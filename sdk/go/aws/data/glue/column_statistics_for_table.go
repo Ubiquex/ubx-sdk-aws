@@ -11,93 +11,93 @@ type ColumnStatisticsForTable_ColumnStatisticsList_StatisticsData_BinaryColumnSt
 
 type ColumnStatisticsForTable_ColumnStatisticsList_StatisticsData_BooleanColumnStatisticsData struct {
 	NumberOfFalses any
-	NumberOfNulls any
-	NumberOfTrues any
+	NumberOfNulls  any
+	NumberOfTrues  any
 }
 
 type ColumnStatisticsForTable_ColumnStatisticsList_StatisticsData_DateColumnStatisticsData struct {
-	MaximumValue any
-	MinimumValue any
+	MaximumValue           any
+	MinimumValue           any
 	NumberOfDistinctValues any
-	NumberOfNulls any
+	NumberOfNulls          any
 }
 
 type ColumnStatisticsForTable_ColumnStatisticsList_StatisticsData_DecimalColumnStatisticsData_MaximumValue struct {
-	Scale any
+	Scale         any
 	UnscaledValue any
 }
 
 type ColumnStatisticsForTable_ColumnStatisticsList_StatisticsData_DecimalColumnStatisticsData struct {
-	MaximumValue any
-	MinimumValue any
+	MaximumValue           any
+	MinimumValue           any
 	NumberOfDistinctValues any
-	NumberOfNulls any
+	NumberOfNulls          any
 }
 
 type ColumnStatisticsForTable_ColumnStatisticsList_StatisticsData_DoubleColumnStatisticsData struct {
-	MaximumValue any
-	MinimumValue any
+	MaximumValue           any
+	MinimumValue           any
 	NumberOfDistinctValues any
-	NumberOfNulls any
+	NumberOfNulls          any
 }
 
 type ColumnStatisticsForTable_ColumnStatisticsList_StatisticsData_StringColumnStatisticsData struct {
-	AverageLength any
-	MaximumLength any
+	AverageLength          any
+	MaximumLength          any
 	NumberOfDistinctValues any
-	NumberOfNulls any
+	NumberOfNulls          any
 }
 
 type ColumnStatisticsForTable_ColumnStatisticsList_StatisticsData struct {
-	BinaryColumnStatisticsData any
+	BinaryColumnStatisticsData  any
 	BooleanColumnStatisticsData any
-	DateColumnStatisticsData any
+	DateColumnStatisticsData    any
 	DecimalColumnStatisticsData any
-	DoubleColumnStatisticsData any
-	LongColumnStatisticsData any
-	StringColumnStatisticsData any
-	Type any
+	DoubleColumnStatisticsData  any
+	LongColumnStatisticsData    any
+	StringColumnStatisticsData  any
+	Type                        any
 }
 
 type ColumnStatisticsForTable_ColumnStatisticsList struct {
-	AnalyzedTime any
-	ColumnName any
-	ColumnType any
+	AnalyzedTime   any
+	ColumnName     any
+	ColumnType     any
 	StatisticsData any
 }
 
 type ColumnStatisticsForTable_Errors_Error struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type ColumnStatisticsForTable_Errors struct {
 	ColumnName any
-	Error any
+	Error      any
 }
 
 type ColumnStatisticsForTableConfig struct {
-	CatalogId any
-	ColumnNames any
+	CatalogId    any
+	ColumnNames  any
 	DatabaseName any
-	TableName any
+	TableName    any
 }
 
 type ColumnStatisticsForTableAttrs struct {
-	CatalogId any
-	ColumnNames any
+	CatalogId            any
+	ColumnNames          any
 	ColumnStatisticsList any
-	DatabaseName any
-	Errors any
-	TableName any
+	DatabaseName         any
+	Errors               any
+	TableName            any
 }
 
 var ColumnStatisticsForTable = ubx.DataSourceBinding{
 	WireType: "aws_glue_column_statistics_for_table",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
+		"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+		"ColumnNames":  ubx.FieldSpec{WireName: "column_names"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":    ubx.FieldSpec{WireName: "table_name"},
 	},
 }

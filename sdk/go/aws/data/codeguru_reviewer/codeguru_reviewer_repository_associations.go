@@ -4,43 +4,43 @@ package codeguru_reviewer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeguruReviewerRepositoryAssociations_RepositoryAssociationSummaries struct {
-	AssociationArn any
-	AssociationId any
-	ConnectionArn any
+	AssociationArn       any
+	AssociationId        any
+	ConnectionArn        any
 	LastUpdatedTimeStamp any
-	Name any
-	Owner any
-	ProviderType any
-	State any
+	Name                 any
+	Owner                any
+	ProviderType         any
+	State                any
 }
 
 type CodeguruReviewerRepositoryAssociationsConfig struct {
-	MaxResults any
-	Names any
-	NextToken any
-	Owners any
+	MaxResults    any
+	Names         any
+	NextToken     any
+	Owners        any
 	ProviderTypes any
-	States any
+	States        any
 }
 
 type CodeguruReviewerRepositoryAssociationsAttrs struct {
-	MaxResults any
-	Names any
-	NextToken any
-	Owners any
-	ProviderTypes any
+	MaxResults                     any
+	Names                          any
+	NextToken                      any
+	Owners                         any
+	ProviderTypes                  any
 	RepositoryAssociationSummaries any
-	States any
+	States                         any
 }
 
 var CodeguruReviewerRepositoryAssociations = ubx.DataSourceBinding{
 	WireType: "aws_codeguru_reviewer_repository_associations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Owners": ubx.FieldSpec{WireName: "owners"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"Names":         ubx.FieldSpec{WireName: "names"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"Owners":        ubx.FieldSpec{WireName: "owners"},
 		"ProviderTypes": ubx.FieldSpec{WireName: "provider_types"},
-		"States": ubx.FieldSpec{WireName: "states"},
+		"States":        ubx.FieldSpec{WireName: "states"},
 	},
 }

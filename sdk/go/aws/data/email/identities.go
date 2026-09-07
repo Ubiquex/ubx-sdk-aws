@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentitiesConfig struct {
 	IdentityType any
-	MaxItems any
-	NextToken any
+	MaxItems     any
+	NextToken    any
 }
 
 type IdentitiesAttrs struct {
-	Identities any
+	Identities   any
 	IdentityType any
-	MaxItems any
-	NextToken any
+	MaxItems     any
+	NextToken    any
 }
 
 var Identities = ubx.DataSourceBinding{
 	WireType: "aws_email_identities",
 	Fields: ubx.FieldMap{
 		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxItems":     ubx.FieldSpec{WireName: "max_items"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

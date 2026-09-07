@@ -29,7 +29,7 @@ var ViewVersion = ubx.ResourceBinding{
 	WireType: "aws_connect_view_version",
 	Fields: ubx.FieldMap{
 		"VersionDescription": ubx.FieldSpec{WireName: "version_description"},
-		"ViewArn": ubx.FieldSpec{WireName: "view_arn"},
-		"ViewContentSha256": ubx.FieldSpec{WireName: "view_content_sha256"},
+		"ViewArn":            ubx.FieldSpec{WireName: "view_arn"},
+		"ViewContentSha256":  ubx.FieldSpec{WireName: "view_content_sha256"},
 	},
 }

@@ -114,119 +114,119 @@ type Table_StorageClassConfiguration struct {
 }
 
 type Table_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Table_CompactionFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetFileSizeMb": ubx.FieldSpec{WireName: "target_file_size_mb"},
-	}
+	"Status":           ubx.FieldSpec{WireName: "status"},
+	"TargetFileSizeMb": ubx.FieldSpec{WireName: "target_file_size_mb"},
+}
 
 var Table_IcebergMetadata_IcebergPartitionSpec_FieldsFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"Transform": ubx.FieldSpec{WireName: "transform"},
-	}
+	"FieldId":   ubx.FieldSpec{WireName: "field_id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"SourceId":  ubx.FieldSpec{WireName: "source_id"},
+	"Transform": ubx.FieldSpec{WireName: "transform"},
+}
 
 var Table_IcebergMetadata_IcebergPartitionSpecFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Table_IcebergMetadata_IcebergPartitionSpec_FieldsFields,
-		},
-		"SpecId": ubx.FieldSpec{WireName: "spec_id"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Table_IcebergMetadata_IcebergPartitionSpec_FieldsFields,
+	},
+	"SpecId": ubx.FieldSpec{WireName: "spec_id"},
+}
 
 var Table_IcebergMetadata_IcebergSchema_SchemaFieldListFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Required": ubx.FieldSpec{WireName: "required"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_IcebergMetadata_IcebergSchemaFields = ubx.FieldMap{
-		"SchemaFieldList": ubx.FieldSpec{
-			WireName: "schema_field_list",
-			Kind: "list",
-			Fields: Table_IcebergMetadata_IcebergSchema_SchemaFieldListFields,
-		},
-	}
+	"SchemaFieldList": ubx.FieldSpec{
+		WireName: "schema_field_list",
+		Kind:     "list",
+		Fields:   Table_IcebergMetadata_IcebergSchema_SchemaFieldListFields,
+	},
+}
 
 var Table_IcebergMetadata_IcebergSchemaV2_SchemaV2FieldListFields = ubx.FieldMap{
-		"Doc": ubx.FieldSpec{WireName: "doc"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Doc":      ubx.FieldSpec{WireName: "doc"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Required": ubx.FieldSpec{WireName: "required"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_IcebergMetadata_IcebergSchemaV2Fields = ubx.FieldMap{
-		"IdentifierFieldIds": ubx.FieldSpec{WireName: "identifier_field_ids"},
-		"SchemaId": ubx.FieldSpec{WireName: "schema_id"},
-		"SchemaV2FieldList": ubx.FieldSpec{
-			WireName: "schema_v2_field_list",
-			Kind: "list",
-			Fields: Table_IcebergMetadata_IcebergSchemaV2_SchemaV2FieldListFields,
-		},
-		"SchemaV2FieldType": ubx.FieldSpec{WireName: "schema_v2_field_type"},
-	}
+	"IdentifierFieldIds": ubx.FieldSpec{WireName: "identifier_field_ids"},
+	"SchemaId":           ubx.FieldSpec{WireName: "schema_id"},
+	"SchemaV2FieldList": ubx.FieldSpec{
+		WireName: "schema_v2_field_list",
+		Kind:     "list",
+		Fields:   Table_IcebergMetadata_IcebergSchemaV2_SchemaV2FieldListFields,
+	},
+	"SchemaV2FieldType": ubx.FieldSpec{WireName: "schema_v2_field_type"},
+}
 
 var Table_IcebergMetadata_IcebergSortOrder_FieldsFields = ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"NullOrder": ubx.FieldSpec{WireName: "null_order"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"Transform": ubx.FieldSpec{WireName: "transform"},
-	}
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"NullOrder": ubx.FieldSpec{WireName: "null_order"},
+	"SourceId":  ubx.FieldSpec{WireName: "source_id"},
+	"Transform": ubx.FieldSpec{WireName: "transform"},
+}
 
 var Table_IcebergMetadata_IcebergSortOrderFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Table_IcebergMetadata_IcebergSortOrder_FieldsFields,
-		},
-		"OrderId": ubx.FieldSpec{WireName: "order_id"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Table_IcebergMetadata_IcebergSortOrder_FieldsFields,
+	},
+	"OrderId": ubx.FieldSpec{WireName: "order_id"},
+}
 
 var Table_IcebergMetadataFields = ubx.FieldMap{
-		"IcebergPartitionSpec": ubx.FieldSpec{
-			WireName: "iceberg_partition_spec",
-			Kind: "object",
-			Fields: Table_IcebergMetadata_IcebergPartitionSpecFields,
-		},
-		"IcebergSchema": ubx.FieldSpec{
-			WireName: "iceberg_schema",
-			Kind: "object",
-			Fields: Table_IcebergMetadata_IcebergSchemaFields,
-		},
-		"IcebergSchemaV2": ubx.FieldSpec{
-			WireName: "iceberg_schema_v2",
-			Kind: "object",
-			Fields: Table_IcebergMetadata_IcebergSchemaV2Fields,
-		},
-		"IcebergSortOrder": ubx.FieldSpec{
-			WireName: "iceberg_sort_order",
-			Kind: "object",
-			Fields: Table_IcebergMetadata_IcebergSortOrderFields,
-		},
-		"TableProperties": ubx.FieldSpec{WireName: "table_properties"},
-	}
+	"IcebergPartitionSpec": ubx.FieldSpec{
+		WireName: "iceberg_partition_spec",
+		Kind:     "object",
+		Fields:   Table_IcebergMetadata_IcebergPartitionSpecFields,
+	},
+	"IcebergSchema": ubx.FieldSpec{
+		WireName: "iceberg_schema",
+		Kind:     "object",
+		Fields:   Table_IcebergMetadata_IcebergSchemaFields,
+	},
+	"IcebergSchemaV2": ubx.FieldSpec{
+		WireName: "iceberg_schema_v2",
+		Kind:     "object",
+		Fields:   Table_IcebergMetadata_IcebergSchemaV2Fields,
+	},
+	"IcebergSortOrder": ubx.FieldSpec{
+		WireName: "iceberg_sort_order",
+		Kind:     "object",
+		Fields:   Table_IcebergMetadata_IcebergSortOrderFields,
+	},
+	"TableProperties": ubx.FieldSpec{WireName: "table_properties"},
+}
 
 var Table_SnapshotManagementFields = ubx.FieldMap{
-		"MaxSnapshotAgeHours": ubx.FieldSpec{WireName: "max_snapshot_age_hours"},
-		"MinSnapshotsToKeep": ubx.FieldSpec{WireName: "min_snapshots_to_keep"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"MaxSnapshotAgeHours": ubx.FieldSpec{WireName: "max_snapshot_age_hours"},
+	"MinSnapshotsToKeep":  ubx.FieldSpec{WireName: "min_snapshots_to_keep"},
+	"Status":              ubx.FieldSpec{WireName: "status"},
+}
 
 var Table_StorageClassConfigurationFields = ubx.FieldMap{
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
+	"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+}
 
 var Table_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TableConfig struct {
 	// Settings governing the Compaction maintenance action. Contains details about the compaction settings for an Iceberg table.
@@ -285,32 +285,32 @@ var Table = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Compaction": ubx.FieldSpec{
 			WireName: "compaction",
-			Kind: "object",
-			Fields: Table_CompactionFields,
+			Kind:     "object",
+			Fields:   Table_CompactionFields,
 		},
 		"IcebergMetadata": ubx.FieldSpec{
 			WireName: "iceberg_metadata",
-			Kind: "object",
-			Fields: Table_IcebergMetadataFields,
+			Kind:     "object",
+			Fields:   Table_IcebergMetadataFields,
 		},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"Namespace":       ubx.FieldSpec{WireName: "namespace"},
 		"OpenTableFormat": ubx.FieldSpec{WireName: "open_table_format"},
 		"SnapshotManagement": ubx.FieldSpec{
 			WireName: "snapshot_management",
-			Kind: "object",
-			Fields: Table_SnapshotManagementFields,
+			Kind:     "object",
+			Fields:   Table_SnapshotManagementFields,
 		},
 		"StorageClassConfiguration": ubx.FieldSpec{
 			WireName: "storage_class_configuration",
-			Kind: "object",
-			Fields: Table_StorageClassConfigurationFields,
+			Kind:     "object",
+			Fields:   Table_StorageClassConfigurationFields,
 		},
 		"TableBucketArn": ubx.FieldSpec{WireName: "table_bucket_arn"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":      ubx.FieldSpec{WireName: "table_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Table_TagsFields,
+			Kind:     "list",
+			Fields:   Table_TagsFields,
 		},
 		"WithoutMetadata": ubx.FieldSpec{WireName: "without_metadata"},
 	},

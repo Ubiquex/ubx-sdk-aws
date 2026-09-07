@@ -4,49 +4,49 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpUsers_Users_Attributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type CognitoIdpUsers_Users_Mfaoptions struct {
-	AttributeName any
+	AttributeName  any
 	DeliveryMedium any
 }
 
 type CognitoIdpUsers_Users struct {
-	Attributes any
-	Enabled any
-	Mfaoptions any
-	UserCreateDate any
+	Attributes           any
+	Enabled              any
+	Mfaoptions           any
+	UserCreateDate       any
 	UserLastModifiedDate any
-	UserStatus any
-	Username any
+	UserStatus           any
+	Username             any
 }
 
 type CognitoIdpUsersConfig struct {
 	AttributesToGet any
-	Filter any
-	Limit any
+	Filter          any
+	Limit           any
 	PaginationToken any
-	UserPoolId any
+	UserPoolId      any
 }
 
 type CognitoIdpUsersAttrs struct {
 	AttributesToGet any
-	Filter any
-	Limit any
+	Filter          any
+	Limit           any
 	PaginationToken any
-	UserPoolId any
-	Users any
+	UserPoolId      any
+	Users           any
 }
 
 var CognitoIdpUsers = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_users",
 	Fields: ubx.FieldMap{
 		"AttributesToGet": ubx.FieldSpec{WireName: "attributes_to_get"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Filter":          ubx.FieldSpec{WireName: "filter"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
 		"PaginationToken": ubx.FieldSpec{WireName: "pagination_token"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"UserPoolId":      ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

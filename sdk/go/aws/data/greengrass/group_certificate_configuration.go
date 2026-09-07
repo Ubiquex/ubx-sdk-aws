@@ -9,8 +9,8 @@ type GroupCertificateConfigurationConfig struct {
 
 type GroupCertificateConfigurationAttrs struct {
 	CertificateAuthorityExpiryInMilliseconds any
-	CertificateExpiryInMilliseconds any
-	GroupId any
+	CertificateExpiryInMilliseconds          any
+	GroupId                                  any
 }
 
 var GroupCertificateConfiguration = ubx.DataSourceBinding{

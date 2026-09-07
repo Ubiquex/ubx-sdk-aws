@@ -23,26 +23,26 @@ type ResourceCollection_ResourceCollectionFilter struct {
 }
 
 var ResourceCollection_ResourceCollectionFilter_CloudFormationFields = ubx.FieldMap{
-		"StackNames": ubx.FieldSpec{WireName: "stack_names"},
-	}
+	"StackNames": ubx.FieldSpec{WireName: "stack_names"},
+}
 
 var ResourceCollection_ResourceCollectionFilter_TagsFields = ubx.FieldMap{
-		"AppBoundaryKey": ubx.FieldSpec{WireName: "app_boundary_key"},
-		"TagValues": ubx.FieldSpec{WireName: "tag_values"},
-	}
+	"AppBoundaryKey": ubx.FieldSpec{WireName: "app_boundary_key"},
+	"TagValues":      ubx.FieldSpec{WireName: "tag_values"},
+}
 
 var ResourceCollection_ResourceCollectionFilterFields = ubx.FieldMap{
-		"CloudFormation": ubx.FieldSpec{
-			WireName: "cloud_formation",
-			Kind: "object",
-			Fields: ResourceCollection_ResourceCollectionFilter_CloudFormationFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: ResourceCollection_ResourceCollectionFilter_TagsFields,
-		},
-	}
+	"CloudFormation": ubx.FieldSpec{
+		WireName: "cloud_formation",
+		Kind:     "object",
+		Fields:   ResourceCollection_ResourceCollectionFilter_CloudFormationFields,
+	},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   ResourceCollection_ResourceCollectionFilter_TagsFields,
+	},
+}
 
 type ResourceCollectionConfig struct {
 	// Information about a filter used to specify which AWS resources are analyzed for anomalous behavior by DevOps Guru.
@@ -61,8 +61,8 @@ var ResourceCollection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ResourceCollectionFilter": ubx.FieldSpec{
 			WireName: "resource_collection_filter",
-			Kind: "object",
-			Fields: ResourceCollection_ResourceCollectionFilterFields,
+			Kind:     "object",
+			Fields:   ResourceCollection_ResourceCollectionFilterFields,
 		},
 	},
 }

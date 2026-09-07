@@ -5,61 +5,61 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuntimeLexSession_ActiveContexts_TimeToLive struct {
 	TimeToLiveInSeconds any
-	TurnsToLive any
+	TurnsToLive         any
 }
 
 type RuntimeLexSession_ActiveContexts struct {
-	Name any
+	Name       any
 	Parameters any
 	TimeToLive any
 }
 
 type RuntimeLexSession_DialogAction struct {
 	FulfillmentState any
-	IntentName any
-	Message any
-	MessageFormat any
-	SlotToElicit any
-	Slots any
-	Type any
+	IntentName       any
+	Message          any
+	MessageFormat    any
+	SlotToElicit     any
+	Slots            any
+	Type             any
 }
 
 type RuntimeLexSession_RecentIntentSummaryView struct {
-	CheckpointLabel any
+	CheckpointLabel    any
 	ConfirmationStatus any
-	DialogActionType any
-	FulfillmentState any
-	IntentName any
-	SlotToElicit any
-	Slots any
+	DialogActionType   any
+	FulfillmentState   any
+	IntentName         any
+	SlotToElicit       any
+	Slots              any
 }
 
 type RuntimeLexSessionConfig struct {
-	BotAlias any
-	BotName any
+	BotAlias              any
+	BotName               any
 	CheckpointLabelFilter any
-	UserId any
+	UserId                any
 }
 
 type RuntimeLexSessionAttrs struct {
-	ActiveContexts any
-	BotAlias any
-	BotName any
+	ActiveContexts        any
+	BotAlias              any
+	BotName               any
 	CheckpointLabelFilter any
 	// <p>Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state.</p>
-	DialogAction any
+	DialogAction            any
 	RecentIntentSummaryView any
-	SessionAttributes any
-	SessionId any
-	UserId any
+	SessionAttributes       any
+	SessionId               any
+	UserId                  any
 }
 
 var RuntimeLexSession = ubx.DataSourceBinding{
 	WireType: "aws_runtime_lex_session",
 	Fields: ubx.FieldMap{
-		"BotAlias": ubx.FieldSpec{WireName: "bot_alias"},
-		"BotName": ubx.FieldSpec{WireName: "bot_name"},
+		"BotAlias":              ubx.FieldSpec{WireName: "bot_alias"},
+		"BotName":               ubx.FieldSpec{WireName: "bot_name"},
 		"CheckpointLabelFilter": ubx.FieldSpec{WireName: "checkpoint_label_filter"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":                ubx.FieldSpec{WireName: "user_id"},
 	},
 }

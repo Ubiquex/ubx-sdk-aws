@@ -28,8 +28,8 @@ type TransitGatewayRouteAttrs struct {
 var TransitGatewayRoute = ubx.ResourceBinding{
 	WireType: "aws_ec2_transit_gateway_route",
 	Fields: ubx.FieldMap{
-		"Blackhole": ubx.FieldSpec{WireName: "blackhole"},
-		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
+		"Blackhole":                  ubx.FieldSpec{WireName: "blackhole"},
+		"DestinationCidrBlock":       ubx.FieldSpec{WireName: "destination_cidr_block"},
 		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 		"TransitGatewayRouteTableId": ubx.FieldSpec{WireName: "transit_gateway_route_table_id"},
 	},

@@ -88,97 +88,97 @@ type Policy_SecurityServicePolicyData struct {
 }
 
 var Policy_ExcludeMapFields = ubx.FieldMap{
-		"Account": ubx.FieldSpec{WireName: "account"},
-		"Orgunit": ubx.FieldSpec{WireName: "orgunit"},
-	}
+	"Account": ubx.FieldSpec{WireName: "account"},
+	"Orgunit": ubx.FieldSpec{WireName: "orgunit"},
+}
 
 var Policy_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCodeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRangeFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"From": ubx.FieldSpec{WireName: "from"},
+	"To":   ubx.FieldSpec{WireName: "to"},
+}
 
 var Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields = ubx.FieldMap{
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"Egress": ubx.FieldSpec{WireName: "egress"},
-		"IcmpTypeCode": ubx.FieldSpec{
-			WireName: "icmp_type_code",
-			Kind: "object",
-			Fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCodeFields,
-		},
-		"Ipv6CidrBlock": ubx.FieldSpec{WireName: "ipv6_cidr_block"},
-		"PortRange": ubx.FieldSpec{
-			WireName: "port_range",
-			Kind: "object",
-			Fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRangeFields,
-		},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"RuleAction": ubx.FieldSpec{WireName: "rule_action"},
-	}
+	"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
+	"Egress":    ubx.FieldSpec{WireName: "egress"},
+	"IcmpTypeCode": ubx.FieldSpec{
+		WireName: "icmp_type_code",
+		Kind:     "object",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCodeFields,
+	},
+	"Ipv6CidrBlock": ubx.FieldSpec{WireName: "ipv6_cidr_block"},
+	"PortRange": ubx.FieldSpec{
+		WireName: "port_range",
+		Kind:     "object",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRangeFields,
+	},
+	"Protocol":   ubx.FieldSpec{WireName: "protocol"},
+	"RuleAction": ubx.FieldSpec{WireName: "rule_action"},
+}
 
 var Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySetFields = ubx.FieldMap{
-		"FirstEntries": ubx.FieldSpec{
-			WireName: "first_entries",
-			Kind: "list",
-			Fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields,
-		},
-		"ForceRemediateForFirstEntries": ubx.FieldSpec{WireName: "force_remediate_for_first_entries"},
-		"ForceRemediateForLastEntries": ubx.FieldSpec{WireName: "force_remediate_for_last_entries"},
-		"LastEntries": ubx.FieldSpec{
-			WireName: "last_entries",
-			Kind: "list",
-			Fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields,
-		},
-	}
+	"FirstEntries": ubx.FieldSpec{
+		WireName: "first_entries",
+		Kind:     "list",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields,
+	},
+	"ForceRemediateForFirstEntries": ubx.FieldSpec{WireName: "force_remediate_for_first_entries"},
+	"ForceRemediateForLastEntries":  ubx.FieldSpec{WireName: "force_remediate_for_last_entries"},
+	"LastEntries": ubx.FieldSpec{
+		WireName: "last_entries",
+		Kind:     "list",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntriesFields,
+	},
+}
 
 var Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicyFields = ubx.FieldMap{
-		"NetworkAclEntrySet": ubx.FieldSpec{
-			WireName: "network_acl_entry_set",
-			Kind: "object",
-			Fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySetFields,
-		},
-	}
+	"NetworkAclEntrySet": ubx.FieldSpec{
+		WireName: "network_acl_entry_set",
+		Kind:     "object",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySetFields,
+	},
+}
 
 var Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields = ubx.FieldMap{
-		"FirewallDeploymentModel": ubx.FieldSpec{WireName: "firewall_deployment_model"},
-	}
+	"FirewallDeploymentModel": ubx.FieldSpec{WireName: "firewall_deployment_model"},
+}
 
 var Policy_SecurityServicePolicyData_PolicyOptionFields = ubx.FieldMap{
-		"NetworkAclCommonPolicy": ubx.FieldSpec{
-			WireName: "network_acl_common_policy",
-			Kind: "object",
-			Fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicyFields,
-		},
-		"NetworkFirewallPolicy": ubx.FieldSpec{
-			WireName: "network_firewall_policy",
-			Kind: "object",
-			Fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields,
-		},
-		"ThirdPartyFirewallPolicy": ubx.FieldSpec{
-			WireName: "third_party_firewall_policy",
-			Kind: "object",
-			Fields: Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields,
-		},
-	}
+	"NetworkAclCommonPolicy": ubx.FieldSpec{
+		WireName: "network_acl_common_policy",
+		Kind:     "object",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicyFields,
+	},
+	"NetworkFirewallPolicy": ubx.FieldSpec{
+		WireName: "network_firewall_policy",
+		Kind:     "object",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields,
+	},
+	"ThirdPartyFirewallPolicy": ubx.FieldSpec{
+		WireName: "third_party_firewall_policy",
+		Kind:     "object",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOption_NetworkFirewallPolicyFields,
+	},
+}
 
 var Policy_SecurityServicePolicyDataFields = ubx.FieldMap{
-		"ManagedServiceData": ubx.FieldSpec{WireName: "managed_service_data"},
-		"PolicyOption": ubx.FieldSpec{
-			WireName: "policy_option",
-			Kind: "object",
-			Fields: Policy_SecurityServicePolicyData_PolicyOptionFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ManagedServiceData": ubx.FieldSpec{WireName: "managed_service_data"},
+	"PolicyOption": ubx.FieldSpec{
+		WireName: "policy_option",
+		Kind:     "object",
+		Fields:   Policy_SecurityServicePolicyData_PolicyOptionFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PolicyConfig struct {
 	// Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred)
@@ -256,37 +256,37 @@ var Policy = ubx.ResourceBinding{
 		"DeleteAllPolicyResources": ubx.FieldSpec{WireName: "delete_all_policy_resources"},
 		"ExcludeMap": ubx.FieldSpec{
 			WireName: "exclude_map",
-			Kind: "object",
-			Fields: Policy_ExcludeMapFields,
+			Kind:     "object",
+			Fields:   Policy_ExcludeMapFields,
 		},
 		"ExcludeResourceTags": ubx.FieldSpec{WireName: "exclude_resource_tags"},
 		"IncludeMap": ubx.FieldSpec{
 			WireName: "include_map",
-			Kind: "object",
-			Fields: Policy_ExcludeMapFields,
+			Kind:     "object",
+			Fields:   Policy_ExcludeMapFields,
 		},
-		"PolicyDescription": ubx.FieldSpec{WireName: "policy_description"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"RemediationEnabled": ubx.FieldSpec{WireName: "remediation_enabled"},
-		"ResourceSetIds": ubx.FieldSpec{WireName: "resource_set_ids"},
+		"PolicyDescription":          ubx.FieldSpec{WireName: "policy_description"},
+		"PolicyName":                 ubx.FieldSpec{WireName: "policy_name"},
+		"RemediationEnabled":         ubx.FieldSpec{WireName: "remediation_enabled"},
+		"ResourceSetIds":             ubx.FieldSpec{WireName: "resource_set_ids"},
 		"ResourceTagLogicalOperator": ubx.FieldSpec{WireName: "resource_tag_logical_operator"},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Policy_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   Policy_ResourceTagsFields,
 		},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":     ubx.FieldSpec{WireName: "resource_type"},
 		"ResourceTypeList": ubx.FieldSpec{WireName: "resource_type_list"},
 		"ResourcesCleanUp": ubx.FieldSpec{WireName: "resources_clean_up"},
 		"SecurityServicePolicyData": ubx.FieldSpec{
 			WireName: "security_service_policy_data",
-			Kind: "object",
-			Fields: Policy_SecurityServicePolicyDataFields,
+			Kind:     "object",
+			Fields:   Policy_SecurityServicePolicyDataFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Policy_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   Policy_ResourceTagsFields,
 		},
 	},
 }

@@ -8,26 +8,26 @@ type BuildBatchesForProject_Filter struct {
 }
 
 var BuildBatchesForProject_FilterFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 type BuildBatchesForProjectConfig struct {
 	// <p>Specifies filters when retrieving batch builds.</p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter      any
+	MaxResults  any
+	NextToken   any
 	ProjectName any
-	SortOrder any
+	SortOrder   any
 }
 
 type BuildBatchesForProjectAttrs struct {
 	// <p>Specifies filters when retrieving batch builds.</p>
-	Filter any
-	Ids any
-	MaxResults any
-	NextToken any
+	Filter      any
+	Ids         any
+	MaxResults  any
+	NextToken   any
 	ProjectName any
-	SortOrder any
+	SortOrder   any
 }
 
 var BuildBatchesForProject = ubx.DataSourceBinding{
@@ -35,12 +35,12 @@ var BuildBatchesForProject = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: BuildBatchesForProject_FilterFields,
+			Kind:     "object",
+			Fields:   BuildBatchesForProject_FilterFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"SortOrder":   ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

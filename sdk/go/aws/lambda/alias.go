@@ -21,21 +21,21 @@ type Alias_RoutingConfig struct {
 }
 
 var Alias_ProvisionedConcurrencyConfigFields = ubx.FieldMap{
-		"ProvisionedConcurrentExecutions": ubx.FieldSpec{WireName: "provisioned_concurrent_executions"},
-	}
+	"ProvisionedConcurrentExecutions": ubx.FieldSpec{WireName: "provisioned_concurrent_executions"},
+}
 
 var Alias_RoutingConfig_AdditionalVersionWeightsFields = ubx.FieldMap{
-		"FunctionVersion": ubx.FieldSpec{WireName: "function_version"},
-		"FunctionWeight": ubx.FieldSpec{WireName: "function_weight"},
-	}
+	"FunctionVersion": ubx.FieldSpec{WireName: "function_version"},
+	"FunctionWeight":  ubx.FieldSpec{WireName: "function_weight"},
+}
 
 var Alias_RoutingConfigFields = ubx.FieldMap{
-		"AdditionalVersionWeights": ubx.FieldSpec{
-			WireName: "additional_version_weights",
-			Kind: "list",
-			Fields: Alias_RoutingConfig_AdditionalVersionWeightsFields,
-		},
-	}
+	"AdditionalVersionWeights": ubx.FieldSpec{
+		WireName: "additional_version_weights",
+		Kind:     "list",
+		Fields:   Alias_RoutingConfig_AdditionalVersionWeightsFields,
+	},
+}
 
 type AliasConfig struct {
 	// A description of the alias.
@@ -72,19 +72,19 @@ type AliasAttrs struct {
 var Alias = ubx.ResourceBinding{
 	WireType: "aws_lambda_alias",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"FunctionName":    ubx.FieldSpec{WireName: "function_name"},
 		"FunctionVersion": ubx.FieldSpec{WireName: "function_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"ProvisionedConcurrencyConfig": ubx.FieldSpec{
 			WireName: "provisioned_concurrency_config",
-			Kind: "object",
-			Fields: Alias_ProvisionedConcurrencyConfigFields,
+			Kind:     "object",
+			Fields:   Alias_ProvisionedConcurrencyConfigFields,
 		},
 		"RoutingConfig": ubx.FieldSpec{
 			WireName: "routing_config",
-			Kind: "object",
-			Fields: Alias_RoutingConfigFields,
+			Kind:     "object",
+			Fields:   Alias_RoutingConfigFields,
 		},
 	},
 }

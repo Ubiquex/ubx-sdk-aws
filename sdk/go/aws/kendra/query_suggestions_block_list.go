@@ -18,14 +18,14 @@ type QuerySuggestionsBlockList_Tags struct {
 }
 
 var QuerySuggestionsBlockList_SourceS3PathFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var QuerySuggestionsBlockList_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type QuerySuggestionsBlockListConfig struct {
 	// A description for the block list.
@@ -65,18 +65,18 @@ var QuerySuggestionsBlockList = ubx.ResourceBinding{
 	WireType: "aws_kendra_query_suggestions_block_list",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"IndexId":     ubx.FieldSpec{WireName: "index_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
 		"SourceS3Path": ubx.FieldSpec{
 			WireName: "source_s3_path",
-			Kind: "object",
-			Fields: QuerySuggestionsBlockList_SourceS3PathFields,
+			Kind:     "object",
+			Fields:   QuerySuggestionsBlockList_SourceS3PathFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: QuerySuggestionsBlockList_TagsFields,
+			Kind:     "list",
+			Fields:   QuerySuggestionsBlockList_TagsFields,
 		},
 	},
 }

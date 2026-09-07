@@ -4,9 +4,9 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdministratorAccount_Administrator struct {
-	AccountId any
-	InvitationId any
-	InvitedAt any
+	AccountId          any
+	InvitationId       any
+	InvitedAt          any
 	RelationshipStatus any
 }
 
@@ -17,7 +17,7 @@ type AdministratorAccountConfig struct {
 type AdministratorAccountAttrs struct {
 	// <p>Contains information about the administrator account and invitation.</p>
 	Administrator any
-	DetectorId any
+	DetectorId    any
 }
 
 var AdministratorAccount = ubx.DataSourceBinding{

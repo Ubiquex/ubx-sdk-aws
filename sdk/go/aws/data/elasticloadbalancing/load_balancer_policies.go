@@ -4,31 +4,31 @@ package elasticloadbalancing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancerPolicies_PolicyDescriptions_PolicyAttributeDescriptions struct {
-	AttributeName any
+	AttributeName  any
 	AttributeValue any
 }
 
 type LoadBalancerPolicies_PolicyDescriptions struct {
 	PolicyAttributeDescriptions any
-	PolicyName any
-	PolicyTypeName any
+	PolicyName                  any
+	PolicyTypeName              any
 }
 
 type LoadBalancerPoliciesConfig struct {
 	LoadBalancerName any
-	PolicyNames any
+	PolicyNames      any
 }
 
 type LoadBalancerPoliciesAttrs struct {
-	LoadBalancerName any
+	LoadBalancerName   any
 	PolicyDescriptions any
-	PolicyNames any
+	PolicyNames        any
 }
 
 var LoadBalancerPolicies = ubx.DataSourceBinding{
 	WireType: "aws_elasticloadbalancing_load_balancer_policies",
 	Fields: ubx.FieldMap{
 		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
-		"PolicyNames": ubx.FieldSpec{WireName: "policy_names"},
+		"PolicyNames":      ubx.FieldSpec{WireName: "policy_names"},
 	},
 }

@@ -11,19 +11,19 @@ type VectorBucket_EncryptionConfiguration struct {
 }
 
 type VectorBucket_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var VectorBucket_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"SseType": ubx.FieldSpec{WireName: "sse_type"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+	"SseType":   ubx.FieldSpec{WireName: "sse_type"},
+}
 
 var VectorBucket_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VectorBucketConfig struct {
 	// The encryption configuration for the vector bucket.
@@ -52,13 +52,13 @@ var VectorBucket = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: VectorBucket_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   VectorBucket_EncryptionConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VectorBucket_TagsFields,
+			Kind:     "list",
+			Fields:   VectorBucket_TagsFields,
 		},
 		"VectorBucketName": ubx.FieldSpec{WireName: "vector_bucket_name"},
 	},

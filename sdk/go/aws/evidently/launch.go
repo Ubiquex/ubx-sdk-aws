@@ -69,59 +69,59 @@ type Launch_Tags struct {
 }
 
 var Launch_ExecutionStatusFields = ubx.FieldMap{
-		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
+	"Reason":       ubx.FieldSpec{WireName: "reason"},
+	"Status":       ubx.FieldSpec{WireName: "status"},
+}
 
 var Launch_GroupsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Feature": ubx.FieldSpec{WireName: "feature"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"Variation": ubx.FieldSpec{WireName: "variation"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Feature":     ubx.FieldSpec{WireName: "feature"},
+	"GroupName":   ubx.FieldSpec{WireName: "group_name"},
+	"Variation":   ubx.FieldSpec{WireName: "variation"},
+}
 
 var Launch_MetricMonitorsFields = ubx.FieldMap{
-		"EntityIdKey": ubx.FieldSpec{WireName: "entity_id_key"},
-		"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"UnitLabel": ubx.FieldSpec{WireName: "unit_label"},
-		"ValueKey": ubx.FieldSpec{WireName: "value_key"},
-	}
+	"EntityIdKey":  ubx.FieldSpec{WireName: "entity_id_key"},
+	"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
+	"MetricName":   ubx.FieldSpec{WireName: "metric_name"},
+	"UnitLabel":    ubx.FieldSpec{WireName: "unit_label"},
+	"ValueKey":     ubx.FieldSpec{WireName: "value_key"},
+}
 
 var Launch_ScheduledSplitsConfig_GroupWeightsFields = ubx.FieldMap{
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"SplitWeight": ubx.FieldSpec{WireName: "split_weight"},
-	}
+	"GroupName":   ubx.FieldSpec{WireName: "group_name"},
+	"SplitWeight": ubx.FieldSpec{WireName: "split_weight"},
+}
 
 var Launch_ScheduledSplitsConfig_SegmentOverridesFields = ubx.FieldMap{
-		"EvaluationOrder": ubx.FieldSpec{WireName: "evaluation_order"},
-		"Segment": ubx.FieldSpec{WireName: "segment"},
-		"Weights": ubx.FieldSpec{
-			WireName: "weights",
-			Kind: "list",
-			Fields: Launch_ScheduledSplitsConfig_GroupWeightsFields,
-		},
-	}
+	"EvaluationOrder": ubx.FieldSpec{WireName: "evaluation_order"},
+	"Segment":         ubx.FieldSpec{WireName: "segment"},
+	"Weights": ubx.FieldSpec{
+		WireName: "weights",
+		Kind:     "list",
+		Fields:   Launch_ScheduledSplitsConfig_GroupWeightsFields,
+	},
+}
 
 var Launch_ScheduledSplitsConfigFields = ubx.FieldMap{
-		"GroupWeights": ubx.FieldSpec{
-			WireName: "group_weights",
-			Kind: "list",
-			Fields: Launch_ScheduledSplitsConfig_GroupWeightsFields,
-		},
-		"SegmentOverrides": ubx.FieldSpec{
-			WireName: "segment_overrides",
-			Kind: "list",
-			Fields: Launch_ScheduledSplitsConfig_SegmentOverridesFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"GroupWeights": ubx.FieldSpec{
+		WireName: "group_weights",
+		Kind:     "list",
+		Fields:   Launch_ScheduledSplitsConfig_GroupWeightsFields,
+	},
+	"SegmentOverrides": ubx.FieldSpec{
+		WireName: "segment_overrides",
+		Kind:     "list",
+		Fields:   Launch_ScheduledSplitsConfig_SegmentOverridesFields,
+	},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Launch_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LaunchConfig struct {
 	// Provides an optional human-readable description of the launch to help identify its purpose. (AI-inferred)
@@ -173,31 +173,31 @@ var Launch = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExecutionStatus": ubx.FieldSpec{
 			WireName: "execution_status",
-			Kind: "object",
-			Fields: Launch_ExecutionStatusFields,
+			Kind:     "object",
+			Fields:   Launch_ExecutionStatusFields,
 		},
 		"Groups": ubx.FieldSpec{
 			WireName: "groups",
-			Kind: "list",
-			Fields: Launch_GroupsFields,
+			Kind:     "list",
+			Fields:   Launch_GroupsFields,
 		},
 		"MetricMonitors": ubx.FieldSpec{
 			WireName: "metric_monitors",
-			Kind: "list",
-			Fields: Launch_MetricMonitorsFields,
+			Kind:     "list",
+			Fields:   Launch_MetricMonitorsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"Project":           ubx.FieldSpec{WireName: "project"},
 		"RandomizationSalt": ubx.FieldSpec{WireName: "randomization_salt"},
 		"ScheduledSplitsConfig": ubx.FieldSpec{
 			WireName: "scheduled_splits_config",
-			Kind: "list",
-			Fields: Launch_ScheduledSplitsConfigFields,
+			Kind:     "list",
+			Fields:   Launch_ScheduledSplitsConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Launch_TagsFields,
+			Kind:     "list",
+			Fields:   Launch_TagsFields,
 		},
 	},
 }

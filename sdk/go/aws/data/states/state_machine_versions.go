@@ -4,28 +4,28 @@ package states
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StateMachineVersions_StateMachineVersions struct {
-	CreationDate any
+	CreationDate           any
 	StateMachineVersionArn any
 }
 
 type StateMachineVersionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	StateMachineArn any
 }
 
 type StateMachineVersionsAttrs struct {
-	MaxResults any
-	NextToken any
-	StateMachineArn any
+	MaxResults           any
+	NextToken            any
+	StateMachineArn      any
 	StateMachineVersions any
 }
 
 var StateMachineVersions = ubx.DataSourceBinding{
 	WireType: "aws_states_state_machine_versions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"StateMachineArn": ubx.FieldSpec{WireName: "state_machine_arn"},
 	},
 }

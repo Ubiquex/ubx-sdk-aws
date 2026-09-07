@@ -4,43 +4,43 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiKeys_Items struct {
-	CreatedDate any
-	CustomerId any
-	Description any
-	Enabled any
-	Id any
+	CreatedDate     any
+	CustomerId      any
+	Description     any
+	Enabled         any
+	Id              any
 	LastUpdatedDate any
-	Name any
-	StageKeys any
-	Tags any
-	Value any
+	Name            any
+	StageKeys       any
+	Tags            any
+	Value           any
 }
 
 type ApiKeysConfig struct {
-	CustomerId any
+	CustomerId    any
 	IncludeValues any
-	Limit any
-	NameQuery any
-	Position any
+	Limit         any
+	NameQuery     any
+	Position      any
 }
 
 type ApiKeysAttrs struct {
-	CustomerId any
+	CustomerId    any
 	IncludeValues any
-	Items any
-	Limit any
-	NameQuery any
-	Position any
-	Warnings any
+	Items         any
+	Limit         any
+	NameQuery     any
+	Position      any
+	Warnings      any
 }
 
 var ApiKeys = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_api_keys",
 	Fields: ubx.FieldMap{
-		"CustomerId": ubx.FieldSpec{WireName: "customer_id"},
+		"CustomerId":    ubx.FieldSpec{WireName: "customer_id"},
 		"IncludeValues": ubx.FieldSpec{WireName: "include_values"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NameQuery": ubx.FieldSpec{WireName: "name_query"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
+		"NameQuery":     ubx.FieldSpec{WireName: "name_query"},
+		"Position":      ubx.FieldSpec{WireName: "position"},
 	},
 }

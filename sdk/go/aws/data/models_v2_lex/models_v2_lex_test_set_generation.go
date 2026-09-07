@@ -4,16 +4,16 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexTestSetGeneration_GenerationDataSource_ConversationLogsDataSource_Filter struct {
-	EndTime any
+	EndTime   any
 	InputMode any
 	StartTime any
 }
 
 type ModelsV2LexTestSetGeneration_GenerationDataSource_ConversationLogsDataSource struct {
 	BotAliasId any
-	BotId any
+	BotId      any
 	// <p>The selected data source to filter the conversation log.</p>
-	Filter any
+	Filter   any
 	LocaleId any
 }
 
@@ -23,9 +23,9 @@ type ModelsV2LexTestSetGeneration_GenerationDataSource struct {
 }
 
 type ModelsV2LexTestSetGeneration_StorageLocation struct {
-	KmsKeyArn any
+	KmsKeyArn    any
 	S3BucketName any
-	S3Path any
+	S3Path       any
 }
 
 type ModelsV2LexTestSetGenerationConfig struct {
@@ -34,18 +34,18 @@ type ModelsV2LexTestSetGenerationConfig struct {
 
 type ModelsV2LexTestSetGenerationAttrs struct {
 	CreationDateTime any
-	Description any
-	FailureReasons any
+	Description      any
+	FailureReasons   any
 	// <p>Contains information about the data source from which the test set is generated.</p>
 	GenerationDataSource any
-	LastUpdatedDateTime any
-	RoleArn any
+	LastUpdatedDateTime  any
+	RoleArn              any
 	// <p>Contains information about the location in which the test set is stored.</p>
-	StorageLocation any
-	TestSetGenerationId any
+	StorageLocation         any
+	TestSetGenerationId     any
 	TestSetGenerationStatus any
-	TestSetId any
-	TestSetName any
+	TestSetId               any
+	TestSetName             any
 }
 
 var ModelsV2LexTestSetGeneration = ubx.DataSourceBinding{

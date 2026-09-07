@@ -39,17 +39,17 @@ type SecurityConfig_SamlOptions struct {
 }
 
 var SecurityConfig_IamFederationOptionsFields = ubx.FieldMap{
-		"GroupAttribute": ubx.FieldSpec{WireName: "group_attribute"},
-		"UserAttribute": ubx.FieldSpec{WireName: "user_attribute"},
-	}
+	"GroupAttribute": ubx.FieldSpec{WireName: "group_attribute"},
+	"UserAttribute":  ubx.FieldSpec{WireName: "user_attribute"},
+}
 
 var SecurityConfig_SamlOptionsFields = ubx.FieldMap{
-		"GroupAttribute": ubx.FieldSpec{WireName: "group_attribute"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"OpenSearchServerlessEntityId": ubx.FieldSpec{WireName: "open_search_serverless_entity_id"},
-		"SessionTimeout": ubx.FieldSpec{WireName: "session_timeout"},
-		"UserAttribute": ubx.FieldSpec{WireName: "user_attribute"},
-	}
+	"GroupAttribute":               ubx.FieldSpec{WireName: "group_attribute"},
+	"Metadata":                     ubx.FieldSpec{WireName: "metadata"},
+	"OpenSearchServerlessEntityId": ubx.FieldSpec{WireName: "open_search_serverless_entity_id"},
+	"SessionTimeout":               ubx.FieldSpec{WireName: "session_timeout"},
+	"UserAttribute":                ubx.FieldSpec{WireName: "user_attribute"},
+}
 
 type SecurityConfigConfig struct {
 	// Security config description
@@ -87,14 +87,14 @@ var SecurityConfig = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IamFederationOptions": ubx.FieldSpec{
 			WireName: "iam_federation_options",
-			Kind: "object",
-			Fields: SecurityConfig_IamFederationOptionsFields,
+			Kind:     "object",
+			Fields:   SecurityConfig_IamFederationOptionsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SamlOptions": ubx.FieldSpec{
 			WireName: "saml_options",
-			Kind: "object",
-			Fields: SecurityConfig_SamlOptionsFields,
+			Kind:     "object",
+			Fields:   SecurityConfig_SamlOptionsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

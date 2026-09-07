@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SourceNetwork_Tags struct {
 	// A user-defined key for a tag on the AWS Elastic Disaster Recovery (DRS) Source Network, used to categorize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var SourceNetwork_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SourceNetworkConfig struct {
 	// The account ID containing the VPC to protect.
@@ -44,11 +44,11 @@ var SourceNetwork = ubx.ResourceBinding{
 	WireType: "aws_drs_source_network",
 	Fields: ubx.FieldMap{
 		"OriginAccountId": ubx.FieldSpec{WireName: "origin_account_id"},
-		"OriginRegion": ubx.FieldSpec{WireName: "origin_region"},
+		"OriginRegion":    ubx.FieldSpec{WireName: "origin_region"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SourceNetwork_TagsFields,
+			Kind:     "list",
+			Fields:   SourceNetwork_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

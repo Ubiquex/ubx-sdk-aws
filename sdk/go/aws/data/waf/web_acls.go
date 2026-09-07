@@ -4,25 +4,25 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebAcls_WebAcls struct {
-	Name any
+	Name     any
 	WebAclid any
 }
 
 type WebAclsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WebAclsAttrs struct {
-	Limit any
+	Limit      any
 	NextMarker any
-	WebAcls any
+	WebAcls    any
 }
 
 var WebAcls = ubx.DataSourceBinding{
 	WireType: "aws_waf_web_acls",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

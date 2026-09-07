@@ -6,29 +6,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type PrincipalMapping_GroupOrderingIdSummaries struct {
 	FailureReason any
 	LastUpdatedAt any
-	OrderingId any
-	ReceivedAt any
-	Status any
+	OrderingId    any
+	ReceivedAt    any
+	Status        any
 }
 
 type PrincipalMappingConfig struct {
 	DataSourceId any
-	GroupId any
-	IndexId any
+	GroupId      any
+	IndexId      any
 }
 
 type PrincipalMappingAttrs struct {
-	DataSourceId any
-	GroupId any
+	DataSourceId             any
+	GroupId                  any
 	GroupOrderingIdSummaries any
-	IndexId any
+	IndexId                  any
 }
 
 var PrincipalMapping = ubx.DataSourceBinding{
 	WireType: "aws_kendra_principal_mapping",
 	Fields: ubx.FieldMap{
 		"DataSourceId": ubx.FieldSpec{WireName: "data_source_id"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"GroupId":      ubx.FieldSpec{WireName: "group_id"},
+		"IndexId":      ubx.FieldSpec{WireName: "index_id"},
 	},
 }

@@ -133,112 +133,112 @@ type Theme_Version struct {
 }
 
 var Theme_Configuration_DataColorPaletteFields = ubx.FieldMap{
-		"Colors": ubx.FieldSpec{WireName: "colors"},
-		"EmptyFillColor": ubx.FieldSpec{WireName: "empty_fill_color"},
-		"MinMaxGradient": ubx.FieldSpec{WireName: "min_max_gradient"},
-	}
+	"Colors":         ubx.FieldSpec{WireName: "colors"},
+	"EmptyFillColor": ubx.FieldSpec{WireName: "empty_fill_color"},
+	"MinMaxGradient": ubx.FieldSpec{WireName: "min_max_gradient"},
+}
 
 var Theme_Configuration_Sheet_Tile_BorderFields = ubx.FieldMap{
-		"Show": ubx.FieldSpec{WireName: "show"},
-	}
+	"Show": ubx.FieldSpec{WireName: "show"},
+}
 
 var Theme_Configuration_Sheet_TileFields = ubx.FieldMap{
-		"Border": ubx.FieldSpec{
-			WireName: "border",
-			Kind: "object",
-			Fields: Theme_Configuration_Sheet_Tile_BorderFields,
-		},
-	}
+	"Border": ubx.FieldSpec{
+		WireName: "border",
+		Kind:     "object",
+		Fields:   Theme_Configuration_Sheet_Tile_BorderFields,
+	},
+}
 
 var Theme_Configuration_Sheet_TileLayoutFields = ubx.FieldMap{
-		"Gutter": ubx.FieldSpec{
-			WireName: "gutter",
-			Kind: "object",
-			Fields: Theme_Configuration_Sheet_Tile_BorderFields,
-		},
-		"Margin": ubx.FieldSpec{
-			WireName: "margin",
-			Kind: "object",
-			Fields: Theme_Configuration_Sheet_Tile_BorderFields,
-		},
-	}
+	"Gutter": ubx.FieldSpec{
+		WireName: "gutter",
+		Kind:     "object",
+		Fields:   Theme_Configuration_Sheet_Tile_BorderFields,
+	},
+	"Margin": ubx.FieldSpec{
+		WireName: "margin",
+		Kind:     "object",
+		Fields:   Theme_Configuration_Sheet_Tile_BorderFields,
+	},
+}
 
 var Theme_Configuration_SheetFields = ubx.FieldMap{
-		"Tile": ubx.FieldSpec{
-			WireName: "tile",
-			Kind: "object",
-			Fields: Theme_Configuration_Sheet_TileFields,
-		},
-		"TileLayout": ubx.FieldSpec{
-			WireName: "tile_layout",
-			Kind: "object",
-			Fields: Theme_Configuration_Sheet_TileLayoutFields,
-		},
-	}
+	"Tile": ubx.FieldSpec{
+		WireName: "tile",
+		Kind:     "object",
+		Fields:   Theme_Configuration_Sheet_TileFields,
+	},
+	"TileLayout": ubx.FieldSpec{
+		WireName: "tile_layout",
+		Kind:     "object",
+		Fields:   Theme_Configuration_Sheet_TileLayoutFields,
+	},
+}
 
 var Theme_Configuration_Typography_FontFamiliesFields = ubx.FieldMap{
-		"FontFamily": ubx.FieldSpec{WireName: "font_family"},
-	}
+	"FontFamily": ubx.FieldSpec{WireName: "font_family"},
+}
 
 var Theme_Configuration_TypographyFields = ubx.FieldMap{
-		"FontFamilies": ubx.FieldSpec{
-			WireName: "font_families",
-			Kind: "list",
-			Fields: Theme_Configuration_Typography_FontFamiliesFields,
-		},
-	}
+	"FontFamilies": ubx.FieldSpec{
+		WireName: "font_families",
+		Kind:     "list",
+		Fields:   Theme_Configuration_Typography_FontFamiliesFields,
+	},
+}
 
 var Theme_Configuration_UicolorPaletteFields = ubx.FieldMap{
-		"Accent": ubx.FieldSpec{WireName: "accent"},
-		"AccentForeground": ubx.FieldSpec{WireName: "accent_foreground"},
-		"Danger": ubx.FieldSpec{WireName: "danger"},
-		"DangerForeground": ubx.FieldSpec{WireName: "danger_foreground"},
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"DimensionForeground": ubx.FieldSpec{WireName: "dimension_foreground"},
-		"Measure": ubx.FieldSpec{WireName: "measure"},
-		"MeasureForeground": ubx.FieldSpec{WireName: "measure_foreground"},
-		"PrimaryBackground": ubx.FieldSpec{WireName: "primary_background"},
-		"PrimaryForeground": ubx.FieldSpec{WireName: "primary_foreground"},
-		"SecondaryBackground": ubx.FieldSpec{WireName: "secondary_background"},
-		"SecondaryForeground": ubx.FieldSpec{WireName: "secondary_foreground"},
-		"Success": ubx.FieldSpec{WireName: "success"},
-		"SuccessForeground": ubx.FieldSpec{WireName: "success_foreground"},
-		"Warning": ubx.FieldSpec{WireName: "warning"},
-		"WarningForeground": ubx.FieldSpec{WireName: "warning_foreground"},
-	}
+	"Accent":              ubx.FieldSpec{WireName: "accent"},
+	"AccentForeground":    ubx.FieldSpec{WireName: "accent_foreground"},
+	"Danger":              ubx.FieldSpec{WireName: "danger"},
+	"DangerForeground":    ubx.FieldSpec{WireName: "danger_foreground"},
+	"Dimension":           ubx.FieldSpec{WireName: "dimension"},
+	"DimensionForeground": ubx.FieldSpec{WireName: "dimension_foreground"},
+	"Measure":             ubx.FieldSpec{WireName: "measure"},
+	"MeasureForeground":   ubx.FieldSpec{WireName: "measure_foreground"},
+	"PrimaryBackground":   ubx.FieldSpec{WireName: "primary_background"},
+	"PrimaryForeground":   ubx.FieldSpec{WireName: "primary_foreground"},
+	"SecondaryBackground": ubx.FieldSpec{WireName: "secondary_background"},
+	"SecondaryForeground": ubx.FieldSpec{WireName: "secondary_foreground"},
+	"Success":             ubx.FieldSpec{WireName: "success"},
+	"SuccessForeground":   ubx.FieldSpec{WireName: "success_foreground"},
+	"Warning":             ubx.FieldSpec{WireName: "warning"},
+	"WarningForeground":   ubx.FieldSpec{WireName: "warning_foreground"},
+}
 
 var Theme_ConfigurationFields = ubx.FieldMap{
-		"DataColorPalette": ubx.FieldSpec{
-			WireName: "data_color_palette",
-			Kind: "object",
-			Fields: Theme_Configuration_DataColorPaletteFields,
-		},
-		"Sheet": ubx.FieldSpec{
-			WireName: "sheet",
-			Kind: "object",
-			Fields: Theme_Configuration_SheetFields,
-		},
-		"Typography": ubx.FieldSpec{
-			WireName: "typography",
-			Kind: "object",
-			Fields: Theme_Configuration_TypographyFields,
-		},
-		"UicolorPalette": ubx.FieldSpec{
-			WireName: "uicolor_palette",
-			Kind: "object",
-			Fields: Theme_Configuration_UicolorPaletteFields,
-		},
-	}
+	"DataColorPalette": ubx.FieldSpec{
+		WireName: "data_color_palette",
+		Kind:     "object",
+		Fields:   Theme_Configuration_DataColorPaletteFields,
+	},
+	"Sheet": ubx.FieldSpec{
+		WireName: "sheet",
+		Kind:     "object",
+		Fields:   Theme_Configuration_SheetFields,
+	},
+	"Typography": ubx.FieldSpec{
+		WireName: "typography",
+		Kind:     "object",
+		Fields:   Theme_Configuration_TypographyFields,
+	},
+	"UicolorPalette": ubx.FieldSpec{
+		WireName: "uicolor_palette",
+		Kind:     "object",
+		Fields:   Theme_Configuration_UicolorPaletteFields,
+	},
+}
 
 var Theme_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var Theme_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ThemeConfig struct {
 	// The AWS account ID where the QuickSight theme is created, scoping the theme resource to that specific account. (AI-inferred)
@@ -292,24 +292,24 @@ var Theme = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_theme",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"BaseThemeId": ubx.FieldSpec{WireName: "base_theme_id"},
+		"BaseThemeId":  ubx.FieldSpec{WireName: "base_theme_id"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Theme_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Theme_ConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: Theme_PermissionsFields,
+			Kind:     "list",
+			Fields:   Theme_PermissionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Theme_TagsFields,
+			Kind:     "list",
+			Fields:   Theme_TagsFields,
 		},
-		"ThemeId": ubx.FieldSpec{WireName: "theme_id"},
+		"ThemeId":            ubx.FieldSpec{WireName: "theme_id"},
 		"VersionDescription": ubx.FieldSpec{WireName: "version_description"},
 	},
 }

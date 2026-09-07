@@ -4,34 +4,34 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityContext_UserIdentifier struct {
-	Email any
-	UserArn any
+	Email    any
+	UserArn  any
 	UserName any
 }
 
 var IdentityContext_UserIdentifierFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"UserArn": ubx.FieldSpec{WireName: "user_arn"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
-	}
+	"Email":    ubx.FieldSpec{WireName: "email"},
+	"UserArn":  ubx.FieldSpec{WireName: "user_arn"},
+	"UserName": ubx.FieldSpec{WireName: "user_name"},
+}
 
 type IdentityContextConfig struct {
-	AwsAccountId any
-	ContextRegion any
-	Namespace any
+	AwsAccountId     any
+	ContextRegion    any
+	Namespace        any
 	SessionExpiresAt any
 	// <p>A structure that contains information to identify a user.</p>
 	UserIdentifier any
 }
 
 type IdentityContextAttrs struct {
-	AwsAccountId any
-	Context any
-	ContextRegion any
-	Namespace any
-	RequestId any
+	AwsAccountId     any
+	Context          any
+	ContextRegion    any
+	Namespace        any
+	RequestId        any
 	SessionExpiresAt any
-	Status any
+	Status           any
 	// <p>A structure that contains information to identify a user.</p>
 	UserIdentifier any
 }
@@ -39,14 +39,14 @@ type IdentityContextAttrs struct {
 var IdentityContext = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_identity_context",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"ContextRegion": ubx.FieldSpec{WireName: "context_region"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"AwsAccountId":     ubx.FieldSpec{WireName: "aws_account_id"},
+		"ContextRegion":    ubx.FieldSpec{WireName: "context_region"},
+		"Namespace":        ubx.FieldSpec{WireName: "namespace"},
 		"SessionExpiresAt": ubx.FieldSpec{WireName: "session_expires_at"},
 		"UserIdentifier": ubx.FieldSpec{
 			WireName: "user_identifier",
-			Kind: "object",
-			Fields: IdentityContext_UserIdentifierFields,
+			Kind:     "object",
+			Fields:   IdentityContext_UserIdentifierFields,
 		},
 	},
 }

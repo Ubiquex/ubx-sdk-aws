@@ -101,112 +101,112 @@ type DataSource_Schedule struct {
 }
 
 var DataSource_AssetFormsInputFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"FormName": ubx.FieldSpec{WireName: "form_name"},
-		"TypeIdentifier": ubx.FieldSpec{WireName: "type_identifier"},
-		"TypeRevision": ubx.FieldSpec{WireName: "type_revision"},
-	}
+	"Content":        ubx.FieldSpec{WireName: "content"},
+	"FormName":       ubx.FieldSpec{WireName: "form_name"},
+	"TypeIdentifier": ubx.FieldSpec{WireName: "type_identifier"},
+	"TypeRevision":   ubx.FieldSpec{WireName: "type_revision"},
+}
 
 var DataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurations_FilterExpressionsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var DataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurationsFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"FilterExpressions": ubx.FieldSpec{
-			WireName: "filter_expressions",
-			Kind: "list",
-			Fields: DataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurations_FilterExpressionsFields,
-		},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"FilterExpressions": ubx.FieldSpec{
+		WireName: "filter_expressions",
+		Kind:     "list",
+		Fields:   DataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurations_FilterExpressionsFields,
+	},
+	"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
+}
 
 var DataSource_Configuration_GlueRunConfigurationFields = ubx.FieldMap{
-		"AutoImportDataQualityResult": ubx.FieldSpec{WireName: "auto_import_data_quality_result"},
-		"CatalogName": ubx.FieldSpec{WireName: "catalog_name"},
-		"DataAccessRole": ubx.FieldSpec{WireName: "data_access_role"},
-		"RelationalFilterConfigurations": ubx.FieldSpec{
-			WireName: "relational_filter_configurations",
-			Kind: "list",
-			Fields: DataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurationsFields,
-		},
-	}
+	"AutoImportDataQualityResult": ubx.FieldSpec{WireName: "auto_import_data_quality_result"},
+	"CatalogName":                 ubx.FieldSpec{WireName: "catalog_name"},
+	"DataAccessRole":              ubx.FieldSpec{WireName: "data_access_role"},
+	"RelationalFilterConfigurations": ubx.FieldSpec{
+		WireName: "relational_filter_configurations",
+		Kind:     "list",
+		Fields:   DataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurationsFields,
+	},
+}
 
 var DataSource_Configuration_RedshiftRunConfiguration_RedshiftCredentialConfigurationFields = ubx.FieldMap{
-		"SecretManagerArn": ubx.FieldSpec{WireName: "secret_manager_arn"},
-	}
+	"SecretManagerArn": ubx.FieldSpec{WireName: "secret_manager_arn"},
+}
 
 var DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage_RedshiftClusterSourceFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-	}
+	"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+}
 
 var DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage_RedshiftServerlessSourceFields = ubx.FieldMap{
-		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
-	}
+	"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
+}
 
 var DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorageFields = ubx.FieldMap{
-		"RedshiftClusterSource": ubx.FieldSpec{
-			WireName: "redshift_cluster_source",
-			Kind: "object",
-			Fields: DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage_RedshiftClusterSourceFields,
-		},
-		"RedshiftServerlessSource": ubx.FieldSpec{
-			WireName: "redshift_serverless_source",
-			Kind: "object",
-			Fields: DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage_RedshiftServerlessSourceFields,
-		},
-	}
+	"RedshiftClusterSource": ubx.FieldSpec{
+		WireName: "redshift_cluster_source",
+		Kind:     "object",
+		Fields:   DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage_RedshiftClusterSourceFields,
+	},
+	"RedshiftServerlessSource": ubx.FieldSpec{
+		WireName: "redshift_serverless_source",
+		Kind:     "object",
+		Fields:   DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage_RedshiftServerlessSourceFields,
+	},
+}
 
 var DataSource_Configuration_RedshiftRunConfigurationFields = ubx.FieldMap{
-		"DataAccessRole": ubx.FieldSpec{WireName: "data_access_role"},
-		"RedshiftCredentialConfiguration": ubx.FieldSpec{
-			WireName: "redshift_credential_configuration",
-			Kind: "object",
-			Fields: DataSource_Configuration_RedshiftRunConfiguration_RedshiftCredentialConfigurationFields,
-		},
-		"RedshiftStorage": ubx.FieldSpec{
-			WireName: "redshift_storage",
-			Kind: "object",
-			Fields: DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorageFields,
-		},
-		"RelationalFilterConfigurations": ubx.FieldSpec{
-			WireName: "relational_filter_configurations",
-			Kind: "list",
-			Fields: DataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurationsFields,
-		},
-	}
+	"DataAccessRole": ubx.FieldSpec{WireName: "data_access_role"},
+	"RedshiftCredentialConfiguration": ubx.FieldSpec{
+		WireName: "redshift_credential_configuration",
+		Kind:     "object",
+		Fields:   DataSource_Configuration_RedshiftRunConfiguration_RedshiftCredentialConfigurationFields,
+	},
+	"RedshiftStorage": ubx.FieldSpec{
+		WireName: "redshift_storage",
+		Kind:     "object",
+		Fields:   DataSource_Configuration_RedshiftRunConfiguration_RedshiftStorageFields,
+	},
+	"RelationalFilterConfigurations": ubx.FieldSpec{
+		WireName: "relational_filter_configurations",
+		Kind:     "list",
+		Fields:   DataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurationsFields,
+	},
+}
 
 var DataSource_Configuration_SageMakerRunConfigurationFields = ubx.FieldMap{
-		"TrackingAssets": ubx.FieldSpec{WireName: "tracking_assets"},
-	}
+	"TrackingAssets": ubx.FieldSpec{WireName: "tracking_assets"},
+}
 
 var DataSource_ConfigurationFields = ubx.FieldMap{
-		"GlueRunConfiguration": ubx.FieldSpec{
-			WireName: "glue_run_configuration",
-			Kind: "object",
-			Fields: DataSource_Configuration_GlueRunConfigurationFields,
-		},
-		"RedshiftRunConfiguration": ubx.FieldSpec{
-			WireName: "redshift_run_configuration",
-			Kind: "object",
-			Fields: DataSource_Configuration_RedshiftRunConfigurationFields,
-		},
-		"SageMakerRunConfiguration": ubx.FieldSpec{
-			WireName: "sage_maker_run_configuration",
-			Kind: "object",
-			Fields: DataSource_Configuration_SageMakerRunConfigurationFields,
-		},
-	}
+	"GlueRunConfiguration": ubx.FieldSpec{
+		WireName: "glue_run_configuration",
+		Kind:     "object",
+		Fields:   DataSource_Configuration_GlueRunConfigurationFields,
+	},
+	"RedshiftRunConfiguration": ubx.FieldSpec{
+		WireName: "redshift_run_configuration",
+		Kind:     "object",
+		Fields:   DataSource_Configuration_RedshiftRunConfigurationFields,
+	},
+	"SageMakerRunConfiguration": ubx.FieldSpec{
+		WireName: "sage_maker_run_configuration",
+		Kind:     "object",
+		Fields:   DataSource_Configuration_SageMakerRunConfigurationFields,
+	},
+}
 
 var DataSource_RecommendationFields = ubx.FieldMap{
-		"EnableBusinessNameGeneration": ubx.FieldSpec{WireName: "enable_business_name_generation"},
-	}
+	"EnableBusinessNameGeneration": ubx.FieldSpec{WireName: "enable_business_name_generation"},
+}
 
 var DataSource_ScheduleFields = ubx.FieldMap{
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Schedule": ubx.FieldSpec{WireName: "schedule"},
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 type DataSourceConfig struct {
 	// The metadata forms that are to be attached to the assets that this data source works with.
@@ -293,31 +293,31 @@ var DataSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AssetFormsInput": ubx.FieldSpec{
 			WireName: "asset_forms_input",
-			Kind: "list",
-			Fields: DataSource_AssetFormsInputFields,
+			Kind:     "list",
+			Fields:   DataSource_AssetFormsInputFields,
 		},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: DataSource_ConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSource_ConfigurationFields,
 		},
-		"ConnectionIdentifier": ubx.FieldSpec{WireName: "connection_identifier"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"EnableSetting": ubx.FieldSpec{WireName: "enable_setting"},
+		"ConnectionIdentifier":  ubx.FieldSpec{WireName: "connection_identifier"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"DomainIdentifier":      ubx.FieldSpec{WireName: "domain_identifier"},
+		"EnableSetting":         ubx.FieldSpec{WireName: "enable_setting"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectIdentifier": ubx.FieldSpec{WireName: "project_identifier"},
-		"PublishOnImport": ubx.FieldSpec{WireName: "publish_on_import"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"ProjectIdentifier":     ubx.FieldSpec{WireName: "project_identifier"},
+		"PublishOnImport":       ubx.FieldSpec{WireName: "publish_on_import"},
 		"Recommendation": ubx.FieldSpec{
 			WireName: "recommendation",
-			Kind: "object",
-			Fields: DataSource_RecommendationFields,
+			Kind:     "object",
+			Fields:   DataSource_RecommendationFields,
 		},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: DataSource_ScheduleFields,
+			Kind:     "object",
+			Fields:   DataSource_ScheduleFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

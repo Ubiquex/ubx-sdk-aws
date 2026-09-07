@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubscriptionFilters_SubscriptionFilters struct {
 	ApplyOnTransformedLogs any
-	CreationTime any
-	DestinationArn any
-	Distribution any
-	EmitSystemFields any
+	CreationTime           any
+	DestinationArn         any
+	Distribution           any
+	EmitSystemFields       any
 	FieldSelectionCriteria any
-	FilterName any
-	FilterPattern any
-	LogGroupName any
-	RoleArn any
+	FilterName             any
+	FilterPattern          any
+	LogGroupName           any
+	RoleArn                any
 }
 
 type SubscriptionFiltersConfig struct {
 	FilterNamePrefix any
-	Limit any
-	LogGroupName any
+	Limit            any
+	LogGroupName     any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
 
 type SubscriptionFiltersAttrs struct {
 	FilterNamePrefix any
-	Limit any
-	LogGroupName any
+	Limit            any
+	LogGroupName     any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken           any
 	SubscriptionFilters any
 }
 
@@ -37,8 +37,8 @@ var SubscriptionFilters = ubx.DataSourceBinding{
 	WireType: "aws_logs_subscription_filters",
 	Fields: ubx.FieldMap{
 		"FilterNamePrefix": ubx.FieldSpec{WireName: "filter_name_prefix"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"LogGroupName":     ubx.FieldSpec{WireName: "log_group_name"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

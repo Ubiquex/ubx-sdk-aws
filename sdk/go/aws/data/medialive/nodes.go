@@ -4,31 +4,31 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Nodes_Nodes_NodeInterfaceMappings struct {
-	LogicalInterfaceName any
-	NetworkInterfaceMode any
+	LogicalInterfaceName         any
+	NetworkInterfaceMode         any
 	PhysicalInterfaceIpAddresses any
-	PhysicalInterfaceName any
+	PhysicalInterfaceName        any
 }
 
 type Nodes_Nodes_SdiSourceMappings struct {
-	CardNumber any
+	CardNumber    any
 	ChannelNumber any
-	SdiSource any
+	SdiSource     any
 }
 
 type Nodes_Nodes struct {
-	Arn any
+	Arn                    any
 	ChannelPlacementGroups any
-	ClusterId any
-	ConnectionState any
-	Id any
-	InstanceArn any
-	ManagedInstanceId any
-	Name any
-	NodeInterfaceMappings any
-	Role any
-	SdiSourceMappings any
-	State any
+	ClusterId              any
+	ConnectionState        any
+	Id                     any
+	InstanceArn            any
+	ManagedInstanceId      any
+	Name                   any
+	NodeInterfaceMappings  any
+	Role                   any
+	SdiSourceMappings      any
+	State                  any
 }
 
 type NodesConfig struct {
@@ -54,8 +54,8 @@ type NodesAttrs struct {
 var Nodes = ubx.DataSourceBinding{
 	WireType: "aws_medialive_nodes",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+		"ClusterId":  ubx.FieldSpec{WireName: "cluster_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,7 +4,7 @@ package bedrock_agentcore_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BedrockAgentcoreControlTokenVault_KmsConfiguration struct {
-	KeyType any
+	KeyType   any
 	KmsKeyArn any
 }
 
@@ -16,7 +16,7 @@ type BedrockAgentcoreControlTokenVaultAttrs struct {
 	// <p>Contains the KMS configuration for a resource.</p>
 	KmsConfiguration any
 	LastModifiedDate any
-	TokenVaultId any
+	TokenVaultId     any
 }
 
 var BedrockAgentcoreControlTokenVault = ubx.DataSourceBinding{

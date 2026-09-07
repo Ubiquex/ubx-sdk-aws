@@ -4,9 +4,9 @@ package mail_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerArchiveMessageContent_Body struct {
-	Html any
+	Html             any
 	MessageMalformed any
-	Text any
+	Text             any
 }
 
 type MailManagerArchiveMessageContentConfig struct {

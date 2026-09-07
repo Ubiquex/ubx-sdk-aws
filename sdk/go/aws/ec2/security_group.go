@@ -47,38 +47,38 @@ type SecurityGroup_SecurityGroupIngress struct {
 
 type SecurityGroup_Tags struct {
 	// The key of a tag assigned to the security group, used to organize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var SecurityGroup_SecurityGroupEgressFields = ubx.FieldMap{
-		"CidrIp": ubx.FieldSpec{WireName: "cidr_ip"},
-		"CidrIpv6": ubx.FieldSpec{WireName: "cidr_ipv6"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DestinationPrefixListId": ubx.FieldSpec{WireName: "destination_prefix_list_id"},
-		"DestinationSecurityGroupId": ubx.FieldSpec{WireName: "destination_security_group_id"},
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"CidrIp":                     ubx.FieldSpec{WireName: "cidr_ip"},
+	"CidrIpv6":                   ubx.FieldSpec{WireName: "cidr_ipv6"},
+	"Description":                ubx.FieldSpec{WireName: "description"},
+	"DestinationPrefixListId":    ubx.FieldSpec{WireName: "destination_prefix_list_id"},
+	"DestinationSecurityGroupId": ubx.FieldSpec{WireName: "destination_security_group_id"},
+	"FromPort":                   ubx.FieldSpec{WireName: "from_port"},
+	"IpProtocol":                 ubx.FieldSpec{WireName: "ip_protocol"},
+	"ToPort":                     ubx.FieldSpec{WireName: "to_port"},
+}
 
 var SecurityGroup_SecurityGroupIngressFields = ubx.FieldMap{
-		"CidrIp": ubx.FieldSpec{WireName: "cidr_ip"},
-		"CidrIpv6": ubx.FieldSpec{WireName: "cidr_ipv6"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"SourcePrefixListId": ubx.FieldSpec{WireName: "source_prefix_list_id"},
-		"SourceSecurityGroupId": ubx.FieldSpec{WireName: "source_security_group_id"},
-		"SourceSecurityGroupName": ubx.FieldSpec{WireName: "source_security_group_name"},
-		"SourceSecurityGroupOwnerId": ubx.FieldSpec{WireName: "source_security_group_owner_id"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"CidrIp":                     ubx.FieldSpec{WireName: "cidr_ip"},
+	"CidrIpv6":                   ubx.FieldSpec{WireName: "cidr_ipv6"},
+	"Description":                ubx.FieldSpec{WireName: "description"},
+	"FromPort":                   ubx.FieldSpec{WireName: "from_port"},
+	"IpProtocol":                 ubx.FieldSpec{WireName: "ip_protocol"},
+	"SourcePrefixListId":         ubx.FieldSpec{WireName: "source_prefix_list_id"},
+	"SourceSecurityGroupId":      ubx.FieldSpec{WireName: "source_security_group_id"},
+	"SourceSecurityGroupName":    ubx.FieldSpec{WireName: "source_security_group_name"},
+	"SourceSecurityGroupOwnerId": ubx.FieldSpec{WireName: "source_security_group_owner_id"},
+	"ToPort":                     ubx.FieldSpec{WireName: "to_port"},
+}
 
 var SecurityGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SecurityGroupConfig struct {
 	// A description for the security group.
@@ -118,21 +118,21 @@ var SecurityGroup = ubx.ResourceBinding{
 	WireType: "aws_security_group",
 	Fields: ubx.FieldMap{
 		"GroupDescription": ubx.FieldSpec{WireName: "group_description"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"GroupName":        ubx.FieldSpec{WireName: "group_name"},
 		"SecurityGroupEgress": ubx.FieldSpec{
 			WireName: "security_group_egress",
-			Kind: "list",
-			Fields: SecurityGroup_SecurityGroupEgressFields,
+			Kind:     "list",
+			Fields:   SecurityGroup_SecurityGroupEgressFields,
 		},
 		"SecurityGroupIngress": ubx.FieldSpec{
 			WireName: "security_group_ingress",
-			Kind: "list",
-			Fields: SecurityGroup_SecurityGroupIngressFields,
+			Kind:     "list",
+			Fields:   SecurityGroup_SecurityGroupIngressFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SecurityGroup_TagsFields,
+			Kind:     "list",
+			Fields:   SecurityGroup_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

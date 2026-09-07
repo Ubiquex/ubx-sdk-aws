@@ -8,28 +8,28 @@ type DirectQueryDataSources_DirectQueryDataSources_DataSourceType_CloudWatchLog 
 }
 
 type DirectQueryDataSources_DirectQueryDataSources_DataSourceType_Prometheus struct {
-	RoleArn any
+	RoleArn      any
 	WorkspaceArn any
 }
 
 type DirectQueryDataSources_DirectQueryDataSources_DataSourceType struct {
 	CloudWatchLog any
-	Prometheus any
-	SecurityLake any
+	Prometheus    any
+	SecurityLake  any
 }
 
 type DirectQueryDataSources_DirectQueryDataSources_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type DirectQueryDataSources_DirectQueryDataSources struct {
-	DataSourceArn any
+	DataSourceArn  any
 	DataSourceName any
 	DataSourceType any
-	Description any
+	Description    any
 	OpenSearchArns any
-	TagList any
+	TagList        any
 }
 
 type DirectQueryDataSourcesConfig struct {

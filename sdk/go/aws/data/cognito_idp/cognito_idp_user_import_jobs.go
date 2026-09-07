@@ -4,40 +4,40 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpUserImportJobs_UserImportJobs struct {
-	CloudWatchLogsRoleArn any
-	CompletionDate any
-	CompletionMessage any
-	CreationDate any
-	FailedUsers any
-	ImportedUsers any
-	JobId any
-	JobName any
+	CloudWatchLogsRoleArn    any
+	CompletionDate           any
+	CompletionMessage        any
+	CreationDate             any
+	FailedUsers              any
+	ImportedUsers            any
+	JobId                    any
+	JobName                  any
 	PasswordHashingAlgorithm any
-	PreSignedUrl any
-	SkippedUsers any
-	StartDate any
-	Status any
-	UserPoolId any
+	PreSignedUrl             any
+	SkippedUsers             any
+	StartDate                any
+	Status                   any
+	UserPoolId               any
 }
 
 type CognitoIdpUserImportJobsConfig struct {
-	MaxResults any
+	MaxResults      any
 	PaginationToken any
-	UserPoolId any
+	UserPoolId      any
 }
 
 type CognitoIdpUserImportJobsAttrs struct {
-	MaxResults any
+	MaxResults      any
 	PaginationToken any
-	UserImportJobs any
-	UserPoolId any
+	UserImportJobs  any
+	UserPoolId      any
 }
 
 var CognitoIdpUserImportJobs = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_user_import_jobs",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
 		"PaginationToken": ubx.FieldSpec{WireName: "pagination_token"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"UserPoolId":      ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

@@ -46,54 +46,54 @@ type IdNamespace_InputSourceConfig struct {
 
 type IdNamespace_Tags struct {
 	// The key of a user-defined tag applied to the AWS Entity Resolution ID namespace, used for metadata organization and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var IdNamespace_IdMappingWorkflowProperties_ProviderPropertiesFields = ubx.FieldMap{
-		"ProviderConfiguration": ubx.FieldSpec{WireName: "provider_configuration"},
-		"ProviderServiceArn": ubx.FieldSpec{WireName: "provider_service_arn"},
-	}
+	"ProviderConfiguration": ubx.FieldSpec{WireName: "provider_configuration"},
+	"ProviderServiceArn":    ubx.FieldSpec{WireName: "provider_service_arn"},
+}
 
 var IdNamespace_IdMappingWorkflowProperties_RuleBasedProperties_RulesFields = ubx.FieldMap{
-		"MatchingKeys": ubx.FieldSpec{WireName: "matching_keys"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-	}
+	"MatchingKeys": ubx.FieldSpec{WireName: "matching_keys"},
+	"RuleName":     ubx.FieldSpec{WireName: "rule_name"},
+}
 
 var IdNamespace_IdMappingWorkflowProperties_RuleBasedPropertiesFields = ubx.FieldMap{
-		"AttributeMatchingModel": ubx.FieldSpec{WireName: "attribute_matching_model"},
-		"RecordMatchingModels": ubx.FieldSpec{WireName: "record_matching_models"},
-		"RuleDefinitionTypes": ubx.FieldSpec{WireName: "rule_definition_types"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: IdNamespace_IdMappingWorkflowProperties_RuleBasedProperties_RulesFields,
-		},
-	}
+	"AttributeMatchingModel": ubx.FieldSpec{WireName: "attribute_matching_model"},
+	"RecordMatchingModels":   ubx.FieldSpec{WireName: "record_matching_models"},
+	"RuleDefinitionTypes":    ubx.FieldSpec{WireName: "rule_definition_types"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   IdNamespace_IdMappingWorkflowProperties_RuleBasedProperties_RulesFields,
+	},
+}
 
 var IdNamespace_IdMappingWorkflowPropertiesFields = ubx.FieldMap{
-		"IdMappingType": ubx.FieldSpec{WireName: "id_mapping_type"},
-		"ProviderProperties": ubx.FieldSpec{
-			WireName: "provider_properties",
-			Kind: "object",
-			Fields: IdNamespace_IdMappingWorkflowProperties_ProviderPropertiesFields,
-		},
-		"RuleBasedProperties": ubx.FieldSpec{
-			WireName: "rule_based_properties",
-			Kind: "object",
-			Fields: IdNamespace_IdMappingWorkflowProperties_RuleBasedPropertiesFields,
-		},
-	}
+	"IdMappingType": ubx.FieldSpec{WireName: "id_mapping_type"},
+	"ProviderProperties": ubx.FieldSpec{
+		WireName: "provider_properties",
+		Kind:     "object",
+		Fields:   IdNamespace_IdMappingWorkflowProperties_ProviderPropertiesFields,
+	},
+	"RuleBasedProperties": ubx.FieldSpec{
+		WireName: "rule_based_properties",
+		Kind:     "object",
+		Fields:   IdNamespace_IdMappingWorkflowProperties_RuleBasedPropertiesFields,
+	},
+}
 
 var IdNamespace_InputSourceConfigFields = ubx.FieldMap{
-		"InputSourceArn": ubx.FieldSpec{WireName: "input_source_arn"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"InputSourceArn": ubx.FieldSpec{WireName: "input_source_arn"},
+	"SchemaName":     ubx.FieldSpec{WireName: "schema_name"},
+}
 
 var IdNamespace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IdNamespaceConfig struct {
 	// An optional free-form description that helps identify the purpose or contents of the ID namespace. (AI-inferred)
@@ -141,20 +141,20 @@ var IdNamespace = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IdMappingWorkflowProperties": ubx.FieldSpec{
 			WireName: "id_mapping_workflow_properties",
-			Kind: "list",
-			Fields: IdNamespace_IdMappingWorkflowPropertiesFields,
+			Kind:     "list",
+			Fields:   IdNamespace_IdMappingWorkflowPropertiesFields,
 		},
 		"IdNamespaceName": ubx.FieldSpec{WireName: "id_namespace_name"},
 		"InputSourceConfig": ubx.FieldSpec{
 			WireName: "input_source_config",
-			Kind: "list",
-			Fields: IdNamespace_InputSourceConfigFields,
+			Kind:     "list",
+			Fields:   IdNamespace_InputSourceConfigFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IdNamespace_TagsFields,
+			Kind:     "list",
+			Fields:   IdNamespace_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

@@ -4,49 +4,49 @@ package application_signals
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationSignalsServiceDependencies_ServiceDependencies_MetricReferences_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ApplicationSignalsServiceDependencies_ServiceDependencies_MetricReferences struct {
-	AccountId any
+	AccountId  any
 	Dimensions any
 	MetricName any
 	MetricType any
-	Namespace any
+	Namespace  any
 }
 
 type ApplicationSignalsServiceDependencies_ServiceDependencies struct {
 	DependencyKeyAttributes any
 	DependencyOperationName any
-	MetricReferences any
-	OperationName any
+	MetricReferences        any
+	OperationName           any
 }
 
 type ApplicationSignalsServiceDependenciesConfig struct {
-	EndTime any
+	EndTime       any
 	KeyAttributes any
-	MaxResults any
-	NextToken any
-	StartTime any
+	MaxResults    any
+	NextToken     any
+	StartTime     any
 }
 
 type ApplicationSignalsServiceDependenciesAttrs struct {
-	EndTime any
-	KeyAttributes any
-	MaxResults any
-	NextToken any
+	EndTime             any
+	KeyAttributes       any
+	MaxResults          any
+	NextToken           any
 	ServiceDependencies any
-	StartTime any
+	StartTime           any
 }
 
 var ApplicationSignalsServiceDependencies = ubx.DataSourceBinding{
 	WireType: "aws_application_signals_service_dependencies",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":       ubx.FieldSpec{WireName: "end_time"},
 		"KeyAttributes": ubx.FieldSpec{WireName: "key_attributes"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":     ubx.FieldSpec{WireName: "start_time"},
 	},
 }

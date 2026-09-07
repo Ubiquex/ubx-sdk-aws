@@ -9,7 +9,7 @@ type DeploymentMarketplaceTagsForResourceConfig struct {
 
 type DeploymentMarketplaceTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var DeploymentMarketplaceTagsForResource = ubx.DataSourceBinding{

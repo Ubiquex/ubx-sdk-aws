@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryPlanSteps_RecoveryPlanSteps_Configuration_ServerStepConfiguration_Servers struct {
 	ImpactLevel any
-	ServerArn any
+	ServerArn   any
 }
 
 type RecoveryPlanSteps_RecoveryPlanSteps_Configuration_ServerStepConfiguration struct {
@@ -18,38 +18,38 @@ type RecoveryPlanSteps_RecoveryPlanSteps_Configuration_WaitStepConfiguration str
 
 type RecoveryPlanSteps_RecoveryPlanSteps_Configuration struct {
 	ServerStepConfiguration any
-	WaitStepConfiguration any
+	WaitStepConfiguration   any
 }
 
 type RecoveryPlanSteps_RecoveryPlanSteps struct {
-	Configuration any
-	CreatedAt any
+	Configuration       any
+	CreatedAt           any
 	RecoveryPlanStepArn any
-	StepName any
-	StepOrder any
-	UpdatedAt any
+	StepName            any
+	StepOrder           any
+	UpdatedAt           any
 }
 
 type RecoveryPlanStepsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// Strict ARN type for Recovery Plan resources. Only allows safe characters in the resource portion — rejects HTML/script injection characters (<, >, ", ', etc.) per AWS API input validation standards. Resource portion allows: [A-Za-z0-9_/.-] which covers all DRS recovery plan resource identifiers (plan-xxx, st-xxx, exec-xxx, step-xxx).
 	RecoveryPlanArn any
 }
 
 type RecoveryPlanStepsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// Strict ARN type for Recovery Plan resources. Only allows safe characters in the resource portion — rejects HTML/script injection characters (<, >, ", ', etc.) per AWS API input validation standards. Resource portion allows: [A-Za-z0-9_/.-] which covers all DRS recovery plan resource identifiers (plan-xxx, st-xxx, exec-xxx, step-xxx).
-	RecoveryPlanArn any
+	RecoveryPlanArn   any
 	RecoveryPlanSteps any
 }
 
 var RecoveryPlanSteps = ubx.DataSourceBinding{
 	WireType: "aws_drs_recovery_plan_steps",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"RecoveryPlanArn": ubx.FieldSpec{WireName: "recovery_plan_arn"},
 	},
 }

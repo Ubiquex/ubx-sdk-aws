@@ -4,28 +4,28 @@ package route53_recovery_readiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route53RecoveryReadinessCells_Cells struct {
-	CellArn any
-	CellName any
-	Cells any
+	CellArn               any
+	CellName              any
+	Cells                 any
 	ParentReadinessScopes any
-	Tags any
+	Tags                  any
 }
 
 type Route53RecoveryReadinessCellsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type Route53RecoveryReadinessCellsAttrs struct {
-	Cells any
+	Cells      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Route53RecoveryReadinessCells = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_readiness_cells",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

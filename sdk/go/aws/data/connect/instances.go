@@ -4,33 +4,33 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instances_InstanceSummaryList struct {
-	Arn any
-	CreatedTime any
-	Id any
+	Arn                    any
+	CreatedTime            any
+	Id                     any
 	IdentityManagementType any
-	InboundCallsEnabled any
-	InstanceAccessUrl any
-	InstanceAlias any
-	InstanceStatus any
-	OutboundCallsEnabled any
-	ServiceRole any
+	InboundCallsEnabled    any
+	InstanceAccessUrl      any
+	InstanceAlias          any
+	InstanceStatus         any
+	OutboundCallsEnabled   any
+	ServiceRole            any
 }
 
 type InstancesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InstancesAttrs struct {
 	InstanceSummaryList any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 var Instances = ubx.DataSourceBinding{
 	WireType: "aws_connect_instances",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,44 +4,44 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReservedNodes_ReservedNodes_RecurringCharges struct {
-	RecurringChargeAmount any
+	RecurringChargeAmount    any
 	RecurringChargeFrequency any
 }
 
 type ReservedNodes_ReservedNodes struct {
-	CurrencyCode any
-	Duration any
-	FixedPrice any
-	NodeCount any
-	NodeType any
-	OfferingType any
-	RecurringCharges any
-	ReservedNodeId any
-	ReservedNodeOfferingId any
+	CurrencyCode             any
+	Duration                 any
+	FixedPrice               any
+	NodeCount                any
+	NodeType                 any
+	OfferingType             any
+	RecurringCharges         any
+	ReservedNodeId           any
+	ReservedNodeOfferingId   any
 	ReservedNodeOfferingType any
-	StartTime any
-	State any
-	UsagePrice any
+	StartTime                any
+	State                    any
+	UsagePrice               any
 }
 
 type ReservedNodesConfig struct {
-	Marker any
-	MaxRecords any
+	Marker         any
+	MaxRecords     any
 	ReservedNodeId any
 }
 
 type ReservedNodesAttrs struct {
-	Marker any
-	MaxRecords any
+	Marker         any
+	MaxRecords     any
 	ReservedNodeId any
-	ReservedNodes any
+	ReservedNodes  any
 }
 
 var ReservedNodes = ubx.DataSourceBinding{
 	WireType: "aws_redshift_reserved_nodes",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":     ubx.FieldSpec{WireName: "max_records"},
 		"ReservedNodeId": ubx.FieldSpec{WireName: "reserved_node_id"},
 	},
 }

@@ -25,29 +25,29 @@ type LocationFsxOpenZfs_Tags struct {
 }
 
 var LocationFsxOpenZfs_Protocol_Nfs_MountOptionsFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var LocationFsxOpenZfs_Protocol_NfsFields = ubx.FieldMap{
-		"MountOptions": ubx.FieldSpec{
-			WireName: "mount_options",
-			Kind: "object",
-			Fields: LocationFsxOpenZfs_Protocol_Nfs_MountOptionsFields,
-		},
-	}
+	"MountOptions": ubx.FieldSpec{
+		WireName: "mount_options",
+		Kind:     "object",
+		Fields:   LocationFsxOpenZfs_Protocol_Nfs_MountOptionsFields,
+	},
+}
 
 var LocationFsxOpenZfs_ProtocolFields = ubx.FieldMap{
-		"Nfs": ubx.FieldSpec{
-			WireName: "nfs",
-			Kind: "object",
-			Fields: LocationFsxOpenZfs_Protocol_NfsFields,
-		},
-	}
+	"Nfs": ubx.FieldSpec{
+		WireName: "nfs",
+		Kind:     "object",
+		Fields:   LocationFsxOpenZfs_Protocol_NfsFields,
+	},
+}
 
 var LocationFsxOpenZfs_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationFsxOpenZfsConfig struct {
 	// The Amazon Resource Name (ARN) for the FSx OpenZFS file system.
@@ -85,15 +85,15 @@ var LocationFsxOpenZfs = ubx.ResourceBinding{
 		"FsxFilesystemArn": ubx.FieldSpec{WireName: "fsx_filesystem_arn"},
 		"Protocol": ubx.FieldSpec{
 			WireName: "protocol",
-			Kind: "object",
-			Fields: LocationFsxOpenZfs_ProtocolFields,
+			Kind:     "object",
+			Fields:   LocationFsxOpenZfs_ProtocolFields,
 		},
 		"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"Subdirectory":      ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationFsxOpenZfs_TagsFields,
+			Kind:     "list",
+			Fields:   LocationFsxOpenZfs_TagsFields,
 		},
 	},
 }

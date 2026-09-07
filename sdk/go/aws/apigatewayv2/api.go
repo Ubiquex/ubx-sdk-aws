@@ -30,20 +30,20 @@ type Api_CorsConfiguration struct {
 }
 
 var Api_BodyS3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Etag":    ubx.FieldSpec{WireName: "etag"},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Api_CorsConfigurationFields = ubx.FieldMap{
-		"AllowCredentials": ubx.FieldSpec{WireName: "allow_credentials"},
-		"AllowHeaders": ubx.FieldSpec{WireName: "allow_headers"},
-		"AllowMethods": ubx.FieldSpec{WireName: "allow_methods"},
-		"AllowOrigins": ubx.FieldSpec{WireName: "allow_origins"},
-		"ExposeHeaders": ubx.FieldSpec{WireName: "expose_headers"},
-		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
-	}
+	"AllowCredentials": ubx.FieldSpec{WireName: "allow_credentials"},
+	"AllowHeaders":     ubx.FieldSpec{WireName: "allow_headers"},
+	"AllowMethods":     ubx.FieldSpec{WireName: "allow_methods"},
+	"AllowOrigins":     ubx.FieldSpec{WireName: "allow_origins"},
+	"ExposeHeaders":    ubx.FieldSpec{WireName: "expose_headers"},
+	"MaxAge":           ubx.FieldSpec{WireName: "max_age"},
+}
 
 type ApiConfig struct {
 	// An API key selection expression. Supported only for WebSocket APIs. See [API Key Selection Expressions](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).
@@ -133,30 +133,30 @@ var Api = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_api",
 	Fields: ubx.FieldMap{
 		"ApiKeySelectionExpression": ubx.FieldSpec{WireName: "api_key_selection_expression"},
-		"BasePath": ubx.FieldSpec{WireName: "base_path"},
-		"Body": ubx.FieldSpec{WireName: "body"},
+		"BasePath":                  ubx.FieldSpec{WireName: "base_path"},
+		"Body":                      ubx.FieldSpec{WireName: "body"},
 		"BodyS3Location": ubx.FieldSpec{
 			WireName: "body_s3_location",
-			Kind: "object",
-			Fields: Api_BodyS3LocationFields,
+			Kind:     "object",
+			Fields:   Api_BodyS3LocationFields,
 		},
 		"CorsConfiguration": ubx.FieldSpec{
 			WireName: "cors_configuration",
-			Kind: "object",
-			Fields: Api_CorsConfigurationFields,
+			Kind:     "object",
+			Fields:   Api_CorsConfigurationFields,
 		},
-		"CredentialsArn": ubx.FieldSpec{WireName: "credentials_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CredentialsArn":            ubx.FieldSpec{WireName: "credentials_arn"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
 		"DisableExecuteApiEndpoint": ubx.FieldSpec{WireName: "disable_execute_api_endpoint"},
-		"DisableSchemaValidation": ubx.FieldSpec{WireName: "disable_schema_validation"},
-		"FailOnWarnings": ubx.FieldSpec{WireName: "fail_on_warnings"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProtocolType": ubx.FieldSpec{WireName: "protocol_type"},
-		"RouteKey": ubx.FieldSpec{WireName: "route_key"},
-		"RouteSelectionExpression": ubx.FieldSpec{WireName: "route_selection_expression"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"DisableSchemaValidation":   ubx.FieldSpec{WireName: "disable_schema_validation"},
+		"FailOnWarnings":            ubx.FieldSpec{WireName: "fail_on_warnings"},
+		"IpAddressType":             ubx.FieldSpec{WireName: "ip_address_type"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"ProtocolType":              ubx.FieldSpec{WireName: "protocol_type"},
+		"RouteKey":                  ubx.FieldSpec{WireName: "route_key"},
+		"RouteSelectionExpression":  ubx.FieldSpec{WireName: "route_selection_expression"},
+		"Tags":                      ubx.FieldSpec{WireName: "tags"},
+		"Target":                    ubx.FieldSpec{WireName: "target"},
+		"Version":                   ubx.FieldSpec{WireName: "version"},
 	},
 }

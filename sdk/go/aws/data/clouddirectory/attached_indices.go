@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachedIndices_IndexAttachments_IndexedAttributes_Key struct {
 	FacetName any
-	Name any
+	Name      any
 	SchemaArn any
 }
 
 type AttachedIndices_IndexAttachments_IndexedAttributes_Value struct {
-	BinaryValue any
-	BooleanValue any
+	BinaryValue   any
+	BooleanValue  any
 	DatetimeValue any
-	NumberValue any
-	StringValue any
+	NumberValue   any
+	StringValue   any
 }
 
 type AttachedIndices_IndexAttachments_IndexedAttributes struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AttachedIndices_IndexAttachments struct {
 	IndexedAttributes any
-	ObjectIdentifier any
+	ObjectIdentifier  any
 }
 
 type AttachedIndices_TargetReference struct {
@@ -32,24 +32,24 @@ type AttachedIndices_TargetReference struct {
 }
 
 var AttachedIndices_TargetReferenceFields = ubx.FieldMap{
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 type AttachedIndicesConfig struct {
 	ConsistencyLevel any
-	DirectoryArn any
-	MaxResults any
-	NextToken any
+	DirectoryArn     any
+	MaxResults       any
+	NextToken        any
 	// <p>The reference that identifies an object.</p>
 	TargetReference any
 }
 
 type AttachedIndicesAttrs struct {
 	ConsistencyLevel any
-	DirectoryArn any
+	DirectoryArn     any
 	IndexAttachments any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	// <p>The reference that identifies an object.</p>
 	TargetReference any
 }
@@ -58,13 +58,13 @@ var AttachedIndices = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_attached_indices",
 	Fields: ubx.FieldMap{
 		"ConsistencyLevel": ubx.FieldSpec{WireName: "consistency_level"},
-		"DirectoryArn": ubx.FieldSpec{WireName: "directory_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DirectoryArn":     ubx.FieldSpec{WireName: "directory_arn"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"TargetReference": ubx.FieldSpec{
 			WireName: "target_reference",
-			Kind: "object",
-			Fields: AttachedIndices_TargetReferenceFields,
+			Kind:     "object",
+			Fields:   AttachedIndices_TargetReferenceFields,
 		},
 	},
 }

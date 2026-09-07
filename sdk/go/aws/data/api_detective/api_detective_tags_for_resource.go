@@ -9,7 +9,7 @@ type ApiDetectiveTagsForResourceConfig struct {
 
 type ApiDetectiveTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ApiDetectiveTagsForResource = ubx.DataSourceBinding{

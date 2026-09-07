@@ -4,31 +4,31 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceTypes_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var InstanceTypes_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstanceTypesConfig struct {
-	DryRun any
-	Filters any
+	DryRun                     any
+	Filters                    any
 	IncludeUnsupportedInRegion any
-	InstanceTypes any
-	MaxResults any
-	NextToken any
+	InstanceTypes              any
+	MaxResults                 any
+	NextToken                  any
 }
 
 type InstanceTypesAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                     any
+	Filters                    any
 	IncludeUnsupportedInRegion any
-	InstanceTypes any
-	MaxResults any
-	NextToken any
+	InstanceTypes              any
+	MaxResults                 any
+	NextToken                  any
 }
 
 var InstanceTypes = ubx.DataSourceBinding{
@@ -37,12 +37,12 @@ var InstanceTypes = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstanceTypes_FiltersFields,
+			Kind:     "list",
+			Fields:   InstanceTypes_FiltersFields,
 		},
 		"IncludeUnsupportedInRegion": ubx.FieldSpec{WireName: "include_unsupported_in_region"},
-		"InstanceTypes": ubx.FieldSpec{WireName: "instance_types"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceTypes":              ubx.FieldSpec{WireName: "instance_types"},
+		"MaxResults":                 ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

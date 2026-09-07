@@ -25,23 +25,23 @@ type PermissionSet_Tags struct {
 }
 
 var PermissionSet_CustomerManagedPolicyReferencesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var PermissionSet_PermissionsBoundaryFields = ubx.FieldMap{
-		"CustomerManagedPolicyReference": ubx.FieldSpec{
-			WireName: "customer_managed_policy_reference",
-			Kind: "object",
-			Fields: PermissionSet_CustomerManagedPolicyReferencesFields,
-		},
-		"ManagedPolicyArn": ubx.FieldSpec{WireName: "managed_policy_arn"},
-	}
+	"CustomerManagedPolicyReference": ubx.FieldSpec{
+		WireName: "customer_managed_policy_reference",
+		Kind:     "object",
+		Fields:   PermissionSet_CustomerManagedPolicyReferencesFields,
+	},
+	"ManagedPolicyArn": ubx.FieldSpec{WireName: "managed_policy_arn"},
+}
 
 var PermissionSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PermissionSetConfig struct {
 	// Specifies the customer-managed IAM policies (identified by name and path) that are attached to this AWS SSO permission set. (AI-inferred)
@@ -96,25 +96,25 @@ var PermissionSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomerManagedPolicyReferences": ubx.FieldSpec{
 			WireName: "customer_managed_policy_references",
-			Kind: "list",
-			Fields: PermissionSet_CustomerManagedPolicyReferencesFields,
+			Kind:     "list",
+			Fields:   PermissionSet_CustomerManagedPolicyReferencesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InlinePolicy": ubx.FieldSpec{WireName: "inline_policy"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"InlinePolicy":    ubx.FieldSpec{WireName: "inline_policy"},
+		"InstanceArn":     ubx.FieldSpec{WireName: "instance_arn"},
 		"ManagedPolicies": ubx.FieldSpec{WireName: "managed_policies"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"PermissionsBoundary": ubx.FieldSpec{
 			WireName: "permissions_boundary",
-			Kind: "object",
-			Fields: PermissionSet_PermissionsBoundaryFields,
+			Kind:     "object",
+			Fields:   PermissionSet_PermissionsBoundaryFields,
 		},
-		"RelayStateType": ubx.FieldSpec{WireName: "relay_state_type"},
+		"RelayStateType":  ubx.FieldSpec{WireName: "relay_state_type"},
 		"SessionDuration": ubx.FieldSpec{WireName: "session_duration"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PermissionSet_TagsFields,
+			Kind:     "list",
+			Fields:   PermissionSet_TagsFields,
 		},
 	},
 }

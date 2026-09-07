@@ -4,34 +4,34 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostReservationPurchasePreview_Purchase struct {
-	CurrencyCode any
-	Duration any
-	HostIdSet any
+	CurrencyCode      any
+	Duration          any
+	HostIdSet         any
 	HostReservationId any
-	HourlyPrice any
-	InstanceFamily any
-	PaymentOption any
-	UpfrontPrice any
+	HourlyPrice       any
+	InstanceFamily    any
+	PaymentOption     any
+	UpfrontPrice      any
 }
 
 type HostReservationPurchasePreviewConfig struct {
-	HostIdSet any
+	HostIdSet  any
 	OfferingId any
 }
 
 type HostReservationPurchasePreviewAttrs struct {
-	CurrencyCode any
-	HostIdSet any
-	OfferingId any
-	Purchase any
-	TotalHourlyPrice any
+	CurrencyCode      any
+	HostIdSet         any
+	OfferingId        any
+	Purchase          any
+	TotalHourlyPrice  any
 	TotalUpfrontPrice any
 }
 
 var HostReservationPurchasePreview = ubx.DataSourceBinding{
 	WireType: "aws_ec2_host_reservation_purchase_preview",
 	Fields: ubx.FieldMap{
-		"HostIdSet": ubx.FieldSpec{WireName: "host_id_set"},
+		"HostIdSet":  ubx.FieldSpec{WireName: "host_id_set"},
 		"OfferingId": ubx.FieldSpec{WireName: "offering_id"},
 	},
 }

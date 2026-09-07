@@ -4,35 +4,35 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceImageMetadata_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type InstanceImageMetadata_InstanceImageMetadata_ImageMetadata_ImageWatermarks struct {
 	SourceImageCreationTime any
-	SourceImageId any
-	SourceImageRegion any
-	WatermarkCreationTime any
-	WatermarkKey any
+	SourceImageId           any
+	SourceImageRegion       any
+	WatermarkCreationTime   any
+	WatermarkKey            any
 }
 
 type InstanceImageMetadata_InstanceImageMetadata_ImageMetadata struct {
-	CreationDate any
+	CreationDate    any
 	DeprecationTime any
-	ImageAllowed any
-	ImageId any
+	ImageAllowed    any
+	ImageId         any
 	ImageOwnerAlias any
 	ImageWatermarks any
-	IsPublic any
-	Name any
-	OwnerId any
-	State any
+	IsPublic        any
+	Name            any
+	OwnerId         any
+	State           any
 }
 
 type InstanceImageMetadata_InstanceImageMetadata_Operator struct {
 	HiddenByDefault any
-	Managed any
-	Principal any
+	Managed         any
+	Principal       any
 }
 
 type InstanceImageMetadata_InstanceImageMetadata_State struct {
@@ -41,43 +41,43 @@ type InstanceImageMetadata_InstanceImageMetadata_State struct {
 }
 
 type InstanceImageMetadata_InstanceImageMetadata_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type InstanceImageMetadata_InstanceImageMetadata struct {
 	AvailabilityZone any
-	ImageMetadata any
-	InstanceId any
-	InstanceType any
-	LaunchTime any
-	Operator any
-	OwnerId any
-	State any
-	Tags any
-	ZoneId any
+	ImageMetadata    any
+	InstanceId       any
+	InstanceType     any
+	LaunchTime       any
+	Operator         any
+	OwnerId          any
+	State            any
+	Tags             any
+	ZoneId           any
 }
 
 var InstanceImageMetadata_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstanceImageMetadataConfig struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	InstanceIds any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type InstanceImageMetadataAttrs struct {
-	DryRun any
-	Filters any
-	InstanceIds any
+	DryRun                any
+	Filters               any
+	InstanceIds           any
 	InstanceImageMetadata any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 var InstanceImageMetadata = ubx.DataSourceBinding{
@@ -86,11 +86,11 @@ var InstanceImageMetadata = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstanceImageMetadata_FiltersFields,
+			Kind:     "list",
+			Fields:   InstanceImageMetadata_FiltersFields,
 		},
 		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GeoMatchSets_GeoMatchSets struct {
 	GeoMatchSetId any
-	Name any
+	Name          any
 }
 
 type GeoMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type GeoMatchSetsAttrs struct {
 	GeoMatchSets any
-	Limit any
-	NextMarker any
+	Limit        any
+	NextMarker   any
 }
 
 var GeoMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_geo_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

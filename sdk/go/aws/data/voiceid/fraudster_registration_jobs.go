@@ -4,7 +4,7 @@ package voiceid
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FraudsterRegistrationJobs_JobSummaries_FailureDetails struct {
-	Message any
+	Message    any
 	StatusCode any
 }
 
@@ -13,37 +13,37 @@ type FraudsterRegistrationJobs_JobSummaries_JobProgress struct {
 }
 
 type FraudsterRegistrationJobs_JobSummaries struct {
-	CreatedAt any
-	DomainId any
-	EndedAt any
+	CreatedAt      any
+	DomainId       any
+	EndedAt        any
 	FailureDetails any
-	JobId any
-	JobName any
-	JobProgress any
-	JobStatus any
+	JobId          any
+	JobName        any
+	JobProgress    any
+	JobStatus      any
 }
 
 type FraudsterRegistrationJobsConfig struct {
-	DomainId any
-	JobStatus any
+	DomainId   any
+	JobStatus  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FraudsterRegistrationJobsAttrs struct {
-	DomainId any
-	JobStatus any
+	DomainId     any
+	JobStatus    any
 	JobSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var FraudsterRegistrationJobs = ubx.DataSourceBinding{
 	WireType: "aws_voiceid_fraudster_registration_jobs",
 	Fields: ubx.FieldMap{
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
+		"DomainId":   ubx.FieldSpec{WireName: "domain_id"},
+		"JobStatus":  ubx.FieldSpec{WireName: "job_status"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

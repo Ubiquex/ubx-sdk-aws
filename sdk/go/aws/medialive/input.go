@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Input_Destinations_NetworkRoutes struct {
 	// The CIDR block (e.g., '10.0.0.0/24') for a network route associated with the MediaLive input's destination, specifying the IP address range that the route applies to. (AI-inferred)
-	Cidr any
+	Cidr    any
 	Gateway any
 }
 
@@ -13,7 +13,7 @@ type Input_Destinations struct {
 	// For a MediaLive input using a UDP or RTP push type, specifies the network IP address of the destination where the input stream is sent. (AI-inferred)
 	Network any
 	// The `network_routes` list within each destination defines static routes (CIDR and gateway) that MediaLive uses to route push input traffic to the specified destination IP addresses, enabling delivery through a VPC or AWS Direct Connect. (AI-inferred)
-	NetworkRoutes any
+	NetworkRoutes   any
 	StaticIpAddress any
 	// The stream name of the input destination, which represents the push endpoint (for example, the RTMP stream key or URL) that an upstream encoder uses to send content to this AWS Elemental MediaLive input. (AI-inferred)
 	StreamName any
@@ -49,7 +49,7 @@ type Input_RouterSettings struct {
 	Destinations any
 	// For an SRT MediaLive input, this field sets the encryption type (AES128 or AES256) used for the incoming stream. (AI-inferred)
 	EncryptionType any
-	SecretArn any
+	SecretArn      any
 }
 
 type Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdps struct {
@@ -131,145 +131,145 @@ type Input_Vpc struct {
 }
 
 var Input_Destinations_NetworkRoutesFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"Gateway": ubx.FieldSpec{WireName: "gateway"},
-	}
+	"Cidr":    ubx.FieldSpec{WireName: "cidr"},
+	"Gateway": ubx.FieldSpec{WireName: "gateway"},
+}
 
 var Input_DestinationsFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkRoutes": ubx.FieldSpec{
-			WireName: "network_routes",
-			Kind: "list",
-			Fields: Input_Destinations_NetworkRoutesFields,
-		},
-		"StaticIpAddress": ubx.FieldSpec{WireName: "static_ip_address"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-	}
+	"Network": ubx.FieldSpec{WireName: "network"},
+	"NetworkRoutes": ubx.FieldSpec{
+		WireName: "network_routes",
+		Kind:     "list",
+		Fields:   Input_Destinations_NetworkRoutesFields,
+	},
+	"StaticIpAddress": ubx.FieldSpec{WireName: "static_ip_address"},
+	"StreamName":      ubx.FieldSpec{WireName: "stream_name"},
+}
 
 var Input_InputDevicesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var Input_MediaConnectFlowsFields = ubx.FieldMap{
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
-	}
+	"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
+}
 
 var Input_MulticastSettings_SourcesFields = ubx.FieldMap{
-		"SourceIp": ubx.FieldSpec{WireName: "source_ip"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"SourceIp": ubx.FieldSpec{WireName: "source_ip"},
+	"Url":      ubx.FieldSpec{WireName: "url"},
+}
 
 var Input_MulticastSettingsFields = ubx.FieldMap{
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: Input_MulticastSettings_SourcesFields,
-		},
-	}
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   Input_MulticastSettings_SourcesFields,
+	},
+}
 
 var Input_RouterSettings_DestinationsFields = ubx.FieldMap{
-		"AvailabilityZoneName": ubx.FieldSpec{WireName: "availability_zone_name"},
-	}
+	"AvailabilityZoneName": ubx.FieldSpec{WireName: "availability_zone_name"},
+}
 
 var Input_RouterSettingsFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: Input_RouterSettings_DestinationsFields,
-		},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   Input_RouterSettings_DestinationsFields,
+	},
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"SecretArn":      ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdpsFields = ubx.FieldMap{
-		"MediaIndex": ubx.FieldSpec{WireName: "media_index"},
-		"SdpUrl": ubx.FieldSpec{WireName: "sdp_url"},
-	}
+	"MediaIndex": ubx.FieldSpec{WireName: "media_index"},
+	"SdpUrl":     ubx.FieldSpec{WireName: "sdp_url"},
+}
 
 var Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettingsFields = ubx.FieldMap{
-		"AncillarySdps": ubx.FieldSpec{
-			WireName: "ancillary_sdps",
-			Kind: "list",
-			Fields: Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdpsFields,
-		},
-		"AudioSdps": ubx.FieldSpec{
-			WireName: "audio_sdps",
-			Kind: "list",
-			Fields: Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdpsFields,
-		},
-		"VideoSdp": ubx.FieldSpec{
-			WireName: "video_sdp",
-			Kind: "object",
-			Fields: Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdpsFields,
-		},
-	}
+	"AncillarySdps": ubx.FieldSpec{
+		WireName: "ancillary_sdps",
+		Kind:     "list",
+		Fields:   Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdpsFields,
+	},
+	"AudioSdps": ubx.FieldSpec{
+		WireName: "audio_sdps",
+		Kind:     "list",
+		Fields:   Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdpsFields,
+	},
+	"VideoSdp": ubx.FieldSpec{
+		WireName: "video_sdp",
+		Kind:     "object",
+		Fields:   Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdpsFields,
+	},
+}
 
 var Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroupsFields = ubx.FieldMap{
-		"SdpSettings": ubx.FieldSpec{
-			WireName: "sdp_settings",
-			Kind: "object",
-			Fields: Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettingsFields,
-		},
-	}
+	"SdpSettings": ubx.FieldSpec{
+		WireName: "sdp_settings",
+		Kind:     "object",
+		Fields:   Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettingsFields,
+	},
+}
 
 var Input_Smpte2110ReceiverGroupSettingsFields = ubx.FieldMap{
-		"Smpte2110ReceiverGroups": ubx.FieldSpec{
-			WireName: "smpte2110_receiver_groups",
-			Kind: "list",
-			Fields: Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroupsFields,
-		},
-	}
+	"Smpte2110ReceiverGroups": ubx.FieldSpec{
+		WireName: "smpte2110_receiver_groups",
+		Kind:     "list",
+		Fields:   Input_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroupsFields,
+	},
+}
 
 var Input_SourcesFields = ubx.FieldMap{
-		"PasswordParam": ubx.FieldSpec{WireName: "password_param"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"PasswordParam": ubx.FieldSpec{WireName: "password_param"},
+	"Url":           ubx.FieldSpec{WireName: "url"},
+	"Username":      ubx.FieldSpec{WireName: "username"},
+}
 
 var Input_SrtSettings_SrtCallerSources_DecryptionFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"PassphraseSecretArn": ubx.FieldSpec{WireName: "passphrase_secret_arn"},
-	}
+	"Algorithm":           ubx.FieldSpec{WireName: "algorithm"},
+	"PassphraseSecretArn": ubx.FieldSpec{WireName: "passphrase_secret_arn"},
+}
 
 var Input_SrtSettings_SrtCallerSourcesFields = ubx.FieldMap{
-		"Decryption": ubx.FieldSpec{
-			WireName: "decryption",
-			Kind: "object",
-			Fields: Input_SrtSettings_SrtCallerSources_DecryptionFields,
-		},
-		"MinimumLatency": ubx.FieldSpec{WireName: "minimum_latency"},
-		"SrtListenerAddress": ubx.FieldSpec{WireName: "srt_listener_address"},
-		"SrtListenerPort": ubx.FieldSpec{WireName: "srt_listener_port"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
-	}
+	"Decryption": ubx.FieldSpec{
+		WireName: "decryption",
+		Kind:     "object",
+		Fields:   Input_SrtSettings_SrtCallerSources_DecryptionFields,
+	},
+	"MinimumLatency":     ubx.FieldSpec{WireName: "minimum_latency"},
+	"SrtListenerAddress": ubx.FieldSpec{WireName: "srt_listener_address"},
+	"SrtListenerPort":    ubx.FieldSpec{WireName: "srt_listener_port"},
+	"StreamId":           ubx.FieldSpec{WireName: "stream_id"},
+}
 
 var Input_SrtSettings_SrtListenerSettingsFields = ubx.FieldMap{
-		"Decryption": ubx.FieldSpec{
-			WireName: "decryption",
-			Kind: "object",
-			Fields: Input_SrtSettings_SrtCallerSources_DecryptionFields,
-		},
-		"MinimumLatency": ubx.FieldSpec{WireName: "minimum_latency"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
-	}
+	"Decryption": ubx.FieldSpec{
+		WireName: "decryption",
+		Kind:     "object",
+		Fields:   Input_SrtSettings_SrtCallerSources_DecryptionFields,
+	},
+	"MinimumLatency": ubx.FieldSpec{WireName: "minimum_latency"},
+	"StreamId":       ubx.FieldSpec{WireName: "stream_id"},
+}
 
 var Input_SrtSettingsFields = ubx.FieldMap{
-		"SrtCallerSources": ubx.FieldSpec{
-			WireName: "srt_caller_sources",
-			Kind: "list",
-			Fields: Input_SrtSettings_SrtCallerSourcesFields,
-		},
-		"SrtListenerSettings": ubx.FieldSpec{
-			WireName: "srt_listener_settings",
-			Kind: "object",
-			Fields: Input_SrtSettings_SrtListenerSettingsFields,
-		},
-	}
+	"SrtCallerSources": ubx.FieldSpec{
+		WireName: "srt_caller_sources",
+		Kind:     "list",
+		Fields:   Input_SrtSettings_SrtCallerSourcesFields,
+	},
+	"SrtListenerSettings": ubx.FieldSpec{
+		WireName: "srt_listener_settings",
+		Kind:     "object",
+		Fields:   Input_SrtSettings_SrtListenerSettingsFields,
+	},
+}
 
 var Input_VpcFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type InputConfig struct {
 	// Specifies the destination endpoints (e.g., RTMP URLs or RTP IP/port pairs) for a push input, defining the network locations where AWS MediaLive will listen for the incoming media stream. (AI-inferred)
@@ -350,55 +350,55 @@ var Input = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Destinations": ubx.FieldSpec{
 			WireName: "destinations",
-			Kind: "list",
-			Fields: Input_DestinationsFields,
+			Kind:     "list",
+			Fields:   Input_DestinationsFields,
 		},
 		"InputDevices": ubx.FieldSpec{
 			WireName: "input_devices",
-			Kind: "list",
-			Fields: Input_InputDevicesFields,
+			Kind:     "list",
+			Fields:   Input_InputDevicesFields,
 		},
 		"InputNetworkLocation": ubx.FieldSpec{WireName: "input_network_location"},
-		"InputSecurityGroups": ubx.FieldSpec{WireName: "input_security_groups"},
+		"InputSecurityGroups":  ubx.FieldSpec{WireName: "input_security_groups"},
 		"MediaConnectFlows": ubx.FieldSpec{
 			WireName: "media_connect_flows",
-			Kind: "list",
-			Fields: Input_MediaConnectFlowsFields,
+			Kind:     "list",
+			Fields:   Input_MediaConnectFlowsFields,
 		},
 		"MulticastSettings": ubx.FieldSpec{
 			WireName: "multicast_settings",
-			Kind: "object",
-			Fields: Input_MulticastSettingsFields,
+			Kind:     "object",
+			Fields:   Input_MulticastSettingsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"RouterSettings": ubx.FieldSpec{
 			WireName: "router_settings",
-			Kind: "object",
-			Fields: Input_RouterSettingsFields,
+			Kind:     "object",
+			Fields:   Input_RouterSettingsFields,
 		},
 		"SdiSources": ubx.FieldSpec{WireName: "sdi_sources"},
 		"Smpte2110ReceiverGroupSettings": ubx.FieldSpec{
 			WireName: "smpte2110_receiver_group_settings",
-			Kind: "object",
-			Fields: Input_Smpte2110ReceiverGroupSettingsFields,
+			Kind:     "object",
+			Fields:   Input_Smpte2110ReceiverGroupSettingsFields,
 		},
 		"Sources": ubx.FieldSpec{
 			WireName: "sources",
-			Kind: "list",
-			Fields: Input_SourcesFields,
+			Kind:     "list",
+			Fields:   Input_SourcesFields,
 		},
 		"SrtSettings": ubx.FieldSpec{
 			WireName: "srt_settings",
-			Kind: "object",
-			Fields: Input_SrtSettingsFields,
+			Kind:     "object",
+			Fields:   Input_SrtSettingsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"Vpc": ubx.FieldSpec{
 			WireName: "vpc",
-			Kind: "object",
-			Fields: Input_VpcFields,
+			Kind:     "object",
+			Fields:   Input_VpcFields,
 		},
 	},
 }

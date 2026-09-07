@@ -4,29 +4,29 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Frameworks_Frameworks struct {
-	CreationTime any
-	DeploymentStatus any
-	FrameworkArn any
+	CreationTime         any
+	DeploymentStatus     any
+	FrameworkArn         any
 	FrameworkDescription any
-	FrameworkName any
-	NumberOfControls any
+	FrameworkName        any
+	NumberOfControls     any
 }
 
 type FrameworksConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FrameworksAttrs struct {
 	Frameworks any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Frameworks = ubx.DataSourceBinding{
 	WireType: "aws_backup_frameworks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

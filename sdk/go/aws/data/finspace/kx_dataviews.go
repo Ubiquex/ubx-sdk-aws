@@ -4,58 +4,58 @@ package finspace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KxDataviews_KxDataviews_ActiveVersions_SegmentConfigurations struct {
-	DbPaths any
-	OnDemand any
+	DbPaths    any
+	OnDemand   any
 	VolumeName any
 }
 
 type KxDataviews_KxDataviews_ActiveVersions struct {
-	AttachedClusters any
-	ChangesetId any
-	CreatedTimestamp any
+	AttachedClusters      any
+	ChangesetId           any
+	CreatedTimestamp      any
 	SegmentConfigurations any
-	VersionId any
+	VersionId             any
 }
 
 type KxDataviews_KxDataviews struct {
-	ActiveVersions any
-	AutoUpdate any
-	AvailabilityZoneId any
-	AzMode any
-	ChangesetId any
-	CreatedTimestamp any
-	DatabaseName any
-	DataviewName any
-	Description any
-	EnvironmentId any
+	ActiveVersions        any
+	AutoUpdate            any
+	AvailabilityZoneId    any
+	AzMode                any
+	ChangesetId           any
+	CreatedTimestamp      any
+	DatabaseName          any
+	DataviewName          any
+	Description           any
+	EnvironmentId         any
 	LastModifiedTimestamp any
-	ReadWrite any
+	ReadWrite             any
 	SegmentConfigurations any
-	Status any
-	StatusReason any
+	Status                any
+	StatusReason          any
 }
 
 type KxDataviewsConfig struct {
-	DatabaseName any
+	DatabaseName  any
 	EnvironmentId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type KxDataviewsAttrs struct {
-	DatabaseName any
+	DatabaseName  any
 	EnvironmentId any
-	KxDataviews any
-	MaxResults any
-	NextToken any
+	KxDataviews   any
+	MaxResults    any
+	NextToken     any
 }
 
 var KxDataviews = ubx.DataSourceBinding{
 	WireType: "aws_finspace_kx_dataviews",
 	Fields: ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+		"DatabaseName":  ubx.FieldSpec{WireName: "database_name"},
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

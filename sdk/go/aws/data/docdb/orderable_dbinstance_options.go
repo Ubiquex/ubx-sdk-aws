@@ -4,7 +4,7 @@ package docdb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrderableDbinstanceOptions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -14,56 +14,56 @@ type OrderableDbinstanceOptions_OrderableDbinstanceOptions_AvailabilityZones str
 
 type OrderableDbinstanceOptions_OrderableDbinstanceOptions struct {
 	AvailabilityZones any
-	DbinstanceClass any
-	Engine any
-	EngineVersion any
-	LicenseModel any
-	StorageType any
-	Vpc any
+	DbinstanceClass   any
+	Engine            any
+	EngineVersion     any
+	LicenseModel      any
+	StorageType       any
+	Vpc               any
 }
 
 var OrderableDbinstanceOptions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type OrderableDbinstanceOptionsConfig struct {
 	DbinstanceClass any
-	Engine any
-	EngineVersion any
-	Filters any
-	LicenseModel any
-	Marker any
-	MaxRecords any
-	Vpc any
+	Engine          any
+	EngineVersion   any
+	Filters         any
+	LicenseModel    any
+	Marker          any
+	MaxRecords      any
+	Vpc             any
 }
 
 type OrderableDbinstanceOptionsAttrs struct {
-	DbinstanceClass any
-	Engine any
-	EngineVersion any
-	Filters any
-	LicenseModel any
-	Marker any
-	MaxRecords any
+	DbinstanceClass            any
+	Engine                     any
+	EngineVersion              any
+	Filters                    any
+	LicenseModel               any
+	Marker                     any
+	MaxRecords                 any
 	OrderableDbinstanceOptions any
-	Vpc any
+	Vpc                        any
 }
 
 var OrderableDbinstanceOptions = ubx.DataSourceBinding{
 	WireType: "aws_docdb_orderable_dbinstance_options",
 	Fields: ubx.FieldMap{
 		"DbinstanceClass": ubx.FieldSpec{WireName: "dbinstance_class"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
+		"Engine":          ubx.FieldSpec{WireName: "engine"},
+		"EngineVersion":   ubx.FieldSpec{WireName: "engine_version"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: OrderableDbinstanceOptions_FiltersFields,
+			Kind:     "list",
+			Fields:   OrderableDbinstanceOptions_FiltersFields,
 		},
 		"LicenseModel": ubx.FieldSpec{WireName: "license_model"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"Vpc": ubx.FieldSpec{WireName: "vpc"},
+		"Marker":       ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":   ubx.FieldSpec{WireName: "max_records"},
+		"Vpc":          ubx.FieldSpec{WireName: "vpc"},
 	},
 }

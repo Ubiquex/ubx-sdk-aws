@@ -29,18 +29,18 @@ type Connection_Tags struct {
 }
 
 var Connection_AttachPointFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"DirectConnectGateway": ubx.FieldSpec{WireName: "direct_connect_gateway"},
-	}
+	"Arn":                  ubx.FieldSpec{WireName: "arn"},
+	"DirectConnectGateway": ubx.FieldSpec{WireName: "direct_connect_gateway"},
+}
 
 var Connection_RemoteAccountFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+}
 
 var Connection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectionConfig struct {
 	// The activation key for accepting a connection proposal from a partner CSP. Mutually exclusive with EnvironmentId.
@@ -102,22 +102,22 @@ var Connection = ubx.ResourceBinding{
 		"ActivationKey": ubx.FieldSpec{WireName: "activation_key"},
 		"AttachPoint": ubx.FieldSpec{
 			WireName: "attach_point",
-			Kind: "object",
-			Fields: Connection_AttachPointFields,
+			Kind:     "object",
+			Fields:   Connection_AttachPointFields,
 		},
-		"Bandwidth": ubx.FieldSpec{WireName: "bandwidth"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Bandwidth":     ubx.FieldSpec{WireName: "bandwidth"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
 		"RemoteAccount": ubx.FieldSpec{
 			WireName: "remote_account",
-			Kind: "object",
-			Fields: Connection_RemoteAccountFields,
+			Kind:     "object",
+			Fields:   Connection_RemoteAccountFields,
 		},
 		"RemoteOwnerAccount": ubx.FieldSpec{WireName: "remote_owner_account"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Connection_TagsFields,
+			Kind:     "list",
+			Fields:   Connection_TagsFields,
 		},
 	},
 }

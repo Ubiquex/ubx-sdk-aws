@@ -78,7 +78,7 @@ type AssetModel_AssetModelCompositeModels_CompositeModelProperties_Type struct {
 
 type AssetModel_AssetModelCompositeModels_CompositeModelProperties struct {
 	// Specifies the data type of the property within a composite model, determining whether the property's values are strings, integers, doubles, booleans, or structured data. (AI-inferred)
-	DataType any
+	DataType     any
 	DataTypeSpec any
 	// An optional customer-defined external ID for a composite model property in an AWS IoT SiteWise asset model, used to map the property to an external system or business object without relying on AWS-generated identifiers. (AI-inferred)
 	ExternalId any
@@ -151,24 +151,24 @@ type AssetModel_Tags struct {
 }
 
 var AssetModel_EnforcedAssetModelInterfaceRelationships_PropertyMappingsFields = ubx.FieldMap{
-		"AssetModelPropertyExternalId": ubx.FieldSpec{WireName: "asset_model_property_external_id"},
-		"AssetModelPropertyLogicalId": ubx.FieldSpec{WireName: "asset_model_property_logical_id"},
-		"InterfaceAssetModelPropertyExternalId": ubx.FieldSpec{WireName: "interface_asset_model_property_external_id"},
-	}
+	"AssetModelPropertyExternalId":          ubx.FieldSpec{WireName: "asset_model_property_external_id"},
+	"AssetModelPropertyLogicalId":           ubx.FieldSpec{WireName: "asset_model_property_logical_id"},
+	"InterfaceAssetModelPropertyExternalId": ubx.FieldSpec{WireName: "interface_asset_model_property_external_id"},
+}
 
 var AssetModel_EnforcedAssetModelInterfaceRelationshipsFields = ubx.FieldMap{
-		"InterfaceAssetModelId": ubx.FieldSpec{WireName: "interface_asset_model_id"},
-		"PropertyMappings": ubx.FieldSpec{
-			WireName: "property_mappings",
-			Kind: "list",
-			Fields: AssetModel_EnforcedAssetModelInterfaceRelationships_PropertyMappingsFields,
-		},
-	}
+	"InterfaceAssetModelId": ubx.FieldSpec{WireName: "interface_asset_model_id"},
+	"PropertyMappings": ubx.FieldSpec{
+		WireName: "property_mappings",
+		Kind:     "list",
+		Fields:   AssetModel_EnforcedAssetModelInterfaceRelationships_PropertyMappingsFields,
+	},
+}
 
 var AssetModel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssetModelConfig struct {
 	// A description for the asset model.
@@ -214,18 +214,18 @@ var AssetModel = ubx.ResourceBinding{
 	WireType: "aws_io_tsite_wise_asset_model",
 	Fields: ubx.FieldMap{
 		"AssetModelDescription": ubx.FieldSpec{WireName: "asset_model_description"},
-		"AssetModelExternalId": ubx.FieldSpec{WireName: "asset_model_external_id"},
-		"AssetModelName": ubx.FieldSpec{WireName: "asset_model_name"},
-		"AssetModelType": ubx.FieldSpec{WireName: "asset_model_type"},
+		"AssetModelExternalId":  ubx.FieldSpec{WireName: "asset_model_external_id"},
+		"AssetModelName":        ubx.FieldSpec{WireName: "asset_model_name"},
+		"AssetModelType":        ubx.FieldSpec{WireName: "asset_model_type"},
 		"EnforcedAssetModelInterfaceRelationships": ubx.FieldSpec{
 			WireName: "enforced_asset_model_interface_relationships",
-			Kind: "list",
-			Fields: AssetModel_EnforcedAssetModelInterfaceRelationshipsFields,
+			Kind:     "list",
+			Fields:   AssetModel_EnforcedAssetModelInterfaceRelationshipsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AssetModel_TagsFields,
+			Kind:     "list",
+			Fields:   AssetModel_TagsFields,
 		},
 	},
 }

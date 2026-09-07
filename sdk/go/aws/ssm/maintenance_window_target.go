@@ -11,9 +11,9 @@ type MaintenanceWindowTarget_Targets struct {
 }
 
 var MaintenanceWindowTarget_TargetsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MaintenanceWindowTargetConfig struct {
 	// A description for the target.
@@ -50,14 +50,14 @@ type MaintenanceWindowTargetAttrs struct {
 var MaintenanceWindowTarget = ubx.ResourceBinding{
 	WireType: "aws_ssm_maintenance_window_target",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"OwnerInformation": ubx.FieldSpec{WireName: "owner_information"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":     ubx.FieldSpec{WireName: "resource_type"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: MaintenanceWindowTarget_TargetsFields,
+			Kind:     "list",
+			Fields:   MaintenanceWindowTarget_TargetsFields,
 		},
 		"WindowId": ubx.FieldSpec{WireName: "window_id"},
 	},

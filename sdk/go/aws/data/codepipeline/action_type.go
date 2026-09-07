@@ -4,7 +4,7 @@ package codepipeline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ActionType_ActionType_Executor_Configuration_JobWorkerExecutorConfiguration struct {
-	PollingAccounts any
+	PollingAccounts          any
 	PollingServicePrincipals any
 }
 
@@ -21,17 +21,17 @@ type ActionType_ActionType_Executor_Configuration struct {
 
 type ActionType_ActionType_Executor struct {
 	// <p>The action engine, or executor, related to the supported integration model used to create and update the action type. The available executor types are <code>Lambda</code> and <code>JobWorker</code>.</p>
-	Configuration any
-	JobTimeout any
+	Configuration            any
+	JobTimeout               any
 	PolicyStatementsTemplate any
-	Type any
+	Type                     any
 }
 
 type ActionType_ActionType_Id struct {
 	Category any
-	Owner any
+	Owner    any
 	Provider any
-	Version any
+	Version  any
 }
 
 type ActionType_ActionType_InputArtifactDetails struct {
@@ -45,18 +45,18 @@ type ActionType_ActionType_Permissions struct {
 
 type ActionType_ActionType_Properties struct {
 	Description any
-	Key any
-	Name any
-	NoEcho any
-	Optional any
-	Queryable any
+	Key         any
+	Name        any
+	NoEcho      any
+	Optional    any
+	Queryable   any
 }
 
 type ActionType_ActionType_Urls struct {
-	ConfigurationUrl any
-	EntityUrlTemplate any
+	ConfigurationUrl     any
+	EntityUrlTemplate    any
 	ExecutionUrlTemplate any
-	RevisionUrlTemplate any
+	RevisionUrlTemplate  any
 }
 
 type ActionType_ActionType struct {
@@ -71,33 +71,33 @@ type ActionType_ActionType struct {
 	OutputArtifactDetails any
 	// <p>Details identifying the users with permissions to use the action type.</p>
 	Permissions any
-	Properties any
+	Properties  any
 	// <p>Returns information about URLs for web pages that display to customers as links on the pipeline view, such as an external configuration page for the action type.</p>
 	Urls any
 }
 
 type ActionTypeConfig struct {
 	Category any
-	Owner any
+	Owner    any
 	Provider any
-	Version any
+	Version  any
 }
 
 type ActionTypeAttrs struct {
 	// <p>The parameters for the action type definition that are provided when the action type is created or updated.</p>
 	ActionType any
-	Category any
-	Owner any
-	Provider any
-	Version any
+	Category   any
+	Owner      any
+	Provider   any
+	Version    any
 }
 
 var ActionType = ubx.DataSourceBinding{
 	WireType: "aws_codepipeline_action_type",
 	Fields: ubx.FieldMap{
 		"Category": ubx.FieldSpec{WireName: "category"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"Owner":    ubx.FieldSpec{WireName: "owner"},
 		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Version":  ubx.FieldSpec{WireName: "version"},
 	},
 }

@@ -4,37 +4,37 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Snapshots_SnapShotTimeFilter struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type SnapshotsConfig struct {
-	IndexId any
-	Interval any
+	IndexId    any
+	Interval   any
 	MaxResults any
 	MetricType any
-	NextToken any
+	NextToken  any
 }
 
 type SnapshotsAttrs struct {
-	IndexId any
-	Interval any
+	IndexId    any
+	Interval   any
 	MaxResults any
 	MetricType any
-	NextToken any
+	NextToken  any
 	// <p>Provides a range of time.</p>
-	SnapShotTimeFilter any
-	SnapshotsData any
+	SnapShotTimeFilter  any
+	SnapshotsData       any
 	SnapshotsDataHeader any
 }
 
 var Snapshots = ubx.DataSourceBinding{
 	WireType: "aws_kendra_snapshots",
 	Fields: ubx.FieldMap{
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
+		"Interval":   ubx.FieldSpec{WireName: "interval"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"MetricType": ubx.FieldSpec{WireName: "metric_type"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,7 +4,7 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountLimits_AccountLimits struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type AccountLimitsConfig struct {
 
 type AccountLimitsAttrs struct {
 	AccountLimits any
-	NextToken any
+	NextToken     any
 }
 
 var AccountLimits = ubx.DataSourceBinding{

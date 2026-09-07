@@ -4,16 +4,16 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdmChannel_AdmchannelResponse struct {
-	ApplicationId any
-	CreationDate any
-	Enabled any
-	HasCredential any
-	Id any
-	IsArchived any
-	LastModifiedBy any
+	ApplicationId    any
+	CreationDate     any
+	Enabled          any
+	HasCredential    any
+	Id               any
+	IsArchived       any
+	LastModifiedBy   any
 	LastModifiedDate any
-	Platform any
-	Version any
+	Platform         any
+	Version          any
 }
 
 type AdmChannelConfig struct {
@@ -23,7 +23,7 @@ type AdmChannelConfig struct {
 type AdmChannelAttrs struct {
 	// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 	AdmchannelResponse any
-	ApplicationId any
+	ApplicationId      any
 }
 
 var AdmChannel = ubx.DataSourceBinding{

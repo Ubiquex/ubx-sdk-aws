@@ -66,59 +66,59 @@ type ImagePipeline_Workflows struct {
 }
 
 var ImagePipeline_ImageScanningConfiguration_EcrConfigurationFields = ubx.FieldMap{
-		"ContainerTags": ubx.FieldSpec{WireName: "container_tags"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
-	}
+	"ContainerTags":  ubx.FieldSpec{WireName: "container_tags"},
+	"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+}
 
 var ImagePipeline_ImageScanningConfigurationFields = ubx.FieldMap{
-		"EcrConfiguration": ubx.FieldSpec{
-			WireName: "ecr_configuration",
-			Kind: "object",
-			Fields: ImagePipeline_ImageScanningConfiguration_EcrConfigurationFields,
-		},
-		"ImageScanningEnabled": ubx.FieldSpec{WireName: "image_scanning_enabled"},
-	}
+	"EcrConfiguration": ubx.FieldSpec{
+		WireName: "ecr_configuration",
+		Kind:     "object",
+		Fields:   ImagePipeline_ImageScanningConfiguration_EcrConfigurationFields,
+	},
+	"ImageScanningEnabled": ubx.FieldSpec{WireName: "image_scanning_enabled"},
+}
 
 var ImagePipeline_ImageTestsConfigurationFields = ubx.FieldMap{
-		"ImageTestsEnabled": ubx.FieldSpec{WireName: "image_tests_enabled"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"ImageTestsEnabled": ubx.FieldSpec{WireName: "image_tests_enabled"},
+	"TimeoutMinutes":    ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var ImagePipeline_LoggingConfigurationFields = ubx.FieldMap{
-		"ImageLogGroupName": ubx.FieldSpec{WireName: "image_log_group_name"},
-		"PipelineLogGroupName": ubx.FieldSpec{WireName: "pipeline_log_group_name"},
-	}
+	"ImageLogGroupName":    ubx.FieldSpec{WireName: "image_log_group_name"},
+	"PipelineLogGroupName": ubx.FieldSpec{WireName: "pipeline_log_group_name"},
+}
 
 var ImagePipeline_Schedule_AutoDisablePolicyFields = ubx.FieldMap{
-		"FailureCount": ubx.FieldSpec{WireName: "failure_count"},
-	}
+	"FailureCount": ubx.FieldSpec{WireName: "failure_count"},
+}
 
 var ImagePipeline_ScheduleFields = ubx.FieldMap{
-		"AutoDisablePolicy": ubx.FieldSpec{
-			WireName: "auto_disable_policy",
-			Kind: "object",
-			Fields: ImagePipeline_Schedule_AutoDisablePolicyFields,
-		},
-		"PipelineExecutionStartCondition": ubx.FieldSpec{WireName: "pipeline_execution_start_condition"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"AutoDisablePolicy": ubx.FieldSpec{
+		WireName: "auto_disable_policy",
+		Kind:     "object",
+		Fields:   ImagePipeline_Schedule_AutoDisablePolicyFields,
+	},
+	"PipelineExecutionStartCondition": ubx.FieldSpec{WireName: "pipeline_execution_start_condition"},
+	"ScheduleExpression":              ubx.FieldSpec{WireName: "schedule_expression"},
+	"Timezone":                        ubx.FieldSpec{WireName: "timezone"},
+}
 
 var ImagePipeline_Workflows_ParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ImagePipeline_WorkflowsFields = ubx.FieldMap{
-		"OnFailure": ubx.FieldSpec{WireName: "on_failure"},
-		"ParallelGroup": ubx.FieldSpec{WireName: "parallel_group"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: ImagePipeline_Workflows_ParametersFields,
-		},
-		"WorkflowArn": ubx.FieldSpec{WireName: "workflow_arn"},
-	}
+	"OnFailure":     ubx.FieldSpec{WireName: "on_failure"},
+	"ParallelGroup": ubx.FieldSpec{WireName: "parallel_group"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   ImagePipeline_Workflows_ParametersFields,
+	},
+	"WorkflowArn": ubx.FieldSpec{WireName: "workflow_arn"},
+}
 
 type ImagePipelineConfig struct {
 	// The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.
@@ -197,41 +197,41 @@ type ImagePipelineAttrs struct {
 var ImagePipeline = ubx.ResourceBinding{
 	WireType: "aws_image_builder_image_pipeline",
 	Fields: ubx.FieldMap{
-		"ContainerRecipeArn": ubx.FieldSpec{WireName: "container_recipe_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ContainerRecipeArn":           ubx.FieldSpec{WireName: "container_recipe_arn"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
 		"DistributionConfigurationArn": ubx.FieldSpec{WireName: "distribution_configuration_arn"},
 		"EnhancedImageMetadataEnabled": ubx.FieldSpec{WireName: "enhanced_image_metadata_enabled"},
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"ImageRecipeArn": ubx.FieldSpec{WireName: "image_recipe_arn"},
+		"ExecutionRole":                ubx.FieldSpec{WireName: "execution_role"},
+		"ImageRecipeArn":               ubx.FieldSpec{WireName: "image_recipe_arn"},
 		"ImageScanningConfiguration": ubx.FieldSpec{
 			WireName: "image_scanning_configuration",
-			Kind: "object",
-			Fields: ImagePipeline_ImageScanningConfigurationFields,
+			Kind:     "object",
+			Fields:   ImagePipeline_ImageScanningConfigurationFields,
 		},
 		"ImageTags": ubx.FieldSpec{WireName: "image_tags"},
 		"ImageTestsConfiguration": ubx.FieldSpec{
 			WireName: "image_tests_configuration",
-			Kind: "object",
-			Fields: ImagePipeline_ImageTestsConfigurationFields,
+			Kind:     "object",
+			Fields:   ImagePipeline_ImageTestsConfigurationFields,
 		},
 		"InfrastructureConfigurationArn": ubx.FieldSpec{WireName: "infrastructure_configuration_arn"},
 		"LoggingConfiguration": ubx.FieldSpec{
 			WireName: "logging_configuration",
-			Kind: "object",
-			Fields: ImagePipeline_LoggingConfigurationFields,
+			Kind:     "object",
+			Fields:   ImagePipeline_LoggingConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: ImagePipeline_ScheduleFields,
+			Kind:     "object",
+			Fields:   ImagePipeline_ScheduleFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":   ubx.FieldSpec{WireName: "tags"},
 		"Workflows": ubx.FieldSpec{
 			WireName: "workflows",
-			Kind: "list",
-			Fields: ImagePipeline_WorkflowsFields,
+			Kind:     "list",
+			Fields:   ImagePipeline_WorkflowsFields,
 		},
 	},
 }

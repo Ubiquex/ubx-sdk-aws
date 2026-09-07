@@ -5,65 +5,65 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployment_AppliedExtensions struct {
 	ExtensionAssociationId any
-	ExtensionId any
-	Parameters any
-	VersionNumber any
+	ExtensionId            any
+	Parameters             any
+	VersionNumber          any
 }
 
 type Deployment_EventLog_ActionInvocations struct {
-	ActionName any
-	ErrorCode any
-	ErrorMessage any
+	ActionName          any
+	ErrorCode           any
+	ErrorMessage        any
 	ExtensionIdentifier any
-	InvocationId any
-	RoleArn any
-	Uri any
+	InvocationId        any
+	RoleArn             any
+	Uri                 any
 }
 
 type Deployment_EventLog struct {
 	ActionInvocations any
-	Description any
-	EventType any
-	OccurredAt any
-	TriggeredBy any
+	Description       any
+	EventType         any
+	OccurredAt        any
+	TriggeredBy       any
 }
 
 type DeploymentConfig struct {
-	ApplicationId any
+	ApplicationId    any
 	DeploymentNumber any
-	EnvironmentId any
+	EnvironmentId    any
 }
 
 type DeploymentAttrs struct {
-	ApplicationId any
-	AppliedExtensions any
-	CompletedAt any
-	ConfigurationLocationUri any
-	ConfigurationName any
-	ConfigurationProfileId any
-	ConfigurationVersion any
+	ApplicationId               any
+	AppliedExtensions           any
+	CompletedAt                 any
+	ConfigurationLocationUri    any
+	ConfigurationName           any
+	ConfigurationProfileId      any
+	ConfigurationVersion        any
 	DeploymentDurationInMinutes any
-	DeploymentNumber any
-	DeploymentStrategyId any
-	Description any
-	EnvironmentId any
-	EventLog any
-	FinalBakeTimeInMinutes any
-	GrowthFactor any
-	GrowthType any
-	KmsKeyArn any
-	KmsKeyIdentifier any
-	PercentageComplete any
-	StartedAt any
-	State any
-	VersionLabel any
+	DeploymentNumber            any
+	DeploymentStrategyId        any
+	Description                 any
+	EnvironmentId               any
+	EventLog                    any
+	FinalBakeTimeInMinutes      any
+	GrowthFactor                any
+	GrowthType                  any
+	KmsKeyArn                   any
+	KmsKeyIdentifier            any
+	PercentageComplete          any
+	StartedAt                   any
+	State                       any
+	VersionLabel                any
 }
 
 var Deployment = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_deployment",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":    ubx.FieldSpec{WireName: "application_id"},
 		"DeploymentNumber": ubx.FieldSpec{WireName: "deployment_number"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"EnvironmentId":    ubx.FieldSpec{WireName: "environment_id"},
 	},
 }

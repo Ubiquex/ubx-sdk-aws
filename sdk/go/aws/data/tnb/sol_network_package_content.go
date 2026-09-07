@@ -4,21 +4,21 @@ package tnb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SolNetworkPackageContentConfig struct {
-	Accept any
+	Accept    any
 	NsdInfoId any
 }
 
 type SolNetworkPackageContentAttrs struct {
-	Accept any
+	Accept      any
 	ContentType any
-	NsdContent any
-	NsdInfoId any
+	NsdContent  any
+	NsdInfoId   any
 }
 
 var SolNetworkPackageContent = ubx.DataSourceBinding{
 	WireType: "aws_tnb_sol_network_package_content",
 	Fields: ubx.FieldMap{
-		"Accept": ubx.FieldSpec{WireName: "accept"},
+		"Accept":    ubx.FieldSpec{WireName: "accept"},
 		"NsdInfoId": ubx.FieldSpec{WireName: "nsd_info_id"},
 	},
 }

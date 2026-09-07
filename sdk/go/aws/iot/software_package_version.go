@@ -25,23 +25,23 @@ type SoftwarePackageVersion_Tags struct {
 }
 
 var SoftwarePackageVersion_Artifact_S3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var SoftwarePackageVersion_ArtifactFields = ubx.FieldMap{
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: SoftwarePackageVersion_Artifact_S3LocationFields,
-		},
-	}
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   SoftwarePackageVersion_Artifact_S3LocationFields,
+	},
+}
 
 var SoftwarePackageVersion_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SoftwarePackageVersionConfig struct {
 	// The artifact location of the package version
@@ -94,22 +94,22 @@ var SoftwarePackageVersion = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Artifact": ubx.FieldSpec{
 			WireName: "artifact",
-			Kind: "object",
-			Fields: SoftwarePackageVersion_ArtifactFields,
+			Kind:     "object",
+			Fields:   SoftwarePackageVersion_ArtifactFields,
 		},
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"Attributes":  ubx.FieldSpec{WireName: "attributes"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"PackageName": ubx.FieldSpec{WireName: "package_name"},
-		"Recipe": ubx.FieldSpec{WireName: "recipe"},
+		"Recipe":      ubx.FieldSpec{WireName: "recipe"},
 		"Sbom": ubx.FieldSpec{
 			WireName: "sbom",
-			Kind: "object",
-			Fields: SoftwarePackageVersion_ArtifactFields,
+			Kind:     "object",
+			Fields:   SoftwarePackageVersion_ArtifactFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SoftwarePackageVersion_TagsFields,
+			Kind:     "list",
+			Fields:   SoftwarePackageVersion_TagsFields,
 		},
 		"VersionName": ubx.FieldSpec{WireName: "version_name"},
 	},

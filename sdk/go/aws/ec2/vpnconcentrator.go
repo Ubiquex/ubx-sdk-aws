@@ -4,14 +4,14 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vpnconcentrator_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Vpnconcentrator_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpnconcentratorConfig struct {
 	// Any tags assigned to the VPN concentrator.
@@ -40,10 +40,10 @@ var Vpnconcentrator = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Vpnconcentrator_TagsFields,
+			Kind:     "list",
+			Fields:   Vpnconcentrator_TagsFields,
 		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
 	},
 }

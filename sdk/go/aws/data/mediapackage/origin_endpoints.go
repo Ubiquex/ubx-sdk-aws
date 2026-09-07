@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OriginEndpoints_OriginEndpoints_Authorization struct {
 	CdnIdentifierSecret any
-	SecretsRoleArn any
+	SecretsRoleArn      any
 }
 
 type OriginEndpoints_OriginEndpoints_CmafPackage_Encryption_SpekeKeyProvider_EncryptionContractConfiguration struct {
@@ -14,93 +14,93 @@ type OriginEndpoints_OriginEndpoints_CmafPackage_Encryption_SpekeKeyProvider_Enc
 }
 
 type OriginEndpoints_OriginEndpoints_CmafPackage_Encryption_SpekeKeyProvider struct {
-	CertificateArn any
+	CertificateArn                  any
 	EncryptionContractConfiguration any
-	ResourceId any
-	RoleArn any
-	SystemIds any
-	Url any
+	ResourceId                      any
+	RoleArn                         any
+	SystemIds                       any
+	Url                             any
 }
 
 type OriginEndpoints_OriginEndpoints_CmafPackage_Encryption struct {
 	ConstantInitializationVector any
-	EncryptionMethod any
-	KeyRotationIntervalSeconds any
-	SpekeKeyProvider any
+	EncryptionMethod             any
+	KeyRotationIntervalSeconds   any
+	SpekeKeyProvider             any
 }
 
 type OriginEndpoints_OriginEndpoints_CmafPackage_HlsManifests struct {
-	AdMarkers any
-	AdTriggers any
-	AdsOnDeliveryRestrictions any
-	Id any
-	IncludeIframeOnlyStream any
-	ManifestName any
-	PlaylistType any
-	PlaylistWindowSeconds any
+	AdMarkers                      any
+	AdTriggers                     any
+	AdsOnDeliveryRestrictions      any
+	Id                             any
+	IncludeIframeOnlyStream        any
+	ManifestName                   any
+	PlaylistType                   any
+	PlaylistWindowSeconds          any
 	ProgramDateTimeIntervalSeconds any
-	Url any
+	Url                            any
 }
 
 type OriginEndpoints_OriginEndpoints_CmafPackage_StreamSelection struct {
 	MaxVideoBitsPerSecond any
 	MinVideoBitsPerSecond any
-	StreamOrder any
+	StreamOrder           any
 }
 
 type OriginEndpoints_OriginEndpoints_CmafPackage struct {
-	Encryption any
-	HlsManifests any
+	Encryption             any
+	HlsManifests           any
 	SegmentDurationSeconds any
-	SegmentPrefix any
-	StreamSelection any
+	SegmentPrefix          any
+	StreamSelection        any
 }
 
 type OriginEndpoints_OriginEndpoints_DashPackage_Encryption struct {
 	KeyRotationIntervalSeconds any
-	SpekeKeyProvider any
+	SpekeKeyProvider           any
 }
 
 type OriginEndpoints_OriginEndpoints_DashPackage struct {
-	AdTriggers any
-	AdsOnDeliveryRestrictions any
-	Encryption any
-	IncludeIframeOnlyStream any
-	ManifestLayout any
-	ManifestWindowSeconds any
-	MinBufferTimeSeconds any
-	MinUpdatePeriodSeconds any
-	PeriodTriggers any
-	Profile any
-	SegmentDurationSeconds any
-	SegmentTemplateFormat any
-	StreamSelection any
+	AdTriggers                        any
+	AdsOnDeliveryRestrictions         any
+	Encryption                        any
+	IncludeIframeOnlyStream           any
+	ManifestLayout                    any
+	ManifestWindowSeconds             any
+	MinBufferTimeSeconds              any
+	MinUpdatePeriodSeconds            any
+	PeriodTriggers                    any
+	Profile                           any
+	SegmentDurationSeconds            any
+	SegmentTemplateFormat             any
+	StreamSelection                   any
 	SuggestedPresentationDelaySeconds any
-	UtcTiming any
-	UtcTimingUri any
+	UtcTiming                         any
+	UtcTimingUri                      any
 }
 
 type OriginEndpoints_OriginEndpoints_HlsPackage_Encryption struct {
 	ConstantInitializationVector any
-	EncryptionMethod any
-	KeyRotationIntervalSeconds any
-	RepeatExtXkey any
-	SpekeKeyProvider any
+	EncryptionMethod             any
+	KeyRotationIntervalSeconds   any
+	RepeatExtXkey                any
+	SpekeKeyProvider             any
 }
 
 type OriginEndpoints_OriginEndpoints_HlsPackage struct {
-	AdMarkers any
-	AdTriggers any
-	AdsOnDeliveryRestrictions any
-	Encryption any
-	IncludeDvbSubtitles any
-	IncludeIframeOnlyStream any
-	PlaylistType any
-	PlaylistWindowSeconds any
+	AdMarkers                      any
+	AdTriggers                     any
+	AdsOnDeliveryRestrictions      any
+	Encryption                     any
+	IncludeDvbSubtitles            any
+	IncludeIframeOnlyStream        any
+	PlaylistType                   any
+	PlaylistWindowSeconds          any
 	ProgramDateTimeIntervalSeconds any
-	SegmentDurationSeconds any
-	StreamSelection any
-	UseAudioRenditionGroup any
+	SegmentDurationSeconds         any
+	StreamSelection                any
+	UseAudioRenditionGroup         any
 }
 
 type OriginEndpoints_OriginEndpoints_MssPackage_Encryption struct {
@@ -108,50 +108,50 @@ type OriginEndpoints_OriginEndpoints_MssPackage_Encryption struct {
 }
 
 type OriginEndpoints_OriginEndpoints_MssPackage struct {
-	Encryption any
-	ManifestWindowSeconds any
+	Encryption             any
+	ManifestWindowSeconds  any
 	SegmentDurationSeconds any
-	StreamSelection any
+	StreamSelection        any
 }
 
 type OriginEndpoints_OriginEndpoints struct {
-	Arn any
-	Authorization any
-	ChannelId any
-	CmafPackage any
-	CreatedAt any
-	DashPackage any
-	Description any
-	HlsPackage any
-	Id any
-	ManifestName any
-	MssPackage any
-	Origination any
+	Arn                    any
+	Authorization          any
+	ChannelId              any
+	CmafPackage            any
+	CreatedAt              any
+	DashPackage            any
+	Description            any
+	HlsPackage             any
+	Id                     any
+	ManifestName           any
+	MssPackage             any
+	Origination            any
 	StartoverWindowSeconds any
-	Tags any
-	TimeDelaySeconds any
-	Url any
-	Whitelist any
+	Tags                   any
+	TimeDelaySeconds       any
+	Url                    any
+	Whitelist              any
 }
 
 type OriginEndpointsConfig struct {
-	ChannelId any
+	ChannelId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type OriginEndpointsAttrs struct {
-	ChannelId any
-	MaxResults any
-	NextToken any
+	ChannelId       any
+	MaxResults      any
+	NextToken       any
 	OriginEndpoints any
 }
 
 var OriginEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_mediapackage_origin_endpoints",
 	Fields: ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
+		"ChannelId":  ubx.FieldSpec{WireName: "channel_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

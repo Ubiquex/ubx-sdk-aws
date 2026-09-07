@@ -10,9 +10,9 @@ type DatasetGroup_Tags struct {
 }
 
 var DatasetGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetGroupConfig struct {
 	// An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.
@@ -41,13 +41,13 @@ type DatasetGroupAttrs struct {
 var DatasetGroup = ubx.ResourceBinding{
 	WireType: "aws_forecast_dataset_group",
 	Fields: ubx.FieldMap{
-		"DatasetArns": ubx.FieldSpec{WireName: "dataset_arns"},
+		"DatasetArns":      ubx.FieldSpec{WireName: "dataset_arns"},
 		"DatasetGroupName": ubx.FieldSpec{WireName: "dataset_group_name"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":           ubx.FieldSpec{WireName: "domain"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DatasetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DatasetGroup_TagsFields,
 		},
 	},
 }

@@ -70,78 +70,78 @@ type InAppTemplate_Content struct {
 }
 
 var InAppTemplate_Content_BodyConfigFields = ubx.FieldMap{
-		"Alignment": ubx.FieldSpec{WireName: "alignment"},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"TextColor": ubx.FieldSpec{WireName: "text_color"},
-	}
+	"Alignment": ubx.FieldSpec{WireName: "alignment"},
+	"Body":      ubx.FieldSpec{WireName: "body"},
+	"TextColor": ubx.FieldSpec{WireName: "text_color"},
+}
 
 var InAppTemplate_Content_HeaderConfigFields = ubx.FieldMap{
-		"Alignment": ubx.FieldSpec{WireName: "alignment"},
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"TextColor": ubx.FieldSpec{WireName: "text_color"},
-	}
+	"Alignment": ubx.FieldSpec{WireName: "alignment"},
+	"Header":    ubx.FieldSpec{WireName: "header"},
+	"TextColor": ubx.FieldSpec{WireName: "text_color"},
+}
 
 var InAppTemplate_Content_PrimaryBtn_AndroidFields = ubx.FieldMap{
-		"ButtonAction": ubx.FieldSpec{WireName: "button_action"},
-		"Link": ubx.FieldSpec{WireName: "link"},
-	}
+	"ButtonAction": ubx.FieldSpec{WireName: "button_action"},
+	"Link":         ubx.FieldSpec{WireName: "link"},
+}
 
 var InAppTemplate_Content_PrimaryBtn_DefaultConfigFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"BorderRadius": ubx.FieldSpec{WireName: "border_radius"},
-		"ButtonAction": ubx.FieldSpec{WireName: "button_action"},
-		"Link": ubx.FieldSpec{WireName: "link"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"TextColor": ubx.FieldSpec{WireName: "text_color"},
-	}
+	"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
+	"BorderRadius":    ubx.FieldSpec{WireName: "border_radius"},
+	"ButtonAction":    ubx.FieldSpec{WireName: "button_action"},
+	"Link":            ubx.FieldSpec{WireName: "link"},
+	"Text":            ubx.FieldSpec{WireName: "text"},
+	"TextColor":       ubx.FieldSpec{WireName: "text_color"},
+}
 
 var InAppTemplate_Content_PrimaryBtnFields = ubx.FieldMap{
-		"Android": ubx.FieldSpec{
-			WireName: "android",
-			Kind: "object",
-			Fields: InAppTemplate_Content_PrimaryBtn_AndroidFields,
-		},
-		"DefaultConfig": ubx.FieldSpec{
-			WireName: "default_config",
-			Kind: "object",
-			Fields: InAppTemplate_Content_PrimaryBtn_DefaultConfigFields,
-		},
-		"Ios": ubx.FieldSpec{
-			WireName: "ios",
-			Kind: "object",
-			Fields: InAppTemplate_Content_PrimaryBtn_AndroidFields,
-		},
-		"Web": ubx.FieldSpec{
-			WireName: "web",
-			Kind: "object",
-			Fields: InAppTemplate_Content_PrimaryBtn_AndroidFields,
-		},
-	}
+	"Android": ubx.FieldSpec{
+		WireName: "android",
+		Kind:     "object",
+		Fields:   InAppTemplate_Content_PrimaryBtn_AndroidFields,
+	},
+	"DefaultConfig": ubx.FieldSpec{
+		WireName: "default_config",
+		Kind:     "object",
+		Fields:   InAppTemplate_Content_PrimaryBtn_DefaultConfigFields,
+	},
+	"Ios": ubx.FieldSpec{
+		WireName: "ios",
+		Kind:     "object",
+		Fields:   InAppTemplate_Content_PrimaryBtn_AndroidFields,
+	},
+	"Web": ubx.FieldSpec{
+		WireName: "web",
+		Kind:     "object",
+		Fields:   InAppTemplate_Content_PrimaryBtn_AndroidFields,
+	},
+}
 
 var InAppTemplate_ContentFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"BodyConfig": ubx.FieldSpec{
-			WireName: "body_config",
-			Kind: "object",
-			Fields: InAppTemplate_Content_BodyConfigFields,
-		},
-		"HeaderConfig": ubx.FieldSpec{
-			WireName: "header_config",
-			Kind: "object",
-			Fields: InAppTemplate_Content_HeaderConfigFields,
-		},
-		"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
-		"PrimaryBtn": ubx.FieldSpec{
-			WireName: "primary_btn",
-			Kind: "object",
-			Fields: InAppTemplate_Content_PrimaryBtnFields,
-		},
-		"SecondaryBtn": ubx.FieldSpec{
-			WireName: "secondary_btn",
-			Kind: "object",
-			Fields: InAppTemplate_Content_PrimaryBtnFields,
-		},
-	}
+	"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
+	"BodyConfig": ubx.FieldSpec{
+		WireName: "body_config",
+		Kind:     "object",
+		Fields:   InAppTemplate_Content_BodyConfigFields,
+	},
+	"HeaderConfig": ubx.FieldSpec{
+		WireName: "header_config",
+		Kind:     "object",
+		Fields:   InAppTemplate_Content_HeaderConfigFields,
+	},
+	"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
+	"PrimaryBtn": ubx.FieldSpec{
+		WireName: "primary_btn",
+		Kind:     "object",
+		Fields:   InAppTemplate_Content_PrimaryBtnFields,
+	},
+	"SecondaryBtn": ubx.FieldSpec{
+		WireName: "secondary_btn",
+		Kind:     "object",
+		Fields:   InAppTemplate_Content_PrimaryBtnFields,
+	},
+}
 
 type InAppTemplateConfig struct {
 	// The list of content objects for the in-app template, each defining the message's header, body, background color, media URL, and optional action buttons. (AI-inferred)
@@ -180,13 +180,13 @@ var InAppTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "list",
-			Fields: InAppTemplate_ContentFields,
+			Kind:     "list",
+			Fields:   InAppTemplate_ContentFields,
 		},
-		"CustomConfig": ubx.FieldSpec{WireName: "custom_config"},
-		"Layout": ubx.FieldSpec{WireName: "layout"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"CustomConfig":        ubx.FieldSpec{WireName: "custom_config"},
+		"Layout":              ubx.FieldSpec{WireName: "layout"},
+		"Tags":                ubx.FieldSpec{WireName: "tags"},
 		"TemplateDescription": ubx.FieldSpec{WireName: "template_description"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"TemplateName":        ubx.FieldSpec{WireName: "template_name"},
 	},
 }

@@ -8,38 +8,38 @@ type MailManagerAddressListImportJobs_ImportJobs_ImportDataFormat struct {
 }
 
 type MailManagerAddressListImportJobs_ImportJobs struct {
-	AddressListId any
+	AddressListId      any
 	CompletedTimestamp any
-	CreatedTimestamp any
-	Error any
-	FailedItemsCount any
-	ImportDataFormat any
+	CreatedTimestamp   any
+	Error              any
+	FailedItemsCount   any
+	ImportDataFormat   any
 	ImportedItemsCount any
-	JobId any
-	Name any
-	PreSignedUrl any
-	StartTimestamp any
-	Status any
+	JobId              any
+	Name               any
+	PreSignedUrl       any
+	StartTimestamp     any
+	Status             any
 }
 
 type MailManagerAddressListImportJobsConfig struct {
 	AddressListId any
-	NextToken any
-	PageSize any
+	NextToken     any
+	PageSize      any
 }
 
 type MailManagerAddressListImportJobsAttrs struct {
 	AddressListId any
-	ImportJobs any
-	NextToken any
-	PageSize any
+	ImportJobs    any
+	NextToken     any
+	PageSize      any
 }
 
 var MailManagerAddressListImportJobs = ubx.DataSourceBinding{
 	WireType: "aws_mail_manager_address_list_import_jobs",
 	Fields: ubx.FieldMap{
 		"AddressListId": ubx.FieldSpec{WireName: "address_list_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
 	},
 }

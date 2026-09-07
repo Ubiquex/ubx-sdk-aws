@@ -4,39 +4,39 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostedConfigurationVersions_Items struct {
-	ApplicationId any
+	ApplicationId          any
 	ConfigurationProfileId any
-	ContentType any
-	Description any
-	KmsKeyArn any
-	VersionLabel any
-	VersionNumber any
+	ContentType            any
+	Description            any
+	KmsKeyArn              any
+	VersionLabel           any
+	VersionNumber          any
 }
 
 type HostedConfigurationVersionsConfig struct {
-	ApplicationId any
+	ApplicationId          any
 	ConfigurationProfileId any
-	MaxResults any
-	NextToken any
-	VersionLabel any
+	MaxResults             any
+	NextToken              any
+	VersionLabel           any
 }
 
 type HostedConfigurationVersionsAttrs struct {
-	ApplicationId any
+	ApplicationId          any
 	ConfigurationProfileId any
-	Items any
-	MaxResults any
-	NextToken any
-	VersionLabel any
+	Items                  any
+	MaxResults             any
+	NextToken              any
+	VersionLabel           any
 }
 
 var HostedConfigurationVersions = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_hosted_configuration_versions",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":          ubx.FieldSpec{WireName: "application_id"},
 		"ConfigurationProfileId": ubx.FieldSpec{WireName: "configuration_profile_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VersionLabel": ubx.FieldSpec{WireName: "version_label"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"VersionLabel":           ubx.FieldSpec{WireName: "version_label"},
 	},
 }

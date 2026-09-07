@@ -20,17 +20,17 @@ type IpamresourceDiscovery_Tags struct {
 }
 
 var IpamresourceDiscovery_OperatingRegionsFields = ubx.FieldMap{
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
-	}
+	"RegionName": ubx.FieldSpec{WireName: "region_name"},
+}
 
 var IpamresourceDiscovery_OrganizationalUnitExclusionsFields = ubx.FieldMap{
-		"OrganizationsEntityPath": ubx.FieldSpec{WireName: "organizations_entity_path"},
-	}
+	"OrganizationsEntityPath": ubx.FieldSpec{WireName: "organizations_entity_path"},
+}
 
 var IpamresourceDiscovery_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpamresourceDiscoveryConfig struct {
 	// Specifies a custom description for the IPAM resource discovery, which is used to provide human-readable context or identification for the discovery resource within the AWS EC2 IPAM service. (AI-inferred)
@@ -72,18 +72,18 @@ var IpamresourceDiscovery = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"OperatingRegions": ubx.FieldSpec{
 			WireName: "operating_regions",
-			Kind: "list",
-			Fields: IpamresourceDiscovery_OperatingRegionsFields,
+			Kind:     "list",
+			Fields:   IpamresourceDiscovery_OperatingRegionsFields,
 		},
 		"OrganizationalUnitExclusions": ubx.FieldSpec{
 			WireName: "organizational_unit_exclusions",
-			Kind: "list",
-			Fields: IpamresourceDiscovery_OrganizationalUnitExclusionsFields,
+			Kind:     "list",
+			Fields:   IpamresourceDiscovery_OrganizationalUnitExclusionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IpamresourceDiscovery_TagsFields,
+			Kind:     "list",
+			Fields:   IpamresourceDiscovery_TagsFields,
 		},
 	},
 }

@@ -10,18 +10,18 @@ type Pipeline_ParallelismConfiguration struct {
 
 type Pipeline_Tags struct {
 	// The key of a tag attached to the SageMaker pipeline, used to assign metadata for organizing, identifying, and managing the pipeline resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Pipeline_ParallelismConfigurationFields = ubx.FieldMap{
-		"MaxParallelExecutionSteps": ubx.FieldSpec{WireName: "max_parallel_execution_steps"},
-	}
+	"MaxParallelExecutionSteps": ubx.FieldSpec{WireName: "max_parallel_execution_steps"},
+}
 
 var Pipeline_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PipelineConfig struct {
 	// Defines the parallelism configuration for the SageMaker pipeline, including the maximum number of execution steps that can run in parallel. (AI-inferred)
@@ -62,18 +62,18 @@ var Pipeline = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ParallelismConfiguration": ubx.FieldSpec{
 			WireName: "parallelism_configuration",
-			Kind: "object",
-			Fields: Pipeline_ParallelismConfigurationFields,
+			Kind:     "object",
+			Fields:   Pipeline_ParallelismConfigurationFields,
 		},
-		"PipelineDefinition": ubx.FieldSpec{WireName: "pipeline_definition"},
+		"PipelineDefinition":  ubx.FieldSpec{WireName: "pipeline_definition"},
 		"PipelineDescription": ubx.FieldSpec{WireName: "pipeline_description"},
 		"PipelineDisplayName": ubx.FieldSpec{WireName: "pipeline_display_name"},
-		"PipelineName": ubx.FieldSpec{WireName: "pipeline_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"PipelineName":        ubx.FieldSpec{WireName: "pipeline_name"},
+		"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Pipeline_TagsFields,
+			Kind:     "list",
+			Fields:   Pipeline_TagsFields,
 		},
 	},
 }

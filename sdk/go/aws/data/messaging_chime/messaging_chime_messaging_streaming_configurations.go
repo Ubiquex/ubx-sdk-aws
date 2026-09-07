@@ -4,7 +4,7 @@ package messaging_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeMessagingStreamingConfigurations_StreamingConfigurations struct {
-	DataType any
+	DataType    any
 	ResourceArn any
 }
 
@@ -13,7 +13,7 @@ type MessagingChimeMessagingStreamingConfigurationsConfig struct {
 }
 
 type MessagingChimeMessagingStreamingConfigurationsAttrs struct {
-	AppInstanceArn any
+	AppInstanceArn          any
 	StreamingConfigurations any
 }
 

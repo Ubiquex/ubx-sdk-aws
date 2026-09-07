@@ -28,7 +28,7 @@ type CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource
 	// Specifies the EBS snapshot ID used to initialize the ephemeral EBS volume attached to EC2 instances launched for this Bedrock agent core capacity provider. (AI-inferred)
 	SnapshotId any
 	// The throughput (in MiB/s) for the EBS volume attached as an ephemeral volume to the compute instances launched by the capacity provider's launch template, determining the sustained I/O performance of that volume. (AI-inferred)
-	Throughput any
+	Throughput               any
 	VolumeInitializationRate any
 	// Specifies the size of the EBS ephemeral volume in GiB within the EC2 launch parameters for the core capacity provider's compute configuration. (AI-inferred)
 	VolumeSize any
@@ -156,172 +156,172 @@ type CapacityProvider_PermissionsConfiguration struct {
 }
 
 type CapacityProvider_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_CapacityReservationSpecification_CapacityReservationTargetFields = ubx.FieldMap{
-		"CapacityReservationId": ubx.FieldSpec{WireName: "capacity_reservation_id"},
-		"CapacityReservationResourceGroupArn": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arn"},
-	}
+	"CapacityReservationId":               ubx.FieldSpec{WireName: "capacity_reservation_id"},
+	"CapacityReservationResourceGroupArn": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arn"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_CapacityReservationSpecificationFields = ubx.FieldMap{
-		"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
-		"CapacityReservationTarget": ubx.FieldSpec{
-			WireName: "capacity_reservation_target",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_CapacityReservationSpecification_CapacityReservationTargetFields,
-		},
-	}
+	"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
+	"CapacityReservationTarget": ubx.FieldSpec{
+		WireName: "capacity_reservation_target",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_CapacityReservationSpecification_CapacityReservationTargetFields,
+	},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumes_EbsFields = ubx.FieldMap{
-		"EbsCardIndex": ubx.FieldSpec{WireName: "ebs_card_index"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeInitializationRate": ubx.FieldSpec{WireName: "volume_initialization_rate"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"EbsCardIndex":             ubx.FieldSpec{WireName: "ebs_card_index"},
+	"Encrypted":                ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":                     ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":                 ubx.FieldSpec{WireName: "kms_key_id"},
+	"SnapshotId":               ubx.FieldSpec{WireName: "snapshot_id"},
+	"Throughput":               ubx.FieldSpec{WireName: "throughput"},
+	"VolumeInitializationRate": ubx.FieldSpec{WireName: "volume_initialization_rate"},
+	"VolumeSize":               ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType":               ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumesFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Ebs": ubx.FieldSpec{
-			WireName: "ebs",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumes_EbsFields,
-		},
-		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Ebs": ubx.FieldSpec{
+		WireName: "ebs",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumes_EbsFields,
+	},
+	"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_InstanceRequirementsFields = ubx.FieldMap{
-		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
-	}
+	"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_LicenseSpecificationsFields = ubx.FieldMap{
-		"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
-	}
+	"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParametersFields = ubx.FieldMap{
-		"CapacityReservationSpecification": ubx.FieldSpec{
-			WireName: "capacity_reservation_specification",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_CapacityReservationSpecificationFields,
-		},
-		"EphemeralVolumes": ubx.FieldSpec{
-			WireName: "ephemeral_volumes",
-			Kind: "list",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumesFields,
-		},
-		"InstanceProfileArn": ubx.FieldSpec{WireName: "instance_profile_arn"},
-		"InstanceRequirements": ubx.FieldSpec{
-			WireName: "instance_requirements",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_InstanceRequirementsFields,
-		},
-		"LicenseSpecifications": ubx.FieldSpec{
-			WireName: "license_specifications",
-			Kind: "list",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_LicenseSpecificationsFields,
-		},
-		"Monitoring": ubx.FieldSpec{WireName: "monitoring"},
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"PropagatedTags": ubx.FieldSpec{WireName: "propagated_tags"},
-		"SshKeyName": ubx.FieldSpec{WireName: "ssh_key_name"},
-	}
+	"CapacityReservationSpecification": ubx.FieldSpec{
+		WireName: "capacity_reservation_specification",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_CapacityReservationSpecificationFields,
+	},
+	"EphemeralVolumes": ubx.FieldSpec{
+		WireName: "ephemeral_volumes",
+		Kind:     "list",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumesFields,
+	},
+	"InstanceProfileArn": ubx.FieldSpec{WireName: "instance_profile_arn"},
+	"InstanceRequirements": ubx.FieldSpec{
+		WireName: "instance_requirements",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_InstanceRequirementsFields,
+	},
+	"LicenseSpecifications": ubx.FieldSpec{
+		WireName: "license_specifications",
+		Kind:     "list",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_LicenseSpecificationsFields,
+	},
+	"Monitoring":      ubx.FieldSpec{WireName: "monitoring"},
+	"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
+	"PropagatedTags":  ubx.FieldSpec{WireName: "propagated_tags"},
+	"SshKeyName":      ubx.FieldSpec{WireName: "ssh_key_name"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSourceFields = ubx.FieldMap{
-		"LaunchParameters": ubx.FieldSpec{
-			WireName: "launch_parameters",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParametersFields,
-		},
-	}
+	"LaunchParameters": ubx.FieldSpec{
+		WireName: "launch_parameters",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParametersFields,
+	},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_LifecycleConfigurationFields = ubx.FieldMap{
-		"IdleInstanceTimeout": ubx.FieldSpec{WireName: "idle_instance_timeout"},
-		"MaxLifetime": ubx.FieldSpec{WireName: "max_lifetime"},
-	}
+	"IdleInstanceTimeout": ubx.FieldSpec{WireName: "idle_instance_timeout"},
+	"MaxLifetime":         ubx.FieldSpec{WireName: "max_lifetime"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_RootVolumeFields = ubx.FieldMap{
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"FreeSpaceGiB": ubx.FieldSpec{WireName: "free_space_gi_b"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Encrypted":    ubx.FieldSpec{WireName: "encrypted"},
+	"FreeSpaceGiB": ubx.FieldSpec{WireName: "free_space_gi_b"},
+	"Iops":         ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":     ubx.FieldSpec{WireName: "kms_key_id"},
+	"Throughput":   ubx.FieldSpec{WireName: "throughput"},
+	"VolumeType":   ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_Volumes_EbsConfigurationFields = ubx.FieldMap{
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SizeGiB": ubx.FieldSpec{WireName: "size_gi_b"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Encrypted":  ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":       ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":   ubx.FieldSpec{WireName: "kms_key_id"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"SizeGiB":    ubx.FieldSpec{WireName: "size_gi_b"},
+	"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
+	"Throughput": ubx.FieldSpec{WireName: "throughput"},
+	"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_VolumesFields = ubx.FieldMap{
-		"EbsConfiguration": ubx.FieldSpec{
-			WireName: "ebs_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_Volumes_EbsConfigurationFields,
-		},
-	}
+	"EbsConfiguration": ubx.FieldSpec{
+		WireName: "ebs_configuration",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_Volumes_EbsConfigurationFields,
+	},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2Configuration_VpcConfigurationFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var CapacityProvider_ComputeConfiguration_Ec2ConfigurationFields = ubx.FieldMap{
-		"LaunchTemplateSource": ubx.FieldSpec{
-			WireName: "launch_template_source",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSourceFields,
-		},
-		"LifecycleConfiguration": ubx.FieldSpec{
-			WireName: "lifecycle_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_LifecycleConfigurationFields,
-		},
-		"RootVolume": ubx.FieldSpec{
-			WireName: "root_volume",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_RootVolumeFields,
-		},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_VolumesFields,
-		},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2Configuration_VpcConfigurationFields,
-		},
-	}
+	"LaunchTemplateSource": ubx.FieldSpec{
+		WireName: "launch_template_source",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSourceFields,
+	},
+	"LifecycleConfiguration": ubx.FieldSpec{
+		WireName: "lifecycle_configuration",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_LifecycleConfigurationFields,
+	},
+	"RootVolume": ubx.FieldSpec{
+		WireName: "root_volume",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_RootVolumeFields,
+	},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_VolumesFields,
+	},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2Configuration_VpcConfigurationFields,
+	},
+}
 
 var CapacityProvider_ComputeConfigurationFields = ubx.FieldMap{
-		"Ec2Configuration": ubx.FieldSpec{
-			WireName: "ec2_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfiguration_Ec2ConfigurationFields,
-		},
-	}
+	"Ec2Configuration": ubx.FieldSpec{
+		WireName: "ec2_configuration",
+		Kind:     "object",
+		Fields:   CapacityProvider_ComputeConfiguration_Ec2ConfigurationFields,
+	},
+}
 
 var CapacityProvider_PermissionsConfigurationFields = ubx.FieldMap{
-		"CapacityProviderOperatorRoleArn": ubx.FieldSpec{WireName: "capacity_provider_operator_role_arn"},
-	}
+	"CapacityProviderOperatorRoleArn": ubx.FieldSpec{WireName: "capacity_provider_operator_role_arn"},
+}
 
 var CapacityProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CapacityProviderConfig struct {
 	// The capacity configuration for the capacity provider. Defines the compute resources for this capacity provider.
@@ -364,20 +364,20 @@ var CapacityProvider = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputeConfiguration": ubx.FieldSpec{
 			WireName: "compute_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_ComputeConfigurationFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_ComputeConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PermissionsConfiguration": ubx.FieldSpec{
 			WireName: "permissions_configuration",
-			Kind: "object",
-			Fields: CapacityProvider_PermissionsConfigurationFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_PermissionsConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CapacityProvider_TagsFields,
+			Kind:     "list",
+			Fields:   CapacityProvider_TagsFields,
 		},
 	},
 }

@@ -4,7 +4,7 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DefaultEncryptionConfiguration_ConfigurationStatus_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -20,12 +20,11 @@ type DefaultEncryptionConfigurationConfig struct {
 type DefaultEncryptionConfigurationAttrs struct {
 	// <p>Contains current status information for the configuration.</p>
 	ConfigurationStatus any
-	EncryptionType any
-	KmsKeyArn any
+	EncryptionType      any
+	KmsKeyArn           any
 }
 
 var DefaultEncryptionConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_default_encryption_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -9,14 +9,14 @@ type NetworkFirewallVpcEndpointAssociations_VpcEndpointAssociations struct {
 
 type NetworkFirewallVpcEndpointAssociationsConfig struct {
 	FirewallArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type NetworkFirewallVpcEndpointAssociationsAttrs struct {
-	FirewallArn any
-	MaxResults any
-	NextToken any
+	FirewallArn             any
+	MaxResults              any
+	NextToken               any
 	VpcEndpointAssociations any
 }
 
@@ -24,7 +24,7 @@ var NetworkFirewallVpcEndpointAssociations = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_vpc_endpoint_associations",
 	Fields: ubx.FieldMap{
 		"FirewallArn": ubx.FieldSpec{WireName: "firewall_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -126,121 +126,121 @@ type DataProvider_Tags struct {
 }
 
 var DataProvider_Settings_DocDbSettingsFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ServerName": ubx.FieldSpec{WireName: "server_name"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"DatabaseName":   ubx.FieldSpec{WireName: "database_name"},
+	"Port":           ubx.FieldSpec{WireName: "port"},
+	"ServerName":     ubx.FieldSpec{WireName: "server_name"},
+	"SslMode":        ubx.FieldSpec{WireName: "ssl_mode"},
+}
 
 var DataProvider_Settings_MariaDbSettingsFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ServerName": ubx.FieldSpec{WireName: "server_name"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"Port":           ubx.FieldSpec{WireName: "port"},
+	"ServerName":     ubx.FieldSpec{WireName: "server_name"},
+	"SslMode":        ubx.FieldSpec{WireName: "ssl_mode"},
+}
 
 var DataProvider_Settings_MongoDbSettingsFields = ubx.FieldMap{
-		"AuthMechanism": ubx.FieldSpec{WireName: "auth_mechanism"},
-		"AuthSource": ubx.FieldSpec{WireName: "auth_source"},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ServerName": ubx.FieldSpec{WireName: "server_name"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-	}
+	"AuthMechanism":  ubx.FieldSpec{WireName: "auth_mechanism"},
+	"AuthSource":     ubx.FieldSpec{WireName: "auth_source"},
+	"AuthType":       ubx.FieldSpec{WireName: "auth_type"},
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"DatabaseName":   ubx.FieldSpec{WireName: "database_name"},
+	"Port":           ubx.FieldSpec{WireName: "port"},
+	"ServerName":     ubx.FieldSpec{WireName: "server_name"},
+	"SslMode":        ubx.FieldSpec{WireName: "ssl_mode"},
+}
 
 var DataProvider_Settings_OracleSettingsFields = ubx.FieldMap{
-		"AsmServer": ubx.FieldSpec{WireName: "asm_server"},
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecretsManagerOracleAsmAccessRoleArn": ubx.FieldSpec{WireName: "secrets_manager_oracle_asm_access_role_arn"},
-		"SecretsManagerOracleAsmSecretId": ubx.FieldSpec{WireName: "secrets_manager_oracle_asm_secret_id"},
-		"SecretsManagerSecurityDbEncryptionAccessRoleArn": ubx.FieldSpec{WireName: "secrets_manager_security_db_encryption_access_role_arn"},
-		"SecretsManagerSecurityDbEncryptionSecretId": ubx.FieldSpec{WireName: "secrets_manager_security_db_encryption_secret_id"},
-		"ServerName": ubx.FieldSpec{WireName: "server_name"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-	}
+	"AsmServer":                            ubx.FieldSpec{WireName: "asm_server"},
+	"CertificateArn":                       ubx.FieldSpec{WireName: "certificate_arn"},
+	"DatabaseName":                         ubx.FieldSpec{WireName: "database_name"},
+	"Port":                                 ubx.FieldSpec{WireName: "port"},
+	"SecretsManagerOracleAsmAccessRoleArn": ubx.FieldSpec{WireName: "secrets_manager_oracle_asm_access_role_arn"},
+	"SecretsManagerOracleAsmSecretId":      ubx.FieldSpec{WireName: "secrets_manager_oracle_asm_secret_id"},
+	"SecretsManagerSecurityDbEncryptionAccessRoleArn": ubx.FieldSpec{WireName: "secrets_manager_security_db_encryption_access_role_arn"},
+	"SecretsManagerSecurityDbEncryptionSecretId":      ubx.FieldSpec{WireName: "secrets_manager_security_db_encryption_secret_id"},
+	"ServerName": ubx.FieldSpec{WireName: "server_name"},
+	"SslMode":    ubx.FieldSpec{WireName: "ssl_mode"},
+}
 
 var DataProvider_Settings_RedshiftSettingsFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ServerName": ubx.FieldSpec{WireName: "server_name"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Port":         ubx.FieldSpec{WireName: "port"},
+	"ServerName":   ubx.FieldSpec{WireName: "server_name"},
+}
 
 var DataProvider_Settings_SybaseAseSettingsFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"EncryptPassword": ubx.FieldSpec{WireName: "encrypt_password"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ServerName": ubx.FieldSpec{WireName: "server_name"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-	}
+	"CertificateArn":  ubx.FieldSpec{WireName: "certificate_arn"},
+	"DatabaseName":    ubx.FieldSpec{WireName: "database_name"},
+	"EncryptPassword": ubx.FieldSpec{WireName: "encrypt_password"},
+	"Port":            ubx.FieldSpec{WireName: "port"},
+	"ServerName":      ubx.FieldSpec{WireName: "server_name"},
+	"SslMode":         ubx.FieldSpec{WireName: "ssl_mode"},
+}
 
 var DataProvider_SettingsFields = ubx.FieldMap{
-		"DocDbSettings": ubx.FieldSpec{
-			WireName: "doc_db_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_DocDbSettingsFields,
-		},
-		"IbmDb2LuwSettings": ubx.FieldSpec{
-			WireName: "ibm_db2_luw_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_DocDbSettingsFields,
-		},
-		"IbmDb2zOsSettings": ubx.FieldSpec{
-			WireName: "ibm_db2z_os_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_DocDbSettingsFields,
-		},
-		"MariaDbSettings": ubx.FieldSpec{
-			WireName: "maria_db_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_MariaDbSettingsFields,
-		},
-		"MicrosoftSqlServerSettings": ubx.FieldSpec{
-			WireName: "microsoft_sql_server_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_DocDbSettingsFields,
-		},
-		"MongoDbSettings": ubx.FieldSpec{
-			WireName: "mongo_db_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_MongoDbSettingsFields,
-		},
-		"MySqlSettings": ubx.FieldSpec{
-			WireName: "my_sql_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_MariaDbSettingsFields,
-		},
-		"OracleSettings": ubx.FieldSpec{
-			WireName: "oracle_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_OracleSettingsFields,
-		},
-		"PostgreSqlSettings": ubx.FieldSpec{
-			WireName: "postgre_sql_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_DocDbSettingsFields,
-		},
-		"RedshiftSettings": ubx.FieldSpec{
-			WireName: "redshift_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_RedshiftSettingsFields,
-		},
-		"SybaseAseSettings": ubx.FieldSpec{
-			WireName: "sybase_ase_settings",
-			Kind: "object",
-			Fields: DataProvider_Settings_SybaseAseSettingsFields,
-		},
-	}
+	"DocDbSettings": ubx.FieldSpec{
+		WireName: "doc_db_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_DocDbSettingsFields,
+	},
+	"IbmDb2LuwSettings": ubx.FieldSpec{
+		WireName: "ibm_db2_luw_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_DocDbSettingsFields,
+	},
+	"IbmDb2zOsSettings": ubx.FieldSpec{
+		WireName: "ibm_db2z_os_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_DocDbSettingsFields,
+	},
+	"MariaDbSettings": ubx.FieldSpec{
+		WireName: "maria_db_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_MariaDbSettingsFields,
+	},
+	"MicrosoftSqlServerSettings": ubx.FieldSpec{
+		WireName: "microsoft_sql_server_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_DocDbSettingsFields,
+	},
+	"MongoDbSettings": ubx.FieldSpec{
+		WireName: "mongo_db_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_MongoDbSettingsFields,
+	},
+	"MySqlSettings": ubx.FieldSpec{
+		WireName: "my_sql_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_MariaDbSettingsFields,
+	},
+	"OracleSettings": ubx.FieldSpec{
+		WireName: "oracle_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_OracleSettingsFields,
+	},
+	"PostgreSqlSettings": ubx.FieldSpec{
+		WireName: "postgre_sql_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_DocDbSettingsFields,
+	},
+	"RedshiftSettings": ubx.FieldSpec{
+		WireName: "redshift_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_RedshiftSettingsFields,
+	},
+	"SybaseAseSettings": ubx.FieldSpec{
+		WireName: "sybase_ase_settings",
+		Kind:     "object",
+		Fields:   DataProvider_Settings_SybaseAseSettingsFields,
+	},
+}
 
 var DataProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataProviderConfig struct {
 	// The property describes an identifier for the data provider. It is used for describing/deleting/modifying can be name/arn
@@ -284,19 +284,19 @@ var DataProvider = ubx.ResourceBinding{
 	WireType: "aws_dms_data_provider",
 	Fields: ubx.FieldMap{
 		"DataProviderIdentifier": ubx.FieldSpec{WireName: "data_provider_identifier"},
-		"DataProviderName": ubx.FieldSpec{WireName: "data_provider_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"ExactSettings": ubx.FieldSpec{WireName: "exact_settings"},
+		"DataProviderName":       ubx.FieldSpec{WireName: "data_provider_name"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"Engine":                 ubx.FieldSpec{WireName: "engine"},
+		"ExactSettings":          ubx.FieldSpec{WireName: "exact_settings"},
 		"Settings": ubx.FieldSpec{
 			WireName: "settings",
-			Kind: "object",
-			Fields: DataProvider_SettingsFields,
+			Kind:     "object",
+			Fields:   DataProvider_SettingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataProvider_TagsFields,
+			Kind:     "list",
+			Fields:   DataProvider_TagsFields,
 		},
 	},
 }

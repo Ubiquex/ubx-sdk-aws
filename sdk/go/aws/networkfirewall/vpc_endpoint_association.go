@@ -11,19 +11,19 @@ type VpcEndpointAssociation_SubnetMapping struct {
 }
 
 type VpcEndpointAssociation_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var VpcEndpointAssociation_SubnetMappingFields = ubx.FieldMap{
-		"IpaddressType": ubx.FieldSpec{WireName: "ipaddress_type"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"IpaddressType": ubx.FieldSpec{WireName: "ipaddress_type"},
+	"SubnetId":      ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var VpcEndpointAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcEndpointAssociationConfig struct {
 	// The description of this VPC endpoint association. (AI-inferred)
@@ -64,13 +64,13 @@ var VpcEndpointAssociation = ubx.ResourceBinding{
 		"FirewallArn": ubx.FieldSpec{WireName: "firewall_arn"},
 		"SubnetMapping": ubx.FieldSpec{
 			WireName: "subnet_mapping",
-			Kind: "object",
-			Fields: VpcEndpointAssociation_SubnetMappingFields,
+			Kind:     "object",
+			Fields:   VpcEndpointAssociation_SubnetMappingFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcEndpointAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   VpcEndpointAssociation_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

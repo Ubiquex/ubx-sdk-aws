@@ -10,9 +10,9 @@ type ChannelPlacementGroup_Tags struct {
 }
 
 var ChannelPlacementGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelPlacementGroupConfig struct {
 	// The ID of the cluster the node is on.
@@ -48,12 +48,12 @@ var ChannelPlacementGroup = ubx.ResourceBinding{
 	WireType: "aws_media_live_channel_placement_group",
 	Fields: ubx.FieldMap{
 		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nodes": ubx.FieldSpec{WireName: "nodes"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Nodes":     ubx.FieldSpec{WireName: "nodes"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ChannelPlacementGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ChannelPlacementGroup_TagsFields,
 		},
 	},
 }

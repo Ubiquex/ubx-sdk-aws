@@ -4,11 +4,11 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integration_IntegrationResponses struct {
-	ContentHandling any
+	ContentHandling    any
 	ResponseParameters any
-	ResponseTemplates any
-	SelectionPattern any
-	StatusCode any
+	ResponseTemplates  any
+	SelectionPattern   any
+	StatusCode         any
 }
 
 type Integration_TlsConfig struct {
@@ -18,31 +18,31 @@ type Integration_TlsConfig struct {
 type IntegrationConfig struct {
 	HttpMethod any
 	ResourceId any
-	RestApiId any
+	RestApiId  any
 }
 
 type IntegrationAttrs struct {
-	CacheKeyParameters any
-	CacheNamespace any
-	ConnectionId any
-	ConnectionType any
-	ContentHandling any
-	Credentials any
-	HttpMethod any
+	CacheKeyParameters   any
+	CacheNamespace       any
+	ConnectionId         any
+	ConnectionType       any
+	ContentHandling      any
+	Credentials          any
+	HttpMethod           any
 	IntegrationResponses any
-	IntegrationTarget any
-	PassthroughBehavior any
-	RequestParameters any
-	RequestTemplates any
-	ResourceId any
+	IntegrationTarget    any
+	PassthroughBehavior  any
+	RequestParameters    any
+	RequestTemplates     any
+	ResourceId           any
 	ResponseTransferMode any
-	RestApiId any
-	TimeoutInMillis any
+	RestApiId            any
+	TimeoutInMillis      any
 	// <p>Specifies the TLS configuration for an integration.</p>
 	TlsConfig any
 	// <p>The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend; <code>AWS</code> with any Amazon Web Services service endpoints; <code>MOCK</code> for testing without actually invoking the backend; <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with the Lambda proxy integration. </p>
 	Type any
-	Uri any
+	Uri  any
 }
 
 var Integration = ubx.DataSourceBinding{
@@ -50,6 +50,6 @@ var Integration = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"RestApiId":  ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

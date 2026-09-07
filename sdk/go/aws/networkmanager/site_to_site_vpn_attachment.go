@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_Tags struct {
 	// The key of a tag associated with the proposed network function group change for the Site-to-Site VPN attachment, used to label the network function group change for tracking and management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -28,29 +28,29 @@ type SiteToSiteVpnAttachment_ProposedSegmentChange struct {
 }
 
 var SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"NetworkFunctionGroupName":   ubx.FieldSpec{WireName: "network_function_group_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 var SiteToSiteVpnAttachment_ProposedSegmentChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"SegmentName": ubx.FieldSpec{WireName: "segment_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"SegmentName":                ubx.FieldSpec{WireName: "segment_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 type SiteToSiteVpnAttachmentConfig struct {
 	// The ID of a core network where you're creating a site-to-site VPN attachment.
@@ -113,23 +113,23 @@ type SiteToSiteVpnAttachmentAttrs struct {
 var SiteToSiteVpnAttachment = ubx.ResourceBinding{
 	WireType: "aws_network_manager_site_to_site_vpn_attachment",
 	Fields: ubx.FieldMap{
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
+		"CoreNetworkId":            ubx.FieldSpec{WireName: "core_network_id"},
 		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
 		"ProposedNetworkFunctionGroupChange": ubx.FieldSpec{
 			WireName: "proposed_network_function_group_change",
-			Kind: "object",
-			Fields: SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChangeFields,
+			Kind:     "object",
+			Fields:   SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChangeFields,
 		},
 		"ProposedSegmentChange": ubx.FieldSpec{
 			WireName: "proposed_segment_change",
-			Kind: "object",
-			Fields: SiteToSiteVpnAttachment_ProposedSegmentChangeFields,
+			Kind:     "object",
+			Fields:   SiteToSiteVpnAttachment_ProposedSegmentChangeFields,
 		},
 		"RoutingPolicyLabel": ubx.FieldSpec{WireName: "routing_policy_label"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+			Kind:     "list",
+			Fields:   SiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
 		},
 		"VpnConnectionArn": ubx.FieldSpec{WireName: "vpn_connection_arn"},
 	},

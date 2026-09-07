@@ -32,24 +32,24 @@ type Branch_Tags struct {
 }
 
 var Branch_BackendFields = ubx.FieldMap{
-		"StackArn": ubx.FieldSpec{WireName: "stack_arn"},
-	}
+	"StackArn": ubx.FieldSpec{WireName: "stack_arn"},
+}
 
 var Branch_BasicAuthConfigFields = ubx.FieldMap{
-		"EnableBasicAuth": ubx.FieldSpec{WireName: "enable_basic_auth"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"EnableBasicAuth": ubx.FieldSpec{WireName: "enable_basic_auth"},
+	"Password":        ubx.FieldSpec{WireName: "password"},
+	"Username":        ubx.FieldSpec{WireName: "username"},
+}
 
 var Branch_EnvironmentVariablesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Branch_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BranchConfig struct {
 	// The unique ID of the Amplify app that this branch belongs to. (AI-inferred)
@@ -129,34 +129,34 @@ var Branch = ubx.ResourceBinding{
 		"AppId": ubx.FieldSpec{WireName: "app_id"},
 		"Backend": ubx.FieldSpec{
 			WireName: "backend",
-			Kind: "object",
-			Fields: Branch_BackendFields,
+			Kind:     "object",
+			Fields:   Branch_BackendFields,
 		},
 		"BasicAuthConfig": ubx.FieldSpec{
 			WireName: "basic_auth_config",
-			Kind: "object",
-			Fields: Branch_BasicAuthConfigFields,
+			Kind:     "object",
+			Fields:   Branch_BasicAuthConfigFields,
 		},
-		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
-		"BuildSpec": ubx.FieldSpec{WireName: "build_spec"},
-		"ComputeRoleArn": ubx.FieldSpec{WireName: "compute_role_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableAutoBuild": ubx.FieldSpec{WireName: "enable_auto_build"},
-		"EnablePerformanceMode": ubx.FieldSpec{WireName: "enable_performance_mode"},
+		"BranchName":               ubx.FieldSpec{WireName: "branch_name"},
+		"BuildSpec":                ubx.FieldSpec{WireName: "build_spec"},
+		"ComputeRoleArn":           ubx.FieldSpec{WireName: "compute_role_arn"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"EnableAutoBuild":          ubx.FieldSpec{WireName: "enable_auto_build"},
+		"EnablePerformanceMode":    ubx.FieldSpec{WireName: "enable_performance_mode"},
 		"EnablePullRequestPreview": ubx.FieldSpec{WireName: "enable_pull_request_preview"},
-		"EnableSkewProtection": ubx.FieldSpec{WireName: "enable_skew_protection"},
+		"EnableSkewProtection":     ubx.FieldSpec{WireName: "enable_skew_protection"},
 		"EnvironmentVariables": ubx.FieldSpec{
 			WireName: "environment_variables",
-			Kind: "list",
-			Fields: Branch_EnvironmentVariablesFields,
+			Kind:     "list",
+			Fields:   Branch_EnvironmentVariablesFields,
 		},
-		"Framework": ubx.FieldSpec{WireName: "framework"},
+		"Framework":                  ubx.FieldSpec{WireName: "framework"},
 		"PullRequestEnvironmentName": ubx.FieldSpec{WireName: "pull_request_environment_name"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
+		"Stage":                      ubx.FieldSpec{WireName: "stage"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Branch_TagsFields,
+			Kind:     "list",
+			Fields:   Branch_TagsFields,
 		},
 	},
 }

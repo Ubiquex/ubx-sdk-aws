@@ -4,20 +4,20 @@ package transcribestreaming
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MedicalScribeStream_MedicalScribeStreamDetails_ChannelDefinitions struct {
-	ChannelId any
+	ChannelId       any
 	ParticipantRole any
 }
 
 type MedicalScribeStream_MedicalScribeStreamDetails_EncryptionSettings struct {
 	KmsEncryptionContext any
-	KmsKeyId any
+	KmsKeyId             any
 }
 
 type MedicalScribeStream_MedicalScribeStreamDetails_PostStreamAnalyticsResult_ClinicalNoteGenerationResult struct {
 	ClinicalNoteOutputLocation any
-	FailureReason any
-	Status any
-	TranscriptOutputLocation any
+	FailureReason              any
+	Status                     any
+	TranscriptOutputLocation   any
 }
 
 type MedicalScribeStream_MedicalScribeStreamDetails_PostStreamAnalyticsResult struct {
@@ -26,7 +26,7 @@ type MedicalScribeStream_MedicalScribeStreamDetails_PostStreamAnalyticsResult st
 }
 
 type MedicalScribeStream_MedicalScribeStreamDetails_PostStreamAnalyticsSettings_ClinicalNoteGenerationSettings struct {
-	NoteTemplate any
+	NoteTemplate     any
 	OutputBucketName any
 }
 
@@ -38,23 +38,23 @@ type MedicalScribeStream_MedicalScribeStreamDetails_PostStreamAnalyticsSettings 
 type MedicalScribeStream_MedicalScribeStreamDetails struct {
 	ChannelDefinitions any
 	// <p>Contains encryption related settings to be used for data encryption with Key Management Service, including KmsEncryptionContext and KmsKeyId. The KmsKeyId is required, while KmsEncryptionContext is optional for additional layer of security. </p> <p>By default, Amazon Web Services HealthScribe provides encryption at rest to protect sensitive customer data using Amazon S3-managed keys. HealthScribe uses the KMS key you specify as a second layer of encryption.</p> <p> Your <code>ResourceAccessRoleArn</code> must permission to use your KMS key. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/health-scribe-encryption.html">Data Encryption at rest for Amazon Web Services HealthScribe</a>. </p>
-	EncryptionSettings any
-	LanguageCode any
-	MediaEncoding any
-	MediaSampleRateHertz any
+	EncryptionSettings           any
+	LanguageCode                 any
+	MediaEncoding                any
+	MediaSampleRateHertz         any
 	MedicalScribeContextProvided any
 	// <p>Contains details for the result of post-stream analytics. </p>
 	PostStreamAnalyticsResult any
 	// <p>The settings for post-stream analytics. </p>
 	PostStreamAnalyticsSettings any
-	ResourceAccessRoleArn any
-	SessionId any
-	StreamCreatedAt any
-	StreamEndedAt any
-	StreamStatus any
-	VocabularyFilterMethod any
-	VocabularyFilterName any
-	VocabularyName any
+	ResourceAccessRoleArn       any
+	SessionId                   any
+	StreamCreatedAt             any
+	StreamEndedAt               any
+	StreamStatus                any
+	VocabularyFilterMethod      any
+	VocabularyFilterName        any
+	VocabularyName              any
 }
 
 type MedicalScribeStreamConfig struct {
@@ -64,7 +64,7 @@ type MedicalScribeStreamConfig struct {
 type MedicalScribeStreamAttrs struct {
 	// <p>Contains details about a Amazon Web Services HealthScribe streaming session.</p>
 	MedicalScribeStreamDetails any
-	SessionId any
+	SessionId                  any
 }
 
 var MedicalScribeStream = ubx.DataSourceBinding{

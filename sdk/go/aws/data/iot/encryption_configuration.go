@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EncryptionConfiguration_ConfigurationDetails struct {
 	ConfigurationStatus any
-	ErrorCode any
-	ErrorMessage any
+	ErrorCode           any
+	ErrorMessage        any
 }
 
 type EncryptionConfigurationConfig struct {
@@ -15,14 +15,13 @@ type EncryptionConfigurationConfig struct {
 type EncryptionConfigurationAttrs struct {
 	// <p>The encryption configuration details that include the status information of the Key Management Service (KMS) key and the KMS access role.</p>
 	ConfigurationDetails any
-	EncryptionType any
-	KmsAccessRoleArn any
-	KmsKeyArn any
-	LastModifiedDate any
+	EncryptionType       any
+	KmsAccessRoleArn     any
+	KmsKeyArn            any
+	LastModifiedDate     any
 }
 
 var EncryptionConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_iot_encryption_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

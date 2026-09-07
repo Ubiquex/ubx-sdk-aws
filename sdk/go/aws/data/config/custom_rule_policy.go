@@ -9,7 +9,7 @@ type CustomRulePolicyConfig struct {
 
 type CustomRulePolicyAttrs struct {
 	ConfigRuleName any
-	PolicyText any
+	PolicyText     any
 }
 
 var CustomRulePolicy = ubx.DataSourceBinding{

@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PromptFileConfig struct {
 	InstanceId any
-	PromptId any
+	PromptId   any
 }
 
 type PromptFileAttrs struct {
-	InstanceId any
+	InstanceId         any
 	LastModifiedRegion any
-	LastModifiedTime any
-	PromptId any
+	LastModifiedTime   any
+	PromptId           any
 	PromptPresignedUrl any
 }
 
@@ -20,6 +20,6 @@ var PromptFile = ubx.DataSourceBinding{
 	WireType: "aws_connect_prompt_file",
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"PromptId": ubx.FieldSpec{WireName: "prompt_id"},
+		"PromptId":   ubx.FieldSpec{WireName: "prompt_id"},
 	},
 }

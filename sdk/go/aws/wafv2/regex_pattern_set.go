@@ -11,9 +11,9 @@ type RegexPatternSet_Tags struct {
 }
 
 var RegexPatternSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RegexPatternSetConfig struct {
 	// Description of the entity.
@@ -48,14 +48,14 @@ type RegexPatternSetAttrs struct {
 var RegexPatternSet = ubx.ResourceBinding{
 	WireType: "aws_wafv2_regex_pattern_set",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"RegularExpressionList": ubx.FieldSpec{WireName: "regular_expression_list"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":                 ubx.FieldSpec{WireName: "scope"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RegexPatternSet_TagsFields,
+			Kind:     "list",
+			Fields:   RegexPatternSet_TagsFields,
 		},
 	},
 }

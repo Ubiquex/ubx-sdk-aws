@@ -4,14 +4,14 @@ package devopsagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Service_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Service_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceConfig struct {
 	// The name of the private connection to use for OAuth token exchange requests only. Cannot be specified when PrivateConnectionName is provided.
@@ -59,14 +59,14 @@ var Service = ubx.ResourceBinding{
 	WireType: "aws_dev_ops_agent_service",
 	Fields: ubx.FieldMap{
 		"ExchangeUrlPrivateConnectionName": ubx.FieldSpec{WireName: "exchange_url_private_connection_name"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"PrivateConnectionName": ubx.FieldSpec{WireName: "private_connection_name"},
-		"ServiceDetails": ubx.FieldSpec{WireName: "service_details"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
+		"KmsKeyArn":                        ubx.FieldSpec{WireName: "kms_key_arn"},
+		"PrivateConnectionName":            ubx.FieldSpec{WireName: "private_connection_name"},
+		"ServiceDetails":                   ubx.FieldSpec{WireName: "service_details"},
+		"ServiceType":                      ubx.FieldSpec{WireName: "service_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Service_TagsFields,
+			Kind:     "list",
+			Fields:   Service_TagsFields,
 		},
 		"TargetUrlPrivateConnectionName": ubx.FieldSpec{WireName: "target_url_private_connection_name"},
 	},

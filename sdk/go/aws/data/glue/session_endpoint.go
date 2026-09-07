@@ -4,9 +4,9 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SessionEndpoint_SparkConnect struct {
-	AuthToken any
+	AuthToken               any
 	AuthTokenExpirationTime any
-	Url any
+	Url                     any
 }
 
 type SessionEndpointConfig struct {

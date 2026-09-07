@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LabelDetection_GetRequestMetadata struct {
 	AggregateBy any
-	SortBy any
+	SortBy      any
 }
 
 type LabelDetection_Labels_Label_Aliases struct {
@@ -14,47 +14,47 @@ type LabelDetection_Labels_Label_Aliases struct {
 
 type LabelDetection_Labels_Label_Instances_BoundingBox struct {
 	Height any
-	Left any
-	Top any
-	Width any
+	Left   any
+	Top    any
+	Width  any
 }
 
 type LabelDetection_Labels_Label_Instances_DominantColors struct {
-	Blue any
-	Csscolor any
-	Green any
-	HexCode any
-	PixelPercent any
-	Red any
+	Blue            any
+	Csscolor        any
+	Green           any
+	HexCode         any
+	PixelPercent    any
+	Red             any
 	SimplifiedColor any
 }
 
 type LabelDetection_Labels_Label_Instances struct {
-	BoundingBox any
-	Confidence any
+	BoundingBox    any
+	Confidence     any
 	DominantColors any
 }
 
 type LabelDetection_Labels_Label struct {
-	Aliases any
+	Aliases    any
 	Categories any
 	Confidence any
-	Instances any
-	Name any
-	Parents any
+	Instances  any
+	Name       any
+	Parents    any
 }
 
 type LabelDetection_Labels struct {
-	DurationMillis any
-	EndTimestampMillis any
-	Label any
+	DurationMillis       any
+	EndTimestampMillis   any
+	Label                any
 	StartTimestampMillis any
-	Timestamp any
+	Timestamp            any
 }
 
 type LabelDetection_Video_S3Object struct {
-	Bucket any
-	Name any
+	Bucket  any
+	Name    any
 	Version any
 }
 
@@ -64,36 +64,36 @@ type LabelDetection_Video struct {
 }
 
 type LabelDetection_VideoMetadata struct {
-	Codec any
-	ColorRange any
+	Codec          any
+	ColorRange     any
 	DurationMillis any
-	Format any
-	FrameHeight any
-	FrameRate any
-	FrameWidth any
+	Format         any
+	FrameHeight    any
+	FrameRate      any
+	FrameWidth     any
 }
 
 type LabelDetectionConfig struct {
 	AggregateBy any
-	JobId any
-	MaxResults any
-	NextToken any
-	SortBy any
+	JobId       any
+	MaxResults  any
+	NextToken   any
+	SortBy      any
 }
 
 type LabelDetectionAttrs struct {
 	AggregateBy any
 	// <p>Contains metadata about a label detection request, including the SortBy and AggregateBy options.</p>
 	GetRequestMetadata any
-	JobId any
-	JobStatus any
-	JobTag any
-	LabelModelVersion any
-	Labels any
-	MaxResults any
-	NextToken any
-	SortBy any
-	StatusMessage any
+	JobId              any
+	JobStatus          any
+	JobTag             any
+	LabelModelVersion  any
+	Labels             any
+	MaxResults         any
+	NextToken          any
+	SortBy             any
+	StatusMessage      any
 	// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
 	Video any
 	// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
@@ -104,9 +104,9 @@ var LabelDetection = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_label_detection",
 	Fields: ubx.FieldMap{
 		"AggregateBy": ubx.FieldSpec{WireName: "aggregate_by"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"JobId":       ubx.FieldSpec{WireName: "job_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":      ubx.FieldSpec{WireName: "sort_by"},
 	},
 }

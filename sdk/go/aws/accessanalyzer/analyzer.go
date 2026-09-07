@@ -23,7 +23,7 @@ type Analyzer_AnalyzerConfiguration_InternalAccessConfiguration struct {
 }
 
 type Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -74,83 +74,83 @@ type Analyzer_ArchiveRules struct {
 }
 
 var Analyzer_AnalyzerConfiguration_InternalAccessConfiguration_InternalAccessAnalysisRule_InclusionsFields = ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"AccountIds":    ubx.FieldSpec{WireName: "account_ids"},
+	"ResourceArns":  ubx.FieldSpec{WireName: "resource_arns"},
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var Analyzer_AnalyzerConfiguration_InternalAccessConfiguration_InternalAccessAnalysisRuleFields = ubx.FieldMap{
-		"Inclusions": ubx.FieldSpec{
-			WireName: "inclusions",
-			Kind: "list",
-			Fields: Analyzer_AnalyzerConfiguration_InternalAccessConfiguration_InternalAccessAnalysisRule_InclusionsFields,
-		},
-	}
+	"Inclusions": ubx.FieldSpec{
+		WireName: "inclusions",
+		Kind:     "list",
+		Fields:   Analyzer_AnalyzerConfiguration_InternalAccessConfiguration_InternalAccessAnalysisRule_InclusionsFields,
+	},
+}
 
 var Analyzer_AnalyzerConfiguration_InternalAccessConfigurationFields = ubx.FieldMap{
-		"InternalAccessAnalysisRule": ubx.FieldSpec{
-			WireName: "internal_access_analysis_rule",
-			Kind: "object",
-			Fields: Analyzer_AnalyzerConfiguration_InternalAccessConfiguration_InternalAccessAnalysisRuleFields,
-		},
-	}
+	"InternalAccessAnalysisRule": ubx.FieldSpec{
+		WireName: "internal_access_analysis_rule",
+		Kind:     "object",
+		Fields:   Analyzer_AnalyzerConfiguration_InternalAccessConfiguration_InternalAccessAnalysisRuleFields,
+	},
+}
 
 var Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_ExclusionsFields = ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"ResourceTags": ubx.FieldSpec{WireName: "resource_tags"},
-	}
+	"AccountIds":   ubx.FieldSpec{WireName: "account_ids"},
+	"ResourceTags": ubx.FieldSpec{WireName: "resource_tags"},
+}
 
 var Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRuleFields = ubx.FieldMap{
-		"Exclusions": ubx.FieldSpec{
-			WireName: "exclusions",
-			Kind: "list",
-			Fields: Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_ExclusionsFields,
-		},
-	}
+	"Exclusions": ubx.FieldSpec{
+		WireName: "exclusions",
+		Kind:     "list",
+		Fields:   Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_ExclusionsFields,
+	},
+}
 
 var Analyzer_AnalyzerConfiguration_UnusedAccessConfigurationFields = ubx.FieldMap{
-		"AnalysisRule": ubx.FieldSpec{
-			WireName: "analysis_rule",
-			Kind: "object",
-			Fields: Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRuleFields,
-		},
-		"UnusedAccessAge": ubx.FieldSpec{WireName: "unused_access_age"},
-	}
+	"AnalysisRule": ubx.FieldSpec{
+		WireName: "analysis_rule",
+		Kind:     "object",
+		Fields:   Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRuleFields,
+	},
+	"UnusedAccessAge": ubx.FieldSpec{WireName: "unused_access_age"},
+}
 
 var Analyzer_AnalyzerConfigurationFields = ubx.FieldMap{
-		"InternalAccessConfiguration": ubx.FieldSpec{
-			WireName: "internal_access_configuration",
-			Kind: "object",
-			Fields: Analyzer_AnalyzerConfiguration_InternalAccessConfigurationFields,
-		},
-		"UnusedAccessConfiguration": ubx.FieldSpec{
-			WireName: "unused_access_configuration",
-			Kind: "object",
-			Fields: Analyzer_AnalyzerConfiguration_UnusedAccessConfigurationFields,
-		},
-	}
+	"InternalAccessConfiguration": ubx.FieldSpec{
+		WireName: "internal_access_configuration",
+		Kind:     "object",
+		Fields:   Analyzer_AnalyzerConfiguration_InternalAccessConfigurationFields,
+	},
+	"UnusedAccessConfiguration": ubx.FieldSpec{
+		WireName: "unused_access_configuration",
+		Kind:     "object",
+		Fields:   Analyzer_AnalyzerConfiguration_UnusedAccessConfigurationFields,
+	},
+}
 
 var Analyzer_ArchiveRules_FilterFields = ubx.FieldMap{
-		"Contains": ubx.FieldSpec{WireName: "contains"},
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Exists": ubx.FieldSpec{WireName: "exists"},
-		"Neq": ubx.FieldSpec{WireName: "neq"},
-		"Property": ubx.FieldSpec{WireName: "property"},
-	}
+	"Contains": ubx.FieldSpec{WireName: "contains"},
+	"Eq":       ubx.FieldSpec{WireName: "eq"},
+	"Exists":   ubx.FieldSpec{WireName: "exists"},
+	"Neq":      ubx.FieldSpec{WireName: "neq"},
+	"Property": ubx.FieldSpec{WireName: "property"},
+}
 
 var Analyzer_ArchiveRulesFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "list",
-			Fields: Analyzer_ArchiveRules_FilterFields,
-		},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "list",
+		Fields:   Analyzer_ArchiveRules_FilterFields,
+	},
+	"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+}
 
 var Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AnalyzerConfig struct {
 	// The configuration for the analyzer
@@ -185,19 +185,19 @@ var Analyzer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AnalyzerConfiguration": ubx.FieldSpec{
 			WireName: "analyzer_configuration",
-			Kind: "object",
-			Fields: Analyzer_AnalyzerConfigurationFields,
+			Kind:     "object",
+			Fields:   Analyzer_AnalyzerConfigurationFields,
 		},
 		"AnalyzerName": ubx.FieldSpec{WireName: "analyzer_name"},
 		"ArchiveRules": ubx.FieldSpec{
 			WireName: "archive_rules",
-			Kind: "list",
-			Fields: Analyzer_ArchiveRulesFields,
+			Kind:     "list",
+			Fields:   Analyzer_ArchiveRulesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   Analyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions_ResourceTagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

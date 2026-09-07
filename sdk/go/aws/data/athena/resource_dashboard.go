@@ -9,7 +9,7 @@ type ResourceDashboardConfig struct {
 
 type ResourceDashboardAttrs struct {
 	ResourceArn any
-	Url any
+	Url         any
 }
 
 var ResourceDashboard = ubx.DataSourceBinding{

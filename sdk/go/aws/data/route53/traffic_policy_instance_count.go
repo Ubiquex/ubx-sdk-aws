@@ -12,6 +12,5 @@ type TrafficPolicyInstanceCountAttrs struct {
 
 var TrafficPolicyInstanceCount = ubx.DataSourceBinding{
 	WireType: "aws_route53_traffic_policy_instance_count",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

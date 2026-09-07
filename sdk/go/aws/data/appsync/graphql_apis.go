@@ -5,96 +5,96 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GraphqlApis_GraphqlApis_AdditionalAuthenticationProviders_LambdaAuthorizerConfig struct {
 	AuthorizerResultTtlInSeconds any
-	AuthorizerUri any
+	AuthorizerUri                any
 	IdentityValidationExpression any
 }
 
 type GraphqlApis_GraphqlApis_AdditionalAuthenticationProviders_OpenIdconnectConfig struct {
-	AuthTtl any
+	AuthTtl  any
 	ClientId any
-	IatTtl any
-	Issuer any
+	IatTtl   any
+	Issuer   any
 }
 
 type GraphqlApis_GraphqlApis_AdditionalAuthenticationProviders_UserPoolConfig struct {
 	AppIdClientRegex any
-	AwsRegion any
-	UserPoolId any
+	AwsRegion        any
+	UserPoolId       any
 }
 
 type GraphqlApis_GraphqlApis_AdditionalAuthenticationProviders struct {
-	AuthenticationType any
+	AuthenticationType     any
 	LambdaAuthorizerConfig any
-	OpenIdconnectConfig any
-	UserPoolConfig any
+	OpenIdconnectConfig    any
+	UserPoolConfig         any
 }
 
 type GraphqlApis_GraphqlApis_EnhancedMetricsConfig struct {
 	DataSourceLevelMetricsBehavior any
-	OperationLevelMetricsConfig any
-	ResolverLevelMetricsBehavior any
+	OperationLevelMetricsConfig    any
+	ResolverLevelMetricsBehavior   any
 }
 
 type GraphqlApis_GraphqlApis_LogConfig struct {
 	CloudWatchLogsRoleArn any
 	ExcludeVerboseContent any
-	FieldLogLevel any
+	FieldLogLevel         any
 }
 
 type GraphqlApis_GraphqlApis_UserPoolConfig struct {
 	AppIdClientRegex any
-	AwsRegion any
-	DefaultAction any
-	UserPoolId any
+	AwsRegion        any
+	DefaultAction    any
+	UserPoolId       any
 }
 
 type GraphqlApis_GraphqlApis struct {
 	AdditionalAuthenticationProviders any
-	ApiId any
-	ApiType any
-	Arn any
-	AuthenticationType any
-	Dns any
-	EnhancedMetricsConfig any
-	IntrospectionConfig any
-	LambdaAuthorizerConfig any
-	LogConfig any
-	MergedApiExecutionRoleArn any
-	Name any
-	OpenIdconnectConfig any
-	Owner any
-	OwnerContact any
-	QueryDepthLimit any
-	ResolverCountLimit any
-	Tags any
-	Uris any
-	UserPoolConfig any
-	Visibility any
-	WafWebAclArn any
-	XrayEnabled any
+	ApiId                             any
+	ApiType                           any
+	Arn                               any
+	AuthenticationType                any
+	Dns                               any
+	EnhancedMetricsConfig             any
+	IntrospectionConfig               any
+	LambdaAuthorizerConfig            any
+	LogConfig                         any
+	MergedApiExecutionRoleArn         any
+	Name                              any
+	OpenIdconnectConfig               any
+	Owner                             any
+	OwnerContact                      any
+	QueryDepthLimit                   any
+	ResolverCountLimit                any
+	Tags                              any
+	Uris                              any
+	UserPoolConfig                    any
+	Visibility                        any
+	WafWebAclArn                      any
+	XrayEnabled                       any
 }
 
 type GraphqlApisConfig struct {
-	ApiType any
+	ApiType    any
 	MaxResults any
-	NextToken any
-	Owner any
+	NextToken  any
+	Owner      any
 }
 
 type GraphqlApisAttrs struct {
-	ApiType any
+	ApiType     any
 	GraphqlApis any
-	MaxResults any
-	NextToken any
-	Owner any
+	MaxResults  any
+	NextToken   any
+	Owner       any
 }
 
 var GraphqlApis = ubx.DataSourceBinding{
 	WireType: "aws_appsync_graphql_apis",
 	Fields: ubx.FieldMap{
-		"ApiType": ubx.FieldSpec{WireName: "api_type"},
+		"ApiType":    ubx.FieldSpec{WireName: "api_type"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Owner":      ubx.FieldSpec{WireName: "owner"},
 	},
 }

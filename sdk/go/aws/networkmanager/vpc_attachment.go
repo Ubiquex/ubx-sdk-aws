@@ -40,36 +40,36 @@ type VpcAttachment_ProposedSegmentChange struct {
 }
 
 var VpcAttachment_OptionsFields = ubx.FieldMap{
-		"ApplianceModeSupport": ubx.FieldSpec{WireName: "appliance_mode_support"},
-		"DnsSupport": ubx.FieldSpec{WireName: "dns_support"},
-		"Ipv6Support": ubx.FieldSpec{WireName: "ipv6_support"},
-		"SecurityGroupReferencingSupport": ubx.FieldSpec{WireName: "security_group_referencing_support"},
-	}
+	"ApplianceModeSupport":            ubx.FieldSpec{WireName: "appliance_mode_support"},
+	"DnsSupport":                      ubx.FieldSpec{WireName: "dns_support"},
+	"Ipv6Support":                     ubx.FieldSpec{WireName: "ipv6_support"},
+	"SecurityGroupReferencingSupport": ubx.FieldSpec{WireName: "security_group_referencing_support"},
+}
 
 var VpcAttachment_ProposedNetworkFunctionGroupChange_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var VpcAttachment_ProposedNetworkFunctionGroupChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: VpcAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"NetworkFunctionGroupName":   ubx.FieldSpec{WireName: "network_function_group_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   VpcAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 var VpcAttachment_ProposedSegmentChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"SegmentName": ubx.FieldSpec{WireName: "segment_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: VpcAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"SegmentName":                ubx.FieldSpec{WireName: "segment_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   VpcAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 type VpcAttachmentConfig struct {
 	// The ID of a core network for the VPC attachment.
@@ -141,25 +141,25 @@ var VpcAttachment = ubx.ResourceBinding{
 		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: VpcAttachment_OptionsFields,
+			Kind:     "object",
+			Fields:   VpcAttachment_OptionsFields,
 		},
 		"ProposedNetworkFunctionGroupChange": ubx.FieldSpec{
 			WireName: "proposed_network_function_group_change",
-			Kind: "object",
-			Fields: VpcAttachment_ProposedNetworkFunctionGroupChangeFields,
+			Kind:     "object",
+			Fields:   VpcAttachment_ProposedNetworkFunctionGroupChangeFields,
 		},
 		"ProposedSegmentChange": ubx.FieldSpec{
 			WireName: "proposed_segment_change",
-			Kind: "object",
-			Fields: VpcAttachment_ProposedSegmentChangeFields,
+			Kind:     "object",
+			Fields:   VpcAttachment_ProposedSegmentChangeFields,
 		},
 		"RoutingPolicyLabel": ubx.FieldSpec{WireName: "routing_policy_label"},
-		"SubnetArns": ubx.FieldSpec{WireName: "subnet_arns"},
+		"SubnetArns":         ubx.FieldSpec{WireName: "subnet_arns"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+			Kind:     "list",
+			Fields:   VpcAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
 		},
 		"VpcArn": ubx.FieldSpec{WireName: "vpc_arn"},
 	},

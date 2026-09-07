@@ -4,13 +4,13 @@ package mediastore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricPolicy_MetricPolicy_MetricPolicyRules struct {
-	ObjectGroup any
+	ObjectGroup     any
 	ObjectGroupName any
 }
 
 type MetricPolicy_MetricPolicy struct {
 	ContainerLevelMetrics any
-	MetricPolicyRules any
+	MetricPolicyRules     any
 }
 
 type MetricPolicyConfig struct {

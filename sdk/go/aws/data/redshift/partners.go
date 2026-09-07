@@ -4,35 +4,35 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Partners_PartnerIntegrationInfoList struct {
-	CreatedAt any
-	DatabaseName any
-	PartnerName any
-	Status any
+	CreatedAt     any
+	DatabaseName  any
+	PartnerName   any
+	Status        any
 	StatusMessage any
-	UpdatedAt any
+	UpdatedAt     any
 }
 
 type PartnersConfig struct {
-	AccountId any
+	AccountId         any
 	ClusterIdentifier any
-	DatabaseName any
-	PartnerName any
+	DatabaseName      any
+	PartnerName       any
 }
 
 type PartnersAttrs struct {
-	AccountId any
-	ClusterIdentifier any
-	DatabaseName any
+	AccountId                  any
+	ClusterIdentifier          any
+	DatabaseName               any
 	PartnerIntegrationInfoList any
-	PartnerName any
+	PartnerName                any
 }
 
 var Partners = ubx.DataSourceBinding{
 	WireType: "aws_redshift_partners",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"PartnerName": ubx.FieldSpec{WireName: "partner_name"},
+		"DatabaseName":      ubx.FieldSpec{WireName: "database_name"},
+		"PartnerName":       ubx.FieldSpec{WireName: "partner_name"},
 	},
 }

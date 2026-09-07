@@ -18,14 +18,14 @@ type SigningProfile_Tags struct {
 }
 
 var SigningProfile_SignatureValidityPeriodFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var SigningProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SigningProfileConfig struct {
 	// The platform ID that determines the signing platform (e.g., AWSLambda or Notation) and the cryptographic algorithm used by the signing profile. (AI-inferred)
@@ -59,13 +59,13 @@ var SigningProfile = ubx.ResourceBinding{
 		"PlatformId": ubx.FieldSpec{WireName: "platform_id"},
 		"SignatureValidityPeriod": ubx.FieldSpec{
 			WireName: "signature_validity_period",
-			Kind: "object",
-			Fields: SigningProfile_SignatureValidityPeriodFields,
+			Kind:     "object",
+			Fields:   SigningProfile_SignatureValidityPeriodFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SigningProfile_TagsFields,
+			Kind:     "list",
+			Fields:   SigningProfile_TagsFields,
 		},
 	},
 }

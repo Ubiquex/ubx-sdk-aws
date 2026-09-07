@@ -26,7 +26,7 @@ type ResourceSpecificLoggingAttrs struct {
 var ResourceSpecificLogging = ubx.ResourceBinding{
 	WireType: "aws_io_t_resource_specific_logging",
 	Fields: ubx.FieldMap{
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
+		"LogLevel":   ubx.FieldSpec{WireName: "log_level"},
 		"TargetName": ubx.FieldSpec{WireName: "target_name"},
 		"TargetType": ubx.FieldSpec{WireName: "target_type"},
 	},

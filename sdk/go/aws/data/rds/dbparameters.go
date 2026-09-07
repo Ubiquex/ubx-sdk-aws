@@ -4,44 +4,44 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dbparameters_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type Dbparameters_Parameters struct {
-	AllowedValues any
-	ApplyMethod any
-	ApplyType any
-	DataType any
-	Description any
-	IsModifiable any
+	AllowedValues        any
+	ApplyMethod          any
+	ApplyType            any
+	DataType             any
+	Description          any
+	IsModifiable         any
 	MinimumEngineVersion any
-	ParameterName any
-	ParameterValue any
-	Source any
+	ParameterName        any
+	ParameterValue       any
+	Source               any
 	SupportedEngineModes any
 }
 
 var Dbparameters_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DbparametersConfig struct {
 	DbparameterGroupName any
-	Filters any
-	Marker any
-	MaxRecords any
-	Source any
+	Filters              any
+	Marker               any
+	MaxRecords           any
+	Source               any
 }
 
 type DbparametersAttrs struct {
 	DbparameterGroupName any
-	Filters any
-	Marker any
-	MaxRecords any
-	Parameters any
-	Source any
+	Filters              any
+	Marker               any
+	MaxRecords           any
+	Parameters           any
+	Source               any
 }
 
 var Dbparameters = ubx.DataSourceBinding{
@@ -50,11 +50,11 @@ var Dbparameters = ubx.DataSourceBinding{
 		"DbparameterGroupName": ubx.FieldSpec{WireName: "dbparameter_group_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Dbparameters_FiltersFields,
+			Kind:     "list",
+			Fields:   Dbparameters_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Source":     ubx.FieldSpec{WireName: "source"},
 	},
 }

@@ -9,8 +9,8 @@ type AssociatedRoleConfig struct {
 
 type AssociatedRoleAttrs struct {
 	AssociatedAt any
-	GroupId any
-	RoleArn any
+	GroupId      any
+	RoleArn      any
 }
 
 var AssociatedRole = ubx.DataSourceBinding{

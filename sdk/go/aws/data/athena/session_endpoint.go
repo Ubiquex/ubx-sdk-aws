@@ -8,10 +8,10 @@ type SessionEndpointConfig struct {
 }
 
 type SessionEndpointAttrs struct {
-	AuthToken any
+	AuthToken               any
 	AuthTokenExpirationTime any
-	EndpointUrl any
-	SessionId any
+	EndpointUrl             any
+	SessionId               any
 }
 
 var SessionEndpoint = ubx.DataSourceBinding{

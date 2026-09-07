@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentTextDetection_Blocks_Geometry_BoundingBox struct {
 	Height any
-	Left any
-	Top any
-	Width any
+	Left   any
+	Top    any
+	Width  any
 }
 
 type DocumentTextDetection_Blocks_Geometry_Polygon struct {
@@ -16,38 +16,38 @@ type DocumentTextDetection_Blocks_Geometry_Polygon struct {
 }
 
 type DocumentTextDetection_Blocks_Geometry struct {
-	BoundingBox any
-	Polygon any
+	BoundingBox   any
+	Polygon       any
 	RotationAngle any
 }
 
 type DocumentTextDetection_Blocks_Query struct {
 	Alias any
 	Pages any
-	Text any
+	Text  any
 }
 
 type DocumentTextDetection_Blocks_Relationships struct {
-	Ids any
+	Ids  any
 	Type any
 }
 
 type DocumentTextDetection_Blocks struct {
-	BlockType any
-	ColumnIndex any
-	ColumnSpan any
-	Confidence any
-	EntityTypes any
-	Geometry any
-	Id any
-	Page any
-	Query any
-	Relationships any
-	RowIndex any
-	RowSpan any
+	BlockType       any
+	ColumnIndex     any
+	ColumnSpan      any
+	Confidence      any
+	EntityTypes     any
+	Geometry        any
+	Id              any
+	Page            any
+	Query           any
+	Relationships   any
+	RowIndex        any
+	RowSpan         any
 	SelectionStatus any
-	Text any
-	TextType any
+	Text            any
+	TextType        any
 }
 
 type DocumentTextDetection_DocumentMetadata struct {
@@ -56,33 +56,33 @@ type DocumentTextDetection_DocumentMetadata struct {
 
 type DocumentTextDetection_Warnings struct {
 	ErrorCode any
-	Pages any
+	Pages     any
 }
 
 type DocumentTextDetectionConfig struct {
-	JobId any
+	JobId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DocumentTextDetectionAttrs struct {
-	Blocks any
+	Blocks                         any
 	DetectDocumentTextModelVersion any
 	// <p>Information about the input document.</p>
 	DocumentMetadata any
-	JobId any
-	JobStatus any
-	MaxResults any
-	NextToken any
-	StatusMessage any
-	Warnings any
+	JobId            any
+	JobStatus        any
+	MaxResults       any
+	NextToken        any
+	StatusMessage    any
+	Warnings         any
 }
 
 var DocumentTextDetection = ubx.DataSourceBinding{
 	WireType: "aws_textract_document_text_detection",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

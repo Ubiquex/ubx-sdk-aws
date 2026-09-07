@@ -20,17 +20,17 @@ type LocationNfs_Tags struct {
 }
 
 var LocationNfs_MountOptionsFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var LocationNfs_OnPremConfigFields = ubx.FieldMap{
-		"AgentArns": ubx.FieldSpec{WireName: "agent_arns"},
-	}
+	"AgentArns": ubx.FieldSpec{WireName: "agent_arns"},
+}
 
 var LocationNfs_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationNfsConfig struct {
 	// The NFS mount options that DataSync can use to mount your NFS share.
@@ -67,20 +67,20 @@ var LocationNfs = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"MountOptions": ubx.FieldSpec{
 			WireName: "mount_options",
-			Kind: "object",
-			Fields: LocationNfs_MountOptionsFields,
+			Kind:     "object",
+			Fields:   LocationNfs_MountOptionsFields,
 		},
 		"OnPremConfig": ubx.FieldSpec{
 			WireName: "on_prem_config",
-			Kind: "object",
-			Fields: LocationNfs_OnPremConfigFields,
+			Kind:     "object",
+			Fields:   LocationNfs_OnPremConfigFields,
 		},
 		"ServerHostname": ubx.FieldSpec{WireName: "server_hostname"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"Subdirectory":   ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationNfs_TagsFields,
+			Kind:     "list",
+			Fields:   LocationNfs_TagsFields,
 		},
 	},
 }

@@ -11,9 +11,9 @@ type Oidcprovider_Tags struct {
 }
 
 var Oidcprovider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OidcproviderConfig struct {
 	// The list of client IDs (also known as audiences) that are allowed to use the OIDC provider to authenticate to AWS. (AI-inferred)
@@ -45,10 +45,10 @@ var Oidcprovider = ubx.ResourceBinding{
 		"ClientIdList": ubx.FieldSpec{WireName: "client_id_list"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Oidcprovider_TagsFields,
+			Kind:     "list",
+			Fields:   Oidcprovider_TagsFields,
 		},
 		"ThumbprintList": ubx.FieldSpec{WireName: "thumbprint_list"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Url":            ubx.FieldSpec{WireName: "url"},
 	},
 }

@@ -32,10 +32,10 @@ type ProfilePermissionAttrs struct {
 var ProfilePermission = ubx.ResourceBinding{
 	WireType: "aws_signer_profile_permission",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
+		"Action":         ubx.FieldSpec{WireName: "action"},
+		"Principal":      ubx.FieldSpec{WireName: "principal"},
+		"ProfileName":    ubx.FieldSpec{WireName: "profile_name"},
 		"ProfileVersion": ubx.FieldSpec{WireName: "profile_version"},
-		"StatementId": ubx.FieldSpec{WireName: "statement_id"},
+		"StatementId":    ubx.FieldSpec{WireName: "statement_id"},
 	},
 }

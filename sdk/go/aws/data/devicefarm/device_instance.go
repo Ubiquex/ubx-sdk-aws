@@ -4,22 +4,22 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeviceInstance_DeviceInstance_InstanceProfile struct {
-	Arn any
-	Description any
+	Arn                           any
+	Description                   any
 	ExcludeAppPackagesFromCleanup any
-	Name any
-	PackageCleanup any
-	RebootAfterUse any
+	Name                          any
+	PackageCleanup                any
+	RebootAfterUse                any
 }
 
 type DeviceInstance_DeviceInstance struct {
-	Arn any
+	Arn       any
 	DeviceArn any
 	// <p>Represents the instance profile.</p>
 	InstanceProfile any
-	Labels any
-	Status any
-	Udid any
+	Labels          any
+	Status          any
+	Udid            any
 }
 
 type DeviceInstanceConfig struct {

@@ -4,20 +4,20 @@ package ssm_sap
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmSapResourcePermissionConfig struct {
-	ActionType any
+	ActionType  any
 	ResourceArn any
 }
 
 type SsmSapResourcePermissionAttrs struct {
-	ActionType any
-	Policy any
+	ActionType  any
+	Policy      any
 	ResourceArn any
 }
 
 var SsmSapResourcePermission = ubx.DataSourceBinding{
 	WireType: "aws_ssm_sap_resource_permission",
 	Fields: ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
+		"ActionType":  ubx.FieldSpec{WireName: "action_type"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

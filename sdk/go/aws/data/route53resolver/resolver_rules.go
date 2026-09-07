@@ -4,51 +4,51 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverRules_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ResolverRules_ResolverRules_TargetIps struct {
-	Ip any
-	Ipv6 any
-	Port any
-	Protocol any
+	Ip                   any
+	Ipv6                 any
+	Port                 any
+	Protocol             any
 	ServerNameIndication any
 }
 
 type ResolverRules_ResolverRules struct {
-	Arn any
-	CreationTime any
-	CreatorRequestId any
-	DelegationRecord any
-	DomainName any
-	Id any
-	ModificationTime any
-	Name any
-	OwnerId any
+	Arn                any
+	CreationTime       any
+	CreatorRequestId   any
+	DelegationRecord   any
+	DomainName         any
+	Id                 any
+	ModificationTime   any
+	Name               any
+	OwnerId            any
 	ResolverEndpointId any
-	RuleType any
-	ShareStatus any
-	Status any
-	StatusMessage any
-	TargetIps any
+	RuleType           any
+	ShareStatus        any
+	Status             any
+	StatusMessage      any
+	TargetIps          any
 }
 
 var ResolverRules_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ResolverRulesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResolverRulesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	ResolverRules any
 }
 
@@ -57,10 +57,10 @@ var ResolverRules = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ResolverRules_FiltersFields,
+			Kind:     "list",
+			Fields:   ResolverRules_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

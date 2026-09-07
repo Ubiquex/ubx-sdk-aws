@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Versions_Versions struct {
 	ExpirationDate any
-	Version any
+	Version        any
 }
 
 type VersionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VersionsAttrs struct {
 	MaxResults any
-	NextToken any
-	Versions any
+	NextToken  any
+	Versions   any
 }
 
 var Versions = ubx.DataSourceBinding{
 	WireType: "aws_mediaconvert_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

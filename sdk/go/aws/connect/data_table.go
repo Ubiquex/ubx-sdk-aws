@@ -10,14 +10,14 @@ type DataTable_LockVersion struct {
 
 type DataTable_Tags struct {
 	// The key of a tag to attach to the Amazon Connect data table, used for organizing and identifying the resource within AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var DataTable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataTableConfig struct {
 	// The description of the Data Table.
@@ -68,14 +68,14 @@ var DataTable = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataTable_TagsFields,
+			Kind:     "list",
+			Fields:   DataTable_TagsFields,
 		},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"TimeZone":       ubx.FieldSpec{WireName: "time_zone"},
 		"ValueLockLevel": ubx.FieldSpec{WireName: "value_lock_level"},
 	},
 }

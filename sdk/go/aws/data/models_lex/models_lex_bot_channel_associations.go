@@ -4,41 +4,41 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexBotChannelAssociations_BotChannelAssociations struct {
-	BotAlias any
+	BotAlias         any
 	BotConfiguration any
-	BotName any
-	CreatedDate any
-	Description any
-	FailureReason any
-	Name any
-	Status any
-	Type any
+	BotName          any
+	CreatedDate      any
+	Description      any
+	FailureReason    any
+	Name             any
+	Status           any
+	Type             any
 }
 
 type ModelsLexBotChannelAssociationsConfig struct {
-	BotAlias any
-	BotName any
-	MaxResults any
+	BotAlias     any
+	BotName      any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 type ModelsLexBotChannelAssociationsAttrs struct {
-	BotAlias any
+	BotAlias               any
 	BotChannelAssociations any
-	BotName any
-	MaxResults any
-	NameContains any
-	NextToken any
+	BotName                any
+	MaxResults             any
+	NameContains           any
+	NextToken              any
 }
 
 var ModelsLexBotChannelAssociations = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_bot_channel_associations",
 	Fields: ubx.FieldMap{
-		"BotAlias": ubx.FieldSpec{WireName: "bot_alias"},
-		"BotName": ubx.FieldSpec{WireName: "bot_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"BotAlias":     ubx.FieldSpec{WireName: "bot_alias"},
+		"BotName":      ubx.FieldSpec{WireName: "bot_name"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

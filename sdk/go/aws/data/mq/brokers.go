@@ -4,31 +4,31 @@ package mq
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Brokers_BrokerSummaries struct {
-	BrokerArn any
-	BrokerId any
-	BrokerName any
-	BrokerState any
-	Created any
-	DeploymentMode any
-	EngineType any
+	BrokerArn        any
+	BrokerId         any
+	BrokerName       any
+	BrokerState      any
+	Created          any
+	DeploymentMode   any
+	EngineType       any
 	HostInstanceType any
 }
 
 type BrokersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BrokersAttrs struct {
 	BrokerSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 var Brokers = ubx.DataSourceBinding{
 	WireType: "aws_mq_brokers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -34,29 +34,29 @@ type InfrastructureConfiguration_Placement struct {
 }
 
 var InfrastructureConfiguration_InstanceMetadataOptionsFields = ubx.FieldMap{
-		"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
-		"HttpTokens": ubx.FieldSpec{WireName: "http_tokens"},
-	}
+	"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
+	"HttpTokens":              ubx.FieldSpec{WireName: "http_tokens"},
+}
 
 var InfrastructureConfiguration_Logging_S3LogsFields = ubx.FieldMap{
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
-	}
+	"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3KeyPrefix":  ubx.FieldSpec{WireName: "s3_key_prefix"},
+}
 
 var InfrastructureConfiguration_LoggingFields = ubx.FieldMap{
-		"S3Logs": ubx.FieldSpec{
-			WireName: "s3_logs",
-			Kind: "object",
-			Fields: InfrastructureConfiguration_Logging_S3LogsFields,
-		},
-	}
+	"S3Logs": ubx.FieldSpec{
+		WireName: "s3_logs",
+		Kind:     "object",
+		Fields:   InfrastructureConfiguration_Logging_S3LogsFields,
+	},
+}
 
 var InfrastructureConfiguration_PlacementFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"HostId": ubx.FieldSpec{WireName: "host_id"},
-		"HostResourceGroupArn": ubx.FieldSpec{WireName: "host_resource_group_arn"},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
-	}
+	"AvailabilityZone":     ubx.FieldSpec{WireName: "availability_zone"},
+	"HostId":               ubx.FieldSpec{WireName: "host_id"},
+	"HostResourceGroupArn": ubx.FieldSpec{WireName: "host_resource_group_arn"},
+	"Tenancy":              ubx.FieldSpec{WireName: "tenancy"},
+}
 
 type InfrastructureConfigurationConfig struct {
 	// The description of the infrastructure configuration.
@@ -128,28 +128,28 @@ var InfrastructureConfiguration = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InstanceMetadataOptions": ubx.FieldSpec{
 			WireName: "instance_metadata_options",
-			Kind: "object",
-			Fields: InfrastructureConfiguration_InstanceMetadataOptionsFields,
+			Kind:     "object",
+			Fields:   InfrastructureConfiguration_InstanceMetadataOptionsFields,
 		},
 		"InstanceProfileName": ubx.FieldSpec{WireName: "instance_profile_name"},
-		"InstanceTypes": ubx.FieldSpec{WireName: "instance_types"},
-		"KeyPair": ubx.FieldSpec{WireName: "key_pair"},
+		"InstanceTypes":       ubx.FieldSpec{WireName: "instance_types"},
+		"KeyPair":             ubx.FieldSpec{WireName: "key_pair"},
 		"Logging": ubx.FieldSpec{
 			WireName: "logging",
-			Kind: "object",
-			Fields: InfrastructureConfiguration_LoggingFields,
+			Kind:     "object",
+			Fields:   InfrastructureConfiguration_LoggingFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Placement": ubx.FieldSpec{
 			WireName: "placement",
-			Kind: "object",
-			Fields: InfrastructureConfiguration_PlacementFields,
+			Kind:     "object",
+			Fields:   InfrastructureConfiguration_PlacementFields,
 		},
-		"ResourceTags": ubx.FieldSpec{WireName: "resource_tags"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"ResourceTags":               ubx.FieldSpec{WireName: "resource_tags"},
+		"SecurityGroupIds":           ubx.FieldSpec{WireName: "security_group_ids"},
+		"SnsTopicArn":                ubx.FieldSpec{WireName: "sns_topic_arn"},
+		"SubnetId":                   ubx.FieldSpec{WireName: "subnet_id"},
+		"Tags":                       ubx.FieldSpec{WireName: "tags"},
 		"TerminateInstanceOnFailure": ubx.FieldSpec{WireName: "terminate_instance_on_failure"},
 	},
 }

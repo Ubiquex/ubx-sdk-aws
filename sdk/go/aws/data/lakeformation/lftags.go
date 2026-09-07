@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Lftags_Lftags struct {
 	CatalogId any
-	TagKey any
+	TagKey    any
 	TagValues any
 }
 
 type LftagsConfig struct {
-	CatalogId any
-	MaxResults any
-	NextToken any
+	CatalogId         any
+	MaxResults        any
+	NextToken         any
 	ResourceShareType any
 }
 
 type LftagsAttrs struct {
-	CatalogId any
-	Lftags any
-	MaxResults any
-	NextToken any
+	CatalogId         any
+	Lftags            any
+	MaxResults        any
+	NextToken         any
 	ResourceShareType any
 }
 
 var Lftags = ubx.DataSourceBinding{
 	WireType: "aws_lakeformation_lftags",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CatalogId":         ubx.FieldSpec{WireName: "catalog_id"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"ResourceShareType": ubx.FieldSpec{WireName: "resource_share_type"},
 	},
 }

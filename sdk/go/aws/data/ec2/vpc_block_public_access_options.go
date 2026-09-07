@@ -4,14 +4,14 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcBlockPublicAccessOptions_VpcBlockPublicAccessOptions struct {
-	AwsAccountId any
-	AwsRegion any
-	ExclusionsAllowed any
+	AwsAccountId             any
+	AwsRegion                any
+	ExclusionsAllowed        any
 	InternetGatewayBlockMode any
-	LastUpdateTimestamp any
-	ManagedBy any
-	Reason any
-	State any
+	LastUpdateTimestamp      any
+	ManagedBy                any
+	Reason                   any
+	State                    any
 }
 
 type VpcBlockPublicAccessOptionsConfig struct {

@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Parameters_Parameters_NodeTypeSpecificValues struct {
 	NodeType any
-	Value any
+	Value    any
 }
 
 type Parameters_Parameters struct {
-	AllowedValues any
-	ChangeType any
-	DataType any
-	Description any
-	IsModifiable any
+	AllowedValues          any
+	ChangeType             any
+	DataType               any
+	Description            any
+	IsModifiable           any
 	NodeTypeSpecificValues any
-	ParameterName any
-	ParameterType any
-	ParameterValue any
-	Source any
+	ParameterName          any
+	ParameterType          any
+	ParameterValue         any
+	Source                 any
 }
 
 type ParametersConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	ParameterGroupName any
-	Source any
+	Source             any
 }
 
 type ParametersAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	ParameterGroupName any
-	Parameters any
-	Source any
+	Parameters         any
+	Source             any
 }
 
 var Parameters = ubx.DataSourceBinding{
 	WireType: "aws_dax_parameters",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"ParameterGroupName": ubx.FieldSpec{WireName: "parameter_group_name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Source":             ubx.FieldSpec{WireName: "source"},
 	},
 }

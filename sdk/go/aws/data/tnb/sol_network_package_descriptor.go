@@ -9,8 +9,8 @@ type SolNetworkPackageDescriptorConfig struct {
 
 type SolNetworkPackageDescriptorAttrs struct {
 	ContentType any
-	Nsd any
-	NsdInfoId any
+	Nsd         any
+	NsdInfoId   any
 }
 
 var SolNetworkPackageDescriptor = ubx.DataSourceBinding{

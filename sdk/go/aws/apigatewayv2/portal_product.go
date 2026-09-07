@@ -4,14 +4,14 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PortalProduct_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var PortalProduct_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PortalProductConfig struct {
 	// A description of the portal product.
@@ -44,8 +44,8 @@ var PortalProduct = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PortalProduct_TagsFields,
+			Kind:     "list",
+			Fields:   PortalProduct_TagsFields,
 		},
 	},
 }

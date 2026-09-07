@@ -4,7 +4,7 @@ package workspacesweb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrowserSettings_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -18,15 +18,15 @@ type BrowserSettings_WebContentFilteringPolicy struct {
 }
 
 var BrowserSettings_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var BrowserSettings_WebContentFilteringPolicyFields = ubx.FieldMap{
-		"AllowedUrls": ubx.FieldSpec{WireName: "allowed_urls"},
-		"BlockedCategories": ubx.FieldSpec{WireName: "blocked_categories"},
-		"BlockedUrls": ubx.FieldSpec{WireName: "blocked_urls"},
-	}
+	"AllowedUrls":       ubx.FieldSpec{WireName: "allowed_urls"},
+	"BlockedCategories": ubx.FieldSpec{WireName: "blocked_categories"},
+	"BlockedUrls":       ubx.FieldSpec{WireName: "blocked_urls"},
+}
 
 type BrowserSettingsConfig struct {
 	// Adds key-value pairs to the AWS KMS encryption context used to encrypt the browser settings resource, enabling additional contextual information for auditing and access control. (AI-inferred)
@@ -62,17 +62,17 @@ var BrowserSettings = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_web_browser_settings",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"BrowserPolicy": ubx.FieldSpec{WireName: "browser_policy"},
-		"CustomerManagedKey": ubx.FieldSpec{WireName: "customer_managed_key"},
+		"BrowserPolicy":               ubx.FieldSpec{WireName: "browser_policy"},
+		"CustomerManagedKey":          ubx.FieldSpec{WireName: "customer_managed_key"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: BrowserSettings_TagsFields,
+			Kind:     "list",
+			Fields:   BrowserSettings_TagsFields,
 		},
 		"WebContentFilteringPolicy": ubx.FieldSpec{
 			WireName: "web_content_filtering_policy",
-			Kind: "object",
-			Fields: BrowserSettings_WebContentFilteringPolicyFields,
+			Kind:     "object",
+			Fields:   BrowserSettings_WebContentFilteringPolicyFields,
 		},
 	},
 }

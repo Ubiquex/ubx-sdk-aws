@@ -4,7 +4,7 @@ package dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TimeToLive_TimeToLiveDescription struct {
-	AttributeName any
+	AttributeName    any
 	TimeToLiveStatus any
 }
 

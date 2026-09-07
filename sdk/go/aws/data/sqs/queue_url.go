@@ -4,20 +4,20 @@ package sqs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueueUrlConfig struct {
-	QueueName any
+	QueueName              any
 	QueueOwnerAwsaccountId any
 }
 
 type QueueUrlAttrs struct {
-	QueueName any
+	QueueName              any
 	QueueOwnerAwsaccountId any
-	QueueUrl any
+	QueueUrl               any
 }
 
 var QueueUrl = ubx.DataSourceBinding{
 	WireType: "aws_sqs_queue_url",
 	Fields: ubx.FieldMap{
-		"QueueName": ubx.FieldSpec{WireName: "queue_name"},
+		"QueueName":              ubx.FieldSpec{WireName: "queue_name"},
 		"QueueOwnerAwsaccountId": ubx.FieldSpec{WireName: "queue_owner_awsaccount_id"},
 	},
 }

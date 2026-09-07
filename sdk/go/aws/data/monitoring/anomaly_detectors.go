@@ -4,17 +4,17 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnomalyDetectors_AnomalyDetectors_Configuration_ExcludedTimeRanges struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type AnomalyDetectors_AnomalyDetectors_Configuration struct {
 	ExcludedTimeRanges any
-	MetricTimezone any
+	MetricTimezone     any
 }
 
 type AnomalyDetectors_AnomalyDetectors_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -25,23 +25,23 @@ type AnomalyDetectors_AnomalyDetectors_MetricCharacteristics struct {
 type AnomalyDetectors_AnomalyDetectors_MetricMathAnomalyDetector_MetricDataQueries_MetricStat_Metric struct {
 	Dimensions any
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type AnomalyDetectors_AnomalyDetectors_MetricMathAnomalyDetector_MetricDataQueries_MetricStat struct {
 	Metric any
 	Period any
-	Stat any
-	Unit any
+	Stat   any
+	Unit   any
 }
 
 type AnomalyDetectors_AnomalyDetectors_MetricMathAnomalyDetector_MetricDataQueries struct {
-	AccountId any
+	AccountId  any
 	Expression any
-	Id any
-	Label any
+	Id         any
+	Label      any
 	MetricStat any
-	Period any
+	Period     any
 	ReturnData any
 }
 
@@ -50,65 +50,65 @@ type AnomalyDetectors_AnomalyDetectors_MetricMathAnomalyDetector struct {
 }
 
 type AnomalyDetectors_AnomalyDetectors_SingleMetricAnomalyDetector struct {
-	AccountId any
+	AccountId  any
 	Dimensions any
 	MetricName any
-	Namespace any
-	Stat any
+	Namespace  any
+	Stat       any
 }
 
 type AnomalyDetectors_AnomalyDetectors struct {
-	AnomalyDetectorId any
-	Configuration any
-	Dimensions any
-	MetricCharacteristics any
-	MetricMathAnomalyDetector any
-	MetricName any
-	Namespace any
+	AnomalyDetectorId           any
+	Configuration               any
+	Dimensions                  any
+	MetricCharacteristics       any
+	MetricMathAnomalyDetector   any
+	MetricName                  any
+	Namespace                   any
 	SingleMetricAnomalyDetector any
-	Stat any
-	StateValue any
+	Stat                        any
+	StateValue                  any
 }
 
 var AnomalyDetectors_AnomalyDetectors_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AnomalyDetectorsConfig struct {
-	AnomalyDetectorIds any
+	AnomalyDetectorIds   any
 	AnomalyDetectorTypes any
-	Dimensions any
-	MaxResults any
-	MetricName any
-	Namespace any
-	NextToken any
+	Dimensions           any
+	MaxResults           any
+	MetricName           any
+	Namespace            any
+	NextToken            any
 }
 
 type AnomalyDetectorsAttrs struct {
-	AnomalyDetectorIds any
+	AnomalyDetectorIds   any
 	AnomalyDetectorTypes any
-	AnomalyDetectors any
-	Dimensions any
-	MaxResults any
-	MetricName any
-	Namespace any
-	NextToken any
+	AnomalyDetectors     any
+	Dimensions           any
+	MaxResults           any
+	MetricName           any
+	Namespace            any
+	NextToken            any
 }
 
 var AnomalyDetectors = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_anomaly_detectors",
 	Fields: ubx.FieldMap{
-		"AnomalyDetectorIds": ubx.FieldSpec{WireName: "anomaly_detector_ids"},
+		"AnomalyDetectorIds":   ubx.FieldSpec{WireName: "anomaly_detector_ids"},
 		"AnomalyDetectorTypes": ubx.FieldSpec{WireName: "anomaly_detector_types"},
 		"Dimensions": ubx.FieldSpec{
 			WireName: "dimensions",
-			Kind: "list",
-			Fields: AnomalyDetectors_AnomalyDetectors_DimensionsFields,
+			Kind:     "list",
+			Fields:   AnomalyDetectors_AnomalyDetectors_DimensionsFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDbengineVersion_Tags struct {
 	// The key of a tag attached to this AWS RDS Custom DB engine version, used to organize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var CustomDbengineVersion_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomDbengineVersionConfig struct {
 	// The S3 object keys of the database installation files located in the specified S3 bucket (and optional prefix) that define the installation files for this custom DB engine version. (AI-inferred)
@@ -77,21 +77,21 @@ type CustomDbengineVersionAttrs struct {
 var CustomDbengineVersion = ubx.ResourceBinding{
 	WireType: "aws_rds_custom_dbengine_version",
 	Fields: ubx.FieldMap{
-		"DatabaseInstallationFiles": ubx.FieldSpec{WireName: "database_installation_files"},
+		"DatabaseInstallationFiles":             ubx.FieldSpec{WireName: "database_installation_files"},
 		"DatabaseInstallationFilesS3BucketName": ubx.FieldSpec{WireName: "database_installation_files_s3_bucket_name"},
-		"DatabaseInstallationFilesS3Prefix": ubx.FieldSpec{WireName: "database_installation_files_s3_prefix"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
-		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
-		"Manifest": ubx.FieldSpec{WireName: "manifest"},
+		"DatabaseInstallationFilesS3Prefix":     ubx.FieldSpec{WireName: "database_installation_files_s3_prefix"},
+		"Description":                           ubx.FieldSpec{WireName: "description"},
+		"Engine":                                ubx.FieldSpec{WireName: "engine"},
+		"EngineVersion":                         ubx.FieldSpec{WireName: "engine_version"},
+		"ImageId":                               ubx.FieldSpec{WireName: "image_id"},
+		"KmskeyId":                              ubx.FieldSpec{WireName: "kmskey_id"},
+		"Manifest":                              ubx.FieldSpec{WireName: "manifest"},
 		"SourceCustomDbEngineVersionIdentifier": ubx.FieldSpec{WireName: "source_custom_db_engine_version_identifier"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":                                ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomDbengineVersion_TagsFields,
+			Kind:     "list",
+			Fields:   CustomDbengineVersion_TagsFields,
 		},
 		"UseAwsProvidedLatestImage": ubx.FieldSpec{WireName: "use_aws_provided_latest_image"},
 	},

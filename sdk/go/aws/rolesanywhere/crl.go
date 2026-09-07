@@ -11,9 +11,9 @@ type Crl_Tags struct {
 }
 
 var Crl_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CrlConfig struct {
 	// The PEM-encoded certificate revocation list (CRL) data that is uploaded to AWS Roles Anywhere, containing the list of revoked certificates. (AI-inferred)
@@ -48,11 +48,11 @@ var Crl = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CrlData": ubx.FieldSpec{WireName: "crl_data"},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Crl_TagsFields,
+			Kind:     "list",
+			Fields:   Crl_TagsFields,
 		},
 		"TrustAnchorArn": ubx.FieldSpec{WireName: "trust_anchor_arn"},
 	},

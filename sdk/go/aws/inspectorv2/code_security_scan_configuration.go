@@ -30,31 +30,31 @@ type CodeSecurityScanConfiguration_ScopeSettings struct {
 }
 
 var CodeSecurityScanConfiguration_Configuration_ContinuousIntegrationScanConfigurationFields = ubx.FieldMap{
-		"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
-	}
+	"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
+}
 
 var CodeSecurityScanConfiguration_Configuration_PeriodicScanConfigurationFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"FrequencyExpression": ubx.FieldSpec{WireName: "frequency_expression"},
-	}
+	"Frequency":           ubx.FieldSpec{WireName: "frequency"},
+	"FrequencyExpression": ubx.FieldSpec{WireName: "frequency_expression"},
+}
 
 var CodeSecurityScanConfiguration_ConfigurationFields = ubx.FieldMap{
-		"ContinuousIntegrationScanConfiguration": ubx.FieldSpec{
-			WireName: "continuous_integration_scan_configuration",
-			Kind: "object",
-			Fields: CodeSecurityScanConfiguration_Configuration_ContinuousIntegrationScanConfigurationFields,
-		},
-		"PeriodicScanConfiguration": ubx.FieldSpec{
-			WireName: "periodic_scan_configuration",
-			Kind: "object",
-			Fields: CodeSecurityScanConfiguration_Configuration_PeriodicScanConfigurationFields,
-		},
-		"RuleSetCategories": ubx.FieldSpec{WireName: "rule_set_categories"},
-	}
+	"ContinuousIntegrationScanConfiguration": ubx.FieldSpec{
+		WireName: "continuous_integration_scan_configuration",
+		Kind:     "object",
+		Fields:   CodeSecurityScanConfiguration_Configuration_ContinuousIntegrationScanConfigurationFields,
+	},
+	"PeriodicScanConfiguration": ubx.FieldSpec{
+		WireName: "periodic_scan_configuration",
+		Kind:     "object",
+		Fields:   CodeSecurityScanConfiguration_Configuration_PeriodicScanConfigurationFields,
+	},
+	"RuleSetCategories": ubx.FieldSpec{WireName: "rule_set_categories"},
+}
 
 var CodeSecurityScanConfiguration_ScopeSettingsFields = ubx.FieldMap{
-		"ProjectSelectionScope": ubx.FieldSpec{WireName: "project_selection_scope"},
-	}
+	"ProjectSelectionScope": ubx.FieldSpec{WireName: "project_selection_scope"},
+}
 
 type CodeSecurityScanConfigurationConfig struct {
 	// Configuration is an object that specifies how Inspector v2 performs code security scans, including the scan mode (continuous or on a schedule) and any associated scheduling details such as daily start time. (AI-inferred)
@@ -89,15 +89,15 @@ var CodeSecurityScanConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: CodeSecurityScanConfiguration_ConfigurationFields,
+			Kind:     "object",
+			Fields:   CodeSecurityScanConfiguration_ConfigurationFields,
 		},
 		"Level": ubx.FieldSpec{WireName: "level"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"ScopeSettings": ubx.FieldSpec{
 			WireName: "scope_settings",
-			Kind: "object",
-			Fields: CodeSecurityScanConfiguration_ScopeSettingsFields,
+			Kind:     "object",
+			Fields:   CodeSecurityScanConfiguration_ScopeSettingsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

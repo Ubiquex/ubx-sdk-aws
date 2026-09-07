@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationSignalsGroupingAttributeDefinitions_GroupingAttributeDefinitions struct {
 	DefaultGroupingValue any
-	GroupingName any
-	GroupingSourceKeys any
+	GroupingName         any
+	GroupingSourceKeys   any
 }
 
 type ApplicationSignalsGroupingAttributeDefinitionsConfig struct {
-	AwsAccountId any
+	AwsAccountId          any
 	IncludeLinkedAccounts any
-	NextToken any
+	NextToken             any
 }
 
 type ApplicationSignalsGroupingAttributeDefinitionsAttrs struct {
-	AwsAccountId any
+	AwsAccountId                 any
 	GroupingAttributeDefinitions any
-	IncludeLinkedAccounts any
-	NextToken any
-	UpdatedAt any
+	IncludeLinkedAccounts        any
+	NextToken                    any
+	UpdatedAt                    any
 }
 
 var ApplicationSignalsGroupingAttributeDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_application_signals_grouping_attribute_definitions",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+		"AwsAccountId":          ubx.FieldSpec{WireName: "aws_account_id"},
 		"IncludeLinkedAccounts": ubx.FieldSpec{WireName: "include_linked_accounts"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

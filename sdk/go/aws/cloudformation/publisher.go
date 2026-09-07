@@ -29,6 +29,6 @@ var Publisher = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_publisher",
 	Fields: ubx.FieldMap{
 		"AcceptTermsAndConditions": ubx.FieldSpec{WireName: "accept_terms_and_conditions"},
-		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
+		"ConnectionArn":            ubx.FieldSpec{WireName: "connection_arn"},
 	},
 }

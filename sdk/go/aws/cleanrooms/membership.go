@@ -76,95 +76,95 @@ type Membership_Tags struct {
 }
 
 var Membership_DefaultJobResultConfiguration_OutputConfiguration_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-	}
+	"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+	"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
+}
 
 var Membership_DefaultJobResultConfiguration_OutputConfigurationFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Membership_DefaultJobResultConfiguration_OutputConfiguration_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Membership_DefaultJobResultConfiguration_OutputConfiguration_S3Fields,
+	},
+}
 
 var Membership_DefaultJobResultConfigurationFields = ubx.FieldMap{
-		"OutputConfiguration": ubx.FieldSpec{
-			WireName: "output_configuration",
-			Kind: "object",
-			Fields: Membership_DefaultJobResultConfiguration_OutputConfigurationFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"OutputConfiguration": ubx.FieldSpec{
+		WireName: "output_configuration",
+		Kind:     "object",
+		Fields:   Membership_DefaultJobResultConfiguration_OutputConfigurationFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Membership_DefaultResultConfiguration_OutputConfiguration_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-		"ResultFormat": ubx.FieldSpec{WireName: "result_format"},
-		"SingleFileOutput": ubx.FieldSpec{WireName: "single_file_output"},
-	}
+	"Bucket":           ubx.FieldSpec{WireName: "bucket"},
+	"KeyPrefix":        ubx.FieldSpec{WireName: "key_prefix"},
+	"ResultFormat":     ubx.FieldSpec{WireName: "result_format"},
+	"SingleFileOutput": ubx.FieldSpec{WireName: "single_file_output"},
+}
 
 var Membership_DefaultResultConfiguration_OutputConfigurationFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Membership_DefaultResultConfiguration_OutputConfiguration_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Membership_DefaultResultConfiguration_OutputConfiguration_S3Fields,
+	},
+}
 
 var Membership_DefaultResultConfigurationFields = ubx.FieldMap{
-		"OutputConfiguration": ubx.FieldSpec{
-			WireName: "output_configuration",
-			Kind: "object",
-			Fields: Membership_DefaultResultConfiguration_OutputConfigurationFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"OutputConfiguration": ubx.FieldSpec{
+		WireName: "output_configuration",
+		Kind:     "object",
+		Fields:   Membership_DefaultResultConfiguration_OutputConfigurationFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Membership_PaymentConfiguration_JobComputeFields = ubx.FieldMap{
-		"IsResponsible": ubx.FieldSpec{WireName: "is_responsible"},
-	}
+	"IsResponsible": ubx.FieldSpec{WireName: "is_responsible"},
+}
 
 var Membership_PaymentConfiguration_MachineLearningFields = ubx.FieldMap{
-		"ModelInference": ubx.FieldSpec{
-			WireName: "model_inference",
-			Kind: "object",
-			Fields: Membership_PaymentConfiguration_JobComputeFields,
-		},
-		"ModelTraining": ubx.FieldSpec{
-			WireName: "model_training",
-			Kind: "object",
-			Fields: Membership_PaymentConfiguration_JobComputeFields,
-		},
-		"SyntheticDataGeneration": ubx.FieldSpec{
-			WireName: "synthetic_data_generation",
-			Kind: "object",
-			Fields: Membership_PaymentConfiguration_JobComputeFields,
-		},
-	}
+	"ModelInference": ubx.FieldSpec{
+		WireName: "model_inference",
+		Kind:     "object",
+		Fields:   Membership_PaymentConfiguration_JobComputeFields,
+	},
+	"ModelTraining": ubx.FieldSpec{
+		WireName: "model_training",
+		Kind:     "object",
+		Fields:   Membership_PaymentConfiguration_JobComputeFields,
+	},
+	"SyntheticDataGeneration": ubx.FieldSpec{
+		WireName: "synthetic_data_generation",
+		Kind:     "object",
+		Fields:   Membership_PaymentConfiguration_JobComputeFields,
+	},
+}
 
 var Membership_PaymentConfigurationFields = ubx.FieldMap{
-		"JobCompute": ubx.FieldSpec{
-			WireName: "job_compute",
-			Kind: "object",
-			Fields: Membership_PaymentConfiguration_JobComputeFields,
-		},
-		"MachineLearning": ubx.FieldSpec{
-			WireName: "machine_learning",
-			Kind: "object",
-			Fields: Membership_PaymentConfiguration_MachineLearningFields,
-		},
-		"QueryCompute": ubx.FieldSpec{
-			WireName: "query_compute",
-			Kind: "object",
-			Fields: Membership_PaymentConfiguration_JobComputeFields,
-		},
-	}
+	"JobCompute": ubx.FieldSpec{
+		WireName: "job_compute",
+		Kind:     "object",
+		Fields:   Membership_PaymentConfiguration_JobComputeFields,
+	},
+	"MachineLearning": ubx.FieldSpec{
+		WireName: "machine_learning",
+		Kind:     "object",
+		Fields:   Membership_PaymentConfiguration_MachineLearningFields,
+	},
+	"QueryCompute": ubx.FieldSpec{
+		WireName: "query_compute",
+		Kind:     "object",
+		Fields:   Membership_PaymentConfiguration_JobComputeFields,
+	},
+}
 
 var Membership_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MembershipConfig struct {
 	// The unique identifier of the AWS Clean Rooms collaboration that this membership is associated with. (AI-inferred)
@@ -218,26 +218,26 @@ var Membership = ubx.ResourceBinding{
 		"CollaborationIdentifier": ubx.FieldSpec{WireName: "collaboration_identifier"},
 		"DefaultJobResultConfiguration": ubx.FieldSpec{
 			WireName: "default_job_result_configuration",
-			Kind: "object",
-			Fields: Membership_DefaultJobResultConfigurationFields,
+			Kind:     "object",
+			Fields:   Membership_DefaultJobResultConfigurationFields,
 		},
 		"DefaultResultConfiguration": ubx.FieldSpec{
 			WireName: "default_result_configuration",
-			Kind: "object",
-			Fields: Membership_DefaultResultConfigurationFields,
+			Kind:     "object",
+			Fields:   Membership_DefaultResultConfigurationFields,
 		},
 		"IsMetricsEnabled": ubx.FieldSpec{WireName: "is_metrics_enabled"},
-		"JobLogStatus": ubx.FieldSpec{WireName: "job_log_status"},
+		"JobLogStatus":     ubx.FieldSpec{WireName: "job_log_status"},
 		"PaymentConfiguration": ubx.FieldSpec{
 			WireName: "payment_configuration",
-			Kind: "object",
-			Fields: Membership_PaymentConfigurationFields,
+			Kind:     "object",
+			Fields:   Membership_PaymentConfigurationFields,
 		},
 		"QueryLogStatus": ubx.FieldSpec{WireName: "query_log_status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Membership_TagsFields,
+			Kind:     "list",
+			Fields:   Membership_TagsFields,
 		},
 	},
 }

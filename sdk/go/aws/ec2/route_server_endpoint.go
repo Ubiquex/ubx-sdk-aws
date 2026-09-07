@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteServerEndpoint_Tags struct {
 	// The key of a tag attached to the EC2 Route Server Endpoint, used to organize and identify the resource in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var RouteServerEndpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RouteServerEndpointConfig struct {
 	// Route Server ID
@@ -46,11 +46,11 @@ var RouteServerEndpoint = ubx.ResourceBinding{
 	WireType: "aws_ec2_route_server_endpoint",
 	Fields: ubx.FieldMap{
 		"RouteServerId": ubx.FieldSpec{WireName: "route_server_id"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":      ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RouteServerEndpoint_TagsFields,
+			Kind:     "list",
+			Fields:   RouteServerEndpoint_TagsFields,
 		},
 	},
 }

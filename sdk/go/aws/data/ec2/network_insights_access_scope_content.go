@@ -4,23 +4,23 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkInsightsAccessScopeContent_NetworkInsightsAccessScopeContent_ExcludePaths_Destination_PacketHeaderStatement struct {
-	DestinationAddresses any
-	DestinationPorts any
+	DestinationAddresses   any
+	DestinationPorts       any
 	DestinationPrefixLists any
-	Protocols any
-	SourceAddresses any
-	SourcePorts any
-	SourcePrefixLists any
+	Protocols              any
+	SourceAddresses        any
+	SourcePorts            any
+	SourcePrefixLists      any
 }
 
 type NetworkInsightsAccessScopeContent_NetworkInsightsAccessScopeContent_ExcludePaths_Destination_ResourceStatement struct {
 	ResourceTypes any
-	Resources any
+	Resources     any
 }
 
 type NetworkInsightsAccessScopeContent_NetworkInsightsAccessScopeContent_ExcludePaths_Destination struct {
 	PacketHeaderStatement any
-	ResourceStatement any
+	ResourceStatement     any
 }
 
 type NetworkInsightsAccessScopeContent_NetworkInsightsAccessScopeContent_ExcludePaths_ThroughResources struct {
@@ -28,19 +28,19 @@ type NetworkInsightsAccessScopeContent_NetworkInsightsAccessScopeContent_Exclude
 }
 
 type NetworkInsightsAccessScopeContent_NetworkInsightsAccessScopeContent_ExcludePaths struct {
-	Destination any
-	Source any
+	Destination      any
+	Source           any
 	ThroughResources any
 }
 
 type NetworkInsightsAccessScopeContent_NetworkInsightsAccessScopeContent struct {
-	ExcludePaths any
-	MatchPaths any
+	ExcludePaths                 any
+	MatchPaths                   any
 	NetworkInsightsAccessScopeId any
 }
 
 type NetworkInsightsAccessScopeContentConfig struct {
-	DryRun any
+	DryRun                       any
 	NetworkInsightsAccessScopeId any
 }
 
@@ -48,13 +48,13 @@ type NetworkInsightsAccessScopeContentAttrs struct {
 	DryRun any
 	// <p>Describes the Network Access Scope content.</p>
 	NetworkInsightsAccessScopeContent any
-	NetworkInsightsAccessScopeId any
+	NetworkInsightsAccessScopeId      any
 }
 
 var NetworkInsightsAccessScopeContent = ubx.DataSourceBinding{
 	WireType: "aws_ec2_network_insights_access_scope_content",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":                       ubx.FieldSpec{WireName: "dry_run"},
 		"NetworkInsightsAccessScopeId": ubx.FieldSpec{WireName: "network_insights_access_scope_id"},
 	},
 }

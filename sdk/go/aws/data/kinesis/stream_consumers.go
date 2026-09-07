@@ -4,36 +4,36 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamConsumers_Consumers struct {
-	ConsumerArn any
+	ConsumerArn               any
 	ConsumerCreationTimestamp any
-	ConsumerName any
-	ConsumerStatus any
+	ConsumerName              any
+	ConsumerStatus            any
 }
 
 type StreamConsumersConfig struct {
-	MaxResults any
-	NextToken any
-	StreamArn any
+	MaxResults              any
+	NextToken               any
+	StreamArn               any
 	StreamCreationTimestamp any
-	StreamId any
+	StreamId                any
 }
 
 type StreamConsumersAttrs struct {
-	Consumers any
-	MaxResults any
-	NextToken any
-	StreamArn any
+	Consumers               any
+	MaxResults              any
+	NextToken               any
+	StreamArn               any
 	StreamCreationTimestamp any
-	StreamId any
+	StreamId                any
 }
 
 var StreamConsumers = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_stream_consumers",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"StreamArn":               ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamCreationTimestamp": ubx.FieldSpec{WireName: "stream_creation_timestamp"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamId":                ubx.FieldSpec{WireName: "stream_id"},
 	},
 }

@@ -18,14 +18,14 @@ type PublishingDestination_Tags struct {
 }
 
 var PublishingDestination_DestinationPropertiesFields = ubx.FieldMap{
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+	"KmsKeyArn":      ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var PublishingDestination_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PublishingDestinationConfig struct {
 	// Configures the GuardDuty publishing destination by specifying the ARN of the Amazon S3 bucket to receive findings and the ARN of the AWS KMS key used to encrypt those findings. (AI-inferred)
@@ -60,15 +60,15 @@ var PublishingDestination = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DestinationProperties": ubx.FieldSpec{
 			WireName: "destination_properties",
-			Kind: "object",
-			Fields: PublishingDestination_DestinationPropertiesFields,
+			Kind:     "object",
+			Fields:   PublishingDestination_DestinationPropertiesFields,
 		},
 		"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
+		"DetectorId":      ubx.FieldSpec{WireName: "detector_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PublishingDestination_TagsFields,
+			Kind:     "list",
+			Fields:   PublishingDestination_TagsFields,
 		},
 	},
 }

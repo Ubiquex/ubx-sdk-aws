@@ -4,39 +4,39 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceRegistrationSectionDefinitions_RegistrationSectionDefinitions_DisplayHints struct {
-	DocumentationLink any
+	DocumentationLink  any
 	DocumentationTitle any
-	LongDescription any
-	ShortDescription any
-	Title any
+	LongDescription    any
+	ShortDescription   any
+	Title              any
 }
 
 type SmsVoiceRegistrationSectionDefinitions_RegistrationSectionDefinitions struct {
 	DisplayHints any
-	SectionPath any
+	SectionPath  any
 }
 
 type SmsVoiceRegistrationSectionDefinitionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	RegistrationType any
-	SectionPaths any
+	SectionPaths     any
 }
 
 type SmsVoiceRegistrationSectionDefinitionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                     any
+	NextToken                      any
 	RegistrationSectionDefinitions any
-	RegistrationType any
-	SectionPaths any
+	RegistrationType               any
+	SectionPaths                   any
 }
 
 var SmsVoiceRegistrationSectionDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_sms_voice_registration_section_definitions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"RegistrationType": ubx.FieldSpec{WireName: "registration_type"},
-		"SectionPaths": ubx.FieldSpec{WireName: "section_paths"},
+		"SectionPaths":     ubx.FieldSpec{WireName: "section_paths"},
 	},
 }

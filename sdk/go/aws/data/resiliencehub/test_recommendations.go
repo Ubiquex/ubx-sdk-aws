@@ -5,51 +5,51 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestRecommendations_TestRecommendations_Items_DiscoveredAlarm struct {
 	AlarmArn any
-	Source any
+	Source   any
 }
 
 type TestRecommendations_TestRecommendations_Items_LatestDiscoveredExperiment struct {
-	ExperimentArn any
+	ExperimentArn        any
 	ExperimentTemplateId any
 }
 
 type TestRecommendations_TestRecommendations_Items struct {
-	AlreadyImplemented any
-	DiscoveredAlarm any
-	ExcludeReason any
-	Excluded any
+	AlreadyImplemented         any
+	DiscoveredAlarm            any
+	ExcludeReason              any
+	Excluded                   any
 	LatestDiscoveredExperiment any
-	ResourceId any
-	TargetAccountId any
-	TargetRegion any
+	ResourceId                 any
+	TargetAccountId            any
+	TargetRegion               any
 }
 
 type TestRecommendations_TestRecommendations struct {
-	AppComponentId any
-	AppComponentName any
-	DependsOnAlarms any
-	Description any
-	Intent any
-	Items any
-	Name any
-	Prerequisite any
-	RecommendationId any
+	AppComponentId       any
+	AppComponentName     any
+	DependsOnAlarms      any
+	Description          any
+	Intent               any
+	Items                any
+	Name                 any
+	Prerequisite         any
+	RecommendationId     any
 	RecommendationStatus any
-	ReferenceId any
-	Risk any
-	Type any
+	ReferenceId          any
+	Risk                 any
+	Type                 any
 }
 
 type TestRecommendationsConfig struct {
 	AssessmentArn any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type TestRecommendationsAttrs struct {
-	AssessmentArn any
-	MaxResults any
-	NextToken any
+	AssessmentArn       any
+	MaxResults          any
+	NextToken           any
 	TestRecommendations any
 }
 
@@ -57,7 +57,7 @@ var TestRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_test_recommendations",
 	Fields: ubx.FieldMap{
 		"AssessmentArn": ubx.FieldSpec{WireName: "assessment_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

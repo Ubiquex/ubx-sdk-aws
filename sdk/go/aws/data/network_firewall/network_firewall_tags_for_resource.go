@@ -4,28 +4,28 @@ package network_firewall
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkFirewallTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type NetworkFirewallTagsForResourceConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type NetworkFirewallTagsForResourceAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var NetworkFirewallTagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

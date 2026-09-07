@@ -19,13 +19,13 @@ type Url_Cors struct {
 }
 
 var Url_CorsFields = ubx.FieldMap{
-		"AllowCredentials": ubx.FieldSpec{WireName: "allow_credentials"},
-		"AllowHeaders": ubx.FieldSpec{WireName: "allow_headers"},
-		"AllowMethods": ubx.FieldSpec{WireName: "allow_methods"},
-		"AllowOrigins": ubx.FieldSpec{WireName: "allow_origins"},
-		"ExposeHeaders": ubx.FieldSpec{WireName: "expose_headers"},
-		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
-	}
+	"AllowCredentials": ubx.FieldSpec{WireName: "allow_credentials"},
+	"AllowHeaders":     ubx.FieldSpec{WireName: "allow_headers"},
+	"AllowMethods":     ubx.FieldSpec{WireName: "allow_methods"},
+	"AllowOrigins":     ubx.FieldSpec{WireName: "allow_origins"},
+	"ExposeHeaders":    ubx.FieldSpec{WireName: "expose_headers"},
+	"MaxAge":           ubx.FieldSpec{WireName: "max_age"},
+}
 
 type UrlConfig struct {
 	// Can be either AWS_IAM if the requests are authorized via IAM, or NONE if no authorization is configured on the Function URL.
@@ -63,11 +63,11 @@ var Url = ubx.ResourceBinding{
 		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
 		"Cors": ubx.FieldSpec{
 			WireName: "cors",
-			Kind: "object",
-			Fields: Url_CorsFields,
+			Kind:     "object",
+			Fields:   Url_CorsFields,
 		},
-		"InvokeMode": ubx.FieldSpec{WireName: "invoke_mode"},
-		"Qualifier": ubx.FieldSpec{WireName: "qualifier"},
+		"InvokeMode":        ubx.FieldSpec{WireName: "invoke_mode"},
+		"Qualifier":         ubx.FieldSpec{WireName: "qualifier"},
 		"TargetFunctionArn": ubx.FieldSpec{WireName: "target_function_arn"},
 	},
 }

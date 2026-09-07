@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeChannelFlows_ChannelFlows_Processors_Configuration_Lambda struct {
 	InvocationType any
-	ResourceArn any
+	ResourceArn    any
 }
 
 type MessagingChimeChannelFlows_ChannelFlows_Processors_Configuration struct {
@@ -13,36 +13,36 @@ type MessagingChimeChannelFlows_ChannelFlows_Processors_Configuration struct {
 }
 
 type MessagingChimeChannelFlows_ChannelFlows_Processors struct {
-	Configuration any
+	Configuration  any
 	ExecutionOrder any
 	FallbackAction any
-	Name any
+	Name           any
 }
 
 type MessagingChimeChannelFlows_ChannelFlows struct {
 	ChannelFlowArn any
-	Name any
-	Processors any
+	Name           any
+	Processors     any
 }
 
 type MessagingChimeChannelFlowsConfig struct {
 	AppInstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type MessagingChimeChannelFlowsAttrs struct {
 	AppInstanceArn any
-	ChannelFlows any
-	MaxResults any
-	NextToken any
+	ChannelFlows   any
+	MaxResults     any
+	NextToken      any
 }
 
 var MessagingChimeChannelFlows = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channel_flows",
 	Fields: ubx.FieldMap{
 		"AppInstanceArn": ubx.FieldSpec{WireName: "app_instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

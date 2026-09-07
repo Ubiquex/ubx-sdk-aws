@@ -9,7 +9,7 @@ type ApiIotdeviceadvisorTagsForResourceConfig struct {
 
 type ApiIotdeviceadvisorTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ApiIotdeviceadvisorTagsForResource = ubx.DataSourceBinding{

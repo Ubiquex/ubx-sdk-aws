@@ -4,7 +4,7 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policy_Policy_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -15,24 +15,24 @@ type Policy_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy
 
 type Policy_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange struct {
 	From any
-	To any
+	To   any
 }
 
 type Policy_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries struct {
-	CidrBlock any
-	Egress any
-	IcmpTypeCode any
+	CidrBlock     any
+	Egress        any
+	IcmpTypeCode  any
 	Ipv6CidrBlock any
-	PortRange any
-	Protocol any
-	RuleAction any
+	PortRange     any
+	Protocol      any
+	RuleAction    any
 }
 
 type Policy_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet struct {
-	FirstEntries any
+	FirstEntries                  any
 	ForceRemediateForFirstEntries any
-	ForceRemediateForLastEntries any
-	LastEntries any
+	ForceRemediateForLastEntries  any
+	LastEntries                   any
 }
 
 type Policy_Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy struct {
@@ -57,25 +57,25 @@ type Policy_Policy_SecurityServicePolicyData struct {
 	ManagedServiceData any
 	// <p>Contains the settings to configure a network ACL policy, a Network Firewall firewall policy deployment model, or a third-party firewall policy.</p>
 	PolicyOption any
-	Type any
+	Type         any
 }
 
 type Policy_Policy struct {
 	DeleteUnusedFmmanagedResources any
-	ExcludeMap any
-	ExcludeResourceTags any
-	IncludeMap any
-	PolicyDescription any
-	PolicyId any
-	PolicyName any
-	PolicyStatus any
-	PolicyUpdateToken any
-	RemediationEnabled any
-	ResourceSetIds any
-	ResourceTagLogicalOperator any
-	ResourceTags any
-	ResourceType any
-	ResourceTypeList any
+	ExcludeMap                     any
+	ExcludeResourceTags            any
+	IncludeMap                     any
+	PolicyDescription              any
+	PolicyId                       any
+	PolicyName                     any
+	PolicyStatus                   any
+	PolicyUpdateToken              any
+	RemediationEnabled             any
+	ResourceSetIds                 any
+	ResourceTagLogicalOperator     any
+	ResourceTags                   any
+	ResourceType                   any
+	ResourceTypeList               any
 	// <p>Details about the security service that is being used to protect the resources.</p>
 	SecurityServicePolicyData any
 }
@@ -86,9 +86,9 @@ type PolicyConfig struct {
 
 type PolicyAttrs struct {
 	// <p>An Firewall Manager policy.</p>
-	Policy any
+	Policy    any
 	PolicyArn any
-	PolicyId any
+	PolicyId  any
 }
 
 var Policy = ubx.DataSourceBinding{

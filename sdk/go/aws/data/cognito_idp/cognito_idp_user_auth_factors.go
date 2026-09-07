@@ -8,11 +8,11 @@ type CognitoIdpUserAuthFactorsConfig struct {
 }
 
 type CognitoIdpUserAuthFactorsAttrs struct {
-	AccessToken any
+	AccessToken               any
 	ConfiguredUserAuthFactors any
-	PreferredMfaSetting any
-	UserMfasettingList any
-	Username any
+	PreferredMfaSetting       any
+	UserMfasettingList        any
+	Username                  any
 }
 
 var CognitoIdpUserAuthFactors = ubx.DataSourceBinding{

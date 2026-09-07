@@ -38,31 +38,31 @@ type Container_Tags struct {
 }
 
 var Container_CorsPolicyFields = ubx.FieldMap{
-		"AllowedHeaders": ubx.FieldSpec{WireName: "allowed_headers"},
-		"AllowedMethods": ubx.FieldSpec{WireName: "allowed_methods"},
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-		"ExposeHeaders": ubx.FieldSpec{WireName: "expose_headers"},
-		"MaxAgeSeconds": ubx.FieldSpec{WireName: "max_age_seconds"},
-	}
+	"AllowedHeaders": ubx.FieldSpec{WireName: "allowed_headers"},
+	"AllowedMethods": ubx.FieldSpec{WireName: "allowed_methods"},
+	"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
+	"ExposeHeaders":  ubx.FieldSpec{WireName: "expose_headers"},
+	"MaxAgeSeconds":  ubx.FieldSpec{WireName: "max_age_seconds"},
+}
 
 var Container_MetricPolicy_MetricPolicyRulesFields = ubx.FieldMap{
-		"ObjectGroup": ubx.FieldSpec{WireName: "object_group"},
-		"ObjectGroupName": ubx.FieldSpec{WireName: "object_group_name"},
-	}
+	"ObjectGroup":     ubx.FieldSpec{WireName: "object_group"},
+	"ObjectGroupName": ubx.FieldSpec{WireName: "object_group_name"},
+}
 
 var Container_MetricPolicyFields = ubx.FieldMap{
-		"ContainerLevelMetrics": ubx.FieldSpec{WireName: "container_level_metrics"},
-		"MetricPolicyRules": ubx.FieldSpec{
-			WireName: "metric_policy_rules",
-			Kind: "list",
-			Fields: Container_MetricPolicy_MetricPolicyRulesFields,
-		},
-	}
+	"ContainerLevelMetrics": ubx.FieldSpec{WireName: "container_level_metrics"},
+	"MetricPolicyRules": ubx.FieldSpec{
+		WireName: "metric_policy_rules",
+		Kind:     "list",
+		Fields:   Container_MetricPolicy_MetricPolicyRulesFields,
+	},
+}
 
 var Container_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ContainerConfig struct {
 	// Enables or disables access logging for the MediaStore container, which generates detailed logs of requests made to the container. (AI-inferred)
@@ -106,23 +106,23 @@ var Container = ubx.ResourceBinding{
 	WireType: "aws_media_store_container",
 	Fields: ubx.FieldMap{
 		"AccessLoggingEnabled": ubx.FieldSpec{WireName: "access_logging_enabled"},
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+		"ContainerName":        ubx.FieldSpec{WireName: "container_name"},
 		"CorsPolicy": ubx.FieldSpec{
 			WireName: "cors_policy",
-			Kind: "list",
-			Fields: Container_CorsPolicyFields,
+			Kind:     "list",
+			Fields:   Container_CorsPolicyFields,
 		},
 		"LifecyclePolicy": ubx.FieldSpec{WireName: "lifecycle_policy"},
 		"MetricPolicy": ubx.FieldSpec{
 			WireName: "metric_policy",
-			Kind: "object",
-			Fields: Container_MetricPolicyFields,
+			Kind:     "object",
+			Fields:   Container_MetricPolicyFields,
 		},
 		"Policy": ubx.FieldSpec{WireName: "policy"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Container_TagsFields,
+			Kind:     "list",
+			Fields:   Container_TagsFields,
 		},
 	},
 }

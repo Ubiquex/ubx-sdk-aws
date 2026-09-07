@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicationTask_Tags struct {
 	// Specifies the key of a tag attached to the AWS DMS replication task, used for identifying, organizing, and managing the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ReplicationTask_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReplicationTaskConfig struct {
 	// Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
@@ -77,22 +77,22 @@ type ReplicationTaskAttrs struct {
 var ReplicationTask = ubx.ResourceBinding{
 	WireType: "aws_dms_replication_task",
 	Fields: ubx.FieldMap{
-		"CdcStartPosition": ubx.FieldSpec{WireName: "cdc_start_position"},
-		"CdcStartTime": ubx.FieldSpec{WireName: "cdc_start_time"},
-		"CdcStopPosition": ubx.FieldSpec{WireName: "cdc_stop_position"},
-		"MigrationType": ubx.FieldSpec{WireName: "migration_type"},
-		"ReplicationInstanceArn": ubx.FieldSpec{WireName: "replication_instance_arn"},
+		"CdcStartPosition":          ubx.FieldSpec{WireName: "cdc_start_position"},
+		"CdcStartTime":              ubx.FieldSpec{WireName: "cdc_start_time"},
+		"CdcStopPosition":           ubx.FieldSpec{WireName: "cdc_stop_position"},
+		"MigrationType":             ubx.FieldSpec{WireName: "migration_type"},
+		"ReplicationInstanceArn":    ubx.FieldSpec{WireName: "replication_instance_arn"},
 		"ReplicationTaskIdentifier": ubx.FieldSpec{WireName: "replication_task_identifier"},
-		"ReplicationTaskSettings": ubx.FieldSpec{WireName: "replication_task_settings"},
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
-		"SourceEndpointArn": ubx.FieldSpec{WireName: "source_endpoint_arn"},
-		"TableMappings": ubx.FieldSpec{WireName: "table_mappings"},
+		"ReplicationTaskSettings":   ubx.FieldSpec{WireName: "replication_task_settings"},
+		"ResourceIdentifier":        ubx.FieldSpec{WireName: "resource_identifier"},
+		"SourceEndpointArn":         ubx.FieldSpec{WireName: "source_endpoint_arn"},
+		"TableMappings":             ubx.FieldSpec{WireName: "table_mappings"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReplicationTask_TagsFields,
+			Kind:     "list",
+			Fields:   ReplicationTask_TagsFields,
 		},
 		"TargetEndpointArn": ubx.FieldSpec{WireName: "target_endpoint_arn"},
-		"TaskData": ubx.FieldSpec{WireName: "task_data"},
+		"TaskData":          ubx.FieldSpec{WireName: "task_data"},
 	},
 }

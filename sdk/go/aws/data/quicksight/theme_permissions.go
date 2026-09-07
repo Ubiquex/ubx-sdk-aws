@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThemePermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type ThemePermissionsConfig struct {
 	AwsAccountId any
-	ThemeId any
+	ThemeId      any
 }
 
 type ThemePermissionsAttrs struct {
 	AwsAccountId any
-	Permissions any
-	RequestId any
-	Status any
-	ThemeArn any
-	ThemeId any
+	Permissions  any
+	RequestId    any
+	Status       any
+	ThemeArn     any
+	ThemeId      any
 }
 
 var ThemePermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_theme_permissions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"ThemeId": ubx.FieldSpec{WireName: "theme_id"},
+		"ThemeId":      ubx.FieldSpec{WireName: "theme_id"},
 	},
 }

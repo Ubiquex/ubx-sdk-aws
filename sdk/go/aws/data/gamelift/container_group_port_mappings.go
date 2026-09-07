@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContainerGroupPortMappings_ContainerGroupPortMappings_ContainerPortMappings struct {
 	ConnectionPort any
-	ContainerPort any
-	Protocol any
+	ContainerPort  any
+	Protocol       any
 }
 
 type ContainerGroupPortMappings_ContainerGroupPortMappings struct {
-	ContainerName any
+	ContainerName         any
 	ContainerPortMappings any
-	ContainerRuntimeId any
+	ContainerRuntimeId    any
 }
 
 type ContainerGroupPortMappingsConfig struct {
-	ComputeName any
+	ComputeName        any
 	ContainerGroupType any
-	ContainerName any
-	FleetId any
-	InstanceId any
+	ContainerName      any
+	FleetId            any
+	InstanceId         any
 }
 
 type ContainerGroupPortMappingsAttrs struct {
-	ComputeName any
+	ComputeName                 any
 	ContainerGroupDefinitionArn any
-	ContainerGroupPortMappings any
-	ContainerGroupType any
-	ContainerName any
-	FleetArn any
-	FleetId any
-	InstanceId any
-	Location any
+	ContainerGroupPortMappings  any
+	ContainerGroupType          any
+	ContainerName               any
+	FleetArn                    any
+	FleetId                     any
+	InstanceId                  any
+	Location                    any
 }
 
 var ContainerGroupPortMappings = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_container_group_port_mappings",
 	Fields: ubx.FieldMap{
-		"ComputeName": ubx.FieldSpec{WireName: "compute_name"},
+		"ComputeName":        ubx.FieldSpec{WireName: "compute_name"},
 		"ContainerGroupType": ubx.FieldSpec{WireName: "container_group_type"},
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"ContainerName":      ubx.FieldSpec{WireName: "container_name"},
+		"FleetId":            ubx.FieldSpec{WireName: "fleet_id"},
+		"InstanceId":         ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

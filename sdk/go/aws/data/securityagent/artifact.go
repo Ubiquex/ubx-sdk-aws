@@ -23,14 +23,14 @@ type ArtifactAttrs struct {
 	Artifact any
 	// <p>The id of the artifact.</p>
 	ArtifactId any
-	FileName any
-	UpdatedAt any
+	FileName   any
+	UpdatedAt  any
 }
 
 var Artifact = ubx.DataSourceBinding{
 	WireType: "aws_securityagent_artifact",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
+		"ArtifactId":   ubx.FieldSpec{WireName: "artifact_id"},
 	},
 }

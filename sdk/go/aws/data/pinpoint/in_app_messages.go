@@ -5,71 +5,71 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_InAppMessage_Content_BodyConfig struct {
 	Alignment any
-	Body any
+	Body      any
 	TextColor any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_InAppMessage_Content_HeaderConfig struct {
 	Alignment any
-	Header any
+	Header    any
 	TextColor any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_InAppMessage_Content_PrimaryBtn_Android struct {
 	ButtonAction any
-	Link any
+	Link         any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_InAppMessage_Content_PrimaryBtn_DefaultConfig struct {
 	BackgroundColor any
-	BorderRadius any
-	ButtonAction any
-	Link any
-	Text any
-	TextColor any
+	BorderRadius    any
+	ButtonAction    any
+	Link            any
+	Text            any
+	TextColor       any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_InAppMessage_Content_PrimaryBtn struct {
-	Android any
+	Android       any
 	DefaultConfig any
-	Ios any
-	Web any
+	Ios           any
+	Web           any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_InAppMessage_Content struct {
 	BackgroundColor any
-	BodyConfig any
-	HeaderConfig any
-	ImageUrl any
-	PrimaryBtn any
-	SecondaryBtn any
+	BodyConfig      any
+	HeaderConfig    any
+	ImageUrl        any
+	PrimaryBtn      any
+	SecondaryBtn    any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_InAppMessage struct {
-	Content any
+	Content      any
 	CustomConfig any
-	Layout any
+	Layout       any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_Schedule_EventFilter_Dimensions_Attributes struct {
 	AttributeType any
-	Values any
+	Values        any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_Schedule_EventFilter_Dimensions_EventType struct {
 	DimensionType any
-	Values any
+	Values        any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_Schedule_EventFilter_Dimensions_Metrics struct {
 	ComparisonOperator any
-	Value any
+	Value              any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_Schedule_EventFilter_Dimensions struct {
 	Attributes any
-	EventType any
-	Metrics any
+	EventType  any
+	Metrics    any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_Schedule_EventFilter struct {
@@ -78,25 +78,25 @@ type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_Schedule_EventFil
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_Schedule_QuietTime struct {
-	End any
+	End   any
 	Start any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns_Schedule struct {
-	EndDate any
+	EndDate     any
 	EventFilter any
-	QuietTime any
+	QuietTime   any
 }
 
 type InAppMessages_InAppMessagesResponse_InAppMessageCampaigns struct {
-	CampaignId any
-	DailyCap any
+	CampaignId   any
+	DailyCap     any
 	InAppMessage any
-	Priority any
-	Schedule any
-	SessionCap any
-	TotalCap any
-	TreatmentId any
+	Priority     any
+	Schedule     any
+	SessionCap   any
+	TotalCap     any
+	TreatmentId  any
 }
 
 type InAppMessages_InAppMessagesResponse struct {
@@ -105,12 +105,12 @@ type InAppMessages_InAppMessagesResponse struct {
 
 type InAppMessagesConfig struct {
 	ApplicationId any
-	EndpointId any
+	EndpointId    any
 }
 
 type InAppMessagesAttrs struct {
 	ApplicationId any
-	EndpointId any
+	EndpointId    any
 	// <p>Get in-app messages response object.</p>
 	InAppMessagesResponse any
 }
@@ -119,6 +119,6 @@ var InAppMessages = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_in_app_messages",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"EndpointId": ubx.FieldSpec{WireName: "endpoint_id"},
+		"EndpointId":    ubx.FieldSpec{WireName: "endpoint_id"},
 	},
 }

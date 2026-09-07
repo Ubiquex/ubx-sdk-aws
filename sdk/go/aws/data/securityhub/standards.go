@@ -9,32 +9,32 @@ type Standards_Standards_StandardsManagedBy struct {
 }
 
 type Standards_Standards struct {
-	Description any
-	EnabledByDefault any
-	Name any
-	Provider any
-	StandardsArn any
+	Description        any
+	EnabledByDefault   any
+	Name               any
+	Provider           any
+	StandardsArn       any
 	StandardsManagedBy any
 }
 
 type StandardsConfig struct {
 	MaxResults any
-	NextToken any
-	Providers any
+	NextToken  any
+	Providers  any
 }
 
 type StandardsAttrs struct {
 	MaxResults any
-	NextToken any
-	Providers any
-	Standards any
+	NextToken  any
+	Providers  any
+	Standards  any
 }
 
 var Standards = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_standards",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Providers": ubx.FieldSpec{WireName: "providers"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Providers":  ubx.FieldSpec{WireName: "providers"},
 	},
 }

@@ -10,9 +10,9 @@ type TrafficMirrorSession_Tags struct {
 }
 
 var TrafficMirrorSession_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrafficMirrorSessionConfig struct {
 	// The description of the Traffic Mirror session.
@@ -61,18 +61,18 @@ type TrafficMirrorSessionAttrs struct {
 var TrafficMirrorSession = ubx.ResourceBinding{
 	WireType: "aws_ec2_traffic_mirror_session",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"OwnerId": ubx.FieldSpec{WireName: "owner_id"},
-		"PacketLength": ubx.FieldSpec{WireName: "packet_length"},
-		"SessionNumber": ubx.FieldSpec{WireName: "session_number"},
+		"OwnerId":            ubx.FieldSpec{WireName: "owner_id"},
+		"PacketLength":       ubx.FieldSpec{WireName: "packet_length"},
+		"SessionNumber":      ubx.FieldSpec{WireName: "session_number"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrafficMirrorSession_TagsFields,
+			Kind:     "list",
+			Fields:   TrafficMirrorSession_TagsFields,
 		},
 		"TrafficMirrorFilterId": ubx.FieldSpec{WireName: "traffic_mirror_filter_id"},
 		"TrafficMirrorTargetId": ubx.FieldSpec{WireName: "traffic_mirror_target_id"},
-		"VirtualNetworkId": ubx.FieldSpec{WireName: "virtual_network_id"},
+		"VirtualNetworkId":      ubx.FieldSpec{WireName: "virtual_network_id"},
 	},
 }

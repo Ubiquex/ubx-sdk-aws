@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Communications_Communications_AttachmentSet struct {
 	AttachmentId any
-	FileName any
+	FileName     any
 }
 
 type Communications_Communications struct {
 	AttachmentSet any
-	Attachments any
-	Body any
-	CaseId any
-	SubmittedBy any
-	TimeCreated any
+	Attachments   any
+	Body          any
+	CaseId        any
+	SubmittedBy   any
+	TimeCreated   any
 }
 
 type CommunicationsConfig struct {
-	AfterTime any
+	AfterTime  any
 	BeforeTime any
-	CaseId any
-	DryRun any
+	CaseId     any
+	DryRun     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CommunicationsAttrs struct {
-	AfterTime any
-	BeforeTime any
-	CaseId any
+	AfterTime      any
+	BeforeTime     any
+	CaseId         any
 	Communications any
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun         any
+	MaxResults     any
+	NextToken      any
 }
 
 var Communications = ubx.DataSourceBinding{
 	WireType: "aws_support_communications",
 	Fields: ubx.FieldMap{
-		"AfterTime": ubx.FieldSpec{WireName: "after_time"},
+		"AfterTime":  ubx.FieldSpec{WireName: "after_time"},
 		"BeforeTime": ubx.FieldSpec{WireName: "before_time"},
-		"CaseId": ubx.FieldSpec{WireName: "case_id"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"CaseId":     ubx.FieldSpec{WireName: "case_id"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

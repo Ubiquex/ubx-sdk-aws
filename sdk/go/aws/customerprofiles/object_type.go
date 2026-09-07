@@ -41,38 +41,38 @@ type ObjectType_Tags struct {
 }
 
 var ObjectType_Fields_ObjectTypeFieldFields = ubx.FieldMap{
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"ContentType": ubx.FieldSpec{WireName: "content_type"},
+	"Source":      ubx.FieldSpec{WireName: "source"},
+	"Target":      ubx.FieldSpec{WireName: "target"},
+}
 
 var ObjectType_FieldsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ObjectTypeField": ubx.FieldSpec{
-			WireName: "object_type_field",
-			Kind: "object",
-			Fields: ObjectType_Fields_ObjectTypeFieldFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ObjectTypeField": ubx.FieldSpec{
+		WireName: "object_type_field",
+		Kind:     "object",
+		Fields:   ObjectType_Fields_ObjectTypeFieldFields,
+	},
+}
 
 var ObjectType_Keys_ObjectTypeKeyListFields = ubx.FieldMap{
-		"FieldNames": ubx.FieldSpec{WireName: "field_names"},
-		"StandardIdentifiers": ubx.FieldSpec{WireName: "standard_identifiers"},
-	}
+	"FieldNames":          ubx.FieldSpec{WireName: "field_names"},
+	"StandardIdentifiers": ubx.FieldSpec{WireName: "standard_identifiers"},
+}
 
 var ObjectType_KeysFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ObjectTypeKeyList": ubx.FieldSpec{
-			WireName: "object_type_key_list",
-			Kind: "list",
-			Fields: ObjectType_Keys_ObjectTypeKeyListFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ObjectTypeKeyList": ubx.FieldSpec{
+		WireName: "object_type_key_list",
+		Kind:     "list",
+		Fields:   ObjectType_Keys_ObjectTypeKeyListFields,
+	},
+}
 
 var ObjectType_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ObjectTypeConfig struct {
 	// Indicates whether a profile should be created when data is received.
@@ -142,28 +142,28 @@ var ObjectType = ubx.ResourceBinding{
 	WireType: "aws_customer_profiles_object_type",
 	Fields: ubx.FieldMap{
 		"AllowProfileCreation": ubx.FieldSpec{WireName: "allow_profile_creation"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"EncryptionKey": ubx.FieldSpec{WireName: "encryption_key"},
-		"ExpirationDays": ubx.FieldSpec{WireName: "expiration_days"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"DomainName":           ubx.FieldSpec{WireName: "domain_name"},
+		"EncryptionKey":        ubx.FieldSpec{WireName: "encryption_key"},
+		"ExpirationDays":       ubx.FieldSpec{WireName: "expiration_days"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "list",
-			Fields: ObjectType_FieldsFields,
+			Kind:     "list",
+			Fields:   ObjectType_FieldsFields,
 		},
 		"Keys": ubx.FieldSpec{
 			WireName: "keys",
-			Kind: "list",
-			Fields: ObjectType_KeysFields,
+			Kind:     "list",
+			Fields:   ObjectType_KeysFields,
 		},
-		"MaxProfileObjectCount": ubx.FieldSpec{WireName: "max_profile_object_count"},
-		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
+		"MaxProfileObjectCount":            ubx.FieldSpec{WireName: "max_profile_object_count"},
+		"ObjectTypeName":                   ubx.FieldSpec{WireName: "object_type_name"},
 		"SourceLastUpdatedTimestampFormat": ubx.FieldSpec{WireName: "source_last_updated_timestamp_format"},
-		"SourcePriority": ubx.FieldSpec{WireName: "source_priority"},
+		"SourcePriority":                   ubx.FieldSpec{WireName: "source_priority"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ObjectType_TagsFields,
+			Kind:     "list",
+			Fields:   ObjectType_TagsFields,
 		},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
 	},

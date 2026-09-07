@@ -11,9 +11,9 @@ type Volume_Tags struct {
 }
 
 var Volume_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VolumeConfig struct {
 	// Indicates whether the volume is auto-enabled for I/O operations. By default, EBS disables I/O to the volume from attached EC2 instances when it determines that a volume's data is potentially inconsistent. If the consistency of the volume is not a concern, and you prefer that the volume be made available immediately if it's impaired, you can configure the volume to automatically enable I/O.
@@ -86,24 +86,24 @@ type VolumeAttrs struct {
 var Volume = ubx.ResourceBinding{
 	WireType: "aws_ec2_volume",
 	Fields: ubx.FieldMap{
-		"AutoEnableIo": ubx.FieldSpec{WireName: "auto_enable_io"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+		"AutoEnableIo":       ubx.FieldSpec{WireName: "auto_enable_io"},
+		"AvailabilityZone":   ubx.FieldSpec{WireName: "availability_zone"},
 		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"Encrypted":          ubx.FieldSpec{WireName: "encrypted"},
+		"Iops":               ubx.FieldSpec{WireName: "iops"},
+		"KmsKeyId":           ubx.FieldSpec{WireName: "kms_key_id"},
 		"MultiAttachEnabled": ubx.FieldSpec{WireName: "multi_attach_enabled"},
-		"OutpostArn": ubx.FieldSpec{WireName: "outpost_arn"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"SourceVolumeId": ubx.FieldSpec{WireName: "source_volume_id"},
+		"OutpostArn":         ubx.FieldSpec{WireName: "outpost_arn"},
+		"Size":               ubx.FieldSpec{WireName: "size"},
+		"SnapshotId":         ubx.FieldSpec{WireName: "snapshot_id"},
+		"SourceVolumeId":     ubx.FieldSpec{WireName: "source_volume_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Volume_TagsFields,
+			Kind:     "list",
+			Fields:   Volume_TagsFields,
 		},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
+		"Throughput":               ubx.FieldSpec{WireName: "throughput"},
 		"VolumeInitializationRate": ubx.FieldSpec{WireName: "volume_initialization_rate"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+		"VolumeType":               ubx.FieldSpec{WireName: "volume_type"},
 	},
 }

@@ -4,12 +4,12 @@ package kinesis_analytics_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KinesisAnalyticsV2Applications_ApplicationSummaries struct {
-	ApplicationArn any
-	ApplicationMode any
-	ApplicationName any
-	ApplicationStatus any
+	ApplicationArn       any
+	ApplicationMode      any
+	ApplicationName      any
+	ApplicationStatus    any
 	ApplicationVersionId any
-	RuntimeEnvironment any
+	RuntimeEnvironment   any
 }
 
 type KinesisAnalyticsV2ApplicationsConfig struct {
@@ -20,7 +20,7 @@ type KinesisAnalyticsV2ApplicationsConfig struct {
 
 type KinesisAnalyticsV2ApplicationsAttrs struct {
 	ApplicationSummaries any
-	Limit any
+	Limit                any
 	// <p>The name of the application.</p>
 	NextToken any
 }
@@ -28,7 +28,7 @@ type KinesisAnalyticsV2ApplicationsAttrs struct {
 var KinesisAnalyticsV2Applications = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_analytics_v2_applications",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

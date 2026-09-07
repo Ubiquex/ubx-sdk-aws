@@ -4,31 +4,31 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FreeTrialStatusesV2_AccountFreeTrialStatuses_FreeTrialStatuses struct {
-	ExpiresAt any
+	ExpiresAt   any
 	FeatureType any
-	StartedAt any
-	Status any
+	StartedAt   any
+	Status      any
 }
 
 type FreeTrialStatusesV2_AccountFreeTrialStatuses struct {
-	AccountId any
-	EvaluatedAt any
+	AccountId         any
+	EvaluatedAt       any
 	FreeTrialStatuses any
 }
 
 type FreeTrialStatusesV2Config struct {
 	AccountIds any
 	MaxResults any
-	NextToken any
-	Statuses any
+	NextToken  any
+	Statuses   any
 }
 
 type FreeTrialStatusesV2Attrs struct {
 	AccountFreeTrialStatuses any
-	AccountIds any
-	MaxResults any
-	NextToken any
-	Statuses any
+	AccountIds               any
+	MaxResults               any
+	NextToken                any
+	Statuses                 any
 }
 
 var FreeTrialStatusesV2 = ubx.DataSourceBinding{
@@ -36,7 +36,7 @@ var FreeTrialStatusesV2 = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Statuses": ubx.FieldSpec{WireName: "statuses"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Statuses":   ubx.FieldSpec{WireName: "statuses"},
 	},
 }

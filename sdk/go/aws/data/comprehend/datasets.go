@@ -4,47 +4,47 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Datasets_DatasetPropertiesList struct {
-	CreationTime any
-	DatasetArn any
-	DatasetName any
-	DatasetS3Uri any
-	DatasetType any
-	Description any
-	EndTime any
-	Message any
+	CreationTime      any
+	DatasetArn        any
+	DatasetName       any
+	DatasetS3Uri      any
+	DatasetType       any
+	Description       any
+	EndTime           any
+	Message           any
 	NumberOfDocuments any
-	Status any
+	Status            any
 }
 
 type Datasets_Filter struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	DatasetType any
-	Status any
+	DatasetType        any
+	Status             any
 }
 
 var Datasets_FilterFields = ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"DatasetType": ubx.FieldSpec{WireName: "dataset_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
+	"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
+	"DatasetType":        ubx.FieldSpec{WireName: "dataset_type"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+}
 
 type DatasetsConfig struct {
 	// <p>Filter the datasets based on creation time or dataset status.</p>
-	Filter any
+	Filter      any
 	FlywheelArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type DatasetsAttrs struct {
 	DatasetPropertiesList any
 	// <p>Filter the datasets based on creation time or dataset status.</p>
-	Filter any
+	Filter      any
 	FlywheelArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var Datasets = ubx.DataSourceBinding{
@@ -52,11 +52,11 @@ var Datasets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Datasets_FilterFields,
+			Kind:     "object",
+			Fields:   Datasets_FilterFields,
 		},
 		"FlywheelArn": ubx.FieldSpec{WireName: "flywheel_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

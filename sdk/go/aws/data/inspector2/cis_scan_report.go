@@ -4,24 +4,24 @@ package inspector2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CisScanReportConfig struct {
-	ReportFormat any
-	ScanArn any
+	ReportFormat   any
+	ScanArn        any
 	TargetAccounts any
 }
 
 type CisScanReportAttrs struct {
-	ReportFormat any
-	ScanArn any
-	Status any
+	ReportFormat   any
+	ScanArn        any
+	Status         any
 	TargetAccounts any
-	Url any
+	Url            any
 }
 
 var CisScanReport = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_cis_scan_report",
 	Fields: ubx.FieldMap{
-		"ReportFormat": ubx.FieldSpec{WireName: "report_format"},
-		"ScanArn": ubx.FieldSpec{WireName: "scan_arn"},
+		"ReportFormat":   ubx.FieldSpec{WireName: "report_format"},
+		"ScanArn":        ubx.FieldSpec{WireName: "scan_arn"},
 		"TargetAccounts": ubx.FieldSpec{WireName: "target_accounts"},
 	},
 }

@@ -4,36 +4,36 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupMemberships_GroupMemberList struct {
-	Arn any
+	Arn        any
 	MemberName any
 }
 
 type GroupMembershipsConfig struct {
 	AwsAccountId any
-	GroupName any
-	MaxResults any
-	Namespace any
-	NextToken any
+	GroupName    any
+	MaxResults   any
+	Namespace    any
+	NextToken    any
 }
 
 type GroupMembershipsAttrs struct {
-	AwsAccountId any
+	AwsAccountId    any
 	GroupMemberList any
-	GroupName any
-	MaxResults any
-	Namespace any
-	NextToken any
-	RequestId any
-	Status any
+	GroupName       any
+	MaxResults      any
+	Namespace       any
+	NextToken       any
+	RequestId       any
+	Status          any
 }
 
 var GroupMemberships = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_group_memberships",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"GroupName":    ubx.FieldSpec{WireName: "group_name"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"Namespace":    ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

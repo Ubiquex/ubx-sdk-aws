@@ -10,7 +10,7 @@ type Service_LambdaEndpoint struct {
 
 type Service_Tags struct {
 	// The key of a tag attached to the AWS Refactor Spaces service, used to organize, identify, and manage the service within your AWS environment. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -22,18 +22,18 @@ type Service_UrlEndpoint struct {
 }
 
 var Service_LambdaEndpointFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var Service_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Service_UrlEndpointFields = ubx.FieldMap{
-		"HealthUrl": ubx.FieldSpec{WireName: "health_url"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"HealthUrl": ubx.FieldSpec{WireName: "health_url"},
+	"Url":       ubx.FieldSpec{WireName: "url"},
+}
 
 type ServiceConfig struct {
 	// The unique identifier of the Refactor Spaces application to which this service belongs. (AI-inferred)
@@ -85,24 +85,24 @@ var Service = ubx.ResourceBinding{
 	WireType: "aws_refactor_spaces_service",
 	Fields: ubx.FieldMap{
 		"ApplicationIdentifier": ubx.FieldSpec{WireName: "application_identifier"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"EndpointType":          ubx.FieldSpec{WireName: "endpoint_type"},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
 		"LambdaEndpoint": ubx.FieldSpec{
 			WireName: "lambda_endpoint",
-			Kind: "object",
-			Fields: Service_LambdaEndpointFields,
+			Kind:     "object",
+			Fields:   Service_LambdaEndpointFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Service_TagsFields,
+			Kind:     "list",
+			Fields:   Service_TagsFields,
 		},
 		"UrlEndpoint": ubx.FieldSpec{
 			WireName: "url_endpoint",
-			Kind: "object",
-			Fields: Service_UrlEndpointFields,
+			Kind:     "object",
+			Fields:   Service_UrlEndpointFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

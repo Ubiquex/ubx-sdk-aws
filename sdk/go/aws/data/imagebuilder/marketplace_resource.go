@@ -4,24 +4,24 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MarketplaceResourceConfig struct {
-	ResourceArn any
+	ResourceArn      any
 	ResourceLocation any
-	ResourceType any
+	ResourceType     any
 }
 
 type MarketplaceResourceAttrs struct {
-	Data any
-	ResourceArn any
+	Data             any
+	ResourceArn      any
 	ResourceLocation any
-	ResourceType any
-	Url any
+	ResourceType     any
+	Url              any
 }
 
 var MarketplaceResource = ubx.DataSourceBinding{
 	WireType: "aws_imagebuilder_marketplace_resource",
 	Fields: ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"ResourceArn":      ubx.FieldSpec{WireName: "resource_arn"},
 		"ResourceLocation": ubx.FieldSpec{WireName: "resource_location"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":     ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

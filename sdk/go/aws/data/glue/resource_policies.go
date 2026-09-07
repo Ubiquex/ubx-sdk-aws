@@ -4,27 +4,27 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicies_GetResourcePoliciesResponseList struct {
-	CreateTime any
-	PolicyHash any
+	CreateTime   any
+	PolicyHash   any
 	PolicyInJson any
-	UpdateTime any
+	UpdateTime   any
 }
 
 type ResourcePoliciesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourcePoliciesAttrs struct {
 	GetResourcePoliciesResponseList any
-	MaxResults any
-	NextToken any
+	MaxResults                      any
+	NextToken                       any
 }
 
 var ResourcePolicies = ubx.DataSourceBinding{
 	WireType: "aws_glue_resource_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

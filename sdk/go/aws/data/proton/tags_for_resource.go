@@ -4,28 +4,28 @@ package proton
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResourceConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type TagsForResourceAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_proton_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

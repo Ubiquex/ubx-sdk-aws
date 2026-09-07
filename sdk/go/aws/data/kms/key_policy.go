@@ -4,20 +4,20 @@ package kms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyPolicyConfig struct {
-	KeyId any
+	KeyId      any
 	PolicyName any
 }
 
 type KeyPolicyAttrs struct {
-	KeyId any
-	Policy any
+	KeyId      any
+	Policy     any
 	PolicyName any
 }
 
 var KeyPolicy = ubx.DataSourceBinding{
 	WireType: "aws_kms_key_policy",
 	Fields: ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
+		"KeyId":      ubx.FieldSpec{WireName: "key_id"},
 		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
 	},
 }

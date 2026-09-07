@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityVerificationAttributes_VerificationAttributes struct {
 	VerificationStatus any
-	VerificationToken any
+	VerificationToken  any
 }
 
 type IdentityVerificationAttributesConfig struct {
@@ -13,7 +13,7 @@ type IdentityVerificationAttributesConfig struct {
 }
 
 type IdentityVerificationAttributesAttrs struct {
-	Identities any
+	Identities             any
 	VerificationAttributes any
 }
 

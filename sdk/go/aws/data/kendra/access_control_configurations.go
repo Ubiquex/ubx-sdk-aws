@@ -8,23 +8,23 @@ type AccessControlConfigurations_AccessControlConfigurations struct {
 }
 
 type AccessControlConfigurationsConfig struct {
-	IndexId any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AccessControlConfigurationsAttrs struct {
 	AccessControlConfigurations any
-	IndexId any
-	MaxResults any
-	NextToken any
+	IndexId                     any
+	MaxResults                  any
+	NextToken                   any
 }
 
 var AccessControlConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_kendra_access_control_configurations",
 	Fields: ubx.FieldMap{
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

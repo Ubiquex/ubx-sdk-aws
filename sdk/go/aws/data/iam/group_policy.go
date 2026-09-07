@@ -4,20 +4,20 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupPolicyConfig struct {
-	GroupName any
+	GroupName  any
 	PolicyName any
 }
 
 type GroupPolicyAttrs struct {
-	GroupName any
+	GroupName      any
 	PolicyDocument any
-	PolicyName any
+	PolicyName     any
 }
 
 var GroupPolicy = ubx.DataSourceBinding{
 	WireType: "aws_iam_group_policy",
 	Fields: ubx.FieldMap{
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"GroupName":  ubx.FieldSpec{WireName: "group_name"},
 		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
 	},
 }

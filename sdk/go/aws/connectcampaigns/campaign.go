@@ -50,52 +50,52 @@ type Campaign_Tags struct {
 }
 
 var Campaign_DialerConfig_AgentlessDialerConfigFields = ubx.FieldMap{
-		"DialingCapacity": ubx.FieldSpec{WireName: "dialing_capacity"},
-	}
+	"DialingCapacity": ubx.FieldSpec{WireName: "dialing_capacity"},
+}
 
 var Campaign_DialerConfig_PredictiveDialerConfigFields = ubx.FieldMap{
-		"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
-		"DialingCapacity": ubx.FieldSpec{WireName: "dialing_capacity"},
-	}
+	"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
+	"DialingCapacity":     ubx.FieldSpec{WireName: "dialing_capacity"},
+}
 
 var Campaign_DialerConfigFields = ubx.FieldMap{
-		"AgentlessDialerConfig": ubx.FieldSpec{
-			WireName: "agentless_dialer_config",
-			Kind: "object",
-			Fields: Campaign_DialerConfig_AgentlessDialerConfigFields,
-		},
-		"PredictiveDialerConfig": ubx.FieldSpec{
-			WireName: "predictive_dialer_config",
-			Kind: "object",
-			Fields: Campaign_DialerConfig_PredictiveDialerConfigFields,
-		},
-		"ProgressiveDialerConfig": ubx.FieldSpec{
-			WireName: "progressive_dialer_config",
-			Kind: "object",
-			Fields: Campaign_DialerConfig_PredictiveDialerConfigFields,
-		},
-	}
+	"AgentlessDialerConfig": ubx.FieldSpec{
+		WireName: "agentless_dialer_config",
+		Kind:     "object",
+		Fields:   Campaign_DialerConfig_AgentlessDialerConfigFields,
+	},
+	"PredictiveDialerConfig": ubx.FieldSpec{
+		WireName: "predictive_dialer_config",
+		Kind:     "object",
+		Fields:   Campaign_DialerConfig_PredictiveDialerConfigFields,
+	},
+	"ProgressiveDialerConfig": ubx.FieldSpec{
+		WireName: "progressive_dialer_config",
+		Kind:     "object",
+		Fields:   Campaign_DialerConfig_PredictiveDialerConfigFields,
+	},
+}
 
 var Campaign_OutboundCallConfig_AnswerMachineDetectionConfigFields = ubx.FieldMap{
-		"AwaitAnswerMachinePrompt": ubx.FieldSpec{WireName: "await_answer_machine_prompt"},
-		"EnableAnswerMachineDetection": ubx.FieldSpec{WireName: "enable_answer_machine_detection"},
-	}
+	"AwaitAnswerMachinePrompt":     ubx.FieldSpec{WireName: "await_answer_machine_prompt"},
+	"EnableAnswerMachineDetection": ubx.FieldSpec{WireName: "enable_answer_machine_detection"},
+}
 
 var Campaign_OutboundCallConfigFields = ubx.FieldMap{
-		"AnswerMachineDetectionConfig": ubx.FieldSpec{
-			WireName: "answer_machine_detection_config",
-			Kind: "object",
-			Fields: Campaign_OutboundCallConfig_AnswerMachineDetectionConfigFields,
-		},
-		"ConnectContactFlowArn": ubx.FieldSpec{WireName: "connect_contact_flow_arn"},
-		"ConnectQueueArn": ubx.FieldSpec{WireName: "connect_queue_arn"},
-		"ConnectSourcePhoneNumber": ubx.FieldSpec{WireName: "connect_source_phone_number"},
-	}
+	"AnswerMachineDetectionConfig": ubx.FieldSpec{
+		WireName: "answer_machine_detection_config",
+		Kind:     "object",
+		Fields:   Campaign_OutboundCallConfig_AnswerMachineDetectionConfigFields,
+	},
+	"ConnectContactFlowArn":    ubx.FieldSpec{WireName: "connect_contact_flow_arn"},
+	"ConnectQueueArn":          ubx.FieldSpec{WireName: "connect_queue_arn"},
+	"ConnectSourcePhoneNumber": ubx.FieldSpec{WireName: "connect_source_phone_number"},
+}
 
 var Campaign_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CampaignConfig struct {
 	// Amazon Connect Instance Arn
@@ -131,19 +131,19 @@ var Campaign = ubx.ResourceBinding{
 		"ConnectInstanceArn": ubx.FieldSpec{WireName: "connect_instance_arn"},
 		"DialerConfig": ubx.FieldSpec{
 			WireName: "dialer_config",
-			Kind: "object",
-			Fields: Campaign_DialerConfigFields,
+			Kind:     "object",
+			Fields:   Campaign_DialerConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OutboundCallConfig": ubx.FieldSpec{
 			WireName: "outbound_call_config",
-			Kind: "object",
-			Fields: Campaign_OutboundCallConfigFields,
+			Kind:     "object",
+			Fields:   Campaign_OutboundCallConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Campaign_TagsFields,
+			Kind:     "list",
+			Fields:   Campaign_TagsFields,
 		},
 	},
 }

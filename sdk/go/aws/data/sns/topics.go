@@ -13,7 +13,7 @@ type TopicsConfig struct {
 
 type TopicsAttrs struct {
 	NextToken any
-	Topics any
+	Topics    any
 }
 
 var Topics = ubx.DataSourceBinding{

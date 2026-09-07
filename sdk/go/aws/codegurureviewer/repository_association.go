@@ -10,9 +10,9 @@ type RepositoryAssociation_Tags struct {
 }
 
 var RepositoryAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RepositoryAssociationConfig struct {
 	// The name of the S3 bucket associated with an associated S3 repository. It must start with `codeguru-reviewer-`.
@@ -49,14 +49,14 @@ type RepositoryAssociationAttrs struct {
 var RepositoryAssociation = ubx.ResourceBinding{
 	WireType: "aws_code_guru_reviewer_repository_association",
 	Fields: ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"BucketName":    ubx.FieldSpec{WireName: "bucket_name"},
 		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Owner":         ubx.FieldSpec{WireName: "owner"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RepositoryAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   RepositoryAssociation_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

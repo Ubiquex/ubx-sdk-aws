@@ -4,7 +4,7 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DashboardPermissions_LinkSharingConfiguration_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
@@ -14,24 +14,24 @@ type DashboardPermissions_LinkSharingConfiguration struct {
 
 type DashboardPermissionsConfig struct {
 	AwsAccountId any
-	DashboardId any
+	DashboardId  any
 }
 
 type DashboardPermissionsAttrs struct {
 	AwsAccountId any
 	DashboardArn any
-	DashboardId any
+	DashboardId  any
 	// <p>A structure that contains the configuration of a shareable link to the dashboard.</p>
 	LinkSharingConfiguration any
-	Permissions any
-	RequestId any
-	Status any
+	Permissions              any
+	RequestId                any
+	Status                   any
 }
 
 var DashboardPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_dashboard_permissions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DashboardId": ubx.FieldSpec{WireName: "dashboard_id"},
+		"DashboardId":  ubx.FieldSpec{WireName: "dashboard_id"},
 	},
 }

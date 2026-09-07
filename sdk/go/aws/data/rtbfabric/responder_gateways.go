@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponderGatewaysConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResponderGatewaysAttrs struct {
 	GatewayIds any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ResponderGateways = ubx.DataSourceBinding{
 	WireType: "aws_rtbfabric_responder_gateways",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

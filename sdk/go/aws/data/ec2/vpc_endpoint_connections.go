@@ -4,58 +4,58 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpointConnections_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type VpcEndpointConnections_VpcEndpointConnections_DnsEntries struct {
-	DnsName any
+	DnsName      any
 	HostedZoneId any
 }
 
 type VpcEndpointConnections_VpcEndpointConnections_PayerResponsibilities struct {
 	PayerResponsibilityType any
-	Scope any
+	Scope                   any
 }
 
 type VpcEndpointConnections_VpcEndpointConnections_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type VpcEndpointConnections_VpcEndpointConnections struct {
-	CreationTimestamp any
-	DnsEntries any
+	CreationTimestamp       any
+	DnsEntries              any
 	GatewayLoadBalancerArns any
-	IpAddressType any
+	IpAddressType           any
 	NetworkLoadBalancerArns any
-	PayerResponsibilities any
-	ServiceId any
-	Tags any
+	PayerResponsibilities   any
+	ServiceId               any
+	Tags                    any
 	VpcEndpointConnectionId any
-	VpcEndpointId any
-	VpcEndpointOwner any
-	VpcEndpointRegion any
-	VpcEndpointState any
+	VpcEndpointId           any
+	VpcEndpointOwner        any
+	VpcEndpointRegion       any
+	VpcEndpointState        any
 }
 
 var VpcEndpointConnections_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type VpcEndpointConnectionsConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VpcEndpointConnectionsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                 any
+	Filters                any
+	MaxResults             any
+	NextToken              any
 	VpcEndpointConnections any
 }
 
@@ -65,10 +65,10 @@ var VpcEndpointConnections = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: VpcEndpointConnections_FiltersFields,
+			Kind:     "list",
+			Fields:   VpcEndpointConnections_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

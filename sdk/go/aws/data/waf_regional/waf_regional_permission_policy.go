@@ -8,7 +8,7 @@ type WafRegionalPermissionPolicyConfig struct {
 }
 
 type WafRegionalPermissionPolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

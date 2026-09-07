@@ -156,136 +156,136 @@ type Listener_MutualAuthentication struct {
 }
 
 var Listener_CertificatesFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+}
 
 var Listener_DefaultActions_AuthenticateCognitoConfigFields = ubx.FieldMap{
-		"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
-		"OnUnauthenticatedRequest": ubx.FieldSpec{WireName: "on_unauthenticated_request"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SessionCookieName": ubx.FieldSpec{WireName: "session_cookie_name"},
-		"SessionTimeout": ubx.FieldSpec{WireName: "session_timeout"},
-		"UserPoolArn": ubx.FieldSpec{WireName: "user_pool_arn"},
-		"UserPoolClientId": ubx.FieldSpec{WireName: "user_pool_client_id"},
-		"UserPoolDomain": ubx.FieldSpec{WireName: "user_pool_domain"},
-	}
+	"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
+	"OnUnauthenticatedRequest":         ubx.FieldSpec{WireName: "on_unauthenticated_request"},
+	"Scope":                            ubx.FieldSpec{WireName: "scope"},
+	"SessionCookieName":                ubx.FieldSpec{WireName: "session_cookie_name"},
+	"SessionTimeout":                   ubx.FieldSpec{WireName: "session_timeout"},
+	"UserPoolArn":                      ubx.FieldSpec{WireName: "user_pool_arn"},
+	"UserPoolClientId":                 ubx.FieldSpec{WireName: "user_pool_client_id"},
+	"UserPoolDomain":                   ubx.FieldSpec{WireName: "user_pool_domain"},
+}
 
 var Listener_DefaultActions_AuthenticateOidcConfigFields = ubx.FieldMap{
-		"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
-		"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"OnUnauthenticatedRequest": ubx.FieldSpec{WireName: "on_unauthenticated_request"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SessionCookieName": ubx.FieldSpec{WireName: "session_cookie_name"},
-		"SessionTimeout": ubx.FieldSpec{WireName: "session_timeout"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-		"UseExistingClientSecret": ubx.FieldSpec{WireName: "use_existing_client_secret"},
-		"UserInfoEndpoint": ubx.FieldSpec{WireName: "user_info_endpoint"},
-	}
+	"AuthenticationRequestExtraParams": ubx.FieldSpec{WireName: "authentication_request_extra_params"},
+	"AuthorizationEndpoint":            ubx.FieldSpec{WireName: "authorization_endpoint"},
+	"ClientId":                         ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":                     ubx.FieldSpec{WireName: "client_secret"},
+	"Issuer":                           ubx.FieldSpec{WireName: "issuer"},
+	"OnUnauthenticatedRequest":         ubx.FieldSpec{WireName: "on_unauthenticated_request"},
+	"Scope":                            ubx.FieldSpec{WireName: "scope"},
+	"SessionCookieName":                ubx.FieldSpec{WireName: "session_cookie_name"},
+	"SessionTimeout":                   ubx.FieldSpec{WireName: "session_timeout"},
+	"TokenEndpoint":                    ubx.FieldSpec{WireName: "token_endpoint"},
+	"UseExistingClientSecret":          ubx.FieldSpec{WireName: "use_existing_client_secret"},
+	"UserInfoEndpoint":                 ubx.FieldSpec{WireName: "user_info_endpoint"},
+}
 
 var Listener_DefaultActions_FixedResponseConfigFields = ubx.FieldMap{
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"MessageBody": ubx.FieldSpec{WireName: "message_body"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"ContentType": ubx.FieldSpec{WireName: "content_type"},
+	"MessageBody": ubx.FieldSpec{WireName: "message_body"},
+	"StatusCode":  ubx.FieldSpec{WireName: "status_code"},
+}
 
 var Listener_DefaultActions_ForwardConfig_TargetGroupStickinessConfigFields = ubx.FieldMap{
-		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
+	"Enabled":         ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Listener_DefaultActions_ForwardConfig_TargetGroupsFields = ubx.FieldMap{
-		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
+	"Weight":         ubx.FieldSpec{WireName: "weight"},
+}
 
 var Listener_DefaultActions_ForwardConfigFields = ubx.FieldMap{
-		"TargetGroupStickinessConfig": ubx.FieldSpec{
-			WireName: "target_group_stickiness_config",
-			Kind: "object",
-			Fields: Listener_DefaultActions_ForwardConfig_TargetGroupStickinessConfigFields,
-		},
-		"TargetGroups": ubx.FieldSpec{
-			WireName: "target_groups",
-			Kind: "list",
-			Fields: Listener_DefaultActions_ForwardConfig_TargetGroupsFields,
-		},
-	}
+	"TargetGroupStickinessConfig": ubx.FieldSpec{
+		WireName: "target_group_stickiness_config",
+		Kind:     "object",
+		Fields:   Listener_DefaultActions_ForwardConfig_TargetGroupStickinessConfigFields,
+	},
+	"TargetGroups": ubx.FieldSpec{
+		WireName: "target_groups",
+		Kind:     "list",
+		Fields:   Listener_DefaultActions_ForwardConfig_TargetGroupsFields,
+	},
+}
 
 var Listener_DefaultActions_JwtValidationConfig_AdditionalClaimsFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Listener_DefaultActions_JwtValidationConfigFields = ubx.FieldMap{
-		"AdditionalClaims": ubx.FieldSpec{
-			WireName: "additional_claims",
-			Kind: "list",
-			Fields: Listener_DefaultActions_JwtValidationConfig_AdditionalClaimsFields,
-		},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"JwksEndpoint": ubx.FieldSpec{WireName: "jwks_endpoint"},
-	}
+	"AdditionalClaims": ubx.FieldSpec{
+		WireName: "additional_claims",
+		Kind:     "list",
+		Fields:   Listener_DefaultActions_JwtValidationConfig_AdditionalClaimsFields,
+	},
+	"Issuer":       ubx.FieldSpec{WireName: "issuer"},
+	"JwksEndpoint": ubx.FieldSpec{WireName: "jwks_endpoint"},
+}
 
 var Listener_DefaultActions_RedirectConfigFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"Host":       ubx.FieldSpec{WireName: "host"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Port":       ubx.FieldSpec{WireName: "port"},
+	"Protocol":   ubx.FieldSpec{WireName: "protocol"},
+	"Query":      ubx.FieldSpec{WireName: "query"},
+	"StatusCode": ubx.FieldSpec{WireName: "status_code"},
+}
 
 var Listener_DefaultActionsFields = ubx.FieldMap{
-		"AuthenticateCognitoConfig": ubx.FieldSpec{
-			WireName: "authenticate_cognito_config",
-			Kind: "object",
-			Fields: Listener_DefaultActions_AuthenticateCognitoConfigFields,
-		},
-		"AuthenticateOidcConfig": ubx.FieldSpec{
-			WireName: "authenticate_oidc_config",
-			Kind: "object",
-			Fields: Listener_DefaultActions_AuthenticateOidcConfigFields,
-		},
-		"FixedResponseConfig": ubx.FieldSpec{
-			WireName: "fixed_response_config",
-			Kind: "object",
-			Fields: Listener_DefaultActions_FixedResponseConfigFields,
-		},
-		"ForwardConfig": ubx.FieldSpec{
-			WireName: "forward_config",
-			Kind: "object",
-			Fields: Listener_DefaultActions_ForwardConfigFields,
-		},
-		"JwtValidationConfig": ubx.FieldSpec{
-			WireName: "jwt_validation_config",
-			Kind: "object",
-			Fields: Listener_DefaultActions_JwtValidationConfigFields,
-		},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"RedirectConfig": ubx.FieldSpec{
-			WireName: "redirect_config",
-			Kind: "object",
-			Fields: Listener_DefaultActions_RedirectConfigFields,
-		},
-		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AuthenticateCognitoConfig": ubx.FieldSpec{
+		WireName: "authenticate_cognito_config",
+		Kind:     "object",
+		Fields:   Listener_DefaultActions_AuthenticateCognitoConfigFields,
+	},
+	"AuthenticateOidcConfig": ubx.FieldSpec{
+		WireName: "authenticate_oidc_config",
+		Kind:     "object",
+		Fields:   Listener_DefaultActions_AuthenticateOidcConfigFields,
+	},
+	"FixedResponseConfig": ubx.FieldSpec{
+		WireName: "fixed_response_config",
+		Kind:     "object",
+		Fields:   Listener_DefaultActions_FixedResponseConfigFields,
+	},
+	"ForwardConfig": ubx.FieldSpec{
+		WireName: "forward_config",
+		Kind:     "object",
+		Fields:   Listener_DefaultActions_ForwardConfigFields,
+	},
+	"JwtValidationConfig": ubx.FieldSpec{
+		WireName: "jwt_validation_config",
+		Kind:     "object",
+		Fields:   Listener_DefaultActions_JwtValidationConfigFields,
+	},
+	"Order": ubx.FieldSpec{WireName: "order"},
+	"RedirectConfig": ubx.FieldSpec{
+		WireName: "redirect_config",
+		Kind:     "object",
+		Fields:   Listener_DefaultActions_RedirectConfigFields,
+	},
+	"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Listener_ListenerAttributesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Listener_MutualAuthenticationFields = ubx.FieldMap{
-		"AdvertiseTrustStoreCaNames": ubx.FieldSpec{WireName: "advertise_trust_store_ca_names"},
-		"IgnoreClientCertificateExpiry": ubx.FieldSpec{WireName: "ignore_client_certificate_expiry"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"TrustStoreArn": ubx.FieldSpec{WireName: "trust_store_arn"},
-	}
+	"AdvertiseTrustStoreCaNames":    ubx.FieldSpec{WireName: "advertise_trust_store_ca_names"},
+	"IgnoreClientCertificateExpiry": ubx.FieldSpec{WireName: "ignore_client_certificate_expiry"},
+	"Mode":                          ubx.FieldSpec{WireName: "mode"},
+	"TrustStoreArn":                 ubx.FieldSpec{WireName: "trust_store_arn"},
+}
 
 type ListenerConfig struct {
 	// [TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
@@ -341,32 +341,32 @@ var Listener = ubx.ResourceBinding{
 		"AlpnPolicy": ubx.FieldSpec{WireName: "alpn_policy"},
 		"Certificates": ubx.FieldSpec{
 			WireName: "certificates",
-			Kind: "list",
-			Fields: Listener_CertificatesFields,
+			Kind:     "list",
+			Fields:   Listener_CertificatesFields,
 		},
 		"DefaultActions": ubx.FieldSpec{
 			WireName: "default_actions",
-			Kind: "list",
-			Fields: Listener_DefaultActionsFields,
+			Kind:     "list",
+			Fields:   Listener_DefaultActionsFields,
 		},
 		"ListenerAttributes": ubx.FieldSpec{
 			WireName: "listener_attributes",
-			Kind: "list",
-			Fields: Listener_ListenerAttributesFields,
+			Kind:     "list",
+			Fields:   Listener_ListenerAttributesFields,
 		},
 		"LoadBalancerArn": ubx.FieldSpec{WireName: "load_balancer_arn"},
 		"MutualAuthentication": ubx.FieldSpec{
 			WireName: "mutual_authentication",
-			Kind: "object",
-			Fields: Listener_MutualAuthenticationFields,
+			Kind:     "object",
+			Fields:   Listener_MutualAuthenticationFields,
 		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Port":      ubx.FieldSpec{WireName: "port"},
+		"Protocol":  ubx.FieldSpec{WireName: "protocol"},
 		"SslPolicy": ubx.FieldSpec{WireName: "ssl_policy"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Listener_ListenerAttributesFields,
+			Kind:     "list",
+			Fields:   Listener_ListenerAttributesFields,
 		},
 	},
 }

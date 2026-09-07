@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerResourceInventory_Filters struct {
 	Condition any
-	Name any
-	Value any
+	Name      any
+	Value     any
 }
 
 type LicenseManagerResourceInventory_ResourceInventoryList struct {
-	AmiId any
-	HostId any
-	InstanceType any
+	AmiId                   any
+	HostId                  any
+	InstanceType            any
 	MarketplaceProductCodes any
-	Platform any
-	PlatformVersion any
-	Region any
-	ResourceArn any
-	ResourceId any
+	Platform                any
+	PlatformVersion         any
+	Region                  any
+	ResourceArn             any
+	ResourceId              any
 	ResourceOwningAccountId any
-	ResourceType any
-	UsageOperation any
+	ResourceType            any
+	UsageOperation          any
 }
 
 var LicenseManagerResourceInventory_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type LicenseManagerResourceInventoryConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LicenseManagerResourceInventoryAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters               any
+	MaxResults            any
+	NextToken             any
 	ResourceInventoryList any
 }
 
@@ -48,10 +48,10 @@ var LicenseManagerResourceInventory = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerResourceInventory_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerResourceInventory_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

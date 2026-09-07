@@ -24,8 +24,8 @@ type VectorBucketPolicyAttrs struct {
 var VectorBucketPolicy = ubx.ResourceBinding{
 	WireType: "aws_s3_vectors_vector_bucket_policy",
 	Fields: ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"VectorBucketArn": ubx.FieldSpec{WireName: "vector_bucket_arn"},
+		"Policy":           ubx.FieldSpec{WireName: "policy"},
+		"VectorBucketArn":  ubx.FieldSpec{WireName: "vector_bucket_arn"},
 		"VectorBucketName": ubx.FieldSpec{WireName: "vector_bucket_name"},
 	},
 }

@@ -11,9 +11,9 @@ type ReviewTemplate_Tags struct {
 }
 
 var ReviewTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReviewTemplateConfig struct {
 	// The review template description.
@@ -53,12 +53,12 @@ var ReviewTemplate = ubx.ResourceBinding{
 	WireType: "aws_well_architected_review_template",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Lenses": ubx.FieldSpec{WireName: "lenses"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
+		"Lenses":      ubx.FieldSpec{WireName: "lenses"},
+		"Notes":       ubx.FieldSpec{WireName: "notes"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReviewTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   ReviewTemplate_TagsFields,
 		},
 		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
 	},

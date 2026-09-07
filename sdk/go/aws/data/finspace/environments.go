@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Environments_Environments_FederationParameters struct {
 	ApplicationCallBackUrl any
-	AttributeMap any
+	AttributeMap           any
 	FederationProviderName any
-	FederationUrn any
-	SamlMetadataDocument any
-	SamlMetadataUrl any
+	FederationUrn          any
+	SamlMetadataDocument   any
+	SamlMetadataUrl        any
 }
 
 type Environments_Environments struct {
-	AwsAccountId any
+	AwsAccountId              any
 	DedicatedServiceAccountId any
-	Description any
-	EnvironmentArn any
-	EnvironmentId any
-	EnvironmentUrl any
-	FederationMode any
-	FederationParameters any
-	KmsKeyId any
-	Name any
-	SageMakerStudioDomainUrl any
-	Status any
+	Description               any
+	EnvironmentArn            any
+	EnvironmentId             any
+	EnvironmentUrl            any
+	FederationMode            any
+	FederationParameters      any
+	KmsKeyId                  any
+	Name                      any
+	SageMakerStudioDomainUrl  any
+	Status                    any
 }
 
 type EnvironmentsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EnvironmentsAttrs struct {
 	Environments any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var Environments = ubx.DataSourceBinding{
 	WireType: "aws_finspace_environments",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

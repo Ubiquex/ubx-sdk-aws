@@ -9,52 +9,52 @@ type ElasticLoadBalancingV2TargetGroups_TargetGroups_Matcher struct {
 }
 
 type ElasticLoadBalancingV2TargetGroups_TargetGroups struct {
-	HealthCheckEnabled any
+	HealthCheckEnabled         any
 	HealthCheckIntervalSeconds any
-	HealthCheckPath any
-	HealthCheckPort any
-	HealthCheckProtocol any
-	HealthCheckTimeoutSeconds any
-	HealthyThresholdCount any
-	IpAddressType any
-	LoadBalancerArns any
-	Matcher any
-	Port any
-	Protocol any
-	ProtocolVersion any
-	TargetControlPort any
-	TargetGroupArn any
-	TargetGroupName any
-	TargetType any
-	UnhealthyThresholdCount any
-	VpcId any
+	HealthCheckPath            any
+	HealthCheckPort            any
+	HealthCheckProtocol        any
+	HealthCheckTimeoutSeconds  any
+	HealthyThresholdCount      any
+	IpAddressType              any
+	LoadBalancerArns           any
+	Matcher                    any
+	Port                       any
+	Protocol                   any
+	ProtocolVersion            any
+	TargetControlPort          any
+	TargetGroupArn             any
+	TargetGroupName            any
+	TargetType                 any
+	UnhealthyThresholdCount    any
+	VpcId                      any
 }
 
 type ElasticLoadBalancingV2TargetGroupsConfig struct {
 	LoadBalancerArn any
-	Marker any
-	Names any
-	PageSize any
+	Marker          any
+	Names           any
+	PageSize        any
 	TargetGroupArns any
 }
 
 type ElasticLoadBalancingV2TargetGroupsAttrs struct {
 	LoadBalancerArn any
-	Marker any
-	Names any
-	NextMarker any
-	PageSize any
+	Marker          any
+	Names           any
+	NextMarker      any
+	PageSize        any
 	TargetGroupArns any
-	TargetGroups any
+	TargetGroups    any
 }
 
 var ElasticLoadBalancingV2TargetGroups = ubx.DataSourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_target_groups",
 	Fields: ubx.FieldMap{
 		"LoadBalancerArn": ubx.FieldSpec{WireName: "load_balancer_arn"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":          ubx.FieldSpec{WireName: "marker"},
+		"Names":           ubx.FieldSpec{WireName: "names"},
+		"PageSize":        ubx.FieldSpec{WireName: "page_size"},
 		"TargetGroupArns": ubx.FieldSpec{WireName: "target_group_arns"},
 	},
 }

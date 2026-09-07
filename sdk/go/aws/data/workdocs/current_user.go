@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CurrentUser_User_Storage_StorageRule struct {
 	StorageAllocatedInBytes any
-	StorageType any
+	StorageType             any
 }
 
 type CurrentUser_User_Storage struct {
 	// <p>Describes the storage for a user.</p>
-	StorageRule any
+	StorageRule            any
 	StorageUtilizedInBytes any
 }
 
 type CurrentUser_User struct {
-	CreatedTimestamp any
-	EmailAddress any
-	GivenName any
-	Id any
-	Locale any
-	ModifiedTimestamp any
-	OrganizationId any
+	CreatedTimestamp   any
+	EmailAddress       any
+	GivenName          any
+	Id                 any
+	Locale             any
+	ModifiedTimestamp  any
+	OrganizationId     any
 	RecycleBinFolderId any
-	RootFolderId any
-	Status any
+	RootFolderId       any
+	Status             any
 	// <p>Describes the storage for a user.</p>
-	Storage any
-	Surname any
+	Storage    any
+	Surname    any
 	TimeZoneId any
-	Type any
-	Username any
+	Type       any
+	Username   any
 }
 
 type CurrentUserConfig struct {

@@ -9,16 +9,16 @@ type ChannelNamespaces_ChannelNamespaces_HandlerConfigs_OnPublish_Integration_La
 
 type ChannelNamespaces_ChannelNamespaces_HandlerConfigs_OnPublish_Integration struct {
 	DataSourceName any
-	LambdaConfig any
+	LambdaConfig   any
 }
 
 type ChannelNamespaces_ChannelNamespaces_HandlerConfigs_OnPublish struct {
-	Behavior any
+	Behavior    any
 	Integration any
 }
 
 type ChannelNamespaces_ChannelNamespaces_HandlerConfigs struct {
-	OnPublish any
+	OnPublish   any
 	OnSubscribe any
 }
 
@@ -27,36 +27,36 @@ type ChannelNamespaces_ChannelNamespaces_PublishAuthModes struct {
 }
 
 type ChannelNamespaces_ChannelNamespaces struct {
-	ApiId any
+	ApiId               any
 	ChannelNamespaceArn any
-	CodeHandlers any
-	Created any
-	HandlerConfigs any
-	LastModified any
-	Name any
-	PublishAuthModes any
-	SubscribeAuthModes any
-	Tags any
+	CodeHandlers        any
+	Created             any
+	HandlerConfigs      any
+	LastModified        any
+	Name                any
+	PublishAuthModes    any
+	SubscribeAuthModes  any
+	Tags                any
 }
 
 type ChannelNamespacesConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ChannelNamespacesAttrs struct {
-	ApiId any
+	ApiId             any
 	ChannelNamespaces any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var ChannelNamespaces = ubx.DataSourceBinding{
 	WireType: "aws_appsync_channel_namespaces",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

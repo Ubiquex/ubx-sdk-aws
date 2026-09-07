@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ControlplanePaymentCryptographyMpaTeamAssociation_MpaTeamAssociation_MpaStatus struct {
 	InitiationDate any
-	MpaSessionArn any
-	Status any
-	StatusMessage any
+	MpaSessionArn  any
+	Status         any
+	StatusMessage  any
 }
 
 type ControlplanePaymentCryptographyMpaTeamAssociation_MpaTeamAssociation struct {
-	Action any
+	Action           any
 	AssociationState any
 	// <p>The status of an MPA session.</p>
-	MpaStatus any
+	MpaStatus  any
 	MpaTeamArn any
 }
 

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetSelectionRulesConfig struct {
 	MigrationProjectIdentifier any
-	SelectionRules any
+	SelectionRules             any
 }
 
 type TargetSelectionRulesAttrs struct {
 	MigrationProjectIdentifier any
-	SelectionRules any
-	TargetSelectionRules any
+	SelectionRules             any
+	TargetSelectionRules       any
 }
 
 var TargetSelectionRules = ubx.DataSourceBinding{
 	WireType: "aws_dms_target_selection_rules",
 	Fields: ubx.FieldMap{
 		"MigrationProjectIdentifier": ubx.FieldSpec{WireName: "migration_project_identifier"},
-		"SelectionRules": ubx.FieldSpec{WireName: "selection_rules"},
+		"SelectionRules":             ubx.FieldSpec{WireName: "selection_rules"},
 	},
 }

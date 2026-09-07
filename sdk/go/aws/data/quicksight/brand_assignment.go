@@ -9,8 +9,8 @@ type BrandAssignmentConfig struct {
 
 type BrandAssignmentAttrs struct {
 	AwsAccountId any
-	BrandArn any
-	RequestId any
+	BrandArn     any
+	RequestId    any
 }
 
 var BrandAssignment = ubx.DataSourceBinding{

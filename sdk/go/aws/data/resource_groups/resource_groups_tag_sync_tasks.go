@@ -4,43 +4,43 @@ package resource_groups
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceGroupsTagSyncTasks_Filters struct {
-	GroupArn any
+	GroupArn  any
 	GroupName any
 }
 
 type ResourceGroupsTagSyncTasks_TagSyncTasks_ResourceQuery struct {
 	Query any
-	Type any
+	Type  any
 }
 
 type ResourceGroupsTagSyncTasks_TagSyncTasks struct {
-	CreatedAt any
-	ErrorMessage any
-	GroupArn any
-	GroupName any
+	CreatedAt     any
+	ErrorMessage  any
+	GroupArn      any
+	GroupName     any
 	ResourceQuery any
-	RoleArn any
-	Status any
-	TagKey any
-	TagValue any
-	TaskArn any
+	RoleArn       any
+	Status        any
+	TagKey        any
+	TagValue      any
+	TaskArn       any
 }
 
 var ResourceGroupsTagSyncTasks_FiltersFields = ubx.FieldMap{
-		"GroupArn": ubx.FieldSpec{WireName: "group_arn"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-	}
+	"GroupArn":  ubx.FieldSpec{WireName: "group_arn"},
+	"GroupName": ubx.FieldSpec{WireName: "group_name"},
+}
 
 type ResourceGroupsTagSyncTasksConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceGroupsTagSyncTasksAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters      any
+	MaxResults   any
+	NextToken    any
 	TagSyncTasks any
 }
 
@@ -49,10 +49,10 @@ var ResourceGroupsTagSyncTasks = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ResourceGroupsTagSyncTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ResourceGroupsTagSyncTasks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,29 +4,29 @@ package cognito_identity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdentityOpenIdTokenForDeveloperIdentityConfig struct {
-	IdentityId any
+	IdentityId     any
 	IdentityPoolId any
-	Logins any
-	PrincipalTags any
-	TokenDuration any
+	Logins         any
+	PrincipalTags  any
+	TokenDuration  any
 }
 
 type CognitoIdentityOpenIdTokenForDeveloperIdentityAttrs struct {
-	IdentityId any
+	IdentityId     any
 	IdentityPoolId any
-	Logins any
-	PrincipalTags any
-	Token any
-	TokenDuration any
+	Logins         any
+	PrincipalTags  any
+	Token          any
+	TokenDuration  any
 }
 
 var CognitoIdentityOpenIdTokenForDeveloperIdentity = ubx.DataSourceBinding{
 	WireType: "aws_cognito_identity_open_id_token_for_developer_identity",
 	Fields: ubx.FieldMap{
-		"IdentityId": ubx.FieldSpec{WireName: "identity_id"},
+		"IdentityId":     ubx.FieldSpec{WireName: "identity_id"},
 		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"Logins": ubx.FieldSpec{WireName: "logins"},
-		"PrincipalTags": ubx.FieldSpec{WireName: "principal_tags"},
-		"TokenDuration": ubx.FieldSpec{WireName: "token_duration"},
+		"Logins":         ubx.FieldSpec{WireName: "logins"},
+		"PrincipalTags":  ubx.FieldSpec{WireName: "principal_tags"},
+		"TokenDuration":  ubx.FieldSpec{WireName: "token_duration"},
 	},
 }

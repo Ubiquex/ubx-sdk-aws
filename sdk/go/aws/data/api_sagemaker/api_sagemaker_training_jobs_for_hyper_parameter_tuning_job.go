@@ -5,52 +5,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerTrainingJobsForHyperParameterTuningJob_TrainingJobSummaries_FinalHyperParameterTuningJobObjectiveMetric struct {
 	MetricName any
-	Type any
-	Value any
+	Type       any
+	Value      any
 }
 
 type ApiSagemakerTrainingJobsForHyperParameterTuningJob_TrainingJobSummaries struct {
-	CreationTime any
-	FailureReason any
+	CreationTime                                any
+	FailureReason                               any
 	FinalHyperParameterTuningJobObjectiveMetric any
-	ObjectiveStatus any
-	TrainingEndTime any
-	TrainingJobArn any
-	TrainingJobDefinitionName any
-	TrainingJobName any
-	TrainingJobStatus any
-	TrainingStartTime any
-	TunedHyperParameters any
-	TuningJobName any
+	ObjectiveStatus                             any
+	TrainingEndTime                             any
+	TrainingJobArn                              any
+	TrainingJobDefinitionName                   any
+	TrainingJobName                             any
+	TrainingJobStatus                           any
+	TrainingStartTime                           any
+	TunedHyperParameters                        any
+	TuningJobName                               any
 }
 
 type ApiSagemakerTrainingJobsForHyperParameterTuningJobConfig struct {
 	HyperParameterTuningJobName any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StatusEquals any
+	MaxResults                  any
+	NextToken                   any
+	SortBy                      any
+	SortOrder                   any
+	StatusEquals                any
 }
 
 type ApiSagemakerTrainingJobsForHyperParameterTuningJobAttrs struct {
 	HyperParameterTuningJobName any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StatusEquals any
-	TrainingJobSummaries any
+	MaxResults                  any
+	NextToken                   any
+	SortBy                      any
+	SortOrder                   any
+	StatusEquals                any
+	TrainingJobSummaries        any
 }
 
 var ApiSagemakerTrainingJobsForHyperParameterTuningJob = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_training_jobs_for_hyper_parameter_tuning_job",
 	Fields: ubx.FieldMap{
 		"HyperParameterTuningJobName": ubx.FieldSpec{WireName: "hyper_parameter_tuning_job_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"StatusEquals": ubx.FieldSpec{WireName: "status_equals"},
+		"MaxResults":                  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":                      ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":                   ubx.FieldSpec{WireName: "sort_order"},
+		"StatusEquals":                ubx.FieldSpec{WireName: "status_equals"},
 	},
 }

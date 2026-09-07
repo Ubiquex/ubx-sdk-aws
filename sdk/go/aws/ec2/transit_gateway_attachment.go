@@ -22,16 +22,16 @@ type TransitGatewayAttachment_Tags struct {
 }
 
 var TransitGatewayAttachment_OptionsFields = ubx.FieldMap{
-		"ApplianceModeSupport": ubx.FieldSpec{WireName: "appliance_mode_support"},
-		"DnsSupport": ubx.FieldSpec{WireName: "dns_support"},
-		"Ipv6Support": ubx.FieldSpec{WireName: "ipv6_support"},
-		"SecurityGroupReferencingSupport": ubx.FieldSpec{WireName: "security_group_referencing_support"},
-	}
+	"ApplianceModeSupport":            ubx.FieldSpec{WireName: "appliance_mode_support"},
+	"DnsSupport":                      ubx.FieldSpec{WireName: "dns_support"},
+	"Ipv6Support":                     ubx.FieldSpec{WireName: "ipv6_support"},
+	"SecurityGroupReferencingSupport": ubx.FieldSpec{WireName: "security_group_referencing_support"},
+}
 
 var TransitGatewayAttachment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayAttachmentConfig struct {
 	// The options for the transit gateway vpc attachment.
@@ -66,16 +66,16 @@ var TransitGatewayAttachment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: TransitGatewayAttachment_OptionsFields,
+			Kind:     "object",
+			Fields:   TransitGatewayAttachment_OptionsFields,
 		},
 		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayAttachment_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayAttachment_TagsFields,
 		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

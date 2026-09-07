@@ -4,13 +4,13 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Studios_Studios struct {
-	AuthMode any
+	AuthMode     any
 	CreationTime any
-	Description any
-	Name any
-	StudioId any
-	Url any
-	VpcId any
+	Description  any
+	Name         any
+	StudioId     any
+	Url          any
+	VpcId        any
 }
 
 type StudiosConfig struct {
@@ -18,7 +18,7 @@ type StudiosConfig struct {
 }
 
 type StudiosAttrs struct {
-	Marker any
+	Marker  any
 	Studios any
 }
 

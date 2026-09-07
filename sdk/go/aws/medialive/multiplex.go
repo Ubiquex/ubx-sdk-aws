@@ -27,20 +27,20 @@ type Multiplex_Tags struct {
 }
 
 var Multiplex_DestinationsFields = ubx.FieldMap{
-		"MultiplexMediaConnectOutputDestinationSettings": ubx.FieldSpec{WireName: "multiplex_media_connect_output_destination_settings"},
-	}
+	"MultiplexMediaConnectOutputDestinationSettings": ubx.FieldSpec{WireName: "multiplex_media_connect_output_destination_settings"},
+}
 
 var Multiplex_MultiplexSettingsFields = ubx.FieldMap{
-		"MaximumVideoBufferDelayMilliseconds": ubx.FieldSpec{WireName: "maximum_video_buffer_delay_milliseconds"},
-		"TransportStreamBitrate": ubx.FieldSpec{WireName: "transport_stream_bitrate"},
-		"TransportStreamId": ubx.FieldSpec{WireName: "transport_stream_id"},
-		"TransportStreamReservedBitrate": ubx.FieldSpec{WireName: "transport_stream_reserved_bitrate"},
-	}
+	"MaximumVideoBufferDelayMilliseconds": ubx.FieldSpec{WireName: "maximum_video_buffer_delay_milliseconds"},
+	"TransportStreamBitrate":              ubx.FieldSpec{WireName: "transport_stream_bitrate"},
+	"TransportStreamId":                   ubx.FieldSpec{WireName: "transport_stream_id"},
+	"TransportStreamReservedBitrate":      ubx.FieldSpec{WireName: "transport_stream_reserved_bitrate"},
+}
 
 var Multiplex_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MultiplexConfig struct {
 	// A list of availability zones for the multiplex.
@@ -84,19 +84,19 @@ var Multiplex = ubx.ResourceBinding{
 		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
 		"Destinations": ubx.FieldSpec{
 			WireName: "destinations",
-			Kind: "list",
-			Fields: Multiplex_DestinationsFields,
+			Kind:     "list",
+			Fields:   Multiplex_DestinationsFields,
 		},
 		"MultiplexSettings": ubx.FieldSpec{
 			WireName: "multiplex_settings",
-			Kind: "object",
-			Fields: Multiplex_MultiplexSettingsFields,
+			Kind:     "object",
+			Fields:   Multiplex_MultiplexSettingsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Multiplex_TagsFields,
+			Kind:     "list",
+			Fields:   Multiplex_TagsFields,
 		},
 	},
 }

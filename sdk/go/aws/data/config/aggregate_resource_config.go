@@ -5,49 +5,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregateResourceConfig_ConfigurationItem_Relationships struct {
 	RelationshipName any
-	ResourceId any
-	ResourceName any
-	ResourceType any
+	ResourceId       any
+	ResourceName     any
+	ResourceType     any
 }
 
 type AggregateResourceConfig_ConfigurationItem struct {
-	AccountId any
-	Arn any
-	AvailabilityZone any
-	AwsRegion any
-	Configuration any
-	ConfigurationItemCaptureTime any
+	AccountId                     any
+	Arn                           any
+	AvailabilityZone              any
+	AwsRegion                     any
+	Configuration                 any
+	ConfigurationItemCaptureTime  any
 	ConfigurationItemDeliveryTime any
-	ConfigurationItemMd5Hash any
-	ConfigurationItemStatus any
-	ConfigurationStateId any
-	RecordingFrequency any
-	RelatedEvents any
-	Relationships any
-	ResourceCreationTime any
-	ResourceId any
-	ResourceName any
-	ResourceType any
-	SupplementaryConfiguration any
-	Tags any
-	Version any
+	ConfigurationItemMd5Hash      any
+	ConfigurationItemStatus       any
+	ConfigurationStateId          any
+	RecordingFrequency            any
+	RelatedEvents                 any
+	Relationships                 any
+	ResourceCreationTime          any
+	ResourceId                    any
+	ResourceName                  any
+	ResourceType                  any
+	SupplementaryConfiguration    any
+	Tags                          any
+	Version                       any
 }
 
 type AggregateResourceConfig_ResourceIdentifier struct {
-	ResourceId any
-	ResourceName any
-	ResourceType any
+	ResourceId      any
+	ResourceName    any
+	ResourceType    any
 	SourceAccountId any
-	SourceRegion any
+	SourceRegion    any
 }
 
 var AggregateResourceConfig_ResourceIdentifierFields = ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"SourceAccountId": ubx.FieldSpec{WireName: "source_account_id"},
-		"SourceRegion": ubx.FieldSpec{WireName: "source_region"},
-	}
+	"ResourceId":      ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceName":    ubx.FieldSpec{WireName: "resource_name"},
+	"ResourceType":    ubx.FieldSpec{WireName: "resource_type"},
+	"SourceAccountId": ubx.FieldSpec{WireName: "source_account_id"},
+	"SourceRegion":    ubx.FieldSpec{WireName: "source_region"},
+}
 
 type AggregateResourceConfigConfig struct {
 	ConfigurationAggregatorName any
@@ -69,8 +69,8 @@ var AggregateResourceConfig = ubx.DataSourceBinding{
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
 		"ResourceIdentifier": ubx.FieldSpec{
 			WireName: "resource_identifier",
-			Kind: "object",
-			Fields: AggregateResourceConfig_ResourceIdentifierFields,
+			Kind:     "object",
+			Fields:   AggregateResourceConfig_ResourceIdentifierFields,
 		},
 	},
 }

@@ -4,28 +4,28 @@ package cloudhsmv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tags_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	ResourceId any
 }
 
 type TagsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	ResourceId any
-	TagList any
+	TagList    any
 }
 
 var Tags = ubx.DataSourceBinding{
 	WireType: "aws_cloudhsmv2_tags",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

@@ -164,210 +164,210 @@ type RuleGroup_SummaryConfiguration struct {
 }
 
 type RuleGroup_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var RuleGroup_RuleGroup_ReferenceSetsFields = ubx.FieldMap{
-		"IpsetReferences": ubx.FieldSpec{WireName: "ipset_references"},
-	}
+	"IpsetReferences": ubx.FieldSpec{WireName: "ipset_references"},
+}
 
 var RuleGroup_RuleGroup_RuleVariablesFields = ubx.FieldMap{
-		"Ipsets": ubx.FieldSpec{WireName: "ipsets"},
-		"PortSets": ubx.FieldSpec{WireName: "port_sets"},
-	}
+	"Ipsets":   ubx.FieldSpec{WireName: "ipsets"},
+	"PortSets": ubx.FieldSpec{WireName: "port_sets"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_RulesSourceListFields = ubx.FieldMap{
-		"GeneratedRulesType": ubx.FieldSpec{WireName: "generated_rules_type"},
-		"TargetTypes": ubx.FieldSpec{WireName: "target_types"},
-		"Targets": ubx.FieldSpec{WireName: "targets"},
-	}
+	"GeneratedRulesType": ubx.FieldSpec{WireName: "generated_rules_type"},
+	"TargetTypes":        ubx.FieldSpec{WireName: "target_types"},
+	"Targets":            ubx.FieldSpec{WireName: "targets"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatefulRules_HeaderFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"SourcePort": ubx.FieldSpec{WireName: "source_port"},
-	}
+	"Destination":     ubx.FieldSpec{WireName: "destination"},
+	"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
+	"Direction":       ubx.FieldSpec{WireName: "direction"},
+	"Protocol":        ubx.FieldSpec{WireName: "protocol"},
+	"Source":          ubx.FieldSpec{WireName: "source"},
+	"SourcePort":      ubx.FieldSpec{WireName: "source_port"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatefulRules_RuleOptionsFields = ubx.FieldMap{
-		"Keyword": ubx.FieldSpec{WireName: "keyword"},
-		"Settings": ubx.FieldSpec{WireName: "settings"},
-	}
+	"Keyword":  ubx.FieldSpec{WireName: "keyword"},
+	"Settings": ubx.FieldSpec{WireName: "settings"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatefulRulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatefulRules_HeaderFields,
-		},
-		"RuleOptions": ubx.FieldSpec{
-			WireName: "rule_options",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatefulRules_RuleOptionsFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatefulRules_HeaderFields,
+	},
+	"RuleOptions": ubx.FieldSpec{
+		WireName: "rule_options",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatefulRules_RuleOptionsFields,
+	},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction_DimensionsFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricActionFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction_DimensionsFields,
-		},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction_DimensionsFields,
+	},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinitionFields = ubx.FieldMap{
-		"PublishMetricAction": ubx.FieldSpec{
-			WireName: "publish_metric_action",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricActionFields,
-		},
-	}
+	"PublishMetricAction": ubx.FieldSpec{
+		WireName: "publish_metric_action",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricActionFields,
+	},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActionsFields = ubx.FieldMap{
-		"ActionDefinition": ubx.FieldSpec{
-			WireName: "action_definition",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinitionFields,
-		},
-		"ActionName": ubx.FieldSpec{WireName: "action_name"},
-	}
+	"ActionDefinition": ubx.FieldSpec{
+		WireName: "action_definition",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinitionFields,
+	},
+	"ActionName": ubx.FieldSpec{WireName: "action_name"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPortsFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationsFields = ubx.FieldMap{
-		"AddressDefinition": ubx.FieldSpec{WireName: "address_definition"},
-	}
+	"AddressDefinition": ubx.FieldSpec{WireName: "address_definition"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_TcpflagsFields = ubx.FieldMap{
-		"Flags": ubx.FieldSpec{WireName: "flags"},
-		"Masks": ubx.FieldSpec{WireName: "masks"},
-	}
+	"Flags": ubx.FieldSpec{WireName: "flags"},
+	"Masks": ubx.FieldSpec{WireName: "masks"},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributesFields = ubx.FieldMap{
-		"DestinationPorts": ubx.FieldSpec{
-			WireName: "destination_ports",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPortsFields,
-		},
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationsFields,
-		},
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
-		"SourcePorts": ubx.FieldSpec{
-			WireName: "source_ports",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPortsFields,
-		},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationsFields,
-		},
-		"Tcpflags": ubx.FieldSpec{
-			WireName: "tcpflags",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_TcpflagsFields,
-		},
-	}
+	"DestinationPorts": ubx.FieldSpec{
+		WireName: "destination_ports",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPortsFields,
+	},
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationsFields,
+	},
+	"Protocols": ubx.FieldSpec{WireName: "protocols"},
+	"SourcePorts": ubx.FieldSpec{
+		WireName: "source_ports",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPortsFields,
+	},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationsFields,
+	},
+	"Tcpflags": ubx.FieldSpec{
+		WireName: "tcpflags",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_TcpflagsFields,
+	},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinitionFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"MatchAttributes": ubx.FieldSpec{
-			WireName: "match_attributes",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributesFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{WireName: "actions"},
+	"MatchAttributes": ubx.FieldSpec{
+		WireName: "match_attributes",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributesFields,
+	},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRulesFields = ubx.FieldMap{
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RuleDefinition": ubx.FieldSpec{
-			WireName: "rule_definition",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinitionFields,
-		},
-	}
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"RuleDefinition": ubx.FieldSpec{
+		WireName: "rule_definition",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinitionFields,
+	},
+}
 
 var RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActionsFields = ubx.FieldMap{
-		"CustomActions": ubx.FieldSpec{
-			WireName: "custom_actions",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActionsFields,
-		},
-		"StatelessRules": ubx.FieldSpec{
-			WireName: "stateless_rules",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRulesFields,
-		},
-	}
+	"CustomActions": ubx.FieldSpec{
+		WireName: "custom_actions",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActionsFields,
+	},
+	"StatelessRules": ubx.FieldSpec{
+		WireName: "stateless_rules",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRulesFields,
+	},
+}
 
 var RuleGroup_RuleGroup_RulesSourceFields = ubx.FieldMap{
-		"RulesSourceList": ubx.FieldSpec{
-			WireName: "rules_source_list",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RulesSource_RulesSourceListFields,
-		},
-		"RulesString": ubx.FieldSpec{WireName: "rules_string"},
-		"StatefulRules": ubx.FieldSpec{
-			WireName: "stateful_rules",
-			Kind: "list",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatefulRulesFields,
-		},
-		"StatelessRulesAndCustomActions": ubx.FieldSpec{
-			WireName: "stateless_rules_and_custom_actions",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActionsFields,
-		},
-	}
+	"RulesSourceList": ubx.FieldSpec{
+		WireName: "rules_source_list",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RulesSource_RulesSourceListFields,
+	},
+	"RulesString": ubx.FieldSpec{WireName: "rules_string"},
+	"StatefulRules": ubx.FieldSpec{
+		WireName: "stateful_rules",
+		Kind:     "list",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatefulRulesFields,
+	},
+	"StatelessRulesAndCustomActions": ubx.FieldSpec{
+		WireName: "stateless_rules_and_custom_actions",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActionsFields,
+	},
+}
 
 var RuleGroup_RuleGroup_StatefulRuleOptionsFields = ubx.FieldMap{
-		"RuleOrder": ubx.FieldSpec{WireName: "rule_order"},
-	}
+	"RuleOrder": ubx.FieldSpec{WireName: "rule_order"},
+}
 
 var RuleGroup_RuleGroupFields = ubx.FieldMap{
-		"ReferenceSets": ubx.FieldSpec{
-			WireName: "reference_sets",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_ReferenceSetsFields,
-		},
-		"RuleVariables": ubx.FieldSpec{
-			WireName: "rule_variables",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RuleVariablesFields,
-		},
-		"RulesSource": ubx.FieldSpec{
-			WireName: "rules_source",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_RulesSourceFields,
-		},
-		"StatefulRuleOptions": ubx.FieldSpec{
-			WireName: "stateful_rule_options",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroup_StatefulRuleOptionsFields,
-		},
-	}
+	"ReferenceSets": ubx.FieldSpec{
+		WireName: "reference_sets",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_ReferenceSetsFields,
+	},
+	"RuleVariables": ubx.FieldSpec{
+		WireName: "rule_variables",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RuleVariablesFields,
+	},
+	"RulesSource": ubx.FieldSpec{
+		WireName: "rules_source",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_RulesSourceFields,
+	},
+	"StatefulRuleOptions": ubx.FieldSpec{
+		WireName: "stateful_rule_options",
+		Kind:     "object",
+		Fields:   RuleGroup_RuleGroup_StatefulRuleOptionsFields,
+	},
+}
 
 var RuleGroup_SummaryConfigurationFields = ubx.FieldMap{
-		"RuleOptions": ubx.FieldSpec{WireName: "rule_options"},
-	}
+	"RuleOptions": ubx.FieldSpec{WireName: "rule_options"},
+}
 
 var RuleGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RuleGroupConfig struct {
 	// The maximum number of capacity units the rule group can consume, limiting the total number of rules and rule actions that can be defined in the group. (AI-inferred)
@@ -410,23 +410,23 @@ type RuleGroupAttrs struct {
 var RuleGroup = ubx.ResourceBinding{
 	WireType: "aws_network_firewall_rule_group",
 	Fields: ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
+		"Capacity":    ubx.FieldSpec{WireName: "capacity"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"RuleGroup": ubx.FieldSpec{
 			WireName: "rule_group",
-			Kind: "object",
-			Fields: RuleGroup_RuleGroupFields,
+			Kind:     "object",
+			Fields:   RuleGroup_RuleGroupFields,
 		},
 		"RuleGroupName": ubx.FieldSpec{WireName: "rule_group_name"},
 		"SummaryConfiguration": ubx.FieldSpec{
 			WireName: "summary_configuration",
-			Kind: "object",
-			Fields: RuleGroup_SummaryConfigurationFields,
+			Kind:     "object",
+			Fields:   RuleGroup_SummaryConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RuleGroup_TagsFields,
+			Kind:     "list",
+			Fields:   RuleGroup_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

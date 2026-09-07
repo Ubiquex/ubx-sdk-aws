@@ -4,30 +4,30 @@ package codeguru_security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeguruSecurityMetricsSummary_MetricsSummary_CategoriesWithMostFindings struct {
-	CategoryName any
+	CategoryName  any
 	FindingNumber any
 }
 
 type CodeguruSecurityMetricsSummary_MetricsSummary_OpenFindings struct {
 	Critical any
-	High any
-	Info any
-	Low any
-	Medium any
+	High     any
+	Info     any
+	Low      any
+	Medium   any
 }
 
 type CodeguruSecurityMetricsSummary_MetricsSummary_ScansWithMostOpenCriticalFindings struct {
 	FindingNumber any
-	ScanName any
+	ScanName      any
 }
 
 type CodeguruSecurityMetricsSummary_MetricsSummary struct {
 	CategoriesWithMostFindings any
-	Date any
+	Date                       any
 	// <p>A numeric value corresponding to the severity of a finding, such as the number of open findings or the average time it takes to close findings of a given severity.</p>
-	OpenFindings any
+	OpenFindings                      any
 	ScansWithMostOpenCriticalFindings any
-	ScansWithMostOpenFindings any
+	ScansWithMostOpenFindings         any
 }
 
 type CodeguruSecurityMetricsSummaryConfig struct {

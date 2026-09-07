@@ -4,7 +4,7 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Asset_Attachments struct {
-	Content any
+	Content    any
 	FormTypeId any
 }
 
@@ -17,17 +17,17 @@ type AssetConfig struct {
 }
 
 type AssetAttrs struct {
-	AssetTypeId any
-	Attachments any
-	CreatedAt any
-	Description any
-	Forms any
+	AssetTypeId   any
+	Attachments   any
+	CreatedAt     any
+	Description   any
+	Forms         any
 	GlossaryTerms any
-	Id any
-	Identifier any
+	Id            any
+	Identifier    any
 	IterableForms any
-	Name any
-	UpdatedAt any
+	Name          any
+	UpdatedAt     any
 }
 
 var Asset = ubx.DataSourceBinding{

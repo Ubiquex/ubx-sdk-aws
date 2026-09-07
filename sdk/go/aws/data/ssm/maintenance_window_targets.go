@@ -4,38 +4,38 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaintenanceWindowTargets_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type MaintenanceWindowTargets_Targets struct {
-	Description any
-	Name any
+	Description      any
+	Name             any
 	OwnerInformation any
-	ResourceType any
-	Targets any
-	WindowId any
-	WindowTargetId any
+	ResourceType     any
+	Targets          any
+	WindowId         any
+	WindowTargetId   any
 }
 
 var MaintenanceWindowTargets_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MaintenanceWindowTargetsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	WindowId any
+	NextToken  any
+	WindowId   any
 }
 
 type MaintenanceWindowTargetsAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Targets any
-	WindowId any
+	NextToken  any
+	Targets    any
+	WindowId   any
 }
 
 var MaintenanceWindowTargets = ubx.DataSourceBinding{
@@ -43,11 +43,11 @@ var MaintenanceWindowTargets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MaintenanceWindowTargets_FiltersFields,
+			Kind:     "list",
+			Fields:   MaintenanceWindowTargets_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WindowId": ubx.FieldSpec{WireName: "window_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"WindowId":   ubx.FieldSpec{WireName: "window_id"},
 	},
 }

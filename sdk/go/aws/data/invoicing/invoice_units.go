@@ -4,49 +4,49 @@ package invoicing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InvoiceUnits_Filters struct {
-	Accounts any
+	Accounts           any
 	BillSourceAccounts any
-	InvoiceReceivers any
-	Names any
+	InvoiceReceivers   any
+	Names              any
 }
 
 type InvoiceUnits_InvoiceUnits_Rule struct {
 	BillSourceAccounts any
-	LinkedAccounts any
+	LinkedAccounts     any
 }
 
 type InvoiceUnits_InvoiceUnits struct {
-	Description any
-	InvoiceReceiver any
-	InvoiceUnitArn any
-	LastModified any
-	Name any
-	Rule any
+	Description            any
+	InvoiceReceiver        any
+	InvoiceUnitArn         any
+	LastModified           any
+	Name                   any
+	Rule                   any
 	TaxInheritanceDisabled any
 }
 
 var InvoiceUnits_FiltersFields = ubx.FieldMap{
-		"Accounts": ubx.FieldSpec{WireName: "accounts"},
-		"BillSourceAccounts": ubx.FieldSpec{WireName: "bill_source_accounts"},
-		"InvoiceReceivers": ubx.FieldSpec{WireName: "invoice_receivers"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-	}
+	"Accounts":           ubx.FieldSpec{WireName: "accounts"},
+	"BillSourceAccounts": ubx.FieldSpec{WireName: "bill_source_accounts"},
+	"InvoiceReceivers":   ubx.FieldSpec{WireName: "invoice_receivers"},
+	"Names":              ubx.FieldSpec{WireName: "names"},
+}
 
 type InvoiceUnitsConfig struct {
 	AsOf any
 	// <p>An optional input to the list API. If multiple filters are specified, the returned list will be a configuration that match all of the provided filters. Supported filter types are <code>InvoiceReceivers</code>, <code>Names</code>, and <code>Accounts</code>. </p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InvoiceUnitsAttrs struct {
 	AsOf any
 	// <p>An optional input to the list API. If multiple filters are specified, the returned list will be a configuration that match all of the provided filters. Supported filter types are <code>InvoiceReceivers</code>, <code>Names</code>, and <code>Accounts</code>. </p>
-	Filters any
+	Filters      any
 	InvoiceUnits any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var InvoiceUnits = ubx.DataSourceBinding{
@@ -55,10 +55,10 @@ var InvoiceUnits = ubx.DataSourceBinding{
 		"AsOf": ubx.FieldSpec{WireName: "as_of"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: InvoiceUnits_FiltersFields,
+			Kind:     "object",
+			Fields:   InvoiceUnits_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

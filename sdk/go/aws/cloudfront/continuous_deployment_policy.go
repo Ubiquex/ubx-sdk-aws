@@ -49,58 +49,58 @@ type ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig struct {
 }
 
 var ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleHeaderPolicyConfigFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Header": ubx.FieldSpec{WireName: "header"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfig_SessionStickinessConfigFields = ubx.FieldMap{
-		"IdleTtl": ubx.FieldSpec{WireName: "idle_ttl"},
-		"MaximumTtl": ubx.FieldSpec{WireName: "maximum_ttl"},
-	}
+	"IdleTtl":    ubx.FieldSpec{WireName: "idle_ttl"},
+	"MaximumTtl": ubx.FieldSpec{WireName: "maximum_ttl"},
+}
 
 var ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfigFields = ubx.FieldMap{
-		"SessionStickinessConfig": ubx.FieldSpec{
-			WireName: "session_stickiness_config",
-			Kind: "object",
-			Fields: ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfig_SessionStickinessConfigFields,
-		},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"SessionStickinessConfig": ubx.FieldSpec{
+		WireName: "session_stickiness_config",
+		Kind:     "object",
+		Fields:   ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfig_SessionStickinessConfigFields,
+	},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_TrafficConfigFields = ubx.FieldMap{
-		"SingleHeaderConfig": ubx.FieldSpec{
-			WireName: "single_header_config",
-			Kind: "object",
-			Fields: ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleHeaderPolicyConfigFields,
-		},
-		"SingleWeightConfig": ubx.FieldSpec{
-			WireName: "single_weight_config",
-			Kind: "object",
-			Fields: ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfigFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"SingleHeaderConfig": ubx.FieldSpec{
+		WireName: "single_header_config",
+		Kind:     "object",
+		Fields:   ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleHeaderPolicyConfigFields,
+	},
+	"SingleWeightConfig": ubx.FieldSpec{
+		WireName: "single_weight_config",
+		Kind:     "object",
+		Fields:   ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfigFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SingleHeaderPolicyConfig": ubx.FieldSpec{
-			WireName: "single_header_policy_config",
-			Kind: "object",
-			Fields: ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleHeaderPolicyConfigFields,
-		},
-		"SingleWeightPolicyConfig": ubx.FieldSpec{
-			WireName: "single_weight_policy_config",
-			Kind: "object",
-			Fields: ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfigFields,
-		},
-		"StagingDistributionDnsNames": ubx.FieldSpec{WireName: "staging_distribution_dns_names"},
-		"TrafficConfig": ubx.FieldSpec{
-			WireName: "traffic_config",
-			Kind: "object",
-			Fields: ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_TrafficConfigFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"SingleHeaderPolicyConfig": ubx.FieldSpec{
+		WireName: "single_header_policy_config",
+		Kind:     "object",
+		Fields:   ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleHeaderPolicyConfigFields,
+	},
+	"SingleWeightPolicyConfig": ubx.FieldSpec{
+		WireName: "single_weight_policy_config",
+		Kind:     "object",
+		Fields:   ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfigFields,
+	},
+	"StagingDistributionDnsNames": ubx.FieldSpec{WireName: "staging_distribution_dns_names"},
+	"TrafficConfig": ubx.FieldSpec{
+		WireName: "traffic_config",
+		Kind:     "object",
+		Fields:   ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_TrafficConfigFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ContinuousDeploymentPolicyConfig struct {
 	// Contains the configuration for a continuous deployment policy.
@@ -121,8 +121,8 @@ var ContinuousDeploymentPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContinuousDeploymentPolicyConfig": ubx.FieldSpec{
 			WireName: "continuous_deployment_policy_config",
-			Kind: "object",
-			Fields: ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfigFields,
+			Kind:     "object",
+			Fields:   ContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfigFields,
 		},
 	},
 }

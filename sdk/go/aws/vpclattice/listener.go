@@ -35,39 +35,39 @@ type Listener_Tags struct {
 }
 
 var Listener_DefaultAction_FixedResponseFields = ubx.FieldMap{
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"StatusCode": ubx.FieldSpec{WireName: "status_code"},
+}
 
 var Listener_DefaultAction_Forward_TargetGroupsFields = ubx.FieldMap{
-		"TargetGroupIdentifier": ubx.FieldSpec{WireName: "target_group_identifier"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"TargetGroupIdentifier": ubx.FieldSpec{WireName: "target_group_identifier"},
+	"Weight":                ubx.FieldSpec{WireName: "weight"},
+}
 
 var Listener_DefaultAction_ForwardFields = ubx.FieldMap{
-		"TargetGroups": ubx.FieldSpec{
-			WireName: "target_groups",
-			Kind: "list",
-			Fields: Listener_DefaultAction_Forward_TargetGroupsFields,
-		},
-	}
+	"TargetGroups": ubx.FieldSpec{
+		WireName: "target_groups",
+		Kind:     "list",
+		Fields:   Listener_DefaultAction_Forward_TargetGroupsFields,
+	},
+}
 
 var Listener_DefaultActionFields = ubx.FieldMap{
-		"FixedResponse": ubx.FieldSpec{
-			WireName: "fixed_response",
-			Kind: "object",
-			Fields: Listener_DefaultAction_FixedResponseFields,
-		},
-		"Forward": ubx.FieldSpec{
-			WireName: "forward",
-			Kind: "object",
-			Fields: Listener_DefaultAction_ForwardFields,
-		},
-	}
+	"FixedResponse": ubx.FieldSpec{
+		WireName: "fixed_response",
+		Kind:     "object",
+		Fields:   Listener_DefaultAction_FixedResponseFields,
+	},
+	"Forward": ubx.FieldSpec{
+		WireName: "forward",
+		Kind:     "object",
+		Fields:   Listener_DefaultAction_ForwardFields,
+	},
+}
 
 var Listener_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ListenerConfig struct {
 	// The default action defines how the listener handles requests that do not match any other rule, such as forwarding them to a target group or returning a fixed response. (AI-inferred)
@@ -112,17 +112,17 @@ var Listener = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultAction": ubx.FieldSpec{
 			WireName: "default_action",
-			Kind: "object",
-			Fields: Listener_DefaultActionFields,
+			Kind:     "object",
+			Fields:   Listener_DefaultActionFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"Port":              ubx.FieldSpec{WireName: "port"},
+		"Protocol":          ubx.FieldSpec{WireName: "protocol"},
 		"ServiceIdentifier": ubx.FieldSpec{WireName: "service_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Listener_TagsFields,
+			Kind:     "list",
+			Fields:   Listener_TagsFields,
 		},
 	},
 }

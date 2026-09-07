@@ -11,9 +11,9 @@ type PodIdentityAssociation_Tags struct {
 }
 
 var PodIdentityAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PodIdentityAssociationConfig struct {
 	// The cluster that the pod identity association is created for.
@@ -62,16 +62,16 @@ type PodIdentityAssociationAttrs struct {
 var PodIdentityAssociation = ubx.ResourceBinding{
 	WireType: "aws_eks_pod_identity_association",
 	Fields: ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"ClusterName":        ubx.FieldSpec{WireName: "cluster_name"},
 		"DisableSessionTags": ubx.FieldSpec{WireName: "disable_session_tags"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"Namespace":          ubx.FieldSpec{WireName: "namespace"},
+		"Policy":             ubx.FieldSpec{WireName: "policy"},
+		"RoleArn":            ubx.FieldSpec{WireName: "role_arn"},
+		"ServiceAccount":     ubx.FieldSpec{WireName: "service_account"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PodIdentityAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   PodIdentityAssociation_TagsFields,
 		},
 		"TargetRoleArn": ubx.FieldSpec{WireName: "target_role_arn"},
 	},

@@ -79,66 +79,66 @@ type GraphQlapi_UserPoolConfig struct {
 }
 
 var GraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfigFields = ubx.FieldMap{
-		"AuthorizerResultTtlInSeconds": ubx.FieldSpec{WireName: "authorizer_result_ttl_in_seconds"},
-		"AuthorizerUri": ubx.FieldSpec{WireName: "authorizer_uri"},
-		"IdentityValidationExpression": ubx.FieldSpec{WireName: "identity_validation_expression"},
-	}
+	"AuthorizerResultTtlInSeconds": ubx.FieldSpec{WireName: "authorizer_result_ttl_in_seconds"},
+	"AuthorizerUri":                ubx.FieldSpec{WireName: "authorizer_uri"},
+	"IdentityValidationExpression": ubx.FieldSpec{WireName: "identity_validation_expression"},
+}
 
 var GraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfigFields = ubx.FieldMap{
-		"AuthTtl": ubx.FieldSpec{WireName: "auth_ttl"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"IatTtl": ubx.FieldSpec{WireName: "iat_ttl"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-	}
+	"AuthTtl":  ubx.FieldSpec{WireName: "auth_ttl"},
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"IatTtl":   ubx.FieldSpec{WireName: "iat_ttl"},
+	"Issuer":   ubx.FieldSpec{WireName: "issuer"},
+}
 
 var GraphQlapi_AdditionalAuthenticationProviders_UserPoolConfigFields = ubx.FieldMap{
-		"AppIdClientRegex": ubx.FieldSpec{WireName: "app_id_client_regex"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
-	}
+	"AppIdClientRegex": ubx.FieldSpec{WireName: "app_id_client_regex"},
+	"AwsRegion":        ubx.FieldSpec{WireName: "aws_region"},
+	"UserPoolId":       ubx.FieldSpec{WireName: "user_pool_id"},
+}
 
 var GraphQlapi_AdditionalAuthenticationProvidersFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"LambdaAuthorizerConfig": ubx.FieldSpec{
-			WireName: "lambda_authorizer_config",
-			Kind: "object",
-			Fields: GraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfigFields,
-		},
-		"OpenIdconnectConfig": ubx.FieldSpec{
-			WireName: "open_idconnect_config",
-			Kind: "object",
-			Fields: GraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfigFields,
-		},
-		"UserPoolConfig": ubx.FieldSpec{
-			WireName: "user_pool_config",
-			Kind: "object",
-			Fields: GraphQlapi_AdditionalAuthenticationProviders_UserPoolConfigFields,
-		},
-	}
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+	"LambdaAuthorizerConfig": ubx.FieldSpec{
+		WireName: "lambda_authorizer_config",
+		Kind:     "object",
+		Fields:   GraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfigFields,
+	},
+	"OpenIdconnectConfig": ubx.FieldSpec{
+		WireName: "open_idconnect_config",
+		Kind:     "object",
+		Fields:   GraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfigFields,
+	},
+	"UserPoolConfig": ubx.FieldSpec{
+		WireName: "user_pool_config",
+		Kind:     "object",
+		Fields:   GraphQlapi_AdditionalAuthenticationProviders_UserPoolConfigFields,
+	},
+}
 
 var GraphQlapi_EnhancedMetricsConfigFields = ubx.FieldMap{
-		"DataSourceLevelMetricsBehavior": ubx.FieldSpec{WireName: "data_source_level_metrics_behavior"},
-		"OperationLevelMetricsConfig": ubx.FieldSpec{WireName: "operation_level_metrics_config"},
-		"ResolverLevelMetricsBehavior": ubx.FieldSpec{WireName: "resolver_level_metrics_behavior"},
-	}
+	"DataSourceLevelMetricsBehavior": ubx.FieldSpec{WireName: "data_source_level_metrics_behavior"},
+	"OperationLevelMetricsConfig":    ubx.FieldSpec{WireName: "operation_level_metrics_config"},
+	"ResolverLevelMetricsBehavior":   ubx.FieldSpec{WireName: "resolver_level_metrics_behavior"},
+}
 
 var GraphQlapi_LogConfigFields = ubx.FieldMap{
-		"CloudWatchLogsRoleArn": ubx.FieldSpec{WireName: "cloud_watch_logs_role_arn"},
-		"ExcludeVerboseContent": ubx.FieldSpec{WireName: "exclude_verbose_content"},
-		"FieldLogLevel": ubx.FieldSpec{WireName: "field_log_level"},
-	}
+	"CloudWatchLogsRoleArn": ubx.FieldSpec{WireName: "cloud_watch_logs_role_arn"},
+	"ExcludeVerboseContent": ubx.FieldSpec{WireName: "exclude_verbose_content"},
+	"FieldLogLevel":         ubx.FieldSpec{WireName: "field_log_level"},
+}
 
 var GraphQlapi_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var GraphQlapi_UserPoolConfigFields = ubx.FieldMap{
-		"AppIdClientRegex": ubx.FieldSpec{WireName: "app_id_client_regex"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"DefaultAction": ubx.FieldSpec{WireName: "default_action"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
-	}
+	"AppIdClientRegex": ubx.FieldSpec{WireName: "app_id_client_regex"},
+	"AwsRegion":        ubx.FieldSpec{WireName: "aws_region"},
+	"DefaultAction":    ubx.FieldSpec{WireName: "default_action"},
+	"UserPoolId":       ubx.FieldSpec{WireName: "user_pool_id"},
+}
 
 type GraphQlapiConfig struct {
 	// A list of additional authentication providers for the GraphqlApi API.
@@ -237,49 +237,49 @@ var GraphQlapi = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalAuthenticationProviders": ubx.FieldSpec{
 			WireName: "additional_authentication_providers",
-			Kind: "list",
-			Fields: GraphQlapi_AdditionalAuthenticationProvidersFields,
+			Kind:     "list",
+			Fields:   GraphQlapi_AdditionalAuthenticationProvidersFields,
 		},
-		"ApiType": ubx.FieldSpec{WireName: "api_type"},
+		"ApiType":            ubx.FieldSpec{WireName: "api_type"},
 		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
 		"EnhancedMetricsConfig": ubx.FieldSpec{
 			WireName: "enhanced_metrics_config",
-			Kind: "object",
-			Fields: GraphQlapi_EnhancedMetricsConfigFields,
+			Kind:     "object",
+			Fields:   GraphQlapi_EnhancedMetricsConfigFields,
 		},
 		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"IntrospectionConfig": ubx.FieldSpec{WireName: "introspection_config"},
+		"IntrospectionConfig":  ubx.FieldSpec{WireName: "introspection_config"},
 		"LambdaAuthorizerConfig": ubx.FieldSpec{
 			WireName: "lambda_authorizer_config",
-			Kind: "object",
-			Fields: GraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfigFields,
+			Kind:     "object",
+			Fields:   GraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfigFields,
 		},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: GraphQlapi_LogConfigFields,
+			Kind:     "object",
+			Fields:   GraphQlapi_LogConfigFields,
 		},
 		"MergedApiExecutionRoleArn": ubx.FieldSpec{WireName: "merged_api_execution_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
 		"OpenIdconnectConfig": ubx.FieldSpec{
 			WireName: "open_idconnect_config",
-			Kind: "object",
-			Fields: GraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfigFields,
+			Kind:     "object",
+			Fields:   GraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfigFields,
 		},
-		"OwnerContact": ubx.FieldSpec{WireName: "owner_contact"},
-		"QueryDepthLimit": ubx.FieldSpec{WireName: "query_depth_limit"},
+		"OwnerContact":       ubx.FieldSpec{WireName: "owner_contact"},
+		"QueryDepthLimit":    ubx.FieldSpec{WireName: "query_depth_limit"},
 		"ResolverCountLimit": ubx.FieldSpec{WireName: "resolver_count_limit"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GraphQlapi_TagsFields,
+			Kind:     "list",
+			Fields:   GraphQlapi_TagsFields,
 		},
 		"UserPoolConfig": ubx.FieldSpec{
 			WireName: "user_pool_config",
-			Kind: "object",
-			Fields: GraphQlapi_UserPoolConfigFields,
+			Kind:     "object",
+			Fields:   GraphQlapi_UserPoolConfigFields,
 		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
+		"Visibility":  ubx.FieldSpec{WireName: "visibility"},
 		"XrayEnabled": ubx.FieldSpec{WireName: "xray_enabled"},
 	},
 }

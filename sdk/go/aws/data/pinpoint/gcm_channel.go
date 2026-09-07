@@ -4,19 +4,19 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GcmChannel_GcmchannelResponse struct {
-	ApplicationId any
-	CreationDate any
-	Credential any
+	ApplicationId               any
+	CreationDate                any
+	Credential                  any
 	DefaultAuthenticationMethod any
-	Enabled any
-	HasCredential any
-	HasFcmServiceCredentials any
-	Id any
-	IsArchived any
-	LastModifiedBy any
-	LastModifiedDate any
-	Platform any
-	Version any
+	Enabled                     any
+	HasCredential               any
+	HasFcmServiceCredentials    any
+	Id                          any
+	IsArchived                  any
+	LastModifiedBy              any
+	LastModifiedDate            any
+	Platform                    any
+	Version                     any
 }
 
 type GcmChannelConfig struct {

@@ -4,28 +4,28 @@ package query_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryTimestreamTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type QueryTimestreamTagsForResourceConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type QueryTimestreamTagsForResourceAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var QueryTimestreamTagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_query_timestream_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Plan_ReportConfiguration_ReportOutput_S3Configuration struct {
 	// The AWS account ID of the owner of the destination S3 bucket, used by the service to verify bucket ownership before writing the report output to prevent accidental writes to unintended buckets. (AI-inferred)
 	BucketOwner any
-	BucketPath any
+	BucketPath  any
 }
 
 type Plan_ReportConfiguration_ReportOutput struct {
@@ -22,30 +22,30 @@ type Plan_Route53HealthChecks struct {
 	HealthCheckIds any
 	// This field specifies the Route 53 hosted zone IDs associated with the health checks, which the ARC region switch plan uses to update the corresponding DNS records when a failover occurs. (AI-inferred)
 	HostedZoneIds any
-	RecordNames any
-	Regions any
+	RecordNames   any
+	Regions       any
 }
 
 type Plan_Triggers_Conditions struct {
 	// The name of the Amazon CloudWatch alarm that must be in ALARM state to satisfy this trigger condition and initiate the switch plan. (AI-inferred)
 	AssociatedAlarmName any
-	Condition any
+	Condition           any
 }
 
 type Plan_Triggers struct {
-	Action any
-	Conditions any
-	Description any
+	Action                           any
+	Conditions                       any
+	Description                      any
 	MinDelayMinutesBetweenExecutions any
-	TargetRegion any
+	TargetRegion                     any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_ArcRoutingControlConfig struct {
 	CrossAccountRole any
-	ExternalId any
+	ExternalId       any
 	// Defines the AWS regions and the associated ARC routing control identifiers (such as ARNs or names) that the execution block configures to implement the region switch. (AI-inferred)
 	RegionAndRoutingControls any
-	TimeoutMinutes any
+	TimeoutMinutes           any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingConfig struct {
@@ -59,18 +59,18 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingCo
 	InstanceArns any
 	// Specifies the Amazon Aurora database cluster ARNs within the region that this provisioned scaling configuration targets during a workflow execution block. (AI-inferred)
 	RegionDatabaseClusterArns any
-	TimeoutMinutes any
+	TimeoutMinutes            any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraServerlessScalingConfig struct {
 	// The ARN of an IAM role in the target AWS account that is assumed to perform Aurora Serverless scaling operations during a region switch. (AI-inferred)
 	CrossAccountRole any
-	ExternalId any
+	ExternalId       any
 	// Specifies the Aurora global cluster identifier (the global database) that this serverless scaling configuration is associated with during the execution step of an ARC region switch workflow. (AI-inferred)
 	GlobalClusterIdentifier any
 	// Specifies a list of Amazon Aurora Serverless database cluster ARNs in the target region whose compute capacity will be scaled according to the Aurora Serverless scaling configuration during this execution step of the switch plan. (AI-inferred)
 	RegionDatabaseClusterArns any
-	TargetPercent any
+	TargetPercent             any
 	// Specifies the maximum time in minutes to allow for an Aurora Serverless database to complete a scaling adjustment during an execution step's blocking configuration. (AI-inferred)
 	TimeoutMinutes any
 }
@@ -96,8 +96,8 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig s
 	RegionToRun any
 	// The number of minutes to wait before retrying the custom action Lambda function after a failed execution step in the workflow. (AI-inferred)
 	RetryIntervalMinutes any
-	TimeoutMinutes any
-	Ungraceful any
+	TimeoutMinutes       any
+	Ungraceful           any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_Ungraceful struct {
@@ -105,15 +105,15 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_Ungracefu
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig struct {
-	Behavior any
+	Behavior         any
 	CrossAccountRole any
 	// This field specifies the Amazon Resource Names (ARNs) of the Amazon DocumentDB clusters that the execution block configuration in this workflow step operates on during the region switch. (AI-inferred)
 	DatabaseClusterArns any
-	ExternalId any
+	ExternalId          any
 	// Specifies the identifier of the Amazon DocumentDB global cluster that the execution step's DocumentDB configuration targets during the region switch workflow. (AI-inferred)
 	GlobalClusterIdentifier any
-	TimeoutMinutes any
-	Ungraceful any
+	TimeoutMinutes          any
+	Ungraceful              any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_Ungraceful struct {
@@ -122,12 +122,12 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConf
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig struct {
 	// Specifies the list of Auto Scaling Groups targeted for capacity increase during this execution block step's capacity increase configuration. (AI-inferred)
-	Asgs any
+	Asgs                       any
 	CapacityMonitoringApproach any
-	TargetPercent any
+	TargetPercent              any
 	// Specifies the maximum time in minutes that the execution block waits for the EC2 Auto Scaling group capacity increase to reach its target before the step is considered failed. (AI-inferred)
 	TimeoutMinutes any
-	Ungraceful any
+	Ungraceful     any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_Services struct {
@@ -135,19 +135,19 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_
 	ClusterArn any
 	// The cross-account IAM role assumed to increase the desired capacity of this ECS service in another AWS account during the region switch capacity increase step. (AI-inferred)
 	CrossAccountRole any
-	ExternalId any
+	ExternalId       any
 	// The ARN of the ECS service that will be targeted for a capacity increase when the execution block runs. (AI-inferred)
 	ServiceArn any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig struct {
 	CapacityMonitoringApproach any
-	Services any
+	Services                   any
 	// The target capacity percentage to set for the ECS service or cluster when this execution block's capacity increase action is executed. (AI-inferred)
 	TargetPercent any
 	// The maximum time, in minutes, allowed for the ECS capacity increase to complete during this execution block step before the step is considered failed. (AI-inferred)
 	TimeoutMinutes any
-	Ungraceful any
+	Ungraceful     any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_EksClusters struct {
@@ -155,7 +155,7 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_E
 	ClusterArn any
 	// The ARN of the IAM role to assume in the target account owning the EKS cluster, used by the region switch execution to perform scaling changes on that cluster. (AI-inferred)
 	CrossAccountRole any
-	ExternalId any
+	ExternalId       any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_KubernetesResourceType struct {
@@ -167,16 +167,16 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_K
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig struct {
 	CapacityMonitoringApproach any
-	EksClusters any
-	KubernetesResourceType any
-	ScalingResources any
-	TargetPercent any
-	TimeoutMinutes any
-	Ungraceful any
+	EksClusters                any
+	KubernetesResourceType     any
+	ScalingResources           any
+	TargetPercent              any
+	TimeoutMinutes             any
+	Ungraceful                 any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_ExecutionApprovalConfig struct {
-	ApprovalRole any
+	ApprovalRole   any
 	TimeoutMinutes any
 }
 
@@ -188,22 +188,22 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingCo
 	Action any
 	// Maps each AWS region to the Lambda event source mapping identifiers that should be enabled or disabled when this region switch execution block runs. (AI-inferred)
 	RegionEventSourceMappings any
-	TimeoutMinutes any
-	Ungraceful any
+	TimeoutMinutes            any
+	Ungraceful                any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_NeptuneGlobalDatabaseConfig struct {
 	Behavior any
 	// The ARN of an IAM role that the switch plan assumes to perform Neptune Global Database configuration changes in a different AWS account. (AI-inferred)
 	CrossAccountRole any
-	ExternalId any
+	ExternalId       any
 	// The identifier of the Neptune global database that this execution block configuration targets during the region switch plan workflow step. (AI-inferred)
 	GlobalClusterIdentifier any
 	// Specifies the Amazon Resource Names (ARNs) of the Neptune DB clusters (one per AWS region) that form a Neptune global database, used by the switch plan execution step to coordinate failover or management of the global database. (AI-inferred)
 	RegionDatabaseClusterArns any
 	// Specifies the maximum time in minutes that the Neptune global database configuration execution block is allowed to run before timing out in a region switch plan step. (AI-inferred)
 	TimeoutMinutes any
-	Ungraceful any
+	Ungraceful     any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_ParallelConfig struct {
@@ -215,7 +215,7 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadRe
 	CrossAccountRole any
 	// Maps the ARNs of source RDS DB instances to the configuration specifying how their cross-region read replicas should be created when this execution block is run during a switch plan step. (AI-inferred)
 	DbInstanceArnMap any
-	ExternalId any
+	ExternalId       any
 	// The maximum time in minutes to wait for the RDS cross-region read replica creation to complete before the step times out and is marked as failed. (AI-inferred)
 	TimeoutMinutes any
 }
@@ -223,9 +223,9 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadRe
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsSwitchoverReadReplicaConfig struct {
 	CrossAccountRole any
 	DbInstanceArnMap any
-	ExternalId any
-	TimeoutMinutes any
-	Ungraceful any
+	ExternalId       any
+	TimeoutMinutes   any
+	Ungraceful       any
 }
 
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_RecordSets struct {
@@ -238,7 +238,7 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_R
 type Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig struct {
 	// Specifies the IAM role that the switch plan assumes to access the Route 53 health check when it resides in a different AWS account. (AI-inferred)
 	CrossAccountRole any
-	ExternalId any
+	ExternalId       any
 	// This field specifies the ID of the Amazon Route 53 hosted zone associated with the health check, enabling Route 53 to resolve and route the health check's DNS records. (AI-inferred)
 	HostedZoneId any
 	// The fully qualified domain name (e.g., app.example.com) that the Route 53 health check monitors to assess the health of the target endpoint during the execution block of a region switch plan. (AI-inferred)
@@ -252,441 +252,440 @@ type Plan_Workflows_Steps_ExecutionBlockConfiguration struct {
 	ArcRoutingControlConfig any
 	// Configures the auto scaling behavior (e.g., min/max capacity or scaling policy) for Aurora Provisioned clusters when this workflow execution block is run. (AI-inferred)
 	AuroraProvisionedScalingConfig any
-	AuroraServerlessScalingConfig any
-	CustomActionLambdaConfig any
-	DocumentDbConfig any
+	AuroraServerlessScalingConfig  any
+	CustomActionLambdaConfig       any
+	DocumentDbConfig               any
 	// Configuration for increasing the EC2 Auto Scaling Group capacity as part of a step's execution block, used to pre-scale compute resources during a region switch workflow. (AI-inferred)
-	Ec2AsgCapacityIncreaseConfig any
-	EcsCapacityIncreaseConfig any
-	EksResourceScalingConfig any
-	ExecutionApprovalConfig any
-	GlobalAuroraConfig any
+	Ec2AsgCapacityIncreaseConfig   any
+	EcsCapacityIncreaseConfig      any
+	EksResourceScalingConfig       any
+	ExecutionApprovalConfig        any
+	GlobalAuroraConfig             any
 	LambdaEventSourceMappingConfig any
 	// This object specifies how the execution step should handle an Amazon Neptune global database during a region switch, including the target global database and the failover action to promote a secondary cluster in the destination region. (AI-inferred)
 	NeptuneGlobalDatabaseConfig any
-	ParallelConfig any
+	ParallelConfig              any
 	// Configuration for creating a cross-region read replica of an RDS database instance as part of the execution block of this workflow step. (AI-inferred)
 	RdsCreateCrossRegionReadReplicaConfig any
 	// Specifies the configuration for promoting an Amazon RDS read replica to a standalone DB instance during the execution block of a step in the region switch workflow. (AI-inferred)
-	RdsPromoteReadReplicaConfig any
+	RdsPromoteReadReplicaConfig    any
 	RdsSwitchoverReadReplicaConfig any
-	RegionSwitchPlanConfig any
-	Route53HealthCheckConfig any
+	RegionSwitchPlanConfig         any
+	Route53HealthCheckConfig       any
 }
 
 type Plan_Workflows_Steps struct {
-	Description any
+	Description                 any
 	ExecutionBlockConfiguration any
-	ExecutionBlockType any
-	Name any
+	ExecutionBlockType          any
+	Name                        any
 }
 
 type Plan_Workflows struct {
-	Steps any
-	WorkflowDescription any
+	Steps                any
+	WorkflowDescription  any
 	WorkflowTargetAction any
 	WorkflowTargetRegion any
 }
 
 var Plan_ReportConfiguration_ReportOutput_S3ConfigurationFields = ubx.FieldMap{
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-		"BucketPath": ubx.FieldSpec{WireName: "bucket_path"},
-	}
+	"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
+	"BucketPath":  ubx.FieldSpec{WireName: "bucket_path"},
+}
 
 var Plan_ReportConfiguration_ReportOutputFields = ubx.FieldMap{
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: Plan_ReportConfiguration_ReportOutput_S3ConfigurationFields,
-		},
-	}
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   Plan_ReportConfiguration_ReportOutput_S3ConfigurationFields,
+	},
+}
 
 var Plan_ReportConfigurationFields = ubx.FieldMap{
-		"ReportOutput": ubx.FieldSpec{
-			WireName: "report_output",
-			Kind: "list",
-			Fields: Plan_ReportConfiguration_ReportOutputFields,
-		},
-	}
+	"ReportOutput": ubx.FieldSpec{
+		WireName: "report_output",
+		Kind:     "list",
+		Fields:   Plan_ReportConfiguration_ReportOutputFields,
+	},
+}
 
 var Plan_Triggers_ConditionsFields = ubx.FieldMap{
-		"AssociatedAlarmName": ubx.FieldSpec{WireName: "associated_alarm_name"},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-	}
+	"AssociatedAlarmName": ubx.FieldSpec{WireName: "associated_alarm_name"},
+	"Condition":           ubx.FieldSpec{WireName: "condition"},
+}
 
 var Plan_TriggersFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Plan_Triggers_ConditionsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MinDelayMinutesBetweenExecutions": ubx.FieldSpec{WireName: "min_delay_minutes_between_executions"},
-		"TargetRegion": ubx.FieldSpec{WireName: "target_region"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Plan_Triggers_ConditionsFields,
+	},
+	"Description":                      ubx.FieldSpec{WireName: "description"},
+	"MinDelayMinutesBetweenExecutions": ubx.FieldSpec{WireName: "min_delay_minutes_between_executions"},
+	"TargetRegion":                     ubx.FieldSpec{WireName: "target_region"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_ArcRoutingControlConfigFields = ubx.FieldMap{
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"RegionAndRoutingControls": ubx.FieldSpec{WireName: "region_and_routing_controls"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"CrossAccountRole":         ubx.FieldSpec{WireName: "cross_account_role"},
+	"ExternalId":               ubx.FieldSpec{WireName: "external_id"},
+	"RegionAndRoutingControls": ubx.FieldSpec{WireName: "region_and_routing_controls"},
+	"TimeoutMinutes":           ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingConfigFields = ubx.FieldMap{
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
-		"InstanceArns": ubx.FieldSpec{WireName: "instance_arns"},
-		"RegionDatabaseClusterArns": ubx.FieldSpec{WireName: "region_database_cluster_arns"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"CrossAccountRole":          ubx.FieldSpec{WireName: "cross_account_role"},
+	"ExternalId":                ubx.FieldSpec{WireName: "external_id"},
+	"GlobalClusterIdentifier":   ubx.FieldSpec{WireName: "global_cluster_identifier"},
+	"InstanceArns":              ubx.FieldSpec{WireName: "instance_arns"},
+	"RegionDatabaseClusterArns": ubx.FieldSpec{WireName: "region_database_cluster_arns"},
+	"TimeoutMinutes":            ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraServerlessScalingConfigFields = ubx.FieldMap{
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
-		"RegionDatabaseClusterArns": ubx.FieldSpec{WireName: "region_database_cluster_arns"},
-		"TargetPercent": ubx.FieldSpec{WireName: "target_percent"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"CrossAccountRole":          ubx.FieldSpec{WireName: "cross_account_role"},
+	"ExternalId":                ubx.FieldSpec{WireName: "external_id"},
+	"GlobalClusterIdentifier":   ubx.FieldSpec{WireName: "global_cluster_identifier"},
+	"RegionDatabaseClusterArns": ubx.FieldSpec{WireName: "region_database_cluster_arns"},
+	"TargetPercent":             ubx.FieldSpec{WireName: "target_percent"},
+	"TimeoutMinutes":            ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_LambdasFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-	}
+	"Arn":              ubx.FieldSpec{WireName: "arn"},
+	"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
+	"ExternalId":       ubx.FieldSpec{WireName: "external_id"},
+}
 
-var Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields = ubx.FieldMap{
-	}
+var Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields = ubx.FieldMap{}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_UngracefulFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{
-			WireName: "behavior",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
-		},
-	}
+	"Behavior": ubx.FieldSpec{
+		WireName: "behavior",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfigFields = ubx.FieldMap{
-		"Lambdas": ubx.FieldSpec{
-			WireName: "lambdas",
-			Kind: "list",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_LambdasFields,
-		},
-		"RegionToRun": ubx.FieldSpec{WireName: "region_to_run"},
-		"RetryIntervalMinutes": ubx.FieldSpec{WireName: "retry_interval_minutes"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-		"Ungraceful": ubx.FieldSpec{
-			WireName: "ungraceful",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_UngracefulFields,
-		},
-	}
+	"Lambdas": ubx.FieldSpec{
+		WireName: "lambdas",
+		Kind:     "list",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_LambdasFields,
+	},
+	"RegionToRun":          ubx.FieldSpec{WireName: "region_to_run"},
+	"RetryIntervalMinutes": ubx.FieldSpec{WireName: "retry_interval_minutes"},
+	"TimeoutMinutes":       ubx.FieldSpec{WireName: "timeout_minutes"},
+	"Ungraceful": ubx.FieldSpec{
+		WireName: "ungraceful",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_UngracefulFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_UngracefulFields = ubx.FieldMap{
-		"Ungraceful": ubx.FieldSpec{WireName: "ungraceful"},
-	}
+	"Ungraceful": ubx.FieldSpec{WireName: "ungraceful"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfigFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{
-			WireName: "behavior",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
-		},
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"DatabaseClusterArns": ubx.FieldSpec{WireName: "database_cluster_arns"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-		"Ungraceful": ubx.FieldSpec{
-			WireName: "ungraceful",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_UngracefulFields,
-		},
-	}
+	"Behavior": ubx.FieldSpec{
+		WireName: "behavior",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
+	},
+	"CrossAccountRole":        ubx.FieldSpec{WireName: "cross_account_role"},
+	"DatabaseClusterArns":     ubx.FieldSpec{WireName: "database_cluster_arns"},
+	"ExternalId":              ubx.FieldSpec{WireName: "external_id"},
+	"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
+	"TimeoutMinutes":          ubx.FieldSpec{WireName: "timeout_minutes"},
+	"Ungraceful": ubx.FieldSpec{
+		WireName: "ungraceful",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_UngracefulFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_UngracefulFields = ubx.FieldMap{
-		"MinimumSuccessPercentage": ubx.FieldSpec{WireName: "minimum_success_percentage"},
-	}
+	"MinimumSuccessPercentage": ubx.FieldSpec{WireName: "minimum_success_percentage"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfigFields = ubx.FieldMap{
-		"Asgs": ubx.FieldSpec{
-			WireName: "asgs",
-			Kind: "list",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_LambdasFields,
-		},
-		"CapacityMonitoringApproach": ubx.FieldSpec{
-			WireName: "capacity_monitoring_approach",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
-		},
-		"TargetPercent": ubx.FieldSpec{WireName: "target_percent"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-		"Ungraceful": ubx.FieldSpec{
-			WireName: "ungraceful",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_UngracefulFields,
-		},
-	}
+	"Asgs": ubx.FieldSpec{
+		WireName: "asgs",
+		Kind:     "list",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_LambdasFields,
+	},
+	"CapacityMonitoringApproach": ubx.FieldSpec{
+		WireName: "capacity_monitoring_approach",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
+	},
+	"TargetPercent":  ubx.FieldSpec{WireName: "target_percent"},
+	"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
+	"Ungraceful": ubx.FieldSpec{
+		WireName: "ungraceful",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_UngracefulFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_ServicesFields = ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-	}
+	"ClusterArn":       ubx.FieldSpec{WireName: "cluster_arn"},
+	"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
+	"ExternalId":       ubx.FieldSpec{WireName: "external_id"},
+	"ServiceArn":       ubx.FieldSpec{WireName: "service_arn"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfigFields = ubx.FieldMap{
-		"CapacityMonitoringApproach": ubx.FieldSpec{
-			WireName: "capacity_monitoring_approach",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
-		},
-		"Services": ubx.FieldSpec{
-			WireName: "services",
-			Kind: "list",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_ServicesFields,
-		},
-		"TargetPercent": ubx.FieldSpec{WireName: "target_percent"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-		"Ungraceful": ubx.FieldSpec{
-			WireName: "ungraceful",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_UngracefulFields,
-		},
-	}
+	"CapacityMonitoringApproach": ubx.FieldSpec{
+		WireName: "capacity_monitoring_approach",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
+	},
+	"Services": ubx.FieldSpec{
+		WireName: "services",
+		Kind:     "list",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_ServicesFields,
+	},
+	"TargetPercent":  ubx.FieldSpec{WireName: "target_percent"},
+	"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
+	"Ungraceful": ubx.FieldSpec{
+		WireName: "ungraceful",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_UngracefulFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_EksClustersFields = ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-	}
+	"ClusterArn":       ubx.FieldSpec{WireName: "cluster_arn"},
+	"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
+	"ExternalId":       ubx.FieldSpec{WireName: "external_id"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_KubernetesResourceTypeFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfigFields = ubx.FieldMap{
-		"CapacityMonitoringApproach": ubx.FieldSpec{
-			WireName: "capacity_monitoring_approach",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
-		},
-		"EksClusters": ubx.FieldSpec{
-			WireName: "eks_clusters",
-			Kind: "list",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_EksClustersFields,
-		},
-		"KubernetesResourceType": ubx.FieldSpec{
-			WireName: "kubernetes_resource_type",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_KubernetesResourceTypeFields,
-		},
-		"ScalingResources": ubx.FieldSpec{WireName: "scaling_resources"},
-		"TargetPercent": ubx.FieldSpec{WireName: "target_percent"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-		"Ungraceful": ubx.FieldSpec{
-			WireName: "ungraceful",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_UngracefulFields,
-		},
-	}
+	"CapacityMonitoringApproach": ubx.FieldSpec{
+		WireName: "capacity_monitoring_approach",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
+	},
+	"EksClusters": ubx.FieldSpec{
+		WireName: "eks_clusters",
+		Kind:     "list",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_EksClustersFields,
+	},
+	"KubernetesResourceType": ubx.FieldSpec{
+		WireName: "kubernetes_resource_type",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_KubernetesResourceTypeFields,
+	},
+	"ScalingResources": ubx.FieldSpec{WireName: "scaling_resources"},
+	"TargetPercent":    ubx.FieldSpec{WireName: "target_percent"},
+	"TimeoutMinutes":   ubx.FieldSpec{WireName: "timeout_minutes"},
+	"Ungraceful": ubx.FieldSpec{
+		WireName: "ungraceful",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_UngracefulFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_ExecutionApprovalConfigFields = ubx.FieldMap{
-		"ApprovalRole": ubx.FieldSpec{WireName: "approval_role"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"ApprovalRole":   ubx.FieldSpec{WireName: "approval_role"},
+	"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig_UngracefulFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-	}
+	"Behavior": ubx.FieldSpec{WireName: "behavior"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfigFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"RegionEventSourceMappings": ubx.FieldSpec{WireName: "region_event_source_mappings"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-		"Ungraceful": ubx.FieldSpec{
-			WireName: "ungraceful",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig_UngracefulFields,
-		},
-	}
+	"Action":                    ubx.FieldSpec{WireName: "action"},
+	"RegionEventSourceMappings": ubx.FieldSpec{WireName: "region_event_source_mappings"},
+	"TimeoutMinutes":            ubx.FieldSpec{WireName: "timeout_minutes"},
+	"Ungraceful": ubx.FieldSpec{
+		WireName: "ungraceful",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig_UngracefulFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_NeptuneGlobalDatabaseConfigFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{
-			WireName: "behavior",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
-		},
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
-		"RegionDatabaseClusterArns": ubx.FieldSpec{WireName: "region_database_cluster_arns"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-		"Ungraceful": ubx.FieldSpec{
-			WireName: "ungraceful",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_UngracefulFields,
-		},
-	}
+	"Behavior": ubx.FieldSpec{
+		WireName: "behavior",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_BehaviorFields,
+	},
+	"CrossAccountRole":          ubx.FieldSpec{WireName: "cross_account_role"},
+	"ExternalId":                ubx.FieldSpec{WireName: "external_id"},
+	"GlobalClusterIdentifier":   ubx.FieldSpec{WireName: "global_cluster_identifier"},
+	"RegionDatabaseClusterArns": ubx.FieldSpec{WireName: "region_database_cluster_arns"},
+	"TimeoutMinutes":            ubx.FieldSpec{WireName: "timeout_minutes"},
+	"Ungraceful": ubx.FieldSpec{
+		WireName: "ungraceful",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_UngracefulFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_ParallelConfigFields = ubx.FieldMap{
-		"Steps": ubx.FieldSpec{WireName: "steps"},
-	}
+	"Steps": ubx.FieldSpec{WireName: "steps"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfigFields = ubx.FieldMap{
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"DbInstanceArnMap": ubx.FieldSpec{WireName: "db_instance_arn_map"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
+	"DbInstanceArnMap": ubx.FieldSpec{WireName: "db_instance_arn_map"},
+	"ExternalId":       ubx.FieldSpec{WireName: "external_id"},
+	"TimeoutMinutes":   ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsSwitchoverReadReplicaConfigFields = ubx.FieldMap{
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"DbInstanceArnMap": ubx.FieldSpec{WireName: "db_instance_arn_map"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-		"Ungraceful": ubx.FieldSpec{
-			WireName: "ungraceful",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_UngracefulFields,
-		},
-	}
+	"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
+	"DbInstanceArnMap": ubx.FieldSpec{WireName: "db_instance_arn_map"},
+	"ExternalId":       ubx.FieldSpec{WireName: "external_id"},
+	"TimeoutMinutes":   ubx.FieldSpec{WireName: "timeout_minutes"},
+	"Ungraceful": ubx.FieldSpec{
+		WireName: "ungraceful",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_UngracefulFields,
+	},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_RecordSetsFields = ubx.FieldMap{
-		"RecordSetIdentifier": ubx.FieldSpec{WireName: "record_set_identifier"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"RecordSetIdentifier": ubx.FieldSpec{WireName: "record_set_identifier"},
+	"Region":              ubx.FieldSpec{WireName: "region"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfigFields = ubx.FieldMap{
-		"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"RecordName": ubx.FieldSpec{WireName: "record_name"},
-		"RecordSets": ubx.FieldSpec{
-			WireName: "record_sets",
-			Kind: "list",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_RecordSetsFields,
-		},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"CrossAccountRole": ubx.FieldSpec{WireName: "cross_account_role"},
+	"ExternalId":       ubx.FieldSpec{WireName: "external_id"},
+	"HostedZoneId":     ubx.FieldSpec{WireName: "hosted_zone_id"},
+	"RecordName":       ubx.FieldSpec{WireName: "record_name"},
+	"RecordSets": ubx.FieldSpec{
+		WireName: "record_sets",
+		Kind:     "list",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_RecordSetsFields,
+	},
+	"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var Plan_Workflows_Steps_ExecutionBlockConfigurationFields = ubx.FieldMap{
-		"ArcRoutingControlConfig": ubx.FieldSpec{
-			WireName: "arc_routing_control_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_ArcRoutingControlConfigFields,
-		},
-		"AuroraProvisionedScalingConfig": ubx.FieldSpec{
-			WireName: "aurora_provisioned_scaling_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingConfigFields,
-		},
-		"AuroraServerlessScalingConfig": ubx.FieldSpec{
-			WireName: "aurora_serverless_scaling_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraServerlessScalingConfigFields,
-		},
-		"CustomActionLambdaConfig": ubx.FieldSpec{
-			WireName: "custom_action_lambda_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfigFields,
-		},
-		"DocumentDbConfig": ubx.FieldSpec{
-			WireName: "document_db_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfigFields,
-		},
-		"Ec2AsgCapacityIncreaseConfig": ubx.FieldSpec{
-			WireName: "ec2_asg_capacity_increase_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfigFields,
-		},
-		"EcsCapacityIncreaseConfig": ubx.FieldSpec{
-			WireName: "ecs_capacity_increase_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfigFields,
-		},
-		"EksResourceScalingConfig": ubx.FieldSpec{
-			WireName: "eks_resource_scaling_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfigFields,
-		},
-		"ExecutionApprovalConfig": ubx.FieldSpec{
-			WireName: "execution_approval_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_ExecutionApprovalConfigFields,
-		},
-		"GlobalAuroraConfig": ubx.FieldSpec{
-			WireName: "global_aurora_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfigFields,
-		},
-		"LambdaEventSourceMappingConfig": ubx.FieldSpec{
-			WireName: "lambda_event_source_mapping_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfigFields,
-		},
-		"NeptuneGlobalDatabaseConfig": ubx.FieldSpec{
-			WireName: "neptune_global_database_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_NeptuneGlobalDatabaseConfigFields,
-		},
-		"ParallelConfig": ubx.FieldSpec{
-			WireName: "parallel_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_ParallelConfigFields,
-		},
-		"RdsCreateCrossRegionReadReplicaConfig": ubx.FieldSpec{
-			WireName: "rds_create_cross_region_read_replica_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfigFields,
-		},
-		"RdsPromoteReadReplicaConfig": ubx.FieldSpec{
-			WireName: "rds_promote_read_replica_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfigFields,
-		},
-		"RdsSwitchoverReadReplicaConfig": ubx.FieldSpec{
-			WireName: "rds_switchover_read_replica_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsSwitchoverReadReplicaConfigFields,
-		},
-		"RegionSwitchPlanConfig": ubx.FieldSpec{
-			WireName: "region_switch_plan_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_LambdasFields,
-		},
-		"Route53HealthCheckConfig": ubx.FieldSpec{
-			WireName: "route53_health_check_config",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfigFields,
-		},
-	}
+	"ArcRoutingControlConfig": ubx.FieldSpec{
+		WireName: "arc_routing_control_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_ArcRoutingControlConfigFields,
+	},
+	"AuroraProvisionedScalingConfig": ubx.FieldSpec{
+		WireName: "aurora_provisioned_scaling_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingConfigFields,
+	},
+	"AuroraServerlessScalingConfig": ubx.FieldSpec{
+		WireName: "aurora_serverless_scaling_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_AuroraServerlessScalingConfigFields,
+	},
+	"CustomActionLambdaConfig": ubx.FieldSpec{
+		WireName: "custom_action_lambda_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfigFields,
+	},
+	"DocumentDbConfig": ubx.FieldSpec{
+		WireName: "document_db_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfigFields,
+	},
+	"Ec2AsgCapacityIncreaseConfig": ubx.FieldSpec{
+		WireName: "ec2_asg_capacity_increase_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfigFields,
+	},
+	"EcsCapacityIncreaseConfig": ubx.FieldSpec{
+		WireName: "ecs_capacity_increase_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfigFields,
+	},
+	"EksResourceScalingConfig": ubx.FieldSpec{
+		WireName: "eks_resource_scaling_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfigFields,
+	},
+	"ExecutionApprovalConfig": ubx.FieldSpec{
+		WireName: "execution_approval_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_ExecutionApprovalConfigFields,
+	},
+	"GlobalAuroraConfig": ubx.FieldSpec{
+		WireName: "global_aurora_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfigFields,
+	},
+	"LambdaEventSourceMappingConfig": ubx.FieldSpec{
+		WireName: "lambda_event_source_mapping_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfigFields,
+	},
+	"NeptuneGlobalDatabaseConfig": ubx.FieldSpec{
+		WireName: "neptune_global_database_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_NeptuneGlobalDatabaseConfigFields,
+	},
+	"ParallelConfig": ubx.FieldSpec{
+		WireName: "parallel_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_ParallelConfigFields,
+	},
+	"RdsCreateCrossRegionReadReplicaConfig": ubx.FieldSpec{
+		WireName: "rds_create_cross_region_read_replica_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfigFields,
+	},
+	"RdsPromoteReadReplicaConfig": ubx.FieldSpec{
+		WireName: "rds_promote_read_replica_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfigFields,
+	},
+	"RdsSwitchoverReadReplicaConfig": ubx.FieldSpec{
+		WireName: "rds_switchover_read_replica_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_RdsSwitchoverReadReplicaConfigFields,
+	},
+	"RegionSwitchPlanConfig": ubx.FieldSpec{
+		WireName: "region_switch_plan_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_LambdasFields,
+	},
+	"Route53HealthCheckConfig": ubx.FieldSpec{
+		WireName: "route53_health_check_config",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfigFields,
+	},
+}
 
 var Plan_Workflows_StepsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExecutionBlockConfiguration": ubx.FieldSpec{
-			WireName: "execution_block_configuration",
-			Kind: "object",
-			Fields: Plan_Workflows_Steps_ExecutionBlockConfigurationFields,
-		},
-		"ExecutionBlockType": ubx.FieldSpec{WireName: "execution_block_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"ExecutionBlockConfiguration": ubx.FieldSpec{
+		WireName: "execution_block_configuration",
+		Kind:     "object",
+		Fields:   Plan_Workflows_Steps_ExecutionBlockConfigurationFields,
+	},
+	"ExecutionBlockType": ubx.FieldSpec{WireName: "execution_block_type"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+}
 
 var Plan_WorkflowsFields = ubx.FieldMap{
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: Plan_Workflows_StepsFields,
-		},
-		"WorkflowDescription": ubx.FieldSpec{WireName: "workflow_description"},
-		"WorkflowTargetAction": ubx.FieldSpec{WireName: "workflow_target_action"},
-		"WorkflowTargetRegion": ubx.FieldSpec{WireName: "workflow_target_region"},
-	}
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   Plan_Workflows_StepsFields,
+	},
+	"WorkflowDescription":  ubx.FieldSpec{WireName: "workflow_description"},
+	"WorkflowTargetAction": ubx.FieldSpec{WireName: "workflow_target_action"},
+	"WorkflowTargetRegion": ubx.FieldSpec{WireName: "workflow_target_region"},
+}
 
 type PlanConfig struct {
 	// A list of ARNs or names of CloudWatch alarms associated with the region switch plan; when any of these alarms enters the ALARM state, the switch plan is automatically executed to perform the region failover. (AI-inferred)
@@ -757,29 +756,29 @@ type PlanAttrs struct {
 var Plan = ubx.ResourceBinding{
 	WireType: "aws_arcregion_switch_plan",
 	Fields: ubx.FieldMap{
-		"AssociatedAlarms": ubx.FieldSpec{WireName: "associated_alarms"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrimaryRegion": ubx.FieldSpec{WireName: "primary_region"},
-		"RecoveryApproach": ubx.FieldSpec{WireName: "recovery_approach"},
+		"AssociatedAlarms":             ubx.FieldSpec{WireName: "associated_alarms"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
+		"ExecutionRole":                ubx.FieldSpec{WireName: "execution_role"},
+		"Name":                         ubx.FieldSpec{WireName: "name"},
+		"PrimaryRegion":                ubx.FieldSpec{WireName: "primary_region"},
+		"RecoveryApproach":             ubx.FieldSpec{WireName: "recovery_approach"},
 		"RecoveryTimeObjectiveMinutes": ubx.FieldSpec{WireName: "recovery_time_objective_minutes"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
+		"Regions":                      ubx.FieldSpec{WireName: "regions"},
 		"ReportConfiguration": ubx.FieldSpec{
 			WireName: "report_configuration",
-			Kind: "object",
-			Fields: Plan_ReportConfigurationFields,
+			Kind:     "object",
+			Fields:   Plan_ReportConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Triggers": ubx.FieldSpec{
 			WireName: "triggers",
-			Kind: "list",
-			Fields: Plan_TriggersFields,
+			Kind:     "list",
+			Fields:   Plan_TriggersFields,
 		},
 		"Workflows": ubx.FieldSpec{
 			WireName: "workflows",
-			Kind: "list",
-			Fields: Plan_WorkflowsFields,
+			Kind:     "list",
+			Fields:   Plan_WorkflowsFields,
 		},
 	},
 }

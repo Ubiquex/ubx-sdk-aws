@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestRunSources_TestRunSources_ObservabilityAlarm struct {
 	AccountId any
-	AlarmArn any
+	AlarmArn  any
 	AlarmName any
-	Region any
+	Region    any
 }
 
 type TestRunSources_TestRunSources_SuccessCriteriaAlarm struct {
-	AccountId any
-	AlarmArn any
-	AlarmName any
-	Outcome any
+	AccountId     any
+	AlarmArn      any
+	AlarmName     any
+	Outcome       any
 	OutcomeReason any
-	Region any
+	Region        any
 }
 
 type TestRunSources_TestRunSources struct {
-	ObservabilityAlarm any
+	ObservabilityAlarm   any
 	SuccessCriteriaAlarm any
 }
 
@@ -45,7 +45,7 @@ type TestRunSourcesAttrs struct {
 	// <p>ARN identifier.</p>
 	ServiceArn any
 	// <p>The unique identifier of a test run.</p>
-	TestRunId any
+	TestRunId      any
 	TestRunSources any
 	// <p>The type of a test run monitoring-source snapshot.</p>
 	Type any
@@ -55,9 +55,9 @@ var TestRunSources = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_test_run_sources",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"TestRunId": ubx.FieldSpec{WireName: "test_run_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"TestRunId":  ubx.FieldSpec{WireName: "test_run_id"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -31,24 +31,24 @@ type Index_IndexStatistics struct {
 
 type Index_Tags struct {
 	// The key of a tag pair attached to the Amazon Q Business index, enabling resource categorization and access management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Index_CapacityConfigurationFields = ubx.FieldMap{
-		"Units": ubx.FieldSpec{WireName: "units"},
-	}
+	"Units": ubx.FieldSpec{WireName: "units"},
+}
 
 var Index_DocumentAttributeConfigurationsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Search": ubx.FieldSpec{WireName: "search"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var Index_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IndexConfig struct {
 	// The unique identifier of the AWS QBusiness application that this index belongs to, required when creating the index. (AI-inferred)
@@ -102,20 +102,20 @@ var Index = ubx.ResourceBinding{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"CapacityConfiguration": ubx.FieldSpec{
 			WireName: "capacity_configuration",
-			Kind: "object",
-			Fields: Index_CapacityConfigurationFields,
+			Kind:     "object",
+			Fields:   Index_CapacityConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DocumentAttributeConfigurations": ubx.FieldSpec{
 			WireName: "document_attribute_configurations",
-			Kind: "list",
-			Fields: Index_DocumentAttributeConfigurationsFields,
+			Kind:     "list",
+			Fields:   Index_DocumentAttributeConfigurationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Index_TagsFields,
+			Kind:     "list",
+			Fields:   Index_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

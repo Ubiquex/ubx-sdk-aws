@@ -4,23 +4,23 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataEndpointConfig struct {
-	Apiname any
-	StreamArn any
+	Apiname    any
+	StreamArn  any
 	StreamName any
 }
 
 type DataEndpointAttrs struct {
-	Apiname any
+	Apiname      any
 	DataEndpoint any
-	StreamArn any
-	StreamName any
+	StreamArn    any
+	StreamName   any
 }
 
 var DataEndpoint = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_data_endpoint",
 	Fields: ubx.FieldMap{
-		"Apiname": ubx.FieldSpec{WireName: "apiname"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"Apiname":    ubx.FieldSpec{WireName: "apiname"},
+		"StreamArn":  ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

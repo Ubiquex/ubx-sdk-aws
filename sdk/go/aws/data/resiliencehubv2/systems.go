@@ -4,14 +4,14 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Systems_SystemSummaries struct {
-	CreatedAt any
-	Name any
-	OrganizationId any
-	OuId any
-	ServicesCount any
-	SystemArn any
-	SystemId any
-	UpdatedAt any
+	CreatedAt         any
+	Name              any
+	OrganizationId    any
+	OuId              any
+	ServicesCount     any
+	SystemArn         any
+	SystemId          any
+	UpdatedAt         any
 	UserJourneysCount any
 }
 
@@ -20,15 +20,15 @@ type SystemsConfig struct {
 	MaxResults any
 	// <p>Pagination token.</p>
 	NextToken any
-	OuId any
+	OuId      any
 }
 
 type SystemsAttrs struct {
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
-	OuId any
+	NextToken       any
+	OuId            any
 	SystemSummaries any
 }
 
@@ -36,7 +36,7 @@ var Systems = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_systems",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OuId": ubx.FieldSpec{WireName: "ou_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"OuId":       ubx.FieldSpec{WireName: "ou_id"},
 	},
 }

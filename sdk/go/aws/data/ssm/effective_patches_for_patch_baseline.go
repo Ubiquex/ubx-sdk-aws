@@ -4,53 +4,53 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EffectivePatchesForPatchBaseline_EffectivePatches_Patch struct {
-	AdvisoryIds any
-	Arch any
-	BugzillaIds any
+	AdvisoryIds    any
+	Arch           any
+	BugzillaIds    any
 	Classification any
-	ContentUrl any
-	Cveids any
-	Description any
-	Epoch any
-	Id any
-	KbNumber any
-	Language any
-	MsrcNumber any
-	MsrcSeverity any
-	Name any
-	Product any
-	ProductFamily any
-	Release any
-	ReleaseDate any
-	Repository any
-	Severity any
-	Title any
-	Vendor any
-	Version any
+	ContentUrl     any
+	Cveids         any
+	Description    any
+	Epoch          any
+	Id             any
+	KbNumber       any
+	Language       any
+	MsrcNumber     any
+	MsrcSeverity   any
+	Name           any
+	Product        any
+	ProductFamily  any
+	Release        any
+	ReleaseDate    any
+	Repository     any
+	Severity       any
+	Title          any
+	Vendor         any
+	Version        any
 }
 
 type EffectivePatchesForPatchBaseline_EffectivePatches_PatchStatus struct {
-	ApprovalDate any
-	ComplianceLevel any
+	ApprovalDate     any
+	ComplianceLevel  any
 	DeploymentStatus any
 }
 
 type EffectivePatchesForPatchBaseline_EffectivePatches struct {
-	Patch any
+	Patch       any
 	PatchStatus any
 }
 
 type EffectivePatchesForPatchBaselineConfig struct {
 	BaselineId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EffectivePatchesForPatchBaselineAttrs struct {
-	BaselineId any
+	BaselineId       any
 	EffectivePatches any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var EffectivePatchesForPatchBaseline = ubx.DataSourceBinding{
@@ -58,6 +58,6 @@ var EffectivePatchesForPatchBaseline = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"BaselineId": ubx.FieldSpec{WireName: "baseline_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

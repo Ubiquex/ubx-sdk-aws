@@ -23,6 +23,6 @@ var CustomResource = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_custom_resource",
 	Fields: ubx.FieldMap{
 		"ServiceTimeout": ubx.FieldSpec{WireName: "service_timeout"},
-		"ServiceToken": ubx.FieldSpec{WireName: "service_token"},
+		"ServiceToken":   ubx.FieldSpec{WireName: "service_token"},
 	},
 }

@@ -4,29 +4,29 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlossaryTerms_Items struct {
-	Id any
-	Name any
+	Id               any
+	Name             any
 	ShortDescription any
 }
 
 type GlossaryTermsConfig struct {
 	GlossaryIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 type GlossaryTermsAttrs struct {
 	GlossaryIdentifier any
-	Items any
-	MaxResults any
-	NextToken any
+	Items              any
+	MaxResults         any
+	NextToken          any
 }
 
 var GlossaryTerms = ubx.DataSourceBinding{
 	WireType: "aws_glue_glossary_terms",
 	Fields: ubx.FieldMap{
 		"GlossaryIdentifier": ubx.FieldSpec{WireName: "glossary_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

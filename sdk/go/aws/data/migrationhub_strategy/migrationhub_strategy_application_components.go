@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_AntipatternReportS3Object struct {
 	S3Bucket any
-	S3key any
+	S3key    any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_AppUnitError struct {
@@ -17,121 +17,121 @@ type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_Databas
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_ListAntipatternSeveritySummary struct {
-	Count any
+	Count    any
 	Severity any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_RecommendationSet_TransformationTool struct {
-	Description any
-	Name any
+	Description                       any
+	Name                              any
 	TranformationToolInstallationLink any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_RecommendationSet struct {
-	Strategy any
-	TargetDestination any
+	Strategy           any
+	TargetDestination  any
 	TransformationTool any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_ResultList_AnalysisStatus struct {
-	RuntimeAnalysisStatus any
+	RuntimeAnalysisStatus     any
 	SrcCodeOrDbAnalysisStatus any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_ResultList_AntipatternReportResultList_AnalyzerName struct {
-	BinaryAnalyzerName any
-	RunTimeAnalyzerName any
+	BinaryAnalyzerName     any
+	RunTimeAnalyzerName    any
 	SourceCodeAnalyzerName any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_ResultList_AntipatternReportResultList struct {
-	AnalyzerName any
-	AntiPatternReportS3Object any
-	AntipatternReportStatus any
+	AnalyzerName                   any
+	AntiPatternReportS3Object      any
+	AntipatternReportStatus        any
 	AntipatternReportStatusMessage any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_ResultList struct {
-	AnalysisStatus any
-	AnalysisType any
+	AnalysisStatus              any
+	AnalysisType                any
 	AntipatternReportResultList any
-	StatusMessage any
+	StatusMessage               any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos_SourceCodeRepositories struct {
-	Branch any
-	ProjectName any
-	Repository any
+	Branch             any
+	ProjectName        any
+	Repository         any
 	VersionControlType any
 }
 
 type MigrationhubStrategyApplicationComponents_ApplicationComponentInfos struct {
-	AnalysisStatus any
-	AntipatternReportS3Object any
-	AntipatternReportStatus any
+	AnalysisStatus                 any
+	AntipatternReportS3Object      any
+	AntipatternReportStatus        any
 	AntipatternReportStatusMessage any
-	AppType any
-	AppUnitError any
-	AssociatedServerId any
-	DatabaseConfigDetail any
-	Id any
-	InclusionStatus any
-	LastAnalyzedTimestamp any
+	AppType                        any
+	AppUnitError                   any
+	AssociatedServerId             any
+	DatabaseConfigDetail           any
+	Id                             any
+	InclusionStatus                any
+	LastAnalyzedTimestamp          any
 	ListAntipatternSeveritySummary any
-	MoreServerAssociationExists any
-	Name any
-	OsDriver any
-	OsVersion any
-	RecommendationSet any
-	ResourceSubType any
-	ResultList any
-	RuntimeStatus any
-	RuntimeStatusMessage any
-	SourceCodeRepositories any
-	StatusMessage any
+	MoreServerAssociationExists    any
+	Name                           any
+	OsDriver                       any
+	OsVersion                      any
+	RecommendationSet              any
+	ResourceSubType                any
+	ResultList                     any
+	RuntimeStatus                  any
+	RuntimeStatusMessage           any
+	SourceCodeRepositories         any
+	StatusMessage                  any
 }
 
 type MigrationhubStrategyApplicationComponents_GroupIdFilter struct {
-	Name any
+	Name  any
 	Value any
 }
 
 var MigrationhubStrategyApplicationComponents_GroupIdFilterFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MigrationhubStrategyApplicationComponentsConfig struct {
 	ApplicationComponentCriteria any
-	FilterValue any
-	GroupIdFilter any
-	MaxResults any
-	NextToken any
-	Sort any
+	FilterValue                  any
+	GroupIdFilter                any
+	MaxResults                   any
+	NextToken                    any
+	Sort                         any
 }
 
 type MigrationhubStrategyApplicationComponentsAttrs struct {
 	ApplicationComponentCriteria any
-	ApplicationComponentInfos any
-	FilterValue any
-	GroupIdFilter any
-	MaxResults any
-	NextToken any
-	Sort any
+	ApplicationComponentInfos    any
+	FilterValue                  any
+	GroupIdFilter                any
+	MaxResults                   any
+	NextToken                    any
+	Sort                         any
 }
 
 var MigrationhubStrategyApplicationComponents = ubx.DataSourceBinding{
 	WireType: "aws_migrationhub_strategy_application_components",
 	Fields: ubx.FieldMap{
 		"ApplicationComponentCriteria": ubx.FieldSpec{WireName: "application_component_criteria"},
-		"FilterValue": ubx.FieldSpec{WireName: "filter_value"},
+		"FilterValue":                  ubx.FieldSpec{WireName: "filter_value"},
 		"GroupIdFilter": ubx.FieldSpec{
 			WireName: "group_id_filter",
-			Kind: "list",
-			Fields: MigrationhubStrategyApplicationComponents_GroupIdFilterFields,
+			Kind:     "list",
+			Fields:   MigrationhubStrategyApplicationComponents_GroupIdFilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Sort":       ubx.FieldSpec{WireName: "sort"},
 	},
 }

@@ -9,8 +9,8 @@ type ContainerRecipePolicyConfig struct {
 
 type ContainerRecipePolicyAttrs struct {
 	ContainerRecipeArn any
-	Policy any
-	RequestId any
+	Policy             any
+	RequestId          any
 }
 
 var ContainerRecipePolicy = ubx.DataSourceBinding{

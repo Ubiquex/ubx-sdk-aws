@@ -4,24 +4,24 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LensReviewImprovements_ImprovementSummaries_ImprovementPlans struct {
-	ChoiceId any
-	DisplayText any
+	ChoiceId           any
+	DisplayText        any
 	ImprovementPlanUrl any
 }
 
 type LensReviewImprovements_ImprovementSummaries_JiraConfiguration struct {
-	JiraIssueUrl any
+	JiraIssueUrl   any
 	LastSyncedTime any
 }
 
 type LensReviewImprovements_ImprovementSummaries struct {
 	ImprovementPlanUrl any
-	ImprovementPlans any
-	JiraConfiguration any
-	PillarId any
-	QuestionId any
-	QuestionTitle any
-	Risk any
+	ImprovementPlans   any
+	JiraConfiguration  any
+	PillarId           any
+	QuestionId         any
+	QuestionTitle      any
+	Risk               any
 }
 
 type LensReviewImprovementsConfig struct {
@@ -34,7 +34,7 @@ type LensReviewImprovementsConfig struct {
 	// <p>The token to use to retrieve the next set of results.</p>
 	NextToken any
 	// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-	PillarId any
+	PillarId         any
 	QuestionPriority any
 	// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
 	WorkloadId any
@@ -45,7 +45,7 @@ type LensReviewImprovementsAttrs struct {
 	ImprovementSummaries any
 	// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
 	LensAlias any
-	LensArn any
+	LensArn   any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The milestone number.</p> <p>A workload can have a maximum of 100 milestones.</p>
@@ -53,7 +53,7 @@ type LensReviewImprovementsAttrs struct {
 	// <p>The token to use to retrieve the next set of results.</p>
 	NextToken any
 	// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-	PillarId any
+	PillarId         any
 	QuestionPriority any
 	// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
 	WorkloadId any
@@ -62,12 +62,12 @@ type LensReviewImprovementsAttrs struct {
 var LensReviewImprovements = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_lens_review_improvements",
 	Fields: ubx.FieldMap{
-		"LensAlias": ubx.FieldSpec{WireName: "lens_alias"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MilestoneNumber": ubx.FieldSpec{WireName: "milestone_number"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PillarId": ubx.FieldSpec{WireName: "pillar_id"},
+		"LensAlias":        ubx.FieldSpec{WireName: "lens_alias"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"MilestoneNumber":  ubx.FieldSpec{WireName: "milestone_number"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"PillarId":         ubx.FieldSpec{WireName: "pillar_id"},
 		"QuestionPriority": ubx.FieldSpec{WireName: "question_priority"},
-		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
+		"WorkloadId":       ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

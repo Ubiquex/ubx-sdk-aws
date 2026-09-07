@@ -4,28 +4,28 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeaders struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig struct {
 	AccessControlAllowCredentials any
-	AccessControlAllowHeaders any
-	AccessControlAllowMethods any
-	AccessControlAllowOrigins any
-	AccessControlExposeHeaders any
-	AccessControlMaxAgeSec any
-	OriginOverride any
+	AccessControlAllowHeaders     any
+	AccessControlAllowMethods     any
+	AccessControlAllowOrigins     any
+	AccessControlExposeHeaders    any
+	AccessControlMaxAgeSec        any
+	OriginOverride                any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig_Items struct {
-	Header any
+	Header   any
 	Override any
-	Value any
+	Value    any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -34,13 +34,13 @@ type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPoli
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfig struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentSecurityPolicy struct {
 	ContentSecurityPolicy any
-	Override any
+	Override              any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentTypeOptions struct {
@@ -49,89 +49,89 @@ type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPoli
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_FrameOptions struct {
 	FrameOption any
-	Override any
+	Override    any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ReferrerPolicy struct {
-	Override any
+	Override       any
 	ReferrerPolicy any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_StrictTransportSecurity struct {
 	AccessControlMaxAgeSec any
-	IncludeSubdomains any
-	Override any
-	Preload any
+	IncludeSubdomains      any
+	Override               any
+	Preload                any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_Xssprotection struct {
-	ModeBlock any
-	Override any
+	ModeBlock  any
+	Override   any
 	Protection any
-	ReportUri any
+	ReportUri  any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig struct {
-	ContentSecurityPolicy any
-	ContentTypeOptions any
-	FrameOptions any
-	ReferrerPolicy any
+	ContentSecurityPolicy   any
+	ContentTypeOptions      any
+	FrameOptions            any
+	ReferrerPolicy          any
 	StrictTransportSecurity any
-	Xssprotection any
+	Xssprotection           any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig_ServerTimingHeadersConfig struct {
-	Enabled any
+	Enabled      any
 	SamplingRate any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy_ResponseHeadersPolicyConfig struct {
-	Comment any
-	CorsConfig any
-	CustomHeadersConfig any
-	Name any
-	RemoveHeadersConfig any
-	SecurityHeadersConfig any
+	Comment                   any
+	CorsConfig                any
+	CustomHeadersConfig       any
+	Name                      any
+	RemoveHeadersConfig       any
+	SecurityHeadersConfig     any
 	ServerTimingHeadersConfig any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items_ResponseHeadersPolicy struct {
-	Id any
-	LastModifiedTime any
+	Id                          any
+	LastModifiedTime            any
 	ResponseHeadersPolicyConfig any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList_Items struct {
 	ResponseHeadersPolicy any
-	Type any
+	Type                  any
 }
 
 type ResponseHeadersPolicies_ResponseHeadersPolicyList struct {
-	Items any
-	MaxItems any
+	Items      any
+	MaxItems   any
 	NextMarker any
-	Quantity any
+	Quantity   any
 }
 
 type ResponseHeadersPoliciesConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
-	Type any
+	Type     any
 }
 
 type ResponseHeadersPoliciesAttrs struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	// <p>A list of response headers policies.</p>
 	ResponseHeadersPolicyList any
-	Type any
+	Type                      any
 }
 
 var ResponseHeadersPolicies = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_response_headers_policies",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":     ubx.FieldSpec{WireName: "type"},
 	},
 }

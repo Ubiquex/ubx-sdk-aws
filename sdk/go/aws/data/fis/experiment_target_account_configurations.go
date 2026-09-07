@@ -4,19 +4,19 @@ package fis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentTargetAccountConfigurations_TargetAccountConfigurations struct {
-	AccountId any
+	AccountId   any
 	Description any
-	RoleArn any
+	RoleArn     any
 }
 
 type ExperimentTargetAccountConfigurationsConfig struct {
 	ExperimentId any
-	NextToken any
+	NextToken    any
 }
 
 type ExperimentTargetAccountConfigurationsAttrs struct {
-	ExperimentId any
-	NextToken any
+	ExperimentId                any
+	NextToken                   any
 	TargetAccountConfigurations any
 }
 
@@ -24,6 +24,6 @@ var ExperimentTargetAccountConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_fis_experiment_target_account_configurations",
 	Fields: ubx.FieldMap{
 		"ExperimentId": ubx.FieldSpec{WireName: "experiment_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,36 +4,36 @@ package ce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CommitmentPurchaseAnalysis_AnalysisDetails_SavingsPlansPurchaseAnalysisDetails_MetricsOverLookbackPeriod struct {
-	CurrentCoverage any
-	EstimatedCoverage any
+	CurrentCoverage                   any
+	EstimatedCoverage                 any
 	EstimatedNewCommitmentUtilization any
-	EstimatedOnDemandCost any
-	StartTime any
+	EstimatedOnDemandCost             any
+	StartTime                         any
 }
 
 type CommitmentPurchaseAnalysis_AnalysisDetails_SavingsPlansPurchaseAnalysisDetails struct {
-	AdditionalMetadata any
-	CurrencyCode any
-	CurrentAverageCoverage any
-	CurrentAverageHourlyOnDemandSpend any
-	CurrentMaximumHourlyOnDemandSpend any
-	CurrentMinimumHourlyOnDemandSpend any
-	CurrentOnDemandSpend any
-	EstimatedAverageCoverage any
-	EstimatedAverageUtilization any
-	EstimatedCommitmentCost any
-	EstimatedMonthlySavingsAmount any
-	EstimatedOnDemandCost any
+	AdditionalMetadata                         any
+	CurrencyCode                               any
+	CurrentAverageCoverage                     any
+	CurrentAverageHourlyOnDemandSpend          any
+	CurrentMaximumHourlyOnDemandSpend          any
+	CurrentMinimumHourlyOnDemandSpend          any
+	CurrentOnDemandSpend                       any
+	EstimatedAverageCoverage                   any
+	EstimatedAverageUtilization                any
+	EstimatedCommitmentCost                    any
+	EstimatedMonthlySavingsAmount              any
+	EstimatedOnDemandCost                      any
 	EstimatedOnDemandCostWithCurrentCommitment any
-	EstimatedRoi any
-	EstimatedSavingsAmount any
-	EstimatedSavingsPercentage any
-	ExistingHourlyCommitment any
-	HourlyCommitmentToPurchase any
-	LatestUsageTimestamp any
-	LookbackPeriodInHours any
-	MetricsOverLookbackPeriod any
-	UpfrontCost any
+	EstimatedRoi                               any
+	EstimatedSavingsAmount                     any
+	EstimatedSavingsPercentage                 any
+	ExistingHourlyCommitment                   any
+	HourlyCommitmentToPurchase                 any
+	LatestUsageTimestamp                       any
+	LookbackPeriodInHours                      any
+	MetricsOverLookbackPeriod                  any
+	UpfrontCost                                any
 }
 
 type CommitmentPurchaseAnalysis_AnalysisDetails struct {
@@ -42,29 +42,29 @@ type CommitmentPurchaseAnalysis_AnalysisDetails struct {
 }
 
 type CommitmentPurchaseAnalysis_CommitmentPurchaseAnalysisConfiguration_SavingsPlansPurchaseAnalysisConfiguration_LookBackTimePeriod struct {
-	End any
+	End   any
 	Start any
 }
 
 type CommitmentPurchaseAnalysis_CommitmentPurchaseAnalysisConfiguration_SavingsPlansPurchaseAnalysisConfiguration_SavingsPlansToAdd struct {
-	InstanceFamily any
-	OfferingId any
-	PaymentOption any
-	Region any
+	InstanceFamily         any
+	OfferingId             any
+	PaymentOption          any
+	Region                 any
 	SavingsPlansCommitment any
-	SavingsPlansType any
-	TermInYears any
+	SavingsPlansType       any
+	TermInYears            any
 }
 
 type CommitmentPurchaseAnalysis_CommitmentPurchaseAnalysisConfiguration_SavingsPlansPurchaseAnalysisConfiguration struct {
-	AccountId any
+	AccountId    any
 	AccountScope any
 	AnalysisType any
 	// <p>The time period of the request. </p>
-	LookBackTimePeriod any
+	LookBackTimePeriod         any
 	SavingsPlansTargetCoverage any
-	SavingsPlansToAdd any
-	SavingsPlansToExclude any
+	SavingsPlansToAdd          any
+	SavingsPlansToExclude      any
 }
 
 type CommitmentPurchaseAnalysis_CommitmentPurchaseAnalysisConfiguration struct {
@@ -81,13 +81,13 @@ type CommitmentPurchaseAnalysisAttrs struct {
 	AnalysisCompletionTime any
 	// <p>Details about the analysis.</p>
 	AnalysisDetails any
-	AnalysisId any
+	AnalysisId      any
 	// <p>The period of time that you want the usage and costs for.</p>
 	AnalysisStartedTime any
-	AnalysisStatus any
+	AnalysisStatus      any
 	// <p>The configuration for the commitment purchase analysis.</p>
 	CommitmentPurchaseAnalysisConfiguration any
-	ErrorCode any
+	ErrorCode                               any
 	// <p>The period of time that you want the usage and costs for.</p>
 	EstimatedCompletionTime any
 }

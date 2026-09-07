@@ -23,18 +23,18 @@ type Firewall_Tags struct {
 }
 
 var Firewall_AvailabilityZoneMappingsFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-	}
+	"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+}
 
 var Firewall_SubnetMappingsFields = ubx.FieldMap{
-		"IpaddressType": ubx.FieldSpec{WireName: "ipaddress_type"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"IpaddressType": ubx.FieldSpec{WireName: "ipaddress_type"},
+	"SubnetId":      ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var Firewall_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallConfig struct {
 	// Controls whether the firewall's assigned Availability Zones can be changed, with true preventing any modifications to the Availability Zones associated with the firewall. (AI-inferred)
@@ -57,7 +57,7 @@ type FirewallConfig struct {
 	SubnetChangeProtection any
 	// Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred)
 	SubnetMappings any
-	Tags any
+	Tags           any
 	// A reference to the transit gateway associated with this firewall, present only for transit gateway-attached firewalls. (AI-inferred)
 	TransitGatewayId any
 	// The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred)
@@ -91,7 +91,7 @@ type FirewallAttrs struct {
 	SubnetChangeProtection any
 	// Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred)
 	SubnetMappings any
-	Tags any
+	Tags           any
 	// The unique identifier of the Transit Gateway attachment that connects the firewall to its VPC, populated after the firewall is created. (AI-inferred)
 	TransitGatewayAttachmentId any
 	// A reference to the transit gateway associated with this firewall, present only for transit gateway-attached firewalls. (AI-inferred)
@@ -106,27 +106,27 @@ var Firewall = ubx.ResourceBinding{
 		"AvailabilityZoneChangeProtection": ubx.FieldSpec{WireName: "availability_zone_change_protection"},
 		"AvailabilityZoneMappings": ubx.FieldSpec{
 			WireName: "availability_zone_mappings",
-			Kind: "list",
-			Fields: Firewall_AvailabilityZoneMappingsFields,
+			Kind:     "list",
+			Fields:   Firewall_AvailabilityZoneMappingsFields,
 		},
-		"DeleteProtection": ubx.FieldSpec{WireName: "delete_protection"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnabledAnalysisTypes": ubx.FieldSpec{WireName: "enabled_analysis_types"},
-		"FirewallName": ubx.FieldSpec{WireName: "firewall_name"},
-		"FirewallPolicyArn": ubx.FieldSpec{WireName: "firewall_policy_arn"},
+		"DeleteProtection":               ubx.FieldSpec{WireName: "delete_protection"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"EnabledAnalysisTypes":           ubx.FieldSpec{WireName: "enabled_analysis_types"},
+		"FirewallName":                   ubx.FieldSpec{WireName: "firewall_name"},
+		"FirewallPolicyArn":              ubx.FieldSpec{WireName: "firewall_policy_arn"},
 		"FirewallPolicyChangeProtection": ubx.FieldSpec{WireName: "firewall_policy_change_protection"},
-		"SubnetChangeProtection": ubx.FieldSpec{WireName: "subnet_change_protection"},
+		"SubnetChangeProtection":         ubx.FieldSpec{WireName: "subnet_change_protection"},
 		"SubnetMappings": ubx.FieldSpec{
 			WireName: "subnet_mappings",
-			Kind: "list",
-			Fields: Firewall_SubnetMappingsFields,
+			Kind:     "list",
+			Fields:   Firewall_SubnetMappingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Firewall_TagsFields,
+			Kind:     "list",
+			Fields:   Firewall_TagsFields,
 		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

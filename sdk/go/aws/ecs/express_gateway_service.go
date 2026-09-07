@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExpressGatewayService_ActiveConfigurations_IngressPaths struct {
 	AccessType any
-	Endpoint any
+	Endpoint   any
 }
 
 type ExpressGatewayService_ActiveConfigurations_NetworkConfiguration struct {
@@ -40,57 +40,57 @@ type ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Secrets struct 
 
 type ExpressGatewayService_ActiveConfigurations_PrimaryContainer struct {
 	AwsLogsConfiguration any
-	Command any
-	ContainerPort any
-	Environment any
-	Image any
+	Command              any
+	ContainerPort        any
+	Environment          any
+	Image                any
 	// Specifies the credentials used to authenticate to a private container registry, typically containing a credentialsParameter ARN that references a Secrets Manager secret or SSM parameter. (AI-inferred)
 	RepositoryCredentials any
-	Secrets any
+	Secrets               any
 }
 
 type ExpressGatewayService_ActiveConfigurations_ScalingTarget struct {
-	AutoScalingMetric any
+	AutoScalingMetric      any
 	AutoScalingTargetValue any
-	MaxTaskCount any
-	MinTaskCount any
+	MaxTaskCount           any
+	MinTaskCount           any
 }
 
 type ExpressGatewayService_ActiveConfigurations struct {
-	Cpu any
-	CreatedAt any
-	ExecutionRoleArn any
-	HealthCheckPath any
-	IngressPaths any
-	Memory any
+	Cpu                  any
+	CreatedAt            any
+	ExecutionRoleArn     any
+	HealthCheckPath      any
+	IngressPaths         any
+	Memory               any
 	NetworkConfiguration any
-	PrimaryContainer any
-	ScalingTarget any
+	PrimaryContainer     any
+	ScalingTarget        any
 	// Uniquely identifies the version of the service configuration that is among the currently active configurations for the ECS Express Gateway service. (AI-inferred)
 	ServiceRevisionArn any
-	TaskDefinitionArn any
-	TaskRoleArn any
+	TaskDefinitionArn  any
+	TaskRoleArn        any
 }
 
 type ExpressGatewayService_EcsmanagedResourceArns_AutoScaling struct {
 	ApplicationAutoScalingPolicies any
-	ScalableTarget any
+	ScalableTarget                 any
 }
 
 type ExpressGatewayService_EcsmanagedResourceArns_IngressPath struct {
-	CertificateArn any
-	ListenerArn any
-	ListenerRuleArn any
-	LoadBalancerArn any
+	CertificateArn             any
+	ListenerArn                any
+	ListenerRuleArn            any
+	LoadBalancerArn            any
 	LoadBalancerSecurityGroups any
-	TargetGroupArns any
+	TargetGroupArns            any
 }
 
 type ExpressGatewayService_EcsmanagedResourceArns struct {
-	AutoScaling any
-	IngressPath any
-	LogGroups any
-	MetricAlarms any
+	AutoScaling           any
+	IngressPath           any
+	LogGroups             any
+	MetricAlarms          any
 	ServiceSecurityGroups any
 }
 
@@ -99,71 +99,71 @@ type ExpressGatewayService_Status struct {
 }
 
 type ExpressGatewayService_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ExpressGatewayService_ActiveConfigurations_NetworkConfigurationFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfigurationFields = ubx.FieldMap{
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-		"LogStreamPrefix": ubx.FieldSpec{WireName: "log_stream_prefix"},
-	}
+	"LogGroup":        ubx.FieldSpec{WireName: "log_group"},
+	"LogStreamPrefix": ubx.FieldSpec{WireName: "log_stream_prefix"},
+}
 
 var ExpressGatewayService_ActiveConfigurations_PrimaryContainer_EnvironmentFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentialsFields = ubx.FieldMap{
-		"CredentialsParameter": ubx.FieldSpec{WireName: "credentials_parameter"},
-	}
+	"CredentialsParameter": ubx.FieldSpec{WireName: "credentials_parameter"},
+}
 
 var ExpressGatewayService_ActiveConfigurations_PrimaryContainer_SecretsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ValueFrom": ubx.FieldSpec{WireName: "value_from"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ValueFrom": ubx.FieldSpec{WireName: "value_from"},
+}
 
 var ExpressGatewayService_ActiveConfigurations_PrimaryContainerFields = ubx.FieldMap{
-		"AwsLogsConfiguration": ubx.FieldSpec{
-			WireName: "aws_logs_configuration",
-			Kind: "object",
-			Fields: ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfigurationFields,
-		},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "list",
-			Fields: ExpressGatewayService_ActiveConfigurations_PrimaryContainer_EnvironmentFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"RepositoryCredentials": ubx.FieldSpec{
-			WireName: "repository_credentials",
-			Kind: "object",
-			Fields: ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentialsFields,
-		},
-		"Secrets": ubx.FieldSpec{
-			WireName: "secrets",
-			Kind: "list",
-			Fields: ExpressGatewayService_ActiveConfigurations_PrimaryContainer_SecretsFields,
-		},
-	}
+	"AwsLogsConfiguration": ubx.FieldSpec{
+		WireName: "aws_logs_configuration",
+		Kind:     "object",
+		Fields:   ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfigurationFields,
+	},
+	"Command":       ubx.FieldSpec{WireName: "command"},
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "list",
+		Fields:   ExpressGatewayService_ActiveConfigurations_PrimaryContainer_EnvironmentFields,
+	},
+	"Image": ubx.FieldSpec{WireName: "image"},
+	"RepositoryCredentials": ubx.FieldSpec{
+		WireName: "repository_credentials",
+		Kind:     "object",
+		Fields:   ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentialsFields,
+	},
+	"Secrets": ubx.FieldSpec{
+		WireName: "secrets",
+		Kind:     "list",
+		Fields:   ExpressGatewayService_ActiveConfigurations_PrimaryContainer_SecretsFields,
+	},
+}
 
 var ExpressGatewayService_ActiveConfigurations_ScalingTargetFields = ubx.FieldMap{
-		"AutoScalingMetric": ubx.FieldSpec{WireName: "auto_scaling_metric"},
-		"AutoScalingTargetValue": ubx.FieldSpec{WireName: "auto_scaling_target_value"},
-		"MaxTaskCount": ubx.FieldSpec{WireName: "max_task_count"},
-		"MinTaskCount": ubx.FieldSpec{WireName: "min_task_count"},
-	}
+	"AutoScalingMetric":      ubx.FieldSpec{WireName: "auto_scaling_metric"},
+	"AutoScalingTargetValue": ubx.FieldSpec{WireName: "auto_scaling_target_value"},
+	"MaxTaskCount":           ubx.FieldSpec{WireName: "max_task_count"},
+	"MinTaskCount":           ubx.FieldSpec{WireName: "min_task_count"},
+}
 
 var ExpressGatewayService_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ExpressGatewayServiceConfig struct {
 	// The short name or full Amazon Resource Name (ARN) of the cluster this Express service runs in. (AI-inferred)
@@ -240,34 +240,34 @@ type ExpressGatewayServiceAttrs struct {
 var ExpressGatewayService = ubx.ResourceBinding{
 	WireType: "aws_ecs_express_gateway_service",
 	Fields: ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"HealthCheckPath": ubx.FieldSpec{WireName: "health_check_path"},
+		"Cluster":               ubx.FieldSpec{WireName: "cluster"},
+		"Cpu":                   ubx.FieldSpec{WireName: "cpu"},
+		"ExecutionRoleArn":      ubx.FieldSpec{WireName: "execution_role_arn"},
+		"HealthCheckPath":       ubx.FieldSpec{WireName: "health_check_path"},
 		"InfrastructureRoleArn": ubx.FieldSpec{WireName: "infrastructure_role_arn"},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
+		"Memory":                ubx.FieldSpec{WireName: "memory"},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: ExpressGatewayService_ActiveConfigurations_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   ExpressGatewayService_ActiveConfigurations_NetworkConfigurationFields,
 		},
 		"PrimaryContainer": ubx.FieldSpec{
 			WireName: "primary_container",
-			Kind: "object",
-			Fields: ExpressGatewayService_ActiveConfigurations_PrimaryContainerFields,
+			Kind:     "object",
+			Fields:   ExpressGatewayService_ActiveConfigurations_PrimaryContainerFields,
 		},
 		"ScalingTarget": ubx.FieldSpec{
 			WireName: "scaling_target",
-			Kind: "object",
-			Fields: ExpressGatewayService_ActiveConfigurations_ScalingTargetFields,
+			Kind:     "object",
+			Fields:   ExpressGatewayService_ActiveConfigurations_ScalingTargetFields,
 		},
 		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ExpressGatewayService_TagsFields,
+			Kind:     "list",
+			Fields:   ExpressGatewayService_TagsFields,
 		},
 		"TaskDefinitionArn": ubx.FieldSpec{WireName: "task_definition_arn"},
-		"TaskRoleArn": ubx.FieldSpec{WireName: "task_role_arn"},
+		"TaskRoleArn":       ubx.FieldSpec{WireName: "task_role_arn"},
 	},
 }

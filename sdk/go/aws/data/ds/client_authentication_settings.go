@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientAuthenticationSettings_ClientAuthenticationSettingsInfo struct {
 	LastUpdatedDateTime any
-	Status any
-	Type any
+	Status              any
+	Type                any
 }
 
 type ClientAuthenticationSettingsConfig struct {
 	DirectoryId any
-	Limit any
-	NextToken any
-	Type any
+	Limit       any
+	NextToken   any
+	Type        any
 }
 
 type ClientAuthenticationSettingsAttrs struct {
 	ClientAuthenticationSettingsInfo any
-	DirectoryId any
-	Limit any
-	NextToken any
-	Type any
+	DirectoryId                      any
+	Limit                            any
+	NextToken                        any
+	Type                             any
 }
 
 var ClientAuthenticationSettings = ubx.DataSourceBinding{
 	WireType: "aws_ds_client_authentication_settings",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -9,12 +9,12 @@ type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_AnalysisDetails_Conta
 
 type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_AnalysisDetails_ContactLens_MatchedRuleCategories_PointsOfInterest struct {
 	MillisecondOffsets any
-	TranscriptSegment any
+	TranscriptSegment  any
 }
 
 type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_AnalysisDetails_ContactLens_MatchedRuleCategories struct {
-	Category any
-	Condition any
+	Category         any
+	Condition        any
 	PointsOfInterest any
 }
 
@@ -23,13 +23,13 @@ type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_AnalysisDetails_Conta
 }
 
 type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_AnalysisDetails_GenAi struct {
-	Justification any
+	Justification    any
 	PointsOfInterest any
 }
 
 type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_AnalysisDetails struct {
 	ContactLens any
-	GenAi any
+	GenAi       any
 }
 
 type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_Input struct {
@@ -39,63 +39,63 @@ type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_Input struct {
 type ContactEvaluation_Evaluation_Answers_SuggestedAnswers_Value struct {
 	DateTimeValue any
 	NotApplicable any
-	NumericValue any
-	StringValue any
-	StringValues any
+	NumericValue  any
+	StringValue   any
+	StringValues  any
 }
 
 type ContactEvaluation_Evaluation_Answers_SuggestedAnswers struct {
 	AnalysisDetails any
-	AnalysisType any
-	Input any
-	Status any
-	Value any
+	AnalysisType    any
+	Input           any
+	Status          any
+	Value           any
 }
 
 type ContactEvaluation_Evaluation_Answers struct {
-	SuggestedAnswers any
+	SuggestedAnswers     any
 	SystemSuggestedValue any
-	Value any
+	Value                any
 }
 
 type ContactEvaluation_Evaluation_Metadata_Acknowledgement struct {
-	AcknowledgedBy any
-	AcknowledgedTime any
+	AcknowledgedBy      any
+	AcknowledgedTime    any
 	AcknowledgerComment any
 }
 
 type ContactEvaluation_Evaluation_Metadata_AutoEvaluation struct {
 	AutoEvaluationEnabled any
-	AutoEvaluationStatus any
+	AutoEvaluationStatus  any
 }
 
 type ContactEvaluation_Evaluation_Metadata_ContactParticipant struct {
-	ContactParticipantId any
+	ContactParticipantId   any
 	ContactParticipantRole any
 }
 
 type ContactEvaluation_Evaluation_Metadata_Review_ReviewRequestComments struct {
-	Comment any
-	CreatedBy any
+	Comment     any
+	CreatedBy   any
 	CreatedTime any
 }
 
 type ContactEvaluation_Evaluation_Metadata_Review struct {
-	CreatedBy any
-	CreatedTime any
-	RequestedBy any
-	RequestedTime any
-	ReviewId any
+	CreatedBy             any
+	CreatedTime           any
+	RequestedBy           any
+	RequestedTime         any
+	ReviewId              any
 	ReviewRequestComments any
 }
 
 type ContactEvaluation_Evaluation_Metadata_Score struct {
-	AppliedWeight any
-	AutomaticFail any
-	EarnedPoints any
-	MaxBasePoint any
-	NotApplicable any
-	Percentage any
+	AppliedWeight       any
+	AutomaticFail       any
+	EarnedPoints        any
+	MaxBasePoint        any
+	NotApplicable       any
+	Percentage          any
 	PerformanceCategory any
 }
 
@@ -103,15 +103,15 @@ type ContactEvaluation_Evaluation_Metadata struct {
 	// <p>Information about the evaluation acknowledgement.</p>
 	Acknowledgement any
 	// <p>Details about automated evaluations.</p>
-	AutoEvaluation any
+	AutoEvaluation       any
 	CalibrationSessionId any
-	ContactAgentId any
-	ContactId any
+	ContactAgentId       any
+	ContactId            any
 	// <p>Information about a contact participant in the evaluation.</p>
 	ContactParticipant any
-	EvaluatorArn any
+	EvaluatorArn       any
 	// <p>Metadata information about an evaluation review.</p>
-	Review any
+	Review        any
 	SamplingJobId any
 	// <p>Information about scores of a contact evaluation item (section or question).</p>
 	Score any
@@ -122,18 +122,18 @@ type ContactEvaluation_Evaluation_Notes struct {
 }
 
 type ContactEvaluation_Evaluation struct {
-	Answers any
-	CreatedTime any
-	EvaluationArn any
-	EvaluationId any
-	EvaluationType any
+	Answers          any
+	CreatedTime      any
+	EvaluationArn    any
+	EvaluationId     any
+	EvaluationType   any
 	LastModifiedTime any
 	// <p>Metadata information about a contact evaluation.</p>
 	Metadata any
-	Notes any
-	Scores any
-	Status any
-	Tags any
+	Notes    any
+	Scores   any
+	Status   any
+	Tags     any
 }
 
 type ContactEvaluation_EvaluationForm_AutoEvaluationConfiguration struct {
@@ -142,17 +142,17 @@ type ContactEvaluation_EvaluationForm_AutoEvaluationConfiguration struct {
 
 type ContactEvaluation_EvaluationForm_Items_Question_Enablement_Condition_Operands_Expression_Source struct {
 	RefId any
-	Type any
+	Type  any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_Enablement_Condition_Operands_Expression struct {
 	Comparator any
-	Source any
-	Values any
+	Source     any
+	Values     any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_Enablement_Condition_Operands struct {
-	Condition any
+	Condition  any
 	Expression any
 }
 
@@ -162,8 +162,8 @@ type ContactEvaluation_EvaluationForm_Items_Question_Enablement_Condition struct
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_Enablement struct {
-	Action any
-	Condition any
+	Action        any
+	Condition     any
 	DefaultAction any
 }
 
@@ -172,8 +172,8 @@ type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Mult
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_MultiSelect_Automation_Options_RuleCategory struct {
-	Category any
-	Condition any
+	Category     any
+	Condition    any
 	OptionRefIds any
 }
 
@@ -182,9 +182,9 @@ type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Mult
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_MultiSelect_Automation struct {
-	AnswerSource any
+	AnswerSource        any
 	DefaultOptionRefIds any
-	Options any
+	Options             any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_MultiSelect_Options_AutomaticFailConfiguration struct {
@@ -192,23 +192,23 @@ type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Mult
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_MultiSelect_Options_PointsConfiguration struct {
-	IsBonus any
+	IsBonus    any
 	PointValue any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_MultiSelect_Options struct {
-	AutomaticFail any
+	AutomaticFail              any
 	AutomaticFailConfiguration any
-	PointsConfiguration any
-	RefId any
-	Score any
-	Text any
+	PointsConfiguration        any
+	RefId                      any
+	Score                      any
+	Text                       any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_MultiSelect struct {
 	Automation any
-	DisplayAs any
-	Options any
+	DisplayAs  any
+	Options    any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Numeric_Automation_PropertyValue struct {
@@ -216,29 +216,29 @@ type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Nume
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Numeric_Automation struct {
-	AnswerSource any
+	AnswerSource  any
 	PropertyValue any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Numeric_Options struct {
-	AutomaticFail any
+	AutomaticFail              any
 	AutomaticFailConfiguration any
-	MaxValue any
-	MinValue any
-	PointsConfiguration any
-	Score any
+	MaxValue                   any
+	MinValue                   any
+	PointsConfiguration        any
+	Score                      any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Numeric struct {
 	Automation any
-	MaxValue any
-	MinValue any
-	Options any
+	MaxValue   any
+	MinValue   any
+	Options    any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_SingleSelect_Automation_Options_RuleCategory struct {
-	Category any
-	Condition any
+	Category    any
+	Condition   any
 	OptionRefId any
 }
 
@@ -247,15 +247,15 @@ type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Sing
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_SingleSelect_Automation struct {
-	AnswerSource any
+	AnswerSource       any
 	DefaultOptionRefId any
-	Options any
+	Options            any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_SingleSelect struct {
 	Automation any
-	DisplayAs any
-	Options any
+	DisplayAs  any
+	Options    any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Text_Automation struct {
@@ -267,55 +267,55 @@ type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties_Text
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_QuestionTypeProperties struct {
-	MultiSelect any
-	Numeric any
+	MultiSelect  any
+	Numeric      any
 	SingleSelect any
-	Text any
+	Text         any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_ScoringConfiguration_PointsConfiguration struct {
-	IsBonus any
+	IsBonus       any
 	MaxPointValue any
 	MinPointValue any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_ScoringConfiguration_ScoreThresholds struct {
-	MaxScorePercentage any
-	MinScorePercentage any
+	MaxScorePercentage  any
+	MinScorePercentage  any
 	PerformanceCategory any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question_ScoringConfiguration struct {
 	IsExcludedFromScoring any
-	PointsConfiguration any
-	ScoreThresholds any
+	PointsConfiguration   any
+	ScoreThresholds       any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Question struct {
-	Enablement any
-	Instructions any
-	NotApplicableEnabled any
-	QuestionType any
+	Enablement             any
+	Instructions           any
+	NotApplicableEnabled   any
+	QuestionType           any
 	QuestionTypeProperties any
-	RefId any
-	ScoringConfiguration any
-	Title any
-	Weight any
+	RefId                  any
+	ScoringConfiguration   any
+	Title                  any
+	Weight                 any
 }
 
 type ContactEvaluation_EvaluationForm_Items_Section struct {
-	Instructions any
+	Instructions          any
 	IsExcludedFromScoring any
-	Items any
-	RefId any
-	ScoreThresholds any
-	Title any
-	Weight any
+	Items                 any
+	RefId                 any
+	ScoreThresholds       any
+	Title                 any
+	Weight                any
 }
 
 type ContactEvaluation_EvaluationForm_Items struct {
 	Question any
-	Section any
+	Section  any
 }
 
 type ContactEvaluation_EvaluationForm_LanguageConfiguration struct {
@@ -327,19 +327,19 @@ type ContactEvaluation_EvaluationForm_ReviewConfiguration_ReviewNotificationReci
 }
 
 type ContactEvaluation_EvaluationForm_ReviewConfiguration_ReviewNotificationRecipients struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type ContactEvaluation_EvaluationForm_ReviewConfiguration struct {
-	EligibilityDays any
+	EligibilityDays              any
 	ReviewNotificationRecipients any
 }
 
 type ContactEvaluation_EvaluationForm_ScoringStrategy struct {
-	Mode any
+	Mode            any
 	ScoreThresholds any
-	Status any
+	Status          any
 }
 
 type ContactEvaluation_EvaluationForm_TargetConfiguration struct {
@@ -349,11 +349,11 @@ type ContactEvaluation_EvaluationForm_TargetConfiguration struct {
 type ContactEvaluation_EvaluationForm struct {
 	// <p>The automatic evaluation configuration of an evaluation form.</p>
 	AutoEvaluationConfiguration any
-	Description any
-	EvaluationFormArn any
-	EvaluationFormId any
-	EvaluationFormVersion any
-	Items any
+	Description                 any
+	EvaluationFormArn           any
+	EvaluationFormId            any
+	EvaluationFormVersion       any
+	Items                       any
 	// <p>Language configuration for an evaluation form.</p>
 	LanguageConfiguration any
 	// <p>Configuration settings for evaluation reviews.</p>
@@ -362,12 +362,12 @@ type ContactEvaluation_EvaluationForm struct {
 	ScoringStrategy any
 	// <p>Configuration that specifies the target for an evaluation form.</p>
 	TargetConfiguration any
-	Title any
+	Title               any
 }
 
 type ContactEvaluationConfig struct {
 	EvaluationId any
-	InstanceId any
+	InstanceId   any
 }
 
 type ContactEvaluationAttrs struct {
@@ -375,14 +375,14 @@ type ContactEvaluationAttrs struct {
 	Evaluation any
 	// <p>Information about an evaluation form used in a contact evaluation.</p>
 	EvaluationForm any
-	EvaluationId any
-	InstanceId any
+	EvaluationId   any
+	InstanceId     any
 }
 
 var ContactEvaluation = ubx.DataSourceBinding{
 	WireType: "aws_connect_contact_evaluation",
 	Fields: ubx.FieldMap{
 		"EvaluationId": ubx.FieldSpec{WireName: "evaluation_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":   ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

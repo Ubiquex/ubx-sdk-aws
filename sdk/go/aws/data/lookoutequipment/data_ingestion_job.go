@@ -19,12 +19,12 @@ type DataIngestionJob_DataQualitySummary_InsufficientSensorData struct {
 }
 
 type DataIngestionJob_DataQualitySummary_InvalidSensorData struct {
-	AffectedSensorCount any
+	AffectedSensorCount        any
 	TotalNumberOfInvalidValues any
 }
 
 type DataIngestionJob_DataQualitySummary_MissingSensorData struct {
-	AffectedSensorCount any
+	AffectedSensorCount        any
 	TotalNumberOfMissingValues any
 }
 
@@ -47,19 +47,19 @@ type DataIngestionJob_DataQualitySummary struct {
 
 type DataIngestionJob_IngestedFilesSummary_DiscardedFiles struct {
 	Bucket any
-	Key any
+	Key    any
 }
 
 type DataIngestionJob_IngestedFilesSummary struct {
-	DiscardedFiles any
+	DiscardedFiles        any
 	IngestedNumberOfFiles any
-	TotalNumberOfFiles any
+	TotalNumberOfFiles    any
 }
 
 type DataIngestionJob_IngestionInputConfiguration_S3InputConfiguration struct {
-	Bucket any
+	Bucket     any
 	KeyPattern any
-	Prefix any
+	Prefix     any
 }
 
 type DataIngestionJob_IngestionInputConfiguration struct {
@@ -72,23 +72,23 @@ type DataIngestionJobConfig struct {
 }
 
 type DataIngestionJobAttrs struct {
-	CreatedAt any
+	CreatedAt   any
 	DataEndTime any
 	// <p> DataQualitySummary gives aggregated statistics over all the sensors about a completed ingestion job. It primarily gives more information about statistics over different incorrect data like MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, DuplicateTimeStamps. </p>
 	DataQualitySummary any
-	DataStartTime any
-	DatasetArn any
-	FailedReason any
-	IngestedDataSize any
+	DataStartTime      any
+	DatasetArn         any
+	FailedReason       any
+	IngestedDataSize   any
 	// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
 	IngestedFilesSummary any
 	// <p> Specifies configuration information for the input data for the data ingestion job, including input data S3 location. </p>
 	IngestionInputConfiguration any
-	JobId any
-	RoleArn any
-	SourceDatasetArn any
-	Status any
-	StatusDetail any
+	JobId                       any
+	RoleArn                     any
+	SourceDatasetArn            any
+	Status                      any
+	StatusDetail                any
 }
 
 var DataIngestionJob = ubx.DataSourceBinding{

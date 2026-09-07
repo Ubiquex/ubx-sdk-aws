@@ -4,28 +4,28 @@ package ds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResourceConfig struct {
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 	ResourceId any
 }
 
 type TagsForResourceAttrs struct {
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 	ResourceId any
-	Tags any
+	Tags       any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_ds_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

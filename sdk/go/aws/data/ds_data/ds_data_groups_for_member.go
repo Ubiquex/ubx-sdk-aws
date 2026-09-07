@@ -4,39 +4,39 @@ package ds_data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DsDataGroupsForMember_Groups struct {
-	GroupScope any
-	GroupType any
+	GroupScope     any
+	GroupType      any
 	SamaccountName any
-	Sid any
+	Sid            any
 }
 
 type DsDataGroupsForMemberConfig struct {
-	DirectoryId any
-	MaxResults any
-	MemberRealm any
-	NextToken any
-	Realm any
+	DirectoryId    any
+	MaxResults     any
+	MemberRealm    any
+	NextToken      any
+	Realm          any
 	SamaccountName any
 }
 
 type DsDataGroupsForMemberAttrs struct {
-	DirectoryId any
-	Groups any
-	MaxResults any
-	MemberRealm any
-	NextToken any
-	Realm any
+	DirectoryId    any
+	Groups         any
+	MaxResults     any
+	MemberRealm    any
+	NextToken      any
+	Realm          any
 	SamaccountName any
 }
 
 var DsDataGroupsForMember = ubx.DataSourceBinding{
 	WireType: "aws_ds_data_groups_for_member",
 	Fields: ubx.FieldMap{
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MemberRealm": ubx.FieldSpec{WireName: "member_realm"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Realm": ubx.FieldSpec{WireName: "realm"},
+		"DirectoryId":    ubx.FieldSpec{WireName: "directory_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"MemberRealm":    ubx.FieldSpec{WireName: "member_realm"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"Realm":          ubx.FieldSpec{WireName: "realm"},
 		"SamaccountName": ubx.FieldSpec{WireName: "samaccount_name"},
 	},
 }

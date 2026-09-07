@@ -18,14 +18,14 @@ type JobTemplate_HopDestinations struct {
 }
 
 var JobTemplate_AccelerationSettingsFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var JobTemplate_HopDestinationsFields = ubx.FieldMap{
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Queue": ubx.FieldSpec{WireName: "queue"},
-		"WaitMinutes": ubx.FieldSpec{WireName: "wait_minutes"},
-	}
+	"Priority":    ubx.FieldSpec{WireName: "priority"},
+	"Queue":       ubx.FieldSpec{WireName: "queue"},
+	"WaitMinutes": ubx.FieldSpec{WireName: "wait_minutes"},
+}
 
 type JobTemplateConfig struct {
 	// Configures accelerated transcoding behavior for jobs using this template, with the Mode property set to DISABLED, ENABLED, or PREFERRED to control whether faster GPU-based transcoding is used. (AI-inferred)
@@ -82,21 +82,21 @@ var JobTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccelerationSettings": ubx.FieldSpec{
 			WireName: "acceleration_settings",
-			Kind: "object",
-			Fields: JobTemplate_AccelerationSettingsFields,
+			Kind:     "object",
+			Fields:   JobTemplate_AccelerationSettingsFields,
 		},
-		"Category": ubx.FieldSpec{WireName: "category"},
+		"Category":    ubx.FieldSpec{WireName: "category"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"HopDestinations": ubx.FieldSpec{
 			WireName: "hop_destinations",
-			Kind: "list",
-			Fields: JobTemplate_HopDestinationsFields,
+			Kind:     "list",
+			Fields:   JobTemplate_HopDestinationsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Queue": ubx.FieldSpec{WireName: "queue"},
-		"SettingsJson": ubx.FieldSpec{WireName: "settings_json"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Priority":             ubx.FieldSpec{WireName: "priority"},
+		"Queue":                ubx.FieldSpec{WireName: "queue"},
+		"SettingsJson":         ubx.FieldSpec{WireName: "settings_json"},
 		"StatusUpdateInterval": ubx.FieldSpec{WireName: "status_update_interval"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":                 ubx.FieldSpec{WireName: "tags"},
 	},
 }

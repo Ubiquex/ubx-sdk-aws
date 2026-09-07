@@ -4,10 +4,10 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScanJobs_ScanJobs_CreatedBy struct {
-	BackupPlanArn any
-	BackupPlanId any
+	BackupPlanArn     any
+	BackupPlanId      any
 	BackupPlanVersion any
-	BackupRuleId any
+	BackupRuleId      any
 }
 
 type ScanJobs_ScanJobs_ScanResult struct {
@@ -15,75 +15,75 @@ type ScanJobs_ScanJobs_ScanResult struct {
 }
 
 type ScanJobs_ScanJobs struct {
-	AccountId any
-	BackupVaultArn any
-	BackupVaultName any
-	CompletionDate any
-	ContinuousScanEndTime any
-	ContinuousScanStartTime any
-	CreatedBy any
-	CreationDate any
-	IamRoleArn any
-	MalwareScanner any
-	RecoveryPointArn any
-	ResourceArn any
-	ResourceName any
-	ResourceType any
+	AccountId                any
+	BackupVaultArn           any
+	BackupVaultName          any
+	CompletionDate           any
+	ContinuousScanEndTime    any
+	ContinuousScanStartTime  any
+	CreatedBy                any
+	CreationDate             any
+	IamRoleArn               any
+	MalwareScanner           any
+	RecoveryPointArn         any
+	ResourceArn              any
+	ResourceName             any
+	ResourceType             any
 	ScanBaseRecoveryPointArn any
-	ScanId any
-	ScanJobId any
-	ScanMode any
-	ScanResult any
-	ScannerRoleArn any
-	State any
-	StatusMessage any
+	ScanId                   any
+	ScanJobId                any
+	ScanMode                 any
+	ScanResult               any
+	ScannerRoleArn           any
+	State                    any
+	StatusMessage            any
 }
 
 type ScanJobsConfig struct {
-	ByAccountId any
-	ByBackupVaultName any
-	ByCompleteAfter any
-	ByCompleteBefore any
-	ByMalwareScanner any
+	ByAccountId        any
+	ByBackupVaultName  any
+	ByCompleteAfter    any
+	ByCompleteBefore   any
+	ByMalwareScanner   any
 	ByRecoveryPointArn any
-	ByResourceArn any
-	ByResourceType any
+	ByResourceArn      any
+	ByResourceType     any
 	ByScanResultStatus any
-	ByState any
-	MaxResults any
-	NextToken any
+	ByState            any
+	MaxResults         any
+	NextToken          any
 }
 
 type ScanJobsAttrs struct {
-	ByAccountId any
-	ByBackupVaultName any
-	ByCompleteAfter any
-	ByCompleteBefore any
-	ByMalwareScanner any
+	ByAccountId        any
+	ByBackupVaultName  any
+	ByCompleteAfter    any
+	ByCompleteBefore   any
+	ByMalwareScanner   any
 	ByRecoveryPointArn any
-	ByResourceArn any
-	ByResourceType any
+	ByResourceArn      any
+	ByResourceType     any
 	ByScanResultStatus any
-	ByState any
-	MaxResults any
-	NextToken any
-	ScanJobs any
+	ByState            any
+	MaxResults         any
+	NextToken          any
+	ScanJobs           any
 }
 
 var ScanJobs = ubx.DataSourceBinding{
 	WireType: "aws_backup_scan_jobs",
 	Fields: ubx.FieldMap{
-		"ByAccountId": ubx.FieldSpec{WireName: "by_account_id"},
-		"ByBackupVaultName": ubx.FieldSpec{WireName: "by_backup_vault_name"},
-		"ByCompleteAfter": ubx.FieldSpec{WireName: "by_complete_after"},
-		"ByCompleteBefore": ubx.FieldSpec{WireName: "by_complete_before"},
-		"ByMalwareScanner": ubx.FieldSpec{WireName: "by_malware_scanner"},
+		"ByAccountId":        ubx.FieldSpec{WireName: "by_account_id"},
+		"ByBackupVaultName":  ubx.FieldSpec{WireName: "by_backup_vault_name"},
+		"ByCompleteAfter":    ubx.FieldSpec{WireName: "by_complete_after"},
+		"ByCompleteBefore":   ubx.FieldSpec{WireName: "by_complete_before"},
+		"ByMalwareScanner":   ubx.FieldSpec{WireName: "by_malware_scanner"},
 		"ByRecoveryPointArn": ubx.FieldSpec{WireName: "by_recovery_point_arn"},
-		"ByResourceArn": ubx.FieldSpec{WireName: "by_resource_arn"},
-		"ByResourceType": ubx.FieldSpec{WireName: "by_resource_type"},
+		"ByResourceArn":      ubx.FieldSpec{WireName: "by_resource_arn"},
+		"ByResourceType":     ubx.FieldSpec{WireName: "by_resource_type"},
 		"ByScanResultStatus": ubx.FieldSpec{WireName: "by_scan_result_status"},
-		"ByState": ubx.FieldSpec{WireName: "by_state"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ByState":            ubx.FieldSpec{WireName: "by_state"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

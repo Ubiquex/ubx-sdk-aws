@@ -100,23 +100,23 @@ type Instance_Tags struct {
 }
 
 var Instance_AddOns_AutoSnapshotAddOnRequestFields = ubx.FieldMap{
-		"SnapshotTimeOfDay": ubx.FieldSpec{WireName: "snapshot_time_of_day"},
-	}
+	"SnapshotTimeOfDay": ubx.FieldSpec{WireName: "snapshot_time_of_day"},
+}
 
 var Instance_AddOnsFields = ubx.FieldMap{
-		"AddOnType": ubx.FieldSpec{WireName: "add_on_type"},
-		"AutoSnapshotAddOnRequest": ubx.FieldSpec{
-			WireName: "auto_snapshot_add_on_request",
-			Kind: "object",
-			Fields: Instance_AddOns_AutoSnapshotAddOnRequestFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AddOnType": ubx.FieldSpec{WireName: "add_on_type"},
+	"AutoSnapshotAddOnRequest": ubx.FieldSpec{
+		WireName: "auto_snapshot_add_on_request",
+		Kind:     "object",
+		Fields:   Instance_AddOns_AutoSnapshotAddOnRequestFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Instance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InstanceConfig struct {
 	// An array of objects representing the add-ons to enable for the new instance.
@@ -187,18 +187,18 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AddOns": ubx.FieldSpec{
 			WireName: "add_ons",
-			Kind: "list",
-			Fields: Instance_AddOnsFields,
+			Kind:     "list",
+			Fields:   Instance_AddOnsFields,
 		},
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"BlueprintId": ubx.FieldSpec{WireName: "blueprint_id"},
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-		"KeyPairName": ubx.FieldSpec{WireName: "key_pair_name"},
+		"BlueprintId":      ubx.FieldSpec{WireName: "blueprint_id"},
+		"BundleId":         ubx.FieldSpec{WireName: "bundle_id"},
+		"InstanceName":     ubx.FieldSpec{WireName: "instance_name"},
+		"KeyPairName":      ubx.FieldSpec{WireName: "key_pair_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Instance_TagsFields,
+			Kind:     "list",
+			Fields:   Instance_TagsFields,
 		},
 		"UserData": ubx.FieldSpec{WireName: "user_data"},
 	},

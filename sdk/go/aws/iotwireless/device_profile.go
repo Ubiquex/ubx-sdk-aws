@@ -52,31 +52,31 @@ type DeviceProfile_Tags struct {
 }
 
 var DeviceProfile_LoRaWanFields = ubx.FieldMap{
-		"ClassBtimeout": ubx.FieldSpec{WireName: "class_btimeout"},
-		"ClassCtimeout": ubx.FieldSpec{WireName: "class_ctimeout"},
-		"FactoryPresetFreqsList": ubx.FieldSpec{WireName: "factory_preset_freqs_list"},
-		"MacVersion": ubx.FieldSpec{WireName: "mac_version"},
-		"MaxDutyCycle": ubx.FieldSpec{WireName: "max_duty_cycle"},
-		"MaxEirp": ubx.FieldSpec{WireName: "max_eirp"},
-		"PingSlotDr": ubx.FieldSpec{WireName: "ping_slot_dr"},
-		"PingSlotFreq": ubx.FieldSpec{WireName: "ping_slot_freq"},
-		"PingSlotPeriod": ubx.FieldSpec{WireName: "ping_slot_period"},
-		"RegParamsRevision": ubx.FieldSpec{WireName: "reg_params_revision"},
-		"RfRegion": ubx.FieldSpec{WireName: "rf_region"},
-		"RxDataRate2": ubx.FieldSpec{WireName: "rx_data_rate2"},
-		"RxDelay1": ubx.FieldSpec{WireName: "rx_delay1"},
-		"RxDrOffset1": ubx.FieldSpec{WireName: "rx_dr_offset1"},
-		"RxFreq2": ubx.FieldSpec{WireName: "rx_freq2"},
-		"Supports32BitFcnt": ubx.FieldSpec{WireName: "supports32_bit_fcnt"},
-		"SupportsClassB": ubx.FieldSpec{WireName: "supports_class_b"},
-		"SupportsClassC": ubx.FieldSpec{WireName: "supports_class_c"},
-		"SupportsJoin": ubx.FieldSpec{WireName: "supports_join"},
-	}
+	"ClassBtimeout":          ubx.FieldSpec{WireName: "class_btimeout"},
+	"ClassCtimeout":          ubx.FieldSpec{WireName: "class_ctimeout"},
+	"FactoryPresetFreqsList": ubx.FieldSpec{WireName: "factory_preset_freqs_list"},
+	"MacVersion":             ubx.FieldSpec{WireName: "mac_version"},
+	"MaxDutyCycle":           ubx.FieldSpec{WireName: "max_duty_cycle"},
+	"MaxEirp":                ubx.FieldSpec{WireName: "max_eirp"},
+	"PingSlotDr":             ubx.FieldSpec{WireName: "ping_slot_dr"},
+	"PingSlotFreq":           ubx.FieldSpec{WireName: "ping_slot_freq"},
+	"PingSlotPeriod":         ubx.FieldSpec{WireName: "ping_slot_period"},
+	"RegParamsRevision":      ubx.FieldSpec{WireName: "reg_params_revision"},
+	"RfRegion":               ubx.FieldSpec{WireName: "rf_region"},
+	"RxDataRate2":            ubx.FieldSpec{WireName: "rx_data_rate2"},
+	"RxDelay1":               ubx.FieldSpec{WireName: "rx_delay1"},
+	"RxDrOffset1":            ubx.FieldSpec{WireName: "rx_dr_offset1"},
+	"RxFreq2":                ubx.FieldSpec{WireName: "rx_freq2"},
+	"Supports32BitFcnt":      ubx.FieldSpec{WireName: "supports32_bit_fcnt"},
+	"SupportsClassB":         ubx.FieldSpec{WireName: "supports_class_b"},
+	"SupportsClassC":         ubx.FieldSpec{WireName: "supports_class_c"},
+	"SupportsJoin":           ubx.FieldSpec{WireName: "supports_join"},
+}
 
 var DeviceProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeviceProfileConfig struct {
 	// The lo_ra_wan field configures LoRaWAN-specific parameters for the device profile, including whether the device supports Class B and Class C modes. (AI-inferred)
@@ -105,14 +105,14 @@ var DeviceProfile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"LoRaWan": ubx.FieldSpec{
 			WireName: "lo_ra_wan",
-			Kind: "object",
-			Fields: DeviceProfile_LoRaWanFields,
+			Kind:     "object",
+			Fields:   DeviceProfile_LoRaWanFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DeviceProfile_TagsFields,
+			Kind:     "list",
+			Fields:   DeviceProfile_TagsFields,
 		},
 	},
 }

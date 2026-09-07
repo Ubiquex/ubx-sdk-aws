@@ -7,14 +7,14 @@ type QueryDefinition_Parameters struct {
 	DefaultValue any
 	// An optional human-readable description of the query definition, used to identify its purpose or contents. (AI-inferred)
 	Description any
-	Name any
+	Name        any
 }
 
 var QueryDefinition_ParametersFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 type QueryDefinitionConfig struct {
 	// Optionally define specific log groups as part of your query definition
@@ -48,13 +48,13 @@ var QueryDefinition = ubx.ResourceBinding{
 	WireType: "aws_logs_query_definition",
 	Fields: ubx.FieldMap{
 		"LogGroupNames": ubx.FieldSpec{WireName: "log_group_names"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: QueryDefinition_ParametersFields,
+			Kind:     "list",
+			Fields:   QueryDefinition_ParametersFields,
 		},
 		"QueryLanguage": ubx.FieldSpec{WireName: "query_language"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
+		"QueryString":   ubx.FieldSpec{WireName: "query_string"},
 	},
 }

@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSetPermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type DataSetPermissionsConfig struct {
 	AwsAccountId any
-	DataSetId any
+	DataSetId    any
 }
 
 type DataSetPermissionsAttrs struct {
 	AwsAccountId any
-	DataSetArn any
-	DataSetId any
-	Permissions any
-	RequestId any
-	Status any
+	DataSetArn   any
+	DataSetId    any
+	Permissions  any
+	RequestId    any
+	Status       any
 }
 
 var DataSetPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_data_set_permissions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"DataSetId":    ubx.FieldSpec{WireName: "data_set_id"},
 	},
 }

@@ -10,84 +10,84 @@ type CurrentUserData_Filters_ContactFilter struct {
 type CurrentUserData_Filters struct {
 	Agents any
 	// <p>Filters user data based on the contact information that is associated to the users. It contains a list of <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact states</a>.</p>
-	ContactFilter any
-	Queues any
-	RoutingProfiles any
+	ContactFilter       any
+	Queues              any
+	RoutingProfiles     any
 	UserHierarchyGroups any
 }
 
 type CurrentUserData_UserDataList_Contacts_Queue struct {
 	Arn any
-	Id any
+	Id  any
 }
 
 type CurrentUserData_UserDataList_Contacts struct {
-	AgentContactState any
-	Channel any
+	AgentContactState         any
+	Channel                   any
 	ConnectedToAgentTimestamp any
-	ContactId any
-	InitiationMethod any
-	Queue any
-	StateStartTimestamp any
+	ContactId                 any
+	InitiationMethod          any
+	Queue                     any
+	StateStartTimestamp       any
 }
 
 type CurrentUserData_UserDataList_HierarchyPath struct {
-	LevelFive any
-	LevelFour any
-	LevelOne any
+	LevelFive  any
+	LevelFour  any
+	LevelOne   any
 	LevelThree any
-	LevelTwo any
+	LevelTwo   any
 }
 
 type CurrentUserData_UserDataList_Status struct {
-	StatusArn any
-	StatusName any
+	StatusArn            any
+	StatusName           any
 	StatusStartTimestamp any
 }
 
 type CurrentUserData_UserDataList struct {
-	ActiveSlotsByChannel any
+	ActiveSlotsByChannel    any
 	AvailableSlotsByChannel any
-	Contacts any
-	HierarchyPath any
-	MaxSlotsByChannel any
-	NextStatus any
-	RoutingProfile any
-	Status any
-	User any
+	Contacts                any
+	HierarchyPath           any
+	MaxSlotsByChannel       any
+	NextStatus              any
+	RoutingProfile          any
+	Status                  any
+	User                    any
 }
 
 var CurrentUserData_Filters_ContactFilterFields = ubx.FieldMap{
-		"ContactStates": ubx.FieldSpec{WireName: "contact_states"},
-	}
+	"ContactStates": ubx.FieldSpec{WireName: "contact_states"},
+}
 
 var CurrentUserData_FiltersFields = ubx.FieldMap{
-		"Agents": ubx.FieldSpec{WireName: "agents"},
-		"ContactFilter": ubx.FieldSpec{
-			WireName: "contact_filter",
-			Kind: "object",
-			Fields: CurrentUserData_Filters_ContactFilterFields,
-		},
-		"Queues": ubx.FieldSpec{WireName: "queues"},
-		"RoutingProfiles": ubx.FieldSpec{WireName: "routing_profiles"},
-		"UserHierarchyGroups": ubx.FieldSpec{WireName: "user_hierarchy_groups"},
-	}
+	"Agents": ubx.FieldSpec{WireName: "agents"},
+	"ContactFilter": ubx.FieldSpec{
+		WireName: "contact_filter",
+		Kind:     "object",
+		Fields:   CurrentUserData_Filters_ContactFilterFields,
+	},
+	"Queues":              ubx.FieldSpec{WireName: "queues"},
+	"RoutingProfiles":     ubx.FieldSpec{WireName: "routing_profiles"},
+	"UserHierarchyGroups": ubx.FieldSpec{WireName: "user_hierarchy_groups"},
+}
 
 type CurrentUserDataConfig struct {
 	// <p>A filter for the user data.</p>
-	Filters any
+	Filters    any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CurrentUserDataAttrs struct {
 	ApproximateTotalCount any
 	// <p>A filter for the user data.</p>
-	Filters any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	Filters      any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
 	UserDataList any
 }
 
@@ -96,11 +96,11 @@ var CurrentUserData = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: CurrentUserData_FiltersFields,
+			Kind:     "object",
+			Fields:   CurrentUserData_FiltersFields,
 		},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

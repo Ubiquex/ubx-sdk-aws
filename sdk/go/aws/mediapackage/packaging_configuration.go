@@ -139,147 +139,147 @@ type PackagingConfiguration_Tags struct {
 }
 
 var PackagingConfiguration_CmafPackage_Encryption_SpekeKeyProvider_EncryptionContractConfigurationFields = ubx.FieldMap{
-		"PresetSpeke20Audio": ubx.FieldSpec{WireName: "preset_speke20_audio"},
-		"PresetSpeke20Video": ubx.FieldSpec{WireName: "preset_speke20_video"},
-	}
+	"PresetSpeke20Audio": ubx.FieldSpec{WireName: "preset_speke20_audio"},
+	"PresetSpeke20Video": ubx.FieldSpec{WireName: "preset_speke20_video"},
+}
 
 var PackagingConfiguration_CmafPackage_Encryption_SpekeKeyProviderFields = ubx.FieldMap{
-		"EncryptionContractConfiguration": ubx.FieldSpec{
-			WireName: "encryption_contract_configuration",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_Encryption_SpekeKeyProvider_EncryptionContractConfigurationFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SystemIds": ubx.FieldSpec{WireName: "system_ids"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"EncryptionContractConfiguration": ubx.FieldSpec{
+		WireName: "encryption_contract_configuration",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_Encryption_SpekeKeyProvider_EncryptionContractConfigurationFields,
+	},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"SystemIds": ubx.FieldSpec{WireName: "system_ids"},
+	"Url":       ubx.FieldSpec{WireName: "url"},
+}
 
 var PackagingConfiguration_CmafPackage_EncryptionFields = ubx.FieldMap{
-		"SpekeKeyProvider": ubx.FieldSpec{
-			WireName: "speke_key_provider",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_Encryption_SpekeKeyProviderFields,
-		},
-	}
+	"SpekeKeyProvider": ubx.FieldSpec{
+		WireName: "speke_key_provider",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_Encryption_SpekeKeyProviderFields,
+	},
+}
 
 var PackagingConfiguration_CmafPackage_HlsManifests_StreamSelectionFields = ubx.FieldMap{
-		"MaxVideoBitsPerSecond": ubx.FieldSpec{WireName: "max_video_bits_per_second"},
-		"MinVideoBitsPerSecond": ubx.FieldSpec{WireName: "min_video_bits_per_second"},
-		"StreamOrder": ubx.FieldSpec{WireName: "stream_order"},
-	}
+	"MaxVideoBitsPerSecond": ubx.FieldSpec{WireName: "max_video_bits_per_second"},
+	"MinVideoBitsPerSecond": ubx.FieldSpec{WireName: "min_video_bits_per_second"},
+	"StreamOrder":           ubx.FieldSpec{WireName: "stream_order"},
+}
 
 var PackagingConfiguration_CmafPackage_HlsManifestsFields = ubx.FieldMap{
-		"AdMarkers": ubx.FieldSpec{WireName: "ad_markers"},
-		"IncludeIframeOnlyStream": ubx.FieldSpec{WireName: "include_iframe_only_stream"},
-		"ManifestName": ubx.FieldSpec{WireName: "manifest_name"},
-		"ProgramDateTimeIntervalSeconds": ubx.FieldSpec{WireName: "program_date_time_interval_seconds"},
-		"RepeatExtXkey": ubx.FieldSpec{WireName: "repeat_ext_xkey"},
-		"StreamSelection": ubx.FieldSpec{
-			WireName: "stream_selection",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_HlsManifests_StreamSelectionFields,
-		},
-	}
+	"AdMarkers":                      ubx.FieldSpec{WireName: "ad_markers"},
+	"IncludeIframeOnlyStream":        ubx.FieldSpec{WireName: "include_iframe_only_stream"},
+	"ManifestName":                   ubx.FieldSpec{WireName: "manifest_name"},
+	"ProgramDateTimeIntervalSeconds": ubx.FieldSpec{WireName: "program_date_time_interval_seconds"},
+	"RepeatExtXkey":                  ubx.FieldSpec{WireName: "repeat_ext_xkey"},
+	"StreamSelection": ubx.FieldSpec{
+		WireName: "stream_selection",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_HlsManifests_StreamSelectionFields,
+	},
+}
 
 var PackagingConfiguration_CmafPackageFields = ubx.FieldMap{
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_EncryptionFields,
-		},
-		"HlsManifests": ubx.FieldSpec{
-			WireName: "hls_manifests",
-			Kind: "list",
-			Fields: PackagingConfiguration_CmafPackage_HlsManifestsFields,
-		},
-		"IncludeEncoderConfigurationInSegments": ubx.FieldSpec{WireName: "include_encoder_configuration_in_segments"},
-		"SegmentDurationSeconds": ubx.FieldSpec{WireName: "segment_duration_seconds"},
-	}
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_EncryptionFields,
+	},
+	"HlsManifests": ubx.FieldSpec{
+		WireName: "hls_manifests",
+		Kind:     "list",
+		Fields:   PackagingConfiguration_CmafPackage_HlsManifestsFields,
+	},
+	"IncludeEncoderConfigurationInSegments": ubx.FieldSpec{WireName: "include_encoder_configuration_in_segments"},
+	"SegmentDurationSeconds":                ubx.FieldSpec{WireName: "segment_duration_seconds"},
+}
 
 var PackagingConfiguration_DashPackage_DashManifestsFields = ubx.FieldMap{
-		"ManifestLayout": ubx.FieldSpec{WireName: "manifest_layout"},
-		"ManifestName": ubx.FieldSpec{WireName: "manifest_name"},
-		"MinBufferTimeSeconds": ubx.FieldSpec{WireName: "min_buffer_time_seconds"},
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-		"ScteMarkersSource": ubx.FieldSpec{WireName: "scte_markers_source"},
-		"StreamSelection": ubx.FieldSpec{
-			WireName: "stream_selection",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_HlsManifests_StreamSelectionFields,
-		},
-	}
+	"ManifestLayout":       ubx.FieldSpec{WireName: "manifest_layout"},
+	"ManifestName":         ubx.FieldSpec{WireName: "manifest_name"},
+	"MinBufferTimeSeconds": ubx.FieldSpec{WireName: "min_buffer_time_seconds"},
+	"Profile":              ubx.FieldSpec{WireName: "profile"},
+	"ScteMarkersSource":    ubx.FieldSpec{WireName: "scte_markers_source"},
+	"StreamSelection": ubx.FieldSpec{
+		WireName: "stream_selection",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_HlsManifests_StreamSelectionFields,
+	},
+}
 
 var PackagingConfiguration_DashPackageFields = ubx.FieldMap{
-		"DashManifests": ubx.FieldSpec{
-			WireName: "dash_manifests",
-			Kind: "list",
-			Fields: PackagingConfiguration_DashPackage_DashManifestsFields,
-		},
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_EncryptionFields,
-		},
-		"IncludeEncoderConfigurationInSegments": ubx.FieldSpec{WireName: "include_encoder_configuration_in_segments"},
-		"IncludeIframeOnlyStream": ubx.FieldSpec{WireName: "include_iframe_only_stream"},
-		"PeriodTriggers": ubx.FieldSpec{WireName: "period_triggers"},
-		"SegmentDurationSeconds": ubx.FieldSpec{WireName: "segment_duration_seconds"},
-		"SegmentTemplateFormat": ubx.FieldSpec{WireName: "segment_template_format"},
-	}
+	"DashManifests": ubx.FieldSpec{
+		WireName: "dash_manifests",
+		Kind:     "list",
+		Fields:   PackagingConfiguration_DashPackage_DashManifestsFields,
+	},
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_EncryptionFields,
+	},
+	"IncludeEncoderConfigurationInSegments": ubx.FieldSpec{WireName: "include_encoder_configuration_in_segments"},
+	"IncludeIframeOnlyStream":               ubx.FieldSpec{WireName: "include_iframe_only_stream"},
+	"PeriodTriggers":                        ubx.FieldSpec{WireName: "period_triggers"},
+	"SegmentDurationSeconds":                ubx.FieldSpec{WireName: "segment_duration_seconds"},
+	"SegmentTemplateFormat":                 ubx.FieldSpec{WireName: "segment_template_format"},
+}
 
 var PackagingConfiguration_HlsPackage_EncryptionFields = ubx.FieldMap{
-		"ConstantInitializationVector": ubx.FieldSpec{WireName: "constant_initialization_vector"},
-		"EncryptionMethod": ubx.FieldSpec{WireName: "encryption_method"},
-		"SpekeKeyProvider": ubx.FieldSpec{
-			WireName: "speke_key_provider",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_Encryption_SpekeKeyProviderFields,
-		},
-	}
+	"ConstantInitializationVector": ubx.FieldSpec{WireName: "constant_initialization_vector"},
+	"EncryptionMethod":             ubx.FieldSpec{WireName: "encryption_method"},
+	"SpekeKeyProvider": ubx.FieldSpec{
+		WireName: "speke_key_provider",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_Encryption_SpekeKeyProviderFields,
+	},
+}
 
 var PackagingConfiguration_HlsPackageFields = ubx.FieldMap{
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: PackagingConfiguration_HlsPackage_EncryptionFields,
-		},
-		"HlsManifests": ubx.FieldSpec{
-			WireName: "hls_manifests",
-			Kind: "list",
-			Fields: PackagingConfiguration_CmafPackage_HlsManifestsFields,
-		},
-		"IncludeDvbSubtitles": ubx.FieldSpec{WireName: "include_dvb_subtitles"},
-		"SegmentDurationSeconds": ubx.FieldSpec{WireName: "segment_duration_seconds"},
-		"UseAudioRenditionGroup": ubx.FieldSpec{WireName: "use_audio_rendition_group"},
-	}
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_HlsPackage_EncryptionFields,
+	},
+	"HlsManifests": ubx.FieldSpec{
+		WireName: "hls_manifests",
+		Kind:     "list",
+		Fields:   PackagingConfiguration_CmafPackage_HlsManifestsFields,
+	},
+	"IncludeDvbSubtitles":    ubx.FieldSpec{WireName: "include_dvb_subtitles"},
+	"SegmentDurationSeconds": ubx.FieldSpec{WireName: "segment_duration_seconds"},
+	"UseAudioRenditionGroup": ubx.FieldSpec{WireName: "use_audio_rendition_group"},
+}
 
 var PackagingConfiguration_MssPackage_MssManifestsFields = ubx.FieldMap{
-		"ManifestName": ubx.FieldSpec{WireName: "manifest_name"},
-		"StreamSelection": ubx.FieldSpec{
-			WireName: "stream_selection",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_HlsManifests_StreamSelectionFields,
-		},
-	}
+	"ManifestName": ubx.FieldSpec{WireName: "manifest_name"},
+	"StreamSelection": ubx.FieldSpec{
+		WireName: "stream_selection",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_HlsManifests_StreamSelectionFields,
+	},
+}
 
 var PackagingConfiguration_MssPackageFields = ubx.FieldMap{
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackage_EncryptionFields,
-		},
-		"MssManifests": ubx.FieldSpec{
-			WireName: "mss_manifests",
-			Kind: "list",
-			Fields: PackagingConfiguration_MssPackage_MssManifestsFields,
-		},
-		"SegmentDurationSeconds": ubx.FieldSpec{WireName: "segment_duration_seconds"},
-	}
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   PackagingConfiguration_CmafPackage_EncryptionFields,
+	},
+	"MssManifests": ubx.FieldSpec{
+		WireName: "mss_manifests",
+		Kind:     "list",
+		Fields:   PackagingConfiguration_MssPackage_MssManifestsFields,
+	},
+	"SegmentDurationSeconds": ubx.FieldSpec{WireName: "segment_duration_seconds"},
+}
 
 var PackagingConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PackagingConfigurationConfig struct {
 	// A CMAF packaging configuration.
@@ -322,30 +322,30 @@ var PackagingConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CmafPackage": ubx.FieldSpec{
 			WireName: "cmaf_package",
-			Kind: "object",
-			Fields: PackagingConfiguration_CmafPackageFields,
+			Kind:     "object",
+			Fields:   PackagingConfiguration_CmafPackageFields,
 		},
 		"DashPackage": ubx.FieldSpec{
 			WireName: "dash_package",
-			Kind: "object",
-			Fields: PackagingConfiguration_DashPackageFields,
+			Kind:     "object",
+			Fields:   PackagingConfiguration_DashPackageFields,
 		},
 		"HlsPackage": ubx.FieldSpec{
 			WireName: "hls_package",
-			Kind: "object",
-			Fields: PackagingConfiguration_HlsPackageFields,
+			Kind:     "object",
+			Fields:   PackagingConfiguration_HlsPackageFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"MssPackage": ubx.FieldSpec{
 			WireName: "mss_package",
-			Kind: "object",
-			Fields: PackagingConfiguration_MssPackageFields,
+			Kind:     "object",
+			Fields:   PackagingConfiguration_MssPackageFields,
 		},
 		"PackagingGroupId": ubx.FieldSpec{WireName: "packaging_group_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PackagingConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   PackagingConfiguration_TagsFields,
 		},
 	},
 }

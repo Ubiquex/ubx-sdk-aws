@@ -14,7 +14,7 @@ type DevopsGuruAnomaliesForInsight_Filters struct {
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_AnomalyReportedTimeRange struct {
 	CloseTime any
-	OpenTime any
+	OpenTime  any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_AnomalyResources struct {
@@ -23,7 +23,7 @@ type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_AnomalyResources struct {
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_AnomalyTimeRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
@@ -33,49 +33,49 @@ type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_ResourceCollection_CloudFo
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_ResourceCollection_Tags struct {
 	AppBoundaryKey any
-	TagValues any
+	TagValues      any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_ResourceCollection struct {
 	CloudFormation any
-	Tags any
+	Tags           any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_CloudWatchMetrics_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_CloudWatchMetrics_MetricDataSummary_TimestampMetricValuePairList struct {
 	MetricValue any
-	Timestamp any
+	Timestamp   any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_CloudWatchMetrics_MetricDataSummary struct {
-	StatusCode any
+	StatusCode                   any
 	TimestampMetricValuePairList any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_CloudWatchMetrics struct {
-	Dimensions any
+	Dimensions        any
 	MetricDataSummary any
-	MetricName any
-	Namespace any
-	Period any
-	Stat any
-	Unit any
+	MetricName        any
+	Namespace         any
+	Period            any
+	Stat              any
+	Unit              any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_PerformanceInsightsMetrics_MetricQuery_GroupBy struct {
 	Dimensions any
-	Group any
-	Limit any
+	Group      any
+	Limit      any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_PerformanceInsightsMetrics_MetricQuery struct {
-	Filter any
+	Filter  any
 	GroupBy any
-	Metric any
+	Metric  any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_PerformanceInsightsMetrics_ReferenceData_ComparisonValues_ReferenceMetric struct {
@@ -93,96 +93,96 @@ type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_PerformanceI
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_PerformanceInsightsMetrics_ReferenceData struct {
 	ComparisonValues any
-	Name any
+	Name             any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_PerformanceInsightsMetrics_StatsAtAnomaly struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails_PerformanceInsightsMetrics struct {
 	MetricDisplayName any
-	MetricQuery any
-	ReferenceData any
-	StatsAtAnomaly any
-	StatsAtBaseline any
-	Unit any
+	MetricQuery       any
+	ReferenceData     any
+	StatsAtAnomaly    any
+	StatsAtBaseline   any
+	Unit              any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceDetails struct {
-	CloudWatchMetrics any
+	CloudWatchMetrics          any
 	PerformanceInsightsMetrics any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies_SourceMetadata struct {
-	Source any
+	Source             any
 	SourceResourceName any
 	SourceResourceType any
 }
 
 type DevopsGuruAnomaliesForInsight_ProactiveAnomalies struct {
 	AnomalyReportedTimeRange any
-	AnomalyResources any
-	AnomalyTimeRange any
-	AssociatedInsightId any
-	Description any
-	Id any
-	Limit any
-	PredictionTimeRange any
-	ResourceCollection any
-	Severity any
-	SourceDetails any
-	SourceMetadata any
-	Status any
-	UpdateTime any
+	AnomalyResources         any
+	AnomalyTimeRange         any
+	AssociatedInsightId      any
+	Description              any
+	Id                       any
+	Limit                    any
+	PredictionTimeRange      any
+	ResourceCollection       any
+	Severity                 any
+	SourceDetails            any
+	SourceMetadata           any
+	Status                   any
+	UpdateTime               any
 }
 
 type DevopsGuruAnomaliesForInsight_ReactiveAnomalies struct {
 	AnomalyReportedTimeRange any
-	AnomalyResources any
-	AnomalyTimeRange any
-	AssociatedInsightId any
-	CausalAnomalyId any
-	Description any
-	Id any
-	Name any
-	ResourceCollection any
-	Severity any
-	SourceDetails any
-	Status any
-	Type any
+	AnomalyResources         any
+	AnomalyTimeRange         any
+	AssociatedInsightId      any
+	CausalAnomalyId          any
+	Description              any
+	Id                       any
+	Name                     any
+	ResourceCollection       any
+	Severity                 any
+	SourceDetails            any
+	Status                   any
+	Type                     any
 }
 
 type DevopsGuruAnomaliesForInsight_StartTimeRange struct {
 	FromTime any
-	ToTime any
+	ToTime   any
 }
 
 var DevopsGuruAnomaliesForInsight_Filters_ServiceCollectionFields = ubx.FieldMap{
-		"ServiceNames": ubx.FieldSpec{WireName: "service_names"},
-	}
+	"ServiceNames": ubx.FieldSpec{WireName: "service_names"},
+}
 
 var DevopsGuruAnomaliesForInsight_FiltersFields = ubx.FieldMap{
-		"ServiceCollection": ubx.FieldSpec{
-			WireName: "service_collection",
-			Kind: "object",
-			Fields: DevopsGuruAnomaliesForInsight_Filters_ServiceCollectionFields,
-		},
-	}
+	"ServiceCollection": ubx.FieldSpec{
+		WireName: "service_collection",
+		Kind:     "object",
+		Fields:   DevopsGuruAnomaliesForInsight_Filters_ServiceCollectionFields,
+	},
+}
 
 var DevopsGuruAnomaliesForInsight_StartTimeRangeFields = ubx.FieldMap{
-		"FromTime": ubx.FieldSpec{WireName: "from_time"},
-		"ToTime": ubx.FieldSpec{WireName: "to_time"},
-	}
+	"FromTime": ubx.FieldSpec{WireName: "from_time"},
+	"ToTime":   ubx.FieldSpec{WireName: "to_time"},
+}
 
 type DevopsGuruAnomaliesForInsightConfig struct {
 	AccountId any
 	// <p> Specifies one or more service names that are used to list anomalies. </p>
-	Filters any
-	InsightId any
+	Filters    any
+	InsightId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
 	StartTimeRange any
 }
@@ -190,12 +190,12 @@ type DevopsGuruAnomaliesForInsightConfig struct {
 type DevopsGuruAnomaliesForInsightAttrs struct {
 	AccountId any
 	// <p> Specifies one or more service names that are used to list anomalies. </p>
-	Filters any
-	InsightId any
-	MaxResults any
-	NextToken any
+	Filters            any
+	InsightId          any
+	MaxResults         any
+	NextToken          any
 	ProactiveAnomalies any
-	ReactiveAnomalies any
+	ReactiveAnomalies  any
 	// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
 	StartTimeRange any
 }
@@ -206,16 +206,16 @@ var DevopsGuruAnomaliesForInsight = ubx.DataSourceBinding{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: DevopsGuruAnomaliesForInsight_FiltersFields,
+			Kind:     "object",
+			Fields:   DevopsGuruAnomaliesForInsight_FiltersFields,
 		},
-		"InsightId": ubx.FieldSpec{WireName: "insight_id"},
+		"InsightId":  ubx.FieldSpec{WireName: "insight_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"StartTimeRange": ubx.FieldSpec{
 			WireName: "start_time_range",
-			Kind: "object",
-			Fields: DevopsGuruAnomaliesForInsight_StartTimeRangeFields,
+			Kind:     "object",
+			Fields:   DevopsGuruAnomaliesForInsight_StartTimeRangeFields,
 		},
 	},
 }

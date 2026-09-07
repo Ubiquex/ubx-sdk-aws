@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AvailableManagedRuleGroupVersions_Versions struct {
 	LastUpdateTimestamp any
-	Name any
+	Name                any
 }
 
 type AvailableManagedRuleGroupVersionsConfig struct {
-	Limit any
-	Name any
+	Limit      any
+	Name       any
 	NextMarker any
-	Scope any
+	Scope      any
 	VendorName any
 }
 
 type AvailableManagedRuleGroupVersionsAttrs struct {
 	CurrentDefaultVersion any
-	Limit any
-	Name any
-	NextMarker any
-	Scope any
-	VendorName any
-	Versions any
+	Limit                 any
+	Name                  any
+	NextMarker            any
+	Scope                 any
+	VendorName            any
+	Versions              any
 }
 
 var AvailableManagedRuleGroupVersions = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_available_managed_rule_group_versions",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":      ubx.FieldSpec{WireName: "scope"},
 		"VendorName": ubx.FieldSpec{WireName: "vendor_name"},
 	},
 }

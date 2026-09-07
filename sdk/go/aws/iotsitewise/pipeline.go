@@ -4,28 +4,28 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipeline_Computations struct {
-	ComputeNodeName any
-	DependsOn any
+	ComputeNodeName      any
+	DependsOn            any
 	EnvironmentVariables any
-	TaskName any
+	TaskName             any
 }
 
 type Pipeline_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Pipeline_ComputationsFields = ubx.FieldMap{
-		"ComputeNodeName": ubx.FieldSpec{WireName: "compute_node_name"},
-		"DependsOn": ubx.FieldSpec{WireName: "depends_on"},
-		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"TaskName": ubx.FieldSpec{WireName: "task_name"},
-	}
+	"ComputeNodeName":      ubx.FieldSpec{WireName: "compute_node_name"},
+	"DependsOn":            ubx.FieldSpec{WireName: "depends_on"},
+	"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
+	"TaskName":             ubx.FieldSpec{WireName: "task_name"},
+}
 
 var Pipeline_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PipelineConfig struct {
 	// The list of compute nodes that form the pipeline DAG.
@@ -66,16 +66,16 @@ var Pipeline = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Computations": ubx.FieldSpec{
 			WireName: "computations",
-			Kind: "list",
-			Fields: Pipeline_ComputationsFields,
+			Kind:     "list",
+			Fields:   Pipeline_ComputationsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"PipelineName": ubx.FieldSpec{WireName: "pipeline_name"},
+		"PipelineName":         ubx.FieldSpec{WireName: "pipeline_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Pipeline_TagsFields,
+			Kind:     "list",
+			Fields:   Pipeline_TagsFields,
 		},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},

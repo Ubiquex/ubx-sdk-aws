@@ -15,23 +15,23 @@ type AgreementMarketplaceAgreement_EndTimeBehavior struct {
 	ReasonCode any
 	// <p>The details of the renewal that applies at the end date of an agreement.</p>
 	RenewalSummary any
-	Type any
+	Type           any
 }
 
 type AgreementMarketplaceAgreement_EstimatedCharges struct {
 	AgreementValue any
-	CurrencyCode any
+	CurrencyCode   any
 }
 
 type AgreementMarketplaceAgreement_ProposalSummary_Resources struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type AgreementMarketplaceAgreement_ProposalSummary struct {
-	OfferId any
+	OfferId    any
 	OfferSetId any
-	Resources any
+	Resources  any
 }
 
 type AgreementMarketplaceAgreementConfig struct {
@@ -41,21 +41,21 @@ type AgreementMarketplaceAgreementConfig struct {
 type AgreementMarketplaceAgreementAttrs struct {
 	AcceptanceTime any
 	// <p>The details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement</code>.</p>
-	Acceptor any
-	AgreementId any
+	Acceptor      any
+	AgreementId   any
 	AgreementType any
-	EndTime any
+	EndTime       any
 	// <p>The behavior of an agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
 	EndTimeBehavior any
 	// <p>Estimated cost of the agreement.</p>
-	EstimatedCharges any
+	EstimatedCharges   any
 	InitialAgreementId any
 	// <p>A summary of the proposal received from the proposer.</p>
 	ProposalSummary any
 	// <p>Details of the party proposing the agreement terms,. This is commonly the seller for <code>PurchaseAgreement</code>. </p>
-	Proposer any
+	Proposer  any
 	StartTime any
-	Status any
+	Status    any
 }
 
 var AgreementMarketplaceAgreement = ubx.DataSourceBinding{

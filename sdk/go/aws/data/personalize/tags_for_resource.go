@@ -4,7 +4,7 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	TagKey any
+	TagKey   any
 	TagValue any
 }
 
@@ -14,7 +14,7 @@ type TagsForResourceConfig struct {
 
 type TagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TagsForResource = ubx.DataSourceBinding{

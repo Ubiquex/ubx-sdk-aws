@@ -89,101 +89,101 @@ type Scraper_Tags struct {
 }
 
 var Scraper_Destination_AmpConfigurationFields = ubx.FieldMap{
-		"WorkspaceArn": ubx.FieldSpec{WireName: "workspace_arn"},
-	}
+	"WorkspaceArn": ubx.FieldSpec{WireName: "workspace_arn"},
+}
 
 var Scraper_Destination_CloudWatchConfigurationFields = ubx.FieldMap{
-		"DatasetArn": ubx.FieldSpec{WireName: "dataset_arn"},
-	}
+	"DatasetArn": ubx.FieldSpec{WireName: "dataset_arn"},
+}
 
 var Scraper_DestinationFields = ubx.FieldMap{
-		"AmpConfiguration": ubx.FieldSpec{
-			WireName: "amp_configuration",
-			Kind: "object",
-			Fields: Scraper_Destination_AmpConfigurationFields,
-		},
-		"CloudWatchConfiguration": ubx.FieldSpec{
-			WireName: "cloud_watch_configuration",
-			Kind: "object",
-			Fields: Scraper_Destination_CloudWatchConfigurationFields,
-		},
-	}
+	"AmpConfiguration": ubx.FieldSpec{
+		WireName: "amp_configuration",
+		Kind:     "object",
+		Fields:   Scraper_Destination_AmpConfigurationFields,
+	},
+	"CloudWatchConfiguration": ubx.FieldSpec{
+		WireName: "cloud_watch_configuration",
+		Kind:     "object",
+		Fields:   Scraper_Destination_CloudWatchConfigurationFields,
+	},
+}
 
 var Scraper_RoleConfigurationFields = ubx.FieldMap{
-		"SourceRoleArn": ubx.FieldSpec{WireName: "source_role_arn"},
-		"TargetRoleArn": ubx.FieldSpec{WireName: "target_role_arn"},
-	}
+	"SourceRoleArn": ubx.FieldSpec{WireName: "source_role_arn"},
+	"TargetRoleArn": ubx.FieldSpec{WireName: "target_role_arn"},
+}
 
 var Scraper_ScrapeConfigurationFields = ubx.FieldMap{
-		"ConfigurationBlob": ubx.FieldSpec{WireName: "configuration_blob"},
-	}
+	"ConfigurationBlob": ubx.FieldSpec{WireName: "configuration_blob"},
+}
 
 var Scraper_ScraperLoggingConfiguration_LoggingDestination_CloudWatchLogsFields = ubx.FieldMap{
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-	}
+	"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
+}
 
 var Scraper_ScraperLoggingConfiguration_LoggingDestinationFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: Scraper_ScraperLoggingConfiguration_LoggingDestination_CloudWatchLogsFields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   Scraper_ScraperLoggingConfiguration_LoggingDestination_CloudWatchLogsFields,
+	},
+}
 
 var Scraper_ScraperLoggingConfiguration_ScraperComponents_ConfigFields = ubx.FieldMap{
-		"Options": ubx.FieldSpec{WireName: "options"},
-	}
+	"Options": ubx.FieldSpec{WireName: "options"},
+}
 
 var Scraper_ScraperLoggingConfiguration_ScraperComponentsFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Scraper_ScraperLoggingConfiguration_ScraperComponents_ConfigFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Scraper_ScraperLoggingConfiguration_ScraperComponents_ConfigFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Scraper_ScraperLoggingConfigurationFields = ubx.FieldMap{
-		"LoggingDestination": ubx.FieldSpec{
-			WireName: "logging_destination",
-			Kind: "object",
-			Fields: Scraper_ScraperLoggingConfiguration_LoggingDestinationFields,
-		},
-		"ScraperComponents": ubx.FieldSpec{
-			WireName: "scraper_components",
-			Kind: "list",
-			Fields: Scraper_ScraperLoggingConfiguration_ScraperComponentsFields,
-		},
-	}
+	"LoggingDestination": ubx.FieldSpec{
+		WireName: "logging_destination",
+		Kind:     "object",
+		Fields:   Scraper_ScraperLoggingConfiguration_LoggingDestinationFields,
+	},
+	"ScraperComponents": ubx.FieldSpec{
+		WireName: "scraper_components",
+		Kind:     "list",
+		Fields:   Scraper_ScraperLoggingConfiguration_ScraperComponentsFields,
+	},
+}
 
 var Scraper_Source_EksConfigurationFields = ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"ClusterArn":       ubx.FieldSpec{WireName: "cluster_arn"},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var Scraper_Source_VpcConfigurationFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var Scraper_SourceFields = ubx.FieldMap{
-		"EksConfiguration": ubx.FieldSpec{
-			WireName: "eks_configuration",
-			Kind: "object",
-			Fields: Scraper_Source_EksConfigurationFields,
-		},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: Scraper_Source_VpcConfigurationFields,
-		},
-	}
+	"EksConfiguration": ubx.FieldSpec{
+		WireName: "eks_configuration",
+		Kind:     "object",
+		Fields:   Scraper_Source_EksConfigurationFields,
+	},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   Scraper_Source_VpcConfigurationFields,
+	},
+}
 
 var Scraper_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ScraperConfig struct {
 	// Scraper alias.
@@ -231,33 +231,33 @@ var Scraper = ubx.ResourceBinding{
 		"Alias": ubx.FieldSpec{WireName: "alias"},
 		"Destination": ubx.FieldSpec{
 			WireName: "destination",
-			Kind: "object",
-			Fields: Scraper_DestinationFields,
+			Kind:     "object",
+			Fields:   Scraper_DestinationFields,
 		},
 		"RoleConfiguration": ubx.FieldSpec{
 			WireName: "role_configuration",
-			Kind: "object",
-			Fields: Scraper_RoleConfigurationFields,
+			Kind:     "object",
+			Fields:   Scraper_RoleConfigurationFields,
 		},
 		"ScrapeConfiguration": ubx.FieldSpec{
 			WireName: "scrape_configuration",
-			Kind: "object",
-			Fields: Scraper_ScrapeConfigurationFields,
+			Kind:     "object",
+			Fields:   Scraper_ScrapeConfigurationFields,
 		},
 		"ScraperLoggingConfiguration": ubx.FieldSpec{
 			WireName: "scraper_logging_configuration",
-			Kind: "object",
-			Fields: Scraper_ScraperLoggingConfigurationFields,
+			Kind:     "object",
+			Fields:   Scraper_ScraperLoggingConfigurationFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Scraper_SourceFields,
+			Kind:     "object",
+			Fields:   Scraper_SourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Scraper_TagsFields,
+			Kind:     "list",
+			Fields:   Scraper_TagsFields,
 		},
 	},
 }

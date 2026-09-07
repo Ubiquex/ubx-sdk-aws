@@ -4,23 +4,23 @@ package codedeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentTargetsConfig struct {
-	DeploymentId any
-	NextToken any
+	DeploymentId  any
+	NextToken     any
 	TargetFilters any
 }
 
 type DeploymentTargetsAttrs struct {
-	DeploymentId any
-	NextToken any
+	DeploymentId  any
+	NextToken     any
 	TargetFilters any
-	TargetIds any
+	TargetIds     any
 }
 
 var DeploymentTargets = ubx.DataSourceBinding{
 	WireType: "aws_codedeploy_deployment_targets",
 	Fields: ubx.FieldMap{
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DeploymentId":  ubx.FieldSpec{WireName: "deployment_id"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"TargetFilters": ubx.FieldSpec{WireName: "target_filters"},
 	},
 }

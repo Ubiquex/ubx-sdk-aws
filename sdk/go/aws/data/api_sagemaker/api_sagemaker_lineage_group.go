@@ -4,16 +4,16 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerLineageGroup_CreatedBy_IamIdentity struct {
-	Arn any
-	PrincipalId any
+	Arn            any
+	PrincipalId    any
 	SourceIdentity any
 }
 
 type ApiSagemakerLineageGroup_CreatedBy struct {
 	DomainId any
 	// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages and project entities only.</p>
-	IamIdentity any
-	UserProfileArn any
+	IamIdentity     any
+	UserProfileArn  any
 	UserProfileName any
 }
 
@@ -23,14 +23,14 @@ type ApiSagemakerLineageGroupConfig struct {
 
 type ApiSagemakerLineageGroupAttrs struct {
 	// <p>Information about the user who created or modified a SageMaker resource.</p>
-	CreatedBy any
+	CreatedBy    any
 	CreationTime any
-	Description any
-	DisplayName any
+	Description  any
+	DisplayName  any
 	// <p>Information about the user who created or modified a SageMaker resource.</p>
-	LastModifiedBy any
+	LastModifiedBy   any
 	LastModifiedTime any
-	LineageGroupArn any
+	LineageGroupArn  any
 	LineageGroupName any
 }
 

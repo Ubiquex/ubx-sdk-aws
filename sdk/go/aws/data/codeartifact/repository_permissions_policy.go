@@ -4,30 +4,30 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RepositoryPermissionsPolicy_Policy struct {
-	Document any
+	Document    any
 	ResourceArn any
-	Revision any
+	Revision    any
 }
 
 type RepositoryPermissionsPolicyConfig struct {
-	Domain any
+	Domain      any
 	DomainOwner any
-	Repository any
+	Repository  any
 }
 
 type RepositoryPermissionsPolicyAttrs struct {
-	Domain any
+	Domain      any
 	DomainOwner any
 	// <p> An CodeArtifact resource policy that contains a resource ARN, document details, and a revision. </p>
-	Policy any
+	Policy     any
 	Repository any
 }
 
 var RepositoryPermissionsPolicy = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_repository_permissions_policy",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":      ubx.FieldSpec{WireName: "domain"},
 		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
+		"Repository":  ubx.FieldSpec{WireName: "repository"},
 	},
 }

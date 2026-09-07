@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Exports_Exports struct {
 	ExportingStackId any
-	Name any
-	Value any
+	Name             any
+	Value            any
 }
 
 type ExportsConfig struct {
@@ -14,7 +14,7 @@ type ExportsConfig struct {
 }
 
 type ExportsAttrs struct {
-	Exports any
+	Exports   any
 	NextToken any
 }
 

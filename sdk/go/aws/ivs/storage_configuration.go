@@ -16,13 +16,13 @@ type StorageConfiguration_Tags struct {
 }
 
 var StorageConfiguration_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+}
 
 var StorageConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StorageConfigurationConfig struct {
 	// Storage Configuration Name.
@@ -50,13 +50,13 @@ var StorageConfiguration = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"S3": ubx.FieldSpec{
 			WireName: "s3",
-			Kind: "object",
-			Fields: StorageConfiguration_S3Fields,
+			Kind:     "object",
+			Fields:   StorageConfiguration_S3Fields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StorageConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   StorageConfiguration_TagsFields,
 		},
 	},
 }

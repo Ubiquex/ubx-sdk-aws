@@ -4,9 +4,9 @@ package servicediscovery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceAttributes_ServiceAttributes struct {
-	Attributes any
+	Attributes    any
 	ResourceOwner any
-	ServiceArn any
+	ServiceArn    any
 }
 
 type ServiceAttributesConfig struct {
@@ -16,7 +16,7 @@ type ServiceAttributesConfig struct {
 type ServiceAttributesAttrs struct {
 	// <p>A complex type that contains information about attributes associated with a specific service.</p>
 	ServiceAttributes any
-	ServiceId any
+	ServiceId         any
 }
 
 var ServiceAttributes = ubx.DataSourceBinding{

@@ -4,61 +4,61 @@ package ssm_contacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmContactsRotations_Rotations_Recurrence_DailySettings struct {
-	HourOfDay any
+	HourOfDay    any
 	MinuteOfHour any
 }
 
 type SsmContactsRotations_Rotations_Recurrence_MonthlySettings struct {
-	DayOfMonth any
+	DayOfMonth  any
 	HandOffTime any
 }
 
 type SsmContactsRotations_Rotations_Recurrence_ShiftCoverages struct {
-	End any
+	End   any
 	Start any
 }
 
 type SsmContactsRotations_Rotations_Recurrence_WeeklySettings struct {
-	DayOfWeek any
+	DayOfWeek   any
 	HandOffTime any
 }
 
 type SsmContactsRotations_Rotations_Recurrence struct {
-	DailySettings any
-	MonthlySettings any
-	NumberOfOnCalls any
+	DailySettings        any
+	MonthlySettings      any
+	NumberOfOnCalls      any
 	RecurrenceMultiplier any
-	ShiftCoverages any
-	WeeklySettings any
+	ShiftCoverages       any
+	WeeklySettings       any
 }
 
 type SsmContactsRotations_Rotations struct {
-	ContactIds any
-	Name any
-	Recurrence any
+	ContactIds  any
+	Name        any
+	Recurrence  any
 	RotationArn any
-	StartTime any
-	TimeZoneId any
+	StartTime   any
+	TimeZoneId  any
 }
 
 type SsmContactsRotationsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	RotationNamePrefix any
 }
 
 type SsmContactsRotationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	RotationNamePrefix any
-	Rotations any
+	Rotations          any
 }
 
 var SsmContactsRotations = ubx.DataSourceBinding{
 	WireType: "aws_ssm_contacts_rotations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"RotationNamePrefix": ubx.FieldSpec{WireName: "rotation_name_prefix"},
 	},
 }

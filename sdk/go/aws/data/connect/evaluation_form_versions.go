@@ -4,38 +4,38 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EvaluationFormVersions_EvaluationFormVersionSummaryList struct {
-	CreatedBy any
-	CreatedTime any
-	EvaluationFormArn any
-	EvaluationFormId any
+	CreatedBy             any
+	CreatedTime           any
+	EvaluationFormArn     any
+	EvaluationFormId      any
 	EvaluationFormVersion any
-	LastModifiedBy any
-	LastModifiedTime any
-	Locked any
-	Status any
+	LastModifiedBy        any
+	LastModifiedTime      any
+	Locked                any
+	Status                any
 }
 
 type EvaluationFormVersionsConfig struct {
 	EvaluationFormId any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId       any
+	MaxResults       any
+	NextToken        any
 }
 
 type EvaluationFormVersionsAttrs struct {
-	EvaluationFormId any
+	EvaluationFormId                 any
 	EvaluationFormVersionSummaryList any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId                       any
+	MaxResults                       any
+	NextToken                        any
 }
 
 var EvaluationFormVersions = ubx.DataSourceBinding{
 	WireType: "aws_connect_evaluation_form_versions",
 	Fields: ubx.FieldMap{
 		"EvaluationFormId": ubx.FieldSpec{WireName: "evaluation_form_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":       ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

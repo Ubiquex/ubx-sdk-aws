@@ -4,7 +4,7 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type LicenseManagerTagsForResourceConfig struct {
 
 type LicenseManagerTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var LicenseManagerTagsForResource = ubx.DataSourceBinding{

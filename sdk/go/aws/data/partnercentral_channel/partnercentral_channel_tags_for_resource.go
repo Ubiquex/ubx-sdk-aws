@@ -4,7 +4,7 @@ package partnercentral_channel
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PartnercentralChannelTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type PartnercentralChannelTagsForResourceConfig struct {
 
 type PartnercentralChannelTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var PartnercentralChannelTagsForResource = ubx.DataSourceBinding{

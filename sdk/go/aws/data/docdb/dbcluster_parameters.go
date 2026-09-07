@@ -4,43 +4,43 @@ package docdb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbclusterParameters_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type DbclusterParameters_Parameters struct {
-	AllowedValues any
-	ApplyMethod any
-	ApplyType any
-	DataType any
-	Description any
-	IsModifiable any
+	AllowedValues        any
+	ApplyMethod          any
+	ApplyType            any
+	DataType             any
+	Description          any
+	IsModifiable         any
 	MinimumEngineVersion any
-	ParameterName any
-	ParameterValue any
-	Source any
+	ParameterName        any
+	ParameterValue       any
+	Source               any
 }
 
 var DbclusterParameters_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DbclusterParametersConfig struct {
 	DbclusterParameterGroupName any
-	Filters any
-	Marker any
-	MaxRecords any
-	Source any
+	Filters                     any
+	Marker                      any
+	MaxRecords                  any
+	Source                      any
 }
 
 type DbclusterParametersAttrs struct {
 	DbclusterParameterGroupName any
-	Filters any
-	Marker any
-	MaxRecords any
-	Parameters any
-	Source any
+	Filters                     any
+	Marker                      any
+	MaxRecords                  any
+	Parameters                  any
+	Source                      any
 }
 
 var DbclusterParameters = ubx.DataSourceBinding{
@@ -49,11 +49,11 @@ var DbclusterParameters = ubx.DataSourceBinding{
 		"DbclusterParameterGroupName": ubx.FieldSpec{WireName: "dbcluster_parameter_group_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DbclusterParameters_FiltersFields,
+			Kind:     "list",
+			Fields:   DbclusterParameters_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Source":     ubx.FieldSpec{WireName: "source"},
 	},
 }

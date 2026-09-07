@@ -12,26 +12,26 @@ type LogObject_FieldStream_InternalStreamingException struct {
 }
 
 type LogObject_FieldStream struct {
-	Fields any
+	Fields                     any
 	InternalStreamingException any
 }
 
 type LogObjectConfig struct {
 	LogObjectPointer any
-	Unmask any
+	Unmask           any
 }
 
 type LogObjectAttrs struct {
 	// <p>A stream of structured log data returned by the GetLogObject operation. This stream contains log events with their associated metadata and extracted fields.</p>
-	FieldStream any
+	FieldStream      any
 	LogObjectPointer any
-	Unmask any
+	Unmask           any
 }
 
 var LogObject = ubx.DataSourceBinding{
 	WireType: "aws_logs_log_object",
 	Fields: ubx.FieldMap{
 		"LogObjectPointer": ubx.FieldSpec{WireName: "log_object_pointer"},
-		"Unmask": ubx.FieldSpec{WireName: "unmask"},
+		"Unmask":           ubx.FieldSpec{WireName: "unmask"},
 	},
 }

@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Channels_Channels struct {
 	ChannelDescription any
-	ChannelId any
-	ChannelName any
-	ChannelStatus any
-	CreateDateTime any
-	DeleteDateTime any
-	GroupCount any
-	SpaceId any
-	UserCount any
+	ChannelId          any
+	ChannelName        any
+	ChannelStatus      any
+	CreateDateTime     any
+	DeleteDateTime     any
+	GroupCount         any
+	SpaceId            any
+	UserCount          any
 }
 
 type ChannelsConfig struct {
 	MaxResults any
-	NextToken any
-	SpaceId any
+	NextToken  any
+	SpaceId    any
 }
 
 type ChannelsAttrs struct {
-	Channels any
+	Channels   any
 	MaxResults any
-	NextToken any
-	SpaceId any
+	NextToken  any
+	SpaceId    any
 }
 
 var Channels = ubx.DataSourceBinding{
 	WireType: "aws_repostspace_channels",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SpaceId": ubx.FieldSpec{WireName: "space_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SpaceId":    ubx.FieldSpec{WireName: "space_id"},
 	},
 }

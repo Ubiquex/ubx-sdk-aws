@@ -10,9 +10,9 @@ type DeliverySource_Tags struct {
 }
 
 var DeliverySource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeliverySourceConfig struct {
 	// A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length.
@@ -54,13 +54,13 @@ var DeliverySource = ubx.ResourceBinding{
 	WireType: "aws_logs_delivery_source",
 	Fields: ubx.FieldMap{
 		"DeliverySourceConfiguration": ubx.FieldSpec{WireName: "delivery_source_configuration"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"LogType":                     ubx.FieldSpec{WireName: "log_type"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
+		"ResourceArn":                 ubx.FieldSpec{WireName: "resource_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DeliverySource_TagsFields,
+			Kind:     "list",
+			Fields:   DeliverySource_TagsFields,
 		},
 	},
 }

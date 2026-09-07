@@ -4,34 +4,34 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BatchInferenceJobs_BatchInferenceJobs struct {
-	BatchInferenceJobArn any
+	BatchInferenceJobArn  any
 	BatchInferenceJobMode any
-	CreationDateTime any
-	FailureReason any
-	JobName any
-	LastUpdatedDateTime any
-	SolutionVersionArn any
-	Status any
+	CreationDateTime      any
+	FailureReason         any
+	JobName               any
+	LastUpdatedDateTime   any
+	SolutionVersionArn    any
+	Status                any
 }
 
 type BatchInferenceJobsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	SolutionVersionArn any
 }
 
 type BatchInferenceJobsAttrs struct {
 	BatchInferenceJobs any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	SolutionVersionArn any
 }
 
 var BatchInferenceJobs = ubx.DataSourceBinding{
 	WireType: "aws_personalize_batch_inference_jobs",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"SolutionVersionArn": ubx.FieldSpec{WireName: "solution_version_arn"},
 	},
 }

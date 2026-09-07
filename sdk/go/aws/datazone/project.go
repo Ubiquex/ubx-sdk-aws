@@ -34,44 +34,44 @@ type Project_UserParameters_EnvironmentParameters struct {
 type Project_UserParameters struct {
 	// Specifies the name of the environment configuration in the DataZone project to which this user parameter applies, allowing parameters to be scoped to a specific environment configuration. (AI-inferred)
 	EnvironmentConfigurationName any
-	EnvironmentId any
+	EnvironmentId                any
 	// This field specifies a list of environment parameter objects that define configuration values for AWS Data Zone environments associated with the project, such as resource names or compute settings, which are applied when environments are created from the project's environment profiles. (AI-inferred)
 	EnvironmentParameters any
 }
 
 var Project_MembershipAssignments_MemberFields = ubx.FieldMap{
-		"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
-		"UserIdentifier": ubx.FieldSpec{WireName: "user_identifier"},
-	}
+	"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
+	"UserIdentifier":  ubx.FieldSpec{WireName: "user_identifier"},
+}
 
 var Project_MembershipAssignmentsFields = ubx.FieldMap{
-		"Designation": ubx.FieldSpec{WireName: "designation"},
-		"Member": ubx.FieldSpec{
-			WireName: "member",
-			Kind: "object",
-			Fields: Project_MembershipAssignments_MemberFields,
-		},
-	}
+	"Designation": ubx.FieldSpec{WireName: "designation"},
+	"Member": ubx.FieldSpec{
+		WireName: "member",
+		Kind:     "object",
+		Fields:   Project_MembershipAssignments_MemberFields,
+	},
+}
 
 var Project_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Project_UserParameters_EnvironmentParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Project_UserParametersFields = ubx.FieldMap{
-		"EnvironmentConfigurationName": ubx.FieldSpec{WireName: "environment_configuration_name"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"EnvironmentParameters": ubx.FieldSpec{
-			WireName: "environment_parameters",
-			Kind: "list",
-			Fields: Project_UserParameters_EnvironmentParametersFields,
-		},
-	}
+	"EnvironmentConfigurationName": ubx.FieldSpec{WireName: "environment_configuration_name"},
+	"EnvironmentId":                ubx.FieldSpec{WireName: "environment_id"},
+	"EnvironmentParameters": ubx.FieldSpec{
+		WireName: "environment_parameters",
+		Kind:     "list",
+		Fields:   Project_UserParameters_EnvironmentParametersFields,
+	},
+}
 
 type ProjectConfig struct {
 	// The description of the Amazon DataZone project.
@@ -142,29 +142,29 @@ type ProjectAttrs struct {
 var Project = ubx.ResourceBinding{
 	WireType: "aws_data_zone_project",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"DomainUnitId": ubx.FieldSpec{WireName: "domain_unit_id"},
-		"GlossaryTerms": ubx.FieldSpec{WireName: "glossary_terms"},
+		"DomainUnitId":     ubx.FieldSpec{WireName: "domain_unit_id"},
+		"GlossaryTerms":    ubx.FieldSpec{WireName: "glossary_terms"},
 		"MembershipAssignments": ubx.FieldSpec{
 			WireName: "membership_assignments",
-			Kind: "list",
-			Fields: Project_MembershipAssignmentsFields,
+			Kind:     "list",
+			Fields:   Project_MembershipAssignmentsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectCategory": ubx.FieldSpec{WireName: "project_category"},
-		"ProjectExecutionRole": ubx.FieldSpec{WireName: "project_execution_role"},
-		"ProjectProfileId": ubx.FieldSpec{WireName: "project_profile_id"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"ProjectCategory":       ubx.FieldSpec{WireName: "project_category"},
+		"ProjectExecutionRole":  ubx.FieldSpec{WireName: "project_execution_role"},
+		"ProjectProfileId":      ubx.FieldSpec{WireName: "project_profile_id"},
 		"ProjectProfileVersion": ubx.FieldSpec{WireName: "project_profile_version"},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Project_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   Project_ResourceTagsFields,
 		},
 		"UserParameters": ubx.FieldSpec{
 			WireName: "user_parameters",
-			Kind: "list",
-			Fields: Project_UserParametersFields,
+			Kind:     "list",
+			Fields:   Project_UserParametersFields,
 		},
 	},
 }

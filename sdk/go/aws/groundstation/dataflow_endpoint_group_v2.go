@@ -107,7 +107,7 @@ type DataflowEndpointGroupV2_Endpoints_UplinkAwsGroundStationAgentEndpoint struc
 type DataflowEndpointGroupV2_Endpoints struct {
 	// This object defines the downlink endpoint for an AWS Ground Station agent, specifying the network address and socket settings (such as IP, port, and MTU) used to receive data from a satellite. (AI-inferred)
 	DownlinkAwsGroundStationAgentEndpoint any
-	UplinkAwsGroundStationAgentEndpoint any
+	UplinkAwsGroundStationAgentEndpoint   any
 }
 
 type DataflowEndpointGroupV2_Tags struct {
@@ -118,119 +118,119 @@ type DataflowEndpointGroupV2_Tags struct {
 }
 
 var DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddress_SocketAddress_PortRangeFields = ubx.FieldMap{
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-	}
+	"Maximum": ubx.FieldSpec{WireName: "maximum"},
+	"Minimum": ubx.FieldSpec{WireName: "minimum"},
+}
 
 var DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddress_SocketAddressFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PortRange": ubx.FieldSpec{
-			WireName: "port_range",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddress_SocketAddress_PortRangeFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PortRange": ubx.FieldSpec{
+		WireName: "port_range",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddress_SocketAddress_PortRangeFields,
+	},
+}
 
 var DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddressFields = ubx.FieldMap{
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"SocketAddress": ubx.FieldSpec{
-			WireName: "socket_address",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddress_SocketAddressFields,
-		},
-	}
+	"Mtu": ubx.FieldSpec{WireName: "mtu"},
+	"SocketAddress": ubx.FieldSpec{
+		WireName: "socket_address",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddress_SocketAddressFields,
+	},
+}
 
 var DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_EgressAddressAndPort_SocketAddressFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_EgressAddressAndPortFields = ubx.FieldMap{
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"SocketAddress": ubx.FieldSpec{
-			WireName: "socket_address",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_EgressAddressAndPort_SocketAddressFields,
-		},
-	}
+	"Mtu": ubx.FieldSpec{WireName: "mtu"},
+	"SocketAddress": ubx.FieldSpec{
+		WireName: "socket_address",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_EgressAddressAndPort_SocketAddressFields,
+	},
+}
 
 var DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetailsFields = ubx.FieldMap{
-		"AgentIpAndPortAddress": ubx.FieldSpec{
-			WireName: "agent_ip_and_port_address",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddressFields,
-		},
-		"EgressAddressAndPort": ubx.FieldSpec{
-			WireName: "egress_address_and_port",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_EgressAddressAndPortFields,
-		},
-	}
+	"AgentIpAndPortAddress": ubx.FieldSpec{
+		WireName: "agent_ip_and_port_address",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddressFields,
+	},
+	"EgressAddressAndPort": ubx.FieldSpec{
+		WireName: "egress_address_and_port",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_EgressAddressAndPortFields,
+	},
+}
 
 var DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetailsFields = ubx.FieldMap{
-		"AgentConnectionDetails": ubx.FieldSpec{
-			WireName: "agent_connection_details",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetailsFields,
-		},
-	}
+	"AgentConnectionDetails": ubx.FieldSpec{
+		WireName: "agent_connection_details",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetailsFields,
+	},
+}
 
 var DataflowEndpointGroupV2_Endpoints_DownlinkAwsGroundStationAgentEndpointFields = ubx.FieldMap{
-		"DataflowDetails": ubx.FieldSpec{
-			WireName: "dataflow_details",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetailsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DataflowDetails": ubx.FieldSpec{
+		WireName: "dataflow_details",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetailsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var DataflowEndpointGroupV2_EndpointDetails_UplinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetailsFields = ubx.FieldMap{
-		"AgentIpAndPortAddress": ubx.FieldSpec{
-			WireName: "agent_ip_and_port_address",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddressFields,
-		},
-		"IngressAddressAndPort": ubx.FieldSpec{
-			WireName: "ingress_address_and_port",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_EgressAddressAndPortFields,
-		},
-	}
+	"AgentIpAndPortAddress": ubx.FieldSpec{
+		WireName: "agent_ip_and_port_address",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_AgentIpAndPortAddressFields,
+	},
+	"IngressAddressAndPort": ubx.FieldSpec{
+		WireName: "ingress_address_and_port",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_DownlinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetails_EgressAddressAndPortFields,
+	},
+}
 
 var DataflowEndpointGroupV2_EndpointDetails_UplinkAwsGroundStationAgentEndpoint_DataflowDetailsFields = ubx.FieldMap{
-		"AgentConnectionDetails": ubx.FieldSpec{
-			WireName: "agent_connection_details",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_UplinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetailsFields,
-		},
-	}
+	"AgentConnectionDetails": ubx.FieldSpec{
+		WireName: "agent_connection_details",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_UplinkAwsGroundStationAgentEndpoint_DataflowDetails_AgentConnectionDetailsFields,
+	},
+}
 
 var DataflowEndpointGroupV2_Endpoints_UplinkAwsGroundStationAgentEndpointFields = ubx.FieldMap{
-		"DataflowDetails": ubx.FieldSpec{
-			WireName: "dataflow_details",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_EndpointDetails_UplinkAwsGroundStationAgentEndpoint_DataflowDetailsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DataflowDetails": ubx.FieldSpec{
+		WireName: "dataflow_details",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_EndpointDetails_UplinkAwsGroundStationAgentEndpoint_DataflowDetailsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var DataflowEndpointGroupV2_EndpointsFields = ubx.FieldMap{
-		"DownlinkAwsGroundStationAgentEndpoint": ubx.FieldSpec{
-			WireName: "downlink_aws_ground_station_agent_endpoint",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_Endpoints_DownlinkAwsGroundStationAgentEndpointFields,
-		},
-		"UplinkAwsGroundStationAgentEndpoint": ubx.FieldSpec{
-			WireName: "uplink_aws_ground_station_agent_endpoint",
-			Kind: "object",
-			Fields: DataflowEndpointGroupV2_Endpoints_UplinkAwsGroundStationAgentEndpointFields,
-		},
-	}
+	"DownlinkAwsGroundStationAgentEndpoint": ubx.FieldSpec{
+		WireName: "downlink_aws_ground_station_agent_endpoint",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_Endpoints_DownlinkAwsGroundStationAgentEndpointFields,
+	},
+	"UplinkAwsGroundStationAgentEndpoint": ubx.FieldSpec{
+		WireName: "uplink_aws_ground_station_agent_endpoint",
+		Kind:     "object",
+		Fields:   DataflowEndpointGroupV2_Endpoints_UplinkAwsGroundStationAgentEndpointFields,
+	},
+}
 
 var DataflowEndpointGroupV2_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataflowEndpointGroupV2Config struct {
 	// Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a POSTPASS state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the POSTPASS state.
@@ -264,16 +264,16 @@ var DataflowEndpointGroupV2 = ubx.ResourceBinding{
 	WireType: "aws_ground_station_dataflow_endpoint_group_v2",
 	Fields: ubx.FieldMap{
 		"ContactPostPassDurationSeconds": ubx.FieldSpec{WireName: "contact_post_pass_duration_seconds"},
-		"ContactPrePassDurationSeconds": ubx.FieldSpec{WireName: "contact_pre_pass_duration_seconds"},
+		"ContactPrePassDurationSeconds":  ubx.FieldSpec{WireName: "contact_pre_pass_duration_seconds"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind: "list",
-			Fields: DataflowEndpointGroupV2_EndpointsFields,
+			Kind:     "list",
+			Fields:   DataflowEndpointGroupV2_EndpointsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataflowEndpointGroupV2_TagsFields,
+			Kind:     "list",
+			Fields:   DataflowEndpointGroupV2_TagsFields,
 		},
 	},
 }

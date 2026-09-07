@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Findings_Filters_AwsAccountId struct {
 	Comparison any
-	Value any
+	Value      any
 }
 
 type Findings_Filters_Confidence struct {
-	Eq any
-	Gt any
+	Eq  any
+	Gt  any
 	Gte any
-	Lt any
+	Lt  any
 	Lte any
 }
 
 type Findings_Filters_CreatedAt_DateRange struct {
 	Comparison any
-	Unit any
-	Value any
+	Unit       any
+	Value      any
 }
 
 type Findings_Filters_CreatedAt struct {
 	DateRange any
-	End any
-	Start any
+	End       any
+	Start     any
 }
 
 type Findings_Filters_Keyword struct {
@@ -38,8 +38,8 @@ type Findings_Filters_NetworkDestinationIpV4 struct {
 
 type Findings_Filters_ProductFields struct {
 	Comparison any
-	Key any
-	Value any
+	Key        any
+	Value      any
 }
 
 type Findings_Filters_Sample struct {
@@ -47,113 +47,113 @@ type Findings_Filters_Sample struct {
 }
 
 type Findings_Filters struct {
-	AwsAccountId any
-	AwsAccountName any
-	CompanyName any
-	ComplianceAssociatedStandardsId any
-	ComplianceSecurityControlId any
-	ComplianceSecurityControlParametersName any
-	ComplianceSecurityControlParametersValue any
-	ComplianceStatus any
-	Confidence any
-	CreatedAt any
-	Criticality any
-	Description any
-	FindingProviderFieldsConfidence any
-	FindingProviderFieldsCriticality any
-	FindingProviderFieldsRelatedFindingsId any
+	AwsAccountId                                   any
+	AwsAccountName                                 any
+	CompanyName                                    any
+	ComplianceAssociatedStandardsId                any
+	ComplianceSecurityControlId                    any
+	ComplianceSecurityControlParametersName        any
+	ComplianceSecurityControlParametersValue       any
+	ComplianceStatus                               any
+	Confidence                                     any
+	CreatedAt                                      any
+	Criticality                                    any
+	Description                                    any
+	FindingProviderFieldsConfidence                any
+	FindingProviderFieldsCriticality               any
+	FindingProviderFieldsRelatedFindingsId         any
 	FindingProviderFieldsRelatedFindingsProductArn any
-	FindingProviderFieldsSeverityLabel any
-	FindingProviderFieldsSeverityOriginal any
-	FindingProviderFieldsTypes any
-	FirstObservedAt any
-	GeneratorId any
-	Id any
-	Keyword any
-	LastObservedAt any
-	MalwareName any
-	MalwarePath any
-	MalwareState any
-	MalwareType any
-	NetworkDestinationDomain any
-	NetworkDestinationIpV4 any
-	NetworkDestinationIpV6 any
-	NetworkDestinationPort any
-	NetworkDirection any
-	NetworkProtocol any
-	NetworkSourceDomain any
-	NetworkSourceIpV4 any
-	NetworkSourceIpV6 any
-	NetworkSourceMac any
-	NetworkSourcePort any
-	NoteText any
-	NoteUpdatedAt any
-	NoteUpdatedBy any
-	ProcessLaunchedAt any
-	ProcessName any
-	ProcessParentPid any
-	ProcessPath any
-	ProcessPid any
-	ProcessTerminatedAt any
-	ProductArn any
-	ProductFields any
-	ProductName any
-	RecommendationText any
-	RecordState any
-	Region any
-	RelatedFindingsId any
-	RelatedFindingsProductArn any
-	ResourceApplicationArn any
-	ResourceApplicationName any
-	ResourceAwsEc2InstanceIamInstanceProfileArn any
-	ResourceAwsEc2InstanceImageId any
-	ResourceAwsEc2InstanceIpV4Addresses any
-	ResourceAwsEc2InstanceIpV6Addresses any
-	ResourceAwsEc2InstanceKeyName any
-	ResourceAwsEc2InstanceLaunchedAt any
-	ResourceAwsEc2InstanceSubnetId any
-	ResourceAwsEc2InstanceType any
-	ResourceAwsEc2InstanceVpcId any
-	ResourceAwsIamAccessKeyCreatedAt any
-	ResourceAwsIamAccessKeyPrincipalName any
-	ResourceAwsIamAccessKeyStatus any
-	ResourceAwsIamAccessKeyUserName any
-	ResourceAwsIamUserUserName any
-	ResourceAwsS3BucketOwnerId any
-	ResourceAwsS3BucketOwnerName any
-	ResourceContainerImageId any
-	ResourceContainerImageName any
-	ResourceContainerLaunchedAt any
-	ResourceContainerName any
-	ResourceDetailsOther any
-	ResourceId any
-	ResourceOwnerAccountId any
-	ResourceOwnerOrgId any
-	ResourcePartition any
-	ResourceProvider any
-	ResourceRegion any
-	ResourceTags any
-	ResourceType any
-	Sample any
-	SeverityLabel any
-	SeverityNormalized any
-	SeverityProduct any
-	SourceUrl any
-	ThreatIntelIndicatorCategory any
-	ThreatIntelIndicatorLastObservedAt any
-	ThreatIntelIndicatorSource any
-	ThreatIntelIndicatorSourceUrl any
-	ThreatIntelIndicatorType any
-	ThreatIntelIndicatorValue any
-	Title any
-	Type any
-	UpdatedAt any
-	UserDefinedFields any
-	VerificationState any
-	VulnerabilitiesExploitAvailable any
-	VulnerabilitiesFixAvailable any
-	WorkflowState any
-	WorkflowStatus any
+	FindingProviderFieldsSeverityLabel             any
+	FindingProviderFieldsSeverityOriginal          any
+	FindingProviderFieldsTypes                     any
+	FirstObservedAt                                any
+	GeneratorId                                    any
+	Id                                             any
+	Keyword                                        any
+	LastObservedAt                                 any
+	MalwareName                                    any
+	MalwarePath                                    any
+	MalwareState                                   any
+	MalwareType                                    any
+	NetworkDestinationDomain                       any
+	NetworkDestinationIpV4                         any
+	NetworkDestinationIpV6                         any
+	NetworkDestinationPort                         any
+	NetworkDirection                               any
+	NetworkProtocol                                any
+	NetworkSourceDomain                            any
+	NetworkSourceIpV4                              any
+	NetworkSourceIpV6                              any
+	NetworkSourceMac                               any
+	NetworkSourcePort                              any
+	NoteText                                       any
+	NoteUpdatedAt                                  any
+	NoteUpdatedBy                                  any
+	ProcessLaunchedAt                              any
+	ProcessName                                    any
+	ProcessParentPid                               any
+	ProcessPath                                    any
+	ProcessPid                                     any
+	ProcessTerminatedAt                            any
+	ProductArn                                     any
+	ProductFields                                  any
+	ProductName                                    any
+	RecommendationText                             any
+	RecordState                                    any
+	Region                                         any
+	RelatedFindingsId                              any
+	RelatedFindingsProductArn                      any
+	ResourceApplicationArn                         any
+	ResourceApplicationName                        any
+	ResourceAwsEc2InstanceIamInstanceProfileArn    any
+	ResourceAwsEc2InstanceImageId                  any
+	ResourceAwsEc2InstanceIpV4Addresses            any
+	ResourceAwsEc2InstanceIpV6Addresses            any
+	ResourceAwsEc2InstanceKeyName                  any
+	ResourceAwsEc2InstanceLaunchedAt               any
+	ResourceAwsEc2InstanceSubnetId                 any
+	ResourceAwsEc2InstanceType                     any
+	ResourceAwsEc2InstanceVpcId                    any
+	ResourceAwsIamAccessKeyCreatedAt               any
+	ResourceAwsIamAccessKeyPrincipalName           any
+	ResourceAwsIamAccessKeyStatus                  any
+	ResourceAwsIamAccessKeyUserName                any
+	ResourceAwsIamUserUserName                     any
+	ResourceAwsS3BucketOwnerId                     any
+	ResourceAwsS3BucketOwnerName                   any
+	ResourceContainerImageId                       any
+	ResourceContainerImageName                     any
+	ResourceContainerLaunchedAt                    any
+	ResourceContainerName                          any
+	ResourceDetailsOther                           any
+	ResourceId                                     any
+	ResourceOwnerAccountId                         any
+	ResourceOwnerOrgId                             any
+	ResourcePartition                              any
+	ResourceProvider                               any
+	ResourceRegion                                 any
+	ResourceTags                                   any
+	ResourceType                                   any
+	Sample                                         any
+	SeverityLabel                                  any
+	SeverityNormalized                             any
+	SeverityProduct                                any
+	SourceUrl                                      any
+	ThreatIntelIndicatorCategory                   any
+	ThreatIntelIndicatorLastObservedAt             any
+	ThreatIntelIndicatorSource                     any
+	ThreatIntelIndicatorSourceUrl                  any
+	ThreatIntelIndicatorType                       any
+	ThreatIntelIndicatorValue                      any
+	Title                                          any
+	Type                                           any
+	UpdatedAt                                      any
+	UserDefinedFields                              any
+	VerificationState                              any
+	VulnerabilitiesExploitAvailable                any
+	VulnerabilitiesFixAvailable                    any
+	WorkflowState                                  any
+	WorkflowStatus                                 any
 }
 
 type Findings_Findings_Action_AwsApiCallAction_DomainDetails struct {
@@ -175,49 +175,49 @@ type Findings_Findings_Action_AwsApiCallAction_RemoteIpDetails_GeoLocation struc
 }
 
 type Findings_Findings_Action_AwsApiCallAction_RemoteIpDetails_Organization struct {
-	Asn any
+	Asn    any
 	AsnOrg any
-	Isp any
-	Org any
+	Isp    any
+	Org    any
 }
 
 type Findings_Findings_Action_AwsApiCallAction_RemoteIpDetails struct {
-	City any
-	Country any
-	GeoLocation any
-	IpAddressV4 any
+	City         any
+	Country      any
+	GeoLocation  any
+	IpAddressV4  any
 	Organization any
 }
 
 type Findings_Findings_Action_AwsApiCallAction struct {
 	AffectedResources any
-	Api any
-	CallerType any
-	DomainDetails any
-	FirstSeen any
-	LastSeen any
-	RemoteIpDetails any
-	ServiceName any
+	Api               any
+	CallerType        any
+	DomainDetails     any
+	FirstSeen         any
+	LastSeen          any
+	RemoteIpDetails   any
+	ServiceName       any
 }
 
 type Findings_Findings_Action_DnsRequestAction struct {
-	Blocked any
-	Domain any
+	Blocked  any
+	Domain   any
 	Protocol any
 }
 
 type Findings_Findings_Action_NetworkConnectionAction_LocalPortDetails struct {
-	Port any
+	Port     any
 	PortName any
 }
 
 type Findings_Findings_Action_NetworkConnectionAction struct {
-	Blocked any
+	Blocked             any
 	ConnectionDirection any
-	LocalPortDetails any
-	Protocol any
-	RemoteIpDetails any
-	RemotePortDetails any
+	LocalPortDetails    any
+	Protocol            any
+	RemoteIpDetails     any
+	RemotePortDetails   any
 }
 
 type Findings_Findings_Action_PortProbeAction_PortProbeDetails_LocalIpDetails struct {
@@ -225,22 +225,22 @@ type Findings_Findings_Action_PortProbeAction_PortProbeDetails_LocalIpDetails st
 }
 
 type Findings_Findings_Action_PortProbeAction_PortProbeDetails struct {
-	LocalIpDetails any
+	LocalIpDetails   any
 	LocalPortDetails any
-	RemoteIpDetails any
+	RemoteIpDetails  any
 }
 
 type Findings_Findings_Action_PortProbeAction struct {
-	Blocked any
+	Blocked          any
 	PortProbeDetails any
 }
 
 type Findings_Findings_Action struct {
-	ActionType any
-	AwsApiCallAction any
-	DnsRequestAction any
+	ActionType              any
+	AwsApiCallAction        any
+	DnsRequestAction        any
 	NetworkConnectionAction any
-	PortProbeAction any
+	PortProbeAction         any
 }
 
 type Findings_Findings_Compliance_AssociatedStandards struct {
@@ -248,52 +248,52 @@ type Findings_Findings_Compliance_AssociatedStandards struct {
 }
 
 type Findings_Findings_Compliance_SecurityControlParameters struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Findings_Findings_Compliance_StatusReasons struct {
 	Description any
-	ReasonCode any
+	ReasonCode  any
 }
 
 type Findings_Findings_Compliance struct {
-	AssociatedStandards any
-	RelatedRequirements any
-	SecurityControlId any
+	AssociatedStandards       any
+	RelatedRequirements       any
+	SecurityControlId         any
 	SecurityControlParameters any
-	Status any
-	StatusReasons any
+	Status                    any
+	StatusReasons             any
 }
 
 type Findings_Findings_Detection_Sequence_Actors_Session struct {
 	CreatedTime any
-	Issuer any
-	MfaStatus any
-	Uid any
+	Issuer      any
+	MfaStatus   any
+	Uid         any
 }
 
 type Findings_Findings_Detection_Sequence_Actors_User_Account struct {
 	Name any
-	Uid any
+	Uid  any
 }
 
 type Findings_Findings_Detection_Sequence_Actors_User struct {
-	Account any
+	Account       any
 	CredentialUid any
-	Name any
-	Type any
-	Uid any
+	Name          any
+	Type          any
+	Uid           any
 }
 
 type Findings_Findings_Detection_Sequence_Actors struct {
-	Id any
+	Id      any
 	Session any
-	User any
+	User    any
 }
 
 type Findings_Findings_Detection_Sequence_Endpoints_AutonomousSystem struct {
-	Name any
+	Name   any
 	Number any
 }
 
@@ -302,53 +302,53 @@ type Findings_Findings_Detection_Sequence_Endpoints_Connection struct {
 }
 
 type Findings_Findings_Detection_Sequence_Endpoints_Location struct {
-	City any
+	City    any
 	Country any
-	Lat any
-	Lon any
+	Lat     any
+	Lon     any
 }
 
 type Findings_Findings_Detection_Sequence_Endpoints struct {
 	AutonomousSystem any
-	Connection any
-	Domain any
-	Id any
-	Ip any
-	Location any
-	Port any
+	Connection       any
+	Domain           any
+	Id               any
+	Ip               any
+	Location         any
+	Port             any
 }
 
 type Findings_Findings_Detection_Sequence_SequenceIndicators struct {
-	Key any
-	Title any
-	Type any
+	Key    any
+	Title  any
+	Type   any
 	Values any
 }
 
 type Findings_Findings_Detection_Sequence_Signals struct {
-	ActorIds any
-	Count any
-	CreatedAt any
-	EndpointIds any
-	FirstSeenAt any
-	Id any
-	LastSeenAt any
-	Name any
-	ProductArn any
-	ResourceIds any
-	Severity any
+	ActorIds         any
+	Count            any
+	CreatedAt        any
+	EndpointIds      any
+	FirstSeenAt      any
+	Id               any
+	LastSeenAt       any
+	Name             any
+	ProductArn       any
+	ResourceIds      any
+	Severity         any
 	SignalIndicators any
-	Title any
-	Type any
-	UpdatedAt any
+	Title            any
+	Type             any
+	UpdatedAt        any
 }
 
 type Findings_Findings_Detection_Sequence struct {
-	Actors any
-	Endpoints any
+	Actors             any
+	Endpoints          any
 	SequenceIndicators any
-	Signals any
-	Uid any
+	Signals            any
+	Uid                any
 }
 
 type Findings_Findings_Detection struct {
@@ -356,106 +356,106 @@ type Findings_Findings_Detection struct {
 }
 
 type Findings_Findings_FindingProviderFields_RelatedFindings struct {
-	Id any
+	Id         any
 	ProductArn any
 }
 
 type Findings_Findings_FindingProviderFields_Severity struct {
-	Label any
+	Label    any
 	Original any
 }
 
 type Findings_Findings_FindingProviderFields struct {
-	Confidence any
-	Criticality any
+	Confidence      any
+	Criticality     any
 	RelatedFindings any
-	Severity any
-	Types any
+	Severity        any
+	Types           any
 }
 
 type Findings_Findings_GeneratorDetails struct {
 	Description any
-	Labels any
-	Name any
+	Labels      any
+	Name        any
 }
 
 type Findings_Findings_Malware struct {
-	Name any
-	Path any
+	Name  any
+	Path  any
 	State any
-	Type any
+	Type  any
 }
 
 type Findings_Findings_Network_OpenPortRange struct {
 	Begin any
-	End any
+	End   any
 }
 
 type Findings_Findings_Network struct {
 	DestinationDomain any
-	DestinationIpV4 any
-	DestinationIpV6 any
-	DestinationPort any
-	Direction any
-	OpenPortRange any
-	Protocol any
-	SourceDomain any
-	SourceIpV4 any
-	SourceIpV6 any
-	SourceMac any
-	SourcePort any
+	DestinationIpV4   any
+	DestinationIpV6   any
+	DestinationPort   any
+	Direction         any
+	OpenPortRange     any
+	Protocol          any
+	SourceDomain      any
+	SourceIpV4        any
+	SourceIpV6        any
+	SourceMac         any
+	SourcePort        any
 }
 
 type Findings_Findings_NetworkPath_Egress_Destination struct {
-	Address any
+	Address    any
 	PortRanges any
 }
 
 type Findings_Findings_NetworkPath_Egress struct {
 	Destination any
-	Protocol any
-	Source any
+	Protocol    any
+	Source      any
 }
 
 type Findings_Findings_NetworkPath struct {
-	ComponentId any
+	ComponentId   any
 	ComponentType any
-	Egress any
-	Ingress any
+	Egress        any
+	Ingress       any
 }
 
 type Findings_Findings_Note struct {
-	Text any
+	Text      any
 	UpdatedAt any
 	UpdatedBy any
 }
 
 type Findings_Findings_PatchSummary struct {
-	FailedCount any
-	Id any
-	InstalledCount any
-	InstalledOtherCount any
+	FailedCount            any
+	Id                     any
+	InstalledCount         any
+	InstalledOtherCount    any
 	InstalledPendingReboot any
 	InstalledRejectedCount any
-	MissingCount any
-	Operation any
-	OperationEndTime any
-	OperationStartTime any
-	RebootOption any
+	MissingCount           any
+	Operation              any
+	OperationEndTime       any
+	OperationStartTime     any
+	RebootOption           any
 }
 
 type Findings_Findings_Process struct {
-	LaunchedAt any
-	Name any
-	ParentPid any
-	Path any
-	Pid any
+	LaunchedAt   any
+	Name         any
+	ParentPid    any
+	Path         any
+	Pid          any
 	TerminatedAt any
 }
 
 type Findings_Findings_Remediation_Recommendation struct {
 	Text any
-	Url any
+	Url  any
 }
 
 type Findings_Findings_Remediation struct {
@@ -464,40 +464,40 @@ type Findings_Findings_Remediation struct {
 
 type Findings_Findings_Resources_DataClassification_Result_CustomDataIdentifiers_Detections_Occurrences_Cells struct {
 	CellReference any
-	Column any
-	ColumnName any
-	Row any
+	Column        any
+	ColumnName    any
+	Row           any
 }
 
 type Findings_Findings_Resources_DataClassification_Result_CustomDataIdentifiers_Detections_Occurrences_LineRanges struct {
-	End any
-	Start any
+	End         any
+	Start       any
 	StartColumn any
 }
 
 type Findings_Findings_Resources_DataClassification_Result_CustomDataIdentifiers_Detections_Occurrences_Pages struct {
-	LineRange any
+	LineRange   any
 	OffsetRange any
-	PageNumber any
+	PageNumber  any
 }
 
 type Findings_Findings_Resources_DataClassification_Result_CustomDataIdentifiers_Detections_Occurrences_Records struct {
-	JsonPath any
+	JsonPath    any
 	RecordIndex any
 }
 
 type Findings_Findings_Resources_DataClassification_Result_CustomDataIdentifiers_Detections_Occurrences struct {
-	Cells any
-	LineRanges any
+	Cells        any
+	LineRanges   any
 	OffsetRanges any
-	Pages any
-	Records any
+	Pages        any
+	Records      any
 }
 
 type Findings_Findings_Resources_DataClassification_Result_CustomDataIdentifiers_Detections struct {
-	Arn any
-	Count any
-	Name any
+	Arn         any
+	Count       any
+	Name        any
 	Occurrences any
 }
 
@@ -507,97 +507,97 @@ type Findings_Findings_Resources_DataClassification_Result_CustomDataIdentifiers
 }
 
 type Findings_Findings_Resources_DataClassification_Result_SensitiveData_Detections struct {
-	Count any
+	Count       any
 	Occurrences any
-	Type any
+	Type        any
 }
 
 type Findings_Findings_Resources_DataClassification_Result_SensitiveData struct {
-	Category any
+	Category   any
 	Detections any
 	TotalCount any
 }
 
 type Findings_Findings_Resources_DataClassification_Result_Status struct {
-	Code any
+	Code   any
 	Reason any
 }
 
 type Findings_Findings_Resources_DataClassification_Result struct {
 	AdditionalOccurrences any
 	CustomDataIdentifiers any
-	MimeType any
-	SensitiveData any
-	SizeClassified any
-	Status any
+	MimeType              any
+	SensitiveData         any
+	SizeClassified        any
+	Status                any
 }
 
 type Findings_Findings_Resources_DataClassification struct {
 	DetailedResultsLocation any
-	Result any
+	Result                  any
 }
 
 type Findings_Findings_Resources_Details_AwsAmazonMqBroker_EncryptionOptions struct {
-	KmsKeyId any
+	KmsKeyId       any
 	UseAwsOwnedKey any
 }
 
 type Findings_Findings_Resources_Details_AwsAmazonMqBroker_LdapServerMetadata struct {
-	Hosts any
-	RoleBase any
-	RoleName any
-	RoleSearchMatching any
-	RoleSearchSubtree any
+	Hosts                  any
+	RoleBase               any
+	RoleName               any
+	RoleSearchMatching     any
+	RoleSearchSubtree      any
 	ServiceAccountUsername any
-	UserBase any
-	UserRoleName any
-	UserSearchMatching any
-	UserSearchSubtree any
+	UserBase               any
+	UserRoleName           any
+	UserSearchMatching     any
+	UserSearchSubtree      any
 }
 
 type Findings_Findings_Resources_Details_AwsAmazonMqBroker_Logs_Pending struct {
-	Audit any
+	Audit   any
 	General any
 }
 
 type Findings_Findings_Resources_Details_AwsAmazonMqBroker_Logs struct {
-	Audit any
-	AuditLogGroup any
-	General any
+	Audit           any
+	AuditLogGroup   any
+	General         any
 	GeneralLogGroup any
-	Pending any
+	Pending         any
 }
 
 type Findings_Findings_Resources_Details_AwsAmazonMqBroker_MaintenanceWindowStartTime struct {
 	DayOfWeek any
 	TimeOfDay any
-	TimeZone any
+	TimeZone  any
 }
 
 type Findings_Findings_Resources_Details_AwsAmazonMqBroker_Users struct {
 	PendingChange any
-	Username any
+	Username      any
 }
 
 type Findings_Findings_Resources_Details_AwsAmazonMqBroker struct {
-	AuthenticationStrategy any
-	AutoMinorVersionUpgrade any
-	BrokerArn any
-	BrokerId any
-	BrokerName any
-	DeploymentMode any
-	EncryptionOptions any
-	EngineType any
-	EngineVersion any
-	HostInstanceType any
-	LdapServerMetadata any
-	Logs any
+	AuthenticationStrategy     any
+	AutoMinorVersionUpgrade    any
+	BrokerArn                  any
+	BrokerId                   any
+	BrokerName                 any
+	DeploymentMode             any
+	EncryptionOptions          any
+	EngineType                 any
+	EngineVersion              any
+	HostInstanceType           any
+	LdapServerMetadata         any
+	Logs                       any
 	MaintenanceWindowStartTime any
-	PubliclyAccessible any
-	SecurityGroups any
-	StorageType any
-	SubnetIds any
-	Users any
+	PubliclyAccessible         any
+	SecurityGroups             any
+	StorageType                any
+	SubnetIds                  any
+	Users                      any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayRestApi_EndpointConfiguration struct {
@@ -605,160 +605,160 @@ type Findings_Findings_Resources_Details_AwsApiGatewayRestApi_EndpointConfigurat
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayRestApi struct {
-	ApiKeySource any
-	BinaryMediaTypes any
-	CreatedDate any
-	Description any
-	EndpointConfiguration any
-	Id any
+	ApiKeySource           any
+	BinaryMediaTypes       any
+	CreatedDate            any
+	Description            any
+	EndpointConfiguration  any
+	Id                     any
 	MinimumCompressionSize any
-	Name any
-	Version any
+	Name                   any
+	Version                any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayStage_AccessLogSettings struct {
 	DestinationArn any
-	Format any
+	Format         any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayStage_CanarySettings struct {
-	DeploymentId any
-	PercentTraffic any
+	DeploymentId           any
+	PercentTraffic         any
 	StageVariableOverrides any
-	UseStageCache any
+	UseStageCache          any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayStage_MethodSettings struct {
-	CacheDataEncrypted any
-	CacheTtlInSeconds any
-	CachingEnabled any
-	DataTraceEnabled any
-	HttpMethod any
-	LoggingLevel any
-	MetricsEnabled any
-	RequireAuthorizationForCacheControl any
-	ResourcePath any
-	ThrottlingBurstLimit any
-	ThrottlingRateLimit any
+	CacheDataEncrypted                     any
+	CacheTtlInSeconds                      any
+	CachingEnabled                         any
+	DataTraceEnabled                       any
+	HttpMethod                             any
+	LoggingLevel                           any
+	MetricsEnabled                         any
+	RequireAuthorizationForCacheControl    any
+	ResourcePath                           any
+	ThrottlingBurstLimit                   any
+	ThrottlingRateLimit                    any
 	UnauthorizedCacheControlHeaderStrategy any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayStage struct {
-	AccessLogSettings any
-	CacheClusterEnabled any
-	CacheClusterSize any
-	CacheClusterStatus any
-	CanarySettings any
-	ClientCertificateId any
-	CreatedDate any
-	DeploymentId any
-	Description any
+	AccessLogSettings    any
+	CacheClusterEnabled  any
+	CacheClusterSize     any
+	CacheClusterStatus   any
+	CanarySettings       any
+	ClientCertificateId  any
+	CreatedDate          any
+	DeploymentId         any
+	Description          any
 	DocumentationVersion any
-	LastUpdatedDate any
-	MethodSettings any
-	StageName any
-	TracingEnabled any
-	Variables any
-	WebAclArn any
+	LastUpdatedDate      any
+	MethodSettings       any
+	StageName            any
+	TracingEnabled       any
+	Variables            any
+	WebAclArn            any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayV2Api_CorsConfiguration struct {
 	AllowCredentials any
-	AllowHeaders any
-	AllowMethods any
-	AllowOrigins any
-	ExposeHeaders any
-	MaxAge any
+	AllowHeaders     any
+	AllowMethods     any
+	AllowOrigins     any
+	ExposeHeaders    any
+	MaxAge           any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayV2Api struct {
-	ApiEndpoint any
-	ApiId any
+	ApiEndpoint               any
+	ApiId                     any
 	ApiKeySelectionExpression any
-	CorsConfiguration any
-	CreatedDate any
-	Description any
-	Name any
-	ProtocolType any
-	RouteSelectionExpression any
-	Version any
+	CorsConfiguration         any
+	CreatedDate               any
+	Description               any
+	Name                      any
+	ProtocolType              any
+	RouteSelectionExpression  any
+	Version                   any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayV2Stage_DefaultRouteSettings struct {
-	DataTraceEnabled any
+	DataTraceEnabled       any
 	DetailedMetricsEnabled any
-	LoggingLevel any
-	ThrottlingBurstLimit any
-	ThrottlingRateLimit any
+	LoggingLevel           any
+	ThrottlingBurstLimit   any
+	ThrottlingRateLimit    any
 }
 
 type Findings_Findings_Resources_Details_AwsApiGatewayV2Stage struct {
-	AccessLogSettings any
-	ApiGatewayManaged any
-	AutoDeploy any
-	ClientCertificateId any
-	CreatedDate any
-	DefaultRouteSettings any
-	DeploymentId any
-	Description any
+	AccessLogSettings           any
+	ApiGatewayManaged           any
+	AutoDeploy                  any
+	ClientCertificateId         any
+	CreatedDate                 any
+	DefaultRouteSettings        any
+	DeploymentId                any
+	Description                 any
 	LastDeploymentStatusMessage any
-	LastUpdatedDate any
-	RouteSettings any
-	StageName any
-	StageVariables any
+	LastUpdatedDate             any
+	RouteSettings               any
+	StageName                   any
+	StageVariables              any
 }
 
 type Findings_Findings_Resources_Details_AwsAppSyncGraphQlApi_AdditionalAuthenticationProviders_LambdaAuthorizerConfig struct {
 	AuthorizerResultTtlInSeconds any
-	AuthorizerUri any
+	AuthorizerUri                any
 	IdentityValidationExpression any
 }
 
 type Findings_Findings_Resources_Details_AwsAppSyncGraphQlApi_AdditionalAuthenticationProviders_OpenIdConnectConfig struct {
-	AuthTtL any
+	AuthTtL  any
 	ClientId any
-	IatTtL any
-	Issuer any
+	IatTtL   any
+	Issuer   any
 }
 
 type Findings_Findings_Resources_Details_AwsAppSyncGraphQlApi_AdditionalAuthenticationProviders_UserPoolConfig struct {
 	AppIdClientRegex any
-	AwsRegion any
-	DefaultAction any
-	UserPoolId any
+	AwsRegion        any
+	DefaultAction    any
+	UserPoolId       any
 }
 
 type Findings_Findings_Resources_Details_AwsAppSyncGraphQlApi_AdditionalAuthenticationProviders struct {
-	AuthenticationType any
+	AuthenticationType     any
 	LambdaAuthorizerConfig any
-	OpenIdConnectConfig any
-	UserPoolConfig any
+	OpenIdConnectConfig    any
+	UserPoolConfig         any
 }
 
 type Findings_Findings_Resources_Details_AwsAppSyncGraphQlApi_LogConfig struct {
 	CloudWatchLogsRoleArn any
 	ExcludeVerboseContent any
-	FieldLogLevel any
+	FieldLogLevel         any
 }
 
 type Findings_Findings_Resources_Details_AwsAppSyncGraphQlApi struct {
 	AdditionalAuthenticationProviders any
-	ApiId any
-	Arn any
-	AuthenticationType any
-	Id any
-	LambdaAuthorizerConfig any
-	LogConfig any
-	Name any
-	OpenIdConnectConfig any
-	UserPoolConfig any
-	WafWebAclArn any
-	XrayEnabled any
+	ApiId                             any
+	Arn                               any
+	AuthenticationType                any
+	Id                                any
+	LambdaAuthorizerConfig            any
+	LogConfig                         any
+	Name                              any
+	OpenIdConnectConfig               any
+	UserPoolConfig                    any
+	WafWebAclArn                      any
+	XrayEnabled                       any
 }
 
 type Findings_Findings_Resources_Details_AwsAthenaWorkGroup_Configuration_ResultConfiguration_EncryptionConfiguration struct {
 	EncryptionOption any
-	KmsKey any
+	KmsKey           any
 }
 
 type Findings_Findings_Resources_Details_AwsAthenaWorkGroup_Configuration_ResultConfiguration struct {
@@ -771,66 +771,66 @@ type Findings_Findings_Resources_Details_AwsAthenaWorkGroup_Configuration struct
 
 type Findings_Findings_Resources_Details_AwsAthenaWorkGroup struct {
 	Configuration any
-	Description any
-	Name any
-	State any
+	Description   any
+	Name          any
+	State         any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingAutoScalingGroup_LaunchTemplate struct {
-	LaunchTemplateId any
+	LaunchTemplateId   any
 	LaunchTemplateName any
-	Version any
+	Version            any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingAutoScalingGroup_MixedInstancesPolicy_InstancesDistribution struct {
-	OnDemandAllocationStrategy any
-	OnDemandBaseCapacity any
+	OnDemandAllocationStrategy          any
+	OnDemandBaseCapacity                any
 	OnDemandPercentageAboveBaseCapacity any
-	SpotAllocationStrategy any
-	SpotInstancePools any
-	SpotMaxPrice any
+	SpotAllocationStrategy              any
+	SpotInstancePools                   any
+	SpotMaxPrice                        any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingAutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides struct {
-	InstanceType any
+	InstanceType     any
 	WeightedCapacity any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingAutoScalingGroup_MixedInstancesPolicy_LaunchTemplate struct {
 	LaunchTemplateSpecification any
-	Overrides any
+	Overrides                   any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingAutoScalingGroup_MixedInstancesPolicy struct {
 	InstancesDistribution any
-	LaunchTemplate any
+	LaunchTemplate        any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingAutoScalingGroup struct {
-	AvailabilityZones any
-	CapacityRebalance any
-	CreatedTime any
-	HealthCheckGracePeriod any
-	HealthCheckType any
+	AvailabilityZones       any
+	CapacityRebalance       any
+	CreatedTime             any
+	HealthCheckGracePeriod  any
+	HealthCheckType         any
 	LaunchConfigurationName any
-	LaunchTemplate any
-	LoadBalancerNames any
-	MixedInstancesPolicy any
+	LaunchTemplate          any
+	LoadBalancerNames       any
+	MixedInstancesPolicy    any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingLaunchConfiguration_BlockDeviceMappings_Ebs struct {
 	DeleteOnTermination any
-	Encrypted any
-	Iops any
-	SnapshotId any
-	VolumeSize any
-	VolumeType any
+	Encrypted           any
+	Iops                any
+	SnapshotId          any
+	VolumeSize          any
+	VolumeType          any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingLaunchConfiguration_BlockDeviceMappings struct {
-	DeviceName any
-	Ebs any
-	NoDevice any
+	DeviceName  any
+	Ebs         any
+	NoDevice    any
 	VirtualName any
 }
 
@@ -839,129 +839,129 @@ type Findings_Findings_Resources_Details_AwsAutoScalingLaunchConfiguration_Insta
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingLaunchConfiguration_MetadataOptions struct {
-	HttpEndpoint any
+	HttpEndpoint            any
 	HttpPutResponseHopLimit any
-	HttpTokens any
+	HttpTokens              any
 }
 
 type Findings_Findings_Resources_Details_AwsAutoScalingLaunchConfiguration struct {
-	AssociatePublicIpAddress any
-	BlockDeviceMappings any
-	ClassicLinkVpcId any
+	AssociatePublicIpAddress     any
+	BlockDeviceMappings          any
+	ClassicLinkVpcId             any
 	ClassicLinkVpcSecurityGroups any
-	CreatedTime any
-	EbsOptimized any
-	IamInstanceProfile any
-	ImageId any
-	InstanceMonitoring any
-	InstanceType any
-	KernelId any
-	KeyName any
-	LaunchConfigurationName any
-	MetadataOptions any
-	PlacementTenancy any
-	RamdiskId any
-	SecurityGroups any
-	SpotPrice any
-	UserData any
+	CreatedTime                  any
+	EbsOptimized                 any
+	IamInstanceProfile           any
+	ImageId                      any
+	InstanceMonitoring           any
+	InstanceType                 any
+	KernelId                     any
+	KeyName                      any
+	LaunchConfigurationName      any
+	MetadataOptions              any
+	PlacementTenancy             any
+	RamdiskId                    any
+	SecurityGroups               any
+	SpotPrice                    any
+	UserData                     any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupBackupPlan_BackupPlan_AdvancedBackupSettings struct {
 	BackupOptions any
-	ResourceType any
+	ResourceType  any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupBackupPlan_BackupPlan_BackupPlanRule_CopyActions_Lifecycle struct {
-	DeleteAfterDays any
+	DeleteAfterDays            any
 	MoveToColdStorageAfterDays any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupBackupPlan_BackupPlan_BackupPlanRule_CopyActions struct {
 	DestinationBackupVaultArn any
-	Lifecycle any
+	Lifecycle                 any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupBackupPlan_BackupPlan_BackupPlanRule struct {
 	CompletionWindowMinutes any
-	CopyActions any
-	EnableContinuousBackup any
-	Lifecycle any
-	RuleId any
-	RuleName any
-	ScheduleExpression any
-	StartWindowMinutes any
-	TargetBackupVault any
+	CopyActions             any
+	EnableContinuousBackup  any
+	Lifecycle               any
+	RuleId                  any
+	RuleName                any
+	ScheduleExpression      any
+	StartWindowMinutes      any
+	TargetBackupVault       any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupBackupPlan_BackupPlan struct {
 	AdvancedBackupSettings any
-	BackupPlanName any
-	BackupPlanRule any
+	BackupPlanName         any
+	BackupPlanRule         any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupBackupPlan struct {
-	BackupPlan any
+	BackupPlan    any
 	BackupPlanArn any
-	BackupPlanId any
-	VersionId any
+	BackupPlanId  any
+	VersionId     any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupBackupVault_Notifications struct {
 	BackupVaultEvents any
-	SnsTopicArn any
+	SnsTopicArn       any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupBackupVault struct {
-	AccessPolicy any
-	BackupVaultArn any
-	BackupVaultName any
+	AccessPolicy     any
+	BackupVaultArn   any
+	BackupVaultName  any
 	EncryptionKeyArn any
-	Notifications any
+	Notifications    any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupRecoveryPoint_CalculatedLifecycle struct {
-	DeleteAt any
+	DeleteAt            any
 	MoveToColdStorageAt any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupRecoveryPoint_CreatedBy struct {
-	BackupPlanArn any
-	BackupPlanId any
+	BackupPlanArn     any
+	BackupPlanId      any
 	BackupPlanVersion any
-	BackupRuleId any
+	BackupRuleId      any
 }
 
 type Findings_Findings_Resources_Details_AwsBackupRecoveryPoint struct {
-	BackupSizeInBytes any
-	BackupVaultArn any
-	BackupVaultName any
-	CalculatedLifecycle any
-	CompletionDate any
-	CreatedBy any
-	CreationDate any
-	EncryptionKeyArn any
-	IamRoleArn any
-	IsEncrypted any
-	LastRestoreTime any
-	Lifecycle any
-	RecoveryPointArn any
-	ResourceArn any
-	ResourceType any
+	BackupSizeInBytes    any
+	BackupVaultArn       any
+	BackupVaultName      any
+	CalculatedLifecycle  any
+	CompletionDate       any
+	CreatedBy            any
+	CreationDate         any
+	EncryptionKeyArn     any
+	IamRoleArn           any
+	IsEncrypted          any
+	LastRestoreTime      any
+	Lifecycle            any
+	RecoveryPointArn     any
+	ResourceArn          any
+	ResourceType         any
 	SourceBackupVaultArn any
-	Status any
-	StatusMessage any
-	StorageClass any
+	Status               any
+	StatusMessage        any
+	StorageClass         any
 }
 
 type Findings_Findings_Resources_Details_AwsCertificateManagerCertificate_DomainValidationOptions_ResourceRecord struct {
-	Name any
-	Type any
+	Name  any
+	Type  any
 	Value any
 }
 
 type Findings_Findings_Resources_Details_AwsCertificateManagerCertificate_DomainValidationOptions struct {
-	DomainName any
-	ResourceRecord any
+	DomainName       any
+	ResourceRecord   any
 	ValidationDomain any
 	ValidationEmails any
 	ValidationMethod any
@@ -970,7 +970,7 @@ type Findings_Findings_Resources_Details_AwsCertificateManagerCertificate_Domain
 
 type Findings_Findings_Resources_Details_AwsCertificateManagerCertificate_ExtendedKeyUsages struct {
 	Name any
-	Oid any
+	Oid  any
 }
 
 type Findings_Findings_Resources_Details_AwsCertificateManagerCertificate_KeyUsages struct {
@@ -983,35 +983,35 @@ type Findings_Findings_Resources_Details_AwsCertificateManagerCertificate_Option
 
 type Findings_Findings_Resources_Details_AwsCertificateManagerCertificate_RenewalSummary struct {
 	DomainValidationOptions any
-	RenewalStatus any
-	RenewalStatusReason any
-	UpdatedAt any
+	RenewalStatus           any
+	RenewalStatusReason     any
+	UpdatedAt               any
 }
 
 type Findings_Findings_Resources_Details_AwsCertificateManagerCertificate struct {
 	CertificateAuthorityArn any
-	CreatedAt any
-	DomainName any
+	CreatedAt               any
+	DomainName              any
 	DomainValidationOptions any
-	ExtendedKeyUsages any
-	FailureReason any
-	ImportedAt any
-	InUseBy any
-	IssuedAt any
-	Issuer any
-	KeyAlgorithm any
-	KeyUsages any
-	NotAfter any
-	NotBefore any
-	Options any
-	RenewalEligibility any
-	RenewalSummary any
-	Serial any
-	SignatureAlgorithm any
-	Status any
-	Subject any
+	ExtendedKeyUsages       any
+	FailureReason           any
+	ImportedAt              any
+	InUseBy                 any
+	IssuedAt                any
+	Issuer                  any
+	KeyAlgorithm            any
+	KeyUsages               any
+	NotAfter                any
+	NotBefore               any
+	Options                 any
+	RenewalEligibility      any
+	RenewalSummary          any
+	Serial                  any
+	SignatureAlgorithm      any
+	Status                  any
+	Subject                 any
 	SubjectAlternativeNames any
-	Type any
+	Type                    any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFormationStack_DriftInformation struct {
@@ -1020,26 +1020,26 @@ type Findings_Findings_Resources_Details_AwsCloudFormationStack_DriftInformation
 
 type Findings_Findings_Resources_Details_AwsCloudFormationStack_Outputs struct {
 	Description any
-	OutputKey any
+	OutputKey   any
 	OutputValue any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFormationStack struct {
-	Capabilities any
-	CreationTime any
-	Description any
-	DisableRollback any
-	DriftInformation any
+	Capabilities                any
+	CreationTime                any
+	Description                 any
+	DisableRollback             any
+	DriftInformation            any
 	EnableTerminationProtection any
-	LastUpdatedTime any
-	NotificationArns any
-	Outputs any
-	RoleArn any
-	StackId any
-	StackName any
-	StackStatus any
-	StackStatusReason any
-	TimeoutInMinutes any
+	LastUpdatedTime             any
+	NotificationArns            any
+	Outputs                     any
+	RoleArn                     any
+	StackId                     any
+	StackName                   any
+	StackStatus                 any
+	StackStatusReason           any
+	TimeoutInMinutes            any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_CacheBehaviors_Items struct {
@@ -1051,14 +1051,14 @@ type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_CacheBehavior
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_Logging struct {
-	Bucket any
-	Enabled any
+	Bucket         any
+	Enabled        any
 	IncludeCookies any
-	Prefix any
+	Prefix         any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_OriginGroups_Items_FailoverCriteria_StatusCodes struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -1075,17 +1075,17 @@ type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_OriginGroups 
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_Origins_Items_CustomOriginConfig_OriginSslProtocols struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_Origins_Items_CustomOriginConfig struct {
-	HttpPort any
-	HttpsPort any
+	HttpPort               any
+	HttpsPort              any
 	OriginKeepaliveTimeout any
-	OriginProtocolPolicy any
-	OriginReadTimeout any
-	OriginSslProtocols any
+	OriginProtocolPolicy   any
+	OriginReadTimeout      any
+	OriginSslProtocols     any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_Origins_Items_S3OriginConfig struct {
@@ -1094,10 +1094,10 @@ type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_Origins_Items
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_Origins_Items struct {
 	CustomOriginConfig any
-	DomainName any
-	Id any
-	OriginPath any
-	S3OriginConfig any
+	DomainName         any
+	Id                 any
+	OriginPath         any
+	S3OriginConfig     any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_Origins struct {
@@ -1105,160 +1105,160 @@ type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_Origins struc
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution_ViewerCertificate struct {
-	AcmCertificateArn any
-	Certificate any
-	CertificateSource any
+	AcmCertificateArn            any
+	Certificate                  any
+	CertificateSource            any
 	CloudFrontDefaultCertificate any
-	IamCertificateId any
-	MinimumProtocolVersion any
-	SslSupportMethod any
+	IamCertificateId             any
+	MinimumProtocolVersion       any
+	SslSupportMethod             any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudFrontDistribution struct {
-	CacheBehaviors any
+	CacheBehaviors       any
 	DefaultCacheBehavior any
-	DefaultRootObject any
-	DomainName any
-	Etag any
-	LastModifiedTime any
-	Logging any
-	OriginGroups any
-	Origins any
-	Status any
-	ViewerCertificate any
-	WebAclId any
+	DefaultRootObject    any
+	DomainName           any
+	Etag                 any
+	LastModifiedTime     any
+	Logging              any
+	OriginGroups         any
+	Origins              any
+	Status               any
+	ViewerCertificate    any
+	WebAclId             any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudTrailTrail struct {
-	CloudWatchLogsLogGroupArn any
-	CloudWatchLogsRoleArn any
-	HasCustomEventSelectors any
-	HomeRegion any
+	CloudWatchLogsLogGroupArn  any
+	CloudWatchLogsRoleArn      any
+	HasCustomEventSelectors    any
+	HomeRegion                 any
 	IncludeGlobalServiceEvents any
-	IsMultiRegionTrail any
-	IsOrganizationTrail any
-	KmsKeyId any
-	LogFileValidationEnabled any
-	Name any
-	S3BucketName any
-	S3KeyPrefix any
-	SnsTopicArn any
-	SnsTopicName any
-	TrailArn any
+	IsMultiRegionTrail         any
+	IsOrganizationTrail        any
+	KmsKeyId                   any
+	LogFileValidationEnabled   any
+	Name                       any
+	S3BucketName               any
+	S3KeyPrefix                any
+	SnsTopicArn                any
+	SnsTopicName               any
+	TrailArn                   any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudWatchAlarm_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Findings_Findings_Resources_Details_AwsCloudWatchAlarm struct {
-	ActionsEnabled any
-	AlarmActions any
-	AlarmArn any
+	ActionsEnabled                     any
+	AlarmActions                       any
+	AlarmArn                           any
 	AlarmConfigurationUpdatedTimestamp any
-	AlarmDescription any
-	AlarmName any
-	ComparisonOperator any
-	DatapointsToAlarm any
-	Dimensions any
-	EvaluateLowSampleCountPercentile any
-	EvaluationPeriods any
-	ExtendedStatistic any
-	InsufficientDataActions any
-	MetricName any
-	Namespace any
-	OkActions any
-	Period any
-	Statistic any
-	Threshold any
-	ThresholdMetricId any
-	TreatMissingData any
-	Unit any
+	AlarmDescription                   any
+	AlarmName                          any
+	ComparisonOperator                 any
+	DatapointsToAlarm                  any
+	Dimensions                         any
+	EvaluateLowSampleCountPercentile   any
+	EvaluationPeriods                  any
+	ExtendedStatistic                  any
+	InsufficientDataActions            any
+	MetricName                         any
+	Namespace                          any
+	OkActions                          any
+	Period                             any
+	Statistic                          any
+	Threshold                          any
+	ThresholdMetricId                  any
+	TreatMissingData                   any
+	Unit                               any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject_Artifacts struct {
-	ArtifactIdentifier any
-	EncryptionDisabled any
-	Location any
-	Name any
-	NamespaceType any
+	ArtifactIdentifier   any
+	EncryptionDisabled   any
+	Location             any
+	Name                 any
+	NamespaceType        any
 	OverrideArtifactName any
-	Packaging any
-	Path any
-	Type any
+	Packaging            any
+	Path                 any
+	Type                 any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject_Environment_RegistryCredential struct {
-	Credential any
+	Credential         any
 	CredentialProvider any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject_Environment struct {
-	Certificate any
-	EnvironmentVariables any
+	Certificate              any
+	EnvironmentVariables     any
 	ImagePullCredentialsType any
-	PrivilegedMode any
-	RegistryCredential any
-	Type any
+	PrivilegedMode           any
+	RegistryCredential       any
+	Type                     any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject_LogsConfig_CloudWatchLogs struct {
-	GroupName any
-	Status any
+	GroupName  any
+	Status     any
 	StreamName any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject_LogsConfig_S3Logs struct {
 	EncryptionDisabled any
-	Location any
-	Status any
+	Location           any
+	Status             any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject_LogsConfig struct {
 	CloudWatchLogs any
-	S3Logs any
+	S3Logs         any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject_Source struct {
 	GitCloneDepth any
-	InsecureSsl any
-	Location any
-	Type any
+	InsecureSsl   any
+	Location      any
+	Type          any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject_VpcConfig struct {
 	SecurityGroupIds any
-	Subnets any
-	VpcId any
+	Subnets          any
+	VpcId            any
 }
 
 type Findings_Findings_Resources_Details_AwsCodeBuildProject struct {
-	Artifacts any
-	EncryptionKey any
-	Environment any
-	LogsConfig any
-	Name any
+	Artifacts          any
+	EncryptionKey      any
+	Environment        any
+	LogsConfig         any
+	Name               any
 	SecondaryArtifacts any
-	ServiceRole any
-	Source any
-	VpcConfig any
+	ServiceRole        any
+	Source             any
+	VpcConfig          any
 }
 
 type Findings_Findings_Resources_Details_AwsDmsEndpoint struct {
-	CertificateArn any
-	DatabaseName any
-	EndpointArn any
-	EndpointIdentifier any
-	EndpointType any
-	EngineName any
-	ExternalId any
+	CertificateArn            any
+	DatabaseName              any
+	EndpointArn               any
+	EndpointIdentifier        any
+	EndpointType              any
+	EngineName                any
+	ExternalId                any
 	ExtraConnectionAttributes any
-	KmsKeyId any
-	Port any
-	ServerName any
-	SslMode any
-	Username any
+	KmsKeyId                  any
+	Port                      any
+	ServerName                any
+	SslMode                   any
+	Username                  any
 }
 
 type Findings_Findings_Resources_Details_AwsDmsReplicationInstance_ReplicationSubnetGroup struct {
@@ -1270,34 +1270,34 @@ type Findings_Findings_Resources_Details_AwsDmsReplicationInstance_VpcSecurityGr
 }
 
 type Findings_Findings_Resources_Details_AwsDmsReplicationInstance struct {
-	AllocatedStorage any
-	AutoMinorVersionUpgrade any
-	AvailabilityZone any
-	EngineVersion any
-	KmsKeyId any
-	MultiAz any
-	PreferredMaintenanceWindow any
-	PubliclyAccessible any
-	ReplicationInstanceClass any
+	AllocatedStorage              any
+	AutoMinorVersionUpgrade       any
+	AvailabilityZone              any
+	EngineVersion                 any
+	KmsKeyId                      any
+	MultiAz                       any
+	PreferredMaintenanceWindow    any
+	PubliclyAccessible            any
+	ReplicationInstanceClass      any
 	ReplicationInstanceIdentifier any
-	ReplicationSubnetGroup any
-	VpcSecurityGroups any
+	ReplicationSubnetGroup        any
+	VpcSecurityGroups             any
 }
 
 type Findings_Findings_Resources_Details_AwsDmsReplicationTask struct {
-	CdcStartPosition any
-	CdcStartTime any
-	CdcStopPosition any
-	Id any
-	MigrationType any
-	ReplicationInstanceArn any
+	CdcStartPosition          any
+	CdcStartTime              any
+	CdcStopPosition           any
+	Id                        any
+	MigrationType             any
+	ReplicationInstanceArn    any
 	ReplicationTaskIdentifier any
-	ReplicationTaskSettings any
-	ResourceIdentifier any
-	SourceEndpointArn any
-	TableMappings any
-	TargetEndpointArn any
-	TaskData any
+	ReplicationTaskSettings   any
+	ResourceIdentifier        any
+	SourceEndpointArn         any
+	TableMappings             any
+	TargetEndpointArn         any
+	TaskData                  any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_AttributeDefinitions struct {
@@ -1306,44 +1306,44 @@ type Findings_Findings_Resources_Details_AwsDynamoDbTable_AttributeDefinitions s
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_BillingModeSummary struct {
-	BillingMode any
+	BillingMode                       any
 	LastUpdateToPayPerRequestDateTime any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_GlobalSecondaryIndexes_KeySchema struct {
 	AttributeName any
-	KeyType any
+	KeyType       any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_GlobalSecondaryIndexes_Projection struct {
 	NonKeyAttributes any
-	ProjectionType any
+	ProjectionType   any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_GlobalSecondaryIndexes_ProvisionedThroughput struct {
-	LastDecreaseDateTime any
-	LastIncreaseDateTime any
+	LastDecreaseDateTime   any
+	LastIncreaseDateTime   any
 	NumberOfDecreasesToday any
-	ReadCapacityUnits any
-	WriteCapacityUnits any
+	ReadCapacityUnits      any
+	WriteCapacityUnits     any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_GlobalSecondaryIndexes struct {
-	Backfilling any
-	IndexArn any
-	IndexName any
-	IndexSizeBytes any
-	IndexStatus any
-	ItemCount any
-	KeySchema any
-	Projection any
+	Backfilling           any
+	IndexArn              any
+	IndexName             any
+	IndexSizeBytes        any
+	IndexStatus           any
+	ItemCount             any
+	KeySchema             any
+	Projection            any
 	ProvisionedThroughput any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_LocalSecondaryIndexes struct {
-	IndexArn any
-	IndexName any
-	KeySchema any
+	IndexArn   any
+	IndexName  any
+	KeySchema  any
 	Projection any
 }
 
@@ -1352,59 +1352,59 @@ type Findings_Findings_Resources_Details_AwsDynamoDbTable_Replicas_GlobalSeconda
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_Replicas_GlobalSecondaryIndexes struct {
-	IndexName any
+	IndexName                     any
 	ProvisionedThroughputOverride any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_Replicas struct {
-	GlobalSecondaryIndexes any
-	KmsMasterKeyId any
+	GlobalSecondaryIndexes        any
+	KmsMasterKeyId                any
 	ProvisionedThroughputOverride any
-	RegionName any
-	ReplicaStatus any
-	ReplicaStatusDescription any
+	RegionName                    any
+	ReplicaStatus                 any
+	ReplicaStatusDescription      any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_RestoreSummary struct {
-	RestoreDateTime any
+	RestoreDateTime   any
 	RestoreInProgress any
-	SourceBackupArn any
-	SourceTableArn any
+	SourceBackupArn   any
+	SourceTableArn    any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_SseDescription struct {
 	InaccessibleEncryptionDateTime any
-	KmsMasterKeyArn any
-	SseType any
-	Status any
+	KmsMasterKeyArn                any
+	SseType                        any
+	Status                         any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable_StreamSpecification struct {
-	StreamEnabled any
+	StreamEnabled  any
 	StreamViewType any
 }
 
 type Findings_Findings_Resources_Details_AwsDynamoDbTable struct {
-	AttributeDefinitions any
-	BillingModeSummary any
-	CreationDateTime any
+	AttributeDefinitions      any
+	BillingModeSummary        any
+	CreationDateTime          any
 	DeletionProtectionEnabled any
-	GlobalSecondaryIndexes any
-	GlobalTableVersion any
-	ItemCount any
-	KeySchema any
-	LatestStreamArn any
-	LatestStreamLabel any
-	LocalSecondaryIndexes any
-	ProvisionedThroughput any
-	Replicas any
-	RestoreSummary any
-	SseDescription any
-	StreamSpecification any
-	TableId any
-	TableName any
-	TableSizeBytes any
-	TableStatus any
+	GlobalSecondaryIndexes    any
+	GlobalTableVersion        any
+	ItemCount                 any
+	KeySchema                 any
+	LatestStreamArn           any
+	LatestStreamLabel         any
+	LocalSecondaryIndexes     any
+	ProvisionedThroughput     any
+	Replicas                  any
+	RestoreSummary            any
+	SseDescription            any
+	StreamSpecification       any
+	TableId                   any
+	TableName                 any
+	TableSizeBytes            any
+	TableStatus               any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_AuthenticationOptions_ActiveDirectory struct {
@@ -1412,7 +1412,7 @@ type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_AuthenticationO
 }
 
 type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_AuthenticationOptions_FederatedAuthentication struct {
-	SamlProviderArn any
+	SamlProviderArn            any
 	SelfServiceSamlProviderArn any
 }
 
@@ -1421,72 +1421,72 @@ type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_AuthenticationO
 }
 
 type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_AuthenticationOptions struct {
-	ActiveDirectory any
+	ActiveDirectory         any
 	FederatedAuthentication any
-	MutualAuthentication any
-	Type any
+	MutualAuthentication    any
+	Type                    any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_ClientConnectOptions_Status struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_ClientConnectOptions struct {
-	Enabled any
+	Enabled           any
 	LambdaFunctionArn any
-	Status any
+	Status            any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_ClientLoginBannerOptions struct {
 	BannerText any
-	Enabled any
+	Enabled    any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint_ConnectionLogOptions struct {
-	CloudwatchLogGroup any
+	CloudwatchLogGroup  any
 	CloudwatchLogStream any
-	Enabled any
+	Enabled             any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2ClientVpnEndpoint struct {
-	AuthenticationOptions any
-	ClientCidrBlock any
-	ClientConnectOptions any
+	AuthenticationOptions    any
+	ClientCidrBlock          any
+	ClientConnectOptions     any
 	ClientLoginBannerOptions any
-	ClientVpnEndpointId any
-	ConnectionLogOptions any
-	Description any
-	DnsServer any
-	SecurityGroupIdSet any
-	SelfServicePortalUrl any
-	ServerCertificateArn any
-	SessionTimeoutHours any
-	SplitTunnel any
-	TransportProtocol any
-	VpcId any
-	VpnPort any
+	ClientVpnEndpointId      any
+	ConnectionLogOptions     any
+	Description              any
+	DnsServer                any
+	SecurityGroupIdSet       any
+	SelfServicePortalUrl     any
+	ServerCertificateArn     any
+	SessionTimeoutHours      any
+	SplitTunnel              any
+	TransportProtocol        any
+	VpcId                    any
+	VpnPort                  any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Eip struct {
-	AllocationId any
-	AssociationId any
-	Domain any
-	InstanceId any
-	NetworkBorderGroup any
-	NetworkInterfaceId any
+	AllocationId            any
+	AssociationId           any
+	Domain                  any
+	InstanceId              any
+	NetworkBorderGroup      any
+	NetworkInterfaceId      any
 	NetworkInterfaceOwnerId any
-	PrivateIpAddress any
-	PublicIp any
-	PublicIpv4Pool any
+	PrivateIpAddress        any
+	PublicIp                any
+	PublicIpv4Pool          any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Instance_MetadataOptions struct {
-	HttpEndpoint any
-	HttpProtocolIpv6 any
+	HttpEndpoint            any
+	HttpProtocolIpv6        any
 	HttpPutResponseHopLimit any
-	HttpTokens any
-	InstanceMetadataTags any
+	HttpTokens              any
+	InstanceMetadataTags    any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Instance_Monitoring struct {
@@ -1499,50 +1499,50 @@ type Findings_Findings_Resources_Details_AwsEc2Instance_NetworkInterfaces struct
 
 type Findings_Findings_Resources_Details_AwsEc2Instance struct {
 	IamInstanceProfileArn any
-	ImageId any
-	IpV4Addresses any
-	IpV6Addresses any
-	KeyName any
-	LaunchedAt any
-	MetadataOptions any
-	Monitoring any
-	NetworkInterfaces any
-	SubnetId any
-	Type any
-	VirtualizationType any
-	VpcId any
+	ImageId               any
+	IpV4Addresses         any
+	IpV6Addresses         any
+	KeyName               any
+	LaunchedAt            any
+	MetadataOptions       any
+	Monitoring            any
+	NetworkInterfaces     any
+	SubnetId              any
+	Type                  any
+	VirtualizationType    any
+	VpcId                 any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_BlockDeviceMappingSet_Ebs struct {
 	DeleteOnTermination any
-	Encrypted any
-	Iops any
-	KmsKeyId any
-	SnapshotId any
-	Throughput any
-	VolumeSize any
-	VolumeType any
+	Encrypted           any
+	Iops                any
+	KmsKeyId            any
+	SnapshotId          any
+	Throughput          any
+	VolumeSize          any
+	VolumeType          any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_BlockDeviceMappingSet struct {
-	DeviceName any
-	Ebs any
-	NoDevice any
+	DeviceName  any
+	Ebs         any
+	NoDevice    any
 	VirtualName any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_CapacityReservationSpecification_CapacityReservationTarget struct {
-	CapacityReservationId any
+	CapacityReservationId               any
 	CapacityReservationResourceGroupArn any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_CapacityReservationSpecification struct {
 	CapacityReservationPreference any
-	CapacityReservationTarget any
+	CapacityReservationTarget     any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_CpuOptions struct {
-	CoreCount any
+	CoreCount      any
 	ThreadsPerCore any
 }
 
@@ -1556,7 +1556,7 @@ type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_ElasticInferenceAcceleratorSet struct {
 	Count any
-	Type any
+	Type  any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_HibernationOptions struct {
@@ -1564,20 +1564,20 @@ type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_IamInstanceProfile struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_InstanceMarketOptions_SpotOptions struct {
-	BlockDurationMinutes any
+	BlockDurationMinutes         any
 	InstanceInterruptionBehavior any
-	MaxPrice any
-	SpotInstanceType any
-	ValidUntil any
+	MaxPrice                     any
+	SpotInstanceType             any
+	ValidUntil                   any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_InstanceMarketOptions struct {
-	MarketType any
+	MarketType  any
 	SpotOptions any
 }
 
@@ -1587,27 +1587,27 @@ type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_InstanceRequirements struct {
-	AcceleratorCount any
-	AcceleratorManufacturers any
-	AcceleratorNames any
-	AcceleratorTotalMemoryMiB any
-	AcceleratorTypes any
-	BareMetal any
-	BaselineEbsBandwidthMbps any
-	BurstablePerformance any
-	CpuManufacturers any
-	ExcludedInstanceTypes any
-	InstanceGenerations any
-	LocalStorage any
-	LocalStorageTypes any
-	MemoryGiBperVcpu any
-	MemoryMiB any
-	NetworkInterfaceCount any
+	AcceleratorCount                          any
+	AcceleratorManufacturers                  any
+	AcceleratorNames                          any
+	AcceleratorTotalMemoryMiB                 any
+	AcceleratorTypes                          any
+	BareMetal                                 any
+	BaselineEbsBandwidthMbps                  any
+	BurstablePerformance                      any
+	CpuManufacturers                          any
+	ExcludedInstanceTypes                     any
+	InstanceGenerations                       any
+	LocalStorage                              any
+	LocalStorageTypes                         any
+	MemoryGiBperVcpu                          any
+	MemoryMiB                                 any
+	NetworkInterfaceCount                     any
 	OnDemandMaxPricePercentageOverLowestPrice any
-	RequireHibernateSupport any
-	SpotMaxPricePercentageOverLowestPrice any
-	TotalLocalStorageGb any
-	VcpuCount any
+	RequireHibernateSupport                   any
+	SpotMaxPricePercentageOverLowestPrice     any
+	TotalLocalStorageGb                       any
+	VcpuCount                                 any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_LicenseSet struct {
@@ -1631,94 +1631,94 @@ type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_NetworkInterfaceSet_PrivateIpAddresses struct {
-	Primary any
+	Primary          any
 	PrivateIpAddress any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_NetworkInterfaceSet struct {
-	AssociateCarrierIpAddress any
-	AssociatePublicIpAddress any
-	DeleteOnTermination any
-	Description any
-	DeviceIndex any
-	Groups any
-	InterfaceType any
-	Ipv4PrefixCount any
-	Ipv4Prefixes any
-	Ipv6AddressCount any
-	Ipv6Addresses any
-	Ipv6PrefixCount any
-	Ipv6Prefixes any
-	NetworkCardIndex any
-	NetworkInterfaceId any
-	PrivateIpAddress any
-	PrivateIpAddresses any
+	AssociateCarrierIpAddress      any
+	AssociatePublicIpAddress       any
+	DeleteOnTermination            any
+	Description                    any
+	DeviceIndex                    any
+	Groups                         any
+	InterfaceType                  any
+	Ipv4PrefixCount                any
+	Ipv4Prefixes                   any
+	Ipv6AddressCount               any
+	Ipv6Addresses                  any
+	Ipv6PrefixCount                any
+	Ipv6Prefixes                   any
+	NetworkCardIndex               any
+	NetworkInterfaceId             any
+	PrivateIpAddress               any
+	PrivateIpAddresses             any
 	SecondaryPrivateIpAddressCount any
-	SubnetId any
+	SubnetId                       any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_Placement struct {
-	Affinity any
-	AvailabilityZone any
-	GroupName any
-	HostId any
+	Affinity             any
+	AvailabilityZone     any
+	GroupName            any
+	HostId               any
 	HostResourceGroupArn any
-	PartitionNumber any
-	SpreadDomain any
-	Tenancy any
+	PartitionNumber      any
+	SpreadDomain         any
+	Tenancy              any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData_PrivateDnsNameOptions struct {
 	EnableResourceNameDnsAaaarecord any
-	EnableResourceNameDnsArecord any
-	HostnameType any
+	EnableResourceNameDnsArecord    any
+	HostnameType                    any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate_LaunchTemplateData struct {
-	BlockDeviceMappingSet any
-	CapacityReservationSpecification any
-	CpuOptions any
-	CreditSpecification any
-	DisableApiStop any
-	DisableApiTermination any
-	EbsOptimized any
-	ElasticGpuSpecificationSet any
-	ElasticInferenceAcceleratorSet any
-	EnclaveOptions any
-	HibernationOptions any
-	IamInstanceProfile any
-	ImageId any
+	BlockDeviceMappingSet             any
+	CapacityReservationSpecification  any
+	CpuOptions                        any
+	CreditSpecification               any
+	DisableApiStop                    any
+	DisableApiTermination             any
+	EbsOptimized                      any
+	ElasticGpuSpecificationSet        any
+	ElasticInferenceAcceleratorSet    any
+	EnclaveOptions                    any
+	HibernationOptions                any
+	IamInstanceProfile                any
+	ImageId                           any
 	InstanceInitiatedShutdownBehavior any
-	InstanceMarketOptions any
-	InstanceRequirements any
-	InstanceType any
-	KernelId any
-	KeyName any
-	LicenseSet any
-	MaintenanceOptions any
-	MetadataOptions any
-	Monitoring any
-	NetworkInterfaceSet any
-	Placement any
-	PrivateDnsNameOptions any
-	RamDiskId any
-	SecurityGroupIdSet any
-	SecurityGroupSet any
-	UserData any
+	InstanceMarketOptions             any
+	InstanceRequirements              any
+	InstanceType                      any
+	KernelId                          any
+	KeyName                           any
+	LicenseSet                        any
+	MaintenanceOptions                any
+	MetadataOptions                   any
+	Monitoring                        any
+	NetworkInterfaceSet               any
+	Placement                         any
+	PrivateDnsNameOptions             any
+	RamDiskId                         any
+	SecurityGroupIdSet                any
+	SecurityGroupSet                  any
+	UserData                          any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2LaunchTemplate struct {
 	DefaultVersionNumber any
-	Id any
-	LatestVersionNumber any
-	LaunchTemplateData any
-	LaunchTemplateName any
+	Id                   any
+	LatestVersionNumber  any
+	LaunchTemplateData   any
+	LaunchTemplateName   any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkAcl_Associations struct {
 	NetworkAclAssociationId any
-	NetworkAclId any
-	SubnetId any
+	NetworkAclId            any
+	SubnetId                any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkAcl_Entries_IcmpTypeCode struct {
@@ -1728,37 +1728,37 @@ type Findings_Findings_Resources_Details_AwsEc2NetworkAcl_Entries_IcmpTypeCode s
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkAcl_Entries_PortRange struct {
 	From any
-	To any
+	To   any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkAcl_Entries struct {
-	CidrBlock any
-	Egress any
-	IcmpTypeCode any
+	CidrBlock     any
+	Egress        any
+	IcmpTypeCode  any
 	Ipv6CidrBlock any
-	PortRange any
-	Protocol any
-	RuleAction any
-	RuleNumber any
+	PortRange     any
+	Protocol      any
+	RuleAction    any
+	RuleNumber    any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkAcl struct {
 	Associations any
-	Entries any
-	IsDefault any
+	Entries      any
+	IsDefault    any
 	NetworkAclId any
-	OwnerId any
-	VpcId any
+	OwnerId      any
+	VpcId        any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkInterface_Attachment struct {
-	AttachTime any
-	AttachmentId any
+	AttachTime          any
+	AttachmentId        any
 	DeleteOnTermination any
-	DeviceIndex any
-	InstanceId any
-	InstanceOwnerId any
-	Status any
+	DeviceIndex         any
+	InstanceId          any
+	InstanceOwnerId     any
+	Status              any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkInterface_IpV6Addresses struct {
@@ -1766,38 +1766,38 @@ type Findings_Findings_Resources_Details_AwsEc2NetworkInterface_IpV6Addresses st
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkInterface_PrivateIpAddresses struct {
-	PrivateDnsName any
+	PrivateDnsName   any
 	PrivateIpAddress any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkInterface_SecurityGroups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2NetworkInterface struct {
-	Attachment any
-	IpV6Addresses any
+	Attachment         any
+	IpV6Addresses      any
 	NetworkInterfaceId any
 	PrivateIpAddresses any
-	PublicDnsName any
-	PublicIp any
-	SecurityGroups any
-	SourceDestCheck any
+	PublicDnsName      any
+	PublicIp           any
+	SecurityGroups     any
+	SourceDestCheck    any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2RouteTable_AssociationSet_AssociationState struct {
-	State any
+	State         any
 	StatusMessage any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2RouteTable_AssociationSet struct {
-	AssociationState any
-	GatewayId any
-	Main any
+	AssociationState        any
+	GatewayId               any
+	Main                    any
 	RouteTableAssociationId any
-	RouteTableId any
-	SubnetId any
+	RouteTableId            any
+	SubnetId                any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2RouteTable_PropagatingVgwSet struct {
@@ -1805,31 +1805,31 @@ type Findings_Findings_Resources_Details_AwsEc2RouteTable_PropagatingVgwSet stru
 }
 
 type Findings_Findings_Resources_Details_AwsEc2RouteTable_RouteSet struct {
-	CarrierGatewayId any
-	CoreNetworkArn any
-	DestinationCidrBlock any
-	DestinationIpv6CidrBlock any
-	DestinationPrefixListId any
+	CarrierGatewayId            any
+	CoreNetworkArn              any
+	DestinationCidrBlock        any
+	DestinationIpv6CidrBlock    any
+	DestinationPrefixListId     any
 	EgressOnlyInternetGatewayId any
-	GatewayId any
-	InstanceId any
-	InstanceOwnerId any
-	LocalGatewayId any
-	NatGatewayId any
-	NetworkInterfaceId any
-	Origin any
-	State any
-	TransitGatewayId any
-	VpcPeeringConnectionId any
+	GatewayId                   any
+	InstanceId                  any
+	InstanceOwnerId             any
+	LocalGatewayId              any
+	NatGatewayId                any
+	NetworkInterfaceId          any
+	Origin                      any
+	State                       any
+	TransitGatewayId            any
+	VpcPeeringConnectionId      any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2RouteTable struct {
-	AssociationSet any
-	OwnerId any
+	AssociationSet    any
+	OwnerId           any
 	PropagatingVgwSet any
-	RouteSet any
-	RouteTableId any
-	VpcId any
+	RouteSet          any
+	RouteTableId      any
+	VpcId             any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2SecurityGroup_IpPermissions_IpRanges struct {
@@ -1845,102 +1845,102 @@ type Findings_Findings_Resources_Details_AwsEc2SecurityGroup_IpPermissions_Prefi
 }
 
 type Findings_Findings_Resources_Details_AwsEc2SecurityGroup_IpPermissions_UserIdGroupPairs struct {
-	GroupId any
-	GroupName any
-	PeeringStatus any
-	UserId any
-	VpcId any
+	GroupId                any
+	GroupName              any
+	PeeringStatus          any
+	UserId                 any
+	VpcId                  any
 	VpcPeeringConnectionId any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2SecurityGroup_IpPermissions struct {
-	FromPort any
-	IpProtocol any
-	IpRanges any
-	Ipv6Ranges any
-	PrefixListIds any
-	ToPort any
+	FromPort         any
+	IpProtocol       any
+	IpRanges         any
+	Ipv6Ranges       any
+	PrefixListIds    any
+	ToPort           any
 	UserIdGroupPairs any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2SecurityGroup struct {
-	GroupId any
-	GroupName any
-	IpPermissions any
+	GroupId             any
+	GroupName           any
+	IpPermissions       any
 	IpPermissionsEgress any
-	OwnerId any
-	VpcId any
+	OwnerId             any
+	VpcId               any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Subnet_Ipv6CidrBlockAssociationSet struct {
-	AssociationId any
+	AssociationId  any
 	CidrBlockState any
-	Ipv6CidrBlock any
+	Ipv6CidrBlock  any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Subnet struct {
 	AssignIpv6AddressOnCreation any
-	AvailabilityZone any
-	AvailabilityZoneId any
-	AvailableIpAddressCount any
-	CidrBlock any
-	DefaultForAz any
+	AvailabilityZone            any
+	AvailabilityZoneId          any
+	AvailableIpAddressCount     any
+	CidrBlock                   any
+	DefaultForAz                any
 	Ipv6CidrBlockAssociationSet any
-	MapPublicIpOnLaunch any
-	OwnerId any
-	State any
-	SubnetArn any
-	SubnetId any
-	VpcId any
+	MapPublicIpOnLaunch         any
+	OwnerId                     any
+	State                       any
+	SubnetArn                   any
+	SubnetId                    any
+	VpcId                       any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2TransitGateway struct {
-	AmazonSideAsn any
+	AmazonSideAsn                  any
 	AssociationDefaultRouteTableId any
-	AutoAcceptSharedAttachments any
-	DefaultRouteTableAssociation any
-	DefaultRouteTablePropagation any
-	Description any
-	DnsSupport any
-	Id any
-	MulticastSupport any
+	AutoAcceptSharedAttachments    any
+	DefaultRouteTableAssociation   any
+	DefaultRouteTablePropagation   any
+	Description                    any
+	DnsSupport                     any
+	Id                             any
+	MulticastSupport               any
 	PropagationDefaultRouteTableId any
-	TransitGatewayCidrBlocks any
-	VpnEcmpSupport any
+	TransitGatewayCidrBlocks       any
+	VpnEcmpSupport                 any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Volume_Attachments struct {
-	AttachTime any
+	AttachTime          any
 	DeleteOnTermination any
-	InstanceId any
-	Status any
+	InstanceId          any
+	Status              any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Volume struct {
-	Attachments any
-	CreateTime any
-	DeviceName any
-	Encrypted any
-	KmsKeyId any
-	Size any
-	SnapshotId any
-	Status any
-	VolumeId any
+	Attachments      any
+	CreateTime       any
+	DeviceName       any
+	Encrypted        any
+	KmsKeyId         any
+	Size             any
+	SnapshotId       any
+	Status           any
+	VolumeId         any
 	VolumeScanStatus any
-	VolumeType any
+	VolumeType       any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Vpc_CidrBlockAssociationSet struct {
-	AssociationId any
-	CidrBlock any
+	AssociationId  any
+	CidrBlock      any
 	CidrBlockState any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2Vpc struct {
-	CidrBlockAssociationSet any
-	DhcpOptionsId any
+	CidrBlockAssociationSet     any
+	DhcpOptionsId               any
 	Ipv6CidrBlockAssociationSet any
-	State any
+	State                       any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpcEndpointService_ServiceType struct {
@@ -1948,17 +1948,17 @@ type Findings_Findings_Resources_Details_AwsEc2VpcEndpointService_ServiceType st
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpcEndpointService struct {
-	AcceptanceRequired any
-	AvailabilityZones any
-	BaseEndpointDnsNames any
+	AcceptanceRequired      any
+	AvailabilityZones       any
+	BaseEndpointDnsNames    any
 	GatewayLoadBalancerArns any
-	ManagesVpcEndpoints any
+	ManagesVpcEndpoints     any
 	NetworkLoadBalancerArns any
-	PrivateDnsName any
-	ServiceId any
-	ServiceName any
-	ServiceState any
-	ServiceType any
+	PrivateDnsName          any
+	ServiceId               any
+	ServiceName             any
+	ServiceState            any
+	ServiceType             any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpcPeeringConnection_AccepterVpcInfo_CidrBlockSet struct {
@@ -1970,88 +1970,88 @@ type Findings_Findings_Resources_Details_AwsEc2VpcPeeringConnection_AccepterVpcI
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpcPeeringConnection_AccepterVpcInfo_PeeringOptions struct {
-	AllowDnsResolutionFromRemoteVpc any
+	AllowDnsResolutionFromRemoteVpc            any
 	AllowEgressFromLocalClassicLinkToRemoteVpc any
 	AllowEgressFromLocalVpcToRemoteClassicLink any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpcPeeringConnection_AccepterVpcInfo struct {
-	CidrBlock any
-	CidrBlockSet any
+	CidrBlock        any
+	CidrBlockSet     any
 	Ipv6CidrBlockSet any
-	OwnerId any
-	PeeringOptions any
-	Region any
-	VpcId any
+	OwnerId          any
+	PeeringOptions   any
+	Region           any
+	VpcId            any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpcPeeringConnection struct {
-	AccepterVpcInfo any
-	ExpirationTime any
-	RequesterVpcInfo any
-	Status any
+	AccepterVpcInfo        any
+	ExpirationTime         any
+	RequesterVpcInfo       any
+	Status                 any
 	VpcPeeringConnectionId any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpnConnection_Options_TunnelOptions struct {
-	DpdTimeoutSeconds any
-	IkeVersions any
-	OutsideIpAddress any
-	Phase1DhGroupNumbers any
+	DpdTimeoutSeconds          any
+	IkeVersions                any
+	OutsideIpAddress           any
+	Phase1DhGroupNumbers       any
 	Phase1EncryptionAlgorithms any
-	Phase1IntegrityAlgorithms any
-	Phase1LifetimeSeconds any
-	Phase2DhGroupNumbers any
+	Phase1IntegrityAlgorithms  any
+	Phase1LifetimeSeconds      any
+	Phase2DhGroupNumbers       any
 	Phase2EncryptionAlgorithms any
-	Phase2IntegrityAlgorithms any
-	Phase2LifetimeSeconds any
-	PreSharedKey any
-	RekeyFuzzPercentage any
-	RekeyMarginTimeSeconds any
-	ReplayWindowSize any
-	TunnelInsideCidr any
+	Phase2IntegrityAlgorithms  any
+	Phase2LifetimeSeconds      any
+	PreSharedKey               any
+	RekeyFuzzPercentage        any
+	RekeyMarginTimeSeconds     any
+	ReplayWindowSize           any
+	TunnelInsideCidr           any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpnConnection_Options struct {
 	StaticRoutesOnly any
-	TunnelOptions any
+	TunnelOptions    any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpnConnection_Routes struct {
 	DestinationCidrBlock any
-	State any
+	State                any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpnConnection_VgwTelemetry struct {
 	AcceptedRouteCount any
-	CertificateArn any
-	LastStatusChange any
-	OutsideIpAddress any
-	Status any
-	StatusMessage any
+	CertificateArn     any
+	LastStatusChange   any
+	OutsideIpAddress   any
+	Status             any
+	StatusMessage      any
 }
 
 type Findings_Findings_Resources_Details_AwsEc2VpnConnection struct {
-	Category any
+	Category                     any
 	CustomerGatewayConfiguration any
-	CustomerGatewayId any
-	Options any
-	Routes any
-	State any
-	TransitGatewayId any
-	Type any
-	VgwTelemetry any
-	VpnConnectionId any
-	VpnGatewayId any
+	CustomerGatewayId            any
+	Options                      any
+	Routes                       any
+	State                        any
+	TransitGatewayId             any
+	Type                         any
+	VgwTelemetry                 any
+	VpnConnectionId              any
+	VpnGatewayId                 any
 }
 
 type Findings_Findings_Resources_Details_AwsEcrContainerImage struct {
-	Architecture any
-	ImageDigest any
+	Architecture     any
+	ImageDigest      any
 	ImagePublishedAt any
-	ImageTags any
-	RegistryId any
-	RepositoryName any
+	ImageTags        any
+	RegistryId       any
+	RepositoryName   any
 }
 
 type Findings_Findings_Resources_Details_AwsEcrRepository_ImageScanningConfiguration struct {
@@ -2060,30 +2060,30 @@ type Findings_Findings_Resources_Details_AwsEcrRepository_ImageScanningConfigura
 
 type Findings_Findings_Resources_Details_AwsEcrRepository_LifecyclePolicy struct {
 	LifecyclePolicyText any
-	RegistryId any
+	RegistryId          any
 }
 
 type Findings_Findings_Resources_Details_AwsEcrRepository struct {
-	Arn any
+	Arn                        any
 	ImageScanningConfiguration any
-	ImageTagMutability any
-	LifecyclePolicy any
-	RepositoryName any
-	RepositoryPolicyText any
+	ImageTagMutability         any
+	LifecyclePolicy            any
+	RepositoryName             any
+	RepositoryPolicyText       any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsCluster_Configuration_ExecuteCommandConfiguration_LogConfiguration struct {
 	CloudWatchEncryptionEnabled any
-	CloudWatchLogGroupName any
-	S3BucketName any
-	S3EncryptionEnabled any
-	S3KeyPrefix any
+	CloudWatchLogGroupName      any
+	S3BucketName                any
+	S3EncryptionEnabled         any
+	S3KeyPrefix                 any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsCluster_Configuration_ExecuteCommandConfiguration struct {
-	KmsKeyId any
+	KmsKeyId         any
 	LogConfiguration any
-	Logging any
+	Logging          any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsCluster_Configuration struct {
@@ -2091,58 +2091,58 @@ type Findings_Findings_Resources_Details_AwsEcsCluster_Configuration struct {
 }
 
 type Findings_Findings_Resources_Details_AwsEcsCluster_DefaultCapacityProviderStrategy struct {
-	Base any
+	Base             any
 	CapacityProvider any
-	Weight any
+	Weight           any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsCluster struct {
-	ActiveServicesCount any
-	CapacityProviders any
-	ClusterArn any
-	ClusterName any
-	ClusterSettings any
-	Configuration any
-	DefaultCapacityProviderStrategy any
+	ActiveServicesCount               any
+	CapacityProviders                 any
+	ClusterArn                        any
+	ClusterName                       any
+	ClusterSettings                   any
+	Configuration                     any
+	DefaultCapacityProviderStrategy   any
 	RegisteredContainerInstancesCount any
-	RunningTasksCount any
-	Status any
+	RunningTasksCount                 any
+	Status                            any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsContainer_MountPoints struct {
 	ContainerPath any
-	SourceVolume any
+	SourceVolume  any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsContainer struct {
-	Image any
+	Image       any
 	MountPoints any
-	Name any
-	Privileged any
+	Name        any
+	Privileged  any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsService_DeploymentConfiguration_DeploymentCircuitBreaker struct {
-	Enable any
+	Enable   any
 	Rollback any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsService_DeploymentConfiguration struct {
 	DeploymentCircuitBreaker any
-	MaximumPercent any
-	MinimumHealthyPercent any
+	MaximumPercent           any
+	MinimumHealthyPercent    any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsService_LoadBalancers struct {
-	ContainerName any
-	ContainerPort any
+	ContainerName    any
+	ContainerPort    any
 	LoadBalancerName any
-	TargetGroupArn any
+	TargetGroupArn   any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsService_NetworkConfiguration_AwsVpcConfiguration struct {
 	AssignPublicIp any
 	SecurityGroups any
-	Subnets any
+	Subnets        any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsService_NetworkConfiguration struct {
@@ -2151,44 +2151,44 @@ type Findings_Findings_Resources_Details_AwsEcsService_NetworkConfiguration stru
 
 type Findings_Findings_Resources_Details_AwsEcsService_PlacementConstraints struct {
 	Expression any
-	Type any
+	Type       any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsService_PlacementStrategies struct {
 	Field any
-	Type any
+	Type  any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsService_ServiceRegistries struct {
 	ContainerName any
 	ContainerPort any
-	Port any
-	RegistryArn any
+	Port          any
+	RegistryArn   any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsService struct {
-	CapacityProviderStrategy any
-	Cluster any
-	DeploymentConfiguration any
-	DeploymentController any
-	DesiredCount any
-	EnableEcsManagedTags any
-	EnableExecuteCommand any
+	CapacityProviderStrategy      any
+	Cluster                       any
+	DeploymentConfiguration       any
+	DeploymentController          any
+	DesiredCount                  any
+	EnableEcsManagedTags          any
+	EnableExecuteCommand          any
 	HealthCheckGracePeriodSeconds any
-	LaunchType any
-	LoadBalancers any
-	Name any
-	NetworkConfiguration any
-	PlacementConstraints any
-	PlacementStrategies any
-	PlatformVersion any
-	PropagateTags any
-	Role any
-	SchedulingStrategy any
-	ServiceArn any
-	ServiceName any
-	ServiceRegistries any
-	TaskDefinition any
+	LaunchType                    any
+	LoadBalancers                 any
+	Name                          any
+	NetworkConfiguration          any
+	PlacementConstraints          any
+	PlacementStrategies           any
+	PlatformVersion               any
+	PropagateTags                 any
+	Role                          any
+	SchedulingStrategy            any
+	ServiceArn                    any
+	ServiceName                   any
+	ServiceRegistries             any
+	TaskDefinition                any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTask_Volumes_Host struct {
@@ -2201,93 +2201,93 @@ type Findings_Findings_Resources_Details_AwsEcsTask_Volumes struct {
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTask struct {
-	ClusterArn any
-	Containers any
-	CreatedAt any
-	Group any
-	StartedAt any
-	StartedBy any
+	ClusterArn        any
+	Containers        any
+	CreatedAt         any
+	Group             any
+	StartedAt         any
+	StartedBy         any
 	TaskDefinitionArn any
-	Version any
-	Volumes any
+	Version           any
+	Volumes           any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_DependsOn struct {
-	Condition any
+	Condition     any
 	ContainerName any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_EnvironmentFiles struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_ExtraHosts struct {
-	Hostname any
+	Hostname  any
 	IpAddress any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_FirelensConfiguration struct {
 	Options any
-	Type any
+	Type    any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_HealthCheck struct {
-	Command any
-	Interval any
-	Retries any
+	Command     any
+	Interval    any
+	Retries     any
 	StartPeriod any
-	Timeout any
+	Timeout     any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities struct {
-	Add any
+	Add  any
 	Drop any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_LinuxParameters_Devices struct {
 	ContainerPath any
-	HostPath any
-	Permissions any
+	HostPath      any
+	Permissions   any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs struct {
 	ContainerPath any
-	MountOptions any
-	Size any
+	MountOptions  any
+	Size          any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_LinuxParameters struct {
-	Capabilities any
-	Devices any
+	Capabilities       any
+	Devices            any
 	InitProcessEnabled any
-	MaxSwap any
-	SharedMemorySize any
-	Swappiness any
-	Tmpfs any
+	MaxSwap            any
+	SharedMemorySize   any
+	Swappiness         any
+	Tmpfs              any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions struct {
-	Name any
+	Name      any
 	ValueFrom any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_LogConfiguration struct {
-	LogDriver any
-	Options any
+	LogDriver     any
+	Options       any
 	SecretOptions any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_MountPoints struct {
 	ContainerPath any
-	ReadOnly any
-	SourceVolume any
+	ReadOnly      any
+	SourceVolume  any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_PortMappings struct {
 	ContainerPort any
-	HostPort any
-	Protocol any
+	HostPort      any
+	Protocol      any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_RepositoryCredentials struct {
@@ -2296,60 +2296,60 @@ type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitio
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_SystemControls struct {
 	Namespace any
-	Value any
+	Value     any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_Ulimits struct {
 	HardLimit any
-	Name any
+	Name      any
 	SoftLimit any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions_VolumesFrom struct {
-	ReadOnly any
+	ReadOnly        any
 	SourceContainer any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ContainerDefinitions struct {
-	Command any
-	Cpu any
-	DependsOn any
-	DisableNetworking any
-	DnsSearchDomains any
-	DnsServers any
-	DockerLabels any
-	DockerSecurityOptions any
-	EntryPoint any
-	Environment any
-	EnvironmentFiles any
-	Essential any
-	ExtraHosts any
-	FirelensConfiguration any
-	HealthCheck any
-	Hostname any
-	Image any
-	Interactive any
-	Links any
-	LinuxParameters any
-	LogConfiguration any
-	Memory any
-	MemoryReservation any
-	MountPoints any
-	Name any
-	PortMappings any
-	Privileged any
-	PseudoTerminal any
+	Command                any
+	Cpu                    any
+	DependsOn              any
+	DisableNetworking      any
+	DnsSearchDomains       any
+	DnsServers             any
+	DockerLabels           any
+	DockerSecurityOptions  any
+	EntryPoint             any
+	Environment            any
+	EnvironmentFiles       any
+	Essential              any
+	ExtraHosts             any
+	FirelensConfiguration  any
+	HealthCheck            any
+	Hostname               any
+	Image                  any
+	Interactive            any
+	Links                  any
+	LinuxParameters        any
+	LogConfiguration       any
+	Memory                 any
+	MemoryReservation      any
+	MountPoints            any
+	Name                   any
+	PortMappings           any
+	Privileged             any
+	PseudoTerminal         any
 	ReadonlyRootFilesystem any
-	RepositoryCredentials any
-	ResourceRequirements any
-	Secrets any
-	StartTimeout any
-	StopTimeout any
-	SystemControls any
-	Ulimits any
-	User any
-	VolumesFrom any
-	WorkingDirectory any
+	RepositoryCredentials  any
+	ResourceRequirements   any
+	Secrets                any
+	StartTimeout           any
+	StopTimeout            any
+	SystemControls         any
+	Ulimits                any
+	User                   any
+	VolumesFrom            any
+	WorkingDirectory       any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_InferenceAccelerators struct {
@@ -2358,86 +2358,86 @@ type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_InferenceAccelerat
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_ProxyConfiguration struct {
-	ContainerName any
+	ContainerName                any
 	ProxyConfigurationProperties any
-	Type any
+	Type                         any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_Volumes_DockerVolumeConfiguration struct {
 	Autoprovision any
-	Driver any
-	DriverOpts any
-	Labels any
-	Scope any
+	Driver        any
+	DriverOpts    any
+	Labels        any
+	Scope         any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_Volumes_EfsVolumeConfiguration_AuthorizationConfig struct {
 	AccessPointId any
-	Iam any
+	Iam           any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_Volumes_EfsVolumeConfiguration struct {
-	AuthorizationConfig any
-	FilesystemId any
-	RootDirectory any
-	TransitEncryption any
+	AuthorizationConfig   any
+	FilesystemId          any
+	RootDirectory         any
+	TransitEncryption     any
 	TransitEncryptionPort any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition_Volumes struct {
 	DockerVolumeConfiguration any
-	EfsVolumeConfiguration any
-	Host any
-	Name any
+	EfsVolumeConfiguration    any
+	Host                      any
+	Name                      any
 }
 
 type Findings_Findings_Resources_Details_AwsEcsTaskDefinition struct {
-	ContainerDefinitions any
-	Cpu any
-	ExecutionRoleArn any
-	Family any
-	InferenceAccelerators any
-	IpcMode any
-	Memory any
-	NetworkMode any
-	PidMode any
-	PlacementConstraints any
-	ProxyConfiguration any
+	ContainerDefinitions    any
+	Cpu                     any
+	ExecutionRoleArn        any
+	Family                  any
+	InferenceAccelerators   any
+	IpcMode                 any
+	Memory                  any
+	NetworkMode             any
+	PidMode                 any
+	PlacementConstraints    any
+	ProxyConfiguration      any
 	RequiresCompatibilities any
-	Status any
-	TaskRoleArn any
-	Volumes any
+	Status                  any
+	TaskRoleArn             any
+	Volumes                 any
 }
 
 type Findings_Findings_Resources_Details_AwsEfsAccessPoint_PosixUser struct {
-	Gid any
+	Gid           any
 	SecondaryGids any
-	Uid any
+	Uid           any
 }
 
 type Findings_Findings_Resources_Details_AwsEfsAccessPoint_RootDirectory_CreationInfo struct {
-	OwnerGid any
-	OwnerUid any
+	OwnerGid    any
+	OwnerUid    any
 	Permissions any
 }
 
 type Findings_Findings_Resources_Details_AwsEfsAccessPoint_RootDirectory struct {
 	CreationInfo any
-	Path any
+	Path         any
 }
 
 type Findings_Findings_Resources_Details_AwsEfsAccessPoint struct {
 	AccessPointId any
-	Arn any
-	ClientToken any
-	FileSystemId any
-	PosixUser any
+	Arn           any
+	ClientToken   any
+	FileSystemId  any
+	PosixUser     any
 	RootDirectory any
 }
 
 type Findings_Findings_Resources_Details_AwsEksCluster_Logging_ClusterLogging struct {
 	Enabled any
-	Types any
+	Types   any
 }
 
 type Findings_Findings_Resources_Details_AwsEksCluster_Logging struct {
@@ -2446,61 +2446,61 @@ type Findings_Findings_Resources_Details_AwsEksCluster_Logging struct {
 
 type Findings_Findings_Resources_Details_AwsEksCluster_ResourcesVpcConfig struct {
 	EndpointPublicAccess any
-	SecurityGroupIds any
-	SubnetIds any
+	SecurityGroupIds     any
+	SubnetIds            any
 }
 
 type Findings_Findings_Resources_Details_AwsEksCluster struct {
-	Arn any
+	Arn                      any
 	CertificateAuthorityData any
-	ClusterStatus any
-	Endpoint any
-	Logging any
-	Name any
-	ResourcesVpcConfig any
-	RoleArn any
-	Version any
+	ClusterStatus            any
+	Endpoint                 any
+	Logging                  any
+	Name                     any
+	ResourcesVpcConfig       any
+	RoleArn                  any
+	Version                  any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticBeanstalkEnvironment_EnvironmentLinks struct {
 	EnvironmentName any
-	LinkName any
+	LinkName        any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticBeanstalkEnvironment_OptionSettings struct {
-	Namespace any
-	OptionName any
+	Namespace    any
+	OptionName   any
 	ResourceName any
-	Value any
+	Value        any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticBeanstalkEnvironment_Tier struct {
-	Name any
-	Type any
+	Name    any
+	Type    any
 	Version any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticBeanstalkEnvironment struct {
-	ApplicationName any
-	Cname any
-	DateCreated any
-	DateUpdated any
-	Description any
-	EndpointUrl any
-	EnvironmentArn any
-	EnvironmentId any
-	EnvironmentLinks any
-	EnvironmentName any
-	OptionSettings any
-	PlatformArn any
+	ApplicationName   any
+	Cname             any
+	DateCreated       any
+	DateUpdated       any
+	Description       any
+	EndpointUrl       any
+	EnvironmentArn    any
+	EnvironmentId     any
+	EnvironmentLinks  any
+	EnvironmentName   any
+	OptionSettings    any
+	PlatformArn       any
 	SolutionStackName any
-	Status any
-	Tier any
-	VersionLabel any
+	Status            any
+	Tier              any
+	VersionLabel      any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticsearchDomain_DomainEndpointOptions struct {
-	EnforceHttps any
+	EnforceHttps      any
 	TlssecurityPolicy any
 }
 
@@ -2509,74 +2509,74 @@ type Findings_Findings_Resources_Details_AwsElasticsearchDomain_ElasticsearchClu
 }
 
 type Findings_Findings_Resources_Details_AwsElasticsearchDomain_ElasticsearchClusterConfig struct {
-	DedicatedMasterCount any
+	DedicatedMasterCount   any
 	DedicatedMasterEnabled any
-	DedicatedMasterType any
-	InstanceCount any
-	InstanceType any
-	ZoneAwarenessConfig any
-	ZoneAwarenessEnabled any
+	DedicatedMasterType    any
+	InstanceCount          any
+	InstanceType           any
+	ZoneAwarenessConfig    any
+	ZoneAwarenessEnabled   any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticsearchDomain_EncryptionAtRestOptions struct {
-	Enabled any
+	Enabled  any
 	KmsKeyId any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticsearchDomain_LogPublishingOptions_AuditLogs struct {
 	CloudWatchLogsLogGroupArn any
-	Enabled any
+	Enabled                   any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticsearchDomain_LogPublishingOptions struct {
-	AuditLogs any
-	IndexSlowLogs any
+	AuditLogs      any
+	IndexSlowLogs  any
 	SearchSlowLogs any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticsearchDomain_ServiceSoftwareOptions struct {
 	AutomatedUpdateDate any
-	Cancellable any
-	CurrentVersion any
-	Description any
-	NewVersion any
-	UpdateAvailable any
-	UpdateStatus any
+	Cancellable         any
+	CurrentVersion      any
+	Description         any
+	NewVersion          any
+	UpdateAvailable     any
+	UpdateStatus        any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticsearchDomain_Vpcoptions struct {
 	AvailabilityZones any
-	SecurityGroupIds any
-	SubnetIds any
-	Vpcid any
+	SecurityGroupIds  any
+	SubnetIds         any
+	Vpcid             any
 }
 
 type Findings_Findings_Resources_Details_AwsElasticsearchDomain struct {
-	AccessPolicies any
-	DomainEndpointOptions any
-	DomainId any
-	DomainName any
-	ElasticsearchClusterConfig any
-	ElasticsearchVersion any
-	EncryptionAtRestOptions any
-	Endpoint any
-	Endpoints any
-	LogPublishingOptions any
+	AccessPolicies              any
+	DomainEndpointOptions       any
+	DomainId                    any
+	DomainName                  any
+	ElasticsearchClusterConfig  any
+	ElasticsearchVersion        any
+	EncryptionAtRestOptions     any
+	Endpoint                    any
+	Endpoints                   any
+	LogPublishingOptions        any
 	NodeToNodeEncryptionOptions any
-	ServiceSoftwareOptions any
-	Vpcoptions any
+	ServiceSoftwareOptions      any
+	Vpcoptions                  any
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_BackendServerDescriptions struct {
 	InstancePort any
-	PolicyNames any
+	PolicyNames  any
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_HealthCheck struct {
-	HealthyThreshold any
-	Interval any
-	Target any
-	Timeout any
+	HealthyThreshold   any
+	Interval           any
+	Target             any
+	Timeout            any
 	UnhealthyThreshold any
 }
 
@@ -2585,27 +2585,27 @@ type Findings_Findings_Resources_Details_AwsElbLoadBalancer_Instances struct {
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_ListenerDescriptions_Listener struct {
-	InstancePort any
+	InstancePort     any
 	InstanceProtocol any
 	LoadBalancerPort any
-	Protocol any
+	Protocol         any
 	SslCertificateId any
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_ListenerDescriptions struct {
-	Listener any
+	Listener    any
 	PolicyNames any
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_LoadBalancerAttributes_AccessLog struct {
-	EmitInterval any
-	Enabled any
-	S3BucketName any
+	EmitInterval   any
+	Enabled        any
+	S3BucketName   any
 	S3BucketPrefix any
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_LoadBalancerAttributes_AdditionalAttributes struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -2619,10 +2619,10 @@ type Findings_Findings_Resources_Details_AwsElbLoadBalancer_LoadBalancerAttribut
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_LoadBalancerAttributes struct {
-	AccessLog any
-	AdditionalAttributes any
-	ConnectionDraining any
-	ConnectionSettings any
+	AccessLog              any
+	AdditionalAttributes   any
+	ConnectionDraining     any
+	ConnectionSettings     any
 	CrossZoneLoadBalancing any
 }
 
@@ -2633,38 +2633,38 @@ type Findings_Findings_Resources_Details_AwsElbLoadBalancer_Policies_AppCookieSt
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_Policies_LbCookieStickinessPolicies struct {
 	CookieExpirationPeriod any
-	PolicyName any
+	PolicyName             any
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_Policies struct {
 	AppCookieStickinessPolicies any
-	LbCookieStickinessPolicies any
-	OtherPolicies any
+	LbCookieStickinessPolicies  any
+	OtherPolicies               any
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer_SourceSecurityGroup struct {
-	GroupName any
+	GroupName  any
 	OwnerAlias any
 }
 
 type Findings_Findings_Resources_Details_AwsElbLoadBalancer struct {
-	AvailabilityZones any
+	AvailabilityZones         any
 	BackendServerDescriptions any
-	CanonicalHostedZoneName any
+	CanonicalHostedZoneName   any
 	CanonicalHostedZoneNameId any
-	CreatedTime any
-	DnsName any
-	HealthCheck any
-	Instances any
-	ListenerDescriptions any
-	LoadBalancerAttributes any
-	LoadBalancerName any
-	Policies any
-	Scheme any
-	SecurityGroups any
-	SourceSecurityGroup any
-	Subnets any
-	VpcId any
+	CreatedTime               any
+	DnsName                   any
+	HealthCheck               any
+	Instances                 any
+	ListenerDescriptions      any
+	LoadBalancerAttributes    any
+	LoadBalancerName          any
+	Policies                  any
+	Scheme                    any
+	SecurityGroups            any
+	SourceSecurityGroup       any
+	Subnets                   any
+	VpcId                     any
 }
 
 type Findings_Findings_Resources_Details_AwsElbv2LoadBalancer_AvailabilityZones struct {
@@ -2673,22 +2673,22 @@ type Findings_Findings_Resources_Details_AwsElbv2LoadBalancer_AvailabilityZones 
 }
 
 type Findings_Findings_Resources_Details_AwsElbv2LoadBalancer struct {
-	AvailabilityZones any
-	CanonicalHostedZoneId any
-	CreatedTime any
-	Dnsname any
-	IpAddressType any
+	AvailabilityZones      any
+	CanonicalHostedZoneId  any
+	CreatedTime            any
+	Dnsname                any
+	IpAddressType          any
 	LoadBalancerAttributes any
-	Scheme any
-	SecurityGroups any
-	State any
-	Type any
-	VpcId any
+	Scheme                 any
+	SecurityGroups         any
+	State                  any
+	Type                   any
+	VpcId                  any
 }
 
 type Findings_Findings_Resources_Details_AwsEventSchemasRegistry struct {
-	Description any
-	RegistryArn any
+	Description  any
+	RegistryArn  any
 	RegistryName any
 }
 
@@ -2705,7 +2705,7 @@ type Findings_Findings_Resources_Details_AwsEventsEndpoint_RoutingConfig_Failove
 }
 
 type Findings_Findings_Resources_Details_AwsEventsEndpoint_RoutingConfig_FailoverConfig struct {
-	Primary any
+	Primary   any
 	Secondary any
 }
 
@@ -2714,22 +2714,22 @@ type Findings_Findings_Resources_Details_AwsEventsEndpoint_RoutingConfig struct 
 }
 
 type Findings_Findings_Resources_Details_AwsEventsEndpoint struct {
-	Arn any
-	Description any
-	EndpointId any
-	EndpointUrl any
-	EventBuses any
-	Name any
+	Arn               any
+	Description       any
+	EndpointId        any
+	EndpointUrl       any
+	EventBuses        any
+	Name              any
 	ReplicationConfig any
-	RoleArn any
-	RoutingConfig any
-	State any
-	StateReason any
+	RoleArn           any
+	RoutingConfig     any
+	State             any
+	StateReason       any
 }
 
 type Findings_Findings_Resources_Details_AwsEventsEventbus struct {
-	Arn any
-	Name any
+	Arn    any
+	Name   any
 	Policy any
 }
 
@@ -2752,63 +2752,63 @@ type Findings_Findings_Resources_Details_AwsGuardDutyDetector_DataSources_Malwar
 
 type Findings_Findings_Resources_Details_AwsGuardDutyDetector_DataSources_MalwareProtection struct {
 	ScanEc2InstanceWithFindings any
-	ServiceRole any
+	ServiceRole                 any
 }
 
 type Findings_Findings_Resources_Details_AwsGuardDutyDetector_DataSources struct {
-	CloudTrail any
-	DnsLogs any
-	FlowLogs any
-	Kubernetes any
+	CloudTrail        any
+	DnsLogs           any
+	FlowLogs          any
+	Kubernetes        any
 	MalwareProtection any
-	S3Logs any
+	S3Logs            any
 }
 
 type Findings_Findings_Resources_Details_AwsGuardDutyDetector_Features struct {
-	Name any
+	Name   any
 	Status any
 }
 
 type Findings_Findings_Resources_Details_AwsGuardDutyDetector struct {
-	DataSources any
-	Features any
+	DataSources                any
+	Features                   any
 	FindingPublishingFrequency any
-	ServiceRole any
-	Status any
+	ServiceRole                any
+	Status                     any
 }
 
 type Findings_Findings_Resources_Details_AwsIamAccessKey_SessionContext_Attributes struct {
-	CreationDate any
+	CreationDate     any
 	MfaAuthenticated any
 }
 
 type Findings_Findings_Resources_Details_AwsIamAccessKey_SessionContext_SessionIssuer struct {
-	AccountId any
-	Arn any
+	AccountId   any
+	Arn         any
 	PrincipalId any
-	Type any
-	UserName any
+	Type        any
+	UserName    any
 }
 
 type Findings_Findings_Resources_Details_AwsIamAccessKey_SessionContext struct {
-	Attributes any
+	Attributes    any
 	SessionIssuer any
 }
 
 type Findings_Findings_Resources_Details_AwsIamAccessKey struct {
-	AccessKeyId any
-	AccountId any
-	CreatedAt any
-	PrincipalId any
-	PrincipalName any
-	PrincipalType any
+	AccessKeyId    any
+	AccountId      any
+	CreatedAt      any
+	PrincipalId    any
+	PrincipalName  any
+	PrincipalType  any
 	SessionContext any
-	Status any
-	UserName any
+	Status         any
+	UserName       any
 }
 
 type Findings_Findings_Resources_Details_AwsIamGroup_AttachedManagedPolicies struct {
-	PolicyArn any
+	PolicyArn  any
 	PolicyName any
 }
 
@@ -2818,109 +2818,109 @@ type Findings_Findings_Resources_Details_AwsIamGroup_GroupPolicyList struct {
 
 type Findings_Findings_Resources_Details_AwsIamGroup struct {
 	AttachedManagedPolicies any
-	CreateDate any
-	GroupId any
-	GroupName any
-	GroupPolicyList any
-	Path any
+	CreateDate              any
+	GroupId                 any
+	GroupName               any
+	GroupPolicyList         any
+	Path                    any
 }
 
 type Findings_Findings_Resources_Details_AwsIamPolicy_PolicyVersionList struct {
-	CreateDate any
+	CreateDate       any
 	IsDefaultVersion any
-	VersionId any
+	VersionId        any
 }
 
 type Findings_Findings_Resources_Details_AwsIamPolicy struct {
-	AttachmentCount any
-	CreateDate any
-	DefaultVersionId any
-	Description any
-	IsAttachable any
-	Path any
+	AttachmentCount               any
+	CreateDate                    any
+	DefaultVersionId              any
+	Description                   any
+	IsAttachable                  any
+	Path                          any
 	PermissionsBoundaryUsageCount any
-	PolicyId any
-	PolicyName any
-	PolicyVersionList any
-	UpdateDate any
+	PolicyId                      any
+	PolicyName                    any
+	PolicyVersionList             any
+	UpdateDate                    any
 }
 
 type Findings_Findings_Resources_Details_AwsIamRole_InstanceProfileList_Roles struct {
-	Arn any
+	Arn                      any
 	AssumeRolePolicyDocument any
-	CreateDate any
-	Path any
-	RoleId any
-	RoleName any
+	CreateDate               any
+	Path                     any
+	RoleId                   any
+	RoleName                 any
 }
 
 type Findings_Findings_Resources_Details_AwsIamRole_InstanceProfileList struct {
-	Arn any
-	CreateDate any
-	InstanceProfileId any
+	Arn                 any
+	CreateDate          any
+	InstanceProfileId   any
 	InstanceProfileName any
-	Path any
-	Roles any
+	Path                any
+	Roles               any
 }
 
 type Findings_Findings_Resources_Details_AwsIamRole_PermissionsBoundary struct {
-	PermissionsBoundaryArn any
+	PermissionsBoundaryArn  any
 	PermissionsBoundaryType any
 }
 
 type Findings_Findings_Resources_Details_AwsIamRole struct {
 	AssumeRolePolicyDocument any
-	AttachedManagedPolicies any
-	CreateDate any
-	InstanceProfileList any
-	MaxSessionDuration any
-	Path any
-	PermissionsBoundary any
-	RoleId any
-	RoleName any
-	RolePolicyList any
+	AttachedManagedPolicies  any
+	CreateDate               any
+	InstanceProfileList      any
+	MaxSessionDuration       any
+	Path                     any
+	PermissionsBoundary      any
+	RoleId                   any
+	RoleName                 any
+	RolePolicyList           any
 }
 
 type Findings_Findings_Resources_Details_AwsIamUser struct {
 	AttachedManagedPolicies any
-	CreateDate any
-	GroupList any
-	Path any
-	PermissionsBoundary any
-	UserId any
-	UserName any
-	UserPolicyList any
+	CreateDate              any
+	GroupList               any
+	Path                    any
+	PermissionsBoundary     any
+	UserId                  any
+	UserName                any
+	UserPolicyList          any
 }
 
 type Findings_Findings_Resources_Details_AwsKinesisStream_StreamEncryption struct {
 	EncryptionType any
-	KeyId any
+	KeyId          any
 }
 
 type Findings_Findings_Resources_Details_AwsKinesisStream struct {
-	Arn any
-	Name any
+	Arn                  any
+	Name                 any
 	RetentionPeriodHours any
-	ShardCount any
-	StreamEncryption any
+	ShardCount           any
+	StreamEncryption     any
 }
 
 type Findings_Findings_Resources_Details_AwsKmsKey struct {
-	AwsaccountId any
-	CreationDate any
-	Description any
-	KeyId any
-	KeyManager any
+	AwsaccountId      any
+	CreationDate      any
+	Description       any
+	KeyId             any
+	KeyManager        any
 	KeyRotationStatus any
-	KeyState any
-	Origin any
+	KeyState          any
+	Origin            any
 }
 
 type Findings_Findings_Resources_Details_AwsLambdaFunction_Code struct {
-	S3Bucket any
-	S3Key any
+	S3Bucket        any
+	S3Key           any
 	S3ObjectVersion any
-	ZipFile any
+	ZipFile         any
 }
 
 type Findings_Findings_Resources_Details_AwsLambdaFunction_DeadLetterConfig struct {
@@ -2929,16 +2929,16 @@ type Findings_Findings_Resources_Details_AwsLambdaFunction_DeadLetterConfig stru
 
 type Findings_Findings_Resources_Details_AwsLambdaFunction_Environment_Error struct {
 	ErrorCode any
-	Message any
+	Message   any
 }
 
 type Findings_Findings_Resources_Details_AwsLambdaFunction_Environment struct {
-	Error any
+	Error     any
 	Variables any
 }
 
 type Findings_Findings_Resources_Details_AwsLambdaFunction_Layers struct {
-	Arn any
+	Arn      any
 	CodeSize any
 }
 
@@ -2948,52 +2948,52 @@ type Findings_Findings_Resources_Details_AwsLambdaFunction_TracingConfig struct 
 
 type Findings_Findings_Resources_Details_AwsLambdaFunction_VpcConfig struct {
 	SecurityGroupIds any
-	SubnetIds any
-	VpcId any
+	SubnetIds        any
+	VpcId            any
 }
 
 type Findings_Findings_Resources_Details_AwsLambdaFunction struct {
-	Architectures any
-	Code any
-	CodeSha256 any
+	Architectures    any
+	Code             any
+	CodeSha256       any
 	DeadLetterConfig any
-	Environment any
-	FunctionName any
-	Handler any
-	KmsKeyArn any
-	LastModified any
-	Layers any
-	MasterArn any
-	MemorySize any
-	PackageType any
-	RevisionId any
-	Role any
-	Runtime any
-	Timeout any
-	TracingConfig any
-	Version any
-	VpcConfig any
+	Environment      any
+	FunctionName     any
+	Handler          any
+	KmsKeyArn        any
+	LastModified     any
+	Layers           any
+	MasterArn        any
+	MemorySize       any
+	PackageType      any
+	RevisionId       any
+	Role             any
+	Runtime          any
+	Timeout          any
+	TracingConfig    any
+	Version          any
+	VpcConfig        any
 }
 
 type Findings_Findings_Resources_Details_AwsLambdaLayerVersion struct {
 	CompatibleRuntimes any
-	CreatedDate any
-	Version any
+	CreatedDate        any
+	Version            any
 }
 
 type Findings_Findings_Resources_Details_AwsMskCluster_ClusterInfo_ClientAuthentication_Sasl struct {
-	Iam any
+	Iam   any
 	Scram any
 }
 
 type Findings_Findings_Resources_Details_AwsMskCluster_ClusterInfo_ClientAuthentication_Tls struct {
 	CertificateAuthorityArnList any
-	Enabled any
+	Enabled                     any
 }
 
 type Findings_Findings_Resources_Details_AwsMskCluster_ClusterInfo_ClientAuthentication struct {
-	Sasl any
-	Tls any
+	Sasl            any
+	Tls             any
 	Unauthenticated any
 }
 
@@ -3003,21 +3003,21 @@ type Findings_Findings_Resources_Details_AwsMskCluster_ClusterInfo_EncryptionInf
 
 type Findings_Findings_Resources_Details_AwsMskCluster_ClusterInfo_EncryptionInfo_EncryptionInTransit struct {
 	ClientBroker any
-	InCluster any
+	InCluster    any
 }
 
 type Findings_Findings_Resources_Details_AwsMskCluster_ClusterInfo_EncryptionInfo struct {
-	EncryptionAtRest any
+	EncryptionAtRest    any
 	EncryptionInTransit any
 }
 
 type Findings_Findings_Resources_Details_AwsMskCluster_ClusterInfo struct {
 	ClientAuthentication any
-	ClusterName any
-	CurrentVersion any
-	EncryptionInfo any
-	EnhancedMonitoring any
-	NumberOfBrokerNodes any
+	ClusterName          any
+	CurrentVersion       any
+	EncryptionInfo       any
+	EnhancedMonitoring   any
+	NumberOfBrokerNodes  any
 }
 
 type Findings_Findings_Resources_Details_AwsMskCluster struct {
@@ -3029,16 +3029,16 @@ type Findings_Findings_Resources_Details_AwsNetworkFirewallFirewall_SubnetMappin
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallFirewall struct {
-	DeleteProtection any
-	Description any
-	FirewallArn any
-	FirewallId any
-	FirewallName any
-	FirewallPolicyArn any
+	DeleteProtection               any
+	Description                    any
+	FirewallArn                    any
+	FirewallId                     any
+	FirewallName                   any
+	FirewallPolicyArn              any
 	FirewallPolicyChangeProtection any
-	SubnetChangeProtection any
-	SubnetMappings any
-	VpcId any
+	SubnetChangeProtection         any
+	SubnetMappings                 any
+	VpcId                          any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallFirewallPolicy_FirewallPolicy_StatefulRuleGroupReferences struct {
@@ -3055,27 +3055,27 @@ type Findings_Findings_Resources_Details_AwsNetworkFirewallFirewallPolicy_Firewa
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallFirewallPolicy_FirewallPolicy_StatelessCustomActions struct {
 	ActionDefinition any
-	ActionName any
+	ActionName       any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallFirewallPolicy_FirewallPolicy_StatelessRuleGroupReferences struct {
-	Priority any
+	Priority    any
 	ResourceArn any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallFirewallPolicy_FirewallPolicy struct {
-	StatefulRuleGroupReferences any
-	StatelessCustomActions any
-	StatelessDefaultActions any
+	StatefulRuleGroupReferences     any
+	StatelessCustomActions          any
+	StatelessDefaultActions         any
 	StatelessFragmentDefaultActions any
-	StatelessRuleGroupReferences any
+	StatelessRuleGroupReferences    any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallFirewallPolicy struct {
-	Description any
-	FirewallPolicy any
-	FirewallPolicyArn any
-	FirewallPolicyId any
+	Description        any
+	FirewallPolicy     any
+	FirewallPolicyArn  any
+	FirewallPolicyId   any
 	FirewallPolicyName any
 }
 
@@ -3084,39 +3084,39 @@ type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_R
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RuleVariables struct {
-	IpSets any
+	IpSets   any
 	PortSets any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_RulesSourceList struct {
 	GeneratedRulesType any
-	TargetTypes any
-	Targets any
+	TargetTypes        any
+	Targets            any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatefulRules_Header struct {
-	Destination any
+	Destination     any
 	DestinationPort any
-	Direction any
-	Protocol any
-	Source any
-	SourcePort any
+	Direction       any
+	Protocol        any
+	Source          any
+	SourcePort      any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatefulRules_RuleOptions struct {
-	Keyword any
+	Keyword  any
 	Settings any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatefulRules struct {
-	Action any
-	Header any
+	Action      any
+	Header      any
 	RuleOptions any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPorts struct {
 	FromPort any
-	ToPort any
+	ToPort   any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Destinations struct {
@@ -3130,218 +3130,218 @@ type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_R
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes struct {
 	DestinationPorts any
-	Destinations any
-	Protocols any
-	SourcePorts any
-	Sources any
-	TcpFlags any
+	Destinations     any
+	Protocols        any
+	SourcePorts      any
+	Sources          any
+	TcpFlags         any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition struct {
-	Actions any
+	Actions         any
 	MatchAttributes any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules struct {
-	Priority any
+	Priority       any
 	RuleDefinition any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions struct {
-	CustomActions any
+	CustomActions  any
 	StatelessRules any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup_RulesSource struct {
-	RulesSourceList any
-	RulesString any
-	StatefulRules any
+	RulesSourceList                any
+	RulesString                    any
+	StatefulRules                  any
 	StatelessRulesAndCustomActions any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup_RuleGroup struct {
 	RuleVariables any
-	RulesSource any
+	RulesSource   any
 }
 
 type Findings_Findings_Resources_Details_AwsNetworkFirewallRuleGroup struct {
-	Capacity any
-	Description any
-	RuleGroup any
-	RuleGroupArn any
-	RuleGroupId any
+	Capacity      any
+	Description   any
+	RuleGroup     any
+	RuleGroupArn  any
+	RuleGroupId   any
 	RuleGroupName any
-	Type any
+	Type          any
 }
 
 type Findings_Findings_Resources_Details_AwsOpenSearchServiceDomain_AdvancedSecurityOptions_MasterUserOptions struct {
-	MasterUserArn any
-	MasterUserName any
+	MasterUserArn      any
+	MasterUserName     any
 	MasterUserPassword any
 }
 
 type Findings_Findings_Resources_Details_AwsOpenSearchServiceDomain_AdvancedSecurityOptions struct {
-	Enabled any
+	Enabled                     any
 	InternalUserDatabaseEnabled any
-	MasterUserOptions any
+	MasterUserOptions           any
 }
 
 type Findings_Findings_Resources_Details_AwsOpenSearchServiceDomain_ClusterConfig struct {
-	DedicatedMasterCount any
+	DedicatedMasterCount   any
 	DedicatedMasterEnabled any
-	DedicatedMasterType any
-	InstanceCount any
-	InstanceType any
-	WarmCount any
-	WarmEnabled any
-	WarmType any
-	ZoneAwarenessConfig any
-	ZoneAwarenessEnabled any
+	DedicatedMasterType    any
+	InstanceCount          any
+	InstanceType           any
+	WarmCount              any
+	WarmEnabled            any
+	WarmType               any
+	ZoneAwarenessConfig    any
+	ZoneAwarenessEnabled   any
 }
 
 type Findings_Findings_Resources_Details_AwsOpenSearchServiceDomain_DomainEndpointOptions struct {
-	CustomEndpoint any
+	CustomEndpoint               any
 	CustomEndpointCertificateArn any
-	CustomEndpointEnabled any
-	EnforceHttps any
-	TlssecurityPolicy any
+	CustomEndpointEnabled        any
+	EnforceHttps                 any
+	TlssecurityPolicy            any
 }
 
 type Findings_Findings_Resources_Details_AwsOpenSearchServiceDomain_ServiceSoftwareOptions struct {
 	AutomatedUpdateDate any
-	Cancellable any
-	CurrentVersion any
-	Description any
-	NewVersion any
-	OptionalDeployment any
-	UpdateAvailable any
-	UpdateStatus any
+	Cancellable         any
+	CurrentVersion      any
+	Description         any
+	NewVersion          any
+	OptionalDeployment  any
+	UpdateAvailable     any
+	UpdateStatus        any
 }
 
 type Findings_Findings_Resources_Details_AwsOpenSearchServiceDomain_VpcOptions struct {
 	SecurityGroupIds any
-	SubnetIds any
+	SubnetIds        any
 }
 
 type Findings_Findings_Resources_Details_AwsOpenSearchServiceDomain struct {
-	AccessPolicies any
-	AdvancedSecurityOptions any
-	Arn any
-	ClusterConfig any
-	DomainEndpoint any
-	DomainEndpointOptions any
-	DomainEndpoints any
-	DomainName any
-	EncryptionAtRestOptions any
-	EngineVersion any
-	Id any
-	LogPublishingOptions any
+	AccessPolicies              any
+	AdvancedSecurityOptions     any
+	Arn                         any
+	ClusterConfig               any
+	DomainEndpoint              any
+	DomainEndpointOptions       any
+	DomainEndpoints             any
+	DomainName                  any
+	EncryptionAtRestOptions     any
+	EngineVersion               any
+	Id                          any
+	LogPublishingOptions        any
 	NodeToNodeEncryptionOptions any
-	ServiceSoftwareOptions any
-	VpcOptions any
+	ServiceSoftwareOptions      any
+	VpcOptions                  any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbCluster_AssociatedRoles struct {
 	RoleArn any
-	Status any
+	Status  any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbCluster_DbClusterMembers struct {
 	DbClusterParameterGroupStatus any
-	DbInstanceIdentifier any
-	IsClusterWriter any
-	PromotionTier any
+	DbInstanceIdentifier          any
+	IsClusterWriter               any
+	PromotionTier                 any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbCluster_DbClusterOptionGroupMemberships struct {
 	DbClusterOptionGroupName any
-	Status any
+	Status                   any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbCluster_DomainMemberships struct {
-	Domain any
-	Fqdn any
+	Domain      any
+	Fqdn        any
 	IamRoleName any
-	Status any
+	Status      any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbCluster_VpcSecurityGroups struct {
-	Status any
+	Status             any
 	VpcSecurityGroupId any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbCluster struct {
-	ActivityStreamStatus any
-	AllocatedStorage any
-	AssociatedRoles any
-	AutoMinorVersionUpgrade any
-	AvailabilityZones any
-	BackupRetentionPeriod any
-	ClusterCreateTime any
-	CopyTagsToSnapshot any
-	CrossAccountClone any
-	CustomEndpoints any
-	DatabaseName any
-	DbClusterIdentifier any
-	DbClusterMembers any
-	DbClusterOptionGroupMemberships any
-	DbClusterParameterGroup any
-	DbClusterResourceId any
-	DbSubnetGroup any
-	DeletionProtection any
-	DomainMemberships any
-	EnabledCloudWatchLogsExports any
-	Endpoint any
-	Engine any
-	EngineMode any
-	EngineVersion any
-	HostedZoneId any
-	HttpEndpointEnabled any
+	ActivityStreamStatus             any
+	AllocatedStorage                 any
+	AssociatedRoles                  any
+	AutoMinorVersionUpgrade          any
+	AvailabilityZones                any
+	BackupRetentionPeriod            any
+	ClusterCreateTime                any
+	CopyTagsToSnapshot               any
+	CrossAccountClone                any
+	CustomEndpoints                  any
+	DatabaseName                     any
+	DbClusterIdentifier              any
+	DbClusterMembers                 any
+	DbClusterOptionGroupMemberships  any
+	DbClusterParameterGroup          any
+	DbClusterResourceId              any
+	DbSubnetGroup                    any
+	DeletionProtection               any
+	DomainMemberships                any
+	EnabledCloudWatchLogsExports     any
+	Endpoint                         any
+	Engine                           any
+	EngineMode                       any
+	EngineVersion                    any
+	HostedZoneId                     any
+	HttpEndpointEnabled              any
 	IamDatabaseAuthenticationEnabled any
-	KmsKeyId any
-	MasterUsername any
-	MultiAz any
-	Port any
-	PreferredBackupWindow any
-	PreferredMaintenanceWindow any
-	ReadReplicaIdentifiers any
-	ReaderEndpoint any
-	Status any
-	StorageEncrypted any
-	VpcSecurityGroups any
+	KmsKeyId                         any
+	MasterUsername                   any
+	MultiAz                          any
+	Port                             any
+	PreferredBackupWindow            any
+	PreferredMaintenanceWindow       any
+	ReadReplicaIdentifiers           any
+	ReaderEndpoint                   any
+	Status                           any
+	StorageEncrypted                 any
+	VpcSecurityGroups                any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbClusterSnapshot_DbClusterSnapshotAttributes struct {
-	AttributeName any
+	AttributeName   any
 	AttributeValues any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbClusterSnapshot struct {
-	AllocatedStorage any
-	AvailabilityZones any
-	ClusterCreateTime any
-	DbClusterIdentifier any
-	DbClusterSnapshotAttributes any
-	DbClusterSnapshotIdentifier any
-	Engine any
-	EngineVersion any
+	AllocatedStorage                 any
+	AvailabilityZones                any
+	ClusterCreateTime                any
+	DbClusterIdentifier              any
+	DbClusterSnapshotAttributes      any
+	DbClusterSnapshotIdentifier      any
+	Engine                           any
+	EngineVersion                    any
 	IamDatabaseAuthenticationEnabled any
-	KmsKeyId any
-	LicenseModel any
-	MasterUsername any
-	PercentProgress any
-	Port any
-	SnapshotCreateTime any
-	SnapshotType any
-	Status any
-	StorageEncrypted any
-	VpcId any
+	KmsKeyId                         any
+	LicenseModel                     any
+	MasterUsername                   any
+	PercentProgress                  any
+	Port                             any
+	SnapshotCreateTime               any
+	SnapshotType                     any
+	Status                           any
+	StorageEncrypted                 any
+	VpcId                            any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_AssociatedRoles struct {
 	FeatureName any
-	RoleArn any
-	Status any
+	RoleArn     any
+	Status      any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_DbParameterGroups struct {
@@ -3351,125 +3351,125 @@ type Findings_Findings_Resources_Details_AwsRdsDbInstance_DbParameterGroups stru
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_DbSubnetGroup_Subnets struct {
 	SubnetAvailabilityZone any
-	SubnetIdentifier any
-	SubnetStatus any
+	SubnetIdentifier       any
+	SubnetStatus           any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_DbSubnetGroup struct {
-	DbSubnetGroupArn any
+	DbSubnetGroupArn         any
 	DbSubnetGroupDescription any
-	DbSubnetGroupName any
-	SubnetGroupStatus any
-	Subnets any
-	VpcId any
+	DbSubnetGroupName        any
+	SubnetGroupStatus        any
+	Subnets                  any
+	VpcId                    any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_Endpoint struct {
-	Address any
+	Address      any
 	HostedZoneId any
-	Port any
+	Port         any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_OptionGroupMemberships struct {
 	OptionGroupName any
-	Status any
+	Status          any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_PendingModifiedValues_PendingCloudWatchLogsExports struct {
 	LogTypesToDisable any
-	LogTypesToEnable any
+	LogTypesToEnable  any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_PendingModifiedValues struct {
-	AllocatedStorage any
-	BackupRetentionPeriod any
-	CaCertificateIdentifier any
-	DbInstanceClass any
-	DbInstanceIdentifier any
-	DbSubnetGroupName any
-	EngineVersion any
-	Iops any
-	LicenseModel any
-	MasterUserPassword any
-	MultiAz any
+	AllocatedStorage             any
+	BackupRetentionPeriod        any
+	CaCertificateIdentifier      any
+	DbInstanceClass              any
+	DbInstanceIdentifier         any
+	DbSubnetGroupName            any
+	EngineVersion                any
+	Iops                         any
+	LicenseModel                 any
+	MasterUserPassword           any
+	MultiAz                      any
 	PendingCloudWatchLogsExports any
-	Port any
-	ProcessorFeatures any
-	StorageType any
+	Port                         any
+	ProcessorFeatures            any
+	StorageType                  any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance_StatusInfos struct {
-	Message any
-	Normal any
-	Status any
+	Message    any
+	Normal     any
+	Status     any
 	StatusType any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbInstance struct {
-	AllocatedStorage any
-	AssociatedRoles any
-	AutoMinorVersionUpgrade any
-	AvailabilityZone any
-	BackupRetentionPeriod any
-	CacertificateIdentifier any
-	CharacterSetName any
-	CopyTagsToSnapshot any
-	DbInstancePort any
-	DbInstanceStatus any
-	DbParameterGroups any
-	DbSecurityGroups any
-	DbSubnetGroup any
-	DbclusterIdentifier any
-	DbiResourceId any
-	DbinstanceClass any
-	DbinstanceIdentifier any
-	Dbname any
-	DeletionProtection any
-	DomainMemberships any
-	EnabledCloudWatchLogsExports any
-	Endpoint any
-	Engine any
-	EngineVersion any
-	EnhancedMonitoringResourceArn any
-	IamdatabaseAuthenticationEnabled any
-	InstanceCreateTime any
-	Iops any
-	KmsKeyId any
-	LatestRestorableTime any
-	LicenseModel any
-	ListenerEndpoint any
-	MasterUsername any
-	MaxAllocatedStorage any
-	MonitoringInterval any
-	MonitoringRoleArn any
-	MultiAz any
-	OptionGroupMemberships any
-	PendingModifiedValues any
-	PerformanceInsightsEnabled any
-	PerformanceInsightsKmsKeyId any
-	PerformanceInsightsRetentionPeriod any
-	PreferredBackupWindow any
-	PreferredMaintenanceWindow any
-	ProcessorFeatures any
-	PromotionTier any
-	PubliclyAccessible any
-	ReadReplicaDbclusterIdentifiers any
-	ReadReplicaDbinstanceIdentifiers any
+	AllocatedStorage                      any
+	AssociatedRoles                       any
+	AutoMinorVersionUpgrade               any
+	AvailabilityZone                      any
+	BackupRetentionPeriod                 any
+	CacertificateIdentifier               any
+	CharacterSetName                      any
+	CopyTagsToSnapshot                    any
+	DbInstancePort                        any
+	DbInstanceStatus                      any
+	DbParameterGroups                     any
+	DbSecurityGroups                      any
+	DbSubnetGroup                         any
+	DbclusterIdentifier                   any
+	DbiResourceId                         any
+	DbinstanceClass                       any
+	DbinstanceIdentifier                  any
+	Dbname                                any
+	DeletionProtection                    any
+	DomainMemberships                     any
+	EnabledCloudWatchLogsExports          any
+	Endpoint                              any
+	Engine                                any
+	EngineVersion                         any
+	EnhancedMonitoringResourceArn         any
+	IamdatabaseAuthenticationEnabled      any
+	InstanceCreateTime                    any
+	Iops                                  any
+	KmsKeyId                              any
+	LatestRestorableTime                  any
+	LicenseModel                          any
+	ListenerEndpoint                      any
+	MasterUsername                        any
+	MaxAllocatedStorage                   any
+	MonitoringInterval                    any
+	MonitoringRoleArn                     any
+	MultiAz                               any
+	OptionGroupMemberships                any
+	PendingModifiedValues                 any
+	PerformanceInsightsEnabled            any
+	PerformanceInsightsKmsKeyId           any
+	PerformanceInsightsRetentionPeriod    any
+	PreferredBackupWindow                 any
+	PreferredMaintenanceWindow            any
+	ProcessorFeatures                     any
+	PromotionTier                         any
+	PubliclyAccessible                    any
+	ReadReplicaDbclusterIdentifiers       any
+	ReadReplicaDbinstanceIdentifiers      any
 	ReadReplicaSourceDbinstanceIdentifier any
-	SecondaryAvailabilityZone any
-	StatusInfos any
-	StorageEncrypted any
-	StorageType any
-	TdeCredentialArn any
-	Timezone any
-	VpcSecurityGroups any
+	SecondaryAvailabilityZone             any
+	StatusInfos                           any
+	StorageEncrypted                      any
+	StorageType                           any
+	TdeCredentialArn                      any
+	Timezone                              any
+	VpcSecurityGroups                     any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbSecurityGroup_Ec2SecurityGroups struct {
-	Ec2SecurityGroupId any
-	Ec2SecurityGroupName any
+	Ec2SecurityGroupId      any
+	Ec2SecurityGroupName    any
 	Ec2SecurityGroupOwnerId any
-	Status any
+	Status                  any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbSecurityGroup_IpRanges struct {
@@ -3478,197 +3478,197 @@ type Findings_Findings_Resources_Details_AwsRdsDbSecurityGroup_IpRanges struct {
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbSecurityGroup struct {
-	DbSecurityGroupArn any
+	DbSecurityGroupArn         any
 	DbSecurityGroupDescription any
-	DbSecurityGroupName any
-	Ec2SecurityGroups any
-	IpRanges any
-	OwnerId any
-	VpcId any
+	DbSecurityGroupName        any
+	Ec2SecurityGroups          any
+	IpRanges                   any
+	OwnerId                    any
+	VpcId                      any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsDbSnapshot struct {
-	AllocatedStorage any
-	AvailabilityZone any
-	DbInstanceIdentifier any
-	DbSnapshotIdentifier any
-	DbiResourceId any
-	Encrypted any
-	Engine any
-	EngineVersion any
+	AllocatedStorage                 any
+	AvailabilityZone                 any
+	DbInstanceIdentifier             any
+	DbSnapshotIdentifier             any
+	DbiResourceId                    any
+	Encrypted                        any
+	Engine                           any
+	EngineVersion                    any
 	IamDatabaseAuthenticationEnabled any
-	InstanceCreateTime any
-	Iops any
-	KmsKeyId any
-	LicenseModel any
-	MasterUsername any
-	OptionGroupName any
-	PercentProgress any
-	Port any
-	ProcessorFeatures any
-	SnapshotCreateTime any
-	SnapshotType any
-	SourceDbSnapshotIdentifier any
-	SourceRegion any
-	Status any
-	StorageType any
-	TdeCredentialArn any
-	Timezone any
-	VpcId any
+	InstanceCreateTime               any
+	Iops                             any
+	KmsKeyId                         any
+	LicenseModel                     any
+	MasterUsername                   any
+	OptionGroupName                  any
+	PercentProgress                  any
+	Port                             any
+	ProcessorFeatures                any
+	SnapshotCreateTime               any
+	SnapshotType                     any
+	SourceDbSnapshotIdentifier       any
+	SourceRegion                     any
+	Status                           any
+	StorageType                      any
+	TdeCredentialArn                 any
+	Timezone                         any
+	VpcId                            any
 }
 
 type Findings_Findings_Resources_Details_AwsRdsEventSubscription struct {
-	CustSubscriptionId any
-	CustomerAwsId any
-	Enabled any
-	EventCategoriesList any
-	EventSubscriptionArn any
-	SnsTopicArn any
-	SourceIdsList any
-	SourceType any
-	Status any
+	CustSubscriptionId       any
+	CustomerAwsId            any
+	Enabled                  any
+	EventCategoriesList      any
+	EventSubscriptionArn     any
+	SnsTopicArn              any
+	SourceIdsList            any
+	SourceType               any
+	Status                   any
 	SubscriptionCreationTime any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_ClusterNodes struct {
-	NodeRole any
+	NodeRole         any
 	PrivateIpAddress any
-	PublicIpAddress any
+	PublicIpAddress  any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_ClusterParameterGroups_ClusterParameterStatusList struct {
 	ParameterApplyErrorDescription any
-	ParameterApplyStatus any
-	ParameterName any
+	ParameterApplyStatus           any
+	ParameterName                  any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_ClusterParameterGroups struct {
 	ClusterParameterStatusList any
-	ParameterApplyStatus any
-	ParameterGroupName any
+	ParameterApplyStatus       any
+	ParameterGroupName         any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_ClusterSecurityGroups struct {
 	ClusterSecurityGroupName any
-	Status any
+	Status                   any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_ClusterSnapshotCopyStatus struct {
-	DestinationRegion any
+	DestinationRegion             any
 	ManualSnapshotRetentionPeriod any
-	RetentionPeriod any
-	SnapshotCopyGrantName any
+	RetentionPeriod               any
+	SnapshotCopyGrantName         any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_DeferredMaintenanceWindows struct {
-	DeferMaintenanceEndTime any
+	DeferMaintenanceEndTime    any
 	DeferMaintenanceIdentifier any
-	DeferMaintenanceStartTime any
+	DeferMaintenanceStartTime  any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_ElasticIpStatus struct {
 	ElasticIp any
-	Status any
+	Status    any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_Endpoint struct {
 	Address any
-	Port any
+	Port    any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_HsmStatus struct {
 	HsmClientCertificateIdentifier any
-	HsmConfigurationIdentifier any
-	Status any
+	HsmConfigurationIdentifier     any
+	Status                         any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_IamRoles struct {
 	ApplyStatus any
-	IamRoleArn any
+	IamRoleArn  any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_LoggingStatus struct {
-	BucketName any
-	LastFailureMessage any
-	LastFailureTime any
+	BucketName                 any
+	LastFailureMessage         any
+	LastFailureTime            any
 	LastSuccessfulDeliveryTime any
-	LoggingEnabled any
-	S3KeyPrefix any
+	LoggingEnabled             any
+	S3KeyPrefix                any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_PendingModifiedValues struct {
 	AutomatedSnapshotRetentionPeriod any
-	ClusterIdentifier any
-	ClusterType any
-	ClusterVersion any
-	EncryptionType any
-	EnhancedVpcRouting any
-	MaintenanceTrackName any
-	MasterUserPassword any
-	NodeType any
-	NumberOfNodes any
-	PubliclyAccessible any
+	ClusterIdentifier                any
+	ClusterType                      any
+	ClusterVersion                   any
+	EncryptionType                   any
+	EnhancedVpcRouting               any
+	MaintenanceTrackName             any
+	MasterUserPassword               any
+	NodeType                         any
+	NumberOfNodes                    any
+	PubliclyAccessible               any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_ResizeInfo struct {
 	AllowCancelResize any
-	ResizeType any
+	ResizeType        any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster_RestoreStatus struct {
 	CurrentRestoreRateInMegaBytesPerSecond any
-	ElapsedTimeInSeconds any
-	EstimatedTimeToCompletionInSeconds any
-	ProgressInMegaBytes any
-	SnapshotSizeInMegaBytes any
-	Status any
+	ElapsedTimeInSeconds                   any
+	EstimatedTimeToCompletionInSeconds     any
+	ProgressInMegaBytes                    any
+	SnapshotSizeInMegaBytes                any
+	Status                                 any
 }
 
 type Findings_Findings_Resources_Details_AwsRedshiftCluster struct {
-	AllowVersionUpgrade any
-	AutomatedSnapshotRetentionPeriod any
-	AvailabilityZone any
-	ClusterAvailabilityStatus any
-	ClusterCreateTime any
-	ClusterIdentifier any
-	ClusterNodes any
-	ClusterParameterGroups any
-	ClusterPublicKey any
-	ClusterRevisionNumber any
-	ClusterSecurityGroups any
-	ClusterSnapshotCopyStatus any
-	ClusterStatus any
-	ClusterSubnetGroupName any
-	ClusterVersion any
-	Dbname any
-	DeferredMaintenanceWindows any
-	ElasticIpStatus any
-	ElasticResizeNumberOfNodeOptions any
-	Encrypted any
-	Endpoint any
-	EnhancedVpcRouting any
-	ExpectedNextSnapshotScheduleTime any
+	AllowVersionUpgrade                    any
+	AutomatedSnapshotRetentionPeriod       any
+	AvailabilityZone                       any
+	ClusterAvailabilityStatus              any
+	ClusterCreateTime                      any
+	ClusterIdentifier                      any
+	ClusterNodes                           any
+	ClusterParameterGroups                 any
+	ClusterPublicKey                       any
+	ClusterRevisionNumber                  any
+	ClusterSecurityGroups                  any
+	ClusterSnapshotCopyStatus              any
+	ClusterStatus                          any
+	ClusterSubnetGroupName                 any
+	ClusterVersion                         any
+	Dbname                                 any
+	DeferredMaintenanceWindows             any
+	ElasticIpStatus                        any
+	ElasticResizeNumberOfNodeOptions       any
+	Encrypted                              any
+	Endpoint                               any
+	EnhancedVpcRouting                     any
+	ExpectedNextSnapshotScheduleTime       any
 	ExpectedNextSnapshotScheduleTimeStatus any
-	HsmStatus any
-	IamRoles any
-	KmsKeyId any
-	LoggingStatus any
-	MaintenanceTrackName any
-	ManualSnapshotRetentionPeriod any
-	MasterUsername any
-	NextMaintenanceWindowStartTime any
-	NodeType any
-	NumberOfNodes any
-	PendingActions any
-	PendingModifiedValues any
-	PreferredMaintenanceWindow any
-	PubliclyAccessible any
-	ResizeInfo any
-	RestoreStatus any
-	SnapshotScheduleIdentifier any
-	SnapshotScheduleState any
-	VpcId any
-	VpcSecurityGroups any
+	HsmStatus                              any
+	IamRoles                               any
+	KmsKeyId                               any
+	LoggingStatus                          any
+	MaintenanceTrackName                   any
+	ManualSnapshotRetentionPeriod          any
+	MasterUsername                         any
+	NextMaintenanceWindowStartTime         any
+	NodeType                               any
+	NumberOfNodes                          any
+	PendingActions                         any
+	PendingModifiedValues                  any
+	PreferredMaintenanceWindow             any
+	PubliclyAccessible                     any
+	ResizeInfo                             any
+	RestoreStatus                          any
+	SnapshotScheduleIdentifier             any
+	SnapshotScheduleState                  any
+	VpcId                                  any
+	VpcSecurityGroups                      any
 }
 
 type Findings_Findings_Resources_Details_AwsRoute53HostedZone_HostedZone_Config struct {
@@ -3677,14 +3677,14 @@ type Findings_Findings_Resources_Details_AwsRoute53HostedZone_HostedZone_Config 
 
 type Findings_Findings_Resources_Details_AwsRoute53HostedZone_HostedZone struct {
 	Config any
-	Id any
-	Name any
+	Id     any
+	Name   any
 }
 
 type Findings_Findings_Resources_Details_AwsRoute53HostedZone_QueryLoggingConfig_CloudWatchLogsLogGroupArn struct {
 	CloudWatchLogsLogGroupArn any
-	HostedZoneId any
-	Id any
+	HostedZoneId              any
+	Id                        any
 }
 
 type Findings_Findings_Resources_Details_AwsRoute53HostedZone_QueryLoggingConfig struct {
@@ -3692,21 +3692,21 @@ type Findings_Findings_Resources_Details_AwsRoute53HostedZone_QueryLoggingConfig
 }
 
 type Findings_Findings_Resources_Details_AwsRoute53HostedZone_Vpcs struct {
-	Id any
+	Id     any
 	Region any
 }
 
 type Findings_Findings_Resources_Details_AwsRoute53HostedZone struct {
-	HostedZone any
-	NameServers any
+	HostedZone         any
+	NameServers        any
 	QueryLoggingConfig any
-	Vpcs any
+	Vpcs               any
 }
 
 type Findings_Findings_Resources_Details_AwsS3AccessPoint_PublicAccessBlockConfiguration struct {
-	BlockPublicAcls any
-	BlockPublicPolicy any
-	IgnorePublicAcls any
+	BlockPublicAcls       any
+	BlockPublicPolicy     any
+	IgnorePublicAcls      any
 	RestrictPublicBuckets any
 }
 
@@ -3715,14 +3715,14 @@ type Findings_Findings_Resources_Details_AwsS3AccessPoint_VpcConfiguration struc
 }
 
 type Findings_Findings_Resources_Details_AwsS3AccessPoint struct {
-	AccessPointArn any
-	Alias any
-	Bucket any
-	BucketAccountId any
-	Name any
-	NetworkOrigin any
+	AccessPointArn                 any
+	Alias                          any
+	Bucket                         any
+	BucketAccountId                any
+	Name                           any
+	NetworkOrigin                  any
 	PublicAccessBlockConfiguration any
-	VpcConfiguration any
+	VpcConfiguration               any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguration_Rules_AbortIncompleteMultipartUpload struct {
@@ -3731,15 +3731,15 @@ type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguratio
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguration_Rules_Filter_Predicate_Operands struct {
 	Prefix any
-	Tag any
-	Type any
+	Tag    any
+	Type   any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguration_Rules_Filter_Predicate struct {
 	Operands any
-	Prefix any
-	Tag any
-	Type any
+	Prefix   any
+	Tag      any
+	Type     any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguration_Rules_Filter struct {
@@ -3747,28 +3747,28 @@ type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguratio
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguration_Rules_NoncurrentVersionTransitions struct {
-	Days any
+	Days         any
 	StorageClass any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguration_Rules_Transitions struct {
-	Date any
-	Days any
+	Date         any
+	Days         any
 	StorageClass any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguration_Rules struct {
-	AbortIncompleteMultipartUpload any
-	ExpirationDate any
-	ExpirationInDays any
-	ExpiredObjectDeleteMarker any
-	Filter any
-	Id any
+	AbortIncompleteMultipartUpload    any
+	ExpirationDate                    any
+	ExpirationInDays                  any
+	ExpiredObjectDeleteMarker         any
+	Filter                            any
+	Id                                any
 	NoncurrentVersionExpirationInDays any
-	NoncurrentVersionTransitions any
-	Prefix any
-	Status any
-	Transitions any
+	NoncurrentVersionTransitions      any
+	Prefix                            any
+	Status                            any
+	Transitions                       any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguration struct {
@@ -3777,7 +3777,7 @@ type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLifecycleConfiguratio
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketLoggingConfiguration struct {
 	DestinationBucketName any
-	LogFilePrefix any
+	LogFilePrefix         any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketNotificationConfiguration_Configurations_Filter_S3KeyFilter struct {
@@ -3790,9 +3790,9 @@ type Findings_Findings_Resources_Details_AwsS3Bucket_BucketNotificationConfigura
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketNotificationConfiguration_Configurations struct {
 	Destination any
-	Events any
-	Filter any
-	Type any
+	Events      any
+	Filter      any
+	Type        any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketNotificationConfiguration struct {
@@ -3801,7 +3801,7 @@ type Findings_Findings_Resources_Details_AwsS3Bucket_BucketNotificationConfigura
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketVersioningConfiguration struct {
 	IsMfaDeleteEnabled any
-	Status any
+	Status             any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketWebsiteConfiguration_RedirectAllRequestsTo struct {
@@ -3811,32 +3811,32 @@ type Findings_Findings_Resources_Details_AwsS3Bucket_BucketWebsiteConfiguration_
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketWebsiteConfiguration_RoutingRules_Condition struct {
 	HttpErrorCodeReturnedEquals any
-	KeyPrefixEquals any
+	KeyPrefixEquals             any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketWebsiteConfiguration_RoutingRules_Redirect struct {
-	Hostname any
-	HttpRedirectCode any
-	Protocol any
+	Hostname             any
+	HttpRedirectCode     any
+	Protocol             any
 	ReplaceKeyPrefixWith any
-	ReplaceKeyWith any
+	ReplaceKeyWith       any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketWebsiteConfiguration_RoutingRules struct {
 	Condition any
-	Redirect any
+	Redirect  any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_BucketWebsiteConfiguration struct {
-	ErrorDocument any
-	IndexDocumentSuffix any
+	ErrorDocument         any
+	IndexDocumentSuffix   any
 	RedirectAllRequestsTo any
-	RoutingRules any
+	RoutingRules          any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_ObjectLockConfiguration_Rule_DefaultRetention struct {
-	Days any
-	Mode any
+	Days  any
+	Mode  any
 	Years any
 }
 
@@ -3846,12 +3846,12 @@ type Findings_Findings_Resources_Details_AwsS3Bucket_ObjectLockConfiguration_Rul
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_ObjectLockConfiguration struct {
 	ObjectLockEnabled any
-	Rule any
+	Rule              any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_ServerSideEncryptionConfiguration_Rules_ApplyServerSideEncryptionByDefault struct {
 	KmsmasterKeyId any
-	Ssealgorithm any
+	Ssealgorithm   any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket_ServerSideEncryptionConfiguration_Rules struct {
@@ -3863,29 +3863,29 @@ type Findings_Findings_Resources_Details_AwsS3Bucket_ServerSideEncryptionConfigu
 }
 
 type Findings_Findings_Resources_Details_AwsS3Bucket struct {
-	AccessControlList any
-	BucketLifecycleConfiguration any
-	BucketLoggingConfiguration any
-	BucketNotificationConfiguration any
-	BucketVersioningConfiguration any
-	BucketWebsiteConfiguration any
-	CreatedAt any
-	Name any
-	ObjectLockConfiguration any
-	OwnerAccountId any
-	OwnerId any
-	OwnerName any
-	PublicAccessBlockConfiguration any
+	AccessControlList                 any
+	BucketLifecycleConfiguration      any
+	BucketLoggingConfiguration        any
+	BucketNotificationConfiguration   any
+	BucketVersioningConfiguration     any
+	BucketWebsiteConfiguration        any
+	CreatedAt                         any
+	Name                              any
+	ObjectLockConfiguration           any
+	OwnerAccountId                    any
+	OwnerId                           any
+	OwnerName                         any
+	PublicAccessBlockConfiguration    any
 	ServerSideEncryptionConfiguration any
 }
 
 type Findings_Findings_Resources_Details_AwsS3Object struct {
-	ContentType any
-	Etag any
-	LastModified any
+	ContentType          any
+	Etag                 any
+	LastModified         any
 	ServerSideEncryption any
-	SsekmskeyId any
-	VersionId any
+	SsekmskeyId          any
+	VersionId            any
 }
 
 type Findings_Findings_Resources_Details_AwsSageMakerNotebookInstance_InstanceMetadataServiceConfiguration struct {
@@ -3893,26 +3893,26 @@ type Findings_Findings_Resources_Details_AwsSageMakerNotebookInstance_InstanceMe
 }
 
 type Findings_Findings_Resources_Details_AwsSageMakerNotebookInstance struct {
-	AcceleratorTypes any
-	AdditionalCodeRepositories any
-	DefaultCodeRepository any
-	DirectInternetAccess any
-	FailureReason any
+	AcceleratorTypes                     any
+	AdditionalCodeRepositories           any
+	DefaultCodeRepository                any
+	DirectInternetAccess                 any
+	FailureReason                        any
 	InstanceMetadataServiceConfiguration any
-	InstanceType any
-	KmsKeyId any
-	NetworkInterfaceId any
-	NotebookInstanceArn any
-	NotebookInstanceLifecycleConfigName any
-	NotebookInstanceName any
-	NotebookInstanceStatus any
-	PlatformIdentifier any
-	RoleArn any
-	RootAccess any
-	SecurityGroups any
-	SubnetId any
-	Url any
-	VolumeSizeInGb any
+	InstanceType                         any
+	KmsKeyId                             any
+	NetworkInterfaceId                   any
+	NotebookInstanceArn                  any
+	NotebookInstanceLifecycleConfigName  any
+	NotebookInstanceName                 any
+	NotebookInstanceStatus               any
+	PlatformIdentifier                   any
+	RoleArn                              any
+	RootAccess                           any
+	SecurityGroups                       any
+	SubnetId                             any
+	Url                                  any
+	VolumeSizeInGb                       any
 }
 
 type Findings_Findings_Resources_Details_AwsSecretsManagerSecret_RotationRules struct {
@@ -3920,14 +3920,14 @@ type Findings_Findings_Resources_Details_AwsSecretsManagerSecret_RotationRules s
 }
 
 type Findings_Findings_Resources_Details_AwsSecretsManagerSecret struct {
-	Deleted any
-	Description any
-	KmsKeyId any
-	Name any
-	RotationEnabled any
-	RotationLambdaArn any
+	Deleted                         any
+	Description                     any
+	KmsKeyId                        any
+	Name                            any
+	RotationEnabled                 any
+	RotationLambdaArn               any
 	RotationOccurredWithinFrequency any
-	RotationRules any
+	RotationRules                   any
 }
 
 type Findings_Findings_Resources_Details_AwsSnsTopic_Subscription struct {
@@ -3937,44 +3937,44 @@ type Findings_Findings_Resources_Details_AwsSnsTopic_Subscription struct {
 
 type Findings_Findings_Resources_Details_AwsSnsTopic struct {
 	ApplicationSuccessFeedbackRoleArn any
-	FirehoseFailureFeedbackRoleArn any
-	FirehoseSuccessFeedbackRoleArn any
-	HttpFailureFeedbackRoleArn any
-	HttpSuccessFeedbackRoleArn any
-	KmsMasterKeyId any
-	Owner any
-	SqsFailureFeedbackRoleArn any
-	SqsSuccessFeedbackRoleArn any
-	Subscription any
-	TopicName any
+	FirehoseFailureFeedbackRoleArn    any
+	FirehoseSuccessFeedbackRoleArn    any
+	HttpFailureFeedbackRoleArn        any
+	HttpSuccessFeedbackRoleArn        any
+	KmsMasterKeyId                    any
+	Owner                             any
+	SqsFailureFeedbackRoleArn         any
+	SqsSuccessFeedbackRoleArn         any
+	Subscription                      any
+	TopicName                         any
 }
 
 type Findings_Findings_Resources_Details_AwsSqsQueue struct {
-	DeadLetterTargetArn any
+	DeadLetterTargetArn          any
 	KmsDataKeyReusePeriodSeconds any
-	KmsMasterKeyId any
-	QueueName any
+	KmsMasterKeyId               any
+	QueueName                    any
 }
 
 type Findings_Findings_Resources_Details_AwsSsmPatchCompliance_Patch_ComplianceSummary struct {
-	ComplianceType any
-	CompliantCriticalCount any
-	CompliantHighCount any
-	CompliantInformationalCount any
-	CompliantLowCount any
-	CompliantMediumCount any
-	CompliantUnspecifiedCount any
-	ExecutionType any
-	NonCompliantCriticalCount any
-	NonCompliantHighCount any
+	ComplianceType                 any
+	CompliantCriticalCount         any
+	CompliantHighCount             any
+	CompliantInformationalCount    any
+	CompliantLowCount              any
+	CompliantMediumCount           any
+	CompliantUnspecifiedCount      any
+	ExecutionType                  any
+	NonCompliantCriticalCount      any
+	NonCompliantHighCount          any
 	NonCompliantInformationalCount any
-	NonCompliantLowCount any
-	NonCompliantMediumCount any
-	NonCompliantUnspecifiedCount any
-	OverallSeverity any
-	PatchBaselineId any
-	PatchGroup any
-	Status any
+	NonCompliantLowCount           any
+	NonCompliantMediumCount        any
+	NonCompliantUnspecifiedCount   any
+	OverallSeverity                any
+	PatchBaselineId                any
+	PatchGroup                     any
+	Status                         any
 }
 
 type Findings_Findings_Resources_Details_AwsSsmPatchCompliance_Patch struct {
@@ -3994,72 +3994,72 @@ type Findings_Findings_Resources_Details_AwsStepFunctionStateMachine_LoggingConf
 }
 
 type Findings_Findings_Resources_Details_AwsStepFunctionStateMachine_LoggingConfiguration struct {
-	Destinations any
+	Destinations         any
 	IncludeExecutionData any
-	Level any
+	Level                any
 }
 
 type Findings_Findings_Resources_Details_AwsStepFunctionStateMachine struct {
-	Label any
+	Label                any
 	LoggingConfiguration any
-	Name any
-	RoleArn any
-	StateMachineArn any
-	Status any
+	Name                 any
+	RoleArn              any
+	StateMachineArn      any
+	Status               any
 	TracingConfiguration any
-	Type any
+	Type                 any
 }
 
 type Findings_Findings_Resources_Details_AwsWafRateBasedRule_MatchPredicates struct {
-	DataId any
+	DataId  any
 	Negated any
-	Type any
+	Type    any
 }
 
 type Findings_Findings_Resources_Details_AwsWafRateBasedRule struct {
 	MatchPredicates any
-	MetricName any
-	Name any
-	RateKey any
-	RateLimit any
-	RuleId any
+	MetricName      any
+	Name            any
+	RateKey         any
+	RateLimit       any
+	RuleId          any
 }
 
 type Findings_Findings_Resources_Details_AwsWafRegionalRule struct {
-	MetricName any
-	Name any
+	MetricName    any
+	Name          any
 	PredicateList any
-	RuleId any
+	RuleId        any
 }
 
 type Findings_Findings_Resources_Details_AwsWafRegionalRuleGroup_Rules struct {
-	Action any
+	Action   any
 	Priority any
-	RuleId any
-	Type any
+	RuleId   any
+	Type     any
 }
 
 type Findings_Findings_Resources_Details_AwsWafRegionalRuleGroup struct {
-	MetricName any
-	Name any
+	MetricName  any
+	Name        any
 	RuleGroupId any
-	Rules any
+	Rules       any
 }
 
 type Findings_Findings_Resources_Details_AwsWafRegionalWebAcl_RulesList struct {
-	Action any
+	Action         any
 	OverrideAction any
-	Priority any
-	RuleId any
-	Type any
+	Priority       any
+	RuleId         any
+	Type           any
 }
 
 type Findings_Findings_Resources_Details_AwsWafRegionalWebAcl struct {
 	DefaultAction any
-	MetricName any
-	Name any
-	RulesList any
-	WebAclId any
+	MetricName    any
+	Name          any
+	RulesList     any
+	WebAclId      any
 }
 
 type Findings_Findings_Resources_Details_AwsWafWebAcl_Rules_ExcludedRules struct {
@@ -4067,19 +4067,19 @@ type Findings_Findings_Resources_Details_AwsWafWebAcl_Rules_ExcludedRules struct
 }
 
 type Findings_Findings_Resources_Details_AwsWafWebAcl_Rules struct {
-	Action any
-	ExcludedRules any
+	Action         any
+	ExcludedRules  any
 	OverrideAction any
-	Priority any
-	RuleId any
-	Type any
+	Priority       any
+	RuleId         any
+	Type           any
 }
 
 type Findings_Findings_Resources_Details_AwsWafWebAcl struct {
 	DefaultAction any
-	Name any
-	Rules any
-	WebAclId any
+	Name          any
+	Rules         any
+	WebAclId      any
 }
 
 type Findings_Findings_Resources_Details_AwsWafv2RuleGroup_Rules_Action_Allow_CustomRequestHandling struct {
@@ -4092,8 +4092,8 @@ type Findings_Findings_Resources_Details_AwsWafv2RuleGroup_Rules_Action_Allow st
 
 type Findings_Findings_Resources_Details_AwsWafv2RuleGroup_Rules_Action_Block_CustomResponse struct {
 	CustomResponseBodyKey any
-	ResponseCode any
-	ResponseHeaders any
+	ResponseCode          any
+	ResponseHeaders       any
 }
 
 type Findings_Findings_Resources_Details_AwsWafv2RuleGroup_Rules_Action_Block struct {
@@ -4101,34 +4101,34 @@ type Findings_Findings_Resources_Details_AwsWafv2RuleGroup_Rules_Action_Block st
 }
 
 type Findings_Findings_Resources_Details_AwsWafv2RuleGroup_Rules_Action struct {
-	Allow any
-	Block any
+	Allow   any
+	Block   any
 	Captcha any
-	Count any
+	Count   any
 }
 
 type Findings_Findings_Resources_Details_AwsWafv2RuleGroup_Rules_VisibilityConfig struct {
 	CloudWatchMetricsEnabled any
-	MetricName any
-	SampledRequestsEnabled any
+	MetricName               any
+	SampledRequestsEnabled   any
 }
 
 type Findings_Findings_Resources_Details_AwsWafv2RuleGroup_Rules struct {
-	Action any
-	Name any
-	OverrideAction any
-	Priority any
+	Action           any
+	Name             any
+	OverrideAction   any
+	Priority         any
 	VisibilityConfig any
 }
 
 type Findings_Findings_Resources_Details_AwsWafv2RuleGroup struct {
-	Arn any
-	Capacity any
-	Description any
-	Id any
-	Name any
-	Rules any
-	Scope any
+	Arn              any
+	Capacity         any
+	Description      any
+	Id               any
+	Name             any
+	Rules            any
+	Scope            any
 	VisibilityConfig any
 }
 
@@ -4146,147 +4146,147 @@ type Findings_Findings_Resources_Details_AwsWafv2WebAcl_DefaultAction struct {
 }
 
 type Findings_Findings_Resources_Details_AwsWafv2WebAcl struct {
-	Arn any
-	Capacity any
-	CaptchaConfig any
-	DefaultAction any
-	Description any
-	Id any
+	Arn                      any
+	Capacity                 any
+	CaptchaConfig            any
+	DefaultAction            any
+	Description              any
+	Id                       any
 	ManagedbyFirewallManager any
-	Name any
-	Rules any
-	VisibilityConfig any
+	Name                     any
+	Rules                    any
+	VisibilityConfig         any
 }
 
 type Findings_Findings_Resources_Details_AwsXrayEncryptionConfig struct {
-	KeyId any
+	KeyId  any
 	Status any
-	Type any
+	Type   any
 }
 
 type Findings_Findings_Resources_Details_CodeRepository struct {
 	CodeSecurityIntegrationArn any
-	ProjectName any
-	ProviderType any
+	ProjectName                any
+	ProviderType               any
 }
 
 type Findings_Findings_Resources_Details_Container_VolumeMounts struct {
 	MountPath any
-	Name any
+	Name      any
 }
 
 type Findings_Findings_Resources_Details_Container struct {
 	ContainerRuntime any
-	ImageId any
-	ImageName any
-	LaunchedAt any
-	Name any
-	Privileged any
-	VolumeMounts any
+	ImageId          any
+	ImageName        any
+	LaunchedAt       any
+	Name             any
+	Privileged       any
+	VolumeMounts     any
 }
 
 type Findings_Findings_Resources_Details struct {
-	AwsAmazonMqBroker any
-	AwsApiGatewayRestApi any
-	AwsApiGatewayStage any
-	AwsApiGatewayV2Api any
-	AwsApiGatewayV2Stage any
-	AwsAppSyncGraphQlApi any
-	AwsAthenaWorkGroup any
-	AwsAutoScalingAutoScalingGroup any
+	AwsAmazonMqBroker                 any
+	AwsApiGatewayRestApi              any
+	AwsApiGatewayStage                any
+	AwsApiGatewayV2Api                any
+	AwsApiGatewayV2Stage              any
+	AwsAppSyncGraphQlApi              any
+	AwsAthenaWorkGroup                any
+	AwsAutoScalingAutoScalingGroup    any
 	AwsAutoScalingLaunchConfiguration any
-	AwsBackupBackupPlan any
-	AwsBackupBackupVault any
-	AwsBackupRecoveryPoint any
-	AwsCertificateManagerCertificate any
-	AwsCloudFormationStack any
-	AwsCloudFrontDistribution any
-	AwsCloudTrailTrail any
-	AwsCloudWatchAlarm any
-	AwsCodeBuildProject any
-	AwsDmsEndpoint any
-	AwsDmsReplicationInstance any
-	AwsDmsReplicationTask any
-	AwsDynamoDbTable any
-	AwsEc2ClientVpnEndpoint any
-	AwsEc2Eip any
-	AwsEc2Instance any
-	AwsEc2LaunchTemplate any
-	AwsEc2NetworkAcl any
-	AwsEc2NetworkInterface any
-	AwsEc2RouteTable any
-	AwsEc2SecurityGroup any
-	AwsEc2Subnet any
-	AwsEc2TransitGateway any
-	AwsEc2Volume any
-	AwsEc2Vpc any
-	AwsEc2VpcEndpointService any
-	AwsEc2VpcPeeringConnection any
-	AwsEc2VpnConnection any
-	AwsEcrContainerImage any
-	AwsEcrRepository any
-	AwsEcsCluster any
-	AwsEcsContainer any
-	AwsEcsService any
-	AwsEcsTask any
-	AwsEcsTaskDefinition any
-	AwsEfsAccessPoint any
-	AwsEksCluster any
-	AwsElasticBeanstalkEnvironment any
-	AwsElasticsearchDomain any
-	AwsElbLoadBalancer any
-	AwsElbv2LoadBalancer any
-	AwsEventSchemasRegistry any
-	AwsEventsEndpoint any
-	AwsEventsEventbus any
-	AwsGuardDutyDetector any
-	AwsIamAccessKey any
-	AwsIamGroup any
-	AwsIamPolicy any
-	AwsIamRole any
-	AwsIamUser any
-	AwsKinesisStream any
-	AwsKmsKey any
-	AwsLambdaFunction any
-	AwsLambdaLayerVersion any
-	AwsMskCluster any
-	AwsNetworkFirewallFirewall any
-	AwsNetworkFirewallFirewallPolicy any
-	AwsNetworkFirewallRuleGroup any
-	AwsOpenSearchServiceDomain any
-	AwsRdsDbCluster any
-	AwsRdsDbClusterSnapshot any
-	AwsRdsDbInstance any
-	AwsRdsDbSecurityGroup any
-	AwsRdsDbSnapshot any
-	AwsRdsEventSubscription any
-	AwsRedshiftCluster any
-	AwsRoute53HostedZone any
-	AwsS3AccessPoint any
-	AwsS3AccountPublicAccessBlock any
-	AwsS3Bucket any
-	AwsS3Object any
-	AwsSageMakerNotebookInstance any
-	AwsSecretsManagerSecret any
-	AwsSnsTopic any
-	AwsSqsQueue any
-	AwsSsmPatchCompliance any
-	AwsStepFunctionStateMachine any
-	AwsWafRateBasedRule any
-	AwsWafRegionalRateBasedRule any
-	AwsWafRegionalRule any
-	AwsWafRegionalRuleGroup any
-	AwsWafRegionalWebAcl any
-	AwsWafRule any
-	AwsWafRuleGroup any
-	AwsWafWebAcl any
-	AwsWafv2RuleGroup any
-	AwsWafv2WebAcl any
-	AwsXrayEncryptionConfig any
-	AzureResource any
-	CodeRepository any
-	Container any
-	Other any
+	AwsBackupBackupPlan               any
+	AwsBackupBackupVault              any
+	AwsBackupRecoveryPoint            any
+	AwsCertificateManagerCertificate  any
+	AwsCloudFormationStack            any
+	AwsCloudFrontDistribution         any
+	AwsCloudTrailTrail                any
+	AwsCloudWatchAlarm                any
+	AwsCodeBuildProject               any
+	AwsDmsEndpoint                    any
+	AwsDmsReplicationInstance         any
+	AwsDmsReplicationTask             any
+	AwsDynamoDbTable                  any
+	AwsEc2ClientVpnEndpoint           any
+	AwsEc2Eip                         any
+	AwsEc2Instance                    any
+	AwsEc2LaunchTemplate              any
+	AwsEc2NetworkAcl                  any
+	AwsEc2NetworkInterface            any
+	AwsEc2RouteTable                  any
+	AwsEc2SecurityGroup               any
+	AwsEc2Subnet                      any
+	AwsEc2TransitGateway              any
+	AwsEc2Volume                      any
+	AwsEc2Vpc                         any
+	AwsEc2VpcEndpointService          any
+	AwsEc2VpcPeeringConnection        any
+	AwsEc2VpnConnection               any
+	AwsEcrContainerImage              any
+	AwsEcrRepository                  any
+	AwsEcsCluster                     any
+	AwsEcsContainer                   any
+	AwsEcsService                     any
+	AwsEcsTask                        any
+	AwsEcsTaskDefinition              any
+	AwsEfsAccessPoint                 any
+	AwsEksCluster                     any
+	AwsElasticBeanstalkEnvironment    any
+	AwsElasticsearchDomain            any
+	AwsElbLoadBalancer                any
+	AwsElbv2LoadBalancer              any
+	AwsEventSchemasRegistry           any
+	AwsEventsEndpoint                 any
+	AwsEventsEventbus                 any
+	AwsGuardDutyDetector              any
+	AwsIamAccessKey                   any
+	AwsIamGroup                       any
+	AwsIamPolicy                      any
+	AwsIamRole                        any
+	AwsIamUser                        any
+	AwsKinesisStream                  any
+	AwsKmsKey                         any
+	AwsLambdaFunction                 any
+	AwsLambdaLayerVersion             any
+	AwsMskCluster                     any
+	AwsNetworkFirewallFirewall        any
+	AwsNetworkFirewallFirewallPolicy  any
+	AwsNetworkFirewallRuleGroup       any
+	AwsOpenSearchServiceDomain        any
+	AwsRdsDbCluster                   any
+	AwsRdsDbClusterSnapshot           any
+	AwsRdsDbInstance                  any
+	AwsRdsDbSecurityGroup             any
+	AwsRdsDbSnapshot                  any
+	AwsRdsEventSubscription           any
+	AwsRedshiftCluster                any
+	AwsRoute53HostedZone              any
+	AwsS3AccessPoint                  any
+	AwsS3AccountPublicAccessBlock     any
+	AwsS3Bucket                       any
+	AwsS3Object                       any
+	AwsSageMakerNotebookInstance      any
+	AwsSecretsManagerSecret           any
+	AwsSnsTopic                       any
+	AwsSqsQueue                       any
+	AwsSsmPatchCompliance             any
+	AwsStepFunctionStateMachine       any
+	AwsWafRateBasedRule               any
+	AwsWafRegionalRateBasedRule       any
+	AwsWafRegionalRule                any
+	AwsWafRegionalRuleGroup           any
+	AwsWafRegionalWebAcl              any
+	AwsWafRule                        any
+	AwsWafRuleGroup                   any
+	AwsWafWebAcl                      any
+	AwsWafv2RuleGroup                 any
+	AwsWafv2WebAcl                    any
+	AwsXrayEncryptionConfig           any
+	AzureResource                     any
+	CodeRepository                    any
+	Container                         any
+	Other                             any
 }
 
 type Findings_Findings_Resources_Owner_Account struct {
@@ -4295,64 +4295,64 @@ type Findings_Findings_Resources_Owner_Account struct {
 
 type Findings_Findings_Resources_Owner struct {
 	Account any
-	Org any
+	Org     any
 }
 
 type Findings_Findings_Resources struct {
-	ApplicationArn any
-	ApplicationName any
+	ApplicationArn     any
+	ApplicationName    any
 	DataClassification any
-	Details any
-	Id any
-	Owner any
-	Partition any
-	Provider any
-	Region any
-	ResourceRole any
-	Tags any
-	Type any
+	Details            any
+	Id                 any
+	Owner              any
+	Partition          any
+	Provider           any
+	Region             any
+	ResourceRole       any
+	Tags               any
+	Type               any
 }
 
 type Findings_Findings_Severity struct {
-	Label any
+	Label      any
 	Normalized any
-	Original any
-	Product any
+	Original   any
+	Product    any
 }
 
 type Findings_Findings_ThreatIntelIndicators struct {
-	Category any
+	Category       any
 	LastObservedAt any
-	Source any
-	SourceUrl any
-	Type any
-	Value any
+	Source         any
+	SourceUrl      any
+	Type           any
+	Value          any
 }
 
 type Findings_Findings_Threats_FilePaths struct {
-	FileName any
-	FilePath any
-	Hash any
+	FileName   any
+	FilePath   any
+	Hash       any
 	ResourceId any
 }
 
 type Findings_Findings_Threats struct {
 	FilePaths any
 	ItemCount any
-	Name any
-	Severity any
+	Name      any
+	Severity  any
 }
 
 type Findings_Findings_Vulnerabilities_CodeVulnerabilities_FilePath struct {
-	EndLine any
-	FileName any
-	FilePath any
+	EndLine   any
+	FileName  any
+	FilePath  any
 	StartLine any
 }
 
 type Findings_Findings_Vulnerabilities_CodeVulnerabilities struct {
-	Cwes any
-	FilePath any
+	Cwes      any
+	FilePath  any
 	SourceArn any
 }
 
@@ -4363,705 +4363,705 @@ type Findings_Findings_Vulnerabilities_Cvss_Adjustments struct {
 
 type Findings_Findings_Vulnerabilities_Cvss struct {
 	Adjustments any
-	BaseScore any
-	BaseVector any
-	Source any
-	Version any
+	BaseScore   any
+	BaseVector  any
+	Source      any
+	Version     any
 }
 
 type Findings_Findings_Vulnerabilities_Vendor struct {
-	Name any
-	Url any
+	Name            any
+	Url             any
 	VendorCreatedAt any
-	VendorSeverity any
+	VendorSeverity  any
 	VendorUpdatedAt any
 }
 
 type Findings_Findings_Vulnerabilities_VulnerablePackages struct {
-	Architecture any
-	Epoch any
-	FilePath any
-	FixedInVersion any
-	Name any
-	PackageManager any
-	Release any
-	Remediation any
-	SourceLayerArn any
+	Architecture    any
+	Epoch           any
+	FilePath        any
+	FixedInVersion  any
+	Name            any
+	PackageManager  any
+	Release         any
+	Remediation     any
+	SourceLayerArn  any
 	SourceLayerHash any
-	Version any
+	Version         any
 }
 
 type Findings_Findings_Vulnerabilities struct {
-	CodeVulnerabilities any
-	Cvss any
-	EpssScore any
-	ExploitAvailable any
-	FixAvailable any
-	Id any
-	LastKnownExploitAt any
-	ReferenceUrls any
+	CodeVulnerabilities    any
+	Cvss                   any
+	EpssScore              any
+	ExploitAvailable       any
+	FixAvailable           any
+	Id                     any
+	LastKnownExploitAt     any
+	ReferenceUrls          any
 	RelatedVulnerabilities any
-	Vendor any
-	VulnerablePackages any
+	Vendor                 any
+	VulnerablePackages     any
 }
 
 type Findings_Findings struct {
-	Action any
-	AwsAccountId any
-	AwsAccountName any
-	CompanyName any
-	Compliance any
-	Confidence any
-	CreatedAt any
-	Criticality any
-	Description any
-	Detection any
+	Action                any
+	AwsAccountId          any
+	AwsAccountName        any
+	CompanyName           any
+	Compliance            any
+	Confidence            any
+	CreatedAt             any
+	Criticality           any
+	Description           any
+	Detection             any
 	FindingProviderFields any
-	FirstObservedAt any
-	GeneratorDetails any
-	GeneratorId any
-	Id any
-	LastObservedAt any
-	Malware any
-	Network any
-	NetworkPath any
-	Note any
-	PatchSummary any
-	Process any
-	ProcessedAt any
-	ProductArn any
-	ProductFields any
-	ProductName any
-	RecordState any
-	Region any
-	RelatedFindings any
-	Remediation any
-	Resources any
-	Sample any
-	SchemaVersion any
-	Severity any
-	SourceUrl any
+	FirstObservedAt       any
+	GeneratorDetails      any
+	GeneratorId           any
+	Id                    any
+	LastObservedAt        any
+	Malware               any
+	Network               any
+	NetworkPath           any
+	Note                  any
+	PatchSummary          any
+	Process               any
+	ProcessedAt           any
+	ProductArn            any
+	ProductFields         any
+	ProductName           any
+	RecordState           any
+	Region                any
+	RelatedFindings       any
+	Remediation           any
+	Resources             any
+	Sample                any
+	SchemaVersion         any
+	Severity              any
+	SourceUrl             any
 	ThreatIntelIndicators any
-	Threats any
-	Title any
-	Types any
-	UpdatedAt any
-	UserDefinedFields any
-	VerificationState any
-	Vulnerabilities any
-	Workflow any
-	WorkflowState any
+	Threats               any
+	Title                 any
+	Types                 any
+	UpdatedAt             any
+	UserDefinedFields     any
+	VerificationState     any
+	Vulnerabilities       any
+	Workflow              any
+	WorkflowState         any
 }
 
 type Findings_SortCriteria struct {
-	Field any
+	Field     any
 	SortOrder any
 }
 
 var Findings_Filters_AwsAccountIdFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Findings_Filters_ConfidenceFields = ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Gt": ubx.FieldSpec{WireName: "gt"},
-		"Gte": ubx.FieldSpec{WireName: "gte"},
-		"Lt": ubx.FieldSpec{WireName: "lt"},
-		"Lte": ubx.FieldSpec{WireName: "lte"},
-	}
+	"Eq":  ubx.FieldSpec{WireName: "eq"},
+	"Gt":  ubx.FieldSpec{WireName: "gt"},
+	"Gte": ubx.FieldSpec{WireName: "gte"},
+	"Lt":  ubx.FieldSpec{WireName: "lt"},
+	"Lte": ubx.FieldSpec{WireName: "lte"},
+}
 
 var Findings_Filters_CreatedAt_DateRangeFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Unit":       ubx.FieldSpec{WireName: "unit"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Findings_Filters_CreatedAtFields = ubx.FieldMap{
-		"DateRange": ubx.FieldSpec{
-			WireName: "date_range",
-			Kind: "object",
-			Fields: Findings_Filters_CreatedAt_DateRangeFields,
-		},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"DateRange": ubx.FieldSpec{
+		WireName: "date_range",
+		Kind:     "object",
+		Fields:   Findings_Filters_CreatedAt_DateRangeFields,
+	},
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var Findings_Filters_KeywordFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Findings_Filters_NetworkDestinationIpV4Fields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+}
 
 var Findings_Filters_ProductFieldsFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Findings_Filters_SampleFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Findings_FiltersFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{
-			WireName: "aws_account_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"AwsAccountName": ubx.FieldSpec{
-			WireName: "aws_account_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"CompanyName": ubx.FieldSpec{
-			WireName: "company_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ComplianceAssociatedStandardsId": ubx.FieldSpec{
-			WireName: "compliance_associated_standards_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ComplianceSecurityControlId": ubx.FieldSpec{
-			WireName: "compliance_security_control_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ComplianceSecurityControlParametersName": ubx.FieldSpec{
-			WireName: "compliance_security_control_parameters_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ComplianceSecurityControlParametersValue": ubx.FieldSpec{
-			WireName: "compliance_security_control_parameters_value",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ComplianceStatus": ubx.FieldSpec{
-			WireName: "compliance_status",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"Confidence": ubx.FieldSpec{
-			WireName: "confidence",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"CreatedAt": ubx.FieldSpec{
-			WireName: "created_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"Criticality": ubx.FieldSpec{
-			WireName: "criticality",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"Description": ubx.FieldSpec{
-			WireName: "description",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsConfidence": ubx.FieldSpec{
-			WireName: "finding_provider_fields_confidence",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"FindingProviderFieldsCriticality": ubx.FieldSpec{
-			WireName: "finding_provider_fields_criticality",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"FindingProviderFieldsRelatedFindingsId": ubx.FieldSpec{
-			WireName: "finding_provider_fields_related_findings_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsRelatedFindingsProductArn": ubx.FieldSpec{
-			WireName: "finding_provider_fields_related_findings_product_arn",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsSeverityLabel": ubx.FieldSpec{
-			WireName: "finding_provider_fields_severity_label",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsSeverityOriginal": ubx.FieldSpec{
-			WireName: "finding_provider_fields_severity_original",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsTypes": ubx.FieldSpec{
-			WireName: "finding_provider_fields_types",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"FirstObservedAt": ubx.FieldSpec{
-			WireName: "first_observed_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"GeneratorId": ubx.FieldSpec{
-			WireName: "generator_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"Id": ubx.FieldSpec{
-			WireName: "id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"Keyword": ubx.FieldSpec{
-			WireName: "keyword",
-			Kind: "list",
-			Fields: Findings_Filters_KeywordFields,
-		},
-		"LastObservedAt": ubx.FieldSpec{
-			WireName: "last_observed_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"MalwareName": ubx.FieldSpec{
-			WireName: "malware_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"MalwarePath": ubx.FieldSpec{
-			WireName: "malware_path",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"MalwareState": ubx.FieldSpec{
-			WireName: "malware_state",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"MalwareType": ubx.FieldSpec{
-			WireName: "malware_type",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"NetworkDestinationDomain": ubx.FieldSpec{
-			WireName: "network_destination_domain",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"NetworkDestinationIpV4": ubx.FieldSpec{
-			WireName: "network_destination_ip_v4",
-			Kind: "list",
-			Fields: Findings_Filters_NetworkDestinationIpV4Fields,
-		},
-		"NetworkDestinationIpV6": ubx.FieldSpec{
-			WireName: "network_destination_ip_v6",
-			Kind: "list",
-			Fields: Findings_Filters_NetworkDestinationIpV4Fields,
-		},
-		"NetworkDestinationPort": ubx.FieldSpec{
-			WireName: "network_destination_port",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"NetworkDirection": ubx.FieldSpec{
-			WireName: "network_direction",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"NetworkProtocol": ubx.FieldSpec{
-			WireName: "network_protocol",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"NetworkSourceDomain": ubx.FieldSpec{
-			WireName: "network_source_domain",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"NetworkSourceIpV4": ubx.FieldSpec{
-			WireName: "network_source_ip_v4",
-			Kind: "list",
-			Fields: Findings_Filters_NetworkDestinationIpV4Fields,
-		},
-		"NetworkSourceIpV6": ubx.FieldSpec{
-			WireName: "network_source_ip_v6",
-			Kind: "list",
-			Fields: Findings_Filters_NetworkDestinationIpV4Fields,
-		},
-		"NetworkSourceMac": ubx.FieldSpec{
-			WireName: "network_source_mac",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"NetworkSourcePort": ubx.FieldSpec{
-			WireName: "network_source_port",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"NoteText": ubx.FieldSpec{
-			WireName: "note_text",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"NoteUpdatedAt": ubx.FieldSpec{
-			WireName: "note_updated_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"NoteUpdatedBy": ubx.FieldSpec{
-			WireName: "note_updated_by",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ProcessLaunchedAt": ubx.FieldSpec{
-			WireName: "process_launched_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"ProcessName": ubx.FieldSpec{
-			WireName: "process_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ProcessParentPid": ubx.FieldSpec{
-			WireName: "process_parent_pid",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"ProcessPath": ubx.FieldSpec{
-			WireName: "process_path",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ProcessPid": ubx.FieldSpec{
-			WireName: "process_pid",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"ProcessTerminatedAt": ubx.FieldSpec{
-			WireName: "process_terminated_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"ProductArn": ubx.FieldSpec{
-			WireName: "product_arn",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ProductFields": ubx.FieldSpec{
-			WireName: "product_fields",
-			Kind: "list",
-			Fields: Findings_Filters_ProductFieldsFields,
-		},
-		"ProductName": ubx.FieldSpec{
-			WireName: "product_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"RecommendationText": ubx.FieldSpec{
-			WireName: "recommendation_text",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"RecordState": ubx.FieldSpec{
-			WireName: "record_state",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"Region": ubx.FieldSpec{
-			WireName: "region",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"RelatedFindingsId": ubx.FieldSpec{
-			WireName: "related_findings_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"RelatedFindingsProductArn": ubx.FieldSpec{
-			WireName: "related_findings_product_arn",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceApplicationArn": ubx.FieldSpec{
-			WireName: "resource_application_arn",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceApplicationName": ubx.FieldSpec{
-			WireName: "resource_application_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceIamInstanceProfileArn": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_iam_instance_profile_arn",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceImageId": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_image_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceIpV4Addresses": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_ip_v4_addresses",
-			Kind: "list",
-			Fields: Findings_Filters_NetworkDestinationIpV4Fields,
-		},
-		"ResourceAwsEc2InstanceIpV6Addresses": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_ip_v6_addresses",
-			Kind: "list",
-			Fields: Findings_Filters_NetworkDestinationIpV4Fields,
-		},
-		"ResourceAwsEc2InstanceKeyName": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_key_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceLaunchedAt": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_launched_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"ResourceAwsEc2InstanceSubnetId": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_subnet_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceType": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_type",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceVpcId": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_vpc_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsIamAccessKeyCreatedAt": ubx.FieldSpec{
-			WireName: "resource_aws_iam_access_key_created_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"ResourceAwsIamAccessKeyPrincipalName": ubx.FieldSpec{
-			WireName: "resource_aws_iam_access_key_principal_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsIamAccessKeyStatus": ubx.FieldSpec{
-			WireName: "resource_aws_iam_access_key_status",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsIamAccessKeyUserName": ubx.FieldSpec{
-			WireName: "resource_aws_iam_access_key_user_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsIamUserUserName": ubx.FieldSpec{
-			WireName: "resource_aws_iam_user_user_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsS3BucketOwnerId": ubx.FieldSpec{
-			WireName: "resource_aws_s3_bucket_owner_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsS3BucketOwnerName": ubx.FieldSpec{
-			WireName: "resource_aws_s3_bucket_owner_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceContainerImageId": ubx.FieldSpec{
-			WireName: "resource_container_image_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceContainerImageName": ubx.FieldSpec{
-			WireName: "resource_container_image_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceContainerLaunchedAt": ubx.FieldSpec{
-			WireName: "resource_container_launched_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"ResourceContainerName": ubx.FieldSpec{
-			WireName: "resource_container_name",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceDetailsOther": ubx.FieldSpec{
-			WireName: "resource_details_other",
-			Kind: "list",
-			Fields: Findings_Filters_ProductFieldsFields,
-		},
-		"ResourceId": ubx.FieldSpec{
-			WireName: "resource_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceOwnerAccountId": ubx.FieldSpec{
-			WireName: "resource_owner_account_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceOwnerOrgId": ubx.FieldSpec{
-			WireName: "resource_owner_org_id",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourcePartition": ubx.FieldSpec{
-			WireName: "resource_partition",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceProvider": ubx.FieldSpec{
-			WireName: "resource_provider",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceRegion": ubx.FieldSpec{
-			WireName: "resource_region",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ResourceTags": ubx.FieldSpec{
-			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Findings_Filters_ProductFieldsFields,
-		},
-		"ResourceType": ubx.FieldSpec{
-			WireName: "resource_type",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"Sample": ubx.FieldSpec{
-			WireName: "sample",
-			Kind: "list",
-			Fields: Findings_Filters_SampleFields,
-		},
-		"SeverityLabel": ubx.FieldSpec{
-			WireName: "severity_label",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"SeverityNormalized": ubx.FieldSpec{
-			WireName: "severity_normalized",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"SeverityProduct": ubx.FieldSpec{
-			WireName: "severity_product",
-			Kind: "list",
-			Fields: Findings_Filters_ConfidenceFields,
-		},
-		"SourceUrl": ubx.FieldSpec{
-			WireName: "source_url",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorCategory": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_category",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorLastObservedAt": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_last_observed_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"ThreatIntelIndicatorSource": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_source",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorSourceUrl": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_source_url",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorType": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_type",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorValue": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_value",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"UpdatedAt": ubx.FieldSpec{
-			WireName: "updated_at",
-			Kind: "list",
-			Fields: Findings_Filters_CreatedAtFields,
-		},
-		"UserDefinedFields": ubx.FieldSpec{
-			WireName: "user_defined_fields",
-			Kind: "list",
-			Fields: Findings_Filters_ProductFieldsFields,
-		},
-		"VerificationState": ubx.FieldSpec{
-			WireName: "verification_state",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"VulnerabilitiesExploitAvailable": ubx.FieldSpec{
-			WireName: "vulnerabilities_exploit_available",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"VulnerabilitiesFixAvailable": ubx.FieldSpec{
-			WireName: "vulnerabilities_fix_available",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"WorkflowState": ubx.FieldSpec{
-			WireName: "workflow_state",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-		"WorkflowStatus": ubx.FieldSpec{
-			WireName: "workflow_status",
-			Kind: "list",
-			Fields: Findings_Filters_AwsAccountIdFields,
-		},
-	}
+	"AwsAccountId": ubx.FieldSpec{
+		WireName: "aws_account_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"AwsAccountName": ubx.FieldSpec{
+		WireName: "aws_account_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"CompanyName": ubx.FieldSpec{
+		WireName: "company_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ComplianceAssociatedStandardsId": ubx.FieldSpec{
+		WireName: "compliance_associated_standards_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ComplianceSecurityControlId": ubx.FieldSpec{
+		WireName: "compliance_security_control_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ComplianceSecurityControlParametersName": ubx.FieldSpec{
+		WireName: "compliance_security_control_parameters_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ComplianceSecurityControlParametersValue": ubx.FieldSpec{
+		WireName: "compliance_security_control_parameters_value",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ComplianceStatus": ubx.FieldSpec{
+		WireName: "compliance_status",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"Confidence": ubx.FieldSpec{
+		WireName: "confidence",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"CreatedAt": ubx.FieldSpec{
+		WireName: "created_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"Criticality": ubx.FieldSpec{
+		WireName: "criticality",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"Description": ubx.FieldSpec{
+		WireName: "description",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsConfidence": ubx.FieldSpec{
+		WireName: "finding_provider_fields_confidence",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"FindingProviderFieldsCriticality": ubx.FieldSpec{
+		WireName: "finding_provider_fields_criticality",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"FindingProviderFieldsRelatedFindingsId": ubx.FieldSpec{
+		WireName: "finding_provider_fields_related_findings_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsRelatedFindingsProductArn": ubx.FieldSpec{
+		WireName: "finding_provider_fields_related_findings_product_arn",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsSeverityLabel": ubx.FieldSpec{
+		WireName: "finding_provider_fields_severity_label",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsSeverityOriginal": ubx.FieldSpec{
+		WireName: "finding_provider_fields_severity_original",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsTypes": ubx.FieldSpec{
+		WireName: "finding_provider_fields_types",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"FirstObservedAt": ubx.FieldSpec{
+		WireName: "first_observed_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"GeneratorId": ubx.FieldSpec{
+		WireName: "generator_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"Id": ubx.FieldSpec{
+		WireName: "id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"Keyword": ubx.FieldSpec{
+		WireName: "keyword",
+		Kind:     "list",
+		Fields:   Findings_Filters_KeywordFields,
+	},
+	"LastObservedAt": ubx.FieldSpec{
+		WireName: "last_observed_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"MalwareName": ubx.FieldSpec{
+		WireName: "malware_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"MalwarePath": ubx.FieldSpec{
+		WireName: "malware_path",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"MalwareState": ubx.FieldSpec{
+		WireName: "malware_state",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"MalwareType": ubx.FieldSpec{
+		WireName: "malware_type",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"NetworkDestinationDomain": ubx.FieldSpec{
+		WireName: "network_destination_domain",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"NetworkDestinationIpV4": ubx.FieldSpec{
+		WireName: "network_destination_ip_v4",
+		Kind:     "list",
+		Fields:   Findings_Filters_NetworkDestinationIpV4Fields,
+	},
+	"NetworkDestinationIpV6": ubx.FieldSpec{
+		WireName: "network_destination_ip_v6",
+		Kind:     "list",
+		Fields:   Findings_Filters_NetworkDestinationIpV4Fields,
+	},
+	"NetworkDestinationPort": ubx.FieldSpec{
+		WireName: "network_destination_port",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"NetworkDirection": ubx.FieldSpec{
+		WireName: "network_direction",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"NetworkProtocol": ubx.FieldSpec{
+		WireName: "network_protocol",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"NetworkSourceDomain": ubx.FieldSpec{
+		WireName: "network_source_domain",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"NetworkSourceIpV4": ubx.FieldSpec{
+		WireName: "network_source_ip_v4",
+		Kind:     "list",
+		Fields:   Findings_Filters_NetworkDestinationIpV4Fields,
+	},
+	"NetworkSourceIpV6": ubx.FieldSpec{
+		WireName: "network_source_ip_v6",
+		Kind:     "list",
+		Fields:   Findings_Filters_NetworkDestinationIpV4Fields,
+	},
+	"NetworkSourceMac": ubx.FieldSpec{
+		WireName: "network_source_mac",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"NetworkSourcePort": ubx.FieldSpec{
+		WireName: "network_source_port",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"NoteText": ubx.FieldSpec{
+		WireName: "note_text",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"NoteUpdatedAt": ubx.FieldSpec{
+		WireName: "note_updated_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"NoteUpdatedBy": ubx.FieldSpec{
+		WireName: "note_updated_by",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ProcessLaunchedAt": ubx.FieldSpec{
+		WireName: "process_launched_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"ProcessName": ubx.FieldSpec{
+		WireName: "process_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ProcessParentPid": ubx.FieldSpec{
+		WireName: "process_parent_pid",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"ProcessPath": ubx.FieldSpec{
+		WireName: "process_path",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ProcessPid": ubx.FieldSpec{
+		WireName: "process_pid",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"ProcessTerminatedAt": ubx.FieldSpec{
+		WireName: "process_terminated_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"ProductArn": ubx.FieldSpec{
+		WireName: "product_arn",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ProductFields": ubx.FieldSpec{
+		WireName: "product_fields",
+		Kind:     "list",
+		Fields:   Findings_Filters_ProductFieldsFields,
+	},
+	"ProductName": ubx.FieldSpec{
+		WireName: "product_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"RecommendationText": ubx.FieldSpec{
+		WireName: "recommendation_text",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"RecordState": ubx.FieldSpec{
+		WireName: "record_state",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"Region": ubx.FieldSpec{
+		WireName: "region",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"RelatedFindingsId": ubx.FieldSpec{
+		WireName: "related_findings_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"RelatedFindingsProductArn": ubx.FieldSpec{
+		WireName: "related_findings_product_arn",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceApplicationArn": ubx.FieldSpec{
+		WireName: "resource_application_arn",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceApplicationName": ubx.FieldSpec{
+		WireName: "resource_application_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceIamInstanceProfileArn": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_iam_instance_profile_arn",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceImageId": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_image_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceIpV4Addresses": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_ip_v4_addresses",
+		Kind:     "list",
+		Fields:   Findings_Filters_NetworkDestinationIpV4Fields,
+	},
+	"ResourceAwsEc2InstanceIpV6Addresses": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_ip_v6_addresses",
+		Kind:     "list",
+		Fields:   Findings_Filters_NetworkDestinationIpV4Fields,
+	},
+	"ResourceAwsEc2InstanceKeyName": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_key_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceLaunchedAt": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_launched_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"ResourceAwsEc2InstanceSubnetId": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_subnet_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceType": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_type",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceVpcId": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_vpc_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsIamAccessKeyCreatedAt": ubx.FieldSpec{
+		WireName: "resource_aws_iam_access_key_created_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"ResourceAwsIamAccessKeyPrincipalName": ubx.FieldSpec{
+		WireName: "resource_aws_iam_access_key_principal_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsIamAccessKeyStatus": ubx.FieldSpec{
+		WireName: "resource_aws_iam_access_key_status",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsIamAccessKeyUserName": ubx.FieldSpec{
+		WireName: "resource_aws_iam_access_key_user_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsIamUserUserName": ubx.FieldSpec{
+		WireName: "resource_aws_iam_user_user_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsS3BucketOwnerId": ubx.FieldSpec{
+		WireName: "resource_aws_s3_bucket_owner_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsS3BucketOwnerName": ubx.FieldSpec{
+		WireName: "resource_aws_s3_bucket_owner_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceContainerImageId": ubx.FieldSpec{
+		WireName: "resource_container_image_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceContainerImageName": ubx.FieldSpec{
+		WireName: "resource_container_image_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceContainerLaunchedAt": ubx.FieldSpec{
+		WireName: "resource_container_launched_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"ResourceContainerName": ubx.FieldSpec{
+		WireName: "resource_container_name",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceDetailsOther": ubx.FieldSpec{
+		WireName: "resource_details_other",
+		Kind:     "list",
+		Fields:   Findings_Filters_ProductFieldsFields,
+	},
+	"ResourceId": ubx.FieldSpec{
+		WireName: "resource_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceOwnerAccountId": ubx.FieldSpec{
+		WireName: "resource_owner_account_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceOwnerOrgId": ubx.FieldSpec{
+		WireName: "resource_owner_org_id",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourcePartition": ubx.FieldSpec{
+		WireName: "resource_partition",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceProvider": ubx.FieldSpec{
+		WireName: "resource_provider",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceRegion": ubx.FieldSpec{
+		WireName: "resource_region",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ResourceTags": ubx.FieldSpec{
+		WireName: "resource_tags",
+		Kind:     "list",
+		Fields:   Findings_Filters_ProductFieldsFields,
+	},
+	"ResourceType": ubx.FieldSpec{
+		WireName: "resource_type",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"Sample": ubx.FieldSpec{
+		WireName: "sample",
+		Kind:     "list",
+		Fields:   Findings_Filters_SampleFields,
+	},
+	"SeverityLabel": ubx.FieldSpec{
+		WireName: "severity_label",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"SeverityNormalized": ubx.FieldSpec{
+		WireName: "severity_normalized",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"SeverityProduct": ubx.FieldSpec{
+		WireName: "severity_product",
+		Kind:     "list",
+		Fields:   Findings_Filters_ConfidenceFields,
+	},
+	"SourceUrl": ubx.FieldSpec{
+		WireName: "source_url",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorCategory": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_category",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorLastObservedAt": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_last_observed_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"ThreatIntelIndicatorSource": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_source",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorSourceUrl": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_source_url",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorType": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_type",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorValue": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_value",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"UpdatedAt": ubx.FieldSpec{
+		WireName: "updated_at",
+		Kind:     "list",
+		Fields:   Findings_Filters_CreatedAtFields,
+	},
+	"UserDefinedFields": ubx.FieldSpec{
+		WireName: "user_defined_fields",
+		Kind:     "list",
+		Fields:   Findings_Filters_ProductFieldsFields,
+	},
+	"VerificationState": ubx.FieldSpec{
+		WireName: "verification_state",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"VulnerabilitiesExploitAvailable": ubx.FieldSpec{
+		WireName: "vulnerabilities_exploit_available",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"VulnerabilitiesFixAvailable": ubx.FieldSpec{
+		WireName: "vulnerabilities_fix_available",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"WorkflowState": ubx.FieldSpec{
+		WireName: "workflow_state",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+	"WorkflowStatus": ubx.FieldSpec{
+		WireName: "workflow_status",
+		Kind:     "list",
+		Fields:   Findings_Filters_AwsAccountIdFields,
+	},
+}
 
 var Findings_SortCriteriaFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Field":     ubx.FieldSpec{WireName: "field"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 type FindingsConfig struct {
 	// <p>A collection of filters that are applied to all active findings aggregated by Security Hub CSPM.</p> <p>You can filter by up to ten finding attributes. For each attribute, you can provide up to 20 filter values.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters      any
+	MaxResults   any
+	NextToken    any
 	SortCriteria any
 }
 
 type FindingsAttrs struct {
 	// <p>A collection of filters that are applied to all active findings aggregated by Security Hub CSPM.</p> <p>You can filter by up to ten finding attributes. For each attribute, you can provide up to 20 filter values.</p>
-	Filters any
-	Findings any
-	MaxResults any
-	NextToken any
+	Filters      any
+	Findings     any
+	MaxResults   any
+	NextToken    any
 	SortCriteria any
 }
 
@@ -5070,15 +5070,15 @@ var Findings = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: Findings_FiltersFields,
+			Kind:     "object",
+			Fields:   Findings_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "list",
-			Fields: Findings_SortCriteriaFields,
+			Kind:     "list",
+			Fields:   Findings_SortCriteriaFields,
 		},
 	},
 }

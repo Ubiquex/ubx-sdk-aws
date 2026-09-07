@@ -25,7 +25,7 @@ type Pool_OptionalKeywords struct {
 
 type Pool_Tags struct {
 	// The key of a tag assigned to an SMS voice pool, which defines the tag's name within the pool's AWS resource tags for organizational and cost-allocation purposes. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -39,38 +39,38 @@ type Pool_TwoWay struct {
 }
 
 var Pool_MandatoryKeywords_HelpFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Pool_MandatoryKeywordsFields = ubx.FieldMap{
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: Pool_MandatoryKeywords_HelpFields,
-		},
-		"Stop": ubx.FieldSpec{
-			WireName: "stop",
-			Kind: "object",
-			Fields: Pool_MandatoryKeywords_HelpFields,
-		},
-	}
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   Pool_MandatoryKeywords_HelpFields,
+	},
+	"Stop": ubx.FieldSpec{
+		WireName: "stop",
+		Kind:     "object",
+		Fields:   Pool_MandatoryKeywords_HelpFields,
+	},
+}
 
 var Pool_OptionalKeywordsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Keyword": ubx.FieldSpec{WireName: "keyword"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Action":  ubx.FieldSpec{WireName: "action"},
+	"Keyword": ubx.FieldSpec{WireName: "keyword"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Pool_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pool_TwoWayFields = ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"ChannelRole": ubx.FieldSpec{WireName: "channel_role"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"ChannelArn":  ubx.FieldSpec{WireName: "channel_arn"},
+	"ChannelRole": ubx.FieldSpec{WireName: "channel_role"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+}
 
 type PoolConfig struct {
 	// When set to true the pool can't be deleted. By default this is set to false.
@@ -124,27 +124,27 @@ var Pool = ubx.ResourceBinding{
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
 		"MandatoryKeywords": ubx.FieldSpec{
 			WireName: "mandatory_keywords",
-			Kind: "object",
-			Fields: Pool_MandatoryKeywordsFields,
+			Kind:     "object",
+			Fields:   Pool_MandatoryKeywordsFields,
 		},
 		"OptOutListName": ubx.FieldSpec{WireName: "opt_out_list_name"},
 		"OptionalKeywords": ubx.FieldSpec{
 			WireName: "optional_keywords",
-			Kind: "list",
-			Fields: Pool_OptionalKeywordsFields,
+			Kind:     "list",
+			Fields:   Pool_OptionalKeywordsFields,
 		},
-		"OriginationIdentities": ubx.FieldSpec{WireName: "origination_identities"},
+		"OriginationIdentities":     ubx.FieldSpec{WireName: "origination_identities"},
 		"SelfManagedOptOutsEnabled": ubx.FieldSpec{WireName: "self_managed_opt_outs_enabled"},
-		"SharedRoutesEnabled": ubx.FieldSpec{WireName: "shared_routes_enabled"},
+		"SharedRoutesEnabled":       ubx.FieldSpec{WireName: "shared_routes_enabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Pool_TagsFields,
+			Kind:     "list",
+			Fields:   Pool_TagsFields,
 		},
 		"TwoWay": ubx.FieldSpec{
 			WireName: "two_way",
-			Kind: "object",
-			Fields: Pool_TwoWayFields,
+			Kind:     "object",
+			Fields:   Pool_TwoWayFields,
 		},
 	},
 }

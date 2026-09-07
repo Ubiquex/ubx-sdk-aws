@@ -4,12 +4,12 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tests_Tests struct {
-	CreationTime any
-	ServiceArn any
+	CreationTime       any
+	ServiceArn         any
 	SuccessfulTestRuns any
-	TestId any
-	TestTemplateArn any
-	TotalTestRuns any
+	TestId             any
+	TestTemplateArn    any
+	TotalTestRuns      any
 }
 
 type TestsConfig struct {
@@ -28,14 +28,14 @@ type TestsAttrs struct {
 	NextToken any
 	// <p>ARN identifier.</p>
 	ServiceArn any
-	Tests any
+	Tests      any
 }
 
 var Tests = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_tests",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
 	},
 }

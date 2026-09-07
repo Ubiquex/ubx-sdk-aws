@@ -35,28 +35,28 @@ type CapacityReservationFleet_TagSpecifications struct {
 }
 
 var CapacityReservationFleet_InstanceTypeSpecificationsFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
-		"InstancePlatform": ubx.FieldSpec{WireName: "instance_platform"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"AvailabilityZone":   ubx.FieldSpec{WireName: "availability_zone"},
+	"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
+	"EbsOptimized":       ubx.FieldSpec{WireName: "ebs_optimized"},
+	"InstancePlatform":   ubx.FieldSpec{WireName: "instance_platform"},
+	"InstanceType":       ubx.FieldSpec{WireName: "instance_type"},
+	"Priority":           ubx.FieldSpec{WireName: "priority"},
+	"Weight":             ubx.FieldSpec{WireName: "weight"},
+}
 
 var CapacityReservationFleet_TagSpecifications_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CapacityReservationFleet_TagSpecificationsFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: CapacityReservationFleet_TagSpecifications_TagsFields,
-		},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   CapacityReservationFleet_TagSpecifications_TagsFields,
+	},
+}
 
 type CapacityReservationFleetConfig struct {
 	// Determines how the Capacity Reservation Fleet allocates capacity across the specified instance types, either by spreading evenly across them (diversified) or by honoring the priority order you set (prioritized). (AI-inferred)
@@ -105,22 +105,22 @@ type CapacityReservationFleetAttrs struct {
 var CapacityReservationFleet = ubx.ResourceBinding{
 	WireType: "aws_ec2_capacity_reservation_fleet",
 	Fields: ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
+		"AllocationStrategy":    ubx.FieldSpec{WireName: "allocation_strategy"},
+		"EndDate":               ubx.FieldSpec{WireName: "end_date"},
 		"InstanceMatchCriteria": ubx.FieldSpec{WireName: "instance_match_criteria"},
 		"InstanceTypeSpecifications": ubx.FieldSpec{
 			WireName: "instance_type_specifications",
-			Kind: "list",
-			Fields: CapacityReservationFleet_InstanceTypeSpecificationsFields,
+			Kind:     "list",
+			Fields:   CapacityReservationFleet_InstanceTypeSpecificationsFields,
 		},
 		"NoRemoveEndDate": ubx.FieldSpec{WireName: "no_remove_end_date"},
-		"RemoveEndDate": ubx.FieldSpec{WireName: "remove_end_date"},
+		"RemoveEndDate":   ubx.FieldSpec{WireName: "remove_end_date"},
 		"TagSpecifications": ubx.FieldSpec{
 			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: CapacityReservationFleet_TagSpecificationsFields,
+			Kind:     "list",
+			Fields:   CapacityReservationFleet_TagSpecificationsFields,
 		},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
+		"Tenancy":             ubx.FieldSpec{WireName: "tenancy"},
 		"TotalTargetCapacity": ubx.FieldSpec{WireName: "total_target_capacity"},
 	},
 }

@@ -4,287 +4,287 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkInsightsAnalyses_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_AlternatePathHints struct {
 	ComponentArn any
-	ComponentId any
+	ComponentId  any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_Acl struct {
-	Arn any
-	Id any
+	Arn  any
+	Id   any
 	Name any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_AclRule_PortRange struct {
 	From any
-	To any
+	To   any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_AclRule struct {
-	Cidr any
-	Egress any
-	PortRange any
-	Protocol any
+	Cidr       any
+	Egress     any
+	PortRange  any
+	Protocol   any
 	RuleAction any
 	RuleNumber any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_ClassicLoadBalancerListener struct {
-	InstancePort any
+	InstancePort     any
 	LoadBalancerPort any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_FirewallStatefulRule struct {
 	DestinationPorts any
-	Destinations any
-	Direction any
-	Protocol any
-	RuleAction any
-	RuleGroupArn any
-	SourcePorts any
-	Sources any
+	Destinations     any
+	Direction        any
+	Protocol         any
+	RuleAction       any
+	RuleGroupArn     any
+	SourcePorts      any
+	Sources          any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_FirewallStatelessRule struct {
 	DestinationPorts any
-	Destinations any
-	Priority any
-	Protocols any
-	RuleAction any
-	RuleGroupArn any
-	SourcePorts any
-	Sources any
+	Destinations     any
+	Priority         any
+	Protocols        any
+	RuleAction       any
+	RuleGroupArn     any
+	SourcePorts      any
+	Sources          any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_LoadBalancerTarget struct {
-	Address any
-	AvailabilityZone any
+	Address            any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	Instance any
-	Port any
+	Instance           any
+	Port               any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_RouteTableRoute struct {
-	CarrierGatewayId any
-	CoreNetworkArn any
-	DestinationCidr any
-	DestinationPrefixListId any
+	CarrierGatewayId            any
+	CoreNetworkArn              any
+	DestinationCidr             any
+	DestinationPrefixListId     any
 	EgressOnlyInternetGatewayId any
-	GatewayId any
-	InstanceId any
-	LocalGatewayId any
-	NatGatewayId any
-	NetworkInterfaceId any
-	Origin any
-	State any
-	TransitGatewayId any
-	VpcPeeringConnectionId any
+	GatewayId                   any
+	InstanceId                  any
+	LocalGatewayId              any
+	NatGatewayId                any
+	NetworkInterfaceId          any
+	Origin                      any
+	State                       any
+	TransitGatewayId            any
+	VpcPeeringConnectionId      any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_SecurityGroupRule struct {
-	Cidr any
-	Direction any
-	PortRange any
-	PrefixListId any
-	Protocol any
+	Cidr            any
+	Direction       any
+	PortRange       any
+	PrefixListId    any
+	Protocol        any
 	SecurityGroupId any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations_TransitGatewayRouteTableRoute struct {
-	AttachmentId any
+	AttachmentId    any
 	DestinationCidr any
-	PrefixListId any
-	ResourceId any
-	ResourceType any
-	RouteOrigin any
-	State any
+	PrefixListId    any
+	ResourceId      any
+	ResourceType    any
+	RouteOrigin     any
+	State           any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Explanations struct {
-	Acl any
-	AclRule any
-	Address any
-	Addresses any
-	AttachedTo any
-	AvailabilityZoneIds any
-	AvailabilityZones any
-	Cidrs any
-	ClassicLoadBalancerListener any
-	Component any
-	ComponentAccount any
-	ComponentRegion any
-	CustomerGateway any
-	Destination any
-	DestinationVpc any
-	Direction any
-	ElasticLoadBalancerListener any
-	ExplanationCode any
-	FirewallStatefulRule any
-	FirewallStatelessRule any
-	IngressRouteTable any
-	InternetGateway any
-	LoadBalancerArn any
-	LoadBalancerListenerPort any
-	LoadBalancerTarget any
-	LoadBalancerTargetGroup any
-	LoadBalancerTargetGroups any
-	LoadBalancerTargetPort any
-	MissingComponent any
-	NatGateway any
-	NetworkInterface any
-	PacketField any
-	Port any
-	PortRanges any
-	PrefixList any
-	Protocols any
-	RouteTable any
-	RouteTableRoute any
-	SecurityGroup any
-	SecurityGroupRule any
-	SecurityGroups any
-	SourceVpc any
-	State any
-	Subnet any
-	SubnetRouteTable any
-	TransitGateway any
-	TransitGatewayAttachment any
-	TransitGatewayRouteTable any
+	Acl                           any
+	AclRule                       any
+	Address                       any
+	Addresses                     any
+	AttachedTo                    any
+	AvailabilityZoneIds           any
+	AvailabilityZones             any
+	Cidrs                         any
+	ClassicLoadBalancerListener   any
+	Component                     any
+	ComponentAccount              any
+	ComponentRegion               any
+	CustomerGateway               any
+	Destination                   any
+	DestinationVpc                any
+	Direction                     any
+	ElasticLoadBalancerListener   any
+	ExplanationCode               any
+	FirewallStatefulRule          any
+	FirewallStatelessRule         any
+	IngressRouteTable             any
+	InternetGateway               any
+	LoadBalancerArn               any
+	LoadBalancerListenerPort      any
+	LoadBalancerTarget            any
+	LoadBalancerTargetGroup       any
+	LoadBalancerTargetGroups      any
+	LoadBalancerTargetPort        any
+	MissingComponent              any
+	NatGateway                    any
+	NetworkInterface              any
+	PacketField                   any
+	Port                          any
+	PortRanges                    any
+	PrefixList                    any
+	Protocols                     any
+	RouteTable                    any
+	RouteTableRoute               any
+	SecurityGroup                 any
+	SecurityGroupRule             any
+	SecurityGroups                any
+	SourceVpc                     any
+	State                         any
+	Subnet                        any
+	SubnetRouteTable              any
+	TransitGateway                any
+	TransitGatewayAttachment      any
+	TransitGatewayRouteTable      any
 	TransitGatewayRouteTableRoute any
-	Vpc any
-	VpcEndpoint any
-	VpcPeeringConnection any
-	VpnConnection any
-	VpnGateway any
+	Vpc                           any
+	VpcEndpoint                   any
+	VpcPeeringConnection          any
+	VpnConnection                 any
+	VpnGateway                    any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_ForwardPathComponents_AdditionalDetails_RuleGroupRuleOptionsPairs_RuleOptions struct {
-	Keyword any
+	Keyword  any
 	Settings any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_ForwardPathComponents_AdditionalDetails_RuleGroupRuleOptionsPairs struct {
 	RuleGroupArn any
-	RuleOptions any
+	RuleOptions  any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_ForwardPathComponents_AdditionalDetails_RuleGroupTypePairs struct {
-	RuleGroupArn any
+	RuleGroupArn  any
 	RuleGroupType any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_ForwardPathComponents_AdditionalDetails struct {
-	AdditionalDetailType any
-	Component any
-	LoadBalancers any
+	AdditionalDetailType      any
+	Component                 any
+	LoadBalancers             any
 	RuleGroupRuleOptionsPairs any
-	RuleGroupTypePairs any
-	RuleOptions any
-	ServiceName any
-	VpcEndpointService any
+	RuleGroupTypePairs        any
+	RuleOptions               any
+	ServiceName               any
+	VpcEndpointService        any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_ForwardPathComponents_InboundHeader struct {
-	DestinationAddresses any
+	DestinationAddresses  any
 	DestinationPortRanges any
-	Protocol any
-	SourceAddresses any
-	SourcePortRanges any
+	Protocol              any
+	SourceAddresses       any
+	SourcePortRanges      any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_ForwardPathComponents struct {
-	AclRule any
-	AdditionalDetails any
-	AttachedTo any
-	Component any
-	DestinationVpc any
-	ElasticLoadBalancerListener any
-	Explanations any
-	FirewallStatefulRule any
-	FirewallStatelessRule any
-	InboundHeader any
-	OutboundHeader any
-	RouteTableRoute any
-	SecurityGroupRule any
-	SequenceNumber any
-	ServiceName any
-	SourceVpc any
-	Subnet any
-	TransitGateway any
+	AclRule                       any
+	AdditionalDetails             any
+	AttachedTo                    any
+	Component                     any
+	DestinationVpc                any
+	ElasticLoadBalancerListener   any
+	Explanations                  any
+	FirewallStatefulRule          any
+	FirewallStatelessRule         any
+	InboundHeader                 any
+	OutboundHeader                any
+	RouteTableRoute               any
+	SecurityGroupRule             any
+	SequenceNumber                any
+	ServiceName                   any
+	SourceVpc                     any
+	Subnet                        any
+	TransitGateway                any
 	TransitGatewayRouteTableRoute any
-	Vpc any
+	Vpc                           any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type NetworkInsightsAnalyses_NetworkInsightsAnalyses struct {
-	AdditionalAccounts any
-	AlternatePathHints any
-	Explanations any
-	FilterInArns any
-	FilterOutArns any
-	ForwardPathComponents any
+	AdditionalAccounts         any
+	AlternatePathHints         any
+	Explanations               any
+	FilterInArns               any
+	FilterOutArns              any
+	ForwardPathComponents      any
 	NetworkInsightsAnalysisArn any
-	NetworkInsightsAnalysisId any
-	NetworkInsightsPathId any
-	NetworkPathFound any
-	ReturnPathComponents any
-	StartDate any
-	Status any
-	StatusMessage any
-	SuggestedAccounts any
-	Tags any
-	WarningMessage any
+	NetworkInsightsAnalysisId  any
+	NetworkInsightsPathId      any
+	NetworkPathFound           any
+	ReturnPathComponents       any
+	StartDate                  any
+	Status                     any
+	StatusMessage              any
+	SuggestedAccounts          any
+	Tags                       any
+	WarningMessage             any
 }
 
 var NetworkInsightsAnalyses_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type NetworkInsightsAnalysesConfig struct {
-	AnalysisEndTime any
-	AnalysisStartTime any
-	DryRun any
-	Filters any
-	MaxResults any
+	AnalysisEndTime            any
+	AnalysisStartTime          any
+	DryRun                     any
+	Filters                    any
+	MaxResults                 any
 	NetworkInsightsAnalysisIds any
-	NetworkInsightsPathId any
-	NextToken any
+	NetworkInsightsPathId      any
+	NextToken                  any
 }
 
 type NetworkInsightsAnalysesAttrs struct {
-	AnalysisEndTime any
-	AnalysisStartTime any
-	DryRun any
-	Filters any
-	MaxResults any
-	NetworkInsightsAnalyses any
+	AnalysisEndTime            any
+	AnalysisStartTime          any
+	DryRun                     any
+	Filters                    any
+	MaxResults                 any
+	NetworkInsightsAnalyses    any
 	NetworkInsightsAnalysisIds any
-	NetworkInsightsPathId any
-	NextToken any
+	NetworkInsightsPathId      any
+	NextToken                  any
 }
 
 var NetworkInsightsAnalyses = ubx.DataSourceBinding{
 	WireType: "aws_ec2_network_insights_analyses",
 	Fields: ubx.FieldMap{
-		"AnalysisEndTime": ubx.FieldSpec{WireName: "analysis_end_time"},
+		"AnalysisEndTime":   ubx.FieldSpec{WireName: "analysis_end_time"},
 		"AnalysisStartTime": ubx.FieldSpec{WireName: "analysis_start_time"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":            ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: NetworkInsightsAnalyses_FiltersFields,
+			Kind:     "list",
+			Fields:   NetworkInsightsAnalyses_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":                 ubx.FieldSpec{WireName: "max_results"},
 		"NetworkInsightsAnalysisIds": ubx.FieldSpec{WireName: "network_insights_analysis_ids"},
-		"NetworkInsightsPathId": ubx.FieldSpec{WireName: "network_insights_path_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NetworkInsightsPathId":      ubx.FieldSpec{WireName: "network_insights_path_id"},
+		"NextToken":                  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

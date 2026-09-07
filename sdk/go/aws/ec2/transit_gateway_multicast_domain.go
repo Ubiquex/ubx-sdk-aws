@@ -19,15 +19,15 @@ type TransitGatewayMulticastDomain_Tags struct {
 }
 
 var TransitGatewayMulticastDomain_OptionsFields = ubx.FieldMap{
-		"AutoAcceptSharedAssociations": ubx.FieldSpec{WireName: "auto_accept_shared_associations"},
-		"Igmpv2Support": ubx.FieldSpec{WireName: "igmpv2_support"},
-		"StaticSourcesSupport": ubx.FieldSpec{WireName: "static_sources_support"},
-	}
+	"AutoAcceptSharedAssociations": ubx.FieldSpec{WireName: "auto_accept_shared_associations"},
+	"Igmpv2Support":                ubx.FieldSpec{WireName: "igmpv2_support"},
+	"StaticSourcesSupport":         ubx.FieldSpec{WireName: "static_sources_support"},
+}
 
 var TransitGatewayMulticastDomain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayMulticastDomainConfig struct {
 	// The options for the transit gateway multicast domain.
@@ -60,13 +60,13 @@ var TransitGatewayMulticastDomain = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: TransitGatewayMulticastDomain_OptionsFields,
+			Kind:     "object",
+			Fields:   TransitGatewayMulticastDomain_OptionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayMulticastDomain_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayMulticastDomain_TagsFields,
 		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},

@@ -4,36 +4,36 @@ package secretsmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecretVersionIds_Versions struct {
-	CreatedDate any
-	KmsKeyIds any
+	CreatedDate      any
+	KmsKeyIds        any
 	LastAccessedDate any
-	VersionId any
-	VersionStages any
+	VersionId        any
+	VersionStages    any
 }
 
 type SecretVersionIdsConfig struct {
 	IncludeDeprecated any
-	MaxResults any
-	NextToken any
-	SecretId any
+	MaxResults        any
+	NextToken         any
+	SecretId          any
 }
 
 type SecretVersionIdsAttrs struct {
-	Arn any
+	Arn               any
 	IncludeDeprecated any
-	MaxResults any
-	Name any
-	NextToken any
-	SecretId any
-	Versions any
+	MaxResults        any
+	Name              any
+	NextToken         any
+	SecretId          any
+	Versions          any
 }
 
 var SecretVersionIds = ubx.DataSourceBinding{
 	WireType: "aws_secretsmanager_secret_version_ids",
 	Fields: ubx.FieldMap{
 		"IncludeDeprecated": ubx.FieldSpec{WireName: "include_deprecated"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"SecretId":          ubx.FieldSpec{WireName: "secret_id"},
 	},
 }

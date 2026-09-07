@@ -4,20 +4,20 @@ package amplifyuibuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetadataConfig struct {
-	AppId any
+	AppId           any
 	EnvironmentName any
 }
 
 type MetadataAttrs struct {
-	AppId any
+	AppId           any
 	EnvironmentName any
-	Features any
+	Features        any
 }
 
 var Metadata = ubx.DataSourceBinding{
 	WireType: "aws_amplifyuibuilder_metadata",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":           ubx.FieldSpec{WireName: "app_id"},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
 	},
 }

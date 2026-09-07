@@ -4,28 +4,28 @@ package voiceid
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Fraudster_Fraudster struct {
-	CreatedAt any
-	DomainId any
+	CreatedAt            any
+	DomainId             any
 	GeneratedFraudsterId any
-	WatchlistIds any
+	WatchlistIds         any
 }
 
 type FraudsterConfig struct {
-	DomainId any
+	DomainId    any
 	FraudsterId any
 }
 
 type FraudsterAttrs struct {
 	DomainId any
 	// <p>Contains all the information about a fraudster.</p>
-	Fraudster any
+	Fraudster   any
 	FraudsterId any
 }
 
 var Fraudster = ubx.DataSourceBinding{
 	WireType: "aws_voiceid_fraudster",
 	Fields: ubx.FieldMap{
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
+		"DomainId":    ubx.FieldSpec{WireName: "domain_id"},
 		"FraudsterId": ubx.FieldSpec{WireName: "fraudster_id"},
 	},
 }

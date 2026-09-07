@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExplainabilityExports_ExplainabilityExports_Destination_S3Config struct {
 	KmskeyArn any
-	Path any
-	RoleArn any
+	Path      any
+	RoleArn   any
 }
 
 type ExplainabilityExports_ExplainabilityExports_Destination struct {
@@ -14,38 +14,38 @@ type ExplainabilityExports_ExplainabilityExports_Destination struct {
 }
 
 type ExplainabilityExports_ExplainabilityExports struct {
-	CreationTime any
-	Destination any
-	ExplainabilityExportArn any
+	CreationTime             any
+	Destination              any
+	ExplainabilityExportArn  any
 	ExplainabilityExportName any
-	LastModificationTime any
-	Message any
-	Status any
+	LastModificationTime     any
+	Message                  any
+	Status                   any
 }
 
 type ExplainabilityExports_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 var ExplainabilityExports_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type ExplainabilityExportsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExplainabilityExportsAttrs struct {
 	ExplainabilityExports any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters               any
+	MaxResults            any
+	NextToken             any
 }
 
 var ExplainabilityExports = ubx.DataSourceBinding{
@@ -53,10 +53,10 @@ var ExplainabilityExports = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ExplainabilityExports_FiltersFields,
+			Kind:     "list",
+			Fields:   ExplainabilityExports_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -27,6 +27,6 @@ var ResolverConfig = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_resolver_config",
 	Fields: ubx.FieldMap{
 		"AutodefinedReverseFlag": ubx.FieldSpec{WireName: "autodefined_reverse_flag"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":             ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

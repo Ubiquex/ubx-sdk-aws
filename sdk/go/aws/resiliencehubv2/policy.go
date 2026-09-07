@@ -29,23 +29,23 @@ type Policy_Tags struct {
 }
 
 var Policy_AvailabilitySloFields = ubx.FieldMap{
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"Target": ubx.FieldSpec{WireName: "target"},
+}
 
 var Policy_DataRecoveryFields = ubx.FieldMap{
-		"TimeBetweenBackupsInMinutes": ubx.FieldSpec{WireName: "time_between_backups_in_minutes"},
-	}
+	"TimeBetweenBackupsInMinutes": ubx.FieldSpec{WireName: "time_between_backups_in_minutes"},
+}
 
 var Policy_MultiAzFields = ubx.FieldMap{
-		"DisasterRecoveryApproach": ubx.FieldSpec{WireName: "disaster_recovery_approach"},
-		"RpoInMinutes": ubx.FieldSpec{WireName: "rpo_in_minutes"},
-		"RtoInMinutes": ubx.FieldSpec{WireName: "rto_in_minutes"},
-	}
+	"DisasterRecoveryApproach": ubx.FieldSpec{WireName: "disaster_recovery_approach"},
+	"RpoInMinutes":             ubx.FieldSpec{WireName: "rpo_in_minutes"},
+	"RtoInMinutes":             ubx.FieldSpec{WireName: "rto_in_minutes"},
+}
 
 var Policy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PolicyConfig struct {
 	// Defines the availability service level objective (SLO) for the policy, specifying the target uptime percentage (e.g., 99.99%) that the application must meet to be considered resilient. (AI-inferred)
@@ -55,8 +55,8 @@ type PolicyConfig struct {
 	// The description of the policy.
 	Description any
 	// The KMS key ID for encrypting policy data.
-	KmsKeyId any
-	MultiAz any
+	KmsKeyId    any
+	MultiAz     any
 	MultiRegion any
 	// The name of the policy.
 	Name any
@@ -76,8 +76,8 @@ type PolicyAttrs struct {
 	// The description of the policy.
 	Description any
 	// The KMS key ID for encrypting policy data.
-	KmsKeyId any
-	MultiAz any
+	KmsKeyId    any
+	MultiAz     any
 	MultiRegion any
 	// The name of the policy.
 	Name any
@@ -94,31 +94,31 @@ var Policy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AvailabilitySlo": ubx.FieldSpec{
 			WireName: "availability_slo",
-			Kind: "object",
-			Fields: Policy_AvailabilitySloFields,
+			Kind:     "object",
+			Fields:   Policy_AvailabilitySloFields,
 		},
 		"DataRecovery": ubx.FieldSpec{
 			WireName: "data_recovery",
-			Kind: "object",
-			Fields: Policy_DataRecoveryFields,
+			Kind:     "object",
+			Fields:   Policy_DataRecoveryFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"KmsKeyId":    ubx.FieldSpec{WireName: "kms_key_id"},
 		"MultiAz": ubx.FieldSpec{
 			WireName: "multi_az",
-			Kind: "object",
-			Fields: Policy_MultiAzFields,
+			Kind:     "object",
+			Fields:   Policy_MultiAzFields,
 		},
 		"MultiRegion": ubx.FieldSpec{
 			WireName: "multi_region",
-			Kind: "object",
-			Fields: Policy_MultiAzFields,
+			Kind:     "object",
+			Fields:   Policy_MultiAzFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Policy_TagsFields,
+			Kind:     "list",
+			Fields:   Policy_TagsFields,
 		},
 	},
 }

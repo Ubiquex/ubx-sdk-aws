@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransformerJob_OutputFiles struct {
 	BucketName any
-	Key any
+	Key        any
 }
 
 type TransformerJobConfig struct {
-	TransformerId any
+	TransformerId    any
 	TransformerJobId any
 }
 
 type TransformerJobAttrs struct {
-	Message any
-	OutputFiles any
-	Status any
-	TransformerId any
+	Message          any
+	OutputFiles      any
+	Status           any
+	TransformerId    any
 	TransformerJobId any
 }
 
 var TransformerJob = ubx.DataSourceBinding{
 	WireType: "aws_b2bi_transformer_job",
 	Fields: ubx.FieldMap{
-		"TransformerId": ubx.FieldSpec{WireName: "transformer_id"},
+		"TransformerId":    ubx.FieldSpec{WireName: "transformer_id"},
 		"TransformerJobId": ubx.FieldSpec{WireName: "transformer_job_id"},
 	},
 }

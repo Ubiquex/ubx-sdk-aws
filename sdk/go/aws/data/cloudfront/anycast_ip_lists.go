@@ -4,54 +4,54 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnycastIpLists_AnycastIpLists_Items_IpamConfig_IpamCidrConfigs struct {
-	AnycastIp any
-	Cidr any
+	AnycastIp   any
+	Cidr        any
 	IpamPoolArn any
-	Status any
+	Status      any
 }
 
 type AnycastIpLists_AnycastIpLists_Items_IpamConfig struct {
 	IpamCidrConfigs any
-	Quantity any
+	Quantity        any
 }
 
 type AnycastIpLists_AnycastIpLists_Items struct {
-	Arn any
-	Etag any
-	Id any
-	IpAddressType any
-	IpCount any
-	IpamConfig any
+	Arn              any
+	Etag             any
+	Id               any
+	IpAddressType    any
+	IpCount          any
+	IpamConfig       any
 	LastModifiedTime any
-	Name any
-	Status any
+	Name             any
+	Status           any
 }
 
 type AnycastIpLists_AnycastIpLists struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type AnycastIpListsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type AnycastIpListsAttrs struct {
 	// <p>The Anycast static IP list collection.</p>
 	AnycastIpLists any
-	Marker any
-	MaxItems any
+	Marker         any
+	MaxItems       any
 }
 
 var AnycastIpLists = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_anycast_ip_lists",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

@@ -9,8 +9,8 @@ type WarmPool_InstanceReusePolicy struct {
 }
 
 var WarmPool_InstanceReusePolicyFields = ubx.FieldMap{
-		"ReuseOnScaleIn": ubx.FieldSpec{WireName: "reuse_on_scale_in"},
-	}
+	"ReuseOnScaleIn": ubx.FieldSpec{WireName: "reuse_on_scale_in"},
+}
 
 type WarmPoolConfig struct {
 	// The name of the Auto Scaling group for which the warm pool is configured. (AI-inferred)
@@ -44,11 +44,11 @@ var WarmPool = ubx.ResourceBinding{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
 		"InstanceReusePolicy": ubx.FieldSpec{
 			WireName: "instance_reuse_policy",
-			Kind: "object",
-			Fields: WarmPool_InstanceReusePolicyFields,
+			Kind:     "object",
+			Fields:   WarmPool_InstanceReusePolicyFields,
 		},
 		"MaxGroupPreparedCapacity": ubx.FieldSpec{WireName: "max_group_prepared_capacity"},
-		"MinSize": ubx.FieldSpec{WireName: "min_size"},
-		"PoolState": ubx.FieldSpec{WireName: "pool_state"},
+		"MinSize":                  ubx.FieldSpec{WireName: "min_size"},
+		"PoolState":                ubx.FieldSpec{WireName: "pool_state"},
 	},
 }

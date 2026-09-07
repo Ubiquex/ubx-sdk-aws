@@ -4,14 +4,14 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityTasks_CapacityTasks struct {
-	AssetId any
-	CapacityTaskId any
+	AssetId            any
+	CapacityTaskId     any
 	CapacityTaskStatus any
-	CompletionDate any
-	CreationDate any
-	LastModifiedDate any
-	OrderId any
-	OutpostId any
+	CompletionDate     any
+	CreationDate       any
+	LastModifiedDate   any
+	OrderId            any
+	OutpostId          any
 }
 
 type CapacityTasksConfig struct {
@@ -19,17 +19,17 @@ type CapacityTasksConfig struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken               any
 	OutpostIdentifierFilter any
 }
 
 type CapacityTasksAttrs struct {
 	CapacityTaskStatusFilter any
-	CapacityTasks any
+	CapacityTasks            any
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken               any
 	OutpostIdentifierFilter any
 }
 
@@ -37,8 +37,8 @@ var CapacityTasks = ubx.DataSourceBinding{
 	WireType: "aws_outposts_capacity_tasks",
 	Fields: ubx.FieldMap{
 		"CapacityTaskStatusFilter": ubx.FieldSpec{WireName: "capacity_task_status_filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OutpostIdentifierFilter": ubx.FieldSpec{WireName: "outpost_identifier_filter"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
+		"OutpostIdentifierFilter":  ubx.FieldSpec{WireName: "outpost_identifier_filter"},
 	},
 }

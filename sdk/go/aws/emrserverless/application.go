@@ -109,86 +109,86 @@ type Application_Tags struct {
 }
 
 var Application_AutoStartConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Application_AutoStopConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"IdleTimeoutMinutes": ubx.FieldSpec{WireName: "idle_timeout_minutes"},
-	}
+	"Enabled":            ubx.FieldSpec{WireName: "enabled"},
+	"IdleTimeoutMinutes": ubx.FieldSpec{WireName: "idle_timeout_minutes"},
+}
 
 var Application_IdentityCenterConfigurationFields = ubx.FieldMap{
-		"IdentityCenterInstanceArn": ubx.FieldSpec{WireName: "identity_center_instance_arn"},
-	}
+	"IdentityCenterInstanceArn": ubx.FieldSpec{WireName: "identity_center_instance_arn"},
+}
 
 var Application_ImageConfigurationFields = ubx.FieldMap{
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-	}
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+}
 
 var Application_InitialCapacity_Value_WorkerConfigurationFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"Disk": ubx.FieldSpec{WireName: "disk"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-	}
+	"Cpu":      ubx.FieldSpec{WireName: "cpu"},
+	"Disk":     ubx.FieldSpec{WireName: "disk"},
+	"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+	"Memory":   ubx.FieldSpec{WireName: "memory"},
+}
 
 var Application_InitialCapacity_ValueFields = ubx.FieldMap{
-		"WorkerConfiguration": ubx.FieldSpec{
-			WireName: "worker_configuration",
-			Kind: "object",
-			Fields: Application_InitialCapacity_Value_WorkerConfigurationFields,
-		},
-		"WorkerCount": ubx.FieldSpec{WireName: "worker_count"},
-	}
+	"WorkerConfiguration": ubx.FieldSpec{
+		WireName: "worker_configuration",
+		Kind:     "object",
+		Fields:   Application_InitialCapacity_Value_WorkerConfigurationFields,
+	},
+	"WorkerCount": ubx.FieldSpec{WireName: "worker_count"},
+}
 
 var Application_InitialCapacityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Application_InitialCapacity_ValueFields,
-		},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Application_InitialCapacity_ValueFields,
+	},
+}
 
 var Application_InteractiveConfigurationFields = ubx.FieldMap{
-		"LivyEndpointEnabled": ubx.FieldSpec{WireName: "livy_endpoint_enabled"},
-		"SessionEnabled": ubx.FieldSpec{WireName: "session_enabled"},
-		"StudioEnabled": ubx.FieldSpec{WireName: "studio_enabled"},
-	}
+	"LivyEndpointEnabled": ubx.FieldSpec{WireName: "livy_endpoint_enabled"},
+	"SessionEnabled":      ubx.FieldSpec{WireName: "session_enabled"},
+	"StudioEnabled":       ubx.FieldSpec{WireName: "studio_enabled"},
+}
 
 var Application_MaximumCapacityFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"Disk": ubx.FieldSpec{WireName: "disk"},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-	}
+	"Cpu":    ubx.FieldSpec{WireName: "cpu"},
+	"Disk":   ubx.FieldSpec{WireName: "disk"},
+	"Memory": ubx.FieldSpec{WireName: "memory"},
+}
 
 var Application_MonitoringConfigurationFields = ubx.FieldMap{
-		"CloudWatchLoggingConfiguration": ubx.FieldSpec{WireName: "cloud_watch_logging_configuration"},
-		"ManagedPersistenceMonitoringConfiguration": ubx.FieldSpec{WireName: "managed_persistence_monitoring_configuration"},
-		"PrometheusMonitoringConfiguration": ubx.FieldSpec{WireName: "prometheus_monitoring_configuration"},
-		"S3MonitoringConfiguration": ubx.FieldSpec{WireName: "s3_monitoring_configuration"},
-	}
+	"CloudWatchLoggingConfiguration":            ubx.FieldSpec{WireName: "cloud_watch_logging_configuration"},
+	"ManagedPersistenceMonitoringConfiguration": ubx.FieldSpec{WireName: "managed_persistence_monitoring_configuration"},
+	"PrometheusMonitoringConfiguration":         ubx.FieldSpec{WireName: "prometheus_monitoring_configuration"},
+	"S3MonitoringConfiguration":                 ubx.FieldSpec{WireName: "s3_monitoring_configuration"},
+}
 
 var Application_NetworkConfigurationFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var Application_RuntimeConfigurationFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"Configurations": ubx.FieldSpec{WireName: "configurations"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"Classification": ubx.FieldSpec{WireName: "classification"},
+	"Configurations": ubx.FieldSpec{WireName: "configurations"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+}
 
 var Application_SchedulerConfigurationFields = ubx.FieldMap{
-		"MaxConcurrentRuns": ubx.FieldSpec{WireName: "max_concurrent_runs"},
-		"QueueTimeoutMinutes": ubx.FieldSpec{WireName: "queue_timeout_minutes"},
-	}
+	"MaxConcurrentRuns":   ubx.FieldSpec{WireName: "max_concurrent_runs"},
+	"QueueTimeoutMinutes": ubx.FieldSpec{WireName: "queue_timeout_minutes"},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// The cpu architecture of an application.
@@ -274,67 +274,67 @@ var Application = ubx.ResourceBinding{
 		"Architecture": ubx.FieldSpec{WireName: "architecture"},
 		"AutoStartConfiguration": ubx.FieldSpec{
 			WireName: "auto_start_configuration",
-			Kind: "object",
-			Fields: Application_AutoStartConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_AutoStartConfigurationFields,
 		},
 		"AutoStopConfiguration": ubx.FieldSpec{
 			WireName: "auto_stop_configuration",
-			Kind: "object",
-			Fields: Application_AutoStopConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_AutoStopConfigurationFields,
 		},
 		"IdentityCenterConfiguration": ubx.FieldSpec{
 			WireName: "identity_center_configuration",
-			Kind: "object",
-			Fields: Application_IdentityCenterConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_IdentityCenterConfigurationFields,
 		},
 		"ImageConfiguration": ubx.FieldSpec{
 			WireName: "image_configuration",
-			Kind: "object",
-			Fields: Application_ImageConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_ImageConfigurationFields,
 		},
 		"InitialCapacity": ubx.FieldSpec{
 			WireName: "initial_capacity",
-			Kind: "list",
-			Fields: Application_InitialCapacityFields,
+			Kind:     "list",
+			Fields:   Application_InitialCapacityFields,
 		},
 		"InteractiveConfiguration": ubx.FieldSpec{
 			WireName: "interactive_configuration",
-			Kind: "object",
-			Fields: Application_InteractiveConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_InteractiveConfigurationFields,
 		},
 		"MaximumCapacity": ubx.FieldSpec{
 			WireName: "maximum_capacity",
-			Kind: "object",
-			Fields: Application_MaximumCapacityFields,
+			Kind:     "object",
+			Fields:   Application_MaximumCapacityFields,
 		},
 		"MonitoringConfiguration": ubx.FieldSpec{
 			WireName: "monitoring_configuration",
-			Kind: "object",
-			Fields: Application_MonitoringConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_MonitoringConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: Application_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_NetworkConfigurationFields,
 		},
 		"ReleaseLabel": ubx.FieldSpec{WireName: "release_label"},
 		"RuntimeConfiguration": ubx.FieldSpec{
 			WireName: "runtime_configuration",
-			Kind: "list",
-			Fields: Application_RuntimeConfigurationFields,
+			Kind:     "list",
+			Fields:   Application_RuntimeConfigurationFields,
 		},
 		"SchedulerConfiguration": ubx.FieldSpec{
 			WireName: "scheduler_configuration",
-			Kind: "object",
-			Fields: Application_SchedulerConfigurationFields,
+			Kind:     "object",
+			Fields:   Application_SchedulerConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":                     ubx.FieldSpec{WireName: "type"},
 		"WorkerTypeSpecifications": ubx.FieldSpec{WireName: "worker_type_specifications"},
 	},
 }

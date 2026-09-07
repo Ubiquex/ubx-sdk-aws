@@ -4,21 +4,21 @@ package fis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetAccountConfigurations_TargetAccountConfigurations struct {
-	AccountId any
+	AccountId   any
 	Description any
-	RoleArn any
+	RoleArn     any
 }
 
 type TargetAccountConfigurationsConfig struct {
 	ExperimentTemplateId any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 type TargetAccountConfigurationsAttrs struct {
-	ExperimentTemplateId any
-	MaxResults any
-	NextToken any
+	ExperimentTemplateId        any
+	MaxResults                  any
+	NextToken                   any
 	TargetAccountConfigurations any
 }
 
@@ -26,7 +26,7 @@ var TargetAccountConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_fis_target_account_configurations",
 	Fields: ubx.FieldMap{
 		"ExperimentTemplateId": ubx.FieldSpec{WireName: "experiment_template_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

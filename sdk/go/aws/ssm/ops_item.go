@@ -11,9 +11,9 @@ type OpsItem_Tags struct {
 }
 
 var OpsItem_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OpsItemConfig struct {
 	// The category of the OpsItem.
@@ -70,15 +70,15 @@ type OpsItemAttrs struct {
 var OpsItem = ubx.ResourceBinding{
 	WireType: "aws_ssm_ops_item",
 	Fields: ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
+		"Category":    ubx.FieldSpec{WireName: "category"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Severity":    ubx.FieldSpec{WireName: "severity"},
+		"Source":      ubx.FieldSpec{WireName: "source"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OpsItem_TagsFields,
+			Kind:     "list",
+			Fields:   OpsItem_TagsFields,
 		},
 		"Title": ubx.FieldSpec{WireName: "title"},
 	},

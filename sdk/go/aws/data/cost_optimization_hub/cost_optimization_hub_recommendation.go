@@ -8,48 +8,48 @@ type CostOptimizationHubRecommendation_CurrentResourceDetails_AuroraDbClusterSto
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_AuroraDbClusterStorage_CostCalculation_Pricing_EstimatedDiscounts struct {
-	OtherDiscount any
+	OtherDiscount             any
 	ReservedInstancesDiscount any
-	SavingsPlansDiscount any
+	SavingsPlansDiscount      any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_AuroraDbClusterStorage_CostCalculation_Pricing struct {
-	EstimatedCostAfterDiscounts any
-	EstimatedCostBeforeDiscounts any
-	EstimatedDiscounts any
+	EstimatedCostAfterDiscounts            any
+	EstimatedCostBeforeDiscounts           any
+	EstimatedDiscounts                     any
 	EstimatedNetUnusedAmortizedCommitments any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_AuroraDbClusterStorage_CostCalculation_Usages struct {
-	Operation any
+	Operation   any
 	ProductCode any
-	Unit any
+	Unit        any
 	UsageAmount any
-	UsageType any
+	UsageType   any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_AuroraDbClusterStorage_CostCalculation struct {
 	Pricing any
-	Usages any
+	Usages  any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_AuroraDbClusterStorage struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_ComputeSavingsPlans_Configuration struct {
-	AccountScope any
+	AccountScope     any
 	HourlyCommitment any
-	PaymentOption any
-	Term any
+	PaymentOption    any
+	Term             any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_ComputeSavingsPlans_CostCalculation_Pricing struct {
-	EstimatedMonthlyCommitment any
-	EstimatedOnDemandCost any
+	EstimatedMonthlyCommitment      any
+	EstimatedOnDemandCost           any
 	MonthlySavingsPlansEligibleCost any
-	SavingsPercentage any
+	SavingsPercentage               any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_ComputeSavingsPlans_CostCalculation struct {
@@ -57,7 +57,7 @@ type CostOptimizationHubRecommendation_CurrentResourceDetails_ComputeSavingsPlan
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_ComputeSavingsPlans struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
@@ -66,22 +66,22 @@ type CostOptimizationHubRecommendation_CurrentResourceDetails_DocumentDbCluster 
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_DynamoDbReservedCapacity_Configuration struct {
-	AccountScope any
-	CapacityUnits any
-	MonthlyRecurringCost any
+	AccountScope                    any
+	CapacityUnits                   any
+	MonthlyRecurringCost            any
 	NumberOfCapacityUnitsToPurchase any
-	PaymentOption any
-	ReservedInstancesRegion any
-	Service any
-	Term any
-	UpfrontCost any
+	PaymentOption                   any
+	ReservedInstancesRegion         any
+	Service                         any
+	Term                            any
+	UpfrontCost                     any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_DynamoDbReservedCapacity_CostCalculation_Pricing struct {
 	EstimatedMonthlyAmortizedReservationCost any
-	EstimatedOnDemandCost any
-	MonthlyReservationEligibleCost any
-	SavingsPercentage any
+	EstimatedOnDemandCost                    any
+	MonthlyReservationEligibleCost           any
+	SavingsPercentage                        any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_DynamoDbReservedCapacity_CostCalculation struct {
@@ -89,28 +89,28 @@ type CostOptimizationHubRecommendation_CurrentResourceDetails_DynamoDbReservedCa
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_DynamoDbReservedCapacity struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_EbsVolume_Configuration_Performance struct {
-	Iops any
+	Iops       any
 	Throughput any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_EbsVolume_Configuration_Storage struct {
 	SizeInGb any
-	Type any
+	Type     any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_EbsVolume_Configuration struct {
 	AttachmentState any
-	Performance any
-	Storage any
+	Performance     any
+	Storage         any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_EbsVolume struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
@@ -120,13 +120,13 @@ type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2AutoScalingGrou
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2AutoScalingGroup_Configuration struct {
 	AllocationStrategy any
-	Instance any
-	MixedInstances any
-	Type any
+	Instance           any
+	MixedInstances     any
+	Type               any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2AutoScalingGroup struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
@@ -135,53 +135,53 @@ type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2Instance_Config
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2Instance struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2InstanceSavingsPlans_Configuration struct {
-	AccountScope any
-	HourlyCommitment any
-	InstanceFamily any
-	PaymentOption any
+	AccountScope       any
+	HourlyCommitment   any
+	InstanceFamily     any
+	PaymentOption      any
 	SavingsPlansRegion any
-	Term any
+	Term               any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2InstanceSavingsPlans struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2ReservedInstances_Configuration struct {
-	AccountScope any
-	CurrentGeneration any
-	InstanceFamily any
-	InstanceType any
-	MonthlyRecurringCost any
-	NormalizedUnitsToPurchase any
+	AccountScope                any
+	CurrentGeneration           any
+	InstanceFamily              any
+	InstanceType                any
+	MonthlyRecurringCost        any
+	NormalizedUnitsToPurchase   any
 	NumberOfInstancesToPurchase any
-	OfferingClass any
-	PaymentOption any
-	Platform any
-	ReservedInstancesRegion any
-	Service any
-	SizeFlexEligible any
-	Tenancy any
-	Term any
-	UpfrontCost any
+	OfferingClass               any
+	PaymentOption               any
+	Platform                    any
+	ReservedInstancesRegion     any
+	Service                     any
+	SizeFlexEligible            any
+	Tenancy                     any
+	Term                        any
+	UpfrontCost                 any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_Ec2ReservedInstances struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_EcsService_Configuration_Compute struct {
-	Architecture any
+	Architecture   any
 	MemorySizeInMb any
-	Platform any
-	VCpu any
+	Platform       any
+	VCpu           any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_EcsService_Configuration struct {
@@ -189,59 +189,59 @@ type CostOptimizationHubRecommendation_CurrentResourceDetails_EcsService_Configu
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_EcsService struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_ElastiCacheReservedInstances_Configuration struct {
-	AccountScope any
-	CurrentGeneration any
-	InstanceFamily any
-	InstanceType any
-	MonthlyRecurringCost any
-	NormalizedUnitsToPurchase any
+	AccountScope                any
+	CurrentGeneration           any
+	InstanceFamily              any
+	InstanceType                any
+	MonthlyRecurringCost        any
+	NormalizedUnitsToPurchase   any
 	NumberOfInstancesToPurchase any
-	PaymentOption any
-	ReservedInstancesRegion any
-	Service any
-	SizeFlexEligible any
-	Term any
-	UpfrontCost any
+	PaymentOption               any
+	ReservedInstancesRegion     any
+	Service                     any
+	SizeFlexEligible            any
+	Term                        any
+	UpfrontCost                 any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_ElastiCacheReservedInstances struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_NatGateway_Configuration struct {
-	ActiveConnectionCount any
+	ActiveConnectionCount    any
 	PacketsInFromDestination any
-	PacketsInFromSource any
+	PacketsInFromSource      any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_NatGateway struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_OpenSearchReservedInstances_Configuration struct {
-	AccountScope any
-	CurrentGeneration any
-	InstanceType any
-	MonthlyRecurringCost any
-	NormalizedUnitsToPurchase any
+	AccountScope                any
+	CurrentGeneration           any
+	InstanceType                any
+	MonthlyRecurringCost        any
+	NormalizedUnitsToPurchase   any
 	NumberOfInstancesToPurchase any
-	PaymentOption any
-	ReservedInstancesRegion any
-	Service any
-	SizeFlexEligible any
-	Term any
-	UpfrontCost any
+	PaymentOption               any
+	ReservedInstancesRegion     any
+	Service                     any
+	SizeFlexEligible            any
+	Term                        any
+	UpfrontCost                 any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_OpenSearchReservedInstances struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
@@ -254,77 +254,77 @@ type CostOptimizationHubRecommendation_CurrentResourceDetails_RdsDbInstance_Conf
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_RdsDbInstance struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_RdsDbInstanceStorage_Configuration struct {
 	AllocatedStorageInGb any
-	Iops any
-	StorageThroughput any
-	StorageType any
+	Iops                 any
+	StorageThroughput    any
+	StorageType          any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_RdsDbInstanceStorage struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_RdsReservedInstances_Configuration struct {
-	AccountScope any
-	CurrentGeneration any
-	DatabaseEdition any
-	DatabaseEngine any
-	DeploymentOption any
-	InstanceFamily any
-	InstanceType any
-	LicenseModel any
-	MonthlyRecurringCost any
-	NormalizedUnitsToPurchase any
+	AccountScope                any
+	CurrentGeneration           any
+	DatabaseEdition             any
+	DatabaseEngine              any
+	DeploymentOption            any
+	InstanceFamily              any
+	InstanceType                any
+	LicenseModel                any
+	MonthlyRecurringCost        any
+	NormalizedUnitsToPurchase   any
 	NumberOfInstancesToPurchase any
-	PaymentOption any
-	ReservedInstancesRegion any
-	Service any
-	SizeFlexEligible any
-	Term any
-	UpfrontCost any
+	PaymentOption               any
+	ReservedInstancesRegion     any
+	Service                     any
+	SizeFlexEligible            any
+	Term                        any
+	UpfrontCost                 any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails_RdsReservedInstances struct {
-	Configuration any
+	Configuration   any
 	CostCalculation any
 }
 
 type CostOptimizationHubRecommendation_CurrentResourceDetails struct {
-	AuroraDbClusterStorage any
-	ComputeSavingsPlans any
-	DocumentDbCluster any
-	DynamoDbReservedCapacity any
-	DynamoDbTable any
-	EbsVolume any
-	Ec2AutoScalingGroup any
-	Ec2Instance any
-	Ec2InstanceSavingsPlans any
-	Ec2ReservedInstances any
-	EcsService any
-	ElastiCacheCluster any
+	AuroraDbClusterStorage       any
+	ComputeSavingsPlans          any
+	DocumentDbCluster            any
+	DynamoDbReservedCapacity     any
+	DynamoDbTable                any
+	EbsVolume                    any
+	Ec2AutoScalingGroup          any
+	Ec2Instance                  any
+	Ec2InstanceSavingsPlans      any
+	Ec2ReservedInstances         any
+	EcsService                   any
+	ElastiCacheCluster           any
 	ElastiCacheReservedInstances any
-	LambdaFunction any
-	MemoryDbCluster any
-	MemoryDbReservedInstances any
-	NatGateway any
-	OpenSearchReservedInstances any
-	RdsDbInstance any
-	RdsDbInstanceStorage any
-	RdsReservedInstances any
-	RedshiftReservedInstances any
-	SageMakerEndpoint any
-	SageMakerSavingsPlans any
-	WorkSpaces any
+	LambdaFunction               any
+	MemoryDbCluster              any
+	MemoryDbReservedInstances    any
+	NatGateway                   any
+	OpenSearchReservedInstances  any
+	RdsDbInstance                any
+	RdsDbInstanceStorage         any
+	RdsReservedInstances         any
+	RedshiftReservedInstances    any
+	SageMakerEndpoint            any
+	SageMakerSavingsPlans        any
+	WorkSpaces                   any
 }
 
 type CostOptimizationHubRecommendation_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -333,31 +333,31 @@ type CostOptimizationHubRecommendationConfig struct {
 }
 
 type CostOptimizationHubRecommendationAttrs struct {
-	AccountId any
-	ActionType any
+	AccountId                           any
+	ActionType                          any
 	CostCalculationLookbackPeriodInDays any
-	CurrencyCode any
+	CurrencyCode                        any
 	// <p>Contains detailed information about the specified resource.</p>
-	CurrentResourceDetails any
-	CurrentResourceType any
-	EstimatedMonthlyCost any
-	EstimatedMonthlySavings any
+	CurrentResourceDetails                            any
+	CurrentResourceType                               any
+	EstimatedMonthlyCost                              any
+	EstimatedMonthlySavings                           any
 	EstimatedSavingsOverCostCalculationLookbackPeriod any
-	EstimatedSavingsPercentage any
-	ImplementationEffort any
-	LastRefreshTimestamp any
-	RecommendationId any
-	RecommendationLookbackPeriodInDays any
+	EstimatedSavingsPercentage                        any
+	ImplementationEffort                              any
+	LastRefreshTimestamp                              any
+	RecommendationId                                  any
+	RecommendationLookbackPeriodInDays                any
 	// <p>Contains detailed information about the specified resource.</p>
 	RecommendedResourceDetails any
-	RecommendedResourceType any
-	Region any
-	ResourceArn any
-	ResourceId any
-	RestartNeeded any
-	RollbackPossible any
-	Source any
-	Tags any
+	RecommendedResourceType    any
+	Region                     any
+	ResourceArn                any
+	ResourceId                 any
+	RestartNeeded              any
+	RollbackPossible           any
+	Source                     any
+	Tags                       any
 }
 
 var CostOptimizationHubRecommendation = ubx.DataSourceBinding{

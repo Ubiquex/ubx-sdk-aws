@@ -8,18 +8,18 @@ type Tenant_ResourceAssociations struct {
 }
 
 type Tenant_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Tenant_ResourceAssociationsFields = ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var Tenant_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TenantConfig struct {
 	// The list of resources to associate with the tenant.
@@ -46,13 +46,13 @@ var Tenant = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ResourceAssociations": ubx.FieldSpec{
 			WireName: "resource_associations",
-			Kind: "list",
-			Fields: Tenant_ResourceAssociationsFields,
+			Kind:     "list",
+			Fields:   Tenant_ResourceAssociationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Tenant_TagsFields,
+			Kind:     "list",
+			Fields:   Tenant_TagsFields,
 		},
 		"TenantName": ubx.FieldSpec{WireName: "tenant_name"},
 	},

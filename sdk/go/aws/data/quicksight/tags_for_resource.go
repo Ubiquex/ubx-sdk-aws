@@ -4,7 +4,7 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -13,10 +13,10 @@ type TagsForResourceConfig struct {
 }
 
 type TagsForResourceAttrs struct {
-	RequestId any
+	RequestId   any
 	ResourceArn any
-	Status any
-	Tags any
+	Status      any
+	Tags        any
 }
 
 var TagsForResource = ubx.DataSourceBinding{

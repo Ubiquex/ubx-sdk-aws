@@ -4,27 +4,27 @@ package api_detective
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiDetectiveInvestigationConfig struct {
-	GraphArn any
+	GraphArn        any
 	InvestigationId any
 }
 
 type ApiDetectiveInvestigationAttrs struct {
-	CreatedTime any
-	EntityArn any
-	EntityType any
-	GraphArn any
+	CreatedTime     any
+	EntityArn       any
+	EntityType      any
+	GraphArn        any
 	InvestigationId any
-	ScopeEndTime any
-	ScopeStartTime any
-	Severity any
-	State any
-	Status any
+	ScopeEndTime    any
+	ScopeStartTime  any
+	Severity        any
+	State           any
+	Status          any
 }
 
 var ApiDetectiveInvestigation = ubx.DataSourceBinding{
 	WireType: "aws_api_detective_investigation",
 	Fields: ubx.FieldMap{
-		"GraphArn": ubx.FieldSpec{WireName: "graph_arn"},
+		"GraphArn":        ubx.FieldSpec{WireName: "graph_arn"},
 		"InvestigationId": ubx.FieldSpec{WireName: "investigation_id"},
 	},
 }

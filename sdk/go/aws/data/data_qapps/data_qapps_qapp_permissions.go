@@ -4,23 +4,23 @@ package data_qapps
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQappsQappPermissions_Permissions_Principal struct {
-	Email any
-	UserId any
+	Email    any
+	UserId   any
 	UserType any
 }
 
 type DataQappsQappPermissions_Permissions struct {
-	Action any
+	Action    any
 	Principal any
 }
 
 type DataQappsQappPermissionsConfig struct {
-	AppId any
+	AppId      any
 	InstanceId any
 }
 
 type DataQappsQappPermissionsAttrs struct {
-	AppId any
+	AppId      any
 	InstanceId any
 	// <p>A list of permissions granted for a Amazon Q App.</p>
 	Permissions any
@@ -30,7 +30,7 @@ type DataQappsQappPermissionsAttrs struct {
 var DataQappsQappPermissions = ubx.DataSourceBinding{
 	WireType: "aws_data_qapps_qapp_permissions",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

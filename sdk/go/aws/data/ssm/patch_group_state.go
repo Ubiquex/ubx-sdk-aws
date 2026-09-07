@@ -8,20 +8,20 @@ type PatchGroupStateConfig struct {
 }
 
 type PatchGroupStateAttrs struct {
-	Instances any
-	InstancesWithAvailableSecurityUpdates any
-	InstancesWithCriticalNonCompliantPatches any
-	InstancesWithFailedPatches any
-	InstancesWithInstalledOtherPatches any
-	InstancesWithInstalledPatches any
-	InstancesWithInstalledPendingRebootPatches any
-	InstancesWithInstalledRejectedPatches any
-	InstancesWithMissingPatches any
-	InstancesWithNotApplicablePatches any
-	InstancesWithOtherNonCompliantPatches any
-	InstancesWithSecurityNonCompliantPatches any
+	Instances                                   any
+	InstancesWithAvailableSecurityUpdates       any
+	InstancesWithCriticalNonCompliantPatches    any
+	InstancesWithFailedPatches                  any
+	InstancesWithInstalledOtherPatches          any
+	InstancesWithInstalledPatches               any
+	InstancesWithInstalledPendingRebootPatches  any
+	InstancesWithInstalledRejectedPatches       any
+	InstancesWithMissingPatches                 any
+	InstancesWithNotApplicablePatches           any
+	InstancesWithOtherNonCompliantPatches       any
+	InstancesWithSecurityNonCompliantPatches    any
 	InstancesWithUnreportedNotApplicablePatches any
-	PatchGroup any
+	PatchGroup                                  any
 }
 
 var PatchGroupState = ubx.DataSourceBinding{

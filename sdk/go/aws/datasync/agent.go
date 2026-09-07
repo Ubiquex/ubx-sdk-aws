@@ -4,14 +4,14 @@ package datasync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Agent_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Agent_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AgentConfig struct {
 	// Activation key of the Agent.
@@ -50,14 +50,14 @@ type AgentAttrs struct {
 var Agent = ubx.ResourceBinding{
 	WireType: "aws_data_sync_agent",
 	Fields: ubx.FieldMap{
-		"ActivationKey": ubx.FieldSpec{WireName: "activation_key"},
-		"AgentName": ubx.FieldSpec{WireName: "agent_name"},
+		"ActivationKey":     ubx.FieldSpec{WireName: "activation_key"},
+		"AgentName":         ubx.FieldSpec{WireName: "agent_name"},
 		"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
-		"SubnetArns": ubx.FieldSpec{WireName: "subnet_arns"},
+		"SubnetArns":        ubx.FieldSpec{WireName: "subnet_arns"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Agent_TagsFields,
+			Kind:     "list",
+			Fields:   Agent_TagsFields,
 		},
 		"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
 	},

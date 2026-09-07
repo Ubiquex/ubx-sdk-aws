@@ -4,31 +4,31 @@ package ssm_sap
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmSapApplication_Application struct {
-	AppRegistryArn any
-	Arn any
+	AppRegistryArn            any
+	Arn                       any
 	AssociatedApplicationArns any
-	Components any
-	DiscoveryStatus any
-	Id any
-	LastUpdated any
-	Status any
-	StatusMessage any
-	Type any
+	Components                any
+	DiscoveryStatus           any
+	Id                        any
+	LastUpdated               any
+	Status                    any
+	StatusMessage             any
+	Type                      any
 }
 
 type SsmSapApplicationConfig struct {
 	AppRegistryArn any
 	ApplicationArn any
-	ApplicationId any
+	ApplicationId  any
 }
 
 type SsmSapApplicationAttrs struct {
 	AppRegistryArn any
 	// <p>An SAP application registered with AWS Systems Manager for SAP.</p>
-	Application any
+	Application    any
 	ApplicationArn any
-	ApplicationId any
-	Tags any
+	ApplicationId  any
+	Tags           any
 }
 
 var SsmSapApplication = ubx.DataSourceBinding{
@@ -36,6 +36,6 @@ var SsmSapApplication = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AppRegistryArn": ubx.FieldSpec{WireName: "app_registry_arn"},
 		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":  ubx.FieldSpec{WireName: "application_id"},
 	},
 }

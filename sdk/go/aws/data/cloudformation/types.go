@@ -4,54 +4,54 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Types_Filters struct {
-	Category any
-	PublisherId any
+	Category       any
+	PublisherId    any
 	TypeNamePrefix any
 }
 
 type Types_TypeSummaries struct {
-	DefaultVersionId any
-	Description any
-	IsActivated any
-	LastUpdated any
+	DefaultVersionId    any
+	Description         any
+	IsActivated         any
+	LastUpdated         any
 	LatestPublicVersion any
-	OriginalTypeName any
+	OriginalTypeName    any
 	PublicVersionNumber any
-	PublisherId any
-	PublisherIdentity any
-	PublisherName any
-	Type any
-	TypeArn any
-	TypeName any
+	PublisherId         any
+	PublisherIdentity   any
+	PublisherName       any
+	Type                any
+	TypeArn             any
+	TypeName            any
 }
 
 var Types_FiltersFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"PublisherId": ubx.FieldSpec{WireName: "publisher_id"},
-		"TypeNamePrefix": ubx.FieldSpec{WireName: "type_name_prefix"},
-	}
+	"Category":       ubx.FieldSpec{WireName: "category"},
+	"PublisherId":    ubx.FieldSpec{WireName: "publisher_id"},
+	"TypeNamePrefix": ubx.FieldSpec{WireName: "type_name_prefix"},
+}
 
 type TypesConfig struct {
 	DeprecatedStatus any
 	// <p>Filter criteria to use in determining which extensions to return.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 	ProvisioningType any
-	Type any
-	Visibility any
+	Type             any
+	Visibility       any
 }
 
 type TypesAttrs struct {
 	DeprecatedStatus any
 	// <p>Filter criteria to use in determining which extensions to return.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 	ProvisioningType any
-	Type any
-	TypeSummaries any
-	Visibility any
+	Type             any
+	TypeSummaries    any
+	Visibility       any
 }
 
 var Types = ubx.DataSourceBinding{
@@ -60,13 +60,13 @@ var Types = ubx.DataSourceBinding{
 		"DeprecatedStatus": ubx.FieldSpec{WireName: "deprecated_status"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: Types_FiltersFields,
+			Kind:     "object",
+			Fields:   Types_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"ProvisioningType": ubx.FieldSpec{WireName: "provisioning_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
+		"Visibility":       ubx.FieldSpec{WireName: "visibility"},
 	},
 }

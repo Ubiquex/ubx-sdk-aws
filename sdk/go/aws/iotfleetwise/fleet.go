@@ -11,9 +11,9 @@ type Fleet_Tags struct {
 }
 
 var Fleet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FleetConfig struct {
 	// Provides an optional human-readable description of the fleet, such as its purpose or operational context, with a maximum length of 2048 characters. (AI-inferred)
@@ -46,13 +46,13 @@ type FleetAttrs struct {
 var Fleet = ubx.ResourceBinding{
 	WireType: "aws_io_tfleet_wise_fleet",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Id":               ubx.FieldSpec{WireName: "id"},
 		"SignalCatalogArn": ubx.FieldSpec{WireName: "signal_catalog_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Fleet_TagsFields,
+			Kind:     "list",
+			Fields:   Fleet_TagsFields,
 		},
 	},
 }

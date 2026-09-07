@@ -8,18 +8,18 @@ type TemplateSummary_Parameters_ParameterConstraints struct {
 }
 
 type TemplateSummary_Parameters struct {
-	DefaultValue any
-	Description any
-	NoEcho any
+	DefaultValue         any
+	Description          any
+	NoEcho               any
 	ParameterConstraints any
-	ParameterKey any
-	ParameterType any
+	ParameterKey         any
+	ParameterType        any
 }
 
 type TemplateSummary_ResourceIdentifierSummaries struct {
-	LogicalResourceIds any
+	LogicalResourceIds  any
 	ResourceIdentifiers any
-	ResourceType any
+	ResourceType        any
 }
 
 type TemplateSummary_TemplateSummaryConfig struct {
@@ -31,36 +31,36 @@ type TemplateSummary_Warnings struct {
 }
 
 var TemplateSummary_TemplateSummaryConfigFields = ubx.FieldMap{
-		"TreatUnrecognizedResourceTypesAsWarnings": ubx.FieldSpec{WireName: "treat_unrecognized_resource_types_as_warnings"},
-	}
+	"TreatUnrecognizedResourceTypesAsWarnings": ubx.FieldSpec{WireName: "treat_unrecognized_resource_types_as_warnings"},
+}
 
 type TemplateSummaryConfig struct {
-	CallAs any
-	StackName any
+	CallAs       any
+	StackName    any
 	StackSetName any
 	TemplateBody any
 	// <p>Options for the <code>GetTemplateSummary</code> API action.</p>
 	TemplateSummaryConfig any
-	TemplateUrl any
+	TemplateUrl           any
 }
 
 type TemplateSummaryAttrs struct {
-	CallAs any
-	Capabilities any
-	CapabilitiesReason any
-	DeclaredTransforms any
-	Description any
-	Metadata any
-	Parameters any
+	CallAs                      any
+	Capabilities                any
+	CapabilitiesReason          any
+	DeclaredTransforms          any
+	Description                 any
+	Metadata                    any
+	Parameters                  any
 	ResourceIdentifierSummaries any
-	ResourceTypes any
-	StackName any
-	StackSetName any
-	TemplateBody any
+	ResourceTypes               any
+	StackName                   any
+	StackSetName                any
+	TemplateBody                any
 	// <p>Options for the <code>GetTemplateSummary</code> API action.</p>
 	TemplateSummaryConfig any
-	TemplateUrl any
-	Version any
+	TemplateUrl           any
+	Version               any
 	// <p>Contains any warnings returned by the <code>GetTemplateSummary</code> API action.</p>
 	Warnings any
 }
@@ -68,14 +68,14 @@ type TemplateSummaryAttrs struct {
 var TemplateSummary = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_template_summary",
 	Fields: ubx.FieldMap{
-		"CallAs": ubx.FieldSpec{WireName: "call_as"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"CallAs":       ubx.FieldSpec{WireName: "call_as"},
+		"StackName":    ubx.FieldSpec{WireName: "stack_name"},
 		"StackSetName": ubx.FieldSpec{WireName: "stack_set_name"},
 		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
 		"TemplateSummaryConfig": ubx.FieldSpec{
 			WireName: "template_summary_config",
-			Kind: "object",
-			Fields: TemplateSummary_TemplateSummaryConfigFields,
+			Kind:     "object",
+			Fields:   TemplateSummary_TemplateSummaryConfigFields,
 		},
 		"TemplateUrl": ubx.FieldSpec{WireName: "template_url"},
 	},

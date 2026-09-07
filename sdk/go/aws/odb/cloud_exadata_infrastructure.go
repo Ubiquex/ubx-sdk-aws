@@ -30,30 +30,30 @@ type CloudExadataInfrastructure_MaintenanceWindow struct {
 }
 
 type CloudExadataInfrastructure_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CloudExadataInfrastructure_CustomerContactsToSendToOciFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+}
 
 var CloudExadataInfrastructure_MaintenanceWindowFields = ubx.FieldMap{
-		"CustomActionTimeoutInMins": ubx.FieldSpec{WireName: "custom_action_timeout_in_mins"},
-		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
-		"HoursOfDay": ubx.FieldSpec{WireName: "hours_of_day"},
-		"IsCustomActionTimeoutEnabled": ubx.FieldSpec{WireName: "is_custom_action_timeout_enabled"},
-		"LeadTimeInWeeks": ubx.FieldSpec{WireName: "lead_time_in_weeks"},
-		"Months": ubx.FieldSpec{WireName: "months"},
-		"PatchingMode": ubx.FieldSpec{WireName: "patching_mode"},
-		"Preference": ubx.FieldSpec{WireName: "preference"},
-		"WeeksOfMonth": ubx.FieldSpec{WireName: "weeks_of_month"},
-	}
+	"CustomActionTimeoutInMins":    ubx.FieldSpec{WireName: "custom_action_timeout_in_mins"},
+	"DaysOfWeek":                   ubx.FieldSpec{WireName: "days_of_week"},
+	"HoursOfDay":                   ubx.FieldSpec{WireName: "hours_of_day"},
+	"IsCustomActionTimeoutEnabled": ubx.FieldSpec{WireName: "is_custom_action_timeout_enabled"},
+	"LeadTimeInWeeks":              ubx.FieldSpec{WireName: "lead_time_in_weeks"},
+	"Months":                       ubx.FieldSpec{WireName: "months"},
+	"PatchingMode":                 ubx.FieldSpec{WireName: "patching_mode"},
+	"Preference":                   ubx.FieldSpec{WireName: "preference"},
+	"WeeksOfMonth":                 ubx.FieldSpec{WireName: "weeks_of_month"},
+}
 
 var CloudExadataInfrastructure_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CloudExadataInfrastructureConfig struct {
 	// The name of the Availability Zone (AZ) where the Exadata infrastructure is located.
@@ -150,28 +150,28 @@ type CloudExadataInfrastructureAttrs struct {
 var CloudExadataInfrastructure = ubx.ResourceBinding{
 	WireType: "aws_odb_cloud_exadata_infrastructure",
 	Fields: ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZone":   ubx.FieldSpec{WireName: "availability_zone"},
 		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"ComputeCount": ubx.FieldSpec{WireName: "compute_count"},
+		"ComputeCount":       ubx.FieldSpec{WireName: "compute_count"},
 		"CustomerContactsToSendToOci": ubx.FieldSpec{
 			WireName: "customer_contacts_to_send_to_oci",
-			Kind: "list",
-			Fields: CloudExadataInfrastructure_CustomerContactsToSendToOciFields,
+			Kind:     "list",
+			Fields:   CloudExadataInfrastructure_CustomerContactsToSendToOciFields,
 		},
 		"DatabaseServerType": ubx.FieldSpec{WireName: "database_server_type"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
 		"MaintenanceWindow": ubx.FieldSpec{
 			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: CloudExadataInfrastructure_MaintenanceWindowFields,
+			Kind:     "object",
+			Fields:   CloudExadataInfrastructure_MaintenanceWindowFields,
 		},
-		"Shape": ubx.FieldSpec{WireName: "shape"},
-		"StorageCount": ubx.FieldSpec{WireName: "storage_count"},
+		"Shape":             ubx.FieldSpec{WireName: "shape"},
+		"StorageCount":      ubx.FieldSpec{WireName: "storage_count"},
 		"StorageServerType": ubx.FieldSpec{WireName: "storage_server_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CloudExadataInfrastructure_TagsFields,
+			Kind:     "list",
+			Fields:   CloudExadataInfrastructure_TagsFields,
 		},
 	},
 }

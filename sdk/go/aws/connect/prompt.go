@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Prompt_Tags struct {
 	// The key of a tag assigned to the AWS Connect prompt, used for identifying and categorizing the prompt resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Prompt_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PromptConfig struct {
 	// The description of the prompt.
@@ -47,12 +47,12 @@ var Prompt = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"S3Uri":       ubx.FieldSpec{WireName: "s3_uri"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Prompt_TagsFields,
+			Kind:     "list",
+			Fields:   Prompt_TagsFields,
 		},
 	},
 }

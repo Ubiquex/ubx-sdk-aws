@@ -8,9 +8,9 @@ type IdentityCenterAuthTokenConfig struct {
 }
 
 type IdentityCenterAuthTokenAttrs struct {
-	ClusterIds any
+	ClusterIds     any
 	ExpirationTime any
-	Token any
+	Token          any
 }
 
 var IdentityCenterAuthToken = ubx.DataSourceBinding{

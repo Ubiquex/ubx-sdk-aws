@@ -10,7 +10,7 @@ type BandwidthRateLimitConfig struct {
 
 type BandwidthRateLimitAttrs struct {
 	AverageDownloadRateLimitInBitsPerSec any
-	AverageUploadRateLimitInBitsPerSec any
+	AverageUploadRateLimitInBitsPerSec   any
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
 	GatewayArn any
 }

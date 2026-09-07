@@ -20,7 +20,7 @@ type ResourcePolicyAttrs struct {
 var ResourcePolicy = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_resource_policy",
 	Fields: ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":      ubx.FieldSpec{WireName: "policy"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

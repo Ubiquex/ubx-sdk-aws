@@ -618,7 +618,7 @@ type Bot_BotLocales_Intents struct {
 	Description any
 	// Configures the dialog code hook for this intent, including whether it is enabled and the ARN of the Lambda function to invoke for dialog initialization and validation. (AI-inferred)
 	DialogCodeHook any
-	DisplayName any
+	DisplayName    any
 	// Configures the fulfillment code hook, including the Lambda function and optional post-fulfillment updates, that is invoked to complete the user's request once the intent is fully elicited. (AI-inferred)
 	FulfillmentCodeHook any
 	// Specifies the initial response configuration for an intent, including the first message sent to the user, optional code hooks, conditional branches, and the next step in the conversation flow. (AI-inferred)
@@ -636,7 +636,7 @@ type Bot_BotLocales_Intents struct {
 	// Defines the output contexts that are activated when the intent is fulfilled, controlling which other intents can be invoked in the subsequent conversation turns. (AI-inferred)
 	OutputContexts any
 	// Specifies the signature of an Amazon Lex built-in intent that this custom intent is based on, allowing the intent to inherit the built-in intent's behavior and configuration. (AI-inferred)
-	ParentIntentSignature any
+	ParentIntentSignature         any
 	QinConnectIntentConfiguration any
 	// Configuration for the built-in AMAZON.QnAIntent, defining data sources (e.g., Amazon Kendra indexes) and fallback intent behavior for answering user questions in a Lex bot locale. (AI-inferred)
 	QnAintentConfiguration any
@@ -746,7 +746,7 @@ type Bot_BotLocales_SpeechRecognitionSettings struct {
 type Bot_BotLocales_UnifiedSpeechSettings_SpeechFoundationModel struct {
 	// Specifies the Amazon Resource Name (ARN) of the speech foundation model used to perform speech recognition and natural language understanding for the bot's locale. (AI-inferred)
 	ModelArn any
-	VoiceId any
+	VoiceId  any
 }
 
 type Bot_BotLocales_UnifiedSpeechSettings struct {
@@ -901,1199 +901,1199 @@ type Bot_TestBotAliasSettings struct {
 }
 
 var Bot_BotFileS3LocationFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3ObjectKey": ubx.FieldSpec{WireName: "s3_object_key"},
-		"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
-	}
+	"S3Bucket":        ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3ObjectKey":     ubx.FieldSpec{WireName: "s3_object_key"},
+	"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
+}
 
 var Bot_BotLocales_AudioFillerSettingsFields = ubx.FieldMap{
-		"AudioType": ubx.FieldSpec{WireName: "audio_type"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MinimumPlayDurationInMilliseconds": ubx.FieldSpec{WireName: "minimum_play_duration_in_milliseconds"},
-		"ResponseDeliveryDelayInMilliseconds": ubx.FieldSpec{WireName: "response_delivery_delay_in_milliseconds"},
-		"StartDelayInMilliseconds": ubx.FieldSpec{WireName: "start_delay_in_milliseconds"},
-	}
+	"AudioType":                           ubx.FieldSpec{WireName: "audio_type"},
+	"Enabled":                             ubx.FieldSpec{WireName: "enabled"},
+	"MinimumPlayDurationInMilliseconds":   ubx.FieldSpec{WireName: "minimum_play_duration_in_milliseconds"},
+	"ResponseDeliveryDelayInMilliseconds": ubx.FieldSpec{WireName: "response_delivery_delay_in_milliseconds"},
+	"StartDelayInMilliseconds":            ubx.FieldSpec{WireName: "start_delay_in_milliseconds"},
+}
 
 var Bot_BotLocales_CustomVocabulary_CustomVocabularyItemsFields = ubx.FieldMap{
-		"DisplayAs": ubx.FieldSpec{WireName: "display_as"},
-		"Phrase": ubx.FieldSpec{WireName: "phrase"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"DisplayAs": ubx.FieldSpec{WireName: "display_as"},
+	"Phrase":    ubx.FieldSpec{WireName: "phrase"},
+	"Weight":    ubx.FieldSpec{WireName: "weight"},
+}
 
 var Bot_BotLocales_CustomVocabularyFields = ubx.FieldMap{
-		"CustomVocabularyItems": ubx.FieldSpec{
-			WireName: "custom_vocabulary_items",
-			Kind: "list",
-			Fields: Bot_BotLocales_CustomVocabulary_CustomVocabularyItemsFields,
-		},
-	}
+	"CustomVocabularyItems": ubx.FieldSpec{
+		WireName: "custom_vocabulary_items",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_CustomVocabulary_CustomVocabularyItemsFields,
+	},
+}
 
 var Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification_BedrockGuardrailConfigurationFields = ubx.FieldMap{
-		"BedrockGuardrailIdentifier": ubx.FieldSpec{WireName: "bedrock_guardrail_identifier"},
-		"BedrockGuardrailVersion": ubx.FieldSpec{WireName: "bedrock_guardrail_version"},
-	}
+	"BedrockGuardrailIdentifier": ubx.FieldSpec{WireName: "bedrock_guardrail_identifier"},
+	"BedrockGuardrailVersion":    ubx.FieldSpec{WireName: "bedrock_guardrail_version"},
+}
 
 var Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields = ubx.FieldMap{
-		"BedrockGuardrailConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_guardrail_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification_BedrockGuardrailConfigurationFields,
-		},
-		"BedrockModelCustomPrompt": ubx.FieldSpec{WireName: "bedrock_model_custom_prompt"},
-		"BedrockTraceStatus": ubx.FieldSpec{WireName: "bedrock_trace_status"},
-		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
-	}
+	"BedrockGuardrailConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_guardrail_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification_BedrockGuardrailConfigurationFields,
+	},
+	"BedrockModelCustomPrompt": ubx.FieldSpec{WireName: "bedrock_model_custom_prompt"},
+	"BedrockTraceStatus":       ubx.FieldSpec{WireName: "bedrock_trace_status"},
+	"ModelArn":                 ubx.FieldSpec{WireName: "model_arn"},
+}
 
 var Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields = ubx.FieldMap{
-		"BedrockModelSpecification": ubx.FieldSpec{
-			WireName: "bedrock_model_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"BedrockModelSpecification": ubx.FieldSpec{
+		WireName: "bedrock_model_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Bot_BotLocales_GenerativeAisettings_BuildtimeSettingsFields = ubx.FieldMap{
-		"DescriptiveBotBuilderSpecification": ubx.FieldSpec{
-			WireName: "descriptive_bot_builder_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
-		},
-		"SampleUtteranceGenerationSpecification": ubx.FieldSpec{
-			WireName: "sample_utterance_generation_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
-		},
-	}
+	"DescriptiveBotBuilderSpecification": ubx.FieldSpec{
+		WireName: "descriptive_bot_builder_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
+	},
+	"SampleUtteranceGenerationSpecification": ubx.FieldSpec{
+		WireName: "sample_utterance_generation_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
+	},
+}
 
 var Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification_IntentDisambiguationSettingsFields = ubx.FieldMap{
-		"CustomDisambiguationMessage": ubx.FieldSpec{WireName: "custom_disambiguation_message"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxDisambiguationIntents": ubx.FieldSpec{WireName: "max_disambiguation_intents"},
-	}
+	"CustomDisambiguationMessage": ubx.FieldSpec{WireName: "custom_disambiguation_message"},
+	"Enabled":                     ubx.FieldSpec{WireName: "enabled"},
+	"MaxDisambiguationIntents":    ubx.FieldSpec{WireName: "max_disambiguation_intents"},
+}
 
 var Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecificationFields = ubx.FieldMap{
-		"AssistedNluMode": ubx.FieldSpec{WireName: "assisted_nlu_mode"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"IntentDisambiguationSettings": ubx.FieldSpec{
-			WireName: "intent_disambiguation_settings",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification_IntentDisambiguationSettingsFields,
-		},
-	}
+	"AssistedNluMode": ubx.FieldSpec{WireName: "assisted_nlu_mode"},
+	"Enabled":         ubx.FieldSpec{WireName: "enabled"},
+	"IntentDisambiguationSettings": ubx.FieldSpec{
+		WireName: "intent_disambiguation_settings",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification_IntentDisambiguationSettingsFields,
+	},
+}
 
 var Bot_BotLocales_GenerativeAisettings_RuntimeSettingsFields = ubx.FieldMap{
-		"NluImprovementSpecification": ubx.FieldSpec{
-			WireName: "nlu_improvement_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecificationFields,
-		},
-		"SlotResolutionImprovementSpecification": ubx.FieldSpec{
-			WireName: "slot_resolution_improvement_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
-		},
-	}
+	"NluImprovementSpecification": ubx.FieldSpec{
+		WireName: "nlu_improvement_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecificationFields,
+	},
+	"SlotResolutionImprovementSpecification": ubx.FieldSpec{
+		WireName: "slot_resolution_improvement_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecificationFields,
+	},
+}
 
 var Bot_BotLocales_GenerativeAisettingsFields = ubx.FieldMap{
-		"BuildtimeSettings": ubx.FieldSpec{
-			WireName: "buildtime_settings",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettingsFields,
-		},
-		"RuntimeSettings": ubx.FieldSpec{
-			WireName: "runtime_settings",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_RuntimeSettingsFields,
-		},
-	}
+	"BuildtimeSettings": ubx.FieldSpec{
+		WireName: "buildtime_settings",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_BuildtimeSettingsFields,
+	},
+	"RuntimeSettings": ubx.FieldSpec{
+		WireName: "runtime_settings",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_RuntimeSettingsFields,
+	},
+}
 
 var Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentConfigurationFields = ubx.FieldMap{
-		"BedrockAgentAliasId": ubx.FieldSpec{WireName: "bedrock_agent_alias_id"},
-		"BedrockAgentId": ubx.FieldSpec{WireName: "bedrock_agent_id"},
-	}
+	"BedrockAgentAliasId": ubx.FieldSpec{WireName: "bedrock_agent_alias_id"},
+	"BedrockAgentId":      ubx.FieldSpec{WireName: "bedrock_agent_id"},
+}
 
 var Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentIntentKnowledgeBaseConfigurationFields = ubx.FieldMap{
-		"BedrockKnowledgeBaseArn": ubx.FieldSpec{WireName: "bedrock_knowledge_base_arn"},
-		"BedrockModelConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_model_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
-		},
-	}
+	"BedrockKnowledgeBaseArn": ubx.FieldSpec{WireName: "bedrock_knowledge_base_arn"},
+	"BedrockModelConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_model_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_BedrockAgentIntentConfigurationFields = ubx.FieldMap{
-		"BedrockAgentConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_agent_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentConfigurationFields,
-		},
-		"BedrockAgentIntentKnowledgeBaseConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_agent_intent_knowledge_base_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentIntentKnowledgeBaseConfigurationFields,
-		},
-	}
+	"BedrockAgentConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_agent_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentConfigurationFields,
+	},
+	"BedrockAgentIntentKnowledgeBaseConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_agent_intent_knowledge_base_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentIntentKnowledgeBaseConfigurationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_DialogCodeHookFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard_ButtonsFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Text":  ubx.FieldSpec{WireName: "text"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCardFields = ubx.FieldMap{
-		"Buttons": ubx.FieldSpec{
-			WireName: "buttons",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard_ButtonsFields,
-		},
-		"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
-		"Subtitle": ubx.FieldSpec{WireName: "subtitle"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Buttons": ubx.FieldSpec{
+		WireName: "buttons",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard_ButtonsFields,
+	},
+	"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
+	"Subtitle": ubx.FieldSpec{WireName: "subtitle"},
+	"Title":    ubx.FieldSpec{WireName: "title"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_MessageFields = ubx.FieldMap{
-		"CustomPayload": ubx.FieldSpec{
-			WireName: "custom_payload",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
-		},
-		"ImageResponseCard": ubx.FieldSpec{
-			WireName: "image_response_card",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCardFields,
-		},
-		"PlainTextMessage": ubx.FieldSpec{
-			WireName: "plain_text_message",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
-		},
-		"Ssmlmessage": ubx.FieldSpec{
-			WireName: "ssmlmessage",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
-		},
-	}
+	"CustomPayload": ubx.FieldSpec{
+		WireName: "custom_payload",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+	},
+	"ImageResponseCard": ubx.FieldSpec{
+		WireName: "image_response_card",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCardFields,
+	},
+	"PlainTextMessage": ubx.FieldSpec{
+		WireName: "plain_text_message",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+	},
+	"Ssmlmessage": ubx.FieldSpec{
+		WireName: "ssmlmessage",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{
-			WireName: "message",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_MessageFields,
-		},
-		"Variations": ubx.FieldSpec{
-			WireName: "variations",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_MessageFields,
-		},
-	}
+	"Message": ubx.FieldSpec{
+		WireName: "message",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_MessageFields,
+	},
+	"Variations": ubx.FieldSpec{
+		WireName: "variations",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_MessageFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponseFields = ubx.FieldMap{
-		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
-		"DelayInSeconds": ubx.FieldSpec{WireName: "delay_in_seconds"},
-		"MessageGroups": ubx.FieldSpec{
-			WireName: "message_groups",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
-		},
-	}
+	"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
+	"DelayInSeconds": ubx.FieldSpec{WireName: "delay_in_seconds"},
+	"MessageGroups": ubx.FieldSpec{
+		WireName: "message_groups",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_UpdateResponseFields = ubx.FieldMap{
-		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
-		"FrequencyInSeconds": ubx.FieldSpec{WireName: "frequency_in_seconds"},
-		"MessageGroups": ubx.FieldSpec{
-			WireName: "message_groups",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
-		},
-	}
+	"AllowInterrupt":     ubx.FieldSpec{WireName: "allow_interrupt"},
+	"FrequencyInSeconds": ubx.FieldSpec{WireName: "frequency_in_seconds"},
+	"MessageGroups": ubx.FieldSpec{
+		WireName: "message_groups",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecificationFields = ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
-		"StartResponse": ubx.FieldSpec{
-			WireName: "start_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponseFields,
-		},
-		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
-		"UpdateResponse": ubx.FieldSpec{
-			WireName: "update_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_UpdateResponseFields,
-		},
-	}
+	"Active": ubx.FieldSpec{WireName: "active"},
+	"StartResponse": ubx.FieldSpec{
+		WireName: "start_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponseFields,
+	},
+	"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
+	"UpdateResponse": ubx.FieldSpec{
+		WireName: "update_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_UpdateResponseFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ConditionFields = ubx.FieldMap{
-		"ExpressionString": ubx.FieldSpec{WireName: "expression_string"},
-	}
+	"ExpressionString": ubx.FieldSpec{WireName: "expression_string"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_DialogActionFields = ubx.FieldMap{
-		"SlotToElicit": ubx.FieldSpec{WireName: "slot_to_elicit"},
-		"SuppressNextMessage": ubx.FieldSpec{WireName: "suppress_next_message"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"SlotToElicit":        ubx.FieldSpec{WireName: "slot_to_elicit"},
+	"SuppressNextMessage": ubx.FieldSpec{WireName: "suppress_next_message"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride_ValueFields = ubx.FieldMap{
-		"InterpretedValue": ubx.FieldSpec{WireName: "interpreted_value"},
-	}
+	"InterpretedValue": ubx.FieldSpec{WireName: "interpreted_value"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverrideFields = ubx.FieldMap{
-		"Shape": ubx.FieldSpec{WireName: "shape"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride_ValueFields,
-		},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Shape": ubx.FieldSpec{WireName: "shape"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride_ValueFields,
+	},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_SlotsFields = ubx.FieldMap{
-		"SlotName": ubx.FieldSpec{WireName: "slot_name"},
-		"SlotValueOverride": ubx.FieldSpec{
-			WireName: "slot_value_override",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverrideFields,
-		},
-	}
+	"SlotName": ubx.FieldSpec{WireName: "slot_name"},
+	"SlotValueOverride": ubx.FieldSpec{
+		WireName: "slot_value_override",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverrideFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_IntentFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Slots": ubx.FieldSpec{
-			WireName: "slots",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_SlotsFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Slots": ubx.FieldSpec{
+		WireName: "slots",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_SlotsFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields = ubx.FieldMap{
-		"DialogAction": ubx.FieldSpec{
-			WireName: "dialog_action",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_DialogActionFields,
-		},
-		"Intent": ubx.FieldSpec{
-			WireName: "intent",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_IntentFields,
-		},
-		"SessionAttributes": ubx.FieldSpec{
-			WireName: "session_attributes",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
-		},
-	}
+	"DialogAction": ubx.FieldSpec{
+		WireName: "dialog_action",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_DialogActionFields,
+	},
+	"Intent": ubx.FieldSpec{
+		WireName: "intent",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_IntentFields,
+	},
+	"SessionAttributes": ubx.FieldSpec{
+		WireName: "session_attributes",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields = ubx.FieldMap{
-		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
-		"MessageGroupsList": ubx.FieldSpec{
-			WireName: "message_groups_list",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
-		},
-	}
+	"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
+	"MessageGroupsList": ubx.FieldSpec{
+		WireName: "message_groups_list",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranchesFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ConditionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextStep": ubx.FieldSpec{
-			WireName: "next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ConditionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"NextStep": ubx.FieldSpec{
+		WireName: "next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_DefaultBranchFields = ubx.FieldMap{
-		"NextStep": ubx.FieldSpec{
-			WireName: "next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-	}
+	"NextStep": ubx.FieldSpec{
+		WireName: "next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields = ubx.FieldMap{
-		"ConditionalBranches": ubx.FieldSpec{
-			WireName: "conditional_branches",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranchesFields,
-		},
-		"DefaultBranch": ubx.FieldSpec{
-			WireName: "default_branch",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_DefaultBranchFields,
-		},
-		"IsActive": ubx.FieldSpec{WireName: "is_active"},
-	}
+	"ConditionalBranches": ubx.FieldSpec{
+		WireName: "conditional_branches",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranchesFields,
+	},
+	"DefaultBranch": ubx.FieldSpec{
+		WireName: "default_branch",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_DefaultBranchFields,
+	},
+	"IsActive": ubx.FieldSpec{WireName: "is_active"},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecificationFields = ubx.FieldMap{
-		"FailureConditional": ubx.FieldSpec{
-			WireName: "failure_conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"FailureNextStep": ubx.FieldSpec{
-			WireName: "failure_next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"FailureResponse": ubx.FieldSpec{
-			WireName: "failure_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"SuccessConditional": ubx.FieldSpec{
-			WireName: "success_conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"SuccessNextStep": ubx.FieldSpec{
-			WireName: "success_next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"SuccessResponse": ubx.FieldSpec{
-			WireName: "success_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"TimeoutConditional": ubx.FieldSpec{
-			WireName: "timeout_conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"TimeoutNextStep": ubx.FieldSpec{
-			WireName: "timeout_next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"TimeoutResponse": ubx.FieldSpec{
-			WireName: "timeout_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-	}
+	"FailureConditional": ubx.FieldSpec{
+		WireName: "failure_conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"FailureNextStep": ubx.FieldSpec{
+		WireName: "failure_next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"FailureResponse": ubx.FieldSpec{
+		WireName: "failure_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"SuccessConditional": ubx.FieldSpec{
+		WireName: "success_conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"SuccessNextStep": ubx.FieldSpec{
+		WireName: "success_next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"SuccessResponse": ubx.FieldSpec{
+		WireName: "success_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"TimeoutConditional": ubx.FieldSpec{
+		WireName: "timeout_conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"TimeoutNextStep": ubx.FieldSpec{
+		WireName: "timeout_next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"TimeoutResponse": ubx.FieldSpec{
+		WireName: "timeout_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+}
 
 var Bot_BotLocales_Intents_FulfillmentCodeHookFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"FulfillmentUpdatesSpecification": ubx.FieldSpec{
-			WireName: "fulfillment_updates_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecificationFields,
-		},
-		"IsActive": ubx.FieldSpec{WireName: "is_active"},
-		"PostFulfillmentStatusSpecification": ubx.FieldSpec{
-			WireName: "post_fulfillment_status_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecificationFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"FulfillmentUpdatesSpecification": ubx.FieldSpec{
+		WireName: "fulfillment_updates_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecificationFields,
+	},
+	"IsActive": ubx.FieldSpec{WireName: "is_active"},
+	"PostFulfillmentStatusSpecification": ubx.FieldSpec{
+		WireName: "post_fulfillment_status_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecificationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields = ubx.FieldMap{
-		"EnableCodeHookInvocation": ubx.FieldSpec{WireName: "enable_code_hook_invocation"},
-		"InvocationLabel": ubx.FieldSpec{WireName: "invocation_label"},
-		"IsActive": ubx.FieldSpec{WireName: "is_active"},
-		"PostCodeHookSpecification": ubx.FieldSpec{
-			WireName: "post_code_hook_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecificationFields,
-		},
-	}
+	"EnableCodeHookInvocation": ubx.FieldSpec{WireName: "enable_code_hook_invocation"},
+	"InvocationLabel":          ubx.FieldSpec{WireName: "invocation_label"},
+	"IsActive":                 ubx.FieldSpec{WireName: "is_active"},
+	"PostCodeHookSpecification": ubx.FieldSpec{
+		WireName: "post_code_hook_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecificationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_InitialResponseSettingFields = ubx.FieldMap{
-		"CodeHook": ubx.FieldSpec{
-			WireName: "code_hook",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
-		},
-		"Conditional": ubx.FieldSpec{
-			WireName: "conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"InitialResponse": ubx.FieldSpec{
-			WireName: "initial_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"NextStep": ubx.FieldSpec{
-			WireName: "next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-	}
+	"CodeHook": ubx.FieldSpec{
+		WireName: "code_hook",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
+	},
+	"Conditional": ubx.FieldSpec{
+		WireName: "conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"InitialResponse": ubx.FieldSpec{
+		WireName: "initial_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"NextStep": ubx.FieldSpec{
+		WireName: "next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+}
 
 var Bot_BotLocales_Intents_InputContextsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Bot_BotLocales_Intents_IntentClosingSettingFields = ubx.FieldMap{
-		"ClosingResponse": ubx.FieldSpec{
-			WireName: "closing_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"Conditional": ubx.FieldSpec{
-			WireName: "conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"IsActive": ubx.FieldSpec{WireName: "is_active"},
-		"NextStep": ubx.FieldSpec{
-			WireName: "next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-	}
+	"ClosingResponse": ubx.FieldSpec{
+		WireName: "closing_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"Conditional": ubx.FieldSpec{
+		WireName: "conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"IsActive": ubx.FieldSpec{WireName: "is_active"},
+	"NextStep": ubx.FieldSpec{
+		WireName: "next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+}
 
 var Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHookFields = ubx.FieldMap{
-		"EnableCodeHookInvocation": ubx.FieldSpec{WireName: "enable_code_hook_invocation"},
-		"InvocationLabel": ubx.FieldSpec{WireName: "invocation_label"},
-	}
+	"EnableCodeHookInvocation": ubx.FieldSpec{WireName: "enable_code_hook_invocation"},
+	"InvocationLabel":          ubx.FieldSpec{WireName: "invocation_label"},
+}
 
 var Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecificationFields = ubx.FieldMap{
-		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
-		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
-		"MessageGroupsList": ubx.FieldSpec{
-			WireName: "message_groups_list",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
-		},
-		"MessageSelectionStrategy": ubx.FieldSpec{WireName: "message_selection_strategy"},
-		"PromptAttemptsSpecification": ubx.FieldSpec{WireName: "prompt_attempts_specification"},
-	}
+	"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
+	"MaxRetries":     ubx.FieldSpec{WireName: "max_retries"},
+	"MessageGroupsList": ubx.FieldSpec{
+		WireName: "message_groups_list",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+	},
+	"MessageSelectionStrategy":    ubx.FieldSpec{WireName: "message_selection_strategy"},
+	"PromptAttemptsSpecification": ubx.FieldSpec{WireName: "prompt_attempts_specification"},
+}
 
 var Bot_BotLocales_Intents_IntentConfirmationSettingFields = ubx.FieldMap{
-		"CodeHook": ubx.FieldSpec{
-			WireName: "code_hook",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
-		},
-		"ConfirmationConditional": ubx.FieldSpec{
-			WireName: "confirmation_conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"ConfirmationNextStep": ubx.FieldSpec{
-			WireName: "confirmation_next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"ConfirmationResponse": ubx.FieldSpec{
-			WireName: "confirmation_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"DeclinationConditional": ubx.FieldSpec{
-			WireName: "declination_conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"DeclinationNextStep": ubx.FieldSpec{
-			WireName: "declination_next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"DeclinationResponse": ubx.FieldSpec{
-			WireName: "declination_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"ElicitationCodeHook": ubx.FieldSpec{
-			WireName: "elicitation_code_hook",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHookFields,
-		},
-		"FailureConditional": ubx.FieldSpec{
-			WireName: "failure_conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"FailureNextStep": ubx.FieldSpec{
-			WireName: "failure_next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"FailureResponse": ubx.FieldSpec{
-			WireName: "failure_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"IsActive": ubx.FieldSpec{WireName: "is_active"},
-		"PromptSpecification": ubx.FieldSpec{
-			WireName: "prompt_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecificationFields,
-		},
-	}
+	"CodeHook": ubx.FieldSpec{
+		WireName: "code_hook",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
+	},
+	"ConfirmationConditional": ubx.FieldSpec{
+		WireName: "confirmation_conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"ConfirmationNextStep": ubx.FieldSpec{
+		WireName: "confirmation_next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"ConfirmationResponse": ubx.FieldSpec{
+		WireName: "confirmation_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"DeclinationConditional": ubx.FieldSpec{
+		WireName: "declination_conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"DeclinationNextStep": ubx.FieldSpec{
+		WireName: "declination_next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"DeclinationResponse": ubx.FieldSpec{
+		WireName: "declination_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"ElicitationCodeHook": ubx.FieldSpec{
+		WireName: "elicitation_code_hook",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHookFields,
+	},
+	"FailureConditional": ubx.FieldSpec{
+		WireName: "failure_conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"FailureNextStep": ubx.FieldSpec{
+		WireName: "failure_next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"FailureResponse": ubx.FieldSpec{
+		WireName: "failure_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"IsActive": ubx.FieldSpec{WireName: "is_active"},
+	"PromptSpecification": ubx.FieldSpec{
+		WireName: "prompt_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecificationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_KendraConfigurationFields = ubx.FieldMap{
-		"KendraIndex": ubx.FieldSpec{WireName: "kendra_index"},
-		"QueryFilterString": ubx.FieldSpec{WireName: "query_filter_string"},
-		"QueryFilterStringEnabled": ubx.FieldSpec{WireName: "query_filter_string_enabled"},
-	}
+	"KendraIndex":              ubx.FieldSpec{WireName: "kendra_index"},
+	"QueryFilterString":        ubx.FieldSpec{WireName: "query_filter_string"},
+	"QueryFilterStringEnabled": ubx.FieldSpec{WireName: "query_filter_string_enabled"},
+}
 
 var Bot_BotLocales_Intents_OutputContextsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TimeToLiveInSeconds": ubx.FieldSpec{WireName: "time_to_live_in_seconds"},
-		"TurnsToLive": ubx.FieldSpec{WireName: "turns_to_live"},
-	}
+	"Name":                ubx.FieldSpec{WireName: "name"},
+	"TimeToLiveInSeconds": ubx.FieldSpec{WireName: "time_to_live_in_seconds"},
+	"TurnsToLive":         ubx.FieldSpec{WireName: "turns_to_live"},
+}
 
 var Bot_BotLocales_Intents_QinConnectIntentConfiguration_QinConnectAssistantConfigurationFields = ubx.FieldMap{
-		"AssistantArn": ubx.FieldSpec{WireName: "assistant_arn"},
-	}
+	"AssistantArn": ubx.FieldSpec{WireName: "assistant_arn"},
+}
 
 var Bot_BotLocales_Intents_QinConnectIntentConfigurationFields = ubx.FieldMap{
-		"QinConnectAssistantConfiguration": ubx.FieldSpec{
-			WireName: "qin_connect_assistant_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QinConnectIntentConfiguration_QinConnectAssistantConfigurationFields,
-		},
-	}
+	"QinConnectAssistantConfiguration": ubx.FieldSpec{
+		WireName: "qin_connect_assistant_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QinConnectIntentConfiguration_QinConnectAssistantConfigurationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration_BkbexactResponseFieldsFields = ubx.FieldMap{
-		"AnswerField": ubx.FieldSpec{WireName: "answer_field"},
-	}
+	"AnswerField": ubx.FieldSpec{WireName: "answer_field"},
+}
 
 var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfigurationFields = ubx.FieldMap{
-		"BedrockKnowledgeBaseArn": ubx.FieldSpec{WireName: "bedrock_knowledge_base_arn"},
-		"BkbexactResponseFields": ubx.FieldSpec{
-			WireName: "bkbexact_response_fields",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration_BkbexactResponseFieldsFields,
-		},
-		"ExactResponse": ubx.FieldSpec{WireName: "exact_response"},
-	}
+	"BedrockKnowledgeBaseArn": ubx.FieldSpec{WireName: "bedrock_knowledge_base_arn"},
+	"BkbexactResponseFields": ubx.FieldSpec{
+		WireName: "bkbexact_response_fields",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration_BkbexactResponseFieldsFields,
+	},
+	"ExactResponse": ubx.FieldSpec{WireName: "exact_response"},
+}
 
 var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_KendraConfigurationFields = ubx.FieldMap{
-		"ExactResponse": ubx.FieldSpec{WireName: "exact_response"},
-		"KendraIndex": ubx.FieldSpec{WireName: "kendra_index"},
-		"QueryFilterString": ubx.FieldSpec{WireName: "query_filter_string"},
-		"QueryFilterStringEnabled": ubx.FieldSpec{WireName: "query_filter_string_enabled"},
-	}
+	"ExactResponse":            ubx.FieldSpec{WireName: "exact_response"},
+	"KendraIndex":              ubx.FieldSpec{WireName: "kendra_index"},
+	"QueryFilterString":        ubx.FieldSpec{WireName: "query_filter_string"},
+	"QueryFilterStringEnabled": ubx.FieldSpec{WireName: "query_filter_string_enabled"},
+}
 
 var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration_ExactResponseFieldsFields = ubx.FieldMap{
-		"AnswerField": ubx.FieldSpec{WireName: "answer_field"},
-		"QuestionField": ubx.FieldSpec{WireName: "question_field"},
-	}
+	"AnswerField":   ubx.FieldSpec{WireName: "answer_field"},
+	"QuestionField": ubx.FieldSpec{WireName: "question_field"},
+}
 
 var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfigurationFields = ubx.FieldMap{
-		"DomainEndpoint": ubx.FieldSpec{WireName: "domain_endpoint"},
-		"ExactResponse": ubx.FieldSpec{WireName: "exact_response"},
-		"ExactResponseFields": ubx.FieldSpec{
-			WireName: "exact_response_fields",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration_ExactResponseFieldsFields,
-		},
-		"IncludeFields": ubx.FieldSpec{WireName: "include_fields"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-	}
+	"DomainEndpoint": ubx.FieldSpec{WireName: "domain_endpoint"},
+	"ExactResponse":  ubx.FieldSpec{WireName: "exact_response"},
+	"ExactResponseFields": ubx.FieldSpec{
+		WireName: "exact_response_fields",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration_ExactResponseFieldsFields,
+	},
+	"IncludeFields": ubx.FieldSpec{WireName: "include_fields"},
+	"IndexName":     ubx.FieldSpec{WireName: "index_name"},
+}
 
 var Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfigurationFields = ubx.FieldMap{
-		"BedrockKnowledgeStoreConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_knowledge_store_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfigurationFields,
-		},
-		"KendraConfiguration": ubx.FieldSpec{
-			WireName: "kendra_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_KendraConfigurationFields,
-		},
-		"OpensearchConfiguration": ubx.FieldSpec{
-			WireName: "opensearch_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfigurationFields,
-		},
-	}
+	"BedrockKnowledgeStoreConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_knowledge_store_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfigurationFields,
+	},
+	"KendraConfiguration": ubx.FieldSpec{
+		WireName: "kendra_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_KendraConfigurationFields,
+	},
+	"OpensearchConfiguration": ubx.FieldSpec{
+		WireName: "opensearch_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfigurationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_QnAintentConfigurationFields = ubx.FieldMap{
-		"BedrockModelConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_model_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
-		},
-		"DataSourceConfiguration": ubx.FieldSpec{
-			WireName: "data_source_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfigurationFields,
-		},
-	}
+	"BedrockModelConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_model_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecificationFields,
+	},
+	"DataSourceConfiguration": ubx.FieldSpec{
+		WireName: "data_source_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfigurationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_SampleUtterancesFields = ubx.FieldMap{
-		"Utterance": ubx.FieldSpec{WireName: "utterance"},
-	}
+	"Utterance": ubx.FieldSpec{WireName: "utterance"},
+}
 
 var Bot_BotLocales_Intents_SlotPrioritiesFields = ubx.FieldMap{
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SlotName": ubx.FieldSpec{WireName: "slot_name"},
-	}
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"SlotName": ubx.FieldSpec{WireName: "slot_name"},
+}
 
 var Bot_BotLocales_Intents_Slots_MultipleValuesSettingFields = ubx.FieldMap{
-		"AllowMultipleValues": ubx.FieldSpec{WireName: "allow_multiple_values"},
-	}
+	"AllowMultipleValues": ubx.FieldSpec{WireName: "allow_multiple_values"},
+}
 
 var Bot_BotLocales_Intents_Slots_ObfuscationSettingFields = ubx.FieldMap{
-		"ObfuscationSettingType": ubx.FieldSpec{WireName: "obfuscation_setting_type"},
-	}
+	"ObfuscationSettingType": ubx.FieldSpec{WireName: "obfuscation_setting_type"},
+}
 
 var Bot_BotLocales_Intents_Slots_SubSlotSettingFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"SlotSpecifications": ubx.FieldSpec{WireName: "slot_specifications"},
-	}
+	"Expression":         ubx.FieldSpec{WireName: "expression"},
+	"SlotSpecifications": ubx.FieldSpec{WireName: "slot_specifications"},
+}
 
 var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification_DefaultValueListFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+}
 
 var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecificationFields = ubx.FieldMap{
-		"DefaultValueList": ubx.FieldSpec{
-			WireName: "default_value_list",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification_DefaultValueListFields,
-		},
-	}
+	"DefaultValueList": ubx.FieldSpec{
+		WireName: "default_value_list",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification_DefaultValueListFields,
+	},
+}
 
 var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_SlotCaptureSettingFields = ubx.FieldMap{
-		"CaptureConditional": ubx.FieldSpec{
-			WireName: "capture_conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"CaptureNextStep": ubx.FieldSpec{
-			WireName: "capture_next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"CaptureResponse": ubx.FieldSpec{
-			WireName: "capture_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"CodeHook": ubx.FieldSpec{
-			WireName: "code_hook",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
-		},
-		"ElicitationCodeHook": ubx.FieldSpec{
-			WireName: "elicitation_code_hook",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHookFields,
-		},
-		"FailureConditional": ubx.FieldSpec{
-			WireName: "failure_conditional",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
-		},
-		"FailureNextStep": ubx.FieldSpec{
-			WireName: "failure_next_step",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
-		},
-		"FailureResponse": ubx.FieldSpec{
-			WireName: "failure_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-	}
+	"CaptureConditional": ubx.FieldSpec{
+		WireName: "capture_conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"CaptureNextStep": ubx.FieldSpec{
+		WireName: "capture_next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"CaptureResponse": ubx.FieldSpec{
+		WireName: "capture_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"CodeHook": ubx.FieldSpec{
+		WireName: "code_hook",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_InitialResponseSetting_CodeHookFields,
+	},
+	"ElicitationCodeHook": ubx.FieldSpec{
+		WireName: "elicitation_code_hook",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHookFields,
+	},
+	"FailureConditional": ubx.FieldSpec{
+		WireName: "failure_conditional",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditionalFields,
+	},
+	"FailureNextStep": ubx.FieldSpec{
+		WireName: "failure_next_step",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStepFields,
+	},
+	"FailureResponse": ubx.FieldSpec{
+		WireName: "failure_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+}
 
 var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification_StillWaitingResponseFields = ubx.FieldMap{
-		"AllowInterrupt": ubx.FieldSpec{WireName: "allow_interrupt"},
-		"FrequencyInSeconds": ubx.FieldSpec{WireName: "frequency_in_seconds"},
-		"MessageGroupsList": ubx.FieldSpec{
-			WireName: "message_groups_list",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
-		},
-		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
-	}
+	"AllowInterrupt":     ubx.FieldSpec{WireName: "allow_interrupt"},
+	"FrequencyInSeconds": ubx.FieldSpec{WireName: "frequency_in_seconds"},
+	"MessageGroupsList": ubx.FieldSpec{
+		WireName: "message_groups_list",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroupsFields,
+	},
+	"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
+}
 
 var Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecificationFields = ubx.FieldMap{
-		"ContinueResponse": ubx.FieldSpec{
-			WireName: "continue_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-		"IsActive": ubx.FieldSpec{WireName: "is_active"},
-		"StillWaitingResponse": ubx.FieldSpec{
-			WireName: "still_waiting_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification_StillWaitingResponseFields,
-		},
-		"WaitingResponse": ubx.FieldSpec{
-			WireName: "waiting_response",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
-		},
-	}
+	"ContinueResponse": ubx.FieldSpec{
+		WireName: "continue_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+	"IsActive": ubx.FieldSpec{WireName: "is_active"},
+	"StillWaitingResponse": ubx.FieldSpec{
+		WireName: "still_waiting_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification_StillWaitingResponseFields,
+	},
+	"WaitingResponse": ubx.FieldSpec{
+		WireName: "waiting_response",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_ResponseFields,
+	},
+}
 
 var Bot_BotLocales_Intents_Slots_ValueElicitationSettingFields = ubx.FieldMap{
-		"DefaultValueSpecification": ubx.FieldSpec{
-			WireName: "default_value_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecificationFields,
-		},
-		"PromptSpecification": ubx.FieldSpec{
-			WireName: "prompt_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecificationFields,
-		},
-		"SampleUtterances": ubx.FieldSpec{
-			WireName: "sample_utterances",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_SampleUtterancesFields,
-		},
-		"SlotCaptureSetting": ubx.FieldSpec{
-			WireName: "slot_capture_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_SlotCaptureSettingFields,
-		},
-		"SlotConstraint": ubx.FieldSpec{WireName: "slot_constraint"},
-		"WaitAndContinueSpecification": ubx.FieldSpec{
-			WireName: "wait_and_continue_specification",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecificationFields,
-		},
-	}
+	"DefaultValueSpecification": ubx.FieldSpec{
+		WireName: "default_value_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecificationFields,
+	},
+	"PromptSpecification": ubx.FieldSpec{
+		WireName: "prompt_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecificationFields,
+	},
+	"SampleUtterances": ubx.FieldSpec{
+		WireName: "sample_utterances",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_SampleUtterancesFields,
+	},
+	"SlotCaptureSetting": ubx.FieldSpec{
+		WireName: "slot_capture_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_Slots_ValueElicitationSetting_SlotCaptureSettingFields,
+	},
+	"SlotConstraint": ubx.FieldSpec{WireName: "slot_constraint"},
+	"WaitAndContinueSpecification": ubx.FieldSpec{
+		WireName: "wait_and_continue_specification",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecificationFields,
+	},
+}
 
 var Bot_BotLocales_Intents_SlotsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MultipleValuesSetting": ubx.FieldSpec{
-			WireName: "multiple_values_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_Slots_MultipleValuesSettingFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ObfuscationSetting": ubx.FieldSpec{
-			WireName: "obfuscation_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_Slots_ObfuscationSettingFields,
-		},
-		"SlotTypeName": ubx.FieldSpec{WireName: "slot_type_name"},
-		"SubSlotSetting": ubx.FieldSpec{
-			WireName: "sub_slot_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_Slots_SubSlotSettingFields,
-		},
-		"ValueElicitationSetting": ubx.FieldSpec{
-			WireName: "value_elicitation_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_Slots_ValueElicitationSettingFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"MultipleValuesSetting": ubx.FieldSpec{
+		WireName: "multiple_values_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_Slots_MultipleValuesSettingFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ObfuscationSetting": ubx.FieldSpec{
+		WireName: "obfuscation_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_Slots_ObfuscationSettingFields,
+	},
+	"SlotTypeName": ubx.FieldSpec{WireName: "slot_type_name"},
+	"SubSlotSetting": ubx.FieldSpec{
+		WireName: "sub_slot_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_Slots_SubSlotSettingFields,
+	},
+	"ValueElicitationSetting": ubx.FieldSpec{
+		WireName: "value_elicitation_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_Slots_ValueElicitationSettingFields,
+	},
+}
 
 var Bot_BotLocales_IntentsFields = ubx.FieldMap{
-		"BedrockAgentIntentConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_agent_intent_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_BedrockAgentIntentConfigurationFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DialogCodeHook": ubx.FieldSpec{
-			WireName: "dialog_code_hook",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_DialogCodeHookFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FulfillmentCodeHook": ubx.FieldSpec{
-			WireName: "fulfillment_code_hook",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHookFields,
-		},
-		"InitialResponseSetting": ubx.FieldSpec{
-			WireName: "initial_response_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_InitialResponseSettingFields,
-		},
-		"InputContexts": ubx.FieldSpec{
-			WireName: "input_contexts",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_InputContextsFields,
-		},
-		"IntentClosingSetting": ubx.FieldSpec{
-			WireName: "intent_closing_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_IntentClosingSettingFields,
-		},
-		"IntentConfirmationSetting": ubx.FieldSpec{
-			WireName: "intent_confirmation_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_IntentConfirmationSettingFields,
-		},
-		"KendraConfiguration": ubx.FieldSpec{
-			WireName: "kendra_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_KendraConfigurationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputContexts": ubx.FieldSpec{
-			WireName: "output_contexts",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_OutputContextsFields,
-		},
-		"ParentIntentSignature": ubx.FieldSpec{WireName: "parent_intent_signature"},
-		"QinConnectIntentConfiguration": ubx.FieldSpec{
-			WireName: "qin_connect_intent_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QinConnectIntentConfigurationFields,
-		},
-		"QnAintentConfiguration": ubx.FieldSpec{
-			WireName: "qn_aintent_configuration",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_QnAintentConfigurationFields,
-		},
-		"SampleUtterances": ubx.FieldSpec{
-			WireName: "sample_utterances",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_SampleUtterancesFields,
-		},
-		"SlotPriorities": ubx.FieldSpec{
-			WireName: "slot_priorities",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_SlotPrioritiesFields,
-		},
-		"Slots": ubx.FieldSpec{
-			WireName: "slots",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_SlotsFields,
-		},
-	}
+	"BedrockAgentIntentConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_agent_intent_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_BedrockAgentIntentConfigurationFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DialogCodeHook": ubx.FieldSpec{
+		WireName: "dialog_code_hook",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_DialogCodeHookFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"FulfillmentCodeHook": ubx.FieldSpec{
+		WireName: "fulfillment_code_hook",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHookFields,
+	},
+	"InitialResponseSetting": ubx.FieldSpec{
+		WireName: "initial_response_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_InitialResponseSettingFields,
+	},
+	"InputContexts": ubx.FieldSpec{
+		WireName: "input_contexts",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_InputContextsFields,
+	},
+	"IntentClosingSetting": ubx.FieldSpec{
+		WireName: "intent_closing_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_IntentClosingSettingFields,
+	},
+	"IntentConfirmationSetting": ubx.FieldSpec{
+		WireName: "intent_confirmation_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_IntentConfirmationSettingFields,
+	},
+	"KendraConfiguration": ubx.FieldSpec{
+		WireName: "kendra_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_KendraConfigurationFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OutputContexts": ubx.FieldSpec{
+		WireName: "output_contexts",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_OutputContextsFields,
+	},
+	"ParentIntentSignature": ubx.FieldSpec{WireName: "parent_intent_signature"},
+	"QinConnectIntentConfiguration": ubx.FieldSpec{
+		WireName: "qin_connect_intent_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QinConnectIntentConfigurationFields,
+	},
+	"QnAintentConfiguration": ubx.FieldSpec{
+		WireName: "qn_aintent_configuration",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_QnAintentConfigurationFields,
+	},
+	"SampleUtterances": ubx.FieldSpec{
+		WireName: "sample_utterances",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_SampleUtterancesFields,
+	},
+	"SlotPriorities": ubx.FieldSpec{
+		WireName: "slot_priorities",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_SlotPrioritiesFields,
+	},
+	"Slots": ubx.FieldSpec{
+		WireName: "slots",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_SlotsFields,
+	},
+}
 
 var Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting_SubSlotsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SlotTypeId": ubx.FieldSpec{WireName: "slot_type_id"},
-		"SlotTypeName": ubx.FieldSpec{WireName: "slot_type_name"},
-	}
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"SlotTypeId":   ubx.FieldSpec{WireName: "slot_type_id"},
+	"SlotTypeName": ubx.FieldSpec{WireName: "slot_type_name"},
+}
 
 var Bot_BotLocales_SlotTypes_CompositeSlotTypeSettingFields = ubx.FieldMap{
-		"SubSlots": ubx.FieldSpec{
-			WireName: "sub_slots",
-			Kind: "list",
-			Fields: Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting_SubSlotsFields,
-		},
-	}
+	"SubSlots": ubx.FieldSpec{
+		WireName: "sub_slots",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting_SubSlotsFields,
+	},
+}
 
 var Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting_SourceFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3ObjectKey": ubx.FieldSpec{WireName: "s3_object_key"},
-	}
+	"KmsKeyArn":    ubx.FieldSpec{WireName: "kms_key_arn"},
+	"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3ObjectKey":  ubx.FieldSpec{WireName: "s3_object_key"},
+}
 
 var Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSettingFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting_SourceFields,
-		},
-	}
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting_SourceFields,
+	},
+}
 
 var Bot_BotLocales_SlotTypes_ExternalSourceSettingFields = ubx.FieldMap{
-		"GrammarSlotTypeSetting": ubx.FieldSpec{
-			WireName: "grammar_slot_type_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSettingFields,
-		},
-	}
+	"GrammarSlotTypeSetting": ubx.FieldSpec{
+		WireName: "grammar_slot_type_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSettingFields,
+	},
+}
 
 var Bot_BotLocales_SlotTypes_SlotTypeValuesFields = ubx.FieldMap{
-		"SampleValue": ubx.FieldSpec{
-			WireName: "sample_value",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
-		},
-		"Synonyms": ubx.FieldSpec{
-			WireName: "synonyms",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
-		},
-	}
+	"SampleValue": ubx.FieldSpec{
+		WireName: "sample_value",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+	},
+	"Synonyms": ubx.FieldSpec{
+		WireName: "synonyms",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayloadFields,
+	},
+}
 
 var Bot_BotLocales_SlotTypes_ValueSelectionSetting_AdvancedRecognitionSettingFields = ubx.FieldMap{
-		"AudioRecognitionStrategy": ubx.FieldSpec{WireName: "audio_recognition_strategy"},
-	}
+	"AudioRecognitionStrategy": ubx.FieldSpec{WireName: "audio_recognition_strategy"},
+}
 
 var Bot_BotLocales_SlotTypes_ValueSelectionSetting_RegexFilterFields = ubx.FieldMap{
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"Pattern": ubx.FieldSpec{WireName: "pattern"},
+}
 
 var Bot_BotLocales_SlotTypes_ValueSelectionSettingFields = ubx.FieldMap{
-		"AdvancedRecognitionSetting": ubx.FieldSpec{
-			WireName: "advanced_recognition_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_SlotTypes_ValueSelectionSetting_AdvancedRecognitionSettingFields,
-		},
-		"RegexFilter": ubx.FieldSpec{
-			WireName: "regex_filter",
-			Kind: "object",
-			Fields: Bot_BotLocales_SlotTypes_ValueSelectionSetting_RegexFilterFields,
-		},
-		"ResolutionStrategy": ubx.FieldSpec{WireName: "resolution_strategy"},
-	}
+	"AdvancedRecognitionSetting": ubx.FieldSpec{
+		WireName: "advanced_recognition_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SlotTypes_ValueSelectionSetting_AdvancedRecognitionSettingFields,
+	},
+	"RegexFilter": ubx.FieldSpec{
+		WireName: "regex_filter",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SlotTypes_ValueSelectionSetting_RegexFilterFields,
+	},
+	"ResolutionStrategy": ubx.FieldSpec{WireName: "resolution_strategy"},
+}
 
 var Bot_BotLocales_SlotTypesFields = ubx.FieldMap{
-		"CompositeSlotTypeSetting": ubx.FieldSpec{
-			WireName: "composite_slot_type_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_SlotTypes_CompositeSlotTypeSettingFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExternalSourceSetting": ubx.FieldSpec{
-			WireName: "external_source_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_SlotTypes_ExternalSourceSettingFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentSlotTypeSignature": ubx.FieldSpec{WireName: "parent_slot_type_signature"},
-		"SlotTypeValues": ubx.FieldSpec{
-			WireName: "slot_type_values",
-			Kind: "list",
-			Fields: Bot_BotLocales_SlotTypes_SlotTypeValuesFields,
-		},
-		"ValueSelectionSetting": ubx.FieldSpec{
-			WireName: "value_selection_setting",
-			Kind: "object",
-			Fields: Bot_BotLocales_SlotTypes_ValueSelectionSettingFields,
-		},
-	}
+	"CompositeSlotTypeSetting": ubx.FieldSpec{
+		WireName: "composite_slot_type_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SlotTypes_CompositeSlotTypeSettingFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"ExternalSourceSetting": ubx.FieldSpec{
+		WireName: "external_source_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SlotTypes_ExternalSourceSettingFields,
+	},
+	"Name":                    ubx.FieldSpec{WireName: "name"},
+	"ParentSlotTypeSignature": ubx.FieldSpec{WireName: "parent_slot_type_signature"},
+	"SlotTypeValues": ubx.FieldSpec{
+		WireName: "slot_type_values",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_SlotTypes_SlotTypeValuesFields,
+	},
+	"ValueSelectionSetting": ubx.FieldSpec{
+		WireName: "value_selection_setting",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SlotTypes_ValueSelectionSettingFields,
+	},
+}
 
 var Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig_DeepgramConfigFields = ubx.FieldMap{
-		"ApiTokenSecretArn": ubx.FieldSpec{WireName: "api_token_secret_arn"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-	}
+	"ApiTokenSecretArn": ubx.FieldSpec{WireName: "api_token_secret_arn"},
+	"ModelId":           ubx.FieldSpec{WireName: "model_id"},
+}
 
 var Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfigFields = ubx.FieldMap{
-		"DeepgramConfig": ubx.FieldSpec{
-			WireName: "deepgram_config",
-			Kind: "object",
-			Fields: Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig_DeepgramConfigFields,
-		},
-	}
+	"DeepgramConfig": ubx.FieldSpec{
+		WireName: "deepgram_config",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig_DeepgramConfigFields,
+	},
+}
 
 var Bot_BotLocales_SpeechRecognitionSettingsFields = ubx.FieldMap{
-		"SpeechModelConfig": ubx.FieldSpec{
-			WireName: "speech_model_config",
-			Kind: "object",
-			Fields: Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfigFields,
-		},
-		"SpeechModelPreference": ubx.FieldSpec{WireName: "speech_model_preference"},
-	}
+	"SpeechModelConfig": ubx.FieldSpec{
+		WireName: "speech_model_config",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfigFields,
+	},
+	"SpeechModelPreference": ubx.FieldSpec{WireName: "speech_model_preference"},
+}
 
 var Bot_BotLocales_UnifiedSpeechSettings_SpeechFoundationModelFields = ubx.FieldMap{
-		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
-		"VoiceId": ubx.FieldSpec{WireName: "voice_id"},
-	}
+	"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
+	"VoiceId":  ubx.FieldSpec{WireName: "voice_id"},
+}
 
 var Bot_BotLocales_UnifiedSpeechSettingsFields = ubx.FieldMap{
-		"SpeechFoundationModel": ubx.FieldSpec{
-			WireName: "speech_foundation_model",
-			Kind: "object",
-			Fields: Bot_BotLocales_UnifiedSpeechSettings_SpeechFoundationModelFields,
-		},
-	}
+	"SpeechFoundationModel": ubx.FieldSpec{
+		WireName: "speech_foundation_model",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_UnifiedSpeechSettings_SpeechFoundationModelFields,
+	},
+}
 
 var Bot_BotLocales_VoiceSettingsFields = ubx.FieldMap{
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"VoiceId": ubx.FieldSpec{WireName: "voice_id"},
-	}
+	"Engine":  ubx.FieldSpec{WireName: "engine"},
+	"VoiceId": ubx.FieldSpec{WireName: "voice_id"},
+}
 
 var Bot_BotLocalesFields = ubx.FieldMap{
-		"AudioFillerSettings": ubx.FieldSpec{
-			WireName: "audio_filler_settings",
-			Kind: "object",
-			Fields: Bot_BotLocales_AudioFillerSettingsFields,
-		},
-		"CustomVocabulary": ubx.FieldSpec{
-			WireName: "custom_vocabulary",
-			Kind: "object",
-			Fields: Bot_BotLocales_CustomVocabularyFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"GenerativeAisettings": ubx.FieldSpec{
-			WireName: "generative_aisettings",
-			Kind: "object",
-			Fields: Bot_BotLocales_GenerativeAisettingsFields,
-		},
-		"Intents": ubx.FieldSpec{
-			WireName: "intents",
-			Kind: "list",
-			Fields: Bot_BotLocales_IntentsFields,
-		},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
-		"NluConfidenceThreshold": ubx.FieldSpec{WireName: "nlu_confidence_threshold"},
-		"SlotTypes": ubx.FieldSpec{
-			WireName: "slot_types",
-			Kind: "list",
-			Fields: Bot_BotLocales_SlotTypesFields,
-		},
-		"SpeechDetectionSensitivity": ubx.FieldSpec{WireName: "speech_detection_sensitivity"},
-		"SpeechRecognitionSettings": ubx.FieldSpec{
-			WireName: "speech_recognition_settings",
-			Kind: "object",
-			Fields: Bot_BotLocales_SpeechRecognitionSettingsFields,
-		},
-		"UnifiedSpeechSettings": ubx.FieldSpec{
-			WireName: "unified_speech_settings",
-			Kind: "object",
-			Fields: Bot_BotLocales_UnifiedSpeechSettingsFields,
-		},
-		"VoiceSettings": ubx.FieldSpec{
-			WireName: "voice_settings",
-			Kind: "object",
-			Fields: Bot_BotLocales_VoiceSettingsFields,
-		},
-	}
+	"AudioFillerSettings": ubx.FieldSpec{
+		WireName: "audio_filler_settings",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_AudioFillerSettingsFields,
+	},
+	"CustomVocabulary": ubx.FieldSpec{
+		WireName: "custom_vocabulary",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_CustomVocabularyFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"GenerativeAisettings": ubx.FieldSpec{
+		WireName: "generative_aisettings",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_GenerativeAisettingsFields,
+	},
+	"Intents": ubx.FieldSpec{
+		WireName: "intents",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_IntentsFields,
+	},
+	"LocaleId":               ubx.FieldSpec{WireName: "locale_id"},
+	"NluConfidenceThreshold": ubx.FieldSpec{WireName: "nlu_confidence_threshold"},
+	"SlotTypes": ubx.FieldSpec{
+		WireName: "slot_types",
+		Kind:     "list",
+		Fields:   Bot_BotLocales_SlotTypesFields,
+	},
+	"SpeechDetectionSensitivity": ubx.FieldSpec{WireName: "speech_detection_sensitivity"},
+	"SpeechRecognitionSettings": ubx.FieldSpec{
+		WireName: "speech_recognition_settings",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_SpeechRecognitionSettingsFields,
+	},
+	"UnifiedSpeechSettings": ubx.FieldSpec{
+		WireName: "unified_speech_settings",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_UnifiedSpeechSettingsFields,
+	},
+	"VoiceSettings": ubx.FieldSpec{
+		WireName: "voice_settings",
+		Kind:     "object",
+		Fields:   Bot_BotLocales_VoiceSettingsFields,
+	},
+}
 
 var Bot_BotMembersFields = ubx.FieldMap{
-		"BotMemberAliasId": ubx.FieldSpec{WireName: "bot_member_alias_id"},
-		"BotMemberAliasName": ubx.FieldSpec{WireName: "bot_member_alias_name"},
-		"BotMemberId": ubx.FieldSpec{WireName: "bot_member_id"},
-		"BotMemberName": ubx.FieldSpec{WireName: "bot_member_name"},
-		"BotMemberVersion": ubx.FieldSpec{WireName: "bot_member_version"},
-	}
+	"BotMemberAliasId":   ubx.FieldSpec{WireName: "bot_member_alias_id"},
+	"BotMemberAliasName": ubx.FieldSpec{WireName: "bot_member_alias_name"},
+	"BotMemberId":        ubx.FieldSpec{WireName: "bot_member_id"},
+	"BotMemberName":      ubx.FieldSpec{WireName: "bot_member_name"},
+	"BotMemberVersion":   ubx.FieldSpec{WireName: "bot_member_version"},
+}
 
 var Bot_DataPrivacyFields = ubx.FieldMap{
-		"ChildDirected": ubx.FieldSpec{WireName: "child_directed"},
-	}
+	"ChildDirected": ubx.FieldSpec{WireName: "child_directed"},
+}
 
 var Bot_ReplicationFields = ubx.FieldMap{
-		"ReplicaRegions": ubx.FieldSpec{WireName: "replica_regions"},
-	}
+	"ReplicaRegions": ubx.FieldSpec{WireName: "replica_regions"},
+}
 
 var Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields = ubx.FieldMap{
-		"CodeHookInterfaceVersion": ubx.FieldSpec{WireName: "code_hook_interface_version"},
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-	}
+	"CodeHookInterfaceVersion": ubx.FieldSpec{WireName: "code_hook_interface_version"},
+	"LambdaArn":                ubx.FieldSpec{WireName: "lambda_arn"},
+}
 
 var Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields = ubx.FieldMap{
-		"LambdaCodeHook": ubx.FieldSpec{
-			WireName: "lambda_code_hook",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields,
-		},
-	}
+	"LambdaCodeHook": ubx.FieldSpec{
+		WireName: "lambda_code_hook",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields,
+	},
+}
 
 var Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSettingFields = ubx.FieldMap{
-		"CodeHookSpecification": ubx.FieldSpec{
-			WireName: "code_hook_specification",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"CodeHookSpecification": ubx.FieldSpec{
+		WireName: "code_hook_specification",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Bot_TestBotAliasSettings_BotAliasLocaleSettingsFields = ubx.FieldMap{
-		"BotAliasLocaleSetting": ubx.FieldSpec{
-			WireName: "bot_alias_locale_setting",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSettingFields,
-		},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
-	}
+	"BotAliasLocaleSetting": ubx.FieldSpec{
+		WireName: "bot_alias_locale_setting",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSettingFields,
+	},
+	"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+}
 
 var Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"LogPrefix": ubx.FieldSpec{WireName: "log_prefix"},
-		"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
-	}
+	"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
+	"LogPrefix":   ubx.FieldSpec{WireName: "log_prefix"},
+	"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
+}
 
 var Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_DestinationFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{
-			WireName: "s3_bucket",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields,
-		},
-	}
+	"S3Bucket": ubx.FieldSpec{
+		WireName: "s3_bucket",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields,
+	},
+}
 
 var Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettingsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_DestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_DestinationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields = ubx.FieldMap{
-		"CloudWatchLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
-		"LogPrefix": ubx.FieldSpec{WireName: "log_prefix"},
-	}
+	"CloudWatchLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
+	"LogPrefix":             ubx.FieldSpec{WireName: "log_prefix"},
+}
 
 var Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_DestinationFields = ubx.FieldMap{
-		"CloudWatch": ubx.FieldSpec{
-			WireName: "cloud_watch",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields,
-		},
-	}
+	"CloudWatch": ubx.FieldSpec{
+		WireName: "cloud_watch",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields,
+	},
+}
 
 var Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettingsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_DestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_DestinationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Bot_TestBotAliasSettings_ConversationLogSettingsFields = ubx.FieldMap{
-		"AudioLogSettings": ubx.FieldSpec{
-			WireName: "audio_log_settings",
-			Kind: "list",
-			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettingsFields,
-		},
-		"TextLogSettings": ubx.FieldSpec{
-			WireName: "text_log_settings",
-			Kind: "list",
-			Fields: Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettingsFields,
-		},
-	}
+	"AudioLogSettings": ubx.FieldSpec{
+		WireName: "audio_log_settings",
+		Kind:     "list",
+		Fields:   Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettingsFields,
+	},
+	"TextLogSettings": ubx.FieldSpec{
+		WireName: "text_log_settings",
+		Kind:     "list",
+		Fields:   Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettingsFields,
+	},
+}
 
 var Bot_TestBotAliasSettings_SentimentAnalysisSettingsFields = ubx.FieldMap{
-		"DetectSentiment": ubx.FieldSpec{WireName: "detect_sentiment"},
-	}
+	"DetectSentiment": ubx.FieldSpec{WireName: "detect_sentiment"},
+}
 
 var Bot_TestBotAliasSettingsFields = ubx.FieldMap{
-		"BotAliasLocaleSettings": ubx.FieldSpec{
-			WireName: "bot_alias_locale_settings",
-			Kind: "list",
-			Fields: Bot_TestBotAliasSettings_BotAliasLocaleSettingsFields,
-		},
-		"ConversationLogSettings": ubx.FieldSpec{
-			WireName: "conversation_log_settings",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_ConversationLogSettingsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"SentimentAnalysisSettings": ubx.FieldSpec{
-			WireName: "sentiment_analysis_settings",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettings_SentimentAnalysisSettingsFields,
-		},
-	}
+	"BotAliasLocaleSettings": ubx.FieldSpec{
+		WireName: "bot_alias_locale_settings",
+		Kind:     "list",
+		Fields:   Bot_TestBotAliasSettings_BotAliasLocaleSettingsFields,
+	},
+	"ConversationLogSettings": ubx.FieldSpec{
+		WireName: "conversation_log_settings",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_ConversationLogSettingsFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"SentimentAnalysisSettings": ubx.FieldSpec{
+		WireName: "sentiment_analysis_settings",
+		Kind:     "object",
+		Fields:   Bot_TestBotAliasSettings_SentimentAnalysisSettingsFields,
+	},
+}
 
 type BotConfig struct {
 	// Whether Amazon Lex automatically builds this bot's own locales as they're added or updated. (AI-inferred)
@@ -2171,53 +2171,53 @@ var Bot = ubx.ResourceBinding{
 		"AutoBuildBotLocales": ubx.FieldSpec{WireName: "auto_build_bot_locales"},
 		"BotFileS3Location": ubx.FieldSpec{
 			WireName: "bot_file_s3_location",
-			Kind: "object",
-			Fields: Bot_BotFileS3LocationFields,
+			Kind:     "object",
+			Fields:   Bot_BotFileS3LocationFields,
 		},
 		"BotLocales": ubx.FieldSpec{
 			WireName: "bot_locales",
-			Kind: "list",
-			Fields: Bot_BotLocalesFields,
+			Kind:     "list",
+			Fields:   Bot_BotLocalesFields,
 		},
 		"BotMembers": ubx.FieldSpec{
 			WireName: "bot_members",
-			Kind: "list",
-			Fields: Bot_BotMembersFields,
+			Kind:     "list",
+			Fields:   Bot_BotMembersFields,
 		},
 		"BotTags": ubx.FieldSpec{
 			WireName: "bot_tags",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
+			Kind:     "list",
+			Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
 		},
 		"BotType": ubx.FieldSpec{WireName: "bot_type"},
 		"DataPrivacy": ubx.FieldSpec{
 			WireName: "data_privacy",
-			Kind: "object",
-			Fields: Bot_DataPrivacyFields,
+			Kind:     "object",
+			Fields:   Bot_DataPrivacyFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ErrorLogSettings": ubx.FieldSpec{
 			WireName: "error_log_settings",
-			Kind: "object",
-			Fields: Bot_BotLocales_Intents_DialogCodeHookFields,
+			Kind:     "object",
+			Fields:   Bot_BotLocales_Intents_DialogCodeHookFields,
 		},
 		"IdleSessionTtlinSeconds": ubx.FieldSpec{WireName: "idle_session_ttlin_seconds"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"Replication": ubx.FieldSpec{
 			WireName: "replication",
-			Kind: "object",
-			Fields: Bot_ReplicationFields,
+			Kind:     "object",
+			Fields:   Bot_ReplicationFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"TestBotAliasSettings": ubx.FieldSpec{
 			WireName: "test_bot_alias_settings",
-			Kind: "object",
-			Fields: Bot_TestBotAliasSettingsFields,
+			Kind:     "object",
+			Fields:   Bot_TestBotAliasSettingsFields,
 		},
 		"TestBotAliasTags": ubx.FieldSpec{
 			WireName: "test_bot_alias_tags",
-			Kind: "list",
-			Fields: Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
+			Kind:     "list",
+			Fields:   Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributesFields,
 		},
 	},
 }

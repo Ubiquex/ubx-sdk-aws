@@ -137,148 +137,148 @@ type Integration_ObjectTypeNames struct {
 }
 
 var Integration_FlowDefinition_SourceFlowConfig_IncrementalPullConfigFields = ubx.FieldMap{
-		"DatetimeTypeFieldName": ubx.FieldSpec{WireName: "datetime_type_field_name"},
-	}
+	"DatetimeTypeFieldName": ubx.FieldSpec{WireName: "datetime_type_field_name"},
+}
 
 var Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_MarketoFields = ubx.FieldMap{
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Object": ubx.FieldSpec{WireName: "object"},
+}
 
 var Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+}
 
 var Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_SalesforceFields = ubx.FieldMap{
-		"EnableDynamicFieldUpdate": ubx.FieldSpec{WireName: "enable_dynamic_field_update"},
-		"IncludeDeletedRecords": ubx.FieldSpec{WireName: "include_deleted_records"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"EnableDynamicFieldUpdate": ubx.FieldSpec{WireName: "enable_dynamic_field_update"},
+	"IncludeDeletedRecords":    ubx.FieldSpec{WireName: "include_deleted_records"},
+	"Object":                   ubx.FieldSpec{WireName: "object"},
+}
 
 var Integration_FlowDefinition_SourceFlowConfig_SourceConnectorPropertiesFields = ubx.FieldMap{
-		"Marketo": ubx.FieldSpec{
-			WireName: "marketo",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_MarketoFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_S3Fields,
-		},
-		"Salesforce": ubx.FieldSpec{
-			WireName: "salesforce",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_SalesforceFields,
-		},
-		"ServiceNow": ubx.FieldSpec{
-			WireName: "service_now",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_MarketoFields,
-		},
-		"Zendesk": ubx.FieldSpec{
-			WireName: "zendesk",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_MarketoFields,
-		},
-	}
+	"Marketo": ubx.FieldSpec{
+		WireName: "marketo",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_MarketoFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_S3Fields,
+	},
+	"Salesforce": ubx.FieldSpec{
+		WireName: "salesforce",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_SalesforceFields,
+	},
+	"ServiceNow": ubx.FieldSpec{
+		WireName: "service_now",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_MarketoFields,
+	},
+	"Zendesk": ubx.FieldSpec{
+		WireName: "zendesk",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_MarketoFields,
+	},
+}
 
 var Integration_FlowDefinition_SourceFlowConfigFields = ubx.FieldMap{
-		"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
-		"ConnectorType": ubx.FieldSpec{WireName: "connector_type"},
-		"IncrementalPullConfig": ubx.FieldSpec{
-			WireName: "incremental_pull_config",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_SourceFlowConfig_IncrementalPullConfigFields,
-		},
-		"SourceConnectorProperties": ubx.FieldSpec{
-			WireName: "source_connector_properties",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_SourceFlowConfig_SourceConnectorPropertiesFields,
-		},
-	}
+	"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
+	"ConnectorType":        ubx.FieldSpec{WireName: "connector_type"},
+	"IncrementalPullConfig": ubx.FieldSpec{
+		WireName: "incremental_pull_config",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_SourceFlowConfig_IncrementalPullConfigFields,
+	},
+	"SourceConnectorProperties": ubx.FieldSpec{
+		WireName: "source_connector_properties",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_SourceFlowConfig_SourceConnectorPropertiesFields,
+	},
+}
 
 var Integration_FlowDefinition_Tasks_ConnectorOperatorFields = ubx.FieldMap{
-		"Marketo": ubx.FieldSpec{WireName: "marketo"},
-		"S3": ubx.FieldSpec{WireName: "s3"},
-		"Salesforce": ubx.FieldSpec{WireName: "salesforce"},
-		"ServiceNow": ubx.FieldSpec{WireName: "service_now"},
-		"Zendesk": ubx.FieldSpec{WireName: "zendesk"},
-	}
+	"Marketo":    ubx.FieldSpec{WireName: "marketo"},
+	"S3":         ubx.FieldSpec{WireName: "s3"},
+	"Salesforce": ubx.FieldSpec{WireName: "salesforce"},
+	"ServiceNow": ubx.FieldSpec{WireName: "service_now"},
+	"Zendesk":    ubx.FieldSpec{WireName: "zendesk"},
+}
 
 var Integration_FlowDefinition_Tasks_TaskPropertiesFields = ubx.FieldMap{
-		"OperatorPropertyKey": ubx.FieldSpec{WireName: "operator_property_key"},
-		"Property": ubx.FieldSpec{WireName: "property"},
-	}
+	"OperatorPropertyKey": ubx.FieldSpec{WireName: "operator_property_key"},
+	"Property":            ubx.FieldSpec{WireName: "property"},
+}
 
 var Integration_FlowDefinition_TasksFields = ubx.FieldMap{
-		"ConnectorOperator": ubx.FieldSpec{
-			WireName: "connector_operator",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_Tasks_ConnectorOperatorFields,
-		},
-		"DestinationField": ubx.FieldSpec{WireName: "destination_field"},
-		"SourceFields": ubx.FieldSpec{WireName: "source_fields"},
-		"TaskProperties": ubx.FieldSpec{
-			WireName: "task_properties",
-			Kind: "list",
-			Fields: Integration_FlowDefinition_Tasks_TaskPropertiesFields,
-		},
-		"TaskType": ubx.FieldSpec{WireName: "task_type"},
-	}
+	"ConnectorOperator": ubx.FieldSpec{
+		WireName: "connector_operator",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_Tasks_ConnectorOperatorFields,
+	},
+	"DestinationField": ubx.FieldSpec{WireName: "destination_field"},
+	"SourceFields":     ubx.FieldSpec{WireName: "source_fields"},
+	"TaskProperties": ubx.FieldSpec{
+		WireName: "task_properties",
+		Kind:     "list",
+		Fields:   Integration_FlowDefinition_Tasks_TaskPropertiesFields,
+	},
+	"TaskType": ubx.FieldSpec{WireName: "task_type"},
+}
 
 var Integration_FlowDefinition_TriggerConfig_TriggerProperties_ScheduledFields = ubx.FieldMap{
-		"DataPullMode": ubx.FieldSpec{WireName: "data_pull_mode"},
-		"FirstExecutionFrom": ubx.FieldSpec{WireName: "first_execution_from"},
-		"ScheduleEndTime": ubx.FieldSpec{WireName: "schedule_end_time"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"ScheduleOffset": ubx.FieldSpec{WireName: "schedule_offset"},
-		"ScheduleStartTime": ubx.FieldSpec{WireName: "schedule_start_time"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"DataPullMode":       ubx.FieldSpec{WireName: "data_pull_mode"},
+	"FirstExecutionFrom": ubx.FieldSpec{WireName: "first_execution_from"},
+	"ScheduleEndTime":    ubx.FieldSpec{WireName: "schedule_end_time"},
+	"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+	"ScheduleOffset":     ubx.FieldSpec{WireName: "schedule_offset"},
+	"ScheduleStartTime":  ubx.FieldSpec{WireName: "schedule_start_time"},
+	"Timezone":           ubx.FieldSpec{WireName: "timezone"},
+}
 
 var Integration_FlowDefinition_TriggerConfig_TriggerPropertiesFields = ubx.FieldMap{
-		"Scheduled": ubx.FieldSpec{
-			WireName: "scheduled",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_TriggerConfig_TriggerProperties_ScheduledFields,
-		},
-	}
+	"Scheduled": ubx.FieldSpec{
+		WireName: "scheduled",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_TriggerConfig_TriggerProperties_ScheduledFields,
+	},
+}
 
 var Integration_FlowDefinition_TriggerConfigFields = ubx.FieldMap{
-		"TriggerProperties": ubx.FieldSpec{
-			WireName: "trigger_properties",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_TriggerConfig_TriggerPropertiesFields,
-		},
-		"TriggerType": ubx.FieldSpec{WireName: "trigger_type"},
-	}
+	"TriggerProperties": ubx.FieldSpec{
+		WireName: "trigger_properties",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_TriggerConfig_TriggerPropertiesFields,
+	},
+	"TriggerType": ubx.FieldSpec{WireName: "trigger_type"},
+}
 
 var Integration_FlowDefinitionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FlowName": ubx.FieldSpec{WireName: "flow_name"},
-		"KmsArn": ubx.FieldSpec{WireName: "kms_arn"},
-		"SourceFlowConfig": ubx.FieldSpec{
-			WireName: "source_flow_config",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_SourceFlowConfigFields,
-		},
-		"Tasks": ubx.FieldSpec{
-			WireName: "tasks",
-			Kind: "list",
-			Fields: Integration_FlowDefinition_TasksFields,
-		},
-		"TriggerConfig": ubx.FieldSpec{
-			WireName: "trigger_config",
-			Kind: "object",
-			Fields: Integration_FlowDefinition_TriggerConfigFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FlowName":    ubx.FieldSpec{WireName: "flow_name"},
+	"KmsArn":      ubx.FieldSpec{WireName: "kms_arn"},
+	"SourceFlowConfig": ubx.FieldSpec{
+		WireName: "source_flow_config",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_SourceFlowConfigFields,
+	},
+	"Tasks": ubx.FieldSpec{
+		WireName: "tasks",
+		Kind:     "list",
+		Fields:   Integration_FlowDefinition_TasksFields,
+	},
+	"TriggerConfig": ubx.FieldSpec{
+		WireName: "trigger_config",
+		Kind:     "object",
+		Fields:   Integration_FlowDefinition_TriggerConfigFields,
+	},
+}
 
 var Integration_ObjectTypeNamesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IntegrationConfig struct {
 	// The unique name of the domain.
@@ -325,24 +325,24 @@ type IntegrationAttrs struct {
 var Integration = ubx.ResourceBinding{
 	WireType: "aws_customer_profiles_integration",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":        ubx.FieldSpec{WireName: "domain_name"},
 		"EventTriggerNames": ubx.FieldSpec{WireName: "event_trigger_names"},
 		"FlowDefinition": ubx.FieldSpec{
 			WireName: "flow_definition",
-			Kind: "object",
-			Fields: Integration_FlowDefinitionFields,
+			Kind:     "object",
+			Fields:   Integration_FlowDefinitionFields,
 		},
 		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
 		"ObjectTypeNames": ubx.FieldSpec{
 			WireName: "object_type_names",
-			Kind: "list",
-			Fields: Integration_ObjectTypeNamesFields,
+			Kind:     "list",
+			Fields:   Integration_ObjectTypeNamesFields,
 		},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Integration_ObjectTypeNamesFields,
+			Kind:     "list",
+			Fields:   Integration_ObjectTypeNamesFields,
 		},
 		"Uri": ubx.FieldSpec{WireName: "uri"},
 	},

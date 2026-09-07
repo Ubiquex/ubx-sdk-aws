@@ -4,70 +4,70 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OptionGroupOptions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type OptionGroupOptions_OptionGroupOptions_OptionGroupOptionSettings_MinimumEngineVersionPerAllowedValue struct {
-	AllowedValue any
+	AllowedValue         any
 	MinimumEngineVersion any
 }
 
 type OptionGroupOptions_OptionGroupOptions_OptionGroupOptionSettings struct {
-	AllowedValues any
-	ApplyType any
-	DefaultValue any
-	IsModifiable any
-	IsRequired any
+	AllowedValues                       any
+	ApplyType                           any
+	DefaultValue                        any
+	IsModifiable                        any
+	IsRequired                          any
 	MinimumEngineVersionPerAllowedValue any
-	SettingDescription any
-	SettingName any
+	SettingDescription                  any
+	SettingName                         any
 }
 
 type OptionGroupOptions_OptionGroupOptions_OptionGroupOptionVersions struct {
 	IsDefault any
-	Version any
+	Version   any
 }
 
 type OptionGroupOptions_OptionGroupOptions struct {
-	CopyableCrossAccount any
-	DefaultPort any
-	Description any
-	EngineName any
-	MajorEngineVersion any
-	MinimumRequiredMinorEngineVersion any
-	Name any
-	OptionGroupOptionSettings any
-	OptionGroupOptionVersions any
-	OptionsConflictsWith any
-	OptionsDependedOn any
-	Permanent any
-	Persistent any
-	PortRequired any
+	CopyableCrossAccount                  any
+	DefaultPort                           any
+	Description                           any
+	EngineName                            any
+	MajorEngineVersion                    any
+	MinimumRequiredMinorEngineVersion     any
+	Name                                  any
+	OptionGroupOptionSettings             any
+	OptionGroupOptionVersions             any
+	OptionsConflictsWith                  any
+	OptionsDependedOn                     any
+	Permanent                             any
+	Persistent                            any
+	PortRequired                          any
 	RequiresAutoMinorEngineVersionUpgrade any
-	SupportsOptionVersionDowngrade any
-	VpcOnly any
+	SupportsOptionVersionDowngrade        any
+	VpcOnly                               any
 }
 
 var OptionGroupOptions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type OptionGroupOptionsConfig struct {
-	EngineName any
-	Filters any
+	EngineName         any
+	Filters            any
 	MajorEngineVersion any
-	Marker any
-	MaxRecords any
+	Marker             any
+	MaxRecords         any
 }
 
 type OptionGroupOptionsAttrs struct {
-	EngineName any
-	Filters any
+	EngineName         any
+	Filters            any
 	MajorEngineVersion any
-	Marker any
-	MaxRecords any
+	Marker             any
+	MaxRecords         any
 	// <p>List of available option group options.</p>
 	OptionGroupOptions any
 }
@@ -78,11 +78,11 @@ var OptionGroupOptions = ubx.DataSourceBinding{
 		"EngineName": ubx.FieldSpec{WireName: "engine_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: OptionGroupOptions_FiltersFields,
+			Kind:     "list",
+			Fields:   OptionGroupOptions_FiltersFields,
 		},
 		"MajorEngineVersion": ubx.FieldSpec{WireName: "major_engine_version"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":             ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":         ubx.FieldSpec{WireName: "max_records"},
 	},
 }

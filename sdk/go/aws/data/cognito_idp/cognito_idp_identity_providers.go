@@ -4,22 +4,22 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpIdentityProviders_Providers struct {
-	CreationDate any
+	CreationDate     any
 	LastModifiedDate any
-	ProviderName any
-	ProviderType any
+	ProviderName     any
+	ProviderType     any
 }
 
 type CognitoIdpIdentityProvidersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	UserPoolId any
 }
 
 type CognitoIdpIdentityProvidersAttrs struct {
 	MaxResults any
-	NextToken any
-	Providers any
+	NextToken  any
+	Providers  any
 	UserPoolId any
 }
 
@@ -27,7 +27,7 @@ var CognitoIdpIdentityProviders = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_identity_providers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportJob_ReportJob_ReportDestination struct {
 	S3BucketName any
-	S3Keys any
+	S3Keys       any
 }
 
 type ReportJob_ReportJob struct {
 	CompletionTime any
-	CreationTime any
+	CreationTime   any
 	// <p>Contains information from your report job about your report destination.</p>
 	ReportDestination any
-	ReportJobId any
-	ReportPlanArn any
-	ReportTemplate any
-	Status any
-	StatusMessage any
+	ReportJobId       any
+	ReportPlanArn     any
+	ReportTemplate    any
+	Status            any
+	StatusMessage     any
 }
 
 type ReportJobConfig struct {
@@ -26,7 +26,7 @@ type ReportJobConfig struct {
 
 type ReportJobAttrs struct {
 	// <p>Contains detailed information about a report job. A report job compiles a report based on a report plan and publishes it to Amazon S3.</p>
-	ReportJob any
+	ReportJob   any
 	ReportJobId any
 }
 

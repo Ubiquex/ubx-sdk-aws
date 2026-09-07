@@ -48,59 +48,59 @@ type TaskTemplate_Tags struct {
 }
 
 var TaskTemplate_Constraints_InvisibleFields_IdFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var TaskTemplate_Constraints_InvisibleFieldsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{
-			WireName: "id",
-			Kind: "object",
-			Fields: TaskTemplate_Constraints_InvisibleFields_IdFields,
-		},
-	}
+	"Id": ubx.FieldSpec{
+		WireName: "id",
+		Kind:     "object",
+		Fields:   TaskTemplate_Constraints_InvisibleFields_IdFields,
+	},
+}
 
 var TaskTemplate_ConstraintsFields = ubx.FieldMap{
-		"InvisibleFields": ubx.FieldSpec{
-			WireName: "invisible_fields",
-			Kind: "list",
-			Fields: TaskTemplate_Constraints_InvisibleFieldsFields,
-		},
-		"ReadOnlyFields": ubx.FieldSpec{
-			WireName: "read_only_fields",
-			Kind: "list",
-			Fields: TaskTemplate_Constraints_InvisibleFieldsFields,
-		},
-		"RequiredFields": ubx.FieldSpec{
-			WireName: "required_fields",
-			Kind: "list",
-			Fields: TaskTemplate_Constraints_InvisibleFieldsFields,
-		},
-	}
+	"InvisibleFields": ubx.FieldSpec{
+		WireName: "invisible_fields",
+		Kind:     "list",
+		Fields:   TaskTemplate_Constraints_InvisibleFieldsFields,
+	},
+	"ReadOnlyFields": ubx.FieldSpec{
+		WireName: "read_only_fields",
+		Kind:     "list",
+		Fields:   TaskTemplate_Constraints_InvisibleFieldsFields,
+	},
+	"RequiredFields": ubx.FieldSpec{
+		WireName: "required_fields",
+		Kind:     "list",
+		Fields:   TaskTemplate_Constraints_InvisibleFieldsFields,
+	},
+}
 
 var TaskTemplate_DefaultsFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Id": ubx.FieldSpec{
-			WireName: "id",
-			Kind: "object",
-			Fields: TaskTemplate_Constraints_InvisibleFields_IdFields,
-		},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Id": ubx.FieldSpec{
+		WireName: "id",
+		Kind:     "object",
+		Fields:   TaskTemplate_Constraints_InvisibleFields_IdFields,
+	},
+}
 
 var TaskTemplate_FieldsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{
-			WireName: "id",
-			Kind: "object",
-			Fields: TaskTemplate_Constraints_InvisibleFields_IdFields,
-		},
-		"SingleSelectOptions": ubx.FieldSpec{WireName: "single_select_options"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Id": ubx.FieldSpec{
+		WireName: "id",
+		Kind:     "object",
+		Fields:   TaskTemplate_Constraints_InvisibleFields_IdFields,
+	},
+	"SingleSelectOptions": ubx.FieldSpec{WireName: "single_select_options"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var TaskTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TaskTemplateConfig struct {
 	// the client token string in uuid format
@@ -160,29 +160,29 @@ var TaskTemplate = ubx.ResourceBinding{
 		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
 		"Constraints": ubx.FieldSpec{
 			WireName: "constraints",
-			Kind: "object",
-			Fields: TaskTemplate_ConstraintsFields,
+			Kind:     "object",
+			Fields:   TaskTemplate_ConstraintsFields,
 		},
 		"ContactFlowArn": ubx.FieldSpec{WireName: "contact_flow_arn"},
 		"Defaults": ubx.FieldSpec{
 			WireName: "defaults",
-			Kind: "list",
-			Fields: TaskTemplate_DefaultsFields,
+			Kind:     "list",
+			Fields:   TaskTemplate_DefaultsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "list",
-			Fields: TaskTemplate_FieldsFields,
+			Kind:     "list",
+			Fields:   TaskTemplate_FieldsFields,
 		},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"InstanceArn":              ubx.FieldSpec{WireName: "instance_arn"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"SelfAssignContactFlowArn": ubx.FieldSpec{WireName: "self_assign_contact_flow_arn"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":                   ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TaskTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   TaskTemplate_TagsFields,
 		},
 	},
 }

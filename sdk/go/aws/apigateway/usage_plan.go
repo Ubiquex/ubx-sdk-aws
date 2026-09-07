@@ -36,26 +36,26 @@ type UsagePlan_Throttle struct {
 }
 
 var UsagePlan_ApiStagesFields = ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
-		"Throttle": ubx.FieldSpec{WireName: "throttle"},
-	}
+	"ApiId":    ubx.FieldSpec{WireName: "api_id"},
+	"Stage":    ubx.FieldSpec{WireName: "stage"},
+	"Throttle": ubx.FieldSpec{WireName: "throttle"},
+}
 
 var UsagePlan_QuotaFields = ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-	}
+	"Limit":  ubx.FieldSpec{WireName: "limit"},
+	"Offset": ubx.FieldSpec{WireName: "offset"},
+	"Period": ubx.FieldSpec{WireName: "period"},
+}
 
 var UsagePlan_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var UsagePlan_ThrottleFields = ubx.FieldMap{
-		"BurstLimit": ubx.FieldSpec{WireName: "burst_limit"},
-		"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
-	}
+	"BurstLimit": ubx.FieldSpec{WireName: "burst_limit"},
+	"RateLimit":  ubx.FieldSpec{WireName: "rate_limit"},
+}
 
 type UsagePlanConfig struct {
 	// Associates this usage plan with specific API Gateway stages, optionally configuring per-stage throttling and quota limits for those stages. (AI-inferred)
@@ -94,24 +94,24 @@ var UsagePlan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApiStages": ubx.FieldSpec{
 			WireName: "api_stages",
-			Kind: "list",
-			Fields: UsagePlan_ApiStagesFields,
+			Kind:     "list",
+			Fields:   UsagePlan_ApiStagesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Quota": ubx.FieldSpec{
 			WireName: "quota",
-			Kind: "object",
-			Fields: UsagePlan_QuotaFields,
+			Kind:     "object",
+			Fields:   UsagePlan_QuotaFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: UsagePlan_TagsFields,
+			Kind:     "list",
+			Fields:   UsagePlan_TagsFields,
 		},
 		"Throttle": ubx.FieldSpec{
 			WireName: "throttle",
-			Kind: "object",
-			Fields: UsagePlan_ThrottleFields,
+			Kind:     "object",
+			Fields:   UsagePlan_ThrottleFields,
 		},
 		"UsagePlanName": ubx.FieldSpec{WireName: "usage_plan_name"},
 	},

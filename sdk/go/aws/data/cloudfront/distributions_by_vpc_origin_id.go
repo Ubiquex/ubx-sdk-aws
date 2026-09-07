@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DistributionsByVpcOriginId_DistributionIdList struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type DistributionsByVpcOriginIdConfig struct {
-	Marker any
-	MaxItems any
+	Marker      any
+	MaxItems    any
 	VpcOriginId any
 }
 
 type DistributionsByVpcOriginIdAttrs struct {
 	// <p>A list of distribution IDs.</p>
 	DistributionIdList any
-	Marker any
-	MaxItems any
-	VpcOriginId any
+	Marker             any
+	MaxItems           any
+	VpcOriginId        any
 }
 
 var DistributionsByVpcOriginId = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_distributions_by_vpc_origin_id",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":      ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":    ubx.FieldSpec{WireName: "max_items"},
 		"VpcOriginId": ubx.FieldSpec{WireName: "vpc_origin_id"},
 	},
 }

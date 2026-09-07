@@ -4,48 +4,48 @@ package discovery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Agents_AgentsInfo_AgentNetworkInfoList struct {
-	IpAddress any
+	IpAddress  any
 	MacAddress any
 }
 
 type Agents_AgentsInfo struct {
-	AgentId any
+	AgentId              any
 	AgentNetworkInfoList any
-	AgentType any
-	CollectionStatus any
-	ConnectorId any
-	Health any
-	HostName any
-	LastHealthPingTime any
-	RegisteredTime any
-	Version any
+	AgentType            any
+	CollectionStatus     any
+	ConnectorId          any
+	Health               any
+	HostName             any
+	LastHealthPingTime   any
+	RegisteredTime       any
+	Version              any
 }
 
 type Agents_Filters struct {
 	Condition any
-	Name any
-	Values any
+	Name      any
+	Values    any
 }
 
 var Agents_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type AgentsConfig struct {
-	AgentIds any
-	Filters any
+	AgentIds   any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AgentsAttrs struct {
-	AgentIds any
+	AgentIds   any
 	AgentsInfo any
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Agents = ubx.DataSourceBinding{
@@ -54,10 +54,10 @@ var Agents = ubx.DataSourceBinding{
 		"AgentIds": ubx.FieldSpec{WireName: "agent_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Agents_FiltersFields,
+			Kind:     "list",
+			Fields:   Agents_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

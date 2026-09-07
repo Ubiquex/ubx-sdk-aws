@@ -10,11 +10,11 @@ type CacheConfig struct {
 
 type CacheAttrs struct {
 	CacheAllocatedInBytes any
-	CacheDirtyPercentage any
-	CacheHitPercentage any
-	CacheMissPercentage any
-	CacheUsedPercentage any
-	DiskIds any
+	CacheDirtyPercentage  any
+	CacheHitPercentage    any
+	CacheMissPercentage   any
+	CacheUsedPercentage   any
+	DiskIds               any
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
 	GatewayArn any
 }

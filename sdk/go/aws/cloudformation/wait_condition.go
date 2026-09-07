@@ -28,8 +28,8 @@ type WaitConditionAttrs struct {
 var WaitCondition = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_wait_condition",
 	Fields: ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
+		"Count":   ubx.FieldSpec{WireName: "count"},
+		"Handle":  ubx.FieldSpec{WireName: "handle"},
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 	},
 }

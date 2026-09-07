@@ -4,20 +4,20 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerAccessTokenConfig struct {
-	Token any
+	Token           any
 	TokenProperties any
 }
 
 type LicenseManagerAccessTokenAttrs struct {
-	AccessToken any
-	Token any
+	AccessToken     any
+	Token           any
 	TokenProperties any
 }
 
 var LicenseManagerAccessToken = ubx.DataSourceBinding{
 	WireType: "aws_license_manager_access_token",
 	Fields: ubx.FieldMap{
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"Token":           ubx.FieldSpec{WireName: "token"},
 		"TokenProperties": ubx.FieldSpec{WireName: "token_properties"},
 	},
 }

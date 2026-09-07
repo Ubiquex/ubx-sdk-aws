@@ -4,36 +4,36 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessageInsights_EmailTags struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type MessageInsights_Insights_Events_Details_Bounce struct {
-	BounceSubType any
-	BounceType any
+	BounceSubType  any
+	BounceType     any
 	DiagnosticCode any
 }
 
 type MessageInsights_Insights_Events_Details_Complaint struct {
 	ComplaintFeedbackType any
-	ComplaintSubType any
+	ComplaintSubType      any
 }
 
 type MessageInsights_Insights_Events_Details struct {
-	Bounce any
+	Bounce    any
 	Complaint any
 }
 
 type MessageInsights_Insights_Events struct {
-	Details any
+	Details   any
 	Timestamp any
-	Type any
+	Type      any
 }
 
 type MessageInsights_Insights struct {
 	Destination any
-	Events any
-	Isp any
+	Events      any
+	Isp         any
 }
 
 type MessageInsightsConfig struct {
@@ -42,11 +42,11 @@ type MessageInsightsConfig struct {
 
 type MessageInsightsAttrs struct {
 	// <p>A list of message tags.</p>
-	EmailTags any
+	EmailTags        any
 	FromEmailAddress any
-	Insights any
-	MessageId any
-	Subject any
+	Insights         any
+	MessageId        any
+	Subject          any
 }
 
 var MessageInsights = ubx.DataSourceBinding{

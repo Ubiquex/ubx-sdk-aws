@@ -4,54 +4,54 @@ package aco_automation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcoAutomationAutomationRules_AutomationRules_OrganizationConfiguration struct {
-	AccountIds any
+	AccountIds     any
 	RuleApplyOrder any
 }
 
 type AcoAutomationAutomationRules_AutomationRules_Schedule struct {
-	ExecutionWindowInMinutes any
-	ScheduleExpression any
+	ExecutionWindowInMinutes   any
+	ScheduleExpression         any
 	ScheduleExpressionTimezone any
 }
 
 type AcoAutomationAutomationRules_AutomationRules struct {
-	AccountId any
-	CreatedTimestamp any
-	Description any
-	LastUpdatedTimestamp any
-	Name any
+	AccountId                 any
+	CreatedTimestamp          any
+	Description               any
+	LastUpdatedTimestamp      any
+	Name                      any
 	OrganizationConfiguration any
-	Priority any
-	RecommendedActionTypes any
-	RuleArn any
-	RuleId any
-	RuleRevision any
-	RuleType any
-	Schedule any
-	Status any
+	Priority                  any
+	RecommendedActionTypes    any
+	RuleArn                   any
+	RuleId                    any
+	RuleRevision              any
+	RuleType                  any
+	Schedule                  any
+	Status                    any
 }
 
 type AcoAutomationAutomationRules_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var AcoAutomationAutomationRules_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type AcoAutomationAutomationRulesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AcoAutomationAutomationRulesAttrs struct {
 	AutomationRules any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters         any
+	MaxResults      any
+	NextToken       any
 }
 
 var AcoAutomationAutomationRules = ubx.DataSourceBinding{
@@ -59,10 +59,10 @@ var AcoAutomationAutomationRules = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRules_FiltersFields,
+			Kind:     "list",
+			Fields:   AcoAutomationAutomationRules_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

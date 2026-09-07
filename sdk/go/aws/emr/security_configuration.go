@@ -20,7 +20,7 @@ type SecurityConfigurationAttrs struct {
 var SecurityConfiguration = ubx.ResourceBinding{
 	WireType: "aws_emr_security_configuration",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
 	},
 }

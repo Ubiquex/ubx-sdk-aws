@@ -4,18 +4,18 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceTopologyEdges_ServiceTopologyEdgeSummaries_Properties struct {
-	Label any
+	Label        any
 	TopologyType any
 }
 
 type ServiceTopologyEdges_ServiceTopologyEdgeSummaries struct {
-	DestinationAccount any
-	DestinationRegion any
+	DestinationAccount            any
+	DestinationRegion             any
 	DestinationResourceIdentifier any
-	Properties any
-	SourceAccount any
-	SourceRegion any
-	SourceResourceIdentifier any
+	Properties                    any
+	SourceAccount                 any
+	SourceRegion                  any
+	SourceResourceIdentifier      any
 }
 
 type ServiceTopologyEdgesConfig struct {
@@ -33,7 +33,7 @@ type ServiceTopologyEdgesAttrs struct {
 	// <p>Pagination token.</p>
 	NextToken any
 	// <p>ARN identifier.</p>
-	ServiceArn any
+	ServiceArn                   any
 	ServiceTopologyEdgeSummaries any
 }
 
@@ -41,7 +41,7 @@ var ServiceTopologyEdges = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_service_topology_edges",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
 	},
 }

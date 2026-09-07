@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Datasets_DatasetSummaries_EnrichmentStatus_Video struct {
 	LastEnrichedAt any
-	Status any
+	Status         any
 }
 
 type Datasets_DatasetSummaries_EnrichmentStatus struct {
@@ -13,12 +13,12 @@ type Datasets_DatasetSummaries_EnrichmentStatus struct {
 }
 
 type Datasets_DatasetSummaries_Status_Error_Details struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Datasets_DatasetSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -29,42 +29,42 @@ type Datasets_DatasetSummaries_Status struct {
 }
 
 type Datasets_DatasetSummaries struct {
-	Arn any
-	CreationDate any
-	DatasetType any
-	Description any
+	Arn              any
+	CreationDate     any
+	DatasetType      any
+	Description      any
 	EnrichmentStatus any
-	Id any
-	LastUpdateDate any
-	Name any
-	SourceType any
-	Status any
+	Id               any
+	LastUpdateDate   any
+	Name             any
+	SourceType       any
+	Status           any
 }
 
 type DatasetsConfig struct {
-	DatasetType any
-	MaxResults any
-	NextToken any
-	SourceType any
+	DatasetType   any
+	MaxResults    any
+	NextToken     any
+	SourceType    any
 	WorkspaceName any
 }
 
 type DatasetsAttrs struct {
 	DatasetSummaries any
-	DatasetType any
-	MaxResults any
-	NextToken any
-	SourceType any
-	WorkspaceName any
+	DatasetType      any
+	MaxResults       any
+	NextToken        any
+	SourceType       any
+	WorkspaceName    any
 }
 
 var Datasets = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_datasets",
 	Fields: ubx.FieldMap{
-		"DatasetType": ubx.FieldSpec{WireName: "dataset_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+		"DatasetType":   ubx.FieldSpec{WireName: "dataset_type"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"SourceType":    ubx.FieldSpec{WireName: "source_type"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

@@ -46,41 +46,41 @@ type CacheCluster_Tags struct {
 }
 
 var CacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetailsFields = ubx.FieldMap{
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-	}
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+}
 
 var CacheCluster_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetailsFields = ubx.FieldMap{
-		"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
-	}
+	"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
+}
 
 var CacheCluster_LogDeliveryConfigurations_DestinationDetailsFields = ubx.FieldMap{
-		"CloudWatchLogsDetails": ubx.FieldSpec{
-			WireName: "cloud_watch_logs_details",
-			Kind: "object",
-			Fields: CacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetailsFields,
-		},
-		"KinesisFirehoseDetails": ubx.FieldSpec{
-			WireName: "kinesis_firehose_details",
-			Kind: "object",
-			Fields: CacheCluster_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetailsFields,
-		},
-	}
+	"CloudWatchLogsDetails": ubx.FieldSpec{
+		WireName: "cloud_watch_logs_details",
+		Kind:     "object",
+		Fields:   CacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetailsFields,
+	},
+	"KinesisFirehoseDetails": ubx.FieldSpec{
+		WireName: "kinesis_firehose_details",
+		Kind:     "object",
+		Fields:   CacheCluster_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetailsFields,
+	},
+}
 
 var CacheCluster_LogDeliveryConfigurationsFields = ubx.FieldMap{
-		"DestinationDetails": ubx.FieldSpec{
-			WireName: "destination_details",
-			Kind: "object",
-			Fields: CacheCluster_LogDeliveryConfigurations_DestinationDetailsFields,
-		},
-		"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
-		"LogFormat": ubx.FieldSpec{WireName: "log_format"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-	}
+	"DestinationDetails": ubx.FieldSpec{
+		WireName: "destination_details",
+		Kind:     "object",
+		Fields:   CacheCluster_LogDeliveryConfigurations_DestinationDetailsFields,
+	},
+	"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
+	"LogFormat":       ubx.FieldSpec{WireName: "log_format"},
+	"LogType":         ubx.FieldSpec{WireName: "log_type"},
+}
 
 var CacheCluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CacheClusterConfig struct {
 	// Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region.
@@ -195,38 +195,38 @@ type CacheClusterAttrs struct {
 var CacheCluster = ubx.ResourceBinding{
 	WireType: "aws_elasti_cache_cache_cluster",
 	Fields: ubx.FieldMap{
-		"Azmode": ubx.FieldSpec{WireName: "azmode"},
+		"Azmode":                  ubx.FieldSpec{WireName: "azmode"},
 		"AutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
-		"CacheNodeType": ubx.FieldSpec{WireName: "cache_node_type"},
+		"CacheNodeType":           ubx.FieldSpec{WireName: "cache_node_type"},
 		"CacheParameterGroupName": ubx.FieldSpec{WireName: "cache_parameter_group_name"},
 		"CacheSecurityGroupNames": ubx.FieldSpec{WireName: "cache_security_group_names"},
-		"CacheSubnetGroupName": ubx.FieldSpec{WireName: "cache_subnet_group_name"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"IpDiscovery": ubx.FieldSpec{WireName: "ip_discovery"},
+		"CacheSubnetGroupName":    ubx.FieldSpec{WireName: "cache_subnet_group_name"},
+		"ClusterName":             ubx.FieldSpec{WireName: "cluster_name"},
+		"Engine":                  ubx.FieldSpec{WireName: "engine"},
+		"EngineVersion":           ubx.FieldSpec{WireName: "engine_version"},
+		"IpDiscovery":             ubx.FieldSpec{WireName: "ip_discovery"},
 		"LogDeliveryConfigurations": ubx.FieldSpec{
 			WireName: "log_delivery_configurations",
-			Kind: "list",
-			Fields: CacheCluster_LogDeliveryConfigurationsFields,
+			Kind:     "list",
+			Fields:   CacheCluster_LogDeliveryConfigurationsFields,
 		},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"NotificationTopicArn": ubx.FieldSpec{WireName: "notification_topic_arn"},
-		"NumCacheNodes": ubx.FieldSpec{WireName: "num_cache_nodes"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PreferredAvailabilityZone": ubx.FieldSpec{WireName: "preferred_availability_zone"},
+		"NetworkType":                ubx.FieldSpec{WireName: "network_type"},
+		"NotificationTopicArn":       ubx.FieldSpec{WireName: "notification_topic_arn"},
+		"NumCacheNodes":              ubx.FieldSpec{WireName: "num_cache_nodes"},
+		"Port":                       ubx.FieldSpec{WireName: "port"},
+		"PreferredAvailabilityZone":  ubx.FieldSpec{WireName: "preferred_availability_zone"},
 		"PreferredAvailabilityZones": ubx.FieldSpec{WireName: "preferred_availability_zones"},
 		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"SnapshotArns": ubx.FieldSpec{WireName: "snapshot_arns"},
-		"SnapshotName": ubx.FieldSpec{WireName: "snapshot_name"},
-		"SnapshotRetentionLimit": ubx.FieldSpec{WireName: "snapshot_retention_limit"},
-		"SnapshotWindow": ubx.FieldSpec{WireName: "snapshot_window"},
+		"SnapshotArns":               ubx.FieldSpec{WireName: "snapshot_arns"},
+		"SnapshotName":               ubx.FieldSpec{WireName: "snapshot_name"},
+		"SnapshotRetentionLimit":     ubx.FieldSpec{WireName: "snapshot_retention_limit"},
+		"SnapshotWindow":             ubx.FieldSpec{WireName: "snapshot_window"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CacheCluster_TagsFields,
+			Kind:     "list",
+			Fields:   CacheCluster_TagsFields,
 		},
 		"TransitEncryptionEnabled": ubx.FieldSpec{WireName: "transit_encryption_enabled"},
-		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
+		"VpcSecurityGroupIds":      ubx.FieldSpec{WireName: "vpc_security_group_ids"},
 	},
 }

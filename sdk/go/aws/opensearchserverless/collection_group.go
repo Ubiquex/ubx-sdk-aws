@@ -15,21 +15,21 @@ type CollectionGroup_CapacityLimits struct {
 }
 
 type CollectionGroup_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CollectionGroup_CapacityLimitsFields = ubx.FieldMap{
-		"MaxIndexingCapacityInOcu": ubx.FieldSpec{WireName: "max_indexing_capacity_in_ocu"},
-		"MaxSearchCapacityInOcu": ubx.FieldSpec{WireName: "max_search_capacity_in_ocu"},
-		"MinIndexingCapacityInOcu": ubx.FieldSpec{WireName: "min_indexing_capacity_in_ocu"},
-		"MinSearchCapacityInOcu": ubx.FieldSpec{WireName: "min_search_capacity_in_ocu"},
-	}
+	"MaxIndexingCapacityInOcu": ubx.FieldSpec{WireName: "max_indexing_capacity_in_ocu"},
+	"MaxSearchCapacityInOcu":   ubx.FieldSpec{WireName: "max_search_capacity_in_ocu"},
+	"MinIndexingCapacityInOcu": ubx.FieldSpec{WireName: "min_indexing_capacity_in_ocu"},
+	"MinSearchCapacityInOcu":   ubx.FieldSpec{WireName: "min_search_capacity_in_ocu"},
+}
 
 var CollectionGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CollectionGroupConfig struct {
 	// Defines the maximum indexing and search capacity in OpenSearch Compute Units (OCUs) that the collection group is allowed to use, effectively limiting the total capacity available to all collections within the group. (AI-inferred)
@@ -70,17 +70,17 @@ var CollectionGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityLimits": ubx.FieldSpec{
 			WireName: "capacity_limits",
-			Kind: "object",
-			Fields: CollectionGroup_CapacityLimitsFields,
+			Kind:     "object",
+			Fields:   CollectionGroup_CapacityLimitsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Generation":      ubx.FieldSpec{WireName: "generation"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"StandbyReplicas": ubx.FieldSpec{WireName: "standby_replicas"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CollectionGroup_TagsFields,
+			Kind:     "list",
+			Fields:   CollectionGroup_TagsFields,
 		},
 	},
 }

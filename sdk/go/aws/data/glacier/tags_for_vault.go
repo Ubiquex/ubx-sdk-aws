@@ -10,7 +10,7 @@ type TagsForVaultConfig struct {
 
 type TagsForVaultAttrs struct {
 	AccountId any
-	Tags any
+	Tags      any
 	VaultName any
 }
 

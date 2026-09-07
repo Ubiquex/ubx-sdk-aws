@@ -4,35 +4,35 @@ package ram
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceShareAssociations_ResourceShareAssociations struct {
-	AssociatedEntity any
-	AssociationType any
-	CreationTime any
-	External any
-	LastUpdatedTime any
-	ResourceShareArn any
+	AssociatedEntity  any
+	AssociationType   any
+	CreationTime      any
+	External          any
+	LastUpdatedTime   any
+	ResourceShareArn  any
 	ResourceShareName any
-	Status any
-	StatusMessage any
+	Status            any
+	StatusMessage     any
 }
 
 type ResourceShareAssociationsConfig struct {
 	AssociationStatus any
-	AssociationType any
-	MaxResults any
-	NextToken any
-	Principal any
-	ResourceArn any
+	AssociationType   any
+	MaxResults        any
+	NextToken         any
+	Principal         any
+	ResourceArn       any
 	ResourceShareArns any
 }
 
 type ResourceShareAssociationsAttrs struct {
-	AssociationStatus any
-	AssociationType any
-	MaxResults any
-	NextToken any
-	Principal any
-	ResourceArn any
-	ResourceShareArns any
+	AssociationStatus         any
+	AssociationType           any
+	MaxResults                any
+	NextToken                 any
+	Principal                 any
+	ResourceArn               any
+	ResourceShareArns         any
 	ResourceShareAssociations any
 }
 
@@ -40,11 +40,11 @@ var ResourceShareAssociations = ubx.DataSourceBinding{
 	WireType: "aws_ram_resource_share_associations",
 	Fields: ubx.FieldMap{
 		"AssociationStatus": ubx.FieldSpec{WireName: "association_status"},
-		"AssociationType": ubx.FieldSpec{WireName: "association_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"AssociationType":   ubx.FieldSpec{WireName: "association_type"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"Principal":         ubx.FieldSpec{WireName: "principal"},
+		"ResourceArn":       ubx.FieldSpec{WireName: "resource_arn"},
 		"ResourceShareArns": ubx.FieldSpec{WireName: "resource_share_arns"},
 	},
 }

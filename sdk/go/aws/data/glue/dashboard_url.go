@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DashboardUrlConfig struct {
 	RequestOrigin any
-	ResourceId any
-	ResourceType any
+	ResourceId    any
+	ResourceType  any
 }
 
 type DashboardUrlAttrs struct {
 	RequestOrigin any
-	ResourceId any
-	ResourceType any
-	Url any
+	ResourceId    any
+	ResourceType  any
+	Url           any
 }
 
 var DashboardUrl = ubx.DataSourceBinding{
 	WireType: "aws_glue_dashboard_url",
 	Fields: ubx.FieldMap{
 		"RequestOrigin": ubx.FieldSpec{WireName: "request_origin"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceId":    ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceType":  ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

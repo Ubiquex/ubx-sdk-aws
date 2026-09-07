@@ -4,35 +4,35 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MovingAddresses_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type MovingAddresses_MovingAddressStatuses struct {
 	MoveStatus any
-	PublicIp any
+	PublicIp   any
 }
 
 var MovingAddresses_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MovingAddressesConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
-	PublicIps any
+	NextToken  any
+	PublicIps  any
 }
 
 type MovingAddressesAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
+	DryRun                any
+	Filters               any
+	MaxResults            any
 	MovingAddressStatuses any
-	NextToken any
-	PublicIps any
+	NextToken             any
+	PublicIps             any
 }
 
 var MovingAddresses = ubx.DataSourceBinding{
@@ -41,11 +41,11 @@ var MovingAddresses = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MovingAddresses_FiltersFields,
+			Kind:     "list",
+			Fields:   MovingAddresses_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PublicIps": ubx.FieldSpec{WireName: "public_ips"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PublicIps":  ubx.FieldSpec{WireName: "public_ips"},
 	},
 }

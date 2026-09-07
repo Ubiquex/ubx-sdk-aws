@@ -4,44 +4,44 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domains_Domains_DomainEntries struct {
-	Id any
+	Id      any
 	IsAlias any
-	Name any
+	Name    any
 	Options any
-	Target any
-	Type any
+	Target  any
+	Type    any
 }
 
 type Domains_Domains_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type Domains_Domains_RegisteredDomainDelegationInfo_NameServersUpdateState struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Domains_Domains_RegisteredDomainDelegationInfo struct {
-	NameServersUpdateState any
+	NameServersUpdateState     any
 	R53HostedZoneDeletionState any
 }
 
 type Domains_Domains_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Domains_Domains struct {
-	Arn any
-	CreatedAt any
-	DomainEntries any
-	Location any
-	Name any
+	Arn                            any
+	CreatedAt                      any
+	DomainEntries                  any
+	Location                       any
+	Name                           any
 	RegisteredDomainDelegationInfo any
-	ResourceType any
-	SupportCode any
-	Tags any
+	ResourceType                   any
+	SupportCode                    any
+	Tags                           any
 }
 
 type DomainsConfig struct {
@@ -49,9 +49,9 @@ type DomainsConfig struct {
 }
 
 type DomainsAttrs struct {
-	Domains any
+	Domains       any
 	NextPageToken any
-	PageToken any
+	PageToken     any
 }
 
 var Domains = ubx.DataSourceBinding{

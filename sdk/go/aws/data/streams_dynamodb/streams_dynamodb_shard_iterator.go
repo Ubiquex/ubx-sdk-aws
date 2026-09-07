@@ -4,26 +4,26 @@ package streams_dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamsDynamodbShardIteratorConfig struct {
-	SequenceNumber any
-	ShardId any
+	SequenceNumber    any
+	ShardId           any
 	ShardIteratorType any
-	StreamArn any
+	StreamArn         any
 }
 
 type StreamsDynamodbShardIteratorAttrs struct {
-	SequenceNumber any
-	ShardId any
-	ShardIterator any
+	SequenceNumber    any
+	ShardId           any
+	ShardIterator     any
 	ShardIteratorType any
-	StreamArn any
+	StreamArn         any
 }
 
 var StreamsDynamodbShardIterator = ubx.DataSourceBinding{
 	WireType: "aws_streams_dynamodb_shard_iterator",
 	Fields: ubx.FieldMap{
-		"SequenceNumber": ubx.FieldSpec{WireName: "sequence_number"},
-		"ShardId": ubx.FieldSpec{WireName: "shard_id"},
+		"SequenceNumber":    ubx.FieldSpec{WireName: "sequence_number"},
+		"ShardId":           ubx.FieldSpec{WireName: "shard_id"},
 		"ShardIteratorType": ubx.FieldSpec{WireName: "shard_iterator_type"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamArn":         ubx.FieldSpec{WireName: "stream_arn"},
 	},
 }

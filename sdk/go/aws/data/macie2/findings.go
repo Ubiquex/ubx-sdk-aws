@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Findings_Findings_ClassificationDetails_Result_CustomDataIdentifiers_Detections_Occurrences_Cells struct {
 	CellReference any
-	Column any
-	ColumnName any
-	Row any
+	Column        any
+	ColumnName    any
+	Row           any
 }
 
 type Findings_Findings_ClassificationDetails_Result_CustomDataIdentifiers_Detections_Occurrences_LineRanges struct {
-	End any
-	Start any
+	End         any
+	Start       any
 	StartColumn any
 }
 
 type Findings_Findings_ClassificationDetails_Result_CustomDataIdentifiers_Detections_Occurrences_Pages struct {
-	LineRange any
+	LineRange   any
 	OffsetRange any
-	PageNumber any
+	PageNumber  any
 }
 
 type Findings_Findings_ClassificationDetails_Result_CustomDataIdentifiers_Detections_Occurrences_Records struct {
-	JsonPath any
+	JsonPath    any
 	RecordIndex any
 }
 
 type Findings_Findings_ClassificationDetails_Result_CustomDataIdentifiers_Detections_Occurrences struct {
-	Cells any
-	LineRanges any
+	Cells        any
+	LineRanges   any
 	OffsetRanges any
-	Pages any
-	Records any
+	Pages        any
+	Records      any
 }
 
 type Findings_Findings_ClassificationDetails_Result_CustomDataIdentifiers_Detections struct {
-	Arn any
-	Count any
-	Name any
+	Arn         any
+	Count       any
+	Name        any
 	Occurrences any
 }
 
@@ -48,48 +48,48 @@ type Findings_Findings_ClassificationDetails_Result_CustomDataIdentifiers struct
 }
 
 type Findings_Findings_ClassificationDetails_Result_SensitiveData_Detections struct {
-	Count any
+	Count       any
 	Occurrences any
-	Type any
+	Type        any
 }
 
 type Findings_Findings_ClassificationDetails_Result_SensitiveData struct {
-	Category any
+	Category   any
 	Detections any
 	TotalCount any
 }
 
 type Findings_Findings_ClassificationDetails_Result_Status struct {
-	Code any
+	Code   any
 	Reason any
 }
 
 type Findings_Findings_ClassificationDetails_Result struct {
 	AdditionalOccurrences any
 	CustomDataIdentifiers any
-	MimeType any
-	SensitiveData any
-	SizeClassified any
-	Status any
+	MimeType              any
+	SensitiveData         any
+	SizeClassified        any
+	Status                any
 }
 
 type Findings_Findings_ClassificationDetails struct {
 	DetailedResultsLocation any
-	JobArn any
-	JobId any
-	OriginType any
-	Result any
+	JobArn                  any
+	JobId                   any
+	OriginType              any
+	Result                  any
 }
 
 type Findings_Findings_PolicyDetails_Action_ApiCallDetails struct {
-	Api any
+	Api            any
 	ApiServiceName any
-	FirstSeen any
-	LastSeen any
+	FirstSeen      any
+	LastSeen       any
 }
 
 type Findings_Findings_PolicyDetails_Action struct {
-	ActionType any
+	ActionType     any
 	ApiCallDetails any
 }
 
@@ -112,48 +112,48 @@ type Findings_Findings_PolicyDetails_Actor_IpAddressDetails_IpGeoLocation struct
 }
 
 type Findings_Findings_PolicyDetails_Actor_IpAddressDetails_IpOwner struct {
-	Asn any
+	Asn    any
 	AsnOrg any
-	Isp any
-	Org any
+	Isp    any
+	Org    any
 }
 
 type Findings_Findings_PolicyDetails_Actor_IpAddressDetails struct {
-	IpAddressV4 any
-	IpCity any
-	IpCountry any
+	IpAddressV4   any
+	IpCity        any
+	IpCountry     any
 	IpGeoLocation any
-	IpOwner any
+	IpOwner       any
 }
 
 type Findings_Findings_PolicyDetails_Actor_UserIdentity_AssumedRole_SessionContext_Attributes struct {
-	CreationDate any
+	CreationDate     any
 	MfaAuthenticated any
 }
 
 type Findings_Findings_PolicyDetails_Actor_UserIdentity_AssumedRole_SessionContext_SessionIssuer struct {
-	AccountId any
-	Arn any
+	AccountId   any
+	Arn         any
 	PrincipalId any
-	Type any
-	UserName any
+	Type        any
+	UserName    any
 }
 
 type Findings_Findings_PolicyDetails_Actor_UserIdentity_AssumedRole_SessionContext struct {
-	Attributes any
+	Attributes    any
 	SessionIssuer any
 }
 
 type Findings_Findings_PolicyDetails_Actor_UserIdentity_AssumedRole struct {
-	AccessKeyId any
-	AccountId any
-	Arn any
-	PrincipalId any
+	AccessKeyId    any
+	AccountId      any
+	Arn            any
+	PrincipalId    any
 	SessionContext any
 }
 
 type Findings_Findings_PolicyDetails_Actor_UserIdentity_AwsAccount struct {
-	AccountId any
+	AccountId   any
 	PrincipalId any
 }
 
@@ -162,37 +162,37 @@ type Findings_Findings_PolicyDetails_Actor_UserIdentity_AwsService struct {
 }
 
 type Findings_Findings_PolicyDetails_Actor_UserIdentity_IamUser struct {
-	AccountId any
-	Arn any
+	AccountId   any
+	Arn         any
 	PrincipalId any
-	UserName any
+	UserName    any
 }
 
 type Findings_Findings_PolicyDetails_Actor_UserIdentity_Root struct {
-	AccountId any
-	Arn any
+	AccountId   any
+	Arn         any
 	PrincipalId any
 }
 
 type Findings_Findings_PolicyDetails_Actor_UserIdentity struct {
-	AssumedRole any
-	AwsAccount any
-	AwsService any
+	AssumedRole   any
+	AwsAccount    any
+	AwsService    any
 	FederatedUser any
-	IamUser any
-	Root any
-	Type any
+	IamUser       any
+	Root          any
+	Type          any
 }
 
 type Findings_Findings_PolicyDetails_Actor struct {
-	DomainDetails any
+	DomainDetails    any
 	IpAddressDetails any
-	UserIdentity any
+	UserIdentity     any
 }
 
 type Findings_Findings_PolicyDetails struct {
 	Action any
-	Actor any
+	Actor  any
 }
 
 type Findings_Findings_ResourcesAffected_S3Bucket_DefaultServerSideEncryption struct {
@@ -202,13 +202,13 @@ type Findings_Findings_ResourcesAffected_S3Bucket_DefaultServerSideEncryption st
 
 type Findings_Findings_ResourcesAffected_S3Bucket_Owner struct {
 	DisplayName any
-	Id any
+	Id          any
 }
 
 type Findings_Findings_ResourcesAffected_S3Bucket_PublicAccess_PermissionConfiguration_AccountLevelPermissions_BlockPublicAccess struct {
-	BlockPublicAcls any
-	BlockPublicPolicy any
-	IgnorePublicAcls any
+	BlockPublicAcls       any
+	BlockPublicPolicy     any
+	IgnorePublicAcls      any
 	RestrictPublicBuckets any
 }
 
@@ -217,55 +217,55 @@ type Findings_Findings_ResourcesAffected_S3Bucket_PublicAccess_PermissionConfigu
 }
 
 type Findings_Findings_ResourcesAffected_S3Bucket_PublicAccess_PermissionConfiguration_BucketLevelPermissions_AccessControlList struct {
-	AllowsPublicReadAccess any
+	AllowsPublicReadAccess  any
 	AllowsPublicWriteAccess any
 }
 
 type Findings_Findings_ResourcesAffected_S3Bucket_PublicAccess_PermissionConfiguration_BucketLevelPermissions struct {
 	AccessControlList any
 	BlockPublicAccess any
-	BucketPolicy any
+	BucketPolicy      any
 }
 
 type Findings_Findings_ResourcesAffected_S3Bucket_PublicAccess_PermissionConfiguration struct {
 	AccountLevelPermissions any
-	BucketLevelPermissions any
+	BucketLevelPermissions  any
 }
 
 type Findings_Findings_ResourcesAffected_S3Bucket_PublicAccess struct {
-	EffectivePermission any
+	EffectivePermission     any
 	PermissionConfiguration any
 }
 
 type Findings_Findings_ResourcesAffected_S3Bucket_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Findings_Findings_ResourcesAffected_S3Bucket struct {
 	AllowsUnencryptedObjectUploads any
-	Arn any
-	CreatedAt any
-	DefaultServerSideEncryption any
-	Name any
-	Owner any
-	PublicAccess any
-	Tags any
+	Arn                            any
+	CreatedAt                      any
+	DefaultServerSideEncryption    any
+	Name                           any
+	Owner                          any
+	PublicAccess                   any
+	Tags                           any
 }
 
 type Findings_Findings_ResourcesAffected_S3Object struct {
-	BucketArn any
-	ETag any
-	Extension any
-	Key any
-	LastModified any
-	Path any
-	PublicAccess any
+	BucketArn            any
+	ETag                 any
+	Extension            any
+	Key                  any
+	LastModified         any
+	Path                 any
+	PublicAccess         any
 	ServerSideEncryption any
-	Size any
-	StorageClass any
-	Tags any
-	VersionId any
+	Size                 any
+	StorageClass         any
+	Tags                 any
+	VersionId            any
 }
 
 type Findings_Findings_ResourcesAffected struct {
@@ -275,39 +275,39 @@ type Findings_Findings_ResourcesAffected struct {
 
 type Findings_Findings_Severity struct {
 	Description any
-	Score any
+	Score       any
 }
 
 type Findings_Findings struct {
-	AccountId any
-	Archived any
-	Category any
+	AccountId             any
+	Archived              any
+	Category              any
 	ClassificationDetails any
-	Count any
-	CreatedAt any
-	Description any
-	Id any
-	Partition any
-	PolicyDetails any
-	Region any
-	ResourcesAffected any
-	Sample any
-	SchemaVersion any
-	Severity any
-	Title any
-	Type any
-	UpdatedAt any
+	Count                 any
+	CreatedAt             any
+	Description           any
+	Id                    any
+	Partition             any
+	PolicyDetails         any
+	Region                any
+	ResourcesAffected     any
+	Sample                any
+	SchemaVersion         any
+	Severity              any
+	Title                 any
+	Type                  any
+	UpdatedAt             any
 }
 
 type Findings_SortCriteria struct {
 	AttributeName any
-	OrderBy any
+	OrderBy       any
 }
 
 var Findings_SortCriteriaFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+}
 
 type FindingsConfig struct {
 	FindingIds any
@@ -317,7 +317,7 @@ type FindingsConfig struct {
 
 type FindingsAttrs struct {
 	FindingIds any
-	Findings any
+	Findings   any
 	// <p>Specifies criteria for sorting the results of a request for findings.</p>
 	SortCriteria any
 }
@@ -328,8 +328,8 @@ var Findings = ubx.DataSourceBinding{
 		"FindingIds": ubx.FieldSpec{WireName: "finding_ids"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "object",
-			Fields: Findings_SortCriteriaFields,
+			Kind:     "object",
+			Fields:   Findings_SortCriteriaFields,
 		},
 	},
 }

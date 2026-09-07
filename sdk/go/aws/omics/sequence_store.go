@@ -11,9 +11,9 @@ type SequenceStore_SseConfig struct {
 }
 
 var SequenceStore_SseConfigFields = ubx.FieldMap{
-		"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 type SequenceStoreConfig struct {
 	// Location of the access logs.
@@ -76,17 +76,17 @@ type SequenceStoreAttrs struct {
 var SequenceStore = ubx.ResourceBinding{
 	WireType: "aws_omics_sequence_store",
 	Fields: ubx.FieldMap{
-		"AccessLogLocation": ubx.FieldSpec{WireName: "access_log_location"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EtagAlgorithmFamily": ubx.FieldSpec{WireName: "etag_algorithm_family"},
-		"FallbackLocation": ubx.FieldSpec{WireName: "fallback_location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AccessLogLocation":      ubx.FieldSpec{WireName: "access_log_location"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"EtagAlgorithmFamily":    ubx.FieldSpec{WireName: "etag_algorithm_family"},
+		"FallbackLocation":       ubx.FieldSpec{WireName: "fallback_location"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"PropagatedSetLevelTags": ubx.FieldSpec{WireName: "propagated_set_level_tags"},
-		"S3AccessPolicy": ubx.FieldSpec{WireName: "s3_access_policy"},
+		"S3AccessPolicy":         ubx.FieldSpec{WireName: "s3_access_policy"},
 		"SseConfig": ubx.FieldSpec{
 			WireName: "sse_config",
-			Kind: "object",
-			Fields: SequenceStore_SseConfigFields,
+			Kind:     "object",
+			Fields:   SequenceStore_SseConfigFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

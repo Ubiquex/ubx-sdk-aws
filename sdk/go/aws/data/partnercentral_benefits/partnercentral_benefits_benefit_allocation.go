@@ -8,36 +8,36 @@ type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail_AccessDetails str
 }
 
 type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail_ConsumableDetails_AllocatedAmount struct {
-	Amount any
+	Amount       any
 	CurrencyCode any
 }
 
 type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail_ConsumableDetails_IssuanceDetails struct {
 	IssuanceAmount any
-	IssuanceId any
-	IssuedAt any
+	IssuanceId     any
+	IssuedAt       any
 }
 
 type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail_ConsumableDetails struct {
 	AllocatedAmount any
 	IssuanceDetails any
 	RemainingAmount any
-	UtilizedAmount any
+	UtilizedAmount  any
 }
 
 type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail_CreditDetails_Codes struct {
-	AwsAccountId any
+	AwsAccountId  any
 	AwsCreditCode any
-	ExpiresAt any
-	IssuedAt any
-	Status any
-	Value any
+	ExpiresAt     any
+	IssuedAt      any
+	Status        any
+	Value         any
 }
 
 type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail_CreditDetails struct {
 	AllocatedAmount any
-	Codes any
-	IssuedAmount any
+	Codes           any
+	IssuedAmount    any
 }
 
 type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail_DisbursementDetails struct {
@@ -46,42 +46,42 @@ type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail_DisbursementDetai
 }
 
 type PartnercentralBenefitsBenefitAllocation_FulfillmentDetail struct {
-	AccessDetails any
-	ConsumableDetails any
-	CreditDetails any
+	AccessDetails       any
+	ConsumableDetails   any
+	CreditDetails       any
 	DisbursementDetails any
 }
 
 type PartnercentralBenefitsBenefitAllocationConfig struct {
-	Catalog any
+	Catalog    any
 	Identifier any
 }
 
 type PartnercentralBenefitsBenefitAllocationAttrs struct {
 	ApplicableBenefitIds any
-	Arn any
+	Arn                  any
 	BenefitApplicationId any
-	BenefitId any
-	Catalog any
-	CreatedAt any
-	Description any
-	ExpiresAt any
+	BenefitId            any
+	Catalog              any
+	CreatedAt            any
+	Description          any
+	ExpiresAt            any
 	// <p>Contains comprehensive information about how a benefit allocation is fulfilled across different fulfillment types.</p>
 	FulfillmentDetail any
-	FulfillmentType any
-	Id any
-	Identifier any
-	Name any
-	StartsAt any
-	Status any
-	StatusReason any
-	UpdatedAt any
+	FulfillmentType   any
+	Id                any
+	Identifier        any
+	Name              any
+	StartsAt          any
+	Status            any
+	StatusReason      any
+	UpdatedAt         any
 }
 
 var PartnercentralBenefitsBenefitAllocation = ubx.DataSourceBinding{
 	WireType: "aws_partnercentral_benefits_benefit_allocation",
 	Fields: ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
+		"Catalog":    ubx.FieldSpec{WireName: "catalog"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	},
 }

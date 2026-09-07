@@ -8,21 +8,21 @@ type SmsVoiceProtectConfigurationCountryRuleSet_CountryRuleSet struct {
 }
 
 type SmsVoiceProtectConfigurationCountryRuleSetConfig struct {
-	NumberCapability any
+	NumberCapability       any
 	ProtectConfigurationId any
 }
 
 type SmsVoiceProtectConfigurationCountryRuleSetAttrs struct {
-	CountryRuleSet any
-	NumberCapability any
+	CountryRuleSet          any
+	NumberCapability        any
 	ProtectConfigurationArn any
-	ProtectConfigurationId any
+	ProtectConfigurationId  any
 }
 
 var SmsVoiceProtectConfigurationCountryRuleSet = ubx.DataSourceBinding{
 	WireType: "aws_sms_voice_protect_configuration_country_rule_set",
 	Fields: ubx.FieldMap{
-		"NumberCapability": ubx.FieldSpec{WireName: "number_capability"},
+		"NumberCapability":       ubx.FieldSpec{WireName: "number_capability"},
 		"ProtectConfigurationId": ubx.FieldSpec{WireName: "protect_configuration_id"},
 	},
 }

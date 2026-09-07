@@ -4,13 +4,13 @@ package elastic_load_balancing_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticLoadBalancingV2Tags_TagDescriptions_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ElasticLoadBalancingV2Tags_TagDescriptions struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 type ElasticLoadBalancingV2TagsConfig struct {
@@ -18,7 +18,7 @@ type ElasticLoadBalancingV2TagsConfig struct {
 }
 
 type ElasticLoadBalancingV2TagsAttrs struct {
-	ResourceArns any
+	ResourceArns    any
 	TagDescriptions any
 }
 

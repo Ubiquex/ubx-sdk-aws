@@ -11,9 +11,9 @@ type DedicatedIpPool_Tags struct {
 }
 
 var DedicatedIpPool_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DedicatedIpPoolConfig struct {
 	// The name of the dedicated IP pool.
@@ -36,12 +36,12 @@ type DedicatedIpPoolAttrs struct {
 var DedicatedIpPool = ubx.ResourceBinding{
 	WireType: "aws_ses_dedicated_ip_pool",
 	Fields: ubx.FieldMap{
-		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
+		"PoolName":    ubx.FieldSpec{WireName: "pool_name"},
 		"ScalingMode": ubx.FieldSpec{WireName: "scaling_mode"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DedicatedIpPool_TagsFields,
+			Kind:     "list",
+			Fields:   DedicatedIpPool_TagsFields,
 		},
 	},
 }

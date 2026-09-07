@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotdeviceadvisorEndpointConfig struct {
 	AuthenticationMethod any
-	CertificateArn any
-	DeviceRoleArn any
-	ThingArn any
+	CertificateArn       any
+	DeviceRoleArn        any
+	ThingArn             any
 }
 
 type ApiIotdeviceadvisorEndpointAttrs struct {
 	AuthenticationMethod any
-	CertificateArn any
-	DeviceRoleArn any
-	Endpoint any
-	ThingArn any
+	CertificateArn       any
+	DeviceRoleArn        any
+	Endpoint             any
+	ThingArn             any
 }
 
 var ApiIotdeviceadvisorEndpoint = ubx.DataSourceBinding{
 	WireType: "aws_api_iotdeviceadvisor_endpoint",
 	Fields: ubx.FieldMap{
 		"AuthenticationMethod": ubx.FieldSpec{WireName: "authentication_method"},
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"DeviceRoleArn": ubx.FieldSpec{WireName: "device_role_arn"},
-		"ThingArn": ubx.FieldSpec{WireName: "thing_arn"},
+		"CertificateArn":       ubx.FieldSpec{WireName: "certificate_arn"},
+		"DeviceRoleArn":        ubx.FieldSpec{WireName: "device_role_arn"},
+		"ThingArn":             ubx.FieldSpec{WireName: "thing_arn"},
 	},
 }

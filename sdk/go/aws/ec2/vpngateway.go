@@ -11,9 +11,9 @@ type Vpngateway_Tags struct {
 }
 
 var Vpngateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpngatewayConfig struct {
 	// The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
@@ -41,8 +41,8 @@ var Vpngateway = ubx.ResourceBinding{
 		"AmazonSideAsn": ubx.FieldSpec{WireName: "amazon_side_asn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Vpngateway_TagsFields,
+			Kind:     "list",
+			Fields:   Vpngateway_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

@@ -30,9 +30,9 @@ type VpcEndpointAttrs struct {
 var VpcEndpoint = ubx.ResourceBinding{
 	WireType: "aws_vpc_endpoint",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+		"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

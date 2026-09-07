@@ -9,23 +9,23 @@ type ApplicationCostProfilerReportDefinitions_ReportDefinitions_DestinationS3Loc
 }
 
 type ApplicationCostProfilerReportDefinitions_ReportDefinitions struct {
-	CreatedAt any
+	CreatedAt             any
 	DestinationS3Location any
-	Format any
-	LastUpdatedAt any
-	ReportDescription any
-	ReportFrequency any
-	ReportId any
+	Format                any
+	LastUpdatedAt         any
+	ReportDescription     any
+	ReportFrequency       any
+	ReportId              any
 }
 
 type ApplicationCostProfilerReportDefinitionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApplicationCostProfilerReportDefinitionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	ReportDefinitions any
 }
 
@@ -33,6 +33,6 @@ var ApplicationCostProfilerReportDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_application_cost_profiler_report_definitions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

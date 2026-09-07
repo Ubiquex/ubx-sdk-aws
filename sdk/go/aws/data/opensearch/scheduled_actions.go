@@ -4,15 +4,15 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduledActions_ScheduledActions struct {
-	Cancellable any
-	Description any
-	Id any
-	Mandatory any
-	ScheduledBy any
+	Cancellable   any
+	Description   any
+	Id            any
+	Mandatory     any
+	ScheduledBy   any
 	ScheduledTime any
-	Severity any
-	Status any
-	Type any
+	Severity      any
+	Status        any
+	Type          any
 }
 
 type ScheduledActionsConfig struct {
@@ -30,7 +30,7 @@ type ScheduledActionsAttrs struct {
 	// <p>An optional parameter that specifies the maximum number of results to return for a given request.</p>
 	MaxResults any
 	// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
-	NextToken any
+	NextToken        any
 	ScheduledActions any
 }
 
@@ -39,6 +39,6 @@ var ScheduledActions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

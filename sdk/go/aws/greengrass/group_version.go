@@ -46,13 +46,13 @@ type GroupVersionAttrs struct {
 var GroupVersion = ubx.ResourceBinding{
 	WireType: "aws_greengrass_group_version",
 	Fields: ubx.FieldMap{
-		"ConnectorDefinitionVersionArn": ubx.FieldSpec{WireName: "connector_definition_version_arn"},
-		"CoreDefinitionVersionArn": ubx.FieldSpec{WireName: "core_definition_version_arn"},
-		"DeviceDefinitionVersionArn": ubx.FieldSpec{WireName: "device_definition_version_arn"},
-		"FunctionDefinitionVersionArn": ubx.FieldSpec{WireName: "function_definition_version_arn"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"LoggerDefinitionVersionArn": ubx.FieldSpec{WireName: "logger_definition_version_arn"},
-		"ResourceDefinitionVersionArn": ubx.FieldSpec{WireName: "resource_definition_version_arn"},
+		"ConnectorDefinitionVersionArn":    ubx.FieldSpec{WireName: "connector_definition_version_arn"},
+		"CoreDefinitionVersionArn":         ubx.FieldSpec{WireName: "core_definition_version_arn"},
+		"DeviceDefinitionVersionArn":       ubx.FieldSpec{WireName: "device_definition_version_arn"},
+		"FunctionDefinitionVersionArn":     ubx.FieldSpec{WireName: "function_definition_version_arn"},
+		"GroupId":                          ubx.FieldSpec{WireName: "group_id"},
+		"LoggerDefinitionVersionArn":       ubx.FieldSpec{WireName: "logger_definition_version_arn"},
+		"ResourceDefinitionVersionArn":     ubx.FieldSpec{WireName: "resource_definition_version_arn"},
 		"SubscriptionDefinitionVersionArn": ubx.FieldSpec{WireName: "subscription_definition_version_arn"},
 	},
 }

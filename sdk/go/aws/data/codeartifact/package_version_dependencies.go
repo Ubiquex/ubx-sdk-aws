@@ -4,47 +4,47 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageVersionDependencies_Dependencies struct {
-	DependencyType any
-	Namespace any
-	Package any
+	DependencyType     any
+	Namespace          any
+	Package            any
 	VersionRequirement any
 }
 
 type PackageVersionDependenciesConfig struct {
-	Domain any
-	DomainOwner any
-	Format any
-	Namespace any
-	NextToken any
-	Package any
+	Domain         any
+	DomainOwner    any
+	Format         any
+	Namespace      any
+	NextToken      any
+	Package        any
 	PackageVersion any
-	Repository any
+	Repository     any
 }
 
 type PackageVersionDependenciesAttrs struct {
-	Dependencies any
-	Domain any
-	DomainOwner any
-	Format any
-	Namespace any
-	NextToken any
-	Package any
-	PackageVersion any
-	Repository any
-	Version any
+	Dependencies    any
+	Domain          any
+	DomainOwner     any
+	Format          any
+	Namespace       any
+	NextToken       any
+	Package         any
+	PackageVersion  any
+	Repository      any
+	Version         any
 	VersionRevision any
 }
 
 var PackageVersionDependencies = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_package_version_dependencies",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Package": ubx.FieldSpec{WireName: "package"},
+		"Domain":         ubx.FieldSpec{WireName: "domain"},
+		"DomainOwner":    ubx.FieldSpec{WireName: "domain_owner"},
+		"Format":         ubx.FieldSpec{WireName: "format"},
+		"Namespace":      ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"Package":        ubx.FieldSpec{WireName: "package"},
 		"PackageVersion": ubx.FieldSpec{WireName: "package_version"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
+		"Repository":     ubx.FieldSpec{WireName: "repository"},
 	},
 }

@@ -4,7 +4,7 @@ package trustedadvisor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationRecommendation_OrganizationRecommendation_PillarSpecificAggregates_CostOptimizing struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings        any
 	EstimatedPercentMonthlySavings any
 }
 
@@ -14,35 +14,35 @@ type OrganizationRecommendation_OrganizationRecommendation_PillarSpecificAggrega
 }
 
 type OrganizationRecommendation_OrganizationRecommendation_ResourcesAggregates struct {
-	ErrorCount any
+	ErrorCount    any
 	ExcludedCount any
-	OkCount any
-	WarningCount any
+	OkCount       any
+	WarningCount  any
 }
 
 type OrganizationRecommendation_OrganizationRecommendation struct {
-	Arn any
-	AwsServices any
-	CheckArn any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Id any
-	LastUpdatedAt any
+	Arn            any
+	AwsServices    any
+	CheckArn       any
+	CreatedAt      any
+	CreatedBy      any
+	Description    any
+	Id             any
+	LastUpdatedAt  any
 	LifecycleStage any
-	Name any
+	Name           any
 	// <p>Recommendation pillar aggregates</p>
 	PillarSpecificAggregates any
-	Pillars any
-	ResolvedAt any
+	Pillars                  any
+	ResolvedAt               any
 	// <p>Aggregation of Recommendation Resources</p>
-	ResourcesAggregates any
-	Source any
-	Status any
-	Type any
-	UpdateReason any
-	UpdateReasonCode any
-	UpdatedOnBehalfOf any
+	ResourcesAggregates       any
+	Source                    any
+	Status                    any
+	Type                      any
+	UpdateReason              any
+	UpdateReasonCode          any
+	UpdatedOnBehalfOf         any
 	UpdatedOnBehalfOfJobTitle any
 }
 
@@ -52,7 +52,7 @@ type OrganizationRecommendationConfig struct {
 
 type OrganizationRecommendationAttrs struct {
 	// <p>A Recommendation for accounts within an Organization</p>
-	OrganizationRecommendation any
+	OrganizationRecommendation           any
 	OrganizationRecommendationIdentifier any
 }
 

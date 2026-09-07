@@ -4,29 +4,29 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProtectedResources_Results struct {
-	LastBackupTime any
-	LastBackupVaultArn any
+	LastBackupTime       any
+	LastBackupVaultArn   any
 	LastRecoveryPointArn any
-	ResourceArn any
-	ResourceName any
-	ResourceType any
+	ResourceArn          any
+	ResourceName         any
+	ResourceType         any
 }
 
 type ProtectedResourcesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ProtectedResourcesAttrs struct {
 	MaxResults any
-	NextToken any
-	Results any
+	NextToken  any
+	Results    any
 }
 
 var ProtectedResources = ubx.DataSourceBinding{
 	WireType: "aws_backup_protected_resources",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

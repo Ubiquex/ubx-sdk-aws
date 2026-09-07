@@ -9,59 +9,59 @@ type ExportImageTasks_ExportImageTasks_S3ExportLocation struct {
 }
 
 type ExportImageTasks_ExportImageTasks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ExportImageTasks_ExportImageTasks struct {
-	Description any
+	Description       any
 	ExportImageTaskId any
-	ImageId any
-	Progress any
-	S3ExportLocation any
-	Status any
-	StatusMessage any
-	Tags any
+	ImageId           any
+	Progress          any
+	S3ExportLocation  any
+	Status            any
+	StatusMessage     any
+	Tags              any
 }
 
 type ExportImageTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ExportImageTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ExportImageTasksConfig struct {
-	DryRun any
+	DryRun             any
 	ExportImageTaskIds any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 }
 
 type ExportImageTasksAttrs struct {
-	DryRun any
+	DryRun             any
 	ExportImageTaskIds any
-	ExportImageTasks any
-	Filters any
-	MaxResults any
-	NextToken any
+	ExportImageTasks   any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 }
 
 var ExportImageTasks = ubx.DataSourceBinding{
 	WireType: "aws_ec2_export_image_tasks",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":             ubx.FieldSpec{WireName: "dry_run"},
 		"ExportImageTaskIds": ubx.FieldSpec{WireName: "export_image_task_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ExportImageTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ExportImageTasks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

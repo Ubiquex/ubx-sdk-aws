@@ -11,34 +11,34 @@ type GatewayRateLimit_Entries_Connections struct {
 
 type GatewayRateLimit_Entries struct {
 	Connections any
-	Dimensions any
-	Requests any
-	Tokens any
+	Dimensions  any
+	Requests    any
+	Tokens      any
 }
 
 var GatewayRateLimit_Entries_ConnectionsFields = ubx.FieldMap{
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Rate": ubx.FieldSpec{WireName: "rate"},
-	}
+	"Period": ubx.FieldSpec{WireName: "period"},
+	"Rate":   ubx.FieldSpec{WireName: "rate"},
+}
 
 var GatewayRateLimit_EntriesFields = ubx.FieldMap{
-		"Connections": ubx.FieldSpec{
-			WireName: "connections",
-			Kind: "list",
-			Fields: GatewayRateLimit_Entries_ConnectionsFields,
-		},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"Requests": ubx.FieldSpec{
-			WireName: "requests",
-			Kind: "list",
-			Fields: GatewayRateLimit_Entries_ConnectionsFields,
-		},
-		"Tokens": ubx.FieldSpec{
-			WireName: "tokens",
-			Kind: "list",
-			Fields: GatewayRateLimit_Entries_ConnectionsFields,
-		},
-	}
+	"Connections": ubx.FieldSpec{
+		WireName: "connections",
+		Kind:     "list",
+		Fields:   GatewayRateLimit_Entries_ConnectionsFields,
+	},
+	"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+	"Requests": ubx.FieldSpec{
+		WireName: "requests",
+		Kind:     "list",
+		Fields:   GatewayRateLimit_Entries_ConnectionsFields,
+	},
+	"Tokens": ubx.FieldSpec{
+		WireName: "tokens",
+		Kind:     "list",
+		Fields:   GatewayRateLimit_Entries_ConnectionsFields,
+	},
+}
 
 type GatewayRateLimitConfig struct {
 	// Optional human-readable description for this limit.
@@ -75,14 +75,14 @@ type GatewayRateLimitAttrs struct {
 var GatewayRateLimit = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_gateway_rate_limit",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"DimensionKeys": ubx.FieldSpec{WireName: "dimension_keys"},
 		"Entries": ubx.FieldSpec{
 			WireName: "entries",
-			Kind: "list",
-			Fields: GatewayRateLimit_EntriesFields,
+			Kind:     "list",
+			Fields:   GatewayRateLimit_EntriesFields,
 		},
 		"GatewayIdentifier": ubx.FieldSpec{WireName: "gateway_identifier"},
-		"RateLimitId": ubx.FieldSpec{WireName: "rate_limit_id"},
+		"RateLimitId":       ubx.FieldSpec{WireName: "rate_limit_id"},
 	},
 }

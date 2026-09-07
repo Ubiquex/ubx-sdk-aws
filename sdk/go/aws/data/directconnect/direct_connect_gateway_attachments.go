@@ -4,36 +4,36 @@ package directconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DirectConnectGatewayAttachments_DirectConnectGatewayAttachments struct {
-	AttachmentState any
-	AttachmentType any
-	DirectConnectGatewayId any
-	StateChangeError any
-	VirtualInterfaceId any
+	AttachmentState              any
+	AttachmentType               any
+	DirectConnectGatewayId       any
+	StateChangeError             any
+	VirtualInterfaceId           any
 	VirtualInterfaceOwnerAccount any
-	VirtualInterfaceRegion any
+	VirtualInterfaceRegion       any
 }
 
 type DirectConnectGatewayAttachmentsConfig struct {
 	DirectConnectGatewayId any
-	MaxResults any
-	NextToken any
-	VirtualInterfaceId any
+	MaxResults             any
+	NextToken              any
+	VirtualInterfaceId     any
 }
 
 type DirectConnectGatewayAttachmentsAttrs struct {
 	DirectConnectGatewayAttachments any
-	DirectConnectGatewayId any
-	MaxResults any
-	NextToken any
-	VirtualInterfaceId any
+	DirectConnectGatewayId          any
+	MaxResults                      any
+	NextToken                       any
+	VirtualInterfaceId              any
 }
 
 var DirectConnectGatewayAttachments = ubx.DataSourceBinding{
 	WireType: "aws_directconnect_direct_connect_gateway_attachments",
 	Fields: ubx.FieldMap{
 		"DirectConnectGatewayId": ubx.FieldSpec{WireName: "direct_connect_gateway_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VirtualInterfaceId": ubx.FieldSpec{WireName: "virtual_interface_id"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"VirtualInterfaceId":     ubx.FieldSpec{WireName: "virtual_interface_id"},
 	},
 }

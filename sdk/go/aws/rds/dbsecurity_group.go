@@ -15,21 +15,21 @@ type DbsecurityGroup_DbsecurityGroupIngress struct {
 }
 
 type DbsecurityGroup_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DbsecurityGroup_DbsecurityGroupIngressFields = ubx.FieldMap{
-		"Cidrip": ubx.FieldSpec{WireName: "cidrip"},
-		"Ec2SecurityGroupId": ubx.FieldSpec{WireName: "ec2_security_group_id"},
-		"Ec2SecurityGroupName": ubx.FieldSpec{WireName: "ec2_security_group_name"},
-		"Ec2SecurityGroupOwnerId": ubx.FieldSpec{WireName: "ec2_security_group_owner_id"},
-	}
+	"Cidrip":                  ubx.FieldSpec{WireName: "cidrip"},
+	"Ec2SecurityGroupId":      ubx.FieldSpec{WireName: "ec2_security_group_id"},
+	"Ec2SecurityGroupName":    ubx.FieldSpec{WireName: "ec2_security_group_name"},
+	"Ec2SecurityGroupOwnerId": ubx.FieldSpec{WireName: "ec2_security_group_owner_id"},
+}
 
 var DbsecurityGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbsecurityGroupConfig struct {
 	// Specifies the ingress rules (CIDR IP ranges or EC2 security groups) that are granted network access to the DB instances associated with this DB security group. (AI-inferred)
@@ -60,15 +60,15 @@ var DbsecurityGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DbsecurityGroupIngress": ubx.FieldSpec{
 			WireName: "dbsecurity_group_ingress",
-			Kind: "list",
-			Fields: DbsecurityGroup_DbsecurityGroupIngressFields,
+			Kind:     "list",
+			Fields:   DbsecurityGroup_DbsecurityGroupIngressFields,
 		},
-		"Ec2VpcId": ubx.FieldSpec{WireName: "ec2_vpc_id"},
+		"Ec2VpcId":         ubx.FieldSpec{WireName: "ec2_vpc_id"},
 		"GroupDescription": ubx.FieldSpec{WireName: "group_description"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DbsecurityGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DbsecurityGroup_TagsFields,
 		},
 	},
 }

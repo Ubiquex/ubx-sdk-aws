@@ -11,9 +11,9 @@ type MatchmakingConfiguration_GameProperties struct {
 }
 
 var MatchmakingConfiguration_GamePropertiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MatchmakingConfigurationConfig struct {
 	// A flag that indicates whether a match that was created with this configuration must be accepted by the matched players
@@ -94,30 +94,30 @@ type MatchmakingConfigurationAttrs struct {
 var MatchmakingConfiguration = ubx.ResourceBinding{
 	WireType: "aws_game_lift_matchmaking_configuration",
 	Fields: ubx.FieldMap{
-		"AcceptanceRequired": ubx.FieldSpec{WireName: "acceptance_required"},
+		"AcceptanceRequired":       ubx.FieldSpec{WireName: "acceptance_required"},
 		"AcceptanceTimeoutSeconds": ubx.FieldSpec{WireName: "acceptance_timeout_seconds"},
-		"AdditionalPlayerCount": ubx.FieldSpec{WireName: "additional_player_count"},
-		"BackfillMode": ubx.FieldSpec{WireName: "backfill_mode"},
-		"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
-		"CustomEventData": ubx.FieldSpec{WireName: "custom_event_data"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FlexMatchMode": ubx.FieldSpec{WireName: "flex_match_mode"},
+		"AdditionalPlayerCount":    ubx.FieldSpec{WireName: "additional_player_count"},
+		"BackfillMode":             ubx.FieldSpec{WireName: "backfill_mode"},
+		"CreationTime":             ubx.FieldSpec{WireName: "creation_time"},
+		"CustomEventData":          ubx.FieldSpec{WireName: "custom_event_data"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"FlexMatchMode":            ubx.FieldSpec{WireName: "flex_match_mode"},
 		"GameProperties": ubx.FieldSpec{
 			WireName: "game_properties",
-			Kind: "list",
-			Fields: MatchmakingConfiguration_GamePropertiesFields,
+			Kind:     "list",
+			Fields:   MatchmakingConfiguration_GamePropertiesFields,
 		},
-		"GameSessionData": ubx.FieldSpec{WireName: "game_session_data"},
-		"GameSessionQueueArns": ubx.FieldSpec{WireName: "game_session_queue_arns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NotificationTarget": ubx.FieldSpec{WireName: "notification_target"},
+		"GameSessionData":       ubx.FieldSpec{WireName: "game_session_data"},
+		"GameSessionQueueArns":  ubx.FieldSpec{WireName: "game_session_queue_arns"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"NotificationTarget":    ubx.FieldSpec{WireName: "notification_target"},
 		"RequestTimeoutSeconds": ubx.FieldSpec{WireName: "request_timeout_seconds"},
-		"RuleSetArn": ubx.FieldSpec{WireName: "rule_set_arn"},
-		"RuleSetName": ubx.FieldSpec{WireName: "rule_set_name"},
+		"RuleSetArn":            ubx.FieldSpec{WireName: "rule_set_arn"},
+		"RuleSetName":           ubx.FieldSpec{WireName: "rule_set_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MatchmakingConfiguration_GamePropertiesFields,
+			Kind:     "list",
+			Fields:   MatchmakingConfiguration_GamePropertiesFields,
 		},
 	},
 }

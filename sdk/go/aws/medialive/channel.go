@@ -55,7 +55,7 @@ type Channel_Destinations_Settings struct {
 	// The URL of the MediaLive channel destination, which specifies the network endpoint or storage location where the encoded output will be sent (for example, an RTMP push URL, a MediaPackage endpoint, or an S3 bucket path). (AI-inferred)
 	Url any
 	// The username used for authentication when pushing content to the destination endpoint (e.g., an RTMP server) in these MediaLive channel destination settings. (AI-inferred)
-	Username any
+	Username             any
 	VirtualSourceAddress any
 }
 
@@ -127,7 +127,7 @@ type Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_Nielsen
 	NielsenDistributionType any
 	// Specifies the Nielsen NAES II NW watermarking settings, which configure how Nielsen network watermarks are inserted into the audio via the NAES II NW protocol, including the destination endpoint for the watermark payload. (AI-inferred)
 	NielsenNaesIiNwSettings any
-	NielsenNwOnlySettings any
+	NielsenNwOnlySettings   any
 }
 
 type Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings struct {
@@ -976,7 +976,7 @@ type Channel_EncoderSettings_OutputGroups_OutputGroupSettings struct {
 	// Configures the destination S3 location (and optional CDN settings) for a MediaLive frame capture output group, which periodically captures video frames as still JPEG images. (AI-inferred)
 	FrameCaptureGroupSettings any
 	// Configures the HLS output group settings in MediaLive, including segment length, destination, and encryption options for HTTP Live Streaming outputs. (AI-inferred)
-	HlsGroupSettings any
+	HlsGroupSettings                any
 	MediaConnectRouterGroupSettings any
 	// Configures the destination MediaPackage channel for the output group, specifying the MediaPackage channel ID where the encoded video and audio are delivered. (AI-inferred)
 	MediaPackageGroupSettings any
@@ -1244,7 +1244,7 @@ type Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRou
 	ConnectedRouterInputs any
 	// Defines the container format settings for the MediaLive output that is routed to an AWS Elemental MediaConnect flow. (AI-inferred)
 	ContainerSettings any
-	Destination any
+	Destination       any
 }
 
 type Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettings_MediaPackageV2DestinationSettings struct {
@@ -1273,7 +1273,7 @@ type Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MsSmoothOutputS
 type Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettings_MultiplexM2tsSettings struct {
 	// Specifies whether to drop the audio or encode silence when input audio is absent in the multiplex M2TS output. (AI-inferred)
 	AbsentInputAudioBehavior any
-	Arib any
+	Arib                     any
 	// Controls the audio buffer model used for smoothing audio bitrate fluctuations in the multiplex M2TS output (e.g., ATSC or DVB). (AI-inferred)
 	AudioBufferModel any
 	// Specifies the number of audio frames to include in each Packetized Elementary Stream (PES) packet for the multiplex M2TS output. (AI-inferred)
@@ -1364,7 +1364,7 @@ type Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings struct {
 	// Specifies the capture interval and its units (milliseconds or seconds) for a frame capture output in a MediaLive channel output group. (AI-inferred)
 	FrameCaptureOutputSettings any
 	// Specifies the HLS-specific packaging settings for this output, including the choice of standard or audio-only HLS variant via nested HlsSettings and optional name/segment modifiers that affect the generated HTTP Live Streaming segment file naming. (AI-inferred)
-	HlsOutputSettings any
+	HlsOutputSettings                any
 	MediaConnectRouterOutputSettings any
 	// Specifies the settings for an output that is sent to AWS Elemental MediaPackage; this object is empty and serves only to indicate MediaPackage as the output destination. (AI-inferred)
 	MediaPackageOutputSettings any
@@ -1647,7 +1647,7 @@ type Channel_EncoderSettings_VideoDescriptions_CodecSettings_H265Settings struct
 	ColorMetadata any
 	// Configures the color space settings (including color space type and conversion parameters such as HDR10, Rec. 709, or Rec. 601) for the H.265 video output in the MediaLive channel's encoder settings. (AI-inferred)
 	ColorSpaceSettings any
-	Deblocking any
+	Deblocking         any
 	// Specifies the filter settings for H.265 video encoding, including temporal filter settings that reduce noise and improve compression efficiency. (AI-inferred)
 	FilterSettings any
 	// Specifies the Active Format Description (AFD) value that MediaLive embeds in the H.265 output when the AFD signaling mode is set to FIXED, overriding any AFD value from the input source. (AI-inferred)
@@ -1705,7 +1705,7 @@ type Channel_EncoderSettings_VideoDescriptions_CodecSettings_H265Settings struct
 	// Specifies the H.265 encoding tier (MAIN or HIGH), which determines the codec's maximum bit rate and quality profile. (AI-inferred)
 	Tier any
 	// Specifies the height, in pixels, of each tile used in the H.265 encoding when tiling is enabled, and must be a multiple of 32. (AI-inferred)
-	TileHeight any
+	TileHeight  any
 	TilePadding any
 	// Specifies the width of each H.265 tile in units of 128x128-pixel blocks, controlling how the frame is divided into tiles for parallel encoding. (AI-inferred)
 	TileWidth any
@@ -1823,13 +1823,13 @@ type Channel_EncoderSettings struct {
 type Channel_InferenceSettings_AudioFeedInputs struct {
 	// Defines the name of an audio selector within the MediaLive channel that supplies the audio to this inference feed, so the inference settings can process that specific audio input. (AI-inferred)
 	AudioSelectorName any
-	FeedInput any
+	FeedInput         any
 }
 
 type Channel_InferenceSettings struct {
 	// Defines the list of audio feed inputs that supply audio to the MediaLive inference engine, mapping each named audio feed to a source from the channel's input for use in inference operations. (AI-inferred)
 	AudioFeedInputs any
-	FeedArn any
+	FeedArn         any
 }
 
 type Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_AudioSilenceSettings struct {
@@ -1898,8 +1898,8 @@ type Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_Audi
 type Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettings struct {
 	// Configures audio normalization for the selected PID, specifying the loudness normalization algorithm (e.g., ITU-R BS.1770-2) and the target loudness level in LUFS to be applied to the audio. (AI-inferred)
 	AudioNormalizationSettings any
-	Channels any
-	GainDb any
+	Channels                   any
+	GainDb                     any
 	// Configures the audio remix settings for the selected PID, defining how input channels are combined and mapped to output channels through channel mappings and input channel levels. (AI-inferred)
 	RemixSettings any
 }
@@ -2154,7 +2154,7 @@ type Channel_LinkedChannelSettings_PrimaryChannelSettings struct {
 
 type Channel_LinkedChannelSettings struct {
 	FollowerChannelSettings any
-	PrimaryChannelSettings any
+	PrimaryChannelSettings  any
 }
 
 type Channel_Maintenance struct {
@@ -2174,2133 +2174,2133 @@ type Channel_Vpc struct {
 }
 
 var Channel_AnywhereSettingsFields = ubx.FieldMap{
-		"ChannelPlacementGroupId": ubx.FieldSpec{WireName: "channel_placement_group_id"},
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-	}
+	"ChannelPlacementGroupId": ubx.FieldSpec{WireName: "channel_placement_group_id"},
+	"ClusterId":               ubx.FieldSpec{WireName: "cluster_id"},
+}
 
 var Channel_CdiInputSpecificationFields = ubx.FieldMap{
-		"Resolution": ubx.FieldSpec{WireName: "resolution"},
-	}
+	"Resolution": ubx.FieldSpec{WireName: "resolution"},
+}
 
 var Channel_ChannelEngineVersionFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Channel_Destinations_MediaConnectRouterSettingsFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"SecretArn":      ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Channel_Destinations_MediaPackageSettingsFields = ubx.FieldMap{
-		"ChannelEndpointId": ubx.FieldSpec{WireName: "channel_endpoint_id"},
-		"ChannelGroup": ubx.FieldSpec{WireName: "channel_group"},
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"MediaPackageRegionName": ubx.FieldSpec{WireName: "media_package_region_name"},
-	}
+	"ChannelEndpointId":      ubx.FieldSpec{WireName: "channel_endpoint_id"},
+	"ChannelGroup":           ubx.FieldSpec{WireName: "channel_group"},
+	"ChannelId":              ubx.FieldSpec{WireName: "channel_id"},
+	"ChannelName":            ubx.FieldSpec{WireName: "channel_name"},
+	"MediaPackageRegionName": ubx.FieldSpec{WireName: "media_package_region_name"},
+}
 
 var Channel_Destinations_MultiplexSettingsFields = ubx.FieldMap{
-		"MultiplexId": ubx.FieldSpec{WireName: "multiplex_id"},
-		"ProgramName": ubx.FieldSpec{WireName: "program_name"},
-	}
+	"MultiplexId": ubx.FieldSpec{WireName: "multiplex_id"},
+	"ProgramName": ubx.FieldSpec{WireName: "program_name"},
+}
 
 var Channel_Destinations_SettingsFields = ubx.FieldMap{
-		"PasswordParam": ubx.FieldSpec{WireName: "password_param"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"VirtualSourceAddress": ubx.FieldSpec{WireName: "virtual_source_address"},
-	}
+	"PasswordParam":        ubx.FieldSpec{WireName: "password_param"},
+	"StreamName":           ubx.FieldSpec{WireName: "stream_name"},
+	"Url":                  ubx.FieldSpec{WireName: "url"},
+	"Username":             ubx.FieldSpec{WireName: "username"},
+	"VirtualSourceAddress": ubx.FieldSpec{WireName: "virtual_source_address"},
+}
 
 var Channel_Destinations_SrtSettingsFields = ubx.FieldMap{
-		"ConnectionMode": ubx.FieldSpec{WireName: "connection_mode"},
-		"EncryptionPassphraseSecretArn": ubx.FieldSpec{WireName: "encryption_passphrase_secret_arn"},
-		"ListenerPort": ubx.FieldSpec{WireName: "listener_port"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ConnectionMode":                ubx.FieldSpec{WireName: "connection_mode"},
+	"EncryptionPassphraseSecretArn": ubx.FieldSpec{WireName: "encryption_passphrase_secret_arn"},
+	"ListenerPort":                  ubx.FieldSpec{WireName: "listener_port"},
+	"StreamId":                      ubx.FieldSpec{WireName: "stream_id"},
+	"Url":                           ubx.FieldSpec{WireName: "url"},
+}
 
 var Channel_DestinationsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LogicalInterfaceNames": ubx.FieldSpec{WireName: "logical_interface_names"},
-		"MediaConnectRouterSettings": ubx.FieldSpec{
-			WireName: "media_connect_router_settings",
-			Kind: "list",
-			Fields: Channel_Destinations_MediaConnectRouterSettingsFields,
-		},
-		"MediaPackageSettings": ubx.FieldSpec{
-			WireName: "media_package_settings",
-			Kind: "list",
-			Fields: Channel_Destinations_MediaPackageSettingsFields,
-		},
-		"MultiplexSettings": ubx.FieldSpec{
-			WireName: "multiplex_settings",
-			Kind: "object",
-			Fields: Channel_Destinations_MultiplexSettingsFields,
-		},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "list",
-			Fields: Channel_Destinations_SettingsFields,
-		},
-		"SrtSettings": ubx.FieldSpec{
-			WireName: "srt_settings",
-			Kind: "list",
-			Fields: Channel_Destinations_SrtSettingsFields,
-		},
-	}
+	"Id":                    ubx.FieldSpec{WireName: "id"},
+	"LogicalInterfaceNames": ubx.FieldSpec{WireName: "logical_interface_names"},
+	"MediaConnectRouterSettings": ubx.FieldSpec{
+		WireName: "media_connect_router_settings",
+		Kind:     "list",
+		Fields:   Channel_Destinations_MediaConnectRouterSettingsFields,
+	},
+	"MediaPackageSettings": ubx.FieldSpec{
+		WireName: "media_package_settings",
+		Kind:     "list",
+		Fields:   Channel_Destinations_MediaPackageSettingsFields,
+	},
+	"MultiplexSettings": ubx.FieldSpec{
+		WireName: "multiplex_settings",
+		Kind:     "object",
+		Fields:   Channel_Destinations_MultiplexSettingsFields,
+	},
+	"Settings": ubx.FieldSpec{
+		WireName: "settings",
+		Kind:     "list",
+		Fields:   Channel_Destinations_SettingsFields,
+	},
+	"SrtSettings": ubx.FieldSpec{
+		WireName: "srt_settings",
+		Kind:     "list",
+		Fields:   Channel_Destinations_SrtSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_AudioNormalizationSettingsFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"AlgorithmControl": ubx.FieldSpec{WireName: "algorithm_control"},
-		"PeakCalculation": ubx.FieldSpec{WireName: "peak_calculation"},
-		"PeakLimiterThreshold": ubx.FieldSpec{WireName: "peak_limiter_threshold"},
-		"TargetLkfs": ubx.FieldSpec{WireName: "target_lkfs"},
-	}
+	"Algorithm":            ubx.FieldSpec{WireName: "algorithm"},
+	"AlgorithmControl":     ubx.FieldSpec{WireName: "algorithm_control"},
+	"PeakCalculation":      ubx.FieldSpec{WireName: "peak_calculation"},
+	"PeakLimiterThreshold": ubx.FieldSpec{WireName: "peak_limiter_threshold"},
+	"TargetLkfs":           ubx.FieldSpec{WireName: "target_lkfs"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenCbetSettingsFields = ubx.FieldMap{
-		"CbetCheckDigitString": ubx.FieldSpec{WireName: "cbet_check_digit_string"},
-		"CbetStepaside": ubx.FieldSpec{WireName: "cbet_stepaside"},
-		"Csid": ubx.FieldSpec{WireName: "csid"},
-	}
+	"CbetCheckDigitString": ubx.FieldSpec{WireName: "cbet_check_digit_string"},
+	"CbetStepaside":        ubx.FieldSpec{WireName: "cbet_stepaside"},
+	"Csid":                 ubx.FieldSpec{WireName: "csid"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields = ubx.FieldMap{
-		"CheckDigitString": ubx.FieldSpec{WireName: "check_digit_string"},
-		"Sid": ubx.FieldSpec{WireName: "sid"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"CheckDigitString": ubx.FieldSpec{WireName: "check_digit_string"},
+	"Sid":              ubx.FieldSpec{WireName: "sid"},
+	"Timezone":         ubx.FieldSpec{WireName: "timezone"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettingsFields = ubx.FieldMap{
-		"NielsenCbetSettings": ubx.FieldSpec{
-			WireName: "nielsen_cbet_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenCbetSettingsFields,
-		},
-		"NielsenDistributionType": ubx.FieldSpec{WireName: "nielsen_distribution_type"},
-		"NielsenNaesIiNwSettings": ubx.FieldSpec{
-			WireName: "nielsen_naes_ii_nw_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields,
-		},
-		"NielsenNwOnlySettings": ubx.FieldSpec{
-			WireName: "nielsen_nw_only_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields,
-		},
-	}
+	"NielsenCbetSettings": ubx.FieldSpec{
+		WireName: "nielsen_cbet_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenCbetSettingsFields,
+	},
+	"NielsenDistributionType": ubx.FieldSpec{WireName: "nielsen_distribution_type"},
+	"NielsenNaesIiNwSettings": ubx.FieldSpec{
+		WireName: "nielsen_naes_ii_nw_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields,
+	},
+	"NielsenNwOnlySettings": ubx.FieldSpec{
+		WireName: "nielsen_nw_only_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettingsFields = ubx.FieldMap{
-		"NielsenWatermarksSettings": ubx.FieldSpec{
-			WireName: "nielsen_watermarks_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettingsFields,
-		},
-	}
+	"NielsenWatermarksSettings": ubx.FieldSpec{
+		WireName: "nielsen_watermarks_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_CodecSettings_AacSettingsFields = ubx.FieldMap{
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"CodingMode": ubx.FieldSpec{WireName: "coding_mode"},
-		"InputType": ubx.FieldSpec{WireName: "input_type"},
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-		"RateControlMode": ubx.FieldSpec{WireName: "rate_control_mode"},
-		"RawFormat": ubx.FieldSpec{WireName: "raw_format"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-		"Spec": ubx.FieldSpec{WireName: "spec"},
-		"VbrQuality": ubx.FieldSpec{WireName: "vbr_quality"},
-	}
+	"Bitrate":         ubx.FieldSpec{WireName: "bitrate"},
+	"CodingMode":      ubx.FieldSpec{WireName: "coding_mode"},
+	"InputType":       ubx.FieldSpec{WireName: "input_type"},
+	"Profile":         ubx.FieldSpec{WireName: "profile"},
+	"RateControlMode": ubx.FieldSpec{WireName: "rate_control_mode"},
+	"RawFormat":       ubx.FieldSpec{WireName: "raw_format"},
+	"SampleRate":      ubx.FieldSpec{WireName: "sample_rate"},
+	"Spec":            ubx.FieldSpec{WireName: "spec"},
+	"VbrQuality":      ubx.FieldSpec{WireName: "vbr_quality"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_CodecSettings_Ac3SettingsFields = ubx.FieldMap{
-		"AttenuationControl": ubx.FieldSpec{WireName: "attenuation_control"},
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"BitstreamMode": ubx.FieldSpec{WireName: "bitstream_mode"},
-		"CodingMode": ubx.FieldSpec{WireName: "coding_mode"},
-		"Dialnorm": ubx.FieldSpec{WireName: "dialnorm"},
-		"DrcProfile": ubx.FieldSpec{WireName: "drc_profile"},
-		"LfeFilter": ubx.FieldSpec{WireName: "lfe_filter"},
-		"MetadataControl": ubx.FieldSpec{WireName: "metadata_control"},
-	}
+	"AttenuationControl": ubx.FieldSpec{WireName: "attenuation_control"},
+	"Bitrate":            ubx.FieldSpec{WireName: "bitrate"},
+	"BitstreamMode":      ubx.FieldSpec{WireName: "bitstream_mode"},
+	"CodingMode":         ubx.FieldSpec{WireName: "coding_mode"},
+	"Dialnorm":           ubx.FieldSpec{WireName: "dialnorm"},
+	"DrcProfile":         ubx.FieldSpec{WireName: "drc_profile"},
+	"LfeFilter":          ubx.FieldSpec{WireName: "lfe_filter"},
+	"MetadataControl":    ubx.FieldSpec{WireName: "metadata_control"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_CodecSettings_Eac3AtmosSettingsFields = ubx.FieldMap{
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"CodingMode": ubx.FieldSpec{WireName: "coding_mode"},
-		"Dialnorm": ubx.FieldSpec{WireName: "dialnorm"},
-		"DrcLine": ubx.FieldSpec{WireName: "drc_line"},
-		"DrcRf": ubx.FieldSpec{WireName: "drc_rf"},
-		"HeightTrim": ubx.FieldSpec{WireName: "height_trim"},
-		"SurroundTrim": ubx.FieldSpec{WireName: "surround_trim"},
-	}
+	"Bitrate":      ubx.FieldSpec{WireName: "bitrate"},
+	"CodingMode":   ubx.FieldSpec{WireName: "coding_mode"},
+	"Dialnorm":     ubx.FieldSpec{WireName: "dialnorm"},
+	"DrcLine":      ubx.FieldSpec{WireName: "drc_line"},
+	"DrcRf":        ubx.FieldSpec{WireName: "drc_rf"},
+	"HeightTrim":   ubx.FieldSpec{WireName: "height_trim"},
+	"SurroundTrim": ubx.FieldSpec{WireName: "surround_trim"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_CodecSettings_Eac3SettingsFields = ubx.FieldMap{
-		"AttenuationControl": ubx.FieldSpec{WireName: "attenuation_control"},
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"BitstreamMode": ubx.FieldSpec{WireName: "bitstream_mode"},
-		"CodingMode": ubx.FieldSpec{WireName: "coding_mode"},
-		"DcFilter": ubx.FieldSpec{WireName: "dc_filter"},
-		"Dialnorm": ubx.FieldSpec{WireName: "dialnorm"},
-		"DrcLine": ubx.FieldSpec{WireName: "drc_line"},
-		"DrcRf": ubx.FieldSpec{WireName: "drc_rf"},
-		"LfeControl": ubx.FieldSpec{WireName: "lfe_control"},
-		"LfeFilter": ubx.FieldSpec{WireName: "lfe_filter"},
-		"LoRoCenterMixLevel": ubx.FieldSpec{WireName: "lo_ro_center_mix_level"},
-		"LoRoSurroundMixLevel": ubx.FieldSpec{WireName: "lo_ro_surround_mix_level"},
-		"LtRtCenterMixLevel": ubx.FieldSpec{WireName: "lt_rt_center_mix_level"},
-		"LtRtSurroundMixLevel": ubx.FieldSpec{WireName: "lt_rt_surround_mix_level"},
-		"MetadataControl": ubx.FieldSpec{WireName: "metadata_control"},
-		"PassthroughControl": ubx.FieldSpec{WireName: "passthrough_control"},
-		"PhaseControl": ubx.FieldSpec{WireName: "phase_control"},
-		"StereoDownmix": ubx.FieldSpec{WireName: "stereo_downmix"},
-		"SurroundExMode": ubx.FieldSpec{WireName: "surround_ex_mode"},
-		"SurroundMode": ubx.FieldSpec{WireName: "surround_mode"},
-	}
+	"AttenuationControl":   ubx.FieldSpec{WireName: "attenuation_control"},
+	"Bitrate":              ubx.FieldSpec{WireName: "bitrate"},
+	"BitstreamMode":        ubx.FieldSpec{WireName: "bitstream_mode"},
+	"CodingMode":           ubx.FieldSpec{WireName: "coding_mode"},
+	"DcFilter":             ubx.FieldSpec{WireName: "dc_filter"},
+	"Dialnorm":             ubx.FieldSpec{WireName: "dialnorm"},
+	"DrcLine":              ubx.FieldSpec{WireName: "drc_line"},
+	"DrcRf":                ubx.FieldSpec{WireName: "drc_rf"},
+	"LfeControl":           ubx.FieldSpec{WireName: "lfe_control"},
+	"LfeFilter":            ubx.FieldSpec{WireName: "lfe_filter"},
+	"LoRoCenterMixLevel":   ubx.FieldSpec{WireName: "lo_ro_center_mix_level"},
+	"LoRoSurroundMixLevel": ubx.FieldSpec{WireName: "lo_ro_surround_mix_level"},
+	"LtRtCenterMixLevel":   ubx.FieldSpec{WireName: "lt_rt_center_mix_level"},
+	"LtRtSurroundMixLevel": ubx.FieldSpec{WireName: "lt_rt_surround_mix_level"},
+	"MetadataControl":      ubx.FieldSpec{WireName: "metadata_control"},
+	"PassthroughControl":   ubx.FieldSpec{WireName: "passthrough_control"},
+	"PhaseControl":         ubx.FieldSpec{WireName: "phase_control"},
+	"StereoDownmix":        ubx.FieldSpec{WireName: "stereo_downmix"},
+	"SurroundExMode":       ubx.FieldSpec{WireName: "surround_ex_mode"},
+	"SurroundMode":         ubx.FieldSpec{WireName: "surround_mode"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_CodecSettings_Mp2SettingsFields = ubx.FieldMap{
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"CodingMode": ubx.FieldSpec{WireName: "coding_mode"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"Bitrate":    ubx.FieldSpec{WireName: "bitrate"},
+	"CodingMode": ubx.FieldSpec{WireName: "coding_mode"},
+	"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_CodecSettings_WavSettingsFields = ubx.FieldMap{
-		"BitDepth": ubx.FieldSpec{WireName: "bit_depth"},
-		"CodingMode": ubx.FieldSpec{WireName: "coding_mode"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"BitDepth":   ubx.FieldSpec{WireName: "bit_depth"},
+	"CodingMode": ubx.FieldSpec{WireName: "coding_mode"},
+	"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_CodecSettingsFields = ubx.FieldMap{
-		"AacSettings": ubx.FieldSpec{
-			WireName: "aac_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_CodecSettings_AacSettingsFields,
-		},
-		"Ac3Settings": ubx.FieldSpec{
-			WireName: "ac3_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_CodecSettings_Ac3SettingsFields,
-		},
-		"Eac3AtmosSettings": ubx.FieldSpec{
-			WireName: "eac3_atmos_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_CodecSettings_Eac3AtmosSettingsFields,
-		},
-		"Eac3Settings": ubx.FieldSpec{
-			WireName: "eac3_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_CodecSettings_Eac3SettingsFields,
-		},
-		"Mp2Settings": ubx.FieldSpec{
-			WireName: "mp2_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_CodecSettings_Mp2SettingsFields,
-		},
-		"PassThroughSettings": ubx.FieldSpec{WireName: "pass_through_settings"},
-		"WavSettings": ubx.FieldSpec{
-			WireName: "wav_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_CodecSettings_WavSettingsFields,
-		},
-	}
+	"AacSettings": ubx.FieldSpec{
+		WireName: "aac_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_CodecSettings_AacSettingsFields,
+	},
+	"Ac3Settings": ubx.FieldSpec{
+		WireName: "ac3_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_CodecSettings_Ac3SettingsFields,
+	},
+	"Eac3AtmosSettings": ubx.FieldSpec{
+		WireName: "eac3_atmos_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_CodecSettings_Eac3AtmosSettingsFields,
+	},
+	"Eac3Settings": ubx.FieldSpec{
+		WireName: "eac3_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_CodecSettings_Eac3SettingsFields,
+	},
+	"Mp2Settings": ubx.FieldSpec{
+		WireName: "mp2_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_CodecSettings_Mp2SettingsFields,
+	},
+	"PassThroughSettings": ubx.FieldSpec{WireName: "pass_through_settings"},
+	"WavSettings": ubx.FieldSpec{
+		WireName: "wav_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_CodecSettings_WavSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_RemixSettings_ChannelMappings_InputChannelLevelsFields = ubx.FieldMap{
-		"Gain": ubx.FieldSpec{WireName: "gain"},
-		"InputChannel": ubx.FieldSpec{WireName: "input_channel"},
-	}
+	"Gain":         ubx.FieldSpec{WireName: "gain"},
+	"InputChannel": ubx.FieldSpec{WireName: "input_channel"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_RemixSettings_ChannelMappingsFields = ubx.FieldMap{
-		"InputChannelLevels": ubx.FieldSpec{
-			WireName: "input_channel_levels",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_AudioDescriptions_RemixSettings_ChannelMappings_InputChannelLevelsFields,
-		},
-		"OutputChannel": ubx.FieldSpec{WireName: "output_channel"},
-	}
+	"InputChannelLevels": ubx.FieldSpec{
+		WireName: "input_channel_levels",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_RemixSettings_ChannelMappings_InputChannelLevelsFields,
+	},
+	"OutputChannel": ubx.FieldSpec{WireName: "output_channel"},
+}
 
 var Channel_EncoderSettings_AudioDescriptions_RemixSettingsFields = ubx.FieldMap{
-		"ChannelMappings": ubx.FieldSpec{
-			WireName: "channel_mappings",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_AudioDescriptions_RemixSettings_ChannelMappingsFields,
-		},
-		"ChannelsIn": ubx.FieldSpec{WireName: "channels_in"},
-		"ChannelsOut": ubx.FieldSpec{WireName: "channels_out"},
-	}
+	"ChannelMappings": ubx.FieldSpec{
+		WireName: "channel_mappings",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_RemixSettings_ChannelMappingsFields,
+	},
+	"ChannelsIn":  ubx.FieldSpec{WireName: "channels_in"},
+	"ChannelsOut": ubx.FieldSpec{WireName: "channels_out"},
+}
 
 var Channel_EncoderSettings_AudioDescriptionsFields = ubx.FieldMap{
-		"AudioDashRoles": ubx.FieldSpec{WireName: "audio_dash_roles"},
-		"AudioNormalizationSettings": ubx.FieldSpec{
-			WireName: "audio_normalization_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_AudioNormalizationSettingsFields,
-		},
-		"AudioSelectorName": ubx.FieldSpec{WireName: "audio_selector_name"},
-		"AudioType": ubx.FieldSpec{WireName: "audio_type"},
-		"AudioTypeControl": ubx.FieldSpec{WireName: "audio_type_control"},
-		"AudioWatermarkingSettings": ubx.FieldSpec{
-			WireName: "audio_watermarking_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettingsFields,
-		},
-		"CodecSettings": ubx.FieldSpec{
-			WireName: "codec_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_CodecSettingsFields,
-		},
-		"DvbDashAccessibility": ubx.FieldSpec{WireName: "dvb_dash_accessibility"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"LanguageCodeControl": ubx.FieldSpec{WireName: "language_code_control"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RemixSettings": ubx.FieldSpec{
-			WireName: "remix_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_RemixSettingsFields,
-		},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-	}
+	"AudioDashRoles": ubx.FieldSpec{WireName: "audio_dash_roles"},
+	"AudioNormalizationSettings": ubx.FieldSpec{
+		WireName: "audio_normalization_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_AudioNormalizationSettingsFields,
+	},
+	"AudioSelectorName": ubx.FieldSpec{WireName: "audio_selector_name"},
+	"AudioType":         ubx.FieldSpec{WireName: "audio_type"},
+	"AudioTypeControl":  ubx.FieldSpec{WireName: "audio_type_control"},
+	"AudioWatermarkingSettings": ubx.FieldSpec{
+		WireName: "audio_watermarking_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettingsFields,
+	},
+	"CodecSettings": ubx.FieldSpec{
+		WireName: "codec_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_CodecSettingsFields,
+	},
+	"DvbDashAccessibility": ubx.FieldSpec{WireName: "dvb_dash_accessibility"},
+	"LanguageCode":         ubx.FieldSpec{WireName: "language_code"},
+	"LanguageCodeControl":  ubx.FieldSpec{WireName: "language_code_control"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"RemixSettings": ubx.FieldSpec{
+		WireName: "remix_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_RemixSettingsFields,
+	},
+	"StreamName": ubx.FieldSpec{WireName: "stream_name"},
+}
 
 var Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields = ubx.FieldMap{
-		"PasswordParam": ubx.FieldSpec{WireName: "password_param"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"PasswordParam": ubx.FieldSpec{WireName: "password_param"},
+	"Uri":           ubx.FieldSpec{WireName: "uri"},
+	"Username":      ubx.FieldSpec{WireName: "username"},
+}
 
 var Channel_EncoderSettings_AvailBlankingFields = ubx.FieldMap{
-		"AvailBlankingImage": ubx.FieldSpec{
-			WireName: "avail_blanking_image",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AvailBlankingImage": ubx.FieldSpec{
+		WireName: "avail_blanking_image",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Channel_EncoderSettings_AvailConfiguration_AvailSettings_EsamFields = ubx.FieldMap{
-		"AcquisitionPointId": ubx.FieldSpec{WireName: "acquisition_point_id"},
-		"AdAvailOffset": ubx.FieldSpec{WireName: "ad_avail_offset"},
-		"PasswordParam": ubx.FieldSpec{WireName: "password_param"},
-		"PoisEndpoint": ubx.FieldSpec{WireName: "pois_endpoint"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"ZoneIdentity": ubx.FieldSpec{WireName: "zone_identity"},
-	}
+	"AcquisitionPointId": ubx.FieldSpec{WireName: "acquisition_point_id"},
+	"AdAvailOffset":      ubx.FieldSpec{WireName: "ad_avail_offset"},
+	"PasswordParam":      ubx.FieldSpec{WireName: "password_param"},
+	"PoisEndpoint":       ubx.FieldSpec{WireName: "pois_endpoint"},
+	"Username":           ubx.FieldSpec{WireName: "username"},
+	"ZoneIdentity":       ubx.FieldSpec{WireName: "zone_identity"},
+}
 
 var Channel_EncoderSettings_AvailConfiguration_AvailSettings_Scte35SpliceInsertFields = ubx.FieldMap{
-		"AdAvailOffset": ubx.FieldSpec{WireName: "ad_avail_offset"},
-		"NoRegionalBlackoutFlag": ubx.FieldSpec{WireName: "no_regional_blackout_flag"},
-		"WebDeliveryAllowedFlag": ubx.FieldSpec{WireName: "web_delivery_allowed_flag"},
-	}
+	"AdAvailOffset":          ubx.FieldSpec{WireName: "ad_avail_offset"},
+	"NoRegionalBlackoutFlag": ubx.FieldSpec{WireName: "no_regional_blackout_flag"},
+	"WebDeliveryAllowedFlag": ubx.FieldSpec{WireName: "web_delivery_allowed_flag"},
+}
 
 var Channel_EncoderSettings_AvailConfiguration_AvailSettingsFields = ubx.FieldMap{
-		"Esam": ubx.FieldSpec{
-			WireName: "esam",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailConfiguration_AvailSettings_EsamFields,
-		},
-		"Scte35SpliceInsert": ubx.FieldSpec{
-			WireName: "scte35_splice_insert",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailConfiguration_AvailSettings_Scte35SpliceInsertFields,
-		},
-		"Scte35TimeSignalApos": ubx.FieldSpec{
-			WireName: "scte35_time_signal_apos",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailConfiguration_AvailSettings_Scte35SpliceInsertFields,
-		},
-	}
+	"Esam": ubx.FieldSpec{
+		WireName: "esam",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailConfiguration_AvailSettings_EsamFields,
+	},
+	"Scte35SpliceInsert": ubx.FieldSpec{
+		WireName: "scte35_splice_insert",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailConfiguration_AvailSettings_Scte35SpliceInsertFields,
+	},
+	"Scte35TimeSignalApos": ubx.FieldSpec{
+		WireName: "scte35_time_signal_apos",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailConfiguration_AvailSettings_Scte35SpliceInsertFields,
+	},
+}
 
 var Channel_EncoderSettings_AvailConfigurationFields = ubx.FieldMap{
-		"AvailSettings": ubx.FieldSpec{
-			WireName: "avail_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailConfiguration_AvailSettingsFields,
-		},
-		"Scte35SegmentationScope": ubx.FieldSpec{WireName: "scte35_segmentation_scope"},
-	}
+	"AvailSettings": ubx.FieldSpec{
+		WireName: "avail_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailConfiguration_AvailSettingsFields,
+	},
+	"Scte35SegmentationScope": ubx.FieldSpec{WireName: "scte35_segmentation_scope"},
+}
 
 var Channel_EncoderSettings_BlackoutSlateFields = ubx.FieldMap{
-		"BlackoutSlateImage": ubx.FieldSpec{
-			WireName: "blackout_slate_image",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
-		},
-		"NetworkEndBlackout": ubx.FieldSpec{WireName: "network_end_blackout"},
-		"NetworkEndBlackoutImage": ubx.FieldSpec{
-			WireName: "network_end_blackout_image",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
-		},
-		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"BlackoutSlateImage": ubx.FieldSpec{
+		WireName: "blackout_slate_image",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
+	},
+	"NetworkEndBlackout": ubx.FieldSpec{WireName: "network_end_blackout"},
+	"NetworkEndBlackoutImage": ubx.FieldSpec{
+		WireName: "network_end_blackout_image",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
+	},
+	"NetworkId": ubx.FieldSpec{WireName: "network_id"},
+	"State":     ubx.FieldSpec{WireName: "state"},
+}
 
 var Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_BurnInDestinationSettingsFields = ubx.FieldMap{
-		"Alignment": ubx.FieldSpec{WireName: "alignment"},
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"BackgroundOpacity": ubx.FieldSpec{WireName: "background_opacity"},
-		"Font": ubx.FieldSpec{
-			WireName: "font",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
-		},
-		"FontColor": ubx.FieldSpec{WireName: "font_color"},
-		"FontOpacity": ubx.FieldSpec{WireName: "font_opacity"},
-		"FontResolution": ubx.FieldSpec{WireName: "font_resolution"},
-		"FontSize": ubx.FieldSpec{WireName: "font_size"},
-		"OutlineColor": ubx.FieldSpec{WireName: "outline_color"},
-		"OutlineSize": ubx.FieldSpec{WireName: "outline_size"},
-		"ShadowColor": ubx.FieldSpec{WireName: "shadow_color"},
-		"ShadowOpacity": ubx.FieldSpec{WireName: "shadow_opacity"},
-		"ShadowXoffset": ubx.FieldSpec{WireName: "shadow_xoffset"},
-		"ShadowYoffset": ubx.FieldSpec{WireName: "shadow_yoffset"},
-		"SubtitleRows": ubx.FieldSpec{WireName: "subtitle_rows"},
-		"TeletextGridControl": ubx.FieldSpec{WireName: "teletext_grid_control"},
-		"Xposition": ubx.FieldSpec{WireName: "xposition"},
-		"Yposition": ubx.FieldSpec{WireName: "yposition"},
-	}
+	"Alignment":         ubx.FieldSpec{WireName: "alignment"},
+	"BackgroundColor":   ubx.FieldSpec{WireName: "background_color"},
+	"BackgroundOpacity": ubx.FieldSpec{WireName: "background_opacity"},
+	"Font": ubx.FieldSpec{
+		WireName: "font",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
+	},
+	"FontColor":           ubx.FieldSpec{WireName: "font_color"},
+	"FontOpacity":         ubx.FieldSpec{WireName: "font_opacity"},
+	"FontResolution":      ubx.FieldSpec{WireName: "font_resolution"},
+	"FontSize":            ubx.FieldSpec{WireName: "font_size"},
+	"OutlineColor":        ubx.FieldSpec{WireName: "outline_color"},
+	"OutlineSize":         ubx.FieldSpec{WireName: "outline_size"},
+	"ShadowColor":         ubx.FieldSpec{WireName: "shadow_color"},
+	"ShadowOpacity":       ubx.FieldSpec{WireName: "shadow_opacity"},
+	"ShadowXoffset":       ubx.FieldSpec{WireName: "shadow_xoffset"},
+	"ShadowYoffset":       ubx.FieldSpec{WireName: "shadow_yoffset"},
+	"SubtitleRows":        ubx.FieldSpec{WireName: "subtitle_rows"},
+	"TeletextGridControl": ubx.FieldSpec{WireName: "teletext_grid_control"},
+	"Xposition":           ubx.FieldSpec{WireName: "xposition"},
+	"Yposition":           ubx.FieldSpec{WireName: "yposition"},
+}
 
 var Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_EbuTtDdestinationSettingsFields = ubx.FieldMap{
-		"CopyrightHolder": ubx.FieldSpec{WireName: "copyright_holder"},
-		"DefaultFontSize": ubx.FieldSpec{WireName: "default_font_size"},
-		"DefaultLineHeight": ubx.FieldSpec{WireName: "default_line_height"},
-		"FillLineGap": ubx.FieldSpec{WireName: "fill_line_gap"},
-		"FontFamily": ubx.FieldSpec{WireName: "font_family"},
-		"StyleControl": ubx.FieldSpec{WireName: "style_control"},
-	}
+	"CopyrightHolder":   ubx.FieldSpec{WireName: "copyright_holder"},
+	"DefaultFontSize":   ubx.FieldSpec{WireName: "default_font_size"},
+	"DefaultLineHeight": ubx.FieldSpec{WireName: "default_line_height"},
+	"FillLineGap":       ubx.FieldSpec{WireName: "fill_line_gap"},
+	"FontFamily":        ubx.FieldSpec{WireName: "font_family"},
+	"StyleControl":      ubx.FieldSpec{WireName: "style_control"},
+}
 
 var Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettingsFields = ubx.FieldMap{
-		"StyleControl": ubx.FieldSpec{WireName: "style_control"},
-	}
+	"StyleControl": ubx.FieldSpec{WireName: "style_control"},
+}
 
 var Channel_EncoderSettings_CaptionDescriptions_DestinationSettingsFields = ubx.FieldMap{
-		"AribDestinationSettings": ubx.FieldSpec{WireName: "arib_destination_settings"},
-		"BurnInDestinationSettings": ubx.FieldSpec{
-			WireName: "burn_in_destination_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_BurnInDestinationSettingsFields,
-		},
-		"DvbSubDestinationSettings": ubx.FieldSpec{
-			WireName: "dvb_sub_destination_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_BurnInDestinationSettingsFields,
-		},
-		"EbuTtDdestinationSettings": ubx.FieldSpec{
-			WireName: "ebu_tt_ddestination_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_EbuTtDdestinationSettingsFields,
-		},
-		"EmbeddedDestinationSettings": ubx.FieldSpec{WireName: "embedded_destination_settings"},
-		"EmbeddedPlusScte20DestinationSettings": ubx.FieldSpec{WireName: "embedded_plus_scte20_destination_settings"},
-		"RtmpCaptionInfoDestinationSettings": ubx.FieldSpec{WireName: "rtmp_caption_info_destination_settings"},
-		"Scte20PlusEmbeddedDestinationSettings": ubx.FieldSpec{WireName: "scte20_plus_embedded_destination_settings"},
-		"Scte27DestinationSettings": ubx.FieldSpec{WireName: "scte27_destination_settings"},
-		"SmpteTtDestinationSettings": ubx.FieldSpec{WireName: "smpte_tt_destination_settings"},
-		"TeletextDestinationSettings": ubx.FieldSpec{WireName: "teletext_destination_settings"},
-		"TtmlDestinationSettings": ubx.FieldSpec{
-			WireName: "ttml_destination_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettingsFields,
-		},
-		"WebvttDestinationSettings": ubx.FieldSpec{
-			WireName: "webvtt_destination_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettingsFields,
-		},
-	}
+	"AribDestinationSettings": ubx.FieldSpec{WireName: "arib_destination_settings"},
+	"BurnInDestinationSettings": ubx.FieldSpec{
+		WireName: "burn_in_destination_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_BurnInDestinationSettingsFields,
+	},
+	"DvbSubDestinationSettings": ubx.FieldSpec{
+		WireName: "dvb_sub_destination_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_BurnInDestinationSettingsFields,
+	},
+	"EbuTtDdestinationSettings": ubx.FieldSpec{
+		WireName: "ebu_tt_ddestination_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_EbuTtDdestinationSettingsFields,
+	},
+	"EmbeddedDestinationSettings":           ubx.FieldSpec{WireName: "embedded_destination_settings"},
+	"EmbeddedPlusScte20DestinationSettings": ubx.FieldSpec{WireName: "embedded_plus_scte20_destination_settings"},
+	"RtmpCaptionInfoDestinationSettings":    ubx.FieldSpec{WireName: "rtmp_caption_info_destination_settings"},
+	"Scte20PlusEmbeddedDestinationSettings": ubx.FieldSpec{WireName: "scte20_plus_embedded_destination_settings"},
+	"Scte27DestinationSettings":             ubx.FieldSpec{WireName: "scte27_destination_settings"},
+	"SmpteTtDestinationSettings":            ubx.FieldSpec{WireName: "smpte_tt_destination_settings"},
+	"TeletextDestinationSettings":           ubx.FieldSpec{WireName: "teletext_destination_settings"},
+	"TtmlDestinationSettings": ubx.FieldSpec{
+		WireName: "ttml_destination_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettingsFields,
+	},
+	"WebvttDestinationSettings": ubx.FieldSpec{
+		WireName: "webvtt_destination_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_CaptionDescriptionsFields = ubx.FieldMap{
-		"Accessibility": ubx.FieldSpec{WireName: "accessibility"},
-		"CaptionDashRoles": ubx.FieldSpec{WireName: "caption_dash_roles"},
-		"CaptionSelectorName": ubx.FieldSpec{WireName: "caption_selector_name"},
-		"DestinationSettings": ubx.FieldSpec{
-			WireName: "destination_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_CaptionDescriptions_DestinationSettingsFields,
-		},
-		"DvbDashAccessibility": ubx.FieldSpec{WireName: "dvb_dash_accessibility"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"LanguageDescription": ubx.FieldSpec{WireName: "language_description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Accessibility":       ubx.FieldSpec{WireName: "accessibility"},
+	"CaptionDashRoles":    ubx.FieldSpec{WireName: "caption_dash_roles"},
+	"CaptionSelectorName": ubx.FieldSpec{WireName: "caption_selector_name"},
+	"DestinationSettings": ubx.FieldSpec{
+		WireName: "destination_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_CaptionDescriptions_DestinationSettingsFields,
+	},
+	"DvbDashAccessibility": ubx.FieldSpec{WireName: "dvb_dash_accessibility"},
+	"LanguageCode":         ubx.FieldSpec{WireName: "language_code"},
+	"LanguageDescription":  ubx.FieldSpec{WireName: "language_description"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+}
 
 var Channel_EncoderSettings_ColorCorrectionSettings_GlobalColorCorrectionsFields = ubx.FieldMap{
-		"InputColorSpace": ubx.FieldSpec{WireName: "input_color_space"},
-		"OutputColorSpace": ubx.FieldSpec{WireName: "output_color_space"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"InputColorSpace":  ubx.FieldSpec{WireName: "input_color_space"},
+	"OutputColorSpace": ubx.FieldSpec{WireName: "output_color_space"},
+	"Uri":              ubx.FieldSpec{WireName: "uri"},
+}
 
 var Channel_EncoderSettings_ColorCorrectionSettingsFields = ubx.FieldMap{
-		"GlobalColorCorrections": ubx.FieldSpec{
-			WireName: "global_color_corrections",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_ColorCorrectionSettings_GlobalColorCorrectionsFields,
-		},
-	}
+	"GlobalColorCorrections": ubx.FieldSpec{
+		WireName: "global_color_corrections",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_ColorCorrectionSettings_GlobalColorCorrectionsFields,
+	},
+}
 
 var Channel_EncoderSettings_FeatureActivationsFields = ubx.FieldMap{
-		"InputPrepareScheduleActions": ubx.FieldSpec{WireName: "input_prepare_schedule_actions"},
-		"OutputStaticImageOverlayScheduleActions": ubx.FieldSpec{WireName: "output_static_image_overlay_schedule_actions"},
-	}
+	"InputPrepareScheduleActions":             ubx.FieldSpec{WireName: "input_prepare_schedule_actions"},
+	"OutputStaticImageOverlayScheduleActions": ubx.FieldSpec{WireName: "output_static_image_overlay_schedule_actions"},
+}
 
 var Channel_EncoderSettings_GlobalConfiguration_InputLossBehaviorFields = ubx.FieldMap{
-		"BlackFrameMsec": ubx.FieldSpec{WireName: "black_frame_msec"},
-		"InputLossImageColor": ubx.FieldSpec{WireName: "input_loss_image_color"},
-		"InputLossImageSlate": ubx.FieldSpec{
-			WireName: "input_loss_image_slate",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
-		},
-		"InputLossImageType": ubx.FieldSpec{WireName: "input_loss_image_type"},
-		"RepeatFrameMsec": ubx.FieldSpec{WireName: "repeat_frame_msec"},
-	}
+	"BlackFrameMsec":      ubx.FieldSpec{WireName: "black_frame_msec"},
+	"InputLossImageColor": ubx.FieldSpec{WireName: "input_loss_image_color"},
+	"InputLossImageSlate": ubx.FieldSpec{
+		WireName: "input_loss_image_slate",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
+	},
+	"InputLossImageType": ubx.FieldSpec{WireName: "input_loss_image_type"},
+	"RepeatFrameMsec":    ubx.FieldSpec{WireName: "repeat_frame_msec"},
+}
 
 var Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_DisabledLockingSettingsFields = ubx.FieldMap{
-		"CustomEpoch": ubx.FieldSpec{WireName: "custom_epoch"},
-	}
+	"CustomEpoch": ubx.FieldSpec{WireName: "custom_epoch"},
+}
 
 var Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_EpochLockingSettingsFields = ubx.FieldMap{
-		"CustomEpoch": ubx.FieldSpec{WireName: "custom_epoch"},
-		"JamSyncTime": ubx.FieldSpec{WireName: "jam_sync_time"},
-	}
+	"CustomEpoch": ubx.FieldSpec{WireName: "custom_epoch"},
+	"JamSyncTime": ubx.FieldSpec{WireName: "jam_sync_time"},
+}
 
 var Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_PipelineLockingSettingsFields = ubx.FieldMap{
-		"CustomEpoch": ubx.FieldSpec{WireName: "custom_epoch"},
-		"PipelineLockingMethod": ubx.FieldSpec{WireName: "pipeline_locking_method"},
-	}
+	"CustomEpoch":           ubx.FieldSpec{WireName: "custom_epoch"},
+	"PipelineLockingMethod": ubx.FieldSpec{WireName: "pipeline_locking_method"},
+}
 
 var Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettingsFields = ubx.FieldMap{
-		"DisabledLockingSettings": ubx.FieldSpec{
-			WireName: "disabled_locking_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_DisabledLockingSettingsFields,
-		},
-		"EpochLockingSettings": ubx.FieldSpec{
-			WireName: "epoch_locking_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_EpochLockingSettingsFields,
-		},
-		"PipelineLockingSettings": ubx.FieldSpec{
-			WireName: "pipeline_locking_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_PipelineLockingSettingsFields,
-		},
-	}
+	"DisabledLockingSettings": ubx.FieldSpec{
+		WireName: "disabled_locking_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_DisabledLockingSettingsFields,
+	},
+	"EpochLockingSettings": ubx.FieldSpec{
+		WireName: "epoch_locking_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_EpochLockingSettingsFields,
+	},
+	"PipelineLockingSettings": ubx.FieldSpec{
+		WireName: "pipeline_locking_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_PipelineLockingSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_GlobalConfigurationFields = ubx.FieldMap{
-		"InitialAudioGain": ubx.FieldSpec{WireName: "initial_audio_gain"},
-		"InputEndAction": ubx.FieldSpec{WireName: "input_end_action"},
-		"InputLossBehavior": ubx.FieldSpec{
-			WireName: "input_loss_behavior",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_GlobalConfiguration_InputLossBehaviorFields,
-		},
-		"OutputLockingMode": ubx.FieldSpec{WireName: "output_locking_mode"},
-		"OutputLockingSettings": ubx.FieldSpec{
-			WireName: "output_locking_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettingsFields,
-		},
-		"OutputTimingSource": ubx.FieldSpec{WireName: "output_timing_source"},
-		"SupportLowFramerateInputs": ubx.FieldSpec{WireName: "support_low_framerate_inputs"},
-	}
+	"InitialAudioGain": ubx.FieldSpec{WireName: "initial_audio_gain"},
+	"InputEndAction":   ubx.FieldSpec{WireName: "input_end_action"},
+	"InputLossBehavior": ubx.FieldSpec{
+		WireName: "input_loss_behavior",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_GlobalConfiguration_InputLossBehaviorFields,
+	},
+	"OutputLockingMode": ubx.FieldSpec{WireName: "output_locking_mode"},
+	"OutputLockingSettings": ubx.FieldSpec{
+		WireName: "output_locking_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_GlobalConfiguration_OutputLockingSettingsFields,
+	},
+	"OutputTimingSource":        ubx.FieldSpec{WireName: "output_timing_source"},
+	"SupportLowFramerateInputs": ubx.FieldSpec{WireName: "support_low_framerate_inputs"},
+}
 
 var Channel_EncoderSettings_MotionGraphicsConfiguration_MotionGraphicsSettingsFields = ubx.FieldMap{
-		"HtmlMotionGraphicsSettings": ubx.FieldSpec{WireName: "html_motion_graphics_settings"},
-	}
+	"HtmlMotionGraphicsSettings": ubx.FieldSpec{WireName: "html_motion_graphics_settings"},
+}
 
 var Channel_EncoderSettings_MotionGraphicsConfigurationFields = ubx.FieldMap{
-		"MotionGraphicsInsertion": ubx.FieldSpec{WireName: "motion_graphics_insertion"},
-		"MotionGraphicsSettings": ubx.FieldSpec{
-			WireName: "motion_graphics_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_MotionGraphicsConfiguration_MotionGraphicsSettingsFields,
-		},
-	}
+	"MotionGraphicsInsertion": ubx.FieldSpec{WireName: "motion_graphics_insertion"},
+	"MotionGraphicsSettings": ubx.FieldSpec{
+		WireName: "motion_graphics_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_MotionGraphicsConfiguration_MotionGraphicsSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_NielsenConfigurationFields = ubx.FieldMap{
-		"DistributorId": ubx.FieldSpec{WireName: "distributor_id"},
-		"NielsenPcmToId3Tagging": ubx.FieldSpec{WireName: "nielsen_pcm_to_id3_tagging"},
-	}
+	"DistributorId":          ubx.FieldSpec{WireName: "distributor_id"},
+	"NielsenPcmToId3Tagging": ubx.FieldSpec{WireName: "nielsen_pcm_to_id3_tagging"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings_ArchiveS3SettingsFields = ubx.FieldMap{
-		"CannedAcl": ubx.FieldSpec{WireName: "canned_acl"},
-	}
+	"CannedAcl": ubx.FieldSpec{WireName: "canned_acl"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettingsFields = ubx.FieldMap{
-		"ArchiveS3Settings": ubx.FieldSpec{
-			WireName: "archive_s3_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings_ArchiveS3SettingsFields,
-		},
-	}
+	"ArchiveS3Settings": ubx.FieldSpec{
+		WireName: "archive_s3_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings_ArchiveS3SettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields = ubx.FieldMap{
-		"DestinationRefId": ubx.FieldSpec{WireName: "destination_ref_id"},
-	}
+	"DestinationRefId": ubx.FieldSpec{WireName: "destination_ref_id"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettingsFields = ubx.FieldMap{
-		"ArchiveCdnSettings": ubx.FieldSpec{
-			WireName: "archive_cdn_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettingsFields,
-		},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"RolloverInterval": ubx.FieldSpec{WireName: "rollover_interval"},
-	}
+	"ArchiveCdnSettings": ubx.FieldSpec{
+		WireName: "archive_cdn_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettingsFields,
+	},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"RolloverInterval": ubx.FieldSpec{WireName: "rollover_interval"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_AdditionalDestinationsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_CaptionLanguageMappingsFields = ubx.FieldMap{
-		"CaptionChannel": ubx.FieldSpec{WireName: "caption_channel"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-	}
+	"CaptionChannel": ubx.FieldSpec{WireName: "caption_channel"},
+	"LanguageCode":   ubx.FieldSpec{WireName: "language_code"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettingsFields = ubx.FieldMap{
-		"AdditionalDestinations": ubx.FieldSpec{
-			WireName: "additional_destinations",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_AdditionalDestinationsFields,
-		},
-		"CaptionLanguageMappings": ubx.FieldSpec{
-			WireName: "caption_language_mappings",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_CaptionLanguageMappingsFields,
-		},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"Id3Behavior": ubx.FieldSpec{WireName: "id3_behavior"},
-		"Id3NameModifier": ubx.FieldSpec{WireName: "id3_name_modifier"},
-		"KlvBehavior": ubx.FieldSpec{WireName: "klv_behavior"},
-		"KlvNameModifier": ubx.FieldSpec{WireName: "klv_name_modifier"},
-		"NielsenId3Behavior": ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
-		"NielsenId3NameModifier": ubx.FieldSpec{WireName: "nielsen_id3_name_modifier"},
-		"Scte35NameModifier": ubx.FieldSpec{WireName: "scte35_name_modifier"},
-		"Scte35Type": ubx.FieldSpec{WireName: "scte35_type"},
-		"SegmentLength": ubx.FieldSpec{WireName: "segment_length"},
-		"SegmentLengthUnits": ubx.FieldSpec{WireName: "segment_length_units"},
-		"SendDelayMs": ubx.FieldSpec{WireName: "send_delay_ms"},
-		"TimedMetadataId3Frame": ubx.FieldSpec{WireName: "timed_metadata_id3_frame"},
-		"TimedMetadataId3Period": ubx.FieldSpec{WireName: "timed_metadata_id3_period"},
-		"TimedMetadataPassthrough": ubx.FieldSpec{WireName: "timed_metadata_passthrough"},
-	}
+	"AdditionalDestinations": ubx.FieldSpec{
+		WireName: "additional_destinations",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_AdditionalDestinationsFields,
+	},
+	"CaptionLanguageMappings": ubx.FieldSpec{
+		WireName: "caption_language_mappings",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_CaptionLanguageMappingsFields,
+	},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"Id3Behavior":              ubx.FieldSpec{WireName: "id3_behavior"},
+	"Id3NameModifier":          ubx.FieldSpec{WireName: "id3_name_modifier"},
+	"KlvBehavior":              ubx.FieldSpec{WireName: "klv_behavior"},
+	"KlvNameModifier":          ubx.FieldSpec{WireName: "klv_name_modifier"},
+	"NielsenId3Behavior":       ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
+	"NielsenId3NameModifier":   ubx.FieldSpec{WireName: "nielsen_id3_name_modifier"},
+	"Scte35NameModifier":       ubx.FieldSpec{WireName: "scte35_name_modifier"},
+	"Scte35Type":               ubx.FieldSpec{WireName: "scte35_type"},
+	"SegmentLength":            ubx.FieldSpec{WireName: "segment_length"},
+	"SegmentLengthUnits":       ubx.FieldSpec{WireName: "segment_length_units"},
+	"SendDelayMs":              ubx.FieldSpec{WireName: "send_delay_ms"},
+	"TimedMetadataId3Frame":    ubx.FieldSpec{WireName: "timed_metadata_id3_frame"},
+	"TimedMetadataId3Period":   ubx.FieldSpec{WireName: "timed_metadata_id3_period"},
+	"TimedMetadataPassthrough": ubx.FieldSpec{WireName: "timed_metadata_passthrough"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_FrameCaptureGroupSettings_FrameCaptureCdnSettingsFields = ubx.FieldMap{
-		"FrameCaptureS3Settings": ubx.FieldSpec{
-			WireName: "frame_capture_s3_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings_ArchiveS3SettingsFields,
-		},
-	}
+	"FrameCaptureS3Settings": ubx.FieldSpec{
+		WireName: "frame_capture_s3_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings_ArchiveS3SettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_FrameCaptureGroupSettingsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"FrameCaptureCdnSettings": ubx.FieldSpec{
-			WireName: "frame_capture_cdn_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_FrameCaptureGroupSettings_FrameCaptureCdnSettingsFields,
-		},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"FrameCaptureCdnSettings": ubx.FieldSpec{
+		WireName: "frame_capture_cdn_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_FrameCaptureGroupSettings_FrameCaptureCdnSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_CaptionLanguageMappingsFields = ubx.FieldMap{
-		"CaptionChannel": ubx.FieldSpec{WireName: "caption_channel"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"LanguageDescription": ubx.FieldSpec{WireName: "language_description"},
-	}
+	"CaptionChannel":      ubx.FieldSpec{WireName: "caption_channel"},
+	"LanguageCode":        ubx.FieldSpec{WireName: "language_code"},
+	"LanguageDescription": ubx.FieldSpec{WireName: "language_description"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsAkamaiSettingsFields = ubx.FieldMap{
-		"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
-		"FilecacheDuration": ubx.FieldSpec{WireName: "filecache_duration"},
-		"HttpTransferMode": ubx.FieldSpec{WireName: "http_transfer_mode"},
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-		"RestartDelay": ubx.FieldSpec{WireName: "restart_delay"},
-		"Salt": ubx.FieldSpec{WireName: "salt"},
-		"Token": ubx.FieldSpec{WireName: "token"},
-	}
+	"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
+	"FilecacheDuration":       ubx.FieldSpec{WireName: "filecache_duration"},
+	"HttpTransferMode":        ubx.FieldSpec{WireName: "http_transfer_mode"},
+	"NumRetries":              ubx.FieldSpec{WireName: "num_retries"},
+	"RestartDelay":            ubx.FieldSpec{WireName: "restart_delay"},
+	"Salt":                    ubx.FieldSpec{WireName: "salt"},
+	"Token":                   ubx.FieldSpec{WireName: "token"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsBasicPutSettingsFields = ubx.FieldMap{
-		"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
-		"FilecacheDuration": ubx.FieldSpec{WireName: "filecache_duration"},
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-		"RestartDelay": ubx.FieldSpec{WireName: "restart_delay"},
-	}
+	"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
+	"FilecacheDuration":       ubx.FieldSpec{WireName: "filecache_duration"},
+	"NumRetries":              ubx.FieldSpec{WireName: "num_retries"},
+	"RestartDelay":            ubx.FieldSpec{WireName: "restart_delay"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsMediaStoreSettingsFields = ubx.FieldMap{
-		"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
-		"FilecacheDuration": ubx.FieldSpec{WireName: "filecache_duration"},
-		"MediaStoreStorageClass": ubx.FieldSpec{WireName: "media_store_storage_class"},
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-		"RestartDelay": ubx.FieldSpec{WireName: "restart_delay"},
-	}
+	"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
+	"FilecacheDuration":       ubx.FieldSpec{WireName: "filecache_duration"},
+	"MediaStoreStorageClass":  ubx.FieldSpec{WireName: "media_store_storage_class"},
+	"NumRetries":              ubx.FieldSpec{WireName: "num_retries"},
+	"RestartDelay":            ubx.FieldSpec{WireName: "restart_delay"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsWebdavSettingsFields = ubx.FieldMap{
-		"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
-		"FilecacheDuration": ubx.FieldSpec{WireName: "filecache_duration"},
-		"HttpTransferMode": ubx.FieldSpec{WireName: "http_transfer_mode"},
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-		"RestartDelay": ubx.FieldSpec{WireName: "restart_delay"},
-	}
+	"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
+	"FilecacheDuration":       ubx.FieldSpec{WireName: "filecache_duration"},
+	"HttpTransferMode":        ubx.FieldSpec{WireName: "http_transfer_mode"},
+	"NumRetries":              ubx.FieldSpec{WireName: "num_retries"},
+	"RestartDelay":            ubx.FieldSpec{WireName: "restart_delay"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettingsFields = ubx.FieldMap{
-		"HlsAkamaiSettings": ubx.FieldSpec{
-			WireName: "hls_akamai_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsAkamaiSettingsFields,
-		},
-		"HlsBasicPutSettings": ubx.FieldSpec{
-			WireName: "hls_basic_put_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsBasicPutSettingsFields,
-		},
-		"HlsMediaStoreSettings": ubx.FieldSpec{
-			WireName: "hls_media_store_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsMediaStoreSettingsFields,
-		},
-		"HlsS3Settings": ubx.FieldSpec{
-			WireName: "hls_s3_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings_ArchiveS3SettingsFields,
-		},
-		"HlsWebdavSettings": ubx.FieldSpec{
-			WireName: "hls_webdav_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsWebdavSettingsFields,
-		},
-	}
+	"HlsAkamaiSettings": ubx.FieldSpec{
+		WireName: "hls_akamai_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsAkamaiSettingsFields,
+	},
+	"HlsBasicPutSettings": ubx.FieldSpec{
+		WireName: "hls_basic_put_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsBasicPutSettingsFields,
+	},
+	"HlsMediaStoreSettings": ubx.FieldSpec{
+		WireName: "hls_media_store_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsMediaStoreSettingsFields,
+	},
+	"HlsS3Settings": ubx.FieldSpec{
+		WireName: "hls_s3_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings_ArchiveS3SettingsFields,
+	},
+	"HlsWebdavSettings": ubx.FieldSpec{
+		WireName: "hls_webdav_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsWebdavSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_KeyProviderSettings_StaticKeySettingsFields = ubx.FieldMap{
-		"KeyProviderServer": ubx.FieldSpec{
-			WireName: "key_provider_server",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
-		},
-		"StaticKeyValue": ubx.FieldSpec{WireName: "static_key_value"},
-	}
+	"KeyProviderServer": ubx.FieldSpec{
+		WireName: "key_provider_server",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
+	},
+	"StaticKeyValue": ubx.FieldSpec{WireName: "static_key_value"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_KeyProviderSettingsFields = ubx.FieldMap{
-		"StaticKeySettings": ubx.FieldSpec{
-			WireName: "static_key_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_KeyProviderSettings_StaticKeySettingsFields,
-		},
-	}
+	"StaticKeySettings": ubx.FieldSpec{
+		WireName: "static_key_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_KeyProviderSettings_StaticKeySettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettingsFields = ubx.FieldMap{
-		"AdMarkers": ubx.FieldSpec{WireName: "ad_markers"},
-		"BaseUrlContent": ubx.FieldSpec{WireName: "base_url_content"},
-		"BaseUrlContent1": ubx.FieldSpec{WireName: "base_url_content1"},
-		"BaseUrlManifest": ubx.FieldSpec{WireName: "base_url_manifest"},
-		"BaseUrlManifest1": ubx.FieldSpec{WireName: "base_url_manifest1"},
-		"CaptionLanguageMappings": ubx.FieldSpec{
-			WireName: "caption_language_mappings",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_CaptionLanguageMappingsFields,
-		},
-		"CaptionLanguageSetting": ubx.FieldSpec{WireName: "caption_language_setting"},
-		"ClientCache": ubx.FieldSpec{WireName: "client_cache"},
-		"CodecSpecification": ubx.FieldSpec{WireName: "codec_specification"},
-		"ConstantIv": ubx.FieldSpec{WireName: "constant_iv"},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"DirectoryStructure": ubx.FieldSpec{WireName: "directory_structure"},
-		"DiscontinuityTags": ubx.FieldSpec{WireName: "discontinuity_tags"},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"HlsCdnSettings": ubx.FieldSpec{
-			WireName: "hls_cdn_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettingsFields,
-		},
-		"HlsId3SegmentTagging": ubx.FieldSpec{WireName: "hls_id3_segment_tagging"},
-		"IframeOnlyPlaylists": ubx.FieldSpec{WireName: "iframe_only_playlists"},
-		"IncompleteSegmentBehavior": ubx.FieldSpec{WireName: "incomplete_segment_behavior"},
-		"IndexNsegments": ubx.FieldSpec{WireName: "index_nsegments"},
-		"InputLossAction": ubx.FieldSpec{WireName: "input_loss_action"},
-		"IvInManifest": ubx.FieldSpec{WireName: "iv_in_manifest"},
-		"IvSource": ubx.FieldSpec{WireName: "iv_source"},
-		"KeepSegments": ubx.FieldSpec{WireName: "keep_segments"},
-		"KeyFormat": ubx.FieldSpec{WireName: "key_format"},
-		"KeyFormatVersions": ubx.FieldSpec{WireName: "key_format_versions"},
-		"KeyProviderSettings": ubx.FieldSpec{
-			WireName: "key_provider_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_KeyProviderSettingsFields,
-		},
-		"ManifestCompression": ubx.FieldSpec{WireName: "manifest_compression"},
-		"ManifestDurationFormat": ubx.FieldSpec{WireName: "manifest_duration_format"},
-		"MinSegmentLength": ubx.FieldSpec{WireName: "min_segment_length"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"OutputSelection": ubx.FieldSpec{WireName: "output_selection"},
-		"ProgramDateTime": ubx.FieldSpec{WireName: "program_date_time"},
-		"ProgramDateTimeClock": ubx.FieldSpec{WireName: "program_date_time_clock"},
-		"ProgramDateTimePeriod": ubx.FieldSpec{WireName: "program_date_time_period"},
-		"RedundantManifest": ubx.FieldSpec{WireName: "redundant_manifest"},
-		"SegmentLength": ubx.FieldSpec{WireName: "segment_length"},
-		"SegmentationMode": ubx.FieldSpec{WireName: "segmentation_mode"},
-		"SegmentsPerSubdirectory": ubx.FieldSpec{WireName: "segments_per_subdirectory"},
-		"StreamInfResolution": ubx.FieldSpec{WireName: "stream_inf_resolution"},
-		"TimedMetadataId3Frame": ubx.FieldSpec{WireName: "timed_metadata_id3_frame"},
-		"TimedMetadataId3Period": ubx.FieldSpec{WireName: "timed_metadata_id3_period"},
-		"TimestampDeltaMilliseconds": ubx.FieldSpec{WireName: "timestamp_delta_milliseconds"},
-		"TsFileMode": ubx.FieldSpec{WireName: "ts_file_mode"},
-	}
+	"AdMarkers":        ubx.FieldSpec{WireName: "ad_markers"},
+	"BaseUrlContent":   ubx.FieldSpec{WireName: "base_url_content"},
+	"BaseUrlContent1":  ubx.FieldSpec{WireName: "base_url_content1"},
+	"BaseUrlManifest":  ubx.FieldSpec{WireName: "base_url_manifest"},
+	"BaseUrlManifest1": ubx.FieldSpec{WireName: "base_url_manifest1"},
+	"CaptionLanguageMappings": ubx.FieldSpec{
+		WireName: "caption_language_mappings",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_CaptionLanguageMappingsFields,
+	},
+	"CaptionLanguageSetting": ubx.FieldSpec{WireName: "caption_language_setting"},
+	"ClientCache":            ubx.FieldSpec{WireName: "client_cache"},
+	"CodecSpecification":     ubx.FieldSpec{WireName: "codec_specification"},
+	"ConstantIv":             ubx.FieldSpec{WireName: "constant_iv"},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"DirectoryStructure": ubx.FieldSpec{WireName: "directory_structure"},
+	"DiscontinuityTags":  ubx.FieldSpec{WireName: "discontinuity_tags"},
+	"EncryptionType":     ubx.FieldSpec{WireName: "encryption_type"},
+	"HlsCdnSettings": ubx.FieldSpec{
+		WireName: "hls_cdn_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettingsFields,
+	},
+	"HlsId3SegmentTagging":      ubx.FieldSpec{WireName: "hls_id3_segment_tagging"},
+	"IframeOnlyPlaylists":       ubx.FieldSpec{WireName: "iframe_only_playlists"},
+	"IncompleteSegmentBehavior": ubx.FieldSpec{WireName: "incomplete_segment_behavior"},
+	"IndexNsegments":            ubx.FieldSpec{WireName: "index_nsegments"},
+	"InputLossAction":           ubx.FieldSpec{WireName: "input_loss_action"},
+	"IvInManifest":              ubx.FieldSpec{WireName: "iv_in_manifest"},
+	"IvSource":                  ubx.FieldSpec{WireName: "iv_source"},
+	"KeepSegments":              ubx.FieldSpec{WireName: "keep_segments"},
+	"KeyFormat":                 ubx.FieldSpec{WireName: "key_format"},
+	"KeyFormatVersions":         ubx.FieldSpec{WireName: "key_format_versions"},
+	"KeyProviderSettings": ubx.FieldSpec{
+		WireName: "key_provider_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_KeyProviderSettingsFields,
+	},
+	"ManifestCompression":        ubx.FieldSpec{WireName: "manifest_compression"},
+	"ManifestDurationFormat":     ubx.FieldSpec{WireName: "manifest_duration_format"},
+	"MinSegmentLength":           ubx.FieldSpec{WireName: "min_segment_length"},
+	"Mode":                       ubx.FieldSpec{WireName: "mode"},
+	"OutputSelection":            ubx.FieldSpec{WireName: "output_selection"},
+	"ProgramDateTime":            ubx.FieldSpec{WireName: "program_date_time"},
+	"ProgramDateTimeClock":       ubx.FieldSpec{WireName: "program_date_time_clock"},
+	"ProgramDateTimePeriod":      ubx.FieldSpec{WireName: "program_date_time_period"},
+	"RedundantManifest":          ubx.FieldSpec{WireName: "redundant_manifest"},
+	"SegmentLength":              ubx.FieldSpec{WireName: "segment_length"},
+	"SegmentationMode":           ubx.FieldSpec{WireName: "segmentation_mode"},
+	"SegmentsPerSubdirectory":    ubx.FieldSpec{WireName: "segments_per_subdirectory"},
+	"StreamInfResolution":        ubx.FieldSpec{WireName: "stream_inf_resolution"},
+	"TimedMetadataId3Frame":      ubx.FieldSpec{WireName: "timed_metadata_id3_frame"},
+	"TimedMetadataId3Period":     ubx.FieldSpec{WireName: "timed_metadata_id3_period"},
+	"TimestampDeltaMilliseconds": ubx.FieldSpec{WireName: "timestamp_delta_milliseconds"},
+	"TsFileMode":                 ubx.FieldSpec{WireName: "ts_file_mode"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaConnectRouterGroupSettingsFields = ubx.FieldMap{
-		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
-	}
+	"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaPackageGroupSettings_MediapackageV2GroupSettingsFields = ubx.FieldMap{
-		"AdditionalDestinations": ubx.FieldSpec{
-			WireName: "additional_destinations",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_AdditionalDestinationsFields,
-		},
-		"CaptionLanguageMappings": ubx.FieldSpec{
-			WireName: "caption_language_mappings",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_CaptionLanguageMappingsFields,
-		},
-		"Id3Behavior": ubx.FieldSpec{WireName: "id3_behavior"},
-		"KlvBehavior": ubx.FieldSpec{WireName: "klv_behavior"},
-		"NielsenId3Behavior": ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
-		"Scte35Type": ubx.FieldSpec{WireName: "scte35_type"},
-		"SegmentLength": ubx.FieldSpec{WireName: "segment_length"},
-		"SegmentLengthUnits": ubx.FieldSpec{WireName: "segment_length_units"},
-		"TimedMetadataId3Frame": ubx.FieldSpec{WireName: "timed_metadata_id3_frame"},
-		"TimedMetadataId3Period": ubx.FieldSpec{WireName: "timed_metadata_id3_period"},
-		"TimedMetadataPassthrough": ubx.FieldSpec{WireName: "timed_metadata_passthrough"},
-	}
+	"AdditionalDestinations": ubx.FieldSpec{
+		WireName: "additional_destinations",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_AdditionalDestinationsFields,
+	},
+	"CaptionLanguageMappings": ubx.FieldSpec{
+		WireName: "caption_language_mappings",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_CaptionLanguageMappingsFields,
+	},
+	"Id3Behavior":              ubx.FieldSpec{WireName: "id3_behavior"},
+	"KlvBehavior":              ubx.FieldSpec{WireName: "klv_behavior"},
+	"NielsenId3Behavior":       ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
+	"Scte35Type":               ubx.FieldSpec{WireName: "scte35_type"},
+	"SegmentLength":            ubx.FieldSpec{WireName: "segment_length"},
+	"SegmentLengthUnits":       ubx.FieldSpec{WireName: "segment_length_units"},
+	"TimedMetadataId3Frame":    ubx.FieldSpec{WireName: "timed_metadata_id3_frame"},
+	"TimedMetadataId3Period":   ubx.FieldSpec{WireName: "timed_metadata_id3_period"},
+	"TimedMetadataPassthrough": ubx.FieldSpec{WireName: "timed_metadata_passthrough"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaPackageGroupSettingsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"MediapackageV2GroupSettings": ubx.FieldSpec{
-			WireName: "mediapackage_v2_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaPackageGroupSettings_MediapackageV2GroupSettingsFields,
-		},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"MediapackageV2GroupSettings": ubx.FieldSpec{
+		WireName: "mediapackage_v2_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaPackageGroupSettings_MediapackageV2GroupSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MsSmoothGroupSettingsFields = ubx.FieldMap{
-		"AcquisitionPointId": ubx.FieldSpec{WireName: "acquisition_point_id"},
-		"AudioOnlyTimecodeControl": ubx.FieldSpec{WireName: "audio_only_timecode_control"},
-		"CertificateMode": ubx.FieldSpec{WireName: "certificate_mode"},
-		"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"EventId": ubx.FieldSpec{WireName: "event_id"},
-		"EventIdMode": ubx.FieldSpec{WireName: "event_id_mode"},
-		"EventStopBehavior": ubx.FieldSpec{WireName: "event_stop_behavior"},
-		"FilecacheDuration": ubx.FieldSpec{WireName: "filecache_duration"},
-		"FragmentLength": ubx.FieldSpec{WireName: "fragment_length"},
-		"InputLossAction": ubx.FieldSpec{WireName: "input_loss_action"},
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-		"RestartDelay": ubx.FieldSpec{WireName: "restart_delay"},
-		"SegmentationMode": ubx.FieldSpec{WireName: "segmentation_mode"},
-		"SendDelayMs": ubx.FieldSpec{WireName: "send_delay_ms"},
-		"SparseTrackType": ubx.FieldSpec{WireName: "sparse_track_type"},
-		"StreamManifestBehavior": ubx.FieldSpec{WireName: "stream_manifest_behavior"},
-		"TimestampOffset": ubx.FieldSpec{WireName: "timestamp_offset"},
-		"TimestampOffsetMode": ubx.FieldSpec{WireName: "timestamp_offset_mode"},
-	}
+	"AcquisitionPointId":       ubx.FieldSpec{WireName: "acquisition_point_id"},
+	"AudioOnlyTimecodeControl": ubx.FieldSpec{WireName: "audio_only_timecode_control"},
+	"CertificateMode":          ubx.FieldSpec{WireName: "certificate_mode"},
+	"ConnectionRetryInterval":  ubx.FieldSpec{WireName: "connection_retry_interval"},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"EventId":                ubx.FieldSpec{WireName: "event_id"},
+	"EventIdMode":            ubx.FieldSpec{WireName: "event_id_mode"},
+	"EventStopBehavior":      ubx.FieldSpec{WireName: "event_stop_behavior"},
+	"FilecacheDuration":      ubx.FieldSpec{WireName: "filecache_duration"},
+	"FragmentLength":         ubx.FieldSpec{WireName: "fragment_length"},
+	"InputLossAction":        ubx.FieldSpec{WireName: "input_loss_action"},
+	"NumRetries":             ubx.FieldSpec{WireName: "num_retries"},
+	"RestartDelay":           ubx.FieldSpec{WireName: "restart_delay"},
+	"SegmentationMode":       ubx.FieldSpec{WireName: "segmentation_mode"},
+	"SendDelayMs":            ubx.FieldSpec{WireName: "send_delay_ms"},
+	"SparseTrackType":        ubx.FieldSpec{WireName: "sparse_track_type"},
+	"StreamManifestBehavior": ubx.FieldSpec{WireName: "stream_manifest_behavior"},
+	"TimestampOffset":        ubx.FieldSpec{WireName: "timestamp_offset"},
+	"TimestampOffsetMode":    ubx.FieldSpec{WireName: "timestamp_offset_mode"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_RtmpGroupSettingsFields = ubx.FieldMap{
-		"AdMarkers": ubx.FieldSpec{WireName: "ad_markers"},
-		"AuthenticationScheme": ubx.FieldSpec{WireName: "authentication_scheme"},
-		"CacheFullBehavior": ubx.FieldSpec{WireName: "cache_full_behavior"},
-		"CacheLength": ubx.FieldSpec{WireName: "cache_length"},
-		"CaptionData": ubx.FieldSpec{WireName: "caption_data"},
-		"IncludeFillerNalUnits": ubx.FieldSpec{WireName: "include_filler_nal_units"},
-		"InputLossAction": ubx.FieldSpec{WireName: "input_loss_action"},
-		"RestartDelay": ubx.FieldSpec{WireName: "restart_delay"},
-	}
+	"AdMarkers":             ubx.FieldSpec{WireName: "ad_markers"},
+	"AuthenticationScheme":  ubx.FieldSpec{WireName: "authentication_scheme"},
+	"CacheFullBehavior":     ubx.FieldSpec{WireName: "cache_full_behavior"},
+	"CacheLength":           ubx.FieldSpec{WireName: "cache_length"},
+	"CaptionData":           ubx.FieldSpec{WireName: "caption_data"},
+	"IncludeFillerNalUnits": ubx.FieldSpec{WireName: "include_filler_nal_units"},
+	"InputLossAction":       ubx.FieldSpec{WireName: "input_loss_action"},
+	"RestartDelay":          ubx.FieldSpec{WireName: "restart_delay"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_SrtGroupSettingsFields = ubx.FieldMap{
-		"InputLossAction": ubx.FieldSpec{WireName: "input_loss_action"},
-	}
+	"InputLossAction": ubx.FieldSpec{WireName: "input_loss_action"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettings_UdpGroupSettingsFields = ubx.FieldMap{
-		"InputLossAction": ubx.FieldSpec{WireName: "input_loss_action"},
-		"TimedMetadataId3Frame": ubx.FieldSpec{WireName: "timed_metadata_id3_frame"},
-		"TimedMetadataId3Period": ubx.FieldSpec{WireName: "timed_metadata_id3_period"},
-	}
+	"InputLossAction":        ubx.FieldSpec{WireName: "input_loss_action"},
+	"TimedMetadataId3Frame":  ubx.FieldSpec{WireName: "timed_metadata_id3_frame"},
+	"TimedMetadataId3Period": ubx.FieldSpec{WireName: "timed_metadata_id3_period"},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputGroupSettingsFields = ubx.FieldMap{
-		"ArchiveGroupSettings": ubx.FieldSpec{
-			WireName: "archive_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettingsFields,
-		},
-		"CmafIngestGroupSettings": ubx.FieldSpec{
-			WireName: "cmaf_ingest_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettingsFields,
-		},
-		"FrameCaptureGroupSettings": ubx.FieldSpec{
-			WireName: "frame_capture_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_FrameCaptureGroupSettingsFields,
-		},
-		"HlsGroupSettings": ubx.FieldSpec{
-			WireName: "hls_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettingsFields,
-		},
-		"MediaConnectRouterGroupSettings": ubx.FieldSpec{
-			WireName: "media_connect_router_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaConnectRouterGroupSettingsFields,
-		},
-		"MediaPackageGroupSettings": ubx.FieldSpec{
-			WireName: "media_package_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaPackageGroupSettingsFields,
-		},
-		"MsSmoothGroupSettings": ubx.FieldSpec{
-			WireName: "ms_smooth_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MsSmoothGroupSettingsFields,
-		},
-		"MultiplexGroupSettings": ubx.FieldSpec{WireName: "multiplex_group_settings"},
-		"RtmpGroupSettings": ubx.FieldSpec{
-			WireName: "rtmp_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_RtmpGroupSettingsFields,
-		},
-		"SrtGroupSettings": ubx.FieldSpec{
-			WireName: "srt_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_SrtGroupSettingsFields,
-		},
-		"UdpGroupSettings": ubx.FieldSpec{
-			WireName: "udp_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_UdpGroupSettingsFields,
-		},
-	}
+	"ArchiveGroupSettings": ubx.FieldSpec{
+		WireName: "archive_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettingsFields,
+	},
+	"CmafIngestGroupSettings": ubx.FieldSpec{
+		WireName: "cmaf_ingest_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettingsFields,
+	},
+	"FrameCaptureGroupSettings": ubx.FieldSpec{
+		WireName: "frame_capture_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_FrameCaptureGroupSettingsFields,
+	},
+	"HlsGroupSettings": ubx.FieldSpec{
+		WireName: "hls_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettingsFields,
+	},
+	"MediaConnectRouterGroupSettings": ubx.FieldSpec{
+		WireName: "media_connect_router_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaConnectRouterGroupSettingsFields,
+	},
+	"MediaPackageGroupSettings": ubx.FieldSpec{
+		WireName: "media_package_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaPackageGroupSettingsFields,
+	},
+	"MsSmoothGroupSettings": ubx.FieldSpec{
+		WireName: "ms_smooth_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_MsSmoothGroupSettingsFields,
+	},
+	"MultiplexGroupSettings": ubx.FieldSpec{WireName: "multiplex_group_settings"},
+	"RtmpGroupSettings": ubx.FieldSpec{
+		WireName: "rtmp_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_RtmpGroupSettingsFields,
+	},
+	"SrtGroupSettings": ubx.FieldSpec{
+		WireName: "srt_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_SrtGroupSettingsFields,
+	},
+	"UdpGroupSettings": ubx.FieldSpec{
+		WireName: "udp_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_UdpGroupSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbNitSettingsFields = ubx.FieldMap{
-		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
-		"NetworkName": ubx.FieldSpec{WireName: "network_name"},
-		"RepInterval": ubx.FieldSpec{WireName: "rep_interval"},
-	}
+	"NetworkId":   ubx.FieldSpec{WireName: "network_id"},
+	"NetworkName": ubx.FieldSpec{WireName: "network_name"},
+	"RepInterval": ubx.FieldSpec{WireName: "rep_interval"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbSdtSettingsFields = ubx.FieldMap{
-		"OutputSdt": ubx.FieldSpec{WireName: "output_sdt"},
-		"RepInterval": ubx.FieldSpec{WireName: "rep_interval"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceProviderName": ubx.FieldSpec{WireName: "service_provider_name"},
-	}
+	"OutputSdt":           ubx.FieldSpec{WireName: "output_sdt"},
+	"RepInterval":         ubx.FieldSpec{WireName: "rep_interval"},
+	"ServiceName":         ubx.FieldSpec{WireName: "service_name"},
+	"ServiceProviderName": ubx.FieldSpec{WireName: "service_provider_name"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbTdtSettingsFields = ubx.FieldMap{
-		"RepInterval": ubx.FieldSpec{WireName: "rep_interval"},
-	}
+	"RepInterval": ubx.FieldSpec{WireName: "rep_interval"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettingsFields = ubx.FieldMap{
-		"AbsentInputAudioBehavior": ubx.FieldSpec{WireName: "absent_input_audio_behavior"},
-		"Arib": ubx.FieldSpec{WireName: "arib"},
-		"AribCaptionsPid": ubx.FieldSpec{WireName: "arib_captions_pid"},
-		"AribCaptionsPidControl": ubx.FieldSpec{WireName: "arib_captions_pid_control"},
-		"AudioBufferModel": ubx.FieldSpec{WireName: "audio_buffer_model"},
-		"AudioFramesPerPes": ubx.FieldSpec{WireName: "audio_frames_per_pes"},
-		"AudioPids": ubx.FieldSpec{WireName: "audio_pids"},
-		"AudioStreamType": ubx.FieldSpec{WireName: "audio_stream_type"},
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"BufferModel": ubx.FieldSpec{WireName: "buffer_model"},
-		"CcDescriptor": ubx.FieldSpec{WireName: "cc_descriptor"},
-		"DvbNitSettings": ubx.FieldSpec{
-			WireName: "dvb_nit_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbNitSettingsFields,
-		},
-		"DvbSdtSettings": ubx.FieldSpec{
-			WireName: "dvb_sdt_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbSdtSettingsFields,
-		},
-		"DvbSubPids": ubx.FieldSpec{WireName: "dvb_sub_pids"},
-		"DvbTdtSettings": ubx.FieldSpec{
-			WireName: "dvb_tdt_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbTdtSettingsFields,
-		},
-		"DvbTeletextPid": ubx.FieldSpec{WireName: "dvb_teletext_pid"},
-		"Ebif": ubx.FieldSpec{WireName: "ebif"},
-		"EbpAudioInterval": ubx.FieldSpec{WireName: "ebp_audio_interval"},
-		"EbpLookaheadMs": ubx.FieldSpec{WireName: "ebp_lookahead_ms"},
-		"EbpPlacement": ubx.FieldSpec{WireName: "ebp_placement"},
-		"EcmPid": ubx.FieldSpec{WireName: "ecm_pid"},
-		"EsRateInPes": ubx.FieldSpec{WireName: "es_rate_in_pes"},
-		"EtvPlatformPid": ubx.FieldSpec{WireName: "etv_platform_pid"},
-		"EtvSignalPid": ubx.FieldSpec{WireName: "etv_signal_pid"},
-		"FragmentTime": ubx.FieldSpec{WireName: "fragment_time"},
-		"Klv": ubx.FieldSpec{WireName: "klv"},
-		"KlvDataPids": ubx.FieldSpec{WireName: "klv_data_pids"},
-		"NielsenId3Behavior": ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
-		"NullPacketBitrate": ubx.FieldSpec{WireName: "null_packet_bitrate"},
-		"PatInterval": ubx.FieldSpec{WireName: "pat_interval"},
-		"PcrControl": ubx.FieldSpec{WireName: "pcr_control"},
-		"PcrPeriod": ubx.FieldSpec{WireName: "pcr_period"},
-		"PcrPid": ubx.FieldSpec{WireName: "pcr_pid"},
-		"PmtInterval": ubx.FieldSpec{WireName: "pmt_interval"},
-		"PmtPid": ubx.FieldSpec{WireName: "pmt_pid"},
-		"ProgramNum": ubx.FieldSpec{WireName: "program_num"},
-		"RateMode": ubx.FieldSpec{WireName: "rate_mode"},
-		"Scte27Pids": ubx.FieldSpec{WireName: "scte27_pids"},
-		"Scte35Control": ubx.FieldSpec{WireName: "scte35_control"},
-		"Scte35Pid": ubx.FieldSpec{WireName: "scte35_pid"},
-		"Scte35PrerollPullupMilliseconds": ubx.FieldSpec{WireName: "scte35_preroll_pullup_milliseconds"},
-		"SegmentationMarkers": ubx.FieldSpec{WireName: "segmentation_markers"},
-		"SegmentationStyle": ubx.FieldSpec{WireName: "segmentation_style"},
-		"SegmentationTime": ubx.FieldSpec{WireName: "segmentation_time"},
-		"TimedMetadataBehavior": ubx.FieldSpec{WireName: "timed_metadata_behavior"},
-		"TimedMetadataPid": ubx.FieldSpec{WireName: "timed_metadata_pid"},
-		"TransportStreamId": ubx.FieldSpec{WireName: "transport_stream_id"},
-		"VideoPid": ubx.FieldSpec{WireName: "video_pid"},
-	}
+	"AbsentInputAudioBehavior": ubx.FieldSpec{WireName: "absent_input_audio_behavior"},
+	"Arib":                     ubx.FieldSpec{WireName: "arib"},
+	"AribCaptionsPid":          ubx.FieldSpec{WireName: "arib_captions_pid"},
+	"AribCaptionsPidControl":   ubx.FieldSpec{WireName: "arib_captions_pid_control"},
+	"AudioBufferModel":         ubx.FieldSpec{WireName: "audio_buffer_model"},
+	"AudioFramesPerPes":        ubx.FieldSpec{WireName: "audio_frames_per_pes"},
+	"AudioPids":                ubx.FieldSpec{WireName: "audio_pids"},
+	"AudioStreamType":          ubx.FieldSpec{WireName: "audio_stream_type"},
+	"Bitrate":                  ubx.FieldSpec{WireName: "bitrate"},
+	"BufferModel":              ubx.FieldSpec{WireName: "buffer_model"},
+	"CcDescriptor":             ubx.FieldSpec{WireName: "cc_descriptor"},
+	"DvbNitSettings": ubx.FieldSpec{
+		WireName: "dvb_nit_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbNitSettingsFields,
+	},
+	"DvbSdtSettings": ubx.FieldSpec{
+		WireName: "dvb_sdt_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbSdtSettingsFields,
+	},
+	"DvbSubPids": ubx.FieldSpec{WireName: "dvb_sub_pids"},
+	"DvbTdtSettings": ubx.FieldSpec{
+		WireName: "dvb_tdt_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbTdtSettingsFields,
+	},
+	"DvbTeletextPid":                  ubx.FieldSpec{WireName: "dvb_teletext_pid"},
+	"Ebif":                            ubx.FieldSpec{WireName: "ebif"},
+	"EbpAudioInterval":                ubx.FieldSpec{WireName: "ebp_audio_interval"},
+	"EbpLookaheadMs":                  ubx.FieldSpec{WireName: "ebp_lookahead_ms"},
+	"EbpPlacement":                    ubx.FieldSpec{WireName: "ebp_placement"},
+	"EcmPid":                          ubx.FieldSpec{WireName: "ecm_pid"},
+	"EsRateInPes":                     ubx.FieldSpec{WireName: "es_rate_in_pes"},
+	"EtvPlatformPid":                  ubx.FieldSpec{WireName: "etv_platform_pid"},
+	"EtvSignalPid":                    ubx.FieldSpec{WireName: "etv_signal_pid"},
+	"FragmentTime":                    ubx.FieldSpec{WireName: "fragment_time"},
+	"Klv":                             ubx.FieldSpec{WireName: "klv"},
+	"KlvDataPids":                     ubx.FieldSpec{WireName: "klv_data_pids"},
+	"NielsenId3Behavior":              ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
+	"NullPacketBitrate":               ubx.FieldSpec{WireName: "null_packet_bitrate"},
+	"PatInterval":                     ubx.FieldSpec{WireName: "pat_interval"},
+	"PcrControl":                      ubx.FieldSpec{WireName: "pcr_control"},
+	"PcrPeriod":                       ubx.FieldSpec{WireName: "pcr_period"},
+	"PcrPid":                          ubx.FieldSpec{WireName: "pcr_pid"},
+	"PmtInterval":                     ubx.FieldSpec{WireName: "pmt_interval"},
+	"PmtPid":                          ubx.FieldSpec{WireName: "pmt_pid"},
+	"ProgramNum":                      ubx.FieldSpec{WireName: "program_num"},
+	"RateMode":                        ubx.FieldSpec{WireName: "rate_mode"},
+	"Scte27Pids":                      ubx.FieldSpec{WireName: "scte27_pids"},
+	"Scte35Control":                   ubx.FieldSpec{WireName: "scte35_control"},
+	"Scte35Pid":                       ubx.FieldSpec{WireName: "scte35_pid"},
+	"Scte35PrerollPullupMilliseconds": ubx.FieldSpec{WireName: "scte35_preroll_pullup_milliseconds"},
+	"SegmentationMarkers":             ubx.FieldSpec{WireName: "segmentation_markers"},
+	"SegmentationStyle":               ubx.FieldSpec{WireName: "segmentation_style"},
+	"SegmentationTime":                ubx.FieldSpec{WireName: "segmentation_time"},
+	"TimedMetadataBehavior":           ubx.FieldSpec{WireName: "timed_metadata_behavior"},
+	"TimedMetadataPid":                ubx.FieldSpec{WireName: "timed_metadata_pid"},
+	"TransportStreamId":               ubx.FieldSpec{WireName: "transport_stream_id"},
+	"VideoPid":                        ubx.FieldSpec{WireName: "video_pid"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettingsFields = ubx.FieldMap{
-		"M2tsSettings": ubx.FieldSpec{
-			WireName: "m2ts_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettingsFields,
-		},
-		"RawSettings": ubx.FieldSpec{WireName: "raw_settings"},
-	}
+	"M2tsSettings": ubx.FieldSpec{
+		WireName: "m2ts_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettingsFields,
+	},
+	"RawSettings": ubx.FieldSpec{WireName: "raw_settings"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettingsFields = ubx.FieldMap{
-		"ContainerSettings": ubx.FieldSpec{
-			WireName: "container_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettingsFields,
-		},
-		"Extension": ubx.FieldSpec{WireName: "extension"},
-		"NameModifier": ubx.FieldSpec{WireName: "name_modifier"},
-	}
+	"ContainerSettings": ubx.FieldSpec{
+		WireName: "container_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettingsFields,
+	},
+	"Extension":    ubx.FieldSpec{WireName: "extension"},
+	"NameModifier": ubx.FieldSpec{WireName: "name_modifier"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_CmafIngestOutputSettingsFields = ubx.FieldMap{
-		"NameModifier": ubx.FieldSpec{WireName: "name_modifier"},
-	}
+	"NameModifier": ubx.FieldSpec{WireName: "name_modifier"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_AudioOnlyHlsSettingsFields = ubx.FieldMap{
-		"AudioGroupId": ubx.FieldSpec{WireName: "audio_group_id"},
-		"AudioOnlyImage": ubx.FieldSpec{
-			WireName: "audio_only_image",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
-		},
-		"AudioTrackType": ubx.FieldSpec{WireName: "audio_track_type"},
-		"SegmentType": ubx.FieldSpec{WireName: "segment_type"},
-	}
+	"AudioGroupId": ubx.FieldSpec{WireName: "audio_group_id"},
+	"AudioOnlyImage": ubx.FieldSpec{
+		WireName: "audio_only_image",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailBlanking_AvailBlankingImageFields,
+	},
+	"AudioTrackType": ubx.FieldSpec{WireName: "audio_track_type"},
+	"SegmentType":    ubx.FieldSpec{WireName: "segment_type"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_Fmp4HlsSettingsFields = ubx.FieldMap{
-		"AudioRenditionSets": ubx.FieldSpec{WireName: "audio_rendition_sets"},
-		"NielsenId3Behavior": ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
-		"TimedMetadataBehavior": ubx.FieldSpec{WireName: "timed_metadata_behavior"},
-	}
+	"AudioRenditionSets":    ubx.FieldSpec{WireName: "audio_rendition_sets"},
+	"NielsenId3Behavior":    ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
+	"TimedMetadataBehavior": ubx.FieldSpec{WireName: "timed_metadata_behavior"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_StandardHlsSettings_M3u8SettingsFields = ubx.FieldMap{
-		"AudioFramesPerPes": ubx.FieldSpec{WireName: "audio_frames_per_pes"},
-		"AudioPids": ubx.FieldSpec{WireName: "audio_pids"},
-		"EcmPid": ubx.FieldSpec{WireName: "ecm_pid"},
-		"KlvBehavior": ubx.FieldSpec{WireName: "klv_behavior"},
-		"KlvDataPids": ubx.FieldSpec{WireName: "klv_data_pids"},
-		"NielsenId3Behavior": ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
-		"PatInterval": ubx.FieldSpec{WireName: "pat_interval"},
-		"PcrControl": ubx.FieldSpec{WireName: "pcr_control"},
-		"PcrPeriod": ubx.FieldSpec{WireName: "pcr_period"},
-		"PcrPid": ubx.FieldSpec{WireName: "pcr_pid"},
-		"PmtInterval": ubx.FieldSpec{WireName: "pmt_interval"},
-		"PmtPid": ubx.FieldSpec{WireName: "pmt_pid"},
-		"ProgramNum": ubx.FieldSpec{WireName: "program_num"},
-		"Scte35Behavior": ubx.FieldSpec{WireName: "scte35_behavior"},
-		"Scte35Pid": ubx.FieldSpec{WireName: "scte35_pid"},
-		"TimedMetadataBehavior": ubx.FieldSpec{WireName: "timed_metadata_behavior"},
-		"TimedMetadataPid": ubx.FieldSpec{WireName: "timed_metadata_pid"},
-		"TransportStreamId": ubx.FieldSpec{WireName: "transport_stream_id"},
-		"VideoPid": ubx.FieldSpec{WireName: "video_pid"},
-	}
+	"AudioFramesPerPes":     ubx.FieldSpec{WireName: "audio_frames_per_pes"},
+	"AudioPids":             ubx.FieldSpec{WireName: "audio_pids"},
+	"EcmPid":                ubx.FieldSpec{WireName: "ecm_pid"},
+	"KlvBehavior":           ubx.FieldSpec{WireName: "klv_behavior"},
+	"KlvDataPids":           ubx.FieldSpec{WireName: "klv_data_pids"},
+	"NielsenId3Behavior":    ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
+	"PatInterval":           ubx.FieldSpec{WireName: "pat_interval"},
+	"PcrControl":            ubx.FieldSpec{WireName: "pcr_control"},
+	"PcrPeriod":             ubx.FieldSpec{WireName: "pcr_period"},
+	"PcrPid":                ubx.FieldSpec{WireName: "pcr_pid"},
+	"PmtInterval":           ubx.FieldSpec{WireName: "pmt_interval"},
+	"PmtPid":                ubx.FieldSpec{WireName: "pmt_pid"},
+	"ProgramNum":            ubx.FieldSpec{WireName: "program_num"},
+	"Scte35Behavior":        ubx.FieldSpec{WireName: "scte35_behavior"},
+	"Scte35Pid":             ubx.FieldSpec{WireName: "scte35_pid"},
+	"TimedMetadataBehavior": ubx.FieldSpec{WireName: "timed_metadata_behavior"},
+	"TimedMetadataPid":      ubx.FieldSpec{WireName: "timed_metadata_pid"},
+	"TransportStreamId":     ubx.FieldSpec{WireName: "transport_stream_id"},
+	"VideoPid":              ubx.FieldSpec{WireName: "video_pid"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_StandardHlsSettingsFields = ubx.FieldMap{
-		"AudioRenditionSets": ubx.FieldSpec{WireName: "audio_rendition_sets"},
-		"M3u8Settings": ubx.FieldSpec{
-			WireName: "m3u8_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_StandardHlsSettings_M3u8SettingsFields,
-		},
-	}
+	"AudioRenditionSets": ubx.FieldSpec{WireName: "audio_rendition_sets"},
+	"M3u8Settings": ubx.FieldSpec{
+		WireName: "m3u8_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_StandardHlsSettings_M3u8SettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettingsFields = ubx.FieldMap{
-		"AudioOnlyHlsSettings": ubx.FieldSpec{
-			WireName: "audio_only_hls_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_AudioOnlyHlsSettingsFields,
-		},
-		"Fmp4HlsSettings": ubx.FieldSpec{
-			WireName: "fmp4_hls_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_Fmp4HlsSettingsFields,
-		},
-		"FrameCaptureHlsSettings": ubx.FieldSpec{WireName: "frame_capture_hls_settings"},
-		"StandardHlsSettings": ubx.FieldSpec{
-			WireName: "standard_hls_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_StandardHlsSettingsFields,
-		},
-	}
+	"AudioOnlyHlsSettings": ubx.FieldSpec{
+		WireName: "audio_only_hls_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_AudioOnlyHlsSettingsFields,
+	},
+	"Fmp4HlsSettings": ubx.FieldSpec{
+		WireName: "fmp4_hls_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_Fmp4HlsSettingsFields,
+	},
+	"FrameCaptureHlsSettings": ubx.FieldSpec{WireName: "frame_capture_hls_settings"},
+	"StandardHlsSettings": ubx.FieldSpec{
+		WireName: "standard_hls_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_StandardHlsSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettingsFields = ubx.FieldMap{
-		"H265PackagingType": ubx.FieldSpec{WireName: "h265_packaging_type"},
-		"HlsSettings": ubx.FieldSpec{
-			WireName: "hls_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettingsFields,
-		},
-		"NameModifier": ubx.FieldSpec{WireName: "name_modifier"},
-		"SegmentModifier": ubx.FieldSpec{WireName: "segment_modifier"},
-	}
+	"H265PackagingType": ubx.FieldSpec{WireName: "h265_packaging_type"},
+	"HlsSettings": ubx.FieldSpec{
+		WireName: "hls_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettingsFields,
+	},
+	"NameModifier":    ubx.FieldSpec{WireName: "name_modifier"},
+	"SegmentModifier": ubx.FieldSpec{WireName: "segment_modifier"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ConnectedRouterInputsFields = ubx.FieldMap{
-		"Pipeline0": ubx.FieldSpec{WireName: "pipeline0"},
-		"Pipeline1": ubx.FieldSpec{WireName: "pipeline1"},
-	}
+	"Pipeline0": ubx.FieldSpec{WireName: "pipeline0"},
+	"Pipeline1": ubx.FieldSpec{WireName: "pipeline1"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ContainerSettingsFields = ubx.FieldMap{
-		"M2tsSettings": ubx.FieldSpec{
-			WireName: "m2ts_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettingsFields,
-		},
-	}
+	"M2tsSettings": ubx.FieldSpec{
+		WireName: "m2ts_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettingsFields = ubx.FieldMap{
-		"ConnectedRouterInputs": ubx.FieldSpec{
-			WireName: "connected_router_inputs",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ConnectedRouterInputsFields,
-		},
-		"ContainerSettings": ubx.FieldSpec{
-			WireName: "container_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ContainerSettingsFields,
-		},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-	}
+	"ConnectedRouterInputs": ubx.FieldSpec{
+		WireName: "connected_router_inputs",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ConnectedRouterInputsFields,
+	},
+	"ContainerSettings": ubx.FieldSpec{
+		WireName: "container_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ContainerSettingsFields,
+	},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettings_MediaPackageV2DestinationSettingsFields = ubx.FieldMap{
-		"AudioGroupId": ubx.FieldSpec{WireName: "audio_group_id"},
-		"AudioRenditionSets": ubx.FieldSpec{WireName: "audio_rendition_sets"},
-		"HlsAutoSelect": ubx.FieldSpec{WireName: "hls_auto_select"},
-		"HlsDefault": ubx.FieldSpec{WireName: "hls_default"},
-	}
+	"AudioGroupId":       ubx.FieldSpec{WireName: "audio_group_id"},
+	"AudioRenditionSets": ubx.FieldSpec{WireName: "audio_rendition_sets"},
+	"HlsAutoSelect":      ubx.FieldSpec{WireName: "hls_auto_select"},
+	"HlsDefault":         ubx.FieldSpec{WireName: "hls_default"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettingsFields = ubx.FieldMap{
-		"MediaPackageV2DestinationSettings": ubx.FieldSpec{
-			WireName: "media_package_v2_destination_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettings_MediaPackageV2DestinationSettingsFields,
-		},
-	}
+	"MediaPackageV2DestinationSettings": ubx.FieldSpec{
+		WireName: "media_package_v2_destination_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettings_MediaPackageV2DestinationSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MsSmoothOutputSettingsFields = ubx.FieldMap{
-		"H265PackagingType": ubx.FieldSpec{WireName: "h265_packaging_type"},
-		"NameModifier": ubx.FieldSpec{WireName: "name_modifier"},
-	}
+	"H265PackagingType": ubx.FieldSpec{WireName: "h265_packaging_type"},
+	"NameModifier":      ubx.FieldSpec{WireName: "name_modifier"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettings_MultiplexM2tsSettingsFields = ubx.FieldMap{
-		"AbsentInputAudioBehavior": ubx.FieldSpec{WireName: "absent_input_audio_behavior"},
-		"Arib": ubx.FieldSpec{WireName: "arib"},
-		"AudioBufferModel": ubx.FieldSpec{WireName: "audio_buffer_model"},
-		"AudioFramesPerPes": ubx.FieldSpec{WireName: "audio_frames_per_pes"},
-		"AudioStreamType": ubx.FieldSpec{WireName: "audio_stream_type"},
-		"CcDescriptor": ubx.FieldSpec{WireName: "cc_descriptor"},
-		"Ebif": ubx.FieldSpec{WireName: "ebif"},
-		"EsRateInPes": ubx.FieldSpec{WireName: "es_rate_in_pes"},
-		"Klv": ubx.FieldSpec{WireName: "klv"},
-		"NielsenId3Behavior": ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
-		"PcrControl": ubx.FieldSpec{WireName: "pcr_control"},
-		"PcrPeriod": ubx.FieldSpec{WireName: "pcr_period"},
-		"Scte35Control": ubx.FieldSpec{WireName: "scte35_control"},
-		"Scte35PrerollPullupMilliseconds": ubx.FieldSpec{WireName: "scte35_preroll_pullup_milliseconds"},
-	}
+	"AbsentInputAudioBehavior":        ubx.FieldSpec{WireName: "absent_input_audio_behavior"},
+	"Arib":                            ubx.FieldSpec{WireName: "arib"},
+	"AudioBufferModel":                ubx.FieldSpec{WireName: "audio_buffer_model"},
+	"AudioFramesPerPes":               ubx.FieldSpec{WireName: "audio_frames_per_pes"},
+	"AudioStreamType":                 ubx.FieldSpec{WireName: "audio_stream_type"},
+	"CcDescriptor":                    ubx.FieldSpec{WireName: "cc_descriptor"},
+	"Ebif":                            ubx.FieldSpec{WireName: "ebif"},
+	"EsRateInPes":                     ubx.FieldSpec{WireName: "es_rate_in_pes"},
+	"Klv":                             ubx.FieldSpec{WireName: "klv"},
+	"NielsenId3Behavior":              ubx.FieldSpec{WireName: "nielsen_id3_behavior"},
+	"PcrControl":                      ubx.FieldSpec{WireName: "pcr_control"},
+	"PcrPeriod":                       ubx.FieldSpec{WireName: "pcr_period"},
+	"Scte35Control":                   ubx.FieldSpec{WireName: "scte35_control"},
+	"Scte35PrerollPullupMilliseconds": ubx.FieldSpec{WireName: "scte35_preroll_pullup_milliseconds"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettingsFields = ubx.FieldMap{
-		"MultiplexM2tsSettings": ubx.FieldSpec{
-			WireName: "multiplex_m2ts_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettings_MultiplexM2tsSettingsFields,
-		},
-	}
+	"MultiplexM2tsSettings": ubx.FieldSpec{
+		WireName: "multiplex_m2ts_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettings_MultiplexM2tsSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettingsFields = ubx.FieldMap{
-		"ContainerSettings": ubx.FieldSpec{
-			WireName: "container_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettingsFields,
-		},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-	}
+	"ContainerSettings": ubx.FieldSpec{
+		WireName: "container_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettingsFields,
+	},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_RtmpOutputSettingsFields = ubx.FieldMap{
-		"CertificateMode": ubx.FieldSpec{WireName: "certificate_mode"},
-		"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-	}
+	"CertificateMode":         ubx.FieldSpec{WireName: "certificate_mode"},
+	"ConnectionRetryInterval": ubx.FieldSpec{WireName: "connection_retry_interval"},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_SrtOutputSettingsFields = ubx.FieldMap{
-		"BufferMsec": ubx.FieldSpec{WireName: "buffer_msec"},
-		"ContainerSettings": ubx.FieldSpec{
-			WireName: "container_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ContainerSettingsFields,
-		},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"Latency": ubx.FieldSpec{WireName: "latency"},
-	}
+	"BufferMsec": ubx.FieldSpec{WireName: "buffer_msec"},
+	"ContainerSettings": ubx.FieldSpec{
+		WireName: "container_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ContainerSettingsFields,
+	},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"Latency":        ubx.FieldSpec{WireName: "latency"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_UdpOutputSettings_FecOutputSettingsFields = ubx.FieldMap{
-		"ColumnDepth": ubx.FieldSpec{WireName: "column_depth"},
-		"IncludeFec": ubx.FieldSpec{WireName: "include_fec"},
-		"RowLength": ubx.FieldSpec{WireName: "row_length"},
-	}
+	"ColumnDepth": ubx.FieldSpec{WireName: "column_depth"},
+	"IncludeFec":  ubx.FieldSpec{WireName: "include_fec"},
+	"RowLength":   ubx.FieldSpec{WireName: "row_length"},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_UdpOutputSettingsFields = ubx.FieldMap{
-		"BufferMsec": ubx.FieldSpec{WireName: "buffer_msec"},
-		"ContainerSettings": ubx.FieldSpec{
-			WireName: "container_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ContainerSettingsFields,
-		},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
-		},
-		"FecOutputSettings": ubx.FieldSpec{
-			WireName: "fec_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_UdpOutputSettings_FecOutputSettingsFields,
-		},
-	}
+	"BufferMsec": ubx.FieldSpec{WireName: "buffer_msec"},
+	"ContainerSettings": ubx.FieldSpec{
+		WireName: "container_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ContainerSettingsFields,
+	},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_DestinationFields,
+	},
+	"FecOutputSettings": ubx.FieldSpec{
+		WireName: "fec_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_UdpOutputSettings_FecOutputSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_Outputs_OutputSettingsFields = ubx.FieldMap{
-		"ArchiveOutputSettings": ubx.FieldSpec{
-			WireName: "archive_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettingsFields,
-		},
-		"CmafIngestOutputSettings": ubx.FieldSpec{
-			WireName: "cmaf_ingest_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_CmafIngestOutputSettingsFields,
-		},
-		"FrameCaptureOutputSettings": ubx.FieldSpec{
-			WireName: "frame_capture_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_CmafIngestOutputSettingsFields,
-		},
-		"HlsOutputSettings": ubx.FieldSpec{
-			WireName: "hls_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettingsFields,
-		},
-		"MediaConnectRouterOutputSettings": ubx.FieldSpec{
-			WireName: "media_connect_router_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettingsFields,
-		},
-		"MediaPackageOutputSettings": ubx.FieldSpec{
-			WireName: "media_package_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettingsFields,
-		},
-		"MsSmoothOutputSettings": ubx.FieldSpec{
-			WireName: "ms_smooth_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MsSmoothOutputSettingsFields,
-		},
-		"MultiplexOutputSettings": ubx.FieldSpec{
-			WireName: "multiplex_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettingsFields,
-		},
-		"RtmpOutputSettings": ubx.FieldSpec{
-			WireName: "rtmp_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_RtmpOutputSettingsFields,
-		},
-		"SrtOutputSettings": ubx.FieldSpec{
-			WireName: "srt_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_SrtOutputSettingsFields,
-		},
-		"UdpOutputSettings": ubx.FieldSpec{
-			WireName: "udp_output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_UdpOutputSettingsFields,
-		},
-	}
+	"ArchiveOutputSettings": ubx.FieldSpec{
+		WireName: "archive_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettingsFields,
+	},
+	"CmafIngestOutputSettings": ubx.FieldSpec{
+		WireName: "cmaf_ingest_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_CmafIngestOutputSettingsFields,
+	},
+	"FrameCaptureOutputSettings": ubx.FieldSpec{
+		WireName: "frame_capture_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_CmafIngestOutputSettingsFields,
+	},
+	"HlsOutputSettings": ubx.FieldSpec{
+		WireName: "hls_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettingsFields,
+	},
+	"MediaConnectRouterOutputSettings": ubx.FieldSpec{
+		WireName: "media_connect_router_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettingsFields,
+	},
+	"MediaPackageOutputSettings": ubx.FieldSpec{
+		WireName: "media_package_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettingsFields,
+	},
+	"MsSmoothOutputSettings": ubx.FieldSpec{
+		WireName: "ms_smooth_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MsSmoothOutputSettingsFields,
+	},
+	"MultiplexOutputSettings": ubx.FieldSpec{
+		WireName: "multiplex_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettingsFields,
+	},
+	"RtmpOutputSettings": ubx.FieldSpec{
+		WireName: "rtmp_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_RtmpOutputSettingsFields,
+	},
+	"SrtOutputSettings": ubx.FieldSpec{
+		WireName: "srt_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_SrtOutputSettingsFields,
+	},
+	"UdpOutputSettings": ubx.FieldSpec{
+		WireName: "udp_output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettings_UdpOutputSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_OutputGroups_OutputsFields = ubx.FieldMap{
-		"AudioDescriptionNames": ubx.FieldSpec{WireName: "audio_description_names"},
-		"CaptionDescriptionNames": ubx.FieldSpec{WireName: "caption_description_names"},
-		"OutputName": ubx.FieldSpec{WireName: "output_name"},
-		"OutputSettings": ubx.FieldSpec{
-			WireName: "output_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_Outputs_OutputSettingsFields,
-		},
-		"VideoDescriptionName": ubx.FieldSpec{WireName: "video_description_name"},
-	}
+	"AudioDescriptionNames":   ubx.FieldSpec{WireName: "audio_description_names"},
+	"CaptionDescriptionNames": ubx.FieldSpec{WireName: "caption_description_names"},
+	"OutputName":              ubx.FieldSpec{WireName: "output_name"},
+	"OutputSettings": ubx.FieldSpec{
+		WireName: "output_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_Outputs_OutputSettingsFields,
+	},
+	"VideoDescriptionName": ubx.FieldSpec{WireName: "video_description_name"},
+}
 
 var Channel_EncoderSettings_OutputGroupsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputGroupSettings": ubx.FieldSpec{
-			WireName: "output_group_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputGroupSettingsFields,
-		},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_OutputGroups_OutputsFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OutputGroupSettings": ubx.FieldSpec{
+		WireName: "output_group_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputGroupSettingsFields,
+	},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_OutputGroups_OutputsFields,
+	},
+}
 
 var Channel_EncoderSettings_ThumbnailConfigurationFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Channel_EncoderSettings_TimecodeConfigFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"SyncThreshold": ubx.FieldSpec{WireName: "sync_threshold"},
-	}
+	"Source":        ubx.FieldSpec{WireName: "source"},
+	"SyncThreshold": ubx.FieldSpec{WireName: "sync_threshold"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings_Hdr10SettingsFields = ubx.FieldMap{
-		"MaxCll": ubx.FieldSpec{WireName: "max_cll"},
-		"MaxFall": ubx.FieldSpec{WireName: "max_fall"},
-	}
+	"MaxCll":  ubx.FieldSpec{WireName: "max_cll"},
+	"MaxFall": ubx.FieldSpec{WireName: "max_fall"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettingsFields = ubx.FieldMap{
-		"ColorSpacePassthroughSettings": ubx.FieldSpec{WireName: "color_space_passthrough_settings"},
-		"Hdr10Settings": ubx.FieldSpec{
-			WireName: "hdr10_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings_Hdr10SettingsFields,
-		},
-		"Hlg2020Settings": ubx.FieldSpec{WireName: "hlg2020_settings"},
-		"Rec601Settings": ubx.FieldSpec{WireName: "rec601_settings"},
-		"Rec709Settings": ubx.FieldSpec{WireName: "rec709_settings"},
-	}
+	"ColorSpacePassthroughSettings": ubx.FieldSpec{WireName: "color_space_passthrough_settings"},
+	"Hdr10Settings": ubx.FieldSpec{
+		WireName: "hdr10_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings_Hdr10SettingsFields,
+	},
+	"Hlg2020Settings": ubx.FieldSpec{WireName: "hlg2020_settings"},
+	"Rec601Settings":  ubx.FieldSpec{WireName: "rec601_settings"},
+	"Rec709Settings":  ubx.FieldSpec{WireName: "rec709_settings"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields = ubx.FieldMap{
-		"FontSize": ubx.FieldSpec{WireName: "font_size"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"FontSize": ubx.FieldSpec{WireName: "font_size"},
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"Prefix":   ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1SettingsFields = ubx.FieldMap{
-		"AfdSignaling": ubx.FieldSpec{WireName: "afd_signaling"},
-		"BitDepth": ubx.FieldSpec{WireName: "bit_depth"},
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"BufSize": ubx.FieldSpec{WireName: "buf_size"},
-		"ColorSpaceSettings": ubx.FieldSpec{
-			WireName: "color_space_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettingsFields,
-		},
-		"FixedAfd": ubx.FieldSpec{WireName: "fixed_afd"},
-		"FramerateDenominator": ubx.FieldSpec{WireName: "framerate_denominator"},
-		"FramerateNumerator": ubx.FieldSpec{WireName: "framerate_numerator"},
-		"GopSize": ubx.FieldSpec{WireName: "gop_size"},
-		"GopSizeUnits": ubx.FieldSpec{WireName: "gop_size_units"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"LookAheadRateControl": ubx.FieldSpec{WireName: "look_ahead_rate_control"},
-		"MaxBitrate": ubx.FieldSpec{WireName: "max_bitrate"},
-		"MinBitrate": ubx.FieldSpec{WireName: "min_bitrate"},
-		"MinIinterval": ubx.FieldSpec{WireName: "min_iinterval"},
-		"ParDenominator": ubx.FieldSpec{WireName: "par_denominator"},
-		"ParNumerator": ubx.FieldSpec{WireName: "par_numerator"},
-		"QvbrQualityLevel": ubx.FieldSpec{WireName: "qvbr_quality_level"},
-		"RateControlMode": ubx.FieldSpec{WireName: "rate_control_mode"},
-		"SceneChangeDetect": ubx.FieldSpec{WireName: "scene_change_detect"},
-		"SpatialAq": ubx.FieldSpec{WireName: "spatial_aq"},
-		"TemporalAq": ubx.FieldSpec{WireName: "temporal_aq"},
-		"TimecodeBurninSettings": ubx.FieldSpec{
-			WireName: "timecode_burnin_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
-		},
-		"TimecodeInsertion": ubx.FieldSpec{WireName: "timecode_insertion"},
-	}
+	"AfdSignaling": ubx.FieldSpec{WireName: "afd_signaling"},
+	"BitDepth":     ubx.FieldSpec{WireName: "bit_depth"},
+	"Bitrate":      ubx.FieldSpec{WireName: "bitrate"},
+	"BufSize":      ubx.FieldSpec{WireName: "buf_size"},
+	"ColorSpaceSettings": ubx.FieldSpec{
+		WireName: "color_space_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettingsFields,
+	},
+	"FixedAfd":             ubx.FieldSpec{WireName: "fixed_afd"},
+	"FramerateDenominator": ubx.FieldSpec{WireName: "framerate_denominator"},
+	"FramerateNumerator":   ubx.FieldSpec{WireName: "framerate_numerator"},
+	"GopSize":              ubx.FieldSpec{WireName: "gop_size"},
+	"GopSizeUnits":         ubx.FieldSpec{WireName: "gop_size_units"},
+	"Level":                ubx.FieldSpec{WireName: "level"},
+	"LookAheadRateControl": ubx.FieldSpec{WireName: "look_ahead_rate_control"},
+	"MaxBitrate":           ubx.FieldSpec{WireName: "max_bitrate"},
+	"MinBitrate":           ubx.FieldSpec{WireName: "min_bitrate"},
+	"MinIinterval":         ubx.FieldSpec{WireName: "min_iinterval"},
+	"ParDenominator":       ubx.FieldSpec{WireName: "par_denominator"},
+	"ParNumerator":         ubx.FieldSpec{WireName: "par_numerator"},
+	"QvbrQualityLevel":     ubx.FieldSpec{WireName: "qvbr_quality_level"},
+	"RateControlMode":      ubx.FieldSpec{WireName: "rate_control_mode"},
+	"SceneChangeDetect":    ubx.FieldSpec{WireName: "scene_change_detect"},
+	"SpatialAq":            ubx.FieldSpec{WireName: "spatial_aq"},
+	"TemporalAq":           ubx.FieldSpec{WireName: "temporal_aq"},
+	"TimecodeBurninSettings": ubx.FieldSpec{
+		WireName: "timecode_burnin_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
+	},
+	"TimecodeInsertion": ubx.FieldSpec{WireName: "timecode_insertion"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_FrameCaptureSettingsFields = ubx.FieldMap{
-		"CaptureInterval": ubx.FieldSpec{WireName: "capture_interval"},
-		"CaptureIntervalUnits": ubx.FieldSpec{WireName: "capture_interval_units"},
-		"TimecodeBurninSettings": ubx.FieldSpec{
-			WireName: "timecode_burnin_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
-		},
-	}
+	"CaptureInterval":      ubx.FieldSpec{WireName: "capture_interval"},
+	"CaptureIntervalUnits": ubx.FieldSpec{WireName: "capture_interval_units"},
+	"TimecodeBurninSettings": ubx.FieldSpec{
+		WireName: "timecode_burnin_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_ColorSpaceSettingsFields = ubx.FieldMap{
-		"ColorSpacePassthroughSettings": ubx.FieldSpec{WireName: "color_space_passthrough_settings"},
-		"Rec601Settings": ubx.FieldSpec{WireName: "rec601_settings"},
-		"Rec709Settings": ubx.FieldSpec{WireName: "rec709_settings"},
-	}
+	"ColorSpacePassthroughSettings": ubx.FieldSpec{WireName: "color_space_passthrough_settings"},
+	"Rec601Settings":                ubx.FieldSpec{WireName: "rec601_settings"},
+	"Rec709Settings":                ubx.FieldSpec{WireName: "rec709_settings"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings_BandwidthReductionFilterSettingsFields = ubx.FieldMap{
-		"PostFilterSharpening": ubx.FieldSpec{WireName: "post_filter_sharpening"},
-		"Strength": ubx.FieldSpec{WireName: "strength"},
-	}
+	"PostFilterSharpening": ubx.FieldSpec{WireName: "post_filter_sharpening"},
+	"Strength":             ubx.FieldSpec{WireName: "strength"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettingsFields = ubx.FieldMap{
-		"BandwidthReductionFilterSettings": ubx.FieldSpec{
-			WireName: "bandwidth_reduction_filter_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings_BandwidthReductionFilterSettingsFields,
-		},
-		"TemporalFilterSettings": ubx.FieldSpec{
-			WireName: "temporal_filter_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings_BandwidthReductionFilterSettingsFields,
-		},
-	}
+	"BandwidthReductionFilterSettings": ubx.FieldSpec{
+		WireName: "bandwidth_reduction_filter_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings_BandwidthReductionFilterSettingsFields,
+	},
+	"TemporalFilterSettings": ubx.FieldSpec{
+		WireName: "temporal_filter_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings_BandwidthReductionFilterSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264SettingsFields = ubx.FieldMap{
-		"AdaptiveQuantization": ubx.FieldSpec{WireName: "adaptive_quantization"},
-		"AfdSignaling": ubx.FieldSpec{WireName: "afd_signaling"},
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"BufFillPct": ubx.FieldSpec{WireName: "buf_fill_pct"},
-		"BufSize": ubx.FieldSpec{WireName: "buf_size"},
-		"ColorMetadata": ubx.FieldSpec{WireName: "color_metadata"},
-		"ColorSpaceSettings": ubx.FieldSpec{
-			WireName: "color_space_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_ColorSpaceSettingsFields,
-		},
-		"EntropyEncoding": ubx.FieldSpec{WireName: "entropy_encoding"},
-		"FilterSettings": ubx.FieldSpec{
-			WireName: "filter_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettingsFields,
-		},
-		"FixedAfd": ubx.FieldSpec{WireName: "fixed_afd"},
-		"FlickerAq": ubx.FieldSpec{WireName: "flicker_aq"},
-		"ForceFieldPictures": ubx.FieldSpec{WireName: "force_field_pictures"},
-		"FramerateControl": ubx.FieldSpec{WireName: "framerate_control"},
-		"FramerateDenominator": ubx.FieldSpec{WireName: "framerate_denominator"},
-		"FramerateNumerator": ubx.FieldSpec{WireName: "framerate_numerator"},
-		"GopBreference": ubx.FieldSpec{WireName: "gop_breference"},
-		"GopClosedCadence": ubx.FieldSpec{WireName: "gop_closed_cadence"},
-		"GopNumBframes": ubx.FieldSpec{WireName: "gop_num_bframes"},
-		"GopSize": ubx.FieldSpec{WireName: "gop_size"},
-		"GopSizeUnits": ubx.FieldSpec{WireName: "gop_size_units"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"LookAheadRateControl": ubx.FieldSpec{WireName: "look_ahead_rate_control"},
-		"MaxBitrate": ubx.FieldSpec{WireName: "max_bitrate"},
-		"MinBitrate": ubx.FieldSpec{WireName: "min_bitrate"},
-		"MinIinterval": ubx.FieldSpec{WireName: "min_iinterval"},
-		"MinQp": ubx.FieldSpec{WireName: "min_qp"},
-		"NumRefFrames": ubx.FieldSpec{WireName: "num_ref_frames"},
-		"ParControl": ubx.FieldSpec{WireName: "par_control"},
-		"ParDenominator": ubx.FieldSpec{WireName: "par_denominator"},
-		"ParNumerator": ubx.FieldSpec{WireName: "par_numerator"},
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-		"QualityLevel": ubx.FieldSpec{WireName: "quality_level"},
-		"QvbrQualityLevel": ubx.FieldSpec{WireName: "qvbr_quality_level"},
-		"RateControlMode": ubx.FieldSpec{WireName: "rate_control_mode"},
-		"ScanType": ubx.FieldSpec{WireName: "scan_type"},
-		"SceneChangeDetect": ubx.FieldSpec{WireName: "scene_change_detect"},
-		"Slices": ubx.FieldSpec{WireName: "slices"},
-		"Softness": ubx.FieldSpec{WireName: "softness"},
-		"SpatialAq": ubx.FieldSpec{WireName: "spatial_aq"},
-		"SubgopLength": ubx.FieldSpec{WireName: "subgop_length"},
-		"Syntax": ubx.FieldSpec{WireName: "syntax"},
-		"TemporalAq": ubx.FieldSpec{WireName: "temporal_aq"},
-		"TimecodeBurninSettings": ubx.FieldSpec{
-			WireName: "timecode_burnin_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
-		},
-		"TimecodeInsertion": ubx.FieldSpec{WireName: "timecode_insertion"},
-	}
+	"AdaptiveQuantization": ubx.FieldSpec{WireName: "adaptive_quantization"},
+	"AfdSignaling":         ubx.FieldSpec{WireName: "afd_signaling"},
+	"Bitrate":              ubx.FieldSpec{WireName: "bitrate"},
+	"BufFillPct":           ubx.FieldSpec{WireName: "buf_fill_pct"},
+	"BufSize":              ubx.FieldSpec{WireName: "buf_size"},
+	"ColorMetadata":        ubx.FieldSpec{WireName: "color_metadata"},
+	"ColorSpaceSettings": ubx.FieldSpec{
+		WireName: "color_space_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_ColorSpaceSettingsFields,
+	},
+	"EntropyEncoding": ubx.FieldSpec{WireName: "entropy_encoding"},
+	"FilterSettings": ubx.FieldSpec{
+		WireName: "filter_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettingsFields,
+	},
+	"FixedAfd":             ubx.FieldSpec{WireName: "fixed_afd"},
+	"FlickerAq":            ubx.FieldSpec{WireName: "flicker_aq"},
+	"ForceFieldPictures":   ubx.FieldSpec{WireName: "force_field_pictures"},
+	"FramerateControl":     ubx.FieldSpec{WireName: "framerate_control"},
+	"FramerateDenominator": ubx.FieldSpec{WireName: "framerate_denominator"},
+	"FramerateNumerator":   ubx.FieldSpec{WireName: "framerate_numerator"},
+	"GopBreference":        ubx.FieldSpec{WireName: "gop_breference"},
+	"GopClosedCadence":     ubx.FieldSpec{WireName: "gop_closed_cadence"},
+	"GopNumBframes":        ubx.FieldSpec{WireName: "gop_num_bframes"},
+	"GopSize":              ubx.FieldSpec{WireName: "gop_size"},
+	"GopSizeUnits":         ubx.FieldSpec{WireName: "gop_size_units"},
+	"Level":                ubx.FieldSpec{WireName: "level"},
+	"LookAheadRateControl": ubx.FieldSpec{WireName: "look_ahead_rate_control"},
+	"MaxBitrate":           ubx.FieldSpec{WireName: "max_bitrate"},
+	"MinBitrate":           ubx.FieldSpec{WireName: "min_bitrate"},
+	"MinIinterval":         ubx.FieldSpec{WireName: "min_iinterval"},
+	"MinQp":                ubx.FieldSpec{WireName: "min_qp"},
+	"NumRefFrames":         ubx.FieldSpec{WireName: "num_ref_frames"},
+	"ParControl":           ubx.FieldSpec{WireName: "par_control"},
+	"ParDenominator":       ubx.FieldSpec{WireName: "par_denominator"},
+	"ParNumerator":         ubx.FieldSpec{WireName: "par_numerator"},
+	"Profile":              ubx.FieldSpec{WireName: "profile"},
+	"QualityLevel":         ubx.FieldSpec{WireName: "quality_level"},
+	"QvbrQualityLevel":     ubx.FieldSpec{WireName: "qvbr_quality_level"},
+	"RateControlMode":      ubx.FieldSpec{WireName: "rate_control_mode"},
+	"ScanType":             ubx.FieldSpec{WireName: "scan_type"},
+	"SceneChangeDetect":    ubx.FieldSpec{WireName: "scene_change_detect"},
+	"Slices":               ubx.FieldSpec{WireName: "slices"},
+	"Softness":             ubx.FieldSpec{WireName: "softness"},
+	"SpatialAq":            ubx.FieldSpec{WireName: "spatial_aq"},
+	"SubgopLength":         ubx.FieldSpec{WireName: "subgop_length"},
+	"Syntax":               ubx.FieldSpec{WireName: "syntax"},
+	"TemporalAq":           ubx.FieldSpec{WireName: "temporal_aq"},
+	"TimecodeBurninSettings": ubx.FieldSpec{
+		WireName: "timecode_burnin_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
+	},
+	"TimecodeInsertion": ubx.FieldSpec{WireName: "timecode_insertion"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_H265Settings_ColorSpaceSettingsFields = ubx.FieldMap{
-		"ColorSpacePassthroughSettings": ubx.FieldSpec{WireName: "color_space_passthrough_settings"},
-		"DolbyVision81Settings": ubx.FieldSpec{WireName: "dolby_vision81_settings"},
-		"Hdr10Settings": ubx.FieldSpec{
-			WireName: "hdr10_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings_Hdr10SettingsFields,
-		},
-		"Hlg2020Settings": ubx.FieldSpec{WireName: "hlg2020_settings"},
-		"Rec601Settings": ubx.FieldSpec{WireName: "rec601_settings"},
-		"Rec709Settings": ubx.FieldSpec{WireName: "rec709_settings"},
-	}
+	"ColorSpacePassthroughSettings": ubx.FieldSpec{WireName: "color_space_passthrough_settings"},
+	"DolbyVision81Settings":         ubx.FieldSpec{WireName: "dolby_vision81_settings"},
+	"Hdr10Settings": ubx.FieldSpec{
+		WireName: "hdr10_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings_Hdr10SettingsFields,
+	},
+	"Hlg2020Settings": ubx.FieldSpec{WireName: "hlg2020_settings"},
+	"Rec601Settings":  ubx.FieldSpec{WireName: "rec601_settings"},
+	"Rec709Settings":  ubx.FieldSpec{WireName: "rec709_settings"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_H265SettingsFields = ubx.FieldMap{
-		"AdaptiveQuantization": ubx.FieldSpec{WireName: "adaptive_quantization"},
-		"AfdSignaling": ubx.FieldSpec{WireName: "afd_signaling"},
-		"AlternativeTransferFunction": ubx.FieldSpec{WireName: "alternative_transfer_function"},
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"BufSize": ubx.FieldSpec{WireName: "buf_size"},
-		"ColorMetadata": ubx.FieldSpec{WireName: "color_metadata"},
-		"ColorSpaceSettings": ubx.FieldSpec{
-			WireName: "color_space_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H265Settings_ColorSpaceSettingsFields,
-		},
-		"Deblocking": ubx.FieldSpec{WireName: "deblocking"},
-		"FilterSettings": ubx.FieldSpec{
-			WireName: "filter_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettingsFields,
-		},
-		"FixedAfd": ubx.FieldSpec{WireName: "fixed_afd"},
-		"FlickerAq": ubx.FieldSpec{WireName: "flicker_aq"},
-		"FramerateDenominator": ubx.FieldSpec{WireName: "framerate_denominator"},
-		"FramerateNumerator": ubx.FieldSpec{WireName: "framerate_numerator"},
-		"GopBreference": ubx.FieldSpec{WireName: "gop_breference"},
-		"GopClosedCadence": ubx.FieldSpec{WireName: "gop_closed_cadence"},
-		"GopNumBframes": ubx.FieldSpec{WireName: "gop_num_bframes"},
-		"GopSize": ubx.FieldSpec{WireName: "gop_size"},
-		"GopSizeUnits": ubx.FieldSpec{WireName: "gop_size_units"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"LookAheadRateControl": ubx.FieldSpec{WireName: "look_ahead_rate_control"},
-		"MaxBitrate": ubx.FieldSpec{WireName: "max_bitrate"},
-		"MinBitrate": ubx.FieldSpec{WireName: "min_bitrate"},
-		"MinIinterval": ubx.FieldSpec{WireName: "min_iinterval"},
-		"MinQp": ubx.FieldSpec{WireName: "min_qp"},
-		"MvOverPictureBoundaries": ubx.FieldSpec{WireName: "mv_over_picture_boundaries"},
-		"MvTemporalPredictor": ubx.FieldSpec{WireName: "mv_temporal_predictor"},
-		"ParDenominator": ubx.FieldSpec{WireName: "par_denominator"},
-		"ParNumerator": ubx.FieldSpec{WireName: "par_numerator"},
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-		"QvbrQualityLevel": ubx.FieldSpec{WireName: "qvbr_quality_level"},
-		"RateControlMode": ubx.FieldSpec{WireName: "rate_control_mode"},
-		"ScanType": ubx.FieldSpec{WireName: "scan_type"},
-		"SceneChangeDetect": ubx.FieldSpec{WireName: "scene_change_detect"},
-		"Slices": ubx.FieldSpec{WireName: "slices"},
-		"SubgopLength": ubx.FieldSpec{WireName: "subgop_length"},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-		"TileHeight": ubx.FieldSpec{WireName: "tile_height"},
-		"TilePadding": ubx.FieldSpec{WireName: "tile_padding"},
-		"TileWidth": ubx.FieldSpec{WireName: "tile_width"},
-		"TimecodeBurninSettings": ubx.FieldSpec{
-			WireName: "timecode_burnin_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
-		},
-		"TimecodeInsertion": ubx.FieldSpec{WireName: "timecode_insertion"},
-		"TreeblockSize": ubx.FieldSpec{WireName: "treeblock_size"},
-	}
+	"AdaptiveQuantization":        ubx.FieldSpec{WireName: "adaptive_quantization"},
+	"AfdSignaling":                ubx.FieldSpec{WireName: "afd_signaling"},
+	"AlternativeTransferFunction": ubx.FieldSpec{WireName: "alternative_transfer_function"},
+	"Bitrate":                     ubx.FieldSpec{WireName: "bitrate"},
+	"BufSize":                     ubx.FieldSpec{WireName: "buf_size"},
+	"ColorMetadata":               ubx.FieldSpec{WireName: "color_metadata"},
+	"ColorSpaceSettings": ubx.FieldSpec{
+		WireName: "color_space_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H265Settings_ColorSpaceSettingsFields,
+	},
+	"Deblocking": ubx.FieldSpec{WireName: "deblocking"},
+	"FilterSettings": ubx.FieldSpec{
+		WireName: "filter_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettingsFields,
+	},
+	"FixedAfd":                ubx.FieldSpec{WireName: "fixed_afd"},
+	"FlickerAq":               ubx.FieldSpec{WireName: "flicker_aq"},
+	"FramerateDenominator":    ubx.FieldSpec{WireName: "framerate_denominator"},
+	"FramerateNumerator":      ubx.FieldSpec{WireName: "framerate_numerator"},
+	"GopBreference":           ubx.FieldSpec{WireName: "gop_breference"},
+	"GopClosedCadence":        ubx.FieldSpec{WireName: "gop_closed_cadence"},
+	"GopNumBframes":           ubx.FieldSpec{WireName: "gop_num_bframes"},
+	"GopSize":                 ubx.FieldSpec{WireName: "gop_size"},
+	"GopSizeUnits":            ubx.FieldSpec{WireName: "gop_size_units"},
+	"Level":                   ubx.FieldSpec{WireName: "level"},
+	"LookAheadRateControl":    ubx.FieldSpec{WireName: "look_ahead_rate_control"},
+	"MaxBitrate":              ubx.FieldSpec{WireName: "max_bitrate"},
+	"MinBitrate":              ubx.FieldSpec{WireName: "min_bitrate"},
+	"MinIinterval":            ubx.FieldSpec{WireName: "min_iinterval"},
+	"MinQp":                   ubx.FieldSpec{WireName: "min_qp"},
+	"MvOverPictureBoundaries": ubx.FieldSpec{WireName: "mv_over_picture_boundaries"},
+	"MvTemporalPredictor":     ubx.FieldSpec{WireName: "mv_temporal_predictor"},
+	"ParDenominator":          ubx.FieldSpec{WireName: "par_denominator"},
+	"ParNumerator":            ubx.FieldSpec{WireName: "par_numerator"},
+	"Profile":                 ubx.FieldSpec{WireName: "profile"},
+	"QvbrQualityLevel":        ubx.FieldSpec{WireName: "qvbr_quality_level"},
+	"RateControlMode":         ubx.FieldSpec{WireName: "rate_control_mode"},
+	"ScanType":                ubx.FieldSpec{WireName: "scan_type"},
+	"SceneChangeDetect":       ubx.FieldSpec{WireName: "scene_change_detect"},
+	"Slices":                  ubx.FieldSpec{WireName: "slices"},
+	"SubgopLength":            ubx.FieldSpec{WireName: "subgop_length"},
+	"Tier":                    ubx.FieldSpec{WireName: "tier"},
+	"TileHeight":              ubx.FieldSpec{WireName: "tile_height"},
+	"TilePadding":             ubx.FieldSpec{WireName: "tile_padding"},
+	"TileWidth":               ubx.FieldSpec{WireName: "tile_width"},
+	"TimecodeBurninSettings": ubx.FieldSpec{
+		WireName: "timecode_burnin_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
+	},
+	"TimecodeInsertion": ubx.FieldSpec{WireName: "timecode_insertion"},
+	"TreeblockSize":     ubx.FieldSpec{WireName: "treeblock_size"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_Mpeg2Settings_FilterSettingsFields = ubx.FieldMap{
-		"TemporalFilterSettings": ubx.FieldSpec{
-			WireName: "temporal_filter_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings_BandwidthReductionFilterSettingsFields,
-		},
-	}
+	"TemporalFilterSettings": ubx.FieldSpec{
+		WireName: "temporal_filter_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings_BandwidthReductionFilterSettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettings_Mpeg2SettingsFields = ubx.FieldMap{
-		"AdaptiveQuantization": ubx.FieldSpec{WireName: "adaptive_quantization"},
-		"AfdSignaling": ubx.FieldSpec{WireName: "afd_signaling"},
-		"ColorMetadata": ubx.FieldSpec{WireName: "color_metadata"},
-		"ColorSpace": ubx.FieldSpec{WireName: "color_space"},
-		"DisplayAspectRatio": ubx.FieldSpec{WireName: "display_aspect_ratio"},
-		"FilterSettings": ubx.FieldSpec{
-			WireName: "filter_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Mpeg2Settings_FilterSettingsFields,
-		},
-		"FixedAfd": ubx.FieldSpec{WireName: "fixed_afd"},
-		"FramerateDenominator": ubx.FieldSpec{WireName: "framerate_denominator"},
-		"FramerateNumerator": ubx.FieldSpec{WireName: "framerate_numerator"},
-		"GopClosedCadence": ubx.FieldSpec{WireName: "gop_closed_cadence"},
-		"GopNumBframes": ubx.FieldSpec{WireName: "gop_num_bframes"},
-		"GopSize": ubx.FieldSpec{WireName: "gop_size"},
-		"GopSizeUnits": ubx.FieldSpec{WireName: "gop_size_units"},
-		"ScanType": ubx.FieldSpec{WireName: "scan_type"},
-		"SubgopLength": ubx.FieldSpec{WireName: "subgop_length"},
-		"TimecodeBurninSettings": ubx.FieldSpec{
-			WireName: "timecode_burnin_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
-		},
-		"TimecodeInsertion": ubx.FieldSpec{WireName: "timecode_insertion"},
-	}
+	"AdaptiveQuantization": ubx.FieldSpec{WireName: "adaptive_quantization"},
+	"AfdSignaling":         ubx.FieldSpec{WireName: "afd_signaling"},
+	"ColorMetadata":        ubx.FieldSpec{WireName: "color_metadata"},
+	"ColorSpace":           ubx.FieldSpec{WireName: "color_space"},
+	"DisplayAspectRatio":   ubx.FieldSpec{WireName: "display_aspect_ratio"},
+	"FilterSettings": ubx.FieldSpec{
+		WireName: "filter_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Mpeg2Settings_FilterSettingsFields,
+	},
+	"FixedAfd":             ubx.FieldSpec{WireName: "fixed_afd"},
+	"FramerateDenominator": ubx.FieldSpec{WireName: "framerate_denominator"},
+	"FramerateNumerator":   ubx.FieldSpec{WireName: "framerate_numerator"},
+	"GopClosedCadence":     ubx.FieldSpec{WireName: "gop_closed_cadence"},
+	"GopNumBframes":        ubx.FieldSpec{WireName: "gop_num_bframes"},
+	"GopSize":              ubx.FieldSpec{WireName: "gop_size"},
+	"GopSizeUnits":         ubx.FieldSpec{WireName: "gop_size_units"},
+	"ScanType":             ubx.FieldSpec{WireName: "scan_type"},
+	"SubgopLength":         ubx.FieldSpec{WireName: "subgop_length"},
+	"TimecodeBurninSettings": ubx.FieldSpec{
+		WireName: "timecode_burnin_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettingsFields,
+	},
+	"TimecodeInsertion": ubx.FieldSpec{WireName: "timecode_insertion"},
+}
 
 var Channel_EncoderSettings_VideoDescriptions_CodecSettingsFields = ubx.FieldMap{
-		"Av1Settings": ubx.FieldSpec{
-			WireName: "av1_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1SettingsFields,
-		},
-		"FrameCaptureSettings": ubx.FieldSpec{
-			WireName: "frame_capture_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_FrameCaptureSettingsFields,
-		},
-		"H264Settings": ubx.FieldSpec{
-			WireName: "h264_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264SettingsFields,
-		},
-		"H265Settings": ubx.FieldSpec{
-			WireName: "h265_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_H265SettingsFields,
-		},
-		"Mpeg2Settings": ubx.FieldSpec{
-			WireName: "mpeg2_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Mpeg2SettingsFields,
-		},
-	}
+	"Av1Settings": ubx.FieldSpec{
+		WireName: "av1_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1SettingsFields,
+	},
+	"FrameCaptureSettings": ubx.FieldSpec{
+		WireName: "frame_capture_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_FrameCaptureSettingsFields,
+	},
+	"H264Settings": ubx.FieldSpec{
+		WireName: "h264_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H264SettingsFields,
+	},
+	"H265Settings": ubx.FieldSpec{
+		WireName: "h265_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_H265SettingsFields,
+	},
+	"Mpeg2Settings": ubx.FieldSpec{
+		WireName: "mpeg2_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Mpeg2SettingsFields,
+	},
+}
 
 var Channel_EncoderSettings_VideoDescriptionsFields = ubx.FieldMap{
-		"CodecSettings": ubx.FieldSpec{
-			WireName: "codec_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettingsFields,
-		},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RespondToAfd": ubx.FieldSpec{WireName: "respond_to_afd"},
-		"ScalingBehavior": ubx.FieldSpec{WireName: "scaling_behavior"},
-		"Sharpness": ubx.FieldSpec{WireName: "sharpness"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"CodecSettings": ubx.FieldSpec{
+		WireName: "codec_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettingsFields,
+	},
+	"Height":          ubx.FieldSpec{WireName: "height"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"RespondToAfd":    ubx.FieldSpec{WireName: "respond_to_afd"},
+	"ScalingBehavior": ubx.FieldSpec{WireName: "scaling_behavior"},
+	"Sharpness":       ubx.FieldSpec{WireName: "sharpness"},
+	"Width":           ubx.FieldSpec{WireName: "width"},
+}
 
 var Channel_EncoderSettingsFields = ubx.FieldMap{
-		"AudioDescriptions": ubx.FieldSpec{
-			WireName: "audio_descriptions",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_AudioDescriptionsFields,
-		},
-		"AvailBlanking": ubx.FieldSpec{
-			WireName: "avail_blanking",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailBlankingFields,
-		},
-		"AvailConfiguration": ubx.FieldSpec{
-			WireName: "avail_configuration",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AvailConfigurationFields,
-		},
-		"BlackoutSlate": ubx.FieldSpec{
-			WireName: "blackout_slate",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_BlackoutSlateFields,
-		},
-		"CaptionDescriptions": ubx.FieldSpec{
-			WireName: "caption_descriptions",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_CaptionDescriptionsFields,
-		},
-		"ColorCorrectionSettings": ubx.FieldSpec{
-			WireName: "color_correction_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_ColorCorrectionSettingsFields,
-		},
-		"FeatureActivations": ubx.FieldSpec{
-			WireName: "feature_activations",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_FeatureActivationsFields,
-		},
-		"GlobalConfiguration": ubx.FieldSpec{
-			WireName: "global_configuration",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_GlobalConfigurationFields,
-		},
-		"MotionGraphicsConfiguration": ubx.FieldSpec{
-			WireName: "motion_graphics_configuration",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_MotionGraphicsConfigurationFields,
-		},
-		"NielsenConfiguration": ubx.FieldSpec{
-			WireName: "nielsen_configuration",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_NielsenConfigurationFields,
-		},
-		"OutputGroups": ubx.FieldSpec{
-			WireName: "output_groups",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_OutputGroupsFields,
-		},
-		"ThumbnailConfiguration": ubx.FieldSpec{
-			WireName: "thumbnail_configuration",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_ThumbnailConfigurationFields,
-		},
-		"TimecodeConfig": ubx.FieldSpec{
-			WireName: "timecode_config",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_TimecodeConfigFields,
-		},
-		"VideoDescriptions": ubx.FieldSpec{
-			WireName: "video_descriptions",
-			Kind: "list",
-			Fields: Channel_EncoderSettings_VideoDescriptionsFields,
-		},
-	}
+	"AudioDescriptions": ubx.FieldSpec{
+		WireName: "audio_descriptions",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_AudioDescriptionsFields,
+	},
+	"AvailBlanking": ubx.FieldSpec{
+		WireName: "avail_blanking",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailBlankingFields,
+	},
+	"AvailConfiguration": ubx.FieldSpec{
+		WireName: "avail_configuration",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AvailConfigurationFields,
+	},
+	"BlackoutSlate": ubx.FieldSpec{
+		WireName: "blackout_slate",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_BlackoutSlateFields,
+	},
+	"CaptionDescriptions": ubx.FieldSpec{
+		WireName: "caption_descriptions",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_CaptionDescriptionsFields,
+	},
+	"ColorCorrectionSettings": ubx.FieldSpec{
+		WireName: "color_correction_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_ColorCorrectionSettingsFields,
+	},
+	"FeatureActivations": ubx.FieldSpec{
+		WireName: "feature_activations",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_FeatureActivationsFields,
+	},
+	"GlobalConfiguration": ubx.FieldSpec{
+		WireName: "global_configuration",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_GlobalConfigurationFields,
+	},
+	"MotionGraphicsConfiguration": ubx.FieldSpec{
+		WireName: "motion_graphics_configuration",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_MotionGraphicsConfigurationFields,
+	},
+	"NielsenConfiguration": ubx.FieldSpec{
+		WireName: "nielsen_configuration",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_NielsenConfigurationFields,
+	},
+	"OutputGroups": ubx.FieldSpec{
+		WireName: "output_groups",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_OutputGroupsFields,
+	},
+	"ThumbnailConfiguration": ubx.FieldSpec{
+		WireName: "thumbnail_configuration",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_ThumbnailConfigurationFields,
+	},
+	"TimecodeConfig": ubx.FieldSpec{
+		WireName: "timecode_config",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_TimecodeConfigFields,
+	},
+	"VideoDescriptions": ubx.FieldSpec{
+		WireName: "video_descriptions",
+		Kind:     "list",
+		Fields:   Channel_EncoderSettings_VideoDescriptionsFields,
+	},
+}
 
 var Channel_InferenceSettings_AudioFeedInputsFields = ubx.FieldMap{
-		"AudioSelectorName": ubx.FieldSpec{WireName: "audio_selector_name"},
-		"FeedInput": ubx.FieldSpec{WireName: "feed_input"},
-	}
+	"AudioSelectorName": ubx.FieldSpec{WireName: "audio_selector_name"},
+	"FeedInput":         ubx.FieldSpec{WireName: "feed_input"},
+}
 
 var Channel_InferenceSettingsFields = ubx.FieldMap{
-		"AudioFeedInputs": ubx.FieldSpec{
-			WireName: "audio_feed_inputs",
-			Kind: "list",
-			Fields: Channel_InferenceSettings_AudioFeedInputsFields,
-		},
-		"FeedArn": ubx.FieldSpec{WireName: "feed_arn"},
-	}
+	"AudioFeedInputs": ubx.FieldSpec{
+		WireName: "audio_feed_inputs",
+		Kind:     "list",
+		Fields:   Channel_InferenceSettings_AudioFeedInputsFields,
+	},
+	"FeedArn": ubx.FieldSpec{WireName: "feed_arn"},
+}
 
 var Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_AudioSilenceSettingsFields = ubx.FieldMap{
-		"AudioSelectorName": ubx.FieldSpec{WireName: "audio_selector_name"},
-		"AudioSilenceThresholdMsec": ubx.FieldSpec{WireName: "audio_silence_threshold_msec"},
-	}
+	"AudioSelectorName":         ubx.FieldSpec{WireName: "audio_selector_name"},
+	"AudioSilenceThresholdMsec": ubx.FieldSpec{WireName: "audio_silence_threshold_msec"},
+}
 
 var Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_InputLossSettingsFields = ubx.FieldMap{
-		"InputLossThresholdMsec": ubx.FieldSpec{WireName: "input_loss_threshold_msec"},
-	}
+	"InputLossThresholdMsec": ubx.FieldSpec{WireName: "input_loss_threshold_msec"},
+}
 
 var Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_VideoBlackSettingsFields = ubx.FieldMap{
-		"BlackDetectThreshold": ubx.FieldSpec{WireName: "black_detect_threshold"},
-		"VideoBlackThresholdMsec": ubx.FieldSpec{WireName: "video_black_threshold_msec"},
-	}
+	"BlackDetectThreshold":    ubx.FieldSpec{WireName: "black_detect_threshold"},
+	"VideoBlackThresholdMsec": ubx.FieldSpec{WireName: "video_black_threshold_msec"},
+}
 
 var Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettingsFields = ubx.FieldMap{
-		"AudioSilenceSettings": ubx.FieldSpec{
-			WireName: "audio_silence_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_AudioSilenceSettingsFields,
-		},
-		"InputLossSettings": ubx.FieldSpec{
-			WireName: "input_loss_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_InputLossSettingsFields,
-		},
-		"VideoBlackSettings": ubx.FieldSpec{
-			WireName: "video_black_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_VideoBlackSettingsFields,
-		},
-	}
+	"AudioSilenceSettings": ubx.FieldSpec{
+		WireName: "audio_silence_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_AudioSilenceSettingsFields,
+	},
+	"InputLossSettings": ubx.FieldSpec{
+		WireName: "input_loss_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_InputLossSettingsFields,
+	},
+	"VideoBlackSettings": ubx.FieldSpec{
+		WireName: "video_black_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_VideoBlackSettingsFields,
+	},
+}
 
 var Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditionsFields = ubx.FieldMap{
-		"FailoverConditionSettings": ubx.FieldSpec{
-			WireName: "failover_condition_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettingsFields,
-		},
-	}
+	"FailoverConditionSettings": ubx.FieldSpec{
+		WireName: "failover_condition_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettingsFields,
+	},
+}
 
 var Channel_InputAttachments_AutomaticInputFailoverSettingsFields = ubx.FieldMap{
-		"ErrorClearTimeMsec": ubx.FieldSpec{WireName: "error_clear_time_msec"},
-		"FailoverConditions": ubx.FieldSpec{
-			WireName: "failover_conditions",
-			Kind: "list",
-			Fields: Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditionsFields,
-		},
-		"InputPreference": ubx.FieldSpec{WireName: "input_preference"},
-		"SecondaryInputId": ubx.FieldSpec{WireName: "secondary_input_id"},
-	}
+	"ErrorClearTimeMsec": ubx.FieldSpec{WireName: "error_clear_time_msec"},
+	"FailoverConditions": ubx.FieldSpec{
+		WireName: "failover_conditions",
+		Kind:     "list",
+		Fields:   Channel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditionsFields,
+	},
+	"InputPreference":  ubx.FieldSpec{WireName: "input_preference"},
+	"SecondaryInputId": ubx.FieldSpec{WireName: "secondary_input_id"},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioHlsRenditionSelectionFields = ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"GroupId": ubx.FieldSpec{WireName: "group_id"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioLanguageSelectionFields = ubx.FieldMap{
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"LanguageSelectionPolicy": ubx.FieldSpec{WireName: "language_selection_policy"},
-	}
+	"LanguageCode":            ubx.FieldSpec{WireName: "language_code"},
+	"LanguageSelectionPolicy": ubx.FieldSpec{WireName: "language_selection_policy"},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_DolbyEdecodeFields = ubx.FieldMap{
-		"ProgramSelection": ubx.FieldSpec{WireName: "program_selection"},
-	}
+	"ProgramSelection": ubx.FieldSpec{WireName: "program_selection"},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettingsFields = ubx.FieldMap{
-		"AudioNormalizationSettings": ubx.FieldSpec{
-			WireName: "audio_normalization_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_AudioNormalizationSettingsFields,
-		},
-		"Channels": ubx.FieldSpec{WireName: "channels"},
-		"GainDb": ubx.FieldSpec{WireName: "gain_db"},
-		"RemixSettings": ubx.FieldSpec{
-			WireName: "remix_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_AudioDescriptions_RemixSettingsFields,
-		},
-	}
+	"AudioNormalizationSettings": ubx.FieldSpec{
+		WireName: "audio_normalization_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_AudioNormalizationSettingsFields,
+	},
+	"Channels": ubx.FieldSpec{WireName: "channels"},
+	"GainDb":   ubx.FieldSpec{WireName: "gain_db"},
+	"RemixSettings": ubx.FieldSpec{
+		WireName: "remix_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_AudioDescriptions_RemixSettingsFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_PidsFields = ubx.FieldMap{
-		"DolbyEdecode": ubx.FieldSpec{
-			WireName: "dolby_edecode",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_DolbyEdecodeFields,
-		},
-		"Pid": ubx.FieldSpec{WireName: "pid"},
-		"PremixSettings": ubx.FieldSpec{
-			WireName: "premix_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettingsFields,
-		},
-	}
+	"DolbyEdecode": ubx.FieldSpec{
+		WireName: "dolby_edecode",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_DolbyEdecodeFields,
+	},
+	"Pid": ubx.FieldSpec{WireName: "pid"},
+	"PremixSettings": ubx.FieldSpec{
+		WireName: "premix_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettingsFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelectionFields = ubx.FieldMap{
-		"Pid": ubx.FieldSpec{WireName: "pid"},
-		"Pids": ubx.FieldSpec{
-			WireName: "pids",
-			Kind: "list",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_PidsFields,
-		},
-	}
+	"Pid": ubx.FieldSpec{WireName: "pid"},
+	"Pids": ubx.FieldSpec{
+		WireName: "pids",
+		Kind:     "list",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_PidsFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelection_TracksFields = ubx.FieldMap{
-		"PremixSettings": ubx.FieldSpec{
-			WireName: "premix_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettingsFields,
-		},
-		"Track": ubx.FieldSpec{WireName: "track"},
-	}
+	"PremixSettings": ubx.FieldSpec{
+		WireName: "premix_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettingsFields,
+	},
+	"Track": ubx.FieldSpec{WireName: "track"},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelectionFields = ubx.FieldMap{
-		"DolbyEdecode": ubx.FieldSpec{
-			WireName: "dolby_edecode",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_DolbyEdecodeFields,
-		},
-		"Tracks": ubx.FieldSpec{
-			WireName: "tracks",
-			Kind: "list",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelection_TracksFields,
-		},
-	}
+	"DolbyEdecode": ubx.FieldSpec{
+		WireName: "dolby_edecode",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_DolbyEdecodeFields,
+	},
+	"Tracks": ubx.FieldSpec{
+		WireName: "tracks",
+		Kind:     "list",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelection_TracksFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettingsFields = ubx.FieldMap{
-		"AudioHlsRenditionSelection": ubx.FieldSpec{
-			WireName: "audio_hls_rendition_selection",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioHlsRenditionSelectionFields,
-		},
-		"AudioLanguageSelection": ubx.FieldSpec{
-			WireName: "audio_language_selection",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioLanguageSelectionFields,
-		},
-		"AudioPidSelection": ubx.FieldSpec{
-			WireName: "audio_pid_selection",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelectionFields,
-		},
-		"AudioTrackSelection": ubx.FieldSpec{
-			WireName: "audio_track_selection",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelectionFields,
-		},
-	}
+	"AudioHlsRenditionSelection": ubx.FieldSpec{
+		WireName: "audio_hls_rendition_selection",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioHlsRenditionSelectionFields,
+	},
+	"AudioLanguageSelection": ubx.FieldSpec{
+		WireName: "audio_language_selection",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioLanguageSelectionFields,
+	},
+	"AudioPidSelection": ubx.FieldSpec{
+		WireName: "audio_pid_selection",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelectionFields,
+	},
+	"AudioTrackSelection": ubx.FieldSpec{
+		WireName: "audio_track_selection",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelectionFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_AudioSelectorsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SelectorSettings": ubx.FieldSpec{
-			WireName: "selector_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettingsFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"SelectorSettings": ubx.FieldSpec{
+		WireName: "selector_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectors_SelectorSettingsFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_AncillarySourceSettingsFields = ubx.FieldMap{
-		"SourceAncillaryChannelNumber": ubx.FieldSpec{WireName: "source_ancillary_channel_number"},
-	}
+	"SourceAncillaryChannelNumber": ubx.FieldSpec{WireName: "source_ancillary_channel_number"},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_DvbSubSourceSettingsFields = ubx.FieldMap{
-		"OcrLanguage": ubx.FieldSpec{WireName: "ocr_language"},
-		"Pid": ubx.FieldSpec{WireName: "pid"},
-	}
+	"OcrLanguage": ubx.FieldSpec{WireName: "ocr_language"},
+	"Pid":         ubx.FieldSpec{WireName: "pid"},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_EmbeddedSourceSettingsFields = ubx.FieldMap{
-		"Convert608To708": ubx.FieldSpec{WireName: "convert608_to708"},
-		"Scte20Detection": ubx.FieldSpec{WireName: "scte20_detection"},
-		"Source608ChannelNumber": ubx.FieldSpec{WireName: "source608_channel_number"},
-		"Source608TrackNumber": ubx.FieldSpec{WireName: "source608_track_number"},
-	}
+	"Convert608To708":        ubx.FieldSpec{WireName: "convert608_to708"},
+	"Scte20Detection":        ubx.FieldSpec{WireName: "scte20_detection"},
+	"Source608ChannelNumber": ubx.FieldSpec{WireName: "source608_channel_number"},
+	"Source608TrackNumber":   ubx.FieldSpec{WireName: "source608_track_number"},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_Scte20SourceSettingsFields = ubx.FieldMap{
-		"Convert608To708": ubx.FieldSpec{WireName: "convert608_to708"},
-		"Source608ChannelNumber": ubx.FieldSpec{WireName: "source608_channel_number"},
-	}
+	"Convert608To708":        ubx.FieldSpec{WireName: "convert608_to708"},
+	"Source608ChannelNumber": ubx.FieldSpec{WireName: "source608_channel_number"},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_SmartSubtitleSourceSettingsFields = ubx.FieldMap{
-		"CaptionSynchronizationMode": ubx.FieldSpec{WireName: "caption_synchronization_mode"},
-		"InferenceFeedOutput": ubx.FieldSpec{WireName: "inference_feed_output"},
-	}
+	"CaptionSynchronizationMode": ubx.FieldSpec{WireName: "caption_synchronization_mode"},
+	"InferenceFeedOutput":        ubx.FieldSpec{WireName: "inference_feed_output"},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettings_OutputRectangleFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"LeftOffset": ubx.FieldSpec{WireName: "left_offset"},
-		"TopOffset": ubx.FieldSpec{WireName: "top_offset"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Height":     ubx.FieldSpec{WireName: "height"},
+	"LeftOffset": ubx.FieldSpec{WireName: "left_offset"},
+	"TopOffset":  ubx.FieldSpec{WireName: "top_offset"},
+	"Width":      ubx.FieldSpec{WireName: "width"},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettingsFields = ubx.FieldMap{
-		"OutputRectangle": ubx.FieldSpec{
-			WireName: "output_rectangle",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettings_OutputRectangleFields,
-		},
-		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
-	}
+	"OutputRectangle": ubx.FieldSpec{
+		WireName: "output_rectangle",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettings_OutputRectangleFields,
+	},
+	"PageNumber": ubx.FieldSpec{WireName: "page_number"},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettingsFields = ubx.FieldMap{
-		"AncillarySourceSettings": ubx.FieldSpec{
-			WireName: "ancillary_source_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_AncillarySourceSettingsFields,
-		},
-		"AribSourceSettings": ubx.FieldSpec{WireName: "arib_source_settings"},
-		"DvbSubSourceSettings": ubx.FieldSpec{
-			WireName: "dvb_sub_source_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_DvbSubSourceSettingsFields,
-		},
-		"EmbeddedSourceSettings": ubx.FieldSpec{
-			WireName: "embedded_source_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_EmbeddedSourceSettingsFields,
-		},
-		"Scte20SourceSettings": ubx.FieldSpec{
-			WireName: "scte20_source_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_Scte20SourceSettingsFields,
-		},
-		"Scte27SourceSettings": ubx.FieldSpec{
-			WireName: "scte27_source_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_DvbSubSourceSettingsFields,
-		},
-		"SmartSubtitleSourceSettings": ubx.FieldSpec{
-			WireName: "smart_subtitle_source_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_SmartSubtitleSourceSettingsFields,
-		},
-		"TeletextSourceSettings": ubx.FieldSpec{
-			WireName: "teletext_source_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettingsFields,
-		},
-	}
+	"AncillarySourceSettings": ubx.FieldSpec{
+		WireName: "ancillary_source_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_AncillarySourceSettingsFields,
+	},
+	"AribSourceSettings": ubx.FieldSpec{WireName: "arib_source_settings"},
+	"DvbSubSourceSettings": ubx.FieldSpec{
+		WireName: "dvb_sub_source_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_DvbSubSourceSettingsFields,
+	},
+	"EmbeddedSourceSettings": ubx.FieldSpec{
+		WireName: "embedded_source_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_EmbeddedSourceSettingsFields,
+	},
+	"Scte20SourceSettings": ubx.FieldSpec{
+		WireName: "scte20_source_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_Scte20SourceSettingsFields,
+	},
+	"Scte27SourceSettings": ubx.FieldSpec{
+		WireName: "scte27_source_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_DvbSubSourceSettingsFields,
+	},
+	"SmartSubtitleSourceSettings": ubx.FieldSpec{
+		WireName: "smart_subtitle_source_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_SmartSubtitleSourceSettingsFields,
+	},
+	"TeletextSourceSettings": ubx.FieldSpec{
+		WireName: "teletext_source_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettingsFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_CaptionSelectorsFields = ubx.FieldMap{
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SelectorSettings": ubx.FieldSpec{
-			WireName: "selector_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettingsFields,
-		},
-	}
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"SelectorSettings": ubx.FieldSpec{
+		WireName: "selector_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettingsFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_NetworkInputSettings_HlsInputSettingsFields = ubx.FieldMap{
-		"Bandwidth": ubx.FieldSpec{WireName: "bandwidth"},
-		"BufferSegments": ubx.FieldSpec{WireName: "buffer_segments"},
-		"Retries": ubx.FieldSpec{WireName: "retries"},
-		"RetryInterval": ubx.FieldSpec{WireName: "retry_interval"},
-		"Scte35Source": ubx.FieldSpec{WireName: "scte35_source"},
-	}
+	"Bandwidth":      ubx.FieldSpec{WireName: "bandwidth"},
+	"BufferSegments": ubx.FieldSpec{WireName: "buffer_segments"},
+	"Retries":        ubx.FieldSpec{WireName: "retries"},
+	"RetryInterval":  ubx.FieldSpec{WireName: "retry_interval"},
+	"Scte35Source":   ubx.FieldSpec{WireName: "scte35_source"},
+}
 
 var Channel_InputAttachments_InputSettings_NetworkInputSettings_MulticastInputSettingsFields = ubx.FieldMap{
-		"SourceIpAddress": ubx.FieldSpec{WireName: "source_ip_address"},
-	}
+	"SourceIpAddress": ubx.FieldSpec{WireName: "source_ip_address"},
+}
 
 var Channel_InputAttachments_InputSettings_NetworkInputSettingsFields = ubx.FieldMap{
-		"HlsInputSettings": ubx.FieldSpec{
-			WireName: "hls_input_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_NetworkInputSettings_HlsInputSettingsFields,
-		},
-		"MulticastInputSettings": ubx.FieldSpec{
-			WireName: "multicast_input_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_NetworkInputSettings_MulticastInputSettingsFields,
-		},
-		"ServerValidation": ubx.FieldSpec{WireName: "server_validation"},
-	}
+	"HlsInputSettings": ubx.FieldSpec{
+		WireName: "hls_input_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_NetworkInputSettings_HlsInputSettingsFields,
+	},
+	"MulticastInputSettings": ubx.FieldSpec{
+		WireName: "multicast_input_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_NetworkInputSettings_MulticastInputSettingsFields,
+	},
+	"ServerValidation": ubx.FieldSpec{WireName: "server_validation"},
+}
 
 var Channel_InputAttachments_InputSettings_VideoSelector_ColorSpaceSettingsFields = ubx.FieldMap{
-		"Hdr10Settings": ubx.FieldSpec{
-			WireName: "hdr10_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings_Hdr10SettingsFields,
-		},
-	}
+	"Hdr10Settings": ubx.FieldSpec{
+		WireName: "hdr10_settings",
+		Kind:     "object",
+		Fields:   Channel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings_Hdr10SettingsFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettings_VideoSelectorPidFields = ubx.FieldMap{
-		"Pid": ubx.FieldSpec{WireName: "pid"},
-	}
+	"Pid": ubx.FieldSpec{WireName: "pid"},
+}
 
 var Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettings_VideoSelectorProgramIdFields = ubx.FieldMap{
-		"ProgramId": ubx.FieldSpec{WireName: "program_id"},
-	}
+	"ProgramId": ubx.FieldSpec{WireName: "program_id"},
+}
 
 var Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettingsFields = ubx.FieldMap{
-		"VideoSelectorPid": ubx.FieldSpec{
-			WireName: "video_selector_pid",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettings_VideoSelectorPidFields,
-		},
-		"VideoSelectorProgramId": ubx.FieldSpec{
-			WireName: "video_selector_program_id",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettings_VideoSelectorProgramIdFields,
-		},
-	}
+	"VideoSelectorPid": ubx.FieldSpec{
+		WireName: "video_selector_pid",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettings_VideoSelectorPidFields,
+	},
+	"VideoSelectorProgramId": ubx.FieldSpec{
+		WireName: "video_selector_program_id",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettings_VideoSelectorProgramIdFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettings_VideoSelectorFields = ubx.FieldMap{
-		"ColorSpace": ubx.FieldSpec{WireName: "color_space"},
-		"ColorSpaceSettings": ubx.FieldSpec{
-			WireName: "color_space_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_VideoSelector_ColorSpaceSettingsFields,
-		},
-		"ColorSpaceUsage": ubx.FieldSpec{WireName: "color_space_usage"},
-		"SelectorSettings": ubx.FieldSpec{
-			WireName: "selector_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettingsFields,
-		},
-	}
+	"ColorSpace": ubx.FieldSpec{WireName: "color_space"},
+	"ColorSpaceSettings": ubx.FieldSpec{
+		WireName: "color_space_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_VideoSelector_ColorSpaceSettingsFields,
+	},
+	"ColorSpaceUsage": ubx.FieldSpec{WireName: "color_space_usage"},
+	"SelectorSettings": ubx.FieldSpec{
+		WireName: "selector_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_VideoSelector_SelectorSettingsFields,
+	},
+}
 
 var Channel_InputAttachments_InputSettingsFields = ubx.FieldMap{
-		"AudioSelectors": ubx.FieldSpec{
-			WireName: "audio_selectors",
-			Kind: "list",
-			Fields: Channel_InputAttachments_InputSettings_AudioSelectorsFields,
-		},
-		"CaptionSelectors": ubx.FieldSpec{
-			WireName: "caption_selectors",
-			Kind: "list",
-			Fields: Channel_InputAttachments_InputSettings_CaptionSelectorsFields,
-		},
-		"DeblockFilter": ubx.FieldSpec{WireName: "deblock_filter"},
-		"DenoiseFilter": ubx.FieldSpec{WireName: "denoise_filter"},
-		"FilterStrength": ubx.FieldSpec{WireName: "filter_strength"},
-		"InputFilter": ubx.FieldSpec{WireName: "input_filter"},
-		"NetworkInputSettings": ubx.FieldSpec{
-			WireName: "network_input_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_NetworkInputSettingsFields,
-		},
-		"Scte35Pid": ubx.FieldSpec{WireName: "scte35_pid"},
-		"Smpte2038DataPreference": ubx.FieldSpec{WireName: "smpte2038_data_preference"},
-		"SourceEndBehavior": ubx.FieldSpec{WireName: "source_end_behavior"},
-		"VideoSelector": ubx.FieldSpec{
-			WireName: "video_selector",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettings_VideoSelectorFields,
-		},
-	}
+	"AudioSelectors": ubx.FieldSpec{
+		WireName: "audio_selectors",
+		Kind:     "list",
+		Fields:   Channel_InputAttachments_InputSettings_AudioSelectorsFields,
+	},
+	"CaptionSelectors": ubx.FieldSpec{
+		WireName: "caption_selectors",
+		Kind:     "list",
+		Fields:   Channel_InputAttachments_InputSettings_CaptionSelectorsFields,
+	},
+	"DeblockFilter":  ubx.FieldSpec{WireName: "deblock_filter"},
+	"DenoiseFilter":  ubx.FieldSpec{WireName: "denoise_filter"},
+	"FilterStrength": ubx.FieldSpec{WireName: "filter_strength"},
+	"InputFilter":    ubx.FieldSpec{WireName: "input_filter"},
+	"NetworkInputSettings": ubx.FieldSpec{
+		WireName: "network_input_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_NetworkInputSettingsFields,
+	},
+	"Scte35Pid":               ubx.FieldSpec{WireName: "scte35_pid"},
+	"Smpte2038DataPreference": ubx.FieldSpec{WireName: "smpte2038_data_preference"},
+	"SourceEndBehavior":       ubx.FieldSpec{WireName: "source_end_behavior"},
+	"VideoSelector": ubx.FieldSpec{
+		WireName: "video_selector",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettings_VideoSelectorFields,
+	},
+}
 
 var Channel_InputAttachmentsFields = ubx.FieldMap{
-		"AutomaticInputFailoverSettings": ubx.FieldSpec{
-			WireName: "automatic_input_failover_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_AutomaticInputFailoverSettingsFields,
-		},
-		"InputAttachmentName": ubx.FieldSpec{WireName: "input_attachment_name"},
-		"InputId": ubx.FieldSpec{WireName: "input_id"},
-		"InputSettings": ubx.FieldSpec{
-			WireName: "input_settings",
-			Kind: "object",
-			Fields: Channel_InputAttachments_InputSettingsFields,
-		},
-		"LogicalInterfaceNames": ubx.FieldSpec{WireName: "logical_interface_names"},
-	}
+	"AutomaticInputFailoverSettings": ubx.FieldSpec{
+		WireName: "automatic_input_failover_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_AutomaticInputFailoverSettingsFields,
+	},
+	"InputAttachmentName": ubx.FieldSpec{WireName: "input_attachment_name"},
+	"InputId":             ubx.FieldSpec{WireName: "input_id"},
+	"InputSettings": ubx.FieldSpec{
+		WireName: "input_settings",
+		Kind:     "object",
+		Fields:   Channel_InputAttachments_InputSettingsFields,
+	},
+	"LogicalInterfaceNames": ubx.FieldSpec{WireName: "logical_interface_names"},
+}
 
 var Channel_InputSpecificationFields = ubx.FieldMap{
-		"Codec": ubx.FieldSpec{WireName: "codec"},
-		"MaximumBitrate": ubx.FieldSpec{WireName: "maximum_bitrate"},
-		"Resolution": ubx.FieldSpec{WireName: "resolution"},
-	}
+	"Codec":          ubx.FieldSpec{WireName: "codec"},
+	"MaximumBitrate": ubx.FieldSpec{WireName: "maximum_bitrate"},
+	"Resolution":     ubx.FieldSpec{WireName: "resolution"},
+}
 
 var Channel_LinkedChannelSettings_FollowerChannelSettingsFields = ubx.FieldMap{
-		"LinkedChannelType": ubx.FieldSpec{WireName: "linked_channel_type"},
-		"PrimaryChannelArn": ubx.FieldSpec{WireName: "primary_channel_arn"},
-	}
+	"LinkedChannelType": ubx.FieldSpec{WireName: "linked_channel_type"},
+	"PrimaryChannelArn": ubx.FieldSpec{WireName: "primary_channel_arn"},
+}
 
 var Channel_LinkedChannelSettings_PrimaryChannelSettingsFields = ubx.FieldMap{
-		"LinkedChannelType": ubx.FieldSpec{WireName: "linked_channel_type"},
-	}
+	"LinkedChannelType": ubx.FieldSpec{WireName: "linked_channel_type"},
+}
 
 var Channel_LinkedChannelSettingsFields = ubx.FieldMap{
-		"FollowerChannelSettings": ubx.FieldSpec{
-			WireName: "follower_channel_settings",
-			Kind: "object",
-			Fields: Channel_LinkedChannelSettings_FollowerChannelSettingsFields,
-		},
-		"PrimaryChannelSettings": ubx.FieldSpec{
-			WireName: "primary_channel_settings",
-			Kind: "object",
-			Fields: Channel_LinkedChannelSettings_PrimaryChannelSettingsFields,
-		},
-	}
+	"FollowerChannelSettings": ubx.FieldSpec{
+		WireName: "follower_channel_settings",
+		Kind:     "object",
+		Fields:   Channel_LinkedChannelSettings_FollowerChannelSettingsFields,
+	},
+	"PrimaryChannelSettings": ubx.FieldSpec{
+		WireName: "primary_channel_settings",
+		Kind:     "object",
+		Fields:   Channel_LinkedChannelSettings_PrimaryChannelSettingsFields,
+	},
+}
 
 var Channel_MaintenanceFields = ubx.FieldMap{
-		"MaintenanceDay": ubx.FieldSpec{WireName: "maintenance_day"},
-		"MaintenanceStartTime": ubx.FieldSpec{WireName: "maintenance_start_time"},
-	}
+	"MaintenanceDay":       ubx.FieldSpec{WireName: "maintenance_day"},
+	"MaintenanceStartTime": ubx.FieldSpec{WireName: "maintenance_start_time"},
+}
 
 var Channel_VpcFields = ubx.FieldMap{
-		"PublicAddressAllocationIds": ubx.FieldSpec{WireName: "public_address_allocation_ids"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"PublicAddressAllocationIds": ubx.FieldSpec{WireName: "public_address_allocation_ids"},
+	"SecurityGroupIds":           ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":                  ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type ChannelConfig struct {
 	// Configures the channel for MediaLive Anywhere, specifying the control plane endpoint and channel placement group to run on-premises MediaLive infrastructure. (AI-inferred)
@@ -4391,65 +4391,65 @@ var Channel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AnywhereSettings": ubx.FieldSpec{
 			WireName: "anywhere_settings",
-			Kind: "object",
-			Fields: Channel_AnywhereSettingsFields,
+			Kind:     "object",
+			Fields:   Channel_AnywhereSettingsFields,
 		},
 		"CdiInputSpecification": ubx.FieldSpec{
 			WireName: "cdi_input_specification",
-			Kind: "object",
-			Fields: Channel_CdiInputSpecificationFields,
+			Kind:     "object",
+			Fields:   Channel_CdiInputSpecificationFields,
 		},
 		"ChannelClass": ubx.FieldSpec{WireName: "channel_class"},
 		"ChannelEngineVersion": ubx.FieldSpec{
 			WireName: "channel_engine_version",
-			Kind: "object",
-			Fields: Channel_ChannelEngineVersionFields,
+			Kind:     "object",
+			Fields:   Channel_ChannelEngineVersionFields,
 		},
 		"ChannelSecurityGroups": ubx.FieldSpec{WireName: "channel_security_groups"},
 		"Destinations": ubx.FieldSpec{
 			WireName: "destinations",
-			Kind: "list",
-			Fields: Channel_DestinationsFields,
+			Kind:     "list",
+			Fields:   Channel_DestinationsFields,
 		},
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"EncoderSettings": ubx.FieldSpec{
 			WireName: "encoder_settings",
-			Kind: "object",
-			Fields: Channel_EncoderSettingsFields,
+			Kind:     "object",
+			Fields:   Channel_EncoderSettingsFields,
 		},
 		"InferenceSettings": ubx.FieldSpec{
 			WireName: "inference_settings",
-			Kind: "object",
-			Fields: Channel_InferenceSettingsFields,
+			Kind:     "object",
+			Fields:   Channel_InferenceSettingsFields,
 		},
 		"InputAttachments": ubx.FieldSpec{
 			WireName: "input_attachments",
-			Kind: "list",
-			Fields: Channel_InputAttachmentsFields,
+			Kind:     "list",
+			Fields:   Channel_InputAttachmentsFields,
 		},
 		"InputSpecification": ubx.FieldSpec{
 			WireName: "input_specification",
-			Kind: "object",
-			Fields: Channel_InputSpecificationFields,
+			Kind:     "object",
+			Fields:   Channel_InputSpecificationFields,
 		},
 		"LinkedChannelSettings": ubx.FieldSpec{
 			WireName: "linked_channel_settings",
-			Kind: "object",
-			Fields: Channel_LinkedChannelSettingsFields,
+			Kind:     "object",
+			Fields:   Channel_LinkedChannelSettingsFields,
 		},
 		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
 		"Maintenance": ubx.FieldSpec{
 			WireName: "maintenance",
-			Kind: "object",
-			Fields: Channel_MaintenanceFields,
+			Kind:     "object",
+			Fields:   Channel_MaintenanceFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":    ubx.FieldSpec{WireName: "tags"},
 		"Vpc": ubx.FieldSpec{
 			WireName: "vpc",
-			Kind: "object",
-			Fields: Channel_VpcFields,
+			Kind:     "object",
+			Fields:   Channel_VpcFields,
 		},
 	},
 }

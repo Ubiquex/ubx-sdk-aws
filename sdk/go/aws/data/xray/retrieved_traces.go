@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RetrievedTraces_Traces_Spans struct {
 	Document any
-	Id any
+	Id       any
 }
 
 type RetrievedTraces_Traces struct {
 	Duration any
-	Id any
-	Spans any
+	Id       any
+	Spans    any
 }
 
 type RetrievedTracesConfig struct {
-	NextToken any
+	NextToken      any
 	RetrievalToken any
-	TraceFormat any
+	TraceFormat    any
 }
 
 type RetrievedTracesAttrs struct {
-	NextToken any
+	NextToken       any
 	RetrievalStatus any
-	RetrievalToken any
-	TraceFormat any
-	Traces any
+	RetrievalToken  any
+	TraceFormat     any
+	Traces          any
 }
 
 var RetrievedTraces = ubx.DataSourceBinding{
 	WireType: "aws_xray_retrieved_traces",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"RetrievalToken": ubx.FieldSpec{WireName: "retrieval_token"},
-		"TraceFormat": ubx.FieldSpec{WireName: "trace_format"},
+		"TraceFormat":    ubx.FieldSpec{WireName: "trace_format"},
 	},
 }

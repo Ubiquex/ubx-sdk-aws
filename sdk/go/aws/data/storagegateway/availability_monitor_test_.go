@@ -11,8 +11,8 @@ type AvailabilityMonitorTestConfig struct {
 type AvailabilityMonitorTestAttrs struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
 	GatewayArn any
-	StartTime any
-	Status any
+	StartTime  any
+	Status     any
 }
 
 var AvailabilityMonitorTest = ubx.DataSourceBinding{

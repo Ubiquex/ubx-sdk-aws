@@ -5,59 +5,59 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerRecommendationSummaries_RecommendationSummaries_AggregatedSavingsOpportunity_EstimatedMonthlySavings struct {
 	Currency any
-	Value any
+	Value    any
 }
 
 type ComputeOptimizerRecommendationSummaries_RecommendationSummaries_AggregatedSavingsOpportunity struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings      any
 	SavingsOpportunityPercentage any
 }
 
 type ComputeOptimizerRecommendationSummaries_RecommendationSummaries_CurrentPerformanceRiskRatings struct {
-	High any
-	Low any
-	Medium any
+	High    any
+	Low     any
+	Medium  any
 	VeryLow any
 }
 
 type ComputeOptimizerRecommendationSummaries_RecommendationSummaries_IdleSummaries struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ComputeOptimizerRecommendationSummaries_RecommendationSummaries_InferredWorkloadSavings struct {
 	EstimatedMonthlySavings any
-	InferredWorkloadTypes any
+	InferredWorkloadTypes   any
 }
 
 type ComputeOptimizerRecommendationSummaries_RecommendationSummaries_Summaries struct {
-	Name any
+	Name                any
 	ReasonCodeSummaries any
-	Value any
+	Value               any
 }
 
 type ComputeOptimizerRecommendationSummaries_RecommendationSummaries struct {
-	AccountId any
-	AggregatedSavingsOpportunity any
+	AccountId                     any
+	AggregatedSavingsOpportunity  any
 	CurrentPerformanceRiskRatings any
-	IdleSavingsOpportunity any
-	IdleSummaries any
-	InferredWorkloadSavings any
-	RecommendationResourceType any
-	SavingsOpportunity any
-	Summaries any
+	IdleSavingsOpportunity        any
+	IdleSummaries                 any
+	InferredWorkloadSavings       any
+	RecommendationResourceType    any
+	SavingsOpportunity            any
+	Summaries                     any
 }
 
 type ComputeOptimizerRecommendationSummariesConfig struct {
 	AccountIds any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ComputeOptimizerRecommendationSummariesAttrs struct {
-	AccountIds any
-	MaxResults any
-	NextToken any
+	AccountIds              any
+	MaxResults              any
+	NextToken               any
 	RecommendationSummaries any
 }
 
@@ -66,6 +66,6 @@ var ComputeOptimizerRecommendationSummaries = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

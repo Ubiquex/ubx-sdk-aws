@@ -4,25 +4,25 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AwsserviceAccessForOrganization_EnabledServicePrincipals struct {
-	DateEnabled any
+	DateEnabled      any
 	ServicePrincipal any
 }
 
 type AwsserviceAccessForOrganizationConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AwsserviceAccessForOrganizationAttrs struct {
 	EnabledServicePrincipals any
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 }
 
 var AwsserviceAccessForOrganization = ubx.DataSourceBinding{
 	WireType: "aws_organizations_awsservice_access_for_organization",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

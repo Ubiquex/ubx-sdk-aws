@@ -16,21 +16,21 @@ type Policy_Definition struct {
 }
 
 var Policy_Definition_CedarFields = ubx.FieldMap{
-		"Statement": ubx.FieldSpec{WireName: "statement"},
-	}
+	"Statement": ubx.FieldSpec{WireName: "statement"},
+}
 
 var Policy_DefinitionFields = ubx.FieldMap{
-		"Cedar": ubx.FieldSpec{
-			WireName: "cedar",
-			Kind: "object",
-			Fields: Policy_Definition_CedarFields,
-		},
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: Policy_Definition_CedarFields,
-		},
-	}
+	"Cedar": ubx.FieldSpec{
+		WireName: "cedar",
+		Kind:     "object",
+		Fields:   Policy_Definition_CedarFields,
+	},
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   Policy_Definition_CedarFields,
+	},
+}
 
 type PolicyConfig struct {
 	// The definition structure for policies. Encapsulates different policy formats.
@@ -79,13 +79,13 @@ var Policy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: Policy_DefinitionFields,
+			Kind:     "object",
+			Fields:   Policy_DefinitionFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"EnforcementMode": ubx.FieldSpec{WireName: "enforcement_mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyEngineId": ubx.FieldSpec{WireName: "policy_engine_id"},
-		"ValidationMode": ubx.FieldSpec{WireName: "validation_mode"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"PolicyEngineId":  ubx.FieldSpec{WireName: "policy_engine_id"},
+		"ValidationMode":  ubx.FieldSpec{WireName: "validation_mode"},
 	},
 }

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContactAttributesConfig struct {
 	InitialContactId any
-	InstanceId any
+	InstanceId       any
 }
 
 type ContactAttributesAttrs struct {
-	Attributes any
+	Attributes       any
 	InitialContactId any
-	InstanceId any
+	InstanceId       any
 }
 
 var ContactAttributes = ubx.DataSourceBinding{
 	WireType: "aws_connect_contact_attributes",
 	Fields: ubx.FieldMap{
 		"InitialContactId": ubx.FieldSpec{WireName: "initial_contact_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":       ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

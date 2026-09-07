@@ -4,7 +4,7 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DashboardSnapshotJob_SnapshotConfiguration_DestinationConfiguration_S3Destinations_BucketConfiguration struct {
-	BucketName any
+	BucketName   any
 	BucketPrefix any
 	BucketRegion any
 }
@@ -19,12 +19,12 @@ type DashboardSnapshotJob_SnapshotConfiguration_DestinationConfiguration struct 
 
 type DashboardSnapshotJob_SnapshotConfiguration_FileGroups_Files_SheetSelections struct {
 	SelectionScope any
-	SheetId any
-	VisualIds any
+	SheetId        any
+	VisualIds      any
 }
 
 type DashboardSnapshotJob_SnapshotConfiguration_FileGroups_Files struct {
-	FormatType any
+	FormatType      any
 	SheetSelections any
 }
 
@@ -33,26 +33,26 @@ type DashboardSnapshotJob_SnapshotConfiguration_FileGroups struct {
 }
 
 type DashboardSnapshotJob_SnapshotConfiguration_Parameters_DateTimeParameters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type DashboardSnapshotJob_SnapshotConfiguration_Parameters_DecimalParameters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type DashboardSnapshotJob_SnapshotConfiguration_Parameters struct {
 	DateTimeParameters any
-	DecimalParameters any
-	IntegerParameters any
-	StringParameters any
+	DecimalParameters  any
+	IntegerParameters  any
+	StringParameters   any
 }
 
 type DashboardSnapshotJob_SnapshotConfiguration struct {
 	// <p>A structure that contains information on the Amazon S3 destinations of the generated snapshot.</p>
 	DestinationConfiguration any
-	FileGroups any
+	FileGroups               any
 	// <p>A list of Quick Sight parameters and the list's override values.</p>
 	Parameters any
 }
@@ -66,23 +66,23 @@ type DashboardSnapshotJob_UserConfiguration struct {
 }
 
 type DashboardSnapshotJobConfig struct {
-	AwsAccountId any
-	DashboardId any
+	AwsAccountId  any
+	DashboardId   any
 	SnapshotJobId any
 }
 
 type DashboardSnapshotJobAttrs struct {
-	Arn any
-	AwsAccountId any
-	CreatedTime any
-	DashboardId any
-	JobStatus any
+	Arn             any
+	AwsAccountId    any
+	CreatedTime     any
+	DashboardId     any
+	JobStatus       any
 	LastUpdatedTime any
-	RequestId any
+	RequestId       any
 	// <p>Describes the configuration of the dashboard snapshot.</p>
 	SnapshotConfiguration any
-	SnapshotJobId any
-	Status any
+	SnapshotJobId         any
+	Status                any
 	// <p>A structure that contains information about the users that the dashboard snapshot is generated for. Sensitive user information is excluded. </p>
 	UserConfiguration any
 }
@@ -90,8 +90,8 @@ type DashboardSnapshotJobAttrs struct {
 var DashboardSnapshotJob = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_dashboard_snapshot_job",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DashboardId": ubx.FieldSpec{WireName: "dashboard_id"},
+		"AwsAccountId":  ubx.FieldSpec{WireName: "aws_account_id"},
+		"DashboardId":   ubx.FieldSpec{WireName: "dashboard_id"},
 		"SnapshotJobId": ubx.FieldSpec{WireName: "snapshot_job_id"},
 	},
 }

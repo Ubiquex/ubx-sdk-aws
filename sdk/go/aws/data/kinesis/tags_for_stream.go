@@ -4,35 +4,35 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForStream_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForStreamConfig struct {
 	ExclusiveStartTagKey any
-	Limit any
-	StreamArn any
-	StreamId any
-	StreamName any
+	Limit                any
+	StreamArn            any
+	StreamId             any
+	StreamName           any
 }
 
 type TagsForStreamAttrs struct {
 	ExclusiveStartTagKey any
-	HasMoreTags any
-	Limit any
-	StreamArn any
-	StreamId any
-	StreamName any
-	Tags any
+	HasMoreTags          any
+	Limit                any
+	StreamArn            any
+	StreamId             any
+	StreamName           any
+	Tags                 any
 }
 
 var TagsForStream = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_tags_for_stream",
 	Fields: ubx.FieldMap{
 		"ExclusiveStartTagKey": ubx.FieldSpec{WireName: "exclusive_start_tag_key"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"StreamArn":            ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamId":             ubx.FieldSpec{WireName: "stream_id"},
+		"StreamName":           ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

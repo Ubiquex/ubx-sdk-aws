@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SegmentSubscription_ScheduleConfiguration struct {
 	Interval any
-	Unit any
+	Unit     any
 }
 
 type SegmentSubscription_ScheduledExecutions struct {
@@ -14,27 +14,27 @@ type SegmentSubscription_ScheduledExecutions struct {
 }
 
 type SegmentSubscriptionConfig struct {
-	DomainName any
+	DomainName            any
 	SegmentDefinitionName any
 }
 
 type SegmentSubscriptionAttrs struct {
-	DomainName any
+	DomainName    any
 	LastUpdatedAt any
-	Message any
+	Message       any
 	// <p>Configuration for scheduled segment membership event notifications. </p>
 	ScheduleConfiguration any
 	// <p>Information about scheduled execution timestamps. </p>
-	ScheduledExecutions any
+	ScheduledExecutions   any
 	SegmentDefinitionName any
-	StartedAt any
-	Status any
+	StartedAt             any
+	Status                any
 }
 
 var SegmentSubscription = ubx.DataSourceBinding{
 	WireType: "aws_profile_segment_subscription",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":            ubx.FieldSpec{WireName: "domain_name"},
 		"SegmentDefinitionName": ubx.FieldSpec{WireName: "segment_definition_name"},
 	},
 }

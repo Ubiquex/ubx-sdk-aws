@@ -4,12 +4,12 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CommandInvocation_CloudWatchOutputConfig struct {
-	CloudWatchLogGroupName any
+	CloudWatchLogGroupName  any
 	CloudWatchOutputEnabled any
 }
 
 type CommandInvocationConfig struct {
-	CommandId any
+	CommandId  any
 	InstanceId any
 	PluginName any
 }
@@ -17,28 +17,28 @@ type CommandInvocationConfig struct {
 type CommandInvocationAttrs struct {
 	// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
 	CloudWatchOutputConfig any
-	CommandId any
-	Comment any
-	DocumentName any
-	DocumentVersion any
-	ExecutionElapsedTime any
-	ExecutionEndDateTime any
+	CommandId              any
+	Comment                any
+	DocumentName           any
+	DocumentVersion        any
+	ExecutionElapsedTime   any
+	ExecutionEndDateTime   any
 	ExecutionStartDateTime any
-	InstanceId any
-	PluginName any
-	ResponseCode any
-	StandardErrorContent any
-	StandardErrorUrl any
-	StandardOutputContent any
-	StandardOutputUrl any
-	Status any
-	StatusDetails any
+	InstanceId             any
+	PluginName             any
+	ResponseCode           any
+	StandardErrorContent   any
+	StandardErrorUrl       any
+	StandardOutputContent  any
+	StandardOutputUrl      any
+	Status                 any
+	StatusDetails          any
 }
 
 var CommandInvocation = ubx.DataSourceBinding{
 	WireType: "aws_ssm_command_invocation",
 	Fields: ubx.FieldMap{
-		"CommandId": ubx.FieldSpec{WireName: "command_id"},
+		"CommandId":  ubx.FieldSpec{WireName: "command_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"PluginName": ubx.FieldSpec{WireName: "plugin_name"},
 	},

@@ -27,7 +27,7 @@ var InstanceProfile = ubx.ResourceBinding{
 	WireType: "aws_iam_instance_profile",
 	Fields: ubx.FieldMap{
 		"InstanceProfileName": ubx.FieldSpec{WireName: "instance_profile_name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
+		"Path":                ubx.FieldSpec{WireName: "path"},
+		"Roles":               ubx.FieldSpec{WireName: "roles"},
 	},
 }

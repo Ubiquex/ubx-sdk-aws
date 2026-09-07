@@ -4,32 +4,32 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcLinks_Items struct {
-	CreatedDate any
-	Name any
-	SecurityGroupIds any
-	SubnetIds any
-	Tags any
-	VpcLinkId any
-	VpcLinkStatus any
+	CreatedDate          any
+	Name                 any
+	SecurityGroupIds     any
+	SubnetIds            any
+	Tags                 any
+	VpcLinkId            any
+	VpcLinkStatus        any
 	VpcLinkStatusMessage any
-	VpcLinkVersion any
+	VpcLinkVersion       any
 }
 
 type VpcLinksConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VpcLinksAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var VpcLinks = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_vpc_links",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

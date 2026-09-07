@@ -4,29 +4,29 @@ package mpa
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicies_ResourcePolicies struct {
-	PolicyArn any
+	PolicyArn  any
 	PolicyName any
 	PolicyType any
 }
 
 type ResourcePoliciesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type ResourcePoliciesAttrs struct {
-	MaxResults any
-	NextToken any
-	ResourceArn any
+	MaxResults       any
+	NextToken        any
+	ResourceArn      any
 	ResourcePolicies any
 }
 
 var ResourcePolicies = ubx.DataSourceBinding{
 	WireType: "aws_mpa_resource_policies",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

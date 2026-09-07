@@ -138,137 +138,137 @@ type Volume_Tags struct {
 }
 
 var Volume_OntapConfiguration_AggregateConfigurationFields = ubx.FieldMap{
-		"Aggregates": ubx.FieldSpec{WireName: "aggregates"},
-		"ConstituentsPerAggregate": ubx.FieldSpec{WireName: "constituents_per_aggregate"},
-	}
+	"Aggregates":               ubx.FieldSpec{WireName: "aggregates"},
+	"ConstituentsPerAggregate": ubx.FieldSpec{WireName: "constituents_per_aggregate"},
+}
 
 var Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Volume_OntapConfiguration_SnaplockConfiguration_RetentionPeriodFields = ubx.FieldMap{
-		"DefaultRetention": ubx.FieldSpec{
-			WireName: "default_retention",
-			Kind: "object",
-			Fields: Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields,
-		},
-		"MaximumRetention": ubx.FieldSpec{
-			WireName: "maximum_retention",
-			Kind: "object",
-			Fields: Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields,
-		},
-		"MinimumRetention": ubx.FieldSpec{
-			WireName: "minimum_retention",
-			Kind: "object",
-			Fields: Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields,
-		},
-	}
+	"DefaultRetention": ubx.FieldSpec{
+		WireName: "default_retention",
+		Kind:     "object",
+		Fields:   Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields,
+	},
+	"MaximumRetention": ubx.FieldSpec{
+		WireName: "maximum_retention",
+		Kind:     "object",
+		Fields:   Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields,
+	},
+	"MinimumRetention": ubx.FieldSpec{
+		WireName: "minimum_retention",
+		Kind:     "object",
+		Fields:   Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields,
+	},
+}
 
 var Volume_OntapConfiguration_SnaplockConfigurationFields = ubx.FieldMap{
-		"AuditLogVolume": ubx.FieldSpec{WireName: "audit_log_volume"},
-		"AutocommitPeriod": ubx.FieldSpec{
-			WireName: "autocommit_period",
-			Kind: "object",
-			Fields: Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields,
-		},
-		"PrivilegedDelete": ubx.FieldSpec{WireName: "privileged_delete"},
-		"RetentionPeriod": ubx.FieldSpec{
-			WireName: "retention_period",
-			Kind: "object",
-			Fields: Volume_OntapConfiguration_SnaplockConfiguration_RetentionPeriodFields,
-		},
-		"SnaplockType": ubx.FieldSpec{WireName: "snaplock_type"},
-		"VolumeAppendModeEnabled": ubx.FieldSpec{WireName: "volume_append_mode_enabled"},
-	}
+	"AuditLogVolume": ubx.FieldSpec{WireName: "audit_log_volume"},
+	"AutocommitPeriod": ubx.FieldSpec{
+		WireName: "autocommit_period",
+		Kind:     "object",
+		Fields:   Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriodFields,
+	},
+	"PrivilegedDelete": ubx.FieldSpec{WireName: "privileged_delete"},
+	"RetentionPeriod": ubx.FieldSpec{
+		WireName: "retention_period",
+		Kind:     "object",
+		Fields:   Volume_OntapConfiguration_SnaplockConfiguration_RetentionPeriodFields,
+	},
+	"SnaplockType":            ubx.FieldSpec{WireName: "snaplock_type"},
+	"VolumeAppendModeEnabled": ubx.FieldSpec{WireName: "volume_append_mode_enabled"},
+}
 
 var Volume_OntapConfiguration_TieringPolicyFields = ubx.FieldMap{
-		"CoolingPeriod": ubx.FieldSpec{WireName: "cooling_period"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CoolingPeriod": ubx.FieldSpec{WireName: "cooling_period"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+}
 
 var Volume_OntapConfigurationFields = ubx.FieldMap{
-		"AggregateConfiguration": ubx.FieldSpec{
-			WireName: "aggregate_configuration",
-			Kind: "object",
-			Fields: Volume_OntapConfiguration_AggregateConfigurationFields,
-		},
-		"CopyTagsToBackups": ubx.FieldSpec{WireName: "copy_tags_to_backups"},
-		"JunctionPath": ubx.FieldSpec{WireName: "junction_path"},
-		"OntapVolumeType": ubx.FieldSpec{WireName: "ontap_volume_type"},
-		"SecurityStyle": ubx.FieldSpec{WireName: "security_style"},
-		"SizeInBytes": ubx.FieldSpec{WireName: "size_in_bytes"},
-		"SizeInMegabytes": ubx.FieldSpec{WireName: "size_in_megabytes"},
-		"SnaplockConfiguration": ubx.FieldSpec{
-			WireName: "snaplock_configuration",
-			Kind: "object",
-			Fields: Volume_OntapConfiguration_SnaplockConfigurationFields,
-		},
-		"SnapshotPolicy": ubx.FieldSpec{WireName: "snapshot_policy"},
-		"StorageEfficiencyEnabled": ubx.FieldSpec{WireName: "storage_efficiency_enabled"},
-		"StorageVirtualMachineId": ubx.FieldSpec{WireName: "storage_virtual_machine_id"},
-		"TieringPolicy": ubx.FieldSpec{
-			WireName: "tiering_policy",
-			Kind: "object",
-			Fields: Volume_OntapConfiguration_TieringPolicyFields,
-		},
-		"VolumeStyle": ubx.FieldSpec{WireName: "volume_style"},
-	}
+	"AggregateConfiguration": ubx.FieldSpec{
+		WireName: "aggregate_configuration",
+		Kind:     "object",
+		Fields:   Volume_OntapConfiguration_AggregateConfigurationFields,
+	},
+	"CopyTagsToBackups": ubx.FieldSpec{WireName: "copy_tags_to_backups"},
+	"JunctionPath":      ubx.FieldSpec{WireName: "junction_path"},
+	"OntapVolumeType":   ubx.FieldSpec{WireName: "ontap_volume_type"},
+	"SecurityStyle":     ubx.FieldSpec{WireName: "security_style"},
+	"SizeInBytes":       ubx.FieldSpec{WireName: "size_in_bytes"},
+	"SizeInMegabytes":   ubx.FieldSpec{WireName: "size_in_megabytes"},
+	"SnaplockConfiguration": ubx.FieldSpec{
+		WireName: "snaplock_configuration",
+		Kind:     "object",
+		Fields:   Volume_OntapConfiguration_SnaplockConfigurationFields,
+	},
+	"SnapshotPolicy":           ubx.FieldSpec{WireName: "snapshot_policy"},
+	"StorageEfficiencyEnabled": ubx.FieldSpec{WireName: "storage_efficiency_enabled"},
+	"StorageVirtualMachineId":  ubx.FieldSpec{WireName: "storage_virtual_machine_id"},
+	"TieringPolicy": ubx.FieldSpec{
+		WireName: "tiering_policy",
+		Kind:     "object",
+		Fields:   Volume_OntapConfiguration_TieringPolicyFields,
+	},
+	"VolumeStyle": ubx.FieldSpec{WireName: "volume_style"},
+}
 
 var Volume_OpenZfsconfiguration_NfsExports_ClientConfigurationsFields = ubx.FieldMap{
-		"Clients": ubx.FieldSpec{WireName: "clients"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-	}
+	"Clients": ubx.FieldSpec{WireName: "clients"},
+	"Options": ubx.FieldSpec{WireName: "options"},
+}
 
 var Volume_OpenZfsconfiguration_NfsExportsFields = ubx.FieldMap{
-		"ClientConfigurations": ubx.FieldSpec{
-			WireName: "client_configurations",
-			Kind: "list",
-			Fields: Volume_OpenZfsconfiguration_NfsExports_ClientConfigurationsFields,
-		},
-	}
+	"ClientConfigurations": ubx.FieldSpec{
+		WireName: "client_configurations",
+		Kind:     "list",
+		Fields:   Volume_OpenZfsconfiguration_NfsExports_ClientConfigurationsFields,
+	},
+}
 
 var Volume_OpenZfsconfiguration_OriginSnapshotFields = ubx.FieldMap{
-		"CopyStrategy": ubx.FieldSpec{WireName: "copy_strategy"},
-		"SnapshotArn": ubx.FieldSpec{WireName: "snapshot_arn"},
-	}
+	"CopyStrategy": ubx.FieldSpec{WireName: "copy_strategy"},
+	"SnapshotArn":  ubx.FieldSpec{WireName: "snapshot_arn"},
+}
 
 var Volume_OpenZfsconfiguration_UserAndGroupQuotasFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"StorageCapacityQuotaGiB": ubx.FieldSpec{WireName: "storage_capacity_quota_gi_b"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":                      ubx.FieldSpec{WireName: "id"},
+	"StorageCapacityQuotaGiB": ubx.FieldSpec{WireName: "storage_capacity_quota_gi_b"},
+	"Type":                    ubx.FieldSpec{WireName: "type"},
+}
 
 var Volume_OpenZfsconfigurationFields = ubx.FieldMap{
-		"CopyTagsToSnapshots": ubx.FieldSpec{WireName: "copy_tags_to_snapshots"},
-		"DataCompressionType": ubx.FieldSpec{WireName: "data_compression_type"},
-		"NfsExports": ubx.FieldSpec{
-			WireName: "nfs_exports",
-			Kind: "list",
-			Fields: Volume_OpenZfsconfiguration_NfsExportsFields,
-		},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"OriginSnapshot": ubx.FieldSpec{
-			WireName: "origin_snapshot",
-			Kind: "object",
-			Fields: Volume_OpenZfsconfiguration_OriginSnapshotFields,
-		},
-		"ParentVolumeId": ubx.FieldSpec{WireName: "parent_volume_id"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"RecordSizeKiB": ubx.FieldSpec{WireName: "record_size_ki_b"},
-		"StorageCapacityQuotaGiB": ubx.FieldSpec{WireName: "storage_capacity_quota_gi_b"},
-		"StorageCapacityReservationGiB": ubx.FieldSpec{WireName: "storage_capacity_reservation_gi_b"},
-		"UserAndGroupQuotas": ubx.FieldSpec{
-			WireName: "user_and_group_quotas",
-			Kind: "list",
-			Fields: Volume_OpenZfsconfiguration_UserAndGroupQuotasFields,
-		},
-	}
+	"CopyTagsToSnapshots": ubx.FieldSpec{WireName: "copy_tags_to_snapshots"},
+	"DataCompressionType": ubx.FieldSpec{WireName: "data_compression_type"},
+	"NfsExports": ubx.FieldSpec{
+		WireName: "nfs_exports",
+		Kind:     "list",
+		Fields:   Volume_OpenZfsconfiguration_NfsExportsFields,
+	},
+	"Options": ubx.FieldSpec{WireName: "options"},
+	"OriginSnapshot": ubx.FieldSpec{
+		WireName: "origin_snapshot",
+		Kind:     "object",
+		Fields:   Volume_OpenZfsconfiguration_OriginSnapshotFields,
+	},
+	"ParentVolumeId":                ubx.FieldSpec{WireName: "parent_volume_id"},
+	"ReadOnly":                      ubx.FieldSpec{WireName: "read_only"},
+	"RecordSizeKiB":                 ubx.FieldSpec{WireName: "record_size_ki_b"},
+	"StorageCapacityQuotaGiB":       ubx.FieldSpec{WireName: "storage_capacity_quota_gi_b"},
+	"StorageCapacityReservationGiB": ubx.FieldSpec{WireName: "storage_capacity_reservation_gi_b"},
+	"UserAndGroupQuotas": ubx.FieldSpec{
+		WireName: "user_and_group_quotas",
+		Kind:     "list",
+		Fields:   Volume_OpenZfsconfiguration_UserAndGroupQuotasFields,
+	},
+}
 
 var Volume_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VolumeConfig struct {
 	// Specifies the ID of the volume backup to use to create a new volume.
@@ -310,21 +310,21 @@ var Volume = ubx.ResourceBinding{
 	WireType: "aws_fsx_volume",
 	Fields: ubx.FieldMap{
 		"BackupId": ubx.FieldSpec{WireName: "backup_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"OntapConfiguration": ubx.FieldSpec{
 			WireName: "ontap_configuration",
-			Kind: "object",
-			Fields: Volume_OntapConfigurationFields,
+			Kind:     "object",
+			Fields:   Volume_OntapConfigurationFields,
 		},
 		"OpenZfsconfiguration": ubx.FieldSpec{
 			WireName: "open_zfsconfiguration",
-			Kind: "object",
-			Fields: Volume_OpenZfsconfigurationFields,
+			Kind:     "object",
+			Fields:   Volume_OpenZfsconfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Volume_TagsFields,
+			Kind:     "list",
+			Fields:   Volume_TagsFields,
 		},
 		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
 	},

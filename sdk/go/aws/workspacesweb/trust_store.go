@@ -4,14 +4,14 @@ package workspacesweb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrustStore_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var TrustStore_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrustStoreConfig struct {
 	// A list of PEM-encoded certificates to include in this WorkSpaces Web trust store, used to establish trust for web sessions. (AI-inferred)
@@ -37,8 +37,8 @@ var TrustStore = ubx.ResourceBinding{
 		"CertificateList": ubx.FieldSpec{WireName: "certificate_list"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrustStore_TagsFields,
+			Kind:     "list",
+			Fields:   TrustStore_TagsFields,
 		},
 	},
 }

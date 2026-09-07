@@ -4,7 +4,7 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tags_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 

@@ -4,28 +4,28 @@ package codeconnections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RepositorySyncDefinitions_RepositorySyncDefinitions struct {
-	Branch any
+	Branch    any
 	Directory any
-	Parent any
-	Target any
+	Parent    any
+	Target    any
 }
 
 type RepositorySyncDefinitionsConfig struct {
 	RepositoryLinkId any
-	SyncType any
+	SyncType         any
 }
 
 type RepositorySyncDefinitionsAttrs struct {
-	NextToken any
-	RepositoryLinkId any
+	NextToken                 any
+	RepositoryLinkId          any
 	RepositorySyncDefinitions any
-	SyncType any
+	SyncType                  any
 }
 
 var RepositorySyncDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_codeconnections_repository_sync_definitions",
 	Fields: ubx.FieldMap{
 		"RepositoryLinkId": ubx.FieldSpec{WireName: "repository_link_id"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"SyncType":         ubx.FieldSpec{WireName: "sync_type"},
 	},
 }

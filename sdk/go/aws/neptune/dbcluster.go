@@ -25,19 +25,19 @@ type Dbcluster_Tags struct {
 }
 
 var Dbcluster_AssociatedRolesFields = ubx.FieldMap{
-		"FeatureName": ubx.FieldSpec{WireName: "feature_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"FeatureName": ubx.FieldSpec{WireName: "feature_name"},
+	"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Dbcluster_ServerlessScalingConfigurationFields = ubx.FieldMap{
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
-	}
+	"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
+	"MinCapacity": ubx.FieldSpec{WireName: "min_capacity"},
+}
 
 var Dbcluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbclusterConfig struct {
 	// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services on your behalf.
@@ -166,42 +166,42 @@ var Dbcluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AssociatedRoles": ubx.FieldSpec{
 			WireName: "associated_roles",
-			Kind: "list",
-			Fields: Dbcluster_AssociatedRolesFields,
+			Kind:     "list",
+			Fields:   Dbcluster_AssociatedRolesFields,
 		},
-		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
-		"BackupRetentionPeriod": ubx.FieldSpec{WireName: "backup_retention_period"},
-		"CopyTagsToSnapshot": ubx.FieldSpec{WireName: "copy_tags_to_snapshot"},
-		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
-		"DbclusterParameterGroupName": ubx.FieldSpec{WireName: "dbcluster_parameter_group_name"},
+		"AvailabilityZones":            ubx.FieldSpec{WireName: "availability_zones"},
+		"BackupRetentionPeriod":        ubx.FieldSpec{WireName: "backup_retention_period"},
+		"CopyTagsToSnapshot":           ubx.FieldSpec{WireName: "copy_tags_to_snapshot"},
+		"DbclusterIdentifier":          ubx.FieldSpec{WireName: "dbcluster_identifier"},
+		"DbclusterParameterGroupName":  ubx.FieldSpec{WireName: "dbcluster_parameter_group_name"},
 		"DbinstanceParameterGroupName": ubx.FieldSpec{WireName: "dbinstance_parameter_group_name"},
-		"Dbport": ubx.FieldSpec{WireName: "dbport"},
-		"DbsubnetGroupName": ubx.FieldSpec{WireName: "dbsubnet_group_name"},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"EnableCloudwatchLogsExports": ubx.FieldSpec{WireName: "enable_cloudwatch_logs_exports"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
-		"IamAuthEnabled": ubx.FieldSpec{WireName: "iam_auth_enabled"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"PreferredBackupWindow": ubx.FieldSpec{WireName: "preferred_backup_window"},
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"RestoreToTime": ubx.FieldSpec{WireName: "restore_to_time"},
-		"RestoreType": ubx.FieldSpec{WireName: "restore_type"},
+		"Dbport":                       ubx.FieldSpec{WireName: "dbport"},
+		"DbsubnetGroupName":            ubx.FieldSpec{WireName: "dbsubnet_group_name"},
+		"DeletionProtection":           ubx.FieldSpec{WireName: "deletion_protection"},
+		"EnableCloudwatchLogsExports":  ubx.FieldSpec{WireName: "enable_cloudwatch_logs_exports"},
+		"EngineVersion":                ubx.FieldSpec{WireName: "engine_version"},
+		"GlobalClusterIdentifier":      ubx.FieldSpec{WireName: "global_cluster_identifier"},
+		"IamAuthEnabled":               ubx.FieldSpec{WireName: "iam_auth_enabled"},
+		"KmsKeyId":                     ubx.FieldSpec{WireName: "kms_key_id"},
+		"NetworkType":                  ubx.FieldSpec{WireName: "network_type"},
+		"PreferredBackupWindow":        ubx.FieldSpec{WireName: "preferred_backup_window"},
+		"PreferredMaintenanceWindow":   ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+		"RestoreToTime":                ubx.FieldSpec{WireName: "restore_to_time"},
+		"RestoreType":                  ubx.FieldSpec{WireName: "restore_type"},
 		"ServerlessScalingConfiguration": ubx.FieldSpec{
 			WireName: "serverless_scaling_configuration",
-			Kind: "object",
-			Fields: Dbcluster_ServerlessScalingConfigurationFields,
+			Kind:     "object",
+			Fields:   Dbcluster_ServerlessScalingConfigurationFields,
 		},
-		"SnapshotIdentifier": ubx.FieldSpec{WireName: "snapshot_identifier"},
+		"SnapshotIdentifier":        ubx.FieldSpec{WireName: "snapshot_identifier"},
 		"SourceDbclusterIdentifier": ubx.FieldSpec{WireName: "source_dbcluster_identifier"},
-		"StorageEncrypted": ubx.FieldSpec{WireName: "storage_encrypted"},
+		"StorageEncrypted":          ubx.FieldSpec{WireName: "storage_encrypted"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dbcluster_TagsFields,
+			Kind:     "list",
+			Fields:   Dbcluster_TagsFields,
 		},
 		"UseLatestRestorableTime": ubx.FieldSpec{WireName: "use_latest_restorable_time"},
-		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
+		"VpcSecurityGroupIds":     ubx.FieldSpec{WireName: "vpc_security_group_ids"},
 	},
 }

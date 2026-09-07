@@ -4,47 +4,47 @@ package redshift_data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RedshiftDataTable_ColumnList struct {
-	ColumnDefault any
+	ColumnDefault   any
 	IsCaseSensitive any
-	IsCurrency any
-	IsSigned any
-	Label any
-	Length any
-	Name any
-	Nullable any
-	Precision any
-	Scale any
-	SchemaName any
-	TableName any
-	TypeName any
+	IsCurrency      any
+	IsSigned        any
+	Label           any
+	Length          any
+	Name            any
+	Nullable        any
+	Precision       any
+	Scale           any
+	SchemaName      any
+	TableName       any
+	TypeName        any
 }
 
 type RedshiftDataTableConfig struct {
 	ClusterIdentifier any
 	ConnectedDatabase any
-	Database any
-	DbUser any
-	MaxResults any
-	NextToken any
-	Schema any
-	SecretArn any
-	Table any
-	WorkgroupName any
+	Database          any
+	DbUser            any
+	MaxResults        any
+	NextToken         any
+	Schema            any
+	SecretArn         any
+	Table             any
+	WorkgroupName     any
 }
 
 type RedshiftDataTableAttrs struct {
 	ClusterIdentifier any
-	ColumnList any
+	ColumnList        any
 	ConnectedDatabase any
-	Database any
-	DbUser any
-	MaxResults any
-	NextToken any
-	Schema any
-	SecretArn any
-	Table any
-	TableName any
-	WorkgroupName any
+	Database          any
+	DbUser            any
+	MaxResults        any
+	NextToken         any
+	Schema            any
+	SecretArn         any
+	Table             any
+	TableName         any
+	WorkgroupName     any
 }
 
 var RedshiftDataTable = ubx.DataSourceBinding{
@@ -52,13 +52,13 @@ var RedshiftDataTable = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
 		"ConnectedDatabase": ubx.FieldSpec{WireName: "connected_database"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DbUser": ubx.FieldSpec{WireName: "db_user"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
+		"Database":          ubx.FieldSpec{WireName: "database"},
+		"DbUser":            ubx.FieldSpec{WireName: "db_user"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"Schema":            ubx.FieldSpec{WireName: "schema"},
+		"SecretArn":         ubx.FieldSpec{WireName: "secret_arn"},
+		"Table":             ubx.FieldSpec{WireName: "table"},
+		"WorkgroupName":     ubx.FieldSpec{WireName: "workgroup_name"},
 	},
 }

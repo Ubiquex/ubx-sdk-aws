@@ -8,15 +8,15 @@ type ProtectedResourceConfig struct {
 }
 
 type ProtectedResourceAttrs struct {
-	LastBackupTime any
-	LastBackupVaultArn any
-	LastRecoveryPointArn any
-	LatestRestoreExecutionTimeMinutes any
-	LatestRestoreJobCreationDate any
+	LastBackupTime                         any
+	LastBackupVaultArn                     any
+	LastRecoveryPointArn                   any
+	LatestRestoreExecutionTimeMinutes      any
+	LatestRestoreJobCreationDate           any
 	LatestRestoreRecoveryPointCreationDate any
-	ResourceArn any
-	ResourceName any
-	ResourceType any
+	ResourceArn                            any
+	ResourceName                           any
+	ResourceType                           any
 }
 
 var ProtectedResource = ubx.DataSourceBinding{

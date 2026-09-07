@@ -4,14 +4,14 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MltaskRuns_Filter struct {
-	StartedAfter any
+	StartedAfter  any
 	StartedBefore any
-	Status any
-	TaskRunType any
+	Status        any
+	TaskRunType   any
 }
 
 type MltaskRuns_Sort struct {
-	Column any
+	Column        any
 	SortDirection any
 }
 
@@ -20,67 +20,67 @@ type MltaskRuns_TaskRuns_Properties_ExportLabelsTaskRunProperties struct {
 }
 
 type MltaskRuns_TaskRuns_Properties_FindMatchesTaskRunProperties struct {
-	JobId any
-	JobName any
+	JobId    any
+	JobName  any
 	JobRunId any
 }
 
 type MltaskRuns_TaskRuns_Properties_ImportLabelsTaskRunProperties struct {
 	InputS3Path any
-	Replace any
+	Replace     any
 }
 
 type MltaskRuns_TaskRuns_Properties struct {
-	ExportLabelsTaskRunProperties any
-	FindMatchesTaskRunProperties any
-	ImportLabelsTaskRunProperties any
+	ExportLabelsTaskRunProperties          any
+	FindMatchesTaskRunProperties           any
+	ImportLabelsTaskRunProperties          any
 	LabelingSetGenerationTaskRunProperties any
-	TaskType any
+	TaskType                               any
 }
 
 type MltaskRuns_TaskRuns struct {
-	CompletedOn any
-	ErrorString any
-	ExecutionTime any
+	CompletedOn    any
+	ErrorString    any
+	ExecutionTime  any
 	LastModifiedOn any
-	LogGroupName any
-	Properties any
-	StartedOn any
-	Status any
-	TaskRunId any
-	TransformId any
+	LogGroupName   any
+	Properties     any
+	StartedOn      any
+	Status         any
+	TaskRunId      any
+	TransformId    any
 }
 
 var MltaskRuns_FilterFields = ubx.FieldMap{
-		"StartedAfter": ubx.FieldSpec{WireName: "started_after"},
-		"StartedBefore": ubx.FieldSpec{WireName: "started_before"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TaskRunType": ubx.FieldSpec{WireName: "task_run_type"},
-	}
+	"StartedAfter":  ubx.FieldSpec{WireName: "started_after"},
+	"StartedBefore": ubx.FieldSpec{WireName: "started_before"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+	"TaskRunType":   ubx.FieldSpec{WireName: "task_run_type"},
+}
 
 var MltaskRuns_SortFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
-	}
+	"Column":        ubx.FieldSpec{WireName: "column"},
+	"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
+}
 
 type MltaskRunsConfig struct {
 	// <p>The criteria that are used to filter the task runs for the machine learning transform.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The sorting criteria that are used to sort the list of task runs for the machine learning transform.</p>
-	Sort any
+	Sort        any
 	TransformId any
 }
 
 type MltaskRunsAttrs struct {
 	// <p>The criteria that are used to filter the task runs for the machine learning transform.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The sorting criteria that are used to sort the list of task runs for the machine learning transform.</p>
-	Sort any
-	TaskRuns any
+	Sort        any
+	TaskRuns    any
 	TransformId any
 }
 
@@ -89,15 +89,15 @@ var MltaskRuns = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: MltaskRuns_FilterFields,
+			Kind:     "object",
+			Fields:   MltaskRuns_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Sort": ubx.FieldSpec{
 			WireName: "sort",
-			Kind: "object",
-			Fields: MltaskRuns_SortFields,
+			Kind:     "object",
+			Fields:   MltaskRuns_SortFields,
 		},
 		"TransformId": ubx.FieldSpec{WireName: "transform_id"},
 	},

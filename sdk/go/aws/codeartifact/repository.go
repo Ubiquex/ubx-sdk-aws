@@ -11,9 +11,9 @@ type Repository_Tags struct {
 }
 
 var Repository_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RepositoryConfig struct {
 	// A text description of the repository.
@@ -58,15 +58,15 @@ type RepositoryAttrs struct {
 var Repository = ubx.ResourceBinding{
 	WireType: "aws_code_artifact_repository",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"ExternalConnections": ubx.FieldSpec{WireName: "external_connections"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"DomainName":                ubx.FieldSpec{WireName: "domain_name"},
+		"ExternalConnections":       ubx.FieldSpec{WireName: "external_connections"},
 		"PermissionsPolicyDocument": ubx.FieldSpec{WireName: "permissions_policy_document"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"RepositoryName":            ubx.FieldSpec{WireName: "repository_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Repository_TagsFields,
+			Kind:     "list",
+			Fields:   Repository_TagsFields,
 		},
 		"Upstreams": ubx.FieldSpec{WireName: "upstreams"},
 	},

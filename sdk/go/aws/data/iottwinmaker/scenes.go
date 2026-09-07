@@ -4,32 +4,32 @@ package iottwinmaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Scenes_SceneSummaries struct {
-	Arn any
-	ContentLocation any
+	Arn              any
+	ContentLocation  any
 	CreationDateTime any
-	Description any
-	SceneId any
-	UpdateDateTime any
+	Description      any
+	SceneId          any
+	UpdateDateTime   any
 }
 
 type ScenesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	WorkspaceId any
 }
 
 type ScenesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	SceneSummaries any
-	WorkspaceId any
+	WorkspaceId    any
 }
 
 var Scenes = ubx.DataSourceBinding{
 	WireType: "aws_iottwinmaker_scenes",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

@@ -20,15 +20,15 @@ type CrossAccountAttachment_Tags struct {
 }
 
 var CrossAccountAttachment_ResourcesFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"EndpointId": ubx.FieldSpec{WireName: "endpoint_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Cidr":       ubx.FieldSpec{WireName: "cidr"},
+	"EndpointId": ubx.FieldSpec{WireName: "endpoint_id"},
+	"Region":     ubx.FieldSpec{WireName: "region"},
+}
 
 var CrossAccountAttachment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CrossAccountAttachmentConfig struct {
 	// The Friendly identifier of the attachment.
@@ -57,17 +57,17 @@ type CrossAccountAttachmentAttrs struct {
 var CrossAccountAttachment = ubx.ResourceBinding{
 	WireType: "aws_global_accelerator_cross_account_attachment",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Principals": ubx.FieldSpec{WireName: "principals"},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind: "list",
-			Fields: CrossAccountAttachment_ResourcesFields,
+			Kind:     "list",
+			Fields:   CrossAccountAttachment_ResourcesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CrossAccountAttachment_TagsFields,
+			Kind:     "list",
+			Fields:   CrossAccountAttachment_TagsFields,
 		},
 	},
 }

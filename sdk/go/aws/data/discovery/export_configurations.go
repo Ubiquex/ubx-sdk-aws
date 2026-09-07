@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExportConfigurations_ExportsInfo struct {
 	ConfigurationsDownloadUrl any
-	ExportId any
-	ExportRequestTime any
-	ExportStatus any
-	IsTruncated any
-	RequestedEndTime any
-	RequestedStartTime any
-	StatusMessage any
+	ExportId                  any
+	ExportRequestTime         any
+	ExportStatus              any
+	IsTruncated               any
+	RequestedEndTime          any
+	RequestedStartTime        any
+	StatusMessage             any
 }
 
 type ExportConfigurationsConfig struct {
-	ExportIds any
+	ExportIds  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExportConfigurationsAttrs struct {
-	ExportIds any
+	ExportIds   any
 	ExportsInfo any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var ExportConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_discovery_export_configurations",
 	Fields: ubx.FieldMap{
-		"ExportIds": ubx.FieldSpec{WireName: "export_ids"},
+		"ExportIds":  ubx.FieldSpec{WireName: "export_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

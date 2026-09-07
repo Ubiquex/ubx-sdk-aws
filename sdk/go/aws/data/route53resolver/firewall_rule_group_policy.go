@@ -8,7 +8,7 @@ type FirewallRuleGroupPolicyConfig struct {
 }
 
 type FirewallRuleGroupPolicyAttrs struct {
-	Arn any
+	Arn                     any
 	FirewallRuleGroupPolicy any
 }
 

@@ -11,9 +11,9 @@ type WorkerConfiguration_Tags struct {
 }
 
 var WorkerConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkerConfigurationConfig struct {
 	// A summary description of the worker configuration.
@@ -44,13 +44,13 @@ type WorkerConfigurationAttrs struct {
 var WorkerConfiguration = ubx.ResourceBinding{
 	WireType: "aws_kafka_connect_worker_configuration",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"PropertiesFileContent": ubx.FieldSpec{WireName: "properties_file_content"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WorkerConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   WorkerConfiguration_TagsFields,
 		},
 	},
 }

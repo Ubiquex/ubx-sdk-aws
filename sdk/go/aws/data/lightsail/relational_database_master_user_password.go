@@ -4,21 +4,21 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationalDatabaseMasterUserPasswordConfig struct {
-	PasswordVersion any
+	PasswordVersion        any
 	RelationalDatabaseName any
 }
 
 type RelationalDatabaseMasterUserPasswordAttrs struct {
-	CreatedAt any
-	MasterUserPassword any
-	PasswordVersion any
+	CreatedAt              any
+	MasterUserPassword     any
+	PasswordVersion        any
 	RelationalDatabaseName any
 }
 
 var RelationalDatabaseMasterUserPassword = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_relational_database_master_user_password",
 	Fields: ubx.FieldMap{
-		"PasswordVersion": ubx.FieldSpec{WireName: "password_version"},
+		"PasswordVersion":        ubx.FieldSpec{WireName: "password_version"},
 		"RelationalDatabaseName": ubx.FieldSpec{WireName: "relational_database_name"},
 	},
 }

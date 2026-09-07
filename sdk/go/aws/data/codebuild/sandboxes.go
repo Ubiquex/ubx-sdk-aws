@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SandboxesConfig struct {
 	MaxResults any
-	NextToken any
-	SortOrder any
+	NextToken  any
+	SortOrder  any
 }
 
 type SandboxesAttrs struct {
-	Ids any
+	Ids        any
 	MaxResults any
-	NextToken any
-	SortOrder any
+	NextToken  any
+	SortOrder  any
 }
 
 var Sandboxes = ubx.DataSourceBinding{
 	WireType: "aws_codebuild_sandboxes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

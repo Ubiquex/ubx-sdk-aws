@@ -8,7 +8,7 @@ type AcmPcaPolicyConfig struct {
 }
 
 type AcmPcaPolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

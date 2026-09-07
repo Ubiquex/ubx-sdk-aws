@@ -4,14 +4,14 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainMaintenances_DomainMaintenances struct {
-	Action any
-	CreatedAt any
-	DomainName any
+	Action        any
+	CreatedAt     any
+	DomainName    any
 	MaintenanceId any
-	NodeId any
-	Status any
+	NodeId        any
+	Status        any
 	StatusMessage any
-	UpdatedAt any
+	UpdatedAt     any
 }
 
 type DomainMaintenancesConfig struct {
@@ -22,11 +22,11 @@ type DomainMaintenancesConfig struct {
 	MaxResults any
 	// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
 	NextToken any
-	Status any
+	Status    any
 }
 
 type DomainMaintenancesAttrs struct {
-	Action any
+	Action             any
 	DomainMaintenances any
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
 	DomainName any
@@ -34,16 +34,16 @@ type DomainMaintenancesAttrs struct {
 	MaxResults any
 	// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
 	NextToken any
-	Status any
+	Status    any
 }
 
 var DomainMaintenances = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_domain_maintenances",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":     ubx.FieldSpec{WireName: "action"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -4,27 +4,27 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspacesConnectionStatus_WorkspacesConnectionStatus struct {
-	ConnectionState any
-	ConnectionStateCheckTimestamp any
+	ConnectionState                  any
+	ConnectionStateCheckTimestamp    any
 	LastKnownUserConnectionTimestamp any
-	WorkspaceId any
+	WorkspaceId                      any
 }
 
 type WorkspacesConnectionStatusConfig struct {
-	NextToken any
+	NextToken    any
 	WorkspaceIds any
 }
 
 type WorkspacesConnectionStatusAttrs struct {
-	NextToken any
-	WorkspaceIds any
+	NextToken                  any
+	WorkspaceIds               any
 	WorkspacesConnectionStatus any
 }
 
 var WorkspacesConnectionStatus = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_workspaces_connection_status",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceIds": ubx.FieldSpec{WireName: "workspace_ids"},
 	},
 }

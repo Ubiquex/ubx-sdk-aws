@@ -9,37 +9,37 @@ type Projects_Projects_Sample struct {
 }
 
 type Projects_Projects struct {
-	AccountId any
-	CreateDate any
-	CreatedBy any
-	DatasetName any
-	LastModifiedBy any
+	AccountId        any
+	CreateDate       any
+	CreatedBy        any
+	DatasetName      any
+	LastModifiedBy   any
 	LastModifiedDate any
-	Name any
-	OpenDate any
-	OpenedBy any
-	RecipeName any
-	ResourceArn any
-	RoleArn any
-	Sample any
-	Tags any
+	Name             any
+	OpenDate         any
+	OpenedBy         any
+	RecipeName       any
+	ResourceArn      any
+	RoleArn          any
+	Sample           any
+	Tags             any
 }
 
 type ProjectsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ProjectsAttrs struct {
 	MaxResults any
-	NextToken any
-	Projects any
+	NextToken  any
+	Projects   any
 }
 
 var Projects = ubx.DataSourceBinding{
 	WireType: "aws_databrew_projects",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

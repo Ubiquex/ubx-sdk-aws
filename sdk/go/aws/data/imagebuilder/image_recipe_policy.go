@@ -9,8 +9,8 @@ type ImageRecipePolicyConfig struct {
 
 type ImageRecipePolicyAttrs struct {
 	ImageRecipeArn any
-	Policy any
-	RequestId any
+	Policy         any
+	RequestId      any
 }
 
 var ImageRecipePolicy = ubx.DataSourceBinding{

@@ -4,7 +4,7 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Packages_Packages_OriginConfiguration_Restrictions struct {
-	Publish any
+	Publish  any
 	Upstream any
 }
 
@@ -13,51 +13,51 @@ type Packages_Packages_OriginConfiguration struct {
 }
 
 type Packages_Packages struct {
-	Format any
-	Namespace any
+	Format              any
+	Namespace           any
 	OriginConfiguration any
-	Package any
+	Package             any
 }
 
 type PackagesConfig struct {
-	Domain any
-	DomainOwner any
-	Format any
-	MaxResults any
-	Namespace any
-	NextToken any
+	Domain        any
+	DomainOwner   any
+	Format        any
+	MaxResults    any
+	Namespace     any
+	NextToken     any
 	PackagePrefix any
-	Publish any
-	Repository any
-	Upstream any
+	Publish       any
+	Repository    any
+	Upstream      any
 }
 
 type PackagesAttrs struct {
-	Domain any
-	DomainOwner any
-	Format any
-	MaxResults any
-	Namespace any
-	NextToken any
+	Domain        any
+	DomainOwner   any
+	Format        any
+	MaxResults    any
+	Namespace     any
+	NextToken     any
 	PackagePrefix any
-	Packages any
-	Publish any
-	Repository any
-	Upstream any
+	Packages      any
+	Publish       any
+	Repository    any
+	Upstream      any
 }
 
 var Packages = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_packages",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Domain":        ubx.FieldSpec{WireName: "domain"},
+		"DomainOwner":   ubx.FieldSpec{WireName: "domain_owner"},
+		"Format":        ubx.FieldSpec{WireName: "format"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"Namespace":     ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"PackagePrefix": ubx.FieldSpec{WireName: "package_prefix"},
-		"Publish": ubx.FieldSpec{WireName: "publish"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"Upstream": ubx.FieldSpec{WireName: "upstream"},
+		"Publish":       ubx.FieldSpec{WireName: "publish"},
+		"Repository":    ubx.FieldSpec{WireName: "repository"},
+		"Upstream":      ubx.FieldSpec{WireName: "upstream"},
 	},
 }

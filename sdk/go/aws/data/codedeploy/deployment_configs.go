@@ -9,7 +9,7 @@ type DeploymentConfigsConfig struct {
 
 type DeploymentConfigsAttrs struct {
 	DeploymentConfigsList any
-	NextToken any
+	NextToken             any
 }
 
 var DeploymentConfigs = ubx.DataSourceBinding{

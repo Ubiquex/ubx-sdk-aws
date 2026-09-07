@@ -4,58 +4,58 @@ package clouddirectory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FacetAttributes_Attributes_AttributeDefinition_DefaultValue struct {
-	BinaryValue any
-	BooleanValue any
+	BinaryValue   any
+	BooleanValue  any
 	DatetimeValue any
-	NumberValue any
-	StringValue any
+	NumberValue   any
+	StringValue   any
 }
 
 type FacetAttributes_Attributes_AttributeDefinition_Rules struct {
 	Parameters any
-	Type any
+	Type       any
 }
 
 type FacetAttributes_Attributes_AttributeDefinition struct {
 	DefaultValue any
-	IsImmutable any
-	Rules any
-	Type any
+	IsImmutable  any
+	Rules        any
+	Type         any
 }
 
 type FacetAttributes_Attributes_AttributeReference struct {
 	TargetAttributeName any
-	TargetFacetName any
+	TargetFacetName     any
 }
 
 type FacetAttributes_Attributes struct {
 	AttributeDefinition any
-	AttributeReference any
-	Name any
-	RequiredBehavior any
+	AttributeReference  any
+	Name                any
+	RequiredBehavior    any
 }
 
 type FacetAttributesConfig struct {
 	MaxResults any
-	Name any
-	NextToken any
-	SchemaArn any
+	Name       any
+	NextToken  any
+	SchemaArn  any
 }
 
 type FacetAttributesAttrs struct {
 	Attributes any
 	MaxResults any
-	Name any
-	NextToken any
-	SchemaArn any
+	Name       any
+	NextToken  any
+	SchemaArn  any
 }
 
 var FacetAttributes = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_facet_attributes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SchemaArn":  ubx.FieldSpec{WireName: "schema_arn"},
 	},
 }

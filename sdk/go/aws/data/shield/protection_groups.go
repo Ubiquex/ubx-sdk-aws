@@ -4,40 +4,40 @@ package shield
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProtectionGroups_InclusionFilters struct {
-	Aggregations any
-	Patterns any
+	Aggregations       any
+	Patterns           any
 	ProtectionGroupIds any
-	ResourceTypes any
+	ResourceTypes      any
 }
 
 type ProtectionGroups_ProtectionGroups struct {
-	Aggregation any
-	Members any
-	Pattern any
+	Aggregation        any
+	Members            any
+	Pattern            any
 	ProtectionGroupArn any
-	ProtectionGroupId any
-	ResourceType any
+	ProtectionGroupId  any
+	ResourceType       any
 }
 
 var ProtectionGroups_InclusionFiltersFields = ubx.FieldMap{
-		"Aggregations": ubx.FieldSpec{WireName: "aggregations"},
-		"Patterns": ubx.FieldSpec{WireName: "patterns"},
-		"ProtectionGroupIds": ubx.FieldSpec{WireName: "protection_group_ids"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"Aggregations":       ubx.FieldSpec{WireName: "aggregations"},
+	"Patterns":           ubx.FieldSpec{WireName: "patterns"},
+	"ProtectionGroupIds": ubx.FieldSpec{WireName: "protection_group_ids"},
+	"ResourceTypes":      ubx.FieldSpec{WireName: "resource_types"},
+}
 
 type ProtectionGroupsConfig struct {
 	// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with a specific pattern, aggregation, or resource type. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
 	InclusionFilters any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type ProtectionGroupsAttrs struct {
 	// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with a specific pattern, aggregation, or resource type. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
 	InclusionFilters any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ProtectionGroups any
 }
 
@@ -46,10 +46,10 @@ var ProtectionGroups = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InclusionFilters": ubx.FieldSpec{
 			WireName: "inclusion_filters",
-			Kind: "object",
-			Fields: ProtectionGroups_InclusionFiltersFields,
+			Kind:     "object",
+			Fields:   ProtectionGroups_InclusionFiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

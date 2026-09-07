@@ -58,39 +58,39 @@ type StreamProcessor_Tags struct {
 }
 
 var StreamProcessor_BoundingBoxRegionsOfInterestFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Left": ubx.FieldSpec{WireName: "left"},
-		"Top": ubx.FieldSpec{WireName: "top"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Height": ubx.FieldSpec{WireName: "height"},
+	"Left":   ubx.FieldSpec{WireName: "left"},
+	"Top":    ubx.FieldSpec{WireName: "top"},
+	"Width":  ubx.FieldSpec{WireName: "width"},
+}
 
 var StreamProcessor_ConnectedHomeSettingsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MinConfidence": ubx.FieldSpec{WireName: "min_confidence"},
-	}
+	"Labels":        ubx.FieldSpec{WireName: "labels"},
+	"MinConfidence": ubx.FieldSpec{WireName: "min_confidence"},
+}
 
 var StreamProcessor_DataSharingPreferenceFields = ubx.FieldMap{
-		"OptIn": ubx.FieldSpec{WireName: "opt_in"},
-	}
+	"OptIn": ubx.FieldSpec{WireName: "opt_in"},
+}
 
 var StreamProcessor_FaceSearchSettingsFields = ubx.FieldMap{
-		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
-		"FaceMatchThreshold": ubx.FieldSpec{WireName: "face_match_threshold"},
-	}
+	"CollectionId":       ubx.FieldSpec{WireName: "collection_id"},
+	"FaceMatchThreshold": ubx.FieldSpec{WireName: "face_match_threshold"},
+}
 
 var StreamProcessor_KinesisDataStreamFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var StreamProcessor_S3DestinationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"ObjectKeyPrefix": ubx.FieldSpec{WireName: "object_key_prefix"},
-	}
+	"BucketName":      ubx.FieldSpec{WireName: "bucket_name"},
+	"ObjectKeyPrefix": ubx.FieldSpec{WireName: "object_key_prefix"},
+}
 
 var StreamProcessor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StreamProcessorConfig struct {
 	// The BoundingBoxRegionsOfInterest specifies an array of bounding boxes of interest in the video frames to analyze, as part of connected home feature. If an object is partially in a region of interest, Rekognition will tag it as detected if the overlap of the object with the region-of-interest is greater than 20%.
@@ -161,52 +161,52 @@ var StreamProcessor = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BoundingBoxRegionsOfInterest": ubx.FieldSpec{
 			WireName: "bounding_box_regions_of_interest",
-			Kind: "list",
-			Fields: StreamProcessor_BoundingBoxRegionsOfInterestFields,
+			Kind:     "list",
+			Fields:   StreamProcessor_BoundingBoxRegionsOfInterestFields,
 		},
 		"ConnectedHomeSettings": ubx.FieldSpec{
 			WireName: "connected_home_settings",
-			Kind: "object",
-			Fields: StreamProcessor_ConnectedHomeSettingsFields,
+			Kind:     "object",
+			Fields:   StreamProcessor_ConnectedHomeSettingsFields,
 		},
 		"DataSharingPreference": ubx.FieldSpec{
 			WireName: "data_sharing_preference",
-			Kind: "object",
-			Fields: StreamProcessor_DataSharingPreferenceFields,
+			Kind:     "object",
+			Fields:   StreamProcessor_DataSharingPreferenceFields,
 		},
 		"FaceSearchSettings": ubx.FieldSpec{
 			WireName: "face_search_settings",
-			Kind: "object",
-			Fields: StreamProcessor_FaceSearchSettingsFields,
+			Kind:     "object",
+			Fields:   StreamProcessor_FaceSearchSettingsFields,
 		},
 		"KinesisDataStream": ubx.FieldSpec{
 			WireName: "kinesis_data_stream",
-			Kind: "object",
-			Fields: StreamProcessor_KinesisDataStreamFields,
+			Kind:     "object",
+			Fields:   StreamProcessor_KinesisDataStreamFields,
 		},
 		"KinesisVideoStream": ubx.FieldSpec{
 			WireName: "kinesis_video_stream",
-			Kind: "object",
-			Fields: StreamProcessor_KinesisDataStreamFields,
+			Kind:     "object",
+			Fields:   StreamProcessor_KinesisDataStreamFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"NotificationChannel": ubx.FieldSpec{
 			WireName: "notification_channel",
-			Kind: "object",
-			Fields: StreamProcessor_KinesisDataStreamFields,
+			Kind:     "object",
+			Fields:   StreamProcessor_KinesisDataStreamFields,
 		},
 		"PolygonRegionsOfInterest": ubx.FieldSpec{WireName: "polygon_regions_of_interest"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":                  ubx.FieldSpec{WireName: "role_arn"},
 		"S3Destination": ubx.FieldSpec{
 			WireName: "s3_destination",
-			Kind: "object",
-			Fields: StreamProcessor_S3DestinationFields,
+			Kind:     "object",
+			Fields:   StreamProcessor_S3DestinationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StreamProcessor_TagsFields,
+			Kind:     "list",
+			Fields:   StreamProcessor_TagsFields,
 		},
 	},
 }

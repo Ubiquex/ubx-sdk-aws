@@ -4,30 +4,30 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerDomains_Domains struct {
-	CreationTime any
-	DomainArn any
-	DomainId any
-	DomainName any
+	CreationTime     any
+	DomainArn        any
+	DomainId         any
+	DomainName       any
 	LastModifiedTime any
-	Status any
-	Url any
+	Status           any
+	Url              any
 }
 
 type ApiSagemakerDomainsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiSagemakerDomainsAttrs struct {
-	Domains any
+	Domains    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ApiSagemakerDomains = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_domains",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

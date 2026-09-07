@@ -4,52 +4,52 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticsearchDomains_DomainStatusList_AdvancedSecurityOptions_Samloptions_Idp struct {
-	EntityId any
+	EntityId        any
 	MetadataContent any
 }
 
 type ElasticsearchDomains_DomainStatusList_AdvancedSecurityOptions_Samloptions struct {
-	Enabled any
-	Idp any
-	RolesKey any
+	Enabled               any
+	Idp                   any
+	RolesKey              any
 	SessionTimeoutMinutes any
-	SubjectKey any
+	SubjectKey            any
 }
 
 type ElasticsearchDomains_DomainStatusList_AdvancedSecurityOptions struct {
-	AnonymousAuthDisableDate any
-	AnonymousAuthEnabled any
-	Enabled any
+	AnonymousAuthDisableDate    any
+	AnonymousAuthEnabled        any
+	Enabled                     any
 	InternalUserDatabaseEnabled any
-	Samloptions any
+	Samloptions                 any
 }
 
 type ElasticsearchDomains_DomainStatusList_AutoTuneOptions struct {
 	ErrorMessage any
-	State any
+	State        any
 }
 
 type ElasticsearchDomains_DomainStatusList_AutomatedSnapshotPauseOptions struct {
-	Enabled any
-	EndTime any
+	Enabled   any
+	EndTime   any
 	StartTime any
-	State any
+	State     any
 }
 
 type ElasticsearchDomains_DomainStatusList_ChangeProgressDetails struct {
-	ChangeId any
+	ChangeId           any
 	ConfigChangeStatus any
-	InitiatedBy any
-	LastUpdatedTime any
-	Message any
-	StartTime any
+	InitiatedBy        any
+	LastUpdatedTime    any
+	Message            any
+	StartTime          any
 }
 
 type ElasticsearchDomains_DomainStatusList_CognitoOptions struct {
-	Enabled any
+	Enabled        any
 	IdentityPoolId any
-	RoleArn any
-	UserPoolId any
+	RoleArn        any
+	UserPoolId     any
 }
 
 type ElasticsearchDomains_DomainStatusList_DeploymentStrategyOptions struct {
@@ -57,16 +57,16 @@ type ElasticsearchDomains_DomainStatusList_DeploymentStrategyOptions struct {
 }
 
 type ElasticsearchDomains_DomainStatusList_DomainEndpointOptions struct {
-	CustomEndpoint any
+	CustomEndpoint               any
 	CustomEndpointCertificateArn any
-	CustomEndpointEnabled any
-	EnforceHttps any
-	TlssecurityPolicy any
+	CustomEndpointEnabled        any
+	EnforceHttps                 any
+	TlssecurityPolicy            any
 }
 
 type ElasticsearchDomains_DomainStatusList_Ebsoptions struct {
 	Ebsenabled any
-	Iops any
+	Iops       any
 	Throughput any
 	VolumeSize any
 	VolumeType any
@@ -81,45 +81,45 @@ type ElasticsearchDomains_DomainStatusList_ElasticsearchClusterConfig_ZoneAwaren
 }
 
 type ElasticsearchDomains_DomainStatusList_ElasticsearchClusterConfig struct {
-	ColdStorageOptions any
-	DedicatedMasterCount any
+	ColdStorageOptions     any
+	DedicatedMasterCount   any
 	DedicatedMasterEnabled any
-	DedicatedMasterType any
-	InstanceCount any
-	InstanceType any
-	WarmCount any
-	WarmEnabled any
-	WarmType any
-	ZoneAwarenessConfig any
-	ZoneAwarenessEnabled any
+	DedicatedMasterType    any
+	InstanceCount          any
+	InstanceType           any
+	WarmCount              any
+	WarmEnabled            any
+	WarmType               any
+	ZoneAwarenessConfig    any
+	ZoneAwarenessEnabled   any
 }
 
 type ElasticsearchDomains_DomainStatusList_EncryptionAtRestOptions struct {
-	Enabled any
+	Enabled  any
 	KmsKeyId any
 }
 
 type ElasticsearchDomains_DomainStatusList_LogPublishingOptions struct {
 	CloudWatchLogsLogGroupArn any
-	Enabled any
+	Enabled                   any
 }
 
 type ElasticsearchDomains_DomainStatusList_ModifyingProperties struct {
-	ActiveValue any
-	Name any
+	ActiveValue  any
+	Name         any
 	PendingValue any
-	ValueType any
+	ValueType    any
 }
 
 type ElasticsearchDomains_DomainStatusList_ServiceSoftwareOptions struct {
 	AutomatedUpdateDate any
-	Cancellable any
-	CurrentVersion any
-	Description any
-	NewVersion any
-	OptionalDeployment any
-	UpdateAvailable any
-	UpdateStatus any
+	Cancellable         any
+	CurrentVersion      any
+	Description         any
+	NewVersion          any
+	OptionalDeployment  any
+	UpdateAvailable     any
+	UpdateStatus        any
 }
 
 type ElasticsearchDomains_DomainStatusList_SnapshotOptions struct {
@@ -128,43 +128,43 @@ type ElasticsearchDomains_DomainStatusList_SnapshotOptions struct {
 
 type ElasticsearchDomains_DomainStatusList_Vpcoptions struct {
 	AvailabilityZones any
-	SecurityGroupIds any
-	SubnetIds any
-	Vpcid any
+	SecurityGroupIds  any
+	SubnetIds         any
+	Vpcid             any
 }
 
 type ElasticsearchDomains_DomainStatusList struct {
-	AccessPolicies any
-	AdvancedOptions any
-	AdvancedSecurityOptions any
-	Arn any
-	AutoTuneOptions any
+	AccessPolicies                any
+	AdvancedOptions               any
+	AdvancedSecurityOptions       any
+	Arn                           any
+	AutoTuneOptions               any
 	AutomatedSnapshotPauseOptions any
-	ChangeProgressDetails any
-	CognitoOptions any
-	Created any
-	Deleted any
-	DeploymentStrategyOptions any
-	DomainEndpointOptions any
-	DomainId any
-	DomainName any
-	DomainProcessingStatus any
-	Ebsoptions any
-	ElasticsearchClusterConfig any
-	ElasticsearchVersion any
-	EncryptionAtRestOptions any
-	Endpoint any
-	Endpoints any
-	EngineMode any
-	LogPublishingOptions any
-	ModifyingProperties any
-	NodeToNodeEncryptionOptions any
-	Processing any
-	ServiceSoftwareOptions any
-	SnapshotOptions any
-	UpgradeProcessing any
-	UseCase any
-	Vpcoptions any
+	ChangeProgressDetails         any
+	CognitoOptions                any
+	Created                       any
+	Deleted                       any
+	DeploymentStrategyOptions     any
+	DomainEndpointOptions         any
+	DomainId                      any
+	DomainName                    any
+	DomainProcessingStatus        any
+	Ebsoptions                    any
+	ElasticsearchClusterConfig    any
+	ElasticsearchVersion          any
+	EncryptionAtRestOptions       any
+	Endpoint                      any
+	Endpoints                     any
+	EngineMode                    any
+	LogPublishingOptions          any
+	ModifyingProperties           any
+	NodeToNodeEncryptionOptions   any
+	Processing                    any
+	ServiceSoftwareOptions        any
+	SnapshotOptions               any
+	UpgradeProcessing             any
+	UseCase                       any
+	Vpcoptions                    any
 }
 
 type ElasticsearchDomainsConfig struct {

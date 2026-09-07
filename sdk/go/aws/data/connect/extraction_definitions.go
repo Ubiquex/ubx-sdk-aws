@@ -4,25 +4,25 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExtractionDefinitions_ExtractionDefinitionSummaryList struct {
-	CreatedTime any
+	CreatedTime             any
 	ExtractionDefinitionArn any
-	ExtractionDefinitionId any
-	LastUpdatedBy any
-	LastUpdatedTime any
-	Name any
+	ExtractionDefinitionId  any
+	LastUpdatedBy           any
+	LastUpdatedTime         any
+	Name                    any
 }
 
 type ExtractionDefinitionsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExtractionDefinitionsAttrs struct {
 	ExtractionDefinitionSummaryList any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId                      any
+	MaxResults                      any
+	NextToken                       any
 }
 
 var ExtractionDefinitions = ubx.DataSourceBinding{
@@ -30,6 +30,6 @@ var ExtractionDefinitions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

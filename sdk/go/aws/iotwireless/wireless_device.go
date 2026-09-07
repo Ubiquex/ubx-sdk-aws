@@ -92,95 +92,95 @@ type WirelessDevice_Tags struct {
 }
 
 var WirelessDevice_LoRaWan_AbpV10x_SessionKeysFields = ubx.FieldMap{
-		"AppSkey": ubx.FieldSpec{WireName: "app_skey"},
-		"NwkSkey": ubx.FieldSpec{WireName: "nwk_skey"},
-	}
+	"AppSkey": ubx.FieldSpec{WireName: "app_skey"},
+	"NwkSkey": ubx.FieldSpec{WireName: "nwk_skey"},
+}
 
 var WirelessDevice_LoRaWan_AbpV10xFields = ubx.FieldMap{
-		"DevAddr": ubx.FieldSpec{WireName: "dev_addr"},
-		"SessionKeys": ubx.FieldSpec{
-			WireName: "session_keys",
-			Kind: "object",
-			Fields: WirelessDevice_LoRaWan_AbpV10x_SessionKeysFields,
-		},
-	}
+	"DevAddr": ubx.FieldSpec{WireName: "dev_addr"},
+	"SessionKeys": ubx.FieldSpec{
+		WireName: "session_keys",
+		Kind:     "object",
+		Fields:   WirelessDevice_LoRaWan_AbpV10x_SessionKeysFields,
+	},
+}
 
 var WirelessDevice_LoRaWan_AbpV11_SessionKeysFields = ubx.FieldMap{
-		"AppSkey": ubx.FieldSpec{WireName: "app_skey"},
-		"FnwkSintKey": ubx.FieldSpec{WireName: "fnwk_sint_key"},
-		"NwkSencKey": ubx.FieldSpec{WireName: "nwk_senc_key"},
-		"SnwkSintKey": ubx.FieldSpec{WireName: "snwk_sint_key"},
-	}
+	"AppSkey":     ubx.FieldSpec{WireName: "app_skey"},
+	"FnwkSintKey": ubx.FieldSpec{WireName: "fnwk_sint_key"},
+	"NwkSencKey":  ubx.FieldSpec{WireName: "nwk_senc_key"},
+	"SnwkSintKey": ubx.FieldSpec{WireName: "snwk_sint_key"},
+}
 
 var WirelessDevice_LoRaWan_AbpV11Fields = ubx.FieldMap{
-		"DevAddr": ubx.FieldSpec{WireName: "dev_addr"},
-		"SessionKeys": ubx.FieldSpec{
-			WireName: "session_keys",
-			Kind: "object",
-			Fields: WirelessDevice_LoRaWan_AbpV11_SessionKeysFields,
-		},
-	}
+	"DevAddr": ubx.FieldSpec{WireName: "dev_addr"},
+	"SessionKeys": ubx.FieldSpec{
+		WireName: "session_keys",
+		Kind:     "object",
+		Fields:   WirelessDevice_LoRaWan_AbpV11_SessionKeysFields,
+	},
+}
 
 var WirelessDevice_LoRaWan_Fports_ApplicationsFields = ubx.FieldMap{
-		"DestinationName": ubx.FieldSpec{WireName: "destination_name"},
-		"Fport": ubx.FieldSpec{WireName: "fport"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DestinationName": ubx.FieldSpec{WireName: "destination_name"},
+	"Fport":           ubx.FieldSpec{WireName: "fport"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var WirelessDevice_LoRaWan_FportsFields = ubx.FieldMap{
-		"Applications": ubx.FieldSpec{
-			WireName: "applications",
-			Kind: "list",
-			Fields: WirelessDevice_LoRaWan_Fports_ApplicationsFields,
-		},
-	}
+	"Applications": ubx.FieldSpec{
+		WireName: "applications",
+		Kind:     "list",
+		Fields:   WirelessDevice_LoRaWan_Fports_ApplicationsFields,
+	},
+}
 
 var WirelessDevice_LoRaWan_OtaaV10xFields = ubx.FieldMap{
-		"AppEui": ubx.FieldSpec{WireName: "app_eui"},
-		"AppKey": ubx.FieldSpec{WireName: "app_key"},
-	}
+	"AppEui": ubx.FieldSpec{WireName: "app_eui"},
+	"AppKey": ubx.FieldSpec{WireName: "app_key"},
+}
 
 var WirelessDevice_LoRaWan_OtaaV11Fields = ubx.FieldMap{
-		"AppKey": ubx.FieldSpec{WireName: "app_key"},
-		"JoinEui": ubx.FieldSpec{WireName: "join_eui"},
-		"NwkKey": ubx.FieldSpec{WireName: "nwk_key"},
-	}
+	"AppKey":  ubx.FieldSpec{WireName: "app_key"},
+	"JoinEui": ubx.FieldSpec{WireName: "join_eui"},
+	"NwkKey":  ubx.FieldSpec{WireName: "nwk_key"},
+}
 
 var WirelessDevice_LoRaWanFields = ubx.FieldMap{
-		"AbpV10x": ubx.FieldSpec{
-			WireName: "abp_v10x",
-			Kind: "object",
-			Fields: WirelessDevice_LoRaWan_AbpV10xFields,
-		},
-		"AbpV11": ubx.FieldSpec{
-			WireName: "abp_v11",
-			Kind: "object",
-			Fields: WirelessDevice_LoRaWan_AbpV11Fields,
-		},
-		"DevEui": ubx.FieldSpec{WireName: "dev_eui"},
-		"DeviceProfileId": ubx.FieldSpec{WireName: "device_profile_id"},
-		"Fports": ubx.FieldSpec{
-			WireName: "fports",
-			Kind: "object",
-			Fields: WirelessDevice_LoRaWan_FportsFields,
-		},
-		"OtaaV10x": ubx.FieldSpec{
-			WireName: "otaa_v10x",
-			Kind: "object",
-			Fields: WirelessDevice_LoRaWan_OtaaV10xFields,
-		},
-		"OtaaV11": ubx.FieldSpec{
-			WireName: "otaa_v11",
-			Kind: "object",
-			Fields: WirelessDevice_LoRaWan_OtaaV11Fields,
-		},
-		"ServiceProfileId": ubx.FieldSpec{WireName: "service_profile_id"},
-	}
+	"AbpV10x": ubx.FieldSpec{
+		WireName: "abp_v10x",
+		Kind:     "object",
+		Fields:   WirelessDevice_LoRaWan_AbpV10xFields,
+	},
+	"AbpV11": ubx.FieldSpec{
+		WireName: "abp_v11",
+		Kind:     "object",
+		Fields:   WirelessDevice_LoRaWan_AbpV11Fields,
+	},
+	"DevEui":          ubx.FieldSpec{WireName: "dev_eui"},
+	"DeviceProfileId": ubx.FieldSpec{WireName: "device_profile_id"},
+	"Fports": ubx.FieldSpec{
+		WireName: "fports",
+		Kind:     "object",
+		Fields:   WirelessDevice_LoRaWan_FportsFields,
+	},
+	"OtaaV10x": ubx.FieldSpec{
+		WireName: "otaa_v10x",
+		Kind:     "object",
+		Fields:   WirelessDevice_LoRaWan_OtaaV10xFields,
+	},
+	"OtaaV11": ubx.FieldSpec{
+		WireName: "otaa_v11",
+		Kind:     "object",
+		Fields:   WirelessDevice_LoRaWan_OtaaV11Fields,
+	},
+	"ServiceProfileId": ubx.FieldSpec{WireName: "service_profile_id"},
+}
 
 var WirelessDevice_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WirelessDeviceConfig struct {
 	// Wireless device description
@@ -233,22 +233,22 @@ type WirelessDeviceAttrs struct {
 var WirelessDevice = ubx.ResourceBinding{
 	WireType: "aws_io_twireless_wireless_device",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DestinationName": ubx.FieldSpec{WireName: "destination_name"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"DestinationName":      ubx.FieldSpec{WireName: "destination_name"},
 		"LastUplinkReceivedAt": ubx.FieldSpec{WireName: "last_uplink_received_at"},
 		"LoRaWan": ubx.FieldSpec{
 			WireName: "lo_ra_wan",
-			Kind: "object",
-			Fields: WirelessDevice_LoRaWanFields,
+			Kind:     "object",
+			Fields:   WirelessDevice_LoRaWanFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Positioning": ubx.FieldSpec{WireName: "positioning"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WirelessDevice_TagsFields,
+			Kind:     "list",
+			Fields:   WirelessDevice_TagsFields,
 		},
 		"ThingArn": ubx.FieldSpec{WireName: "thing_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":     ubx.FieldSpec{WireName: "type"},
 	},
 }

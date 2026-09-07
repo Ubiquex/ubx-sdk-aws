@@ -4,33 +4,33 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SshpublicKey_SshpublicKey struct {
-	Fingerprint any
+	Fingerprint      any
 	SshpublicKeyBody any
-	SshpublicKeyId any
-	Status any
-	UploadDate any
-	UserName any
+	SshpublicKeyId   any
+	Status           any
+	UploadDate       any
+	UserName         any
 }
 
 type SshpublicKeyConfig struct {
-	Encoding any
+	Encoding       any
 	SshpublicKeyId any
-	UserName any
+	UserName       any
 }
 
 type SshpublicKeyAttrs struct {
 	Encoding any
 	// <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSSHPublicKey.html">GetSSHPublicKey</a> and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSSHPublicKey.html">UploadSSHPublicKey</a> operations. </p>
-	SshpublicKey any
+	SshpublicKey   any
 	SshpublicKeyId any
-	UserName any
+	UserName       any
 }
 
 var SshpublicKey = ubx.DataSourceBinding{
 	WireType: "aws_iam_sshpublic_key",
 	Fields: ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
+		"Encoding":       ubx.FieldSpec{WireName: "encoding"},
 		"SshpublicKeyId": ubx.FieldSpec{WireName: "sshpublic_key_id"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"UserName":       ubx.FieldSpec{WireName: "user_name"},
 	},
 }

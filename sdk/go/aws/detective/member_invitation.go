@@ -33,9 +33,9 @@ var MemberInvitation = ubx.ResourceBinding{
 	WireType: "aws_detective_member_invitation",
 	Fields: ubx.FieldMap{
 		"DisableEmailNotification": ubx.FieldSpec{WireName: "disable_email_notification"},
-		"GraphArn": ubx.FieldSpec{WireName: "graph_arn"},
-		"MemberEmailAddress": ubx.FieldSpec{WireName: "member_email_address"},
-		"MemberId": ubx.FieldSpec{WireName: "member_id"},
-		"Message": ubx.FieldSpec{WireName: "message"},
+		"GraphArn":                 ubx.FieldSpec{WireName: "graph_arn"},
+		"MemberEmailAddress":       ubx.FieldSpec{WireName: "member_email_address"},
+		"MemberId":                 ubx.FieldSpec{WireName: "member_id"},
+		"Message":                  ubx.FieldSpec{WireName: "message"},
 	},
 }

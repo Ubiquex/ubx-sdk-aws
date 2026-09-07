@@ -4,24 +4,24 @@ package controlplane_payment_cryptography
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ControlplanePaymentCryptographyCertificateSigningRequest_CertificateSubject struct {
-	City any
-	CommonName any
-	Country any
-	EmailAddress any
-	Organization any
+	City             any
+	CommonName       any
+	Country          any
+	EmailAddress     any
+	Organization     any
 	OrganizationUnit any
-	StateOrProvince any
+	StateOrProvince  any
 }
 
 var ControlplanePaymentCryptographyCertificateSigningRequest_CertificateSubjectFields = ubx.FieldMap{
-		"City": ubx.FieldSpec{WireName: "city"},
-		"CommonName": ubx.FieldSpec{WireName: "common_name"},
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"OrganizationUnit": ubx.FieldSpec{WireName: "organization_unit"},
-		"StateOrProvince": ubx.FieldSpec{WireName: "state_or_province"},
-	}
+	"City":             ubx.FieldSpec{WireName: "city"},
+	"CommonName":       ubx.FieldSpec{WireName: "common_name"},
+	"Country":          ubx.FieldSpec{WireName: "country"},
+	"EmailAddress":     ubx.FieldSpec{WireName: "email_address"},
+	"Organization":     ubx.FieldSpec{WireName: "organization"},
+	"OrganizationUnit": ubx.FieldSpec{WireName: "organization_unit"},
+	"StateOrProvince":  ubx.FieldSpec{WireName: "state_or_province"},
+}
 
 type ControlplanePaymentCryptographyCertificateSigningRequestConfig struct {
 	// <p>The metadata used to create the certificate signing request.</p>
@@ -47,10 +47,10 @@ var ControlplanePaymentCryptographyCertificateSigningRequest = ubx.DataSourceBin
 	Fields: ubx.FieldMap{
 		"CertificateSubject": ubx.FieldSpec{
 			WireName: "certificate_subject",
-			Kind: "object",
-			Fields: ControlplanePaymentCryptographyCertificateSigningRequest_CertificateSubjectFields,
+			Kind:     "object",
+			Fields:   ControlplanePaymentCryptographyCertificateSigningRequest_CertificateSubjectFields,
 		},
-		"KeyIdentifier": ubx.FieldSpec{WireName: "key_identifier"},
+		"KeyIdentifier":    ubx.FieldSpec{WireName: "key_identifier"},
 		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
 	},
 }

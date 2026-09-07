@@ -28,9 +28,9 @@ type StudioSessionMappingAttrs struct {
 var StudioSessionMapping = ubx.ResourceBinding{
 	WireType: "aws_emr_studio_session_mapping",
 	Fields: ubx.FieldMap{
-		"IdentityName": ubx.FieldSpec{WireName: "identity_name"},
-		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
+		"IdentityName":     ubx.FieldSpec{WireName: "identity_name"},
+		"IdentityType":     ubx.FieldSpec{WireName: "identity_type"},
 		"SessionPolicyArn": ubx.FieldSpec{WireName: "session_policy_arn"},
-		"StudioId": ubx.FieldSpec{WireName: "studio_id"},
+		"StudioId":         ubx.FieldSpec{WireName: "studio_id"},
 	},
 }

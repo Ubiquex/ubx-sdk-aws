@@ -7,39 +7,39 @@ type QueryRuntimeStatistics_QueryRuntimeStatistics_OutputStage_QueryStagePlan_Ch
 }
 
 type QueryRuntimeStatistics_QueryRuntimeStatistics_OutputStage_QueryStagePlan struct {
-	Children any
-	Identifier any
-	Name any
+	Children      any
+	Identifier    any
+	Name          any
 	RemoteSources any
 }
 
 type QueryRuntimeStatistics_QueryRuntimeStatistics_OutputStage struct {
 	ExecutionTime any
-	InputBytes any
-	InputRows any
-	OutputBytes any
-	OutputRows any
+	InputBytes    any
+	InputRows     any
+	OutputBytes   any
+	OutputRows    any
 	// <p>Stage plan information such as name, identifier, sub plans, and remote sources.</p>
 	QueryStagePlan any
-	StageId any
-	State any
-	SubStages any
+	StageId        any
+	State          any
+	SubStages      any
 }
 
 type QueryRuntimeStatistics_QueryRuntimeStatistics_Rows struct {
-	InputBytes any
-	InputRows any
+	InputBytes  any
+	InputRows   any
 	OutputBytes any
-	OutputRows any
+	OutputRows  any
 }
 
 type QueryRuntimeStatistics_QueryRuntimeStatistics_Timeline struct {
-	EngineExecutionTimeInMillis any
-	QueryPlanningTimeInMillis any
-	QueryQueueTimeInMillis any
+	EngineExecutionTimeInMillis      any
+	QueryPlanningTimeInMillis        any
+	QueryQueueTimeInMillis           any
 	ServicePreProcessingTimeInMillis any
-	ServiceProcessingTimeInMillis any
-	TotalExecutionTimeInMillis any
+	ServiceProcessingTimeInMillis    any
+	TotalExecutionTimeInMillis       any
 }
 
 type QueryRuntimeStatistics_QueryRuntimeStatistics struct {

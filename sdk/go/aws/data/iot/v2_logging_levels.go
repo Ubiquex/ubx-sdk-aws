@@ -9,28 +9,28 @@ type V2LoggingLevels_LogTargetConfigurations_LogTarget struct {
 }
 
 type V2LoggingLevels_LogTargetConfigurations struct {
-	LogLevel any
+	LogLevel  any
 	LogTarget any
 }
 
 type V2LoggingLevelsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	TargetType any
 }
 
 type V2LoggingLevelsAttrs struct {
 	LogTargetConfigurations any
-	MaxResults any
-	NextToken any
-	TargetType any
+	MaxResults              any
+	NextToken               any
+	TargetType              any
 }
 
 var V2LoggingLevels = ubx.DataSourceBinding{
 	WireType: "aws_iot_v2_logging_levels",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"TargetType": ubx.FieldSpec{WireName: "target_type"},
 	},
 }

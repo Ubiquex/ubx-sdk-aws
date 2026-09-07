@@ -10,18 +10,18 @@ type OauthClientApplication_IdentityProviderVpcConnectionProperties struct {
 
 type OauthClientApplication_Tags struct {
 	// The key of a tag that can be assigned to this AWS QuickSight OAuth client application for identification and management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var OauthClientApplication_IdentityProviderVpcConnectionPropertiesFields = ubx.FieldMap{
-		"VpcConnectionArn": ubx.FieldSpec{WireName: "vpc_connection_arn"},
-	}
+	"VpcConnectionArn": ubx.FieldSpec{WireName: "vpc_connection_arn"},
+}
 
 var OauthClientApplication_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OauthClientApplicationConfig struct {
 	// The OAuth client ID that identifies the third-party client application being registered with Amazon QuickSight for embedded analytics. (AI-inferred)
@@ -82,24 +82,24 @@ type OauthClientApplicationAttrs struct {
 var OauthClientApplication = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_oauth_client_application",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+		"ClientId":       ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecret":   ubx.FieldSpec{WireName: "client_secret"},
 		"DataSourceType": ubx.FieldSpec{WireName: "data_source_type"},
 		"IdentityProviderVpcConnectionProperties": ubx.FieldSpec{
 			WireName: "identity_provider_vpc_connection_properties",
-			Kind: "object",
-			Fields: OauthClientApplication_IdentityProviderVpcConnectionPropertiesFields,
+			Kind:     "object",
+			Fields:   OauthClientApplication_IdentityProviderVpcConnectionPropertiesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"OauthAuthorizationEndpointUrl": ubx.FieldSpec{WireName: "oauth_authorization_endpoint_url"},
-		"OauthClientApplicationId": ubx.FieldSpec{WireName: "oauth_client_application_id"},
+		"OauthClientApplicationId":      ubx.FieldSpec{WireName: "oauth_client_application_id"},
 		"OauthClientAuthenticationType": ubx.FieldSpec{WireName: "oauth_client_authentication_type"},
-		"OauthScopes": ubx.FieldSpec{WireName: "oauth_scopes"},
-		"OauthTokenEndpointUrl": ubx.FieldSpec{WireName: "oauth_token_endpoint_url"},
+		"OauthScopes":                   ubx.FieldSpec{WireName: "oauth_scopes"},
+		"OauthTokenEndpointUrl":         ubx.FieldSpec{WireName: "oauth_token_endpoint_url"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OauthClientApplication_TagsFields,
+			Kind:     "list",
+			Fields:   OauthClientApplication_TagsFields,
 		},
 	},
 }

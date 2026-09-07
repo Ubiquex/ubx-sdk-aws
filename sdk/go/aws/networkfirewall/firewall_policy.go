@@ -92,114 +92,114 @@ type FirewallPolicy_FirewallPolicy struct {
 
 type FirewallPolicy_Tags struct {
 	// A key of a tag that is assigned to the Network Firewall firewall policy to help organize and identify it. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var FirewallPolicy_FirewallPolicy_PolicyVariablesFields = ubx.FieldMap{
-		"RuleVariables": ubx.FieldSpec{WireName: "rule_variables"},
-	}
+	"RuleVariables": ubx.FieldSpec{WireName: "rule_variables"},
+}
 
 var FirewallPolicy_FirewallPolicy_StatefulEngineOptions_FlowTimeoutsFields = ubx.FieldMap{
-		"TcpIdleTimeoutSeconds": ubx.FieldSpec{WireName: "tcp_idle_timeout_seconds"},
-	}
+	"TcpIdleTimeoutSeconds": ubx.FieldSpec{WireName: "tcp_idle_timeout_seconds"},
+}
 
 var FirewallPolicy_FirewallPolicy_StatefulEngineOptionsFields = ubx.FieldMap{
-		"FlowTimeouts": ubx.FieldSpec{
-			WireName: "flow_timeouts",
-			Kind: "object",
-			Fields: FirewallPolicy_FirewallPolicy_StatefulEngineOptions_FlowTimeoutsFields,
-		},
-		"RuleOrder": ubx.FieldSpec{WireName: "rule_order"},
-		"StreamExceptionPolicy": ubx.FieldSpec{WireName: "stream_exception_policy"},
-	}
+	"FlowTimeouts": ubx.FieldSpec{
+		WireName: "flow_timeouts",
+		Kind:     "object",
+		Fields:   FirewallPolicy_FirewallPolicy_StatefulEngineOptions_FlowTimeoutsFields,
+	},
+	"RuleOrder":             ubx.FieldSpec{WireName: "rule_order"},
+	"StreamExceptionPolicy": ubx.FieldSpec{WireName: "stream_exception_policy"},
+}
 
 var FirewallPolicy_FirewallPolicy_StatefulRuleGroupReferences_OverrideFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+}
 
 var FirewallPolicy_FirewallPolicy_StatefulRuleGroupReferencesFields = ubx.FieldMap{
-		"DeepThreatInspection": ubx.FieldSpec{WireName: "deep_threat_inspection"},
-		"Override": ubx.FieldSpec{
-			WireName: "override",
-			Kind: "object",
-			Fields: FirewallPolicy_FirewallPolicy_StatefulRuleGroupReferences_OverrideFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"DeepThreatInspection": ubx.FieldSpec{WireName: "deep_threat_inspection"},
+	"Override": ubx.FieldSpec{
+		WireName: "override",
+		Kind:     "object",
+		Fields:   FirewallPolicy_FirewallPolicy_StatefulRuleGroupReferences_OverrideFields,
+	},
+	"Priority":    ubx.FieldSpec{WireName: "priority"},
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition_PublishMetricAction_DimensionsFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition_PublishMetricActionFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition_PublishMetricAction_DimensionsFields,
-		},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition_PublishMetricAction_DimensionsFields,
+	},
+}
 
 var FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinitionFields = ubx.FieldMap{
-		"PublishMetricAction": ubx.FieldSpec{
-			WireName: "publish_metric_action",
-			Kind: "object",
-			Fields: FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition_PublishMetricActionFields,
-		},
-	}
+	"PublishMetricAction": ubx.FieldSpec{
+		WireName: "publish_metric_action",
+		Kind:     "object",
+		Fields:   FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition_PublishMetricActionFields,
+	},
+}
 
 var FirewallPolicy_FirewallPolicy_StatelessCustomActionsFields = ubx.FieldMap{
-		"ActionDefinition": ubx.FieldSpec{
-			WireName: "action_definition",
-			Kind: "object",
-			Fields: FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinitionFields,
-		},
-		"ActionName": ubx.FieldSpec{WireName: "action_name"},
-	}
+	"ActionDefinition": ubx.FieldSpec{
+		WireName: "action_definition",
+		Kind:     "object",
+		Fields:   FirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinitionFields,
+	},
+	"ActionName": ubx.FieldSpec{WireName: "action_name"},
+}
 
 var FirewallPolicy_FirewallPolicy_StatelessRuleGroupReferencesFields = ubx.FieldMap{
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"Priority":    ubx.FieldSpec{WireName: "priority"},
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var FirewallPolicy_FirewallPolicyFields = ubx.FieldMap{
-		"EnableTlssessionHolding": ubx.FieldSpec{WireName: "enable_tlssession_holding"},
-		"PolicyVariables": ubx.FieldSpec{
-			WireName: "policy_variables",
-			Kind: "object",
-			Fields: FirewallPolicy_FirewallPolicy_PolicyVariablesFields,
-		},
-		"StatefulDefaultActions": ubx.FieldSpec{WireName: "stateful_default_actions"},
-		"StatefulEngineOptions": ubx.FieldSpec{
-			WireName: "stateful_engine_options",
-			Kind: "object",
-			Fields: FirewallPolicy_FirewallPolicy_StatefulEngineOptionsFields,
-		},
-		"StatefulRuleGroupReferences": ubx.FieldSpec{
-			WireName: "stateful_rule_group_references",
-			Kind: "list",
-			Fields: FirewallPolicy_FirewallPolicy_StatefulRuleGroupReferencesFields,
-		},
-		"StatelessCustomActions": ubx.FieldSpec{
-			WireName: "stateless_custom_actions",
-			Kind: "list",
-			Fields: FirewallPolicy_FirewallPolicy_StatelessCustomActionsFields,
-		},
-		"StatelessDefaultActions": ubx.FieldSpec{WireName: "stateless_default_actions"},
-		"StatelessFragmentDefaultActions": ubx.FieldSpec{WireName: "stateless_fragment_default_actions"},
-		"StatelessRuleGroupReferences": ubx.FieldSpec{
-			WireName: "stateless_rule_group_references",
-			Kind: "list",
-			Fields: FirewallPolicy_FirewallPolicy_StatelessRuleGroupReferencesFields,
-		},
-		"TlsinspectionConfigurationArn": ubx.FieldSpec{WireName: "tlsinspection_configuration_arn"},
-	}
+	"EnableTlssessionHolding": ubx.FieldSpec{WireName: "enable_tlssession_holding"},
+	"PolicyVariables": ubx.FieldSpec{
+		WireName: "policy_variables",
+		Kind:     "object",
+		Fields:   FirewallPolicy_FirewallPolicy_PolicyVariablesFields,
+	},
+	"StatefulDefaultActions": ubx.FieldSpec{WireName: "stateful_default_actions"},
+	"StatefulEngineOptions": ubx.FieldSpec{
+		WireName: "stateful_engine_options",
+		Kind:     "object",
+		Fields:   FirewallPolicy_FirewallPolicy_StatefulEngineOptionsFields,
+	},
+	"StatefulRuleGroupReferences": ubx.FieldSpec{
+		WireName: "stateful_rule_group_references",
+		Kind:     "list",
+		Fields:   FirewallPolicy_FirewallPolicy_StatefulRuleGroupReferencesFields,
+	},
+	"StatelessCustomActions": ubx.FieldSpec{
+		WireName: "stateless_custom_actions",
+		Kind:     "list",
+		Fields:   FirewallPolicy_FirewallPolicy_StatelessCustomActionsFields,
+	},
+	"StatelessDefaultActions":         ubx.FieldSpec{WireName: "stateless_default_actions"},
+	"StatelessFragmentDefaultActions": ubx.FieldSpec{WireName: "stateless_fragment_default_actions"},
+	"StatelessRuleGroupReferences": ubx.FieldSpec{
+		WireName: "stateless_rule_group_references",
+		Kind:     "list",
+		Fields:   FirewallPolicy_FirewallPolicy_StatelessRuleGroupReferencesFields,
+	},
+	"TlsinspectionConfigurationArn": ubx.FieldSpec{WireName: "tlsinspection_configuration_arn"},
+}
 
 var FirewallPolicy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallPolicyConfig struct {
 	// A user-provided description of the firewall policy, used to identify its purpose or contents. (AI-inferred)
@@ -233,14 +233,14 @@ var FirewallPolicy = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"FirewallPolicy": ubx.FieldSpec{
 			WireName: "firewall_policy",
-			Kind: "object",
-			Fields: FirewallPolicy_FirewallPolicyFields,
+			Kind:     "object",
+			Fields:   FirewallPolicy_FirewallPolicyFields,
 		},
 		"FirewallPolicyName": ubx.FieldSpec{WireName: "firewall_policy_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FirewallPolicy_TagsFields,
+			Kind:     "list",
+			Fields:   FirewallPolicy_TagsFields,
 		},
 	},
 }

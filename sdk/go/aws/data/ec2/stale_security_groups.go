@@ -4,54 +4,54 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StaleSecurityGroups_StaleSecurityGroupSet_StaleIpPermissions_UserIdGroupPairs struct {
-	Description any
-	GroupId any
-	GroupName any
-	PeeringStatus any
-	UserId any
-	VpcId any
+	Description            any
+	GroupId                any
+	GroupName              any
+	PeeringStatus          any
+	UserId                 any
+	VpcId                  any
 	VpcPeeringConnectionId any
 }
 
 type StaleSecurityGroups_StaleSecurityGroupSet_StaleIpPermissions struct {
-	FromPort any
-	IpProtocol any
-	IpRanges any
-	PrefixListIds any
-	ToPort any
+	FromPort         any
+	IpProtocol       any
+	IpRanges         any
+	PrefixListIds    any
+	ToPort           any
 	UserIdGroupPairs any
 }
 
 type StaleSecurityGroups_StaleSecurityGroupSet struct {
-	Description any
-	GroupId any
-	GroupName any
-	StaleIpPermissions any
+	Description              any
+	GroupId                  any
+	GroupName                any
+	StaleIpPermissions       any
 	StaleIpPermissionsEgress any
-	VpcId any
+	VpcId                    any
 }
 
 type StaleSecurityGroupsConfig struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
-	VpcId any
+	NextToken  any
+	VpcId      any
 }
 
 type StaleSecurityGroupsAttrs struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun                any
+	MaxResults            any
+	NextToken             any
 	StaleSecurityGroupSet any
-	VpcId any
+	VpcId                 any
 }
 
 var StaleSecurityGroups = ubx.DataSourceBinding{
 	WireType: "aws_ec2_stale_security_groups",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"VpcId":      ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

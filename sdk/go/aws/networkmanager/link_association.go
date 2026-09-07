@@ -24,8 +24,8 @@ type LinkAssociationAttrs struct {
 var LinkAssociation = ubx.ResourceBinding{
 	WireType: "aws_network_manager_link_association",
 	Fields: ubx.FieldMap{
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
+		"DeviceId":        ubx.FieldSpec{WireName: "device_id"},
 		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
-		"LinkId": ubx.FieldSpec{WireName: "link_id"},
+		"LinkId":          ubx.FieldSpec{WireName: "link_id"},
 	},
 }

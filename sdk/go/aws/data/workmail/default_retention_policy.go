@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DefaultRetentionPolicy_FolderConfigurations struct {
 	Action any
-	Name any
+	Name   any
 	Period any
 }
 
@@ -14,11 +14,11 @@ type DefaultRetentionPolicyConfig struct {
 }
 
 type DefaultRetentionPolicyAttrs struct {
-	Description any
+	Description          any
 	FolderConfigurations any
-	Id any
-	Name any
-	OrganizationId any
+	Id                   any
+	Name                 any
+	OrganizationId       any
 }
 
 var DefaultRetentionPolicy = ubx.DataSourceBinding{

@@ -4,83 +4,83 @@ package cloudsearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IndexFields_IndexFields_Options_DateArrayOptions struct {
-	DefaultValue any
-	FacetEnabled any
+	DefaultValue  any
+	FacetEnabled  any
 	ReturnEnabled any
 	SearchEnabled any
-	SourceFields any
+	SourceFields  any
 }
 
 type IndexFields_IndexFields_Options_DateOptions struct {
-	DefaultValue any
-	FacetEnabled any
+	DefaultValue  any
+	FacetEnabled  any
 	ReturnEnabled any
 	SearchEnabled any
-	SortEnabled any
-	SourceField any
+	SortEnabled   any
+	SourceField   any
 }
 
 type IndexFields_IndexFields_Options_DoubleArrayOptions struct {
-	DefaultValue any
-	FacetEnabled any
+	DefaultValue  any
+	FacetEnabled  any
 	ReturnEnabled any
 	SearchEnabled any
-	SourceFields any
+	SourceFields  any
 }
 
 type IndexFields_IndexFields_Options_DoubleOptions struct {
-	DefaultValue any
-	FacetEnabled any
+	DefaultValue  any
+	FacetEnabled  any
 	ReturnEnabled any
 	SearchEnabled any
-	SortEnabled any
-	SourceField any
+	SortEnabled   any
+	SourceField   any
 }
 
 type IndexFields_IndexFields_Options_TextArrayOptions struct {
-	AnalysisScheme any
-	DefaultValue any
+	AnalysisScheme   any
+	DefaultValue     any
 	HighlightEnabled any
-	ReturnEnabled any
-	SourceFields any
+	ReturnEnabled    any
+	SourceFields     any
 }
 
 type IndexFields_IndexFields_Options_TextOptions struct {
-	AnalysisScheme any
-	DefaultValue any
+	AnalysisScheme   any
+	DefaultValue     any
 	HighlightEnabled any
-	ReturnEnabled any
-	SortEnabled any
-	SourceField any
+	ReturnEnabled    any
+	SortEnabled      any
+	SourceField      any
 }
 
 type IndexFields_IndexFields_Options struct {
-	DateArrayOptions any
-	DateOptions any
-	DoubleArrayOptions any
-	DoubleOptions any
-	IndexFieldName any
-	IndexFieldType any
-	IntArrayOptions any
-	IntOptions any
-	LatLonOptions any
+	DateArrayOptions    any
+	DateOptions         any
+	DoubleArrayOptions  any
+	DoubleOptions       any
+	IndexFieldName      any
+	IndexFieldType      any
+	IntArrayOptions     any
+	IntOptions          any
+	LatLonOptions       any
 	LiteralArrayOptions any
-	LiteralOptions any
-	TextArrayOptions any
-	TextOptions any
+	LiteralOptions      any
+	TextArrayOptions    any
+	TextOptions         any
 }
 
 type IndexFields_IndexFields_Status struct {
-	CreationDate any
+	CreationDate    any
 	PendingDeletion any
-	State any
-	UpdateDate any
-	UpdateVersion any
+	State           any
+	UpdateDate      any
+	UpdateVersion   any
 }
 
 type IndexFields_IndexFields struct {
 	Options any
-	Status any
+	Status  any
 }
 
 type IndexFieldsConfig struct {
@@ -102,7 +102,7 @@ type IndexFieldsAttrs struct {
 var IndexFields = ubx.DataSourceBinding{
 	WireType: "aws_cloudsearch_index_fields",
 	Fields: ubx.FieldMap{
-		"Deployed": ubx.FieldSpec{WireName: "deployed"},
+		"Deployed":   ubx.FieldSpec{WireName: "deployed"},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"FieldNames": ubx.FieldSpec{WireName: "field_names"},
 	},

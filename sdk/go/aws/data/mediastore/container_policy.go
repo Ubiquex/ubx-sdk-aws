@@ -9,7 +9,7 @@ type ContainerPolicyConfig struct {
 
 type ContainerPolicyAttrs struct {
 	ContainerName any
-	Policy any
+	Policy        any
 }
 
 var ContainerPolicy = ubx.DataSourceBinding{

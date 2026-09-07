@@ -4,23 +4,23 @@ package api_ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrDownloadUrlForLayerConfig struct {
-	LayerDigest any
-	RegistryId any
+	LayerDigest    any
+	RegistryId     any
 	RepositoryName any
 }
 
 type ApiEcrDownloadUrlForLayerAttrs struct {
-	DownloadUrl any
-	LayerDigest any
-	RegistryId any
+	DownloadUrl    any
+	LayerDigest    any
+	RegistryId     any
 	RepositoryName any
 }
 
 var ApiEcrDownloadUrlForLayer = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_download_url_for_layer",
 	Fields: ubx.FieldMap{
-		"LayerDigest": ubx.FieldSpec{WireName: "layer_digest"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"LayerDigest":    ubx.FieldSpec{WireName: "layer_digest"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

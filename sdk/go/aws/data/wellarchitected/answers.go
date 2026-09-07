@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Answers_AnswerSummaries_ChoiceAnswerSummaries struct {
 	ChoiceId any
-	Reason any
-	Status any
+	Reason   any
+	Status   any
 }
 
 type Answers_AnswerSummaries_Choices_AdditionalResources_Content struct {
 	DisplayText any
-	Url any
+	Url         any
 }
 
 type Answers_AnswerSummaries_Choices_AdditionalResources struct {
 	Content any
-	Type any
+	Type    any
 }
 
 type Answers_AnswerSummaries_Choices struct {
 	AdditionalResources any
-	ChoiceId any
-	Description any
-	HelpfulResource any
-	ImprovementPlan any
-	Title any
+	ChoiceId            any
+	Description         any
+	HelpfulResource     any
+	ImprovementPlan     any
+	Title               any
 }
 
 type Answers_AnswerSummaries_JiraConfiguration struct {
-	JiraIssueUrl any
+	JiraIssueUrl   any
 	LastSyncedTime any
 }
 
 type Answers_AnswerSummaries struct {
 	ChoiceAnswerSummaries any
-	Choices any
-	IsApplicable any
-	JiraConfiguration any
-	PillarId any
-	QuestionId any
-	QuestionTitle any
-	QuestionType any
-	Reason any
-	Risk any
-	SelectedChoices any
+	Choices               any
+	IsApplicable          any
+	JiraConfiguration     any
+	PillarId              any
+	QuestionId            any
+	QuestionTitle         any
+	QuestionType          any
+	Reason                any
+	Risk                  any
+	SelectedChoices       any
 }
 
 type AnswersConfig struct {
@@ -57,7 +57,7 @@ type AnswersConfig struct {
 	// <p>The token to use to retrieve the next set of results.</p>
 	NextToken any
 	// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-	PillarId any
+	PillarId         any
 	QuestionPriority any
 	// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
 	WorkloadId any
@@ -68,7 +68,7 @@ type AnswersAttrs struct {
 	AnswerSummaries any
 	// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
 	LensAlias any
-	LensArn any
+	LensArn   any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The milestone number.</p> <p>A workload can have a maximum of 100 milestones.</p>
@@ -76,7 +76,7 @@ type AnswersAttrs struct {
 	// <p>The token to use to retrieve the next set of results.</p>
 	NextToken any
 	// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-	PillarId any
+	PillarId         any
 	QuestionPriority any
 	// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
 	WorkloadId any
@@ -85,12 +85,12 @@ type AnswersAttrs struct {
 var Answers = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_answers",
 	Fields: ubx.FieldMap{
-		"LensAlias": ubx.FieldSpec{WireName: "lens_alias"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MilestoneNumber": ubx.FieldSpec{WireName: "milestone_number"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PillarId": ubx.FieldSpec{WireName: "pillar_id"},
+		"LensAlias":        ubx.FieldSpec{WireName: "lens_alias"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"MilestoneNumber":  ubx.FieldSpec{WireName: "milestone_number"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"PillarId":         ubx.FieldSpec{WireName: "pillar_id"},
 		"QuestionPriority": ubx.FieldSpec{WireName: "question_priority"},
-		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
+		"WorkloadId":       ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

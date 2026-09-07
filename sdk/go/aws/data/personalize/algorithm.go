@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Algorithm_Algorithm_AlgorithmImage struct {
 	DockerUri any
-	Name any
+	Name      any
 }
 
 type Algorithm_Algorithm_DefaultHyperParameterRanges_CategoricalHyperParameterRanges struct {
 	IsTunable any
-	Name any
-	Values any
+	Name      any
+	Values    any
 }
 
 type Algorithm_Algorithm_DefaultHyperParameterRanges_ContinuousHyperParameterRanges struct {
 	IsTunable any
-	MaxValue any
-	MinValue any
-	Name any
+	MaxValue  any
+	MinValue  any
+	Name      any
 }
 
 type Algorithm_Algorithm_DefaultHyperParameterRanges struct {
 	CategoricalHyperParameterRanges any
-	ContinuousHyperParameterRanges any
-	IntegerHyperParameterRanges any
+	ContinuousHyperParameterRanges  any
+	IntegerHyperParameterRanges     any
 }
 
 type Algorithm_Algorithm struct {
 	AlgorithmArn any
 	// <p>Describes an algorithm image.</p>
-	AlgorithmImage any
+	AlgorithmImage   any
 	CreationDateTime any
 	// <p>Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 	DefaultHyperParameterRanges any
-	DefaultHyperParameters any
-	DefaultResourceConfig any
-	LastUpdatedDateTime any
-	Name any
-	RoleArn any
-	TrainingInputMode any
+	DefaultHyperParameters      any
+	DefaultResourceConfig       any
+	LastUpdatedDateTime         any
+	Name                        any
+	RoleArn                     any
+	TrainingInputMode           any
 }
 
 type AlgorithmConfig struct {
@@ -48,7 +48,7 @@ type AlgorithmConfig struct {
 
 type AlgorithmAttrs struct {
 	// <p>Describes a custom algorithm.</p>
-	Algorithm any
+	Algorithm    any
 	AlgorithmArn any
 }
 

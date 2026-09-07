@@ -69,59 +69,59 @@ type DocumentClassifier_VpcConfig struct {
 }
 
 var DocumentClassifier_InputDataConfig_AugmentedManifestsFields = ubx.FieldMap{
-		"AttributeNames": ubx.FieldSpec{WireName: "attribute_names"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-		"Split": ubx.FieldSpec{WireName: "split"},
-	}
+	"AttributeNames": ubx.FieldSpec{WireName: "attribute_names"},
+	"S3Uri":          ubx.FieldSpec{WireName: "s3_uri"},
+	"Split":          ubx.FieldSpec{WireName: "split"},
+}
 
 var DocumentClassifier_InputDataConfig_DocumentReaderConfigFields = ubx.FieldMap{
-		"DocumentReadAction": ubx.FieldSpec{WireName: "document_read_action"},
-		"DocumentReadMode": ubx.FieldSpec{WireName: "document_read_mode"},
-		"FeatureTypes": ubx.FieldSpec{WireName: "feature_types"},
-	}
+	"DocumentReadAction": ubx.FieldSpec{WireName: "document_read_action"},
+	"DocumentReadMode":   ubx.FieldSpec{WireName: "document_read_mode"},
+	"FeatureTypes":       ubx.FieldSpec{WireName: "feature_types"},
+}
 
 var DocumentClassifier_InputDataConfig_DocumentsFields = ubx.FieldMap{
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-		"TestS3Uri": ubx.FieldSpec{WireName: "test_s3_uri"},
-	}
+	"S3Uri":     ubx.FieldSpec{WireName: "s3_uri"},
+	"TestS3Uri": ubx.FieldSpec{WireName: "test_s3_uri"},
+}
 
 var DocumentClassifier_InputDataConfigFields = ubx.FieldMap{
-		"AugmentedManifests": ubx.FieldSpec{
-			WireName: "augmented_manifests",
-			Kind: "list",
-			Fields: DocumentClassifier_InputDataConfig_AugmentedManifestsFields,
-		},
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"DocumentReaderConfig": ubx.FieldSpec{
-			WireName: "document_reader_config",
-			Kind: "object",
-			Fields: DocumentClassifier_InputDataConfig_DocumentReaderConfigFields,
-		},
-		"DocumentType": ubx.FieldSpec{WireName: "document_type"},
-		"Documents": ubx.FieldSpec{
-			WireName: "documents",
-			Kind: "object",
-			Fields: DocumentClassifier_InputDataConfig_DocumentsFields,
-		},
-		"LabelDelimiter": ubx.FieldSpec{WireName: "label_delimiter"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-		"TestS3Uri": ubx.FieldSpec{WireName: "test_s3_uri"},
-	}
+	"AugmentedManifests": ubx.FieldSpec{
+		WireName: "augmented_manifests",
+		Kind:     "list",
+		Fields:   DocumentClassifier_InputDataConfig_AugmentedManifestsFields,
+	},
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"DocumentReaderConfig": ubx.FieldSpec{
+		WireName: "document_reader_config",
+		Kind:     "object",
+		Fields:   DocumentClassifier_InputDataConfig_DocumentReaderConfigFields,
+	},
+	"DocumentType": ubx.FieldSpec{WireName: "document_type"},
+	"Documents": ubx.FieldSpec{
+		WireName: "documents",
+		Kind:     "object",
+		Fields:   DocumentClassifier_InputDataConfig_DocumentsFields,
+	},
+	"LabelDelimiter": ubx.FieldSpec{WireName: "label_delimiter"},
+	"S3Uri":          ubx.FieldSpec{WireName: "s3_uri"},
+	"TestS3Uri":      ubx.FieldSpec{WireName: "test_s3_uri"},
+}
 
 var DocumentClassifier_OutputDataConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"S3Uri":    ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var DocumentClassifier_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DocumentClassifier_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+}
 
 type DocumentClassifierConfig struct {
 	// The ARN of the IAM role that Amazon Comprehend assumes to access the training documents in the S3 bucket specified as the input data source for the document classifier. (AI-inferred)
@@ -182,33 +182,33 @@ type DocumentClassifierAttrs struct {
 var DocumentClassifier = ubx.ResourceBinding{
 	WireType: "aws_comprehend_document_classifier",
 	Fields: ubx.FieldMap{
-		"DataAccessRoleArn": ubx.FieldSpec{WireName: "data_access_role_arn"},
+		"DataAccessRoleArn":      ubx.FieldSpec{WireName: "data_access_role_arn"},
 		"DocumentClassifierName": ubx.FieldSpec{WireName: "document_classifier_name"},
 		"InputDataConfig": ubx.FieldSpec{
 			WireName: "input_data_config",
-			Kind: "object",
-			Fields: DocumentClassifier_InputDataConfigFields,
+			Kind:     "object",
+			Fields:   DocumentClassifier_InputDataConfigFields,
 		},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"LanguageCode":  ubx.FieldSpec{WireName: "language_code"},
+		"Mode":          ubx.FieldSpec{WireName: "mode"},
 		"ModelKmsKeyId": ubx.FieldSpec{WireName: "model_kms_key_id"},
-		"ModelPolicy": ubx.FieldSpec{WireName: "model_policy"},
+		"ModelPolicy":   ubx.FieldSpec{WireName: "model_policy"},
 		"OutputDataConfig": ubx.FieldSpec{
 			WireName: "output_data_config",
-			Kind: "object",
-			Fields: DocumentClassifier_OutputDataConfigFields,
+			Kind:     "object",
+			Fields:   DocumentClassifier_OutputDataConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DocumentClassifier_TagsFields,
+			Kind:     "list",
+			Fields:   DocumentClassifier_TagsFields,
 		},
-		"VersionName": ubx.FieldSpec{WireName: "version_name"},
+		"VersionName":    ubx.FieldSpec{WireName: "version_name"},
 		"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: DocumentClassifier_VpcConfigFields,
+			Kind:     "object",
+			Fields:   DocumentClassifier_VpcConfigFields,
 		},
 	},
 }

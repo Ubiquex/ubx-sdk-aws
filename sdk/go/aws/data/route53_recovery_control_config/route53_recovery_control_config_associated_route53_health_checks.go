@@ -4,23 +4,23 @@ package route53_recovery_control_config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route53RecoveryControlConfigAssociatedRoute53HealthChecksConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	RoutingControlArn any
 }
 
 type Route53RecoveryControlConfigAssociatedRoute53HealthChecksAttrs struct {
-	HealthCheckIds any
-	MaxResults any
-	NextToken any
+	HealthCheckIds    any
+	MaxResults        any
+	NextToken         any
 	RoutingControlArn any
 }
 
 var Route53RecoveryControlConfigAssociatedRoute53HealthChecks = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_control_config_associated_route53_health_checks",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"RoutingControlArn": ubx.FieldSpec{WireName: "routing_control_arn"},
 	},
 }

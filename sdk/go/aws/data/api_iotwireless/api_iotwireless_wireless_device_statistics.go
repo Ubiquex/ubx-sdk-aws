@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessWirelessDeviceStatistics_LoRaWan_Gateways struct {
 	GatewayEui any
-	Rssi any
-	Snr any
+	Rssi       any
+	Snr        any
 }
 
 type ApiIotwirelessWirelessDeviceStatistics_LoRaWan_PublicGateways struct {
-	DlAllowed any
-	Id any
+	DlAllowed     any
+	Id            any
 	ProviderNetId any
-	RfRegion any
-	Rssi any
-	Snr any
+	RfRegion      any
+	Rssi          any
+	Snr           any
 }
 
 type ApiIotwirelessWirelessDeviceStatistics_LoRaWan struct {
-	DataRate any
-	DevEui any
-	Fport any
-	Frequency any
-	Gateways any
+	DataRate       any
+	DevEui         any
+	Fport          any
+	Frequency      any
+	Gateways       any
 	PublicGateways any
-	Timestamp any
+	Timestamp      any
 }
 
 type ApiIotwirelessWirelessDeviceStatistics_Sidewalk struct {
@@ -35,7 +35,7 @@ type ApiIotwirelessWirelessDeviceStatistics_Sidewalk struct {
 	DeviceState any
 	// <p>Sidewalk device status notification.</p>
 	Event any
-	Rssi any
+	Rssi  any
 }
 
 type ApiIotwirelessWirelessDeviceStatisticsConfig struct {

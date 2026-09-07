@@ -4,32 +4,32 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type App_App struct {
-	AppId any
-	Arn any
-	CreatedTime any
+	AppId           any
+	Arn             any
+	CreatedTime     any
 	LastUpdatedTime any
-	Name any
+	Name            any
 	// <p>The visibility of an app. Valid values are:</p> <ul> <li> <p> <code>PRIVATE</code> – The app is reachable only by authorized Amazon QuickSight principals.</p> </li> <li> <p> <code>PUBLIC</code> – The published app is reachable by anyone on the internet without signing in.</p> </li> </ul>
 	Visibility any
 }
 
 type AppConfig struct {
-	AppId any
+	AppId        any
 	AwsAccountId any
 }
 
 type AppAttrs struct {
 	// <p>A summary of an app, including its identifier, name, and metadata.</p>
-	App any
-	AppId any
+	App          any
+	AppId        any
 	AwsAccountId any
-	RequestId any
+	RequestId    any
 }
 
 var App = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_app",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":        ubx.FieldSpec{WireName: "app_id"},
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 	},
 }

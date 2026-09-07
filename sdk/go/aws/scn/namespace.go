@@ -4,14 +4,14 @@ package scn
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Namespace_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Namespace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NamespaceConfig struct {
 	// The description of the namespace.
@@ -45,12 +45,12 @@ var Namespace = ubx.ResourceBinding{
 	WireType: "aws_scn_namespace",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"InstanceId":  ubx.FieldSpec{WireName: "instance_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Namespace_TagsFields,
+			Kind:     "list",
+			Fields:   Namespace_TagsFields,
 		},
 	},
 }

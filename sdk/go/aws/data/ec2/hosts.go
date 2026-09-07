@@ -4,19 +4,19 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Hosts_Filter struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type Hosts_Hosts_AvailableCapacity_AvailableInstanceCapacity struct {
 	AvailableCapacity any
-	InstanceType any
-	TotalCapacity any
+	InstanceType      any
+	TotalCapacity     any
 }
 
 type Hosts_Hosts_AvailableCapacity struct {
 	AvailableInstanceCapacity any
-	AvailableVcpus any
+	AvailableVcpus            any
 }
 
 type Hosts_Hosts_CpuOptions struct {
@@ -24,66 +24,66 @@ type Hosts_Hosts_CpuOptions struct {
 }
 
 type Hosts_Hosts_HostProperties struct {
-	Cores any
+	Cores          any
 	InstanceFamily any
-	InstanceType any
-	Sockets any
-	TotalVcpus any
+	InstanceType   any
+	Sockets        any
+	TotalVcpus     any
 }
 
 type Hosts_Hosts_Instances struct {
-	InstanceId any
+	InstanceId   any
 	InstanceType any
-	OwnerId any
+	OwnerId      any
 }
 
 type Hosts_Hosts_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Hosts_Hosts struct {
-	AllocationTime any
-	AllowsMultipleInstanceTypes any
-	AssetId any
-	AutoPlacement any
-	AvailabilityZone any
-	AvailabilityZoneId any
-	AvailableCapacity any
-	ClientToken any
-	CpuOptions any
-	HostId any
-	HostMaintenance any
-	HostProperties any
-	HostRecovery any
-	HostReservationId any
-	Instances any
+	AllocationTime                     any
+	AllowsMultipleInstanceTypes        any
+	AssetId                            any
+	AutoPlacement                      any
+	AvailabilityZone                   any
+	AvailabilityZoneId                 any
+	AvailableCapacity                  any
+	ClientToken                        any
+	CpuOptions                         any
+	HostId                             any
+	HostMaintenance                    any
+	HostProperties                     any
+	HostRecovery                       any
+	HostReservationId                  any
+	Instances                          any
 	MemberOfServiceLinkedResourceGroup any
-	OutpostArn any
-	OwnerId any
-	ReleaseTime any
-	State any
-	Tags any
+	OutpostArn                         any
+	OwnerId                            any
+	ReleaseTime                        any
+	State                              any
+	Tags                               any
 }
 
 var Hosts_FilterFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type HostsConfig struct {
-	Filter any
-	HostIds any
+	Filter     any
+	HostIds    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type HostsAttrs struct {
-	Filter any
-	HostIds any
-	Hosts any
+	Filter     any
+	HostIds    any
+	Hosts      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Hosts = ubx.DataSourceBinding{
@@ -91,11 +91,11 @@ var Hosts = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "list",
-			Fields: Hosts_FilterFields,
+			Kind:     "list",
+			Fields:   Hosts_FilterFields,
 		},
-		"HostIds": ubx.FieldSpec{WireName: "host_ids"},
+		"HostIds":    ubx.FieldSpec{WireName: "host_ids"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

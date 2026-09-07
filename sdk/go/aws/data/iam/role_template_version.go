@@ -5,50 +5,50 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoleTemplateVersion_RoleTemplateVersion_InlinePolicyTemplates struct {
 	PolicyDocument any
-	PolicyName any
+	PolicyName     any
 }
 
 type RoleTemplateVersion_RoleTemplateVersion_ParametersDefinition struct {
 	DefaultValue any
-	Description any
-	Immutable any
-	IsRequired any
-	Name any
-	SubType any
-	Type any
+	Description  any
+	Immutable    any
+	IsRequired   any
+	Name         any
+	SubType      any
+	Type         any
 }
 
 type RoleTemplateVersion_RoleTemplateVersion_RoleTagsTemplate struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type RoleTemplateVersion_RoleTemplateVersion struct {
 	AssumeRolePolicyDocumentTemplate any
-	CreateTimestamp any
-	DefaultMinorVersion any
-	Description any
-	Enabled any
-	InlinePolicyTemplates any
-	MajorVersion any
-	ManagedByType any
-	ManagedByValue any
-	ManagedPolicyArns any
-	MaxSessionDuration any
-	MinorVersion any
-	ParametersDefinition any
+	CreateTimestamp                  any
+	DefaultMinorVersion              any
+	Description                      any
+	Enabled                          any
+	InlinePolicyTemplates            any
+	MajorVersion                     any
+	ManagedByType                    any
+	ManagedByValue                   any
+	ManagedPolicyArns                any
+	MaxSessionDuration               any
+	MinorVersion                     any
+	ParametersDefinition             any
 	// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-	PermissionBoundaryArn any
+	PermissionBoundaryArn  any
 	RoleDescriptionPattern any
-	RoleNamePattern any
-	RolePathPattern any
-	RoleTagsTemplate any
+	RoleNamePattern        any
+	RolePathPattern        any
+	RoleTagsTemplate       any
 	// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-	TemplateArn any
-	TemplateName any
+	TemplateArn       any
+	TemplateName      any
 	TemplateVersionId any
-	UpdateTimestamp any
-	VersionEnabled any
+	UpdateTimestamp   any
+	VersionEnabled    any
 }
 
 type RoleTemplateVersionConfig struct {
@@ -69,6 +69,6 @@ var RoleTemplateVersion = ubx.DataSourceBinding{
 	WireType: "aws_iam_role_template_version",
 	Fields: ubx.FieldMap{
 		"MinorVersion": ubx.FieldSpec{WireName: "minor_version"},
-		"TemplateArn": ubx.FieldSpec{WireName: "template_arn"},
+		"TemplateArn":  ubx.FieldSpec{WireName: "template_arn"},
 	},
 }

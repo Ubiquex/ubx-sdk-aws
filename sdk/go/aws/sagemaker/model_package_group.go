@@ -11,9 +11,9 @@ type ModelPackageGroup_Tags struct {
 }
 
 var ModelPackageGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ModelPackageGroupConfig struct {
 	// The description of the model package group.
@@ -47,12 +47,12 @@ var ModelPackageGroup = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_model_package_group",
 	Fields: ubx.FieldMap{
 		"ModelPackageGroupDescription": ubx.FieldSpec{WireName: "model_package_group_description"},
-		"ModelPackageGroupName": ubx.FieldSpec{WireName: "model_package_group_name"},
-		"ModelPackageGroupPolicy": ubx.FieldSpec{WireName: "model_package_group_policy"},
+		"ModelPackageGroupName":        ubx.FieldSpec{WireName: "model_package_group_name"},
+		"ModelPackageGroupPolicy":      ubx.FieldSpec{WireName: "model_package_group_policy"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ModelPackageGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ModelPackageGroup_TagsFields,
 		},
 	},
 }

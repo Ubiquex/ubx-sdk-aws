@@ -4,7 +4,7 @@ package evs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountSettings_Settings struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -18,6 +18,5 @@ type AccountSettingsAttrs struct {
 
 var AccountSettings = ubx.DataSourceBinding{
 	WireType: "aws_evs_account_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

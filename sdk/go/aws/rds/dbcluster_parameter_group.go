@@ -11,9 +11,9 @@ type DbclusterParameterGroup_Tags struct {
 }
 
 var DbclusterParameterGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbclusterParameterGroupConfig struct {
 	// The name of the DB cluster parameter group. Constraints: + Must not match the name of an existing DB cluster parameter group. This value is stored as a lowercase string.
@@ -45,13 +45,13 @@ var DbclusterParameterGroup = ubx.ResourceBinding{
 	WireType: "aws_rds_dbcluster_parameter_group",
 	Fields: ubx.FieldMap{
 		"DbclusterParameterGroupName": ubx.FieldSpec{WireName: "dbcluster_parameter_group_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Family": ubx.FieldSpec{WireName: "family"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"Family":                      ubx.FieldSpec{WireName: "family"},
+		"Parameters":                  ubx.FieldSpec{WireName: "parameters"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DbclusterParameterGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DbclusterParameterGroup_TagsFields,
 		},
 	},
 }

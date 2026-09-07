@@ -4,41 +4,41 @@ package sts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebIdentityToken_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var WebIdentityToken_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WebIdentityTokenConfig struct {
-	Audience any
-	DurationSeconds any
+	Audience         any
+	DurationSeconds  any
 	SigningAlgorithm any
-	Tags any
+	Tags             any
 }
 
 type WebIdentityTokenAttrs struct {
-	Audience any
-	DurationSeconds any
-	Expiration any
+	Audience         any
+	DurationSeconds  any
+	Expiration       any
 	SigningAlgorithm any
-	Tags any
+	Tags             any
 	WebIdentityToken any
 }
 
 var WebIdentityToken = ubx.DataSourceBinding{
 	WireType: "aws_sts_web_identity_token",
 	Fields: ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
+		"Audience":         ubx.FieldSpec{WireName: "audience"},
+		"DurationSeconds":  ubx.FieldSpec{WireName: "duration_seconds"},
 		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WebIdentityToken_TagsFields,
+			Kind:     "list",
+			Fields:   WebIdentityToken_TagsFields,
 		},
 	},
 }

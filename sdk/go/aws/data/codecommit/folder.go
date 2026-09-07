@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Folder_Files struct {
 	AbsolutePath any
-	BlobId any
-	FileMode any
+	BlobId       any
+	FileMode     any
 	RelativePath any
 }
 
 type Folder_SubFolders struct {
 	AbsolutePath any
 	RelativePath any
-	TreeId any
+	TreeId       any
 }
 
 type Folder_SubModules struct {
 	AbsolutePath any
-	CommitId any
+	CommitId     any
 	RelativePath any
 }
 
 type FolderConfig struct {
 	CommitSpecifier any
-	FolderPath any
-	RepositoryName any
+	FolderPath      any
+	RepositoryName  any
 }
 
 type FolderAttrs struct {
-	CommitId any
+	CommitId        any
 	CommitSpecifier any
-	Files any
-	FolderPath any
-	RepositoryName any
-	SubFolders any
-	SubModules any
-	SymbolicLinks any
-	TreeId any
+	Files           any
+	FolderPath      any
+	RepositoryName  any
+	SubFolders      any
+	SubModules      any
+	SymbolicLinks   any
+	TreeId          any
 }
 
 var Folder = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_folder",
 	Fields: ubx.FieldMap{
 		"CommitSpecifier": ubx.FieldSpec{WireName: "commit_specifier"},
-		"FolderPath": ubx.FieldSpec{WireName: "folder_path"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"FolderPath":      ubx.FieldSpec{WireName: "folder_path"},
+		"RepositoryName":  ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

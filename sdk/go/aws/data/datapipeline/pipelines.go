@@ -4,7 +4,7 @@ package datapipeline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipelines_PipelineIdList struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -14,7 +14,7 @@ type PipelinesConfig struct {
 
 type PipelinesAttrs struct {
 	HasMoreResults any
-	Marker any
+	Marker         any
 	PipelineIdList any
 }
 

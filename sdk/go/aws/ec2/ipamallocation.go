@@ -30,9 +30,9 @@ type IpamallocationAttrs struct {
 var Ipamallocation = ubx.ResourceBinding{
 	WireType: "aws_ec2_ipamallocation",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IpamPoolId": ubx.FieldSpec{WireName: "ipam_pool_id"},
+		"Cidr":          ubx.FieldSpec{WireName: "cidr"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"IpamPoolId":    ubx.FieldSpec{WireName: "ipam_pool_id"},
 		"NetmaskLength": ubx.FieldSpec{WireName: "netmask_length"},
 	},
 }

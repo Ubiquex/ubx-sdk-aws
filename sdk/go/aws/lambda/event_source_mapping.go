@@ -98,107 +98,107 @@ type EventSourceMapping_SelfManagedEventSource struct {
 
 type EventSourceMapping_Tags struct {
 	// Specifies the key portion of a tag attached to the AWS Lambda event source mapping, which is used to categorize the resource for cost tracking, operational management, and access control via resource-level policies. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"Uri":  ubx.FieldSpec{WireName: "uri"},
+}
 
 var EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigsFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+}
 
 var EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfigFields = ubx.FieldMap{
-		"AccessConfigs": ubx.FieldSpec{
-			WireName: "access_configs",
-			Kind: "list",
-			Fields: EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigsFields,
-		},
-		"EventRecordFormat": ubx.FieldSpec{WireName: "event_record_format"},
-		"SchemaRegistryUri": ubx.FieldSpec{WireName: "schema_registry_uri"},
-		"SchemaValidationConfigs": ubx.FieldSpec{
-			WireName: "schema_validation_configs",
-			Kind: "list",
-			Fields: EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigsFields,
-		},
-	}
+	"AccessConfigs": ubx.FieldSpec{
+		WireName: "access_configs",
+		Kind:     "list",
+		Fields:   EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigsFields,
+	},
+	"EventRecordFormat": ubx.FieldSpec{WireName: "event_record_format"},
+	"SchemaRegistryUri": ubx.FieldSpec{WireName: "schema_registry_uri"},
+	"SchemaValidationConfigs": ubx.FieldSpec{
+		WireName: "schema_validation_configs",
+		Kind:     "list",
+		Fields:   EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigsFields,
+	},
+}
 
 var EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields = ubx.FieldMap{
-		"ConsumerGroupId": ubx.FieldSpec{WireName: "consumer_group_id"},
-		"SchemaRegistryConfig": ubx.FieldSpec{
-			WireName: "schema_registry_config",
-			Kind: "object",
-			Fields: EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfigFields,
-		},
-	}
+	"ConsumerGroupId": ubx.FieldSpec{WireName: "consumer_group_id"},
+	"SchemaRegistryConfig": ubx.FieldSpec{
+		WireName: "schema_registry_config",
+		Kind:     "object",
+		Fields:   EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfigFields,
+	},
+}
 
 var EventSourceMapping_DestinationConfig_OnFailureFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-	}
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+}
 
 var EventSourceMapping_DestinationConfigFields = ubx.FieldMap{
-		"OnFailure": ubx.FieldSpec{
-			WireName: "on_failure",
-			Kind: "object",
-			Fields: EventSourceMapping_DestinationConfig_OnFailureFields,
-		},
-	}
+	"OnFailure": ubx.FieldSpec{
+		WireName: "on_failure",
+		Kind:     "object",
+		Fields:   EventSourceMapping_DestinationConfig_OnFailureFields,
+	},
+}
 
 var EventSourceMapping_DocumentDbeventSourceConfigFields = ubx.FieldMap{
-		"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"FullDocument": ubx.FieldSpec{WireName: "full_document"},
-	}
+	"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
+	"DatabaseName":   ubx.FieldSpec{WireName: "database_name"},
+	"FullDocument":   ubx.FieldSpec{WireName: "full_document"},
+}
 
 var EventSourceMapping_FilterCriteria_FiltersFields = ubx.FieldMap{
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"Pattern": ubx.FieldSpec{WireName: "pattern"},
+}
 
 var EventSourceMapping_FilterCriteriaFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: EventSourceMapping_FilterCriteria_FiltersFields,
-		},
-	}
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   EventSourceMapping_FilterCriteria_FiltersFields,
+	},
+}
 
 var EventSourceMapping_LoggingConfigFields = ubx.FieldMap{
-		"SystemLogLevel": ubx.FieldSpec{WireName: "system_log_level"},
-	}
+	"SystemLogLevel": ubx.FieldSpec{WireName: "system_log_level"},
+}
 
 var EventSourceMapping_MetricsConfigFields = ubx.FieldMap{
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-	}
+	"Metrics": ubx.FieldSpec{WireName: "metrics"},
+}
 
 var EventSourceMapping_ProvisionedPollerConfigFields = ubx.FieldMap{
-		"MaximumPollers": ubx.FieldSpec{WireName: "maximum_pollers"},
-		"MinimumPollers": ubx.FieldSpec{WireName: "minimum_pollers"},
-		"PollerGroupName": ubx.FieldSpec{WireName: "poller_group_name"},
-	}
+	"MaximumPollers":  ubx.FieldSpec{WireName: "maximum_pollers"},
+	"MinimumPollers":  ubx.FieldSpec{WireName: "minimum_pollers"},
+	"PollerGroupName": ubx.FieldSpec{WireName: "poller_group_name"},
+}
 
 var EventSourceMapping_ScalingConfigFields = ubx.FieldMap{
-		"MaximumConcurrency": ubx.FieldSpec{WireName: "maximum_concurrency"},
-	}
+	"MaximumConcurrency": ubx.FieldSpec{WireName: "maximum_concurrency"},
+}
 
 var EventSourceMapping_SelfManagedEventSource_EndpointsFields = ubx.FieldMap{
-		"KafkaBootstrapServers": ubx.FieldSpec{WireName: "kafka_bootstrap_servers"},
-	}
+	"KafkaBootstrapServers": ubx.FieldSpec{WireName: "kafka_bootstrap_servers"},
+}
 
 var EventSourceMapping_SelfManagedEventSourceFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{
-			WireName: "endpoints",
-			Kind: "object",
-			Fields: EventSourceMapping_SelfManagedEventSource_EndpointsFields,
-		},
-	}
+	"Endpoints": ubx.FieldSpec{
+		WireName: "endpoints",
+		Kind:     "object",
+		Fields:   EventSourceMapping_SelfManagedEventSource_EndpointsFields,
+	},
+}
 
 var EventSourceMapping_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventSourceMappingConfig struct {
 	// Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
@@ -327,79 +327,79 @@ var EventSourceMapping = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AmazonManagedKafkaEventSourceConfig": ubx.FieldSpec{
 			WireName: "amazon_managed_kafka_event_source_config",
-			Kind: "object",
-			Fields: EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields,
 		},
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
+		"BatchSize":                  ubx.FieldSpec{WireName: "batch_size"},
 		"BisectBatchOnFunctionError": ubx.FieldSpec{WireName: "bisect_batch_on_function_error"},
 		"DestinationConfig": ubx.FieldSpec{
 			WireName: "destination_config",
-			Kind: "object",
-			Fields: EventSourceMapping_DestinationConfigFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_DestinationConfigFields,
 		},
 		"DocumentDbeventSourceConfig": ubx.FieldSpec{
 			WireName: "document_dbevent_source_config",
-			Kind: "object",
-			Fields: EventSourceMapping_DocumentDbeventSourceConfigFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_DocumentDbeventSourceConfigFields,
 		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Enabled":        ubx.FieldSpec{WireName: "enabled"},
 		"EventSourceArn": ubx.FieldSpec{WireName: "event_source_arn"},
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: EventSourceMapping_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_FilterCriteriaFields,
 		},
-		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
+		"FunctionName":          ubx.FieldSpec{WireName: "function_name"},
 		"FunctionResponseTypes": ubx.FieldSpec{WireName: "function_response_types"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"KmsKeyArn":             ubx.FieldSpec{WireName: "kms_key_arn"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: EventSourceMapping_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_LoggingConfigFields,
 		},
 		"MaximumBatchingWindowInSeconds": ubx.FieldSpec{WireName: "maximum_batching_window_in_seconds"},
-		"MaximumRecordAgeInSeconds": ubx.FieldSpec{WireName: "maximum_record_age_in_seconds"},
-		"MaximumRetryAttempts": ubx.FieldSpec{WireName: "maximum_retry_attempts"},
+		"MaximumRecordAgeInSeconds":      ubx.FieldSpec{WireName: "maximum_record_age_in_seconds"},
+		"MaximumRetryAttempts":           ubx.FieldSpec{WireName: "maximum_retry_attempts"},
 		"MetricsConfig": ubx.FieldSpec{
 			WireName: "metrics_config",
-			Kind: "object",
-			Fields: EventSourceMapping_MetricsConfigFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_MetricsConfigFields,
 		},
 		"ParallelizationFactor": ubx.FieldSpec{WireName: "parallelization_factor"},
 		"ProvisionedPollerConfig": ubx.FieldSpec{
 			WireName: "provisioned_poller_config",
-			Kind: "object",
-			Fields: EventSourceMapping_ProvisionedPollerConfigFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_ProvisionedPollerConfigFields,
 		},
 		"Queues": ubx.FieldSpec{WireName: "queues"},
 		"ScalingConfig": ubx.FieldSpec{
 			WireName: "scaling_config",
-			Kind: "object",
-			Fields: EventSourceMapping_ScalingConfigFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_ScalingConfigFields,
 		},
 		"SelfManagedEventSource": ubx.FieldSpec{
 			WireName: "self_managed_event_source",
-			Kind: "object",
-			Fields: EventSourceMapping_SelfManagedEventSourceFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_SelfManagedEventSourceFields,
 		},
 		"SelfManagedKafkaEventSourceConfig": ubx.FieldSpec{
 			WireName: "self_managed_kafka_event_source_config",
-			Kind: "object",
-			Fields: EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields,
+			Kind:     "object",
+			Fields:   EventSourceMapping_AmazonManagedKafkaEventSourceConfigFields,
 		},
 		"SourceAccessConfigurations": ubx.FieldSpec{
 			WireName: "source_access_configurations",
-			Kind: "list",
-			Fields: EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigsFields,
+			Kind:     "list",
+			Fields:   EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigsFields,
 		},
-		"StartingPosition": ubx.FieldSpec{WireName: "starting_position"},
+		"StartingPosition":          ubx.FieldSpec{WireName: "starting_position"},
 		"StartingPositionTimestamp": ubx.FieldSpec{WireName: "starting_position_timestamp"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventSourceMapping_TagsFields,
+			Kind:     "list",
+			Fields:   EventSourceMapping_TagsFields,
 		},
-		"Topics": ubx.FieldSpec{WireName: "topics"},
+		"Topics":                  ubx.FieldSpec{WireName: "topics"},
 		"TumblingWindowInSeconds": ubx.FieldSpec{WireName: "tumbling_window_in_seconds"},
 	},
 }

@@ -4,17 +4,17 @@ package api_ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrRegistry_ReplicationConfiguration_Rules_Destinations struct {
-	Region any
+	Region     any
 	RegistryId any
 }
 
 type ApiEcrRegistry_ReplicationConfiguration_Rules_RepositoryFilters struct {
-	Filter any
+	Filter     any
 	FilterType any
 }
 
 type ApiEcrRegistry_ReplicationConfiguration_Rules struct {
-	Destinations any
+	Destinations      any
 	RepositoryFilters any
 }
 
@@ -33,6 +33,5 @@ type ApiEcrRegistryAttrs struct {
 
 var ApiEcrRegistry = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_registry",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

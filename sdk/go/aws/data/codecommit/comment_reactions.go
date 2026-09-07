@@ -4,38 +4,38 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CommentReactions_ReactionsForComment_Reaction struct {
-	Emoji any
+	Emoji     any
 	ShortCode any
-	Unicode any
+	Unicode   any
 }
 
 type CommentReactions_ReactionsForComment struct {
-	Reaction any
-	ReactionUsers any
+	Reaction                       any
+	ReactionUsers                  any
 	ReactionsFromDeletedUsersCount any
 }
 
 type CommentReactionsConfig struct {
-	CommentId any
-	MaxResults any
-	NextToken any
+	CommentId       any
+	MaxResults      any
+	NextToken       any
 	ReactionUserArn any
 }
 
 type CommentReactionsAttrs struct {
-	CommentId any
-	MaxResults any
-	NextToken any
-	ReactionUserArn any
+	CommentId           any
+	MaxResults          any
+	NextToken           any
+	ReactionUserArn     any
 	ReactionsForComment any
 }
 
 var CommentReactions = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_comment_reactions",
 	Fields: ubx.FieldMap{
-		"CommentId": ubx.FieldSpec{WireName: "comment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CommentId":       ubx.FieldSpec{WireName: "comment_id"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"ReactionUserArn": ubx.FieldSpec{WireName: "reaction_user_arn"},
 	},
 }

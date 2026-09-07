@@ -9,20 +9,20 @@ type PendingAggregationRequests_PendingAggregationRequests struct {
 }
 
 type PendingAggregationRequestsConfig struct {
-	Limit any
+	Limit     any
 	NextToken any
 }
 
 type PendingAggregationRequestsAttrs struct {
-	Limit any
-	NextToken any
+	Limit                      any
+	NextToken                  any
 	PendingAggregationRequests any
 }
 
 var PendingAggregationRequests = ubx.DataSourceBinding{
 	WireType: "aws_config_pending_aggregation_requests",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,31 +4,31 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Extensions_Items struct {
-	Arn any
-	Description any
-	Id any
-	Name any
+	Arn           any
+	Description   any
+	Id            any
+	Name          any
 	VersionNumber any
 }
 
 type ExtensionsConfig struct {
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 type ExtensionsAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 var Extensions = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_extensions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

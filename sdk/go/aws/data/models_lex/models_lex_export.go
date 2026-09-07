@@ -4,28 +4,28 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexExportConfig struct {
-	ExportType any
-	Name any
+	ExportType   any
+	Name         any
 	ResourceType any
-	Version any
+	Version      any
 }
 
 type ModelsLexExportAttrs struct {
-	ExportStatus any
-	ExportType any
+	ExportStatus  any
+	ExportType    any
 	FailureReason any
-	Name any
-	ResourceType any
-	Url any
-	Version any
+	Name          any
+	ResourceType  any
+	Url           any
+	Version       any
 }
 
 var ModelsLexExport = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_export",
 	Fields: ubx.FieldMap{
-		"ExportType": ubx.FieldSpec{WireName: "export_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ExportType":   ubx.FieldSpec{WireName: "export_type"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Version":      ubx.FieldSpec{WireName: "version"},
 	},
 }

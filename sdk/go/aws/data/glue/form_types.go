@@ -4,25 +4,25 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FormTypes_Items struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type FormTypesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FormTypesAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var FormTypes = ubx.DataSourceBinding{
 	WireType: "aws_glue_form_types",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

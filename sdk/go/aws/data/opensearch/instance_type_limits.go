@@ -4,7 +4,7 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceTypeLimits_LimitsByRole_AdditionalLimits struct {
-	LimitName any
+	LimitName   any
 	LimitValues any
 }
 
@@ -19,28 +19,28 @@ type InstanceTypeLimits_LimitsByRole_InstanceLimits struct {
 
 type InstanceTypeLimits_LimitsByRole_StorageTypes struct {
 	StorageSubTypeName any
-	StorageTypeLimits any
-	StorageTypeName any
+	StorageTypeLimits  any
+	StorageTypeName    any
 }
 
 type InstanceTypeLimits_LimitsByRole struct {
 	AdditionalLimits any
-	InstanceLimits any
-	StorageTypes any
+	InstanceLimits   any
+	StorageTypes     any
 }
 
 type InstanceTypeLimitsConfig struct {
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-	DomainName any
+	DomainName    any
 	EngineVersion any
-	InstanceType any
+	InstanceType  any
 }
 
 type InstanceTypeLimitsAttrs struct {
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-	DomainName any
+	DomainName    any
 	EngineVersion any
-	InstanceType any
+	InstanceType  any
 	// <p> The role of a given instance and all applicable limits. The role performed by a given OpenSearch instance can be one of the following: </p> <ul> <li> <p> <b>data</b> - A data node.</p> </li> <li> <p> <b>master</b> - A dedicated master node.</p> </li> <li> <p> <b>ultra_warm</b> - An UltraWarm node.</p> </li> </ul>
 	LimitsByRole any
 }
@@ -48,8 +48,8 @@ type InstanceTypeLimitsAttrs struct {
 var InstanceTypeLimits = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_instance_type_limits",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":    ubx.FieldSpec{WireName: "domain_name"},
 		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+		"InstanceType":  ubx.FieldSpec{WireName: "instance_type"},
 	},
 }

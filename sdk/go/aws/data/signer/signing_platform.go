@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SigningPlatform_SigningConfiguration_EncryptionAlgorithmOptions struct {
 	AllowedValues any
-	DefaultValue any
+	DefaultValue  any
 }
 
 type SigningPlatform_SigningConfiguration struct {
@@ -16,7 +16,7 @@ type SigningPlatform_SigningConfiguration struct {
 }
 
 type SigningPlatform_SigningImageFormat struct {
-	DefaultFormat any
+	DefaultFormat    any
 	SupportedFormats any
 }
 
@@ -25,17 +25,17 @@ type SigningPlatformConfig struct {
 }
 
 type SigningPlatformAttrs struct {
-	Category any
-	DisplayName any
-	MaxSizeInMb any
-	Partner any
-	PlatformId any
+	Category            any
+	DisplayName         any
+	MaxSizeInMb         any
+	Partner             any
+	PlatformId          any
 	RevocationSupported any
 	// <p>The configuration of a signing operation.</p>
 	SigningConfiguration any
 	// <p>The image format of a AWS Signer platform or profile.</p>
 	SigningImageFormat any
-	Target any
+	Target             any
 }
 
 var SigningPlatform = ubx.DataSourceBinding{

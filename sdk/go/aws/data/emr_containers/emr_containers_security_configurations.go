@@ -8,21 +8,21 @@ type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigur
 }
 
 type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigurationData_AuthenticationConfiguration_IdentityCenterConfiguration struct {
-	EmrIdentityCenterApplicationArn any
-	EnableIdentityCenter any
+	EmrIdentityCenterApplicationArn             any
+	EnableIdentityCenter                        any
 	IdentityCenterApplicationAssignmentRequired any
-	IdentityCenterInstanceArn any
+	IdentityCenterInstanceArn                   any
 }
 
 type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigurationData_AuthenticationConfiguration struct {
-	IamConfiguration any
+	IamConfiguration            any
 	IdentityCenterConfiguration any
 }
 
 type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigurationData_AuthorizationConfiguration_EncryptionConfiguration_InTransitEncryptionConfiguration_TlsCertificateConfiguration struct {
-	CertificateProviderType any
+	CertificateProviderType     any
 	PrivateCertificateSecretArn any
-	PublicCertificateSecretArn any
+	PublicCertificateSecretArn  any
 }
 
 type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigurationData_AuthorizationConfiguration_EncryptionConfiguration_InTransitEncryptionConfiguration struct {
@@ -40,51 +40,51 @@ type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigur
 
 type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigurationData_AuthorizationConfiguration_LakeFormationConfiguration struct {
 	AuthorizedSessionTagValue any
-	QueryEngineRoleArn any
-	SecureNamespaceInfo any
+	QueryEngineRoleArn        any
+	SecureNamespaceInfo       any
 }
 
 type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigurationData_AuthorizationConfiguration struct {
-	EncryptionConfiguration any
+	EncryptionConfiguration    any
 	LakeFormationConfiguration any
 }
 
 type EmrContainersSecurityConfigurations_SecurityConfigurations_SecurityConfigurationData struct {
 	AuthenticationConfiguration any
-	AuthorizationConfiguration any
+	AuthorizationConfiguration  any
 }
 
 type EmrContainersSecurityConfigurations_SecurityConfigurations struct {
-	Arn any
-	CreatedAt any
-	CreatedBy any
-	Id any
-	Name any
+	Arn                       any
+	CreatedAt                 any
+	CreatedBy                 any
+	Id                        any
+	Name                      any
 	SecurityConfigurationData any
-	Tags any
+	Tags                      any
 }
 
 type EmrContainersSecurityConfigurationsConfig struct {
-	CreatedAfter any
+	CreatedAfter  any
 	CreatedBefore any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type EmrContainersSecurityConfigurationsAttrs struct {
-	CreatedAfter any
-	CreatedBefore any
-	MaxResults any
-	NextToken any
+	CreatedAfter           any
+	CreatedBefore          any
+	MaxResults             any
+	NextToken              any
 	SecurityConfigurations any
 }
 
 var EmrContainersSecurityConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_emr_containers_security_configurations",
 	Fields: ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+		"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
 		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

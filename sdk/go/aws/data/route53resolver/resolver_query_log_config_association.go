@@ -4,13 +4,13 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverQueryLogConfigAssociation_ResolverQueryLogConfigAssociation struct {
-	CreationTime any
-	Error any
-	ErrorMessage any
-	Id any
+	CreationTime             any
+	Error                    any
+	ErrorMessage             any
+	Id                       any
 	ResolverQueryLogConfigId any
-	ResourceId any
-	Status any
+	ResourceId               any
+	Status                   any
 }
 
 type ResolverQueryLogConfigAssociationConfig struct {
@@ -19,7 +19,7 @@ type ResolverQueryLogConfigAssociationConfig struct {
 
 type ResolverQueryLogConfigAssociationAttrs struct {
 	// <p>In the response to an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfigAssociation.html">GetResolverQueryLogConfigAssociation</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html">ListResolverQueryLogConfigAssociations</a>, request, a complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
-	ResolverQueryLogConfigAssociation any
+	ResolverQueryLogConfigAssociation   any
 	ResolverQueryLogConfigAssociationId any
 }
 

@@ -4,29 +4,29 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientCertificates_Items struct {
-	ClientCertificateId any
-	CreatedDate any
-	Description any
-	ExpirationDate any
+	ClientCertificateId   any
+	CreatedDate           any
+	Description           any
+	ExpirationDate        any
 	PemEncodedCertificate any
-	Tags any
+	Tags                  any
 }
 
 type ClientCertificatesConfig struct {
-	Limit any
+	Limit    any
 	Position any
 }
 
 type ClientCertificatesAttrs struct {
-	Items any
-	Limit any
+	Items    any
+	Limit    any
 	Position any
 }
 
 var ClientCertificates = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_client_certificates",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":    ubx.FieldSpec{WireName: "limit"},
 		"Position": ubx.FieldSpec{WireName: "position"},
 	},
 }

@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeadLetterSourceQueuesConfig struct {
 	MaxResults any
-	NextToken any
-	QueueUrl any
+	NextToken  any
+	QueueUrl   any
 }
 
 type DeadLetterSourceQueuesAttrs struct {
 	MaxResults any
-	NextToken any
-	QueueUrl any
-	QueueUrls any
+	NextToken  any
+	QueueUrl   any
+	QueueUrls  any
 }
 
 var DeadLetterSourceQueues = ubx.DataSourceBinding{
 	WireType: "aws_sqs_dead_letter_source_queues",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueueUrl": ubx.FieldSpec{WireName: "queue_url"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"QueueUrl":   ubx.FieldSpec{WireName: "queue_url"},
 	},
 }

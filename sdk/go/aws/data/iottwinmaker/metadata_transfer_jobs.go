@@ -4,57 +4,57 @@ package iottwinmaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetadataTransferJobs_Filters struct {
-	State any
+	State       any
 	WorkspaceId any
 }
 
 type MetadataTransferJobs_MetadataTransferJobSummaries_Progress struct {
-	FailedCount any
-	SkippedCount any
+	FailedCount    any
+	SkippedCount   any
 	SucceededCount any
-	TotalCount any
+	TotalCount     any
 }
 
 type MetadataTransferJobs_MetadataTransferJobSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type MetadataTransferJobs_MetadataTransferJobSummaries_Status struct {
-	Error any
+	Error          any
 	QueuedPosition any
-	State any
+	State          any
 }
 
 type MetadataTransferJobs_MetadataTransferJobSummaries struct {
-	Arn any
-	CreationDateTime any
+	Arn                   any
+	CreationDateTime      any
 	MetadataTransferJobId any
-	Progress any
-	Status any
-	UpdateDateTime any
+	Progress              any
+	Status                any
+	UpdateDateTime        any
 }
 
 var MetadataTransferJobs_FiltersFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
-	}
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
+}
 
 type MetadataTransferJobsConfig struct {
 	DestinationType any
-	Filters any
-	MaxResults any
-	NextToken any
-	SourceType any
+	Filters         any
+	MaxResults      any
+	NextToken       any
+	SourceType      any
 }
 
 type MetadataTransferJobsAttrs struct {
-	DestinationType any
-	Filters any
-	MaxResults any
+	DestinationType              any
+	Filters                      any
+	MaxResults                   any
 	MetadataTransferJobSummaries any
-	NextToken any
-	SourceType any
+	NextToken                    any
+	SourceType                   any
 }
 
 var MetadataTransferJobs = ubx.DataSourceBinding{
@@ -63,11 +63,11 @@ var MetadataTransferJobs = ubx.DataSourceBinding{
 		"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MetadataTransferJobs_FiltersFields,
+			Kind:     "list",
+			Fields:   MetadataTransferJobs_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SourceType": ubx.FieldSpec{WireName: "source_type"},
 	},
 }

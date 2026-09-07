@@ -153,9 +153,9 @@ type StorageLens_Tags struct {
 }
 
 var StorageLens_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StorageLensConfig struct {
 	// A set of tags (key-value pairs) for this Amazon S3 Storage Lens configuration.
@@ -174,8 +174,8 @@ var StorageLens = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StorageLens_TagsFields,
+			Kind:     "list",
+			Fields:   StorageLens_TagsFields,
 		},
 	},
 }

@@ -4,7 +4,7 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Handshake_Handshake_Parties struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -13,19 +13,19 @@ type Handshake_Handshake_Resources_Resources struct {
 
 type Handshake_Handshake_Resources struct {
 	Resources any
-	Type any
-	Value any
+	Type      any
+	Value     any
 }
 
 type Handshake_Handshake struct {
-	Action any
-	Arn any
+	Action              any
+	Arn                 any
 	ExpirationTimestamp any
-	Id any
-	Parties any
-	RequestedTimestamp any
-	Resources any
-	State any
+	Id                  any
+	Parties             any
+	RequestedTimestamp  any
+	Resources           any
+	State               any
 }
 
 type HandshakeConfig struct {
@@ -34,7 +34,7 @@ type HandshakeConfig struct {
 
 type HandshakeAttrs struct {
 	// <p>Contains details for a handshake. A handshake is the secure exchange of information between two Amazon Web Services accounts: a sender and a recipient.</p> <p> <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>EXPIRED</code> show up in lists for only 30 days after entering that state After that they are deleted.</p>
-	Handshake any
+	Handshake   any
 	HandshakeId any
 }
 

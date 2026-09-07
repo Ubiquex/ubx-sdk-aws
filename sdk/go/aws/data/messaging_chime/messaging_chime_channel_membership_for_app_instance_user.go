@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeChannelMembershipForAppInstanceUser_ChannelMembership_AppInstanceUserMembershipSummary struct {
 	ReadMarkerTimestamp any
-	SubChannelId any
-	Type any
+	SubChannelId        any
+	Type                any
 }
 
 type MessagingChimeChannelMembershipForAppInstanceUser_ChannelMembership_ChannelSummary struct {
-	ChannelArn any
+	ChannelArn           any
 	LastMessageTimestamp any
-	Metadata any
-	Mode any
-	Name any
-	Privacy any
+	Metadata             any
+	Mode                 any
+	Name                 any
+	Privacy              any
 }
 
 type MessagingChimeChannelMembershipForAppInstanceUser_ChannelMembership struct {
@@ -27,23 +27,23 @@ type MessagingChimeChannelMembershipForAppInstanceUser_ChannelMembership struct 
 
 type MessagingChimeChannelMembershipForAppInstanceUserConfig struct {
 	AppInstanceUserArn any
-	ChannelArn any
-	ChimeBearer any
+	ChannelArn         any
+	ChimeBearer        any
 }
 
 type MessagingChimeChannelMembershipForAppInstanceUserAttrs struct {
 	AppInstanceUserArn any
-	ChannelArn any
+	ChannelArn         any
 	// <p>Summary of the channel membership details of an <code>AppInstanceUser</code>.</p>
 	ChannelMembership any
-	ChimeBearer any
+	ChimeBearer       any
 }
 
 var MessagingChimeChannelMembershipForAppInstanceUser = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channel_membership_for_app_instance_user",
 	Fields: ubx.FieldMap{
 		"AppInstanceUserArn": ubx.FieldSpec{WireName: "app_instance_user_arn"},
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
+		"ChannelArn":         ubx.FieldSpec{WireName: "channel_arn"},
+		"ChimeBearer":        ubx.FieldSpec{WireName: "chime_bearer"},
 	},
 }

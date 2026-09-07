@@ -4,25 +4,25 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketTagging_TagSet struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BucketTaggingConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketTaggingAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	TagSet any
+	TagSet              any
 }
 
 var BucketTagging = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_tagging",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

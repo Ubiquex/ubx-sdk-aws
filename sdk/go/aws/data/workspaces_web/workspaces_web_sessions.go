@@ -4,44 +4,44 @@ package workspaces_web
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspacesWebSessions_Sessions struct {
-	EndTime any
+	EndTime   any
 	PortalArn any
 	SessionId any
 	StartTime any
-	Status any
-	Username any
+	Status    any
+	Username  any
 }
 
 type WorkspacesWebSessionsConfig struct {
 	MaxResults any
-	NextToken any
-	PortalId any
-	SessionId any
-	SortBy any
-	Status any
-	Username any
+	NextToken  any
+	PortalId   any
+	SessionId  any
+	SortBy     any
+	Status     any
+	Username   any
 }
 
 type WorkspacesWebSessionsAttrs struct {
 	MaxResults any
-	NextToken any
-	PortalId any
-	SessionId any
-	Sessions any
-	SortBy any
-	Status any
-	Username any
+	NextToken  any
+	PortalId   any
+	SessionId  any
+	Sessions   any
+	SortBy     any
+	Status     any
+	Username   any
 }
 
 var WorkspacesWebSessions = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_web_sessions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PortalId": ubx.FieldSpec{WireName: "portal_id"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Username": ubx.FieldSpec{WireName: "username"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PortalId":   ubx.FieldSpec{WireName: "portal_id"},
+		"SessionId":  ubx.FieldSpec{WireName: "session_id"},
+		"SortBy":     ubx.FieldSpec{WireName: "sort_by"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
+		"Username":   ubx.FieldSpec{WireName: "username"},
 	},
 }

@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Forecasts_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 type Forecasts_Forecasts struct {
 	CreatedUsingAutoPredictor any
-	CreationTime any
-	DatasetGroupArn any
-	ForecastArn any
-	ForecastName any
-	LastModificationTime any
-	Message any
-	PredictorArn any
-	Status any
+	CreationTime              any
+	DatasetGroupArn           any
+	ForecastArn               any
+	ForecastName              any
+	LastModificationTime      any
+	Message                   any
+	PredictorArn              any
+	Status                    any
 }
 
 var Forecasts_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type ForecastsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ForecastsAttrs struct {
-	Filters any
-	Forecasts any
+	Filters    any
+	Forecasts  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Forecasts = ubx.DataSourceBinding{
@@ -45,10 +45,10 @@ var Forecasts = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Forecasts_FiltersFields,
+			Kind:     "list",
+			Fields:   Forecasts_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -46,55 +46,55 @@ type Selection_BackupSelection struct {
 }
 
 var Selection_BackupSelection_Conditions_StringEqualsFields = ubx.FieldMap{
-		"ConditionKey": ubx.FieldSpec{WireName: "condition_key"},
-		"ConditionValue": ubx.FieldSpec{WireName: "condition_value"},
-	}
+	"ConditionKey":   ubx.FieldSpec{WireName: "condition_key"},
+	"ConditionValue": ubx.FieldSpec{WireName: "condition_value"},
+}
 
 var Selection_BackupSelection_ConditionsFields = ubx.FieldMap{
-		"StringEquals": ubx.FieldSpec{
-			WireName: "string_equals",
-			Kind: "list",
-			Fields: Selection_BackupSelection_Conditions_StringEqualsFields,
-		},
-		"StringLike": ubx.FieldSpec{
-			WireName: "string_like",
-			Kind: "list",
-			Fields: Selection_BackupSelection_Conditions_StringEqualsFields,
-		},
-		"StringNotEquals": ubx.FieldSpec{
-			WireName: "string_not_equals",
-			Kind: "list",
-			Fields: Selection_BackupSelection_Conditions_StringEqualsFields,
-		},
-		"StringNotLike": ubx.FieldSpec{
-			WireName: "string_not_like",
-			Kind: "list",
-			Fields: Selection_BackupSelection_Conditions_StringEqualsFields,
-		},
-	}
+	"StringEquals": ubx.FieldSpec{
+		WireName: "string_equals",
+		Kind:     "list",
+		Fields:   Selection_BackupSelection_Conditions_StringEqualsFields,
+	},
+	"StringLike": ubx.FieldSpec{
+		WireName: "string_like",
+		Kind:     "list",
+		Fields:   Selection_BackupSelection_Conditions_StringEqualsFields,
+	},
+	"StringNotEquals": ubx.FieldSpec{
+		WireName: "string_not_equals",
+		Kind:     "list",
+		Fields:   Selection_BackupSelection_Conditions_StringEqualsFields,
+	},
+	"StringNotLike": ubx.FieldSpec{
+		WireName: "string_not_like",
+		Kind:     "list",
+		Fields:   Selection_BackupSelection_Conditions_StringEqualsFields,
+	},
+}
 
 var Selection_BackupSelection_ListOfTagsFields = ubx.FieldMap{
-		"ConditionKey": ubx.FieldSpec{WireName: "condition_key"},
-		"ConditionType": ubx.FieldSpec{WireName: "condition_type"},
-		"ConditionValue": ubx.FieldSpec{WireName: "condition_value"},
-	}
+	"ConditionKey":   ubx.FieldSpec{WireName: "condition_key"},
+	"ConditionType":  ubx.FieldSpec{WireName: "condition_type"},
+	"ConditionValue": ubx.FieldSpec{WireName: "condition_value"},
+}
 
 var Selection_BackupSelectionFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "object",
-			Fields: Selection_BackupSelection_ConditionsFields,
-		},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"ListOfTags": ubx.FieldSpec{
-			WireName: "list_of_tags",
-			Kind: "list",
-			Fields: Selection_BackupSelection_ListOfTagsFields,
-		},
-		"NotResources": ubx.FieldSpec{WireName: "not_resources"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"SelectionName": ubx.FieldSpec{WireName: "selection_name"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "object",
+		Fields:   Selection_BackupSelection_ConditionsFields,
+	},
+	"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
+	"ListOfTags": ubx.FieldSpec{
+		WireName: "list_of_tags",
+		Kind:     "list",
+		Fields:   Selection_BackupSelection_ListOfTagsFields,
+	},
+	"NotResources":  ubx.FieldSpec{WireName: "not_resources"},
+	"Resources":     ubx.FieldSpec{WireName: "resources"},
+	"SelectionName": ubx.FieldSpec{WireName: "selection_name"},
+}
 
 type SelectionConfig struct {
 	// The unique identifier of the AWS Backup plan to which this backup selection belongs. (AI-inferred)
@@ -120,8 +120,8 @@ var Selection = ubx.ResourceBinding{
 		"BackupPlanId": ubx.FieldSpec{WireName: "backup_plan_id"},
 		"BackupSelection": ubx.FieldSpec{
 			WireName: "backup_selection",
-			Kind: "object",
-			Fields: Selection_BackupSelectionFields,
+			Kind:     "object",
+			Fields:   Selection_BackupSelectionFields,
 		},
 	},
 }

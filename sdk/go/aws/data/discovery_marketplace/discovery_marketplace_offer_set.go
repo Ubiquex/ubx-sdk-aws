@@ -4,29 +4,29 @@ package discovery_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryMarketplaceOfferSet_AssociatedEntities_Offer_SellerOfRecord struct {
-	DisplayName any
+	DisplayName     any
 	SellerProfileId any
 }
 
 type DiscoveryMarketplaceOfferSet_AssociatedEntities_Offer struct {
-	OfferId any
-	OfferName any
+	OfferId        any
+	OfferName      any
 	SellerOfRecord any
 }
 
 type DiscoveryMarketplaceOfferSet_AssociatedEntities_Product struct {
 	Manufacturer any
-	ProductId any
-	ProductName any
+	ProductId    any
+	ProductName  any
 }
 
 type DiscoveryMarketplaceOfferSet_AssociatedEntities struct {
-	Offer any
+	Offer   any
 	Product any
 }
 
 type DiscoveryMarketplaceOfferSet_Badges struct {
-	BadgeType any
+	BadgeType   any
 	DisplayName any
 }
 
@@ -36,13 +36,13 @@ type DiscoveryMarketplaceOfferSetConfig struct {
 
 type DiscoveryMarketplaceOfferSetAttrs struct {
 	AssociatedEntities any
-	AvailableFromTime any
-	Badges any
-	BuyerNotes any
-	Catalog any
-	ExpirationTime any
-	OfferSetId any
-	OfferSetName any
+	AvailableFromTime  any
+	Badges             any
+	BuyerNotes         any
+	Catalog            any
+	ExpirationTime     any
+	OfferSetId         any
+	OfferSetName       any
 	// <p>Information about a seller, including the profile identifier and display name.</p>
 	SellerOfRecord any
 }

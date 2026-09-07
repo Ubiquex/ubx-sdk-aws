@@ -45,9 +45,9 @@ type CoreNetwork_Tags struct {
 }
 
 var CoreNetwork_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CoreNetworkConfig struct {
 	// The description of core network
@@ -90,13 +90,13 @@ type CoreNetworkAttrs struct {
 var CoreNetwork = ubx.ResourceBinding{
 	WireType: "aws_network_manager_core_network",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+		"PolicyDocument":  ubx.FieldSpec{WireName: "policy_document"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CoreNetwork_TagsFields,
+			Kind:     "list",
+			Fields:   CoreNetwork_TagsFields,
 		},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficDistribution_AgentConfig_Distributions struct {
 	Percentage any
-	Region any
+	Region     any
 }
 
 type TrafficDistribution_AgentConfig struct {
@@ -14,7 +14,7 @@ type TrafficDistribution_AgentConfig struct {
 
 type TrafficDistribution_SignInConfig_Distributions struct {
 	Enabled any
-	Region any
+	Region  any
 }
 
 type TrafficDistribution_SignInConfig struct {
@@ -28,8 +28,8 @@ type TrafficDistributionConfig struct {
 type TrafficDistributionAttrs struct {
 	// <p>The distribution of agents between the instance and its replica(s).</p>
 	AgentConfig any
-	Arn any
-	Id any
+	Arn         any
+	Id          any
 	// <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).</p>
 	SignInConfig any
 	// <p>The distribution of traffic between the instance and its replicas.</p>

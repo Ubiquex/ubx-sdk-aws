@@ -13,10 +13,10 @@ type Logging_EventConfigurations struct {
 }
 
 var Logging_EventConfigurationsFields = ubx.FieldMap{
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"LogDestination": ubx.FieldSpec{WireName: "log_destination"},
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-	}
+	"EventType":      ubx.FieldSpec{WireName: "event_type"},
+	"LogDestination": ubx.FieldSpec{WireName: "log_destination"},
+	"LogLevel":       ubx.FieldSpec{WireName: "log_level"},
+}
 
 type LoggingConfig struct {
 	// Your 12-digit account ID (used as the primary identifier for the CloudFormation resource).
@@ -43,12 +43,12 @@ type LoggingAttrs struct {
 var Logging = ubx.ResourceBinding{
 	WireType: "aws_io_t_logging",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"DefaultLogLevel": ubx.FieldSpec{WireName: "default_log_level"},
 		"EventConfigurations": ubx.FieldSpec{
 			WireName: "event_configurations",
-			Kind: "list",
-			Fields: Logging_EventConfigurationsFields,
+			Kind:     "list",
+			Fields:   Logging_EventConfigurationsFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 	},

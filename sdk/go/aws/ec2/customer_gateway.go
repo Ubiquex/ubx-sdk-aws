@@ -11,9 +11,9 @@ type CustomerGateway_Tags struct {
 }
 
 var CustomerGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomerGatewayConfig struct {
 	// For customer gateway devices that support BGP, specify the device's ASN. You must specify either ``BgpAsn`` or ``BgpAsnExtended`` when creating the customer gateway. If the ASN is larger than ``2,147,483,647``, you must use ``BgpAsnExtended``. Default: 65000 Valid values: ``1`` to ``2,147,483,647``
@@ -54,15 +54,15 @@ type CustomerGatewayAttrs struct {
 var CustomerGateway = ubx.ResourceBinding{
 	WireType: "aws_customer_gateway",
 	Fields: ubx.FieldMap{
-		"BgpAsn": ubx.FieldSpec{WireName: "bgp_asn"},
+		"BgpAsn":         ubx.FieldSpec{WireName: "bgp_asn"},
 		"BgpAsnExtended": ubx.FieldSpec{WireName: "bgp_asn_extended"},
 		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"DeviceName":     ubx.FieldSpec{WireName: "device_name"},
+		"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomerGateway_TagsFields,
+			Kind:     "list",
+			Fields:   CustomerGateway_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

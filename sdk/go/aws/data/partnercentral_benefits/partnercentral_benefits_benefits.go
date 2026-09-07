@@ -4,43 +4,43 @@ package partnercentral_benefits
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PartnercentralBenefitsBenefits_BenefitSummaries struct {
-	Arn any
-	Catalog any
-	Description any
+	Arn              any
+	Catalog          any
+	Description      any
 	FulfillmentTypes any
-	Id any
-	Name any
-	Programs any
-	Status any
+	Id               any
+	Name             any
+	Programs         any
+	Status           any
 }
 
 type PartnercentralBenefitsBenefitsConfig struct {
-	Catalog any
+	Catalog          any
 	FulfillmentTypes any
-	MaxResults any
-	NextToken any
-	Programs any
-	Status any
+	MaxResults       any
+	NextToken        any
+	Programs         any
+	Status           any
 }
 
 type PartnercentralBenefitsBenefitsAttrs struct {
 	BenefitSummaries any
-	Catalog any
+	Catalog          any
 	FulfillmentTypes any
-	MaxResults any
-	NextToken any
-	Programs any
-	Status any
+	MaxResults       any
+	NextToken        any
+	Programs         any
+	Status           any
 }
 
 var PartnercentralBenefitsBenefits = ubx.DataSourceBinding{
 	WireType: "aws_partnercentral_benefits_benefits",
 	Fields: ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
+		"Catalog":          ubx.FieldSpec{WireName: "catalog"},
 		"FulfillmentTypes": ubx.FieldSpec{WireName: "fulfillment_types"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Programs": ubx.FieldSpec{WireName: "programs"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"Programs":         ubx.FieldSpec{WireName: "programs"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
 	},
 }

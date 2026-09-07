@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityProfileFlowModules_AllowedFlowModules struct {
 	FlowModuleId any
-	Type any
+	Type         any
 }
 
 type SecurityProfileFlowModulesConfig struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId        any
+	MaxResults        any
+	NextToken         any
 	SecurityProfileId any
 }
 
 type SecurityProfileFlowModulesAttrs struct {
 	AllowedFlowModules any
-	InstanceId any
+	InstanceId         any
 	LastModifiedRegion any
-	LastModifiedTime any
-	MaxResults any
-	NextToken any
-	SecurityProfileId any
+	LastModifiedTime   any
+	MaxResults         any
+	NextToken          any
+	SecurityProfileId  any
 }
 
 var SecurityProfileFlowModules = ubx.DataSourceBinding{
 	WireType: "aws_connect_security_profile_flow_modules",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":        ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"SecurityProfileId": ubx.FieldSpec{WireName: "security_profile_id"},
 	},
 }

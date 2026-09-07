@@ -4,35 +4,35 @@ package chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rooms_Rooms struct {
-	AccountId any
-	CreatedBy any
+	AccountId        any
+	CreatedBy        any
 	CreatedTimestamp any
-	Name any
-	RoomId any
+	Name             any
+	RoomId           any
 	UpdatedTimestamp any
 }
 
 type RoomsConfig struct {
-	AccountId any
+	AccountId  any
 	MaxResults any
-	MemberId any
-	NextToken any
+	MemberId   any
+	NextToken  any
 }
 
 type RoomsAttrs struct {
-	AccountId any
+	AccountId  any
 	MaxResults any
-	MemberId any
-	NextToken any
-	Rooms any
+	MemberId   any
+	NextToken  any
+	Rooms      any
 }
 
 var Rooms = ubx.DataSourceBinding{
 	WireType: "aws_chime_rooms",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MemberId": ubx.FieldSpec{WireName: "member_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MemberId":   ubx.FieldSpec{WireName: "member_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

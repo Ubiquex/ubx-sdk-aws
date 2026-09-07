@@ -4,32 +4,32 @@ package odb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SystemVersions_SystemVersions struct {
-	GiVersion any
-	Shape any
+	GiVersion      any
+	Shape          any
 	SystemVersions any
 }
 
 type SystemVersionsConfig struct {
-	GiVersion any
+	GiVersion  any
 	MaxResults any
-	NextToken any
-	Shape any
+	NextToken  any
+	Shape      any
 }
 
 type SystemVersionsAttrs struct {
-	GiVersion any
-	MaxResults any
-	NextToken any
-	Shape any
+	GiVersion      any
+	MaxResults     any
+	NextToken      any
+	Shape          any
 	SystemVersions any
 }
 
 var SystemVersions = ubx.DataSourceBinding{
 	WireType: "aws_odb_system_versions",
 	Fields: ubx.FieldMap{
-		"GiVersion": ubx.FieldSpec{WireName: "gi_version"},
+		"GiVersion":  ubx.FieldSpec{WireName: "gi_version"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Shape": ubx.FieldSpec{WireName: "shape"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Shape":      ubx.FieldSpec{WireName: "shape"},
 	},
 }

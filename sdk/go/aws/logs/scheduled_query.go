@@ -23,22 +23,22 @@ type ScheduledQuery_Tags struct {
 }
 
 var ScheduledQuery_DestinationConfiguration_S3ConfigurationFields = ubx.FieldMap{
-		"DestinationIdentifier": ubx.FieldSpec{WireName: "destination_identifier"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"DestinationIdentifier": ubx.FieldSpec{WireName: "destination_identifier"},
+	"RoleArn":               ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var ScheduledQuery_DestinationConfigurationFields = ubx.FieldMap{
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_DestinationConfiguration_S3ConfigurationFields,
-		},
-	}
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   ScheduledQuery_DestinationConfiguration_S3ConfigurationFields,
+	},
+}
 
 var ScheduledQuery_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ScheduledQueryConfig struct {
 	// An optional, user-defined text string that describes the purpose or details of the scheduled query, stored as metadata on the query definition in CloudWatch Logs Insights. (AI-inferred)
@@ -65,7 +65,7 @@ type ScheduledQueryConfig struct {
 	StartTimeOffset any
 	// Specifies whether the scheduled query is enabled or disabled (valid values are ENABLED and DISABLED), allowing you to pause or resume automatic execution of the query on its defined schedule. (AI-inferred)
 	State any
-	Tags any
+	Tags  any
 	// The IANA timezone (such as 'UTC' or 'America/New_York') used to evaluate the schedule's cron expression for the scheduled query; if omitted, UTC is assumed. (AI-inferred)
 	Timezone any
 }
@@ -105,7 +105,7 @@ type ScheduledQueryAttrs struct {
 	StartTimeOffset any
 	// Specifies whether the scheduled query is enabled or disabled (valid values are ENABLED and DISABLED), allowing you to pause or resume automatic execution of the query on its defined schedule. (AI-inferred)
 	State any
-	Tags any
+	Tags  any
 	// The IANA timezone (such as 'UTC' or 'America/New_York') used to evaluate the schedule's cron expression for the scheduled query; if omitted, UTC is assumed. (AI-inferred)
 	Timezone any
 }
@@ -116,23 +116,23 @@ var ScheduledQuery = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationConfiguration": ubx.FieldSpec{
 			WireName: "destination_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_DestinationConfigurationFields,
+			Kind:     "object",
+			Fields:   ScheduledQuery_DestinationConfigurationFields,
 		},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+		"ExecutionRoleArn":    ubx.FieldSpec{WireName: "execution_role_arn"},
 		"LogGroupIdentifiers": ubx.FieldSpec{WireName: "log_group_identifiers"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"QueryLanguage": ubx.FieldSpec{WireName: "query_language"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"ScheduleEndTime": ubx.FieldSpec{WireName: "schedule_end_time"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"ScheduleStartTime": ubx.FieldSpec{WireName: "schedule_start_time"},
-		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"QueryLanguage":       ubx.FieldSpec{WireName: "query_language"},
+		"QueryString":         ubx.FieldSpec{WireName: "query_string"},
+		"ScheduleEndTime":     ubx.FieldSpec{WireName: "schedule_end_time"},
+		"ScheduleExpression":  ubx.FieldSpec{WireName: "schedule_expression"},
+		"ScheduleStartTime":   ubx.FieldSpec{WireName: "schedule_start_time"},
+		"StartTimeOffset":     ubx.FieldSpec{WireName: "start_time_offset"},
+		"State":               ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ScheduledQuery_TagsFields,
+			Kind:     "list",
+			Fields:   ScheduledQuery_TagsFields,
 		},
 		"Timezone": ubx.FieldSpec{WireName: "timezone"},
 	},

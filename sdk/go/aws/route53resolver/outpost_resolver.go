@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutpostResolver_Tags struct {
 	// The key of a tag assigned to the Route 53 Resolver Outpost resolver, used to organize, identify, and manage the resolver within AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var OutpostResolver_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OutpostResolverConfig struct {
 	// The number of OutpostResolvers.
@@ -57,14 +57,14 @@ type OutpostResolverAttrs struct {
 var OutpostResolver = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_outpost_resolver",
 	Fields: ubx.FieldMap{
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutpostArn": ubx.FieldSpec{WireName: "outpost_arn"},
+		"InstanceCount":         ubx.FieldSpec{WireName: "instance_count"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"OutpostArn":            ubx.FieldSpec{WireName: "outpost_arn"},
 		"PreferredInstanceType": ubx.FieldSpec{WireName: "preferred_instance_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OutpostResolver_TagsFields,
+			Kind:     "list",
+			Fields:   OutpostResolver_TagsFields,
 		},
 	},
 }

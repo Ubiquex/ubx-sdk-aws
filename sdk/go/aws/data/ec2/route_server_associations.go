@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteServerAssociations_RouteServerAssociations struct {
 	RouteServerId any
-	State any
-	VpcId any
+	State         any
+	VpcId         any
 }
 
 type RouteServerAssociationsConfig struct {
-	DryRun any
+	DryRun        any
 	RouteServerId any
 }
 
 type RouteServerAssociationsAttrs struct {
-	DryRun any
+	DryRun                  any
 	RouteServerAssociations any
-	RouteServerId any
+	RouteServerId           any
 }
 
 var RouteServerAssociations = ubx.DataSourceBinding{
 	WireType: "aws_ec2_route_server_associations",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
 		"RouteServerId": ubx.FieldSpec{WireName: "route_server_id"},
 	},
 }

@@ -20,7 +20,7 @@ type Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_Authorizin
 type Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
 	// Specifies the expected value or match condition for a custom claim when using a custom JWT authorizer, allowing the agent to authorize requests based on token claims. (AI-inferred)
 	AuthorizingClaimMatchValue any
-	InboundTokenClaimName any
+	InboundTokenClaimName      any
 	// Specifies the expected data type (e.g., string, number, boolean) for the value of an inbound JWT claim, enabling the custom JWT authorizer to correctly parse and validate that claim during request authorization. (AI-inferred)
 	InboundTokenClaimValueType any
 }
@@ -53,7 +53,7 @@ type Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint struct 
 }
 
 type Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverrides struct {
-	Domain any
+	Domain          any
 	PrivateEndpoint any
 }
 
@@ -64,7 +64,7 @@ type Harness_AuthorizerConfiguration_CustomJwtauthorizer struct {
 	AllowedClients any
 	// Lists the OAuth 2.0 scopes that must be present in the JWT token for the custom JWT authorizer to allow the request, restricting access to tokens with the required scope claims. (AI-inferred)
 	AllowedScopes any
-	CustomClaims any
+	CustomClaims  any
 	// The discovery URL that the custom JWT authorizer calls to obtain the OpenID Connect configuration and JSON Web Key Set (JWKS) used for verifying JWT tokens. (AI-inferred)
 	DiscoveryUrl any
 	// Private endpoint configuration for connecting to the OpenID Connect discovery endpoint over a private network.
@@ -100,7 +100,7 @@ type Harness_Environment_AgentCoreRuntimeEnvironment_FilesystemConfigurations st
 type Harness_Environment_AgentCoreRuntimeEnvironment_LifecycleConfiguration struct {
 	// Specifies the maximum duration, in seconds, that an idle agent runtime session can remain open before the agent core environment automatically terminates it to free up resources. (AI-inferred)
 	IdleRuntimeSessionTimeout any
-	MaxLifetime any
+	MaxLifetime               any
 }
 
 type Harness_Environment_AgentCoreRuntimeEnvironment_NetworkConfiguration_NetworkModeConfig struct {
@@ -110,7 +110,7 @@ type Harness_Environment_AgentCoreRuntimeEnvironment_NetworkConfiguration_Networ
 }
 
 type Harness_Environment_AgentCoreRuntimeEnvironment_NetworkConfiguration struct {
-	NetworkMode any
+	NetworkMode       any
 	NetworkModeConfig any
 }
 
@@ -120,10 +120,10 @@ type Harness_Environment_AgentCoreRuntimeEnvironment struct {
 	// The ID of the underlying AgentCore Runtime.
 	AgentRuntimeId any
 	// The name of the underlying AgentCore Runtime.
-	AgentRuntimeName any
+	AgentRuntimeName         any
 	FilesystemConfigurations any
-	LifecycleConfiguration any
-	NetworkConfiguration any
+	LifecycleConfiguration   any
+	NetworkConfiguration     any
 }
 
 type Harness_Environment struct {
@@ -142,7 +142,7 @@ type Harness_EnvironmentArtifact struct {
 type Harness_Memory_AgentCoreMemoryConfiguration struct {
 	ActorId any
 	// The Amazon Resource Name (ARN) of the memory resource that the agent core uses to store and recall session context, required when configuring agent core memory. (AI-inferred)
-	Arn any
+	Arn           any
 	MessagesCount any
 	// Defines the retrieval configuration for the agent's core memory, such as the retrieval type (SEMANTIC or HYBRID) and the number of results to return when the agent recalls past interactions. (AI-inferred)
 	RetrievalConfig any
@@ -201,7 +201,7 @@ type Harness_Model_GeminiModelConfig struct {
 type Harness_Model_LiteLlmModelConfig struct {
 	// Provider-specific parameters passed through to LiteLLM unchanged.
 	AdditionalParams any
-	ApiBase any
+	ApiBase          any
 	// The ARN of the AWS Secrets Manager secret that stores the API key required to authenticate with the LiteLLM model endpoint. (AI-inferred)
 	ApiKeyArn any
 	// The maximum number of tokens the LiteLLM model is allowed to generate in a single response. (AI-inferred)
@@ -235,9 +235,9 @@ type Harness_Model struct {
 	// Specifies the Amazon Bedrock model configuration for the core harness, including the model ARN and inference settings, to define the model used to test the agent. (AI-inferred)
 	BedrockModelConfig any
 	// Specifies the Gemini-specific inference configuration (e.g., temperature, topP, and token limits) for the foundation model used by the agent core harness. (AI-inferred)
-	GeminiModelConfig any
+	GeminiModelConfig  any
 	LiteLlmModelConfig any
-	OpenAiModelConfig any
+	OpenAiModelConfig  any
 }
 
 type Harness_Skills_AwsSkills struct {
@@ -255,7 +255,7 @@ type Harness_Skills_Git struct {
 	// Specifies the authentication credentials (such as a username, password, or personal access token) used to access the private Git repository that contains the skill's source code. (AI-inferred)
 	Auth any
 	Path any
-	Url any
+	Url  any
 }
 
 type Harness_Skills_S3 struct {
@@ -265,9 +265,9 @@ type Harness_Skills_S3 struct {
 type Harness_Skills struct {
 	AwsSkills any
 	// Defines the Git-based source repository that provides the skill's implementation, allowing the harness to pull the skill code from version control. (AI-inferred)
-	Git any
+	Git  any
 	Path any
-	S3 any
+	S3   any
 }
 
 type Harness_SystemPrompt struct {
@@ -277,7 +277,7 @@ type Harness_SystemPrompt struct {
 
 type Harness_Tags struct {
 	// The key of a tag (key-value pair) attached to the AWS Bedrock Agent Core Harness, used to categorize or identify the resource within AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -295,7 +295,7 @@ type Harness_Tools_Config_AgentCoreGateway_OutboundAuth_Oauth struct {
 	// Specifies the default redirect URI that the OAuth authorization server will call back to after successful authentication, used as the return location when the agent core gateway requests OAuth tokens for outbound API access. (AI-inferred)
 	DefaultReturnUrl any
 	// Specifies the OAuth 2.0 grant type used by the agent core to authenticate outbound requests through the agent core gateway. (AI-inferred)
-	GrantType any
+	GrantType   any
 	ProviderArn any
 	// Specifies the list of OAuth 2.0 scopes to request from the authorization server for the Agent Core gateway's outbound authentication, controlling the permissions granted when invoking the configured tool. (AI-inferred)
 	Scopes any
@@ -331,17 +331,17 @@ type Harness_Tools_Config_RemoteMcp struct {
 }
 
 type Harness_Tools_Config struct {
-	AgentCoreBrowser any
+	AgentCoreBrowser         any
 	AgentCoreCodeInterpreter any
-	AgentCoreGateway any
-	InlineFunction any
+	AgentCoreGateway         any
+	InlineFunction           any
 	// Contains the endpoint URI and optional HTTP headers for connecting the tool to a remote Model Context Protocol (MCP) server. (AI-inferred)
 	RemoteMcp any
 }
 
 type Harness_Tools struct {
 	Config any
-	Name any
+	Name   any
 	// Specifies the type of a tool in the agent's tools list, such as ACTION_GROUP, KNOWLEDGE_BASE, or FUNCTION, which determines how the agent invokes the tool. (AI-inferred)
 	Type any
 }
@@ -356,7 +356,7 @@ type Harness_Truncation_Config_Summarization struct {
 	PreserveRecentMessages any
 	// Specifies the system prompt the agent uses to generate a summary of past conversation turns when the chat history exceeds the configured truncation limit. (AI-inferred)
 	SummarizationSystemPrompt any
-	SummaryRatio any
+	SummaryRatio              any
 }
 
 type Harness_Truncation_Config struct {
@@ -365,344 +365,344 @@ type Harness_Truncation_Config struct {
 }
 
 type Harness_Truncation struct {
-	Config any
+	Config   any
 	Strategy any
 }
 
 var Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields = ubx.FieldMap{
-		"MatchValueString": ubx.FieldSpec{WireName: "match_value_string"},
-		"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
-	}
+	"MatchValueString":     ubx.FieldSpec{WireName: "match_value_string"},
+	"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
+}
 
 var Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields = ubx.FieldMap{
-		"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
-		"ClaimMatchValue": ubx.FieldSpec{
-			WireName: "claim_match_value",
-			Kind: "object",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
-		},
-	}
+	"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
+	"ClaimMatchValue": ubx.FieldSpec{
+		WireName: "claim_match_value",
+		Kind:     "object",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
+	},
+}
 
 var Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields = ubx.FieldMap{
-		"AuthorizingClaimMatchValue": ubx.FieldSpec{
-			WireName: "authorizing_claim_match_value",
-			Kind: "object",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
-		},
-		"InboundTokenClaimName": ubx.FieldSpec{WireName: "inbound_token_claim_name"},
-		"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
-	}
+	"AuthorizingClaimMatchValue": ubx.FieldSpec{
+		WireName: "authorizing_claim_match_value",
+		Kind:     "object",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
+	},
+	"InboundTokenClaimName":      ubx.FieldSpec{WireName: "inbound_token_claim_name"},
+	"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
+}
 
 var Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields = ubx.FieldMap{
-		"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
-		"RoutingDomain": ubx.FieldSpec{WireName: "routing_domain"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"VpcIdentifier": ubx.FieldSpec{WireName: "vpc_identifier"},
-	}
+	"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
+	"RoutingDomain":         ubx.FieldSpec{WireName: "routing_domain"},
+	"SecurityGroupIds":      ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":             ubx.FieldSpec{WireName: "subnet_ids"},
+	"Tags":                  ubx.FieldSpec{WireName: "tags"},
+	"VpcIdentifier":         ubx.FieldSpec{WireName: "vpc_identifier"},
+}
 
 var Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields = ubx.FieldMap{
-		"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
-	}
+	"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
+}
 
 var Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields = ubx.FieldMap{
-		"ManagedVpcResource": ubx.FieldSpec{
-			WireName: "managed_vpc_resource",
-			Kind: "object",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields,
-		},
-		"SelfManagedLatticeResource": ubx.FieldSpec{
-			WireName: "self_managed_lattice_resource",
-			Kind: "object",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields,
-		},
-	}
+	"ManagedVpcResource": ubx.FieldSpec{
+		WireName: "managed_vpc_resource",
+		Kind:     "object",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields,
+	},
+	"SelfManagedLatticeResource": ubx.FieldSpec{
+		WireName: "self_managed_lattice_resource",
+		Kind:     "object",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields,
+	},
+}
 
 var Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverridesFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"PrivateEndpoint": ubx.FieldSpec{
-			WireName: "private_endpoint",
-			Kind: "object",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
-		},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+	"PrivateEndpoint": ubx.FieldSpec{
+		WireName: "private_endpoint",
+		Kind:     "object",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
+	},
+}
 
 var Harness_AuthorizerConfiguration_CustomJwtauthorizerFields = ubx.FieldMap{
-		"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
-		"AllowedClients": ubx.FieldSpec{WireName: "allowed_clients"},
-		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
-		"CustomClaims": ubx.FieldSpec{
-			WireName: "custom_claims",
-			Kind: "list",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
-		},
-		"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
-		"PrivateEndpoint": ubx.FieldSpec{
-			WireName: "private_endpoint",
-			Kind: "object",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
-		},
-		"PrivateEndpointOverrides": ubx.FieldSpec{
-			WireName: "private_endpoint_overrides",
-			Kind: "list",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverridesFields,
-		},
-	}
+	"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
+	"AllowedClients":  ubx.FieldSpec{WireName: "allowed_clients"},
+	"AllowedScopes":   ubx.FieldSpec{WireName: "allowed_scopes"},
+	"CustomClaims": ubx.FieldSpec{
+		WireName: "custom_claims",
+		Kind:     "list",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
+	},
+	"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
+	"PrivateEndpoint": ubx.FieldSpec{
+		WireName: "private_endpoint",
+		Kind:     "object",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
+	},
+	"PrivateEndpointOverrides": ubx.FieldSpec{
+		WireName: "private_endpoint_overrides",
+		Kind:     "list",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverridesFields,
+	},
+}
 
 var Harness_AuthorizerConfigurationFields = ubx.FieldMap{
-		"CustomJwtauthorizer": ubx.FieldSpec{
-			WireName: "custom_jwtauthorizer",
-			Kind: "object",
-			Fields: Harness_AuthorizerConfiguration_CustomJwtauthorizerFields,
-		},
-	}
+	"CustomJwtauthorizer": ubx.FieldSpec{
+		WireName: "custom_jwtauthorizer",
+		Kind:     "object",
+		Fields:   Harness_AuthorizerConfiguration_CustomJwtauthorizerFields,
+	},
+}
 
 var Harness_EnvironmentArtifact_ContainerConfigurationFields = ubx.FieldMap{
-		"ContainerUri": ubx.FieldSpec{WireName: "container_uri"},
-	}
+	"ContainerUri": ubx.FieldSpec{WireName: "container_uri"},
+}
 
 var Harness_EnvironmentArtifactFields = ubx.FieldMap{
-		"ContainerConfiguration": ubx.FieldSpec{
-			WireName: "container_configuration",
-			Kind: "object",
-			Fields: Harness_EnvironmentArtifact_ContainerConfigurationFields,
-		},
-	}
+	"ContainerConfiguration": ubx.FieldSpec{
+		WireName: "container_configuration",
+		Kind:     "object",
+		Fields:   Harness_EnvironmentArtifact_ContainerConfigurationFields,
+	},
+}
 
 var Harness_Model_BedrockModelConfigFields = ubx.FieldMap{
-		"AdditionalParams": ubx.FieldSpec{WireName: "additional_params"},
-		"ApiFormat": ubx.FieldSpec{WireName: "api_format"},
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"AdditionalParams": ubx.FieldSpec{WireName: "additional_params"},
+	"ApiFormat":        ubx.FieldSpec{WireName: "api_format"},
+	"MaxTokens":        ubx.FieldSpec{WireName: "max_tokens"},
+	"ModelId":          ubx.FieldSpec{WireName: "model_id"},
+	"Temperature":      ubx.FieldSpec{WireName: "temperature"},
+	"TopP":             ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Harness_Model_GeminiModelConfigFields = ubx.FieldMap{
-		"ApiKeyArn": ubx.FieldSpec{WireName: "api_key_arn"},
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"ApiKeyArn":   ubx.FieldSpec{WireName: "api_key_arn"},
+	"MaxTokens":   ubx.FieldSpec{WireName: "max_tokens"},
+	"ModelId":     ubx.FieldSpec{WireName: "model_id"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+	"TopK":        ubx.FieldSpec{WireName: "top_k"},
+	"TopP":        ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Harness_Model_LiteLlmModelConfigFields = ubx.FieldMap{
-		"AdditionalParams": ubx.FieldSpec{WireName: "additional_params"},
-		"ApiBase": ubx.FieldSpec{WireName: "api_base"},
-		"ApiKeyArn": ubx.FieldSpec{WireName: "api_key_arn"},
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"AdditionalParams": ubx.FieldSpec{WireName: "additional_params"},
+	"ApiBase":          ubx.FieldSpec{WireName: "api_base"},
+	"ApiKeyArn":        ubx.FieldSpec{WireName: "api_key_arn"},
+	"MaxTokens":        ubx.FieldSpec{WireName: "max_tokens"},
+	"ModelId":          ubx.FieldSpec{WireName: "model_id"},
+	"Temperature":      ubx.FieldSpec{WireName: "temperature"},
+	"TopP":             ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Harness_Model_OpenAiModelConfigFields = ubx.FieldMap{
-		"AdditionalParams": ubx.FieldSpec{WireName: "additional_params"},
-		"ApiFormat": ubx.FieldSpec{WireName: "api_format"},
-		"ApiKeyArn": ubx.FieldSpec{WireName: "api_key_arn"},
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"AdditionalParams": ubx.FieldSpec{WireName: "additional_params"},
+	"ApiFormat":        ubx.FieldSpec{WireName: "api_format"},
+	"ApiKeyArn":        ubx.FieldSpec{WireName: "api_key_arn"},
+	"MaxTokens":        ubx.FieldSpec{WireName: "max_tokens"},
+	"ModelId":          ubx.FieldSpec{WireName: "model_id"},
+	"Temperature":      ubx.FieldSpec{WireName: "temperature"},
+	"TopP":             ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Harness_ModelFields = ubx.FieldMap{
-		"BedrockModelConfig": ubx.FieldSpec{
-			WireName: "bedrock_model_config",
-			Kind: "object",
-			Fields: Harness_Model_BedrockModelConfigFields,
-		},
-		"GeminiModelConfig": ubx.FieldSpec{
-			WireName: "gemini_model_config",
-			Kind: "object",
-			Fields: Harness_Model_GeminiModelConfigFields,
-		},
-		"LiteLlmModelConfig": ubx.FieldSpec{
-			WireName: "lite_llm_model_config",
-			Kind: "object",
-			Fields: Harness_Model_LiteLlmModelConfigFields,
-		},
-		"OpenAiModelConfig": ubx.FieldSpec{
-			WireName: "open_ai_model_config",
-			Kind: "object",
-			Fields: Harness_Model_OpenAiModelConfigFields,
-		},
-	}
+	"BedrockModelConfig": ubx.FieldSpec{
+		WireName: "bedrock_model_config",
+		Kind:     "object",
+		Fields:   Harness_Model_BedrockModelConfigFields,
+	},
+	"GeminiModelConfig": ubx.FieldSpec{
+		WireName: "gemini_model_config",
+		Kind:     "object",
+		Fields:   Harness_Model_GeminiModelConfigFields,
+	},
+	"LiteLlmModelConfig": ubx.FieldSpec{
+		WireName: "lite_llm_model_config",
+		Kind:     "object",
+		Fields:   Harness_Model_LiteLlmModelConfigFields,
+	},
+	"OpenAiModelConfig": ubx.FieldSpec{
+		WireName: "open_ai_model_config",
+		Kind:     "object",
+		Fields:   Harness_Model_OpenAiModelConfigFields,
+	},
+}
 
 var Harness_Skills_AwsSkillsFields = ubx.FieldMap{
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-	}
+	"Paths": ubx.FieldSpec{WireName: "paths"},
+}
 
 var Harness_Skills_Git_AuthFields = ubx.FieldMap{
-		"CredentialArn": ubx.FieldSpec{WireName: "credential_arn"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"CredentialArn": ubx.FieldSpec{WireName: "credential_arn"},
+	"Username":      ubx.FieldSpec{WireName: "username"},
+}
 
 var Harness_Skills_GitFields = ubx.FieldMap{
-		"Auth": ubx.FieldSpec{
-			WireName: "auth",
-			Kind: "object",
-			Fields: Harness_Skills_Git_AuthFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Auth": ubx.FieldSpec{
+		WireName: "auth",
+		Kind:     "object",
+		Fields:   Harness_Skills_Git_AuthFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Url":  ubx.FieldSpec{WireName: "url"},
+}
 
 var Harness_Skills_S3Fields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var Harness_SkillsFields = ubx.FieldMap{
-		"AwsSkills": ubx.FieldSpec{
-			WireName: "aws_skills",
-			Kind: "object",
-			Fields: Harness_Skills_AwsSkillsFields,
-		},
-		"Git": ubx.FieldSpec{
-			WireName: "git",
-			Kind: "object",
-			Fields: Harness_Skills_GitFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Harness_Skills_S3Fields,
-		},
-	}
+	"AwsSkills": ubx.FieldSpec{
+		WireName: "aws_skills",
+		Kind:     "object",
+		Fields:   Harness_Skills_AwsSkillsFields,
+	},
+	"Git": ubx.FieldSpec{
+		WireName: "git",
+		Kind:     "object",
+		Fields:   Harness_Skills_GitFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Harness_Skills_S3Fields,
+	},
+}
 
 var Harness_SystemPromptFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Harness_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Harness_Tools_Config_AgentCoreBrowserFields = ubx.FieldMap{
-		"BrowserArn": ubx.FieldSpec{WireName: "browser_arn"},
-	}
+	"BrowserArn": ubx.FieldSpec{WireName: "browser_arn"},
+}
 
 var Harness_Tools_Config_AgentCoreCodeInterpreterFields = ubx.FieldMap{
-		"CodeInterpreterArn": ubx.FieldSpec{WireName: "code_interpreter_arn"},
-	}
+	"CodeInterpreterArn": ubx.FieldSpec{WireName: "code_interpreter_arn"},
+}
 
 var Harness_Tools_Config_AgentCoreGateway_OutboundAuth_OauthFields = ubx.FieldMap{
-		"CustomParameters": ubx.FieldSpec{WireName: "custom_parameters"},
-		"DefaultReturnUrl": ubx.FieldSpec{WireName: "default_return_url"},
-		"GrantType": ubx.FieldSpec{WireName: "grant_type"},
-		"ProviderArn": ubx.FieldSpec{WireName: "provider_arn"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"CustomParameters": ubx.FieldSpec{WireName: "custom_parameters"},
+	"DefaultReturnUrl": ubx.FieldSpec{WireName: "default_return_url"},
+	"GrantType":        ubx.FieldSpec{WireName: "grant_type"},
+	"ProviderArn":      ubx.FieldSpec{WireName: "provider_arn"},
+	"Scopes":           ubx.FieldSpec{WireName: "scopes"},
+}
 
 var Harness_Tools_Config_AgentCoreGateway_OutboundAuthFields = ubx.FieldMap{
-		"AwsIam": ubx.FieldSpec{WireName: "aws_iam"},
-		"None": ubx.FieldSpec{WireName: "none"},
-		"Oauth": ubx.FieldSpec{
-			WireName: "oauth",
-			Kind: "object",
-			Fields: Harness_Tools_Config_AgentCoreGateway_OutboundAuth_OauthFields,
-		},
-	}
+	"AwsIam": ubx.FieldSpec{WireName: "aws_iam"},
+	"None":   ubx.FieldSpec{WireName: "none"},
+	"Oauth": ubx.FieldSpec{
+		WireName: "oauth",
+		Kind:     "object",
+		Fields:   Harness_Tools_Config_AgentCoreGateway_OutboundAuth_OauthFields,
+	},
+}
 
 var Harness_Tools_Config_AgentCoreGatewayFields = ubx.FieldMap{
-		"GatewayArn": ubx.FieldSpec{WireName: "gateway_arn"},
-		"OutboundAuth": ubx.FieldSpec{
-			WireName: "outbound_auth",
-			Kind: "object",
-			Fields: Harness_Tools_Config_AgentCoreGateway_OutboundAuthFields,
-		},
-	}
+	"GatewayArn": ubx.FieldSpec{WireName: "gateway_arn"},
+	"OutboundAuth": ubx.FieldSpec{
+		WireName: "outbound_auth",
+		Kind:     "object",
+		Fields:   Harness_Tools_Config_AgentCoreGateway_OutboundAuthFields,
+	},
+}
 
 var Harness_Tools_Config_InlineFunctionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{WireName: "input_schema"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{WireName: "input_schema"},
+}
 
 var Harness_Tools_Config_RemoteMcpFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Headers": ubx.FieldSpec{WireName: "headers"},
+	"Url":     ubx.FieldSpec{WireName: "url"},
+}
 
 var Harness_Tools_ConfigFields = ubx.FieldMap{
-		"AgentCoreBrowser": ubx.FieldSpec{
-			WireName: "agent_core_browser",
-			Kind: "object",
-			Fields: Harness_Tools_Config_AgentCoreBrowserFields,
-		},
-		"AgentCoreCodeInterpreter": ubx.FieldSpec{
-			WireName: "agent_core_code_interpreter",
-			Kind: "object",
-			Fields: Harness_Tools_Config_AgentCoreCodeInterpreterFields,
-		},
-		"AgentCoreGateway": ubx.FieldSpec{
-			WireName: "agent_core_gateway",
-			Kind: "object",
-			Fields: Harness_Tools_Config_AgentCoreGatewayFields,
-		},
-		"InlineFunction": ubx.FieldSpec{
-			WireName: "inline_function",
-			Kind: "object",
-			Fields: Harness_Tools_Config_InlineFunctionFields,
-		},
-		"RemoteMcp": ubx.FieldSpec{
-			WireName: "remote_mcp",
-			Kind: "object",
-			Fields: Harness_Tools_Config_RemoteMcpFields,
-		},
-	}
+	"AgentCoreBrowser": ubx.FieldSpec{
+		WireName: "agent_core_browser",
+		Kind:     "object",
+		Fields:   Harness_Tools_Config_AgentCoreBrowserFields,
+	},
+	"AgentCoreCodeInterpreter": ubx.FieldSpec{
+		WireName: "agent_core_code_interpreter",
+		Kind:     "object",
+		Fields:   Harness_Tools_Config_AgentCoreCodeInterpreterFields,
+	},
+	"AgentCoreGateway": ubx.FieldSpec{
+		WireName: "agent_core_gateway",
+		Kind:     "object",
+		Fields:   Harness_Tools_Config_AgentCoreGatewayFields,
+	},
+	"InlineFunction": ubx.FieldSpec{
+		WireName: "inline_function",
+		Kind:     "object",
+		Fields:   Harness_Tools_Config_InlineFunctionFields,
+	},
+	"RemoteMcp": ubx.FieldSpec{
+		WireName: "remote_mcp",
+		Kind:     "object",
+		Fields:   Harness_Tools_Config_RemoteMcpFields,
+	},
+}
 
 var Harness_ToolsFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Harness_Tools_ConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Harness_Tools_ConfigFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Harness_Truncation_Config_SlidingWindowFields = ubx.FieldMap{
-		"MessagesCount": ubx.FieldSpec{WireName: "messages_count"},
-	}
+	"MessagesCount": ubx.FieldSpec{WireName: "messages_count"},
+}
 
 var Harness_Truncation_Config_SummarizationFields = ubx.FieldMap{
-		"PreserveRecentMessages": ubx.FieldSpec{WireName: "preserve_recent_messages"},
-		"SummarizationSystemPrompt": ubx.FieldSpec{WireName: "summarization_system_prompt"},
-		"SummaryRatio": ubx.FieldSpec{WireName: "summary_ratio"},
-	}
+	"PreserveRecentMessages":    ubx.FieldSpec{WireName: "preserve_recent_messages"},
+	"SummarizationSystemPrompt": ubx.FieldSpec{WireName: "summarization_system_prompt"},
+	"SummaryRatio":              ubx.FieldSpec{WireName: "summary_ratio"},
+}
 
 var Harness_Truncation_ConfigFields = ubx.FieldMap{
-		"SlidingWindow": ubx.FieldSpec{
-			WireName: "sliding_window",
-			Kind: "object",
-			Fields: Harness_Truncation_Config_SlidingWindowFields,
-		},
-		"Summarization": ubx.FieldSpec{
-			WireName: "summarization",
-			Kind: "object",
-			Fields: Harness_Truncation_Config_SummarizationFields,
-		},
-	}
+	"SlidingWindow": ubx.FieldSpec{
+		WireName: "sliding_window",
+		Kind:     "object",
+		Fields:   Harness_Truncation_Config_SlidingWindowFields,
+	},
+	"Summarization": ubx.FieldSpec{
+		WireName: "summarization",
+		Kind:     "object",
+		Fields:   Harness_Truncation_Config_SummarizationFields,
+	},
+}
 
 var Harness_TruncationFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Harness_Truncation_ConfigFields,
-		},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Harness_Truncation_ConfigFields,
+	},
+	"Strategy": ubx.FieldSpec{WireName: "strategy"},
+}
 
 type HarnessConfig struct {
 	// The tools that the agent is allowed to use.
 	AllowedTools any
 	// Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
 	AuthorizerConfiguration any
-	EnvironmentArtifact any
+	EnvironmentArtifact     any
 	// Environment variables to set in the harness runtime environment.
 	EnvironmentVariables any
 	// The ARN of the IAM role that the harness assumes when running.
@@ -739,7 +739,7 @@ type HarnessAttrs struct {
 	// The timestamp when the harness was created.
 	CreatedAt any
 	// The compute environment on which the harness runs. (AI-inferred)
-	Environment any
+	Environment         any
 	EnvironmentArtifact any
 	// Environment variables to set in the harness runtime environment.
 	EnvironmentVariables any
@@ -753,7 +753,7 @@ type HarnessAttrs struct {
 	MaxIterations any
 	// The maximum number of tokens the agent can generate per iteration.
 	MaxTokens any
-	Memory any
+	Memory    any
 	// Specifies the foundation model configuration (e.g., model ID or inference profile) that the Bedrock agent uses to process prompts and generate responses. (AI-inferred)
 	Model any
 	// The skills available to the agent.
@@ -782,49 +782,49 @@ var Harness = ubx.ResourceBinding{
 		"AllowedTools": ubx.FieldSpec{WireName: "allowed_tools"},
 		"AuthorizerConfiguration": ubx.FieldSpec{
 			WireName: "authorizer_configuration",
-			Kind: "object",
-			Fields: Harness_AuthorizerConfigurationFields,
+			Kind:     "object",
+			Fields:   Harness_AuthorizerConfigurationFields,
 		},
 		"EnvironmentArtifact": ubx.FieldSpec{
 			WireName: "environment_artifact",
-			Kind: "object",
-			Fields: Harness_EnvironmentArtifactFields,
+			Kind:     "object",
+			Fields:   Harness_EnvironmentArtifactFields,
 		},
 		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"HarnessName": ubx.FieldSpec{WireName: "harness_name"},
-		"MaxIterations": ubx.FieldSpec{WireName: "max_iterations"},
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
+		"ExecutionRoleArn":     ubx.FieldSpec{WireName: "execution_role_arn"},
+		"HarnessName":          ubx.FieldSpec{WireName: "harness_name"},
+		"MaxIterations":        ubx.FieldSpec{WireName: "max_iterations"},
+		"MaxTokens":            ubx.FieldSpec{WireName: "max_tokens"},
 		"Model": ubx.FieldSpec{
 			WireName: "model",
-			Kind: "object",
-			Fields: Harness_ModelFields,
+			Kind:     "object",
+			Fields:   Harness_ModelFields,
 		},
 		"Skills": ubx.FieldSpec{
 			WireName: "skills",
-			Kind: "list",
-			Fields: Harness_SkillsFields,
+			Kind:     "list",
+			Fields:   Harness_SkillsFields,
 		},
 		"SystemPrompt": ubx.FieldSpec{
 			WireName: "system_prompt",
-			Kind: "list",
-			Fields: Harness_SystemPromptFields,
+			Kind:     "list",
+			Fields:   Harness_SystemPromptFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Harness_TagsFields,
+			Kind:     "list",
+			Fields:   Harness_TagsFields,
 		},
 		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
 		"Tools": ubx.FieldSpec{
 			WireName: "tools",
-			Kind: "list",
-			Fields: Harness_ToolsFields,
+			Kind:     "list",
+			Fields:   Harness_ToolsFields,
 		},
 		"Truncation": ubx.FieldSpec{
 			WireName: "truncation",
-			Kind: "object",
-			Fields: Harness_TruncationFields,
+			Kind:     "object",
+			Fields:   Harness_TruncationFields,
 		},
 	},
 }

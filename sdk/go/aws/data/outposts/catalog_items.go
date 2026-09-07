@@ -4,19 +4,19 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogItems_CatalogItems_Ec2Capacities struct {
-	Family any
-	MaxSize any
+	Family   any
+	MaxSize  any
 	Quantity any
 }
 
 type CatalogItems_CatalogItems struct {
-	CatalogItemId any
-	Ec2Capacities any
-	ItemStatus any
-	PowerKva any
-	SupportedStorage any
+	CatalogItemId       any
+	Ec2Capacities       any
+	ItemStatus          any
+	PowerKva            any
+	SupportedStorage    any
 	SupportedUplinkGbps any
-	WeightLbs any
+	WeightLbs           any
 }
 
 type CatalogItemsConfig struct {
@@ -25,28 +25,28 @@ type CatalogItemsConfig struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken              any
 	SupportedStorageFilter any
 }
 
 type CatalogItemsAttrs struct {
-	CatalogItems any
+	CatalogItems    any
 	Ec2FamilyFilter any
 	ItemClassFilter any
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken              any
 	SupportedStorageFilter any
 }
 
 var CatalogItems = ubx.DataSourceBinding{
 	WireType: "aws_outposts_catalog_items",
 	Fields: ubx.FieldMap{
-		"Ec2FamilyFilter": ubx.FieldSpec{WireName: "ec2_family_filter"},
-		"ItemClassFilter": ubx.FieldSpec{WireName: "item_class_filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Ec2FamilyFilter":        ubx.FieldSpec{WireName: "ec2_family_filter"},
+		"ItemClassFilter":        ubx.FieldSpec{WireName: "item_class_filter"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 		"SupportedStorageFilter": ubx.FieldSpec{WireName: "supported_storage_filter"},
 	},
 }

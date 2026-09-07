@@ -4,22 +4,22 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublishingDestinations_Destinations struct {
-	DestinationId any
+	DestinationId   any
 	DestinationType any
-	Status any
+	Status          any
 }
 
 type PublishingDestinationsConfig struct {
 	DetectorId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PublishingDestinationsAttrs struct {
 	Destinations any
-	DetectorId any
-	MaxResults any
-	NextToken any
+	DetectorId   any
+	MaxResults   any
+	NextToken    any
 }
 
 var PublishingDestinations = ubx.DataSourceBinding{
@@ -27,6 +27,6 @@ var PublishingDestinations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

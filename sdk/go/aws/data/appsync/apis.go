@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Apis_Apis_EventConfig_AuthProviders_CognitoConfig struct {
 	AppIdClientRegex any
-	AwsRegion any
-	UserPoolId any
+	AwsRegion        any
+	UserPoolId       any
 }
 
 type Apis_Apis_EventConfig_AuthProviders_LambdaAuthorizerConfig struct {
 	AuthorizerResultTtlInSeconds any
-	AuthorizerUri any
+	AuthorizerUri                any
 	IdentityValidationExpression any
 }
 
 type Apis_Apis_EventConfig_AuthProviders_OpenIdconnectConfig struct {
-	AuthTtl any
+	AuthTtl  any
 	ClientId any
-	IatTtl any
-	Issuer any
+	IatTtl   any
+	Issuer   any
 }
 
 type Apis_Apis_EventConfig_AuthProviders struct {
-	AuthType any
-	CognitoConfig any
+	AuthType               any
+	CognitoConfig          any
 	LambdaAuthorizerConfig any
-	OpenIdconnectConfig any
+	OpenIdconnectConfig    any
 }
 
 type Apis_Apis_EventConfig_ConnectionAuthModes struct {
@@ -35,45 +35,45 @@ type Apis_Apis_EventConfig_ConnectionAuthModes struct {
 
 type Apis_Apis_EventConfig_LogConfig struct {
 	CloudWatchLogsRoleArn any
-	LogLevel any
+	LogLevel              any
 }
 
 type Apis_Apis_EventConfig struct {
-	AuthProviders any
-	ConnectionAuthModes any
-	DefaultPublishAuthModes any
+	AuthProviders             any
+	ConnectionAuthModes       any
+	DefaultPublishAuthModes   any
 	DefaultSubscribeAuthModes any
-	LogConfig any
+	LogConfig                 any
 }
 
 type Apis_Apis struct {
-	ApiArn any
-	ApiId any
-	Created any
-	Dns any
-	EventConfig any
-	Name any
+	ApiArn       any
+	ApiId        any
+	Created      any
+	Dns          any
+	EventConfig  any
+	Name         any
 	OwnerContact any
-	Tags any
+	Tags         any
 	WafWebAclArn any
-	XrayEnabled any
+	XrayEnabled  any
 }
 
 type ApisConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApisAttrs struct {
-	Apis any
+	Apis       any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Apis = ubx.DataSourceBinding{
 	WireType: "aws_appsync_apis",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

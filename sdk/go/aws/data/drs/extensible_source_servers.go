@@ -4,29 +4,29 @@ package drs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExtensibleSourceServers_Items struct {
-	Arn any
+	Arn      any
 	Hostname any
-	Tags any
+	Tags     any
 }
 
 type ExtensibleSourceServersConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	StagingAccountId any
 }
 
 type ExtensibleSourceServersAttrs struct {
-	Items any
-	MaxResults any
-	NextToken any
+	Items            any
+	MaxResults       any
+	NextToken        any
 	StagingAccountId any
 }
 
 var ExtensibleSourceServers = ubx.DataSourceBinding{
 	WireType: "aws_drs_extensible_source_servers",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"StagingAccountId": ubx.FieldSpec{WireName: "staging_account_id"},
 	},
 }

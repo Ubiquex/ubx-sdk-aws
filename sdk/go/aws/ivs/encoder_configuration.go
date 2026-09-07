@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EncoderConfiguration_Tags struct {
 	// A user-defined tag key to associate with the IVS encoder configuration, used for resource management and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -21,16 +21,16 @@ type EncoderConfiguration_Video struct {
 }
 
 var EncoderConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var EncoderConfiguration_VideoFields = ubx.FieldMap{
-		"Bitrate": ubx.FieldSpec{WireName: "bitrate"},
-		"Framerate": ubx.FieldSpec{WireName: "framerate"},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Bitrate":   ubx.FieldSpec{WireName: "bitrate"},
+	"Framerate": ubx.FieldSpec{WireName: "framerate"},
+	"Height":    ubx.FieldSpec{WireName: "height"},
+	"Width":     ubx.FieldSpec{WireName: "width"},
+}
 
 type EncoderConfigurationConfig struct {
 	// Encoder configuration name.
@@ -58,13 +58,13 @@ var EncoderConfiguration = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EncoderConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   EncoderConfiguration_TagsFields,
 		},
 		"Video": ubx.FieldSpec{
 			WireName: "video",
-			Kind: "object",
-			Fields: EncoderConfiguration_VideoFields,
+			Kind:     "object",
+			Fields:   EncoderConfiguration_VideoFields,
 		},
 	},
 }

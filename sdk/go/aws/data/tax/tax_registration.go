@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_BelgiumAdditionalInfo struct {
 	IsMercuriusBoxEnabled any
-	PeppolId any
+	PeppolId              any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_BrazilAdditionalInfo struct {
-	CcmCode any
+	CcmCode         any
 	LegalNatureCode any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_CanadaAdditionalInfo struct {
 	CanadaQuebecSalesTaxNumber any
 	CanadaRetailSalesTaxNumber any
-	IsResellerAccount any
-	ProvincialSalesTaxId any
+	IsResellerAccount          any
+	ProvincialSalesTaxId       any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_ChileAdditionalInfo struct {
@@ -27,7 +27,7 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_ChileAdditionalInf
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_EgyptAdditionalInfo struct {
-	UniqueIdentificationNumber any
+	UniqueIdentificationNumber               any
 	UniqueIdentificationNumberExpirationDate any
 }
 
@@ -37,7 +37,7 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_EstoniaAdditionalI
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_FranceAdditionalInfo struct {
 	EInvoiceRoutingCode any
-	SirenNumber any
+	SirenNumber         any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_GeorgiaAdditionalInfo struct {
@@ -53,28 +53,28 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_IndiaAdditionalInf
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_IndonesiaAdditionalInfo struct {
-	DecisionNumber any
+	DecisionNumber              any
 	PpnExceptionDesignationCode any
-	TaxRegistrationNumberType any
+	TaxRegistrationNumberType   any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_IsraelAdditionalInfo struct {
 	CustomerType any
-	DealerType any
+	DealerType   any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_ItalyAdditionalInfo struct {
-	CigNumber any
-	CupNumber any
+	CigNumber    any
+	CupNumber    any
 	CustomerType any
 	SdiAccountId any
-	TaxCode any
+	TaxCode      any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_MalaysiaAdditionalInfo struct {
 	BusinessRegistrationNumber any
-	ServiceTaxCodes any
-	TaxInformationNumber any
+	ServiceTaxCodes            any
+	TaxInformationNumber       any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo struct {
@@ -87,8 +87,8 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_PhilippinesAdditio
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_PolandAdditionalInfo struct {
 	IndividualRegistrationNumber any
-	IsGroupVatEnabled any
-	TaxRegistrationNumberType any
+	IsGroupVatEnabled            any
+	TaxRegistrationNumberType    any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_RomaniaAdditionalInfo struct {
@@ -97,8 +97,8 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_RomaniaAdditionalI
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_SouthKoreaAdditionalInfo struct {
 	BusinessRepresentativeName any
-	ItemOfBusiness any
-	LineOfBusiness any
+	ItemOfBusiness             any
+	LineOfBusiness             any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_SpainAdditionalInfo struct {
@@ -106,10 +106,10 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_SpainAdditionalInf
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_TurkeyAdditionalInfo struct {
-	Industries any
-	KepEmailId any
+	Industries     any
+	KepEmailId     any
 	SecondaryTaxId any
-	TaxOffice any
+	TaxOffice      any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_UkraineAdditionalInfo struct {
@@ -118,14 +118,14 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation_UkraineAdditionalI
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_UzbekistanAdditionalInfo struct {
 	TaxRegistrationNumberType any
-	VatRegistrationNumber any
+	VatRegistrationNumber     any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation_VietnamAdditionalInfo struct {
 	ElectronicTransactionCodeNumber any
-	EnterpriseIdentificationNumber any
-	PaymentVoucherNumber any
-	PaymentVoucherNumberDate any
+	EnterpriseIdentificationNumber  any
+	PaymentVoucherNumber            any
+	PaymentVoucherNumberDate        any
 }
 
 type TaxRegistration_TaxRegistration_AdditionalTaxInformation struct {
@@ -184,32 +184,32 @@ type TaxRegistration_TaxRegistration_AdditionalTaxInformation struct {
 }
 
 type TaxRegistration_TaxRegistration_LegalAddress struct {
-	AddressLine1 any
-	AddressLine2 any
-	AddressLine3 any
-	City any
-	CountryCode any
+	AddressLine1     any
+	AddressLine2     any
+	AddressLine3     any
+	City             any
+	CountryCode      any
 	DistrictOrCounty any
-	PostalCode any
-	StateOrRegion any
+	PostalCode       any
+	StateOrRegion    any
 }
 
 type TaxRegistration_TaxRegistration_TaxDocumentMetadatas struct {
 	TaxDocumentAccessToken any
-	TaxDocumentName any
+	TaxDocumentName        any
 }
 
 type TaxRegistration_TaxRegistration struct {
 	// <p> Additional tax information associated with your TRN. The Tax Settings API returns country-specific information in the response when any additional information is present with your TRN for the following countries.</p>
 	AdditionalTaxInformation any
-	CertifiedEmailId any
+	CertifiedEmailId         any
 	// <p> The details of the address associated with the TRN information. </p>
-	LegalAddress any
-	LegalName any
-	RegistrationId any
-	RegistrationType any
-	Sector any
-	Status any
+	LegalAddress         any
+	LegalName            any
+	RegistrationId       any
+	RegistrationType     any
+	Sector               any
+	Status               any
 	TaxDocumentMetadatas any
 }
 

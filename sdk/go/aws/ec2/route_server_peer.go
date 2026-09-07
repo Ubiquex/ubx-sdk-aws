@@ -11,19 +11,19 @@ type RouteServerPeer_BgpOptions struct {
 }
 
 type RouteServerPeer_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var RouteServerPeer_BgpOptionsFields = ubx.FieldMap{
-		"PeerAsn": ubx.FieldSpec{WireName: "peer_asn"},
-		"PeerLivenessDetection": ubx.FieldSpec{WireName: "peer_liveness_detection"},
-	}
+	"PeerAsn":               ubx.FieldSpec{WireName: "peer_asn"},
+	"PeerLivenessDetection": ubx.FieldSpec{WireName: "peer_liveness_detection"},
+}
 
 var RouteServerPeer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RouteServerPeerConfig struct {
 	// BGP Options
@@ -66,15 +66,15 @@ var RouteServerPeer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BgpOptions": ubx.FieldSpec{
 			WireName: "bgp_options",
-			Kind: "object",
-			Fields: RouteServerPeer_BgpOptionsFields,
+			Kind:     "object",
+			Fields:   RouteServerPeer_BgpOptionsFields,
 		},
-		"PeerAddress": ubx.FieldSpec{WireName: "peer_address"},
+		"PeerAddress":           ubx.FieldSpec{WireName: "peer_address"},
 		"RouteServerEndpointId": ubx.FieldSpec{WireName: "route_server_endpoint_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RouteServerPeer_TagsFields,
+			Kind:     "list",
+			Fields:   RouteServerPeer_TagsFields,
 		},
 	},
 }

@@ -4,37 +4,37 @@ package odb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlexComponents_FlexComponents struct {
-	AvailableCoreCount any
-	AvailableDbStorageInGbs any
+	AvailableCoreCount         any
+	AvailableDbStorageInGbs    any
 	AvailableLocalStorageInGbs any
-	AvailableMemoryInGbs any
-	ComputeModel any
-	DescriptionSummary any
-	HardwareType any
-	MinimumCoreCount any
-	Name any
-	RuntimeMinimumCoreCount any
-	Shape any
+	AvailableMemoryInGbs       any
+	ComputeModel               any
+	DescriptionSummary         any
+	HardwareType               any
+	MinimumCoreCount           any
+	Name                       any
+	RuntimeMinimumCoreCount    any
+	Shape                      any
 }
 
 type FlexComponentsConfig struct {
 	MaxResults any
-	NextToken any
-	Shape any
+	NextToken  any
+	Shape      any
 }
 
 type FlexComponentsAttrs struct {
 	FlexComponents any
-	MaxResults any
-	NextToken any
-	Shape any
+	MaxResults     any
+	NextToken      any
+	Shape          any
 }
 
 var FlexComponents = ubx.DataSourceBinding{
 	WireType: "aws_odb_flex_components",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Shape": ubx.FieldSpec{WireName: "shape"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Shape":      ubx.FieldSpec{WireName: "shape"},
 	},
 }

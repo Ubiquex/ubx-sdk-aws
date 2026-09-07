@@ -12,19 +12,19 @@ type KeyValueStore_ImportSource struct {
 
 type KeyValueStore_Tags struct {
 	// The key of a tag attached to the CloudFront key value store, used to identify the tag within the tag set. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var KeyValueStore_ImportSourceFields = ubx.FieldMap{
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"SourceArn":  ubx.FieldSpec{WireName: "source_arn"},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 var KeyValueStore_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type KeyValueStoreConfig struct {
 	// A comment to describe the Key Value Store. Omitting ``Comment`` from the template during updates will clear the existing comment (set to empty string). To preserve an existing comment, you must explicitly include it in the template.
@@ -60,14 +60,14 @@ var KeyValueStore = ubx.ResourceBinding{
 		"Comment": ubx.FieldSpec{WireName: "comment"},
 		"ImportSource": ubx.FieldSpec{
 			WireName: "import_source",
-			Kind: "object",
-			Fields: KeyValueStore_ImportSourceFields,
+			Kind:     "object",
+			Fields:   KeyValueStore_ImportSourceFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: KeyValueStore_TagsFields,
+			Kind:     "list",
+			Fields:   KeyValueStore_TagsFields,
 		},
 	},
 }

@@ -4,46 +4,46 @@ package support
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CreateCaseOptions_CommunicationTypes_DatesWithoutSupport struct {
-	EndDateTime any
+	EndDateTime   any
 	StartDateTime any
 }
 
 type CreateCaseOptions_CommunicationTypes_SupportedHours struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type CreateCaseOptions_CommunicationTypes struct {
 	DatesWithoutSupport any
-	SupportedHours any
-	Type any
+	SupportedHours      any
+	Type                any
 }
 
 type CreateCaseOptionsConfig struct {
 	CategoryCode any
-	DryRun any
-	IssueType any
-	Language any
-	ServiceCode any
+	DryRun       any
+	IssueType    any
+	Language     any
+	ServiceCode  any
 }
 
 type CreateCaseOptionsAttrs struct {
-	CategoryCode any
-	CommunicationTypes any
-	DryRun any
-	IssueType any
-	Language any
+	CategoryCode         any
+	CommunicationTypes   any
+	DryRun               any
+	IssueType            any
+	Language             any
 	LanguageAvailability any
-	ServiceCode any
+	ServiceCode          any
 }
 
 var CreateCaseOptions = ubx.DataSourceBinding{
 	WireType: "aws_support_create_case_options",
 	Fields: ubx.FieldMap{
 		"CategoryCode": ubx.FieldSpec{WireName: "category_code"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"IssueType": ubx.FieldSpec{WireName: "issue_type"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"ServiceCode": ubx.FieldSpec{WireName: "service_code"},
+		"DryRun":       ubx.FieldSpec{WireName: "dry_run"},
+		"IssueType":    ubx.FieldSpec{WireName: "issue_type"},
+		"Language":     ubx.FieldSpec{WireName: "language"},
+		"ServiceCode":  ubx.FieldSpec{WireName: "service_code"},
 	},
 }

@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Suite_Suite_Counters struct {
 	Errored any
-	Failed any
-	Passed any
+	Failed  any
+	Passed  any
 	Skipped any
 	Stopped any
-	Total any
-	Warned any
+	Total   any
+	Warned  any
 }
 
 type Suite_Suite_DeviceMinutes struct {
-	Metered any
-	Total any
+	Metered   any
+	Total     any
 	Unmetered any
 }
 
@@ -23,16 +23,16 @@ type Suite_Suite struct {
 	Arn any
 	// <p>Represents entity counters.</p>
 	Counters any
-	Created any
+	Created  any
 	// <p>Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.</p>
 	DeviceMinutes any
-	Message any
-	Name any
-	Result any
-	Started any
-	Status any
-	Stopped any
-	Type any
+	Message       any
+	Name          any
+	Result        any
+	Started       any
+	Status        any
+	Stopped       any
+	Type          any
 }
 
 type SuiteConfig struct {

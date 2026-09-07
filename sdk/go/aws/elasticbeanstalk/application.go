@@ -36,38 +36,38 @@ type Application_ResourceLifecycleConfig struct {
 }
 
 var Application_ResourceLifecycleConfig_VersionLifecycleConfig_MaxAgeRuleFields = ubx.FieldMap{
-		"DeleteSourceFromS3": ubx.FieldSpec{WireName: "delete_source_from_s3"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxAgeInDays": ubx.FieldSpec{WireName: "max_age_in_days"},
-	}
+	"DeleteSourceFromS3": ubx.FieldSpec{WireName: "delete_source_from_s3"},
+	"Enabled":            ubx.FieldSpec{WireName: "enabled"},
+	"MaxAgeInDays":       ubx.FieldSpec{WireName: "max_age_in_days"},
+}
 
 var Application_ResourceLifecycleConfig_VersionLifecycleConfig_MaxCountRuleFields = ubx.FieldMap{
-		"DeleteSourceFromS3": ubx.FieldSpec{WireName: "delete_source_from_s3"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxCount": ubx.FieldSpec{WireName: "max_count"},
-	}
+	"DeleteSourceFromS3": ubx.FieldSpec{WireName: "delete_source_from_s3"},
+	"Enabled":            ubx.FieldSpec{WireName: "enabled"},
+	"MaxCount":           ubx.FieldSpec{WireName: "max_count"},
+}
 
 var Application_ResourceLifecycleConfig_VersionLifecycleConfigFields = ubx.FieldMap{
-		"MaxAgeRule": ubx.FieldSpec{
-			WireName: "max_age_rule",
-			Kind: "object",
-			Fields: Application_ResourceLifecycleConfig_VersionLifecycleConfig_MaxAgeRuleFields,
-		},
-		"MaxCountRule": ubx.FieldSpec{
-			WireName: "max_count_rule",
-			Kind: "object",
-			Fields: Application_ResourceLifecycleConfig_VersionLifecycleConfig_MaxCountRuleFields,
-		},
-	}
+	"MaxAgeRule": ubx.FieldSpec{
+		WireName: "max_age_rule",
+		Kind:     "object",
+		Fields:   Application_ResourceLifecycleConfig_VersionLifecycleConfig_MaxAgeRuleFields,
+	},
+	"MaxCountRule": ubx.FieldSpec{
+		WireName: "max_count_rule",
+		Kind:     "object",
+		Fields:   Application_ResourceLifecycleConfig_VersionLifecycleConfig_MaxCountRuleFields,
+	},
+}
 
 var Application_ResourceLifecycleConfigFields = ubx.FieldMap{
-		"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
-		"VersionLifecycleConfig": ubx.FieldSpec{
-			WireName: "version_lifecycle_config",
-			Kind: "object",
-			Fields: Application_ResourceLifecycleConfig_VersionLifecycleConfigFields,
-		},
-	}
+	"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
+	"VersionLifecycleConfig": ubx.FieldSpec{
+		WireName: "version_lifecycle_config",
+		Kind:     "object",
+		Fields:   Application_ResourceLifecycleConfig_VersionLifecycleConfigFields,
+	},
+}
 
 type ApplicationConfig struct {
 	// A name for the Elastic Beanstalk application. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the application name.
@@ -91,11 +91,11 @@ var Application = ubx.ResourceBinding{
 	WireType: "aws_elastic_beanstalk_application",
 	Fields: ubx.FieldMap{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"ResourceLifecycleConfig": ubx.FieldSpec{
 			WireName: "resource_lifecycle_config",
-			Kind: "object",
-			Fields: Application_ResourceLifecycleConfigFields,
+			Kind:     "object",
+			Fields:   Application_ResourceLifecycleConfigFields,
 		},
 	},
 }

@@ -4,64 +4,64 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Mapping_Location_DynamoDb struct {
-	Name any
+	Name  any
 	Param any
 	Value any
 }
 
 type Mapping_Location struct {
 	DynamoDb any
-	Jdbc any
-	S3 any
+	Jdbc     any
+	S3       any
 }
 
 type Mapping_Mapping struct {
-	SourcePath any
+	SourcePath  any
 	SourceTable any
-	SourceType any
-	TargetPath any
+	SourceType  any
+	TargetPath  any
 	TargetTable any
-	TargetType any
+	TargetType  any
 }
 
 type Mapping_Sinks struct {
 	DatabaseName any
-	TableName any
+	TableName    any
 }
 
 var Mapping_Location_DynamoDbFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Param": ubx.FieldSpec{WireName: "param"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Param": ubx.FieldSpec{WireName: "param"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Mapping_LocationFields = ubx.FieldMap{
-		"DynamoDb": ubx.FieldSpec{
-			WireName: "dynamo_db",
-			Kind: "list",
-			Fields: Mapping_Location_DynamoDbFields,
-		},
-		"Jdbc": ubx.FieldSpec{
-			WireName: "jdbc",
-			Kind: "list",
-			Fields: Mapping_Location_DynamoDbFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "list",
-			Fields: Mapping_Location_DynamoDbFields,
-		},
-	}
+	"DynamoDb": ubx.FieldSpec{
+		WireName: "dynamo_db",
+		Kind:     "list",
+		Fields:   Mapping_Location_DynamoDbFields,
+	},
+	"Jdbc": ubx.FieldSpec{
+		WireName: "jdbc",
+		Kind:     "list",
+		Fields:   Mapping_Location_DynamoDbFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "list",
+		Fields:   Mapping_Location_DynamoDbFields,
+	},
+}
 
 var Mapping_SinksFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+}
 
 type MappingConfig struct {
 	// <p>The location of resources.</p>
 	Location any
-	Sinks any
+	Sinks    any
 	// <p>Specifies a table definition in the Glue Data Catalog.</p>
 	Source any
 }
@@ -69,8 +69,8 @@ type MappingConfig struct {
 type MappingAttrs struct {
 	// <p>The location of resources.</p>
 	Location any
-	Mapping any
-	Sinks any
+	Mapping  any
+	Sinks    any
 	// <p>Specifies a table definition in the Glue Data Catalog.</p>
 	Source any
 }
@@ -80,18 +80,18 @@ var Mapping = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Location": ubx.FieldSpec{
 			WireName: "location",
-			Kind: "object",
-			Fields: Mapping_LocationFields,
+			Kind:     "object",
+			Fields:   Mapping_LocationFields,
 		},
 		"Sinks": ubx.FieldSpec{
 			WireName: "sinks",
-			Kind: "list",
-			Fields: Mapping_SinksFields,
+			Kind:     "list",
+			Fields:   Mapping_SinksFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Mapping_SinksFields,
+			Kind:     "object",
+			Fields:   Mapping_SinksFields,
 		},
 	},
 }

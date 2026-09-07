@@ -28,9 +28,9 @@ type PermissionAttrs struct {
 var Permission = ubx.ResourceBinding{
 	WireType: "aws_acmpca_permission",
 	Fields: ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
+		"Actions":                 ubx.FieldSpec{WireName: "actions"},
 		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"SourceAccount": ubx.FieldSpec{WireName: "source_account"},
+		"Principal":               ubx.FieldSpec{WireName: "principal"},
+		"SourceAccount":           ubx.FieldSpec{WireName: "source_account"},
 	},
 }

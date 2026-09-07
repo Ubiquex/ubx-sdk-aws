@@ -9,7 +9,7 @@ type AcmPcaCertificateAuthorityCsrConfig struct {
 
 type AcmPcaCertificateAuthorityCsrAttrs struct {
 	CertificateAuthorityArn any
-	Csr any
+	Csr                     any
 }
 
 var AcmPcaCertificateAuthorityCsr = ubx.DataSourceBinding{

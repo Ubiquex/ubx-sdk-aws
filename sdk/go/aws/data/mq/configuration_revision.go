@@ -4,22 +4,22 @@ package mq
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationRevisionConfig struct {
-	ConfigurationId any
+	ConfigurationId       any
 	ConfigurationRevision any
 }
 
 type ConfigurationRevisionAttrs struct {
-	ConfigurationId any
+	ConfigurationId       any
 	ConfigurationRevision any
-	Created any
-	Data any
-	Description any
+	Created               any
+	Data                  any
+	Description           any
 }
 
 var ConfigurationRevision = ubx.DataSourceBinding{
 	WireType: "aws_mq_configuration_revision",
 	Fields: ubx.FieldMap{
-		"ConfigurationId": ubx.FieldSpec{WireName: "configuration_id"},
+		"ConfigurationId":       ubx.FieldSpec{WireName: "configuration_id"},
 		"ConfigurationRevision": ubx.FieldSpec{WireName: "configuration_revision"},
 	},
 }

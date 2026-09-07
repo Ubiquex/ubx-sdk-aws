@@ -12,10 +12,10 @@ type AssetTypeConfig struct {
 }
 
 type AssetTypeAttrs struct {
-	Forms any
-	Id any
+	Forms      any
+	Id         any
 	Identifier any
-	Name any
+	Name       any
 }
 
 var AssetType = ubx.DataSourceBinding{

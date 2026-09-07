@@ -4,8 +4,8 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdFormat_Statuses struct {
-	Deadline any
-	Resource any
+	Deadline   any
+	Resource   any
 	UseLongIds any
 }
 

@@ -48,11 +48,11 @@ type PackageVersionAttrs struct {
 var PackageVersion = ubx.ResourceBinding{
 	WireType: "aws_panorama_package_version",
 	Fields: ubx.FieldMap{
-		"MarkLatest": ubx.FieldSpec{WireName: "mark_latest"},
-		"OwnerAccount": ubx.FieldSpec{WireName: "owner_account"},
-		"PackageId": ubx.FieldSpec{WireName: "package_id"},
-		"PackageVersion": ubx.FieldSpec{WireName: "package_version"},
-		"PatchVersion": ubx.FieldSpec{WireName: "patch_version"},
+		"MarkLatest":                ubx.FieldSpec{WireName: "mark_latest"},
+		"OwnerAccount":              ubx.FieldSpec{WireName: "owner_account"},
+		"PackageId":                 ubx.FieldSpec{WireName: "package_id"},
+		"PackageVersion":            ubx.FieldSpec{WireName: "package_version"},
+		"PatchVersion":              ubx.FieldSpec{WireName: "patch_version"},
 		"UpdatedLatestPatchVersion": ubx.FieldSpec{WireName: "updated_latest_patch_version"},
 	},
 }

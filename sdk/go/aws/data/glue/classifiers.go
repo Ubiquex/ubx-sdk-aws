@@ -4,70 +4,70 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Classifiers_Classifiers_CsvClassifier struct {
-	AllowSingleColumn any
-	ContainsHeader any
-	CreationTime any
+	AllowSingleColumn        any
+	ContainsHeader           any
+	CreationTime             any
 	CustomDatatypeConfigured any
-	CustomDatatypes any
-	Delimiter any
-	DisableValueTrimming any
-	Header any
-	LastUpdated any
-	Name any
-	QuoteSymbol any
-	Serde any
-	Version any
+	CustomDatatypes          any
+	Delimiter                any
+	DisableValueTrimming     any
+	Header                   any
+	LastUpdated              any
+	Name                     any
+	QuoteSymbol              any
+	Serde                    any
+	Version                  any
 }
 
 type Classifiers_Classifiers_GrokClassifier struct {
 	Classification any
-	CreationTime any
+	CreationTime   any
 	CustomPatterns any
-	GrokPattern any
-	LastUpdated any
-	Name any
-	Version any
+	GrokPattern    any
+	LastUpdated    any
+	Name           any
+	Version        any
 }
 
 type Classifiers_Classifiers_JsonClassifier struct {
 	CreationTime any
-	JsonPath any
-	LastUpdated any
-	Name any
-	Version any
+	JsonPath     any
+	LastUpdated  any
+	Name         any
+	Version      any
 }
 
 type Classifiers_Classifiers_Xmlclassifier struct {
 	Classification any
-	CreationTime any
-	LastUpdated any
-	Name any
-	RowTag any
-	Version any
+	CreationTime   any
+	LastUpdated    any
+	Name           any
+	RowTag         any
+	Version        any
 }
 
 type Classifiers_Classifiers struct {
-	CsvClassifier any
+	CsvClassifier  any
 	GrokClassifier any
 	JsonClassifier any
-	Xmlclassifier any
+	Xmlclassifier  any
 }
 
 type ClassifiersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ClassifiersAttrs struct {
 	Classifiers any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var Classifiers = ubx.DataSourceBinding{
 	WireType: "aws_glue_classifiers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

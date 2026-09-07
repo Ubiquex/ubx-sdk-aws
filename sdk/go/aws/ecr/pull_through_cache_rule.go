@@ -36,11 +36,11 @@ type PullThroughCacheRuleAttrs struct {
 var PullThroughCacheRule = ubx.ResourceBinding{
 	WireType: "aws_ecr_pull_through_cache_rule",
 	Fields: ubx.FieldMap{
-		"CredentialArn": ubx.FieldSpec{WireName: "credential_arn"},
-		"CustomRoleArn": ubx.FieldSpec{WireName: "custom_role_arn"},
-		"EcrRepositoryPrefix": ubx.FieldSpec{WireName: "ecr_repository_prefix"},
-		"UpstreamRegistry": ubx.FieldSpec{WireName: "upstream_registry"},
-		"UpstreamRegistryUrl": ubx.FieldSpec{WireName: "upstream_registry_url"},
+		"CredentialArn":            ubx.FieldSpec{WireName: "credential_arn"},
+		"CustomRoleArn":            ubx.FieldSpec{WireName: "custom_role_arn"},
+		"EcrRepositoryPrefix":      ubx.FieldSpec{WireName: "ecr_repository_prefix"},
+		"UpstreamRegistry":         ubx.FieldSpec{WireName: "upstream_registry"},
+		"UpstreamRegistryUrl":      ubx.FieldSpec{WireName: "upstream_registry_url"},
 		"UpstreamRepositoryPrefix": ubx.FieldSpec{WireName: "upstream_repository_prefix"},
 	},
 }

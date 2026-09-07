@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ParticipantReplicas_Replicas struct {
 	DestinationSessionId any
-	DestinationStageArn any
-	ParticipantId any
-	ReplicationState any
-	SourceSessionId any
-	SourceStageArn any
+	DestinationStageArn  any
+	ParticipantId        any
+	ReplicationState     any
+	SourceSessionId      any
+	SourceStageArn       any
 }
 
 type ParticipantReplicasConfig struct {
-	MaxResults any
-	NextToken any
-	ParticipantId any
+	MaxResults     any
+	NextToken      any
+	ParticipantId  any
 	SourceStageArn any
 }
 
 type ParticipantReplicasAttrs struct {
-	MaxResults any
-	NextToken any
-	ParticipantId any
-	Replicas any
+	MaxResults     any
+	NextToken      any
+	ParticipantId  any
+	Replicas       any
 	SourceStageArn any
 }
 
 var ParticipantReplicas = ubx.DataSourceBinding{
 	WireType: "aws_ivsrealtime_participant_replicas",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ParticipantId": ubx.FieldSpec{WireName: "participant_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"ParticipantId":  ubx.FieldSpec{WireName: "participant_id"},
 		"SourceStageArn": ubx.FieldSpec{WireName: "source_stage_arn"},
 	},
 }

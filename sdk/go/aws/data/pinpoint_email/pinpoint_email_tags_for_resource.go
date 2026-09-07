@@ -4,7 +4,7 @@ package pinpoint_email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PinpointEmailTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type PinpointEmailTagsForResourceConfig struct {
 
 type PinpointEmailTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var PinpointEmailTagsForResource = ubx.DataSourceBinding{

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FindingAggregations_AccountIds struct {
 	Comparison any
-	Value any
+	Value      any
 }
 
 type FindingAggregations_AggregationRequest_AccountAggregation struct {
-	FindingType any
+	FindingType  any
 	ResourceType any
-	SortBy any
-	SortOrder any
+	SortBy       any
+	SortOrder    any
 }
 
 type FindingAggregations_AggregationRequest_AmiAggregation struct {
-	Amis any
-	SortBy any
+	Amis      any
+	SortBy    any
 	SortOrder any
 }
 
@@ -27,873 +27,873 @@ type FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_InUseCoun
 }
 
 type FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_LastInUseAt struct {
-	EndInclusive any
+	EndInclusive   any
 	StartInclusive any
 }
 
 type FindingAggregations_AggregationRequest_AwsEcrContainerAggregation struct {
 	Architectures any
-	ImageShas any
-	ImageTags any
-	InUseCount any
-	LastInUseAt any
-	Repositories any
-	ResourceIds any
-	SortBy any
-	SortOrder any
+	ImageShas     any
+	ImageTags     any
+	InUseCount    any
+	LastInUseAt   any
+	Repositories  any
+	ResourceIds   any
+	SortBy        any
+	SortOrder     any
 }
 
 type FindingAggregations_AggregationRequest_CodeRepositoryAggregation struct {
-	ProjectNames any
+	ProjectNames  any
 	ProviderTypes any
-	ResourceIds any
-	SortBy any
-	SortOrder any
+	ResourceIds   any
+	SortBy        any
+	SortOrder     any
 }
 
 type FindingAggregations_AggregationRequest_ContainerImageAggregation struct {
-	Architectures any
+	Architectures   any
 	CloudAccountIds any
-	CloudOrgIds any
+	CloudOrgIds     any
 	CloudPartitions any
-	CloudProviders any
-	CloudRegions any
-	ImageDigests any
-	ImageTags any
-	InUseCount any
-	LastInUseAt any
-	Registries any
-	Repositories any
-	ResourceIds any
-	SortBy any
-	SortOrder any
+	CloudProviders  any
+	CloudRegions    any
+	ImageDigests    any
+	ImageTags       any
+	InUseCount      any
+	LastInUseAt     any
+	Registries      any
+	Repositories    any
+	ResourceIds     any
+	SortBy          any
+	SortOrder       any
 }
 
 type FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTags struct {
 	Comparison any
-	Key any
-	Value any
+	Key        any
+	Value      any
 }
 
 type FindingAggregations_AggregationRequest_Ec2InstanceAggregation struct {
-	Amis any
-	InstanceIds any
-	InstanceTags any
+	Amis             any
+	InstanceIds      any
+	InstanceTags     any
 	OperatingSystems any
-	SortBy any
-	SortOrder any
+	SortBy           any
+	SortOrder        any
 }
 
 type FindingAggregations_AggregationRequest_ImageLayerAggregation struct {
 	CloudAccountIds any
-	CloudOrgIds any
+	CloudOrgIds     any
 	CloudPartitions any
-	CloudProviders any
-	CloudRegions any
-	LayerHashes any
-	Repositories any
-	ResourceIds any
-	SortBy any
-	SortOrder any
+	CloudProviders  any
+	CloudRegions    any
+	LayerHashes     any
+	Repositories    any
+	ResourceIds     any
+	SortBy          any
+	SortOrder       any
 }
 
 type FindingAggregations_AggregationRequest_LambdaFunctionAggregation struct {
 	FunctionNames any
-	FunctionTags any
-	ResourceIds any
-	Runtimes any
-	SortBy any
-	SortOrder any
+	FunctionTags  any
+	ResourceIds   any
+	Runtimes      any
+	SortBy        any
+	SortOrder     any
 }
 
 type FindingAggregations_AggregationRequest_LambdaLayerAggregation struct {
 	FunctionNames any
-	LayerArns any
-	ResourceIds any
-	SortBy any
-	SortOrder any
+	LayerArns     any
+	ResourceIds   any
+	SortBy        any
+	SortOrder     any
 }
 
 type FindingAggregations_AggregationRequest_PackageAggregation struct {
 	PackageNames any
-	SortBy any
-	SortOrder any
+	SortBy       any
+	SortOrder    any
 }
 
 type FindingAggregations_AggregationRequest_RepositoryAggregation struct {
 	Repositories any
-	SortBy any
-	SortOrder any
+	SortBy       any
+	SortOrder    any
 }
 
 type FindingAggregations_AggregationRequest_ServerlessFunctionAggregation struct {
 	CloudAccountIds any
-	CloudOrgIds any
+	CloudOrgIds     any
 	CloudPartitions any
-	CloudProviders any
-	CloudRegions any
-	FunctionNames any
-	FunctionTags any
-	ResourceIds any
-	Runtimes any
-	SortBy any
-	SortOrder any
+	CloudProviders  any
+	CloudRegions    any
+	FunctionNames   any
+	FunctionTags    any
+	ResourceIds     any
+	Runtimes        any
+	SortBy          any
+	SortOrder       any
 }
 
 type FindingAggregations_AggregationRequest_TitleAggregation struct {
-	FindingType any
-	ResourceType any
-	SortBy any
-	SortOrder any
-	Titles any
+	FindingType      any
+	ResourceType     any
+	SortBy           any
+	SortOrder        any
+	Titles           any
 	VulnerabilityIds any
 }
 
 type FindingAggregations_AggregationRequest_VmInstanceAggregation struct {
-	CloudAccountIds any
-	CloudOrgIds any
-	CloudPartitions any
-	CloudProviders any
-	CloudRegions any
-	InstanceTags any
-	OperatingSystems any
-	ResourceIds any
-	SortBy any
-	SortOrder any
+	CloudAccountIds   any
+	CloudOrgIds       any
+	CloudPartitions   any
+	CloudProviders    any
+	CloudRegions      any
+	InstanceTags      any
+	OperatingSystems  any
+	ResourceIds       any
+	SortBy            any
+	SortOrder         any
 	VmImageReferences any
 }
 
 type FindingAggregations_AggregationRequest struct {
-	AccountAggregation any
-	AmiAggregation any
-	AwsEcrContainerAggregation any
-	CodeRepositoryAggregation any
-	ContainerImageAggregation any
-	Ec2InstanceAggregation any
-	FindingTypeAggregation any
-	ImageLayerAggregation any
-	LambdaFunctionAggregation any
-	LambdaLayerAggregation any
-	PackageAggregation any
-	RepositoryAggregation any
+	AccountAggregation            any
+	AmiAggregation                any
+	AwsEcrContainerAggregation    any
+	CodeRepositoryAggregation     any
+	ContainerImageAggregation     any
+	Ec2InstanceAggregation        any
+	FindingTypeAggregation        any
+	ImageLayerAggregation         any
+	LambdaFunctionAggregation     any
+	LambdaLayerAggregation        any
+	PackageAggregation            any
+	RepositoryAggregation         any
 	ServerlessFunctionAggregation any
-	TitleAggregation any
-	VmInstanceAggregation any
+	TitleAggregation              any
+	VmInstanceAggregation         any
 }
 
 type FindingAggregations_Responses_AccountAggregation_SeverityCounts struct {
-	All any
+	All      any
 	Critical any
-	High any
-	Medium any
+	High     any
+	Medium   any
 }
 
 type FindingAggregations_Responses_AccountAggregation struct {
-	AccountId any
+	AccountId             any
 	ExploitAvailableCount any
-	FixAvailableCount any
-	SeverityCounts any
+	FixAvailableCount     any
+	SeverityCounts        any
 }
 
 type FindingAggregations_Responses_AmiAggregation struct {
-	AccountId any
+	AccountId         any
 	AffectedInstances any
-	Ami any
-	CloudAccountId any
-	CloudOrgId any
-	CloudPartition any
-	CloudProvider any
-	CloudRegion any
-	SeverityCounts any
+	Ami               any
+	CloudAccountId    any
+	CloudOrgId        any
+	CloudPartition    any
+	CloudProvider     any
+	CloudRegion       any
+	SeverityCounts    any
 }
 
 type FindingAggregations_Responses_AwsEcrContainerAggregation struct {
-	AccountId any
-	Architecture any
-	ImageSha any
-	ImageTags any
-	InUseCount any
-	LastInUseAt any
-	Repository any
-	ResourceId any
+	AccountId      any
+	Architecture   any
+	ImageSha       any
+	ImageTags      any
+	InUseCount     any
+	LastInUseAt    any
+	Repository     any
+	ResourceId     any
 	SeverityCounts any
 }
 
 type FindingAggregations_Responses_CodeRepositoryAggregation struct {
-	AccountId any
+	AccountId                           any
 	ExploitAvailableActiveFindingsCount any
-	FixAvailableActiveFindingsCount any
-	ProjectNames any
-	ProviderType any
-	ResourceId any
-	SeverityCounts any
+	FixAvailableActiveFindingsCount     any
+	ProjectNames                        any
+	ProviderType                        any
+	ResourceId                          any
+	SeverityCounts                      any
 }
 
 type FindingAggregations_Responses_ContainerImageAggregation struct {
-	AccountId any
-	Architecture any
-	CloudAccountId any
-	CloudOrgId any
-	CloudPartition any
-	CloudProvider any
-	CloudRegion any
+	AccountId                           any
+	Architecture                        any
+	CloudAccountId                      any
+	CloudOrgId                          any
+	CloudPartition                      any
+	CloudProvider                       any
+	CloudRegion                         any
 	ExploitAvailableActiveFindingsCount any
-	FixAvailableActiveFindingsCount any
-	ImageDigest any
-	ImageTags any
-	InUseCount any
-	LastInUseAt any
-	Registry any
-	Repository any
-	ResourceId any
-	SeverityCounts any
+	FixAvailableActiveFindingsCount     any
+	ImageDigest                         any
+	ImageTags                           any
+	InUseCount                          any
+	LastInUseAt                         any
+	Registry                            any
+	Repository                          any
+	ResourceId                          any
+	SeverityCounts                      any
 }
 
 type FindingAggregations_Responses_Ec2InstanceAggregation struct {
-	AccountId any
-	Ami any
-	InstanceId any
-	InstanceTags any
+	AccountId       any
+	Ami             any
+	InstanceId      any
+	InstanceTags    any
 	NetworkFindings any
 	OperatingSystem any
-	SeverityCounts any
+	SeverityCounts  any
 }
 
 type FindingAggregations_Responses_FindingTypeAggregation struct {
-	AccountId any
-	CloudAccountId any
-	CloudOrgId any
-	CloudPartition any
-	CloudProvider any
-	CloudRegion any
+	AccountId             any
+	CloudAccountId        any
+	CloudOrgId            any
+	CloudPartition        any
+	CloudProvider         any
+	CloudRegion           any
 	ExploitAvailableCount any
-	FixAvailableCount any
-	SeverityCounts any
+	FixAvailableCount     any
+	SeverityCounts        any
 }
 
 type FindingAggregations_Responses_ImageLayerAggregation struct {
-	AccountId any
+	AccountId      any
 	CloudAccountId any
-	CloudOrgId any
+	CloudOrgId     any
 	CloudPartition any
-	CloudProvider any
-	CloudRegion any
-	LayerHash any
-	Repository any
-	ResourceId any
+	CloudProvider  any
+	CloudRegion    any
+	LayerHash      any
+	Repository     any
+	ResourceId     any
 	SeverityCounts any
 }
 
 type FindingAggregations_Responses_LambdaFunctionAggregation struct {
-	AccountId any
-	FunctionName any
-	LambdaTags any
+	AccountId      any
+	FunctionName   any
+	LambdaTags     any
 	LastModifiedAt any
-	ResourceId any
-	Runtime any
+	ResourceId     any
+	Runtime        any
 	SeverityCounts any
 }
 
 type FindingAggregations_Responses_LambdaLayerAggregation struct {
-	AccountId any
-	FunctionName any
-	LayerArn any
-	ResourceId any
+	AccountId      any
+	FunctionName   any
+	LayerArn       any
+	ResourceId     any
 	SeverityCounts any
 }
 
 type FindingAggregations_Responses_PackageAggregation struct {
-	AccountId any
-	PackageName any
+	AccountId      any
+	PackageName    any
 	SeverityCounts any
 }
 
 type FindingAggregations_Responses_RepositoryAggregation struct {
-	AccountId any
+	AccountId      any
 	AffectedImages any
 	CloudAccountId any
-	CloudOrgId any
+	CloudOrgId     any
 	CloudPartition any
-	CloudProvider any
-	CloudRegion any
-	Repository any
+	CloudProvider  any
+	CloudRegion    any
+	Repository     any
 	SeverityCounts any
 }
 
 type FindingAggregations_Responses_ServerlessFunctionAggregation struct {
-	AccountId any
-	CloudAccountId any
-	CloudOrgId any
-	CloudPartition any
-	CloudProvider any
-	CloudRegion any
+	AccountId                           any
+	CloudAccountId                      any
+	CloudOrgId                          any
+	CloudPartition                      any
+	CloudProvider                       any
+	CloudRegion                         any
 	ExploitAvailableActiveFindingsCount any
-	FixAvailableActiveFindingsCount any
-	FunctionName any
-	LastModifiedAt any
-	ResourceId any
-	Runtime any
-	SeverityCounts any
-	Tags any
+	FixAvailableActiveFindingsCount     any
+	FunctionName                        any
+	LastModifiedAt                      any
+	ResourceId                          any
+	Runtime                             any
+	SeverityCounts                      any
+	Tags                                any
 }
 
 type FindingAggregations_Responses_TitleAggregation struct {
-	AccountId any
-	SeverityCounts any
-	Title any
+	AccountId       any
+	SeverityCounts  any
+	Title           any
 	VulnerabilityId any
 }
 
 type FindingAggregations_Responses_VmInstanceAggregation struct {
-	AccountId any
-	CloudAccountId any
-	CloudOrgId any
-	CloudPartition any
-	CloudProvider any
-	CloudRegion any
+	AccountId                           any
+	CloudAccountId                      any
+	CloudOrgId                          any
+	CloudPartition                      any
+	CloudProvider                       any
+	CloudRegion                         any
 	ExploitAvailableActiveFindingsCount any
-	FixAvailableActiveFindingsCount any
-	NetworkFindings any
-	OperatingSystem any
-	ResourceId any
-	SeverityCounts any
-	Tags any
-	VmImageReference any
+	FixAvailableActiveFindingsCount     any
+	NetworkFindings                     any
+	OperatingSystem                     any
+	ResourceId                          any
+	SeverityCounts                      any
+	Tags                                any
+	VmImageReference                    any
 }
 
 type FindingAggregations_Responses struct {
-	AccountAggregation any
-	AmiAggregation any
-	AwsEcrContainerAggregation any
-	CodeRepositoryAggregation any
-	ContainerImageAggregation any
-	Ec2InstanceAggregation any
-	FindingTypeAggregation any
-	ImageLayerAggregation any
-	LambdaFunctionAggregation any
-	LambdaLayerAggregation any
-	PackageAggregation any
-	RepositoryAggregation any
+	AccountAggregation            any
+	AmiAggregation                any
+	AwsEcrContainerAggregation    any
+	CodeRepositoryAggregation     any
+	ContainerImageAggregation     any
+	Ec2InstanceAggregation        any
+	FindingTypeAggregation        any
+	ImageLayerAggregation         any
+	LambdaFunctionAggregation     any
+	LambdaLayerAggregation        any
+	PackageAggregation            any
+	RepositoryAggregation         any
 	ServerlessFunctionAggregation any
-	TitleAggregation any
-	VmInstanceAggregation any
+	TitleAggregation              any
+	VmInstanceAggregation         any
 }
 
 var FindingAggregations_AccountIdsFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var FindingAggregations_AggregationRequest_AccountAggregationFields = ubx.FieldMap{
-		"FindingType": ubx.FieldSpec{WireName: "finding_type"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"FindingType":  ubx.FieldSpec{WireName: "finding_type"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"SortBy":       ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder":    ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_AmiAggregationFields = ubx.FieldMap{
-		"Amis": ubx.FieldSpec{
-			WireName: "amis",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Amis": ubx.FieldSpec{
+		WireName: "amis",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_InUseCountFields = ubx.FieldMap{
-		"LowerInclusive": ubx.FieldSpec{WireName: "lower_inclusive"},
-		"UpperInclusive": ubx.FieldSpec{WireName: "upper_inclusive"},
-	}
+	"LowerInclusive": ubx.FieldSpec{WireName: "lower_inclusive"},
+	"UpperInclusive": ubx.FieldSpec{WireName: "upper_inclusive"},
+}
 
 var FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_LastInUseAtFields = ubx.FieldMap{
-		"EndInclusive": ubx.FieldSpec{WireName: "end_inclusive"},
-		"StartInclusive": ubx.FieldSpec{WireName: "start_inclusive"},
-	}
+	"EndInclusive":   ubx.FieldSpec{WireName: "end_inclusive"},
+	"StartInclusive": ubx.FieldSpec{WireName: "start_inclusive"},
+}
 
 var FindingAggregations_AggregationRequest_AwsEcrContainerAggregationFields = ubx.FieldMap{
-		"Architectures": ubx.FieldSpec{
-			WireName: "architectures",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ImageShas": ubx.FieldSpec{
-			WireName: "image_shas",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ImageTags": ubx.FieldSpec{
-			WireName: "image_tags",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"InUseCount": ubx.FieldSpec{
-			WireName: "in_use_count",
-			Kind: "list",
-			Fields: FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_InUseCountFields,
-		},
-		"LastInUseAt": ubx.FieldSpec{
-			WireName: "last_in_use_at",
-			Kind: "list",
-			Fields: FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_LastInUseAtFields,
-		},
-		"Repositories": ubx.FieldSpec{
-			WireName: "repositories",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Architectures": ubx.FieldSpec{
+		WireName: "architectures",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ImageShas": ubx.FieldSpec{
+		WireName: "image_shas",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ImageTags": ubx.FieldSpec{
+		WireName: "image_tags",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"InUseCount": ubx.FieldSpec{
+		WireName: "in_use_count",
+		Kind:     "list",
+		Fields:   FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_InUseCountFields,
+	},
+	"LastInUseAt": ubx.FieldSpec{
+		WireName: "last_in_use_at",
+		Kind:     "list",
+		Fields:   FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_LastInUseAtFields,
+	},
+	"Repositories": ubx.FieldSpec{
+		WireName: "repositories",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_CodeRepositoryAggregationFields = ubx.FieldMap{
-		"ProjectNames": ubx.FieldSpec{
-			WireName: "project_names",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ProviderTypes": ubx.FieldSpec{
-			WireName: "provider_types",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"ProjectNames": ubx.FieldSpec{
+		WireName: "project_names",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ProviderTypes": ubx.FieldSpec{
+		WireName: "provider_types",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_ContainerImageAggregationFields = ubx.FieldMap{
-		"Architectures": ubx.FieldSpec{
-			WireName: "architectures",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudAccountIds": ubx.FieldSpec{
-			WireName: "cloud_account_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudOrgIds": ubx.FieldSpec{
-			WireName: "cloud_org_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudPartitions": ubx.FieldSpec{
-			WireName: "cloud_partitions",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudProviders": ubx.FieldSpec{
-			WireName: "cloud_providers",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudRegions": ubx.FieldSpec{
-			WireName: "cloud_regions",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ImageDigests": ubx.FieldSpec{
-			WireName: "image_digests",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ImageTags": ubx.FieldSpec{
-			WireName: "image_tags",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"InUseCount": ubx.FieldSpec{
-			WireName: "in_use_count",
-			Kind: "list",
-			Fields: FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_InUseCountFields,
-		},
-		"LastInUseAt": ubx.FieldSpec{
-			WireName: "last_in_use_at",
-			Kind: "list",
-			Fields: FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_LastInUseAtFields,
-		},
-		"Registries": ubx.FieldSpec{
-			WireName: "registries",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"Repositories": ubx.FieldSpec{
-			WireName: "repositories",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Architectures": ubx.FieldSpec{
+		WireName: "architectures",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudAccountIds": ubx.FieldSpec{
+		WireName: "cloud_account_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudOrgIds": ubx.FieldSpec{
+		WireName: "cloud_org_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudPartitions": ubx.FieldSpec{
+		WireName: "cloud_partitions",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudProviders": ubx.FieldSpec{
+		WireName: "cloud_providers",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudRegions": ubx.FieldSpec{
+		WireName: "cloud_regions",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ImageDigests": ubx.FieldSpec{
+		WireName: "image_digests",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ImageTags": ubx.FieldSpec{
+		WireName: "image_tags",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"InUseCount": ubx.FieldSpec{
+		WireName: "in_use_count",
+		Kind:     "list",
+		Fields:   FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_InUseCountFields,
+	},
+	"LastInUseAt": ubx.FieldSpec{
+		WireName: "last_in_use_at",
+		Kind:     "list",
+		Fields:   FindingAggregations_AggregationRequest_AwsEcrContainerAggregation_LastInUseAtFields,
+	},
+	"Registries": ubx.FieldSpec{
+		WireName: "registries",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"Repositories": ubx.FieldSpec{
+		WireName: "repositories",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var FindingAggregations_AggregationRequest_Ec2InstanceAggregationFields = ubx.FieldMap{
-		"Amis": ubx.FieldSpec{
-			WireName: "amis",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"InstanceIds": ubx.FieldSpec{
-			WireName: "instance_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"InstanceTags": ubx.FieldSpec{
-			WireName: "instance_tags",
-			Kind: "list",
-			Fields: FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields,
-		},
-		"OperatingSystems": ubx.FieldSpec{
-			WireName: "operating_systems",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Amis": ubx.FieldSpec{
+		WireName: "amis",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"InstanceIds": ubx.FieldSpec{
+		WireName: "instance_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"InstanceTags": ubx.FieldSpec{
+		WireName: "instance_tags",
+		Kind:     "list",
+		Fields:   FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields,
+	},
+	"OperatingSystems": ubx.FieldSpec{
+		WireName: "operating_systems",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_ImageLayerAggregationFields = ubx.FieldMap{
-		"CloudAccountIds": ubx.FieldSpec{
-			WireName: "cloud_account_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudOrgIds": ubx.FieldSpec{
-			WireName: "cloud_org_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudPartitions": ubx.FieldSpec{
-			WireName: "cloud_partitions",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudProviders": ubx.FieldSpec{
-			WireName: "cloud_providers",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudRegions": ubx.FieldSpec{
-			WireName: "cloud_regions",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"LayerHashes": ubx.FieldSpec{
-			WireName: "layer_hashes",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"Repositories": ubx.FieldSpec{
-			WireName: "repositories",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"CloudAccountIds": ubx.FieldSpec{
+		WireName: "cloud_account_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudOrgIds": ubx.FieldSpec{
+		WireName: "cloud_org_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudPartitions": ubx.FieldSpec{
+		WireName: "cloud_partitions",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudProviders": ubx.FieldSpec{
+		WireName: "cloud_providers",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudRegions": ubx.FieldSpec{
+		WireName: "cloud_regions",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"LayerHashes": ubx.FieldSpec{
+		WireName: "layer_hashes",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"Repositories": ubx.FieldSpec{
+		WireName: "repositories",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_LambdaFunctionAggregationFields = ubx.FieldMap{
-		"FunctionNames": ubx.FieldSpec{
-			WireName: "function_names",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"FunctionTags": ubx.FieldSpec{
-			WireName: "function_tags",
-			Kind: "list",
-			Fields: FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields,
-		},
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"Runtimes": ubx.FieldSpec{
-			WireName: "runtimes",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"FunctionNames": ubx.FieldSpec{
+		WireName: "function_names",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"FunctionTags": ubx.FieldSpec{
+		WireName: "function_tags",
+		Kind:     "list",
+		Fields:   FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields,
+	},
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"Runtimes": ubx.FieldSpec{
+		WireName: "runtimes",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_LambdaLayerAggregationFields = ubx.FieldMap{
-		"FunctionNames": ubx.FieldSpec{
-			WireName: "function_names",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"LayerArns": ubx.FieldSpec{
-			WireName: "layer_arns",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"FunctionNames": ubx.FieldSpec{
+		WireName: "function_names",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"LayerArns": ubx.FieldSpec{
+		WireName: "layer_arns",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_PackageAggregationFields = ubx.FieldMap{
-		"PackageNames": ubx.FieldSpec{
-			WireName: "package_names",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"PackageNames": ubx.FieldSpec{
+		WireName: "package_names",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_RepositoryAggregationFields = ubx.FieldMap{
-		"Repositories": ubx.FieldSpec{
-			WireName: "repositories",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Repositories": ubx.FieldSpec{
+		WireName: "repositories",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_ServerlessFunctionAggregationFields = ubx.FieldMap{
-		"CloudAccountIds": ubx.FieldSpec{
-			WireName: "cloud_account_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudOrgIds": ubx.FieldSpec{
-			WireName: "cloud_org_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudPartitions": ubx.FieldSpec{
-			WireName: "cloud_partitions",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudProviders": ubx.FieldSpec{
-			WireName: "cloud_providers",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudRegions": ubx.FieldSpec{
-			WireName: "cloud_regions",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"FunctionNames": ubx.FieldSpec{
-			WireName: "function_names",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"FunctionTags": ubx.FieldSpec{
-			WireName: "function_tags",
-			Kind: "list",
-			Fields: FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields,
-		},
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"Runtimes": ubx.FieldSpec{
-			WireName: "runtimes",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"CloudAccountIds": ubx.FieldSpec{
+		WireName: "cloud_account_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudOrgIds": ubx.FieldSpec{
+		WireName: "cloud_org_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudPartitions": ubx.FieldSpec{
+		WireName: "cloud_partitions",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudProviders": ubx.FieldSpec{
+		WireName: "cloud_providers",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudRegions": ubx.FieldSpec{
+		WireName: "cloud_regions",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"FunctionNames": ubx.FieldSpec{
+		WireName: "function_names",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"FunctionTags": ubx.FieldSpec{
+		WireName: "function_tags",
+		Kind:     "list",
+		Fields:   FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields,
+	},
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"Runtimes": ubx.FieldSpec{
+		WireName: "runtimes",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var FindingAggregations_AggregationRequest_TitleAggregationFields = ubx.FieldMap{
-		"FindingType": ubx.FieldSpec{WireName: "finding_type"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"Titles": ubx.FieldSpec{
-			WireName: "titles",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"VulnerabilityIds": ubx.FieldSpec{
-			WireName: "vulnerability_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-	}
+	"FindingType":  ubx.FieldSpec{WireName: "finding_type"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"SortBy":       ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder":    ubx.FieldSpec{WireName: "sort_order"},
+	"Titles": ubx.FieldSpec{
+		WireName: "titles",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"VulnerabilityIds": ubx.FieldSpec{
+		WireName: "vulnerability_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+}
 
 var FindingAggregations_AggregationRequest_VmInstanceAggregationFields = ubx.FieldMap{
-		"CloudAccountIds": ubx.FieldSpec{
-			WireName: "cloud_account_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudOrgIds": ubx.FieldSpec{
-			WireName: "cloud_org_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudPartitions": ubx.FieldSpec{
-			WireName: "cloud_partitions",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudProviders": ubx.FieldSpec{
-			WireName: "cloud_providers",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"CloudRegions": ubx.FieldSpec{
-			WireName: "cloud_regions",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"InstanceTags": ubx.FieldSpec{
-			WireName: "instance_tags",
-			Kind: "list",
-			Fields: FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields,
-		},
-		"OperatingSystems": ubx.FieldSpec{
-			WireName: "operating_systems",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"VmImageReferences": ubx.FieldSpec{
-			WireName: "vm_image_references",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
-		},
-	}
+	"CloudAccountIds": ubx.FieldSpec{
+		WireName: "cloud_account_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudOrgIds": ubx.FieldSpec{
+		WireName: "cloud_org_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudPartitions": ubx.FieldSpec{
+		WireName: "cloud_partitions",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudProviders": ubx.FieldSpec{
+		WireName: "cloud_providers",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"CloudRegions": ubx.FieldSpec{
+		WireName: "cloud_regions",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"InstanceTags": ubx.FieldSpec{
+		WireName: "instance_tags",
+		Kind:     "list",
+		Fields:   FindingAggregations_AggregationRequest_Ec2InstanceAggregation_InstanceTagsFields,
+	},
+	"OperatingSystems": ubx.FieldSpec{
+		WireName: "operating_systems",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+	"VmImageReferences": ubx.FieldSpec{
+		WireName: "vm_image_references",
+		Kind:     "list",
+		Fields:   FindingAggregations_AccountIdsFields,
+	},
+}
 
 var FindingAggregations_AggregationRequestFields = ubx.FieldMap{
-		"AccountAggregation": ubx.FieldSpec{
-			WireName: "account_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_AccountAggregationFields,
-		},
-		"AmiAggregation": ubx.FieldSpec{
-			WireName: "ami_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_AmiAggregationFields,
-		},
-		"AwsEcrContainerAggregation": ubx.FieldSpec{
-			WireName: "aws_ecr_container_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_AwsEcrContainerAggregationFields,
-		},
-		"CodeRepositoryAggregation": ubx.FieldSpec{
-			WireName: "code_repository_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_CodeRepositoryAggregationFields,
-		},
-		"ContainerImageAggregation": ubx.FieldSpec{
-			WireName: "container_image_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_ContainerImageAggregationFields,
-		},
-		"Ec2InstanceAggregation": ubx.FieldSpec{
-			WireName: "ec2_instance_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_Ec2InstanceAggregationFields,
-		},
-		"FindingTypeAggregation": ubx.FieldSpec{
-			WireName: "finding_type_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_AccountAggregationFields,
-		},
-		"ImageLayerAggregation": ubx.FieldSpec{
-			WireName: "image_layer_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_ImageLayerAggregationFields,
-		},
-		"LambdaFunctionAggregation": ubx.FieldSpec{
-			WireName: "lambda_function_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_LambdaFunctionAggregationFields,
-		},
-		"LambdaLayerAggregation": ubx.FieldSpec{
-			WireName: "lambda_layer_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_LambdaLayerAggregationFields,
-		},
-		"PackageAggregation": ubx.FieldSpec{
-			WireName: "package_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_PackageAggregationFields,
-		},
-		"RepositoryAggregation": ubx.FieldSpec{
-			WireName: "repository_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_RepositoryAggregationFields,
-		},
-		"ServerlessFunctionAggregation": ubx.FieldSpec{
-			WireName: "serverless_function_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_ServerlessFunctionAggregationFields,
-		},
-		"TitleAggregation": ubx.FieldSpec{
-			WireName: "title_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_TitleAggregationFields,
-		},
-		"VmInstanceAggregation": ubx.FieldSpec{
-			WireName: "vm_instance_aggregation",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequest_VmInstanceAggregationFields,
-		},
-	}
+	"AccountAggregation": ubx.FieldSpec{
+		WireName: "account_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_AccountAggregationFields,
+	},
+	"AmiAggregation": ubx.FieldSpec{
+		WireName: "ami_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_AmiAggregationFields,
+	},
+	"AwsEcrContainerAggregation": ubx.FieldSpec{
+		WireName: "aws_ecr_container_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_AwsEcrContainerAggregationFields,
+	},
+	"CodeRepositoryAggregation": ubx.FieldSpec{
+		WireName: "code_repository_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_CodeRepositoryAggregationFields,
+	},
+	"ContainerImageAggregation": ubx.FieldSpec{
+		WireName: "container_image_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_ContainerImageAggregationFields,
+	},
+	"Ec2InstanceAggregation": ubx.FieldSpec{
+		WireName: "ec2_instance_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_Ec2InstanceAggregationFields,
+	},
+	"FindingTypeAggregation": ubx.FieldSpec{
+		WireName: "finding_type_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_AccountAggregationFields,
+	},
+	"ImageLayerAggregation": ubx.FieldSpec{
+		WireName: "image_layer_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_ImageLayerAggregationFields,
+	},
+	"LambdaFunctionAggregation": ubx.FieldSpec{
+		WireName: "lambda_function_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_LambdaFunctionAggregationFields,
+	},
+	"LambdaLayerAggregation": ubx.FieldSpec{
+		WireName: "lambda_layer_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_LambdaLayerAggregationFields,
+	},
+	"PackageAggregation": ubx.FieldSpec{
+		WireName: "package_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_PackageAggregationFields,
+	},
+	"RepositoryAggregation": ubx.FieldSpec{
+		WireName: "repository_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_RepositoryAggregationFields,
+	},
+	"ServerlessFunctionAggregation": ubx.FieldSpec{
+		WireName: "serverless_function_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_ServerlessFunctionAggregationFields,
+	},
+	"TitleAggregation": ubx.FieldSpec{
+		WireName: "title_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_TitleAggregationFields,
+	},
+	"VmInstanceAggregation": ubx.FieldSpec{
+		WireName: "vm_instance_aggregation",
+		Kind:     "object",
+		Fields:   FindingAggregations_AggregationRequest_VmInstanceAggregationFields,
+	},
+}
 
 type FindingAggregationsConfig struct {
 	AccountIds any
 	// <p>Contains details about an aggregation request.</p>
 	AggregationRequest any
-	AggregationType any
-	MaxResults any
-	NextToken any
+	AggregationType    any
+	MaxResults         any
+	NextToken          any
 }
 
 type FindingAggregationsAttrs struct {
 	AccountIds any
 	// <p>Contains details about an aggregation request.</p>
 	AggregationRequest any
-	AggregationType any
-	MaxResults any
-	NextToken any
-	Responses any
+	AggregationType    any
+	MaxResults         any
+	NextToken          any
+	Responses          any
 }
 
 var FindingAggregations = ubx.DataSourceBinding{
@@ -901,16 +901,16 @@ var FindingAggregations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountIds": ubx.FieldSpec{
 			WireName: "account_ids",
-			Kind: "list",
-			Fields: FindingAggregations_AccountIdsFields,
+			Kind:     "list",
+			Fields:   FindingAggregations_AccountIdsFields,
 		},
 		"AggregationRequest": ubx.FieldSpec{
 			WireName: "aggregation_request",
-			Kind: "object",
-			Fields: FindingAggregations_AggregationRequestFields,
+			Kind:     "object",
+			Fields:   FindingAggregations_AggregationRequestFields,
 		},
 		"AggregationType": ubx.FieldSpec{WireName: "aggregation_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

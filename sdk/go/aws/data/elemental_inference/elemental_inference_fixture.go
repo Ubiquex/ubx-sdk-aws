@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElementalInferenceFixture_Competitors struct {
 	IsHome any
-	Name any
+	Name   any
 }
 
 type ElementalInferenceFixtureConfig struct {
@@ -13,12 +13,12 @@ type ElementalInferenceFixtureConfig struct {
 }
 
 type ElementalInferenceFixtureAttrs struct {
-	Competitors any
-	FixtureGroup any
-	FixtureId any
-	Name any
+	Competitors    any
+	FixtureGroup   any
+	FixtureId      any
+	Name           any
 	ScheduledStart any
-	Status any
+	Status         any
 }
 
 var ElementalInferenceFixture = ubx.DataSourceBinding{

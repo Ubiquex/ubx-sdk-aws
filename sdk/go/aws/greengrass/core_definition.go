@@ -20,19 +20,19 @@ type CoreDefinition_InitialVersion struct {
 }
 
 var CoreDefinition_InitialVersion_CoresFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"SyncShadow": ubx.FieldSpec{WireName: "sync_shadow"},
-		"ThingArn": ubx.FieldSpec{WireName: "thing_arn"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"Id":             ubx.FieldSpec{WireName: "id"},
+	"SyncShadow":     ubx.FieldSpec{WireName: "sync_shadow"},
+	"ThingArn":       ubx.FieldSpec{WireName: "thing_arn"},
+}
 
 var CoreDefinition_InitialVersionFields = ubx.FieldMap{
-		"Cores": ubx.FieldSpec{
-			WireName: "cores",
-			Kind: "list",
-			Fields: CoreDefinition_InitialVersion_CoresFields,
-		},
-	}
+	"Cores": ubx.FieldSpec{
+		WireName: "cores",
+		Kind:     "list",
+		Fields:   CoreDefinition_InitialVersion_CoresFields,
+	},
+}
 
 type CoreDefinitionConfig struct {
 	// Defines the initial version of the core definition by specifying a list of Greengrass core devices, each identified by its AWS IoT thing ARN and associated certificate ARN, that are used when the definition is first created. (AI-inferred)
@@ -63,8 +63,8 @@ var CoreDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InitialVersion": ubx.FieldSpec{
 			WireName: "initial_version",
-			Kind: "object",
-			Fields: CoreDefinition_InitialVersionFields,
+			Kind:     "object",
+			Fields:   CoreDefinition_InitialVersionFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

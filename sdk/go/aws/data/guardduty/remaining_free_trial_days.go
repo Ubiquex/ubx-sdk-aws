@@ -16,28 +16,28 @@ type RemainingFreeTrialDays_Accounts_DataSources_MalwareProtection struct {
 }
 
 type RemainingFreeTrialDays_Accounts_DataSources struct {
-	CloudTrail any
-	DnsLogs any
-	FlowLogs any
-	Kubernetes any
+	CloudTrail        any
+	DnsLogs           any
+	FlowLogs          any
+	Kubernetes        any
 	MalwareProtection any
-	S3Logs any
+	S3Logs            any
 }
 
 type RemainingFreeTrialDays_Accounts_Features struct {
 	FreeTrialDaysRemaining any
-	Name any
+	Name                   any
 }
 
 type RemainingFreeTrialDays_Accounts struct {
-	AccountId any
+	AccountId   any
 	DataSources any
-	Features any
+	Features    any
 }
 
 type RemainingFreeTrialDays_UnprocessedAccounts struct {
 	AccountId any
-	Result any
+	Result    any
 }
 
 type RemainingFreeTrialDaysConfig struct {
@@ -46,9 +46,9 @@ type RemainingFreeTrialDaysConfig struct {
 }
 
 type RemainingFreeTrialDaysAttrs struct {
-	AccountIds any
-	Accounts any
-	DetectorId any
+	AccountIds          any
+	Accounts            any
+	DetectorId          any
 	UnprocessedAccounts any
 }
 

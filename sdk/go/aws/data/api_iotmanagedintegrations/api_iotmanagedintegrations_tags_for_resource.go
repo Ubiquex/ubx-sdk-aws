@@ -9,7 +9,7 @@ type ApiIotmanagedintegrationsTagsForResourceConfig struct {
 
 type ApiIotmanagedintegrationsTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ApiIotmanagedintegrationsTagsForResource = ubx.DataSourceBinding{

@@ -4,19 +4,19 @@ package inspector2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoverageStatistics_CountsByGroup struct {
-	Count any
+	Count    any
 	GroupKey any
 }
 
 type CoverageStatistics_FilterCriteria_AccountId struct {
 	Comparison any
-	Value any
+	Value      any
 }
 
 type CoverageStatistics_FilterCriteria_CloudServerlessFunctionTags struct {
 	Comparison any
-	Key any
-	Value any
+	Key        any
+	Value      any
 }
 
 type CoverageStatistics_FilterCriteria_EcrImageInUseCount struct {
@@ -25,243 +25,243 @@ type CoverageStatistics_FilterCriteria_EcrImageInUseCount struct {
 }
 
 type CoverageStatistics_FilterCriteria_EcrImageLastInUseAt struct {
-	EndInclusive any
+	EndInclusive   any
 	StartInclusive any
 }
 
 type CoverageStatistics_FilterCriteria struct {
-	AccountId any
-	CloudContainerImageTags any
-	CloudContainerRegistryName any
-	CloudContainerRepositoryName any
-	CloudProvider any
-	CloudProviderAccountId any
-	CloudProviderOrgId any
-	CloudProviderRegion any
-	CloudServerlessFunctionName any
-	CloudServerlessFunctionRuntime any
-	CloudServerlessFunctionTags any
-	CloudVmInstanceTags any
-	CodeRepositoryProjectName any
-	CodeRepositoryProviderType any
+	AccountId                            any
+	CloudContainerImageTags              any
+	CloudContainerRegistryName           any
+	CloudContainerRepositoryName         any
+	CloudProvider                        any
+	CloudProviderAccountId               any
+	CloudProviderOrgId                   any
+	CloudProviderRegion                  any
+	CloudServerlessFunctionName          any
+	CloudServerlessFunctionRuntime       any
+	CloudServerlessFunctionTags          any
+	CloudVmInstanceTags                  any
+	CodeRepositoryProjectName            any
+	CodeRepositoryProviderType           any
 	CodeRepositoryProviderTypeVisibility any
-	Ec2InstanceTags any
-	EcrImageInUseCount any
-	EcrImageLastInUseAt any
-	EcrImageTags any
-	EcrRepositoryName any
-	ImagePulledAt any
-	LambdaFunctionName any
-	LambdaFunctionRuntime any
-	LambdaFunctionTags any
-	LastScannedAt any
-	LastScannedCommitId any
-	ResourceId any
-	ResourceType any
-	ScanMode any
-	ScanStatusCode any
-	ScanStatusReason any
-	ScanType any
+	Ec2InstanceTags                      any
+	EcrImageInUseCount                   any
+	EcrImageLastInUseAt                  any
+	EcrImageTags                         any
+	EcrRepositoryName                    any
+	ImagePulledAt                        any
+	LambdaFunctionName                   any
+	LambdaFunctionRuntime                any
+	LambdaFunctionTags                   any
+	LastScannedAt                        any
+	LastScannedCommitId                  any
+	ResourceId                           any
+	ResourceType                         any
+	ScanMode                             any
+	ScanStatusCode                       any
+	ScanStatusReason                     any
+	ScanType                             any
 }
 
 var CoverageStatistics_FilterCriteria_AccountIdFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var CoverageStatistics_FilterCriteria_EcrImageInUseCountFields = ubx.FieldMap{
-		"LowerInclusive": ubx.FieldSpec{WireName: "lower_inclusive"},
-		"UpperInclusive": ubx.FieldSpec{WireName: "upper_inclusive"},
-	}
+	"LowerInclusive": ubx.FieldSpec{WireName: "lower_inclusive"},
+	"UpperInclusive": ubx.FieldSpec{WireName: "upper_inclusive"},
+}
 
 var CoverageStatistics_FilterCriteria_EcrImageLastInUseAtFields = ubx.FieldMap{
-		"EndInclusive": ubx.FieldSpec{WireName: "end_inclusive"},
-		"StartInclusive": ubx.FieldSpec{WireName: "start_inclusive"},
-	}
+	"EndInclusive":   ubx.FieldSpec{WireName: "end_inclusive"},
+	"StartInclusive": ubx.FieldSpec{WireName: "start_inclusive"},
+}
 
 var CoverageStatistics_FilterCriteriaFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{
-			WireName: "account_id",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudContainerImageTags": ubx.FieldSpec{
-			WireName: "cloud_container_image_tags",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudContainerRegistryName": ubx.FieldSpec{
-			WireName: "cloud_container_registry_name",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudContainerRepositoryName": ubx.FieldSpec{
-			WireName: "cloud_container_repository_name",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudProvider": ubx.FieldSpec{
-			WireName: "cloud_provider",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudProviderAccountId": ubx.FieldSpec{
-			WireName: "cloud_provider_account_id",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudProviderOrgId": ubx.FieldSpec{
-			WireName: "cloud_provider_org_id",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudProviderRegion": ubx.FieldSpec{
-			WireName: "cloud_provider_region",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudServerlessFunctionName": ubx.FieldSpec{
-			WireName: "cloud_serverless_function_name",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudServerlessFunctionRuntime": ubx.FieldSpec{
-			WireName: "cloud_serverless_function_runtime",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CloudServerlessFunctionTags": ubx.FieldSpec{
-			WireName: "cloud_serverless_function_tags",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields,
-		},
-		"CloudVmInstanceTags": ubx.FieldSpec{
-			WireName: "cloud_vm_instance_tags",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields,
-		},
-		"CodeRepositoryProjectName": ubx.FieldSpec{
-			WireName: "code_repository_project_name",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CodeRepositoryProviderType": ubx.FieldSpec{
-			WireName: "code_repository_provider_type",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"CodeRepositoryProviderTypeVisibility": ubx.FieldSpec{
-			WireName: "code_repository_provider_type_visibility",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"Ec2InstanceTags": ubx.FieldSpec{
-			WireName: "ec2_instance_tags",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields,
-		},
-		"EcrImageInUseCount": ubx.FieldSpec{
-			WireName: "ecr_image_in_use_count",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_EcrImageInUseCountFields,
-		},
-		"EcrImageLastInUseAt": ubx.FieldSpec{
-			WireName: "ecr_image_last_in_use_at",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_EcrImageLastInUseAtFields,
-		},
-		"EcrImageTags": ubx.FieldSpec{
-			WireName: "ecr_image_tags",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"EcrRepositoryName": ubx.FieldSpec{
-			WireName: "ecr_repository_name",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"ImagePulledAt": ubx.FieldSpec{
-			WireName: "image_pulled_at",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_EcrImageLastInUseAtFields,
-		},
-		"LambdaFunctionName": ubx.FieldSpec{
-			WireName: "lambda_function_name",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"LambdaFunctionRuntime": ubx.FieldSpec{
-			WireName: "lambda_function_runtime",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"LambdaFunctionTags": ubx.FieldSpec{
-			WireName: "lambda_function_tags",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields,
-		},
-		"LastScannedAt": ubx.FieldSpec{
-			WireName: "last_scanned_at",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_EcrImageLastInUseAtFields,
-		},
-		"LastScannedCommitId": ubx.FieldSpec{
-			WireName: "last_scanned_commit_id",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"ResourceId": ubx.FieldSpec{
-			WireName: "resource_id",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"ResourceType": ubx.FieldSpec{
-			WireName: "resource_type",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"ScanMode": ubx.FieldSpec{
-			WireName: "scan_mode",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"ScanStatusCode": ubx.FieldSpec{
-			WireName: "scan_status_code",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"ScanStatusReason": ubx.FieldSpec{
-			WireName: "scan_status_reason",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-		"ScanType": ubx.FieldSpec{
-			WireName: "scan_type",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_AccountIdFields,
-		},
-	}
+	"AccountId": ubx.FieldSpec{
+		WireName: "account_id",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudContainerImageTags": ubx.FieldSpec{
+		WireName: "cloud_container_image_tags",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudContainerRegistryName": ubx.FieldSpec{
+		WireName: "cloud_container_registry_name",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudContainerRepositoryName": ubx.FieldSpec{
+		WireName: "cloud_container_repository_name",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudProvider": ubx.FieldSpec{
+		WireName: "cloud_provider",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudProviderAccountId": ubx.FieldSpec{
+		WireName: "cloud_provider_account_id",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudProviderOrgId": ubx.FieldSpec{
+		WireName: "cloud_provider_org_id",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudProviderRegion": ubx.FieldSpec{
+		WireName: "cloud_provider_region",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudServerlessFunctionName": ubx.FieldSpec{
+		WireName: "cloud_serverless_function_name",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudServerlessFunctionRuntime": ubx.FieldSpec{
+		WireName: "cloud_serverless_function_runtime",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CloudServerlessFunctionTags": ubx.FieldSpec{
+		WireName: "cloud_serverless_function_tags",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields,
+	},
+	"CloudVmInstanceTags": ubx.FieldSpec{
+		WireName: "cloud_vm_instance_tags",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields,
+	},
+	"CodeRepositoryProjectName": ubx.FieldSpec{
+		WireName: "code_repository_project_name",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CodeRepositoryProviderType": ubx.FieldSpec{
+		WireName: "code_repository_provider_type",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"CodeRepositoryProviderTypeVisibility": ubx.FieldSpec{
+		WireName: "code_repository_provider_type_visibility",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"Ec2InstanceTags": ubx.FieldSpec{
+		WireName: "ec2_instance_tags",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields,
+	},
+	"EcrImageInUseCount": ubx.FieldSpec{
+		WireName: "ecr_image_in_use_count",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_EcrImageInUseCountFields,
+	},
+	"EcrImageLastInUseAt": ubx.FieldSpec{
+		WireName: "ecr_image_last_in_use_at",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_EcrImageLastInUseAtFields,
+	},
+	"EcrImageTags": ubx.FieldSpec{
+		WireName: "ecr_image_tags",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"EcrRepositoryName": ubx.FieldSpec{
+		WireName: "ecr_repository_name",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"ImagePulledAt": ubx.FieldSpec{
+		WireName: "image_pulled_at",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_EcrImageLastInUseAtFields,
+	},
+	"LambdaFunctionName": ubx.FieldSpec{
+		WireName: "lambda_function_name",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"LambdaFunctionRuntime": ubx.FieldSpec{
+		WireName: "lambda_function_runtime",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"LambdaFunctionTags": ubx.FieldSpec{
+		WireName: "lambda_function_tags",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_CloudServerlessFunctionTagsFields,
+	},
+	"LastScannedAt": ubx.FieldSpec{
+		WireName: "last_scanned_at",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_EcrImageLastInUseAtFields,
+	},
+	"LastScannedCommitId": ubx.FieldSpec{
+		WireName: "last_scanned_commit_id",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"ResourceId": ubx.FieldSpec{
+		WireName: "resource_id",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"ResourceType": ubx.FieldSpec{
+		WireName: "resource_type",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"ScanMode": ubx.FieldSpec{
+		WireName: "scan_mode",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"ScanStatusCode": ubx.FieldSpec{
+		WireName: "scan_status_code",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"ScanStatusReason": ubx.FieldSpec{
+		WireName: "scan_status_reason",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+	"ScanType": ubx.FieldSpec{
+		WireName: "scan_type",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_AccountIdFields,
+	},
+}
 
 type CoverageStatisticsConfig struct {
 	// <p>A structure that identifies filter criteria for <code>GetCoverageStatistics</code>.</p>
 	FilterCriteria any
-	GroupBy any
-	NextToken any
+	GroupBy        any
+	NextToken      any
 }
 
 type CoverageStatisticsAttrs struct {
 	CountsByGroup any
 	// <p>A structure that identifies filter criteria for <code>GetCoverageStatistics</code>.</p>
 	FilterCriteria any
-	GroupBy any
-	NextToken any
-	TotalCounts any
+	GroupBy        any
+	NextToken      any
+	TotalCounts    any
 }
 
 var CoverageStatistics = ubx.DataSourceBinding{
@@ -269,10 +269,10 @@ var CoverageStatistics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: CoverageStatistics_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   CoverageStatistics_FilterCriteriaFields,
 		},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
+		"GroupBy":   ubx.FieldSpec{WireName: "group_by"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

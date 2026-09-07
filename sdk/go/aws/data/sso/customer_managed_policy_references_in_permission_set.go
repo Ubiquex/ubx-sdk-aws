@@ -9,26 +9,26 @@ type CustomerManagedPolicyReferencesInPermissionSet_CustomerManagedPolicyReferen
 }
 
 type CustomerManagedPolicyReferencesInPermissionSetConfig struct {
-	InstanceArn any
-	MaxResults any
-	NextToken any
+	InstanceArn      any
+	MaxResults       any
+	NextToken        any
 	PermissionSetArn any
 }
 
 type CustomerManagedPolicyReferencesInPermissionSetAttrs struct {
 	CustomerManagedPolicyReferences any
-	InstanceArn any
-	MaxResults any
-	NextToken any
-	PermissionSetArn any
+	InstanceArn                     any
+	MaxResults                      any
+	NextToken                       any
+	PermissionSetArn                any
 }
 
 var CustomerManagedPolicyReferencesInPermissionSet = ubx.DataSourceBinding{
 	WireType: "aws_sso_customer_managed_policy_references_in_permission_set",
 	Fields: ubx.FieldMap{
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceArn":      ubx.FieldSpec{WireName: "instance_arn"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"PermissionSetArn": ubx.FieldSpec{WireName: "permission_set_arn"},
 	},
 }

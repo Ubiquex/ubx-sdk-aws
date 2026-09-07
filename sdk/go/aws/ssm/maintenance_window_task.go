@@ -95,87 +95,87 @@ type MaintenanceWindowTask_TaskInvocationParameters struct {
 }
 
 var MaintenanceWindowTask_LoggingInfoFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Prefix": ubx.FieldSpec{WireName: "s3_prefix"},
-	}
+	"Region":   ubx.FieldSpec{WireName: "region"},
+	"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Prefix": ubx.FieldSpec{WireName: "s3_prefix"},
+}
 
 var MaintenanceWindowTask_TargetsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowAutomationParametersFields = ubx.FieldMap{
-		"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
+	"Parameters":      ubx.FieldSpec{WireName: "parameters"},
+}
 
 var MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowLambdaParametersFields = ubx.FieldMap{
-		"ClientContext": ubx.FieldSpec{WireName: "client_context"},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"Qualifier": ubx.FieldSpec{WireName: "qualifier"},
-	}
+	"ClientContext": ubx.FieldSpec{WireName: "client_context"},
+	"Payload":       ubx.FieldSpec{WireName: "payload"},
+	"Qualifier":     ubx.FieldSpec{WireName: "qualifier"},
+}
 
 var MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_CloudWatchOutputConfigFields = ubx.FieldMap{
-		"CloudWatchLogGroupName": ubx.FieldSpec{WireName: "cloud_watch_log_group_name"},
-		"CloudWatchOutputEnabled": ubx.FieldSpec{WireName: "cloud_watch_output_enabled"},
-	}
+	"CloudWatchLogGroupName":  ubx.FieldSpec{WireName: "cloud_watch_log_group_name"},
+	"CloudWatchOutputEnabled": ubx.FieldSpec{WireName: "cloud_watch_output_enabled"},
+}
 
 var MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_NotificationConfigFields = ubx.FieldMap{
-		"NotificationArn": ubx.FieldSpec{WireName: "notification_arn"},
-		"NotificationEvents": ubx.FieldSpec{WireName: "notification_events"},
-		"NotificationType": ubx.FieldSpec{WireName: "notification_type"},
-	}
+	"NotificationArn":    ubx.FieldSpec{WireName: "notification_arn"},
+	"NotificationEvents": ubx.FieldSpec{WireName: "notification_events"},
+	"NotificationType":   ubx.FieldSpec{WireName: "notification_type"},
+}
 
 var MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParametersFields = ubx.FieldMap{
-		"CloudWatchOutputConfig": ubx.FieldSpec{
-			WireName: "cloud_watch_output_config",
-			Kind: "object",
-			Fields: MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_CloudWatchOutputConfigFields,
-		},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"DocumentHash": ubx.FieldSpec{WireName: "document_hash"},
-		"DocumentHashType": ubx.FieldSpec{WireName: "document_hash_type"},
-		"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
-		"NotificationConfig": ubx.FieldSpec{
-			WireName: "notification_config",
-			Kind: "object",
-			Fields: MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_NotificationConfigFields,
-		},
-		"OutputS3BucketName": ubx.FieldSpec{WireName: "output_s3_bucket_name"},
-		"OutputS3KeyPrefix": ubx.FieldSpec{WireName: "output_s3_key_prefix"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"ServiceRoleArn": ubx.FieldSpec{WireName: "service_role_arn"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"CloudWatchOutputConfig": ubx.FieldSpec{
+		WireName: "cloud_watch_output_config",
+		Kind:     "object",
+		Fields:   MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_CloudWatchOutputConfigFields,
+	},
+	"Comment":          ubx.FieldSpec{WireName: "comment"},
+	"DocumentHash":     ubx.FieldSpec{WireName: "document_hash"},
+	"DocumentHashType": ubx.FieldSpec{WireName: "document_hash_type"},
+	"DocumentVersion":  ubx.FieldSpec{WireName: "document_version"},
+	"NotificationConfig": ubx.FieldSpec{
+		WireName: "notification_config",
+		Kind:     "object",
+		Fields:   MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_NotificationConfigFields,
+	},
+	"OutputS3BucketName": ubx.FieldSpec{WireName: "output_s3_bucket_name"},
+	"OutputS3KeyPrefix":  ubx.FieldSpec{WireName: "output_s3_key_prefix"},
+	"Parameters":         ubx.FieldSpec{WireName: "parameters"},
+	"ServiceRoleArn":     ubx.FieldSpec{WireName: "service_role_arn"},
+	"TimeoutSeconds":     ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowStepFunctionsParametersFields = ubx.FieldMap{
-		"Input": ubx.FieldSpec{WireName: "input"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Input": ubx.FieldSpec{WireName: "input"},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+}
 
 var MaintenanceWindowTask_TaskInvocationParametersFields = ubx.FieldMap{
-		"MaintenanceWindowAutomationParameters": ubx.FieldSpec{
-			WireName: "maintenance_window_automation_parameters",
-			Kind: "object",
-			Fields: MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowAutomationParametersFields,
-		},
-		"MaintenanceWindowLambdaParameters": ubx.FieldSpec{
-			WireName: "maintenance_window_lambda_parameters",
-			Kind: "object",
-			Fields: MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowLambdaParametersFields,
-		},
-		"MaintenanceWindowRunCommandParameters": ubx.FieldSpec{
-			WireName: "maintenance_window_run_command_parameters",
-			Kind: "object",
-			Fields: MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParametersFields,
-		},
-		"MaintenanceWindowStepFunctionsParameters": ubx.FieldSpec{
-			WireName: "maintenance_window_step_functions_parameters",
-			Kind: "object",
-			Fields: MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowStepFunctionsParametersFields,
-		},
-	}
+	"MaintenanceWindowAutomationParameters": ubx.FieldSpec{
+		WireName: "maintenance_window_automation_parameters",
+		Kind:     "object",
+		Fields:   MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowAutomationParametersFields,
+	},
+	"MaintenanceWindowLambdaParameters": ubx.FieldSpec{
+		WireName: "maintenance_window_lambda_parameters",
+		Kind:     "object",
+		Fields:   MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowLambdaParametersFields,
+	},
+	"MaintenanceWindowRunCommandParameters": ubx.FieldSpec{
+		WireName: "maintenance_window_run_command_parameters",
+		Kind:     "object",
+		Fields:   MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParametersFields,
+	},
+	"MaintenanceWindowStepFunctionsParameters": ubx.FieldSpec{
+		WireName: "maintenance_window_step_functions_parameters",
+		Kind:     "object",
+		Fields:   MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowStepFunctionsParametersFields,
+	},
+}
 
 type MaintenanceWindowTaskConfig struct {
 	// The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.
@@ -245,30 +245,30 @@ var MaintenanceWindowTask = ubx.ResourceBinding{
 	WireType: "aws_ssm_maintenance_window_task",
 	Fields: ubx.FieldMap{
 		"CutoffBehavior": ubx.FieldSpec{WireName: "cutoff_behavior"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"LoggingInfo": ubx.FieldSpec{
 			WireName: "logging_info",
-			Kind: "object",
-			Fields: MaintenanceWindowTask_LoggingInfoFields,
+			Kind:     "object",
+			Fields:   MaintenanceWindowTask_LoggingInfoFields,
 		},
 		"MaxConcurrency": ubx.FieldSpec{WireName: "max_concurrency"},
-		"MaxErrors": ubx.FieldSpec{WireName: "max_errors"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"MaxErrors":      ubx.FieldSpec{WireName: "max_errors"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Priority":       ubx.FieldSpec{WireName: "priority"},
 		"ServiceRoleArn": ubx.FieldSpec{WireName: "service_role_arn"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: MaintenanceWindowTask_TargetsFields,
+			Kind:     "list",
+			Fields:   MaintenanceWindowTask_TargetsFields,
 		},
 		"TaskArn": ubx.FieldSpec{WireName: "task_arn"},
 		"TaskInvocationParameters": ubx.FieldSpec{
 			WireName: "task_invocation_parameters",
-			Kind: "object",
-			Fields: MaintenanceWindowTask_TaskInvocationParametersFields,
+			Kind:     "object",
+			Fields:   MaintenanceWindowTask_TaskInvocationParametersFields,
 		},
 		"TaskParameters": ubx.FieldSpec{WireName: "task_parameters"},
-		"TaskType": ubx.FieldSpec{WireName: "task_type"},
-		"WindowId": ubx.FieldSpec{WireName: "window_id"},
+		"TaskType":       ubx.FieldSpec{WireName: "task_type"},
+		"WindowId":       ubx.FieldSpec{WireName: "window_id"},
 	},
 }

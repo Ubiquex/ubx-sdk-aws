@@ -33,23 +33,23 @@ type ReportPlan_ReportSetting struct {
 }
 
 var ReportPlan_ReportDeliveryChannelFields = ubx.FieldMap{
-		"Formats": ubx.FieldSpec{WireName: "formats"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
-	}
+	"Formats":      ubx.FieldSpec{WireName: "formats"},
+	"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3KeyPrefix":  ubx.FieldSpec{WireName: "s3_key_prefix"},
+}
 
 var ReportPlan_ReportPlanTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ReportPlan_ReportSettingFields = ubx.FieldMap{
-		"Accounts": ubx.FieldSpec{WireName: "accounts"},
-		"FrameworkArns": ubx.FieldSpec{WireName: "framework_arns"},
-		"OrganizationUnits": ubx.FieldSpec{WireName: "organization_units"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"ReportTemplate": ubx.FieldSpec{WireName: "report_template"},
-	}
+	"Accounts":          ubx.FieldSpec{WireName: "accounts"},
+	"FrameworkArns":     ubx.FieldSpec{WireName: "framework_arns"},
+	"OrganizationUnits": ubx.FieldSpec{WireName: "organization_units"},
+	"Regions":           ubx.FieldSpec{WireName: "regions"},
+	"ReportTemplate":    ubx.FieldSpec{WireName: "report_template"},
+}
 
 type ReportPlanConfig struct {
 	// A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.
@@ -84,20 +84,20 @@ var ReportPlan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ReportDeliveryChannel": ubx.FieldSpec{
 			WireName: "report_delivery_channel",
-			Kind: "object",
-			Fields: ReportPlan_ReportDeliveryChannelFields,
+			Kind:     "object",
+			Fields:   ReportPlan_ReportDeliveryChannelFields,
 		},
 		"ReportPlanDescription": ubx.FieldSpec{WireName: "report_plan_description"},
-		"ReportPlanName": ubx.FieldSpec{WireName: "report_plan_name"},
+		"ReportPlanName":        ubx.FieldSpec{WireName: "report_plan_name"},
 		"ReportPlanTags": ubx.FieldSpec{
 			WireName: "report_plan_tags",
-			Kind: "list",
-			Fields: ReportPlan_ReportPlanTagsFields,
+			Kind:     "list",
+			Fields:   ReportPlan_ReportPlanTagsFields,
 		},
 		"ReportSetting": ubx.FieldSpec{
 			WireName: "report_setting",
-			Kind: "object",
-			Fields: ReportPlan_ReportSettingFields,
+			Kind:     "object",
+			Fields:   ReportPlan_ReportSettingFields,
 		},
 	},
 }

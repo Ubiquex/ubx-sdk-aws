@@ -18,14 +18,14 @@ type PrefixList_Tags struct {
 }
 
 var PrefixList_EntriesFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-	}
+	"Cidr":        ubx.FieldSpec{WireName: "cidr"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+}
 
 var PrefixList_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PrefixListConfig struct {
 	// Ip Version of Prefix List.
@@ -67,15 +67,15 @@ var PrefixList = ubx.ResourceBinding{
 		"AddressFamily": ubx.FieldSpec{WireName: "address_family"},
 		"Entries": ubx.FieldSpec{
 			WireName: "entries",
-			Kind: "list",
-			Fields: PrefixList_EntriesFields,
+			Kind:     "list",
+			Fields:   PrefixList_EntriesFields,
 		},
-		"MaxEntries": ubx.FieldSpec{WireName: "max_entries"},
+		"MaxEntries":     ubx.FieldSpec{WireName: "max_entries"},
 		"PrefixListName": ubx.FieldSpec{WireName: "prefix_list_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PrefixList_TagsFields,
+			Kind:     "list",
+			Fields:   PrefixList_TagsFields,
 		},
 	},
 }

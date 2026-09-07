@@ -4,30 +4,30 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RequestValidators_Items struct {
-	Id any
-	Name any
-	ValidateRequestBody any
+	Id                        any
+	Name                      any
+	ValidateRequestBody       any
 	ValidateRequestParameters any
 }
 
 type RequestValidatorsConfig struct {
-	Limit any
-	Position any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 type RequestValidatorsAttrs struct {
-	Items any
-	Limit any
-	Position any
+	Items     any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 var RequestValidators = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_request_validators",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Position":  ubx.FieldSpec{WireName: "position"},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

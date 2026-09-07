@@ -4,41 +4,41 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IamInstanceProfileAssociations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IamInstanceProfileAssociations_IamInstanceProfileAssociations_IamInstanceProfile struct {
 	Arn any
-	Id any
+	Id  any
 }
 
 type IamInstanceProfileAssociations_IamInstanceProfileAssociations struct {
-	AssociationId any
+	AssociationId      any
 	IamInstanceProfile any
-	InstanceId any
-	State any
-	Timestamp any
+	InstanceId         any
+	State              any
+	Timestamp          any
 }
 
 var IamInstanceProfileAssociations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IamInstanceProfileAssociationsConfig struct {
 	AssociationIds any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 }
 
 type IamInstanceProfileAssociationsAttrs struct {
-	AssociationIds any
-	Filters any
+	AssociationIds                 any
+	Filters                        any
 	IamInstanceProfileAssociations any
-	MaxResults any
-	NextToken any
+	MaxResults                     any
+	NextToken                      any
 }
 
 var IamInstanceProfileAssociations = ubx.DataSourceBinding{
@@ -47,10 +47,10 @@ var IamInstanceProfileAssociations = ubx.DataSourceBinding{
 		"AssociationIds": ubx.FieldSpec{WireName: "association_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IamInstanceProfileAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   IamInstanceProfileAssociations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Prices_Prices_ChangeOwnershipPrice struct {
 	Currency any
-	Price any
+	Price    any
 }
 
 type Prices_Prices struct {
 	ChangeOwnershipPrice any
-	Name any
-	RegistrationPrice any
-	RenewalPrice any
-	RestorationPrice any
-	TransferPrice any
+	Name                 any
+	RegistrationPrice    any
+	RenewalPrice         any
+	RestorationPrice     any
+	TransferPrice        any
 }
 
 type PricesConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
-	Tld any
+	Tld      any
 }
 
 type PricesAttrs struct {
-	Marker any
-	MaxItems any
+	Marker         any
+	MaxItems       any
 	NextPageMarker any
-	Prices any
-	Tld any
+	Prices         any
+	Tld            any
 }
 
 var Prices = ubx.DataSourceBinding{
 	WireType: "aws_route53domains_prices",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Tld": ubx.FieldSpec{WireName: "tld"},
+		"Tld":      ubx.FieldSpec{WireName: "tld"},
 	},
 }

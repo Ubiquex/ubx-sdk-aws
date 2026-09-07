@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotdeviceadvisorSuiteDefinitions_SuiteDefinitionInformationList_DefaultDevices struct {
 	CertificateArn any
-	DeviceRoleArn any
-	ThingArn any
+	DeviceRoleArn  any
+	ThingArn       any
 }
 
 type ApiIotdeviceadvisorSuiteDefinitions_SuiteDefinitionInformationList struct {
-	CreatedAt any
-	DefaultDevices any
+	CreatedAt                any
+	DefaultDevices           any
 	IntendedForQualification any
-	IsLongDurationTest any
-	Protocol any
-	SuiteDefinitionId any
-	SuiteDefinitionName any
+	IsLongDurationTest       any
+	Protocol                 any
+	SuiteDefinitionId        any
+	SuiteDefinitionName      any
 }
 
 type ApiIotdeviceadvisorSuiteDefinitionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotdeviceadvisorSuiteDefinitionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                     any
+	NextToken                      any
 	SuiteDefinitionInformationList any
 }
 
@@ -34,6 +34,6 @@ var ApiIotdeviceadvisorSuiteDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_api_iotdeviceadvisor_suite_definitions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

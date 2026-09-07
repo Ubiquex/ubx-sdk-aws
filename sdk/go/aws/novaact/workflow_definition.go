@@ -11,9 +11,9 @@ type WorkflowDefinition_ExportConfig struct {
 }
 
 var WorkflowDefinition_ExportConfigFields = ubx.FieldMap{
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3KeyPrefix": ubx.FieldSpec{WireName: "s3_key_prefix"},
-	}
+	"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3KeyPrefix":  ubx.FieldSpec{WireName: "s3_key_prefix"},
+}
 
 type WorkflowDefinitionConfig struct {
 	// An optional description of the workflow definition's purpose and functionality.
@@ -45,8 +45,8 @@ var WorkflowDefinition = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExportConfig": ubx.FieldSpec{
 			WireName: "export_config",
-			Kind: "object",
-			Fields: WorkflowDefinition_ExportConfigFields,
+			Kind:     "object",
+			Fields:   WorkflowDefinition_ExportConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

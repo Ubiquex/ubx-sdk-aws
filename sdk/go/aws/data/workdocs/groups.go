@@ -4,34 +4,34 @@ package workdocs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Groups_Groups struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type GroupsConfig struct {
 	AuthenticationToken any
-	Limit any
-	Marker any
-	OrganizationId any
-	SearchQuery any
+	Limit               any
+	Marker              any
+	OrganizationId      any
+	SearchQuery         any
 }
 
 type GroupsAttrs struct {
 	AuthenticationToken any
-	Groups any
-	Limit any
-	Marker any
-	OrganizationId any
-	SearchQuery any
+	Groups              any
+	Limit               any
+	Marker              any
+	OrganizationId      any
+	SearchQuery         any
 }
 
 var Groups = ubx.DataSourceBinding{
 	WireType: "aws_workdocs_groups",
 	Fields: ubx.FieldMap{
 		"AuthenticationToken": ubx.FieldSpec{WireName: "authentication_token"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"SearchQuery": ubx.FieldSpec{WireName: "search_query"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"Marker":              ubx.FieldSpec{WireName: "marker"},
+		"OrganizationId":      ubx.FieldSpec{WireName: "organization_id"},
+		"SearchQuery":         ubx.FieldSpec{WireName: "search_query"},
 	},
 }

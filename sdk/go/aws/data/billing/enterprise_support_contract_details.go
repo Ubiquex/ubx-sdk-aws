@@ -4,43 +4,43 @@ package billing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnterpriseSupportContractDetails_AdditionalSupportCharge struct {
-	Amount any
-	ChargeType any
+	Amount      any
+	ChargeType  any
 	Description any
 }
 
 type EnterpriseSupportContractDetails_ChargedPayerAccountIds struct {
-	AccountId any
+	AccountId        any
 	ChargePercentage any
 }
 
 type EnterpriseSupportContractDetails_ContractPayerAccountIds struct {
 	AccountId any
-	IsGdn any
+	IsGdn     any
 }
 
 type EnterpriseSupportContractDetails_PricingPlans_Tiers struct {
 	AdditionalPercentageOfAggregateCharges any
-	AggregateChargesAdjustment any
-	BaseCharge any
-	Increment any
-	IncrementCharge any
-	Incremental any
-	TierMaximum any
-	TierMinimum any
+	AggregateChargesAdjustment             any
+	BaseCharge                             any
+	Increment                              any
+	IncrementCharge                        any
+	Incremental                            any
+	TierMaximum                            any
+	TierMinimum                            any
 }
 
 type EnterpriseSupportContractDetails_PricingPlans struct {
-	Description any
+	Description                    any
 	DiscountAppliesToMinimumCharge any
-	EndDate any
-	MinimumCharge any
-	Name any
-	PlanDiscountPercent any
-	PricingPlanId any
-	StartDate any
-	Tiered any
-	Tiers any
+	EndDate                        any
+	MinimumCharge                  any
+	Name                           any
+	PlanDiscountPercent            any
+	PricingPlanId                  any
+	StartDate                      any
+	Tiered                         any
+	Tiers                          any
 }
 
 type EnterpriseSupportContractDetailsConfig struct {
@@ -59,15 +59,15 @@ type EnterpriseSupportContractDetailsAttrs struct {
 	ChargedPayerAccountIds any
 	// <p>A list of accounts that appear in the Enterprise Support Contract.</p>
 	ContractPayerAccountIds any
-	IsContractActive any
+	IsContractActive        any
 	// <p>A list of pricing plans.</p>
-	PricingPlans any
-	SupportAllocationMethod any
-	SupportProrateStartDate any
+	PricingPlans                                 any
+	SupportAllocationMethod                      any
+	SupportProrateStartDate                      any
 	SupportReservedInstanceAmortizationStartDate any
-	SupportReservedInstanceTreatmentMethod any
-	SupportSavingsPlansAmortizationStartDate any
-	SupportSavingsPlansTreatmentMethod any
+	SupportReservedInstanceTreatmentMethod       any
+	SupportSavingsPlansAmortizationStartDate     any
+	SupportSavingsPlansTreatmentMethod           any
 }
 
 var EnterpriseSupportContractDetails = ubx.DataSourceBinding{

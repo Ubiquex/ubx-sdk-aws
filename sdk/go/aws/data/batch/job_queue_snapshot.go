@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobQueueSnapshot_FrontOfQueue_Jobs struct {
 	EarliestTimeAtPosition any
-	JobArn any
+	JobArn                 any
 }
 
 type JobQueueSnapshot_FrontOfQueue struct {
-	Jobs any
+	Jobs          any
 	LastUpdatedAt any
 }
 
 type JobQueueSnapshot_FrontOfQuotaShares struct {
 	LastUpdatedAt any
-	QuotaShares any
+	QuotaShares   any
 }
 
 type JobQueueSnapshot_QueueUtilization_FairshareUtilization_TopCapacityUtilization_CapacityUsage struct {
 	CapacityUnit any
-	Quantity any
+	Quantity     any
 }
 
 type JobQueueSnapshot_QueueUtilization_FairshareUtilization_TopCapacityUtilization struct {
-	CapacityUsage any
+	CapacityUsage   any
 	ShareIdentifier any
 }
 
 type JobQueueSnapshot_QueueUtilization_FairshareUtilization struct {
-	ActiveShareCount any
+	ActiveShareCount       any
 	TopCapacityUtilization any
 }
 
 type JobQueueSnapshot_QueueUtilization_QuotaShareUtilization_TopCapacityUtilization struct {
-	CapacityUsage any
+	CapacityUsage  any
 	QuotaShareName any
 }
 
@@ -45,10 +45,10 @@ type JobQueueSnapshot_QueueUtilization_QuotaShareUtilization struct {
 type JobQueueSnapshot_QueueUtilization struct {
 	// <p>The fairshare utilization for a job queue, including the number of active shares and top capacity utilization.</p>
 	FairshareUtilization any
-	LastUpdatedAt any
+	LastUpdatedAt        any
 	// <p>An object that represents the capacity utilization details of all quota shares associated with a single job queue.</p>
 	QuotaShareUtilization any
-	TotalCapacityUsage any
+	TotalCapacityUsage    any
 }
 
 type JobQueueSnapshotConfig struct {
@@ -60,7 +60,7 @@ type JobQueueSnapshotAttrs struct {
 	FrontOfQueue any
 	// <p>An object that represents the details of the first <code>RUNNABLE</code> job in each named quota share associated with a single job queue.</p>
 	FrontOfQuotaShares any
-	JobQueue any
+	JobQueue           any
 	// <p>The job queue utilization at a specific point in time, including total capacity usage, and quota share or fairshare utilization breakdown depending on the job queue scheduling policy.</p>
 	QueueUtilization any
 }

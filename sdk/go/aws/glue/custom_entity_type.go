@@ -29,8 +29,8 @@ var CustomEntityType = ubx.ResourceBinding{
 	WireType: "aws_glue_custom_entity_type",
 	Fields: ubx.FieldMap{
 		"ContextWords": ubx.FieldSpec{WireName: "context_words"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"RegexString":  ubx.FieldSpec{WireName: "regex_string"},
+		"Tags":         ubx.FieldSpec{WireName: "tags"},
 	},
 }

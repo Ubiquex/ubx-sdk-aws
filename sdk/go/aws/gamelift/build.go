@@ -15,21 +15,21 @@ type Build_StorageLocation struct {
 }
 
 type Build_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Build_StorageLocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"Bucket":        ubx.FieldSpec{WireName: "bucket"},
+	"Key":           ubx.FieldSpec{WireName: "key"},
+	"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
+	"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Build_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BuildConfig struct {
 	// A descriptive label that is associated with a build. Build names do not need to be unique.
@@ -68,18 +68,18 @@ type BuildAttrs struct {
 var Build = ubx.ResourceBinding{
 	WireType: "aws_game_lift_build",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"OperatingSystem":  ubx.FieldSpec{WireName: "operating_system"},
 		"ServerSdkVersion": ubx.FieldSpec{WireName: "server_sdk_version"},
 		"StorageLocation": ubx.FieldSpec{
 			WireName: "storage_location",
-			Kind: "object",
-			Fields: Build_StorageLocationFields,
+			Kind:     "object",
+			Fields:   Build_StorageLocationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Build_TagsFields,
+			Kind:     "list",
+			Fields:   Build_TagsFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

@@ -31,22 +31,22 @@ type DataMigration_Tags struct {
 }
 
 var DataMigration_DataMigrationSettingsFields = ubx.FieldMap{
-		"CloudwatchLogsEnabled": ubx.FieldSpec{WireName: "cloudwatch_logs_enabled"},
-		"NumberOfJobs": ubx.FieldSpec{WireName: "number_of_jobs"},
-		"SelectionRules": ubx.FieldSpec{WireName: "selection_rules"},
-	}
+	"CloudwatchLogsEnabled": ubx.FieldSpec{WireName: "cloudwatch_logs_enabled"},
+	"NumberOfJobs":          ubx.FieldSpec{WireName: "number_of_jobs"},
+	"SelectionRules":        ubx.FieldSpec{WireName: "selection_rules"},
+}
 
 var DataMigration_SourceDataSettingsFields = ubx.FieldMap{
-		"CdcstartPosition": ubx.FieldSpec{WireName: "cdcstart_position"},
-		"CdcstartTime": ubx.FieldSpec{WireName: "cdcstart_time"},
-		"CdcstopTime": ubx.FieldSpec{WireName: "cdcstop_time"},
-		"SlotName": ubx.FieldSpec{WireName: "slot_name"},
-	}
+	"CdcstartPosition": ubx.FieldSpec{WireName: "cdcstart_position"},
+	"CdcstartTime":     ubx.FieldSpec{WireName: "cdcstart_time"},
+	"CdcstopTime":      ubx.FieldSpec{WireName: "cdcstop_time"},
+	"SlotName":         ubx.FieldSpec{WireName: "slot_name"},
+}
 
 var DataMigration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataMigrationConfig struct {
 	// The property describes an ARN of the data migration.
@@ -94,24 +94,24 @@ var DataMigration = ubx.ResourceBinding{
 	WireType: "aws_dms_data_migration",
 	Fields: ubx.FieldMap{
 		"DataMigrationIdentifier": ubx.FieldSpec{WireName: "data_migration_identifier"},
-		"DataMigrationName": ubx.FieldSpec{WireName: "data_migration_name"},
+		"DataMigrationName":       ubx.FieldSpec{WireName: "data_migration_name"},
 		"DataMigrationSettings": ubx.FieldSpec{
 			WireName: "data_migration_settings",
-			Kind: "object",
-			Fields: DataMigration_DataMigrationSettingsFields,
+			Kind:     "object",
+			Fields:   DataMigration_DataMigrationSettingsFields,
 		},
-		"DataMigrationType": ubx.FieldSpec{WireName: "data_migration_type"},
+		"DataMigrationType":          ubx.FieldSpec{WireName: "data_migration_type"},
 		"MigrationProjectIdentifier": ubx.FieldSpec{WireName: "migration_project_identifier"},
-		"ServiceAccessRoleArn": ubx.FieldSpec{WireName: "service_access_role_arn"},
+		"ServiceAccessRoleArn":       ubx.FieldSpec{WireName: "service_access_role_arn"},
 		"SourceDataSettings": ubx.FieldSpec{
 			WireName: "source_data_settings",
-			Kind: "list",
-			Fields: DataMigration_SourceDataSettingsFields,
+			Kind:     "list",
+			Fields:   DataMigration_SourceDataSettingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataMigration_TagsFields,
+			Kind:     "list",
+			Fields:   DataMigration_TagsFields,
 		},
 	},
 }

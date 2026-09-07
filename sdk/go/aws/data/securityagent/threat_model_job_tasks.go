@@ -4,14 +4,14 @@ package securityagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThreatModelJobTasks_ThreatModelJobTaskSummaries struct {
-	AgentSpaceId any
-	CreatedAt any
-	ExecutionStatus any
-	TaskId any
-	ThreatModelId any
+	AgentSpaceId     any
+	CreatedAt        any
+	ExecutionStatus  any
+	TaskId           any
+	ThreatModelId    any
 	ThreatModelJobId any
-	Title any
-	UpdatedAt any
+	Title            any
+	UpdatedAt        any
 }
 
 type ThreatModelJobTasksConfig struct {
@@ -19,7 +19,7 @@ type ThreatModelJobTasksConfig struct {
 	// <p>Maximum results for pagination.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
+	NextToken        any
 	ThreatModelJobId any
 }
 
@@ -28,7 +28,7 @@ type ThreatModelJobTasksAttrs struct {
 	// <p>Maximum results for pagination.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
-	NextToken any
+	NextToken        any
 	ThreatModelJobId any
 	// <p>List of threat model job task summaries.</p>
 	ThreatModelJobTaskSummaries any
@@ -37,9 +37,9 @@ type ThreatModelJobTasksAttrs struct {
 var ThreatModelJobTasks = ubx.DataSourceBinding{
 	WireType: "aws_securityagent_threat_model_job_tasks",
 	Fields: ubx.FieldMap{
-		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AgentSpaceId":     ubx.FieldSpec{WireName: "agent_space_id"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"ThreatModelJobId": ubx.FieldSpec{WireName: "threat_model_job_id"},
 	},
 }

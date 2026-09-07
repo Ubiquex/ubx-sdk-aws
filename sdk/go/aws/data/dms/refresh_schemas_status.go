@@ -4,11 +4,11 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RefreshSchemasStatus_RefreshSchemasStatus struct {
-	EndpointArn any
-	LastFailureMessage any
-	LastRefreshDate any
+	EndpointArn            any
+	LastFailureMessage     any
+	LastRefreshDate        any
 	ReplicationInstanceArn any
-	Status any
+	Status                 any
 }
 
 type RefreshSchemasStatusConfig struct {

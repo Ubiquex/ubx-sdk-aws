@@ -11,9 +11,9 @@ type Extension_Tags struct {
 }
 
 var Extension_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ExtensionConfig struct {
 	// The actions that this AppConfig extension performs when invoked, each defining an action name, target URI, and optional IAM role ARN. (AI-inferred)
@@ -54,15 +54,15 @@ type ExtensionAttrs struct {
 var Extension = ubx.ResourceBinding{
 	WireType: "aws_app_config_extension",
 	Fields: ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Actions":             ubx.FieldSpec{WireName: "actions"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"LatestVersionNumber": ubx.FieldSpec{WireName: "latest_version_number"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Parameters":          ubx.FieldSpec{WireName: "parameters"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Extension_TagsFields,
+			Kind:     "list",
+			Fields:   Extension_TagsFields,
 		},
 	},
 }

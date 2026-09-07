@@ -36,11 +36,11 @@ type PolicyStatementAttrs struct {
 var PolicyStatement = ubx.ResourceBinding{
 	WireType: "aws_entity_resolution_policy_statement",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"Action":      ubx.FieldSpec{WireName: "action"},
+		"Arn":         ubx.FieldSpec{WireName: "arn"},
+		"Condition":   ubx.FieldSpec{WireName: "condition"},
+		"Effect":      ubx.FieldSpec{WireName: "effect"},
+		"Principal":   ubx.FieldSpec{WireName: "principal"},
 		"StatementId": ubx.FieldSpec{WireName: "statement_id"},
 	},
 }

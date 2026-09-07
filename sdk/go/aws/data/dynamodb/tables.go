@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TablesConfig struct {
 	ExclusiveStartTableName any
-	Limit any
+	Limit                   any
 }
 
 type TablesAttrs struct {
 	ExclusiveStartTableName any
-	LastEvaluatedTableName any
-	Limit any
-	TableNames any
+	LastEvaluatedTableName  any
+	Limit                   any
+	TableNames              any
 }
 
 var Tables = ubx.DataSourceBinding{
 	WireType: "aws_dynamodb_tables",
 	Fields: ubx.FieldMap{
 		"ExclusiveStartTableName": ubx.FieldSpec{WireName: "exclusive_start_table_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":                   ubx.FieldSpec{WireName: "limit"},
 	},
 }

@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerScalingConfigurationRecommendation_DynamicScalingConfiguration_ScalingPolicies_TargetTracking_MetricSpecification_Customized struct {
 	MetricName any
-	Namespace any
-	Statistic any
+	Namespace  any
+	Statistic  any
 }
 
 type ApiSagemakerScalingConfigurationRecommendation_DynamicScalingConfiguration_ScalingPolicies_TargetTracking_MetricSpecification_Predefined struct {
@@ -20,7 +20,7 @@ type ApiSagemakerScalingConfigurationRecommendation_DynamicScalingConfiguration_
 
 type ApiSagemakerScalingConfigurationRecommendation_DynamicScalingConfiguration_ScalingPolicies_TargetTracking struct {
 	MetricSpecification any
-	TargetValue any
+	TargetValue         any
 }
 
 type ApiSagemakerScalingConfigurationRecommendation_DynamicScalingConfiguration_ScalingPolicies struct {
@@ -28,16 +28,16 @@ type ApiSagemakerScalingConfigurationRecommendation_DynamicScalingConfiguration_
 }
 
 type ApiSagemakerScalingConfigurationRecommendation_DynamicScalingConfiguration struct {
-	MaxCapacity any
-	MinCapacity any
-	ScaleInCooldown any
+	MaxCapacity      any
+	MinCapacity      any
+	ScaleInCooldown  any
 	ScaleOutCooldown any
-	ScalingPolicies any
+	ScalingPolicies  any
 }
 
 type ApiSagemakerScalingConfigurationRecommendation_Metric struct {
 	InvocationsPerInstance any
-	ModelLatency any
+	ModelLatency           any
 }
 
 type ApiSagemakerScalingConfigurationRecommendation_ScalingPolicyObjective struct {
@@ -46,42 +46,42 @@ type ApiSagemakerScalingConfigurationRecommendation_ScalingPolicyObjective struc
 }
 
 var ApiSagemakerScalingConfigurationRecommendation_ScalingPolicyObjectiveFields = ubx.FieldMap{
-		"MaxInvocationsPerMinute": ubx.FieldSpec{WireName: "max_invocations_per_minute"},
-		"MinInvocationsPerMinute": ubx.FieldSpec{WireName: "min_invocations_per_minute"},
-	}
+	"MaxInvocationsPerMinute": ubx.FieldSpec{WireName: "max_invocations_per_minute"},
+	"MinInvocationsPerMinute": ubx.FieldSpec{WireName: "min_invocations_per_minute"},
+}
 
 type ApiSagemakerScalingConfigurationRecommendationConfig struct {
-	EndpointName any
+	EndpointName                    any
 	InferenceRecommendationsJobName any
-	RecommendationId any
+	RecommendationId                any
 	// <p>An object where you specify the anticipated traffic pattern for an endpoint.</p>
-	ScalingPolicyObjective any
+	ScalingPolicyObjective      any
 	TargetCpuUtilizationPerCore any
 }
 
 type ApiSagemakerScalingConfigurationRecommendationAttrs struct {
 	// <p>An object with the recommended values for you to specify when creating an autoscaling policy.</p>
-	DynamicScalingConfiguration any
-	EndpointName any
+	DynamicScalingConfiguration     any
+	EndpointName                    any
 	InferenceRecommendationsJobName any
 	// <p>The metric for a scaling policy.</p>
-	Metric any
+	Metric           any
 	RecommendationId any
 	// <p>An object where you specify the anticipated traffic pattern for an endpoint.</p>
-	ScalingPolicyObjective any
+	ScalingPolicyObjective      any
 	TargetCpuUtilizationPerCore any
 }
 
 var ApiSagemakerScalingConfigurationRecommendation = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_scaling_configuration_recommendation",
 	Fields: ubx.FieldMap{
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
+		"EndpointName":                    ubx.FieldSpec{WireName: "endpoint_name"},
 		"InferenceRecommendationsJobName": ubx.FieldSpec{WireName: "inference_recommendations_job_name"},
-		"RecommendationId": ubx.FieldSpec{WireName: "recommendation_id"},
+		"RecommendationId":                ubx.FieldSpec{WireName: "recommendation_id"},
 		"ScalingPolicyObjective": ubx.FieldSpec{
 			WireName: "scaling_policy_objective",
-			Kind: "object",
-			Fields: ApiSagemakerScalingConfigurationRecommendation_ScalingPolicyObjectiveFields,
+			Kind:     "object",
+			Fields:   ApiSagemakerScalingConfigurationRecommendation_ScalingPolicyObjectiveFields,
 		},
 		"TargetCpuUtilizationPerCore": ubx.FieldSpec{WireName: "target_cpu_utilization_per_core"},
 	},

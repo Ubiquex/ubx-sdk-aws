@@ -4,7 +4,7 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectionGroupByRoutingEndpoint_ConnectionGroup_Tags_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -13,17 +13,17 @@ type ConnectionGroupByRoutingEndpoint_ConnectionGroup_Tags struct {
 }
 
 type ConnectionGroupByRoutingEndpoint_ConnectionGroup struct {
-	AnycastIpListId any
-	Arn any
-	CreatedTime any
-	Enabled any
-	Id any
-	Ipv6Enabled any
-	IsDefault any
+	AnycastIpListId  any
+	Arn              any
+	CreatedTime      any
+	Enabled          any
+	Id               any
+	Ipv6Enabled      any
+	IsDefault        any
 	LastModifiedTime any
-	Name any
-	RoutingEndpoint any
-	Status any
+	Name             any
+	RoutingEndpoint  any
+	Status           any
 	// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
 	Tags any
 }
@@ -35,7 +35,7 @@ type ConnectionGroupByRoutingEndpointConfig struct {
 type ConnectionGroupByRoutingEndpointAttrs struct {
 	// <p>The connection group for your distribution tenants. When you first create a distribution tenant and you don't specify a connection group, CloudFront will automatically create a default connection group for you. When you create a new distribution tenant and don't specify a connection group, the default one will be associated with your distribution tenant.</p>
 	ConnectionGroup any
-	Etag any
+	Etag            any
 	RoutingEndpoint any
 }
 

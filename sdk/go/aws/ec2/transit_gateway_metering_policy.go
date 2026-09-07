@@ -4,14 +4,14 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayMeteringPolicy_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var TransitGatewayMeteringPolicy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayMeteringPolicyConfig struct {
 	// Middle box attachment Ids
@@ -43,8 +43,8 @@ var TransitGatewayMeteringPolicy = ubx.ResourceBinding{
 		"MiddleboxAttachmentIds": ubx.FieldSpec{WireName: "middlebox_attachment_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayMeteringPolicy_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayMeteringPolicy_TagsFields,
 		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},

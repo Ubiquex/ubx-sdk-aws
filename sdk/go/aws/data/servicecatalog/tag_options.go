@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagOptions_Filters struct {
 	Active any
-	Key any
-	Value any
+	Key    any
+	Value  any
 }
 
 type TagOptions_TagOptionDetails struct {
 	Active any
-	Id any
-	Key any
-	Owner any
-	Value any
+	Id     any
+	Key    any
+	Owner  any
+	Value  any
 }
 
 var TagOptions_FiltersFields = ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Active": ubx.FieldSpec{WireName: "active"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 type TagOptionsConfig struct {
 	// <p>Filters to use when listing TagOptions.</p>
-	Filters any
-	PageSize any
+	Filters   any
+	PageSize  any
 	PageToken any
 }
 
 type TagOptionsAttrs struct {
 	// <p>Filters to use when listing TagOptions.</p>
-	Filters any
-	PageSize any
-	PageToken any
+	Filters          any
+	PageSize         any
+	PageToken        any
 	TagOptionDetails any
 }
 
@@ -43,10 +43,10 @@ var TagOptions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: TagOptions_FiltersFields,
+			Kind:     "object",
+			Fields:   TagOptions_FiltersFields,
 		},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 		"PageToken": ubx.FieldSpec{WireName: "page_token"},
 	},
 }

@@ -4,26 +4,26 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecommenderFilters_RecommenderFilters struct {
-	CreatedAt any
-	Description any
-	FailureReason any
+	CreatedAt                   any
+	Description                 any
+	FailureReason               any
 	RecommenderFilterExpression any
-	RecommenderFilterName any
-	RecommenderSchemaName any
-	Status any
-	Tags any
+	RecommenderFilterName       any
+	RecommenderSchemaName       any
+	Status                      any
+	Tags                        any
 }
 
 type RecommenderFiltersConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RecommenderFiltersAttrs struct {
-	DomainName any
-	MaxResults any
-	NextToken any
+	DomainName         any
+	MaxResults         any
+	NextToken          any
 	RecommenderFilters any
 }
 
@@ -32,6 +32,6 @@ var RecommenderFilters = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -10,27 +10,27 @@ type CustomPermissions_Capabilities struct {
 	Action any
 	// Controls whether users in the custom permissions profile can add or run anomaly detection on analyses in Amazon QuickSight, with values typically being ENABLED or DISABLED. (AI-inferred)
 	AddOrRunAnomalyDetectionForAnalyses any
-	AmazonBedrockArsaction any
-	AmazonBedrockFsaction any
-	AmazonBedrockKrsaction any
-	AmazonSthreeAction any
+	AmazonBedrockArsaction              any
+	AmazonBedrockFsaction               any
+	AmazonBedrockKrsaction              any
+	AmazonSthreeAction                  any
 	// Sets the analysis permission level for the QuickSight custom permissions profile, controlling which analysis actions (e.g., read, create, update) users with these permissions can perform. (AI-inferred)
 	Analysis any
 	// Specifies whether users granted this custom permission level are allowed to approve requests to share QuickSight flows. (AI-inferred)
 	ApproveFlowShareRequests any
-	Apps any
+	Apps                     any
 	// Controls the Asana action capability, determining whether users with this custom permissions profile can connect to and use Asana as a data source, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
-	AsanaAction any
-	Automate any
+	AsanaAction    any
+	Automate       any
 	BambooHraction any
 	// Sets the resource status for the box_agent_action capability, controlling whether users with this custom permissions profile can perform Box agent actions in Amazon QuickSight. (AI-inferred)
 	BoxAgentAction any
 	// Specifies whether users are allowed to build calculated fields using Amazon QuickSight Q, with a value of either 'ENABLED' or 'DISABLED'. (AI-inferred)
 	BuildCalculatedFieldWithQ any
-	CanvaAgentAction any
-	ChatAgent any
-	ComprehendAction any
-	ComprehendMedicalAction any
+	CanvaAgentAction          any
+	ChatAgent                 any
+	ComprehendAction          any
+	ComprehendMedicalAction   any
 	// Controls whether the Confluence integration action is enabled or disabled for these custom permissions, by setting the value to 'ENABLED' or 'DISABLED'. (AI-inferred)
 	ConfluenceAction any
 	// Specifies whether the custom permissions include the CREATE_AND_UPDATE_AMAZON_BEDROCK_ARS_ACTION capability, which allows a user to create and update Amazon Bedrock ARS actions in QuickSight. (AI-inferred)
@@ -44,10 +44,10 @@ type CustomPermissions_Capabilities struct {
 	// Specifies whether users with this custom permission can create and update QuickSight apps; set to 'DENY' to restrict this capability, or 'ALLOW' to permit it. (AI-inferred)
 	CreateAndUpdateApps any
 	// Specifies whether users with this custom permission can create and update Asana actions in Amazon QuickSight, such as triggering Asana tasks from dashboard insights. (AI-inferred)
-	CreateAndUpdateAsanaAction any
+	CreateAndUpdateAsanaAction    any
 	CreateAndUpdateBambooHraction any
 	// Controls whether the user can create and update Box agent actions in QuickSight, with an allowed value of 'ALLOW' or 'DENY'. (AI-inferred)
-	CreateAndUpdateBoxAgentAction any
+	CreateAndUpdateBoxAgentAction   any
 	CreateAndUpdateCanvaAgentAction any
 	// Specifies whether the user has permission to create and update Amazon Comprehend actions in Amazon QuickSight. (AI-inferred)
 	CreateAndUpdateComprehendAction any
@@ -79,9 +79,9 @@ type CustomPermissions_Capabilities struct {
 	CreateAndUpdateJiraAction any
 	// This string, with allowed values 'ALLOW' or 'DENY', controls whether a user with these custom permissions can create and update knowledge bases in Amazon QuickSight. (AI-inferred)
 	CreateAndUpdateKnowledgeBases any
-	CreateAndUpdateLinearAction any
-	CreateAndUpdateMcpaction any
-	CreateAndUpdateMondayAction any
+	CreateAndUpdateLinearAction   any
+	CreateAndUpdateMcpaction      any
+	CreateAndUpdateMondayAction   any
 	// Specifies whether the custom permission allows users to create and update Microsoft Exchange data sources in Amazon QuickSight, typically with a value of 'ALLOW' or 'DENY'. (AI-inferred)
 	CreateAndUpdateMsexchangeAction any
 	// This field specifies whether the Create and update Microsoft Teams action capability is enabled or disabled for the custom permissions, allowing or denying users the ability to create and update Microsoft Teams actions in Amazon QuickSight (with allowed values 'ENABLED' or 'DISABLED'). (AI-inferred)
@@ -97,13 +97,13 @@ type CustomPermissions_Capabilities struct {
 	// Controls whether users with this custom permissions profile can create and update PagerDuty actions, which are used to set up PagerDuty notifications for QuickSight alerts. (AI-inferred)
 	CreateAndUpdatePagerDutyAction any
 	// This capability key specifies whether users can create and update Salesforce actions in QuickSight, typically set to either 'ENABLED' or 'DISABLED'. (AI-inferred)
-	CreateAndUpdateSalesforceAction any
+	CreateAndUpdateSalesforceAction        any
 	CreateAndUpdateSandPglobalEnergyAction any
-	CreateAndUpdateSandPgmiaction any
+	CreateAndUpdateSandPgmiaction          any
 	CreateAndUpdateSapbillOfMaterialAction any
 	// Specifies whether users can create and update SAP Business Partner actions in Amazon QuickSight, accepting 'ALLOW' or 'DENY' as the permission value within the custom permissions capabilities. (AI-inferred)
 	CreateAndUpdateSapbusinessPartnerAction any
-	CreateAndUpdateSapmaterialStockAction any
+	CreateAndUpdateSapmaterialStockAction   any
 	// Determines whether a user can create and update SAP physical inventory actions in QuickSight, typically set to 'ALLOW' or 'DENY'. (AI-inferred)
 	CreateAndUpdateSapphysicalInventoryAction any
 	CreateAndUpdateSapproductMasterDataAction any
@@ -148,33 +148,33 @@ type CustomPermissions_Capabilities struct {
 	ExportToPdf any
 	// The export_to_pdf_in_scheduled_reports capability specifies whether users with this custom permissions profile can export scheduled reports to PDF, with the string value typically being 'ALLOW' or 'DENY'. (AI-inferred)
 	ExportToPdfInScheduledReports any
-	Extension any
-	FactSetAction any
+	Extension                     any
+	FactSetAction                 any
 	// This field specifies whether the user is allowed or denied the Flow capability in Amazon QuickSight, with accepted values 'ALLOW' and 'DENY'. (AI-inferred)
-	Flow any
+	Flow              any
 	GenericHttpaction any
-	GithubAction any
+	GithubAction      any
 	// Controls whether QuickSight users can perform Google Calendar actions, such as creating, updating, or deleting calendar events, with allowed values ENABLED, DISABLED, or ALERT. (AI-inferred)
 	GoogleCalendarAction any
-	HubspotAction any
-	HuggingFaceAction any
+	HubspotAction        any
+	HuggingFaceAction    any
 	// This string value toggles whether the QuickSight custom permission grants users the ability to include report content (such as charts or tables) in the emails automatically generated for scheduled reports. (AI-inferred)
 	IncludeContentInScheduledReportsEmail any
-	IntercomAction any
-	InvokeAppsAiinference any
-	JiraAction any
+	IntercomAction                        any
+	InvokeAppsAiinference                 any
+	JiraAction                            any
 	// Controls whether users with these custom permissions can access and use Amazon Q knowledge bases in QuickSight, typically set to 'ENABLED' or 'DENIED'. (AI-inferred)
 	KnowledgeBase any
-	LinearAction any
+	LinearAction  any
 	// Controls whether users with this custom permission can manage shared folders in Amazon QuickSight, with a value of either ALLOW or DENY. (AI-inferred)
 	ManageSharedFolders any
-	Mcpaction any
-	MondayAction any
-	MsexchangeAction any
+	Mcpaction           any
+	MondayAction        any
+	MsexchangeAction    any
 	// Determines whether users with this custom permission are granted or denied the ability to use Microsoft Teams actions in QuickSight, with allowed values `GRANT` and `DENY`. (AI-inferred)
-	MsteamsAction any
+	MsteamsAction  any
 	NewRelicAction any
-	NotionAction any
+	NotionAction   any
 	// Specifies whether OneDrive actions (e.g., exporting dashboards or reports to OneDrive) are enabled or disabled for the user, with valid values ENABLED or DISABLED. (AI-inferred)
 	OneDriveAction any
 	// Specifies whether the principal has permission to use QuickSight's OpenAPI actions, which allow programmatic access to QuickSight's REST API operations. (AI-inferred)
@@ -188,11 +188,11 @@ type CustomPermissions_Capabilities struct {
 	// Specifies whether users with this custom permissions profile can publish QuickSight dashboards without requiring an approval process. (AI-inferred)
 	PublishWithoutApproval any
 	// Specifies whether users assigned this custom permissions profile are allowed to rename shared folders in Amazon QuickSight (e.g., using 'ALLOW' or 'DENY'). (AI-inferred)
-	RenameSharedFolders any
-	Research any
-	SalesforceAction any
+	RenameSharedFolders     any
+	Research                any
+	SalesforceAction        any
 	SandPglobalEnergyAction any
-	SandPgmiaction any
+	SandPgmiaction          any
 	// Capability that allows or denies the SAP Bill of Material action, controlling whether users with these custom permissions can perform bill-of-material operations on SAP data sources (allowed values: ALLOW, DENY). (AI-inferred)
 	SapbillOfMaterialAction any
 	// Determines whether users with these custom permissions are allowed to perform SAP Business Partner actions in Amazon QuickSight, with the value set to 'ALLOW' or 'DENY'. (AI-inferred)
@@ -206,7 +206,7 @@ type CustomPermissions_Capabilities struct {
 	ServiceNowAction any
 	// Determines whether the custom permissions include the SHARE_AMAZON_BEDROCK_ACTION capability, granting users the ability to share Amazon Bedrock actions (such as AI-generated insights) with other QuickSight users. (AI-inferred)
 	ShareAmazonBedrockArsaction any
-	ShareAmazonBedrockFsaction any
+	ShareAmazonBedrockFsaction  any
 	// Controls whether users with this custom permission can share Amazon Bedrock KRS actions in QuickSight, with possible values 'ENABLED' or 'DISABLED'. (AI-inferred)
 	ShareAmazonBedrockKrsaction any
 	// Determines whether users assigned these custom permissions are allowed to share QuickSight assets directly to Amazon S3, with a value of 'ENABLED' or 'DISABLED'. (AI-inferred)
@@ -216,13 +216,13 @@ type CustomPermissions_Capabilities struct {
 	// Determines whether users with this custom permissions profile are allowed to share QuickSight apps (e.g., Q topics, stories, and other app assets) with other users, with string values ENABLED or DISABLED. (AI-inferred)
 	ShareApps any
 	// Sets the state ('ALLOW' or 'DENY') of the SHARE_ASANA_ACTION capability, controlling whether QuickSight users with these custom permissions can share analyses/dashboards to Asana. (AI-inferred)
-	ShareAsanaAction any
-	ShareBambooHraction any
-	ShareBoxAgentAction any
+	ShareAsanaAction      any
+	ShareBambooHraction   any
+	ShareBoxAgentAction   any
 	ShareCanvaAgentAction any
 	// Controls whether the user is allowed to share QuickSight assets (such as dashboards) with QuickSight Chat Agents, with values typically 'ENABLED' or 'DENY'. (AI-inferred)
-	ShareChatAgents any
-	ShareComprehendAction any
+	ShareChatAgents              any
+	ShareComprehendAction        any
 	ShareComprehendMedicalAction any
 	// Controls whether the capability to share QuickSight dashboards with Confluence is enabled, using the status value ENABLED or DISABLED. (AI-inferred)
 	ShareConfluenceAction any
@@ -236,7 +236,7 @@ type CustomPermissions_Capabilities struct {
 	ShareFactSetAction any
 	// Controls whether users with this custom permissions profile are allowed to share QuickSight dashboards or analyses via a generic HTTP action, such as a custom URL or webhook. (AI-inferred)
 	ShareGenericHttpaction any
-	ShareGithubAction any
+	ShareGithubAction      any
 	// Defines whether users assigned this custom permission are allowed to share QuickSight assets to Google Calendar, with the string value typically being 'ENABLED' or 'DISABLED'. (AI-inferred)
 	ShareGoogleCalendarAction any
 	// Controls whether sharing QuickSight assets to HubSpot is allowed or denied, with a value of either 'ALLOW' or 'DENY'. (AI-inferred)
@@ -245,32 +245,32 @@ type CustomPermissions_Capabilities struct {
 	ShareHuggingFaceAction any
 	// Controls whether the custom permission set grants the ability to share QuickSight analyses or dashboards via Intercom, with a value expected to be 'ENABLED' or 'DISABLED'. (AI-inferred)
 	ShareIntercomAction any
-	ShareJiraAction any
+	ShareJiraAction     any
 	// Controls whether the custom permissions include the SHARE_KNOWLEDGE_BASES capability, which grants users permission to share Amazon QuickSight knowledge bases. (AI-inferred)
-	ShareKnowledgeBases any
-	ShareLinearAction any
-	ShareMcpaction any
-	ShareMondayAction any
+	ShareKnowledgeBases   any
+	ShareLinearAction     any
+	ShareMcpaction        any
+	ShareMondayAction     any
 	ShareMsexchangeAction any
 	// Controls whether the QuickSight custom permissions allow users to share dashboards and analyses to Microsoft Teams, corresponding to the SHARE_MSTEAMS_ACTION capability. (AI-inferred)
-	ShareMsteamsAction any
+	ShareMsteamsAction  any
 	ShareNewRelicAction any
 	// Determines whether the custom permissions include the ability to share QuickSight notebooks with other users (i.e., the SHARE_NOTEBOOKS capability). (AI-inferred)
 	ShareNotionAction any
 	// Specifies whether users with this custom permission can share QuickSight dashboards and analyses via OneDrive, with valid values 'ALLOW' or 'DENY'. (AI-inferred)
 	ShareOneDriveAction any
-	ShareOpenApiaction any
+	ShareOpenApiaction  any
 	// Specifies whether users with these custom permissions can share QuickSight dashboards by sending them to PagerDuty, typically set to 'ENABLED' or 'DISABLED'. (AI-inferred)
 	SharePagerDutyAction any
-	SharePointAction any
+	SharePointAction     any
 	// Determines whether users with these custom permissions can share QuickSight dashboards and analyses to Salesforce, with allowed values 'DENY' and 'ALLOW'. (AI-inferred)
-	ShareSalesforceAction any
+	ShareSalesforceAction        any
 	ShareSandPglobalEnergyAction any
-	ShareSandPgmiaction any
+	ShareSandPgmiaction          any
 	ShareSapbillOfMaterialAction any
 	// Controls the custom permission for the share-with-SAP-Business-Partner action, where the string value (e.g., ENABLED or DISABLED) determines whether QuickSight users can share assets with SAP Business Partner accounts. (AI-inferred)
 	ShareSapbusinessPartnerAction any
-	ShareSapmaterialStockAction any
+	ShareSapmaterialStockAction   any
 	// Controls whether users with these custom permissions may share SAP physical inventory actions, typically set to 'ENABLED' or 'DISABLED' to allow or deny the action. (AI-inferred)
 	ShareSapphysicalInventoryAction any
 	// This field represents the 'SHARE_SAP_PRODUCT_MASTER_DATA_ACTION' capability in Amazon QuickSight custom permissions, which controls whether users with these permissions can share SAP product master data. (AI-inferred)
@@ -282,13 +282,13 @@ type CustomPermissions_Capabilities struct {
 	ShareSlackAction any
 	// Sets the ShareSmartsheetAction capability to either 'ENABLED' or 'DISABLED', determining whether users with these custom permissions can share Smartsheet data sources in QuickSight. (AI-inferred)
 	ShareSmartsheetAction any
-	ShareSpaces any
+	ShareSpaces           any
 	// Indicates whether sharing of Amazon Textract actions is enabled ('ENABLED') or disabled ('DISABLED') for this custom permissions profile in QuickSight. (AI-inferred)
 	ShareTextractAction any
 	// Determines whether the user can share dashboards with Zendesk, with the value typically set to 'ENABLED' or 'DISABLED'. (AI-inferred)
 	ShareZendeskAction any
-	SlackAction any
-	SmartsheetAction any
+	SlackAction        any
+	SmartsheetAction   any
 	// Controls whether users with this custom permission can create and manage QuickSight spaces, with allowed values 'ALLOW' or 'DENY'. (AI-inferred)
 	Space any
 	// This field enables or disables the 'SUBSCRIBE_DASHBOARD_EMAIL_REPORTS' capability, granting or denying users the ability to subscribe to dashboard email reports. (AI-inferred)
@@ -301,12 +301,12 @@ type CustomPermissions_Capabilities struct {
 	UseAgentWebSearch any
 	// Determines the permission state for users to invoke Amazon Bedrock actions within QuickSight, typically set to 'ALLOW' or 'DENY'. (AI-inferred)
 	UseAmazonBedrockArsaction any
-	UseAmazonBedrockFsaction any
+	UseAmazonBedrockFsaction  any
 	// Controls whether users with these QuickSight custom permissions can use the Amazon Bedrock KRS action, with the string value typically set to 'ALLOW' or 'DENY'. (AI-inferred)
 	UseAmazonBedrockKrsaction any
 	// Controls whether the QuickSight custom permissions profile enables the UseAmazonS3Action capability, which allows or denies users access to Amazon S3 actions such as using S3 data sources, typically set to ENABLED or DISABLED. (AI-inferred)
 	UseAmazonSthreeAction any
-	UseAsanaAction any
+	UseAsanaAction        any
 	// Controls whether the custom permission set authorizes the use of BambooHR actions in Amazon QuickSight, typically with a value of 'ALLOW' or 'DENY'. (AI-inferred)
 	UseBambooHraction any
 	// This field controls whether the QuickSight custom permissions profile allows the use of Amazon Bedrock models for generative BI, corresponding to the 'USE_BEDROCK_MODELS' capability in the capabilities list. (AI-inferred)
@@ -324,8 +324,8 @@ type CustomPermissions_Capabilities struct {
 	// Specifies whether users with this custom permissions profile are allowed to use fact sets in QuickSight, corresponding to the `UseFactSetAction` capability. (AI-inferred)
 	UseFactSetAction any
 	// Whether the custom permissions profile allows users to use generic HTTP actions (such as connecting to a custom HTTP endpoint as a data source) in Amazon QuickSight. (AI-inferred)
-	UseGenericHttpaction any
-	UseGithubAction any
+	UseGenericHttpaction    any
+	UseGithubAction         any
 	UseGoogleCalendarAction any
 	// Specifies whether the Use HubSpot action capability is enabled or disabled for the custom permissions profile, controlling if users can perform HubSpot-specific actions in QuickSight. (AI-inferred)
 	UseHubspotAction any
@@ -334,16 +334,16 @@ type CustomPermissions_Capabilities struct {
 	// Whether the custom permission set includes the USE_INTERCOM_ACTION capability, which grants users the ability to use the Intercom action in Amazon QuickSight analyses and dashboards. (AI-inferred)
 	UseIntercomAction any
 	// Controls whether the user can use the Jira integration action in Amazon QuickSight, with values 'ENABLED' or 'DISABLED'. (AI-inferred)
-	UseJiraAction any
+	UseJiraAction   any
 	UseLinearAction any
-	UseMcpaction any
+	UseMcpaction    any
 	UseMondayAction any
 	// Specifies whether users with these custom permissions can use Microsoft Exchange actions (such as connecting to Microsoft Exchange as a data source) in Amazon QuickSight, typically set to 'ENABLED' or 'DISABLED'. (AI-inferred)
 	UseMsexchangeAction any
 	// Controls whether the custom permission allows the use of Microsoft Teams actions (e.g., sharing insights or sending dashboard updates to Teams) in Amazon QuickSight, with values typically 'ENABLED' or 'DISABLED'. (AI-inferred)
-	UseMsteamsAction any
+	UseMsteamsAction  any
 	UseNewRelicAction any
-	UseNotionAction any
+	UseNotionAction   any
 	// Controls whether users with these custom permissions can use the OneDrive action (for example, exporting dashboards to OneDrive) by setting this capability to ENABLED or DISABLED. (AI-inferred)
 	UseOneDriveAction any
 	// Specifies whether the user or group with these custom permissions is allowed to use QuickSight OpenAPI actions to programmatically perform operations on QuickSight resources such as creating or updating dashboards and data sources. (AI-inferred)
@@ -351,9 +351,9 @@ type CustomPermissions_Capabilities struct {
 	// Determines whether users with these custom permissions can use the PagerDuty action in QuickSight, with a value of 'ENABLED' or 'DISABLED'. (AI-inferred)
 	UsePagerDutyAction any
 	// Sets the USE_SALESFORCE_ACTION capability to enabled or disabled, controlling whether users can perform Salesforce-related actions in QuickSight. (AI-inferred)
-	UseSalesforceAction any
+	UseSalesforceAction        any
 	UseSandPglobalEnergyAction any
-	UseSandPgmiaction any
+	UseSandPgmiaction          any
 	// The `use_sapbill_of_material_action` key in the `capabilities` map sets the permission status (e.g., 'ALLOW' or 'DENY') for the QuickSight SAP Bill of Materials (BOM) action when defining custom permissions for a QuickSight principal. (AI-inferred)
 	UseSapbillOfMaterialAction any
 	// Controls whether the SAP Business Partner action is enabled or disabled for users assigned these QuickSight custom permissions, where the value is typically 'ENABLED' or 'DISABLED'. (AI-inferred)
@@ -364,7 +364,7 @@ type CustomPermissions_Capabilities struct {
 	UseSapphysicalInventoryAction any
 	// Determines whether the custom permission allows or denies use of the SAP product master data action in Amazon QuickSight, typically with values like 'ALLOW' or 'DENY'. (AI-inferred)
 	UseSapproductMasterDataAction any
-	UseServiceNowAction any
+	UseServiceNowAction           any
 	// Controls whether users with this custom permissions profile can use the SharePoint action in QuickSight, such as exporting or sharing content to SharePoint. (AI-inferred)
 	UseSharePointAction any
 	// Determines whether the `USE_SLACK_ACTION` capability is enabled in the custom permissions, allowing users to use Slack actions to share QuickSight dashboards and reports. (AI-inferred)
@@ -377,7 +377,7 @@ type CustomPermissions_Capabilities struct {
 	UseZendeskAction any
 	// Specifies the state (e.g., ENABLED or DISABLED) of the View account SPICE capacity capability in QuickSight custom permissions, controlling whether users can view the account's SPICE capacity usage. (AI-inferred)
 	ViewAccountSpicecapacity any
-	ZendeskAction any
+	ZendeskAction            any
 }
 
 type CustomPermissions_Tags struct {
@@ -388,238 +388,238 @@ type CustomPermissions_Tags struct {
 }
 
 var CustomPermissions_CapabilitiesFields = ubx.FieldMap{
-		"AccessAppsNativeDataStore": ubx.FieldSpec{WireName: "access_apps_native_data_store"},
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"AddOrRunAnomalyDetectionForAnalyses": ubx.FieldSpec{WireName: "add_or_run_anomaly_detection_for_analyses"},
-		"AmazonBedrockArsaction": ubx.FieldSpec{WireName: "amazon_bedrock_arsaction"},
-		"AmazonBedrockFsaction": ubx.FieldSpec{WireName: "amazon_bedrock_fsaction"},
-		"AmazonBedrockKrsaction": ubx.FieldSpec{WireName: "amazon_bedrock_krsaction"},
-		"AmazonSthreeAction": ubx.FieldSpec{WireName: "amazon_sthree_action"},
-		"Analysis": ubx.FieldSpec{WireName: "analysis"},
-		"ApproveFlowShareRequests": ubx.FieldSpec{WireName: "approve_flow_share_requests"},
-		"Apps": ubx.FieldSpec{WireName: "apps"},
-		"AsanaAction": ubx.FieldSpec{WireName: "asana_action"},
-		"Automate": ubx.FieldSpec{WireName: "automate"},
-		"BambooHraction": ubx.FieldSpec{WireName: "bamboo_hraction"},
-		"BoxAgentAction": ubx.FieldSpec{WireName: "box_agent_action"},
-		"BuildCalculatedFieldWithQ": ubx.FieldSpec{WireName: "build_calculated_field_with_q"},
-		"CanvaAgentAction": ubx.FieldSpec{WireName: "canva_agent_action"},
-		"ChatAgent": ubx.FieldSpec{WireName: "chat_agent"},
-		"ComprehendAction": ubx.FieldSpec{WireName: "comprehend_action"},
-		"ComprehendMedicalAction": ubx.FieldSpec{WireName: "comprehend_medical_action"},
-		"ConfluenceAction": ubx.FieldSpec{WireName: "confluence_action"},
-		"CreateAndUpdateAmazonBedrockArsaction": ubx.FieldSpec{WireName: "create_and_update_amazon_bedrock_arsaction"},
-		"CreateAndUpdateAmazonBedrockFsaction": ubx.FieldSpec{WireName: "create_and_update_amazon_bedrock_fsaction"},
-		"CreateAndUpdateAmazonBedrockKrsaction": ubx.FieldSpec{WireName: "create_and_update_amazon_bedrock_krsaction"},
-		"CreateAndUpdateAmazonSthreeAction": ubx.FieldSpec{WireName: "create_and_update_amazon_sthree_action"},
-		"CreateAndUpdateApps": ubx.FieldSpec{WireName: "create_and_update_apps"},
-		"CreateAndUpdateAsanaAction": ubx.FieldSpec{WireName: "create_and_update_asana_action"},
-		"CreateAndUpdateBambooHraction": ubx.FieldSpec{WireName: "create_and_update_bamboo_hraction"},
-		"CreateAndUpdateBoxAgentAction": ubx.FieldSpec{WireName: "create_and_update_box_agent_action"},
-		"CreateAndUpdateCanvaAgentAction": ubx.FieldSpec{WireName: "create_and_update_canva_agent_action"},
-		"CreateAndUpdateComprehendAction": ubx.FieldSpec{WireName: "create_and_update_comprehend_action"},
-		"CreateAndUpdateComprehendMedicalAction": ubx.FieldSpec{WireName: "create_and_update_comprehend_medical_action"},
-		"CreateAndUpdateConfluenceAction": ubx.FieldSpec{WireName: "create_and_update_confluence_action"},
-		"CreateAndUpdateDashboardEmailReports": ubx.FieldSpec{WireName: "create_and_update_dashboard_email_reports"},
-		"CreateAndUpdateDataSources": ubx.FieldSpec{WireName: "create_and_update_data_sources"},
-		"CreateAndUpdateDatasets": ubx.FieldSpec{WireName: "create_and_update_datasets"},
-		"CreateAndUpdateFactSetAction": ubx.FieldSpec{WireName: "create_and_update_fact_set_action"},
-		"CreateAndUpdateGenericHttpaction": ubx.FieldSpec{WireName: "create_and_update_generic_httpaction"},
-		"CreateAndUpdateGithubAction": ubx.FieldSpec{WireName: "create_and_update_github_action"},
-		"CreateAndUpdateGoogleCalendarAction": ubx.FieldSpec{WireName: "create_and_update_google_calendar_action"},
-		"CreateAndUpdateHubspotAction": ubx.FieldSpec{WireName: "create_and_update_hubspot_action"},
-		"CreateAndUpdateHuggingFaceAction": ubx.FieldSpec{WireName: "create_and_update_hugging_face_action"},
-		"CreateAndUpdateIntercomAction": ubx.FieldSpec{WireName: "create_and_update_intercom_action"},
-		"CreateAndUpdateJiraAction": ubx.FieldSpec{WireName: "create_and_update_jira_action"},
-		"CreateAndUpdateKnowledgeBases": ubx.FieldSpec{WireName: "create_and_update_knowledge_bases"},
-		"CreateAndUpdateLinearAction": ubx.FieldSpec{WireName: "create_and_update_linear_action"},
-		"CreateAndUpdateMcpaction": ubx.FieldSpec{WireName: "create_and_update_mcpaction"},
-		"CreateAndUpdateMondayAction": ubx.FieldSpec{WireName: "create_and_update_monday_action"},
-		"CreateAndUpdateMsexchangeAction": ubx.FieldSpec{WireName: "create_and_update_msexchange_action"},
-		"CreateAndUpdateMsteamsAction": ubx.FieldSpec{WireName: "create_and_update_msteams_action"},
-		"CreateAndUpdateNewRelicAction": ubx.FieldSpec{WireName: "create_and_update_new_relic_action"},
-		"CreateAndUpdateNotionAction": ubx.FieldSpec{WireName: "create_and_update_notion_action"},
-		"CreateAndUpdateOneDriveAction": ubx.FieldSpec{WireName: "create_and_update_one_drive_action"},
-		"CreateAndUpdateOpenApiaction": ubx.FieldSpec{WireName: "create_and_update_open_apiaction"},
-		"CreateAndUpdatePagerDutyAction": ubx.FieldSpec{WireName: "create_and_update_pager_duty_action"},
-		"CreateAndUpdateSalesforceAction": ubx.FieldSpec{WireName: "create_and_update_salesforce_action"},
-		"CreateAndUpdateSandPglobalEnergyAction": ubx.FieldSpec{WireName: "create_and_update_sand_pglobal_energy_action"},
-		"CreateAndUpdateSandPgmiaction": ubx.FieldSpec{WireName: "create_and_update_sand_pgmiaction"},
-		"CreateAndUpdateSapbillOfMaterialAction": ubx.FieldSpec{WireName: "create_and_update_sapbill_of_material_action"},
-		"CreateAndUpdateSapbusinessPartnerAction": ubx.FieldSpec{WireName: "create_and_update_sapbusiness_partner_action"},
-		"CreateAndUpdateSapmaterialStockAction": ubx.FieldSpec{WireName: "create_and_update_sapmaterial_stock_action"},
-		"CreateAndUpdateSapphysicalInventoryAction": ubx.FieldSpec{WireName: "create_and_update_sapphysical_inventory_action"},
-		"CreateAndUpdateSapproductMasterDataAction": ubx.FieldSpec{WireName: "create_and_update_sapproduct_master_data_action"},
-		"CreateAndUpdateServiceNowAction": ubx.FieldSpec{WireName: "create_and_update_service_now_action"},
-		"CreateAndUpdateSharePointAction": ubx.FieldSpec{WireName: "create_and_update_share_point_action"},
-		"CreateAndUpdateSlackAction": ubx.FieldSpec{WireName: "create_and_update_slack_action"},
-		"CreateAndUpdateSmartsheetAction": ubx.FieldSpec{WireName: "create_and_update_smartsheet_action"},
-		"CreateAndUpdateTextractAction": ubx.FieldSpec{WireName: "create_and_update_textract_action"},
-		"CreateAndUpdateThemes": ubx.FieldSpec{WireName: "create_and_update_themes"},
-		"CreateAndUpdateThresholdAlerts": ubx.FieldSpec{WireName: "create_and_update_threshold_alerts"},
-		"CreateAndUpdateZendeskAction": ubx.FieldSpec{WireName: "create_and_update_zendesk_action"},
-		"CreateChatAgents": ubx.FieldSpec{WireName: "create_chat_agents"},
-		"CreateDashboardExecutiveSummaryWithQ": ubx.FieldSpec{WireName: "create_dashboard_executive_summary_with_q"},
-		"CreateSharedFolders": ubx.FieldSpec{WireName: "create_shared_folders"},
-		"CreateSpaces": ubx.FieldSpec{WireName: "create_spaces"},
-		"CreateSpicedataset": ubx.FieldSpec{WireName: "create_spicedataset"},
-		"Dashboard": ubx.FieldSpec{WireName: "dashboard"},
-		"EditVisualWithQ": ubx.FieldSpec{WireName: "edit_visual_with_q"},
-		"ExportToCsv": ubx.FieldSpec{WireName: "export_to_csv"},
-		"ExportToCsvInScheduledReports": ubx.FieldSpec{WireName: "export_to_csv_in_scheduled_reports"},
-		"ExportToExcel": ubx.FieldSpec{WireName: "export_to_excel"},
-		"ExportToExcelInScheduledReports": ubx.FieldSpec{WireName: "export_to_excel_in_scheduled_reports"},
-		"ExportToPdf": ubx.FieldSpec{WireName: "export_to_pdf"},
-		"ExportToPdfInScheduledReports": ubx.FieldSpec{WireName: "export_to_pdf_in_scheduled_reports"},
-		"Extension": ubx.FieldSpec{WireName: "extension"},
-		"FactSetAction": ubx.FieldSpec{WireName: "fact_set_action"},
-		"Flow": ubx.FieldSpec{WireName: "flow"},
-		"GenericHttpaction": ubx.FieldSpec{WireName: "generic_httpaction"},
-		"GithubAction": ubx.FieldSpec{WireName: "github_action"},
-		"GoogleCalendarAction": ubx.FieldSpec{WireName: "google_calendar_action"},
-		"HubspotAction": ubx.FieldSpec{WireName: "hubspot_action"},
-		"HuggingFaceAction": ubx.FieldSpec{WireName: "hugging_face_action"},
-		"IncludeContentInScheduledReportsEmail": ubx.FieldSpec{WireName: "include_content_in_scheduled_reports_email"},
-		"IntercomAction": ubx.FieldSpec{WireName: "intercom_action"},
-		"InvokeAppsAiinference": ubx.FieldSpec{WireName: "invoke_apps_aiinference"},
-		"JiraAction": ubx.FieldSpec{WireName: "jira_action"},
-		"KnowledgeBase": ubx.FieldSpec{WireName: "knowledge_base"},
-		"LinearAction": ubx.FieldSpec{WireName: "linear_action"},
-		"ManageSharedFolders": ubx.FieldSpec{WireName: "manage_shared_folders"},
-		"Mcpaction": ubx.FieldSpec{WireName: "mcpaction"},
-		"MondayAction": ubx.FieldSpec{WireName: "monday_action"},
-		"MsexchangeAction": ubx.FieldSpec{WireName: "msexchange_action"},
-		"MsteamsAction": ubx.FieldSpec{WireName: "msteams_action"},
-		"NewRelicAction": ubx.FieldSpec{WireName: "new_relic_action"},
-		"NotionAction": ubx.FieldSpec{WireName: "notion_action"},
-		"OneDriveAction": ubx.FieldSpec{WireName: "one_drive_action"},
-		"OpenApiaction": ubx.FieldSpec{WireName: "open_apiaction"},
-		"PagerDutyAction": ubx.FieldSpec{WireName: "pager_duty_action"},
-		"PerformFlowUiTask": ubx.FieldSpec{WireName: "perform_flow_ui_task"},
-		"PrintReports": ubx.FieldSpec{WireName: "print_reports"},
-		"PublishWithoutApproval": ubx.FieldSpec{WireName: "publish_without_approval"},
-		"RenameSharedFolders": ubx.FieldSpec{WireName: "rename_shared_folders"},
-		"Research": ubx.FieldSpec{WireName: "research"},
-		"SalesforceAction": ubx.FieldSpec{WireName: "salesforce_action"},
-		"SandPglobalEnergyAction": ubx.FieldSpec{WireName: "sand_pglobal_energy_action"},
-		"SandPgmiaction": ubx.FieldSpec{WireName: "sand_pgmiaction"},
-		"SapbillOfMaterialAction": ubx.FieldSpec{WireName: "sapbill_of_material_action"},
-		"SapbusinessPartnerAction": ubx.FieldSpec{WireName: "sapbusiness_partner_action"},
-		"SapmaterialStockAction": ubx.FieldSpec{WireName: "sapmaterial_stock_action"},
-		"SapphysicalInventoryAction": ubx.FieldSpec{WireName: "sapphysical_inventory_action"},
-		"SapproductMasterDataAction": ubx.FieldSpec{WireName: "sapproduct_master_data_action"},
-		"ServiceNowAction": ubx.FieldSpec{WireName: "service_now_action"},
-		"ShareAmazonBedrockArsaction": ubx.FieldSpec{WireName: "share_amazon_bedrock_arsaction"},
-		"ShareAmazonBedrockFsaction": ubx.FieldSpec{WireName: "share_amazon_bedrock_fsaction"},
-		"ShareAmazonBedrockKrsaction": ubx.FieldSpec{WireName: "share_amazon_bedrock_krsaction"},
-		"ShareAmazonSthreeAction": ubx.FieldSpec{WireName: "share_amazon_sthree_action"},
-		"ShareAnalyses": ubx.FieldSpec{WireName: "share_analyses"},
-		"ShareApps": ubx.FieldSpec{WireName: "share_apps"},
-		"ShareAsanaAction": ubx.FieldSpec{WireName: "share_asana_action"},
-		"ShareBambooHraction": ubx.FieldSpec{WireName: "share_bamboo_hraction"},
-		"ShareBoxAgentAction": ubx.FieldSpec{WireName: "share_box_agent_action"},
-		"ShareCanvaAgentAction": ubx.FieldSpec{WireName: "share_canva_agent_action"},
-		"ShareChatAgents": ubx.FieldSpec{WireName: "share_chat_agents"},
-		"ShareComprehendAction": ubx.FieldSpec{WireName: "share_comprehend_action"},
-		"ShareComprehendMedicalAction": ubx.FieldSpec{WireName: "share_comprehend_medical_action"},
-		"ShareConfluenceAction": ubx.FieldSpec{WireName: "share_confluence_action"},
-		"ShareDashboards": ubx.FieldSpec{WireName: "share_dashboards"},
-		"ShareDataSources": ubx.FieldSpec{WireName: "share_data_sources"},
-		"ShareDatasets": ubx.FieldSpec{WireName: "share_datasets"},
-		"ShareFactSetAction": ubx.FieldSpec{WireName: "share_fact_set_action"},
-		"ShareGenericHttpaction": ubx.FieldSpec{WireName: "share_generic_httpaction"},
-		"ShareGithubAction": ubx.FieldSpec{WireName: "share_github_action"},
-		"ShareGoogleCalendarAction": ubx.FieldSpec{WireName: "share_google_calendar_action"},
-		"ShareHubspotAction": ubx.FieldSpec{WireName: "share_hubspot_action"},
-		"ShareHuggingFaceAction": ubx.FieldSpec{WireName: "share_hugging_face_action"},
-		"ShareIntercomAction": ubx.FieldSpec{WireName: "share_intercom_action"},
-		"ShareJiraAction": ubx.FieldSpec{WireName: "share_jira_action"},
-		"ShareKnowledgeBases": ubx.FieldSpec{WireName: "share_knowledge_bases"},
-		"ShareLinearAction": ubx.FieldSpec{WireName: "share_linear_action"},
-		"ShareMcpaction": ubx.FieldSpec{WireName: "share_mcpaction"},
-		"ShareMondayAction": ubx.FieldSpec{WireName: "share_monday_action"},
-		"ShareMsexchangeAction": ubx.FieldSpec{WireName: "share_msexchange_action"},
-		"ShareMsteamsAction": ubx.FieldSpec{WireName: "share_msteams_action"},
-		"ShareNewRelicAction": ubx.FieldSpec{WireName: "share_new_relic_action"},
-		"ShareNotionAction": ubx.FieldSpec{WireName: "share_notion_action"},
-		"ShareOneDriveAction": ubx.FieldSpec{WireName: "share_one_drive_action"},
-		"ShareOpenApiaction": ubx.FieldSpec{WireName: "share_open_apiaction"},
-		"SharePagerDutyAction": ubx.FieldSpec{WireName: "share_pager_duty_action"},
-		"SharePointAction": ubx.FieldSpec{WireName: "share_point_action"},
-		"ShareSalesforceAction": ubx.FieldSpec{WireName: "share_salesforce_action"},
-		"ShareSandPglobalEnergyAction": ubx.FieldSpec{WireName: "share_sand_pglobal_energy_action"},
-		"ShareSandPgmiaction": ubx.FieldSpec{WireName: "share_sand_pgmiaction"},
-		"ShareSapbillOfMaterialAction": ubx.FieldSpec{WireName: "share_sapbill_of_material_action"},
-		"ShareSapbusinessPartnerAction": ubx.FieldSpec{WireName: "share_sapbusiness_partner_action"},
-		"ShareSapmaterialStockAction": ubx.FieldSpec{WireName: "share_sapmaterial_stock_action"},
-		"ShareSapphysicalInventoryAction": ubx.FieldSpec{WireName: "share_sapphysical_inventory_action"},
-		"ShareSapproductMasterDataAction": ubx.FieldSpec{WireName: "share_sapproduct_master_data_action"},
-		"ShareServiceNowAction": ubx.FieldSpec{WireName: "share_service_now_action"},
-		"ShareSharePointAction": ubx.FieldSpec{WireName: "share_share_point_action"},
-		"ShareSlackAction": ubx.FieldSpec{WireName: "share_slack_action"},
-		"ShareSmartsheetAction": ubx.FieldSpec{WireName: "share_smartsheet_action"},
-		"ShareSpaces": ubx.FieldSpec{WireName: "share_spaces"},
-		"ShareTextractAction": ubx.FieldSpec{WireName: "share_textract_action"},
-		"ShareZendeskAction": ubx.FieldSpec{WireName: "share_zendesk_action"},
-		"SlackAction": ubx.FieldSpec{WireName: "slack_action"},
-		"SmartsheetAction": ubx.FieldSpec{WireName: "smartsheet_action"},
-		"Space": ubx.FieldSpec{WireName: "space"},
-		"SubscribeDashboardEmailReports": ubx.FieldSpec{WireName: "subscribe_dashboard_email_reports"},
-		"TextractAction": ubx.FieldSpec{WireName: "textract_action"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-		"UseAgentWebSearch": ubx.FieldSpec{WireName: "use_agent_web_search"},
-		"UseAmazonBedrockArsaction": ubx.FieldSpec{WireName: "use_amazon_bedrock_arsaction"},
-		"UseAmazonBedrockFsaction": ubx.FieldSpec{WireName: "use_amazon_bedrock_fsaction"},
-		"UseAmazonBedrockKrsaction": ubx.FieldSpec{WireName: "use_amazon_bedrock_krsaction"},
-		"UseAmazonSthreeAction": ubx.FieldSpec{WireName: "use_amazon_sthree_action"},
-		"UseAsanaAction": ubx.FieldSpec{WireName: "use_asana_action"},
-		"UseBambooHraction": ubx.FieldSpec{WireName: "use_bamboo_hraction"},
-		"UseBedrockModels": ubx.FieldSpec{WireName: "use_bedrock_models"},
-		"UseBoxAgentAction": ubx.FieldSpec{WireName: "use_box_agent_action"},
-		"UseCanvaAgentAction": ubx.FieldSpec{WireName: "use_canva_agent_action"},
-		"UseComprehendAction": ubx.FieldSpec{WireName: "use_comprehend_action"},
-		"UseComprehendMedicalAction": ubx.FieldSpec{WireName: "use_comprehend_medical_action"},
-		"UseConfluenceAction": ubx.FieldSpec{WireName: "use_confluence_action"},
-		"UseFactSetAction": ubx.FieldSpec{WireName: "use_fact_set_action"},
-		"UseGenericHttpaction": ubx.FieldSpec{WireName: "use_generic_httpaction"},
-		"UseGithubAction": ubx.FieldSpec{WireName: "use_github_action"},
-		"UseGoogleCalendarAction": ubx.FieldSpec{WireName: "use_google_calendar_action"},
-		"UseHubspotAction": ubx.FieldSpec{WireName: "use_hubspot_action"},
-		"UseHuggingFaceAction": ubx.FieldSpec{WireName: "use_hugging_face_action"},
-		"UseIntercomAction": ubx.FieldSpec{WireName: "use_intercom_action"},
-		"UseJiraAction": ubx.FieldSpec{WireName: "use_jira_action"},
-		"UseLinearAction": ubx.FieldSpec{WireName: "use_linear_action"},
-		"UseMcpaction": ubx.FieldSpec{WireName: "use_mcpaction"},
-		"UseMondayAction": ubx.FieldSpec{WireName: "use_monday_action"},
-		"UseMsexchangeAction": ubx.FieldSpec{WireName: "use_msexchange_action"},
-		"UseMsteamsAction": ubx.FieldSpec{WireName: "use_msteams_action"},
-		"UseNewRelicAction": ubx.FieldSpec{WireName: "use_new_relic_action"},
-		"UseNotionAction": ubx.FieldSpec{WireName: "use_notion_action"},
-		"UseOneDriveAction": ubx.FieldSpec{WireName: "use_one_drive_action"},
-		"UseOpenApiaction": ubx.FieldSpec{WireName: "use_open_apiaction"},
-		"UsePagerDutyAction": ubx.FieldSpec{WireName: "use_pager_duty_action"},
-		"UseSalesforceAction": ubx.FieldSpec{WireName: "use_salesforce_action"},
-		"UseSandPglobalEnergyAction": ubx.FieldSpec{WireName: "use_sand_pglobal_energy_action"},
-		"UseSandPgmiaction": ubx.FieldSpec{WireName: "use_sand_pgmiaction"},
-		"UseSapbillOfMaterialAction": ubx.FieldSpec{WireName: "use_sapbill_of_material_action"},
-		"UseSapbusinessPartnerAction": ubx.FieldSpec{WireName: "use_sapbusiness_partner_action"},
-		"UseSapmaterialStockAction": ubx.FieldSpec{WireName: "use_sapmaterial_stock_action"},
-		"UseSapphysicalInventoryAction": ubx.FieldSpec{WireName: "use_sapphysical_inventory_action"},
-		"UseSapproductMasterDataAction": ubx.FieldSpec{WireName: "use_sapproduct_master_data_action"},
-		"UseServiceNowAction": ubx.FieldSpec{WireName: "use_service_now_action"},
-		"UseSharePointAction": ubx.FieldSpec{WireName: "use_share_point_action"},
-		"UseSlackAction": ubx.FieldSpec{WireName: "use_slack_action"},
-		"UseSmartsheetAction": ubx.FieldSpec{WireName: "use_smartsheet_action"},
-		"UseTextractAction": ubx.FieldSpec{WireName: "use_textract_action"},
-		"UseZendeskAction": ubx.FieldSpec{WireName: "use_zendesk_action"},
-		"ViewAccountSpicecapacity": ubx.FieldSpec{WireName: "view_account_spicecapacity"},
-		"ZendeskAction": ubx.FieldSpec{WireName: "zendesk_action"},
-	}
+	"AccessAppsNativeDataStore":                 ubx.FieldSpec{WireName: "access_apps_native_data_store"},
+	"Action":                                    ubx.FieldSpec{WireName: "action"},
+	"AddOrRunAnomalyDetectionForAnalyses":       ubx.FieldSpec{WireName: "add_or_run_anomaly_detection_for_analyses"},
+	"AmazonBedrockArsaction":                    ubx.FieldSpec{WireName: "amazon_bedrock_arsaction"},
+	"AmazonBedrockFsaction":                     ubx.FieldSpec{WireName: "amazon_bedrock_fsaction"},
+	"AmazonBedrockKrsaction":                    ubx.FieldSpec{WireName: "amazon_bedrock_krsaction"},
+	"AmazonSthreeAction":                        ubx.FieldSpec{WireName: "amazon_sthree_action"},
+	"Analysis":                                  ubx.FieldSpec{WireName: "analysis"},
+	"ApproveFlowShareRequests":                  ubx.FieldSpec{WireName: "approve_flow_share_requests"},
+	"Apps":                                      ubx.FieldSpec{WireName: "apps"},
+	"AsanaAction":                               ubx.FieldSpec{WireName: "asana_action"},
+	"Automate":                                  ubx.FieldSpec{WireName: "automate"},
+	"BambooHraction":                            ubx.FieldSpec{WireName: "bamboo_hraction"},
+	"BoxAgentAction":                            ubx.FieldSpec{WireName: "box_agent_action"},
+	"BuildCalculatedFieldWithQ":                 ubx.FieldSpec{WireName: "build_calculated_field_with_q"},
+	"CanvaAgentAction":                          ubx.FieldSpec{WireName: "canva_agent_action"},
+	"ChatAgent":                                 ubx.FieldSpec{WireName: "chat_agent"},
+	"ComprehendAction":                          ubx.FieldSpec{WireName: "comprehend_action"},
+	"ComprehendMedicalAction":                   ubx.FieldSpec{WireName: "comprehend_medical_action"},
+	"ConfluenceAction":                          ubx.FieldSpec{WireName: "confluence_action"},
+	"CreateAndUpdateAmazonBedrockArsaction":     ubx.FieldSpec{WireName: "create_and_update_amazon_bedrock_arsaction"},
+	"CreateAndUpdateAmazonBedrockFsaction":      ubx.FieldSpec{WireName: "create_and_update_amazon_bedrock_fsaction"},
+	"CreateAndUpdateAmazonBedrockKrsaction":     ubx.FieldSpec{WireName: "create_and_update_amazon_bedrock_krsaction"},
+	"CreateAndUpdateAmazonSthreeAction":         ubx.FieldSpec{WireName: "create_and_update_amazon_sthree_action"},
+	"CreateAndUpdateApps":                       ubx.FieldSpec{WireName: "create_and_update_apps"},
+	"CreateAndUpdateAsanaAction":                ubx.FieldSpec{WireName: "create_and_update_asana_action"},
+	"CreateAndUpdateBambooHraction":             ubx.FieldSpec{WireName: "create_and_update_bamboo_hraction"},
+	"CreateAndUpdateBoxAgentAction":             ubx.FieldSpec{WireName: "create_and_update_box_agent_action"},
+	"CreateAndUpdateCanvaAgentAction":           ubx.FieldSpec{WireName: "create_and_update_canva_agent_action"},
+	"CreateAndUpdateComprehendAction":           ubx.FieldSpec{WireName: "create_and_update_comprehend_action"},
+	"CreateAndUpdateComprehendMedicalAction":    ubx.FieldSpec{WireName: "create_and_update_comprehend_medical_action"},
+	"CreateAndUpdateConfluenceAction":           ubx.FieldSpec{WireName: "create_and_update_confluence_action"},
+	"CreateAndUpdateDashboardEmailReports":      ubx.FieldSpec{WireName: "create_and_update_dashboard_email_reports"},
+	"CreateAndUpdateDataSources":                ubx.FieldSpec{WireName: "create_and_update_data_sources"},
+	"CreateAndUpdateDatasets":                   ubx.FieldSpec{WireName: "create_and_update_datasets"},
+	"CreateAndUpdateFactSetAction":              ubx.FieldSpec{WireName: "create_and_update_fact_set_action"},
+	"CreateAndUpdateGenericHttpaction":          ubx.FieldSpec{WireName: "create_and_update_generic_httpaction"},
+	"CreateAndUpdateGithubAction":               ubx.FieldSpec{WireName: "create_and_update_github_action"},
+	"CreateAndUpdateGoogleCalendarAction":       ubx.FieldSpec{WireName: "create_and_update_google_calendar_action"},
+	"CreateAndUpdateHubspotAction":              ubx.FieldSpec{WireName: "create_and_update_hubspot_action"},
+	"CreateAndUpdateHuggingFaceAction":          ubx.FieldSpec{WireName: "create_and_update_hugging_face_action"},
+	"CreateAndUpdateIntercomAction":             ubx.FieldSpec{WireName: "create_and_update_intercom_action"},
+	"CreateAndUpdateJiraAction":                 ubx.FieldSpec{WireName: "create_and_update_jira_action"},
+	"CreateAndUpdateKnowledgeBases":             ubx.FieldSpec{WireName: "create_and_update_knowledge_bases"},
+	"CreateAndUpdateLinearAction":               ubx.FieldSpec{WireName: "create_and_update_linear_action"},
+	"CreateAndUpdateMcpaction":                  ubx.FieldSpec{WireName: "create_and_update_mcpaction"},
+	"CreateAndUpdateMondayAction":               ubx.FieldSpec{WireName: "create_and_update_monday_action"},
+	"CreateAndUpdateMsexchangeAction":           ubx.FieldSpec{WireName: "create_and_update_msexchange_action"},
+	"CreateAndUpdateMsteamsAction":              ubx.FieldSpec{WireName: "create_and_update_msteams_action"},
+	"CreateAndUpdateNewRelicAction":             ubx.FieldSpec{WireName: "create_and_update_new_relic_action"},
+	"CreateAndUpdateNotionAction":               ubx.FieldSpec{WireName: "create_and_update_notion_action"},
+	"CreateAndUpdateOneDriveAction":             ubx.FieldSpec{WireName: "create_and_update_one_drive_action"},
+	"CreateAndUpdateOpenApiaction":              ubx.FieldSpec{WireName: "create_and_update_open_apiaction"},
+	"CreateAndUpdatePagerDutyAction":            ubx.FieldSpec{WireName: "create_and_update_pager_duty_action"},
+	"CreateAndUpdateSalesforceAction":           ubx.FieldSpec{WireName: "create_and_update_salesforce_action"},
+	"CreateAndUpdateSandPglobalEnergyAction":    ubx.FieldSpec{WireName: "create_and_update_sand_pglobal_energy_action"},
+	"CreateAndUpdateSandPgmiaction":             ubx.FieldSpec{WireName: "create_and_update_sand_pgmiaction"},
+	"CreateAndUpdateSapbillOfMaterialAction":    ubx.FieldSpec{WireName: "create_and_update_sapbill_of_material_action"},
+	"CreateAndUpdateSapbusinessPartnerAction":   ubx.FieldSpec{WireName: "create_and_update_sapbusiness_partner_action"},
+	"CreateAndUpdateSapmaterialStockAction":     ubx.FieldSpec{WireName: "create_and_update_sapmaterial_stock_action"},
+	"CreateAndUpdateSapphysicalInventoryAction": ubx.FieldSpec{WireName: "create_and_update_sapphysical_inventory_action"},
+	"CreateAndUpdateSapproductMasterDataAction": ubx.FieldSpec{WireName: "create_and_update_sapproduct_master_data_action"},
+	"CreateAndUpdateServiceNowAction":           ubx.FieldSpec{WireName: "create_and_update_service_now_action"},
+	"CreateAndUpdateSharePointAction":           ubx.FieldSpec{WireName: "create_and_update_share_point_action"},
+	"CreateAndUpdateSlackAction":                ubx.FieldSpec{WireName: "create_and_update_slack_action"},
+	"CreateAndUpdateSmartsheetAction":           ubx.FieldSpec{WireName: "create_and_update_smartsheet_action"},
+	"CreateAndUpdateTextractAction":             ubx.FieldSpec{WireName: "create_and_update_textract_action"},
+	"CreateAndUpdateThemes":                     ubx.FieldSpec{WireName: "create_and_update_themes"},
+	"CreateAndUpdateThresholdAlerts":            ubx.FieldSpec{WireName: "create_and_update_threshold_alerts"},
+	"CreateAndUpdateZendeskAction":              ubx.FieldSpec{WireName: "create_and_update_zendesk_action"},
+	"CreateChatAgents":                          ubx.FieldSpec{WireName: "create_chat_agents"},
+	"CreateDashboardExecutiveSummaryWithQ":      ubx.FieldSpec{WireName: "create_dashboard_executive_summary_with_q"},
+	"CreateSharedFolders":                       ubx.FieldSpec{WireName: "create_shared_folders"},
+	"CreateSpaces":                              ubx.FieldSpec{WireName: "create_spaces"},
+	"CreateSpicedataset":                        ubx.FieldSpec{WireName: "create_spicedataset"},
+	"Dashboard":                                 ubx.FieldSpec{WireName: "dashboard"},
+	"EditVisualWithQ":                           ubx.FieldSpec{WireName: "edit_visual_with_q"},
+	"ExportToCsv":                               ubx.FieldSpec{WireName: "export_to_csv"},
+	"ExportToCsvInScheduledReports":             ubx.FieldSpec{WireName: "export_to_csv_in_scheduled_reports"},
+	"ExportToExcel":                             ubx.FieldSpec{WireName: "export_to_excel"},
+	"ExportToExcelInScheduledReports":           ubx.FieldSpec{WireName: "export_to_excel_in_scheduled_reports"},
+	"ExportToPdf":                               ubx.FieldSpec{WireName: "export_to_pdf"},
+	"ExportToPdfInScheduledReports":             ubx.FieldSpec{WireName: "export_to_pdf_in_scheduled_reports"},
+	"Extension":                                 ubx.FieldSpec{WireName: "extension"},
+	"FactSetAction":                             ubx.FieldSpec{WireName: "fact_set_action"},
+	"Flow":                                      ubx.FieldSpec{WireName: "flow"},
+	"GenericHttpaction":                         ubx.FieldSpec{WireName: "generic_httpaction"},
+	"GithubAction":                              ubx.FieldSpec{WireName: "github_action"},
+	"GoogleCalendarAction":                      ubx.FieldSpec{WireName: "google_calendar_action"},
+	"HubspotAction":                             ubx.FieldSpec{WireName: "hubspot_action"},
+	"HuggingFaceAction":                         ubx.FieldSpec{WireName: "hugging_face_action"},
+	"IncludeContentInScheduledReportsEmail":     ubx.FieldSpec{WireName: "include_content_in_scheduled_reports_email"},
+	"IntercomAction":                            ubx.FieldSpec{WireName: "intercom_action"},
+	"InvokeAppsAiinference":                     ubx.FieldSpec{WireName: "invoke_apps_aiinference"},
+	"JiraAction":                                ubx.FieldSpec{WireName: "jira_action"},
+	"KnowledgeBase":                             ubx.FieldSpec{WireName: "knowledge_base"},
+	"LinearAction":                              ubx.FieldSpec{WireName: "linear_action"},
+	"ManageSharedFolders":                       ubx.FieldSpec{WireName: "manage_shared_folders"},
+	"Mcpaction":                                 ubx.FieldSpec{WireName: "mcpaction"},
+	"MondayAction":                              ubx.FieldSpec{WireName: "monday_action"},
+	"MsexchangeAction":                          ubx.FieldSpec{WireName: "msexchange_action"},
+	"MsteamsAction":                             ubx.FieldSpec{WireName: "msteams_action"},
+	"NewRelicAction":                            ubx.FieldSpec{WireName: "new_relic_action"},
+	"NotionAction":                              ubx.FieldSpec{WireName: "notion_action"},
+	"OneDriveAction":                            ubx.FieldSpec{WireName: "one_drive_action"},
+	"OpenApiaction":                             ubx.FieldSpec{WireName: "open_apiaction"},
+	"PagerDutyAction":                           ubx.FieldSpec{WireName: "pager_duty_action"},
+	"PerformFlowUiTask":                         ubx.FieldSpec{WireName: "perform_flow_ui_task"},
+	"PrintReports":                              ubx.FieldSpec{WireName: "print_reports"},
+	"PublishWithoutApproval":                    ubx.FieldSpec{WireName: "publish_without_approval"},
+	"RenameSharedFolders":                       ubx.FieldSpec{WireName: "rename_shared_folders"},
+	"Research":                                  ubx.FieldSpec{WireName: "research"},
+	"SalesforceAction":                          ubx.FieldSpec{WireName: "salesforce_action"},
+	"SandPglobalEnergyAction":                   ubx.FieldSpec{WireName: "sand_pglobal_energy_action"},
+	"SandPgmiaction":                            ubx.FieldSpec{WireName: "sand_pgmiaction"},
+	"SapbillOfMaterialAction":                   ubx.FieldSpec{WireName: "sapbill_of_material_action"},
+	"SapbusinessPartnerAction":                  ubx.FieldSpec{WireName: "sapbusiness_partner_action"},
+	"SapmaterialStockAction":                    ubx.FieldSpec{WireName: "sapmaterial_stock_action"},
+	"SapphysicalInventoryAction":                ubx.FieldSpec{WireName: "sapphysical_inventory_action"},
+	"SapproductMasterDataAction":                ubx.FieldSpec{WireName: "sapproduct_master_data_action"},
+	"ServiceNowAction":                          ubx.FieldSpec{WireName: "service_now_action"},
+	"ShareAmazonBedrockArsaction":               ubx.FieldSpec{WireName: "share_amazon_bedrock_arsaction"},
+	"ShareAmazonBedrockFsaction":                ubx.FieldSpec{WireName: "share_amazon_bedrock_fsaction"},
+	"ShareAmazonBedrockKrsaction":               ubx.FieldSpec{WireName: "share_amazon_bedrock_krsaction"},
+	"ShareAmazonSthreeAction":                   ubx.FieldSpec{WireName: "share_amazon_sthree_action"},
+	"ShareAnalyses":                             ubx.FieldSpec{WireName: "share_analyses"},
+	"ShareApps":                                 ubx.FieldSpec{WireName: "share_apps"},
+	"ShareAsanaAction":                          ubx.FieldSpec{WireName: "share_asana_action"},
+	"ShareBambooHraction":                       ubx.FieldSpec{WireName: "share_bamboo_hraction"},
+	"ShareBoxAgentAction":                       ubx.FieldSpec{WireName: "share_box_agent_action"},
+	"ShareCanvaAgentAction":                     ubx.FieldSpec{WireName: "share_canva_agent_action"},
+	"ShareChatAgents":                           ubx.FieldSpec{WireName: "share_chat_agents"},
+	"ShareComprehendAction":                     ubx.FieldSpec{WireName: "share_comprehend_action"},
+	"ShareComprehendMedicalAction":              ubx.FieldSpec{WireName: "share_comprehend_medical_action"},
+	"ShareConfluenceAction":                     ubx.FieldSpec{WireName: "share_confluence_action"},
+	"ShareDashboards":                           ubx.FieldSpec{WireName: "share_dashboards"},
+	"ShareDataSources":                          ubx.FieldSpec{WireName: "share_data_sources"},
+	"ShareDatasets":                             ubx.FieldSpec{WireName: "share_datasets"},
+	"ShareFactSetAction":                        ubx.FieldSpec{WireName: "share_fact_set_action"},
+	"ShareGenericHttpaction":                    ubx.FieldSpec{WireName: "share_generic_httpaction"},
+	"ShareGithubAction":                         ubx.FieldSpec{WireName: "share_github_action"},
+	"ShareGoogleCalendarAction":                 ubx.FieldSpec{WireName: "share_google_calendar_action"},
+	"ShareHubspotAction":                        ubx.FieldSpec{WireName: "share_hubspot_action"},
+	"ShareHuggingFaceAction":                    ubx.FieldSpec{WireName: "share_hugging_face_action"},
+	"ShareIntercomAction":                       ubx.FieldSpec{WireName: "share_intercom_action"},
+	"ShareJiraAction":                           ubx.FieldSpec{WireName: "share_jira_action"},
+	"ShareKnowledgeBases":                       ubx.FieldSpec{WireName: "share_knowledge_bases"},
+	"ShareLinearAction":                         ubx.FieldSpec{WireName: "share_linear_action"},
+	"ShareMcpaction":                            ubx.FieldSpec{WireName: "share_mcpaction"},
+	"ShareMondayAction":                         ubx.FieldSpec{WireName: "share_monday_action"},
+	"ShareMsexchangeAction":                     ubx.FieldSpec{WireName: "share_msexchange_action"},
+	"ShareMsteamsAction":                        ubx.FieldSpec{WireName: "share_msteams_action"},
+	"ShareNewRelicAction":                       ubx.FieldSpec{WireName: "share_new_relic_action"},
+	"ShareNotionAction":                         ubx.FieldSpec{WireName: "share_notion_action"},
+	"ShareOneDriveAction":                       ubx.FieldSpec{WireName: "share_one_drive_action"},
+	"ShareOpenApiaction":                        ubx.FieldSpec{WireName: "share_open_apiaction"},
+	"SharePagerDutyAction":                      ubx.FieldSpec{WireName: "share_pager_duty_action"},
+	"SharePointAction":                          ubx.FieldSpec{WireName: "share_point_action"},
+	"ShareSalesforceAction":                     ubx.FieldSpec{WireName: "share_salesforce_action"},
+	"ShareSandPglobalEnergyAction":              ubx.FieldSpec{WireName: "share_sand_pglobal_energy_action"},
+	"ShareSandPgmiaction":                       ubx.FieldSpec{WireName: "share_sand_pgmiaction"},
+	"ShareSapbillOfMaterialAction":              ubx.FieldSpec{WireName: "share_sapbill_of_material_action"},
+	"ShareSapbusinessPartnerAction":             ubx.FieldSpec{WireName: "share_sapbusiness_partner_action"},
+	"ShareSapmaterialStockAction":               ubx.FieldSpec{WireName: "share_sapmaterial_stock_action"},
+	"ShareSapphysicalInventoryAction":           ubx.FieldSpec{WireName: "share_sapphysical_inventory_action"},
+	"ShareSapproductMasterDataAction":           ubx.FieldSpec{WireName: "share_sapproduct_master_data_action"},
+	"ShareServiceNowAction":                     ubx.FieldSpec{WireName: "share_service_now_action"},
+	"ShareSharePointAction":                     ubx.FieldSpec{WireName: "share_share_point_action"},
+	"ShareSlackAction":                          ubx.FieldSpec{WireName: "share_slack_action"},
+	"ShareSmartsheetAction":                     ubx.FieldSpec{WireName: "share_smartsheet_action"},
+	"ShareSpaces":                               ubx.FieldSpec{WireName: "share_spaces"},
+	"ShareTextractAction":                       ubx.FieldSpec{WireName: "share_textract_action"},
+	"ShareZendeskAction":                        ubx.FieldSpec{WireName: "share_zendesk_action"},
+	"SlackAction":                               ubx.FieldSpec{WireName: "slack_action"},
+	"SmartsheetAction":                          ubx.FieldSpec{WireName: "smartsheet_action"},
+	"Space":                                     ubx.FieldSpec{WireName: "space"},
+	"SubscribeDashboardEmailReports":            ubx.FieldSpec{WireName: "subscribe_dashboard_email_reports"},
+	"TextractAction":                            ubx.FieldSpec{WireName: "textract_action"},
+	"Topic":                                     ubx.FieldSpec{WireName: "topic"},
+	"UseAgentWebSearch":                         ubx.FieldSpec{WireName: "use_agent_web_search"},
+	"UseAmazonBedrockArsaction":                 ubx.FieldSpec{WireName: "use_amazon_bedrock_arsaction"},
+	"UseAmazonBedrockFsaction":                  ubx.FieldSpec{WireName: "use_amazon_bedrock_fsaction"},
+	"UseAmazonBedrockKrsaction":                 ubx.FieldSpec{WireName: "use_amazon_bedrock_krsaction"},
+	"UseAmazonSthreeAction":                     ubx.FieldSpec{WireName: "use_amazon_sthree_action"},
+	"UseAsanaAction":                            ubx.FieldSpec{WireName: "use_asana_action"},
+	"UseBambooHraction":                         ubx.FieldSpec{WireName: "use_bamboo_hraction"},
+	"UseBedrockModels":                          ubx.FieldSpec{WireName: "use_bedrock_models"},
+	"UseBoxAgentAction":                         ubx.FieldSpec{WireName: "use_box_agent_action"},
+	"UseCanvaAgentAction":                       ubx.FieldSpec{WireName: "use_canva_agent_action"},
+	"UseComprehendAction":                       ubx.FieldSpec{WireName: "use_comprehend_action"},
+	"UseComprehendMedicalAction":                ubx.FieldSpec{WireName: "use_comprehend_medical_action"},
+	"UseConfluenceAction":                       ubx.FieldSpec{WireName: "use_confluence_action"},
+	"UseFactSetAction":                          ubx.FieldSpec{WireName: "use_fact_set_action"},
+	"UseGenericHttpaction":                      ubx.FieldSpec{WireName: "use_generic_httpaction"},
+	"UseGithubAction":                           ubx.FieldSpec{WireName: "use_github_action"},
+	"UseGoogleCalendarAction":                   ubx.FieldSpec{WireName: "use_google_calendar_action"},
+	"UseHubspotAction":                          ubx.FieldSpec{WireName: "use_hubspot_action"},
+	"UseHuggingFaceAction":                      ubx.FieldSpec{WireName: "use_hugging_face_action"},
+	"UseIntercomAction":                         ubx.FieldSpec{WireName: "use_intercom_action"},
+	"UseJiraAction":                             ubx.FieldSpec{WireName: "use_jira_action"},
+	"UseLinearAction":                           ubx.FieldSpec{WireName: "use_linear_action"},
+	"UseMcpaction":                              ubx.FieldSpec{WireName: "use_mcpaction"},
+	"UseMondayAction":                           ubx.FieldSpec{WireName: "use_monday_action"},
+	"UseMsexchangeAction":                       ubx.FieldSpec{WireName: "use_msexchange_action"},
+	"UseMsteamsAction":                          ubx.FieldSpec{WireName: "use_msteams_action"},
+	"UseNewRelicAction":                         ubx.FieldSpec{WireName: "use_new_relic_action"},
+	"UseNotionAction":                           ubx.FieldSpec{WireName: "use_notion_action"},
+	"UseOneDriveAction":                         ubx.FieldSpec{WireName: "use_one_drive_action"},
+	"UseOpenApiaction":                          ubx.FieldSpec{WireName: "use_open_apiaction"},
+	"UsePagerDutyAction":                        ubx.FieldSpec{WireName: "use_pager_duty_action"},
+	"UseSalesforceAction":                       ubx.FieldSpec{WireName: "use_salesforce_action"},
+	"UseSandPglobalEnergyAction":                ubx.FieldSpec{WireName: "use_sand_pglobal_energy_action"},
+	"UseSandPgmiaction":                         ubx.FieldSpec{WireName: "use_sand_pgmiaction"},
+	"UseSapbillOfMaterialAction":                ubx.FieldSpec{WireName: "use_sapbill_of_material_action"},
+	"UseSapbusinessPartnerAction":               ubx.FieldSpec{WireName: "use_sapbusiness_partner_action"},
+	"UseSapmaterialStockAction":                 ubx.FieldSpec{WireName: "use_sapmaterial_stock_action"},
+	"UseSapphysicalInventoryAction":             ubx.FieldSpec{WireName: "use_sapphysical_inventory_action"},
+	"UseSapproductMasterDataAction":             ubx.FieldSpec{WireName: "use_sapproduct_master_data_action"},
+	"UseServiceNowAction":                       ubx.FieldSpec{WireName: "use_service_now_action"},
+	"UseSharePointAction":                       ubx.FieldSpec{WireName: "use_share_point_action"},
+	"UseSlackAction":                            ubx.FieldSpec{WireName: "use_slack_action"},
+	"UseSmartsheetAction":                       ubx.FieldSpec{WireName: "use_smartsheet_action"},
+	"UseTextractAction":                         ubx.FieldSpec{WireName: "use_textract_action"},
+	"UseZendeskAction":                          ubx.FieldSpec{WireName: "use_zendesk_action"},
+	"ViewAccountSpicecapacity":                  ubx.FieldSpec{WireName: "view_account_spicecapacity"},
+	"ZendeskAction":                             ubx.FieldSpec{WireName: "zendesk_action"},
+}
 
 var CustomPermissions_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomPermissionsConfig struct {
 	// The AWS account ID in which the QuickSight custom permissions profile is created and associated with this resource. (AI-inferred)
@@ -651,14 +651,14 @@ var CustomPermissions = ubx.ResourceBinding{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"Capabilities": ubx.FieldSpec{
 			WireName: "capabilities",
-			Kind: "object",
-			Fields: CustomPermissions_CapabilitiesFields,
+			Kind:     "object",
+			Fields:   CustomPermissions_CapabilitiesFields,
 		},
 		"CustomPermissionsName": ubx.FieldSpec{WireName: "custom_permissions_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomPermissions_TagsFields,
+			Kind:     "list",
+			Fields:   CustomPermissions_TagsFields,
 		},
 	},
 }

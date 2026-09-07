@@ -8,42 +8,42 @@ type Statements_Statements_Output_Data struct {
 }
 
 type Statements_Statements_Output struct {
-	Data any
-	ErrorName any
-	ErrorValue any
+	Data           any
+	ErrorName      any
+	ErrorValue     any
 	ExecutionCount any
-	Status any
-	Traceback any
+	Status         any
+	Traceback      any
 }
 
 type Statements_Statements struct {
-	Code any
+	Code        any
 	CompletedOn any
-	Id any
-	Output any
-	Progress any
-	StartedOn any
-	State any
+	Id          any
+	Output      any
+	Progress    any
+	StartedOn   any
+	State       any
 }
 
 type StatementsConfig struct {
-	NextToken any
+	NextToken     any
 	RequestOrigin any
-	SessionId any
+	SessionId     any
 }
 
 type StatementsAttrs struct {
-	NextToken any
+	NextToken     any
 	RequestOrigin any
-	SessionId any
-	Statements any
+	SessionId     any
+	Statements    any
 }
 
 var Statements = ubx.DataSourceBinding{
 	WireType: "aws_glue_statements",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"RequestOrigin": ubx.FieldSpec{WireName: "request_origin"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"SessionId":     ubx.FieldSpec{WireName: "session_id"},
 	},
 }

@@ -6,46 +6,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type RetirableGrants_Grants_Constraints struct {
 	EncryptionContextEquals any
 	EncryptionContextSubset any
-	SourceArn any
+	SourceArn               any
 }
 
 type RetirableGrants_Grants struct {
-	Constraints any
-	CreationDate any
-	GrantId any
-	GranteePrincipal any
-	GranteeServicePrincipal any
-	IssuingAccount any
-	KeyId any
-	Name any
-	Operations any
-	RetiringPrincipal any
+	Constraints              any
+	CreationDate             any
+	GrantId                  any
+	GranteePrincipal         any
+	GranteeServicePrincipal  any
+	IssuingAccount           any
+	KeyId                    any
+	Name                     any
+	Operations               any
+	RetiringPrincipal        any
 	RetiringServicePrincipal any
 }
 
 type RetirableGrantsConfig struct {
-	Limit any
-	Marker any
-	RetiringPrincipal any
+	Limit                    any
+	Marker                   any
+	RetiringPrincipal        any
 	RetiringServicePrincipal any
 }
 
 type RetirableGrantsAttrs struct {
-	Grants any
-	Limit any
-	Marker any
-	NextMarker any
-	RetiringPrincipal any
+	Grants                   any
+	Limit                    any
+	Marker                   any
+	NextMarker               any
+	RetiringPrincipal        any
 	RetiringServicePrincipal any
-	Truncated any
+	Truncated                any
 }
 
 var RetirableGrants = ubx.DataSourceBinding{
 	WireType: "aws_kms_retirable_grants",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"RetiringPrincipal": ubx.FieldSpec{WireName: "retiring_principal"},
+		"Limit":                    ubx.FieldSpec{WireName: "limit"},
+		"Marker":                   ubx.FieldSpec{WireName: "marker"},
+		"RetiringPrincipal":        ubx.FieldSpec{WireName: "retiring_principal"},
 		"RetiringServicePrincipal": ubx.FieldSpec{WireName: "retiring_service_principal"},
 	},
 }

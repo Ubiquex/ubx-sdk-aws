@@ -30,27 +30,27 @@ type AnnotationStore_StoreOptions struct {
 }
 
 var AnnotationStore_ReferenceFields = ubx.FieldMap{
-		"ReferenceArn": ubx.FieldSpec{WireName: "reference_arn"},
-	}
+	"ReferenceArn": ubx.FieldSpec{WireName: "reference_arn"},
+}
 
 var AnnotationStore_SseConfigFields = ubx.FieldMap{
-		"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KeyArn": ubx.FieldSpec{WireName: "key_arn"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var AnnotationStore_StoreOptions_TsvStoreOptionsFields = ubx.FieldMap{
-		"AnnotationType": ubx.FieldSpec{WireName: "annotation_type"},
-		"FormatToHeader": ubx.FieldSpec{WireName: "format_to_header"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"AnnotationType": ubx.FieldSpec{WireName: "annotation_type"},
+	"FormatToHeader": ubx.FieldSpec{WireName: "format_to_header"},
+	"Schema":         ubx.FieldSpec{WireName: "schema"},
+}
 
 var AnnotationStore_StoreOptionsFields = ubx.FieldMap{
-		"TsvStoreOptions": ubx.FieldSpec{
-			WireName: "tsv_store_options",
-			Kind: "object",
-			Fields: AnnotationStore_StoreOptions_TsvStoreOptionsFields,
-		},
-	}
+	"TsvStoreOptions": ubx.FieldSpec{
+		WireName: "tsv_store_options",
+		Kind:     "object",
+		Fields:   AnnotationStore_StoreOptions_TsvStoreOptionsFields,
+	},
+}
 
 type AnnotationStoreConfig struct {
 	// A user-supplied description of the annotation store, providing optional additional context about the store's purpose or contents. (AI-inferred)
@@ -104,22 +104,22 @@ var AnnotationStore = ubx.ResourceBinding{
 	WireType: "aws_omics_annotation_store",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Reference": ubx.FieldSpec{
 			WireName: "reference",
-			Kind: "object",
-			Fields: AnnotationStore_ReferenceFields,
+			Kind:     "object",
+			Fields:   AnnotationStore_ReferenceFields,
 		},
 		"SseConfig": ubx.FieldSpec{
 			WireName: "sse_config",
-			Kind: "object",
-			Fields: AnnotationStore_SseConfigFields,
+			Kind:     "object",
+			Fields:   AnnotationStore_SseConfigFields,
 		},
 		"StoreFormat": ubx.FieldSpec{WireName: "store_format"},
 		"StoreOptions": ubx.FieldSpec{
 			WireName: "store_options",
-			Kind: "object",
-			Fields: AnnotationStore_StoreOptionsFields,
+			Kind:     "object",
+			Fields:   AnnotationStore_StoreOptionsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

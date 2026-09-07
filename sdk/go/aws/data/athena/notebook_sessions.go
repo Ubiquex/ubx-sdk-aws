@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotebookSessions_NotebookSessionsList struct {
 	CreationTime any
-	SessionId any
+	SessionId    any
 }
 
 type NotebookSessionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	NotebookId any
 }
 
 type NotebookSessionsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	NotebookId any
 	// <p>A list of notebook sessions.</p>
 	NotebookSessionsList any
@@ -26,7 +26,7 @@ var NotebookSessions = ubx.DataSourceBinding{
 	WireType: "aws_athena_notebook_sessions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"NotebookId": ubx.FieldSpec{WireName: "notebook_id"},
 	},
 }

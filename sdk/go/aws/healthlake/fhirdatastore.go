@@ -46,33 +46,33 @@ type Fhirdatastore_Tags struct {
 }
 
 var Fhirdatastore_IdentityProviderConfigurationFields = ubx.FieldMap{
-		"AuthorizationStrategy": ubx.FieldSpec{WireName: "authorization_strategy"},
-		"FineGrainedAuthorizationEnabled": ubx.FieldSpec{WireName: "fine_grained_authorization_enabled"},
-		"IdpLambdaArn": ubx.FieldSpec{WireName: "idp_lambda_arn"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-	}
+	"AuthorizationStrategy":           ubx.FieldSpec{WireName: "authorization_strategy"},
+	"FineGrainedAuthorizationEnabled": ubx.FieldSpec{WireName: "fine_grained_authorization_enabled"},
+	"IdpLambdaArn":                    ubx.FieldSpec{WireName: "idp_lambda_arn"},
+	"Metadata":                        ubx.FieldSpec{WireName: "metadata"},
+}
 
 var Fhirdatastore_PreloadDataConfigFields = ubx.FieldMap{
-		"PreloadDataType": ubx.FieldSpec{WireName: "preload_data_type"},
-	}
+	"PreloadDataType": ubx.FieldSpec{WireName: "preload_data_type"},
+}
 
 var Fhirdatastore_SseConfiguration_KmsEncryptionConfigFields = ubx.FieldMap{
-		"CmkType": ubx.FieldSpec{WireName: "cmk_type"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"CmkType":  ubx.FieldSpec{WireName: "cmk_type"},
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var Fhirdatastore_SseConfigurationFields = ubx.FieldMap{
-		"KmsEncryptionConfig": ubx.FieldSpec{
-			WireName: "kms_encryption_config",
-			Kind: "object",
-			Fields: Fhirdatastore_SseConfiguration_KmsEncryptionConfigFields,
-		},
-	}
+	"KmsEncryptionConfig": ubx.FieldSpec{
+		WireName: "kms_encryption_config",
+		Kind:     "object",
+		Fields:   Fhirdatastore_SseConfiguration_KmsEncryptionConfigFields,
+	},
+}
 
 var Fhirdatastore_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FhirdatastoreConfig struct {
 	// The user-generated name for the Data Store.
@@ -117,27 +117,27 @@ type FhirdatastoreAttrs struct {
 var Fhirdatastore = ubx.ResourceBinding{
 	WireType: "aws_health_lake_fhirdatastore",
 	Fields: ubx.FieldMap{
-		"DatastoreName": ubx.FieldSpec{WireName: "datastore_name"},
+		"DatastoreName":        ubx.FieldSpec{WireName: "datastore_name"},
 		"DatastoreTypeVersion": ubx.FieldSpec{WireName: "datastore_type_version"},
 		"IdentityProviderConfiguration": ubx.FieldSpec{
 			WireName: "identity_provider_configuration",
-			Kind: "object",
-			Fields: Fhirdatastore_IdentityProviderConfigurationFields,
+			Kind:     "object",
+			Fields:   Fhirdatastore_IdentityProviderConfigurationFields,
 		},
 		"PreloadDataConfig": ubx.FieldSpec{
 			WireName: "preload_data_config",
-			Kind: "object",
-			Fields: Fhirdatastore_PreloadDataConfigFields,
+			Kind:     "object",
+			Fields:   Fhirdatastore_PreloadDataConfigFields,
 		},
 		"SseConfiguration": ubx.FieldSpec{
 			WireName: "sse_configuration",
-			Kind: "object",
-			Fields: Fhirdatastore_SseConfigurationFields,
+			Kind:     "object",
+			Fields:   Fhirdatastore_SseConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Fhirdatastore_TagsFields,
+			Kind:     "list",
+			Fields:   Fhirdatastore_TagsFields,
 		},
 	},
 }

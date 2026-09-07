@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Configuration_Tags struct {
 	// The key of a tag attached to the Amazon MQ configuration, used to identify and organize the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Configuration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConfigurationConfig struct {
 	// The authentication strategy associated with the configuration. The default is SIMPLE.
@@ -58,15 +58,15 @@ var Configuration = ubx.ResourceBinding{
 	WireType: "aws_amazon_mq_configuration",
 	Fields: ubx.FieldMap{
 		"AuthenticationStrategy": ubx.FieldSpec{WireName: "authentication_strategy"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Data":                   ubx.FieldSpec{WireName: "data"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"EngineType":             ubx.FieldSpec{WireName: "engine_type"},
+		"EngineVersion":          ubx.FieldSpec{WireName: "engine_version"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Configuration_TagsFields,
+			Kind:     "list",
+			Fields:   Configuration_TagsFields,
 		},
 	},
 }

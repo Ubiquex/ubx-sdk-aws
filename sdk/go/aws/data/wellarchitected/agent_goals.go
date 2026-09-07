@@ -4,22 +4,22 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentGoals_Items struct {
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Id any
+	CreatedAt      any
+	CreatedBy      any
+	Description    any
+	Id             any
 	LastModifiedAt any
 	LastModifiedBy any
-	Pillars any
-	ProfileArn any
-	Title any
+	Pillars        any
+	ProfileArn     any
+	Title          any
 }
 
 type AgentGoalsConfig struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken  any
 	ProfileArn any
 }
 
@@ -28,7 +28,7 @@ type AgentGoalsAttrs struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken  any
 	ProfileArn any
 }
 
@@ -36,7 +36,7 @@ var AgentGoals = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_agent_goals",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ProfileArn": ubx.FieldSpec{WireName: "profile_arn"},
 	},
 }

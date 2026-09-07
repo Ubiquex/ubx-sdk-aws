@@ -12,6 +12,5 @@ type WafRegionalChangeTokenAttrs struct {
 
 var WafRegionalChangeToken = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_change_token",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

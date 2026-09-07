@@ -84,61 +84,61 @@ type Stack_UserSettings struct {
 }
 
 var Stack_AccessEndpointsFields = ubx.FieldMap{
-		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
-		"VpceId": ubx.FieldSpec{WireName: "vpce_id"},
-	}
+	"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
+	"VpceId":       ubx.FieldSpec{WireName: "vpce_id"},
+}
 
 var Stack_AgentAccessConfig_SettingsFields = ubx.FieldMap{
-		"AgentAction": ubx.FieldSpec{WireName: "agent_action"},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-	}
+	"AgentAction": ubx.FieldSpec{WireName: "agent_action"},
+	"Permission":  ubx.FieldSpec{WireName: "permission"},
+}
 
 var Stack_AgentAccessConfigFields = ubx.FieldMap{
-		"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
-		"ScreenImageFormat": ubx.FieldSpec{WireName: "screen_image_format"},
-		"ScreenResolution": ubx.FieldSpec{WireName: "screen_resolution"},
-		"ScreenshotsUploadEnabled": ubx.FieldSpec{WireName: "screenshots_upload_enabled"},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "list",
-			Fields: Stack_AgentAccessConfig_SettingsFields,
-		},
-		"UserControlMode": ubx.FieldSpec{WireName: "user_control_mode"},
-	}
+	"S3BucketArn":              ubx.FieldSpec{WireName: "s3_bucket_arn"},
+	"ScreenImageFormat":        ubx.FieldSpec{WireName: "screen_image_format"},
+	"ScreenResolution":         ubx.FieldSpec{WireName: "screen_resolution"},
+	"ScreenshotsUploadEnabled": ubx.FieldSpec{WireName: "screenshots_upload_enabled"},
+	"Settings": ubx.FieldSpec{
+		WireName: "settings",
+		Kind:     "list",
+		Fields:   Stack_AgentAccessConfig_SettingsFields,
+	},
+	"UserControlMode": ubx.FieldSpec{WireName: "user_control_mode"},
+}
 
 var Stack_ApplicationSettingsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SettingsGroup": ubx.FieldSpec{WireName: "settings_group"},
-	}
+	"Enabled":       ubx.FieldSpec{WireName: "enabled"},
+	"SettingsGroup": ubx.FieldSpec{WireName: "settings_group"},
+}
 
 var Stack_ContentRedirection_HostToClientFields = ubx.FieldMap{
-		"AllowedUrls": ubx.FieldSpec{WireName: "allowed_urls"},
-		"DeniedUrls": ubx.FieldSpec{WireName: "denied_urls"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"AllowedUrls": ubx.FieldSpec{WireName: "allowed_urls"},
+	"DeniedUrls":  ubx.FieldSpec{WireName: "denied_urls"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Stack_ContentRedirectionFields = ubx.FieldMap{
-		"HostToClient": ubx.FieldSpec{
-			WireName: "host_to_client",
-			Kind: "object",
-			Fields: Stack_ContentRedirection_HostToClientFields,
-		},
-	}
+	"HostToClient": ubx.FieldSpec{
+		WireName: "host_to_client",
+		Kind:     "object",
+		Fields:   Stack_ContentRedirection_HostToClientFields,
+	},
+}
 
 var Stack_StreamingExperienceSettingsFields = ubx.FieldMap{
-		"PreferredProtocol": ubx.FieldSpec{WireName: "preferred_protocol"},
-	}
+	"PreferredProtocol": ubx.FieldSpec{WireName: "preferred_protocol"},
+}
 
 var Stack_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Stack_UserSettingsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"MaximumLength": ubx.FieldSpec{WireName: "maximum_length"},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-	}
+	"Action":        ubx.FieldSpec{WireName: "action"},
+	"MaximumLength": ubx.FieldSpec{WireName: "maximum_length"},
+	"Permission":    ubx.FieldSpec{WireName: "permission"},
+}
 
 type StackConfig struct {
 	// The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
@@ -213,46 +213,46 @@ var Stack = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessEndpoints": ubx.FieldSpec{
 			WireName: "access_endpoints",
-			Kind: "list",
-			Fields: Stack_AccessEndpointsFields,
+			Kind:     "list",
+			Fields:   Stack_AccessEndpointsFields,
 		},
 		"AgentAccessConfig": ubx.FieldSpec{
 			WireName: "agent_access_config",
-			Kind: "object",
-			Fields: Stack_AgentAccessConfigFields,
+			Kind:     "object",
+			Fields:   Stack_AgentAccessConfigFields,
 		},
 		"ApplicationSettings": ubx.FieldSpec{
 			WireName: "application_settings",
-			Kind: "object",
-			Fields: Stack_ApplicationSettingsFields,
+			Kind:     "object",
+			Fields:   Stack_ApplicationSettingsFields,
 		},
 		"AttributesToDelete": ubx.FieldSpec{WireName: "attributes_to_delete"},
 		"ContentRedirection": ubx.FieldSpec{
 			WireName: "content_redirection",
-			Kind: "object",
-			Fields: Stack_ContentRedirectionFields,
+			Kind:     "object",
+			Fields:   Stack_ContentRedirectionFields,
 		},
 		"DeleteStorageConnectors": ubx.FieldSpec{WireName: "delete_storage_connectors"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EmbedHostDomains": ubx.FieldSpec{WireName: "embed_host_domains"},
-		"FeedbackUrl": ubx.FieldSpec{WireName: "feedback_url"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
+		"EmbedHostDomains":        ubx.FieldSpec{WireName: "embed_host_domains"},
+		"FeedbackUrl":             ubx.FieldSpec{WireName: "feedback_url"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"RedirectUrl":             ubx.FieldSpec{WireName: "redirect_url"},
 		"StreamingExperienceSettings": ubx.FieldSpec{
 			WireName: "streaming_experience_settings",
-			Kind: "object",
-			Fields: Stack_StreamingExperienceSettingsFields,
+			Kind:     "object",
+			Fields:   Stack_StreamingExperienceSettingsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Stack_TagsFields,
+			Kind:     "list",
+			Fields:   Stack_TagsFields,
 		},
 		"UserSettings": ubx.FieldSpec{
 			WireName: "user_settings",
-			Kind: "list",
-			Fields: Stack_UserSettingsFields,
+			Kind:     "list",
+			Fields:   Stack_UserSettingsFields,
 		},
 	},
 }

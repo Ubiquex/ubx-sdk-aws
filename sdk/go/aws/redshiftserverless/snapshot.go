@@ -34,9 +34,9 @@ type Snapshot_Tags struct {
 }
 
 var Snapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SnapshotConfig struct {
 	// The namespace the snapshot is associated with.
@@ -67,13 +67,13 @@ type SnapshotAttrs struct {
 var Snapshot = ubx.ResourceBinding{
 	WireType: "aws_redshift_serverless_snapshot",
 	Fields: ubx.FieldMap{
-		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
+		"NamespaceName":   ubx.FieldSpec{WireName: "namespace_name"},
 		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
-		"SnapshotName": ubx.FieldSpec{WireName: "snapshot_name"},
+		"SnapshotName":    ubx.FieldSpec{WireName: "snapshot_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Snapshot_TagsFields,
+			Kind:     "list",
+			Fields:   Snapshot_TagsFields,
 		},
 	},
 }

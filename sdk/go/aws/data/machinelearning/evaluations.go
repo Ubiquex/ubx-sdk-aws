@@ -8,20 +8,20 @@ type Evaluations_Results_PerformanceMetrics struct {
 }
 
 type Evaluations_Results struct {
-	ComputeTime any
-	CreatedAt any
-	CreatedByIamUser any
+	ComputeTime            any
+	CreatedAt              any
+	CreatedByIamUser       any
 	EvaluationDataSourceId any
-	EvaluationId any
-	FinishedAt any
-	InputDataLocationS3 any
-	LastUpdatedAt any
-	Message any
-	MlmodelId any
-	Name any
-	PerformanceMetrics any
-	StartedAt any
-	Status any
+	EvaluationId           any
+	FinishedAt             any
+	InputDataLocationS3    any
+	LastUpdatedAt          any
+	Message                any
+	MlmodelId              any
+	Name                   any
+	PerformanceMetrics     any
+	StartedAt              any
+	Status                 any
 }
 
 type EvaluationsConfig struct {
@@ -34,7 +34,7 @@ type EvaluationsConfig struct {
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
 	Gt any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
-	Le any
+	Le    any
 	Limit any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
 	Lt any
@@ -58,7 +58,7 @@ type EvaluationsAttrs struct {
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
 	Gt any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
-	Le any
+	Le    any
 	Limit any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
 	Lt any
@@ -67,7 +67,7 @@ type EvaluationsAttrs struct {
 	// <p>String type.</p>
 	NextToken any
 	// <p>The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.</p>
-	Prefix any
+	Prefix  any
 	Results any
 	// <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <p> <code>asc</code> - Present the information in ascending order (from A-Z).</p> </li> <li> <p> <code>dsc</code> - Present the information in descending order (from Z-A).</p> </li> </ul>
 	SortOrder any
@@ -76,16 +76,16 @@ type EvaluationsAttrs struct {
 var Evaluations = ubx.DataSourceBinding{
 	WireType: "aws_machinelearning_evaluations",
 	Fields: ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
+		"Eq":             ubx.FieldSpec{WireName: "eq"},
 		"FilterVariable": ubx.FieldSpec{WireName: "filter_variable"},
-		"Ge": ubx.FieldSpec{WireName: "ge"},
-		"Gt": ubx.FieldSpec{WireName: "gt"},
-		"Le": ubx.FieldSpec{WireName: "le"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Lt": ubx.FieldSpec{WireName: "lt"},
-		"Ne": ubx.FieldSpec{WireName: "ne"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"Ge":             ubx.FieldSpec{WireName: "ge"},
+		"Gt":             ubx.FieldSpec{WireName: "gt"},
+		"Le":             ubx.FieldSpec{WireName: "le"},
+		"Limit":          ubx.FieldSpec{WireName: "limit"},
+		"Lt":             ubx.FieldSpec{WireName: "lt"},
+		"Ne":             ubx.FieldSpec{WireName: "ne"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"Prefix":         ubx.FieldSpec{WireName: "prefix"},
+		"SortOrder":      ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

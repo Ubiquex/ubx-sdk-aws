@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainSuggestions_SuggestionsList struct {
 	Availability any
-	DomainName any
+	DomainName   any
 }
 
 type DomainSuggestionsConfig struct {
-	DomainName any
-	OnlyAvailable any
+	DomainName      any
+	OnlyAvailable   any
 	SuggestionCount any
 }
 
 type DomainSuggestionsAttrs struct {
-	DomainName any
-	OnlyAvailable any
+	DomainName      any
+	OnlyAvailable   any
 	SuggestionCount any
 	SuggestionsList any
 }
@@ -24,8 +24,8 @@ type DomainSuggestionsAttrs struct {
 var DomainSuggestions = ubx.DataSourceBinding{
 	WireType: "aws_route53domains_domain_suggestions",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"OnlyAvailable": ubx.FieldSpec{WireName: "only_available"},
+		"DomainName":      ubx.FieldSpec{WireName: "domain_name"},
+		"OnlyAvailable":   ubx.FieldSpec{WireName: "only_available"},
 		"SuggestionCount": ubx.FieldSpec{WireName: "suggestion_count"},
 	},
 }

@@ -12,34 +12,34 @@ type EstimatedCarbonEmissions_GranularityConfiguration struct {
 }
 
 type EstimatedCarbonEmissions_Results_EmissionsValues struct {
-	Unit any
+	Unit  any
 	Value any
 }
 
 type EstimatedCarbonEmissions_Results_TimePeriod struct {
-	End any
+	End   any
 	Start any
 }
 
 type EstimatedCarbonEmissions_Results struct {
 	DimensionsValues any
-	EmissionsValues any
-	ModelVersion any
-	TimePeriod any
+	EmissionsValues  any
+	ModelVersion     any
+	TimePeriod       any
 }
 
 var EstimatedCarbonEmissions_FilterByFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-	}
+	"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+}
 
 var EstimatedCarbonEmissions_GranularityConfigurationFields = ubx.FieldMap{
-		"FiscalYearStartMonth": ubx.FieldSpec{WireName: "fiscal_year_start_month"},
-	}
+	"FiscalYearStartMonth": ubx.FieldSpec{WireName: "fiscal_year_start_month"},
+}
 
 var EstimatedCarbonEmissions_Results_TimePeriodFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type EstimatedCarbonEmissionsConfig struct {
 	EmissionsTypes any
@@ -49,9 +49,9 @@ type EstimatedCarbonEmissionsConfig struct {
 	Granularity any
 	// <p> Contains configuration for the fiscal year granularities (e.g., <code>YEARLY_FISCAL</code>, <code>QUARTERLY_FISCAL</code>. </p>
 	GranularityConfiguration any
-	GroupBy any
-	MaxResults any
-	NextToken any
+	GroupBy                  any
+	MaxResults               any
+	NextToken                any
 	// <p>Represents a duration of time defined by start and end timestamps.</p>
 	TimePeriod any
 }
@@ -64,10 +64,10 @@ type EstimatedCarbonEmissionsAttrs struct {
 	Granularity any
 	// <p> Contains configuration for the fiscal year granularities (e.g., <code>YEARLY_FISCAL</code>, <code>QUARTERLY_FISCAL</code>. </p>
 	GranularityConfiguration any
-	GroupBy any
-	MaxResults any
-	NextToken any
-	Results any
+	GroupBy                  any
+	MaxResults               any
+	NextToken                any
+	Results                  any
 	// <p>Represents a duration of time defined by start and end timestamps.</p>
 	TimePeriod any
 }
@@ -78,22 +78,22 @@ var EstimatedCarbonEmissions = ubx.DataSourceBinding{
 		"EmissionsTypes": ubx.FieldSpec{WireName: "emissions_types"},
 		"FilterBy": ubx.FieldSpec{
 			WireName: "filter_by",
-			Kind: "object",
-			Fields: EstimatedCarbonEmissions_FilterByFields,
+			Kind:     "object",
+			Fields:   EstimatedCarbonEmissions_FilterByFields,
 		},
 		"Granularity": ubx.FieldSpec{WireName: "granularity"},
 		"GranularityConfiguration": ubx.FieldSpec{
 			WireName: "granularity_configuration",
-			Kind: "object",
-			Fields: EstimatedCarbonEmissions_GranularityConfigurationFields,
+			Kind:     "object",
+			Fields:   EstimatedCarbonEmissions_GranularityConfigurationFields,
 		},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
+		"GroupBy":    ubx.FieldSpec{WireName: "group_by"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"TimePeriod": ubx.FieldSpec{
 			WireName: "time_period",
-			Kind: "object",
-			Fields: EstimatedCarbonEmissions_Results_TimePeriodFields,
+			Kind:     "object",
+			Fields:   EstimatedCarbonEmissions_Results_TimePeriodFields,
 		},
 	},
 }

@@ -5,35 +5,35 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Voices_Voices struct {
 	AdditionalLanguageCodes any
-	Gender any
-	Id any
-	LanguageCode any
-	LanguageName any
-	Name any
-	SupportedEngines any
+	Gender                  any
+	Id                      any
+	LanguageCode            any
+	LanguageName            any
+	Name                    any
+	SupportedEngines        any
 }
 
 type VoicesConfig struct {
-	Engine any
+	Engine                         any
 	IncludeAdditionalLanguageCodes any
-	LanguageCode any
-	NextToken any
+	LanguageCode                   any
+	NextToken                      any
 }
 
 type VoicesAttrs struct {
-	Engine any
+	Engine                         any
 	IncludeAdditionalLanguageCodes any
-	LanguageCode any
-	NextToken any
-	Voices any
+	LanguageCode                   any
+	NextToken                      any
+	Voices                         any
 }
 
 var Voices = ubx.DataSourceBinding{
 	WireType: "aws_polly_voices",
 	Fields: ubx.FieldMap{
-		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"Engine":                         ubx.FieldSpec{WireName: "engine"},
 		"IncludeAdditionalLanguageCodes": ubx.FieldSpec{WireName: "include_additional_language_codes"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"LanguageCode":                   ubx.FieldSpec{WireName: "language_code"},
+		"NextToken":                      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

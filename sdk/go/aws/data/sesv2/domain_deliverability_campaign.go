@@ -6,24 +6,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DomainDeliverabilityCampaign_DomainDeliverabilityCampaign struct {
 	CampaignId any
 	// <p>An object that contains information about inbox placement percentages.</p>
-	DeleteRate any
-	Esps any
+	DeleteRate        any
+	Esps              any
 	FirstSeenDateTime any
-	FromAddress any
-	ImageUrl any
+	FromAddress       any
+	ImageUrl          any
 	// <p>An object that contains information about inbox placement volume.</p>
-	InboxCount any
+	InboxCount       any
 	LastSeenDateTime any
 	// <p>An object that contains information about inbox placement volume.</p>
 	ProjectedVolume any
 	// <p>An object that contains information about inbox placement percentages.</p>
 	ReadDeleteRate any
 	// <p>An object that contains information about inbox placement percentages.</p>
-	ReadRate any
+	ReadRate   any
 	SendingIps any
 	// <p>An object that contains information about inbox placement volume.</p>
 	SpamCount any
-	Subject any
+	Subject   any
 }
 
 type DomainDeliverabilityCampaignConfig struct {

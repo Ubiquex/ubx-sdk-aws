@@ -23,6 +23,6 @@ var IpPoolRouteTableAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_ip_pool_route_table_association",
 	Fields: ubx.FieldMap{
 		"PublicIpv4Pool": ubx.FieldSpec{WireName: "public_ipv4_pool"},
-		"RouteTableId": ubx.FieldSpec{WireName: "route_table_id"},
+		"RouteTableId":   ubx.FieldSpec{WireName: "route_table_id"},
 	},
 }

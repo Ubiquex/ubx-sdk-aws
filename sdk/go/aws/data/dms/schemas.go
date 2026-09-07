@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemasConfig struct {
 	EndpointArn any
-	Marker any
-	MaxRecords any
+	Marker      any
+	MaxRecords  any
 }
 
 type SchemasAttrs struct {
 	EndpointArn any
-	Marker any
-	MaxRecords any
-	Schemas any
+	Marker      any
+	MaxRecords  any
+	Schemas     any
 }
 
 var Schemas = ubx.DataSourceBinding{
 	WireType: "aws_dms_schemas",
 	Fields: ubx.FieldMap{
 		"EndpointArn": ubx.FieldSpec{WireName: "endpoint_arn"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":      ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":  ubx.FieldSpec{WireName: "max_records"},
 	},
 }

@@ -18,9 +18,9 @@ type Cluster_Tags struct {
 }
 
 var Cluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterConfig struct {
 	// Name of a Cluster. You can use any non-white space character in the name
@@ -49,12 +49,12 @@ type ClusterAttrs struct {
 var Cluster = ubx.ResourceBinding{
 	WireType: "aws_route53_recovery_control_cluster",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cluster_TagsFields,
+			Kind:     "list",
+			Fields:   Cluster_TagsFields,
 		},
 	},
 }

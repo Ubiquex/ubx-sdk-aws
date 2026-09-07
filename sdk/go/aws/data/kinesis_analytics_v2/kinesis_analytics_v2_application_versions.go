@@ -4,23 +4,23 @@ package kinesis_analytics_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KinesisAnalyticsV2ApplicationVersions_ApplicationVersionSummaries struct {
-	ApplicationStatus any
+	ApplicationStatus    any
 	ApplicationVersionId any
 }
 
 type KinesisAnalyticsV2ApplicationVersionsConfig struct {
 	// <p>The name of the application.</p>
 	ApplicationName any
-	Limit any
+	Limit           any
 	// <p>A pagination token that can be used in a subsequent request.</p>
 	NextToken any
 }
 
 type KinesisAnalyticsV2ApplicationVersionsAttrs struct {
 	// <p>The name of the application.</p>
-	ApplicationName any
+	ApplicationName             any
 	ApplicationVersionSummaries any
-	Limit any
+	Limit                       any
 	// <p>A pagination token that can be used in a subsequent request.</p>
 	NextToken any
 }
@@ -29,7 +29,7 @@ var KinesisAnalyticsV2ApplicationVersions = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_analytics_v2_application_versions",
 	Fields: ubx.FieldMap{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

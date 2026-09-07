@@ -5,38 +5,38 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Resources_FilterConditionList struct {
 	ComparisonOperator any
-	Field any
-	StringValueList any
+	Field              any
+	StringValueList    any
 }
 
 type Resources_ResourceInfoList struct {
 	ExpectedResourceOwnerAccount any
-	HybridAccessEnabled any
-	LastModified any
-	ResourceArn any
-	RoleArn any
-	VerificationStatus any
-	WithFederation any
-	WithPrivilegedAccess any
+	HybridAccessEnabled          any
+	LastModified                 any
+	ResourceArn                  any
+	RoleArn                      any
+	VerificationStatus           any
+	WithFederation               any
+	WithPrivilegedAccess         any
 }
 
 var Resources_FilterConditionListFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"StringValueList": ubx.FieldSpec{WireName: "string_value_list"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"Field":              ubx.FieldSpec{WireName: "field"},
+	"StringValueList":    ubx.FieldSpec{WireName: "string_value_list"},
+}
 
 type ResourcesConfig struct {
 	FilterConditionList any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type ResourcesAttrs struct {
 	FilterConditionList any
-	MaxResults any
-	NextToken any
-	ResourceInfoList any
+	MaxResults          any
+	NextToken           any
+	ResourceInfoList    any
 }
 
 var Resources = ubx.DataSourceBinding{
@@ -44,10 +44,10 @@ var Resources = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterConditionList": ubx.FieldSpec{
 			WireName: "filter_condition_list",
-			Kind: "list",
-			Fields: Resources_FilterConditionListFields,
+			Kind:     "list",
+			Fields:   Resources_FilterConditionListFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

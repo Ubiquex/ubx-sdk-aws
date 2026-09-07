@@ -8,8 +8,8 @@ type Route53RecoveryClusterRoutingControlStateConfig struct {
 }
 
 type Route53RecoveryClusterRoutingControlStateAttrs struct {
-	RoutingControlArn any
-	RoutingControlName any
+	RoutingControlArn   any
+	RoutingControlName  any
 	RoutingControlState any
 }
 

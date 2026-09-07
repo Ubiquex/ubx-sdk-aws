@@ -11,9 +11,9 @@ type Schedule_Tags struct {
 }
 
 var Schedule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ScheduleConfig struct {
 	// Schedule cron
@@ -41,12 +41,12 @@ var Schedule = ubx.ResourceBinding{
 	WireType: "aws_data_brew_schedule",
 	Fields: ubx.FieldMap{
 		"CronExpression": ubx.FieldSpec{WireName: "cron_expression"},
-		"JobNames": ubx.FieldSpec{WireName: "job_names"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"JobNames":       ubx.FieldSpec{WireName: "job_names"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Schedule_TagsFields,
+			Kind:     "list",
+			Fields:   Schedule_TagsFields,
 		},
 	},
 }

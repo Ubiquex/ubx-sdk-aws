@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MedicalImagingDicomimportJobs_JobSummaries struct {
 	DataAccessRoleArn any
-	DatastoreId any
-	EndedAt any
-	JobId any
-	JobName any
-	JobStatus any
-	Message any
-	SubmittedAt any
+	DatastoreId       any
+	EndedAt           any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	Message           any
+	SubmittedAt       any
 }
 
 type MedicalImagingDicomimportJobsConfig struct {
 	DatastoreId any
-	JobStatus any
-	MaxResults any
-	NextToken any
+	JobStatus   any
+	MaxResults  any
+	NextToken   any
 }
 
 type MedicalImagingDicomimportJobsAttrs struct {
-	DatastoreId any
-	JobStatus any
+	DatastoreId  any
+	JobStatus    any
 	JobSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var MedicalImagingDicomimportJobs = ubx.DataSourceBinding{
 	WireType: "aws_medical_imaging_dicomimport_jobs",
 	Fields: ubx.FieldMap{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"JobStatus":   ubx.FieldSpec{WireName: "job_status"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -8,9 +8,9 @@ type SchemaCreationStatusConfig struct {
 }
 
 type SchemaCreationStatusAttrs struct {
-	ApiId any
+	ApiId   any
 	Details any
-	Status any
+	Status  any
 }
 
 var SchemaCreationStatus = ubx.DataSourceBinding{

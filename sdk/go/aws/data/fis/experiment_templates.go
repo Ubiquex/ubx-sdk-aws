@@ -4,29 +4,29 @@ package fis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentTemplates_ExperimentTemplates struct {
-	Arn any
-	CreationTime any
-	Description any
-	Id any
+	Arn            any
+	CreationTime   any
+	Description    any
+	Id             any
 	LastUpdateTime any
-	Tags any
+	Tags           any
 }
 
 type ExperimentTemplatesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExperimentTemplatesAttrs struct {
 	ExperimentTemplates any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 var ExperimentTemplates = ubx.DataSourceBinding{
 	WireType: "aws_fis_experiment_templates",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -7,7 +7,7 @@ type DevopsGuruServiceIntegration_ServiceIntegration_KmsserverSideEncryption str
 	KmskeyId any
 	// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
 	OptInStatus any
-	Type any
+	Type        any
 }
 
 type DevopsGuruServiceIntegration_ServiceIntegration_LogsAnomalyDetection struct {
@@ -34,6 +34,5 @@ type DevopsGuruServiceIntegrationAttrs struct {
 
 var DevopsGuruServiceIntegration = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_service_integration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

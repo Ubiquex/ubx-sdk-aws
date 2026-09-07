@@ -39,10 +39,10 @@ var LaunchRoleConstraint = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_launch_role_constraint",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"LocalRoleName": ubx.FieldSpec{WireName: "local_role_name"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"LocalRoleName":  ubx.FieldSpec{WireName: "local_role_name"},
+		"PortfolioId":    ubx.FieldSpec{WireName: "portfolio_id"},
+		"ProductId":      ubx.FieldSpec{WireName: "product_id"},
+		"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

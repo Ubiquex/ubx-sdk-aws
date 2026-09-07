@@ -16,9 +16,9 @@ type Endpoint_NetworkInterfaces struct {
 }
 
 var Endpoint_FailedReasonFields = ubx.FieldMap{
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+}
 
 type EndpointConfig struct {
 	// The type of access for the on-premise network connectivity for the Outpost endpoint. To access endpoint from an on-premises network, you must specify the access type and provide the customer owned Ipv4 pool.
@@ -65,15 +65,15 @@ type EndpointAttrs struct {
 var Endpoint = ubx.ResourceBinding{
 	WireType: "aws_s3_outposts_endpoint",
 	Fields: ubx.FieldMap{
-		"AccessType": ubx.FieldSpec{WireName: "access_type"},
+		"AccessType":            ubx.FieldSpec{WireName: "access_type"},
 		"CustomerOwnedIpv4Pool": ubx.FieldSpec{WireName: "customer_owned_ipv4_pool"},
 		"FailedReason": ubx.FieldSpec{
 			WireName: "failed_reason",
-			Kind: "object",
-			Fields: Endpoint_FailedReasonFields,
+			Kind:     "object",
+			Fields:   Endpoint_FailedReasonFields,
 		},
-		"OutpostId": ubx.FieldSpec{WireName: "outpost_id"},
+		"OutpostId":       ubx.FieldSpec{WireName: "outpost_id"},
 		"SecurityGroupId": ubx.FieldSpec{WireName: "security_group_id"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":        ubx.FieldSpec{WireName: "subnet_id"},
 	},
 }

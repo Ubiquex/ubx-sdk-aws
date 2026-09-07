@@ -4,17 +4,17 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaStorageConfiguration_MediaStorageConfiguration struct {
-	Status any
+	Status    any
 	StreamArn any
 }
 
 type MediaStorageConfigurationConfig struct {
-	ChannelArn any
+	ChannelArn  any
 	ChannelName any
 }
 
 type MediaStorageConfigurationAttrs struct {
-	ChannelArn any
+	ChannelArn  any
 	ChannelName any
 	// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p> <ul> <li> <p>If <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code> provided. In order for WebRTC Ingestion to work, the stream must have data retention enabled.</p> </li> <li> <p>If <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code> parameter will not be needed. </p> </li> </ul>
 	MediaStorageConfiguration any
@@ -23,7 +23,7 @@ type MediaStorageConfigurationAttrs struct {
 var MediaStorageConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_media_storage_configuration",
 	Fields: ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
+		"ChannelArn":  ubx.FieldSpec{WireName: "channel_arn"},
 		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
 	},
 }

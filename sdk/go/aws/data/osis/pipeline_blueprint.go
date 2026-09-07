@@ -4,30 +4,30 @@ package osis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PipelineBlueprint_Blueprint struct {
-	BlueprintName any
-	DisplayDescription any
-	DisplayName any
+	BlueprintName             any
+	DisplayDescription        any
+	DisplayName               any
 	PipelineConfigurationBody any
-	Service any
-	UseCase any
+	Service                   any
+	UseCase                   any
 }
 
 type PipelineBlueprintConfig struct {
 	BlueprintName any
-	Format any
+	Format        any
 }
 
 type PipelineBlueprintAttrs struct {
 	// <p>Container for information about an OpenSearch Ingestion blueprint.</p>
-	Blueprint any
+	Blueprint     any
 	BlueprintName any
-	Format any
+	Format        any
 }
 
 var PipelineBlueprint = ubx.DataSourceBinding{
 	WireType: "aws_osis_pipeline_blueprint",
 	Fields: ubx.FieldMap{
 		"BlueprintName": ubx.FieldSpec{WireName: "blueprint_name"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":        ubx.FieldSpec{WireName: "format"},
 	},
 }

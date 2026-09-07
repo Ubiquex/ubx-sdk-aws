@@ -4,106 +4,106 @@ package agreement_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ByolPricingTerm struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ConfigurableUpfrontPricingTerm_Configuration_Dimensions struct {
-	DimensionKey any
+	DimensionKey   any
 	DimensionValue any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ConfigurableUpfrontPricingTerm_Configuration struct {
-	Dimensions any
+	Dimensions    any
 	SelectorValue any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ConfigurableUpfrontPricingTerm_RateCards_Constraints struct {
 	MultipleDimensionSelection any
-	QuantityConfiguration any
+	QuantityConfiguration      any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ConfigurableUpfrontPricingTerm_RateCards_RateCard struct {
 	DimensionKey any
-	Price any
+	Price        any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ConfigurableUpfrontPricingTerm_RateCards_Selector struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ConfigurableUpfrontPricingTerm_RateCards struct {
 	Constraints any
-	RateCard any
-	Selector any
+	RateCard    any
+	Selector    any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ConfigurableUpfrontPricingTerm struct {
 	Configuration any
-	CurrencyCode any
-	Id any
-	RateCards any
-	Type any
+	CurrencyCode  any
+	Id            any
+	RateCards     any
+	Type          any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_FixedUpfrontPricingTerm_Grants struct {
 	DimensionKey any
-	MaxQuantity any
+	MaxQuantity  any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_FixedUpfrontPricingTerm struct {
 	CurrencyCode any
-	Duration any
-	Grants any
-	Id any
-	Price any
-	Type any
+	Duration     any
+	Grants       any
+	Id           any
+	Price        any
+	Type         any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_FreeTrialPricingTerm struct {
 	Duration any
-	Grants any
-	Id any
-	Type any
+	Grants   any
+	Id       any
+	Type     any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_LegalTerm_Documents struct {
-	Type any
-	Url any
+	Type    any
+	Url     any
 	Version any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_LegalTerm struct {
 	Documents any
-	Id any
-	Type any
+	Id        any
+	Type      any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_NetPaymentTerm struct {
-	Id any
+	Id               any
 	PaymentDuePeriod any
-	Type any
+	Type             any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_PaymentScheduleTerm_Schedule struct {
 	ChargeAmount any
-	ChargeDate any
+	ChargeDate   any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_PaymentScheduleTerm struct {
 	CurrencyCode any
-	Id any
-	Schedule any
-	Type any
+	Id           any
+	Schedule     any
+	Type         any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_RecurringPaymentTerm struct {
 	BillingPeriod any
-	CurrencyCode any
-	Id any
-	Price any
-	Type any
+	CurrencyCode  any
+	Id            any
+	Price         any
+	Type          any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_Configuration struct {
@@ -116,8 +116,8 @@ type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease_PercentageRange struct {
 	DefaultValue any
-	MaxValue any
-	MinValue any
+	MaxValue     any
+	MinValue     any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease struct {
@@ -128,7 +128,7 @@ type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_PriceIncrease 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule struct {
 	ChargeDateOffset any
 	ChargePercentage any
-	DayOfMonth any
+	DayOfMonth       any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate struct {
@@ -141,19 +141,19 @@ type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm_TermTemplates 
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_RenewalTerm struct {
 	AdjustmentDeadline any
-	Configuration any
-	Id any
-	LockoutPeriod any
-	MaxRenewals any
-	PriceIncrease any
-	TermTemplates any
-	Type any
+	Configuration      any
+	Id                 any
+	LockoutPeriod      any
+	MaxRenewals        any
+	PriceIncrease      any
+	TermTemplates      any
+	Type               any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_SupportTerm struct {
-	Id any
+	Id           any
 	RefundPolicy any
-	Type any
+	Type         any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_UsageBasedPricingTerm_RateCards struct {
@@ -162,66 +162,66 @@ type AgreementMarketplaceAgreementTerms_AcceptedTerms_UsageBasedPricingTerm_Rate
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_UsageBasedPricingTerm struct {
 	CurrencyCode any
-	Id any
-	RateCards any
-	Type any
+	Id           any
+	RateCards    any
+	Type         any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_ValidityTerm struct {
-	AgreementDuration any
-	AgreementEndDate any
+	AgreementDuration  any
+	AgreementEndDate   any
 	AgreementStartDate any
-	Id any
-	Type any
+	Id                 any
+	Type               any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_VariablePaymentTerm_Configuration struct {
-	ExpirationDuration any
+	ExpirationDuration             any
 	PaymentRequestApprovalStrategy any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms_VariablePaymentTerm struct {
-	Configuration any
-	CurrencyCode any
-	Id any
+	Configuration        any
+	CurrencyCode         any
+	Id                   any
 	MaxTotalChargeAmount any
-	Type any
+	Type                 any
 }
 
 type AgreementMarketplaceAgreementTerms_AcceptedTerms struct {
-	ByolPricingTerm any
+	ByolPricingTerm                any
 	ConfigurableUpfrontPricingTerm any
-	FixedUpfrontPricingTerm any
-	FreeTrialPricingTerm any
-	LegalTerm any
-	NetPaymentTerm any
-	PaymentScheduleTerm any
-	RecurringPaymentTerm any
-	RenewalTerm any
-	SupportTerm any
-	UsageBasedPricingTerm any
-	ValidityTerm any
-	VariablePaymentTerm any
+	FixedUpfrontPricingTerm        any
+	FreeTrialPricingTerm           any
+	LegalTerm                      any
+	NetPaymentTerm                 any
+	PaymentScheduleTerm            any
+	RecurringPaymentTerm           any
+	RenewalTerm                    any
+	SupportTerm                    any
+	UsageBasedPricingTerm          any
+	ValidityTerm                   any
+	VariablePaymentTerm            any
 }
 
 type AgreementMarketplaceAgreementTermsConfig struct {
 	AgreementId any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type AgreementMarketplaceAgreementTermsAttrs struct {
 	AcceptedTerms any
-	AgreementId any
-	MaxResults any
-	NextToken any
+	AgreementId   any
+	MaxResults    any
+	NextToken     any
 }
 
 var AgreementMarketplaceAgreementTerms = ubx.DataSourceBinding{
 	WireType: "aws_agreement_marketplace_agreement_terms",
 	Fields: ubx.FieldMap{
 		"AgreementId": ubx.FieldSpec{WireName: "agreement_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

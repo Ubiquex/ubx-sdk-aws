@@ -4,9 +4,9 @@ package rtbfabric
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Link_LinkAttributes_ResponderErrorMasking struct {
-	Action any
-	HttpCode any
-	LoggingTypes any
+	Action                    any
+	HttpCode                  any
+	LoggingTypes              any
 	ResponseLoggingPercentage any
 }
 
@@ -18,7 +18,7 @@ type Link_LinkAttributes struct {
 
 type Link_LinkLogSettings_ApplicationLogs_LinkApplicationLogSampling struct {
 	// Defines the percentage (0-100) of error-level application log entries to sample and send to the configured log destination for this RTB Fabric link. (AI-inferred)
-	ErrorLog any
+	ErrorLog  any
 	FilterLog any
 }
 
@@ -31,65 +31,65 @@ type Link_LinkLogSettings struct {
 }
 
 type Link_ModuleConfigurationList struct {
-	DependsOn any
+	DependsOn        any
 	ModuleParameters any
-	Name any
-	Version any
+	Name             any
+	Version          any
 }
 
 type Link_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Link_LinkAttributes_ResponderErrorMaskingFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"HttpCode": ubx.FieldSpec{WireName: "http_code"},
-		"LoggingTypes": ubx.FieldSpec{WireName: "logging_types"},
-		"ResponseLoggingPercentage": ubx.FieldSpec{WireName: "response_logging_percentage"},
-	}
+	"Action":                    ubx.FieldSpec{WireName: "action"},
+	"HttpCode":                  ubx.FieldSpec{WireName: "http_code"},
+	"LoggingTypes":              ubx.FieldSpec{WireName: "logging_types"},
+	"ResponseLoggingPercentage": ubx.FieldSpec{WireName: "response_logging_percentage"},
+}
 
 var Link_LinkAttributesFields = ubx.FieldMap{
-		"CustomerProvidedId": ubx.FieldSpec{WireName: "customer_provided_id"},
-		"ResponderErrorMasking": ubx.FieldSpec{
-			WireName: "responder_error_masking",
-			Kind: "list",
-			Fields: Link_LinkAttributes_ResponderErrorMaskingFields,
-		},
-	}
+	"CustomerProvidedId": ubx.FieldSpec{WireName: "customer_provided_id"},
+	"ResponderErrorMasking": ubx.FieldSpec{
+		WireName: "responder_error_masking",
+		Kind:     "list",
+		Fields:   Link_LinkAttributes_ResponderErrorMaskingFields,
+	},
+}
 
 var Link_LinkLogSettings_ApplicationLogs_LinkApplicationLogSamplingFields = ubx.FieldMap{
-		"ErrorLog": ubx.FieldSpec{WireName: "error_log"},
-		"FilterLog": ubx.FieldSpec{WireName: "filter_log"},
-	}
+	"ErrorLog":  ubx.FieldSpec{WireName: "error_log"},
+	"FilterLog": ubx.FieldSpec{WireName: "filter_log"},
+}
 
 var Link_LinkLogSettings_ApplicationLogsFields = ubx.FieldMap{
-		"LinkApplicationLogSampling": ubx.FieldSpec{
-			WireName: "link_application_log_sampling",
-			Kind: "object",
-			Fields: Link_LinkLogSettings_ApplicationLogs_LinkApplicationLogSamplingFields,
-		},
-	}
+	"LinkApplicationLogSampling": ubx.FieldSpec{
+		WireName: "link_application_log_sampling",
+		Kind:     "object",
+		Fields:   Link_LinkLogSettings_ApplicationLogs_LinkApplicationLogSamplingFields,
+	},
+}
 
 var Link_LinkLogSettingsFields = ubx.FieldMap{
-		"ApplicationLogs": ubx.FieldSpec{
-			WireName: "application_logs",
-			Kind: "object",
-			Fields: Link_LinkLogSettings_ApplicationLogsFields,
-		},
-	}
+	"ApplicationLogs": ubx.FieldSpec{
+		WireName: "application_logs",
+		Kind:     "object",
+		Fields:   Link_LinkLogSettings_ApplicationLogsFields,
+	},
+}
 
 var Link_ModuleConfigurationListFields = ubx.FieldMap{
-		"DependsOn": ubx.FieldSpec{WireName: "depends_on"},
-		"ModuleParameters": ubx.FieldSpec{WireName: "module_parameters"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"DependsOn":        ubx.FieldSpec{WireName: "depends_on"},
+	"ModuleParameters": ubx.FieldSpec{WireName: "module_parameters"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Version":          ubx.FieldSpec{WireName: "version"},
+}
 
 var Link_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LinkConfig struct {
 	// A reference to the gateway this link originates from. (AI-inferred)
@@ -140,28 +140,28 @@ type LinkAttrs struct {
 var Link = ubx.ResourceBinding{
 	WireType: "aws_rtbfabric_link",
 	Fields: ubx.FieldMap{
-		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
+		"GatewayId":            ubx.FieldSpec{WireName: "gateway_id"},
 		"HttpResponderAllowed": ubx.FieldSpec{WireName: "http_responder_allowed"},
 		"LinkAttributes": ubx.FieldSpec{
 			WireName: "link_attributes",
-			Kind: "object",
-			Fields: Link_LinkAttributesFields,
+			Kind:     "object",
+			Fields:   Link_LinkAttributesFields,
 		},
 		"LinkLogSettings": ubx.FieldSpec{
 			WireName: "link_log_settings",
-			Kind: "object",
-			Fields: Link_LinkLogSettingsFields,
+			Kind:     "object",
+			Fields:   Link_LinkLogSettingsFields,
 		},
 		"ModuleConfigurationList": ubx.FieldSpec{
 			WireName: "module_configuration_list",
-			Kind: "list",
-			Fields: Link_ModuleConfigurationListFields,
+			Kind:     "list",
+			Fields:   Link_ModuleConfigurationListFields,
 		},
 		"PeerGatewayId": ubx.FieldSpec{WireName: "peer_gateway_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Link_TagsFields,
+			Kind:     "list",
+			Fields:   Link_TagsFields,
 		},
 	},
 }

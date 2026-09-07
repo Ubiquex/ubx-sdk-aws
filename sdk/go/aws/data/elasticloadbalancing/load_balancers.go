@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancers_LoadBalancerDescriptions_BackendServerDescriptions struct {
 	InstancePort any
-	PolicyNames any
+	PolicyNames  any
 }
 
 type LoadBalancers_LoadBalancerDescriptions_HealthCheck struct {
-	HealthyThreshold any
-	Interval any
-	Target any
-	Timeout any
+	HealthyThreshold   any
+	Interval           any
+	Target             any
+	Timeout            any
 	UnhealthyThreshold any
 }
 
@@ -21,15 +21,15 @@ type LoadBalancers_LoadBalancerDescriptions_Instances struct {
 }
 
 type LoadBalancers_LoadBalancerDescriptions_ListenerDescriptions_Listener struct {
-	InstancePort any
+	InstancePort     any
 	InstanceProtocol any
 	LoadBalancerPort any
-	Protocol any
+	Protocol         any
 	SslcertificateId any
 }
 
 type LoadBalancers_LoadBalancerDescriptions_ListenerDescriptions struct {
-	Listener any
+	Listener    any
 	PolicyNames any
 }
 
@@ -40,58 +40,58 @@ type LoadBalancers_LoadBalancerDescriptions_Policies_AppCookieStickinessPolicies
 
 type LoadBalancers_LoadBalancerDescriptions_Policies_LbcookieStickinessPolicies struct {
 	CookieExpirationPeriod any
-	PolicyName any
+	PolicyName             any
 }
 
 type LoadBalancers_LoadBalancerDescriptions_Policies struct {
 	AppCookieStickinessPolicies any
-	LbcookieStickinessPolicies any
-	OtherPolicies any
+	LbcookieStickinessPolicies  any
+	OtherPolicies               any
 }
 
 type LoadBalancers_LoadBalancerDescriptions_SourceSecurityGroup struct {
-	GroupName any
+	GroupName  any
 	OwnerAlias any
 }
 
 type LoadBalancers_LoadBalancerDescriptions struct {
-	AvailabilityZones any
+	AvailabilityZones         any
 	BackendServerDescriptions any
-	CanonicalHostedZoneName any
+	CanonicalHostedZoneName   any
 	CanonicalHostedZoneNameId any
-	CreatedTime any
-	Dnsname any
-	HealthCheck any
-	Instances any
-	ListenerDescriptions any
-	LoadBalancerName any
-	Policies any
-	Scheme any
-	SecurityGroups any
-	SourceSecurityGroup any
-	Subnets any
-	Vpcid any
+	CreatedTime               any
+	Dnsname                   any
+	HealthCheck               any
+	Instances                 any
+	ListenerDescriptions      any
+	LoadBalancerName          any
+	Policies                  any
+	Scheme                    any
+	SecurityGroups            any
+	SourceSecurityGroup       any
+	Subnets                   any
+	Vpcid                     any
 }
 
 type LoadBalancersConfig struct {
 	LoadBalancerNames any
-	Marker any
-	PageSize any
+	Marker            any
+	PageSize          any
 }
 
 type LoadBalancersAttrs struct {
 	LoadBalancerDescriptions any
-	LoadBalancerNames any
-	Marker any
-	NextMarker any
-	PageSize any
+	LoadBalancerNames        any
+	Marker                   any
+	NextMarker               any
+	PageSize                 any
 }
 
 var LoadBalancers = ubx.DataSourceBinding{
 	WireType: "aws_elasticloadbalancing_load_balancers",
 	Fields: ubx.FieldMap{
 		"LoadBalancerNames": ubx.FieldSpec{WireName: "load_balancer_names"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":            ubx.FieldSpec{WireName: "marker"},
+		"PageSize":          ubx.FieldSpec{WireName: "page_size"},
 	},
 }

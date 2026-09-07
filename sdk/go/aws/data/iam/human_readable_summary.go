@@ -6,21 +6,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type HumanReadableSummaryConfig struct {
 	// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
 	EntityArn any
-	Locale any
+	Locale    any
 }
 
 type HumanReadableSummaryAttrs struct {
 	// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-	EntityArn any
-	Locale any
+	EntityArn      any
+	Locale         any
 	SummaryContent any
-	SummaryState any
+	SummaryState   any
 }
 
 var HumanReadableSummary = ubx.DataSourceBinding{
 	WireType: "aws_iam_human_readable_summary",
 	Fields: ubx.FieldMap{
 		"EntityArn": ubx.FieldSpec{WireName: "entity_arn"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Locale":    ubx.FieldSpec{WireName: "locale"},
 	},
 }

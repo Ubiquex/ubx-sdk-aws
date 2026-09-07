@@ -4,57 +4,57 @@ package wafv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RevenueStatisticsTimeSeries_DataPoints struct {
-	Category any
-	Date any
-	GroupByValue any
-	Intent any
+	Category            any
+	Date                any
+	GroupByValue        any
+	Intent              any
 	MonetizeServedCount any
-	SettledCount any
-	TotalAmount any
+	SettledCount        any
+	TotalAmount         any
 }
 
 type RevenueStatisticsTimeSeries_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type RevenueStatisticsTimeSeries_TimeWindow struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 var RevenueStatisticsTimeSeries_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var RevenueStatisticsTimeSeries_TimeWindowFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 type RevenueStatisticsTimeSeriesConfig struct {
-	Currency any
-	Filters any
-	GroupBy any
-	Interval any
-	Limit any
-	NextMarker any
-	Scope any
+	Currency      any
+	Filters       any
+	GroupBy       any
+	Interval      any
+	Limit         any
+	NextMarker    any
+	Scope         any
 	StatisticType any
 	// <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want WAF to return a sample of web requests.</p> <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p> <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which WAF actually returned a sample of web requests. WAF gets the specified number of requests from among the first 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the 5,000th request.</p>
 	TimeWindow any
 }
 
 type RevenueStatisticsTimeSeriesAttrs struct {
-	Currency any
-	DataPoints any
-	Filters any
-	GroupBy any
-	Interval any
-	Limit any
-	NextMarker any
-	Scope any
+	Currency      any
+	DataPoints    any
+	Filters       any
+	GroupBy       any
+	Interval      any
+	Limit         any
+	NextMarker    any
+	Scope         any
 	StatisticType any
 	// <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want WAF to return a sample of web requests.</p> <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p> <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which WAF actually returned a sample of web requests. WAF gets the specified number of requests from among the first 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the 5,000th request.</p>
 	TimeWindow any
@@ -66,19 +66,19 @@ var RevenueStatisticsTimeSeries = ubx.DataSourceBinding{
 		"Currency": ubx.FieldSpec{WireName: "currency"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: RevenueStatisticsTimeSeries_FiltersFields,
+			Kind:     "list",
+			Fields:   RevenueStatisticsTimeSeries_FiltersFields,
 		},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"GroupBy":       ubx.FieldSpec{WireName: "group_by"},
+		"Interval":      ubx.FieldSpec{WireName: "interval"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
+		"NextMarker":    ubx.FieldSpec{WireName: "next_marker"},
+		"Scope":         ubx.FieldSpec{WireName: "scope"},
 		"StatisticType": ubx.FieldSpec{WireName: "statistic_type"},
 		"TimeWindow": ubx.FieldSpec{
 			WireName: "time_window",
-			Kind: "object",
-			Fields: RevenueStatisticsTimeSeries_TimeWindowFields,
+			Kind:     "object",
+			Fields:   RevenueStatisticsTimeSeries_TimeWindowFields,
 		},
 	},
 }

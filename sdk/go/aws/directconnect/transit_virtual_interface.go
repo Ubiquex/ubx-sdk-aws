@@ -26,9 +26,9 @@ type TransitVirtualInterface_Tags struct {
 }
 
 var TransitVirtualInterface_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitVirtualInterfaceConfig struct {
 	// The Amazon Resource Name (ARN) of the role to allocate the TransitVifAllocation. Needs directconnect:AllocateTransitVirtualInterface permissions and tag permissions if applicable.
@@ -82,17 +82,17 @@ var TransitVirtualInterface = ubx.ResourceBinding{
 	WireType: "aws_direct_connect_transit_virtual_interface",
 	Fields: ubx.FieldMap{
 		"AllocateTransitVirtualInterfaceRoleArn": ubx.FieldSpec{WireName: "allocate_transit_virtual_interface_role_arn"},
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"DirectConnectGatewayId": ubx.FieldSpec{WireName: "direct_connect_gateway_id"},
-		"EnableSiteLink": ubx.FieldSpec{WireName: "enable_site_link"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
+		"ConnectionId":                           ubx.FieldSpec{WireName: "connection_id"},
+		"DirectConnectGatewayId":                 ubx.FieldSpec{WireName: "direct_connect_gateway_id"},
+		"EnableSiteLink":                         ubx.FieldSpec{WireName: "enable_site_link"},
+		"Mtu":                                    ubx.FieldSpec{WireName: "mtu"},
+		"RateLimit":                              ubx.FieldSpec{WireName: "rate_limit"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitVirtualInterface_TagsFields,
+			Kind:     "list",
+			Fields:   TransitVirtualInterface_TagsFields,
 		},
 		"VirtualInterfaceName": ubx.FieldSpec{WireName: "virtual_interface_name"},
-		"Vlan": ubx.FieldSpec{WireName: "vlan"},
+		"Vlan":                 ubx.FieldSpec{WireName: "vlan"},
 	},
 }

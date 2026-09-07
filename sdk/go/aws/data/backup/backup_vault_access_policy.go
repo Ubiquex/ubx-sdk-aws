@@ -8,9 +8,9 @@ type BackupVaultAccessPolicyConfig struct {
 }
 
 type BackupVaultAccessPolicyAttrs struct {
-	BackupVaultArn any
+	BackupVaultArn  any
 	BackupVaultName any
-	Policy any
+	Policy          any
 }
 
 var BackupVaultAccessPolicy = ubx.DataSourceBinding{

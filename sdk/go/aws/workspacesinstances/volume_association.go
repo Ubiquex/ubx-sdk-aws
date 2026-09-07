@@ -28,9 +28,9 @@ type VolumeAssociationAttrs struct {
 var VolumeAssociation = ubx.ResourceBinding{
 	WireType: "aws_workspaces_instances_volume_association",
 	Fields: ubx.FieldMap{
-		"Device": ubx.FieldSpec{WireName: "device"},
-		"DisassociateMode": ubx.FieldSpec{WireName: "disassociate_mode"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+		"Device":              ubx.FieldSpec{WireName: "device"},
+		"DisassociateMode":    ubx.FieldSpec{WireName: "disassociate_mode"},
+		"VolumeId":            ubx.FieldSpec{WireName: "volume_id"},
 		"WorkspaceInstanceId": ubx.FieldSpec{WireName: "workspace_instance_id"},
 	},
 }

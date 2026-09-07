@@ -13,27 +13,27 @@ type EnvironmentResources_EnvironmentResources_Instances struct {
 
 type EnvironmentResources_EnvironmentResources_Queues struct {
 	Name any
-	Url any
+	Url  any
 }
 
 type EnvironmentResources_EnvironmentResources struct {
-	AutoScalingGroups any
-	EnvironmentName any
-	Instances any
+	AutoScalingGroups    any
+	EnvironmentName      any
+	Instances            any
 	LaunchConfigurations any
-	LaunchTemplates any
-	LoadBalancers any
-	Queues any
-	Triggers any
+	LaunchTemplates      any
+	LoadBalancers        any
+	Queues               any
+	Triggers             any
 }
 
 type EnvironmentResourcesConfig struct {
-	EnvironmentId any
+	EnvironmentId   any
 	EnvironmentName any
 }
 
 type EnvironmentResourcesAttrs struct {
-	EnvironmentId any
+	EnvironmentId   any
 	EnvironmentName any
 	// <p>Describes the AWS resources in use by this environment. This data is live.</p>
 	EnvironmentResources any
@@ -42,7 +42,7 @@ type EnvironmentResourcesAttrs struct {
 var EnvironmentResources = ubx.DataSourceBinding{
 	WireType: "aws_elasticbeanstalk_environment_resources",
 	Fields: ubx.FieldMap{
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"EnvironmentId":   ubx.FieldSpec{WireName: "environment_id"},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
 	},
 }

@@ -17,7 +17,7 @@ type PoliciesStats_SecurityConfigStats struct {
 
 type PoliciesStats_SecurityPolicyStats struct {
 	EncryptionPolicyCount any
-	NetworkPolicyCount any
+	NetworkPolicyCount    any
 }
 
 type PoliciesStatsConfig struct {
@@ -32,11 +32,10 @@ type PoliciesStatsAttrs struct {
 	SecurityConfigStats any
 	// <p>Statistics for an OpenSearch Serverless security policy.</p>
 	SecurityPolicyStats any
-	TotalPolicyCount any
+	TotalPolicyCount    any
 }
 
 var PoliciesStats = ubx.DataSourceBinding{
 	WireType: "aws_aoss_policies_stats",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

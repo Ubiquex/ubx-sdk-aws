@@ -8,9 +8,9 @@ type SnapshotBlockPublicAccessStateConfig struct {
 }
 
 type SnapshotBlockPublicAccessStateAttrs struct {
-	DryRun any
+	DryRun    any
 	ManagedBy any
-	State any
+	State     any
 }
 
 var SnapshotBlockPublicAccessState = ubx.DataSourceBinding{

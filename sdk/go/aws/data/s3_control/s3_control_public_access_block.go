@@ -4,9 +4,9 @@ package s3_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlPublicAccessBlock_PublicAccessBlockConfiguration struct {
-	BlockPublicAcls any
-	BlockPublicPolicy any
-	IgnorePublicAcls any
+	BlockPublicAcls       any
+	BlockPublicPolicy     any
+	IgnorePublicAcls      any
 	RestrictPublicBuckets any
 }
 

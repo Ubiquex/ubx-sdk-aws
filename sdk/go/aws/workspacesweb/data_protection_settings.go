@@ -48,54 +48,54 @@ type DataProtectionSettings_InlineRedactionConfiguration struct {
 }
 
 type DataProtectionSettings_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_CustomPatternFields = ubx.FieldMap{
-		"KeywordRegex": ubx.FieldSpec{WireName: "keyword_regex"},
-		"PatternDescription": ubx.FieldSpec{WireName: "pattern_description"},
-		"PatternName": ubx.FieldSpec{WireName: "pattern_name"},
-		"PatternRegex": ubx.FieldSpec{WireName: "pattern_regex"},
-	}
+	"KeywordRegex":       ubx.FieldSpec{WireName: "keyword_regex"},
+	"PatternDescription": ubx.FieldSpec{WireName: "pattern_description"},
+	"PatternName":        ubx.FieldSpec{WireName: "pattern_name"},
+	"PatternRegex":       ubx.FieldSpec{WireName: "pattern_regex"},
+}
 
 var DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_RedactionPlaceHolderFields = ubx.FieldMap{
-		"RedactionPlaceHolderText": ubx.FieldSpec{WireName: "redaction_place_holder_text"},
-		"RedactionPlaceHolderType": ubx.FieldSpec{WireName: "redaction_place_holder_type"},
-	}
+	"RedactionPlaceHolderText": ubx.FieldSpec{WireName: "redaction_place_holder_text"},
+	"RedactionPlaceHolderType": ubx.FieldSpec{WireName: "redaction_place_holder_type"},
+}
 
 var DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatternsFields = ubx.FieldMap{
-		"BuiltInPatternId": ubx.FieldSpec{WireName: "built_in_pattern_id"},
-		"ConfidenceLevel": ubx.FieldSpec{WireName: "confidence_level"},
-		"CustomPattern": ubx.FieldSpec{
-			WireName: "custom_pattern",
-			Kind: "object",
-			Fields: DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_CustomPatternFields,
-		},
-		"EnforcedUrls": ubx.FieldSpec{WireName: "enforced_urls"},
-		"ExemptUrls": ubx.FieldSpec{WireName: "exempt_urls"},
-		"RedactionPlaceHolder": ubx.FieldSpec{
-			WireName: "redaction_place_holder",
-			Kind: "object",
-			Fields: DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_RedactionPlaceHolderFields,
-		},
-	}
+	"BuiltInPatternId": ubx.FieldSpec{WireName: "built_in_pattern_id"},
+	"ConfidenceLevel":  ubx.FieldSpec{WireName: "confidence_level"},
+	"CustomPattern": ubx.FieldSpec{
+		WireName: "custom_pattern",
+		Kind:     "object",
+		Fields:   DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_CustomPatternFields,
+	},
+	"EnforcedUrls": ubx.FieldSpec{WireName: "enforced_urls"},
+	"ExemptUrls":   ubx.FieldSpec{WireName: "exempt_urls"},
+	"RedactionPlaceHolder": ubx.FieldSpec{
+		WireName: "redaction_place_holder",
+		Kind:     "object",
+		Fields:   DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_RedactionPlaceHolderFields,
+	},
+}
 
 var DataProtectionSettings_InlineRedactionConfigurationFields = ubx.FieldMap{
-		"GlobalConfidenceLevel": ubx.FieldSpec{WireName: "global_confidence_level"},
-		"GlobalEnforcedUrls": ubx.FieldSpec{WireName: "global_enforced_urls"},
-		"GlobalExemptUrls": ubx.FieldSpec{WireName: "global_exempt_urls"},
-		"InlineRedactionPatterns": ubx.FieldSpec{
-			WireName: "inline_redaction_patterns",
-			Kind: "list",
-			Fields: DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatternsFields,
-		},
-	}
+	"GlobalConfidenceLevel": ubx.FieldSpec{WireName: "global_confidence_level"},
+	"GlobalEnforcedUrls":    ubx.FieldSpec{WireName: "global_enforced_urls"},
+	"GlobalExemptUrls":      ubx.FieldSpec{WireName: "global_exempt_urls"},
+	"InlineRedactionPatterns": ubx.FieldSpec{
+		WireName: "inline_redaction_patterns",
+		Kind:     "list",
+		Fields:   DataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatternsFields,
+	},
+}
 
 var DataProtectionSettings_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataProtectionSettingsConfig struct {
 	// Provides additional encryption context key-value pairs that are included in the encryption context for AWS KMS keys used to protect data, enabling finer-grained access control and audit logging. (AI-inferred)
@@ -137,18 +137,18 @@ var DataProtectionSettings = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_web_data_protection_settings",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"CustomerManagedKey": ubx.FieldSpec{WireName: "customer_managed_key"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CustomerManagedKey":          ubx.FieldSpec{WireName: "customer_managed_key"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"InlineRedactionConfiguration": ubx.FieldSpec{
 			WireName: "inline_redaction_configuration",
-			Kind: "object",
-			Fields: DataProtectionSettings_InlineRedactionConfigurationFields,
+			Kind:     "object",
+			Fields:   DataProtectionSettings_InlineRedactionConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataProtectionSettings_TagsFields,
+			Kind:     "list",
+			Fields:   DataProtectionSettings_TagsFields,
 		},
 	},
 }

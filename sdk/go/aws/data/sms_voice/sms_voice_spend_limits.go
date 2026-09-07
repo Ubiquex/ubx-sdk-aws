@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceSpendLimits_SpendLimits struct {
 	EnforcedLimit any
-	MaxLimit any
-	Name any
-	Overridden any
+	MaxLimit      any
+	Name          any
+	Overridden    any
 }
 
 type SmsVoiceSpendLimitsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SmsVoiceSpendLimitsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	SpendLimits any
 }
 
@@ -25,6 +25,6 @@ var SmsVoiceSpendLimits = ubx.DataSourceBinding{
 	WireType: "aws_sms_voice_spend_limits",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

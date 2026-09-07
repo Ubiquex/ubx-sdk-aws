@@ -13,10 +13,10 @@ type RateBasedRule_MatchPredicates struct {
 }
 
 var RateBasedRule_MatchPredicatesFields = ubx.FieldMap{
-		"DataId": ubx.FieldSpec{WireName: "data_id"},
-		"Negated": ubx.FieldSpec{WireName: "negated"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DataId":  ubx.FieldSpec{WireName: "data_id"},
+	"Negated": ubx.FieldSpec{WireName: "negated"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type RateBasedRuleConfig struct {
 	// Specifies the list of predicates (such as IP match, byte match, SQL injection, or XSS match conditions) that determine which requests are counted toward the rate limit for blocking in this rate-based rule. (AI-inferred)
@@ -51,12 +51,12 @@ var RateBasedRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"MatchPredicates": ubx.FieldSpec{
 			WireName: "match_predicates",
-			Kind: "list",
-			Fields: RateBasedRule_MatchPredicatesFields,
+			Kind:     "list",
+			Fields:   RateBasedRule_MatchPredicatesFields,
 		},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RateKey": ubx.FieldSpec{WireName: "rate_key"},
-		"RateLimit": ubx.FieldSpec{WireName: "rate_limit"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"RateKey":    ubx.FieldSpec{WireName: "rate_key"},
+		"RateLimit":  ubx.FieldSpec{WireName: "rate_limit"},
 	},
 }

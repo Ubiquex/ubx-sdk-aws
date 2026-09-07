@@ -4,29 +4,29 @@ package ssm_incidents
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmIncidentsResourcePolicies_ResourcePolicies struct {
-	PolicyDocument any
-	PolicyId any
+	PolicyDocument         any
+	PolicyId               any
 	RamResourceShareRegion any
 }
 
 type SsmIncidentsResourcePoliciesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type SsmIncidentsResourcePoliciesAttrs struct {
-	MaxResults any
-	NextToken any
-	ResourceArn any
+	MaxResults       any
+	NextToken        any
+	ResourceArn      any
 	ResourcePolicies any
 }
 
 var SsmIncidentsResourcePolicies = ubx.DataSourceBinding{
 	WireType: "aws_ssm_incidents_resource_policies",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

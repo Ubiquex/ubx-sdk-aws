@@ -54,50 +54,50 @@ type CloudFormationProduct_Tags struct {
 }
 
 var CloudFormationProduct_ProvisioningArtifactParameters_InfoFields = ubx.FieldMap{
-		"ImportFromPhysicalId": ubx.FieldSpec{WireName: "import_from_physical_id"},
-		"LoadTemplateFromUrl": ubx.FieldSpec{WireName: "load_template_from_url"},
-	}
+	"ImportFromPhysicalId": ubx.FieldSpec{WireName: "import_from_physical_id"},
+	"LoadTemplateFromUrl":  ubx.FieldSpec{WireName: "load_template_from_url"},
+}
 
 var CloudFormationProduct_ProvisioningArtifactParametersFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisableTemplateValidation": ubx.FieldSpec{WireName: "disable_template_validation"},
-		"Info": ubx.FieldSpec{
-			WireName: "info",
-			Kind: "object",
-			Fields: CloudFormationProduct_ProvisioningArtifactParameters_InfoFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"DisableTemplateValidation": ubx.FieldSpec{WireName: "disable_template_validation"},
+	"Info": ubx.FieldSpec{
+		WireName: "info",
+		Kind:     "object",
+		Fields:   CloudFormationProduct_ProvisioningArtifactParameters_InfoFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var CloudFormationProduct_SourceConnection_ConnectionParameters_CodeStarFields = ubx.FieldMap{
-		"ArtifactPath": ubx.FieldSpec{WireName: "artifact_path"},
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"ArtifactPath":  ubx.FieldSpec{WireName: "artifact_path"},
+	"Branch":        ubx.FieldSpec{WireName: "branch"},
+	"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
+	"Repository":    ubx.FieldSpec{WireName: "repository"},
+}
 
 var CloudFormationProduct_SourceConnection_ConnectionParametersFields = ubx.FieldMap{
-		"CodeStar": ubx.FieldSpec{
-			WireName: "code_star",
-			Kind: "object",
-			Fields: CloudFormationProduct_SourceConnection_ConnectionParameters_CodeStarFields,
-		},
-	}
+	"CodeStar": ubx.FieldSpec{
+		WireName: "code_star",
+		Kind:     "object",
+		Fields:   CloudFormationProduct_SourceConnection_ConnectionParameters_CodeStarFields,
+	},
+}
 
 var CloudFormationProduct_SourceConnectionFields = ubx.FieldMap{
-		"ConnectionParameters": ubx.FieldSpec{
-			WireName: "connection_parameters",
-			Kind: "object",
-			Fields: CloudFormationProduct_SourceConnection_ConnectionParametersFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ConnectionParameters": ubx.FieldSpec{
+		WireName: "connection_parameters",
+		Kind:     "object",
+		Fields:   CloudFormationProduct_SourceConnection_ConnectionParametersFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var CloudFormationProduct_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CloudFormationProductConfig struct {
 	// The language code.
@@ -169,29 +169,29 @@ var CloudFormationProduct = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_cloud_formation_product",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Distributor": ubx.FieldSpec{WireName: "distributor"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
-		"ProductType": ubx.FieldSpec{WireName: "product_type"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"Distributor":    ubx.FieldSpec{WireName: "distributor"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Owner":          ubx.FieldSpec{WireName: "owner"},
+		"ProductType":    ubx.FieldSpec{WireName: "product_type"},
 		"ProvisioningArtifactParameters": ubx.FieldSpec{
 			WireName: "provisioning_artifact_parameters",
-			Kind: "list",
-			Fields: CloudFormationProduct_ProvisioningArtifactParametersFields,
+			Kind:     "list",
+			Fields:   CloudFormationProduct_ProvisioningArtifactParametersFields,
 		},
 		"ReplaceProvisioningArtifacts": ubx.FieldSpec{WireName: "replace_provisioning_artifacts"},
 		"SourceConnection": ubx.FieldSpec{
 			WireName: "source_connection",
-			Kind: "object",
-			Fields: CloudFormationProduct_SourceConnectionFields,
+			Kind:     "object",
+			Fields:   CloudFormationProduct_SourceConnectionFields,
 		},
 		"SupportDescription": ubx.FieldSpec{WireName: "support_description"},
-		"SupportEmail": ubx.FieldSpec{WireName: "support_email"},
-		"SupportUrl": ubx.FieldSpec{WireName: "support_url"},
+		"SupportEmail":       ubx.FieldSpec{WireName: "support_email"},
+		"SupportUrl":         ubx.FieldSpec{WireName: "support_url"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CloudFormationProduct_TagsFields,
+			Kind:     "list",
+			Fields:   CloudFormationProduct_TagsFields,
 		},
 	},
 }

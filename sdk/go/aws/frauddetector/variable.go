@@ -11,9 +11,9 @@ type Variable_Tags struct {
 }
 
 var Variable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VariableConfig struct {
 	// The source of the data.
@@ -58,15 +58,15 @@ type VariableAttrs struct {
 var Variable = ubx.ResourceBinding{
 	WireType: "aws_fraud_detector_variable",
 	Fields: ubx.FieldMap{
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
+		"DataSource":   ubx.FieldSpec{WireName: "data_source"},
+		"DataType":     ubx.FieldSpec{WireName: "data_type"},
 		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Variable_TagsFields,
+			Kind:     "list",
+			Fields:   Variable_TagsFields,
 		},
 		"VariableType": ubx.FieldSpec{WireName: "variable_type"},
 	},

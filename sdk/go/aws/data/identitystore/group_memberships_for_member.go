@@ -8,34 +8,34 @@ type GroupMembershipsForMember_GroupMemberships_MemberId struct {
 }
 
 type GroupMembershipsForMember_GroupMemberships struct {
-	CreatedAt any
-	CreatedBy any
-	GroupId any
+	CreatedAt       any
+	CreatedBy       any
+	GroupId         any
 	IdentityStoreId any
-	MemberId any
-	MembershipId any
-	UpdatedAt any
-	UpdatedBy any
+	MemberId        any
+	MembershipId    any
+	UpdatedAt       any
+	UpdatedBy       any
 }
 
 var GroupMembershipsForMember_GroupMemberships_MemberIdFields = ubx.FieldMap{
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"UserId": ubx.FieldSpec{WireName: "user_id"},
+}
 
 type GroupMembershipsForMemberConfig struct {
 	IdentityStoreId any
-	MaxResults any
+	MaxResults      any
 	// <p>An object containing the identifier of a group member.</p>
-	MemberId any
+	MemberId  any
 	NextToken any
 }
 
 type GroupMembershipsForMemberAttrs struct {
 	GroupMemberships any
-	IdentityStoreId any
-	MaxResults any
+	IdentityStoreId  any
+	MaxResults       any
 	// <p>An object containing the identifier of a group member.</p>
-	MemberId any
+	MemberId  any
 	NextToken any
 }
 
@@ -43,11 +43,11 @@ var GroupMembershipsForMember = ubx.DataSourceBinding{
 	WireType: "aws_identitystore_group_memberships_for_member",
 	Fields: ubx.FieldMap{
 		"IdentityStoreId": ubx.FieldSpec{WireName: "identity_store_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
 		"MemberId": ubx.FieldSpec{
 			WireName: "member_id",
-			Kind: "object",
-			Fields: GroupMembershipsForMember_GroupMemberships_MemberIdFields,
+			Kind:     "object",
+			Fields:   GroupMembershipsForMember_GroupMemberships_MemberIdFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},

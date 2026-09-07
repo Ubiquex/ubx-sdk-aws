@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryLoggingConfigs_QueryLoggingConfigs struct {
 	CloudWatchLogsLogGroupArn any
-	HostedZoneId any
-	Id any
+	HostedZoneId              any
+	Id                        any
 }
 
 type QueryLoggingConfigsConfig struct {
 	HostedZoneId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type QueryLoggingConfigsAttrs struct {
-	HostedZoneId any
-	MaxResults any
-	NextToken any
+	HostedZoneId        any
+	MaxResults          any
+	NextToken           any
 	QueryLoggingConfigs any
 }
 
@@ -26,7 +26,7 @@ var QueryLoggingConfigs = ubx.DataSourceBinding{
 	WireType: "aws_route53_query_logging_configs",
 	Fields: ubx.FieldMap{
 		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

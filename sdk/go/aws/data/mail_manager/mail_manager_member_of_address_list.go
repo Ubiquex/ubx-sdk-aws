@@ -4,20 +4,20 @@ package mail_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerMemberOfAddressListConfig struct {
-	Address any
+	Address       any
 	AddressListId any
 }
 
 type MailManagerMemberOfAddressListAttrs struct {
-	Address any
-	AddressListId any
+	Address          any
+	AddressListId    any
 	CreatedTimestamp any
 }
 
 var MailManagerMemberOfAddressList = ubx.DataSourceBinding{
 	WireType: "aws_mail_manager_member_of_address_list",
 	Fields: ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
+		"Address":       ubx.FieldSpec{WireName: "address"},
 		"AddressListId": ubx.FieldSpec{WireName: "address_list_id"},
 	},
 }

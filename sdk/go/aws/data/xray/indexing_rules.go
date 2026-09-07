@@ -4,7 +4,7 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IndexingRules_IndexingRules_Rule_Probabilistic struct {
-	ActualSamplingPercentage any
+	ActualSamplingPercentage  any
 	DesiredSamplingPercentage any
 }
 
@@ -14,8 +14,8 @@ type IndexingRules_IndexingRules_Rule struct {
 
 type IndexingRules_IndexingRules struct {
 	ModifiedAt any
-	Name any
-	Rule any
+	Name       any
+	Rule       any
 }
 
 type IndexingRulesConfig struct {
@@ -24,7 +24,7 @@ type IndexingRulesConfig struct {
 
 type IndexingRulesAttrs struct {
 	IndexingRules any
-	NextToken any
+	NextToken     any
 }
 
 var IndexingRules = ubx.DataSourceBinding{

@@ -30,20 +30,19 @@ type LicenseManagerServiceSettingsConfig struct {
 }
 
 type LicenseManagerServiceSettingsAttrs struct {
-	CrossRegionDiscoveryHomeRegion any
+	CrossRegionDiscoveryHomeRegion    any
 	CrossRegionDiscoverySourceRegions any
-	EnableCrossAccountsDiscovery any
-	LicenseManagerResourceShareArn any
+	EnableCrossAccountsDiscovery      any
+	LicenseManagerResourceShareArn    any
 	// <p>Configuration information for Organizations.</p>
 	OrganizationConfiguration any
-	S3BucketArn any
+	S3BucketArn               any
 	// <p>Overall service status information for License Manager.</p>
 	ServiceStatus any
-	SnsTopicArn any
+	SnsTopicArn   any
 }
 
 var LicenseManagerServiceSettings = ubx.DataSourceBinding{
 	WireType: "aws_license_manager_service_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

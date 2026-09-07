@@ -147,286 +147,286 @@ type Filter_FilterCriteria struct {
 }
 
 var Filter_FilterCriteria_AwsAccountIdFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Filter_FilterCriteria_EcrImagePushedAtFields = ubx.FieldMap{
-		"EndInclusive": ubx.FieldSpec{WireName: "end_inclusive"},
-		"StartInclusive": ubx.FieldSpec{WireName: "start_inclusive"},
-	}
+	"EndInclusive":   ubx.FieldSpec{WireName: "end_inclusive"},
+	"StartInclusive": ubx.FieldSpec{WireName: "start_inclusive"},
+}
 
 var Filter_FilterCriteria_EpssScoreFields = ubx.FieldMap{
-		"LowerInclusive": ubx.FieldSpec{WireName: "lower_inclusive"},
-		"UpperInclusive": ubx.FieldSpec{WireName: "upper_inclusive"},
-	}
+	"LowerInclusive": ubx.FieldSpec{WireName: "lower_inclusive"},
+	"UpperInclusive": ubx.FieldSpec{WireName: "upper_inclusive"},
+}
 
 var Filter_FilterCriteria_PortRangeFields = ubx.FieldMap{
-		"BeginInclusive": ubx.FieldSpec{WireName: "begin_inclusive"},
-		"EndInclusive": ubx.FieldSpec{WireName: "end_inclusive"},
-	}
+	"BeginInclusive": ubx.FieldSpec{WireName: "begin_inclusive"},
+	"EndInclusive":   ubx.FieldSpec{WireName: "end_inclusive"},
+}
 
 var Filter_FilterCriteria_ResourceTagsFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Filter_FilterCriteria_VulnerablePackagesFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{
-			WireName: "architecture",
-			Kind: "object",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Epoch": ubx.FieldSpec{
-			WireName: "epoch",
-			Kind: "object",
-			Fields: Filter_FilterCriteria_EpssScoreFields,
-		},
-		"FilePath": ubx.FieldSpec{
-			WireName: "file_path",
-			Kind: "object",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Name": ubx.FieldSpec{
-			WireName: "name",
-			Kind: "object",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Release": ubx.FieldSpec{
-			WireName: "release",
-			Kind: "object",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"SourceLambdaLayerArn": ubx.FieldSpec{
-			WireName: "source_lambda_layer_arn",
-			Kind: "object",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"SourceLayerHash": ubx.FieldSpec{
-			WireName: "source_layer_hash",
-			Kind: "object",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-	}
+	"Architecture": ubx.FieldSpec{
+		WireName: "architecture",
+		Kind:     "object",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Epoch": ubx.FieldSpec{
+		WireName: "epoch",
+		Kind:     "object",
+		Fields:   Filter_FilterCriteria_EpssScoreFields,
+	},
+	"FilePath": ubx.FieldSpec{
+		WireName: "file_path",
+		Kind:     "object",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Name": ubx.FieldSpec{
+		WireName: "name",
+		Kind:     "object",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Release": ubx.FieldSpec{
+		WireName: "release",
+		Kind:     "object",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"SourceLambdaLayerArn": ubx.FieldSpec{
+		WireName: "source_lambda_layer_arn",
+		Kind:     "object",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"SourceLayerHash": ubx.FieldSpec{
+		WireName: "source_layer_hash",
+		Kind:     "object",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+}
 
 var Filter_FilterCriteriaFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{
-			WireName: "aws_account_id",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"CodeVulnerabilityDetectorName": ubx.FieldSpec{
-			WireName: "code_vulnerability_detector_name",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"CodeVulnerabilityDetectorTags": ubx.FieldSpec{
-			WireName: "code_vulnerability_detector_tags",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"CodeVulnerabilityFilePath": ubx.FieldSpec{
-			WireName: "code_vulnerability_file_path",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"ComponentId": ubx.FieldSpec{
-			WireName: "component_id",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"ComponentType": ubx.FieldSpec{
-			WireName: "component_type",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Ec2InstanceImageId": ubx.FieldSpec{
-			WireName: "ec2_instance_image_id",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Ec2InstanceSubnetId": ubx.FieldSpec{
-			WireName: "ec2_instance_subnet_id",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Ec2InstanceVpcId": ubx.FieldSpec{
-			WireName: "ec2_instance_vpc_id",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"EcrImageArchitecture": ubx.FieldSpec{
-			WireName: "ecr_image_architecture",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"EcrImageHash": ubx.FieldSpec{
-			WireName: "ecr_image_hash",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"EcrImagePushedAt": ubx.FieldSpec{
-			WireName: "ecr_image_pushed_at",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_EcrImagePushedAtFields,
-		},
-		"EcrImageRegistry": ubx.FieldSpec{
-			WireName: "ecr_image_registry",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"EcrImageRepositoryName": ubx.FieldSpec{
-			WireName: "ecr_image_repository_name",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"EcrImageTags": ubx.FieldSpec{
-			WireName: "ecr_image_tags",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"EpssScore": ubx.FieldSpec{
-			WireName: "epss_score",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_EpssScoreFields,
-		},
-		"ExploitAvailable": ubx.FieldSpec{
-			WireName: "exploit_available",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"FindingArn": ubx.FieldSpec{
-			WireName: "finding_arn",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"FindingStatus": ubx.FieldSpec{
-			WireName: "finding_status",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"FindingType": ubx.FieldSpec{
-			WireName: "finding_type",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"FirstObservedAt": ubx.FieldSpec{
-			WireName: "first_observed_at",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_EcrImagePushedAtFields,
-		},
-		"FixAvailable": ubx.FieldSpec{
-			WireName: "fix_available",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"InspectorScore": ubx.FieldSpec{
-			WireName: "inspector_score",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_EpssScoreFields,
-		},
-		"LambdaFunctionExecutionRoleArn": ubx.FieldSpec{
-			WireName: "lambda_function_execution_role_arn",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"LambdaFunctionLastModifiedAt": ubx.FieldSpec{
-			WireName: "lambda_function_last_modified_at",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_EcrImagePushedAtFields,
-		},
-		"LambdaFunctionLayers": ubx.FieldSpec{
-			WireName: "lambda_function_layers",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"LambdaFunctionName": ubx.FieldSpec{
-			WireName: "lambda_function_name",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"LambdaFunctionRuntime": ubx.FieldSpec{
-			WireName: "lambda_function_runtime",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"LastObservedAt": ubx.FieldSpec{
-			WireName: "last_observed_at",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_EcrImagePushedAtFields,
-		},
-		"NetworkProtocol": ubx.FieldSpec{
-			WireName: "network_protocol",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"PortRange": ubx.FieldSpec{
-			WireName: "port_range",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_PortRangeFields,
-		},
-		"RelatedVulnerabilities": ubx.FieldSpec{
-			WireName: "related_vulnerabilities",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"ResourceId": ubx.FieldSpec{
-			WireName: "resource_id",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"ResourceTags": ubx.FieldSpec{
-			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_ResourceTagsFields,
-		},
-		"ResourceType": ubx.FieldSpec{
-			WireName: "resource_type",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Severity": ubx.FieldSpec{
-			WireName: "severity",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"UpdatedAt": ubx.FieldSpec{
-			WireName: "updated_at",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_EcrImagePushedAtFields,
-		},
-		"VendorSeverity": ubx.FieldSpec{
-			WireName: "vendor_severity",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"VulnerabilityId": ubx.FieldSpec{
-			WireName: "vulnerability_id",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"VulnerabilitySource": ubx.FieldSpec{
-			WireName: "vulnerability_source",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_AwsAccountIdFields,
-		},
-		"VulnerablePackages": ubx.FieldSpec{
-			WireName: "vulnerable_packages",
-			Kind: "list",
-			Fields: Filter_FilterCriteria_VulnerablePackagesFields,
-		},
-	}
+	"AwsAccountId": ubx.FieldSpec{
+		WireName: "aws_account_id",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"CodeVulnerabilityDetectorName": ubx.FieldSpec{
+		WireName: "code_vulnerability_detector_name",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"CodeVulnerabilityDetectorTags": ubx.FieldSpec{
+		WireName: "code_vulnerability_detector_tags",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"CodeVulnerabilityFilePath": ubx.FieldSpec{
+		WireName: "code_vulnerability_file_path",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"ComponentId": ubx.FieldSpec{
+		WireName: "component_id",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"ComponentType": ubx.FieldSpec{
+		WireName: "component_type",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Ec2InstanceImageId": ubx.FieldSpec{
+		WireName: "ec2_instance_image_id",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Ec2InstanceSubnetId": ubx.FieldSpec{
+		WireName: "ec2_instance_subnet_id",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Ec2InstanceVpcId": ubx.FieldSpec{
+		WireName: "ec2_instance_vpc_id",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"EcrImageArchitecture": ubx.FieldSpec{
+		WireName: "ecr_image_architecture",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"EcrImageHash": ubx.FieldSpec{
+		WireName: "ecr_image_hash",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"EcrImagePushedAt": ubx.FieldSpec{
+		WireName: "ecr_image_pushed_at",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_EcrImagePushedAtFields,
+	},
+	"EcrImageRegistry": ubx.FieldSpec{
+		WireName: "ecr_image_registry",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"EcrImageRepositoryName": ubx.FieldSpec{
+		WireName: "ecr_image_repository_name",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"EcrImageTags": ubx.FieldSpec{
+		WireName: "ecr_image_tags",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"EpssScore": ubx.FieldSpec{
+		WireName: "epss_score",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_EpssScoreFields,
+	},
+	"ExploitAvailable": ubx.FieldSpec{
+		WireName: "exploit_available",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"FindingArn": ubx.FieldSpec{
+		WireName: "finding_arn",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"FindingStatus": ubx.FieldSpec{
+		WireName: "finding_status",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"FindingType": ubx.FieldSpec{
+		WireName: "finding_type",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"FirstObservedAt": ubx.FieldSpec{
+		WireName: "first_observed_at",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_EcrImagePushedAtFields,
+	},
+	"FixAvailable": ubx.FieldSpec{
+		WireName: "fix_available",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"InspectorScore": ubx.FieldSpec{
+		WireName: "inspector_score",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_EpssScoreFields,
+	},
+	"LambdaFunctionExecutionRoleArn": ubx.FieldSpec{
+		WireName: "lambda_function_execution_role_arn",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"LambdaFunctionLastModifiedAt": ubx.FieldSpec{
+		WireName: "lambda_function_last_modified_at",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_EcrImagePushedAtFields,
+	},
+	"LambdaFunctionLayers": ubx.FieldSpec{
+		WireName: "lambda_function_layers",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"LambdaFunctionName": ubx.FieldSpec{
+		WireName: "lambda_function_name",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"LambdaFunctionRuntime": ubx.FieldSpec{
+		WireName: "lambda_function_runtime",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"LastObservedAt": ubx.FieldSpec{
+		WireName: "last_observed_at",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_EcrImagePushedAtFields,
+	},
+	"NetworkProtocol": ubx.FieldSpec{
+		WireName: "network_protocol",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"PortRange": ubx.FieldSpec{
+		WireName: "port_range",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_PortRangeFields,
+	},
+	"RelatedVulnerabilities": ubx.FieldSpec{
+		WireName: "related_vulnerabilities",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"ResourceId": ubx.FieldSpec{
+		WireName: "resource_id",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"ResourceTags": ubx.FieldSpec{
+		WireName: "resource_tags",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_ResourceTagsFields,
+	},
+	"ResourceType": ubx.FieldSpec{
+		WireName: "resource_type",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Severity": ubx.FieldSpec{
+		WireName: "severity",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"UpdatedAt": ubx.FieldSpec{
+		WireName: "updated_at",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_EcrImagePushedAtFields,
+	},
+	"VendorSeverity": ubx.FieldSpec{
+		WireName: "vendor_severity",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"VulnerabilityId": ubx.FieldSpec{
+		WireName: "vulnerability_id",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"VulnerabilitySource": ubx.FieldSpec{
+		WireName: "vulnerability_source",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_AwsAccountIdFields,
+	},
+	"VulnerablePackages": ubx.FieldSpec{
+		WireName: "vulnerable_packages",
+		Kind:     "list",
+		Fields:   Filter_FilterCriteria_VulnerablePackagesFields,
+	},
+}
 
 type FilterConfig struct {
 	// Findings filter description.
@@ -459,12 +459,12 @@ type FilterAttrs struct {
 var Filter = ubx.ResourceBinding{
 	WireType: "aws_inspector_v2_filter",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"FilterAction": ubx.FieldSpec{WireName: "filter_action"},
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: Filter_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   Filter_FilterCriteriaFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

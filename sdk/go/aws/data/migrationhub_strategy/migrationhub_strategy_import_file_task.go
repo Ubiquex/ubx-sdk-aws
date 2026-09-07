@@ -8,17 +8,17 @@ type MigrationhubStrategyImportFileTaskConfig struct {
 }
 
 type MigrationhubStrategyImportFileTaskAttrs struct {
-	CompletionTime any
-	Id any
-	ImportName any
-	InputS3Bucket any
-	InputS3Key any
-	NumberOfRecordsFailed any
+	CompletionTime         any
+	Id                     any
+	ImportName             any
+	InputS3Bucket          any
+	InputS3Key             any
+	NumberOfRecordsFailed  any
 	NumberOfRecordsSuccess any
-	StartTime any
-	Status any
-	StatusReportS3Bucket any
-	StatusReportS3Key any
+	StartTime              any
+	Status                 any
+	StatusReportS3Bucket   any
+	StatusReportS3Key      any
 }
 
 var MigrationhubStrategyImportFileTask = ubx.DataSourceBinding{

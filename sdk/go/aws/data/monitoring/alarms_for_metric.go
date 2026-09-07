@@ -4,13 +4,13 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlarmsForMetric_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type AlarmsForMetric_MetricAlarms_EvaluationCriteria_PromQlcriteria struct {
-	PendingPeriod any
-	Query any
+	PendingPeriod  any
+	Query          any
 	RecoveryPeriod any
 }
 
@@ -23,98 +23,98 @@ type AlarmsForMetric_MetricAlarms_EvaluationWindow_WallClockWindow struct {
 }
 
 type AlarmsForMetric_MetricAlarms_EvaluationWindow struct {
-	SlidingWindow any
+	SlidingWindow   any
 	WallClockWindow any
 }
 
 type AlarmsForMetric_MetricAlarms_Metrics_MetricStat_Metric struct {
 	Dimensions any
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type AlarmsForMetric_MetricAlarms_Metrics_MetricStat struct {
 	Metric any
 	Period any
-	Stat any
-	Unit any
+	Stat   any
+	Unit   any
 }
 
 type AlarmsForMetric_MetricAlarms_Metrics struct {
-	AccountId any
+	AccountId  any
 	Expression any
-	Id any
-	Label any
+	Id         any
+	Label      any
 	MetricStat any
-	Period any
+	Period     any
 	ReturnData any
 }
 
 type AlarmsForMetric_MetricAlarms_WarmUpConfiguration struct {
 	OnlyStartEvaluatingAfterWarmUpPeriodEnds any
-	WarmUpPeriodDurationInMinutes any
+	WarmUpPeriodDurationInMinutes            any
 }
 
 type AlarmsForMetric_MetricAlarms struct {
-	ActionsEnabled any
-	AlarmActions any
-	AlarmArn any
+	ActionsEnabled                     any
+	AlarmActions                       any
+	AlarmArn                           any
 	AlarmConfigurationUpdatedTimestamp any
-	AlarmDescription any
-	AlarmName any
-	ComparisonOperator any
-	DatapointsToAlarm any
-	Dimensions any
-	EvaluateLowSampleCountPercentile any
-	EvaluationCriteria any
-	EvaluationInterval any
-	EvaluationPeriods any
-	EvaluationState any
-	EvaluationWindow any
-	ExtendedStatistic any
-	InsufficientDataActions any
-	MetricName any
-	Metrics any
-	Namespace any
-	Okactions any
-	Period any
-	StateReason any
-	StateReasonData any
-	StateTransitionedTimestamp any
-	StateUpdatedTimestamp any
-	StateValue any
-	Statistic any
-	Threshold any
-	ThresholdMetricId any
-	TreatMissingData any
-	Unit any
-	WarmUpConfiguration any
+	AlarmDescription                   any
+	AlarmName                          any
+	ComparisonOperator                 any
+	DatapointsToAlarm                  any
+	Dimensions                         any
+	EvaluateLowSampleCountPercentile   any
+	EvaluationCriteria                 any
+	EvaluationInterval                 any
+	EvaluationPeriods                  any
+	EvaluationState                    any
+	EvaluationWindow                   any
+	ExtendedStatistic                  any
+	InsufficientDataActions            any
+	MetricName                         any
+	Metrics                            any
+	Namespace                          any
+	Okactions                          any
+	Period                             any
+	StateReason                        any
+	StateReasonData                    any
+	StateTransitionedTimestamp         any
+	StateUpdatedTimestamp              any
+	StateValue                         any
+	Statistic                          any
+	Threshold                          any
+	ThresholdMetricId                  any
+	TreatMissingData                   any
+	Unit                               any
+	WarmUpConfiguration                any
 }
 
 var AlarmsForMetric_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AlarmsForMetricConfig struct {
-	Dimensions any
+	Dimensions        any
 	ExtendedStatistic any
-	MetricName any
-	Namespace any
-	Period any
-	Statistic any
-	Unit any
+	MetricName        any
+	Namespace         any
+	Period            any
+	Statistic         any
+	Unit              any
 }
 
 type AlarmsForMetricAttrs struct {
-	Dimensions any
+	Dimensions        any
 	ExtendedStatistic any
-	MetricAlarms any
-	MetricName any
-	Namespace any
-	Period any
-	Statistic any
-	Unit any
+	MetricAlarms      any
+	MetricName        any
+	Namespace         any
+	Period            any
+	Statistic         any
+	Unit              any
 }
 
 var AlarmsForMetric = ubx.DataSourceBinding{
@@ -122,14 +122,14 @@ var AlarmsForMetric = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Dimensions": ubx.FieldSpec{
 			WireName: "dimensions",
-			Kind: "list",
-			Fields: AlarmsForMetric_DimensionsFields,
+			Kind:     "list",
+			Fields:   AlarmsForMetric_DimensionsFields,
 		},
 		"ExtendedStatistic": ubx.FieldSpec{WireName: "extended_statistic"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
+		"MetricName":        ubx.FieldSpec{WireName: "metric_name"},
+		"Namespace":         ubx.FieldSpec{WireName: "namespace"},
+		"Period":            ubx.FieldSpec{WireName: "period"},
+		"Statistic":         ubx.FieldSpec{WireName: "statistic"},
+		"Unit":              ubx.FieldSpec{WireName: "unit"},
 	},
 }

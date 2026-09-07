@@ -10,18 +10,18 @@ type TaxRegistrationDocument_DestinationS3Location struct {
 
 type TaxRegistrationDocument_TaxDocumentMetadata struct {
 	TaxDocumentAccessToken any
-	TaxDocumentName any
+	TaxDocumentName        any
 }
 
 var TaxRegistrationDocument_DestinationS3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+}
 
 var TaxRegistrationDocument_TaxDocumentMetadataFields = ubx.FieldMap{
-		"TaxDocumentAccessToken": ubx.FieldSpec{WireName: "tax_document_access_token"},
-		"TaxDocumentName": ubx.FieldSpec{WireName: "tax_document_name"},
-	}
+	"TaxDocumentAccessToken": ubx.FieldSpec{WireName: "tax_document_access_token"},
+	"TaxDocumentName":        ubx.FieldSpec{WireName: "tax_document_name"},
+}
 
 type TaxRegistrationDocumentConfig struct {
 	// <p>The location of the Amazon S3 bucket that you specify to download your tax documents to.</p>
@@ -34,7 +34,7 @@ type TaxRegistrationDocumentAttrs struct {
 	DestinationFilePath any
 	// <p>The location of the Amazon S3 bucket that you specify to download your tax documents to.</p>
 	DestinationS3Location any
-	PresignedS3Url any
+	PresignedS3Url        any
 	// <p>The metadata for your tax document.</p>
 	TaxDocumentMetadata any
 }
@@ -44,13 +44,13 @@ var TaxRegistrationDocument = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DestinationS3Location": ubx.FieldSpec{
 			WireName: "destination_s3_location",
-			Kind: "object",
-			Fields: TaxRegistrationDocument_DestinationS3LocationFields,
+			Kind:     "object",
+			Fields:   TaxRegistrationDocument_DestinationS3LocationFields,
 		},
 		"TaxDocumentMetadata": ubx.FieldSpec{
 			WireName: "tax_document_metadata",
-			Kind: "object",
-			Fields: TaxRegistrationDocument_TaxDocumentMetadataFields,
+			Kind:     "object",
+			Fields:   TaxRegistrationDocument_TaxDocumentMetadataFields,
 		},
 	},
 }

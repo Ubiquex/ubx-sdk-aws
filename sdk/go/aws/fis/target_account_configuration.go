@@ -28,9 +28,9 @@ type TargetAccountConfigurationAttrs struct {
 var TargetAccountConfiguration = ubx.ResourceBinding{
 	WireType: "aws_fis_target_account_configuration",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AccountId":            ubx.FieldSpec{WireName: "account_id"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"ExperimentTemplateId": ubx.FieldSpec{WireName: "experiment_template_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":              ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

@@ -4,26 +4,26 @@ package budgets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BudgetActionHistories_ActionHistories_ActionHistoryDetails_Action_ActionThreshold struct {
-	ActionThresholdType any
+	ActionThresholdType  any
 	ActionThresholdValue any
 }
 
 type BudgetActionHistories_ActionHistories_ActionHistoryDetails_Action_Definition_IamActionDefinition struct {
-	Groups any
+	Groups    any
 	PolicyArn any
-	Roles any
-	Users any
+	Roles     any
+	Users     any
 }
 
 type BudgetActionHistories_ActionHistories_ActionHistoryDetails_Action_Definition_ScpActionDefinition struct {
-	PolicyId any
+	PolicyId  any
 	TargetIds any
 }
 
 type BudgetActionHistories_ActionHistories_ActionHistoryDetails_Action_Definition_SsmActionDefinition struct {
 	ActionSubType any
-	InstanceIds any
-	Region any
+	InstanceIds   any
+	Region        any
 }
 
 type BudgetActionHistories_ActionHistories_ActionHistoryDetails_Action_Definition struct {
@@ -33,33 +33,33 @@ type BudgetActionHistories_ActionHistories_ActionHistoryDetails_Action_Definitio
 }
 
 type BudgetActionHistories_ActionHistories_ActionHistoryDetails_Action_Subscribers struct {
-	Address any
+	Address          any
 	SubscriptionType any
 }
 
 type BudgetActionHistories_ActionHistories_ActionHistoryDetails_Action struct {
-	ActionId any
-	ActionThreshold any
-	ActionType any
-	ApprovalModel any
-	BudgetName any
-	Definition any
+	ActionId         any
+	ActionThreshold  any
+	ActionType       any
+	ApprovalModel    any
+	BudgetName       any
+	Definition       any
 	ExecutionRoleArn any
 	NotificationType any
-	Status any
-	Subscribers any
+	Status           any
+	Subscribers      any
 }
 
 type BudgetActionHistories_ActionHistories_ActionHistoryDetails struct {
-	Action any
+	Action  any
 	Message any
 }
 
 type BudgetActionHistories_ActionHistories struct {
 	ActionHistoryDetails any
-	EventType any
-	Status any
-	Timestamp any
+	EventType            any
+	Status               any
+	Timestamp            any
 }
 
 type BudgetActionHistories_TimePeriod struct {
@@ -70,14 +70,14 @@ type BudgetActionHistories_TimePeriod struct {
 }
 
 var BudgetActionHistories_TimePeriodFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type BudgetActionHistoriesConfig struct {
 	// <p>The account ID of the user. It's a 12-digit number.</p>
 	AccountId any
-	ActionId any
+	ActionId  any
 	// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p> <p>Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.</p>
 	BudgetName any
 	// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -90,9 +90,9 @@ type BudgetActionHistoriesConfig struct {
 
 type BudgetActionHistoriesAttrs struct {
 	// <p>The account ID of the user. It's a 12-digit number.</p>
-	AccountId any
+	AccountId       any
 	ActionHistories any
-	ActionId any
+	ActionId        any
 	// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p> <p>Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.</p>
 	BudgetName any
 	// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -106,15 +106,15 @@ type BudgetActionHistoriesAttrs struct {
 var BudgetActionHistories = ubx.DataSourceBinding{
 	WireType: "aws_budgets_budget_action_histories",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ActionId": ubx.FieldSpec{WireName: "action_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"ActionId":   ubx.FieldSpec{WireName: "action_id"},
 		"BudgetName": ubx.FieldSpec{WireName: "budget_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"TimePeriod": ubx.FieldSpec{
 			WireName: "time_period",
-			Kind: "object",
-			Fields: BudgetActionHistories_TimePeriodFields,
+			Kind:     "object",
+			Fields:   BudgetActionHistories_TimePeriodFields,
 		},
 	},
 }

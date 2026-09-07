@@ -4,33 +4,33 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProductPages_Items struct {
-	LastModified any
-	PageTitle any
+	LastModified   any
+	PageTitle      any
 	ProductPageArn any
-	ProductPageId any
+	ProductPageId  any
 }
 
 type ProductPagesConfig struct {
-	MaxResults any
-	NextToken any
-	PortalProductId any
+	MaxResults             any
+	NextToken              any
+	PortalProductId        any
 	ResourceOwnerAccountId any
 }
 
 type ProductPagesAttrs struct {
-	Items any
-	MaxResults any
-	NextToken any
-	PortalProductId any
+	Items                  any
+	MaxResults             any
+	NextToken              any
+	PortalProductId        any
 	ResourceOwnerAccountId any
 }
 
 var ProductPages = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_product_pages",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PortalProductId": ubx.FieldSpec{WireName: "portal_product_id"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"PortalProductId":        ubx.FieldSpec{WireName: "portal_product_id"},
 		"ResourceOwnerAccountId": ubx.FieldSpec{WireName: "resource_owner_account_id"},
 	},
 }

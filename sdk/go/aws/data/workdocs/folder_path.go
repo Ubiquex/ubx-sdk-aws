@@ -4,7 +4,7 @@ package workdocs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FolderPath_Path_Components struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -14,18 +14,18 @@ type FolderPath_Path struct {
 
 type FolderPathConfig struct {
 	AuthenticationToken any
-	Fields any
-	FolderId any
-	Limit any
-	Marker any
+	Fields              any
+	FolderId            any
+	Limit               any
+	Marker              any
 }
 
 type FolderPathAttrs struct {
 	AuthenticationToken any
-	Fields any
-	FolderId any
-	Limit any
-	Marker any
+	Fields              any
+	FolderId            any
+	Limit               any
+	Marker              any
 	// <p>Describes the path information of a resource.</p>
 	Path any
 }
@@ -34,9 +34,9 @@ var FolderPath = ubx.DataSourceBinding{
 	WireType: "aws_workdocs_folder_path",
 	Fields: ubx.FieldMap{
 		"AuthenticationToken": ubx.FieldSpec{WireName: "authentication_token"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"FolderId": ubx.FieldSpec{WireName: "folder_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Fields":              ubx.FieldSpec{WireName: "fields"},
+		"FolderId":            ubx.FieldSpec{WireName: "folder_id"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"Marker":              ubx.FieldSpec{WireName: "marker"},
 	},
 }

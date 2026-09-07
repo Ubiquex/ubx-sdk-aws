@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmIncidentsReplicationSetsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SsmIncidentsReplicationSetsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	ReplicationSetArns any
 }
 
@@ -18,6 +18,6 @@ var SsmIncidentsReplicationSets = ubx.DataSourceBinding{
 	WireType: "aws_ssm_incidents_replication_sets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

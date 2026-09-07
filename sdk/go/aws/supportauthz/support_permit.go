@@ -11,7 +11,7 @@ type SupportPermit_Permit_Actions struct {
 }
 
 type SupportPermit_Permit_Conditions struct {
-	AllowAfter any
+	AllowAfter  any
 	AllowBefore any
 }
 
@@ -37,51 +37,51 @@ type SupportPermit_SigningKeyInfo struct {
 }
 
 type SupportPermit_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var SupportPermit_Permit_ActionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"AllActions": ubx.FieldSpec{WireName: "all_actions"},
-	}
+	"Actions":    ubx.FieldSpec{WireName: "actions"},
+	"AllActions": ubx.FieldSpec{WireName: "all_actions"},
+}
 
 var SupportPermit_Permit_ConditionsFields = ubx.FieldMap{
-		"AllowAfter": ubx.FieldSpec{WireName: "allow_after"},
-		"AllowBefore": ubx.FieldSpec{WireName: "allow_before"},
-	}
+	"AllowAfter":  ubx.FieldSpec{WireName: "allow_after"},
+	"AllowBefore": ubx.FieldSpec{WireName: "allow_before"},
+}
 
 var SupportPermit_Permit_ResourcesFields = ubx.FieldMap{
-		"AllResourcesInRegion": ubx.FieldSpec{WireName: "all_resources_in_region"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-	}
+	"AllResourcesInRegion": ubx.FieldSpec{WireName: "all_resources_in_region"},
+	"Resources":            ubx.FieldSpec{WireName: "resources"},
+}
 
 var SupportPermit_PermitFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "object",
-			Fields: SupportPermit_Permit_ActionsFields,
-		},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: SupportPermit_Permit_ConditionsFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: SupportPermit_Permit_ResourcesFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "object",
+		Fields:   SupportPermit_Permit_ActionsFields,
+	},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   SupportPermit_Permit_ConditionsFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   SupportPermit_Permit_ResourcesFields,
+	},
+}
 
 var SupportPermit_SigningKeyInfoFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var SupportPermit_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SupportPermitConfig struct {
 	// An optional description of the support permit.
@@ -125,22 +125,22 @@ var SupportPermit = ubx.ResourceBinding{
 	WireType: "aws_support_auth_z_support_permit",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Permit": ubx.FieldSpec{
 			WireName: "permit",
-			Kind: "object",
-			Fields: SupportPermit_PermitFields,
+			Kind:     "object",
+			Fields:   SupportPermit_PermitFields,
 		},
 		"SigningKeyInfo": ubx.FieldSpec{
 			WireName: "signing_key_info",
-			Kind: "object",
-			Fields: SupportPermit_SigningKeyInfoFields,
+			Kind:     "object",
+			Fields:   SupportPermit_SigningKeyInfoFields,
 		},
 		"SupportCaseDisplayId": ubx.FieldSpec{WireName: "support_case_display_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SupportPermit_TagsFields,
+			Kind:     "list",
+			Fields:   SupportPermit_TagsFields,
 		},
 	},
 }

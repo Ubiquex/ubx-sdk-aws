@@ -12,7 +12,7 @@ type AutomationRule_Criteria_EbsVolumeSizeInGib struct {
 
 type AutomationRule_Criteria_EbsVolumeType struct {
 	Comparison any
-	Values any
+	Values     any
 }
 
 type AutomationRule_Criteria_ResourceTag struct {
@@ -33,7 +33,7 @@ type AutomationRule_Criteria struct {
 	EstimatedMonthlySavings any
 	// Specifies the look-back period in days that AWS Compute Optimizer uses to evaluate historical resource utilization when determining whether a recommendation matches the automation rule's criteria. (AI-inferred)
 	LookBackPeriodInDays any
-	Region any
+	Region               any
 	// Within the criteria block, resource_arn is a list of objects that specify the Amazon Resource Names (ARNs) of the AWS resources the Compute Optimizer automation rule matches to determine which resources the rule applies to. (AI-inferred)
 	ResourceArn any
 	// A list of tag key-value pairs used as selection criteria, so that the Compute Optimizer automation rule only matches resources carrying the specified tag(s). (AI-inferred)
@@ -59,84 +59,84 @@ type AutomationRule_Schedule struct {
 }
 
 type AutomationRule_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AutomationRule_Criteria_EbsVolumeSizeInGibFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var AutomationRule_Criteria_EbsVolumeTypeFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var AutomationRule_Criteria_ResourceTagFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var AutomationRule_CriteriaFields = ubx.FieldMap{
-		"EbsVolumeSizeInGib": ubx.FieldSpec{
-			WireName: "ebs_volume_size_in_gib",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_EbsVolumeSizeInGibFields,
-		},
-		"EbsVolumeType": ubx.FieldSpec{
-			WireName: "ebs_volume_type",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_EbsVolumeTypeFields,
-		},
-		"EstimatedMonthlySavings": ubx.FieldSpec{
-			WireName: "estimated_monthly_savings",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_EbsVolumeSizeInGibFields,
-		},
-		"LookBackPeriodInDays": ubx.FieldSpec{
-			WireName: "look_back_period_in_days",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_EbsVolumeSizeInGibFields,
-		},
-		"Region": ubx.FieldSpec{
-			WireName: "region",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_EbsVolumeTypeFields,
-		},
-		"ResourceArn": ubx.FieldSpec{
-			WireName: "resource_arn",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_EbsVolumeTypeFields,
-		},
-		"ResourceTag": ubx.FieldSpec{
-			WireName: "resource_tag",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_ResourceTagFields,
-		},
-		"RestartNeeded": ubx.FieldSpec{
-			WireName: "restart_needed",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_EbsVolumeTypeFields,
-		},
-	}
+	"EbsVolumeSizeInGib": ubx.FieldSpec{
+		WireName: "ebs_volume_size_in_gib",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_EbsVolumeSizeInGibFields,
+	},
+	"EbsVolumeType": ubx.FieldSpec{
+		WireName: "ebs_volume_type",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_EbsVolumeTypeFields,
+	},
+	"EstimatedMonthlySavings": ubx.FieldSpec{
+		WireName: "estimated_monthly_savings",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_EbsVolumeSizeInGibFields,
+	},
+	"LookBackPeriodInDays": ubx.FieldSpec{
+		WireName: "look_back_period_in_days",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_EbsVolumeSizeInGibFields,
+	},
+	"Region": ubx.FieldSpec{
+		WireName: "region",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_EbsVolumeTypeFields,
+	},
+	"ResourceArn": ubx.FieldSpec{
+		WireName: "resource_arn",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_EbsVolumeTypeFields,
+	},
+	"ResourceTag": ubx.FieldSpec{
+		WireName: "resource_tag",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_ResourceTagFields,
+	},
+	"RestartNeeded": ubx.FieldSpec{
+		WireName: "restart_needed",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_EbsVolumeTypeFields,
+	},
+}
 
 var AutomationRule_OrganizationConfigurationFields = ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"RuleApplyOrder": ubx.FieldSpec{WireName: "rule_apply_order"},
-	}
+	"AccountIds":     ubx.FieldSpec{WireName: "account_ids"},
+	"RuleApplyOrder": ubx.FieldSpec{WireName: "rule_apply_order"},
+}
 
 var AutomationRule_ScheduleFields = ubx.FieldMap{
-		"ExecutionWindowInMinutes": ubx.FieldSpec{WireName: "execution_window_in_minutes"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"ScheduleExpressionTimezone": ubx.FieldSpec{WireName: "schedule_expression_timezone"},
-	}
+	"ExecutionWindowInMinutes":   ubx.FieldSpec{WireName: "execution_window_in_minutes"},
+	"ScheduleExpression":         ubx.FieldSpec{WireName: "schedule_expression"},
+	"ScheduleExpressionTimezone": ubx.FieldSpec{WireName: "schedule_expression_timezone"},
+}
 
 var AutomationRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AutomationRuleConfig struct {
 	// Defines the filter conditions that match recommendations for the automation rule, including criteria such as resource type, finding status, and savings opportunity threshold. (AI-inferred)
@@ -144,7 +144,7 @@ type AutomationRuleConfig struct {
 	// The description of the automation rule.
 	Description any
 	// The name of the automation rule.
-	Name any
+	Name                      any
 	OrganizationConfiguration any
 	// Rule priority within its group
 	Priority any
@@ -172,7 +172,7 @@ type AutomationRuleAttrs struct {
 	// The timestamp when the automation rule was last updated.
 	LastUpdatedTimestamp any
 	// The name of the automation rule.
-	Name any
+	Name                      any
 	OrganizationConfiguration any
 	// Rule priority within its group
 	Priority any
@@ -199,29 +199,29 @@ var AutomationRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Criteria": ubx.FieldSpec{
 			WireName: "criteria",
-			Kind: "object",
-			Fields: AutomationRule_CriteriaFields,
+			Kind:     "object",
+			Fields:   AutomationRule_CriteriaFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"OrganizationConfiguration": ubx.FieldSpec{
 			WireName: "organization_configuration",
-			Kind: "object",
-			Fields: AutomationRule_OrganizationConfigurationFields,
+			Kind:     "object",
+			Fields:   AutomationRule_OrganizationConfigurationFields,
 		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Priority":               ubx.FieldSpec{WireName: "priority"},
 		"RecommendedActionTypes": ubx.FieldSpec{WireName: "recommended_action_types"},
-		"RuleType": ubx.FieldSpec{WireName: "rule_type"},
+		"RuleType":               ubx.FieldSpec{WireName: "rule_type"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: AutomationRule_ScheduleFields,
+			Kind:     "object",
+			Fields:   AutomationRule_ScheduleFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AutomationRule_TagsFields,
+			Kind:     "list",
+			Fields:   AutomationRule_TagsFields,
 		},
 	},
 }

@@ -11,9 +11,9 @@ type DbshardGroup_Tags struct {
 }
 
 var DbshardGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbshardGroupConfig struct {
 	// Specifies whether to create standby standby DB data access shard for the DB shard group. Valid values are the following: + 0 - Creates a DB shard group without a standby DB data access shard. This is the default value. + 1 - Creates a DB shard group with a standby DB data access shard in a different Availability Zone (AZ). + 2 - Creates a DB shard group with two standby DB data access shard in two different AZs.
@@ -56,16 +56,16 @@ type DbshardGroupAttrs struct {
 var DbshardGroup = ubx.ResourceBinding{
 	WireType: "aws_rds_dbshard_group",
 	Fields: ubx.FieldMap{
-		"ComputeRedundancy": ubx.FieldSpec{WireName: "compute_redundancy"},
-		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
+		"ComputeRedundancy":      ubx.FieldSpec{WireName: "compute_redundancy"},
+		"DbclusterIdentifier":    ubx.FieldSpec{WireName: "dbcluster_identifier"},
 		"DbshardGroupIdentifier": ubx.FieldSpec{WireName: "dbshard_group_identifier"},
-		"MaxAcu": ubx.FieldSpec{WireName: "max_acu"},
-		"MinAcu": ubx.FieldSpec{WireName: "min_acu"},
-		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
+		"MaxAcu":                 ubx.FieldSpec{WireName: "max_acu"},
+		"MinAcu":                 ubx.FieldSpec{WireName: "min_acu"},
+		"PubliclyAccessible":     ubx.FieldSpec{WireName: "publicly_accessible"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DbshardGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DbshardGroup_TagsFields,
 		},
 	},
 }

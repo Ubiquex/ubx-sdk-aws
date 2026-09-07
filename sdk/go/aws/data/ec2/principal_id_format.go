@@ -4,37 +4,37 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PrincipalIdFormat_Principals_Statuses struct {
-	Deadline any
-	Resource any
+	Deadline   any
+	Resource   any
 	UseLongIds any
 }
 
 type PrincipalIdFormat_Principals struct {
-	Arn any
+	Arn      any
 	Statuses any
 }
 
 type PrincipalIdFormatConfig struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
-	Resources any
+	NextToken  any
+	Resources  any
 }
 
 type PrincipalIdFormatAttrs struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	Principals any
-	Resources any
+	Resources  any
 }
 
 var PrincipalIdFormat = ubx.DataSourceBinding{
 	WireType: "aws_ec2_principal_id_format",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Resources":  ubx.FieldSpec{WireName: "resources"},
 	},
 }

@@ -17,6 +17,5 @@ type KmsencryptionKeyAttrs struct {
 
 var KmsencryptionKey = ubx.DataSourceBinding{
 	WireType: "aws_frauddetector_kmsencryption_key",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

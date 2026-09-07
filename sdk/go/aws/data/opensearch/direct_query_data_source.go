@@ -8,14 +8,14 @@ type DirectQueryDataSource_DataSourceType_CloudWatchLog struct {
 }
 
 type DirectQueryDataSource_DataSourceType_Prometheus struct {
-	RoleArn any
+	RoleArn      any
 	WorkspaceArn any
 }
 
 type DirectQueryDataSource_DataSourceType struct {
 	CloudWatchLog any
-	Prometheus any
-	SecurityLake any
+	Prometheus    any
+	SecurityLake  any
 }
 
 type DirectQueryDataSourceConfig struct {
@@ -25,11 +25,11 @@ type DirectQueryDataSourceConfig struct {
 type DirectQueryDataSourceAttrs struct {
 	// <p>Access policy rules for an Amazon OpenSearch Service domain endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>. The maximum size of a policy document is 100 KB.</p>
 	DataSourceAccessPolicy any
-	DataSourceArn any
-	DataSourceName any
+	DataSourceArn          any
+	DataSourceName         any
 	// <p> The type of data source that is used for direct queries. This is a supported Amazon Web Services service, such as CloudWatch Logs or Security Lake. </p>
 	DataSourceType any
-	Description any
+	Description    any
 	OpenSearchArns any
 }
 

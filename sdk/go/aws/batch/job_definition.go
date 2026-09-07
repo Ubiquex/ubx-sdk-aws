@@ -561,640 +561,640 @@ type JobDefinition_Timeout struct {
 }
 
 var JobDefinition_ConsumableResourceProperties_ConsumableResourceListFields = ubx.FieldMap{
-		"ConsumableResource": ubx.FieldSpec{WireName: "consumable_resource"},
-		"Quantity": ubx.FieldSpec{WireName: "quantity"},
-	}
+	"ConsumableResource": ubx.FieldSpec{WireName: "consumable_resource"},
+	"Quantity":           ubx.FieldSpec{WireName: "quantity"},
+}
 
 var JobDefinition_ConsumableResourcePropertiesFields = ubx.FieldMap{
-		"ConsumableResourceList": ubx.FieldSpec{
-			WireName: "consumable_resource_list",
-			Kind: "list",
-			Fields: JobDefinition_ConsumableResourceProperties_ConsumableResourceListFields,
-		},
-	}
+	"ConsumableResourceList": ubx.FieldSpec{
+		WireName: "consumable_resource_list",
+		Kind:     "list",
+		Fields:   JobDefinition_ConsumableResourceProperties_ConsumableResourceListFields,
+	},
+}
 
 var JobDefinition_ContainerProperties_EnvironmentFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var JobDefinition_ContainerProperties_EphemeralStorageFields = ubx.FieldMap{
-		"SizeInGiB": ubx.FieldSpec{WireName: "size_in_gi_b"},
-	}
+	"SizeInGiB": ubx.FieldSpec{WireName: "size_in_gi_b"},
+}
 
 var JobDefinition_ContainerProperties_FargatePlatformConfigurationFields = ubx.FieldMap{
-		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
-	}
+	"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
+}
 
 var JobDefinition_ContainerProperties_LinuxParameters_DevicesFields = ubx.FieldMap{
-		"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
-		"HostPath": ubx.FieldSpec{WireName: "host_path"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-	}
+	"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
+	"HostPath":      ubx.FieldSpec{WireName: "host_path"},
+	"Permissions":   ubx.FieldSpec{WireName: "permissions"},
+}
 
 var JobDefinition_ContainerProperties_LinuxParameters_TmpfsFields = ubx.FieldMap{
-		"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
-		"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-	}
+	"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
+	"MountOptions":  ubx.FieldSpec{WireName: "mount_options"},
+	"Size":          ubx.FieldSpec{WireName: "size"},
+}
 
 var JobDefinition_ContainerProperties_LinuxParametersFields = ubx.FieldMap{
-		"Devices": ubx.FieldSpec{
-			WireName: "devices",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_LinuxParameters_DevicesFields,
-		},
-		"InitProcessEnabled": ubx.FieldSpec{WireName: "init_process_enabled"},
-		"MaxSwap": ubx.FieldSpec{WireName: "max_swap"},
-		"SharedMemorySize": ubx.FieldSpec{WireName: "shared_memory_size"},
-		"Swappiness": ubx.FieldSpec{WireName: "swappiness"},
-		"Tmpfs": ubx.FieldSpec{
-			WireName: "tmpfs",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_LinuxParameters_TmpfsFields,
-		},
-	}
+	"Devices": ubx.FieldSpec{
+		WireName: "devices",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_LinuxParameters_DevicesFields,
+	},
+	"InitProcessEnabled": ubx.FieldSpec{WireName: "init_process_enabled"},
+	"MaxSwap":            ubx.FieldSpec{WireName: "max_swap"},
+	"SharedMemorySize":   ubx.FieldSpec{WireName: "shared_memory_size"},
+	"Swappiness":         ubx.FieldSpec{WireName: "swappiness"},
+	"Tmpfs": ubx.FieldSpec{
+		WireName: "tmpfs",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_LinuxParameters_TmpfsFields,
+	},
+}
 
 var JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ValueFrom": ubx.FieldSpec{WireName: "value_from"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ValueFrom": ubx.FieldSpec{WireName: "value_from"},
+}
 
 var JobDefinition_ContainerProperties_LogConfigurationFields = ubx.FieldMap{
-		"LogDriver": ubx.FieldSpec{WireName: "log_driver"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"SecretOptions": ubx.FieldSpec{
-			WireName: "secret_options",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields,
-		},
-	}
+	"LogDriver": ubx.FieldSpec{WireName: "log_driver"},
+	"Options":   ubx.FieldSpec{WireName: "options"},
+	"SecretOptions": ubx.FieldSpec{
+		WireName: "secret_options",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields,
+	},
+}
 
 var JobDefinition_ContainerProperties_MountPointsFields = ubx.FieldMap{
-		"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SourceVolume": ubx.FieldSpec{WireName: "source_volume"},
-	}
+	"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
+	"ReadOnly":      ubx.FieldSpec{WireName: "read_only"},
+	"SourceVolume":  ubx.FieldSpec{WireName: "source_volume"},
+}
 
 var JobDefinition_ContainerProperties_NetworkConfigurationFields = ubx.FieldMap{
-		"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
-	}
+	"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
+}
 
 var JobDefinition_ContainerProperties_RepositoryCredentialsFields = ubx.FieldMap{
-		"CredentialsParameter": ubx.FieldSpec{WireName: "credentials_parameter"},
-	}
+	"CredentialsParameter": ubx.FieldSpec{WireName: "credentials_parameter"},
+}
 
 var JobDefinition_ContainerProperties_ResourceRequirementsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var JobDefinition_ContainerProperties_RuntimePlatformFields = ubx.FieldMap{
-		"CpuArchitecture": ubx.FieldSpec{WireName: "cpu_architecture"},
-		"OperatingSystemFamily": ubx.FieldSpec{WireName: "operating_system_family"},
-	}
+	"CpuArchitecture":       ubx.FieldSpec{WireName: "cpu_architecture"},
+	"OperatingSystemFamily": ubx.FieldSpec{WireName: "operating_system_family"},
+}
 
 var JobDefinition_ContainerProperties_UlimitsFields = ubx.FieldMap{
-		"HardLimit": ubx.FieldSpec{WireName: "hard_limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SoftLimit": ubx.FieldSpec{WireName: "soft_limit"},
-	}
+	"HardLimit": ubx.FieldSpec{WireName: "hard_limit"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"SoftLimit": ubx.FieldSpec{WireName: "soft_limit"},
+}
 
 var JobDefinition_ContainerProperties_Volumes_EfsVolumeConfiguration_AuthorizationConfigFields = ubx.FieldMap{
-		"AccessPointId": ubx.FieldSpec{WireName: "access_point_id"},
-		"Iam": ubx.FieldSpec{WireName: "iam"},
-	}
+	"AccessPointId": ubx.FieldSpec{WireName: "access_point_id"},
+	"Iam":           ubx.FieldSpec{WireName: "iam"},
+}
 
 var JobDefinition_ContainerProperties_Volumes_EfsVolumeConfigurationFields = ubx.FieldMap{
-		"AuthorizationConfig": ubx.FieldSpec{
-			WireName: "authorization_config",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_Volumes_EfsVolumeConfiguration_AuthorizationConfigFields,
-		},
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-		"TransitEncryption": ubx.FieldSpec{WireName: "transit_encryption"},
-		"TransitEncryptionPort": ubx.FieldSpec{WireName: "transit_encryption_port"},
-	}
+	"AuthorizationConfig": ubx.FieldSpec{
+		WireName: "authorization_config",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_Volumes_EfsVolumeConfiguration_AuthorizationConfigFields,
+	},
+	"FileSystemId":          ubx.FieldSpec{WireName: "file_system_id"},
+	"RootDirectory":         ubx.FieldSpec{WireName: "root_directory"},
+	"TransitEncryption":     ubx.FieldSpec{WireName: "transit_encryption"},
+	"TransitEncryptionPort": ubx.FieldSpec{WireName: "transit_encryption_port"},
+}
 
 var JobDefinition_ContainerProperties_Volumes_HostFields = ubx.FieldMap{
-		"SourcePath": ubx.FieldSpec{WireName: "source_path"},
-	}
+	"SourcePath": ubx.FieldSpec{WireName: "source_path"},
+}
 
 var JobDefinition_ContainerProperties_Volumes_S3FilesVolumeConfigurationFields = ubx.FieldMap{
-		"AccessPointArn": ubx.FieldSpec{WireName: "access_point_arn"},
-		"FileSystemArn": ubx.FieldSpec{WireName: "file_system_arn"},
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-		"TransitEncryptionPort": ubx.FieldSpec{WireName: "transit_encryption_port"},
-	}
+	"AccessPointArn":        ubx.FieldSpec{WireName: "access_point_arn"},
+	"FileSystemArn":         ubx.FieldSpec{WireName: "file_system_arn"},
+	"RootDirectory":         ubx.FieldSpec{WireName: "root_directory"},
+	"TransitEncryptionPort": ubx.FieldSpec{WireName: "transit_encryption_port"},
+}
 
 var JobDefinition_ContainerProperties_VolumesFields = ubx.FieldMap{
-		"EfsVolumeConfiguration": ubx.FieldSpec{
-			WireName: "efs_volume_configuration",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_Volumes_EfsVolumeConfigurationFields,
-		},
-		"Host": ubx.FieldSpec{
-			WireName: "host",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_Volumes_HostFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"S3FilesVolumeConfiguration": ubx.FieldSpec{
-			WireName: "s3_files_volume_configuration",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_Volumes_S3FilesVolumeConfigurationFields,
-		},
-	}
+	"EfsVolumeConfiguration": ubx.FieldSpec{
+		WireName: "efs_volume_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_Volumes_EfsVolumeConfigurationFields,
+	},
+	"Host": ubx.FieldSpec{
+		WireName: "host",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_Volumes_HostFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"S3FilesVolumeConfiguration": ubx.FieldSpec{
+		WireName: "s3_files_volume_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_Volumes_S3FilesVolumeConfigurationFields,
+	},
+}
 
 var JobDefinition_ContainerPropertiesFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_EnvironmentFields,
-		},
-		"EphemeralStorage": ubx.FieldSpec{
-			WireName: "ephemeral_storage",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_EphemeralStorageFields,
-		},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"FargatePlatformConfiguration": ubx.FieldSpec{
-			WireName: "fargate_platform_configuration",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_FargatePlatformConfigurationFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"JobRoleArn": ubx.FieldSpec{WireName: "job_role_arn"},
-		"LinuxParameters": ubx.FieldSpec{
-			WireName: "linux_parameters",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_LinuxParametersFields,
-		},
-		"LogConfiguration": ubx.FieldSpec{
-			WireName: "log_configuration",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_LogConfigurationFields,
-		},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-		"MountPoints": ubx.FieldSpec{
-			WireName: "mount_points",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_MountPointsFields,
-		},
-		"NetworkConfiguration": ubx.FieldSpec{
-			WireName: "network_configuration",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_NetworkConfigurationFields,
-		},
-		"Privileged": ubx.FieldSpec{WireName: "privileged"},
-		"ReadonlyRootFilesystem": ubx.FieldSpec{WireName: "readonly_root_filesystem"},
-		"RepositoryCredentials": ubx.FieldSpec{
-			WireName: "repository_credentials",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_RepositoryCredentialsFields,
-		},
-		"ResourceRequirements": ubx.FieldSpec{
-			WireName: "resource_requirements",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_ResourceRequirementsFields,
-		},
-		"RuntimePlatform": ubx.FieldSpec{
-			WireName: "runtime_platform",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_RuntimePlatformFields,
-		},
-		"Secrets": ubx.FieldSpec{
-			WireName: "secrets",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields,
-		},
-		"Ulimits": ubx.FieldSpec{
-			WireName: "ulimits",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_UlimitsFields,
-		},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"Vcpus": ubx.FieldSpec{WireName: "vcpus"},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_VolumesFields,
-		},
-	}
+	"Command":              ubx.FieldSpec{WireName: "command"},
+	"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_EnvironmentFields,
+	},
+	"EphemeralStorage": ubx.FieldSpec{
+		WireName: "ephemeral_storage",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_EphemeralStorageFields,
+	},
+	"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+	"FargatePlatformConfiguration": ubx.FieldSpec{
+		WireName: "fargate_platform_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_FargatePlatformConfigurationFields,
+	},
+	"Image":      ubx.FieldSpec{WireName: "image"},
+	"JobRoleArn": ubx.FieldSpec{WireName: "job_role_arn"},
+	"LinuxParameters": ubx.FieldSpec{
+		WireName: "linux_parameters",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_LinuxParametersFields,
+	},
+	"LogConfiguration": ubx.FieldSpec{
+		WireName: "log_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_LogConfigurationFields,
+	},
+	"Memory": ubx.FieldSpec{WireName: "memory"},
+	"MountPoints": ubx.FieldSpec{
+		WireName: "mount_points",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_MountPointsFields,
+	},
+	"NetworkConfiguration": ubx.FieldSpec{
+		WireName: "network_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_NetworkConfigurationFields,
+	},
+	"Privileged":             ubx.FieldSpec{WireName: "privileged"},
+	"ReadonlyRootFilesystem": ubx.FieldSpec{WireName: "readonly_root_filesystem"},
+	"RepositoryCredentials": ubx.FieldSpec{
+		WireName: "repository_credentials",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_RepositoryCredentialsFields,
+	},
+	"ResourceRequirements": ubx.FieldSpec{
+		WireName: "resource_requirements",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_ResourceRequirementsFields,
+	},
+	"RuntimePlatform": ubx.FieldSpec{
+		WireName: "runtime_platform",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_RuntimePlatformFields,
+	},
+	"Secrets": ubx.FieldSpec{
+		WireName: "secrets",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields,
+	},
+	"Ulimits": ubx.FieldSpec{
+		WireName: "ulimits",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_UlimitsFields,
+	},
+	"User":  ubx.FieldSpec{WireName: "user"},
+	"Vcpus": ubx.FieldSpec{WireName: "vcpus"},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_VolumesFields,
+	},
+}
 
 var JobDefinition_EcsProperties_TaskProperties_Containers_DependsOnFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-	}
+	"Condition":     ubx.FieldSpec{WireName: "condition"},
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+}
 
 var JobDefinition_EcsProperties_TaskProperties_Containers_FirelensConfigurationFields = ubx.FieldMap{
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Options": ubx.FieldSpec{WireName: "options"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var JobDefinition_EcsProperties_TaskProperties_ContainersFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"DependsOn": ubx.FieldSpec{
-			WireName: "depends_on",
-			Kind: "list",
-			Fields: JobDefinition_EcsProperties_TaskProperties_Containers_DependsOnFields,
-		},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_EnvironmentFields,
-		},
-		"Essential": ubx.FieldSpec{WireName: "essential"},
-		"FirelensConfiguration": ubx.FieldSpec{
-			WireName: "firelens_configuration",
-			Kind: "object",
-			Fields: JobDefinition_EcsProperties_TaskProperties_Containers_FirelensConfigurationFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"LinuxParameters": ubx.FieldSpec{
-			WireName: "linux_parameters",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_LinuxParametersFields,
-		},
-		"LogConfiguration": ubx.FieldSpec{
-			WireName: "log_configuration",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_LogConfigurationFields,
-		},
-		"MountPoints": ubx.FieldSpec{
-			WireName: "mount_points",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_MountPointsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Privileged": ubx.FieldSpec{WireName: "privileged"},
-		"ReadonlyRootFilesystem": ubx.FieldSpec{WireName: "readonly_root_filesystem"},
-		"RepositoryCredentials": ubx.FieldSpec{
-			WireName: "repository_credentials",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_RepositoryCredentialsFields,
-		},
-		"ResourceRequirements": ubx.FieldSpec{
-			WireName: "resource_requirements",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_ResourceRequirementsFields,
-		},
-		"Secrets": ubx.FieldSpec{
-			WireName: "secrets",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields,
-		},
-		"StartTimeout": ubx.FieldSpec{WireName: "start_timeout"},
-		"StopTimeout": ubx.FieldSpec{WireName: "stop_timeout"},
-		"Ulimits": ubx.FieldSpec{
-			WireName: "ulimits",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_UlimitsFields,
-		},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"DependsOn": ubx.FieldSpec{
+		WireName: "depends_on",
+		Kind:     "list",
+		Fields:   JobDefinition_EcsProperties_TaskProperties_Containers_DependsOnFields,
+	},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_EnvironmentFields,
+	},
+	"Essential": ubx.FieldSpec{WireName: "essential"},
+	"FirelensConfiguration": ubx.FieldSpec{
+		WireName: "firelens_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_EcsProperties_TaskProperties_Containers_FirelensConfigurationFields,
+	},
+	"Image": ubx.FieldSpec{WireName: "image"},
+	"LinuxParameters": ubx.FieldSpec{
+		WireName: "linux_parameters",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_LinuxParametersFields,
+	},
+	"LogConfiguration": ubx.FieldSpec{
+		WireName: "log_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_LogConfigurationFields,
+	},
+	"MountPoints": ubx.FieldSpec{
+		WireName: "mount_points",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_MountPointsFields,
+	},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"Privileged":             ubx.FieldSpec{WireName: "privileged"},
+	"ReadonlyRootFilesystem": ubx.FieldSpec{WireName: "readonly_root_filesystem"},
+	"RepositoryCredentials": ubx.FieldSpec{
+		WireName: "repository_credentials",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_RepositoryCredentialsFields,
+	},
+	"ResourceRequirements": ubx.FieldSpec{
+		WireName: "resource_requirements",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_ResourceRequirementsFields,
+	},
+	"Secrets": ubx.FieldSpec{
+		WireName: "secrets",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields,
+	},
+	"StartTimeout": ubx.FieldSpec{WireName: "start_timeout"},
+	"StopTimeout":  ubx.FieldSpec{WireName: "stop_timeout"},
+	"Ulimits": ubx.FieldSpec{
+		WireName: "ulimits",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_UlimitsFields,
+	},
+	"User": ubx.FieldSpec{WireName: "user"},
+}
 
 var JobDefinition_EcsProperties_TaskPropertiesFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: JobDefinition_EcsProperties_TaskProperties_ContainersFields,
-		},
-		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
-		"EphemeralStorage": ubx.FieldSpec{
-			WireName: "ephemeral_storage",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_EphemeralStorageFields,
-		},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"IpcMode": ubx.FieldSpec{WireName: "ipc_mode"},
-		"NetworkConfiguration": ubx.FieldSpec{
-			WireName: "network_configuration",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_NetworkConfigurationFields,
-		},
-		"NetworkMode": ubx.FieldSpec{WireName: "network_mode"},
-		"PidMode": ubx.FieldSpec{WireName: "pid_mode"},
-		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
-		"RuntimePlatform": ubx.FieldSpec{
-			WireName: "runtime_platform",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_RuntimePlatformFields,
-		},
-		"TaskRoleArn": ubx.FieldSpec{WireName: "task_role_arn"},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_VolumesFields,
-		},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   JobDefinition_EcsProperties_TaskProperties_ContainersFields,
+	},
+	"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
+	"EphemeralStorage": ubx.FieldSpec{
+		WireName: "ephemeral_storage",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_EphemeralStorageFields,
+	},
+	"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+	"IpcMode":          ubx.FieldSpec{WireName: "ipc_mode"},
+	"NetworkConfiguration": ubx.FieldSpec{
+		WireName: "network_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_NetworkConfigurationFields,
+	},
+	"NetworkMode":     ubx.FieldSpec{WireName: "network_mode"},
+	"PidMode":         ubx.FieldSpec{WireName: "pid_mode"},
+	"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
+	"RuntimePlatform": ubx.FieldSpec{
+		WireName: "runtime_platform",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_RuntimePlatformFields,
+	},
+	"TaskRoleArn": ubx.FieldSpec{WireName: "task_role_arn"},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_VolumesFields,
+	},
+}
 
 var JobDefinition_EcsPropertiesFields = ubx.FieldMap{
-		"TaskProperties": ubx.FieldSpec{
-			WireName: "task_properties",
-			Kind: "list",
-			Fields: JobDefinition_EcsProperties_TaskPropertiesFields,
-		},
-	}
+	"TaskProperties": ubx.FieldSpec{
+		WireName: "task_properties",
+		Kind:     "list",
+		Fields:   JobDefinition_EcsProperties_TaskPropertiesFields,
+	},
+}
 
 var JobDefinition_EksProperties_PodProperties_Containers_ResourcesFields = ubx.FieldMap{
-		"Limits": ubx.FieldSpec{WireName: "limits"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Limits":   ubx.FieldSpec{WireName: "limits"},
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var JobDefinition_EksProperties_PodProperties_Containers_SecurityContextFields = ubx.FieldMap{
-		"AllowPrivilegeEscalation": ubx.FieldSpec{WireName: "allow_privilege_escalation"},
-		"Privileged": ubx.FieldSpec{WireName: "privileged"},
-		"ReadOnlyRootFilesystem": ubx.FieldSpec{WireName: "read_only_root_filesystem"},
-		"RunAsGroup": ubx.FieldSpec{WireName: "run_as_group"},
-		"RunAsNonRoot": ubx.FieldSpec{WireName: "run_as_non_root"},
-		"RunAsUser": ubx.FieldSpec{WireName: "run_as_user"},
-	}
+	"AllowPrivilegeEscalation": ubx.FieldSpec{WireName: "allow_privilege_escalation"},
+	"Privileged":               ubx.FieldSpec{WireName: "privileged"},
+	"ReadOnlyRootFilesystem":   ubx.FieldSpec{WireName: "read_only_root_filesystem"},
+	"RunAsGroup":               ubx.FieldSpec{WireName: "run_as_group"},
+	"RunAsNonRoot":             ubx.FieldSpec{WireName: "run_as_non_root"},
+	"RunAsUser":                ubx.FieldSpec{WireName: "run_as_user"},
+}
 
 var JobDefinition_EksProperties_PodProperties_Containers_VolumeMountsFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SubPath": ubx.FieldSpec{WireName: "sub_path"},
-	}
+	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ReadOnly":  ubx.FieldSpec{WireName: "read_only"},
+	"SubPath":   ubx.FieldSpec{WireName: "sub_path"},
+}
 
 var JobDefinition_EksProperties_PodProperties_ContainersFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_EnvironmentFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ImagePullPolicy": ubx.FieldSpec{WireName: "image_pull_policy"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: JobDefinition_EksProperties_PodProperties_Containers_ResourcesFields,
-		},
-		"SecurityContext": ubx.FieldSpec{
-			WireName: "security_context",
-			Kind: "object",
-			Fields: JobDefinition_EksProperties_PodProperties_Containers_SecurityContextFields,
-		},
-		"VolumeMounts": ubx.FieldSpec{
-			WireName: "volume_mounts",
-			Kind: "list",
-			Fields: JobDefinition_EksProperties_PodProperties_Containers_VolumeMountsFields,
-		},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_EnvironmentFields,
+	},
+	"Image":           ubx.FieldSpec{WireName: "image"},
+	"ImagePullPolicy": ubx.FieldSpec{WireName: "image_pull_policy"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   JobDefinition_EksProperties_PodProperties_Containers_ResourcesFields,
+	},
+	"SecurityContext": ubx.FieldSpec{
+		WireName: "security_context",
+		Kind:     "object",
+		Fields:   JobDefinition_EksProperties_PodProperties_Containers_SecurityContextFields,
+	},
+	"VolumeMounts": ubx.FieldSpec{
+		WireName: "volume_mounts",
+		Kind:     "list",
+		Fields:   JobDefinition_EksProperties_PodProperties_Containers_VolumeMountsFields,
+	},
+}
 
 var JobDefinition_EksProperties_PodProperties_ImagePullSecretsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var JobDefinition_EksProperties_PodProperties_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Annotations": ubx.FieldSpec{WireName: "annotations"},
+	"Labels":      ubx.FieldSpec{WireName: "labels"},
+	"Namespace":   ubx.FieldSpec{WireName: "namespace"},
+}
 
 var JobDefinition_EksProperties_PodProperties_Volumes_EmptyDirFields = ubx.FieldMap{
-		"Medium": ubx.FieldSpec{WireName: "medium"},
-		"SizeLimit": ubx.FieldSpec{WireName: "size_limit"},
-	}
+	"Medium":    ubx.FieldSpec{WireName: "medium"},
+	"SizeLimit": ubx.FieldSpec{WireName: "size_limit"},
+}
 
 var JobDefinition_EksProperties_PodProperties_Volumes_HostPathFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var JobDefinition_EksProperties_PodProperties_Volumes_PersistentVolumeClaimFields = ubx.FieldMap{
-		"ClaimName": ubx.FieldSpec{WireName: "claim_name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"ClaimName": ubx.FieldSpec{WireName: "claim_name"},
+	"ReadOnly":  ubx.FieldSpec{WireName: "read_only"},
+}
 
 var JobDefinition_EksProperties_PodProperties_Volumes_SecretFields = ubx.FieldMap{
-		"Optional": ubx.FieldSpec{WireName: "optional"},
-		"SecretName": ubx.FieldSpec{WireName: "secret_name"},
-	}
+	"Optional":   ubx.FieldSpec{WireName: "optional"},
+	"SecretName": ubx.FieldSpec{WireName: "secret_name"},
+}
 
 var JobDefinition_EksProperties_PodProperties_VolumesFields = ubx.FieldMap{
-		"EmptyDir": ubx.FieldSpec{
-			WireName: "empty_dir",
-			Kind: "object",
-			Fields: JobDefinition_EksProperties_PodProperties_Volumes_EmptyDirFields,
-		},
-		"HostPath": ubx.FieldSpec{
-			WireName: "host_path",
-			Kind: "object",
-			Fields: JobDefinition_EksProperties_PodProperties_Volumes_HostPathFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PersistentVolumeClaim": ubx.FieldSpec{
-			WireName: "persistent_volume_claim",
-			Kind: "object",
-			Fields: JobDefinition_EksProperties_PodProperties_Volumes_PersistentVolumeClaimFields,
-		},
-		"Secret": ubx.FieldSpec{
-			WireName: "secret",
-			Kind: "object",
-			Fields: JobDefinition_EksProperties_PodProperties_Volumes_SecretFields,
-		},
-	}
+	"EmptyDir": ubx.FieldSpec{
+		WireName: "empty_dir",
+		Kind:     "object",
+		Fields:   JobDefinition_EksProperties_PodProperties_Volumes_EmptyDirFields,
+	},
+	"HostPath": ubx.FieldSpec{
+		WireName: "host_path",
+		Kind:     "object",
+		Fields:   JobDefinition_EksProperties_PodProperties_Volumes_HostPathFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PersistentVolumeClaim": ubx.FieldSpec{
+		WireName: "persistent_volume_claim",
+		Kind:     "object",
+		Fields:   JobDefinition_EksProperties_PodProperties_Volumes_PersistentVolumeClaimFields,
+	},
+	"Secret": ubx.FieldSpec{
+		WireName: "secret",
+		Kind:     "object",
+		Fields:   JobDefinition_EksProperties_PodProperties_Volumes_SecretFields,
+	},
+}
 
 var JobDefinition_EksProperties_PodPropertiesFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: JobDefinition_EksProperties_PodProperties_ContainersFields,
-		},
-		"DnsPolicy": ubx.FieldSpec{WireName: "dns_policy"},
-		"HostNetwork": ubx.FieldSpec{WireName: "host_network"},
-		"ImagePullSecrets": ubx.FieldSpec{
-			WireName: "image_pull_secrets",
-			Kind: "list",
-			Fields: JobDefinition_EksProperties_PodProperties_ImagePullSecretsFields,
-		},
-		"InitContainers": ubx.FieldSpec{
-			WireName: "init_containers",
-			Kind: "list",
-			Fields: JobDefinition_EksProperties_PodProperties_ContainersFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: JobDefinition_EksProperties_PodProperties_MetadataFields,
-		},
-		"ServiceAccountName": ubx.FieldSpec{WireName: "service_account_name"},
-		"ShareProcessNamespace": ubx.FieldSpec{WireName: "share_process_namespace"},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: JobDefinition_EksProperties_PodProperties_VolumesFields,
-		},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   JobDefinition_EksProperties_PodProperties_ContainersFields,
+	},
+	"DnsPolicy":   ubx.FieldSpec{WireName: "dns_policy"},
+	"HostNetwork": ubx.FieldSpec{WireName: "host_network"},
+	"ImagePullSecrets": ubx.FieldSpec{
+		WireName: "image_pull_secrets",
+		Kind:     "list",
+		Fields:   JobDefinition_EksProperties_PodProperties_ImagePullSecretsFields,
+	},
+	"InitContainers": ubx.FieldSpec{
+		WireName: "init_containers",
+		Kind:     "list",
+		Fields:   JobDefinition_EksProperties_PodProperties_ContainersFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   JobDefinition_EksProperties_PodProperties_MetadataFields,
+	},
+	"ServiceAccountName":    ubx.FieldSpec{WireName: "service_account_name"},
+	"ShareProcessNamespace": ubx.FieldSpec{WireName: "share_process_namespace"},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   JobDefinition_EksProperties_PodProperties_VolumesFields,
+	},
+}
 
 var JobDefinition_EksPropertiesFields = ubx.FieldMap{
-		"PodProperties": ubx.FieldSpec{
-			WireName: "pod_properties",
-			Kind: "object",
-			Fields: JobDefinition_EksProperties_PodPropertiesFields,
-		},
-	}
+	"PodProperties": ubx.FieldSpec{
+		WireName: "pod_properties",
+		Kind:     "object",
+		Fields:   JobDefinition_EksProperties_PodPropertiesFields,
+	},
+}
 
 var JobDefinition_NodeProperties_NodeRangeProperties_ContainerFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_EnvironmentFields,
-		},
-		"EphemeralStorage": ubx.FieldSpec{
-			WireName: "ephemeral_storage",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_EphemeralStorageFields,
-		},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"JobRoleArn": ubx.FieldSpec{WireName: "job_role_arn"},
-		"LinuxParameters": ubx.FieldSpec{
-			WireName: "linux_parameters",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_LinuxParametersFields,
-		},
-		"LogConfiguration": ubx.FieldSpec{
-			WireName: "log_configuration",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_LogConfigurationFields,
-		},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-		"MountPoints": ubx.FieldSpec{
-			WireName: "mount_points",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_MountPointsFields,
-		},
-		"Privileged": ubx.FieldSpec{WireName: "privileged"},
-		"ReadonlyRootFilesystem": ubx.FieldSpec{WireName: "readonly_root_filesystem"},
-		"RepositoryCredentials": ubx.FieldSpec{
-			WireName: "repository_credentials",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_RepositoryCredentialsFields,
-		},
-		"ResourceRequirements": ubx.FieldSpec{
-			WireName: "resource_requirements",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_ResourceRequirementsFields,
-		},
-		"RuntimePlatform": ubx.FieldSpec{
-			WireName: "runtime_platform",
-			Kind: "object",
-			Fields: JobDefinition_ContainerProperties_RuntimePlatformFields,
-		},
-		"Secrets": ubx.FieldSpec{
-			WireName: "secrets",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields,
-		},
-		"Ulimits": ubx.FieldSpec{
-			WireName: "ulimits",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_UlimitsFields,
-		},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"Vcpus": ubx.FieldSpec{WireName: "vcpus"},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_VolumesFields,
-		},
-	}
+	"Command":              ubx.FieldSpec{WireName: "command"},
+	"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_EnvironmentFields,
+	},
+	"EphemeralStorage": ubx.FieldSpec{
+		WireName: "ephemeral_storage",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_EphemeralStorageFields,
+	},
+	"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+	"Image":            ubx.FieldSpec{WireName: "image"},
+	"InstanceType":     ubx.FieldSpec{WireName: "instance_type"},
+	"JobRoleArn":       ubx.FieldSpec{WireName: "job_role_arn"},
+	"LinuxParameters": ubx.FieldSpec{
+		WireName: "linux_parameters",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_LinuxParametersFields,
+	},
+	"LogConfiguration": ubx.FieldSpec{
+		WireName: "log_configuration",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_LogConfigurationFields,
+	},
+	"Memory": ubx.FieldSpec{WireName: "memory"},
+	"MountPoints": ubx.FieldSpec{
+		WireName: "mount_points",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_MountPointsFields,
+	},
+	"Privileged":             ubx.FieldSpec{WireName: "privileged"},
+	"ReadonlyRootFilesystem": ubx.FieldSpec{WireName: "readonly_root_filesystem"},
+	"RepositoryCredentials": ubx.FieldSpec{
+		WireName: "repository_credentials",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_RepositoryCredentialsFields,
+	},
+	"ResourceRequirements": ubx.FieldSpec{
+		WireName: "resource_requirements",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_ResourceRequirementsFields,
+	},
+	"RuntimePlatform": ubx.FieldSpec{
+		WireName: "runtime_platform",
+		Kind:     "object",
+		Fields:   JobDefinition_ContainerProperties_RuntimePlatformFields,
+	},
+	"Secrets": ubx.FieldSpec{
+		WireName: "secrets",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_LogConfiguration_SecretOptionsFields,
+	},
+	"Ulimits": ubx.FieldSpec{
+		WireName: "ulimits",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_UlimitsFields,
+	},
+	"User":  ubx.FieldSpec{WireName: "user"},
+	"Vcpus": ubx.FieldSpec{WireName: "vcpus"},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_VolumesFields,
+	},
+}
 
 var JobDefinition_NodeProperties_NodeRangeProperties_EcsProperties_TaskPropertiesFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: JobDefinition_EcsProperties_TaskProperties_ContainersFields,
-		},
-		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"IpcMode": ubx.FieldSpec{WireName: "ipc_mode"},
-		"PidMode": ubx.FieldSpec{WireName: "pid_mode"},
-		"TaskRoleArn": ubx.FieldSpec{WireName: "task_role_arn"},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: JobDefinition_ContainerProperties_VolumesFields,
-		},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   JobDefinition_EcsProperties_TaskProperties_ContainersFields,
+	},
+	"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
+	"ExecutionRoleArn":     ubx.FieldSpec{WireName: "execution_role_arn"},
+	"IpcMode":              ubx.FieldSpec{WireName: "ipc_mode"},
+	"PidMode":              ubx.FieldSpec{WireName: "pid_mode"},
+	"TaskRoleArn":          ubx.FieldSpec{WireName: "task_role_arn"},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   JobDefinition_ContainerProperties_VolumesFields,
+	},
+}
 
 var JobDefinition_NodeProperties_NodeRangeProperties_EcsPropertiesFields = ubx.FieldMap{
-		"TaskProperties": ubx.FieldSpec{
-			WireName: "task_properties",
-			Kind: "list",
-			Fields: JobDefinition_NodeProperties_NodeRangeProperties_EcsProperties_TaskPropertiesFields,
-		},
-	}
+	"TaskProperties": ubx.FieldSpec{
+		WireName: "task_properties",
+		Kind:     "list",
+		Fields:   JobDefinition_NodeProperties_NodeRangeProperties_EcsProperties_TaskPropertiesFields,
+	},
+}
 
 var JobDefinition_NodeProperties_NodeRangePropertiesFields = ubx.FieldMap{
-		"ConsumableResourceProperties": ubx.FieldSpec{
-			WireName: "consumable_resource_properties",
-			Kind: "object",
-			Fields: JobDefinition_ConsumableResourcePropertiesFields,
-		},
-		"Container": ubx.FieldSpec{
-			WireName: "container",
-			Kind: "object",
-			Fields: JobDefinition_NodeProperties_NodeRangeProperties_ContainerFields,
-		},
-		"EcsProperties": ubx.FieldSpec{
-			WireName: "ecs_properties",
-			Kind: "object",
-			Fields: JobDefinition_NodeProperties_NodeRangeProperties_EcsPropertiesFields,
-		},
-		"EksProperties": ubx.FieldSpec{
-			WireName: "eks_properties",
-			Kind: "object",
-			Fields: JobDefinition_EksPropertiesFields,
-		},
-		"InstanceTypes": ubx.FieldSpec{WireName: "instance_types"},
-		"TargetNodes": ubx.FieldSpec{WireName: "target_nodes"},
-	}
+	"ConsumableResourceProperties": ubx.FieldSpec{
+		WireName: "consumable_resource_properties",
+		Kind:     "object",
+		Fields:   JobDefinition_ConsumableResourcePropertiesFields,
+	},
+	"Container": ubx.FieldSpec{
+		WireName: "container",
+		Kind:     "object",
+		Fields:   JobDefinition_NodeProperties_NodeRangeProperties_ContainerFields,
+	},
+	"EcsProperties": ubx.FieldSpec{
+		WireName: "ecs_properties",
+		Kind:     "object",
+		Fields:   JobDefinition_NodeProperties_NodeRangeProperties_EcsPropertiesFields,
+	},
+	"EksProperties": ubx.FieldSpec{
+		WireName: "eks_properties",
+		Kind:     "object",
+		Fields:   JobDefinition_EksPropertiesFields,
+	},
+	"InstanceTypes": ubx.FieldSpec{WireName: "instance_types"},
+	"TargetNodes":   ubx.FieldSpec{WireName: "target_nodes"},
+}
 
 var JobDefinition_NodePropertiesFields = ubx.FieldMap{
-		"MainNode": ubx.FieldSpec{WireName: "main_node"},
-		"NodeRangeProperties": ubx.FieldSpec{
-			WireName: "node_range_properties",
-			Kind: "list",
-			Fields: JobDefinition_NodeProperties_NodeRangePropertiesFields,
-		},
-		"NumNodes": ubx.FieldSpec{WireName: "num_nodes"},
-	}
+	"MainNode": ubx.FieldSpec{WireName: "main_node"},
+	"NodeRangeProperties": ubx.FieldSpec{
+		WireName: "node_range_properties",
+		Kind:     "list",
+		Fields:   JobDefinition_NodeProperties_NodeRangePropertiesFields,
+	},
+	"NumNodes": ubx.FieldSpec{WireName: "num_nodes"},
+}
 
 var JobDefinition_ResourceRetentionPolicyFields = ubx.FieldMap{
-		"SkipDeregisterOnUpdate": ubx.FieldSpec{WireName: "skip_deregister_on_update"},
-	}
+	"SkipDeregisterOnUpdate": ubx.FieldSpec{WireName: "skip_deregister_on_update"},
+}
 
 var JobDefinition_RetryStrategy_EvaluateOnExitFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"OnExitCode": ubx.FieldSpec{WireName: "on_exit_code"},
-		"OnReason": ubx.FieldSpec{WireName: "on_reason"},
-		"OnStatusReason": ubx.FieldSpec{WireName: "on_status_reason"},
-	}
+	"Action":         ubx.FieldSpec{WireName: "action"},
+	"OnExitCode":     ubx.FieldSpec{WireName: "on_exit_code"},
+	"OnReason":       ubx.FieldSpec{WireName: "on_reason"},
+	"OnStatusReason": ubx.FieldSpec{WireName: "on_status_reason"},
+}
 
 var JobDefinition_RetryStrategyFields = ubx.FieldMap{
-		"Attempts": ubx.FieldSpec{WireName: "attempts"},
-		"EvaluateOnExit": ubx.FieldSpec{
-			WireName: "evaluate_on_exit",
-			Kind: "list",
-			Fields: JobDefinition_RetryStrategy_EvaluateOnExitFields,
-		},
-	}
+	"Attempts": ubx.FieldSpec{WireName: "attempts"},
+	"EvaluateOnExit": ubx.FieldSpec{
+		WireName: "evaluate_on_exit",
+		Kind:     "list",
+		Fields:   JobDefinition_RetryStrategy_EvaluateOnExitFields,
+	},
+}
 
 var JobDefinition_TimeoutFields = ubx.FieldMap{
-		"AttemptDurationSeconds": ubx.FieldSpec{WireName: "attempt_duration_seconds"},
-	}
+	"AttemptDurationSeconds": ubx.FieldSpec{WireName: "attempt_duration_seconds"},
+}
 
 type JobDefinitionConfig struct {
 	// Defines a consumable resource, including its name and the quantity the job requires from a shared pool, so that concurrent access to the resource can be limited across jobs in the same job queue. (AI-inferred)
@@ -1269,49 +1269,49 @@ var JobDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConsumableResourceProperties": ubx.FieldSpec{
 			WireName: "consumable_resource_properties",
-			Kind: "object",
-			Fields: JobDefinition_ConsumableResourcePropertiesFields,
+			Kind:     "object",
+			Fields:   JobDefinition_ConsumableResourcePropertiesFields,
 		},
 		"ContainerProperties": ubx.FieldSpec{
 			WireName: "container_properties",
-			Kind: "object",
-			Fields: JobDefinition_ContainerPropertiesFields,
+			Kind:     "object",
+			Fields:   JobDefinition_ContainerPropertiesFields,
 		},
 		"EcsProperties": ubx.FieldSpec{
 			WireName: "ecs_properties",
-			Kind: "object",
-			Fields: JobDefinition_EcsPropertiesFields,
+			Kind:     "object",
+			Fields:   JobDefinition_EcsPropertiesFields,
 		},
 		"EksProperties": ubx.FieldSpec{
 			WireName: "eks_properties",
-			Kind: "object",
-			Fields: JobDefinition_EksPropertiesFields,
+			Kind:     "object",
+			Fields:   JobDefinition_EksPropertiesFields,
 		},
 		"JobDefinitionName": ubx.FieldSpec{WireName: "job_definition_name"},
 		"NodeProperties": ubx.FieldSpec{
 			WireName: "node_properties",
-			Kind: "object",
-			Fields: JobDefinition_NodePropertiesFields,
+			Kind:     "object",
+			Fields:   JobDefinition_NodePropertiesFields,
 		},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Parameters":           ubx.FieldSpec{WireName: "parameters"},
 		"PlatformCapabilities": ubx.FieldSpec{WireName: "platform_capabilities"},
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
+		"PropagateTags":        ubx.FieldSpec{WireName: "propagate_tags"},
 		"ResourceRetentionPolicy": ubx.FieldSpec{
 			WireName: "resource_retention_policy",
-			Kind: "object",
-			Fields: JobDefinition_ResourceRetentionPolicyFields,
+			Kind:     "object",
+			Fields:   JobDefinition_ResourceRetentionPolicyFields,
 		},
 		"RetryStrategy": ubx.FieldSpec{
 			WireName: "retry_strategy",
-			Kind: "object",
-			Fields: JobDefinition_RetryStrategyFields,
+			Kind:     "object",
+			Fields:   JobDefinition_RetryStrategyFields,
 		},
 		"SchedulingPriority": ubx.FieldSpec{WireName: "scheduling_priority"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":               ubx.FieldSpec{WireName: "tags"},
 		"Timeout": ubx.FieldSpec{
 			WireName: "timeout",
-			Kind: "object",
-			Fields: JobDefinition_TimeoutFields,
+			Kind:     "object",
+			Fields:   JobDefinition_TimeoutFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

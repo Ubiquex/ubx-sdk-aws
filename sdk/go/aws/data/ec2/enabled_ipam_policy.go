@@ -8,10 +8,10 @@ type EnabledIpamPolicyConfig struct {
 }
 
 type EnabledIpamPolicyAttrs struct {
-	DryRun any
+	DryRun            any
 	IpamPolicyEnabled any
-	IpamPolicyId any
-	ManagedBy any
+	IpamPolicyId      any
+	ManagedBy         any
 }
 
 var EnabledIpamPolicy = ubx.DataSourceBinding{

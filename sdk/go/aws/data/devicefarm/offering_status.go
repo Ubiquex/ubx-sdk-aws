@@ -4,28 +4,28 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OfferingStatus_Current_Offering_RecurringCharges_Cost struct {
-	Amount any
+	Amount       any
 	CurrencyCode any
 }
 
 type OfferingStatus_Current_Offering_RecurringCharges struct {
-	Cost any
+	Cost      any
 	Frequency any
 }
 
 type OfferingStatus_Current_Offering struct {
-	Description any
-	Id any
-	Platform any
+	Description      any
+	Id               any
+	Platform         any
 	RecurringCharges any
-	Type any
+	Type             any
 }
 
 type OfferingStatus_Current struct {
 	EffectiveOn any
-	Offering any
-	Quantity any
-	Type any
+	Offering    any
+	Quantity    any
+	Type        any
 }
 
 type OfferingStatusConfig struct {
@@ -33,9 +33,9 @@ type OfferingStatusConfig struct {
 }
 
 type OfferingStatusAttrs struct {
-	Current any
+	Current    any
 	NextPeriod any
-	NextToken any
+	NextToken  any
 }
 
 var OfferingStatus = ubx.DataSourceBinding{

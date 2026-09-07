@@ -4,56 +4,56 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerModelCardExportJobs_ModelCardExportJobSummaries struct {
-	CreatedAt any
-	LastModifiedAt any
-	ModelCardExportJobArn any
+	CreatedAt              any
+	LastModifiedAt         any
+	ModelCardExportJobArn  any
 	ModelCardExportJobName any
-	ModelCardName any
-	ModelCardVersion any
-	Status any
+	ModelCardName          any
+	ModelCardVersion       any
+	Status                 any
 }
 
 type ApiSagemakerModelCardExportJobsConfig struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	MaxResults any
+	CreationTimeAfter              any
+	CreationTimeBefore             any
+	MaxResults                     any
 	ModelCardExportJobNameContains any
-	ModelCardName any
-	ModelCardVersion any
-	NextToken any
+	ModelCardName                  any
+	ModelCardVersion               any
+	NextToken                      any
 	// Attribute by which to sort returned export jobs.
-	SortBy any
-	SortOrder any
+	SortBy       any
+	SortOrder    any
 	StatusEquals any
 }
 
 type ApiSagemakerModelCardExportJobsAttrs struct {
-	CreationTimeAfter any
-	CreationTimeBefore any
-	MaxResults any
+	CreationTimeAfter              any
+	CreationTimeBefore             any
+	MaxResults                     any
 	ModelCardExportJobNameContains any
-	ModelCardExportJobSummaries any
-	ModelCardName any
-	ModelCardVersion any
-	NextToken any
+	ModelCardExportJobSummaries    any
+	ModelCardName                  any
+	ModelCardVersion               any
+	NextToken                      any
 	// Attribute by which to sort returned export jobs.
-	SortBy any
-	SortOrder any
+	SortBy       any
+	SortOrder    any
 	StatusEquals any
 }
 
 var ApiSagemakerModelCardExportJobs = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_model_card_export_jobs",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
-		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"CreationTimeAfter":              ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeBefore":             ubx.FieldSpec{WireName: "creation_time_before"},
+		"MaxResults":                     ubx.FieldSpec{WireName: "max_results"},
 		"ModelCardExportJobNameContains": ubx.FieldSpec{WireName: "model_card_export_job_name_contains"},
-		"ModelCardName": ubx.FieldSpec{WireName: "model_card_name"},
-		"ModelCardVersion": ubx.FieldSpec{WireName: "model_card_version"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"StatusEquals": ubx.FieldSpec{WireName: "status_equals"},
+		"ModelCardName":                  ubx.FieldSpec{WireName: "model_card_name"},
+		"ModelCardVersion":               ubx.FieldSpec{WireName: "model_card_version"},
+		"NextToken":                      ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":                         ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":                      ubx.FieldSpec{WireName: "sort_order"},
+		"StatusEquals":                   ubx.FieldSpec{WireName: "status_equals"},
 	},
 }

@@ -21,6 +21,6 @@ var ResourcePolicy = ubx.ResourceBinding{
 	WireType: "aws_smsvoice_resource_policy",
 	Fields: ubx.FieldMap{
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"ResourceArn":    ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

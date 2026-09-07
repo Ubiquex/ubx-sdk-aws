@@ -8,9 +8,9 @@ type ImageBlockPublicAccessStateConfig struct {
 }
 
 type ImageBlockPublicAccessStateAttrs struct {
-	DryRun any
+	DryRun                      any
 	ImageBlockPublicAccessState any
-	ManagedBy any
+	ManagedBy                   any
 }
 
 var ImageBlockPublicAccessState = ubx.DataSourceBinding{

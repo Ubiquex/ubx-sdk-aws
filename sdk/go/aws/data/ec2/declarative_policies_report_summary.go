@@ -4,41 +4,41 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeclarativePoliciesReportSummary_AttributeSummaries_RegionalSummaries struct {
-	NumberOfMatchedAccounts any
+	NumberOfMatchedAccounts   any
 	NumberOfUnmatchedAccounts any
-	RegionName any
+	RegionName                any
 }
 
 type DeclarativePoliciesReportSummary_AttributeSummaries struct {
-	AttributeName any
-	MostFrequentValue any
-	NumberOfMatchedAccounts any
+	AttributeName             any
+	MostFrequentValue         any
+	NumberOfMatchedAccounts   any
 	NumberOfUnmatchedAccounts any
-	RegionalSummaries any
+	RegionalSummaries         any
 }
 
 type DeclarativePoliciesReportSummaryConfig struct {
-	DryRun any
+	DryRun   any
 	ReportId any
 }
 
 type DeclarativePoliciesReportSummaryAttrs struct {
-	AttributeSummaries any
-	DryRun any
-	EndTime any
-	NumberOfAccounts any
+	AttributeSummaries     any
+	DryRun                 any
+	EndTime                any
+	NumberOfAccounts       any
 	NumberOfFailedAccounts any
-	ReportId any
-	S3Bucket any
-	S3Prefix any
-	StartTime any
-	TargetId any
+	ReportId               any
+	S3Bucket               any
+	S3Prefix               any
+	StartTime              any
+	TargetId               any
 }
 
 var DeclarativePoliciesReportSummary = ubx.DataSourceBinding{
 	WireType: "aws_ec2_declarative_policies_report_summary",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":   ubx.FieldSpec{WireName: "dry_run"},
 		"ReportId": ubx.FieldSpec{WireName: "report_id"},
 	},
 }

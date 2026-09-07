@@ -4,7 +4,7 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Migrations_Migrations_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,37 +14,37 @@ type Migrations_Migrations_Source struct {
 
 type Migrations_Migrations struct {
 	ApplicationId any
-	CreatedAt any
-	Error any
+	CreatedAt     any
+	Error         any
 	ExportedCount any
 	ImportedCount any
-	MigrationId any
-	Source any
-	Status any
-	UpdatedAt any
+	MigrationId   any
+	Source        any
+	Status        any
+	UpdatedAt     any
 }
 
 type MigrationsConfig struct {
 	ApplicationId any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults    any
+	NextToken     any
+	Status        any
 }
 
 type MigrationsAttrs struct {
 	ApplicationId any
-	MaxResults any
-	Migrations any
-	NextToken any
-	Status any
+	MaxResults    any
+	Migrations    any
+	NextToken     any
+	Status        any
 }
 
 var Migrations = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_migrations",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"Status":        ubx.FieldSpec{WireName: "status"},
 	},
 }

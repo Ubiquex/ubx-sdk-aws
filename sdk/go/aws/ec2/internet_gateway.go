@@ -11,9 +11,9 @@ type InternetGateway_Tags struct {
 }
 
 var InternetGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InternetGatewayConfig struct {
 	// Any tags to assign to the internet gateway.
@@ -32,8 +32,8 @@ var InternetGateway = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InternetGateway_TagsFields,
+			Kind:     "list",
+			Fields:   InternetGateway_TagsFields,
 		},
 	},
 }

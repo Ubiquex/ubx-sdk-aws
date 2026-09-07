@@ -4,46 +4,46 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamDiscoveredRoutes_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamDiscoveredRoutes_IpamDiscoveredRoutes struct {
-	AdvertisementType any
-	Asn any
-	Cidr any
-	IpamPoolId any
+	AdvertisementType       any
+	Asn                     any
+	Cidr                    any
+	IpamPoolId              any
 	IpamResourceDiscoveryId any
-	NetworkBorderGroup any
-	PoolId any
-	ResourceOwnerId any
-	ResourceRegion any
-	SampleTime any
-	State any
+	NetworkBorderGroup      any
+	PoolId                  any
+	ResourceOwnerId         any
+	ResourceRegion          any
+	SampleTime              any
+	State                   any
 }
 
 var IpamDiscoveredRoutes_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamDiscoveredRoutesConfig struct {
-	DryRun any
-	Filters any
+	DryRun                  any
+	Filters                 any
 	IpamResourceDiscoveryId any
-	MaxResults any
-	NextToken any
-	ResourceRegion any
+	MaxResults              any
+	NextToken               any
+	ResourceRegion          any
 }
 
 type IpamDiscoveredRoutesAttrs struct {
-	DryRun any
-	Filters any
-	IpamDiscoveredRoutes any
+	DryRun                  any
+	Filters                 any
+	IpamDiscoveredRoutes    any
 	IpamResourceDiscoveryId any
-	MaxResults any
-	NextToken any
-	ResourceRegion any
+	MaxResults              any
+	NextToken               any
+	ResourceRegion          any
 }
 
 var IpamDiscoveredRoutes = ubx.DataSourceBinding{
@@ -52,12 +52,12 @@ var IpamDiscoveredRoutes = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamDiscoveredRoutes_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamDiscoveredRoutes_FiltersFields,
 		},
 		"IpamResourceDiscoveryId": ubx.FieldSpec{WireName: "ipam_resource_discovery_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceRegion": ubx.FieldSpec{WireName: "resource_region"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"ResourceRegion":          ubx.FieldSpec{WireName: "resource_region"},
 	},
 }

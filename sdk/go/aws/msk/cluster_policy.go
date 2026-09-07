@@ -23,6 +23,6 @@ var ClusterPolicy = ubx.ResourceBinding{
 	WireType: "aws_msk_cluster_policy",
 	Fields: ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":     ubx.FieldSpec{WireName: "policy"},
 	},
 }

@@ -4,7 +4,7 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Task_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -31,27 +31,27 @@ type Task_TaskConfiguration struct {
 }
 
 var Task_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Task_TaskConfiguration_ContainerTaskConfigurationFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"EcrUri": ubx.FieldSpec{WireName: "ecr_uri"},
-		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"ProcessingType": ubx.FieldSpec{WireName: "processing_type"},
-		"ProcessingUnit": ubx.FieldSpec{WireName: "processing_unit"},
-		"TaskExecutionRole": ubx.FieldSpec{WireName: "task_execution_role"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"Command":              ubx.FieldSpec{WireName: "command"},
+	"EcrUri":               ubx.FieldSpec{WireName: "ecr_uri"},
+	"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
+	"ProcessingType":       ubx.FieldSpec{WireName: "processing_type"},
+	"ProcessingUnit":       ubx.FieldSpec{WireName: "processing_unit"},
+	"TaskExecutionRole":    ubx.FieldSpec{WireName: "task_execution_role"},
+	"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var Task_TaskConfigurationFields = ubx.FieldMap{
-		"ContainerTaskConfiguration": ubx.FieldSpec{
-			WireName: "container_task_configuration",
-			Kind: "object",
-			Fields: Task_TaskConfiguration_ContainerTaskConfigurationFields,
-		},
-	}
+	"ContainerTaskConfiguration": ubx.FieldSpec{
+		WireName: "container_task_configuration",
+		Kind:     "object",
+		Fields:   Task_TaskConfiguration_ContainerTaskConfigurationFields,
+	},
+}
 
 type TaskConfig struct {
 	// A description of the task.
@@ -89,15 +89,15 @@ var Task = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Task_TagsFields,
+			Kind:     "list",
+			Fields:   Task_TagsFields,
 		},
 		"TaskConfiguration": ubx.FieldSpec{
 			WireName: "task_configuration",
-			Kind: "object",
-			Fields: Task_TaskConfigurationFields,
+			Kind:     "object",
+			Fields:   Task_TaskConfigurationFields,
 		},
-		"TaskName": ubx.FieldSpec{WireName: "task_name"},
+		"TaskName":      ubx.FieldSpec{WireName: "task_name"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

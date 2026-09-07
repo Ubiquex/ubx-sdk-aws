@@ -10,18 +10,18 @@ type TransitGatewayConnect_Options struct {
 
 type TransitGatewayConnect_Tags struct {
 	// The key of a user-defined tag assigned to the EC2 Transit Gateway Connect attachment. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var TransitGatewayConnect_OptionsFields = ubx.FieldMap{
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var TransitGatewayConnect_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayConnectConfig struct {
 	// Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred)
@@ -54,13 +54,13 @@ var TransitGatewayConnect = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: TransitGatewayConnect_OptionsFields,
+			Kind:     "object",
+			Fields:   TransitGatewayConnect_OptionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayConnect_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayConnect_TagsFields,
 		},
 		"TransportTransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transport_transit_gateway_attachment_id"},
 	},

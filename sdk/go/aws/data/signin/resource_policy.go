@@ -4,16 +4,16 @@ package signin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicy_SigninResourceBasedPolicy_Statement struct {
-	Action any
+	Action    any
 	Condition any
-	Effect any
+	Effect    any
 	Principal any
-	Resource any
+	Resource  any
 }
 
 type ResourcePolicy_SigninResourceBasedPolicy struct {
 	Statement any
-	Version any
+	Version   any
 }
 
 type ResourcePolicyConfig struct {
@@ -26,6 +26,5 @@ type ResourcePolicyAttrs struct {
 
 var ResourcePolicy = ubx.DataSourceBinding{
 	WireType: "aws_signin_resource_policy",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,9 +4,9 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpointsForDomain_VpcEndpointSummaryList struct {
-	DomainArn any
-	Status any
-	VpcEndpointId any
+	DomainArn        any
+	Status           any
+	VpcEndpointId    any
 	VpcEndpointOwner any
 }
 
@@ -21,7 +21,7 @@ type VpcEndpointsForDomainAttrs struct {
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
 	DomainName any
 	// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
-	NextToken any
+	NextToken              any
 	VpcEndpointSummaryList any
 }
 
@@ -29,6 +29,6 @@ var VpcEndpointsForDomain = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_vpc_endpoints_for_domain",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

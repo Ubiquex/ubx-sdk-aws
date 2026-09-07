@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnvironmentsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EnvironmentsAttrs struct {
 	Environments any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var Environments = ubx.DataSourceBinding{
 	WireType: "aws_airflow_environments",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

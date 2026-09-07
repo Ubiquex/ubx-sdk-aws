@@ -41,9 +41,9 @@ var GroupProfile = ubx.ResourceBinding{
 	WireType: "aws_data_zone_group_profile",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
-		"GroupType": ubx.FieldSpec{WireName: "group_type"},
+		"GroupIdentifier":  ubx.FieldSpec{WireName: "group_identifier"},
+		"GroupType":        ubx.FieldSpec{WireName: "group_type"},
 		"RolePrincipalArn": ubx.FieldSpec{WireName: "role_principal_arn"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -9,41 +9,41 @@ type JobDetails_JobDetails_Data_ActionConfiguration struct {
 
 type JobDetails_JobDetails_Data_ActionTypeId struct {
 	Category any
-	Owner any
+	Owner    any
 	Provider any
-	Version any
+	Version  any
 }
 
 type JobDetails_JobDetails_Data_ArtifactCredentials struct {
-	AccessKeyId any
+	AccessKeyId     any
 	SecretAccessKey any
-	SessionToken any
+	SessionToken    any
 }
 
 type JobDetails_JobDetails_Data_EncryptionKey struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type JobDetails_JobDetails_Data_InputArtifacts_Location_S3Location struct {
 	BucketName any
-	ObjectKey any
+	ObjectKey  any
 }
 
 type JobDetails_JobDetails_Data_InputArtifacts_Location struct {
 	S3Location any
-	Type any
+	Type       any
 }
 
 type JobDetails_JobDetails_Data_InputArtifacts struct {
 	Location any
-	Name any
+	Name     any
 	Revision any
 }
 
 type JobDetails_JobDetails_Data_PipelineContext_Action struct {
 	ActionExecutionId any
-	Name any
+	Name              any
 }
 
 type JobDetails_JobDetails_Data_PipelineContext_Stage struct {
@@ -52,10 +52,10 @@ type JobDetails_JobDetails_Data_PipelineContext_Stage struct {
 
 type JobDetails_JobDetails_Data_PipelineContext struct {
 	// <p>Represents the context of an action in the stage of a pipeline to a job worker.</p>
-	Action any
-	PipelineArn any
+	Action              any
+	PipelineArn         any
 	PipelineExecutionId any
-	PipelineName any
+	PipelineName        any
 	// <p>Represents information about a stage to a job worker.</p>
 	Stage any
 }
@@ -67,10 +67,10 @@ type JobDetails_JobDetails_Data struct {
 	ActionTypeId any
 	// <p>Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.</p>
 	ArtifactCredentials any
-	ContinuationToken any
+	ContinuationToken   any
 	// <p>Represents information about the key used to encrypt data in the artifact store, such as an Amazon Web Services Key Management Service (Key Management Service) key.</p>
-	EncryptionKey any
-	InputArtifacts any
+	EncryptionKey   any
+	InputArtifacts  any
 	OutputArtifacts any
 	// <p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note>
 	PipelineContext any
@@ -80,7 +80,7 @@ type JobDetails_JobDetails struct {
 	AccountId any
 	// <p>Represents other information about a job required for a job worker to complete the job.</p>
 	Data any
-	Id any
+	Id   any
 }
 
 type JobDetailsConfig struct {
@@ -90,7 +90,7 @@ type JobDetailsConfig struct {
 type JobDetailsAttrs struct {
 	// <p>Represents information about the details of a job.</p>
 	JobDetails any
-	JobId any
+	JobId      any
 }
 
 var JobDetails = ubx.DataSourceBinding{

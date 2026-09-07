@@ -4,25 +4,25 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SqlInjectionMatchSets_SqlInjectionMatchSets struct {
-	Name any
+	Name                   any
 	SqlInjectionMatchSetId any
 }
 
 type SqlInjectionMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type SqlInjectionMatchSetsAttrs struct {
-	Limit any
-	NextMarker any
+	Limit                 any
+	NextMarker            any
 	SqlInjectionMatchSets any
 }
 
 var SqlInjectionMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_sql_injection_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

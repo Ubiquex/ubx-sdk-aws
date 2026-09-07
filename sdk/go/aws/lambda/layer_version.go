@@ -15,11 +15,11 @@ type LayerVersion_Content struct {
 }
 
 var LayerVersion_ContentFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-		"S3ObjectStorageMode": ubx.FieldSpec{WireName: "s3_object_storage_mode"},
-		"S3ObjectVersion": ubx.FieldSpec{WireName: "s3_object_version"},
-	}
+	"S3Bucket":            ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":               ubx.FieldSpec{WireName: "s3_key"},
+	"S3ObjectStorageMode": ubx.FieldSpec{WireName: "s3_object_storage_mode"},
+	"S3ObjectVersion":     ubx.FieldSpec{WireName: "s3_object_version"},
+}
 
 type LayerVersionConfig struct {
 	// A list of compatible instruction set architectures.
@@ -57,14 +57,14 @@ var LayerVersion = ubx.ResourceBinding{
 	WireType: "aws_lambda_layer_version",
 	Fields: ubx.FieldMap{
 		"CompatibleArchitectures": ubx.FieldSpec{WireName: "compatible_architectures"},
-		"CompatibleRuntimes": ubx.FieldSpec{WireName: "compatible_runtimes"},
+		"CompatibleRuntimes":      ubx.FieldSpec{WireName: "compatible_runtimes"},
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: LayerVersion_ContentFields,
+			Kind:     "object",
+			Fields:   LayerVersion_ContentFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"LayerName": ubx.FieldSpec{WireName: "layer_name"},
+		"LayerName":   ubx.FieldSpec{WireName: "layer_name"},
 		"LicenseInfo": ubx.FieldSpec{WireName: "license_info"},
 	},
 }

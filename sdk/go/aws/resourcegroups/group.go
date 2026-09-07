@@ -42,52 +42,52 @@ type Group_ResourceQuery struct {
 
 type Group_Tags struct {
 	// Specifies the key portion of a key-value tag that can be applied to the AWS Resource Groups group for identification and cost tracking. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Group_Configuration_ParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Group_ConfigurationFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: Group_Configuration_ParametersFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   Group_Configuration_ParametersFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Group_ResourceQuery_Query_TagFiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Group_ResourceQuery_QueryFields = ubx.FieldMap{
-		"ResourceTypeFilters": ubx.FieldSpec{WireName: "resource_type_filters"},
-		"StackIdentifier": ubx.FieldSpec{WireName: "stack_identifier"},
-		"TagFilters": ubx.FieldSpec{
-			WireName: "tag_filters",
-			Kind: "list",
-			Fields: Group_ResourceQuery_Query_TagFiltersFields,
-		},
-	}
+	"ResourceTypeFilters": ubx.FieldSpec{WireName: "resource_type_filters"},
+	"StackIdentifier":     ubx.FieldSpec{WireName: "stack_identifier"},
+	"TagFilters": ubx.FieldSpec{
+		WireName: "tag_filters",
+		Kind:     "list",
+		Fields:   Group_ResourceQuery_Query_TagFiltersFields,
+	},
+}
 
 var Group_ResourceQueryFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{
-			WireName: "query",
-			Kind: "object",
-			Fields: Group_ResourceQuery_QueryFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Query": ubx.FieldSpec{
+		WireName: "query",
+		Kind:     "object",
+		Fields:   Group_ResourceQuery_QueryFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Group_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GroupConfig struct {
 	// Specifies the configuration items that define the resource group, including the type of query (e.g., TagBased or CloudFormationStackBased) and associated parameters. (AI-inferred)
@@ -126,21 +126,21 @@ var Group = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "list",
-			Fields: Group_ConfigurationFields,
+			Kind:     "list",
+			Fields:   Group_ConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ResourceQuery": ubx.FieldSpec{
 			WireName: "resource_query",
-			Kind: "object",
-			Fields: Group_ResourceQueryFields,
+			Kind:     "object",
+			Fields:   Group_ResourceQueryFields,
 		},
 		"Resources": ubx.FieldSpec{WireName: "resources"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Group_TagsFields,
+			Kind:     "list",
+			Fields:   Group_TagsFields,
 		},
 	},
 }

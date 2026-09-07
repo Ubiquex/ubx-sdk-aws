@@ -4,15 +4,15 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessMulticastGroups_MulticastGroupList struct {
-	Arn any
-	Id any
+	Arn  any
+	Id   any
 	Name any
 }
 
 type ApiIotwirelessMulticastGroupsConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotwirelessMulticastGroupsAttrs struct {
@@ -20,13 +20,13 @@ type ApiIotwirelessMulticastGroupsAttrs struct {
 	MaxResults any
 	// <p>List of multicast groups.</p>
 	MulticastGroupList any
-	NextToken any
+	NextToken          any
 }
 
 var ApiIotwirelessMulticastGroups = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_multicast_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -70,56 +70,56 @@ type Assessment_Tags struct {
 }
 
 var Assessment_AssessmentReportsDestinationFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
-	}
+	"Destination":     ubx.FieldSpec{WireName: "destination"},
+	"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
+}
 
 var Assessment_AwsAccountFields = ubx.FieldMap{
-		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
+	"Id":           ubx.FieldSpec{WireName: "id"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 var Assessment_DelegationsFields = ubx.FieldMap{
-		"AssessmentId": ubx.FieldSpec{WireName: "assessment_id"},
-		"AssessmentName": ubx.FieldSpec{WireName: "assessment_name"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"ControlSetId": ubx.FieldSpec{WireName: "control_set_id"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LastUpdated": ubx.FieldSpec{WireName: "last_updated"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"RoleType": ubx.FieldSpec{WireName: "role_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AssessmentId":   ubx.FieldSpec{WireName: "assessment_id"},
+	"AssessmentName": ubx.FieldSpec{WireName: "assessment_name"},
+	"Comment":        ubx.FieldSpec{WireName: "comment"},
+	"ControlSetId":   ubx.FieldSpec{WireName: "control_set_id"},
+	"CreatedBy":      ubx.FieldSpec{WireName: "created_by"},
+	"CreationTime":   ubx.FieldSpec{WireName: "creation_time"},
+	"Id":             ubx.FieldSpec{WireName: "id"},
+	"LastUpdated":    ubx.FieldSpec{WireName: "last_updated"},
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"RoleType":       ubx.FieldSpec{WireName: "role_type"},
+	"Status":         ubx.FieldSpec{WireName: "status"},
+}
 
 var Assessment_RolesFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"RoleType": ubx.FieldSpec{WireName: "role_type"},
-	}
+	"RoleArn":  ubx.FieldSpec{WireName: "role_arn"},
+	"RoleType": ubx.FieldSpec{WireName: "role_type"},
+}
 
 var Assessment_Scope_AwsServicesFields = ubx.FieldMap{
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	}
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+}
 
 var Assessment_ScopeFields = ubx.FieldMap{
-		"AwsAccounts": ubx.FieldSpec{
-			WireName: "aws_accounts",
-			Kind: "list",
-			Fields: Assessment_AwsAccountFields,
-		},
-		"AwsServices": ubx.FieldSpec{
-			WireName: "aws_services",
-			Kind: "list",
-			Fields: Assessment_Scope_AwsServicesFields,
-		},
-	}
+	"AwsAccounts": ubx.FieldSpec{
+		WireName: "aws_accounts",
+		Kind:     "list",
+		Fields:   Assessment_AwsAccountFields,
+	},
+	"AwsServices": ubx.FieldSpec{
+		WireName: "aws_services",
+		Kind:     "list",
+		Fields:   Assessment_Scope_AwsServicesFields,
+	},
+}
 
 var Assessment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssessmentConfig struct {
 	// The destination in which evidence reports are stored for the specified assessment.
@@ -178,37 +178,37 @@ var Assessment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AssessmentReportsDestination": ubx.FieldSpec{
 			WireName: "assessment_reports_destination",
-			Kind: "object",
-			Fields: Assessment_AssessmentReportsDestinationFields,
+			Kind:     "object",
+			Fields:   Assessment_AssessmentReportsDestinationFields,
 		},
 		"AwsAccount": ubx.FieldSpec{
 			WireName: "aws_account",
-			Kind: "object",
-			Fields: Assessment_AwsAccountFields,
+			Kind:     "object",
+			Fields:   Assessment_AwsAccountFields,
 		},
 		"Delegations": ubx.FieldSpec{
 			WireName: "delegations",
-			Kind: "list",
-			Fields: Assessment_DelegationsFields,
+			Kind:     "list",
+			Fields:   Assessment_DelegationsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"FrameworkId": ubx.FieldSpec{WireName: "framework_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Roles": ubx.FieldSpec{
 			WireName: "roles",
-			Kind: "list",
-			Fields: Assessment_RolesFields,
+			Kind:     "list",
+			Fields:   Assessment_RolesFields,
 		},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind: "object",
-			Fields: Assessment_ScopeFields,
+			Kind:     "object",
+			Fields:   Assessment_ScopeFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Assessment_TagsFields,
+			Kind:     "list",
+			Fields:   Assessment_TagsFields,
 		},
 	},
 }

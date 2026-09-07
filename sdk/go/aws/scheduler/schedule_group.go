@@ -11,9 +11,9 @@ type ScheduleGroup_Tags struct {
 }
 
 var ScheduleGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ScheduleGroupConfig struct {
 	// The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
@@ -43,8 +43,8 @@ var ScheduleGroup = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ScheduleGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ScheduleGroup_TagsFields,
 		},
 	},
 }

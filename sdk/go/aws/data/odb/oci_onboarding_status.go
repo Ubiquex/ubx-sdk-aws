@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OciOnboardingStatus_AutonomousDatabaseOciIntegrationIamRoles struct {
 	AwsIntegration any
-	IamRoleArn any
-	Status any
-	StatusReason any
+	IamRoleArn     any
+	Status         any
+	StatusReason   any
 }
 
 type OciOnboardingStatus_OciIdentityDomain struct {
 	AccountSetupCloudFormationUrl any
-	OciIdentityDomainId any
-	OciIdentityDomainResourceUrl any
-	OciIdentityDomainUrl any
-	Status any
-	StatusReason any
+	OciIdentityDomainId           any
+	OciIdentityDomainResourceUrl  any
+	OciIdentityDomainUrl          any
+	Status                        any
+	StatusReason                  any
 }
 
 type OciOnboardingStatus_SubscriptionErrors struct {
@@ -28,19 +28,18 @@ type OciOnboardingStatusConfig struct {
 
 type OciOnboardingStatusAttrs struct {
 	AutonomousDatabaseOciIntegrationIamRoles any
-	ExistingTenancyActivationLink any
-	LinkedOciCompartmentId any
-	LinkedOciTenancyId any
-	NewTenancyActivationLink any
+	ExistingTenancyActivationLink            any
+	LinkedOciCompartmentId                   any
+	LinkedOciTenancyId                       any
+	NewTenancyActivationLink                 any
 	// <p>Information about an Oracle Cloud Infrastructure (OCI) identity domain configuration.</p>
 	OciIdentityDomain any
 	// <p/>
-	Status any
+	Status             any
 	SubscriptionErrors any
 }
 
 var OciOnboardingStatus = ubx.DataSourceBinding{
 	WireType: "aws_odb_oci_onboarding_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

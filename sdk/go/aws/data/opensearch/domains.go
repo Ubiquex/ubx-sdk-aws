@@ -4,40 +4,40 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domains_DomainStatusList_AdvancedSecurityOptions_IamfederationOptions struct {
-	Enabled any
-	RolesKey any
+	Enabled    any
+	RolesKey   any
 	SubjectKey any
 }
 
 type Domains_DomainStatusList_AdvancedSecurityOptions_Jwtoptions struct {
-	Enabled any
-	JwksUrl any
-	PublicKey any
-	RolesKey any
+	Enabled    any
+	JwksUrl    any
+	PublicKey  any
+	RolesKey   any
 	SubjectKey any
 }
 
 type Domains_DomainStatusList_AdvancedSecurityOptions_Samloptions_Idp struct {
-	EntityId any
+	EntityId        any
 	MetadataContent any
 }
 
 type Domains_DomainStatusList_AdvancedSecurityOptions_Samloptions struct {
-	Enabled any
-	Idp any
-	RolesKey any
+	Enabled               any
+	Idp                   any
+	RolesKey              any
 	SessionTimeoutMinutes any
-	SubjectKey any
+	SubjectKey            any
 }
 
 type Domains_DomainStatusList_AdvancedSecurityOptions struct {
-	AnonymousAuthDisableDate any
-	AnonymousAuthEnabled any
-	Enabled any
-	IamfederationOptions any
+	AnonymousAuthDisableDate    any
+	AnonymousAuthEnabled        any
+	Enabled                     any
+	IamfederationOptions        any
 	InternalUserDatabaseEnabled any
-	Jwtoptions any
-	Samloptions any
+	Jwtoptions                  any
+	Samloptions                 any
 }
 
 type Domains_DomainStatusList_Aimloptions_NaturalLanguageQueryGenerationOptions struct {
@@ -51,41 +51,41 @@ type Domains_DomainStatusList_Aimloptions_S3VectorsEngine struct {
 
 type Domains_DomainStatusList_Aimloptions struct {
 	NaturalLanguageQueryGenerationOptions any
-	S3VectorsEngine any
-	ServerlessVectorAcceleration any
+	S3VectorsEngine                       any
+	ServerlessVectorAcceleration          any
 }
 
 type Domains_DomainStatusList_AutoTuneOptions struct {
-	ErrorMessage any
-	State any
+	ErrorMessage     any
+	State            any
 	UseOffPeakWindow any
 }
 
 type Domains_DomainStatusList_AutomatedSnapshotPauseOptions struct {
-	Enabled any
-	EndTime any
+	Enabled   any
+	EndTime   any
 	StartTime any
-	State any
+	State     any
 }
 
 type Domains_DomainStatusList_ChangeProgressDetails struct {
-	ChangeId any
+	ChangeId           any
 	ConfigChangeStatus any
-	InitiatedBy any
-	LastUpdatedTime any
-	Message any
-	StartTime any
+	InitiatedBy        any
+	LastUpdatedTime    any
+	Message            any
+	StartTime          any
 }
 
 type Domains_DomainStatusList_ClusterConfig_NodeOptions_NodeConfig struct {
-	Count any
+	Count   any
 	Enabled any
-	Type any
+	Type    any
 }
 
 type Domains_DomainStatusList_ClusterConfig_NodeOptions struct {
 	NodeConfig any
-	NodeType any
+	NodeType   any
 }
 
 type Domains_DomainStatusList_ClusterConfig_ZoneAwarenessConfig struct {
@@ -93,26 +93,26 @@ type Domains_DomainStatusList_ClusterConfig_ZoneAwarenessConfig struct {
 }
 
 type Domains_DomainStatusList_ClusterConfig struct {
-	ColdStorageOptions any
-	DedicatedMasterCount any
-	DedicatedMasterEnabled any
-	DedicatedMasterType any
-	InstanceCount any
-	InstanceType any
+	ColdStorageOptions        any
+	DedicatedMasterCount      any
+	DedicatedMasterEnabled    any
+	DedicatedMasterType       any
+	InstanceCount             any
+	InstanceType              any
 	MultiAzwithStandbyEnabled any
-	NodeOptions any
-	WarmCount any
-	WarmEnabled any
-	WarmType any
-	ZoneAwarenessConfig any
-	ZoneAwarenessEnabled any
+	NodeOptions               any
+	WarmCount                 any
+	WarmEnabled               any
+	WarmType                  any
+	ZoneAwarenessConfig       any
+	ZoneAwarenessEnabled      any
 }
 
 type Domains_DomainStatusList_CognitoOptions struct {
-	Enabled any
+	Enabled        any
 	IdentityPoolId any
-	RoleArn any
-	UserPoolId any
+	RoleArn        any
+	UserPoolId     any
 }
 
 type Domains_DomainStatusList_DeploymentStrategyOptions struct {
@@ -120,50 +120,50 @@ type Domains_DomainStatusList_DeploymentStrategyOptions struct {
 }
 
 type Domains_DomainStatusList_DomainEndpointOptions struct {
-	CustomEndpoint any
+	CustomEndpoint               any
 	CustomEndpointCertificateArn any
-	CustomEndpointEnabled any
-	EnforceHttps any
-	TlssecurityPolicy any
+	CustomEndpointEnabled        any
+	EnforceHttps                 any
+	TlssecurityPolicy            any
 }
 
 type Domains_DomainStatusList_Ebsoptions struct {
 	Ebsenabled any
-	Iops any
+	Iops       any
 	Throughput any
 	VolumeSize any
 	VolumeType any
 }
 
 type Domains_DomainStatusList_EncryptionAtRestOptions struct {
-	Enabled any
+	Enabled  any
 	KmsKeyId any
 }
 
 type Domains_DomainStatusList_IdentityCenterOptions struct {
-	EnabledApiaccess any
+	EnabledApiaccess             any
 	IdentityCenterApplicationArn any
-	IdentityCenterInstanceArn any
+	IdentityCenterInstanceArn    any
 	IdentityCenterInstanceRegion any
-	IdentityStoreId any
-	RolesKey any
-	SubjectKey any
+	IdentityStoreId              any
+	RolesKey                     any
+	SubjectKey                   any
 }
 
 type Domains_DomainStatusList_LogPublishingOptions struct {
 	CloudWatchLogsLogGroupArn any
-	Enabled any
+	Enabled                   any
 }
 
 type Domains_DomainStatusList_ModifyingProperties struct {
-	ActiveValue any
-	Name any
+	ActiveValue  any
+	Name         any
 	PendingValue any
-	ValueType any
+	ValueType    any
 }
 
 type Domains_DomainStatusList_OffPeakWindowOptions_OffPeakWindow_WindowStartTime struct {
-	Hours any
+	Hours   any
 	Minutes any
 }
 
@@ -172,19 +172,19 @@ type Domains_DomainStatusList_OffPeakWindowOptions_OffPeakWindow struct {
 }
 
 type Domains_DomainStatusList_OffPeakWindowOptions struct {
-	Enabled any
+	Enabled       any
 	OffPeakWindow any
 }
 
 type Domains_DomainStatusList_ServiceSoftwareOptions struct {
 	AutomatedUpdateDate any
-	Cancellable any
-	CurrentVersion any
-	Description any
-	NewVersion any
-	OptionalDeployment any
-	UpdateAvailable any
-	UpdateStatus any
+	Cancellable         any
+	CurrentVersion      any
+	Description         any
+	NewVersion          any
+	OptionalDeployment  any
+	UpdateAvailable     any
+	UpdateStatus        any
 }
 
 type Domains_DomainStatusList_SnapshotOptions struct {
@@ -192,57 +192,57 @@ type Domains_DomainStatusList_SnapshotOptions struct {
 }
 
 type Domains_DomainStatusList_SoftwareUpdateOptions struct {
-	AutoSoftwareUpdateEnabled any
+	AutoSoftwareUpdateEnabled            any
 	UseLatestServiceSoftwareForBlueGreen any
 }
 
 type Domains_DomainStatusList_Vpcoptions struct {
 	AvailabilityZones any
-	EgressEnabled any
-	SecurityGroupIds any
-	SubnetIds any
-	Vpcid any
+	EgressEnabled     any
+	SecurityGroupIds  any
+	SubnetIds         any
+	Vpcid             any
 }
 
 type Domains_DomainStatusList struct {
-	AccessPolicies any
-	AdvancedOptions any
-	AdvancedSecurityOptions any
-	Aimloptions any
-	Arn any
-	AutoTuneOptions any
+	AccessPolicies                any
+	AdvancedOptions               any
+	AdvancedSecurityOptions       any
+	Aimloptions                   any
+	Arn                           any
+	AutoTuneOptions               any
 	AutomatedSnapshotPauseOptions any
-	ChangeProgressDetails any
-	ClusterConfig any
-	CognitoOptions any
-	Created any
-	Deleted any
-	DeploymentStrategyOptions any
-	DomainEndpointOptions any
-	DomainEndpointV2HostedZoneId any
-	DomainId any
-	DomainName any
-	DomainProcessingStatus any
-	Ebsoptions any
-	EncryptionAtRestOptions any
-	Endpoint any
-	EndpointV2 any
-	Endpoints any
-	EngineMode any
-	EngineVersion any
-	IdentityCenterOptions any
-	IpaddressType any
-	LogPublishingOptions any
-	ModifyingProperties any
-	NodeToNodeEncryptionOptions any
-	OffPeakWindowOptions any
-	Processing any
-	ServiceSoftwareOptions any
-	SnapshotOptions any
-	SoftwareUpdateOptions any
-	UpgradeProcessing any
-	UseCase any
-	Vpcoptions any
+	ChangeProgressDetails         any
+	ClusterConfig                 any
+	CognitoOptions                any
+	Created                       any
+	Deleted                       any
+	DeploymentStrategyOptions     any
+	DomainEndpointOptions         any
+	DomainEndpointV2HostedZoneId  any
+	DomainId                      any
+	DomainName                    any
+	DomainProcessingStatus        any
+	Ebsoptions                    any
+	EncryptionAtRestOptions       any
+	Endpoint                      any
+	EndpointV2                    any
+	Endpoints                     any
+	EngineMode                    any
+	EngineVersion                 any
+	IdentityCenterOptions         any
+	IpaddressType                 any
+	LogPublishingOptions          any
+	ModifyingProperties           any
+	NodeToNodeEncryptionOptions   any
+	OffPeakWindowOptions          any
+	Processing                    any
+	ServiceSoftwareOptions        any
+	SnapshotOptions               any
+	SoftwareUpdateOptions         any
+	UpgradeProcessing             any
+	UseCase                       any
+	Vpcoptions                    any
 }
 
 type DomainsConfig struct {

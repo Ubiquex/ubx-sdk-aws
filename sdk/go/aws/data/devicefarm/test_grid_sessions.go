@@ -4,47 +4,47 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestGridSessions_TestGridSessions struct {
-	Arn any
-	BillingMinutes any
-	Created any
-	Ended any
+	Arn                any
+	BillingMinutes     any
+	Created            any
+	Ended              any
 	SeleniumProperties any
-	Status any
+	Status             any
 }
 
 type TestGridSessionsConfig struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	EndTimeAfter any
-	EndTimeBefore any
-	MaxResult any
-	NextToken any
-	ProjectArn any
-	Status any
+	EndTimeAfter       any
+	EndTimeBefore      any
+	MaxResult          any
+	NextToken          any
+	ProjectArn         any
+	Status             any
 }
 
 type TestGridSessionsAttrs struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	EndTimeAfter any
-	EndTimeBefore any
-	MaxResult any
-	NextToken any
-	ProjectArn any
-	Status any
-	TestGridSessions any
+	EndTimeAfter       any
+	EndTimeBefore      any
+	MaxResult          any
+	NextToken          any
+	ProjectArn         any
+	Status             any
+	TestGridSessions   any
 }
 
 var TestGridSessions = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_test_grid_sessions",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
 		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"EndTimeAfter": ubx.FieldSpec{WireName: "end_time_after"},
-		"EndTimeBefore": ubx.FieldSpec{WireName: "end_time_before"},
-		"MaxResult": ubx.FieldSpec{WireName: "max_result"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProjectArn": ubx.FieldSpec{WireName: "project_arn"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"EndTimeAfter":       ubx.FieldSpec{WireName: "end_time_after"},
+		"EndTimeBefore":      ubx.FieldSpec{WireName: "end_time_before"},
+		"MaxResult":          ubx.FieldSpec{WireName: "max_result"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"ProjectArn":         ubx.FieldSpec{WireName: "project_arn"},
+		"Status":             ubx.FieldSpec{WireName: "status"},
 	},
 }

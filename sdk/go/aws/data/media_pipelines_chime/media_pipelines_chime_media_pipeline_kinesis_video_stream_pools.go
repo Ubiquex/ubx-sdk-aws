@@ -4,26 +4,26 @@ package media_pipelines_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaPipelinesChimeMediaPipelineKinesisVideoStreamPools_KinesisVideoStreamPools struct {
-	PoolArn any
-	PoolId any
+	PoolArn  any
+	PoolId   any
 	PoolName any
 }
 
 type MediaPipelinesChimeMediaPipelineKinesisVideoStreamPoolsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MediaPipelinesChimeMediaPipelineKinesisVideoStreamPoolsAttrs struct {
 	KinesisVideoStreamPools any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 var MediaPipelinesChimeMediaPipelineKinesisVideoStreamPools = ubx.DataSourceBinding{
 	WireType: "aws_media_pipelines_chime_media_pipeline_kinesis_video_stream_pools",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

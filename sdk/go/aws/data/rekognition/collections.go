@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CollectionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CollectionsAttrs struct {
-	CollectionIds any
+	CollectionIds     any
 	FaceModelVersions any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var Collections = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_collections",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

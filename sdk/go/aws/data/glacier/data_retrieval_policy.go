@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataRetrievalPolicy_Policy_Rules struct {
 	BytesPerHour any
-	Strategy any
+	Strategy     any
 }
 
 type DataRetrievalPolicy_Policy struct {

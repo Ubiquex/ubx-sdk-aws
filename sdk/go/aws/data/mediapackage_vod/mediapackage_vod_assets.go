@@ -4,34 +4,34 @@ package mediapackage_vod
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediapackageVodAssets_Assets struct {
-	Arn any
-	CreatedAt any
-	Id any
+	Arn              any
+	CreatedAt        any
+	Id               any
 	PackagingGroupId any
-	ResourceId any
-	SourceArn any
-	SourceRoleArn any
-	Tags any
+	ResourceId       any
+	SourceArn        any
+	SourceRoleArn    any
+	Tags             any
 }
 
 type MediapackageVodAssetsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	PackagingGroupId any
 }
 
 type MediapackageVodAssetsAttrs struct {
-	Assets any
-	MaxResults any
-	NextToken any
+	Assets           any
+	MaxResults       any
+	NextToken        any
 	PackagingGroupId any
 }
 
 var MediapackageVodAssets = ubx.DataSourceBinding{
 	WireType: "aws_mediapackage_vod_assets",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"PackagingGroupId": ubx.FieldSpec{WireName: "packaging_group_id"},
 	},
 }

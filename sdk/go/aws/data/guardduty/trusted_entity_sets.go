@@ -6,13 +6,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type TrustedEntitySetsConfig struct {
 	DetectorId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TrustedEntitySetsAttrs struct {
-	DetectorId any
-	MaxResults any
-	NextToken any
+	DetectorId          any
+	MaxResults          any
+	NextToken           any
 	TrustedEntitySetIds any
 }
 
@@ -21,6 +21,6 @@ var TrustedEntitySets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

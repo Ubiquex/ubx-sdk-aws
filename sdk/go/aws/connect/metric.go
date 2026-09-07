@@ -4,7 +4,7 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Metric_Filters struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -15,7 +15,7 @@ type Metric_MetricCalculation_CalculationComponents_MetricFilters_BooleanConditi
 
 type Metric_MetricCalculation_CalculationComponents_MetricFilters_NumberCondition struct {
 	Comparison any
-	Values any
+	Values     any
 }
 
 type Metric_MetricCalculation_CalculationComponents_MetricFilters_StringCondition struct {
@@ -27,10 +27,10 @@ type Metric_MetricCalculation_CalculationComponents_MetricFilters_StringConditio
 
 type Metric_MetricCalculation_CalculationComponents_MetricFilters struct {
 	BooleanCondition any
-	MetricFilterKey any
-	Negate any
-	NumberCondition any
-	StringCondition any
+	MetricFilterKey  any
+	Negate           any
+	NumberCondition  any
+	StringCondition  any
 }
 
 type Metric_MetricCalculation_CalculationComponents struct {
@@ -38,7 +38,7 @@ type Metric_MetricCalculation_CalculationComponents struct {
 	// A list of metric filter objects, each specifying a dimension (like QUEUE, AGENT, or CHANNEL) and its accepted values, that determines which data points contribute to the calculated metric component. (AI-inferred)
 	MetricFilters any
 	// The identifier of the metric that this calculation component references as an input to the overall metric calculation. (AI-inferred)
-	MetricId any
+	MetricId   any
 	MetricName any
 }
 
@@ -50,68 +50,68 @@ type Metric_MetricCalculation struct {
 }
 
 type Metric_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Metric_MetricCalculation_CalculationComponents_MetricFilters_BooleanConditionFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+}
 
 var Metric_MetricCalculation_CalculationComponents_MetricFilters_NumberConditionFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var Metric_MetricCalculation_CalculationComponents_MetricFilters_StringConditionFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var Metric_MetricCalculation_CalculationComponents_MetricFiltersFields = ubx.FieldMap{
-		"BooleanCondition": ubx.FieldSpec{
-			WireName: "boolean_condition",
-			Kind: "object",
-			Fields: Metric_MetricCalculation_CalculationComponents_MetricFilters_BooleanConditionFields,
-		},
-		"MetricFilterKey": ubx.FieldSpec{WireName: "metric_filter_key"},
-		"Negate": ubx.FieldSpec{WireName: "negate"},
-		"NumberCondition": ubx.FieldSpec{
-			WireName: "number_condition",
-			Kind: "object",
-			Fields: Metric_MetricCalculation_CalculationComponents_MetricFilters_NumberConditionFields,
-		},
-		"StringCondition": ubx.FieldSpec{
-			WireName: "string_condition",
-			Kind: "object",
-			Fields: Metric_MetricCalculation_CalculationComponents_MetricFilters_StringConditionFields,
-		},
-	}
+	"BooleanCondition": ubx.FieldSpec{
+		WireName: "boolean_condition",
+		Kind:     "object",
+		Fields:   Metric_MetricCalculation_CalculationComponents_MetricFilters_BooleanConditionFields,
+	},
+	"MetricFilterKey": ubx.FieldSpec{WireName: "metric_filter_key"},
+	"Negate":          ubx.FieldSpec{WireName: "negate"},
+	"NumberCondition": ubx.FieldSpec{
+		WireName: "number_condition",
+		Kind:     "object",
+		Fields:   Metric_MetricCalculation_CalculationComponents_MetricFilters_NumberConditionFields,
+	},
+	"StringCondition": ubx.FieldSpec{
+		WireName: "string_condition",
+		Kind:     "object",
+		Fields:   Metric_MetricCalculation_CalculationComponents_MetricFilters_StringConditionFields,
+	},
+}
 
 var Metric_MetricCalculation_CalculationComponentsFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"MetricFilters": ubx.FieldSpec{
-			WireName: "metric_filters",
-			Kind: "list",
-			Fields: Metric_MetricCalculation_CalculationComponents_MetricFiltersFields,
-		},
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-	}
+	"Alias": ubx.FieldSpec{WireName: "alias"},
+	"MetricFilters": ubx.FieldSpec{
+		WireName: "metric_filters",
+		Kind:     "list",
+		Fields:   Metric_MetricCalculation_CalculationComponents_MetricFiltersFields,
+	},
+	"MetricId":   ubx.FieldSpec{WireName: "metric_id"},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+}
 
 var Metric_MetricCalculationFields = ubx.FieldMap{
-		"Calculation": ubx.FieldSpec{WireName: "calculation"},
-		"CalculationComponents": ubx.FieldSpec{
-			WireName: "calculation_components",
-			Kind: "list",
-			Fields: Metric_MetricCalculation_CalculationComponentsFields,
-		},
-	}
+	"Calculation": ubx.FieldSpec{WireName: "calculation"},
+	"CalculationComponents": ubx.FieldSpec{
+		WireName: "calculation_components",
+		Kind:     "list",
+		Fields:   Metric_MetricCalculation_CalculationComponentsFields,
+	},
+}
 
 var Metric_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MetricConfig struct {
 	// The description of the custom metric
@@ -194,16 +194,16 @@ var Metric = ubx.ResourceBinding{
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"MetricCalculation": ubx.FieldSpec{
 			WireName: "metric_calculation",
-			Kind: "object",
-			Fields: Metric_MetricCalculationFields,
+			Kind:     "object",
+			Fields:   Metric_MetricCalculationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"PositiveTrendIndicator": ubx.FieldSpec{WireName: "positive_trend_indicator"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":                 ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Metric_TagsFields,
+			Kind:     "list",
+			Fields:   Metric_TagsFields,
 		},
 		"Unit": ubx.FieldSpec{WireName: "unit"},
 	},

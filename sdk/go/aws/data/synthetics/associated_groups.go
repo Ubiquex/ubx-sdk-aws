@@ -4,29 +4,29 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssociatedGroups_Groups struct {
-	Arn any
-	Id any
+	Arn  any
+	Id   any
 	Name any
 }
 
 type AssociatedGroupsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type AssociatedGroupsAttrs struct {
-	Groups any
-	MaxResults any
-	NextToken any
+	Groups      any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 var AssociatedGroups = ubx.DataSourceBinding{
 	WireType: "aws_synthetics_associated_groups",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

@@ -34,10 +34,10 @@ type EipassociationAttrs struct {
 var Eipassociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_eipassociation",
 	Fields: ubx.FieldMap{
-		"AllocationId": ubx.FieldSpec{WireName: "allocation_id"},
-		"Eip": ubx.FieldSpec{WireName: "eip"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"AllocationId":       ubx.FieldSpec{WireName: "allocation_id"},
+		"Eip":                ubx.FieldSpec{WireName: "eip"},
+		"InstanceId":         ubx.FieldSpec{WireName: "instance_id"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+		"PrivateIpAddress":   ubx.FieldSpec{WireName: "private_ip_address"},
 	},
 }

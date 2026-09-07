@@ -4,66 +4,66 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImageReferences_ImageReferences struct {
-	Arn any
-	ImageId any
+	Arn          any
+	ImageId      any
 	ResourceType any
 }
 
 type ImageReferences_ResourceTypes_ResourceTypeOptions struct {
-	OptionName any
+	OptionName   any
 	OptionValues any
 }
 
 type ImageReferences_ResourceTypes struct {
-	ResourceType any
+	ResourceType        any
 	ResourceTypeOptions any
 }
 
 var ImageReferences_ResourceTypes_ResourceTypeOptionsFields = ubx.FieldMap{
-		"OptionName": ubx.FieldSpec{WireName: "option_name"},
-		"OptionValues": ubx.FieldSpec{WireName: "option_values"},
-	}
+	"OptionName":   ubx.FieldSpec{WireName: "option_name"},
+	"OptionValues": ubx.FieldSpec{WireName: "option_values"},
+}
 
 var ImageReferences_ResourceTypesFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"ResourceTypeOptions": ubx.FieldSpec{
-			WireName: "resource_type_options",
-			Kind: "list",
-			Fields: ImageReferences_ResourceTypes_ResourceTypeOptionsFields,
-		},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"ResourceTypeOptions": ubx.FieldSpec{
+		WireName: "resource_type_options",
+		Kind:     "list",
+		Fields:   ImageReferences_ResourceTypes_ResourceTypeOptionsFields,
+	},
+}
 
 type ImageReferencesConfig struct {
-	DryRun any
-	ImageIds any
+	DryRun                  any
+	ImageIds                any
 	IncludeAllResourceTypes any
-	MaxResults any
-	NextToken any
-	ResourceTypes any
+	MaxResults              any
+	NextToken               any
+	ResourceTypes           any
 }
 
 type ImageReferencesAttrs struct {
-	DryRun any
-	ImageIds any
-	ImageReferences any
+	DryRun                  any
+	ImageIds                any
+	ImageReferences         any
 	IncludeAllResourceTypes any
-	MaxResults any
-	NextToken any
-	ResourceTypes any
+	MaxResults              any
+	NextToken               any
+	ResourceTypes           any
 }
 
 var ImageReferences = ubx.DataSourceBinding{
 	WireType: "aws_ec2_image_references",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"ImageIds": ubx.FieldSpec{WireName: "image_ids"},
+		"DryRun":                  ubx.FieldSpec{WireName: "dry_run"},
+		"ImageIds":                ubx.FieldSpec{WireName: "image_ids"},
 		"IncludeAllResourceTypes": ubx.FieldSpec{WireName: "include_all_resource_types"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 		"ResourceTypes": ubx.FieldSpec{
 			WireName: "resource_types",
-			Kind: "list",
-			Fields: ImageReferences_ResourceTypesFields,
+			Kind:     "list",
+			Fields:   ImageReferences_ResourceTypesFields,
 		},
 	},
 }

@@ -4,36 +4,36 @@ package resiliencehub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppVersions_AppVersions struct {
-	AppVersion any
+	AppVersion   any
 	CreationTime any
-	Identifier any
-	VersionName any
+	Identifier   any
+	VersionName  any
 }
 
 type AppVersionsConfig struct {
-	AppArn any
-	EndTime any
+	AppArn     any
+	EndTime    any
 	MaxResults any
-	NextToken any
-	StartTime any
+	NextToken  any
+	StartTime  any
 }
 
 type AppVersionsAttrs struct {
-	AppArn any
+	AppArn      any
 	AppVersions any
-	EndTime any
-	MaxResults any
-	NextToken any
-	StartTime any
+	EndTime     any
+	MaxResults  any
+	NextToken   any
+	StartTime   any
 }
 
 var AppVersions = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_app_versions",
 	Fields: ubx.FieldMap{
-		"AppArn": ubx.FieldSpec{WireName: "app_arn"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"AppArn":     ubx.FieldSpec{WireName: "app_arn"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
 	},
 }

@@ -9,35 +9,35 @@ type ApiIotwirelessWirelessDeviceImportTasks_WirelessDeviceImportTaskList_Sidewa
 
 type ApiIotwirelessWirelessDeviceImportTasks_WirelessDeviceImportTaskList_Sidewalk struct {
 	DeviceCreationFileList any
-	Positioning any
-	Role any
+	Positioning            any
+	Role                   any
 }
 
 type ApiIotwirelessWirelessDeviceImportTasks_WirelessDeviceImportTaskList struct {
-	Arn any
-	CreationTime any
-	DestinationName any
-	FailedImportedDeviceCount any
-	Id any
+	Arn                            any
+	CreationTime                   any
+	DestinationName                any
+	FailedImportedDeviceCount      any
+	Id                             any
 	InitializedImportedDeviceCount any
-	OnboardedImportedDeviceCount any
-	PendingImportedDeviceCount any
-	Positioning any
-	Sidewalk any
-	Status any
-	StatusReason any
+	OnboardedImportedDeviceCount   any
+	PendingImportedDeviceCount     any
+	Positioning                    any
+	Sidewalk                       any
+	Status                         any
+	StatusReason                   any
 }
 
 type ApiIotwirelessWirelessDeviceImportTasksConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotwirelessWirelessDeviceImportTasksAttrs struct {
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults                   any
+	NextToken                    any
 	WirelessDeviceImportTaskList any
 }
 
@@ -45,6 +45,6 @@ var ApiIotwirelessWirelessDeviceImportTasks = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_wireless_device_import_tasks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

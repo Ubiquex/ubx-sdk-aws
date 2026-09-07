@@ -4,27 +4,27 @@ package amplifybackend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackendJobConfig struct {
-	AppId any
+	AppId                  any
 	BackendEnvironmentName any
-	JobId any
+	JobId                  any
 }
 
 type BackendJobAttrs struct {
-	AppId any
+	AppId                  any
 	BackendEnvironmentName any
-	CreateTime any
-	Error any
-	JobId any
-	Operation any
-	Status any
-	UpdateTime any
+	CreateTime             any
+	Error                  any
+	JobId                  any
+	Operation              any
+	Status                 any
+	UpdateTime             any
 }
 
 var BackendJob = ubx.DataSourceBinding{
 	WireType: "aws_amplifybackend_backend_job",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":                  ubx.FieldSpec{WireName: "app_id"},
 		"BackendEnvironmentName": ubx.FieldSpec{WireName: "backend_environment_name"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":                  ubx.FieldSpec{WireName: "job_id"},
 	},
 }

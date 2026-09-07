@@ -4,25 +4,25 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tapes_TapeInfos struct {
-	GatewayArn any
-	PoolEntryDate any
-	PoolId any
+	GatewayArn         any
+	PoolEntryDate      any
+	PoolId             any
 	RetentionStartDate any
-	TapeArn any
-	TapeBarcode any
-	TapeSizeInBytes any
-	TapeStatus any
+	TapeArn            any
+	TapeBarcode        any
+	TapeSizeInBytes    any
+	TapeStatus         any
 }
 
 type TapesConfig struct {
-	Limit any
+	Limit  any
 	Marker any
 	// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
 	TapeArns any
 }
 
 type TapesAttrs struct {
-	Limit any
+	Limit  any
 	Marker any
 	// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
 	TapeArns any
@@ -33,8 +33,8 @@ type TapesAttrs struct {
 var Tapes = ubx.DataSourceBinding{
 	WireType: "aws_storagegateway_tapes",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Limit":    ubx.FieldSpec{WireName: "limit"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"TapeArns": ubx.FieldSpec{WireName: "tape_arns"},
 	},
 }

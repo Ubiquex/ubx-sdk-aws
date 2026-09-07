@@ -44,12 +44,12 @@ type QueueAttrs struct {
 var Queue = ubx.ResourceBinding{
 	WireType: "aws_media_convert_queue",
 	Fields: ubx.FieldMap{
-		"ConcurrentJobs": ubx.FieldSpec{WireName: "concurrent_jobs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ConcurrentJobs":         ubx.FieldSpec{WireName: "concurrent_jobs"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
 		"MaximumConcurrentFeeds": ubx.FieldSpec{WireName: "maximum_concurrent_feeds"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"PricingPlan":            ubx.FieldSpec{WireName: "pricing_plan"},
+		"Status":                 ubx.FieldSpec{WireName: "status"},
+		"Tags":                   ubx.FieldSpec{WireName: "tags"},
 	},
 }

@@ -4,11 +4,11 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountSettings_AccountSettings struct {
-	AccountName any
-	DefaultNamespace any
-	Edition any
-	NotificationEmail any
-	PublicSharingEnabled any
+	AccountName                  any
+	DefaultNamespace             any
+	Edition                      any
+	NotificationEmail            any
+	PublicSharingEnabled         any
 	TerminationProtectionEnabled any
 }
 
@@ -19,9 +19,9 @@ type AccountSettingsConfig struct {
 type AccountSettingsAttrs struct {
 	// <p>The Quick Sight settings associated with your Amazon Web Services account.</p>
 	AccountSettings any
-	AwsAccountId any
-	RequestId any
-	Status any
+	AwsAccountId    any
+	RequestId       any
+	Status          any
 }
 
 var AccountSettings = ubx.DataSourceBinding{

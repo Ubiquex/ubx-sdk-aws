@@ -4,54 +4,54 @@ package dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalTableSettings_ReplicaSettings_ReplicaBillingModeSummary struct {
-	BillingMode any
+	BillingMode                       any
 	LastUpdateToPayPerRequestDateTime any
 }
 
 type GlobalTableSettings_ReplicaSettings_ReplicaGlobalSecondaryIndexSettings_ProvisionedReadCapacityAutoScalingSettings_ScalingPolicies_TargetTrackingScalingPolicyConfiguration struct {
-	DisableScaleIn any
-	ScaleInCooldown any
+	DisableScaleIn   any
+	ScaleInCooldown  any
 	ScaleOutCooldown any
-	TargetValue any
+	TargetValue      any
 }
 
 type GlobalTableSettings_ReplicaSettings_ReplicaGlobalSecondaryIndexSettings_ProvisionedReadCapacityAutoScalingSettings_ScalingPolicies struct {
-	PolicyName any
+	PolicyName                               any
 	TargetTrackingScalingPolicyConfiguration any
 }
 
 type GlobalTableSettings_ReplicaSettings_ReplicaGlobalSecondaryIndexSettings_ProvisionedReadCapacityAutoScalingSettings struct {
 	AutoScalingDisabled any
-	AutoScalingRoleArn any
-	MaximumUnits any
-	MinimumUnits any
-	ScalingPolicies any
+	AutoScalingRoleArn  any
+	MaximumUnits        any
+	MinimumUnits        any
+	ScalingPolicies     any
 }
 
 type GlobalTableSettings_ReplicaSettings_ReplicaGlobalSecondaryIndexSettings struct {
-	IndexName any
-	IndexStatus any
-	ProvisionedReadCapacityAutoScalingSettings any
-	ProvisionedReadCapacityUnits any
+	IndexName                                   any
+	IndexStatus                                 any
+	ProvisionedReadCapacityAutoScalingSettings  any
+	ProvisionedReadCapacityUnits                any
 	ProvisionedWriteCapacityAutoScalingSettings any
-	ProvisionedWriteCapacityUnits any
+	ProvisionedWriteCapacityUnits               any
 }
 
 type GlobalTableSettings_ReplicaSettings_ReplicaTableClassSummary struct {
 	LastUpdateDateTime any
-	TableClass any
+	TableClass         any
 }
 
 type GlobalTableSettings_ReplicaSettings struct {
-	RegionName any
-	ReplicaBillingModeSummary any
-	ReplicaGlobalSecondaryIndexSettings any
-	ReplicaProvisionedReadCapacityAutoScalingSettings any
-	ReplicaProvisionedReadCapacityUnits any
+	RegionName                                         any
+	ReplicaBillingModeSummary                          any
+	ReplicaGlobalSecondaryIndexSettings                any
+	ReplicaProvisionedReadCapacityAutoScalingSettings  any
+	ReplicaProvisionedReadCapacityUnits                any
 	ReplicaProvisionedWriteCapacityAutoScalingSettings any
-	ReplicaProvisionedWriteCapacityUnits any
-	ReplicaStatus any
-	ReplicaTableClassSummary any
+	ReplicaProvisionedWriteCapacityUnits               any
+	ReplicaStatus                                      any
+	ReplicaTableClassSummary                           any
 }
 
 type GlobalTableSettingsConfig struct {

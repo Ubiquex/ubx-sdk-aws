@@ -4,31 +4,31 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedJobTemplates_ManagedJobTemplates struct {
-	Description any
-	Environments any
-	TemplateArn any
-	TemplateName any
+	Description     any
+	Environments    any
+	TemplateArn     any
+	TemplateName    any
 	TemplateVersion any
 }
 
 type ManagedJobTemplatesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	TemplateName any
 }
 
 type ManagedJobTemplatesAttrs struct {
 	ManagedJobTemplates any
-	MaxResults any
-	NextToken any
-	TemplateName any
+	MaxResults          any
+	NextToken           any
+	TemplateName        any
 }
 
 var ManagedJobTemplates = ubx.DataSourceBinding{
 	WireType: "aws_iot_managed_job_templates",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
 	},
 }

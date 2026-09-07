@@ -8,7 +8,7 @@ type SubscriptionAttributesConfig struct {
 }
 
 type SubscriptionAttributesAttrs struct {
-	Attributes any
+	Attributes      any
 	SubscriptionArn any
 }
 

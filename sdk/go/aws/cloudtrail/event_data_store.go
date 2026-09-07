@@ -29,7 +29,7 @@ type EventDataStore_AdvancedEventSelectors struct {
 
 type EventDataStore_ContextKeySelectors struct {
 	Equals any
-	Type any
+	Type   any
 }
 
 type EventDataStore_InsightSelectors struct {
@@ -44,37 +44,37 @@ type EventDataStore_Tags struct {
 }
 
 var EventDataStore_AdvancedEventSelectors_FieldSelectorsFields = ubx.FieldMap{
-		"EndsWith": ubx.FieldSpec{WireName: "ends_with"},
-		"Equals": ubx.FieldSpec{WireName: "equals"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"NotEndsWith": ubx.FieldSpec{WireName: "not_ends_with"},
-		"NotEquals": ubx.FieldSpec{WireName: "not_equals"},
-		"NotStartsWith": ubx.FieldSpec{WireName: "not_starts_with"},
-		"StartsWith": ubx.FieldSpec{WireName: "starts_with"},
-	}
+	"EndsWith":      ubx.FieldSpec{WireName: "ends_with"},
+	"Equals":        ubx.FieldSpec{WireName: "equals"},
+	"Field":         ubx.FieldSpec{WireName: "field"},
+	"NotEndsWith":   ubx.FieldSpec{WireName: "not_ends_with"},
+	"NotEquals":     ubx.FieldSpec{WireName: "not_equals"},
+	"NotStartsWith": ubx.FieldSpec{WireName: "not_starts_with"},
+	"StartsWith":    ubx.FieldSpec{WireName: "starts_with"},
+}
 
 var EventDataStore_AdvancedEventSelectorsFields = ubx.FieldMap{
-		"FieldSelectors": ubx.FieldSpec{
-			WireName: "field_selectors",
-			Kind: "list",
-			Fields: EventDataStore_AdvancedEventSelectors_FieldSelectorsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"FieldSelectors": ubx.FieldSpec{
+		WireName: "field_selectors",
+		Kind:     "list",
+		Fields:   EventDataStore_AdvancedEventSelectors_FieldSelectorsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var EventDataStore_ContextKeySelectorsFields = ubx.FieldMap{
-		"Equals": ubx.FieldSpec{WireName: "equals"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Equals": ubx.FieldSpec{WireName: "equals"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var EventDataStore_InsightSelectorsFields = ubx.FieldMap{
-		"InsightType": ubx.FieldSpec{WireName: "insight_type"},
-	}
+	"InsightType": ubx.FieldSpec{WireName: "insight_type"},
+}
 
 var EventDataStore_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventDataStoreConfig struct {
 	// The advanced event selectors that were used to select events for the data store.
@@ -159,34 +159,34 @@ var EventDataStore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdvancedEventSelectors": ubx.FieldSpec{
 			WireName: "advanced_event_selectors",
-			Kind: "list",
-			Fields: EventDataStore_AdvancedEventSelectorsFields,
+			Kind:     "list",
+			Fields:   EventDataStore_AdvancedEventSelectorsFields,
 		},
 		"BillingMode": ubx.FieldSpec{WireName: "billing_mode"},
 		"ContextKeySelectors": ubx.FieldSpec{
 			WireName: "context_key_selectors",
-			Kind: "list",
-			Fields: EventDataStore_ContextKeySelectorsFields,
+			Kind:     "list",
+			Fields:   EventDataStore_ContextKeySelectorsFields,
 		},
 		"FederationEnabled": ubx.FieldSpec{WireName: "federation_enabled"},
 		"FederationRoleArn": ubx.FieldSpec{WireName: "federation_role_arn"},
-		"IngestionEnabled": ubx.FieldSpec{WireName: "ingestion_enabled"},
+		"IngestionEnabled":  ubx.FieldSpec{WireName: "ingestion_enabled"},
 		"InsightSelectors": ubx.FieldSpec{
 			WireName: "insight_selectors",
-			Kind: "list",
-			Fields: EventDataStore_InsightSelectorsFields,
+			Kind:     "list",
+			Fields:   EventDataStore_InsightSelectorsFields,
 		},
 		"InsightsDestination": ubx.FieldSpec{WireName: "insights_destination"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MaxEventSize": ubx.FieldSpec{WireName: "max_event_size"},
-		"MultiRegionEnabled": ubx.FieldSpec{WireName: "multi_region_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKeyId":            ubx.FieldSpec{WireName: "kms_key_id"},
+		"MaxEventSize":        ubx.FieldSpec{WireName: "max_event_size"},
+		"MultiRegionEnabled":  ubx.FieldSpec{WireName: "multi_region_enabled"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"OrganizationEnabled": ubx.FieldSpec{WireName: "organization_enabled"},
-		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
+		"RetentionPeriod":     ubx.FieldSpec{WireName: "retention_period"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventDataStore_TagsFields,
+			Kind:     "list",
+			Fields:   EventDataStore_TagsFields,
 		},
 		"TerminationProtectionEnabled": ubx.FieldSpec{WireName: "termination_protection_enabled"},
 	},

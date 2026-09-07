@@ -43,33 +43,33 @@ type Fleet_VpcConfig struct {
 }
 
 var Fleet_ComputeCapacityFields = ubx.FieldMap{
-		"DesiredInstances": ubx.FieldSpec{WireName: "desired_instances"},
-		"DesiredSessions": ubx.FieldSpec{WireName: "desired_sessions"},
-	}
+	"DesiredInstances": ubx.FieldSpec{WireName: "desired_instances"},
+	"DesiredSessions":  ubx.FieldSpec{WireName: "desired_sessions"},
+}
 
 var Fleet_DomainJoinInfoFields = ubx.FieldMap{
-		"DirectoryName": ubx.FieldSpec{WireName: "directory_name"},
-		"OrganizationalUnitDistinguishedName": ubx.FieldSpec{WireName: "organizational_unit_distinguished_name"},
-	}
+	"DirectoryName":                       ubx.FieldSpec{WireName: "directory_name"},
+	"OrganizationalUnitDistinguishedName": ubx.FieldSpec{WireName: "organizational_unit_distinguished_name"},
+}
 
 var Fleet_RootVolumeConfigFields = ubx.FieldMap{
-		"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
-	}
+	"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
+}
 
 var Fleet_SessionScriptS3LocationFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-		"S3Key": ubx.FieldSpec{WireName: "s3_key"},
-	}
+	"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
+	"S3Key":    ubx.FieldSpec{WireName: "s3_key"},
+}
 
 var Fleet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Fleet_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type FleetConfig struct {
 	// Configures the compute capacity for the fleet by specifying the desired number of streaming instances. (AI-inferred)
@@ -180,51 +180,51 @@ var Fleet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputeCapacity": ubx.FieldSpec{
 			WireName: "compute_capacity",
-			Kind: "object",
-			Fields: Fleet_ComputeCapacityFields,
+			Kind:     "object",
+			Fields:   Fleet_ComputeCapacityFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisableImdsv1": ubx.FieldSpec{WireName: "disable_imdsv1"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
+		"DisableImdsv1":              ubx.FieldSpec{WireName: "disable_imdsv1"},
 		"DisconnectTimeoutInSeconds": ubx.FieldSpec{WireName: "disconnect_timeout_in_seconds"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":                ubx.FieldSpec{WireName: "display_name"},
 		"DomainJoinInfo": ubx.FieldSpec{
 			WireName: "domain_join_info",
-			Kind: "object",
-			Fields: Fleet_DomainJoinInfoFields,
+			Kind:     "object",
+			Fields:   Fleet_DomainJoinInfoFields,
 		},
-		"EnableDefaultInternetAccess": ubx.FieldSpec{WireName: "enable_default_internet_access"},
-		"FleetType": ubx.FieldSpec{WireName: "fleet_type"},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
+		"EnableDefaultInternetAccess":    ubx.FieldSpec{WireName: "enable_default_internet_access"},
+		"FleetType":                      ubx.FieldSpec{WireName: "fleet_type"},
+		"IamRoleArn":                     ubx.FieldSpec{WireName: "iam_role_arn"},
 		"IdleDisconnectTimeoutInSeconds": ubx.FieldSpec{WireName: "idle_disconnect_timeout_in_seconds"},
-		"ImageArn": ubx.FieldSpec{WireName: "image_arn"},
-		"ImageName": ubx.FieldSpec{WireName: "image_name"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"MaxConcurrentSessions": ubx.FieldSpec{WireName: "max_concurrent_sessions"},
-		"MaxSessionsPerInstance": ubx.FieldSpec{WireName: "max_sessions_per_instance"},
-		"MaxUserDurationInSeconds": ubx.FieldSpec{WireName: "max_user_duration_in_seconds"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"ImageArn":                       ubx.FieldSpec{WireName: "image_arn"},
+		"ImageName":                      ubx.FieldSpec{WireName: "image_name"},
+		"InstanceType":                   ubx.FieldSpec{WireName: "instance_type"},
+		"MaxConcurrentSessions":          ubx.FieldSpec{WireName: "max_concurrent_sessions"},
+		"MaxSessionsPerInstance":         ubx.FieldSpec{WireName: "max_sessions_per_instance"},
+		"MaxUserDurationInSeconds":       ubx.FieldSpec{WireName: "max_user_duration_in_seconds"},
+		"Name":                           ubx.FieldSpec{WireName: "name"},
+		"Platform":                       ubx.FieldSpec{WireName: "platform"},
 		"RootVolumeConfig": ubx.FieldSpec{
 			WireName: "root_volume_config",
-			Kind: "object",
-			Fields: Fleet_RootVolumeConfigFields,
+			Kind:     "object",
+			Fields:   Fleet_RootVolumeConfigFields,
 		},
 		"SessionScriptS3Location": ubx.FieldSpec{
 			WireName: "session_script_s3_location",
-			Kind: "object",
-			Fields: Fleet_SessionScriptS3LocationFields,
+			Kind:     "object",
+			Fields:   Fleet_SessionScriptS3LocationFields,
 		},
 		"StreamView": ubx.FieldSpec{WireName: "stream_view"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Fleet_TagsFields,
+			Kind:     "list",
+			Fields:   Fleet_TagsFields,
 		},
 		"UsbDeviceFilterStrings": ubx.FieldSpec{WireName: "usb_device_filter_strings"},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: Fleet_VpcConfigFields,
+			Kind:     "object",
+			Fields:   Fleet_VpcConfigFields,
 		},
 	},
 }

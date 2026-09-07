@@ -35,7 +35,7 @@ type Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter struct {
 	// Defines a logical NOT operator that negates the evaluation of a nested cost-and-usage filter expression within the dashboard widget's query parameters. (AI-inferred)
 	Not any
 	// A list of cost and usage filter expressions that are combined with logical OR, so that a resource or usage line item is included if it matches any of the contained filter conditions. (AI-inferred)
-	Or any
+	Or   any
 	Tags any
 }
 
@@ -67,7 +67,7 @@ type Dashboard_Widgets_Configs_QueryParameters_CostAndUsage struct {
 	// Specifies the list of grouping definitions (e.g., by service, linked account, or region) that control how cost and usage data is aggregated in the widget, mirroring the GroupBy parameter of an AWS Cost Explorer query. (AI-inferred)
 	GroupBy any
 	// Specifies the list of Cost Explorer metric names (e.g., BlendedCost, UnblendedCost, UsageQuantity) to be included in the widget's cost-and-usage query and displayed on the dashboard. (AI-inferred)
-	Metrics any
+	Metrics   any
 	TimeRange any
 }
 
@@ -119,23 +119,23 @@ type Dashboard_Widgets_Configs_QueryParameters struct {
 	// Specifies the cost and usage query parameters for the widget, such as the time period, granularity, and metrics to display. (AI-inferred)
 	CostAndUsage any
 	// This object specifies the query parameters that determine how the dashboard widget calculates and displays reservation coverage, showing the percentage of AWS usage covered by Reserved Instances and Savings Plans. (AI-inferred)
-	ReservationCoverage any
+	ReservationCoverage    any
 	ReservationUtilization any
 	// Specifies the query parameters for displaying Savings Plans coverage data in a BCM dashboard widget, allowing you to customize what coverage information is included. (AI-inferred)
-	SavingsPlansCoverage any
+	SavingsPlansCoverage    any
 	SavingsPlansUtilization any
 }
 
 type Dashboard_Widgets_Configs struct {
-	DisplayConfig any
+	DisplayConfig   any
 	QueryParameters any
 }
 
 type Dashboard_Widgets struct {
-	Configs any
+	Configs     any
 	Description any
 	// In an AWS BCM Dashboard, the height of a widget defines its vertical size on the dashboard grid, expressed in grid units. (AI-inferred)
-	Height any
+	Height           any
 	HorizontalOffset any
 	// The title text that is displayed on the widget in the AWS BCM (Billing and Cost Management) dashboard. (AI-inferred)
 	Title any
@@ -144,211 +144,211 @@ type Dashboard_Widgets struct {
 }
 
 var Dashboard_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Dashboard_Widgets_Configs_DisplayConfigFields = ubx.FieldMap{
-		"Graph": ubx.FieldSpec{WireName: "graph"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"Graph": ubx.FieldSpec{WireName: "graph"},
+	"Table": ubx.FieldSpec{WireName: "table"},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":          ubx.FieldSpec{WireName: "key"},
+	"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
+	"Values":       ubx.FieldSpec{WireName: "values"},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_FilterFields = ubx.FieldMap{
-		"And": ubx.FieldSpec{WireName: "and"},
-		"CostCategories": ubx.FieldSpec{
-			WireName: "cost_categories",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
-		},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
-		},
-		"Not": ubx.FieldSpec{WireName: "not"},
-		"Or": ubx.FieldSpec{WireName: "or"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
-		},
-	}
+	"And": ubx.FieldSpec{WireName: "and"},
+	"CostCategories": ubx.FieldSpec{
+		WireName: "cost_categories",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
+	},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
+	},
+	"Not": ubx.FieldSpec{WireName: "not"},
+	"Or":  ubx.FieldSpec{WireName: "or"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
+	},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_GroupByFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Key":  ubx.FieldSpec{WireName: "key"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRange_EndTimeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{
-			WireName: "end_time",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRange_EndTimeFields,
-		},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRange_EndTimeFields,
-		},
-	}
+	"EndTime": ubx.FieldSpec{
+		WireName: "end_time",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRange_EndTimeFields,
+	},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRange_EndTimeFields,
+	},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_CostAndUsageFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_FilterFields,
-		},
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_GroupByFields,
-		},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"TimeRange": ubx.FieldSpec{
-			WireName: "time_range",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields,
-		},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_FilterFields,
+	},
+	"Granularity": ubx.FieldSpec{WireName: "granularity"},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_GroupByFields,
+	},
+	"Metrics": ubx.FieldSpec{WireName: "metrics"},
+	"TimeRange": ubx.FieldSpec{
+		WireName: "time_range",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields,
+	},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage_FilterFields = ubx.FieldMap{
-		"And": ubx.FieldSpec{WireName: "and"},
-		"CostCategories": ubx.FieldSpec{
-			WireName: "cost_categories",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
-		},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
-		},
-		"Not": ubx.FieldSpec{WireName: "not"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
-		},
-	}
+	"And": ubx.FieldSpec{WireName: "and"},
+	"CostCategories": ubx.FieldSpec{
+		WireName: "cost_categories",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
+	},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
+	},
+	"Not": ubx.FieldSpec{WireName: "not"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategoriesFields,
+	},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_ReservationCoverageFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage_FilterFields,
-		},
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_GroupByFields,
-		},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"TimeRange": ubx.FieldSpec{
-			WireName: "time_range",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields,
-		},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage_FilterFields,
+	},
+	"Granularity": ubx.FieldSpec{WireName: "granularity"},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_GroupByFields,
+	},
+	"Metrics": ubx.FieldSpec{WireName: "metrics"},
+	"TimeRange": ubx.FieldSpec{
+		WireName: "time_range",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields,
+	},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_ReservationUtilizationFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage_FilterFields,
-		},
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_GroupByFields,
-		},
-		"TimeRange": ubx.FieldSpec{
-			WireName: "time_range",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields,
-		},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage_FilterFields,
+	},
+	"Granularity": ubx.FieldSpec{WireName: "granularity"},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_GroupByFields,
+	},
+	"TimeRange": ubx.FieldSpec{
+		WireName: "time_range",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields,
+	},
+}
 
 var Dashboard_Widgets_Configs_QueryParameters_SavingsPlansUtilizationFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage_FilterFields,
-		},
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"TimeRange": ubx.FieldSpec{
-			WireName: "time_range",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields,
-		},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage_FilterFields,
+	},
+	"Granularity": ubx.FieldSpec{WireName: "granularity"},
+	"TimeRange": ubx.FieldSpec{
+		WireName: "time_range",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRangeFields,
+	},
+}
 
 var Dashboard_Widgets_Configs_QueryParametersFields = ubx.FieldMap{
-		"CostAndUsage": ubx.FieldSpec{
-			WireName: "cost_and_usage",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_CostAndUsageFields,
-		},
-		"ReservationCoverage": ubx.FieldSpec{
-			WireName: "reservation_coverage",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_ReservationCoverageFields,
-		},
-		"ReservationUtilization": ubx.FieldSpec{
-			WireName: "reservation_utilization",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_ReservationUtilizationFields,
-		},
-		"SavingsPlansCoverage": ubx.FieldSpec{
-			WireName: "savings_plans_coverage",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_ReservationCoverageFields,
-		},
-		"SavingsPlansUtilization": ubx.FieldSpec{
-			WireName: "savings_plans_utilization",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParameters_SavingsPlansUtilizationFields,
-		},
-	}
+	"CostAndUsage": ubx.FieldSpec{
+		WireName: "cost_and_usage",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_CostAndUsageFields,
+	},
+	"ReservationCoverage": ubx.FieldSpec{
+		WireName: "reservation_coverage",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_ReservationCoverageFields,
+	},
+	"ReservationUtilization": ubx.FieldSpec{
+		WireName: "reservation_utilization",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_ReservationUtilizationFields,
+	},
+	"SavingsPlansCoverage": ubx.FieldSpec{
+		WireName: "savings_plans_coverage",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_ReservationCoverageFields,
+	},
+	"SavingsPlansUtilization": ubx.FieldSpec{
+		WireName: "savings_plans_utilization",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParameters_SavingsPlansUtilizationFields,
+	},
+}
 
 var Dashboard_Widgets_ConfigsFields = ubx.FieldMap{
-		"DisplayConfig": ubx.FieldSpec{
-			WireName: "display_config",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_DisplayConfigFields,
-		},
-		"QueryParameters": ubx.FieldSpec{
-			WireName: "query_parameters",
-			Kind: "object",
-			Fields: Dashboard_Widgets_Configs_QueryParametersFields,
-		},
-	}
+	"DisplayConfig": ubx.FieldSpec{
+		WireName: "display_config",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_DisplayConfigFields,
+	},
+	"QueryParameters": ubx.FieldSpec{
+		WireName: "query_parameters",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_Configs_QueryParametersFields,
+	},
+}
 
 var Dashboard_WidgetsFields = ubx.FieldMap{
-		"Configs": ubx.FieldSpec{
-			WireName: "configs",
-			Kind: "list",
-			Fields: Dashboard_Widgets_ConfigsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"HorizontalOffset": ubx.FieldSpec{WireName: "horizontal_offset"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Configs": ubx.FieldSpec{
+		WireName: "configs",
+		Kind:     "list",
+		Fields:   Dashboard_Widgets_ConfigsFields,
+	},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Height":           ubx.FieldSpec{WireName: "height"},
+	"HorizontalOffset": ubx.FieldSpec{WireName: "horizontal_offset"},
+	"Title":            ubx.FieldSpec{WireName: "title"},
+	"Width":            ubx.FieldSpec{WireName: "width"},
+}
 
 type DashboardConfig struct {
 	// The description of this dashboard. (AI-inferred)
@@ -384,16 +384,16 @@ var Dashboard = ubx.ResourceBinding{
 	WireType: "aws_bcm_dashboard",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dashboard_TagsFields,
+			Kind:     "list",
+			Fields:   Dashboard_TagsFields,
 		},
 		"Widgets": ubx.FieldSpec{
 			WireName: "widgets",
-			Kind: "list",
-			Fields: Dashboard_WidgetsFields,
+			Kind:     "list",
+			Fields:   Dashboard_WidgetsFields,
 		},
 	},
 }

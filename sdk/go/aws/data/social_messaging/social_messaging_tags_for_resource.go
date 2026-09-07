@@ -4,7 +4,7 @@ package social_messaging
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SocialMessagingTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,8 +14,8 @@ type SocialMessagingTagsForResourceConfig struct {
 
 type SocialMessagingTagsForResourceAttrs struct {
 	ResourceArn any
-	StatusCode any
-	Tags any
+	StatusCode  any
+	Tags        any
 }
 
 var SocialMessagingTagsForResource = ubx.DataSourceBinding{

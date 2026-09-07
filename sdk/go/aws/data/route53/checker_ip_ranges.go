@@ -12,6 +12,5 @@ type CheckerIpRangesAttrs struct {
 
 var CheckerIpRanges = ubx.DataSourceBinding{
 	WireType: "aws_route53_checker_ip_ranges",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

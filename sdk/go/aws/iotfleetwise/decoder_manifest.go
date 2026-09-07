@@ -58,7 +58,7 @@ type DecoderManifest_SignalDecoders_CanSignal struct {
 	Length any
 	// The CAN message identifier (ID) of the CAN frame that carries the signal being decoded. (AI-inferred)
 	MessageId any
-	Name any
+	Name      any
 	// The offset value added to the scaled signal (after applying the factor) to compute the physical value of a CAN signal in the decoder manifest. (AI-inferred)
 	Offset any
 	// Specifies the data type of the decoded CAN signal value, such as integer, float, or boolean, which FleetWise uses to interpret the raw signal bytes. (AI-inferred)
@@ -113,105 +113,105 @@ type DecoderManifest_SignalDecoders struct {
 }
 
 type DecoderManifest_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DecoderManifest_NetworkInterfaces_CanInterfaceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProtocolName": ubx.FieldSpec{WireName: "protocol_name"},
-		"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
-	}
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"ProtocolName":    ubx.FieldSpec{WireName: "protocol_name"},
+	"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
+}
 
 var DecoderManifest_NetworkInterfaces_CustomDecodingInterfaceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var DecoderManifest_NetworkInterfaces_ObdInterfaceFields = ubx.FieldMap{
-		"DtcRequestIntervalSeconds": ubx.FieldSpec{WireName: "dtc_request_interval_seconds"},
-		"HasTransmissionEcu": ubx.FieldSpec{WireName: "has_transmission_ecu"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ObdStandard": ubx.FieldSpec{WireName: "obd_standard"},
-		"PidRequestIntervalSeconds": ubx.FieldSpec{WireName: "pid_request_interval_seconds"},
-		"RequestMessageId": ubx.FieldSpec{WireName: "request_message_id"},
-		"UseExtendedIds": ubx.FieldSpec{WireName: "use_extended_ids"},
-	}
+	"DtcRequestIntervalSeconds": ubx.FieldSpec{WireName: "dtc_request_interval_seconds"},
+	"HasTransmissionEcu":        ubx.FieldSpec{WireName: "has_transmission_ecu"},
+	"Name":                      ubx.FieldSpec{WireName: "name"},
+	"ObdStandard":               ubx.FieldSpec{WireName: "obd_standard"},
+	"PidRequestIntervalSeconds": ubx.FieldSpec{WireName: "pid_request_interval_seconds"},
+	"RequestMessageId":          ubx.FieldSpec{WireName: "request_message_id"},
+	"UseExtendedIds":            ubx.FieldSpec{WireName: "use_extended_ids"},
+}
 
 var DecoderManifest_NetworkInterfacesFields = ubx.FieldMap{
-		"CanInterface": ubx.FieldSpec{
-			WireName: "can_interface",
-			Kind: "object",
-			Fields: DecoderManifest_NetworkInterfaces_CanInterfaceFields,
-		},
-		"CustomDecodingInterface": ubx.FieldSpec{
-			WireName: "custom_decoding_interface",
-			Kind: "object",
-			Fields: DecoderManifest_NetworkInterfaces_CustomDecodingInterfaceFields,
-		},
-		"InterfaceId": ubx.FieldSpec{WireName: "interface_id"},
-		"ObdInterface": ubx.FieldSpec{
-			WireName: "obd_interface",
-			Kind: "object",
-			Fields: DecoderManifest_NetworkInterfaces_ObdInterfaceFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CanInterface": ubx.FieldSpec{
+		WireName: "can_interface",
+		Kind:     "object",
+		Fields:   DecoderManifest_NetworkInterfaces_CanInterfaceFields,
+	},
+	"CustomDecodingInterface": ubx.FieldSpec{
+		WireName: "custom_decoding_interface",
+		Kind:     "object",
+		Fields:   DecoderManifest_NetworkInterfaces_CustomDecodingInterfaceFields,
+	},
+	"InterfaceId": ubx.FieldSpec{WireName: "interface_id"},
+	"ObdInterface": ubx.FieldSpec{
+		WireName: "obd_interface",
+		Kind:     "object",
+		Fields:   DecoderManifest_NetworkInterfaces_ObdInterfaceFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DecoderManifest_SignalDecoders_CanSignalFields = ubx.FieldMap{
-		"Factor": ubx.FieldSpec{WireName: "factor"},
-		"IsBigEndian": ubx.FieldSpec{WireName: "is_big_endian"},
-		"IsSigned": ubx.FieldSpec{WireName: "is_signed"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"SignalValueType": ubx.FieldSpec{WireName: "signal_value_type"},
-		"StartBit": ubx.FieldSpec{WireName: "start_bit"},
-	}
+	"Factor":          ubx.FieldSpec{WireName: "factor"},
+	"IsBigEndian":     ubx.FieldSpec{WireName: "is_big_endian"},
+	"IsSigned":        ubx.FieldSpec{WireName: "is_signed"},
+	"Length":          ubx.FieldSpec{WireName: "length"},
+	"MessageId":       ubx.FieldSpec{WireName: "message_id"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Offset":          ubx.FieldSpec{WireName: "offset"},
+	"SignalValueType": ubx.FieldSpec{WireName: "signal_value_type"},
+	"StartBit":        ubx.FieldSpec{WireName: "start_bit"},
+}
 
 var DecoderManifest_SignalDecoders_CustomDecodingSignalFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var DecoderManifest_SignalDecoders_ObdSignalFields = ubx.FieldMap{
-		"BitMaskLength": ubx.FieldSpec{WireName: "bit_mask_length"},
-		"BitRightShift": ubx.FieldSpec{WireName: "bit_right_shift"},
-		"ByteLength": ubx.FieldSpec{WireName: "byte_length"},
-		"IsSigned": ubx.FieldSpec{WireName: "is_signed"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Pid": ubx.FieldSpec{WireName: "pid"},
-		"PidResponseLength": ubx.FieldSpec{WireName: "pid_response_length"},
-		"Scaling": ubx.FieldSpec{WireName: "scaling"},
-		"ServiceMode": ubx.FieldSpec{WireName: "service_mode"},
-		"SignalValueType": ubx.FieldSpec{WireName: "signal_value_type"},
-		"StartByte": ubx.FieldSpec{WireName: "start_byte"},
-	}
+	"BitMaskLength":     ubx.FieldSpec{WireName: "bit_mask_length"},
+	"BitRightShift":     ubx.FieldSpec{WireName: "bit_right_shift"},
+	"ByteLength":        ubx.FieldSpec{WireName: "byte_length"},
+	"IsSigned":          ubx.FieldSpec{WireName: "is_signed"},
+	"Offset":            ubx.FieldSpec{WireName: "offset"},
+	"Pid":               ubx.FieldSpec{WireName: "pid"},
+	"PidResponseLength": ubx.FieldSpec{WireName: "pid_response_length"},
+	"Scaling":           ubx.FieldSpec{WireName: "scaling"},
+	"ServiceMode":       ubx.FieldSpec{WireName: "service_mode"},
+	"SignalValueType":   ubx.FieldSpec{WireName: "signal_value_type"},
+	"StartByte":         ubx.FieldSpec{WireName: "start_byte"},
+}
 
 var DecoderManifest_SignalDecodersFields = ubx.FieldMap{
-		"CanSignal": ubx.FieldSpec{
-			WireName: "can_signal",
-			Kind: "object",
-			Fields: DecoderManifest_SignalDecoders_CanSignalFields,
-		},
-		"CustomDecodingSignal": ubx.FieldSpec{
-			WireName: "custom_decoding_signal",
-			Kind: "object",
-			Fields: DecoderManifest_SignalDecoders_CustomDecodingSignalFields,
-		},
-		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-		"InterfaceId": ubx.FieldSpec{WireName: "interface_id"},
-		"ObdSignal": ubx.FieldSpec{
-			WireName: "obd_signal",
-			Kind: "object",
-			Fields: DecoderManifest_SignalDecoders_ObdSignalFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CanSignal": ubx.FieldSpec{
+		WireName: "can_signal",
+		Kind:     "object",
+		Fields:   DecoderManifest_SignalDecoders_CanSignalFields,
+	},
+	"CustomDecodingSignal": ubx.FieldSpec{
+		WireName: "custom_decoding_signal",
+		Kind:     "object",
+		Fields:   DecoderManifest_SignalDecoders_CustomDecodingSignalFields,
+	},
+	"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
+	"InterfaceId":        ubx.FieldSpec{WireName: "interface_id"},
+	"ObdSignal": ubx.FieldSpec{
+		WireName: "obd_signal",
+		Kind:     "object",
+		Fields:   DecoderManifest_SignalDecoders_ObdSignalFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DecoderManifest_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DecoderManifestConfig struct {
 	// This string field (typically 'true' or 'false') indicates whether the decoder manifest should assign a default decoder to signals that are not explicitly mapped in any signal decoder, allowing unmapped signals to be decoded; when set to false (the default), unmapped signals are not decoded. (AI-inferred)
@@ -261,24 +261,24 @@ var DecoderManifest = ubx.ResourceBinding{
 	WireType: "aws_io_tfleet_wise_decoder_manifest",
 	Fields: ubx.FieldMap{
 		"DefaultForUnmappedSignals": ubx.FieldSpec{WireName: "default_for_unmapped_signals"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ModelManifestArn": ubx.FieldSpec{WireName: "model_manifest_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"ModelManifestArn":          ubx.FieldSpec{WireName: "model_manifest_arn"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
 		"NetworkInterfaces": ubx.FieldSpec{
 			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: DecoderManifest_NetworkInterfacesFields,
+			Kind:     "list",
+			Fields:   DecoderManifest_NetworkInterfacesFields,
 		},
 		"SignalDecoders": ubx.FieldSpec{
 			WireName: "signal_decoders",
-			Kind: "list",
-			Fields: DecoderManifest_SignalDecodersFields,
+			Kind:     "list",
+			Fields:   DecoderManifest_SignalDecodersFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DecoderManifest_TagsFields,
+			Kind:     "list",
+			Fields:   DecoderManifest_TagsFields,
 		},
 	},
 }

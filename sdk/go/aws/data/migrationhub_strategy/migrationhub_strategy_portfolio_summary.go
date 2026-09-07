@@ -5,52 +5,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyPortfolioSummary_AssessmentSummary_AntipatternReportS3Object struct {
 	S3Bucket any
-	S3key any
+	S3key    any
 }
 
 type MigrationhubStrategyPortfolioSummary_AssessmentSummary_ListAntipatternSeveritySummary struct {
-	Count any
+	Count    any
 	Severity any
 }
 
 type MigrationhubStrategyPortfolioSummary_AssessmentSummary_ListApplicationComponentStatusSummary struct {
-	Count any
+	Count                     any
 	SrcCodeOrDbAnalysisStatus any
 }
 
 type MigrationhubStrategyPortfolioSummary_AssessmentSummary_ListApplicationComponentStrategySummary struct {
-	Count any
+	Count    any
 	Strategy any
 }
 
 type MigrationhubStrategyPortfolioSummary_AssessmentSummary_ListApplicationComponentSummary struct {
 	AppType any
-	Count any
+	Count   any
 }
 
 type MigrationhubStrategyPortfolioSummary_AssessmentSummary_ListServerStatusSummary struct {
-	Count any
+	Count                   any
 	RunTimeAssessmentStatus any
 }
 
 type MigrationhubStrategyPortfolioSummary_AssessmentSummary_ListServerSummary struct {
-	Count any
+	Count        any
 	ServerOsType any
 }
 
 type MigrationhubStrategyPortfolioSummary_AssessmentSummary struct {
 	// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
-	AntipatternReportS3Object any
-	AntipatternReportStatus any
-	AntipatternReportStatusMessage any
-	LastAnalyzedTimestamp any
-	ListAntipatternSeveritySummary any
-	ListApplicationComponentStatusSummary any
+	AntipatternReportS3Object               any
+	AntipatternReportStatus                 any
+	AntipatternReportStatusMessage          any
+	LastAnalyzedTimestamp                   any
+	ListAntipatternSeveritySummary          any
+	ListApplicationComponentStatusSummary   any
 	ListApplicationComponentStrategySummary any
-	ListApplicationComponentSummary any
-	ListServerStatusSummary any
-	ListServerStrategySummary any
-	ListServerSummary any
+	ListApplicationComponentSummary         any
+	ListServerStatusSummary                 any
+	ListServerStrategySummary               any
+	ListServerSummary                       any
 }
 
 type MigrationhubStrategyPortfolioSummaryConfig struct {
@@ -63,6 +63,5 @@ type MigrationhubStrategyPortfolioSummaryAttrs struct {
 
 var MigrationhubStrategyPortfolioSummary = ubx.DataSourceBinding{
 	WireType: "aws_migrationhub_strategy_portfolio_summary",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

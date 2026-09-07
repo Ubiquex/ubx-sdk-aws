@@ -18,14 +18,14 @@ type Stream_Tags struct {
 }
 
 var Stream_KinesisConfigurationFields = ubx.FieldMap{
-		"AggregationEnabled": ubx.FieldSpec{WireName: "aggregation_enabled"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-	}
+	"AggregationEnabled": ubx.FieldSpec{WireName: "aggregation_enabled"},
+	"StreamArn":          ubx.FieldSpec{WireName: "stream_arn"},
+}
 
 var Stream_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StreamConfig struct {
 	// The exclusive_end_time specifies the date and time at which the QLDB journal stream stops delivering data; if omitted, the stream continues indefinitely. (AI-inferred)
@@ -68,20 +68,20 @@ type StreamAttrs struct {
 var Stream = ubx.ResourceBinding{
 	WireType: "aws_qldb_stream",
 	Fields: ubx.FieldMap{
-		"ExclusiveEndTime": ubx.FieldSpec{WireName: "exclusive_end_time"},
+		"ExclusiveEndTime":   ubx.FieldSpec{WireName: "exclusive_end_time"},
 		"InclusiveStartTime": ubx.FieldSpec{WireName: "inclusive_start_time"},
 		"KinesisConfiguration": ubx.FieldSpec{
 			WireName: "kinesis_configuration",
-			Kind: "object",
-			Fields: Stream_KinesisConfigurationFields,
+			Kind:     "object",
+			Fields:   Stream_KinesisConfigurationFields,
 		},
 		"LedgerName": ubx.FieldSpec{WireName: "ledger_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":    ubx.FieldSpec{WireName: "role_arn"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Stream_TagsFields,
+			Kind:     "list",
+			Fields:   Stream_TagsFields,
 		},
 	},
 }

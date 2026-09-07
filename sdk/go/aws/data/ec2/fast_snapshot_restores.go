@@ -4,43 +4,43 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FastSnapshotRestores_FastSnapshotRestores struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	DisabledTime any
-	DisablingTime any
-	EnabledTime any
-	EnablingTime any
-	OptimizingTime any
-	OwnerAlias any
-	OwnerId any
-	SnapshotId any
-	State any
+	AvailabilityZone      any
+	AvailabilityZoneId    any
+	DisabledTime          any
+	DisablingTime         any
+	EnabledTime           any
+	EnablingTime          any
+	OptimizingTime        any
+	OwnerAlias            any
+	OwnerId               any
+	SnapshotId            any
+	State                 any
 	StateTransitionReason any
 }
 
 type FastSnapshotRestores_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var FastSnapshotRestores_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type FastSnapshotRestoresConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FastSnapshotRestoresAttrs struct {
-	DryRun any
+	DryRun               any
 	FastSnapshotRestores any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters              any
+	MaxResults           any
+	NextToken            any
 }
 
 var FastSnapshotRestores = ubx.DataSourceBinding{
@@ -49,10 +49,10 @@ var FastSnapshotRestores = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: FastSnapshotRestores_FiltersFields,
+			Kind:     "list",
+			Fields:   FastSnapshotRestores_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

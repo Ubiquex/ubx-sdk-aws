@@ -4,14 +4,14 @@ package migrationhub_strategy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyCollectors_Collectors_ConfigurationSummary_IpAddressBasedRemoteInfoList struct {
-	AuthType any
+	AuthType                        any
 	IpAddressConfigurationTimeStamp any
-	OsType any
+	OsType                          any
 }
 
 type MigrationhubStrategyCollectors_Collectors_ConfigurationSummary_PipelineInfoList struct {
 	PipelineConfigurationTimeStamp any
-	PipelineType any
+	PipelineType                   any
 }
 
 type MigrationhubStrategyCollectors_Collectors_ConfigurationSummary_RemoteSourceCodeAnalysisServerInfo struct {
@@ -19,49 +19,49 @@ type MigrationhubStrategyCollectors_Collectors_ConfigurationSummary_RemoteSource
 }
 
 type MigrationhubStrategyCollectors_Collectors_ConfigurationSummary_VcenterBasedRemoteInfoList struct {
-	OsType any
+	OsType                        any
 	VcenterConfigurationTimeStamp any
 }
 
 type MigrationhubStrategyCollectors_Collectors_ConfigurationSummary_VersionControlInfoList struct {
 	VersionControlConfigurationTimeStamp any
-	VersionControlType any
+	VersionControlType                   any
 }
 
 type MigrationhubStrategyCollectors_Collectors_ConfigurationSummary struct {
-	IpAddressBasedRemoteInfoList any
-	PipelineInfoList any
+	IpAddressBasedRemoteInfoList       any
+	PipelineInfoList                   any
 	RemoteSourceCodeAnalysisServerInfo any
-	VcenterBasedRemoteInfoList any
-	VersionControlInfoList any
+	VcenterBasedRemoteInfoList         any
+	VersionControlInfoList             any
 }
 
 type MigrationhubStrategyCollectors_Collectors struct {
-	CollectorHealth any
-	CollectorId any
-	CollectorVersion any
-	ConfigurationSummary any
-	HostName any
-	IpAddress any
+	CollectorHealth       any
+	CollectorId           any
+	CollectorVersion      any
+	ConfigurationSummary  any
+	HostName              any
+	IpAddress             any
 	LastActivityTimeStamp any
-	RegisteredTimeStamp any
+	RegisteredTimeStamp   any
 }
 
 type MigrationhubStrategyCollectorsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MigrationhubStrategyCollectorsAttrs struct {
 	Collectors any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var MigrationhubStrategyCollectors = ubx.DataSourceBinding{
 	WireType: "aws_migrationhub_strategy_collectors",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

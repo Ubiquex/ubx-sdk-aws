@@ -4,14 +4,14 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChangeSet_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ChangeSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChangeSetConfig struct {
 	// The capabilities that are allowed in the stack.
@@ -88,24 +88,24 @@ type ChangeSetAttrs struct {
 var ChangeSet = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_change_set",
 	Fields: ubx.FieldMap{
-		"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
-		"ChangeSetName": ubx.FieldSpec{WireName: "change_set_name"},
-		"ChangeSetType": ubx.FieldSpec{WireName: "change_set_type"},
-		"DeploymentMode": ubx.FieldSpec{WireName: "deployment_mode"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Capabilities":            ubx.FieldSpec{WireName: "capabilities"},
+		"ChangeSetName":           ubx.FieldSpec{WireName: "change_set_name"},
+		"ChangeSetType":           ubx.FieldSpec{WireName: "change_set_type"},
+		"DeploymentMode":          ubx.FieldSpec{WireName: "deployment_mode"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
 		"ImportExistingResources": ubx.FieldSpec{WireName: "import_existing_resources"},
-		"IncludeNestedStacks": ubx.FieldSpec{WireName: "include_nested_stacks"},
-		"NotificationArns": ubx.FieldSpec{WireName: "notification_arns"},
-		"OnStackFailure": ubx.FieldSpec{WireName: "on_stack_failure"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"IncludeNestedStacks":     ubx.FieldSpec{WireName: "include_nested_stacks"},
+		"NotificationArns":        ubx.FieldSpec{WireName: "notification_arns"},
+		"OnStackFailure":          ubx.FieldSpec{WireName: "on_stack_failure"},
+		"RoleArn":                 ubx.FieldSpec{WireName: "role_arn"},
+		"StackName":               ubx.FieldSpec{WireName: "stack_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ChangeSet_TagsFields,
+			Kind:     "list",
+			Fields:   ChangeSet_TagsFields,
 		},
-		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
-		"TemplateUrl": ubx.FieldSpec{WireName: "template_url"},
+		"TemplateBody":        ubx.FieldSpec{WireName: "template_body"},
+		"TemplateUrl":         ubx.FieldSpec{WireName: "template_url"},
 		"UsePreviousTemplate": ubx.FieldSpec{WireName: "use_previous_template"},
 	},
 }

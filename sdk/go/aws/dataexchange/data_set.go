@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSet_Tags struct {
 	// The key (name) of a tag attached to the AWS Data Exchange data set, used to organize, identify, and manage the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var DataSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataSetConfig struct {
 	// The type of asset that is added to a data set.
@@ -49,13 +49,13 @@ type DataSetAttrs struct {
 var DataSet = ubx.ResourceBinding{
 	WireType: "aws_data_exchange_data_set",
 	Fields: ubx.FieldMap{
-		"AssetType": ubx.FieldSpec{WireName: "asset_type"},
+		"AssetType":   ubx.FieldSpec{WireName: "asset_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataSet_TagsFields,
+			Kind:     "list",
+			Fields:   DataSet_TagsFields,
 		},
 	},
 }

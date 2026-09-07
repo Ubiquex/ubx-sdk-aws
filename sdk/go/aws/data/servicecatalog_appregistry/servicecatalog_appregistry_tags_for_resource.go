@@ -9,7 +9,7 @@ type ServicecatalogAppregistryTagsForResourceConfig struct {
 
 type ServicecatalogAppregistryTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ServicecatalogAppregistryTagsForResource = ubx.DataSourceBinding{

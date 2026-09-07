@@ -4,41 +4,41 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigRuleEvaluationStatus_ConfigRulesEvaluationStatus struct {
-	ConfigRuleArn any
-	ConfigRuleId any
-	ConfigRuleName any
-	FirstActivatedTime any
-	FirstEvaluationStarted any
-	LastDeactivatedTime any
-	LastDebugLogDeliveryStatus any
+	ConfigRuleArn                    any
+	ConfigRuleId                     any
+	ConfigRuleName                   any
+	FirstActivatedTime               any
+	FirstEvaluationStarted           any
+	LastDeactivatedTime              any
+	LastDebugLogDeliveryStatus       any
 	LastDebugLogDeliveryStatusReason any
-	LastDebugLogDeliveryTime any
-	LastErrorCode any
-	LastErrorMessage any
-	LastFailedEvaluationTime any
-	LastFailedInvocationTime any
-	LastSuccessfulEvaluationTime any
-	LastSuccessfulInvocationTime any
+	LastDebugLogDeliveryTime         any
+	LastErrorCode                    any
+	LastErrorMessage                 any
+	LastFailedEvaluationTime         any
+	LastFailedInvocationTime         any
+	LastSuccessfulEvaluationTime     any
+	LastSuccessfulInvocationTime     any
 }
 
 type ConfigRuleEvaluationStatusConfig struct {
 	ConfigRuleNames any
-	Limit any
-	NextToken any
+	Limit           any
+	NextToken       any
 }
 
 type ConfigRuleEvaluationStatusAttrs struct {
-	ConfigRuleNames any
+	ConfigRuleNames             any
 	ConfigRulesEvaluationStatus any
-	Limit any
-	NextToken any
+	Limit                       any
+	NextToken                   any
 }
 
 var ConfigRuleEvaluationStatus = ubx.DataSourceBinding{
 	WireType: "aws_config_config_rule_evaluation_status",
 	Fields: ubx.FieldMap{
 		"ConfigRuleNames": ubx.FieldSpec{WireName: "config_rule_names"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

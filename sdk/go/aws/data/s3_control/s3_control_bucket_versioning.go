@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlBucketVersioningConfig struct {
 	AccountId any
-	Bucket any
+	Bucket    any
 }
 
 type S3ControlBucketVersioningAttrs struct {
 	AccountId any
-	Bucket any
+	Bucket    any
 	Mfadelete any
-	Status any
+	Status    any
 }
 
 var S3ControlBucketVersioning = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_bucket_versioning",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":    ubx.FieldSpec{WireName: "bucket"},
 	},
 }

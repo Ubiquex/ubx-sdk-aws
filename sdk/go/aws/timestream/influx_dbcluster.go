@@ -30,27 +30,27 @@ type InfluxDbcluster_Tags struct {
 }
 
 var InfluxDbcluster_LogDeliveryConfiguration_S3ConfigurationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+}
 
 var InfluxDbcluster_LogDeliveryConfigurationFields = ubx.FieldMap{
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: InfluxDbcluster_LogDeliveryConfiguration_S3ConfigurationFields,
-		},
-	}
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   InfluxDbcluster_LogDeliveryConfiguration_S3ConfigurationFields,
+	},
+}
 
 var InfluxDbcluster_MaintenanceScheduleFields = ubx.FieldMap{
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+	"Timezone":                   ubx.FieldSpec{WireName: "timezone"},
+}
 
 var InfluxDbcluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InfluxDbclusterConfig struct {
 	// The allocated storage for the InfluxDB cluster.
@@ -153,36 +153,36 @@ type InfluxDbclusterAttrs struct {
 var InfluxDbcluster = ubx.ResourceBinding{
 	WireType: "aws_timestream_influx_dbcluster",
 	Fields: ubx.FieldMap{
-		"AllocatedStorage": ubx.FieldSpec{WireName: "allocated_storage"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"DbInstanceType": ubx.FieldSpec{WireName: "db_instance_type"},
+		"AllocatedStorage":           ubx.FieldSpec{WireName: "allocated_storage"},
+		"Bucket":                     ubx.FieldSpec{WireName: "bucket"},
+		"DbInstanceType":             ubx.FieldSpec{WireName: "db_instance_type"},
 		"DbParameterGroupIdentifier": ubx.FieldSpec{WireName: "db_parameter_group_identifier"},
-		"DbStorageType": ubx.FieldSpec{WireName: "db_storage_type"},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-		"FailoverMode": ubx.FieldSpec{WireName: "failover_mode"},
+		"DbStorageType":              ubx.FieldSpec{WireName: "db_storage_type"},
+		"DeploymentType":             ubx.FieldSpec{WireName: "deployment_type"},
+		"FailoverMode":               ubx.FieldSpec{WireName: "failover_mode"},
 		"LogDeliveryConfiguration": ubx.FieldSpec{
 			WireName: "log_delivery_configuration",
-			Kind: "object",
-			Fields: InfluxDbcluster_LogDeliveryConfigurationFields,
+			Kind:     "object",
+			Fields:   InfluxDbcluster_LogDeliveryConfigurationFields,
 		},
 		"MaintenanceSchedule": ubx.FieldSpec{
 			WireName: "maintenance_schedule",
-			Kind: "object",
-			Fields: InfluxDbcluster_MaintenanceScheduleFields,
+			Kind:     "object",
+			Fields:   InfluxDbcluster_MaintenanceScheduleFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Port": ubx.FieldSpec{WireName: "port"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"NetworkType":        ubx.FieldSpec{WireName: "network_type"},
+		"Organization":       ubx.FieldSpec{WireName: "organization"},
+		"Password":           ubx.FieldSpec{WireName: "password"},
+		"Port":               ubx.FieldSpec{WireName: "port"},
 		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InfluxDbcluster_TagsFields,
+			Kind:     "list",
+			Fields:   InfluxDbcluster_TagsFields,
 		},
-		"Username": ubx.FieldSpec{WireName: "username"},
+		"Username":            ubx.FieldSpec{WireName: "username"},
 		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
-		"VpcSubnetIds": ubx.FieldSpec{WireName: "vpc_subnet_ids"},
+		"VpcSubnetIds":        ubx.FieldSpec{WireName: "vpc_subnet_ids"},
 	},
 }

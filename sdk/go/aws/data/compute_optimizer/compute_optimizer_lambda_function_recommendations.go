@@ -4,7 +4,7 @@ package compute_optimizer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerLambdaFunctionRecommendations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -17,71 +17,71 @@ type ComputeOptimizerLambdaFunctionRecommendations_LambdaFunctionRecommendations
 }
 
 type ComputeOptimizerLambdaFunctionRecommendations_LambdaFunctionRecommendations_MemorySizeRecommendationOptions_ProjectedUtilizationMetrics struct {
-	Name any
+	Name      any
 	Statistic any
-	Value any
+	Value     any
 }
 
 type ComputeOptimizerLambdaFunctionRecommendations_LambdaFunctionRecommendations_MemorySizeRecommendationOptions_SavingsOpportunity_EstimatedMonthlySavings struct {
 	Currency any
-	Value any
+	Value    any
 }
 
 type ComputeOptimizerLambdaFunctionRecommendations_LambdaFunctionRecommendations_MemorySizeRecommendationOptions_SavingsOpportunity struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings      any
 	SavingsOpportunityPercentage any
 }
 
 type ComputeOptimizerLambdaFunctionRecommendations_LambdaFunctionRecommendations_MemorySizeRecommendationOptions struct {
-	MemorySize any
-	ProjectedUtilizationMetrics any
-	Rank any
-	SavingsOpportunity any
+	MemorySize                       any
+	ProjectedUtilizationMetrics      any
+	Rank                             any
+	SavingsOpportunity               any
 	SavingsOpportunityAfterDiscounts any
 }
 
 type ComputeOptimizerLambdaFunctionRecommendations_LambdaFunctionRecommendations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ComputeOptimizerLambdaFunctionRecommendations_LambdaFunctionRecommendations struct {
-	AccountId any
-	CurrentMemorySize any
-	CurrentPerformanceRisk any
+	AccountId                          any
+	CurrentMemorySize                  any
+	CurrentPerformanceRisk             any
 	EffectiveRecommendationPreferences any
-	Finding any
-	FindingReasonCodes any
-	FunctionArn any
-	FunctionVersion any
-	LastRefreshTimestamp any
-	LookbackPeriodInDays any
-	MemorySizeRecommendationOptions any
-	NumberOfInvocations any
-	Tags any
-	UtilizationMetrics any
+	Finding                            any
+	FindingReasonCodes                 any
+	FunctionArn                        any
+	FunctionVersion                    any
+	LastRefreshTimestamp               any
+	LookbackPeriodInDays               any
+	MemorySizeRecommendationOptions    any
+	NumberOfInvocations                any
+	Tags                               any
+	UtilizationMetrics                 any
 }
 
 var ComputeOptimizerLambdaFunctionRecommendations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ComputeOptimizerLambdaFunctionRecommendationsConfig struct {
-	AccountIds any
-	Filters any
+	AccountIds   any
+	Filters      any
 	FunctionArns any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type ComputeOptimizerLambdaFunctionRecommendationsAttrs struct {
-	AccountIds any
-	Filters any
-	FunctionArns any
+	AccountIds                    any
+	Filters                       any
+	FunctionArns                  any
 	LambdaFunctionRecommendations any
-	MaxResults any
-	NextToken any
+	MaxResults                    any
+	NextToken                     any
 }
 
 var ComputeOptimizerLambdaFunctionRecommendations = ubx.DataSourceBinding{
@@ -90,11 +90,11 @@ var ComputeOptimizerLambdaFunctionRecommendations = ubx.DataSourceBinding{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComputeOptimizerLambdaFunctionRecommendations_FiltersFields,
+			Kind:     "list",
+			Fields:   ComputeOptimizerLambdaFunctionRecommendations_FiltersFields,
 		},
 		"FunctionArns": ubx.FieldSpec{WireName: "function_arns"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -11,9 +11,9 @@ type VpcLink_Tags struct {
 }
 
 var VpcLink_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcLinkConfig struct {
 	// A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred)
@@ -43,11 +43,11 @@ var VpcLink = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_vpc_link",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcLink_TagsFields,
+			Kind:     "list",
+			Fields:   VpcLink_TagsFields,
 		},
 		"TargetArns": ubx.FieldSpec{WireName: "target_arns"},
 	},

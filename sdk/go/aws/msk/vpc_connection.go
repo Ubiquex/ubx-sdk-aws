@@ -38,11 +38,11 @@ type VpcConnectionAttrs struct {
 var VpcConnection = ubx.ResourceBinding{
 	WireType: "aws_msk_vpc_connection",
 	Fields: ubx.FieldMap{
-		"Authentication": ubx.FieldSpec{WireName: "authentication"},
-		"ClientSubnets": ubx.FieldSpec{WireName: "client_subnets"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Authentication":   ubx.FieldSpec{WireName: "authentication"},
+		"ClientSubnets":    ubx.FieldSpec{WireName: "client_subnets"},
+		"SecurityGroups":   ubx.FieldSpec{WireName: "security_groups"},
+		"Tags":             ubx.FieldSpec{WireName: "tags"},
 		"TargetClusterArn": ubx.FieldSpec{WireName: "target_cluster_arn"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

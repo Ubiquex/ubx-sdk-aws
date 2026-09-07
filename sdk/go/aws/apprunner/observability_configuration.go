@@ -15,13 +15,13 @@ type ObservabilityConfiguration_TraceConfiguration struct {
 }
 
 var ObservabilityConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ObservabilityConfiguration_TraceConfigurationFields = ubx.FieldMap{
-		"Vendor": ubx.FieldSpec{WireName: "vendor"},
-	}
+	"Vendor": ubx.FieldSpec{WireName: "vendor"},
+}
 
 type ObservabilityConfigurationConfig struct {
 	// A name for the observability configuration. When you use it for the first time in an AWS Region, App Runner creates revision number 1 of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.
@@ -53,13 +53,13 @@ var ObservabilityConfiguration = ubx.ResourceBinding{
 		"ObservabilityConfigurationName": ubx.FieldSpec{WireName: "observability_configuration_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ObservabilityConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   ObservabilityConfiguration_TagsFields,
 		},
 		"TraceConfiguration": ubx.FieldSpec{
 			WireName: "trace_configuration",
-			Kind: "object",
-			Fields: ObservabilityConfiguration_TraceConfigurationFields,
+			Kind:     "object",
+			Fields:   ObservabilityConfiguration_TraceConfigurationFields,
 		},
 	},
 }

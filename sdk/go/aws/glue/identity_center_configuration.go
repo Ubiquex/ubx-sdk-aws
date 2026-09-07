@@ -28,8 +28,8 @@ type IdentityCenterConfigurationAttrs struct {
 var IdentityCenterConfiguration = ubx.ResourceBinding{
 	WireType: "aws_glue_identity_center_configuration",
 	Fields: ubx.FieldMap{
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"InstanceArn":                   ubx.FieldSpec{WireName: "instance_arn"},
+		"Scopes":                        ubx.FieldSpec{WireName: "scopes"},
 		"UserBackgroundSessionsEnabled": ubx.FieldSpec{WireName: "user_background_sessions_enabled"},
 	},
 }

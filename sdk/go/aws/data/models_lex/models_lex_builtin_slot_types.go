@@ -4,31 +4,31 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexBuiltinSlotTypes_SlotTypes struct {
-	Signature any
+	Signature        any
 	SupportedLocales any
 }
 
 type ModelsLexBuiltinSlotTypesConfig struct {
-	Locale any
-	MaxResults any
-	NextToken any
+	Locale            any
+	MaxResults        any
+	NextToken         any
 	SignatureContains any
 }
 
 type ModelsLexBuiltinSlotTypesAttrs struct {
-	Locale any
-	MaxResults any
-	NextToken any
+	Locale            any
+	MaxResults        any
+	NextToken         any
 	SignatureContains any
-	SlotTypes any
+	SlotTypes         any
 }
 
 var ModelsLexBuiltinSlotTypes = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_builtin_slot_types",
 	Fields: ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Locale":            ubx.FieldSpec{WireName: "locale"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"SignatureContains": ubx.FieldSpec{WireName: "signature_contains"},
 	},
 }

@@ -28,30 +28,30 @@ type Mesh_Tags struct {
 }
 
 var Mesh_Spec_EgressFilterFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Mesh_Spec_ServiceDiscoveryFields = ubx.FieldMap{
-		"IpPreference": ubx.FieldSpec{WireName: "ip_preference"},
-	}
+	"IpPreference": ubx.FieldSpec{WireName: "ip_preference"},
+}
 
 var Mesh_SpecFields = ubx.FieldMap{
-		"EgressFilter": ubx.FieldSpec{
-			WireName: "egress_filter",
-			Kind: "object",
-			Fields: Mesh_Spec_EgressFilterFields,
-		},
-		"ServiceDiscovery": ubx.FieldSpec{
-			WireName: "service_discovery",
-			Kind: "object",
-			Fields: Mesh_Spec_ServiceDiscoveryFields,
-		},
-	}
+	"EgressFilter": ubx.FieldSpec{
+		WireName: "egress_filter",
+		Kind:     "object",
+		Fields:   Mesh_Spec_EgressFilterFields,
+	},
+	"ServiceDiscovery": ubx.FieldSpec{
+		WireName: "service_discovery",
+		Kind:     "object",
+		Fields:   Mesh_Spec_ServiceDiscoveryFields,
+	},
+}
 
 var Mesh_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MeshConfig struct {
 	// The name of the App Mesh service mesh; if omitted, CloudFormation generates a unique name, and this name serves as the mesh's resource identifier. (AI-inferred)
@@ -87,13 +87,13 @@ var Mesh = ubx.ResourceBinding{
 		"MeshName": ubx.FieldSpec{WireName: "mesh_name"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: Mesh_SpecFields,
+			Kind:     "object",
+			Fields:   Mesh_SpecFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Mesh_TagsFields,
+			Kind:     "list",
+			Fields:   Mesh_TagsFields,
 		},
 	},
 }

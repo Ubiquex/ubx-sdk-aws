@@ -4,9 +4,9 @@ package networkfirewall
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoggingConfiguration_LoggingConfiguration_LogDestinationConfigs struct {
-	LogDestination any
+	LogDestination     any
 	LogDestinationType any
-	LogType any
+	LogType            any
 }
 
 type LoggingConfiguration_LoggingConfiguration struct {
@@ -14,14 +14,14 @@ type LoggingConfiguration_LoggingConfiguration struct {
 }
 
 type LoggingConfigurationConfig struct {
-	FirewallArn any
+	FirewallArn  any
 	FirewallName any
 }
 
 type LoggingConfigurationAttrs struct {
 	EnableMonitoringDashboard any
-	FirewallArn any
-	FirewallName any
+	FirewallArn               any
+	FirewallName              any
 	// <p>Defines how Network Firewall performs logging for a <a>Firewall</a>. </p>
 	LoggingConfiguration any
 }
@@ -29,7 +29,7 @@ type LoggingConfigurationAttrs struct {
 var LoggingConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_logging_configuration",
 	Fields: ubx.FieldMap{
-		"FirewallArn": ubx.FieldSpec{WireName: "firewall_arn"},
+		"FirewallArn":  ubx.FieldSpec{WireName: "firewall_arn"},
 		"FirewallName": ubx.FieldSpec{WireName: "firewall_name"},
 	},
 }

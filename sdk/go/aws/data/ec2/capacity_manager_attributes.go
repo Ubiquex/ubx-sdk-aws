@@ -8,14 +8,14 @@ type CapacityManagerAttributesConfig struct {
 }
 
 type CapacityManagerAttributesAttrs struct {
-	CapacityManagerStatus any
-	DataExportCount any
-	DryRun any
+	CapacityManagerStatus      any
+	DataExportCount            any
+	DryRun                     any
 	EarliestDatapointTimestamp any
-	IngestionStatus any
-	IngestionStatusMessage any
-	LatestDatapointTimestamp any
-	OrganizationsAccess any
+	IngestionStatus            any
+	IngestionStatusMessage     any
+	LatestDatapointTimestamp   any
+	OrganizationsAccess        any
 }
 
 var CapacityManagerAttributes = ubx.DataSourceBinding{

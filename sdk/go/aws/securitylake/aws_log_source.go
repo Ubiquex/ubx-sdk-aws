@@ -28,9 +28,9 @@ type AwsLogSourceAttrs struct {
 var AwsLogSource = ubx.ResourceBinding{
 	WireType: "aws_security_lake_aws_log_source",
 	Fields: ubx.FieldMap{
-		"Accounts": ubx.FieldSpec{WireName: "accounts"},
-		"DataLakeArn": ubx.FieldSpec{WireName: "data_lake_arn"},
-		"SourceName": ubx.FieldSpec{WireName: "source_name"},
+		"Accounts":      ubx.FieldSpec{WireName: "accounts"},
+		"DataLakeArn":   ubx.FieldSpec{WireName: "data_lake_arn"},
+		"SourceName":    ubx.FieldSpec{WireName: "source_name"},
 		"SourceVersion": ubx.FieldSpec{WireName: "source_version"},
 	},
 }

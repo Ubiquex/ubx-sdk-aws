@@ -4,9 +4,9 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorEmergencyCallingConfiguration_EmergencyCallingConfiguration_Dnis struct {
-	CallingCountry any
+	CallingCountry       any
 	EmergencyPhoneNumber any
-	TestPhoneNumber any
+	TestPhoneNumber      any
 }
 
 type VoiceChimeVoiceConnectorEmergencyCallingConfiguration_EmergencyCallingConfiguration struct {
@@ -20,7 +20,7 @@ type VoiceChimeVoiceConnectorEmergencyCallingConfigurationConfig struct {
 type VoiceChimeVoiceConnectorEmergencyCallingConfigurationAttrs struct {
 	// <p>The emergency calling configuration details associated with an Amazon Chime SDK Voice Connector.</p>
 	EmergencyCallingConfiguration any
-	VoiceConnectorId any
+	VoiceConnectorId              any
 }
 
 var VoiceChimeVoiceConnectorEmergencyCallingConfiguration = ubx.DataSourceBinding{

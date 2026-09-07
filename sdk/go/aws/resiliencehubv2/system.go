@@ -4,14 +4,14 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type System_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var System_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SystemConfig struct {
 	// The description of the system.
@@ -50,14 +50,14 @@ type SystemAttrs struct {
 var System = ubx.ResourceBinding{
 	WireType: "aws_resilience_hub_v2_system",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"KmsKeyId":       ubx.FieldSpec{WireName: "kms_key_id"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"SharingEnabled": ubx.FieldSpec{WireName: "sharing_enabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: System_TagsFields,
+			Kind:     "list",
+			Fields:   System_TagsFields,
 		},
 	},
 }

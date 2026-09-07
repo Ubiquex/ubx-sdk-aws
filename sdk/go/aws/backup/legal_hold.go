@@ -21,29 +21,29 @@ type LegalHold_RecoveryPointSelection struct {
 
 type LegalHold_Tags struct {
 	// The key of a user-defined tag to attach to the AWS Backup legal hold, used for organizing, categorizing, and controlling access to the resource through IAM tag policies. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var LegalHold_RecoveryPointSelection_DateRangeFields = ubx.FieldMap{
-		"FromDate": ubx.FieldSpec{WireName: "from_date"},
-		"ToDate": ubx.FieldSpec{WireName: "to_date"},
-	}
+	"FromDate": ubx.FieldSpec{WireName: "from_date"},
+	"ToDate":   ubx.FieldSpec{WireName: "to_date"},
+}
 
 var LegalHold_RecoveryPointSelectionFields = ubx.FieldMap{
-		"DateRange": ubx.FieldSpec{
-			WireName: "date_range",
-			Kind: "object",
-			Fields: LegalHold_RecoveryPointSelection_DateRangeFields,
-		},
-		"ResourceIdentifiers": ubx.FieldSpec{WireName: "resource_identifiers"},
-		"VaultNames": ubx.FieldSpec{WireName: "vault_names"},
-	}
+	"DateRange": ubx.FieldSpec{
+		WireName: "date_range",
+		Kind:     "object",
+		Fields:   LegalHold_RecoveryPointSelection_DateRangeFields,
+	},
+	"ResourceIdentifiers": ubx.FieldSpec{WireName: "resource_identifiers"},
+	"VaultNames":          ubx.FieldSpec{WireName: "vault_names"},
+}
 
 var LegalHold_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LegalHoldConfig struct {
 	// The description of the legal hold.
@@ -81,13 +81,13 @@ var LegalHold = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"RecoveryPointSelection": ubx.FieldSpec{
 			WireName: "recovery_point_selection",
-			Kind: "object",
-			Fields: LegalHold_RecoveryPointSelectionFields,
+			Kind:     "object",
+			Fields:   LegalHold_RecoveryPointSelectionFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LegalHold_TagsFields,
+			Kind:     "list",
+			Fields:   LegalHold_TagsFields,
 		},
 		"Title": ubx.FieldSpec{WireName: "title"},
 	},

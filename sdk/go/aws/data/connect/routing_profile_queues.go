@@ -4,37 +4,37 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoutingProfileQueues_RoutingProfileQueueConfigSummaryList struct {
-	Channel any
-	Delay any
-	Priority any
-	QueueArn any
-	QueueId any
+	Channel   any
+	Delay     any
+	Priority  any
+	QueueArn  any
+	QueueId   any
 	QueueName any
 }
 
 type RoutingProfileQueuesConfig struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId       any
+	MaxResults       any
+	NextToken        any
 	RoutingProfileId any
 }
 
 type RoutingProfileQueuesAttrs struct {
-	InstanceId any
-	LastModifiedRegion any
-	LastModifiedTime any
-	MaxResults any
-	NextToken any
-	RoutingProfileId any
+	InstanceId                           any
+	LastModifiedRegion                   any
+	LastModifiedTime                     any
+	MaxResults                           any
+	NextToken                            any
+	RoutingProfileId                     any
 	RoutingProfileQueueConfigSummaryList any
 }
 
 var RoutingProfileQueues = ubx.DataSourceBinding{
 	WireType: "aws_connect_routing_profile_queues",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":       ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"RoutingProfileId": ubx.FieldSpec{WireName: "routing_profile_id"},
 	},
 }

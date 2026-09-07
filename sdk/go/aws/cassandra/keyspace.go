@@ -11,19 +11,19 @@ type Keyspace_ReplicationSpecification struct {
 }
 
 type Keyspace_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Keyspace_ReplicationSpecificationFields = ubx.FieldMap{
-		"RegionList": ubx.FieldSpec{WireName: "region_list"},
-		"ReplicationStrategy": ubx.FieldSpec{WireName: "replication_strategy"},
-	}
+	"RegionList":          ubx.FieldSpec{WireName: "region_list"},
+	"ReplicationStrategy": ubx.FieldSpec{WireName: "replication_strategy"},
+}
 
 var Keyspace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type KeyspaceConfig struct {
 	// Indicates whether client-side timestamps are enabled (true) or disabled (false) for all tables in the keyspace. To add a Region to a single-Region keyspace with at least one table, the value must be set to true. After you enabled client-side timestamps for a table, you can’t disable it again.
@@ -51,16 +51,16 @@ var Keyspace = ubx.ResourceBinding{
 	WireType: "aws_cassandra_keyspace",
 	Fields: ubx.FieldMap{
 		"ClientSideTimestampsEnabled": ubx.FieldSpec{WireName: "client_side_timestamps_enabled"},
-		"KeyspaceName": ubx.FieldSpec{WireName: "keyspace_name"},
+		"KeyspaceName":                ubx.FieldSpec{WireName: "keyspace_name"},
 		"ReplicationSpecification": ubx.FieldSpec{
 			WireName: "replication_specification",
-			Kind: "object",
-			Fields: Keyspace_ReplicationSpecificationFields,
+			Kind:     "object",
+			Fields:   Keyspace_ReplicationSpecificationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Keyspace_TagsFields,
+			Kind:     "list",
+			Fields:   Keyspace_TagsFields,
 		},
 	},
 }

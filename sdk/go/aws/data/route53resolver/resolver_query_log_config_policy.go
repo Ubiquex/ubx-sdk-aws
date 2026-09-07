@@ -8,7 +8,7 @@ type ResolverQueryLogConfigPolicyConfig struct {
 }
 
 type ResolverQueryLogConfigPolicyAttrs struct {
-	Arn any
+	Arn                          any
 	ResolverQueryLogConfigPolicy any
 }
 

@@ -17,6 +17,5 @@ type AccountConfigurationAttrs struct {
 
 var AccountConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_acm_account_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

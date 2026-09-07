@@ -4,32 +4,32 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverDnssecConfigs_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ResolverDnssecConfigs_ResolverDnssecConfigs struct {
-	Id any
-	OwnerId any
-	ResourceId any
+	Id               any
+	OwnerId          any
+	ResourceId       any
 	ValidationStatus any
 }
 
 var ResolverDnssecConfigs_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ResolverDnssecConfigsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResolverDnssecConfigsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters               any
+	MaxResults            any
+	NextToken             any
 	ResolverDnssecConfigs any
 }
 
@@ -38,10 +38,10 @@ var ResolverDnssecConfigs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ResolverDnssecConfigs_FiltersFields,
+			Kind:     "list",
+			Fields:   ResolverDnssecConfigs_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

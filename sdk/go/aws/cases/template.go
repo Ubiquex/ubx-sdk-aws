@@ -21,27 +21,27 @@ type Template_Rules struct {
 }
 
 type Template_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Template_LayoutConfigurationFields = ubx.FieldMap{
-		"DefaultLayout": ubx.FieldSpec{WireName: "default_layout"},
-	}
+	"DefaultLayout": ubx.FieldSpec{WireName: "default_layout"},
+}
 
 var Template_RequiredFieldsFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+}
 
 var Template_RulesFields = ubx.FieldMap{
-		"CaseRuleId": ubx.FieldSpec{WireName: "case_rule_id"},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-	}
+	"CaseRuleId": ubx.FieldSpec{WireName: "case_rule_id"},
+	"FieldId":    ubx.FieldSpec{WireName: "field_id"},
+}
 
 var Template_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TemplateConfig struct {
 	// A description explaining the purpose and use case for this template. Should indicate what types of cases this template is designed for and any specific workflow it supports.
@@ -93,28 +93,28 @@ var Template = ubx.ResourceBinding{
 	WireType: "aws_cases_template",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
+		"DomainId":    ubx.FieldSpec{WireName: "domain_id"},
 		"LayoutConfiguration": ubx.FieldSpec{
 			WireName: "layout_configuration",
-			Kind: "object",
-			Fields: Template_LayoutConfigurationFields,
+			Kind:     "object",
+			Fields:   Template_LayoutConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RequiredFields": ubx.FieldSpec{
 			WireName: "required_fields",
-			Kind: "list",
-			Fields: Template_RequiredFieldsFields,
+			Kind:     "list",
+			Fields:   Template_RequiredFieldsFields,
 		},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: Template_RulesFields,
+			Kind:     "list",
+			Fields:   Template_RulesFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Template_TagsFields,
+			Kind:     "list",
+			Fields:   Template_TagsFields,
 		},
 	},
 }

@@ -4,16 +4,16 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedCertificateDetails_ManagedCertificateDetails_ValidationTokenDetails struct {
-	Domain any
+	Domain       any
 	RedirectFrom any
-	RedirectTo any
+	RedirectTo   any
 }
 
 type ManagedCertificateDetails_ManagedCertificateDetails struct {
-	CertificateArn any
-	CertificateStatus any
+	CertificateArn         any
+	CertificateStatus      any
 	ValidationTokenDetails any
-	ValidationTokenHost any
+	ValidationTokenHost    any
 }
 
 type ManagedCertificateDetailsConfig struct {

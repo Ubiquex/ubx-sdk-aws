@@ -8,7 +8,7 @@ type ManagedRuleGroup_AvailableLabels struct {
 }
 
 type ManagedRuleGroup_Rules_Action_Allow_CustomRequestHandling_InsertHeaders struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -22,8 +22,8 @@ type ManagedRuleGroup_Rules_Action_Allow struct {
 
 type ManagedRuleGroup_Rules_Action_Block_CustomResponse struct {
 	CustomResponseBodyKey any
-	ResponseCode any
-	ResponseHeaders any
+	ResponseCode          any
+	ResponseHeaders       any
 }
 
 type ManagedRuleGroup_Rules_Action_Block struct {
@@ -35,45 +35,45 @@ type ManagedRuleGroup_Rules_Action_Monetize struct {
 }
 
 type ManagedRuleGroup_Rules_Action struct {
-	Allow any
-	Block any
-	Captcha any
+	Allow     any
+	Block     any
+	Captcha   any
 	Challenge any
-	Count any
-	Monetize any
+	Count     any
+	Monetize  any
 }
 
 type ManagedRuleGroup_Rules struct {
 	Action any
-	Name any
+	Name   any
 }
 
 type ManagedRuleGroupConfig struct {
-	Name any
-	Scope any
-	VendorName any
+	Name        any
+	Scope       any
+	VendorName  any
 	VersionName any
 }
 
 type ManagedRuleGroupAttrs struct {
 	AvailableLabels any
-	Capacity any
-	ConsumedLabels any
-	LabelNamespace any
-	Name any
-	Rules any
-	Scope any
-	SnsTopicArn any
-	VendorName any
-	VersionName any
+	Capacity        any
+	ConsumedLabels  any
+	LabelNamespace  any
+	Name            any
+	Rules           any
+	Scope           any
+	SnsTopicArn     any
+	VendorName      any
+	VersionName     any
 }
 
 var ManagedRuleGroup = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_managed_rule_group",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"VendorName": ubx.FieldSpec{WireName: "vendor_name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Scope":       ubx.FieldSpec{WireName: "scope"},
+		"VendorName":  ubx.FieldSpec{WireName: "vendor_name"},
 		"VersionName": ubx.FieldSpec{WireName: "version_name"},
 	},
 }

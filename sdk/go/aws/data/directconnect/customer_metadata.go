@@ -5,19 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomerMetadata_Agreements struct {
 	AgreementName any
-	Status any
+	Status        any
 }
 
 type CustomerMetadataConfig struct {
 }
 
 type CustomerMetadataAttrs struct {
-	Agreements any
+	Agreements     any
 	NniPartnerType any
 }
 
 var CustomerMetadata = ubx.DataSourceBinding{
 	WireType: "aws_directconnect_customer_metadata",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

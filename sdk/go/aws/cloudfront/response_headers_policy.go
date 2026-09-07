@@ -137,161 +137,161 @@ type ResponseHeadersPolicy_ResponseHeadersPolicyConfig struct {
 }
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{WireName: "items"},
-	}
+	"Items": ubx.FieldSpec{WireName: "items"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfigFields = ubx.FieldMap{
-		"AccessControlAllowCredentials": ubx.FieldSpec{WireName: "access_control_allow_credentials"},
-		"AccessControlAllowHeaders": ubx.FieldSpec{
-			WireName: "access_control_allow_headers",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields,
-		},
-		"AccessControlAllowMethods": ubx.FieldSpec{
-			WireName: "access_control_allow_methods",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields,
-		},
-		"AccessControlAllowOrigins": ubx.FieldSpec{
-			WireName: "access_control_allow_origins",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields,
-		},
-		"AccessControlExposeHeaders": ubx.FieldSpec{
-			WireName: "access_control_expose_headers",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields,
-		},
-		"AccessControlMaxAgeSec": ubx.FieldSpec{WireName: "access_control_max_age_sec"},
-		"OriginOverride": ubx.FieldSpec{WireName: "origin_override"},
-	}
+	"AccessControlAllowCredentials": ubx.FieldSpec{WireName: "access_control_allow_credentials"},
+	"AccessControlAllowHeaders": ubx.FieldSpec{
+		WireName: "access_control_allow_headers",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields,
+	},
+	"AccessControlAllowMethods": ubx.FieldSpec{
+		WireName: "access_control_allow_methods",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields,
+	},
+	"AccessControlAllowOrigins": ubx.FieldSpec{
+		WireName: "access_control_allow_origins",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields,
+	},
+	"AccessControlExposeHeaders": ubx.FieldSpec{
+		WireName: "access_control_expose_headers",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig_AccessControlAllowHeadersFields,
+	},
+	"AccessControlMaxAgeSec": ubx.FieldSpec{WireName: "access_control_max_age_sec"},
+	"OriginOverride":         ubx.FieldSpec{WireName: "origin_override"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig_ItemsFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"Override": ubx.FieldSpec{WireName: "override"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Header":   ubx.FieldSpec{WireName: "header"},
+	"Override": ubx.FieldSpec{WireName: "override"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfigFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig_ItemsFields,
-		},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig_ItemsFields,
+	},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfig_ItemsFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{WireName: "header"},
-	}
+	"Header": ubx.FieldSpec{WireName: "header"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfigFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfig_ItemsFields,
-		},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfig_ItemsFields,
+	},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentSecurityPolicyFields = ubx.FieldMap{
-		"ContentSecurityPolicy": ubx.FieldSpec{WireName: "content_security_policy"},
-		"Override": ubx.FieldSpec{WireName: "override"},
-	}
+	"ContentSecurityPolicy": ubx.FieldSpec{WireName: "content_security_policy"},
+	"Override":              ubx.FieldSpec{WireName: "override"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentTypeOptionsFields = ubx.FieldMap{
-		"Override": ubx.FieldSpec{WireName: "override"},
-	}
+	"Override": ubx.FieldSpec{WireName: "override"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_FrameOptionsFields = ubx.FieldMap{
-		"FrameOption": ubx.FieldSpec{WireName: "frame_option"},
-		"Override": ubx.FieldSpec{WireName: "override"},
-	}
+	"FrameOption": ubx.FieldSpec{WireName: "frame_option"},
+	"Override":    ubx.FieldSpec{WireName: "override"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ReferrerPolicyFields = ubx.FieldMap{
-		"Override": ubx.FieldSpec{WireName: "override"},
-		"ReferrerPolicy": ubx.FieldSpec{WireName: "referrer_policy"},
-	}
+	"Override":       ubx.FieldSpec{WireName: "override"},
+	"ReferrerPolicy": ubx.FieldSpec{WireName: "referrer_policy"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_StrictTransportSecurityFields = ubx.FieldMap{
-		"AccessControlMaxAgeSec": ubx.FieldSpec{WireName: "access_control_max_age_sec"},
-		"IncludeSubdomains": ubx.FieldSpec{WireName: "include_subdomains"},
-		"Override": ubx.FieldSpec{WireName: "override"},
-		"Preload": ubx.FieldSpec{WireName: "preload"},
-	}
+	"AccessControlMaxAgeSec": ubx.FieldSpec{WireName: "access_control_max_age_sec"},
+	"IncludeSubdomains":      ubx.FieldSpec{WireName: "include_subdomains"},
+	"Override":               ubx.FieldSpec{WireName: "override"},
+	"Preload":                ubx.FieldSpec{WireName: "preload"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_XssprotectionFields = ubx.FieldMap{
-		"ModeBlock": ubx.FieldSpec{WireName: "mode_block"},
-		"Override": ubx.FieldSpec{WireName: "override"},
-		"Protection": ubx.FieldSpec{WireName: "protection"},
-		"ReportUri": ubx.FieldSpec{WireName: "report_uri"},
-	}
+	"ModeBlock":  ubx.FieldSpec{WireName: "mode_block"},
+	"Override":   ubx.FieldSpec{WireName: "override"},
+	"Protection": ubx.FieldSpec{WireName: "protection"},
+	"ReportUri":  ubx.FieldSpec{WireName: "report_uri"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfigFields = ubx.FieldMap{
-		"ContentSecurityPolicy": ubx.FieldSpec{
-			WireName: "content_security_policy",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentSecurityPolicyFields,
-		},
-		"ContentTypeOptions": ubx.FieldSpec{
-			WireName: "content_type_options",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentTypeOptionsFields,
-		},
-		"FrameOptions": ubx.FieldSpec{
-			WireName: "frame_options",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_FrameOptionsFields,
-		},
-		"ReferrerPolicy": ubx.FieldSpec{
-			WireName: "referrer_policy",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ReferrerPolicyFields,
-		},
-		"StrictTransportSecurity": ubx.FieldSpec{
-			WireName: "strict_transport_security",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_StrictTransportSecurityFields,
-		},
-		"Xssprotection": ubx.FieldSpec{
-			WireName: "xssprotection",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_XssprotectionFields,
-		},
-	}
+	"ContentSecurityPolicy": ubx.FieldSpec{
+		WireName: "content_security_policy",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentSecurityPolicyFields,
+	},
+	"ContentTypeOptions": ubx.FieldSpec{
+		WireName: "content_type_options",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ContentTypeOptionsFields,
+	},
+	"FrameOptions": ubx.FieldSpec{
+		WireName: "frame_options",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_FrameOptionsFields,
+	},
+	"ReferrerPolicy": ubx.FieldSpec{
+		WireName: "referrer_policy",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_ReferrerPolicyFields,
+	},
+	"StrictTransportSecurity": ubx.FieldSpec{
+		WireName: "strict_transport_security",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_StrictTransportSecurityFields,
+	},
+	"Xssprotection": ubx.FieldSpec{
+		WireName: "xssprotection",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfig_XssprotectionFields,
+	},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfig_ServerTimingHeadersConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
-	}
+	"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+	"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
+}
 
 var ResponseHeadersPolicy_ResponseHeadersPolicyConfigFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"CorsConfig": ubx.FieldSpec{
-			WireName: "cors_config",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfigFields,
-		},
-		"CustomHeadersConfig": ubx.FieldSpec{
-			WireName: "custom_headers_config",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RemoveHeadersConfig": ubx.FieldSpec{
-			WireName: "remove_headers_config",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfigFields,
-		},
-		"SecurityHeadersConfig": ubx.FieldSpec{
-			WireName: "security_headers_config",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfigFields,
-		},
-		"ServerTimingHeadersConfig": ubx.FieldSpec{
-			WireName: "server_timing_headers_config",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfig_ServerTimingHeadersConfigFields,
-		},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"CorsConfig": ubx.FieldSpec{
+		WireName: "cors_config",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfigFields,
+	},
+	"CustomHeadersConfig": ubx.FieldSpec{
+		WireName: "custom_headers_config",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfigFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"RemoveHeadersConfig": ubx.FieldSpec{
+		WireName: "remove_headers_config",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfigFields,
+	},
+	"SecurityHeadersConfig": ubx.FieldSpec{
+		WireName: "security_headers_config",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_SecurityHeadersConfigFields,
+	},
+	"ServerTimingHeadersConfig": ubx.FieldSpec{
+		WireName: "server_timing_headers_config",
+		Kind:     "object",
+		Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfig_ServerTimingHeadersConfigFields,
+	},
+}
 
 type ResponseHeadersPolicyConfig struct {
 	// A response headers policy configuration. A response headers policy configuration contains metadata about the response headers policy, and configurations for sets of HTTP response headers.
@@ -312,8 +312,8 @@ var ResponseHeadersPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ResponseHeadersPolicyConfig": ubx.FieldSpec{
 			WireName: "response_headers_policy_config",
-			Kind: "object",
-			Fields: ResponseHeadersPolicy_ResponseHeadersPolicyConfigFields,
+			Kind:     "object",
+			Fields:   ResponseHeadersPolicy_ResponseHeadersPolicyConfigFields,
 		},
 	},
 }

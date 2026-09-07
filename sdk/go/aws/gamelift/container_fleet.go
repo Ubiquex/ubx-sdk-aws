@@ -114,58 +114,58 @@ type ContainerFleet_Tags struct {
 }
 
 var ContainerFleet_DeploymentConfigurationFields = ubx.FieldMap{
-		"ImpairmentStrategy": ubx.FieldSpec{WireName: "impairment_strategy"},
-		"MinimumHealthyPercentage": ubx.FieldSpec{WireName: "minimum_healthy_percentage"},
-		"ProtectionStrategy": ubx.FieldSpec{WireName: "protection_strategy"},
-	}
+	"ImpairmentStrategy":       ubx.FieldSpec{WireName: "impairment_strategy"},
+	"MinimumHealthyPercentage": ubx.FieldSpec{WireName: "minimum_healthy_percentage"},
+	"ProtectionStrategy":       ubx.FieldSpec{WireName: "protection_strategy"},
+}
 
 var ContainerFleet_GameSessionCreationLimitPolicyFields = ubx.FieldMap{
-		"NewGameSessionsPerCreator": ubx.FieldSpec{WireName: "new_game_sessions_per_creator"},
-		"PolicyPeriodInMinutes": ubx.FieldSpec{WireName: "policy_period_in_minutes"},
-	}
+	"NewGameSessionsPerCreator": ubx.FieldSpec{WireName: "new_game_sessions_per_creator"},
+	"PolicyPeriodInMinutes":     ubx.FieldSpec{WireName: "policy_period_in_minutes"},
+}
 
 var ContainerFleet_InstanceConnectionPortRangeFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var ContainerFleet_InstanceInboundPermissionsFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"IpRange":  ubx.FieldSpec{WireName: "ip_range"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var ContainerFleet_LogConfigurationFields = ubx.FieldMap{
-		"LogDestination": ubx.FieldSpec{WireName: "log_destination"},
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-	}
+	"LogDestination": ubx.FieldSpec{WireName: "log_destination"},
+	"LogGroupArn":    ubx.FieldSpec{WireName: "log_group_arn"},
+	"S3BucketName":   ubx.FieldSpec{WireName: "s3_bucket_name"},
+}
 
 var ContainerFleet_ScalingPolicies_TargetConfigurationFields = ubx.FieldMap{
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"TargetValue": ubx.FieldSpec{WireName: "target_value"},
+}
 
 var ContainerFleet_ScalingPoliciesFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"EvaluationPeriods": ubx.FieldSpec{WireName: "evaluation_periods"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-		"ScalingAdjustment": ubx.FieldSpec{WireName: "scaling_adjustment"},
-		"ScalingAdjustmentType": ubx.FieldSpec{WireName: "scaling_adjustment_type"},
-		"TargetConfiguration": ubx.FieldSpec{
-			WireName: "target_configuration",
-			Kind: "object",
-			Fields: ContainerFleet_ScalingPolicies_TargetConfigurationFields,
-		},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"ComparisonOperator":    ubx.FieldSpec{WireName: "comparison_operator"},
+	"EvaluationPeriods":     ubx.FieldSpec{WireName: "evaluation_periods"},
+	"MetricName":            ubx.FieldSpec{WireName: "metric_name"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"PolicyType":            ubx.FieldSpec{WireName: "policy_type"},
+	"ScalingAdjustment":     ubx.FieldSpec{WireName: "scaling_adjustment"},
+	"ScalingAdjustmentType": ubx.FieldSpec{WireName: "scaling_adjustment_type"},
+	"TargetConfiguration": ubx.FieldSpec{
+		WireName: "target_configuration",
+		Kind:     "object",
+		Fields:   ContainerFleet_ScalingPolicies_TargetConfigurationFields,
+	},
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var ContainerFleet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ContainerFleetConfig struct {
 	// Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type selected for this fleet.
@@ -265,47 +265,47 @@ var ContainerFleet = ubx.ResourceBinding{
 		"BillingType": ubx.FieldSpec{WireName: "billing_type"},
 		"DeploymentConfiguration": ubx.FieldSpec{
 			WireName: "deployment_configuration",
-			Kind: "object",
-			Fields: ContainerFleet_DeploymentConfigurationFields,
+			Kind:     "object",
+			Fields:   ContainerFleet_DeploymentConfigurationFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FleetRoleArn": ubx.FieldSpec{WireName: "fleet_role_arn"},
+		"Description":                            ubx.FieldSpec{WireName: "description"},
+		"FleetRoleArn":                           ubx.FieldSpec{WireName: "fleet_role_arn"},
 		"GameServerContainerGroupDefinitionName": ubx.FieldSpec{WireName: "game_server_container_group_definition_name"},
-		"GameServerContainerGroupsPerInstance": ubx.FieldSpec{WireName: "game_server_container_groups_per_instance"},
+		"GameServerContainerGroupsPerInstance":   ubx.FieldSpec{WireName: "game_server_container_groups_per_instance"},
 		"GameSessionCreationLimitPolicy": ubx.FieldSpec{
 			WireName: "game_session_creation_limit_policy",
-			Kind: "object",
-			Fields: ContainerFleet_GameSessionCreationLimitPolicyFields,
+			Kind:     "object",
+			Fields:   ContainerFleet_GameSessionCreationLimitPolicyFields,
 		},
 		"InstanceConnectionPortRange": ubx.FieldSpec{
 			WireName: "instance_connection_port_range",
-			Kind: "object",
-			Fields: ContainerFleet_InstanceConnectionPortRangeFields,
+			Kind:     "object",
+			Fields:   ContainerFleet_InstanceConnectionPortRangeFields,
 		},
 		"InstanceInboundPermissions": ubx.FieldSpec{
 			WireName: "instance_inbound_permissions",
-			Kind: "list",
-			Fields: ContainerFleet_InstanceInboundPermissionsFields,
+			Kind:     "list",
+			Fields:   ContainerFleet_InstanceInboundPermissionsFields,
 		},
 		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
 		"LogConfiguration": ubx.FieldSpec{
 			WireName: "log_configuration",
-			Kind: "object",
-			Fields: ContainerFleet_LogConfigurationFields,
+			Kind:     "object",
+			Fields:   ContainerFleet_LogConfigurationFields,
 		},
-		"MetricGroups": ubx.FieldSpec{WireName: "metric_groups"},
-		"NewGameSessionProtectionPolicy": ubx.FieldSpec{WireName: "new_game_session_protection_policy"},
+		"MetricGroups":                            ubx.FieldSpec{WireName: "metric_groups"},
+		"NewGameSessionProtectionPolicy":          ubx.FieldSpec{WireName: "new_game_session_protection_policy"},
 		"PerInstanceContainerGroupDefinitionName": ubx.FieldSpec{WireName: "per_instance_container_group_definition_name"},
-		"PlayerGatewayMode": ubx.FieldSpec{WireName: "player_gateway_mode"},
+		"PlayerGatewayMode":                       ubx.FieldSpec{WireName: "player_gateway_mode"},
 		"ScalingPolicies": ubx.FieldSpec{
 			WireName: "scaling_policies",
-			Kind: "list",
-			Fields: ContainerFleet_ScalingPoliciesFields,
+			Kind:     "list",
+			Fields:   ContainerFleet_ScalingPoliciesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ContainerFleet_TagsFields,
+			Kind:     "list",
+			Fields:   ContainerFleet_TagsFields,
 		},
 	},
 }

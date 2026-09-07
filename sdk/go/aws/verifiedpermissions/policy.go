@@ -34,41 +34,41 @@ type Policy_Definition struct {
 }
 
 var Policy_Definition_StaticFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Statement": ubx.FieldSpec{WireName: "statement"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Statement":   ubx.FieldSpec{WireName: "statement"},
+}
 
 var Policy_Definition_TemplateLinked_PrincipalFields = ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-	}
+	"EntityId":   ubx.FieldSpec{WireName: "entity_id"},
+	"EntityType": ubx.FieldSpec{WireName: "entity_type"},
+}
 
 var Policy_Definition_TemplateLinkedFields = ubx.FieldMap{
-		"PolicyTemplateId": ubx.FieldSpec{WireName: "policy_template_id"},
-		"Principal": ubx.FieldSpec{
-			WireName: "principal",
-			Kind: "object",
-			Fields: Policy_Definition_TemplateLinked_PrincipalFields,
-		},
-		"Resource": ubx.FieldSpec{
-			WireName: "resource",
-			Kind: "object",
-			Fields: Policy_Definition_TemplateLinked_PrincipalFields,
-		},
-	}
+	"PolicyTemplateId": ubx.FieldSpec{WireName: "policy_template_id"},
+	"Principal": ubx.FieldSpec{
+		WireName: "principal",
+		Kind:     "object",
+		Fields:   Policy_Definition_TemplateLinked_PrincipalFields,
+	},
+	"Resource": ubx.FieldSpec{
+		WireName: "resource",
+		Kind:     "object",
+		Fields:   Policy_Definition_TemplateLinked_PrincipalFields,
+	},
+}
 
 var Policy_DefinitionFields = ubx.FieldMap{
-		"Static": ubx.FieldSpec{
-			WireName: "static",
-			Kind: "object",
-			Fields: Policy_Definition_StaticFields,
-		},
-		"TemplateLinked": ubx.FieldSpec{
-			WireName: "template_linked",
-			Kind: "object",
-			Fields: Policy_Definition_TemplateLinkedFields,
-		},
-	}
+	"Static": ubx.FieldSpec{
+		WireName: "static",
+		Kind:     "object",
+		Fields:   Policy_Definition_StaticFields,
+	},
+	"TemplateLinked": ubx.FieldSpec{
+		WireName: "template_linked",
+		Kind:     "object",
+		Fields:   Policy_Definition_TemplateLinkedFields,
+	},
+}
 
 type PolicyConfig struct {
 	// Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred)
@@ -97,10 +97,10 @@ var Policy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: Policy_DefinitionFields,
+			Kind:     "object",
+			Fields:   Policy_DefinitionFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"PolicyStoreId": ubx.FieldSpec{WireName: "policy_store_id"},
 	},
 }

@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoverageStatistics_CoverageStatistics struct {
 	CountByCoverageStatus any
-	CountByResourceType any
+	CountByResourceType   any
 }
 
 type CoverageStatistics_FilterCriteria_FilterCriterion_FilterCondition struct {
-	Equals any
+	Equals    any
 	NotEquals any
 }
 
 type CoverageStatistics_FilterCriteria_FilterCriterion struct {
-	CriterionKey any
+	CriterionKey    any
 	FilterCondition any
 }
 
@@ -23,26 +23,26 @@ type CoverageStatistics_FilterCriteria struct {
 }
 
 var CoverageStatistics_FilterCriteria_FilterCriterion_FilterConditionFields = ubx.FieldMap{
-		"Equals": ubx.FieldSpec{WireName: "equals"},
-		"NotEquals": ubx.FieldSpec{WireName: "not_equals"},
-	}
+	"Equals":    ubx.FieldSpec{WireName: "equals"},
+	"NotEquals": ubx.FieldSpec{WireName: "not_equals"},
+}
 
 var CoverageStatistics_FilterCriteria_FilterCriterionFields = ubx.FieldMap{
-		"CriterionKey": ubx.FieldSpec{WireName: "criterion_key"},
-		"FilterCondition": ubx.FieldSpec{
-			WireName: "filter_condition",
-			Kind: "object",
-			Fields: CoverageStatistics_FilterCriteria_FilterCriterion_FilterConditionFields,
-		},
-	}
+	"CriterionKey": ubx.FieldSpec{WireName: "criterion_key"},
+	"FilterCondition": ubx.FieldSpec{
+		WireName: "filter_condition",
+		Kind:     "object",
+		Fields:   CoverageStatistics_FilterCriteria_FilterCriterion_FilterConditionFields,
+	},
+}
 
 var CoverageStatistics_FilterCriteriaFields = ubx.FieldMap{
-		"FilterCriterion": ubx.FieldSpec{
-			WireName: "filter_criterion",
-			Kind: "list",
-			Fields: CoverageStatistics_FilterCriteria_FilterCriterionFields,
-		},
-	}
+	"FilterCriterion": ubx.FieldSpec{
+		WireName: "filter_criterion",
+		Kind:     "list",
+		Fields:   CoverageStatistics_FilterCriteria_FilterCriterionFields,
+	},
+}
 
 type CoverageStatisticsConfig struct {
 	DetectorId any
@@ -54,7 +54,7 @@ type CoverageStatisticsConfig struct {
 type CoverageStatisticsAttrs struct {
 	// <p>Information about the coverage statistics for a resource.</p>
 	CoverageStatistics any
-	DetectorId any
+	DetectorId         any
 	// <p>Represents the criteria used in the filter.</p>
 	FilterCriteria any
 	StatisticsType any
@@ -66,8 +66,8 @@ var CoverageStatistics = ubx.DataSourceBinding{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: CoverageStatistics_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   CoverageStatistics_FilterCriteriaFields,
 		},
 		"StatisticsType": ubx.FieldSpec{WireName: "statistics_type"},
 	},

@@ -4,28 +4,28 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Metrics_MetricSummaryList struct {
-	Arn any
-	Id any
+	Arn                any
+	Id                 any
 	LastModifiedRegion any
-	LastModifiedTime any
-	Name any
-	Status any
-	Type any
+	LastModifiedTime   any
+	Name               any
+	Status             any
+	Type               any
 }
 
 type MetricsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The type of the metric. Valid values: <code>AWS_MANAGED</code> | <code>CUSTOMER_MANAGED</code>.</p>
 	Type any
 }
 
 type MetricsAttrs struct {
-	InstanceId any
-	MaxResults any
+	InstanceId        any
+	MaxResults        any
 	MetricSummaryList any
-	NextToken any
+	NextToken         any
 	// <p>The type of the metric. Valid values: <code>AWS_MANAGED</code> | <code>CUSTOMER_MANAGED</code>.</p>
 	Type any
 }
@@ -35,7 +35,7 @@ var Metrics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

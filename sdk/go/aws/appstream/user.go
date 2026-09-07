@@ -35,9 +35,9 @@ var User = ubx.ResourceBinding{
 	WireType: "aws_app_stream_user",
 	Fields: ubx.FieldMap{
 		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"FirstName": ubx.FieldSpec{WireName: "first_name"},
-		"LastName": ubx.FieldSpec{WireName: "last_name"},
-		"MessageAction": ubx.FieldSpec{WireName: "message_action"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"FirstName":          ubx.FieldSpec{WireName: "first_name"},
+		"LastName":           ubx.FieldSpec{WireName: "last_name"},
+		"MessageAction":      ubx.FieldSpec{WireName: "message_action"},
+		"UserName":           ubx.FieldSpec{WireName: "user_name"},
 	},
 }

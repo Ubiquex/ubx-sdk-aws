@@ -11,9 +11,9 @@ type Discoverer_Tags struct {
 }
 
 var Discoverer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DiscovererConfig struct {
 	// Defines whether event schemas from other accounts are discovered. Default is True.
@@ -47,12 +47,12 @@ var Discoverer = ubx.ResourceBinding{
 	WireType: "aws_event_schemas_discoverer",
 	Fields: ubx.FieldMap{
 		"CrossAccount": ubx.FieldSpec{WireName: "cross_account"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"SourceArn":    ubx.FieldSpec{WireName: "source_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Discoverer_TagsFields,
+			Kind:     "list",
+			Fields:   Discoverer_TagsFields,
 		},
 	},
 }

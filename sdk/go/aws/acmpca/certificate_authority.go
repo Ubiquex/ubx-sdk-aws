@@ -164,149 +164,149 @@ type CertificateAuthority_Tags struct {
 }
 
 var CertificateAuthority_CsrExtensions_KeyUsageFields = ubx.FieldMap{
-		"Crlsign": ubx.FieldSpec{WireName: "crlsign"},
-		"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
-		"DecipherOnly": ubx.FieldSpec{WireName: "decipher_only"},
-		"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
-		"EncipherOnly": ubx.FieldSpec{WireName: "encipher_only"},
-		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
-		"KeyCertSign": ubx.FieldSpec{WireName: "key_cert_sign"},
-		"KeyEncipherment": ubx.FieldSpec{WireName: "key_encipherment"},
-		"NonRepudiation": ubx.FieldSpec{WireName: "non_repudiation"},
-	}
+	"Crlsign":          ubx.FieldSpec{WireName: "crlsign"},
+	"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
+	"DecipherOnly":     ubx.FieldSpec{WireName: "decipher_only"},
+	"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
+	"EncipherOnly":     ubx.FieldSpec{WireName: "encipher_only"},
+	"KeyAgreement":     ubx.FieldSpec{WireName: "key_agreement"},
+	"KeyCertSign":      ubx.FieldSpec{WireName: "key_cert_sign"},
+	"KeyEncipherment":  ubx.FieldSpec{WireName: "key_encipherment"},
+	"NonRepudiation":   ubx.FieldSpec{WireName: "non_repudiation"},
+}
 
 var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName_CustomAttributesFields = ubx.FieldMap{
-		"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"ObjectIdentifier": ubx.FieldSpec{WireName: "object_identifier"},
+	"Value":            ubx.FieldSpec{WireName: "value"},
+}
 
 var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryNameFields = ubx.FieldMap{
-		"CommonName": ubx.FieldSpec{WireName: "common_name"},
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"CustomAttributes": ubx.FieldSpec{
-			WireName: "custom_attributes",
-			Kind: "list",
-			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName_CustomAttributesFields,
-		},
-		"DistinguishedNameQualifier": ubx.FieldSpec{WireName: "distinguished_name_qualifier"},
-		"GenerationQualifier": ubx.FieldSpec{WireName: "generation_qualifier"},
-		"GivenName": ubx.FieldSpec{WireName: "given_name"},
-		"Initials": ubx.FieldSpec{WireName: "initials"},
-		"Locality": ubx.FieldSpec{WireName: "locality"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
-		"Pseudonym": ubx.FieldSpec{WireName: "pseudonym"},
-		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Surname": ubx.FieldSpec{WireName: "surname"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"CommonName": ubx.FieldSpec{WireName: "common_name"},
+	"Country":    ubx.FieldSpec{WireName: "country"},
+	"CustomAttributes": ubx.FieldSpec{
+		WireName: "custom_attributes",
+		Kind:     "list",
+		Fields:   CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryName_CustomAttributesFields,
+	},
+	"DistinguishedNameQualifier": ubx.FieldSpec{WireName: "distinguished_name_qualifier"},
+	"GenerationQualifier":        ubx.FieldSpec{WireName: "generation_qualifier"},
+	"GivenName":                  ubx.FieldSpec{WireName: "given_name"},
+	"Initials":                   ubx.FieldSpec{WireName: "initials"},
+	"Locality":                   ubx.FieldSpec{WireName: "locality"},
+	"Organization":               ubx.FieldSpec{WireName: "organization"},
+	"OrganizationalUnit":         ubx.FieldSpec{WireName: "organizational_unit"},
+	"Pseudonym":                  ubx.FieldSpec{WireName: "pseudonym"},
+	"SerialNumber":               ubx.FieldSpec{WireName: "serial_number"},
+	"State":                      ubx.FieldSpec{WireName: "state"},
+	"Surname":                    ubx.FieldSpec{WireName: "surname"},
+	"Title":                      ubx.FieldSpec{WireName: "title"},
+}
 
 var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_EdiPartyNameFields = ubx.FieldMap{
-		"NameAssigner": ubx.FieldSpec{WireName: "name_assigner"},
-		"PartyName": ubx.FieldSpec{WireName: "party_name"},
-	}
+	"NameAssigner": ubx.FieldSpec{WireName: "name_assigner"},
+	"PartyName":    ubx.FieldSpec{WireName: "party_name"},
+}
 
 var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_OtherNameFields = ubx.FieldMap{
-		"TypeId": ubx.FieldSpec{WireName: "type_id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"TypeId": ubx.FieldSpec{WireName: "type_id"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocationFields = ubx.FieldMap{
-		"DirectoryName": ubx.FieldSpec{
-			WireName: "directory_name",
-			Kind: "object",
-			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryNameFields,
-		},
-		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
-		"EdiPartyName": ubx.FieldSpec{
-			WireName: "edi_party_name",
-			Kind: "object",
-			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_EdiPartyNameFields,
-		},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"OtherName": ubx.FieldSpec{
-			WireName: "other_name",
-			Kind: "object",
-			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_OtherNameFields,
-		},
-		"RegisteredId": ubx.FieldSpec{WireName: "registered_id"},
-		"Rfc822Name": ubx.FieldSpec{WireName: "rfc822_name"},
-		"UniformResourceIdentifier": ubx.FieldSpec{WireName: "uniform_resource_identifier"},
-	}
+	"DirectoryName": ubx.FieldSpec{
+		WireName: "directory_name",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryNameFields,
+	},
+	"DnsName": ubx.FieldSpec{WireName: "dns_name"},
+	"EdiPartyName": ubx.FieldSpec{
+		WireName: "edi_party_name",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_EdiPartyNameFields,
+	},
+	"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+	"OtherName": ubx.FieldSpec{
+		WireName: "other_name",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_OtherNameFields,
+	},
+	"RegisteredId":              ubx.FieldSpec{WireName: "registered_id"},
+	"Rfc822Name":                ubx.FieldSpec{WireName: "rfc822_name"},
+	"UniformResourceIdentifier": ubx.FieldSpec{WireName: "uniform_resource_identifier"},
+}
 
 var CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessMethodFields = ubx.FieldMap{
-		"AccessMethodType": ubx.FieldSpec{WireName: "access_method_type"},
-		"CustomObjectIdentifier": ubx.FieldSpec{WireName: "custom_object_identifier"},
-	}
+	"AccessMethodType":       ubx.FieldSpec{WireName: "access_method_type"},
+	"CustomObjectIdentifier": ubx.FieldSpec{WireName: "custom_object_identifier"},
+}
 
 var CertificateAuthority_CsrExtensions_SubjectInformationAccessFields = ubx.FieldMap{
-		"AccessLocation": ubx.FieldSpec{
-			WireName: "access_location",
-			Kind: "object",
-			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocationFields,
-		},
-		"AccessMethod": ubx.FieldSpec{
-			WireName: "access_method",
-			Kind: "object",
-			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessMethodFields,
-		},
-	}
+	"AccessLocation": ubx.FieldSpec{
+		WireName: "access_location",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocationFields,
+	},
+	"AccessMethod": ubx.FieldSpec{
+		WireName: "access_method",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessMethodFields,
+	},
+}
 
 var CertificateAuthority_CsrExtensionsFields = ubx.FieldMap{
-		"KeyUsage": ubx.FieldSpec{
-			WireName: "key_usage",
-			Kind: "object",
-			Fields: CertificateAuthority_CsrExtensions_KeyUsageFields,
-		},
-		"SubjectInformationAccess": ubx.FieldSpec{
-			WireName: "subject_information_access",
-			Kind: "list",
-			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccessFields,
-		},
-	}
+	"KeyUsage": ubx.FieldSpec{
+		WireName: "key_usage",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CsrExtensions_KeyUsageFields,
+	},
+	"SubjectInformationAccess": ubx.FieldSpec{
+		WireName: "subject_information_access",
+		Kind:     "list",
+		Fields:   CertificateAuthority_CsrExtensions_SubjectInformationAccessFields,
+	},
+}
 
 var CertificateAuthority_RevocationConfiguration_CrlConfiguration_CrlDistributionPointExtensionConfigurationFields = ubx.FieldMap{
-		"OmitExtension": ubx.FieldSpec{WireName: "omit_extension"},
-	}
+	"OmitExtension": ubx.FieldSpec{WireName: "omit_extension"},
+}
 
 var CertificateAuthority_RevocationConfiguration_CrlConfigurationFields = ubx.FieldMap{
-		"CrlDistributionPointExtensionConfiguration": ubx.FieldSpec{
-			WireName: "crl_distribution_point_extension_configuration",
-			Kind: "object",
-			Fields: CertificateAuthority_RevocationConfiguration_CrlConfiguration_CrlDistributionPointExtensionConfigurationFields,
-		},
-		"CrlType": ubx.FieldSpec{WireName: "crl_type"},
-		"CustomCname": ubx.FieldSpec{WireName: "custom_cname"},
-		"CustomPath": ubx.FieldSpec{WireName: "custom_path"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExpirationInDays": ubx.FieldSpec{WireName: "expiration_in_days"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3ObjectAcl": ubx.FieldSpec{WireName: "s3_object_acl"},
-	}
+	"CrlDistributionPointExtensionConfiguration": ubx.FieldSpec{
+		WireName: "crl_distribution_point_extension_configuration",
+		Kind:     "object",
+		Fields:   CertificateAuthority_RevocationConfiguration_CrlConfiguration_CrlDistributionPointExtensionConfigurationFields,
+	},
+	"CrlType":          ubx.FieldSpec{WireName: "crl_type"},
+	"CustomCname":      ubx.FieldSpec{WireName: "custom_cname"},
+	"CustomPath":       ubx.FieldSpec{WireName: "custom_path"},
+	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+	"ExpirationInDays": ubx.FieldSpec{WireName: "expiration_in_days"},
+	"S3BucketName":     ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3ObjectAcl":      ubx.FieldSpec{WireName: "s3_object_acl"},
+}
 
 var CertificateAuthority_RevocationConfiguration_OcspConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"OcspCustomCname": ubx.FieldSpec{WireName: "ocsp_custom_cname"},
-	}
+	"Enabled":         ubx.FieldSpec{WireName: "enabled"},
+	"OcspCustomCname": ubx.FieldSpec{WireName: "ocsp_custom_cname"},
+}
 
 var CertificateAuthority_RevocationConfigurationFields = ubx.FieldMap{
-		"CrlConfiguration": ubx.FieldSpec{
-			WireName: "crl_configuration",
-			Kind: "object",
-			Fields: CertificateAuthority_RevocationConfiguration_CrlConfigurationFields,
-		},
-		"OcspConfiguration": ubx.FieldSpec{
-			WireName: "ocsp_configuration",
-			Kind: "object",
-			Fields: CertificateAuthority_RevocationConfiguration_OcspConfigurationFields,
-		},
-	}
+	"CrlConfiguration": ubx.FieldSpec{
+		WireName: "crl_configuration",
+		Kind:     "object",
+		Fields:   CertificateAuthority_RevocationConfiguration_CrlConfigurationFields,
+	},
+	"OcspConfiguration": ubx.FieldSpec{
+		WireName: "ocsp_configuration",
+		Kind:     "object",
+		Fields:   CertificateAuthority_RevocationConfiguration_OcspConfigurationFields,
+	},
+}
 
 var CertificateAuthority_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CertificateAuthorityConfig struct {
 	// Structure that contains CSR pass though extensions information.
@@ -321,7 +321,7 @@ type CertificateAuthorityConfig struct {
 	SigningAlgorithm any
 	// Structure that contains X.500 distinguished name information for your CA.
 	Subject any
-	Tags any
+	Tags    any
 	// The type of the certificate authority.
 	Type any
 	// Usage mode of the ceritificate authority.
@@ -345,7 +345,7 @@ type CertificateAuthorityAttrs struct {
 	SigningAlgorithm any
 	// Structure that contains X.500 distinguished name information for your CA.
 	Subject any
-	Tags any
+	Tags    any
 	// The type of the certificate authority.
 	Type any
 	// Usage mode of the ceritificate authority.
@@ -357,28 +357,28 @@ var CertificateAuthority = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CsrExtensions": ubx.FieldSpec{
 			WireName: "csr_extensions",
-			Kind: "object",
-			Fields: CertificateAuthority_CsrExtensionsFields,
+			Kind:     "object",
+			Fields:   CertificateAuthority_CsrExtensionsFields,
 		},
-		"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
+		"KeyAlgorithm":               ubx.FieldSpec{WireName: "key_algorithm"},
 		"KeyStorageSecurityStandard": ubx.FieldSpec{WireName: "key_storage_security_standard"},
 		"RevocationConfiguration": ubx.FieldSpec{
 			WireName: "revocation_configuration",
-			Kind: "object",
-			Fields: CertificateAuthority_RevocationConfigurationFields,
+			Kind:     "object",
+			Fields:   CertificateAuthority_RevocationConfigurationFields,
 		},
 		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
 		"Subject": ubx.FieldSpec{
 			WireName: "subject",
-			Kind: "object",
-			Fields: CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryNameFields,
+			Kind:     "object",
+			Fields:   CertificateAuthority_CsrExtensions_SubjectInformationAccess_AccessLocation_DirectoryNameFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CertificateAuthority_TagsFields,
+			Kind:     "list",
+			Fields:   CertificateAuthority_TagsFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 		"UsageMode": ubx.FieldSpec{WireName: "usage_mode"},
 	},
 }

@@ -4,9 +4,9 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TimeSeriesServiceStatistics_TimeSeriesServiceStatistics_EdgeSummaryStatistics_ErrorStatistics struct {
-	OtherCount any
+	OtherCount    any
 	ThrottleCount any
-	TotalCount any
+	TotalCount    any
 }
 
 type TimeSeriesServiceStatistics_TimeSeriesServiceStatistics_EdgeSummaryStatistics_FaultStatistics struct {
@@ -15,10 +15,10 @@ type TimeSeriesServiceStatistics_TimeSeriesServiceStatistics_EdgeSummaryStatisti
 }
 
 type TimeSeriesServiceStatistics_TimeSeriesServiceStatistics_EdgeSummaryStatistics struct {
-	ErrorStatistics any
-	FaultStatistics any
-	OkCount any
-	TotalCount any
+	ErrorStatistics   any
+	FaultStatistics   any
+	OkCount           any
+	TotalCount        any
 	TotalResponseTime any
 }
 
@@ -29,51 +29,51 @@ type TimeSeriesServiceStatistics_TimeSeriesServiceStatistics_ResponseTimeHistogr
 
 type TimeSeriesServiceStatistics_TimeSeriesServiceStatistics_ServiceForecastStatistics struct {
 	FaultCountHigh any
-	FaultCountLow any
+	FaultCountLow  any
 }
 
 type TimeSeriesServiceStatistics_TimeSeriesServiceStatistics struct {
-	EdgeSummaryStatistics any
-	ResponseTimeHistogram any
+	EdgeSummaryStatistics     any
+	ResponseTimeHistogram     any
 	ServiceForecastStatistics any
-	ServiceSummaryStatistics any
-	Timestamp any
+	ServiceSummaryStatistics  any
+	Timestamp                 any
 }
 
 type TimeSeriesServiceStatisticsConfig struct {
-	EndTime any
+	EndTime                  any
 	EntitySelectorExpression any
-	ForecastStatistics any
-	GroupArn any
-	GroupName any
-	NextToken any
-	Period any
-	StartTime any
+	ForecastStatistics       any
+	GroupArn                 any
+	GroupName                any
+	NextToken                any
+	Period                   any
+	StartTime                any
 }
 
 type TimeSeriesServiceStatisticsAttrs struct {
-	ContainsOldGroupVersions any
-	EndTime any
-	EntitySelectorExpression any
-	ForecastStatistics any
-	GroupArn any
-	GroupName any
-	NextToken any
-	Period any
-	StartTime any
+	ContainsOldGroupVersions    any
+	EndTime                     any
+	EntitySelectorExpression    any
+	ForecastStatistics          any
+	GroupArn                    any
+	GroupName                   any
+	NextToken                   any
+	Period                      any
+	StartTime                   any
 	TimeSeriesServiceStatistics any
 }
 
 var TimeSeriesServiceStatistics = ubx.DataSourceBinding{
 	WireType: "aws_xray_time_series_service_statistics",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":                  ubx.FieldSpec{WireName: "end_time"},
 		"EntitySelectorExpression": ubx.FieldSpec{WireName: "entity_selector_expression"},
-		"ForecastStatistics": ubx.FieldSpec{WireName: "forecast_statistics"},
-		"GroupArn": ubx.FieldSpec{WireName: "group_arn"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"ForecastStatistics":       ubx.FieldSpec{WireName: "forecast_statistics"},
+		"GroupArn":                 ubx.FieldSpec{WireName: "group_arn"},
+		"GroupName":                ubx.FieldSpec{WireName: "group_name"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
+		"Period":                   ubx.FieldSpec{WireName: "period"},
+		"StartTime":                ubx.FieldSpec{WireName: "start_time"},
 	},
 }

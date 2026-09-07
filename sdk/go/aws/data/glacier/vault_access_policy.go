@@ -15,7 +15,7 @@ type VaultAccessPolicyConfig struct {
 type VaultAccessPolicyAttrs struct {
 	AccountId any
 	// <p>Contains the vault access policy.</p>
-	Policy any
+	Policy    any
 	VaultName any
 }
 

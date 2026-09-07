@@ -223,7 +223,7 @@ type NetworkInsightsAnalysis_ForwardPathComponents_AdditionalDetails struct {
 	// The type of additional detail reported for this forward path component, indicating the specific category of network insight (e.g., a route or security group rule) that provides context about the component's role in the analyzed path. (AI-inferred)
 	AdditionalDetailType any
 	// Identifies the specific network component (such as an EC2 instance, subnet, or security group) that the additional detail in the forward path component refers to, including its identifier and ARN. (AI-inferred)
-	Component any
+	Component     any
 	LoadBalancers any
 	// Specifies the name of the AWS service (such as VPC or Subnet) that the additional detail component describes within a forward path component of a Network Insights analysis. (AI-inferred)
 	ServiceName any
@@ -287,9 +287,9 @@ type NetworkInsightsAnalysis_Tags struct {
 }
 
 var NetworkInsightsAnalysis_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkInsightsAnalysisConfig struct {
 	// The list of additional AWS account IDs to include in the network insights analysis, enabling cross-account reachability analysis by including resources from those accounts. (AI-inferred)
@@ -342,14 +342,14 @@ type NetworkInsightsAnalysisAttrs struct {
 var NetworkInsightsAnalysis = ubx.ResourceBinding{
 	WireType: "aws_ec2_network_insights_analysis",
 	Fields: ubx.FieldMap{
-		"AdditionalAccounts": ubx.FieldSpec{WireName: "additional_accounts"},
-		"FilterInArns": ubx.FieldSpec{WireName: "filter_in_arns"},
-		"FilterOutArns": ubx.FieldSpec{WireName: "filter_out_arns"},
+		"AdditionalAccounts":    ubx.FieldSpec{WireName: "additional_accounts"},
+		"FilterInArns":          ubx.FieldSpec{WireName: "filter_in_arns"},
+		"FilterOutArns":         ubx.FieldSpec{WireName: "filter_out_arns"},
 		"NetworkInsightsPathId": ubx.FieldSpec{WireName: "network_insights_path_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkInsightsAnalysis_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkInsightsAnalysis_TagsFields,
 		},
 	},
 }

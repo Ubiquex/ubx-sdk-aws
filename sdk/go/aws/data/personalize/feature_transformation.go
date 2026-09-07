@@ -4,12 +4,12 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FeatureTransformation_FeatureTransformation struct {
-	CreationDateTime any
-	DefaultParameters any
+	CreationDateTime         any
+	DefaultParameters        any
 	FeatureTransformationArn any
-	LastUpdatedDateTime any
-	Name any
-	Status any
+	LastUpdatedDateTime      any
+	Name                     any
+	Status                   any
 }
 
 type FeatureTransformationConfig struct {
@@ -18,7 +18,7 @@ type FeatureTransformationConfig struct {
 
 type FeatureTransformationAttrs struct {
 	// <p>Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training.</p>
-	FeatureTransformation any
+	FeatureTransformation    any
 	FeatureTransformationArn any
 }
 

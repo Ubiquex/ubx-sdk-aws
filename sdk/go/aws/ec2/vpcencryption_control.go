@@ -4,7 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway struct {
-	State any
+	State        any
 	StateMessage any
 }
 
@@ -13,23 +13,23 @@ type VpcencryptionControl_ResourceExclusions struct {
 	// Specifies whether Elastic File System (EFS) file systems are excluded from the enforcement of encryption controls in the VPC. (AI-inferred)
 	ElasticFileSystem any
 	// An object that, when specified, allows Internet Gateways to be excluded from the scope of the VPC encryption control policy. (AI-inferred)
-	InternetGateway any
-	Lambda any
-	NatGateway any
+	InternetGateway       any
+	Lambda                any
+	NatGateway            any
 	VirtualPrivateGateway any
-	VpcLattice any
-	VpcPeering any
+	VpcLattice            any
+	VpcPeering            any
 }
 
 type VpcencryptionControl_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var VpcencryptionControl_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcencryptionControlConfig struct {
 	// Used to enable or disable EIGW exclusion
@@ -93,19 +93,19 @@ var VpcencryptionControl = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpcencryption_control",
 	Fields: ubx.FieldMap{
 		"EgressOnlyInternetGatewayExclusionInput": ubx.FieldSpec{WireName: "egress_only_internet_gateway_exclusion_input"},
-		"ElasticFileSystemExclusionInput": ubx.FieldSpec{WireName: "elastic_file_system_exclusion_input"},
-		"InternetGatewayExclusionInput": ubx.FieldSpec{WireName: "internet_gateway_exclusion_input"},
-		"LambdaExclusionInput": ubx.FieldSpec{WireName: "lambda_exclusion_input"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"NatGatewayExclusionInput": ubx.FieldSpec{WireName: "nat_gateway_exclusion_input"},
+		"ElasticFileSystemExclusionInput":         ubx.FieldSpec{WireName: "elastic_file_system_exclusion_input"},
+		"InternetGatewayExclusionInput":           ubx.FieldSpec{WireName: "internet_gateway_exclusion_input"},
+		"LambdaExclusionInput":                    ubx.FieldSpec{WireName: "lambda_exclusion_input"},
+		"Mode":                                    ubx.FieldSpec{WireName: "mode"},
+		"NatGatewayExclusionInput":                ubx.FieldSpec{WireName: "nat_gateway_exclusion_input"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcencryptionControl_TagsFields,
+			Kind:     "list",
+			Fields:   VpcencryptionControl_TagsFields,
 		},
 		"VirtualPrivateGatewayExclusionInput": ubx.FieldSpec{WireName: "virtual_private_gateway_exclusion_input"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-		"VpcLatticeExclusionInput": ubx.FieldSpec{WireName: "vpc_lattice_exclusion_input"},
-		"VpcPeeringExclusionInput": ubx.FieldSpec{WireName: "vpc_peering_exclusion_input"},
+		"VpcId":                               ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcLatticeExclusionInput":            ubx.FieldSpec{WireName: "vpc_lattice_exclusion_input"},
+		"VpcPeeringExclusionInput":            ubx.FieldSpec{WireName: "vpc_peering_exclusion_input"},
 	},
 }

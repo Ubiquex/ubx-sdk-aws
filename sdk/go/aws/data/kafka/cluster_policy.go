@@ -8,9 +8,9 @@ type ClusterPolicyConfig struct {
 }
 
 type ClusterPolicyAttrs struct {
-	ClusterArn any
+	ClusterArn     any
 	CurrentVersion any
-	Policy any
+	Policy         any
 }
 
 var ClusterPolicy = ubx.DataSourceBinding{

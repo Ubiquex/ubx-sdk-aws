@@ -8,29 +8,29 @@ type GlobalTables_GlobalTables_ReplicationGroup struct {
 }
 
 type GlobalTables_GlobalTables struct {
-	GlobalTableName any
+	GlobalTableName  any
 	ReplicationGroup any
 }
 
 type GlobalTablesConfig struct {
 	ExclusiveStartGlobalTableName any
-	Limit any
-	RegionName any
+	Limit                         any
+	RegionName                    any
 }
 
 type GlobalTablesAttrs struct {
 	ExclusiveStartGlobalTableName any
-	GlobalTables any
-	LastEvaluatedGlobalTableName any
-	Limit any
-	RegionName any
+	GlobalTables                  any
+	LastEvaluatedGlobalTableName  any
+	Limit                         any
+	RegionName                    any
 }
 
 var GlobalTables = ubx.DataSourceBinding{
 	WireType: "aws_dynamodb_global_tables",
 	Fields: ubx.FieldMap{
 		"ExclusiveStartGlobalTableName": ubx.FieldSpec{WireName: "exclusive_start_global_table_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
+		"Limit":                         ubx.FieldSpec{WireName: "limit"},
+		"RegionName":                    ubx.FieldSpec{WireName: "region_name"},
 	},
 }

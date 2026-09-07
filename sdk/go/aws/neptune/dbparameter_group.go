@@ -11,9 +11,9 @@ type DbparameterGroup_Tags struct {
 }
 
 var DbparameterGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbparameterGroupConfig struct {
 	// Provides the customer-specified description for this DB parameter group.
@@ -45,13 +45,13 @@ var DbparameterGroup = ubx.ResourceBinding{
 	WireType: "aws_neptune_dbparameter_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Family": ubx.FieldSpec{WireName: "family"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Family":      ubx.FieldSpec{WireName: "family"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Parameters":  ubx.FieldSpec{WireName: "parameters"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DbparameterGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DbparameterGroup_TagsFields,
 		},
 	},
 }

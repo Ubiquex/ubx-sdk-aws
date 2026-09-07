@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverConfigs_ResolverConfigs struct {
 	AutodefinedReverse any
-	Id any
-	OwnerId any
-	ResourceId any
+	Id                 any
+	OwnerId            any
+	ResourceId         any
 }
 
 type ResolverConfigsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResolverConfigsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	ResolverConfigs any
 }
 
@@ -25,6 +25,6 @@ var ResolverConfigs = ubx.DataSourceBinding{
 	WireType: "aws_route53resolver_resolver_configs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -20,46 +20,46 @@ type BacklogTasks_Filter struct {
 
 type BacklogTasks_Tasks_Reference struct {
 	AssociationId any
-	ReferenceId any
-	ReferenceUrl any
-	System any
-	Title any
+	ReferenceId   any
+	ReferenceUrl  any
+	System        any
+	Title         any
 }
 
 type BacklogTasks_Tasks struct {
-	AgentSpaceId any
-	CreatedAt any
-	Description any
-	ExecutionId any
-	HasLinkedTasks any
-	Metadata any
-	PrimaryTaskId any
-	Priority any
-	Reference any
-	Status any
-	StatusReason any
+	AgentSpaceId    any
+	CreatedAt       any
+	Description     any
+	ExecutionId     any
+	HasLinkedTasks  any
+	Metadata        any
+	PrimaryTaskId   any
+	Priority        any
+	Reference       any
+	Status          any
+	StatusReason    any
 	SupportMetadata any
-	TaskId any
-	TaskType any
-	Title any
-	UpdatedAt any
-	Version any
+	TaskId          any
+	TaskType        any
+	Title           any
+	UpdatedAt       any
+	Version         any
 }
 
 var BacklogTasks_FilterFields = ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"PrimaryTaskId": ubx.FieldSpec{WireName: "primary_task_id"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TaskType": ubx.FieldSpec{WireName: "task_type"},
-	}
+	"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
+	"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
+	"PrimaryTaskId": ubx.FieldSpec{WireName: "primary_task_id"},
+	"Priority":      ubx.FieldSpec{WireName: "priority"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+	"TaskType":      ubx.FieldSpec{WireName: "task_type"},
+}
 
 type BacklogTasksConfig struct {
 	AgentSpaceId any
 	// <p>Filter criteria for listing backlog tasks, supporting time range, priority, status, and type filters.</p>
 	Filter any
-	Limit any
+	Limit  any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
 	// <p>Sort order options</p>
@@ -72,7 +72,7 @@ type BacklogTasksAttrs struct {
 	AgentSpaceId any
 	// <p>Filter criteria for listing backlog tasks, supporting time range, priority, status, and type filters.</p>
 	Filter any
-	Limit any
+	Limit  any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
 	// <p>Sort order options</p>
@@ -89,12 +89,12 @@ var BacklogTasks = ubx.DataSourceBinding{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: BacklogTasks_FilterFields,
+			Kind:     "object",
+			Fields:   BacklogTasks_FilterFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Order": ubx.FieldSpec{WireName: "order"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
 		"SortField": ubx.FieldSpec{WireName: "sort_field"},
 	},
 }

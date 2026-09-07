@@ -38,11 +38,11 @@ type ArchiveAttrs struct {
 var Archive = ubx.ResourceBinding{
 	WireType: "aws_events_archive",
 	Fields: ubx.FieldMap{
-		"ArchiveName": ubx.FieldSpec{WireName: "archive_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
+		"ArchiveName":      ubx.FieldSpec{WireName: "archive_name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"EventPattern":     ubx.FieldSpec{WireName: "event_pattern"},
 		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
-		"RetentionDays": ubx.FieldSpec{WireName: "retention_days"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+		"RetentionDays":    ubx.FieldSpec{WireName: "retention_days"},
+		"SourceArn":        ubx.FieldSpec{WireName: "source_arn"},
 	},
 }

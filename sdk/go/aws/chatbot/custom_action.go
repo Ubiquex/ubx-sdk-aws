@@ -30,41 +30,41 @@ type CustomAction_Definition struct {
 
 type CustomAction_Tags struct {
 	// The key of a tag attached to the AWS Chatbot custom action, used to identify and categorize the resource for management and cost tracking. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var CustomAction_Attachments_CriteriaFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"VariableName": ubx.FieldSpec{WireName: "variable_name"},
-	}
+	"Operator":     ubx.FieldSpec{WireName: "operator"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+	"VariableName": ubx.FieldSpec{WireName: "variable_name"},
+}
 
 var CustomAction_AttachmentsFields = ubx.FieldMap{
-		"ButtonText": ubx.FieldSpec{WireName: "button_text"},
-		"Criteria": ubx.FieldSpec{
-			WireName: "criteria",
-			Kind: "list",
-			Fields: CustomAction_Attachments_CriteriaFields,
-		},
-		"NotificationType": ubx.FieldSpec{WireName: "notification_type"},
-		"Variables": ubx.FieldSpec{WireName: "variables"},
-	}
+	"ButtonText": ubx.FieldSpec{WireName: "button_text"},
+	"Criteria": ubx.FieldSpec{
+		WireName: "criteria",
+		Kind:     "list",
+		Fields:   CustomAction_Attachments_CriteriaFields,
+	},
+	"NotificationType": ubx.FieldSpec{WireName: "notification_type"},
+	"Variables":        ubx.FieldSpec{WireName: "variables"},
+}
 
 var CustomAction_DefinitionFields = ubx.FieldMap{
-		"CommandText": ubx.FieldSpec{WireName: "command_text"},
-	}
+	"CommandText": ubx.FieldSpec{WireName: "command_text"},
+}
 
 var CustomAction_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomActionConfig struct {
 	// A unique, human-readable name for the custom action, used to identify and invoke it within AWS Chatbot (e.g., in Slack or Teams slash commands). (AI-inferred)
 	ActionName any
 	// Specifies the alias for the custom action, allowing users to invoke the action with a shorter or alternate name in chat. (AI-inferred)
-	AliasName any
+	AliasName   any
 	Attachments any
 	// Defines the custom action by providing the command text (CommandText) that the AWS Chatbot runs when the action is invoked. (AI-inferred)
 	Definition any
@@ -76,7 +76,7 @@ type CustomActionAttrs struct {
 	// A unique, human-readable name for the custom action, used to identify and invoke it within AWS Chatbot (e.g., in Slack or Teams slash commands). (AI-inferred)
 	ActionName any
 	// Specifies the alias for the custom action, allowing users to invoke the action with a shorter or alternate name in chat. (AI-inferred)
-	AliasName any
+	AliasName   any
 	Attachments any
 	// The Amazon Resource Name (ARN) that uniquely identifies the custom action in AWS Chatbot, assigned by AWS when the resource is created. (AI-inferred)
 	CustomActionArn any
@@ -90,21 +90,21 @@ var CustomAction = ubx.ResourceBinding{
 	WireType: "aws_chatbot_custom_action",
 	Fields: ubx.FieldMap{
 		"ActionName": ubx.FieldSpec{WireName: "action_name"},
-		"AliasName": ubx.FieldSpec{WireName: "alias_name"},
+		"AliasName":  ubx.FieldSpec{WireName: "alias_name"},
 		"Attachments": ubx.FieldSpec{
 			WireName: "attachments",
-			Kind: "list",
-			Fields: CustomAction_AttachmentsFields,
+			Kind:     "list",
+			Fields:   CustomAction_AttachmentsFields,
 		},
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: CustomAction_DefinitionFields,
+			Kind:     "object",
+			Fields:   CustomAction_DefinitionFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomAction_TagsFields,
+			Kind:     "list",
+			Fields:   CustomAction_TagsFields,
 		},
 	},
 }

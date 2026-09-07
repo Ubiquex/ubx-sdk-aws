@@ -4,42 +4,42 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FpgaImageAttribute_FpgaImageAttribute_LoadPermissions struct {
-	Group any
+	Group  any
 	UserId any
 }
 
 type FpgaImageAttribute_FpgaImageAttribute_ProductCodes struct {
-	ProductCodeId any
+	ProductCodeId   any
 	ProductCodeType any
 }
 
 type FpgaImageAttribute_FpgaImageAttribute struct {
-	Description any
-	FpgaImageId any
+	Description     any
+	FpgaImageId     any
 	LoadPermissions any
-	Name any
-	ProductCodes any
+	Name            any
+	ProductCodes    any
 }
 
 type FpgaImageAttributeConfig struct {
-	Attribute any
-	DryRun any
+	Attribute   any
+	DryRun      any
 	FpgaImageId any
 }
 
 type FpgaImageAttributeAttrs struct {
 	Attribute any
-	DryRun any
+	DryRun    any
 	// <p>Describes an Amazon FPGA image (AFI) attribute.</p>
 	FpgaImageAttribute any
-	FpgaImageId any
+	FpgaImageId        any
 }
 
 var FpgaImageAttribute = ubx.DataSourceBinding{
 	WireType: "aws_ec2_fpga_image_attribute",
 	Fields: ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Attribute":   ubx.FieldSpec{WireName: "attribute"},
+		"DryRun":      ubx.FieldSpec{WireName: "dry_run"},
 		"FpgaImageId": ubx.FieldSpec{WireName: "fpga_image_id"},
 	},
 }

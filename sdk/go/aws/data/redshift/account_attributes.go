@@ -8,7 +8,7 @@ type AccountAttributes_AccountAttributes_AttributeValues struct {
 }
 
 type AccountAttributes_AccountAttributes struct {
-	AttributeName any
+	AttributeName   any
 	AttributeValues any
 }
 
@@ -18,7 +18,7 @@ type AccountAttributesConfig struct {
 
 type AccountAttributesAttrs struct {
 	AccountAttributes any
-	AttributeNames any
+	AttributeNames    any
 }
 
 var AccountAttributes = ubx.DataSourceBinding{

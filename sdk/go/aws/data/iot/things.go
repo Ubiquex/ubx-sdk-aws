@@ -4,40 +4,40 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Things_Things struct {
-	Attributes any
-	ThingArn any
-	ThingName any
+	Attributes    any
+	ThingArn      any
+	ThingName     any
 	ThingTypeName any
-	Version any
+	Version       any
 }
 
 type ThingsConfig struct {
-	AttributeName any
-	AttributeValue any
-	MaxResults any
-	NextToken any
-	ThingTypeName any
+	AttributeName           any
+	AttributeValue          any
+	MaxResults              any
+	NextToken               any
+	ThingTypeName           any
 	UsePrefixAttributeValue any
 }
 
 type ThingsAttrs struct {
-	AttributeName any
-	AttributeValue any
-	MaxResults any
-	NextToken any
-	ThingTypeName any
-	Things any
+	AttributeName           any
+	AttributeValue          any
+	MaxResults              any
+	NextToken               any
+	ThingTypeName           any
+	Things                  any
 	UsePrefixAttributeValue any
 }
 
 var Things = ubx.DataSourceBinding{
 	WireType: "aws_iot_things",
 	Fields: ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ThingTypeName": ubx.FieldSpec{WireName: "thing_type_name"},
+		"AttributeName":           ubx.FieldSpec{WireName: "attribute_name"},
+		"AttributeValue":          ubx.FieldSpec{WireName: "attribute_value"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"ThingTypeName":           ubx.FieldSpec{WireName: "thing_type_name"},
 		"UsePrefixAttributeValue": ubx.FieldSpec{WireName: "use_prefix_attribute_value"},
 	},
 }

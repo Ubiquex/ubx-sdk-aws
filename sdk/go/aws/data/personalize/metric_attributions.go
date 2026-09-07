@@ -4,32 +4,32 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricAttributions_MetricAttributions struct {
-	CreationDateTime any
-	FailureReason any
-	LastUpdatedDateTime any
+	CreationDateTime     any
+	FailureReason        any
+	LastUpdatedDateTime  any
 	MetricAttributionArn any
-	Name any
-	Status any
+	Name                 any
+	Status               any
 }
 
 type MetricAttributionsConfig struct {
 	DatasetGroupArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type MetricAttributionsAttrs struct {
-	DatasetGroupArn any
-	MaxResults any
+	DatasetGroupArn    any
+	MaxResults         any
 	MetricAttributions any
-	NextToken any
+	NextToken          any
 }
 
 var MetricAttributions = ubx.DataSourceBinding{
 	WireType: "aws_personalize_metric_attributions",
 	Fields: ubx.FieldMap{
 		"DatasetGroupArn": ubx.FieldSpec{WireName: "dataset_group_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

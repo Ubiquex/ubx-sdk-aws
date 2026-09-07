@@ -4,7 +4,7 @@ package backup_gateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupGatewayTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type BackupGatewayTagsForResourceConfig struct {
 
 type BackupGatewayTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var BackupGatewayTagsForResource = ubx.DataSourceBinding{

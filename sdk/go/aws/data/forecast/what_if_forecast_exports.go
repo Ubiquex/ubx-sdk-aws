@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WhatIfForecastExports_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 type WhatIfForecastExports_WhatIfForecastExports_Destination_S3Config struct {
 	KmskeyArn any
-	Path any
-	RoleArn any
+	Path      any
+	RoleArn   any
 }
 
 type WhatIfForecastExports_WhatIfForecastExports_Destination struct {
@@ -20,32 +20,32 @@ type WhatIfForecastExports_WhatIfForecastExports_Destination struct {
 }
 
 type WhatIfForecastExports_WhatIfForecastExports struct {
-	CreationTime any
-	Destination any
-	LastModificationTime any
-	Message any
-	Status any
-	WhatIfForecastArns any
-	WhatIfForecastExportArn any
+	CreationTime             any
+	Destination              any
+	LastModificationTime     any
+	Message                  any
+	Status                   any
+	WhatIfForecastArns       any
+	WhatIfForecastExportArn  any
 	WhatIfForecastExportName any
 }
 
 var WhatIfForecastExports_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type WhatIfForecastExportsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WhatIfForecastExportsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters               any
+	MaxResults            any
+	NextToken             any
 	WhatIfForecastExports any
 }
 
@@ -54,10 +54,10 @@ var WhatIfForecastExports = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: WhatIfForecastExports_FiltersFields,
+			Kind:     "list",
+			Fields:   WhatIfForecastExports_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

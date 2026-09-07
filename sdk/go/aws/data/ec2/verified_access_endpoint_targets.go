@@ -4,32 +4,32 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VerifiedAccessEndpointTargets_VerifiedAccessEndpointTargets struct {
-	VerifiedAccessEndpointId any
-	VerifiedAccessEndpointTargetDns any
+	VerifiedAccessEndpointId              any
+	VerifiedAccessEndpointTargetDns       any
 	VerifiedAccessEndpointTargetIpAddress any
 }
 
 type VerifiedAccessEndpointTargetsConfig struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun                   any
+	MaxResults               any
+	NextToken                any
 	VerifiedAccessEndpointId any
 }
 
 type VerifiedAccessEndpointTargetsAttrs struct {
-	DryRun any
-	MaxResults any
-	NextToken any
-	VerifiedAccessEndpointId any
+	DryRun                        any
+	MaxResults                    any
+	NextToken                     any
+	VerifiedAccessEndpointId      any
 	VerifiedAccessEndpointTargets any
 }
 
 var VerifiedAccessEndpointTargets = ubx.DataSourceBinding{
 	WireType: "aws_ec2_verified_access_endpoint_targets",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DryRun":                   ubx.FieldSpec{WireName: "dry_run"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 		"VerifiedAccessEndpointId": ubx.FieldSpec{WireName: "verified_access_endpoint_id"},
 	},
 }

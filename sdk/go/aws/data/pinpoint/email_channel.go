@@ -4,22 +4,22 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EmailChannel_EmailChannelResponse struct {
-	ApplicationId any
-	ConfigurationSet any
-	CreationDate any
-	Enabled any
-	FromAddress any
-	HasCredential any
-	Id any
-	Identity any
-	IsArchived any
-	LastModifiedBy any
-	LastModifiedDate any
-	MessagesPerSecond any
+	ApplicationId               any
+	ConfigurationSet            any
+	CreationDate                any
+	Enabled                     any
+	FromAddress                 any
+	HasCredential               any
+	Id                          any
+	Identity                    any
+	IsArchived                  any
+	LastModifiedBy              any
+	LastModifiedDate            any
+	MessagesPerSecond           any
 	OrchestrationSendingRoleArn any
-	Platform any
-	RoleArn any
-	Version any
+	Platform                    any
+	RoleArn                     any
+	Version                     any
 }
 
 type EmailChannelConfig struct {

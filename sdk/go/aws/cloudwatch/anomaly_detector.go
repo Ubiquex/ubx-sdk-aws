@@ -85,82 +85,82 @@ type AnomalyDetector_SingleMetricAnomalyDetector struct {
 }
 
 var AnomalyDetector_Configuration_ExcludedTimeRangesFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var AnomalyDetector_ConfigurationFields = ubx.FieldMap{
-		"ExcludedTimeRanges": ubx.FieldSpec{
-			WireName: "excluded_time_ranges",
-			Kind: "list",
-			Fields: AnomalyDetector_Configuration_ExcludedTimeRangesFields,
-		},
-		"MetricTimeZone": ubx.FieldSpec{WireName: "metric_time_zone"},
-	}
+	"ExcludedTimeRanges": ubx.FieldSpec{
+		WireName: "excluded_time_ranges",
+		Kind:     "list",
+		Fields:   AnomalyDetector_Configuration_ExcludedTimeRangesFields,
+	},
+	"MetricTimeZone": ubx.FieldSpec{WireName: "metric_time_zone"},
+}
 
 var AnomalyDetector_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AnomalyDetector_MetricCharacteristicsFields = ubx.FieldMap{
-		"PeriodicSpikes": ubx.FieldSpec{WireName: "periodic_spikes"},
-	}
+	"PeriodicSpikes": ubx.FieldSpec{WireName: "periodic_spikes"},
+}
 
 var AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries_MetricStat_MetricFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: AnomalyDetector_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   AnomalyDetector_DimensionsFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+}
 
 var AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries_MetricStatFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries_MetricStat_MetricFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries_MetricStat_MetricFields,
+	},
+	"Period": ubx.FieldSpec{WireName: "period"},
+	"Stat":   ubx.FieldSpec{WireName: "stat"},
+	"Unit":   ubx.FieldSpec{WireName: "unit"},
+}
 
 var AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueriesFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"MetricStat": ubx.FieldSpec{
-			WireName: "metric_stat",
-			Kind: "object",
-			Fields: AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries_MetricStatFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"ReturnData": ubx.FieldSpec{WireName: "return_data"},
-	}
+	"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Label":      ubx.FieldSpec{WireName: "label"},
+	"MetricStat": ubx.FieldSpec{
+		WireName: "metric_stat",
+		Kind:     "object",
+		Fields:   AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries_MetricStatFields,
+	},
+	"Period":     ubx.FieldSpec{WireName: "period"},
+	"ReturnData": ubx.FieldSpec{WireName: "return_data"},
+}
 
 var AnomalyDetector_MetricMathAnomalyDetectorFields = ubx.FieldMap{
-		"MetricDataQueries": ubx.FieldSpec{
-			WireName: "metric_data_queries",
-			Kind: "list",
-			Fields: AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueriesFields,
-		},
-	}
+	"MetricDataQueries": ubx.FieldSpec{
+		WireName: "metric_data_queries",
+		Kind:     "list",
+		Fields:   AnomalyDetector_MetricMathAnomalyDetector_MetricDataQueriesFields,
+	},
+}
 
 var AnomalyDetector_SingleMetricAnomalyDetectorFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: AnomalyDetector_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
-	}
+	"AccountId": ubx.FieldSpec{WireName: "account_id"},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   AnomalyDetector_DimensionsFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+	"Stat":       ubx.FieldSpec{WireName: "stat"},
+}
 
 type AnomalyDetectorConfig struct {
 	// The configuration settings for the anomaly detector, specifying metric characteristics such as the period and evaluation periods (and optionally periodic spacing) that control how the detection model analyzes the metric. (AI-inferred)
@@ -207,30 +207,30 @@ var AnomalyDetector = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: AnomalyDetector_ConfigurationFields,
+			Kind:     "object",
+			Fields:   AnomalyDetector_ConfigurationFields,
 		},
 		"Dimensions": ubx.FieldSpec{
 			WireName: "dimensions",
-			Kind: "list",
-			Fields: AnomalyDetector_DimensionsFields,
+			Kind:     "list",
+			Fields:   AnomalyDetector_DimensionsFields,
 		},
 		"MetricCharacteristics": ubx.FieldSpec{
 			WireName: "metric_characteristics",
-			Kind: "object",
-			Fields: AnomalyDetector_MetricCharacteristicsFields,
+			Kind:     "object",
+			Fields:   AnomalyDetector_MetricCharacteristicsFields,
 		},
 		"MetricMathAnomalyDetector": ubx.FieldSpec{
 			WireName: "metric_math_anomaly_detector",
-			Kind: "object",
-			Fields: AnomalyDetector_MetricMathAnomalyDetectorFields,
+			Kind:     "object",
+			Fields:   AnomalyDetector_MetricMathAnomalyDetectorFields,
 		},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"Namespace":  ubx.FieldSpec{WireName: "namespace"},
 		"SingleMetricAnomalyDetector": ubx.FieldSpec{
 			WireName: "single_metric_anomaly_detector",
-			Kind: "object",
-			Fields: AnomalyDetector_SingleMetricAnomalyDetectorFields,
+			Kind:     "object",
+			Fields:   AnomalyDetector_SingleMetricAnomalyDetectorFields,
 		},
 		"Stat": ubx.FieldSpec{WireName: "stat"},
 	},

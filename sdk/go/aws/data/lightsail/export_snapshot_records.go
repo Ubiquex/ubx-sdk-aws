@@ -4,13 +4,13 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExportSnapshotRecords_ExportSnapshotRecords_DestinationInfo struct {
-	Id any
+	Id      any
 	Service any
 }
 
 type ExportSnapshotRecords_ExportSnapshotRecords_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type ExportSnapshotRecords_ExportSnapshotRecords_SourceInfo_DiskSnapshotInfo struct {
@@ -19,37 +19,37 @@ type ExportSnapshotRecords_ExportSnapshotRecords_SourceInfo_DiskSnapshotInfo str
 
 type ExportSnapshotRecords_ExportSnapshotRecords_SourceInfo_InstanceSnapshotInfo_FromDiskInfo struct {
 	IsSystemDisk any
-	Name any
-	Path any
-	SizeInGb any
+	Name         any
+	Path         any
+	SizeInGb     any
 }
 
 type ExportSnapshotRecords_ExportSnapshotRecords_SourceInfo_InstanceSnapshotInfo struct {
 	FromBlueprintId any
-	FromBundleId any
-	FromDiskInfo any
+	FromBundleId    any
+	FromDiskInfo    any
 }
 
 type ExportSnapshotRecords_ExportSnapshotRecords_SourceInfo struct {
-	Arn any
-	CreatedAt any
-	DiskSnapshotInfo any
-	FromResourceArn any
-	FromResourceName any
+	Arn                  any
+	CreatedAt            any
+	DiskSnapshotInfo     any
+	FromResourceArn      any
+	FromResourceName     any
 	InstanceSnapshotInfo any
-	Name any
-	ResourceType any
+	Name                 any
+	ResourceType         any
 }
 
 type ExportSnapshotRecords_ExportSnapshotRecords struct {
-	Arn any
-	CreatedAt any
+	Arn             any
+	CreatedAt       any
 	DestinationInfo any
-	Location any
-	Name any
-	ResourceType any
-	SourceInfo any
-	State any
+	Location        any
+	Name            any
+	ResourceType    any
+	SourceInfo      any
+	State           any
 }
 
 type ExportSnapshotRecordsConfig struct {
@@ -58,8 +58,8 @@ type ExportSnapshotRecordsConfig struct {
 
 type ExportSnapshotRecordsAttrs struct {
 	ExportSnapshotRecords any
-	NextPageToken any
-	PageToken any
+	NextPageToken         any
+	PageToken             any
 }
 
 var ExportSnapshotRecords = ubx.DataSourceBinding{

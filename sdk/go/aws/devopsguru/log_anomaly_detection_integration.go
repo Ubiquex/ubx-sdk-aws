@@ -13,6 +13,5 @@ type LogAnomalyDetectionIntegrationAttrs struct {
 
 var LogAnomalyDetectionIntegration = ubx.ResourceBinding{
 	WireType: "aws_dev_ops_guru_log_anomaly_detection_integration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

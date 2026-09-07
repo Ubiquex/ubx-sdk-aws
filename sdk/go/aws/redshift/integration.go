@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integration_Tags struct {
 	// The key portion of a user-defined tag attached to the AWS Redshift Integration resource, used for organization, cost tracking, and access control. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Integration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IntegrationConfig struct {
 	// An optional set of non-secret key–value pairs that contains additional contextual information about the data.
@@ -52,13 +52,13 @@ var Integration = ubx.ResourceBinding{
 	WireType: "aws_redshift_integration",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"IntegrationName": ubx.FieldSpec{WireName: "integration_name"},
-		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+		"IntegrationName":             ubx.FieldSpec{WireName: "integration_name"},
+		"KmskeyId":                    ubx.FieldSpec{WireName: "kmskey_id"},
+		"SourceArn":                   ubx.FieldSpec{WireName: "source_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Integration_TagsFields,
+			Kind:     "list",
+			Fields:   Integration_TagsFields,
 		},
 		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
 	},

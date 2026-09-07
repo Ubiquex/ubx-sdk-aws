@@ -8,7 +8,7 @@ type InboundDmarcSettingsConfig struct {
 }
 
 type InboundDmarcSettingsAttrs struct {
-	Enforced any
+	Enforced       any
 	OrganizationId any
 }
 

@@ -11,9 +11,9 @@ type Policy_Tags struct {
 }
 
 var Policy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PolicyConfig struct {
 	// The Policy text content. For AWS CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format before submitting it.
@@ -54,15 +54,15 @@ type PolicyAttrs struct {
 var Policy = ubx.ResourceBinding{
 	WireType: "aws_organizations_policy",
 	Fields: ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
+		"Content":     ubx.FieldSpec{WireName: "content"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Policy_TagsFields,
+			Kind:     "list",
+			Fields:   Policy_TagsFields,
 		},
 		"TargetIds": ubx.FieldSpec{WireName: "target_ids"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 	},
 }

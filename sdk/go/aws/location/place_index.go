@@ -16,13 +16,13 @@ type PlaceIndex_Tags struct {
 }
 
 var PlaceIndex_DataSourceConfigurationFields = ubx.FieldMap{
-		"IntendedUse": ubx.FieldSpec{WireName: "intended_use"},
-	}
+	"IntendedUse": ubx.FieldSpec{WireName: "intended_use"},
+}
 
 var PlaceIndex_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PlaceIndexConfig struct {
 	// The data provider (such as Esri, Here, or Grab) that supplies the location data for the place index and is required when creating the resource. (AI-inferred)
@@ -68,16 +68,16 @@ var PlaceIndex = ubx.ResourceBinding{
 		"DataSource": ubx.FieldSpec{WireName: "data_source"},
 		"DataSourceConfiguration": ubx.FieldSpec{
 			WireName: "data_source_configuration",
-			Kind: "object",
-			Fields: PlaceIndex_DataSourceConfigurationFields,
+			Kind:     "object",
+			Fields:   PlaceIndex_DataSourceConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
+		"IndexName":   ubx.FieldSpec{WireName: "index_name"},
 		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PlaceIndex_TagsFields,
+			Kind:     "list",
+			Fields:   PlaceIndex_TagsFields,
 		},
 	},
 }

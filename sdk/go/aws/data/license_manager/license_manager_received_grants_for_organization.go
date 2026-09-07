@@ -4,7 +4,7 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerReceivedGrantsForOrganization_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -13,37 +13,37 @@ type LicenseManagerReceivedGrantsForOrganization_Grants_Options struct {
 }
 
 type LicenseManagerReceivedGrantsForOrganization_Grants struct {
-	GrantArn any
-	GrantName any
-	GrantStatus any
-	GrantedOperations any
+	GrantArn            any
+	GrantName           any
+	GrantStatus         any
+	GrantedOperations   any
 	GranteePrincipalArn any
-	HomeRegion any
-	LicenseArn any
-	Options any
-	ParentArn any
-	StatusReason any
-	Version any
+	HomeRegion          any
+	LicenseArn          any
+	Options             any
+	ParentArn           any
+	StatusReason        any
+	Version             any
 }
 
 var LicenseManagerReceivedGrantsForOrganization_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerReceivedGrantsForOrganizationConfig struct {
-	Filters any
+	Filters    any
 	LicenseArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LicenseManagerReceivedGrantsForOrganizationAttrs struct {
-	Filters any
-	Grants any
+	Filters    any
+	Grants     any
 	LicenseArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var LicenseManagerReceivedGrantsForOrganization = ubx.DataSourceBinding{
@@ -51,11 +51,11 @@ var LicenseManagerReceivedGrantsForOrganization = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerReceivedGrantsForOrganization_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerReceivedGrantsForOrganization_FiltersFields,
 		},
 		"LicenseArn": ubx.FieldSpec{WireName: "license_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

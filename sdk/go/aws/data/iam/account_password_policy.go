@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountPasswordPolicy_PasswordPolicy struct {
 	AllowUsersToChangePassword any
-	ExpirePasswords any
-	HardExpiry any
-	MaxPasswordAge any
-	MinimumPasswordLength any
-	PasswordReusePrevention any
+	ExpirePasswords            any
+	HardExpiry                 any
+	MaxPasswordAge             any
+	MinimumPasswordLength      any
+	PasswordReusePrevention    any
 	RequireLowercaseCharacters any
-	RequireNumbers any
-	RequireSymbols any
+	RequireNumbers             any
+	RequireSymbols             any
 	RequireUppercaseCharacters any
 }
 
@@ -26,6 +26,5 @@ type AccountPasswordPolicyAttrs struct {
 
 var AccountPasswordPolicy = ubx.DataSourceBinding{
 	WireType: "aws_iam_account_password_policy",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

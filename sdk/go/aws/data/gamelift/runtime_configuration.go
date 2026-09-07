@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuntimeConfiguration_RuntimeConfiguration_ServerProcesses struct {
 	ConcurrentExecutions any
-	LaunchPath any
-	Parameters any
+	LaunchPath           any
+	Parameters           any
 }
 
 type RuntimeConfiguration_RuntimeConfiguration struct {
 	GameSessionActivationTimeoutSeconds any
 	MaxConcurrentGameSessionActivations any
-	ServerProcesses any
+	ServerProcesses                     any
 }
 
 type RuntimeConfigurationConfig struct {

@@ -18,18 +18,18 @@ type LoggingConfiguration_LoggingConfiguration struct {
 }
 
 var LoggingConfiguration_LoggingConfiguration_LogDestinationConfigsFields = ubx.FieldMap{
-		"LogDestination": ubx.FieldSpec{WireName: "log_destination"},
-		"LogDestinationType": ubx.FieldSpec{WireName: "log_destination_type"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-	}
+	"LogDestination":     ubx.FieldSpec{WireName: "log_destination"},
+	"LogDestinationType": ubx.FieldSpec{WireName: "log_destination_type"},
+	"LogType":            ubx.FieldSpec{WireName: "log_type"},
+}
 
 var LoggingConfiguration_LoggingConfigurationFields = ubx.FieldMap{
-		"LogDestinationConfigs": ubx.FieldSpec{
-			WireName: "log_destination_configs",
-			Kind: "list",
-			Fields: LoggingConfiguration_LoggingConfiguration_LogDestinationConfigsFields,
-		},
-	}
+	"LogDestinationConfigs": ubx.FieldSpec{
+		WireName: "log_destination_configs",
+		Kind:     "list",
+		Fields:   LoggingConfiguration_LoggingConfiguration_LogDestinationConfigsFields,
+	},
+}
 
 type LoggingConfigurationConfig struct {
 	// Whether the Network Firewall monitoring dashboard is enabled for this logging configuration's own firewall. (AI-inferred)
@@ -57,12 +57,12 @@ var LoggingConfiguration = ubx.ResourceBinding{
 	WireType: "aws_network_firewall_logging_configuration",
 	Fields: ubx.FieldMap{
 		"EnableMonitoringDashboard": ubx.FieldSpec{WireName: "enable_monitoring_dashboard"},
-		"FirewallArn": ubx.FieldSpec{WireName: "firewall_arn"},
-		"FirewallName": ubx.FieldSpec{WireName: "firewall_name"},
+		"FirewallArn":               ubx.FieldSpec{WireName: "firewall_arn"},
+		"FirewallName":              ubx.FieldSpec{WireName: "firewall_name"},
 		"LoggingConfiguration": ubx.FieldSpec{
 			WireName: "logging_configuration",
-			Kind: "object",
-			Fields: LoggingConfiguration_LoggingConfigurationFields,
+			Kind:     "object",
+			Fields:   LoggingConfiguration_LoggingConfigurationFields,
 		},
 	},
 }

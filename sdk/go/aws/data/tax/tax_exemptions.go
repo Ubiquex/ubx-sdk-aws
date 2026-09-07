@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaxExemptions_TaxExemptionDetailsMap_TaxExemptions_Authority struct {
 	Country any
-	State any
+	State   any
 }
 
 type TaxExemptions_TaxExemptionDetailsMap_TaxExemptions_TaxExemptionType struct {
 	ApplicableJurisdictions any
-	Description any
-	DisplayName any
+	Description             any
+	DisplayName             any
 }
 
 type TaxExemptions_TaxExemptionDetailsMap_TaxExemptions struct {
-	Authority any
-	EffectiveDate any
-	ExpirationDate any
-	Status any
+	Authority           any
+	EffectiveDate       any
+	ExpirationDate      any
+	Status              any
 	SystemEffectiveDate any
-	TaxExemptionType any
+	TaxExemptionType    any
 }
 
 type TaxExemptions_TaxExemptionDetailsMap struct {
-	HeritageObtainedDetails any
+	HeritageObtainedDetails      any
 	HeritageObtainedParentEntity any
-	HeritageObtainedReason any
-	TaxExemptions any
+	HeritageObtainedReason       any
+	TaxExemptions                any
 }
 
 type TaxExemptionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TaxExemptionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 	TaxExemptionDetailsMap any
 }
 
@@ -45,6 +45,6 @@ var TaxExemptions = ubx.DataSourceBinding{
 	WireType: "aws_tax_tax_exemptions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,34 +4,34 @@ package ram
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PrincipalsConfig struct {
-	MaxResults any
-	NextToken any
-	Principals any
-	ResourceArn any
-	ResourceOwner any
+	MaxResults        any
+	NextToken         any
+	Principals        any
+	ResourceArn       any
+	ResourceOwner     any
 	ResourceShareArns any
-	ResourceType any
+	ResourceType      any
 }
 
 type PrincipalsAttrs struct {
-	MaxResults any
-	NextToken any
-	Principals any
-	ResourceArn any
-	ResourceOwner any
+	MaxResults        any
+	NextToken         any
+	Principals        any
+	ResourceArn       any
+	ResourceOwner     any
 	ResourceShareArns any
-	ResourceType any
+	ResourceType      any
 }
 
 var Principals = ubx.DataSourceBinding{
 	WireType: "aws_ram_principals",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Principals": ubx.FieldSpec{WireName: "principals"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"ResourceOwner": ubx.FieldSpec{WireName: "resource_owner"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"Principals":        ubx.FieldSpec{WireName: "principals"},
+		"ResourceArn":       ubx.FieldSpec{WireName: "resource_arn"},
+		"ResourceOwner":     ubx.FieldSpec{WireName: "resource_owner"},
 		"ResourceShareArns": ubx.FieldSpec{WireName: "resource_share_arns"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":      ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

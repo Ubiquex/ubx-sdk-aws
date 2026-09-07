@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Document_Attachments struct {
 	// The key name of an attachment entry, such as 'SourceUrl' or 'Script', that specifies the attachment's purpose within an Automation document. (AI-inferred)
-	Key any
+	Key  any
 	Name any
 	// Provides the list of source URLs (such as Amazon S3 file URLs) that define the actual content locations for an SSM document attachment, matched with the attachment's key to specify the type of source. (AI-inferred)
 	Values any
@@ -26,20 +26,20 @@ type Document_Tags struct {
 }
 
 var Document_AttachmentsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Document_RequiresFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Document_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DocumentConfig struct {
 	// A list of key and value pairs that describe attachments to a version of a document.
@@ -92,25 +92,25 @@ var Document = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attachments": ubx.FieldSpec{
 			WireName: "attachments",
-			Kind: "list",
-			Fields: Document_AttachmentsFields,
+			Kind:     "list",
+			Fields:   Document_AttachmentsFields,
 		},
-		"Content": ubx.FieldSpec{WireName: "content"},
+		"Content":        ubx.FieldSpec{WireName: "content"},
 		"DocumentFormat": ubx.FieldSpec{WireName: "document_format"},
-		"DocumentType": ubx.FieldSpec{WireName: "document_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DocumentType":   ubx.FieldSpec{WireName: "document_type"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"Requires": ubx.FieldSpec{
 			WireName: "requires",
-			Kind: "list",
-			Fields: Document_RequiresFields,
+			Kind:     "list",
+			Fields:   Document_RequiresFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Document_TagsFields,
+			Kind:     "list",
+			Fields:   Document_TagsFields,
 		},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
+		"TargetType":   ubx.FieldSpec{WireName: "target_type"},
 		"UpdateMethod": ubx.FieldSpec{WireName: "update_method"},
-		"VersionName": ubx.FieldSpec{WireName: "version_name"},
+		"VersionName":  ubx.FieldSpec{WireName: "version_name"},
 	},
 }

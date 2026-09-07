@@ -4,27 +4,27 @@ package devops_guru
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruOrganizationOverviewConfig struct {
-	AccountIds any
-	FromTime any
+	AccountIds            any
+	FromTime              any
 	OrganizationalUnitIds any
-	ToTime any
+	ToTime                any
 }
 
 type DevopsGuruOrganizationOverviewAttrs struct {
-	AccountIds any
-	FromTime any
+	AccountIds            any
+	FromTime              any
 	OrganizationalUnitIds any
-	ProactiveInsights any
-	ReactiveInsights any
-	ToTime any
+	ProactiveInsights     any
+	ReactiveInsights      any
+	ToTime                any
 }
 
 var DevopsGuruOrganizationOverview = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_organization_overview",
 	Fields: ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"FromTime": ubx.FieldSpec{WireName: "from_time"},
+		"AccountIds":            ubx.FieldSpec{WireName: "account_ids"},
+		"FromTime":              ubx.FieldSpec{WireName: "from_time"},
 		"OrganizationalUnitIds": ubx.FieldSpec{WireName: "organizational_unit_ids"},
-		"ToTime": ubx.FieldSpec{WireName: "to_time"},
+		"ToTime":                ubx.FieldSpec{WireName: "to_time"},
 	},
 }

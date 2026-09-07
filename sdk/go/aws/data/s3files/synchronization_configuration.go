@@ -8,9 +8,9 @@ type SynchronizationConfiguration_ExpirationDataRules struct {
 }
 
 type SynchronizationConfiguration_ImportDataRules struct {
-	Prefix any
+	Prefix       any
 	SizeLessThan any
-	Trigger any
+	Trigger      any
 }
 
 type SynchronizationConfigurationConfig struct {
@@ -19,8 +19,8 @@ type SynchronizationConfigurationConfig struct {
 
 type SynchronizationConfigurationAttrs struct {
 	ExpirationDataRules any
-	FileSystemId any
-	ImportDataRules any
+	FileSystemId        any
+	ImportDataRules     any
 	LatestVersionNumber any
 }
 

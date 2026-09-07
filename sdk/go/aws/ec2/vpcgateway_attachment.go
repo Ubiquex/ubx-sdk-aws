@@ -27,7 +27,7 @@ var VpcgatewayAttachment = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpcgateway_attachment",
 	Fields: ubx.FieldMap{
 		"InternetGatewayId": ubx.FieldSpec{WireName: "internet_gateway_id"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-		"VpnGatewayId": ubx.FieldSpec{WireName: "vpn_gateway_id"},
+		"VpcId":             ubx.FieldSpec{WireName: "vpc_id"},
+		"VpnGatewayId":      ubx.FieldSpec{WireName: "vpn_gateway_id"},
 	},
 }

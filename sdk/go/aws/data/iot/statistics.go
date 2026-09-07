@@ -4,28 +4,28 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Statistics_Statistics struct {
-	Average any
-	Count any
-	Maximum any
-	Minimum any
+	Average      any
+	Count        any
+	Maximum      any
+	Minimum      any
 	StdDeviation any
-	Sum any
+	Sum          any
 	SumOfSquares any
-	Variance any
+	Variance     any
 }
 
 type StatisticsConfig struct {
 	AggregationField any
-	IndexName any
-	QueryString any
-	QueryVersion any
+	IndexName        any
+	QueryString      any
+	QueryVersion     any
 }
 
 type StatisticsAttrs struct {
 	AggregationField any
-	IndexName any
-	QueryString any
-	QueryVersion any
+	IndexName        any
+	QueryString      any
+	QueryVersion     any
 	// <p>A map of key-value pairs for all supported statistics. For issues with missing or unexpected values for this API, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html"> Fleet indexing troubleshooting guide</a>.</p>
 	Statistics any
 }
@@ -34,8 +34,8 @@ var Statistics = ubx.DataSourceBinding{
 	WireType: "aws_iot_statistics",
 	Fields: ubx.FieldMap{
 		"AggregationField": ubx.FieldSpec{WireName: "aggregation_field"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"QueryVersion": ubx.FieldSpec{WireName: "query_version"},
+		"IndexName":        ubx.FieldSpec{WireName: "index_name"},
+		"QueryString":      ubx.FieldSpec{WireName: "query_string"},
+		"QueryVersion":     ubx.FieldSpec{WireName: "query_version"},
 	},
 }

@@ -4,26 +4,26 @@ package controlplane_payment_cryptography
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ControlplanePaymentCryptographyParametersForExportConfig struct {
-	KeyMaterialType any
+	KeyMaterialType         any
 	ReuseLastGeneratedToken any
-	SigningKeyAlgorithm any
+	SigningKeyAlgorithm     any
 }
 
 type ControlplanePaymentCryptographyParametersForExportAttrs struct {
-	ExportToken any
-	KeyMaterialType any
+	ExportToken                   any
+	KeyMaterialType               any
 	ParametersValidUntilTimestamp any
-	ReuseLastGeneratedToken any
-	SigningKeyAlgorithm any
-	SigningKeyCertificate any
-	SigningKeyCertificateChain any
+	ReuseLastGeneratedToken       any
+	SigningKeyAlgorithm           any
+	SigningKeyCertificate         any
+	SigningKeyCertificateChain    any
 }
 
 var ControlplanePaymentCryptographyParametersForExport = ubx.DataSourceBinding{
 	WireType: "aws_controlplane_payment_cryptography_parameters_for_export",
 	Fields: ubx.FieldMap{
-		"KeyMaterialType": ubx.FieldSpec{WireName: "key_material_type"},
+		"KeyMaterialType":         ubx.FieldSpec{WireName: "key_material_type"},
 		"ReuseLastGeneratedToken": ubx.FieldSpec{WireName: "reuse_last_generated_token"},
-		"SigningKeyAlgorithm": ubx.FieldSpec{WireName: "signing_key_algorithm"},
+		"SigningKeyAlgorithm":     ubx.FieldSpec{WireName: "signing_key_algorithm"},
 	},
 }

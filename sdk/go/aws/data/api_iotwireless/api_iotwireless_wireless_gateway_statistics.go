@@ -8,9 +8,9 @@ type ApiIotwirelessWirelessGatewayStatisticsConfig struct {
 }
 
 type ApiIotwirelessWirelessGatewayStatisticsAttrs struct {
-	ConnectionStatus any
+	ConnectionStatus     any
 	LastUplinkReceivedAt any
-	WirelessGatewayId any
+	WirelessGatewayId    any
 }
 
 var ApiIotwirelessWirelessGatewayStatistics = ubx.DataSourceBinding{

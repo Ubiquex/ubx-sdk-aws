@@ -4,19 +4,19 @@ package devopsagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentSpace_OperatorApp_Iam struct {
-	CreatedAt any
+	CreatedAt          any
 	OperatorAppRoleArn any
-	UpdatedAt any
+	UpdatedAt          any
 }
 
 type AgentSpace_OperatorApp_Idc struct {
-	CreatedAt any
+	CreatedAt         any
 	IdcApplicationArn any
 	// The Amazon Resource Name (ARN) of the IAM Identity Center (IdC) instance used by the operator application in the agent space for its identity configuration. (AI-inferred)
 	IdcInstanceArn any
 	// The Amazon Resource Name (ARN) of the IAM role that the operator application assumes within the AWS IAM Identity Center (IDC) configuration for the agent space. (AI-inferred)
 	OperatorAppRoleArn any
-	UpdatedAt any
+	UpdatedAt          any
 }
 
 type AgentSpace_OperatorApp struct {
@@ -26,14 +26,14 @@ type AgentSpace_OperatorApp struct {
 }
 
 type AgentSpace_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AgentSpace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AgentSpaceConfig struct {
 	// The description of the AgentSpace.
@@ -75,13 +75,13 @@ var AgentSpace = ubx.ResourceBinding{
 	WireType: "aws_dev_ops_agent_agent_space",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Locale":      ubx.FieldSpec{WireName: "locale"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AgentSpace_TagsFields,
+			Kind:     "list",
+			Fields:   AgentSpace_TagsFields,
 		},
 	},
 }

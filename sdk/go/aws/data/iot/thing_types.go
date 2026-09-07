@@ -4,15 +4,15 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThingTypes_ThingTypes_ThingTypeMetadata struct {
-	CreationDate any
-	Deprecated any
+	CreationDate    any
+	Deprecated      any
 	DeprecationDate any
 }
 
 type ThingTypes_ThingTypes_ThingTypeProperties_Mqtt5Configuration_PropagatingAttributes struct {
 	ConnectionAttribute any
-	ThingAttribute any
-	UserPropertyKey any
+	ThingAttribute      any
+	UserPropertyKey     any
 }
 
 type ThingTypes_ThingTypes_ThingTypeProperties_Mqtt5Configuration struct {
@@ -20,36 +20,36 @@ type ThingTypes_ThingTypes_ThingTypeProperties_Mqtt5Configuration struct {
 }
 
 type ThingTypes_ThingTypes_ThingTypeProperties struct {
-	Mqtt5Configuration any
+	Mqtt5Configuration   any
 	SearchableAttributes any
 	ThingTypeDescription any
 }
 
 type ThingTypes_ThingTypes struct {
-	ThingTypeArn any
-	ThingTypeMetadata any
-	ThingTypeName any
+	ThingTypeArn        any
+	ThingTypeMetadata   any
+	ThingTypeName       any
 	ThingTypeProperties any
 }
 
 type ThingTypesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	ThingTypeName any
 }
 
 type ThingTypesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	ThingTypeName any
-	ThingTypes any
+	ThingTypes    any
 }
 
 var ThingTypes = ubx.DataSourceBinding{
 	WireType: "aws_iot_thing_types",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"ThingTypeName": ubx.FieldSpec{WireName: "thing_type_name"},
 	},
 }

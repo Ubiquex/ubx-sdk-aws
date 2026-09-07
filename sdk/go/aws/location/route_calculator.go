@@ -11,9 +11,9 @@ type RouteCalculator_Tags struct {
 }
 
 var RouteCalculator_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RouteCalculatorConfig struct {
 	// The name of the route calculator, which is required, must be unique within your AWS account, and can only contain alphanumeric characters, hyphens, and underscores, up to 100 characters. (AI-inferred)
@@ -53,13 +53,13 @@ var RouteCalculator = ubx.ResourceBinding{
 	WireType: "aws_location_route_calculator",
 	Fields: ubx.FieldMap{
 		"CalculatorName": ubx.FieldSpec{WireName: "calculator_name"},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
+		"DataSource":     ubx.FieldSpec{WireName: "data_source"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"PricingPlan":    ubx.FieldSpec{WireName: "pricing_plan"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RouteCalculator_TagsFields,
+			Kind:     "list",
+			Fields:   RouteCalculator_TagsFields,
 		},
 	},
 }

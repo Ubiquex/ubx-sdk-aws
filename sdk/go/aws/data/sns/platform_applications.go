@@ -4,7 +4,7 @@ package sns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlatformApplications_PlatformApplications struct {
-	Attributes any
+	Attributes             any
 	PlatformApplicationArn any
 }
 
@@ -13,7 +13,7 @@ type PlatformApplicationsConfig struct {
 }
 
 type PlatformApplicationsAttrs struct {
-	NextToken any
+	NextToken            any
 	PlatformApplications any
 }
 

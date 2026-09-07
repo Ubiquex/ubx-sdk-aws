@@ -95,7 +95,7 @@ type Budget_Budget struct {
 	CostTypes any
 	// Specifies a logical expression of key-value filters (such as service, tag, or account) and an operator (AND or OR) that determines which cost and usage data is included in the budget. (AI-inferred)
 	FilterExpression any
-	Metrics any
+	Metrics          any
 	// Specifies budget limits for future cost budget periods, mapping each period's start date (YYYY-MM-DD) to a budget limit amount and unit for that period. (AI-inferred)
 	PlannedBudgetLimits any
 	// Specifies the start and end dates that determine the period covered by the budget. (AI-inferred)
@@ -137,133 +137,133 @@ type Budget_ResourceTags struct {
 }
 
 var Budget_Budget_AutoAdjustData_HistoricalOptionsFields = ubx.FieldMap{
-		"BudgetAdjustmentPeriod": ubx.FieldSpec{WireName: "budget_adjustment_period"},
-	}
+	"BudgetAdjustmentPeriod": ubx.FieldSpec{WireName: "budget_adjustment_period"},
+}
 
 var Budget_Budget_AutoAdjustDataFields = ubx.FieldMap{
-		"AutoAdjustType": ubx.FieldSpec{WireName: "auto_adjust_type"},
-		"HistoricalOptions": ubx.FieldSpec{
-			WireName: "historical_options",
-			Kind: "object",
-			Fields: Budget_Budget_AutoAdjustData_HistoricalOptionsFields,
-		},
-	}
+	"AutoAdjustType": ubx.FieldSpec{WireName: "auto_adjust_type"},
+	"HistoricalOptions": ubx.FieldSpec{
+		WireName: "historical_options",
+		Kind:     "object",
+		Fields:   Budget_Budget_AutoAdjustData_HistoricalOptionsFields,
+	},
+}
 
 var Budget_Budget_BudgetLimitFields = ubx.FieldMap{
-		"Amount": ubx.FieldSpec{WireName: "amount"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Amount": ubx.FieldSpec{WireName: "amount"},
+	"Unit":   ubx.FieldSpec{WireName: "unit"},
+}
 
 var Budget_Budget_CostTypesFields = ubx.FieldMap{
-		"IncludeCredit": ubx.FieldSpec{WireName: "include_credit"},
-		"IncludeDiscount": ubx.FieldSpec{WireName: "include_discount"},
-		"IncludeOtherSubscription": ubx.FieldSpec{WireName: "include_other_subscription"},
-		"IncludeRecurring": ubx.FieldSpec{WireName: "include_recurring"},
-		"IncludeRefund": ubx.FieldSpec{WireName: "include_refund"},
-		"IncludeSubscription": ubx.FieldSpec{WireName: "include_subscription"},
-		"IncludeSupport": ubx.FieldSpec{WireName: "include_support"},
-		"IncludeTax": ubx.FieldSpec{WireName: "include_tax"},
-		"IncludeUpfront": ubx.FieldSpec{WireName: "include_upfront"},
-		"UseAmortized": ubx.FieldSpec{WireName: "use_amortized"},
-		"UseBlended": ubx.FieldSpec{WireName: "use_blended"},
-	}
+	"IncludeCredit":            ubx.FieldSpec{WireName: "include_credit"},
+	"IncludeDiscount":          ubx.FieldSpec{WireName: "include_discount"},
+	"IncludeOtherSubscription": ubx.FieldSpec{WireName: "include_other_subscription"},
+	"IncludeRecurring":         ubx.FieldSpec{WireName: "include_recurring"},
+	"IncludeRefund":            ubx.FieldSpec{WireName: "include_refund"},
+	"IncludeSubscription":      ubx.FieldSpec{WireName: "include_subscription"},
+	"IncludeSupport":           ubx.FieldSpec{WireName: "include_support"},
+	"IncludeTax":               ubx.FieldSpec{WireName: "include_tax"},
+	"IncludeUpfront":           ubx.FieldSpec{WireName: "include_upfront"},
+	"UseAmortized":             ubx.FieldSpec{WireName: "use_amortized"},
+	"UseBlended":               ubx.FieldSpec{WireName: "use_blended"},
+}
 
 var Budget_Budget_FilterExpression_CostCategoriesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":          ubx.FieldSpec{WireName: "key"},
+	"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
+	"Values":       ubx.FieldSpec{WireName: "values"},
+}
 
 var Budget_Budget_FilterExpressionFields = ubx.FieldMap{
-		"And": ubx.FieldSpec{WireName: "and"},
-		"CostCategories": ubx.FieldSpec{
-			WireName: "cost_categories",
-			Kind: "object",
-			Fields: Budget_Budget_FilterExpression_CostCategoriesFields,
-		},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "object",
-			Fields: Budget_Budget_FilterExpression_CostCategoriesFields,
-		},
-		"Not": ubx.FieldSpec{WireName: "not"},
-		"Or": ubx.FieldSpec{WireName: "or"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: Budget_Budget_FilterExpression_CostCategoriesFields,
-		},
-	}
+	"And": ubx.FieldSpec{WireName: "and"},
+	"CostCategories": ubx.FieldSpec{
+		WireName: "cost_categories",
+		Kind:     "object",
+		Fields:   Budget_Budget_FilterExpression_CostCategoriesFields,
+	},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "object",
+		Fields:   Budget_Budget_FilterExpression_CostCategoriesFields,
+	},
+	"Not": ubx.FieldSpec{WireName: "not"},
+	"Or":  ubx.FieldSpec{WireName: "or"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   Budget_Budget_FilterExpression_CostCategoriesFields,
+	},
+}
 
 var Budget_Budget_TimePeriodFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var Budget_BudgetFields = ubx.FieldMap{
-		"AutoAdjustData": ubx.FieldSpec{
-			WireName: "auto_adjust_data",
-			Kind: "object",
-			Fields: Budget_Budget_AutoAdjustDataFields,
-		},
-		"BillingViewArn": ubx.FieldSpec{WireName: "billing_view_arn"},
-		"BudgetLimit": ubx.FieldSpec{
-			WireName: "budget_limit",
-			Kind: "object",
-			Fields: Budget_Budget_BudgetLimitFields,
-		},
-		"BudgetName": ubx.FieldSpec{WireName: "budget_name"},
-		"BudgetType": ubx.FieldSpec{WireName: "budget_type"},
-		"CostFilters": ubx.FieldSpec{WireName: "cost_filters"},
-		"CostTypes": ubx.FieldSpec{
-			WireName: "cost_types",
-			Kind: "object",
-			Fields: Budget_Budget_CostTypesFields,
-		},
-		"FilterExpression": ubx.FieldSpec{
-			WireName: "filter_expression",
-			Kind: "object",
-			Fields: Budget_Budget_FilterExpressionFields,
-		},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"PlannedBudgetLimits": ubx.FieldSpec{WireName: "planned_budget_limits"},
-		"TimePeriod": ubx.FieldSpec{
-			WireName: "time_period",
-			Kind: "object",
-			Fields: Budget_Budget_TimePeriodFields,
-		},
-		"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
-	}
+	"AutoAdjustData": ubx.FieldSpec{
+		WireName: "auto_adjust_data",
+		Kind:     "object",
+		Fields:   Budget_Budget_AutoAdjustDataFields,
+	},
+	"BillingViewArn": ubx.FieldSpec{WireName: "billing_view_arn"},
+	"BudgetLimit": ubx.FieldSpec{
+		WireName: "budget_limit",
+		Kind:     "object",
+		Fields:   Budget_Budget_BudgetLimitFields,
+	},
+	"BudgetName":  ubx.FieldSpec{WireName: "budget_name"},
+	"BudgetType":  ubx.FieldSpec{WireName: "budget_type"},
+	"CostFilters": ubx.FieldSpec{WireName: "cost_filters"},
+	"CostTypes": ubx.FieldSpec{
+		WireName: "cost_types",
+		Kind:     "object",
+		Fields:   Budget_Budget_CostTypesFields,
+	},
+	"FilterExpression": ubx.FieldSpec{
+		WireName: "filter_expression",
+		Kind:     "object",
+		Fields:   Budget_Budget_FilterExpressionFields,
+	},
+	"Metrics":             ubx.FieldSpec{WireName: "metrics"},
+	"PlannedBudgetLimits": ubx.FieldSpec{WireName: "planned_budget_limits"},
+	"TimePeriod": ubx.FieldSpec{
+		WireName: "time_period",
+		Kind:     "object",
+		Fields:   Budget_Budget_TimePeriodFields,
+	},
+	"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
+}
 
 var Budget_NotificationsWithSubscribers_NotificationFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"NotificationType": ubx.FieldSpec{WireName: "notification_type"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"ThresholdType": ubx.FieldSpec{WireName: "threshold_type"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"NotificationType":   ubx.FieldSpec{WireName: "notification_type"},
+	"Threshold":          ubx.FieldSpec{WireName: "threshold"},
+	"ThresholdType":      ubx.FieldSpec{WireName: "threshold_type"},
+}
 
 var Budget_NotificationsWithSubscribers_SubscribersFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"SubscriptionType": ubx.FieldSpec{WireName: "subscription_type"},
-	}
+	"Address":          ubx.FieldSpec{WireName: "address"},
+	"SubscriptionType": ubx.FieldSpec{WireName: "subscription_type"},
+}
 
 var Budget_NotificationsWithSubscribersFields = ubx.FieldMap{
-		"Notification": ubx.FieldSpec{
-			WireName: "notification",
-			Kind: "object",
-			Fields: Budget_NotificationsWithSubscribers_NotificationFields,
-		},
-		"Subscribers": ubx.FieldSpec{
-			WireName: "subscribers",
-			Kind: "list",
-			Fields: Budget_NotificationsWithSubscribers_SubscribersFields,
-		},
-	}
+	"Notification": ubx.FieldSpec{
+		WireName: "notification",
+		Kind:     "object",
+		Fields:   Budget_NotificationsWithSubscribers_NotificationFields,
+	},
+	"Subscribers": ubx.FieldSpec{
+		WireName: "subscribers",
+		Kind:     "list",
+		Fields:   Budget_NotificationsWithSubscribers_SubscribersFields,
+	},
+}
 
 var Budget_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BudgetConfig struct {
 	// The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred)
@@ -290,18 +290,18 @@ var Budget = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Budget": ubx.FieldSpec{
 			WireName: "budget",
-			Kind: "object",
-			Fields: Budget_BudgetFields,
+			Kind:     "object",
+			Fields:   Budget_BudgetFields,
 		},
 		"NotificationsWithSubscribers": ubx.FieldSpec{
 			WireName: "notifications_with_subscribers",
-			Kind: "list",
-			Fields: Budget_NotificationsWithSubscribersFields,
+			Kind:     "list",
+			Fields:   Budget_NotificationsWithSubscribersFields,
 		},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Budget_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   Budget_ResourceTagsFields,
 		},
 	},
 }

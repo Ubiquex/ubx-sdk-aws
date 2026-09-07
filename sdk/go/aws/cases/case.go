@@ -10,9 +10,9 @@ type Case_Tags struct {
 }
 
 var Case_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CaseConfig struct {
 	// The full customer profile ARN for the case.
@@ -48,13 +48,13 @@ var Case = ubx.ResourceBinding{
 	WireType: "aws_cases_case",
 	Fields: ubx.FieldMap{
 		"CustomerId": ubx.FieldSpec{WireName: "customer_id"},
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
+		"DomainId":   ubx.FieldSpec{WireName: "domain_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Case_TagsFields,
+			Kind:     "list",
+			Fields:   Case_TagsFields,
 		},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Title":      ubx.FieldSpec{WireName: "title"},
 	},
 }

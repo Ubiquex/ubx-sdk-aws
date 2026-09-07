@@ -13,31 +13,31 @@ type ManagedblockchainQueryTokenBalances_TokenBalances_AtBlockchainInstant struc
 
 type ManagedblockchainQueryTokenBalances_TokenBalances_TokenIdentifier struct {
 	ContractAddress any
-	Network any
-	TokenId any
+	Network         any
+	TokenId         any
 }
 
 type ManagedblockchainQueryTokenBalances_TokenBalances struct {
 	AtBlockchainInstant any
-	Balance any
-	LastUpdatedTime any
-	OwnerIdentifier any
-	TokenIdentifier any
+	Balance             any
+	LastUpdatedTime     any
+	OwnerIdentifier     any
+	TokenIdentifier     any
 }
 
 var ManagedblockchainQueryTokenBalances_OwnerFilterFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+}
 
 var ManagedblockchainQueryTokenBalances_TokenBalances_TokenIdentifierFields = ubx.FieldMap{
-		"ContractAddress": ubx.FieldSpec{WireName: "contract_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"TokenId": ubx.FieldSpec{WireName: "token_id"},
-	}
+	"ContractAddress": ubx.FieldSpec{WireName: "contract_address"},
+	"Network":         ubx.FieldSpec{WireName: "network"},
+	"TokenId":         ubx.FieldSpec{WireName: "token_id"},
+}
 
 type ManagedblockchainQueryTokenBalancesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The container for the owner information to filter by.</p>
 	OwnerFilter any
 	// <p>The container of the token filter like the contract address on a given blockchain network or a unique token identifier on a given blockchain network.</p> <note> <p>You must always specify the network property of this container when using this operation.</p> </note>
@@ -46,9 +46,9 @@ type ManagedblockchainQueryTokenBalancesConfig struct {
 
 type ManagedblockchainQueryTokenBalancesAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The container for the owner information to filter by.</p>
-	OwnerFilter any
+	OwnerFilter   any
 	TokenBalances any
 	// <p>The container of the token filter like the contract address on a given blockchain network or a unique token identifier on a given blockchain network.</p> <note> <p>You must always specify the network property of this container when using this operation.</p> </note>
 	TokenFilter any
@@ -58,16 +58,16 @@ var ManagedblockchainQueryTokenBalances = ubx.DataSourceBinding{
 	WireType: "aws_managedblockchain_query_token_balances",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"OwnerFilter": ubx.FieldSpec{
 			WireName: "owner_filter",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTokenBalances_OwnerFilterFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTokenBalances_OwnerFilterFields,
 		},
 		"TokenFilter": ubx.FieldSpec{
 			WireName: "token_filter",
-			Kind: "object",
-			Fields: ManagedblockchainQueryTokenBalances_TokenBalances_TokenIdentifierFields,
+			Kind:     "object",
+			Fields:   ManagedblockchainQueryTokenBalances_TokenBalances_TokenIdentifierFields,
 		},
 	},
 }

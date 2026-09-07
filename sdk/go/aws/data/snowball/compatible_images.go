@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CompatibleImages_CompatibleImages struct {
 	AmiId any
-	Name any
+	Name  any
 }
 
 type CompatibleImagesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CompatibleImagesAttrs struct {
 	CompatibleImages any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var CompatibleImages = ubx.DataSourceBinding{
 	WireType: "aws_snowball_compatible_images",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

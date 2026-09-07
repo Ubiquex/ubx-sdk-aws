@@ -4,25 +4,25 @@ package catalog_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogMarketplaceEntityConfig struct {
-	Catalog any
+	Catalog  any
 	EntityId any
 }
 
 type CatalogMarketplaceEntityAttrs struct {
-	Catalog any
-	Details any
-	DetailsDocument any
-	EntityArn any
-	EntityId any
+	Catalog          any
+	Details          any
+	DetailsDocument  any
+	EntityArn        any
+	EntityId         any
 	EntityIdentifier any
-	EntityType any
+	EntityType       any
 	LastModifiedDate any
 }
 
 var CatalogMarketplaceEntity = ubx.DataSourceBinding{
 	WireType: "aws_catalog_marketplace_entity",
 	Fields: ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
+		"Catalog":  ubx.FieldSpec{WireName: "catalog"},
 		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
 	},
 }

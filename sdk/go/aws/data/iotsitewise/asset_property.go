@@ -9,7 +9,7 @@ type AssetProperty_AssetProperty_Notification struct {
 }
 
 type AssetProperty_AssetProperty_Path struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -36,19 +36,19 @@ type AssetProperty_AssetProperty_Type_Metric_ProcessingConfig struct {
 }
 
 type AssetProperty_AssetProperty_Type_Metric_Variables_Value struct {
-	HierarchyId any
-	PropertyId any
+	HierarchyId  any
+	PropertyId   any
 	PropertyPath any
 }
 
 type AssetProperty_AssetProperty_Type_Metric_Variables struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type AssetProperty_AssetProperty_Type_Metric_Window_Tumbling struct {
 	Interval any
-	Offset any
+	Offset   any
 }
 
 type AssetProperty_AssetProperty_Type_Metric_Window struct {
@@ -60,7 +60,7 @@ type AssetProperty_AssetProperty_Type_Metric struct {
 	Expression any
 	// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
 	ProcessingConfig any
-	Variables any
+	Variables        any
 	// <p>Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).</p>
 	Window any
 }
@@ -75,7 +75,7 @@ type AssetProperty_AssetProperty_Type_Transform struct {
 	Expression any
 	// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
 	ProcessingConfig any
-	Variables any
+	Variables        any
 }
 
 type AssetProperty_AssetProperty_Type struct {
@@ -90,14 +90,14 @@ type AssetProperty_AssetProperty_Type struct {
 }
 
 type AssetProperty_AssetProperty struct {
-	Alias any
-	DataType any
+	Alias      any
+	DataType   any
 	ExternalId any
-	Id any
-	Name any
+	Id         any
+	Name       any
 	// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 	Notification any
-	Path any
+	Path         any
 	// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
 	Type any
 	Unit any
@@ -106,33 +106,33 @@ type AssetProperty_AssetProperty struct {
 type AssetProperty_CompositeModel struct {
 	// <p>Contains asset property information.</p>
 	AssetProperty any
-	ExternalId any
-	Id any
-	Name any
-	Type any
+	ExternalId    any
+	Id            any
+	Name          any
+	Type          any
 }
 
 type AssetPropertyConfig struct {
-	AssetId any
+	AssetId    any
 	PropertyId any
 }
 
 type AssetPropertyAttrs struct {
 	AssetExternalId any
-	AssetId any
-	AssetModelId any
-	AssetName any
+	AssetId         any
+	AssetModelId    any
+	AssetName       any
 	// <p>Contains asset property information.</p>
 	AssetProperty any
 	// <p>Contains information about a composite model property on an asset.</p>
 	CompositeModel any
-	PropertyId any
+	PropertyId     any
 }
 
 var AssetProperty = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_asset_property",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
+		"AssetId":    ubx.FieldSpec{WireName: "asset_id"},
 		"PropertyId": ubx.FieldSpec{WireName: "property_id"},
 	},
 }

@@ -10,9 +10,9 @@ type MultiRegionCluster_Tags struct {
 }
 
 var MultiRegionCluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MultiRegionClusterConfig struct {
 	// Description of the multi region cluster.
@@ -69,18 +69,18 @@ type MultiRegionClusterAttrs struct {
 var MultiRegionCluster = ubx.ResourceBinding{
 	WireType: "aws_memory_db_multi_region_cluster",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"MultiRegionClusterNameSuffix": ubx.FieldSpec{WireName: "multi_region_cluster_name_suffix"},
+		"Description":                   ubx.FieldSpec{WireName: "description"},
+		"Engine":                        ubx.FieldSpec{WireName: "engine"},
+		"EngineVersion":                 ubx.FieldSpec{WireName: "engine_version"},
+		"MultiRegionClusterNameSuffix":  ubx.FieldSpec{WireName: "multi_region_cluster_name_suffix"},
 		"MultiRegionParameterGroupName": ubx.FieldSpec{WireName: "multi_region_parameter_group_name"},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
-		"NumShards": ubx.FieldSpec{WireName: "num_shards"},
-		"Tlsenabled": ubx.FieldSpec{WireName: "tlsenabled"},
+		"NodeType":                      ubx.FieldSpec{WireName: "node_type"},
+		"NumShards":                     ubx.FieldSpec{WireName: "num_shards"},
+		"Tlsenabled":                    ubx.FieldSpec{WireName: "tlsenabled"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MultiRegionCluster_TagsFields,
+			Kind:     "list",
+			Fields:   MultiRegionCluster_TagsFields,
 		},
 		"UpdateStrategy": ubx.FieldSpec{WireName: "update_strategy"},
 	},

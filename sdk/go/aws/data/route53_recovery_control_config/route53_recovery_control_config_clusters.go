@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route53RecoveryControlConfigClusters_Clusters_ClusterEndpoints struct {
 	Endpoint any
-	Region any
+	Region   any
 }
 
 type Route53RecoveryControlConfigClusters_Clusters struct {
-	ClusterArn any
+	ClusterArn       any
 	ClusterEndpoints any
-	Name any
-	NetworkType any
-	Owner any
-	Status any
+	Name             any
+	NetworkType      any
+	Owner            any
+	Status           any
 }
 
 type Route53RecoveryControlConfigClustersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type Route53RecoveryControlConfigClustersAttrs struct {
-	Clusters any
+	Clusters   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Route53RecoveryControlConfigClusters = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_control_config_clusters",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

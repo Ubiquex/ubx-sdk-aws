@@ -4,31 +4,31 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedPoliciesInPermissionSet_AttachedManagedPolicies struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type ManagedPoliciesInPermissionSetConfig struct {
-	InstanceArn any
-	MaxResults any
-	NextToken any
+	InstanceArn      any
+	MaxResults       any
+	NextToken        any
 	PermissionSetArn any
 }
 
 type ManagedPoliciesInPermissionSetAttrs struct {
 	AttachedManagedPolicies any
-	InstanceArn any
-	MaxResults any
-	NextToken any
-	PermissionSetArn any
+	InstanceArn             any
+	MaxResults              any
+	NextToken               any
+	PermissionSetArn        any
 }
 
 var ManagedPoliciesInPermissionSet = ubx.DataSourceBinding{
 	WireType: "aws_sso_managed_policies_in_permission_set",
 	Fields: ubx.FieldMap{
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceArn":      ubx.FieldSpec{WireName: "instance_arn"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"PermissionSetArn": ubx.FieldSpec{WireName: "permission_set_arn"},
 	},
 }

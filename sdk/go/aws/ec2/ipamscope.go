@@ -11,19 +11,19 @@ type Ipamscope_ExternalAuthorityConfiguration struct {
 }
 
 type Ipamscope_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Ipamscope_ExternalAuthorityConfigurationFields = ubx.FieldMap{
-		"ExternalResourceIdentifier": ubx.FieldSpec{WireName: "external_resource_identifier"},
-		"IpamScopeExternalAuthorityType": ubx.FieldSpec{WireName: "ipam_scope_external_authority_type"},
-	}
+	"ExternalResourceIdentifier":     ubx.FieldSpec{WireName: "external_resource_identifier"},
+	"IpamScopeExternalAuthorityType": ubx.FieldSpec{WireName: "ipam_scope_external_authority_type"},
+}
 
 var Ipamscope_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpamscopeConfig struct {
 	// A user-defined description for the IPAM scope. (AI-inferred)
@@ -65,14 +65,14 @@ var Ipamscope = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExternalAuthorityConfiguration": ubx.FieldSpec{
 			WireName: "external_authority_configuration",
-			Kind: "object",
-			Fields: Ipamscope_ExternalAuthorityConfigurationFields,
+			Kind:     "object",
+			Fields:   Ipamscope_ExternalAuthorityConfigurationFields,
 		},
 		"IpamId": ubx.FieldSpec{WireName: "ipam_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Ipamscope_TagsFields,
+			Kind:     "list",
+			Fields:   Ipamscope_TagsFields,
 		},
 	},
 }

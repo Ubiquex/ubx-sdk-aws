@@ -9,7 +9,7 @@ type EmrContainersTagsForResourceConfig struct {
 
 type EmrContainersTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var EmrContainersTagsForResource = ubx.DataSourceBinding{

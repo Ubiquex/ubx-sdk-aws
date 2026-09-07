@@ -4,24 +4,24 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Buckets_Buckets_JobDetails struct {
-	IsDefinedInJob any
+	IsDefinedInJob   any
 	IsMonitoredByJob any
-	LastJobId any
-	LastJobRunTime any
+	LastJobId        any
+	LastJobRunTime   any
 }
 
 type Buckets_Buckets_ObjectCountByEncryptionType struct {
 	CustomerManaged any
-	KmsManaged any
-	S3Managed any
-	Unencrypted any
-	Unknown any
+	KmsManaged      any
+	S3Managed       any
+	Unencrypted     any
+	Unknown         any
 }
 
 type Buckets_Buckets_PublicAccess_PermissionConfiguration_AccountLevelPermissions_BlockPublicAccess struct {
-	BlockPublicAcls any
-	BlockPublicPolicy any
-	IgnorePublicAcls any
+	BlockPublicAcls       any
+	BlockPublicPolicy     any
+	IgnorePublicAcls      any
 	RestrictPublicBuckets any
 }
 
@@ -30,113 +30,113 @@ type Buckets_Buckets_PublicAccess_PermissionConfiguration_AccountLevelPermission
 }
 
 type Buckets_Buckets_PublicAccess_PermissionConfiguration_BucketLevelPermissions_AccessControlList struct {
-	AllowsPublicReadAccess any
+	AllowsPublicReadAccess  any
 	AllowsPublicWriteAccess any
 }
 
 type Buckets_Buckets_PublicAccess_PermissionConfiguration_BucketLevelPermissions struct {
 	AccessControlList any
 	BlockPublicAccess any
-	BucketPolicy any
+	BucketPolicy      any
 }
 
 type Buckets_Buckets_PublicAccess_PermissionConfiguration struct {
 	AccountLevelPermissions any
-	BucketLevelPermissions any
+	BucketLevelPermissions  any
 }
 
 type Buckets_Buckets_PublicAccess struct {
-	EffectivePermission any
+	EffectivePermission     any
 	PermissionConfiguration any
 }
 
 type Buckets_Buckets_ReplicationDetails struct {
-	Replicated any
+	Replicated           any
 	ReplicatedExternally any
-	ReplicationAccounts any
+	ReplicationAccounts  any
 }
 
 type Buckets_Buckets_ServerSideEncryption struct {
 	KmsMasterKeyId any
-	Type any
+	Type           any
 }
 
 type Buckets_Buckets_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Buckets_Buckets_UnclassifiableObjectCount struct {
-	FileType any
+	FileType     any
 	StorageClass any
-	Total any
+	Total        any
 }
 
 type Buckets_Buckets struct {
-	AccountId any
-	AllowsUnencryptedObjectUploads any
+	AccountId                          any
+	AllowsUnencryptedObjectUploads     any
 	AutomatedDiscoveryMonitoringStatus any
-	BucketArn any
-	BucketCreatedAt any
-	BucketName any
-	ClassifiableObjectCount any
-	ClassifiableSizeInBytes any
-	ErrorCode any
-	ErrorMessage any
-	JobDetails any
-	LastAutomatedDiscoveryTime any
-	LastUpdated any
-	ObjectCount any
-	ObjectCountByEncryptionType any
-	PublicAccess any
-	Region any
-	ReplicationDetails any
-	SensitivityScore any
-	ServerSideEncryption any
-	SharedAccess any
-	SizeInBytes any
-	SizeInBytesCompressed any
-	Tags any
-	UnclassifiableObjectCount any
-	UnclassifiableObjectSizeInBytes any
-	Versioning any
+	BucketArn                          any
+	BucketCreatedAt                    any
+	BucketName                         any
+	ClassifiableObjectCount            any
+	ClassifiableSizeInBytes            any
+	ErrorCode                          any
+	ErrorMessage                       any
+	JobDetails                         any
+	LastAutomatedDiscoveryTime         any
+	LastUpdated                        any
+	ObjectCount                        any
+	ObjectCountByEncryptionType        any
+	PublicAccess                       any
+	Region                             any
+	ReplicationDetails                 any
+	SensitivityScore                   any
+	ServerSideEncryption               any
+	SharedAccess                       any
+	SizeInBytes                        any
+	SizeInBytesCompressed              any
+	Tags                               any
+	UnclassifiableObjectCount          any
+	UnclassifiableObjectSizeInBytes    any
+	Versioning                         any
 }
 
 type Buckets_Criteria struct {
-	Eq any
-	Gt any
-	Gte any
-	Lt any
-	Lte any
-	Neq any
+	Eq     any
+	Gt     any
+	Gte    any
+	Lt     any
+	Lte    any
+	Neq    any
 	Prefix any
 }
 
 type Buckets_SortCriteria struct {
 	AttributeName any
-	OrderBy any
+	OrderBy       any
 }
 
 var Buckets_CriteriaFields = ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Gt": ubx.FieldSpec{WireName: "gt"},
-		"Gte": ubx.FieldSpec{WireName: "gte"},
-		"Lt": ubx.FieldSpec{WireName: "lt"},
-		"Lte": ubx.FieldSpec{WireName: "lte"},
-		"Neq": ubx.FieldSpec{WireName: "neq"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Eq":     ubx.FieldSpec{WireName: "eq"},
+	"Gt":     ubx.FieldSpec{WireName: "gt"},
+	"Gte":    ubx.FieldSpec{WireName: "gte"},
+	"Lt":     ubx.FieldSpec{WireName: "lt"},
+	"Lte":    ubx.FieldSpec{WireName: "lte"},
+	"Neq":    ubx.FieldSpec{WireName: "neq"},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Buckets_SortCriteriaFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+}
 
 type BucketsConfig struct {
 	// <p>Specifies, as a map, one or more property-based conditions that filter the results of a query for information about S3 buckets.</p>
-	Criteria any
+	Criteria   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies criteria for sorting the results of a query for information about S3 buckets.</p>
 	SortCriteria any
 }
@@ -144,9 +144,9 @@ type BucketsConfig struct {
 type BucketsAttrs struct {
 	Buckets any
 	// <p>Specifies, as a map, one or more property-based conditions that filter the results of a query for information about S3 buckets.</p>
-	Criteria any
+	Criteria   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies criteria for sorting the results of a query for information about S3 buckets.</p>
 	SortCriteria any
 }
@@ -156,15 +156,15 @@ var Buckets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Criteria": ubx.FieldSpec{
 			WireName: "criteria",
-			Kind: "map",
-			Fields: Buckets_CriteriaFields,
+			Kind:     "map",
+			Fields:   Buckets_CriteriaFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "object",
-			Fields: Buckets_SortCriteriaFields,
+			Kind:     "object",
+			Fields:   Buckets_SortCriteriaFields,
 		},
 	},
 }

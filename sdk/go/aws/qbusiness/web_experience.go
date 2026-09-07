@@ -40,47 +40,47 @@ type WebExperience_IdentityProviderConfiguration struct {
 
 type WebExperience_Tags struct {
 	// Defines the tag key for a key-value pair assigned to an AWS Q Business web experience, enabling resource categorization, cost management, and access control through AWS tagging. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var WebExperience_BrowserExtensionConfigurationFields = ubx.FieldMap{
-		"EnabledBrowserExtensions": ubx.FieldSpec{WireName: "enabled_browser_extensions"},
-	}
+	"EnabledBrowserExtensions": ubx.FieldSpec{WireName: "enabled_browser_extensions"},
+}
 
 var WebExperience_CustomizationConfigurationFields = ubx.FieldMap{
-		"CustomCssurl": ubx.FieldSpec{WireName: "custom_cssurl"},
-		"FaviconUrl": ubx.FieldSpec{WireName: "favicon_url"},
-		"FontUrl": ubx.FieldSpec{WireName: "font_url"},
-		"LogoUrl": ubx.FieldSpec{WireName: "logo_url"},
-	}
+	"CustomCssurl": ubx.FieldSpec{WireName: "custom_cssurl"},
+	"FaviconUrl":   ubx.FieldSpec{WireName: "favicon_url"},
+	"FontUrl":      ubx.FieldSpec{WireName: "font_url"},
+	"LogoUrl":      ubx.FieldSpec{WireName: "logo_url"},
+}
 
 var WebExperience_IdentityProviderConfiguration_OpenIdconnectConfigurationFields = ubx.FieldMap{
-		"SecretsArn": ubx.FieldSpec{WireName: "secrets_arn"},
-		"SecretsRole": ubx.FieldSpec{WireName: "secrets_role"},
-	}
+	"SecretsArn":  ubx.FieldSpec{WireName: "secrets_arn"},
+	"SecretsRole": ubx.FieldSpec{WireName: "secrets_role"},
+}
 
 var WebExperience_IdentityProviderConfiguration_SamlConfigurationFields = ubx.FieldMap{
-		"AuthenticationUrl": ubx.FieldSpec{WireName: "authentication_url"},
-	}
+	"AuthenticationUrl": ubx.FieldSpec{WireName: "authentication_url"},
+}
 
 var WebExperience_IdentityProviderConfigurationFields = ubx.FieldMap{
-		"OpenIdconnectConfiguration": ubx.FieldSpec{
-			WireName: "open_idconnect_configuration",
-			Kind: "object",
-			Fields: WebExperience_IdentityProviderConfiguration_OpenIdconnectConfigurationFields,
-		},
-		"SamlConfiguration": ubx.FieldSpec{
-			WireName: "saml_configuration",
-			Kind: "object",
-			Fields: WebExperience_IdentityProviderConfiguration_SamlConfigurationFields,
-		},
-	}
+	"OpenIdconnectConfiguration": ubx.FieldSpec{
+		WireName: "open_idconnect_configuration",
+		Kind:     "object",
+		Fields:   WebExperience_IdentityProviderConfiguration_OpenIdconnectConfigurationFields,
+	},
+	"SamlConfiguration": ubx.FieldSpec{
+		WireName: "saml_configuration",
+		Kind:     "object",
+		Fields:   WebExperience_IdentityProviderConfiguration_SamlConfigurationFields,
+	},
+}
 
 var WebExperience_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WebExperienceConfig struct {
 	// The unique identifier of the AWS QBusiness application to which this web experience is attached. (AI-inferred)
@@ -150,29 +150,29 @@ var WebExperience = ubx.ResourceBinding{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"BrowserExtensionConfiguration": ubx.FieldSpec{
 			WireName: "browser_extension_configuration",
-			Kind: "object",
-			Fields: WebExperience_BrowserExtensionConfigurationFields,
+			Kind:     "object",
+			Fields:   WebExperience_BrowserExtensionConfigurationFields,
 		},
 		"CustomizationConfiguration": ubx.FieldSpec{
 			WireName: "customization_configuration",
-			Kind: "object",
-			Fields: WebExperience_CustomizationConfigurationFields,
+			Kind:     "object",
+			Fields:   WebExperience_CustomizationConfigurationFields,
 		},
 		"IdentityProviderConfiguration": ubx.FieldSpec{
 			WireName: "identity_provider_configuration",
-			Kind: "object",
-			Fields: WebExperience_IdentityProviderConfigurationFields,
+			Kind:     "object",
+			Fields:   WebExperience_IdentityProviderConfigurationFields,
 		},
-		"Origins": ubx.FieldSpec{WireName: "origins"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Origins":                  ubx.FieldSpec{WireName: "origins"},
+		"RoleArn":                  ubx.FieldSpec{WireName: "role_arn"},
 		"SamplePromptsControlMode": ubx.FieldSpec{WireName: "sample_prompts_control_mode"},
-		"Subtitle": ubx.FieldSpec{WireName: "subtitle"},
+		"Subtitle":                 ubx.FieldSpec{WireName: "subtitle"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WebExperience_TagsFields,
+			Kind:     "list",
+			Fields:   WebExperience_TagsFields,
 		},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Title":          ubx.FieldSpec{WireName: "title"},
 		"WelcomeMessage": ubx.FieldSpec{WireName: "welcome_message"},
 	},
 }

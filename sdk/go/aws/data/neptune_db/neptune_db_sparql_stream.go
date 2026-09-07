@@ -9,40 +9,40 @@ type NeptuneDbSparqlStream_Records_Data struct {
 
 type NeptuneDbSparqlStream_Records struct {
 	CommitTimestampInMillis any
-	Data any
-	EventId any
-	IsLastOp any
-	Op any
+	Data                    any
+	EventId                 any
+	IsLastOp                any
+	Op                      any
 }
 
 type NeptuneDbSparqlStreamConfig struct {
-	CommitNum any
-	Encoding any
+	CommitNum    any
+	Encoding     any
 	IteratorType any
-	Limit any
-	OpNum any
+	Limit        any
+	OpNum        any
 }
 
 type NeptuneDbSparqlStreamAttrs struct {
-	CommitNum any
-	Encoding any
-	Format any
-	IteratorType any
-	LastEventId any
+	CommitNum                any
+	Encoding                 any
+	Format                   any
+	IteratorType             any
+	LastEventId              any
 	LastTrxTimestampInMillis any
-	Limit any
-	OpNum any
-	Records any
-	TotalRecords any
+	Limit                    any
+	OpNum                    any
+	Records                  any
+	TotalRecords             any
 }
 
 var NeptuneDbSparqlStream = ubx.DataSourceBinding{
 	WireType: "aws_neptune_db_sparql_stream",
 	Fields: ubx.FieldMap{
-		"CommitNum": ubx.FieldSpec{WireName: "commit_num"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
+		"CommitNum":    ubx.FieldSpec{WireName: "commit_num"},
+		"Encoding":     ubx.FieldSpec{WireName: "encoding"},
 		"IteratorType": ubx.FieldSpec{WireName: "iterator_type"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"OpNum": ubx.FieldSpec{WireName: "op_num"},
+		"Limit":        ubx.FieldSpec{WireName: "limit"},
+		"OpNum":        ubx.FieldSpec{WireName: "op_num"},
 	},
 }

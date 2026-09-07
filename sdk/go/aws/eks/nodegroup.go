@@ -19,7 +19,7 @@ type Nodegroup_NodeRepairConfig_NodeRepairConfigOverrides struct {
 	NodeMonitoringCondition any
 	// The EKS node health detection reason code (such as DiskPressure, KernelDeadlock, or ReadonlyFilesystem) that identifies which unhealthy node condition this node repair configuration override applies to, allowing you to customize the automated repair behavior for that specific failure reason. (AI-inferred)
 	NodeUnhealthyReason any
-	RepairAction any
+	RepairAction        any
 }
 
 type Nodegroup_NodeRepairConfig struct {
@@ -85,61 +85,61 @@ type Nodegroup_WarmPoolConfig struct {
 }
 
 var Nodegroup_LaunchTemplateFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Nodegroup_NodeRepairConfig_NodeRepairConfigOverridesFields = ubx.FieldMap{
-		"MinRepairWaitTimeMins": ubx.FieldSpec{WireName: "min_repair_wait_time_mins"},
-		"NodeMonitoringCondition": ubx.FieldSpec{WireName: "node_monitoring_condition"},
-		"NodeUnhealthyReason": ubx.FieldSpec{WireName: "node_unhealthy_reason"},
-		"RepairAction": ubx.FieldSpec{WireName: "repair_action"},
-	}
+	"MinRepairWaitTimeMins":   ubx.FieldSpec{WireName: "min_repair_wait_time_mins"},
+	"NodeMonitoringCondition": ubx.FieldSpec{WireName: "node_monitoring_condition"},
+	"NodeUnhealthyReason":     ubx.FieldSpec{WireName: "node_unhealthy_reason"},
+	"RepairAction":            ubx.FieldSpec{WireName: "repair_action"},
+}
 
 var Nodegroup_NodeRepairConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxParallelNodesRepairedCount": ubx.FieldSpec{WireName: "max_parallel_nodes_repaired_count"},
-		"MaxParallelNodesRepairedPercentage": ubx.FieldSpec{WireName: "max_parallel_nodes_repaired_percentage"},
-		"MaxUnhealthyNodeThresholdCount": ubx.FieldSpec{WireName: "max_unhealthy_node_threshold_count"},
-		"MaxUnhealthyNodeThresholdPercentage": ubx.FieldSpec{WireName: "max_unhealthy_node_threshold_percentage"},
-		"NodeRepairConfigOverrides": ubx.FieldSpec{
-			WireName: "node_repair_config_overrides",
-			Kind: "list",
-			Fields: Nodegroup_NodeRepairConfig_NodeRepairConfigOverridesFields,
-		},
-	}
+	"Enabled":                             ubx.FieldSpec{WireName: "enabled"},
+	"MaxParallelNodesRepairedCount":       ubx.FieldSpec{WireName: "max_parallel_nodes_repaired_count"},
+	"MaxParallelNodesRepairedPercentage":  ubx.FieldSpec{WireName: "max_parallel_nodes_repaired_percentage"},
+	"MaxUnhealthyNodeThresholdCount":      ubx.FieldSpec{WireName: "max_unhealthy_node_threshold_count"},
+	"MaxUnhealthyNodeThresholdPercentage": ubx.FieldSpec{WireName: "max_unhealthy_node_threshold_percentage"},
+	"NodeRepairConfigOverrides": ubx.FieldSpec{
+		WireName: "node_repair_config_overrides",
+		Kind:     "list",
+		Fields:   Nodegroup_NodeRepairConfig_NodeRepairConfigOverridesFields,
+	},
+}
 
 var Nodegroup_RemoteAccessFields = ubx.FieldMap{
-		"Ec2SshKey": ubx.FieldSpec{WireName: "ec2_ssh_key"},
-		"SourceSecurityGroups": ubx.FieldSpec{WireName: "source_security_groups"},
-	}
+	"Ec2SshKey":            ubx.FieldSpec{WireName: "ec2_ssh_key"},
+	"SourceSecurityGroups": ubx.FieldSpec{WireName: "source_security_groups"},
+}
 
 var Nodegroup_ScalingConfigFields = ubx.FieldMap{
-		"DesiredSize": ubx.FieldSpec{WireName: "desired_size"},
-		"MaxSize": ubx.FieldSpec{WireName: "max_size"},
-		"MinSize": ubx.FieldSpec{WireName: "min_size"},
-	}
+	"DesiredSize": ubx.FieldSpec{WireName: "desired_size"},
+	"MaxSize":     ubx.FieldSpec{WireName: "max_size"},
+	"MinSize":     ubx.FieldSpec{WireName: "min_size"},
+}
 
 var Nodegroup_TaintsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect": ubx.FieldSpec{WireName: "effect"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var Nodegroup_UpdateConfigFields = ubx.FieldMap{
-		"MaxUnavailable": ubx.FieldSpec{WireName: "max_unavailable"},
-		"MaxUnavailablePercentage": ubx.FieldSpec{WireName: "max_unavailable_percentage"},
-		"UpdateStrategy": ubx.FieldSpec{WireName: "update_strategy"},
-	}
+	"MaxUnavailable":           ubx.FieldSpec{WireName: "max_unavailable"},
+	"MaxUnavailablePercentage": ubx.FieldSpec{WireName: "max_unavailable_percentage"},
+	"UpdateStrategy":           ubx.FieldSpec{WireName: "update_strategy"},
+}
 
 var Nodegroup_WarmPoolConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxGroupPreparedCapacity": ubx.FieldSpec{WireName: "max_group_prepared_capacity"},
-		"MinSize": ubx.FieldSpec{WireName: "min_size"},
-		"PoolState": ubx.FieldSpec{WireName: "pool_state"},
-		"ReuseOnScaleIn": ubx.FieldSpec{WireName: "reuse_on_scale_in"},
-	}
+	"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+	"MaxGroupPreparedCapacity": ubx.FieldSpec{WireName: "max_group_prepared_capacity"},
+	"MinSize":                  ubx.FieldSpec{WireName: "min_size"},
+	"PoolState":                ubx.FieldSpec{WireName: "pool_state"},
+	"ReuseOnScaleIn":           ubx.FieldSpec{WireName: "reuse_on_scale_in"},
+}
 
 type NodegroupConfig struct {
 	// The AMI type for your node group.
@@ -234,53 +234,53 @@ type NodegroupAttrs struct {
 var Nodegroup = ubx.ResourceBinding{
 	WireType: "aws_eks_nodegroup",
 	Fields: ubx.FieldMap{
-		"AmiType": ubx.FieldSpec{WireName: "ami_type"},
-		"CapacityType": ubx.FieldSpec{WireName: "capacity_type"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"DiskSize": ubx.FieldSpec{WireName: "disk_size"},
+		"AmiType":            ubx.FieldSpec{WireName: "ami_type"},
+		"CapacityType":       ubx.FieldSpec{WireName: "capacity_type"},
+		"ClusterName":        ubx.FieldSpec{WireName: "cluster_name"},
+		"DiskSize":           ubx.FieldSpec{WireName: "disk_size"},
 		"ForceUpdateEnabled": ubx.FieldSpec{WireName: "force_update_enabled"},
-		"InstanceTypes": ubx.FieldSpec{WireName: "instance_types"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"InstanceTypes":      ubx.FieldSpec{WireName: "instance_types"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
 		"LaunchTemplate": ubx.FieldSpec{
 			WireName: "launch_template",
-			Kind: "object",
-			Fields: Nodegroup_LaunchTemplateFields,
+			Kind:     "object",
+			Fields:   Nodegroup_LaunchTemplateFields,
 		},
 		"NodeRepairConfig": ubx.FieldSpec{
 			WireName: "node_repair_config",
-			Kind: "object",
-			Fields: Nodegroup_NodeRepairConfigFields,
+			Kind:     "object",
+			Fields:   Nodegroup_NodeRepairConfigFields,
 		},
-		"NodeRole": ubx.FieldSpec{WireName: "node_role"},
-		"NodegroupName": ubx.FieldSpec{WireName: "nodegroup_name"},
+		"NodeRole":       ubx.FieldSpec{WireName: "node_role"},
+		"NodegroupName":  ubx.FieldSpec{WireName: "nodegroup_name"},
 		"ReleaseVersion": ubx.FieldSpec{WireName: "release_version"},
 		"RemoteAccess": ubx.FieldSpec{
 			WireName: "remote_access",
-			Kind: "object",
-			Fields: Nodegroup_RemoteAccessFields,
+			Kind:     "object",
+			Fields:   Nodegroup_RemoteAccessFields,
 		},
 		"ScalingConfig": ubx.FieldSpec{
 			WireName: "scaling_config",
-			Kind: "object",
-			Fields: Nodegroup_ScalingConfigFields,
+			Kind:     "object",
+			Fields:   Nodegroup_ScalingConfigFields,
 		},
 		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":    ubx.FieldSpec{WireName: "tags"},
 		"Taints": ubx.FieldSpec{
 			WireName: "taints",
-			Kind: "list",
-			Fields: Nodegroup_TaintsFields,
+			Kind:     "list",
+			Fields:   Nodegroup_TaintsFields,
 		},
 		"UpdateConfig": ubx.FieldSpec{
 			WireName: "update_config",
-			Kind: "object",
-			Fields: Nodegroup_UpdateConfigFields,
+			Kind:     "object",
+			Fields:   Nodegroup_UpdateConfigFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 		"WarmPoolConfig": ubx.FieldSpec{
 			WireName: "warm_pool_config",
-			Kind: "object",
-			Fields: Nodegroup_WarmPoolConfigFields,
+			Kind:     "object",
+			Fields:   Nodegroup_WarmPoolConfigFields,
 		},
 	},
 }

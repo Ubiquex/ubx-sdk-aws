@@ -4,27 +4,27 @@ package kinesisanalytics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Applications_ApplicationSummaries struct {
-	ApplicationArn any
-	ApplicationName any
+	ApplicationArn    any
+	ApplicationName   any
 	ApplicationStatus any
 }
 
 type ApplicationsConfig struct {
 	ExclusiveStartApplicationName any
-	Limit any
+	Limit                         any
 }
 
 type ApplicationsAttrs struct {
-	ApplicationSummaries any
+	ApplicationSummaries          any
 	ExclusiveStartApplicationName any
-	HasMoreApplications any
-	Limit any
+	HasMoreApplications           any
+	Limit                         any
 }
 
 var Applications = ubx.DataSourceBinding{
 	WireType: "aws_kinesisanalytics_applications",
 	Fields: ubx.FieldMap{
 		"ExclusiveStartApplicationName": ubx.FieldSpec{WireName: "exclusive_start_application_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":                         ubx.FieldSpec{WireName: "limit"},
 	},
 }

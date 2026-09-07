@@ -4,7 +4,7 @@ package support
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrustedAdvisorCheckSummaries_Summaries_CategorySpecificSummary_CostOptimizing struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings        any
 	EstimatedPercentMonthlySavings any
 }
 
@@ -13,19 +13,19 @@ type TrustedAdvisorCheckSummaries_Summaries_CategorySpecificSummary struct {
 }
 
 type TrustedAdvisorCheckSummaries_Summaries_ResourcesSummary struct {
-	ResourcesFlagged any
-	ResourcesIgnored any
-	ResourcesProcessed any
+	ResourcesFlagged    any
+	ResourcesIgnored    any
+	ResourcesProcessed  any
 	ResourcesSuppressed any
 }
 
 type TrustedAdvisorCheckSummaries_Summaries struct {
 	CategorySpecificSummary any
-	CheckId any
-	HasFlaggedResources any
-	ResourcesSummary any
-	Status any
-	Timestamp any
+	CheckId                 any
+	HasFlaggedResources     any
+	ResourcesSummary        any
+	Status                  any
+	Timestamp               any
 }
 
 type TrustedAdvisorCheckSummariesConfig struct {
@@ -33,7 +33,7 @@ type TrustedAdvisorCheckSummariesConfig struct {
 }
 
 type TrustedAdvisorCheckSummariesAttrs struct {
-	CheckIds any
+	CheckIds  any
 	Summaries any
 }
 

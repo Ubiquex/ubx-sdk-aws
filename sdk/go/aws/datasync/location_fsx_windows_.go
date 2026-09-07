@@ -30,14 +30,14 @@ type LocationFsxWindows_Tags struct {
 }
 
 var LocationFsxWindows_CustomSecretConfigFields = ubx.FieldMap{
-		"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
+	"SecretArn":           ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var LocationFsxWindows_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationFsxWindowsConfig struct {
 	// Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and an IAM role that DataSync can assume and access the customer-managed secret.
@@ -90,18 +90,18 @@ var LocationFsxWindows = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomSecretConfig": ubx.FieldSpec{
 			WireName: "custom_secret_config",
-			Kind: "object",
-			Fields: LocationFsxWindows_CustomSecretConfigFields,
+			Kind:     "object",
+			Fields:   LocationFsxWindows_CustomSecretConfigFields,
 		},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"FsxFilesystemArn": ubx.FieldSpec{WireName: "fsx_filesystem_arn"},
-		"Password": ubx.FieldSpec{WireName: "password"},
+		"Domain":            ubx.FieldSpec{WireName: "domain"},
+		"FsxFilesystemArn":  ubx.FieldSpec{WireName: "fsx_filesystem_arn"},
+		"Password":          ubx.FieldSpec{WireName: "password"},
 		"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"Subdirectory":      ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationFsxWindows_TagsFields,
+			Kind:     "list",
+			Fields:   LocationFsxWindows_TagsFields,
 		},
 		"User": ubx.FieldSpec{WireName: "user"},
 	},

@@ -8,12 +8,11 @@ type CallerIdentityConfig struct {
 
 type CallerIdentityAttrs struct {
 	Account any
-	Arn any
-	UserId any
+	Arn     any
+	UserId  any
 }
 
 var CallerIdentity = ubx.DataSourceBinding{
 	WireType: "aws_sts_caller_identity",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

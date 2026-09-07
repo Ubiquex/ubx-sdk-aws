@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserProfile_Tags struct {
 	// The key of a user-defined tag attached to the SageMaker User Profile, used for cost allocation, environment identification, or other organizational metadata. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -79,7 +79,7 @@ type UserProfile_UserSettings_CustomFileSystemConfigs struct {
 	EfsfileSystemConfig any
 	// Specifies the FSx for Lustre file system configuration to attach and mount in the user's private SageMaker workspace, including the file system ID and mount path. (AI-inferred)
 	FsxLustreFileSystemConfig any
-	S3FileSystemConfig any
+	S3FileSystemConfig        any
 }
 
 type UserProfile_UserSettings_CustomPosixUserConfig struct {
@@ -214,251 +214,251 @@ type UserProfile_UserSettings struct {
 }
 
 var UserProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var UserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettingsFields = ubx.FieldMap{
-		"IdleTimeoutInMinutes": ubx.FieldSpec{WireName: "idle_timeout_in_minutes"},
-		"LifecycleManagement": ubx.FieldSpec{WireName: "lifecycle_management"},
-		"MaxIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "max_idle_timeout_in_minutes"},
-		"MinIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "min_idle_timeout_in_minutes"},
-	}
+	"IdleTimeoutInMinutes":    ubx.FieldSpec{WireName: "idle_timeout_in_minutes"},
+	"LifecycleManagement":     ubx.FieldSpec{WireName: "lifecycle_management"},
+	"MaxIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "max_idle_timeout_in_minutes"},
+	"MinIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "min_idle_timeout_in_minutes"},
+}
 
 var UserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagementFields = ubx.FieldMap{
-		"IdleSettings": ubx.FieldSpec{
-			WireName: "idle_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettingsFields,
-		},
-	}
+	"IdleSettings": ubx.FieldSpec{
+		WireName: "idle_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettingsFields,
+	},
+}
 
 var UserProfile_UserSettings_CodeEditorAppSettings_CustomImagesFields = ubx.FieldMap{
-		"AppImageConfigName": ubx.FieldSpec{WireName: "app_image_config_name"},
-		"ImageName": ubx.FieldSpec{WireName: "image_name"},
-		"ImageVersionNumber": ubx.FieldSpec{WireName: "image_version_number"},
-	}
+	"AppImageConfigName": ubx.FieldSpec{WireName: "app_image_config_name"},
+	"ImageName":          ubx.FieldSpec{WireName: "image_name"},
+	"ImageVersionNumber": ubx.FieldSpec{WireName: "image_version_number"},
+}
 
 var UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields = ubx.FieldMap{
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"LifecycleConfigArn": ubx.FieldSpec{WireName: "lifecycle_config_arn"},
-		"SageMakerImageArn": ubx.FieldSpec{WireName: "sage_maker_image_arn"},
-		"SageMakerImageVersionArn": ubx.FieldSpec{WireName: "sage_maker_image_version_arn"},
-		"TrainingPlanArn": ubx.FieldSpec{WireName: "training_plan_arn"},
-	}
+	"InstanceType":             ubx.FieldSpec{WireName: "instance_type"},
+	"LifecycleConfigArn":       ubx.FieldSpec{WireName: "lifecycle_config_arn"},
+	"SageMakerImageArn":        ubx.FieldSpec{WireName: "sage_maker_image_arn"},
+	"SageMakerImageVersionArn": ubx.FieldSpec{WireName: "sage_maker_image_version_arn"},
+	"TrainingPlanArn":          ubx.FieldSpec{WireName: "training_plan_arn"},
+}
 
 var UserProfile_UserSettings_CodeEditorAppSettingsFields = ubx.FieldMap{
-		"AppLifecycleManagement": ubx.FieldSpec{
-			WireName: "app_lifecycle_management",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagementFields,
-		},
-		"BuiltInLifecycleConfigArn": ubx.FieldSpec{WireName: "built_in_lifecycle_config_arn"},
-		"CustomImages": ubx.FieldSpec{
-			WireName: "custom_images",
-			Kind: "list",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_CustomImagesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"AppLifecycleManagement": ubx.FieldSpec{
+		WireName: "app_lifecycle_management",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagementFields,
+	},
+	"BuiltInLifecycleConfigArn": ubx.FieldSpec{WireName: "built_in_lifecycle_config_arn"},
+	"CustomImages": ubx.FieldSpec{
+		WireName: "custom_images",
+		Kind:     "list",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_CustomImagesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var UserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields = ubx.FieldMap{
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"FileSystemPath": ubx.FieldSpec{WireName: "file_system_path"},
-	}
+	"FileSystemId":   ubx.FieldSpec{WireName: "file_system_id"},
+	"FileSystemPath": ubx.FieldSpec{WireName: "file_system_path"},
+}
 
 var UserProfile_UserSettings_CustomFileSystemConfigs_S3FileSystemConfigFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	"S3Uri":     ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var UserProfile_UserSettings_CustomFileSystemConfigsFields = ubx.FieldMap{
-		"EfsfileSystemConfig": ubx.FieldSpec{
-			WireName: "efsfile_system_config",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields,
-		},
-		"FsxLustreFileSystemConfig": ubx.FieldSpec{
-			WireName: "fsx_lustre_file_system_config",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields,
-		},
-		"S3FileSystemConfig": ubx.FieldSpec{
-			WireName: "s3_file_system_config",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CustomFileSystemConfigs_S3FileSystemConfigFields,
-		},
-	}
+	"EfsfileSystemConfig": ubx.FieldSpec{
+		WireName: "efsfile_system_config",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields,
+	},
+	"FsxLustreFileSystemConfig": ubx.FieldSpec{
+		WireName: "fsx_lustre_file_system_config",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields,
+	},
+	"S3FileSystemConfig": ubx.FieldSpec{
+		WireName: "s3_file_system_config",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CustomFileSystemConfigs_S3FileSystemConfigFields,
+	},
+}
 
 var UserProfile_UserSettings_CustomPosixUserConfigFields = ubx.FieldMap{
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Gid": ubx.FieldSpec{WireName: "gid"},
+	"Uid": ubx.FieldSpec{WireName: "uid"},
+}
 
 var UserProfile_UserSettings_JupyterLabAppSettings_CodeRepositoriesFields = ubx.FieldMap{
-		"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
-	}
+	"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
+}
 
 var UserProfile_UserSettings_JupyterLabAppSettings_EmrSettingsFields = ubx.FieldMap{
-		"AssumableRoleArns": ubx.FieldSpec{WireName: "assumable_role_arns"},
-		"ExecutionRoleArns": ubx.FieldSpec{WireName: "execution_role_arns"},
-	}
+	"AssumableRoleArns": ubx.FieldSpec{WireName: "assumable_role_arns"},
+	"ExecutionRoleArns": ubx.FieldSpec{WireName: "execution_role_arns"},
+}
 
 var UserProfile_UserSettings_JupyterLabAppSettingsFields = ubx.FieldMap{
-		"AppLifecycleManagement": ubx.FieldSpec{
-			WireName: "app_lifecycle_management",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagementFields,
-		},
-		"BuiltInLifecycleConfigArn": ubx.FieldSpec{WireName: "built_in_lifecycle_config_arn"},
-		"CodeRepositories": ubx.FieldSpec{
-			WireName: "code_repositories",
-			Kind: "list",
-			Fields: UserProfile_UserSettings_JupyterLabAppSettings_CodeRepositoriesFields,
-		},
-		"CustomImages": ubx.FieldSpec{
-			WireName: "custom_images",
-			Kind: "list",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_CustomImagesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
-		},
-		"EmrSettings": ubx.FieldSpec{
-			WireName: "emr_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_JupyterLabAppSettings_EmrSettingsFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"AppLifecycleManagement": ubx.FieldSpec{
+		WireName: "app_lifecycle_management",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagementFields,
+	},
+	"BuiltInLifecycleConfigArn": ubx.FieldSpec{WireName: "built_in_lifecycle_config_arn"},
+	"CodeRepositories": ubx.FieldSpec{
+		WireName: "code_repositories",
+		Kind:     "list",
+		Fields:   UserProfile_UserSettings_JupyterLabAppSettings_CodeRepositoriesFields,
+	},
+	"CustomImages": ubx.FieldSpec{
+		WireName: "custom_images",
+		Kind:     "list",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_CustomImagesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
+	},
+	"EmrSettings": ubx.FieldSpec{
+		WireName: "emr_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_JupyterLabAppSettings_EmrSettingsFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var UserProfile_UserSettings_JupyterServerAppSettingsFields = ubx.FieldMap{
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var UserProfile_UserSettings_KernelGatewayAppSettingsFields = ubx.FieldMap{
-		"CustomImages": ubx.FieldSpec{
-			WireName: "custom_images",
-			Kind: "list",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_CustomImagesFields,
-		},
-		"DefaultResourceSpec": ubx.FieldSpec{
-			WireName: "default_resource_spec",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
-		},
-		"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
-	}
+	"CustomImages": ubx.FieldSpec{
+		WireName: "custom_images",
+		Kind:     "list",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_CustomImagesFields,
+	},
+	"DefaultResourceSpec": ubx.FieldSpec{
+		WireName: "default_resource_spec",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpecFields,
+	},
+	"LifecycleConfigArns": ubx.FieldSpec{WireName: "lifecycle_config_arns"},
+}
 
 var UserProfile_UserSettings_RstudioServerProAppSettingsFields = ubx.FieldMap{
-		"AccessStatus": ubx.FieldSpec{WireName: "access_status"},
-		"UserGroup": ubx.FieldSpec{WireName: "user_group"},
-	}
+	"AccessStatus": ubx.FieldSpec{WireName: "access_status"},
+	"UserGroup":    ubx.FieldSpec{WireName: "user_group"},
+}
 
 var UserProfile_UserSettings_SharingSettingsFields = ubx.FieldMap{
-		"NotebookOutputOption": ubx.FieldSpec{WireName: "notebook_output_option"},
-		"S3KmsKeyId": ubx.FieldSpec{WireName: "s3_kms_key_id"},
-		"S3OutputPath": ubx.FieldSpec{WireName: "s3_output_path"},
-	}
+	"NotebookOutputOption": ubx.FieldSpec{WireName: "notebook_output_option"},
+	"S3KmsKeyId":           ubx.FieldSpec{WireName: "s3_kms_key_id"},
+	"S3OutputPath":         ubx.FieldSpec{WireName: "s3_output_path"},
+}
 
 var UserProfile_UserSettings_SpaceStorageSettings_DefaultEbsStorageSettingsFields = ubx.FieldMap{
-		"DefaultEbsVolumeSizeInGb": ubx.FieldSpec{WireName: "default_ebs_volume_size_in_gb"},
-		"MaximumEbsVolumeSizeInGb": ubx.FieldSpec{WireName: "maximum_ebs_volume_size_in_gb"},
-	}
+	"DefaultEbsVolumeSizeInGb": ubx.FieldSpec{WireName: "default_ebs_volume_size_in_gb"},
+	"MaximumEbsVolumeSizeInGb": ubx.FieldSpec{WireName: "maximum_ebs_volume_size_in_gb"},
+}
 
 var UserProfile_UserSettings_SpaceStorageSettingsFields = ubx.FieldMap{
-		"DefaultEbsStorageSettings": ubx.FieldSpec{
-			WireName: "default_ebs_storage_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_SpaceStorageSettings_DefaultEbsStorageSettingsFields,
-		},
-	}
+	"DefaultEbsStorageSettings": ubx.FieldSpec{
+		WireName: "default_ebs_storage_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_SpaceStorageSettings_DefaultEbsStorageSettingsFields,
+	},
+}
 
 var UserProfile_UserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliasesFields = ubx.FieldMap{
-		"SageMakerImageName": ubx.FieldSpec{WireName: "sage_maker_image_name"},
-		"VersionAliases": ubx.FieldSpec{WireName: "version_aliases"},
-	}
+	"SageMakerImageName": ubx.FieldSpec{WireName: "sage_maker_image_name"},
+	"VersionAliases":     ubx.FieldSpec{WireName: "version_aliases"},
+}
 
 var UserProfile_UserSettings_StudioWebPortalSettingsFields = ubx.FieldMap{
-		"HiddenAppTypes": ubx.FieldSpec{WireName: "hidden_app_types"},
-		"HiddenInstanceTypes": ubx.FieldSpec{WireName: "hidden_instance_types"},
-		"HiddenMlTools": ubx.FieldSpec{WireName: "hidden_ml_tools"},
-		"HiddenSageMakerImageVersionAliases": ubx.FieldSpec{
-			WireName: "hidden_sage_maker_image_version_aliases",
-			Kind: "list",
-			Fields: UserProfile_UserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliasesFields,
-		},
-	}
+	"HiddenAppTypes":      ubx.FieldSpec{WireName: "hidden_app_types"},
+	"HiddenInstanceTypes": ubx.FieldSpec{WireName: "hidden_instance_types"},
+	"HiddenMlTools":       ubx.FieldSpec{WireName: "hidden_ml_tools"},
+	"HiddenSageMakerImageVersionAliases": ubx.FieldSpec{
+		WireName: "hidden_sage_maker_image_version_aliases",
+		Kind:     "list",
+		Fields:   UserProfile_UserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliasesFields,
+	},
+}
 
 var UserProfile_UserSettingsFields = ubx.FieldMap{
-		"AutoMountHomeEfs": ubx.FieldSpec{WireName: "auto_mount_home_efs"},
-		"CodeEditorAppSettings": ubx.FieldSpec{
-			WireName: "code_editor_app_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CodeEditorAppSettingsFields,
-		},
-		"CustomFileSystemConfigs": ubx.FieldSpec{
-			WireName: "custom_file_system_configs",
-			Kind: "list",
-			Fields: UserProfile_UserSettings_CustomFileSystemConfigsFields,
-		},
-		"CustomPosixUserConfig": ubx.FieldSpec{
-			WireName: "custom_posix_user_config",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_CustomPosixUserConfigFields,
-		},
-		"DefaultLandingUri": ubx.FieldSpec{WireName: "default_landing_uri"},
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"JupyterLabAppSettings": ubx.FieldSpec{
-			WireName: "jupyter_lab_app_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_JupyterLabAppSettingsFields,
-		},
-		"JupyterServerAppSettings": ubx.FieldSpec{
-			WireName: "jupyter_server_app_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_JupyterServerAppSettingsFields,
-		},
-		"KernelGatewayAppSettings": ubx.FieldSpec{
-			WireName: "kernel_gateway_app_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_KernelGatewayAppSettingsFields,
-		},
-		"RstudioServerProAppSettings": ubx.FieldSpec{
-			WireName: "rstudio_server_pro_app_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_RstudioServerProAppSettingsFields,
-		},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"SharingSettings": ubx.FieldSpec{
-			WireName: "sharing_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_SharingSettingsFields,
-		},
-		"SpaceStorageSettings": ubx.FieldSpec{
-			WireName: "space_storage_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_SpaceStorageSettingsFields,
-		},
-		"StudioWebPortal": ubx.FieldSpec{WireName: "studio_web_portal"},
-		"StudioWebPortalSettings": ubx.FieldSpec{
-			WireName: "studio_web_portal_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettings_StudioWebPortalSettingsFields,
-		},
-	}
+	"AutoMountHomeEfs": ubx.FieldSpec{WireName: "auto_mount_home_efs"},
+	"CodeEditorAppSettings": ubx.FieldSpec{
+		WireName: "code_editor_app_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CodeEditorAppSettingsFields,
+	},
+	"CustomFileSystemConfigs": ubx.FieldSpec{
+		WireName: "custom_file_system_configs",
+		Kind:     "list",
+		Fields:   UserProfile_UserSettings_CustomFileSystemConfigsFields,
+	},
+	"CustomPosixUserConfig": ubx.FieldSpec{
+		WireName: "custom_posix_user_config",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_CustomPosixUserConfigFields,
+	},
+	"DefaultLandingUri": ubx.FieldSpec{WireName: "default_landing_uri"},
+	"ExecutionRole":     ubx.FieldSpec{WireName: "execution_role"},
+	"JupyterLabAppSettings": ubx.FieldSpec{
+		WireName: "jupyter_lab_app_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_JupyterLabAppSettingsFields,
+	},
+	"JupyterServerAppSettings": ubx.FieldSpec{
+		WireName: "jupyter_server_app_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_JupyterServerAppSettingsFields,
+	},
+	"KernelGatewayAppSettings": ubx.FieldSpec{
+		WireName: "kernel_gateway_app_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_KernelGatewayAppSettingsFields,
+	},
+	"RstudioServerProAppSettings": ubx.FieldSpec{
+		WireName: "rstudio_server_pro_app_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_RstudioServerProAppSettingsFields,
+	},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"SharingSettings": ubx.FieldSpec{
+		WireName: "sharing_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_SharingSettingsFields,
+	},
+	"SpaceStorageSettings": ubx.FieldSpec{
+		WireName: "space_storage_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_SpaceStorageSettingsFields,
+	},
+	"StudioWebPortal": ubx.FieldSpec{WireName: "studio_web_portal"},
+	"StudioWebPortalSettings": ubx.FieldSpec{
+		WireName: "studio_web_portal_settings",
+		Kind:     "object",
+		Fields:   UserProfile_UserSettings_StudioWebPortalSettingsFields,
+	},
+}
 
 type UserProfileConfig struct {
 	// The ID of the associated Domain.
@@ -495,19 +495,19 @@ type UserProfileAttrs struct {
 var UserProfile = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_user_profile",
 	Fields: ubx.FieldMap{
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
+		"DomainId":                   ubx.FieldSpec{WireName: "domain_id"},
 		"SingleSignOnUserIdentifier": ubx.FieldSpec{WireName: "single_sign_on_user_identifier"},
-		"SingleSignOnUserValue": ubx.FieldSpec{WireName: "single_sign_on_user_value"},
+		"SingleSignOnUserValue":      ubx.FieldSpec{WireName: "single_sign_on_user_value"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: UserProfile_TagsFields,
+			Kind:     "list",
+			Fields:   UserProfile_TagsFields,
 		},
 		"UserProfileName": ubx.FieldSpec{WireName: "user_profile_name"},
 		"UserSettings": ubx.FieldSpec{
 			WireName: "user_settings",
-			Kind: "object",
-			Fields: UserProfile_UserSettingsFields,
+			Kind:     "object",
+			Fields:   UserProfile_UserSettingsFields,
 		},
 	},
 }

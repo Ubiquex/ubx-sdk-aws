@@ -12,49 +12,49 @@ type CleanroomsMlCollaborationTrainedModelExportJobs_CollaborationTrainedModelEx
 }
 
 type CleanroomsMlCollaborationTrainedModelExportJobs_CollaborationTrainedModelExportJobs_StatusDetails struct {
-	Message any
+	Message    any
 	StatusCode any
 }
 
 type CleanroomsMlCollaborationTrainedModelExportJobs_CollaborationTrainedModelExportJobs struct {
-	CollaborationIdentifier any
-	CreateTime any
-	CreatorAccountId any
-	Description any
-	MembershipIdentifier any
-	Name any
-	OutputConfiguration any
-	Status any
-	StatusDetails any
-	TrainedModelArn any
+	CollaborationIdentifier       any
+	CreateTime                    any
+	CreatorAccountId              any
+	Description                   any
+	MembershipIdentifier          any
+	Name                          any
+	OutputConfiguration           any
+	Status                        any
+	StatusDetails                 any
+	TrainedModelArn               any
 	TrainedModelVersionIdentifier any
-	UpdateTime any
+	UpdateTime                    any
 }
 
 type CleanroomsMlCollaborationTrainedModelExportJobsConfig struct {
-	CollaborationIdentifier any
-	MaxResults any
-	NextToken any
-	TrainedModelArn any
+	CollaborationIdentifier       any
+	MaxResults                    any
+	NextToken                     any
+	TrainedModelArn               any
 	TrainedModelVersionIdentifier any
 }
 
 type CleanroomsMlCollaborationTrainedModelExportJobsAttrs struct {
-	CollaborationIdentifier any
+	CollaborationIdentifier             any
 	CollaborationTrainedModelExportJobs any
-	MaxResults any
-	NextToken any
-	TrainedModelArn any
-	TrainedModelVersionIdentifier any
+	MaxResults                          any
+	NextToken                           any
+	TrainedModelArn                     any
+	TrainedModelVersionIdentifier       any
 }
 
 var CleanroomsMlCollaborationTrainedModelExportJobs = ubx.DataSourceBinding{
 	WireType: "aws_cleanrooms_ml_collaboration_trained_model_export_jobs",
 	Fields: ubx.FieldMap{
-		"CollaborationIdentifier": ubx.FieldSpec{WireName: "collaboration_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TrainedModelArn": ubx.FieldSpec{WireName: "trained_model_arn"},
+		"CollaborationIdentifier":       ubx.FieldSpec{WireName: "collaboration_identifier"},
+		"MaxResults":                    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                     ubx.FieldSpec{WireName: "next_token"},
+		"TrainedModelArn":               ubx.FieldSpec{WireName: "trained_model_arn"},
 		"TrainedModelVersionIdentifier": ubx.FieldSpec{WireName: "trained_model_version_identifier"},
 	},
 }

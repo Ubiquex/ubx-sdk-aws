@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedNotificationChannelAssociations_ChannelAssociations struct {
 	ChannelIdentifier any
-	ChannelType any
-	OverrideOption any
+	ChannelType       any
+	OverrideOption    any
 }
 
 type ManagedNotificationChannelAssociationsConfig struct {
 	ManagedNotificationConfigurationArn any
-	MaxResults any
-	NextToken any
+	MaxResults                          any
+	NextToken                           any
 }
 
 type ManagedNotificationChannelAssociationsAttrs struct {
-	ChannelAssociations any
+	ChannelAssociations                 any
 	ManagedNotificationConfigurationArn any
-	MaxResults any
-	NextToken any
+	MaxResults                          any
+	NextToken                           any
 }
 
 var ManagedNotificationChannelAssociations = ubx.DataSourceBinding{
 	WireType: "aws_notifications_managed_notification_channel_associations",
 	Fields: ubx.FieldMap{
 		"ManagedNotificationConfigurationArn": ubx.FieldSpec{WireName: "managed_notification_configuration_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

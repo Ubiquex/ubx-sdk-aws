@@ -8,8 +8,8 @@ type ApiIotwirelessWirelessGatewayCertificateConfig struct {
 }
 
 type ApiIotwirelessWirelessGatewayCertificateAttrs struct {
-	Id any
-	IotCertificateId any
+	Id                                any
+	IotCertificateId                  any
 	LoRaWannetworkServerCertificateId any
 }
 

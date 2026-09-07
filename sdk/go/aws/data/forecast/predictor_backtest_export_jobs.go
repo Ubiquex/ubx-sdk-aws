@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PredictorBacktestExportJobs_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 type PredictorBacktestExportJobs_PredictorBacktestExportJobs_Destination_S3Config struct {
 	KmskeyArn any
-	Path any
-	RoleArn any
+	Path      any
+	RoleArn   any
 }
 
 type PredictorBacktestExportJobs_PredictorBacktestExportJobs_Destination struct {
@@ -20,31 +20,31 @@ type PredictorBacktestExportJobs_PredictorBacktestExportJobs_Destination struct 
 }
 
 type PredictorBacktestExportJobs_PredictorBacktestExportJobs struct {
-	CreationTime any
-	Destination any
-	LastModificationTime any
-	Message any
-	PredictorBacktestExportJobArn any
+	CreationTime                   any
+	Destination                    any
+	LastModificationTime           any
+	Message                        any
+	PredictorBacktestExportJobArn  any
 	PredictorBacktestExportJobName any
-	Status any
+	Status                         any
 }
 
 var PredictorBacktestExportJobs_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type PredictorBacktestExportJobsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PredictorBacktestExportJobsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                     any
+	MaxResults                  any
+	NextToken                   any
 	PredictorBacktestExportJobs any
 }
 
@@ -53,10 +53,10 @@ var PredictorBacktestExportJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: PredictorBacktestExportJobs_FiltersFields,
+			Kind:     "list",
+			Fields:   PredictorBacktestExportJobs_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

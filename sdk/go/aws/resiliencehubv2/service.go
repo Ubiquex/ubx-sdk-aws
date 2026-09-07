@@ -24,12 +24,12 @@ type Service_EffectivePolicyValues_AvailabilitySlo struct {
 type Service_EffectivePolicyValues_MultiAzDrApproach struct {
 	// The name of the resiliency policy that governs the multi-AZ disaster recovery approach, determining the recovery point objective and recovery time objective for an application when an Availability Zone disruption occurs. (AI-inferred)
 	PolicyName any
-	Value any
+	Value      any
 }
 
 type Service_EffectivePolicyValues struct {
 	// Specifies the target availability service level objective (SLO) for the application, defining the expected uptime or availability target used within the effective resilience policy values. (AI-inferred)
-	AvailabilitySlo any
+	AvailabilitySlo   any
 	MultiAzDrApproach any
 	// The effective recovery point objective (RPO) value for the multi-availability-zone (AZ) failure domain, resolved from the resiliency policy applied to this service. (AI-inferred)
 	MultiAzRpo any
@@ -52,7 +52,7 @@ type Service_InputSources_ResourceConfiguration_Eks struct {
 
 type Service_InputSources_ResourceConfiguration_ResourceTags struct {
 	// The tag key that, together with the tag value, forms a resource tag entry used to identify or filter resources within the resource configuration of an input source for the Resilience Hub service. (AI-inferred)
-	Key any
+	Key    any
 	Values any
 }
 
@@ -105,92 +105,92 @@ type Service_ReportConfiguration struct {
 }
 
 type Service_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Service_AssertionsFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Service_AssociatedSystemsFields = ubx.FieldMap{
-		"SystemArn": ubx.FieldSpec{WireName: "system_arn"},
-		"UserJourneyIds": ubx.FieldSpec{WireName: "user_journey_ids"},
-	}
+	"SystemArn":      ubx.FieldSpec{WireName: "system_arn"},
+	"UserJourneyIds": ubx.FieldSpec{WireName: "user_journey_ids"},
+}
 
 var Service_InputSources_ResourceConfiguration_EksFields = ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-	}
+	"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
+	"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+}
 
 var Service_InputSources_ResourceConfiguration_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Service_InputSources_ResourceConfigurationFields = ubx.FieldMap{
-		"CfnStackArn": ubx.FieldSpec{WireName: "cfn_stack_arn"},
-		"DesignFileS3Url": ubx.FieldSpec{WireName: "design_file_s3_url"},
-		"Eks": ubx.FieldSpec{
-			WireName: "eks",
-			Kind: "object",
-			Fields: Service_InputSources_ResourceConfiguration_EksFields,
-		},
-		"ResourceTags": ubx.FieldSpec{
-			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Service_InputSources_ResourceConfiguration_ResourceTagsFields,
-		},
-		"TfStateFileUrl": ubx.FieldSpec{WireName: "tf_state_file_url"},
-	}
+	"CfnStackArn":     ubx.FieldSpec{WireName: "cfn_stack_arn"},
+	"DesignFileS3Url": ubx.FieldSpec{WireName: "design_file_s3_url"},
+	"Eks": ubx.FieldSpec{
+		WireName: "eks",
+		Kind:     "object",
+		Fields:   Service_InputSources_ResourceConfiguration_EksFields,
+	},
+	"ResourceTags": ubx.FieldSpec{
+		WireName: "resource_tags",
+		Kind:     "list",
+		Fields:   Service_InputSources_ResourceConfiguration_ResourceTagsFields,
+	},
+	"TfStateFileUrl": ubx.FieldSpec{WireName: "tf_state_file_url"},
+}
 
 var Service_InputSourcesFields = ubx.FieldMap{
-		"ResourceConfiguration": ubx.FieldSpec{
-			WireName: "resource_configuration",
-			Kind: "object",
-			Fields: Service_InputSources_ResourceConfigurationFields,
-		},
-	}
+	"ResourceConfiguration": ubx.FieldSpec{
+		WireName: "resource_configuration",
+		Kind:     "object",
+		Fields:   Service_InputSources_ResourceConfigurationFields,
+	},
+}
 
 var Service_PermissionModel_CrossAccountRoleArnsFields = ubx.FieldMap{
-		"CrossAccountRoleArn": ubx.FieldSpec{WireName: "cross_account_role_arn"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-	}
+	"CrossAccountRoleArn": ubx.FieldSpec{WireName: "cross_account_role_arn"},
+	"ExternalId":          ubx.FieldSpec{WireName: "external_id"},
+}
 
 var Service_PermissionModelFields = ubx.FieldMap{
-		"CrossAccountRoleArns": ubx.FieldSpec{
-			WireName: "cross_account_role_arns",
-			Kind: "list",
-			Fields: Service_PermissionModel_CrossAccountRoleArnsFields,
-		},
-		"InvokerRoleName": ubx.FieldSpec{WireName: "invoker_role_name"},
-	}
+	"CrossAccountRoleArns": ubx.FieldSpec{
+		WireName: "cross_account_role_arns",
+		Kind:     "list",
+		Fields:   Service_PermissionModel_CrossAccountRoleArnsFields,
+	},
+	"InvokerRoleName": ubx.FieldSpec{WireName: "invoker_role_name"},
+}
 
 var Service_ReportConfiguration_ReportOutput_S3Fields = ubx.FieldMap{
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-		"BucketPath": ubx.FieldSpec{WireName: "bucket_path"},
-	}
+	"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
+	"BucketPath":  ubx.FieldSpec{WireName: "bucket_path"},
+}
 
 var Service_ReportConfiguration_ReportOutputFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Service_ReportConfiguration_ReportOutput_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Service_ReportConfiguration_ReportOutput_S3Fields,
+	},
+}
 
 var Service_ReportConfigurationFields = ubx.FieldMap{
-		"ReportOutput": ubx.FieldSpec{
-			WireName: "report_output",
-			Kind: "list",
-			Fields: Service_ReportConfiguration_ReportOutputFields,
-		},
-	}
+	"ReportOutput": ubx.FieldSpec{
+		WireName: "report_output",
+		Kind:     "list",
+		Fields:   Service_ReportConfiguration_ReportOutputFields,
+	},
+}
 
 var Service_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceConfig struct {
 	// Assertions associated with this service.
@@ -259,39 +259,39 @@ var Service = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Assertions": ubx.FieldSpec{
 			WireName: "assertions",
-			Kind: "list",
-			Fields: Service_AssertionsFields,
+			Kind:     "list",
+			Fields:   Service_AssertionsFields,
 		},
 		"AssociatedSystems": ubx.FieldSpec{
 			WireName: "associated_systems",
-			Kind: "list",
-			Fields: Service_AssociatedSystemsFields,
+			Kind:     "list",
+			Fields:   Service_AssociatedSystemsFields,
 		},
 		"DependencyDiscovery": ubx.FieldSpec{WireName: "dependency_discovery"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"InputSources": ubx.FieldSpec{
 			WireName: "input_sources",
-			Kind: "list",
-			Fields: Service_InputSourcesFields,
+			Kind:     "list",
+			Fields:   Service_InputSourcesFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"PermissionModel": ubx.FieldSpec{
 			WireName: "permission_model",
-			Kind: "object",
-			Fields: Service_PermissionModelFields,
+			Kind:     "object",
+			Fields:   Service_PermissionModelFields,
 		},
 		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
+		"Regions":   ubx.FieldSpec{WireName: "regions"},
 		"ReportConfiguration": ubx.FieldSpec{
 			WireName: "report_configuration",
-			Kind: "object",
-			Fields: Service_ReportConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_ReportConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Service_TagsFields,
+			Kind:     "list",
+			Fields:   Service_TagsFields,
 		},
 	},
 }

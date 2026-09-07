@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MfadeviceConfig struct {
 	SerialNumber any
-	UserName any
+	UserName     any
 }
 
 type MfadeviceAttrs struct {
 	Certifications any
-	EnableDate any
-	SerialNumber any
-	UserName any
+	EnableDate     any
+	SerialNumber   any
+	UserName       any
 }
 
 var Mfadevice = ubx.DataSourceBinding{
 	WireType: "aws_iam_mfadevice",
 	Fields: ubx.FieldMap{
 		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"UserName":     ubx.FieldSpec{WireName: "user_name"},
 	},
 }

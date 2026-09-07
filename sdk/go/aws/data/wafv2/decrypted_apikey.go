@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DecryptedApikeyConfig struct {
 	Apikey any
-	Scope any
+	Scope  any
 }
 
 type DecryptedApikeyAttrs struct {
-	Apikey any
+	Apikey            any
 	CreationTimestamp any
-	Scope any
-	TokenDomains any
+	Scope             any
+	TokenDomains      any
 }
 
 var DecryptedApikey = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_decrypted_apikey",
 	Fields: ubx.FieldMap{
 		"Apikey": ubx.FieldSpec{WireName: "apikey"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":  ubx.FieldSpec{WireName: "scope"},
 	},
 }

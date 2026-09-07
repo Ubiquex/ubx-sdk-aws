@@ -4,33 +4,33 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointTypes_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type EndpointTypes_SupportedEndpointTypes struct {
-	EndpointType any
-	EngineDisplayName any
-	EngineName any
+	EndpointType                            any
+	EngineDisplayName                       any
+	EngineName                              any
 	ReplicationInstanceEngineMinimumVersion any
-	SupportsCdc any
+	SupportsCdc                             any
 }
 
 var EndpointTypes_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type EndpointTypesConfig struct {
-	Filters any
-	Marker any
+	Filters    any
+	Marker     any
 	MaxRecords any
 }
 
 type EndpointTypesAttrs struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                any
+	Marker                 any
+	MaxRecords             any
 	SupportedEndpointTypes any
 }
 
@@ -39,10 +39,10 @@ var EndpointTypes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: EndpointTypes_FiltersFields,
+			Kind:     "list",
+			Fields:   EndpointTypes_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

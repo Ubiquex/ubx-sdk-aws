@@ -8,72 +8,72 @@ type Properties_PropertySummaries_Definition_DataType_AllowedValues_ListValue st
 
 type Properties_PropertySummaries_Definition_DataType_AllowedValues_RelationshipValue struct {
 	TargetComponentName any
-	TargetEntityId any
+	TargetEntityId      any
 }
 
 type Properties_PropertySummaries_Definition_DataType_AllowedValues struct {
-	BooleanValue any
-	DoubleValue any
-	Expression any
-	IntegerValue any
-	ListValue any
-	LongValue any
-	MapValue any
+	BooleanValue      any
+	DoubleValue       any
+	Expression        any
+	IntegerValue      any
+	ListValue         any
+	LongValue         any
+	MapValue          any
 	RelationshipValue any
-	StringValue any
+	StringValue       any
 }
 
 type Properties_PropertySummaries_Definition_DataType_Relationship struct {
-	RelationshipType any
+	RelationshipType      any
 	TargetComponentTypeId any
 }
 
 type Properties_PropertySummaries_Definition_DataType struct {
 	AllowedValues any
-	NestedType any
-	Relationship any
-	Type any
+	NestedType    any
+	Relationship  any
+	Type          any
 	UnitOfMeasure any
 }
 
 type Properties_PropertySummaries_Definition struct {
-	Configuration any
-	DataType any
-	DefaultValue any
-	DisplayName any
-	IsExternalId any
-	IsFinal any
-	IsImported any
-	IsInherited any
+	Configuration      any
+	DataType           any
+	DefaultValue       any
+	DisplayName        any
+	IsExternalId       any
+	IsFinal            any
+	IsImported         any
+	IsInherited        any
 	IsRequiredInEntity any
 	IsStoredExternally any
-	IsTimeSeries any
+	IsTimeSeries       any
 }
 
 type Properties_PropertySummaries struct {
 	AreAllPropertyValuesReturned any
-	Definition any
-	PropertyName any
-	Value any
+	Definition                   any
+	PropertyName                 any
+	Value                        any
 }
 
 type PropertiesConfig struct {
 	ComponentName any
 	ComponentPath any
-	EntityId any
-	MaxResults any
-	NextToken any
-	WorkspaceId any
+	EntityId      any
+	MaxResults    any
+	NextToken     any
+	WorkspaceId   any
 }
 
 type PropertiesAttrs struct {
-	ComponentName any
-	ComponentPath any
-	EntityId any
-	MaxResults any
-	NextToken any
+	ComponentName     any
+	ComponentPath     any
+	EntityId          any
+	MaxResults        any
+	NextToken         any
 	PropertySummaries any
-	WorkspaceId any
+	WorkspaceId       any
 }
 
 var Properties = ubx.DataSourceBinding{
@@ -81,9 +81,9 @@ var Properties = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ComponentName": ubx.FieldSpec{WireName: "component_name"},
 		"ComponentPath": ubx.FieldSpec{WireName: "component_path"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
+		"EntityId":      ubx.FieldSpec{WireName: "entity_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"WorkspaceId":   ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

@@ -4,14 +4,14 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Lens_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Lens_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LensConfig struct {
 	// The JSON representation of a lens.
@@ -44,12 +44,12 @@ type LensAttrs struct {
 var Lens = ubx.ResourceBinding{
 	WireType: "aws_well_architected_lens",
 	Fields: ubx.FieldMap{
-		"Jsonstring": ubx.FieldSpec{WireName: "jsonstring"},
+		"Jsonstring":  ubx.FieldSpec{WireName: "jsonstring"},
 		"LensVersion": ubx.FieldSpec{WireName: "lens_version"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Lens_TagsFields,
+			Kind:     "list",
+			Fields:   Lens_TagsFields,
 		},
 	},
 }

@@ -4,14 +4,14 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageGroups_PackageGroups_OriginConfiguration_Restrictions_InheritedFrom struct {
-	Arn any
+	Arn     any
 	Pattern any
 }
 
 type PackageGroups_PackageGroups_OriginConfiguration_Restrictions struct {
-	EffectiveMode any
-	InheritedFrom any
-	Mode any
+	EffectiveMode     any
+	InheritedFrom     any
+	Mode              any
 	RepositoriesCount any
 }
 
@@ -20,41 +20,41 @@ type PackageGroups_PackageGroups_OriginConfiguration struct {
 }
 
 type PackageGroups_PackageGroups struct {
-	Arn any
-	ContactInfo any
-	CreatedTime any
-	Description any
-	DomainName any
-	DomainOwner any
+	Arn                 any
+	ContactInfo         any
+	CreatedTime         any
+	Description         any
+	DomainName          any
+	DomainOwner         any
 	OriginConfiguration any
-	Parent any
-	Pattern any
+	Parent              any
+	Pattern             any
 }
 
 type PackageGroupsConfig struct {
-	Domain any
+	Domain      any
 	DomainOwner any
-	MaxResults any
-	NextToken any
-	Prefix any
+	MaxResults  any
+	NextToken   any
+	Prefix      any
 }
 
 type PackageGroupsAttrs struct {
-	Domain any
-	DomainOwner any
-	MaxResults any
-	NextToken any
+	Domain        any
+	DomainOwner   any
+	MaxResults    any
+	NextToken     any
 	PackageGroups any
-	Prefix any
+	Prefix        any
 }
 
 var PackageGroups = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_package_groups",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":      ubx.FieldSpec{WireName: "domain"},
 		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Prefix":      ubx.FieldSpec{WireName: "prefix"},
 	},
 }

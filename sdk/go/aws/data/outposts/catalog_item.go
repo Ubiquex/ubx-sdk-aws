@@ -4,19 +4,19 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogItem_CatalogItem_Ec2Capacities struct {
-	Family any
-	MaxSize any
+	Family   any
+	MaxSize  any
 	Quantity any
 }
 
 type CatalogItem_CatalogItem struct {
-	CatalogItemId any
-	Ec2Capacities any
-	ItemStatus any
-	PowerKva any
-	SupportedStorage any
+	CatalogItemId       any
+	Ec2Capacities       any
+	ItemStatus          any
+	PowerKva            any
+	SupportedStorage    any
 	SupportedUplinkGbps any
-	WeightLbs any
+	WeightLbs           any
 }
 
 type CatalogItemConfig struct {
@@ -25,7 +25,7 @@ type CatalogItemConfig struct {
 
 type CatalogItemAttrs struct {
 	// <p> Information about a catalog item. </p>
-	CatalogItem any
+	CatalogItem   any
 	CatalogItemId any
 }
 

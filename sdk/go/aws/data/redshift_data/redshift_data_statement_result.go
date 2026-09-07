@@ -4,50 +4,50 @@ package redshift_data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RedshiftDataStatementResult_ColumnMetadata struct {
-	ColumnDefault any
+	ColumnDefault   any
 	IsCaseSensitive any
-	IsCurrency any
-	IsSigned any
-	Label any
-	Length any
-	Name any
-	Nullable any
-	Precision any
-	Scale any
-	SchemaName any
-	TableName any
-	TypeName any
+	IsCurrency      any
+	IsSigned        any
+	Label           any
+	Length          any
+	Name            any
+	Nullable        any
+	Precision       any
+	Scale           any
+	SchemaName      any
+	TableName       any
+	TypeName        any
 }
 
 type RedshiftDataStatementResult_Records struct {
-	BlobValue any
+	BlobValue    any
 	BooleanValue any
-	DoubleValue any
-	IsNull any
-	LongValue any
-	StringValue any
+	DoubleValue  any
+	IsNull       any
+	LongValue    any
+	StringValue  any
 }
 
 type RedshiftDataStatementResultConfig struct {
-	Id any
-	NextToken any
+	Id              any
+	NextToken       any
 	WaitTimeSeconds any
 }
 
 type RedshiftDataStatementResultAttrs struct {
-	ColumnMetadata any
-	Id any
-	NextToken any
-	Records any
-	TotalNumRows any
+	ColumnMetadata  any
+	Id              any
+	NextToken       any
+	Records         any
+	TotalNumRows    any
 	WaitTimeSeconds any
 }
 
 var RedshiftDataStatementResult = ubx.DataSourceBinding{
 	WireType: "aws_redshift_data_statement_result",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Id":              ubx.FieldSpec{WireName: "id"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"WaitTimeSeconds": ubx.FieldSpec{WireName: "wait_time_seconds"},
 	},
 }

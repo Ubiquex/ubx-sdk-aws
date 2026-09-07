@@ -32,9 +32,9 @@ type PrivateGraphEndpointAttrs struct {
 var PrivateGraphEndpoint = ubx.ResourceBinding{
 	WireType: "aws_neptune_graph_private_graph_endpoint",
 	Fields: ubx.FieldMap{
-		"GraphIdentifier": ubx.FieldSpec{WireName: "graph_identifier"},
+		"GraphIdentifier":  ubx.FieldSpec{WireName: "graph_identifier"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+		"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

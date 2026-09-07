@@ -8,9 +8,9 @@ type SinkPolicyConfig struct {
 }
 
 type SinkPolicyAttrs struct {
-	Policy any
-	SinkArn any
-	SinkId any
+	Policy         any
+	SinkArn        any
+	SinkId         any
 	SinkIdentifier any
 }
 

@@ -4,9 +4,9 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdministratorAccount_Administrator struct {
-	AccountId any
+	AccountId    any
 	InvitationId any
-	InvitedAt any
+	InvitedAt    any
 	// <p>The current status of the relationship between an account and an associated Amazon Macie administrator account. Possible values are:</p>
 	RelationshipStatus any
 }
@@ -21,6 +21,5 @@ type AdministratorAccountAttrs struct {
 
 var AdministratorAccount = ubx.DataSourceBinding{
 	WireType: "aws_macie2_administrator_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

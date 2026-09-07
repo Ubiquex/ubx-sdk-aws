@@ -22,19 +22,19 @@ type ConfigurationBundle_LineageMetadata struct {
 }
 
 type ConfigurationBundle_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ConfigurationBundle_CreatedByFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Arn":  ubx.FieldSpec{WireName: "arn"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var ConfigurationBundle_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConfigurationBundleConfig struct {
 	// The branch name for version tracking.
@@ -89,21 +89,21 @@ type ConfigurationBundleAttrs struct {
 var ConfigurationBundle = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_configuration_bundle",
 	Fields: ubx.FieldMap{
-		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
-		"BundleName": ubx.FieldSpec{WireName: "bundle_name"},
+		"BranchName":    ubx.FieldSpec{WireName: "branch_name"},
+		"BundleName":    ubx.FieldSpec{WireName: "bundle_name"},
 		"CommitMessage": ubx.FieldSpec{WireName: "commit_message"},
-		"Components": ubx.FieldSpec{WireName: "components"},
+		"Components":    ubx.FieldSpec{WireName: "components"},
 		"CreatedBy": ubx.FieldSpec{
 			WireName: "created_by",
-			Kind: "object",
-			Fields: ConfigurationBundle_CreatedByFields,
+			Kind:     "object",
+			Fields:   ConfigurationBundle_CreatedByFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfigurationBundle_TagsFields,
+			Kind:     "list",
+			Fields:   ConfigurationBundle_TagsFields,
 		},
 	},
 }

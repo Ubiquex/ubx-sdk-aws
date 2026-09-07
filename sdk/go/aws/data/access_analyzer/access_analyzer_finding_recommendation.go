@@ -4,13 +4,13 @@ package access_analyzer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessAnalyzerFindingRecommendation_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type AccessAnalyzerFindingRecommendation_RecommendedSteps_UnusedPermissionsRecommendedStep struct {
-	ExistingPolicyId any
-	PolicyUpdatedAt any
+	ExistingPolicyId  any
+	PolicyUpdatedAt   any
 	RecommendedAction any
 	RecommendedPolicy any
 }
@@ -21,32 +21,32 @@ type AccessAnalyzerFindingRecommendation_RecommendedSteps struct {
 
 type AccessAnalyzerFindingRecommendationConfig struct {
 	AnalyzerArn any
-	Id any
-	MaxResults any
-	NextToken any
+	Id          any
+	MaxResults  any
+	NextToken   any
 }
 
 type AccessAnalyzerFindingRecommendationAttrs struct {
 	AnalyzerArn any
 	CompletedAt any
 	// <p>Contains information about the reason that the retrieval of a recommendation for a finding failed.</p>
-	Error any
-	Id any
-	MaxResults any
-	NextToken any
+	Error              any
+	Id                 any
+	MaxResults         any
+	NextToken          any
 	RecommendationType any
-	RecommendedSteps any
-	ResourceArn any
-	StartedAt any
-	Status any
+	RecommendedSteps   any
+	ResourceArn        any
+	StartedAt          any
+	Status             any
 }
 
 var AccessAnalyzerFindingRecommendation = ubx.DataSourceBinding{
 	WireType: "aws_access_analyzer_finding_recommendation",
 	Fields: ubx.FieldMap{
 		"AnalyzerArn": ubx.FieldSpec{WireName: "analyzer_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

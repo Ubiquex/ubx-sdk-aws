@@ -17,12 +17,12 @@ type DocumentationPart_Location struct {
 }
 
 var DocumentationPart_LocationFields = ubx.FieldMap{
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Method":     ubx.FieldSpec{WireName: "method"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"StatusCode": ubx.FieldSpec{WireName: "status_code"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 type DocumentationPartConfig struct {
 	// The ``Location`` property specifies the location of the Amazon API Gateway API entity that the documentation applies to. ``Location`` is a property of the [AWS::ApiGateway::DocumentationPart](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html) resource. For more information about each property, including constraints and valid values, see [DocumentationPart](https://docs.aws.amazon.com/apigateway/latest/api/API_DocumentationPartLocation.html) in the *Amazon API Gateway REST API Reference*.
@@ -49,10 +49,10 @@ var DocumentationPart = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Location": ubx.FieldSpec{
 			WireName: "location",
-			Kind: "object",
-			Fields: DocumentationPart_LocationFields,
+			Kind:     "object",
+			Fields:   DocumentationPart_LocationFields,
 		},
 		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"RestApiId":  ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

@@ -4,39 +4,39 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceSenderIds_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SmsVoiceSenderIds_SenderIds struct {
 	IsoCountryCode any
-	SenderId any
+	SenderId       any
 }
 
 var SmsVoiceSenderIds_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var SmsVoiceSenderIds_SenderIdsFields = ubx.FieldMap{
-		"IsoCountryCode": ubx.FieldSpec{WireName: "iso_country_code"},
-		"SenderId": ubx.FieldSpec{WireName: "sender_id"},
-	}
+	"IsoCountryCode": ubx.FieldSpec{WireName: "iso_country_code"},
+	"SenderId":       ubx.FieldSpec{WireName: "sender_id"},
+}
 
 type SmsVoiceSenderIdsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Owner any
-	SenderIds any
+	NextToken  any
+	Owner      any
+	SenderIds  any
 }
 
 type SmsVoiceSenderIdsAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Owner any
-	SenderIds any
+	NextToken  any
+	Owner      any
+	SenderIds  any
 }
 
 var SmsVoiceSenderIds = ubx.DataSourceBinding{
@@ -44,16 +44,16 @@ var SmsVoiceSenderIds = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoiceSenderIds_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoiceSenderIds_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Owner":      ubx.FieldSpec{WireName: "owner"},
 		"SenderIds": ubx.FieldSpec{
 			WireName: "sender_ids",
-			Kind: "list",
-			Fields: SmsVoiceSenderIds_SenderIdsFields,
+			Kind:     "list",
+			Fields:   SmsVoiceSenderIds_SenderIdsFields,
 		},
 	},
 }

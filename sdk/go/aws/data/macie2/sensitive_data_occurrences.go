@@ -12,7 +12,7 @@ type SensitiveDataOccurrencesConfig struct {
 }
 
 type SensitiveDataOccurrencesAttrs struct {
-	Error any
+	Error     any
 	FindingId any
 	// <p>Specifies a type of sensitive data reported by a finding and provides occurrences of the specified type of sensitive data.</p>
 	SensitiveDataOccurrences any

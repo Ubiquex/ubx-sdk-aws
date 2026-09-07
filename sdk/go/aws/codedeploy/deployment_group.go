@@ -172,191 +172,191 @@ type DeploymentGroup_TriggerConfigurations struct {
 }
 
 var DeploymentGroup_AlarmConfiguration_AlarmsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var DeploymentGroup_AlarmConfigurationFields = ubx.FieldMap{
-		"Alarms": ubx.FieldSpec{
-			WireName: "alarms",
-			Kind: "list",
-			Fields: DeploymentGroup_AlarmConfiguration_AlarmsFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"IgnorePollAlarmFailure": ubx.FieldSpec{WireName: "ignore_poll_alarm_failure"},
-	}
+	"Alarms": ubx.FieldSpec{
+		WireName: "alarms",
+		Kind:     "list",
+		Fields:   DeploymentGroup_AlarmConfiguration_AlarmsFields,
+	},
+	"Enabled":                ubx.FieldSpec{WireName: "enabled"},
+	"IgnorePollAlarmFailure": ubx.FieldSpec{WireName: "ignore_poll_alarm_failure"},
+}
 
 var DeploymentGroup_AutoRollbackConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Events": ubx.FieldSpec{WireName: "events"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Events":  ubx.FieldSpec{WireName: "events"},
+}
 
 var DeploymentGroup_BlueGreenDeploymentConfiguration_DeploymentReadyOptionFields = ubx.FieldMap{
-		"ActionOnTimeout": ubx.FieldSpec{WireName: "action_on_timeout"},
-		"WaitTimeInMinutes": ubx.FieldSpec{WireName: "wait_time_in_minutes"},
-	}
+	"ActionOnTimeout":   ubx.FieldSpec{WireName: "action_on_timeout"},
+	"WaitTimeInMinutes": ubx.FieldSpec{WireName: "wait_time_in_minutes"},
+}
 
 var DeploymentGroup_BlueGreenDeploymentConfiguration_GreenFleetProvisioningOptionFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+}
 
 var DeploymentGroup_BlueGreenDeploymentConfiguration_TerminateBlueInstancesOnDeploymentSuccessFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"TerminationWaitTimeInMinutes": ubx.FieldSpec{WireName: "termination_wait_time_in_minutes"},
-	}
+	"Action":                       ubx.FieldSpec{WireName: "action"},
+	"TerminationWaitTimeInMinutes": ubx.FieldSpec{WireName: "termination_wait_time_in_minutes"},
+}
 
 var DeploymentGroup_BlueGreenDeploymentConfigurationFields = ubx.FieldMap{
-		"DeploymentReadyOption": ubx.FieldSpec{
-			WireName: "deployment_ready_option",
-			Kind: "object",
-			Fields: DeploymentGroup_BlueGreenDeploymentConfiguration_DeploymentReadyOptionFields,
-		},
-		"GreenFleetProvisioningOption": ubx.FieldSpec{
-			WireName: "green_fleet_provisioning_option",
-			Kind: "object",
-			Fields: DeploymentGroup_BlueGreenDeploymentConfiguration_GreenFleetProvisioningOptionFields,
-		},
-		"TerminateBlueInstancesOnDeploymentSuccess": ubx.FieldSpec{
-			WireName: "terminate_blue_instances_on_deployment_success",
-			Kind: "object",
-			Fields: DeploymentGroup_BlueGreenDeploymentConfiguration_TerminateBlueInstancesOnDeploymentSuccessFields,
-		},
-	}
+	"DeploymentReadyOption": ubx.FieldSpec{
+		WireName: "deployment_ready_option",
+		Kind:     "object",
+		Fields:   DeploymentGroup_BlueGreenDeploymentConfiguration_DeploymentReadyOptionFields,
+	},
+	"GreenFleetProvisioningOption": ubx.FieldSpec{
+		WireName: "green_fleet_provisioning_option",
+		Kind:     "object",
+		Fields:   DeploymentGroup_BlueGreenDeploymentConfiguration_GreenFleetProvisioningOptionFields,
+	},
+	"TerminateBlueInstancesOnDeploymentSuccess": ubx.FieldSpec{
+		WireName: "terminate_blue_instances_on_deployment_success",
+		Kind:     "object",
+		Fields:   DeploymentGroup_BlueGreenDeploymentConfiguration_TerminateBlueInstancesOnDeploymentSuccessFields,
+	},
+}
 
 var DeploymentGroup_Deployment_Revision_GitHubLocationFields = ubx.FieldMap{
-		"CommitId": ubx.FieldSpec{WireName: "commit_id"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"CommitId":   ubx.FieldSpec{WireName: "commit_id"},
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+}
 
 var DeploymentGroup_Deployment_Revision_S3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BundleType": ubx.FieldSpec{WireName: "bundle_type"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"BundleType": ubx.FieldSpec{WireName: "bundle_type"},
+	"Etag":       ubx.FieldSpec{WireName: "etag"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Version":    ubx.FieldSpec{WireName: "version"},
+}
 
 var DeploymentGroup_Deployment_RevisionFields = ubx.FieldMap{
-		"GitHubLocation": ubx.FieldSpec{
-			WireName: "git_hub_location",
-			Kind: "object",
-			Fields: DeploymentGroup_Deployment_Revision_GitHubLocationFields,
-		},
-		"RevisionType": ubx.FieldSpec{WireName: "revision_type"},
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: DeploymentGroup_Deployment_Revision_S3LocationFields,
-		},
-	}
+	"GitHubLocation": ubx.FieldSpec{
+		WireName: "git_hub_location",
+		Kind:     "object",
+		Fields:   DeploymentGroup_Deployment_Revision_GitHubLocationFields,
+	},
+	"RevisionType": ubx.FieldSpec{WireName: "revision_type"},
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   DeploymentGroup_Deployment_Revision_S3LocationFields,
+	},
+}
 
 var DeploymentGroup_DeploymentFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IgnoreApplicationStopFailures": ubx.FieldSpec{WireName: "ignore_application_stop_failures"},
-		"Revision": ubx.FieldSpec{
-			WireName: "revision",
-			Kind: "object",
-			Fields: DeploymentGroup_Deployment_RevisionFields,
-		},
-	}
+	"Description":                   ubx.FieldSpec{WireName: "description"},
+	"IgnoreApplicationStopFailures": ubx.FieldSpec{WireName: "ignore_application_stop_failures"},
+	"Revision": ubx.FieldSpec{
+		WireName: "revision",
+		Kind:     "object",
+		Fields:   DeploymentGroup_Deployment_RevisionFields,
+	},
+}
 
 var DeploymentGroup_DeploymentStyleFields = ubx.FieldMap{
-		"DeploymentOption": ubx.FieldSpec{WireName: "deployment_option"},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-	}
+	"DeploymentOption": ubx.FieldSpec{WireName: "deployment_option"},
+	"DeploymentType":   ubx.FieldSpec{WireName: "deployment_type"},
+}
 
 var DeploymentGroup_EcsservicesFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	}
+	"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+}
 
 var DeploymentGroup_Ec2TagFiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DeploymentGroup_Ec2TagSet_Ec2TagSetListFields = ubx.FieldMap{
-		"Ec2TagGroup": ubx.FieldSpec{
-			WireName: "ec2_tag_group",
-			Kind: "list",
-			Fields: DeploymentGroup_Ec2TagFiltersFields,
-		},
-	}
+	"Ec2TagGroup": ubx.FieldSpec{
+		WireName: "ec2_tag_group",
+		Kind:     "list",
+		Fields:   DeploymentGroup_Ec2TagFiltersFields,
+	},
+}
 
 var DeploymentGroup_Ec2TagSetFields = ubx.FieldMap{
-		"Ec2TagSetList": ubx.FieldSpec{
-			WireName: "ec2_tag_set_list",
-			Kind: "list",
-			Fields: DeploymentGroup_Ec2TagSet_Ec2TagSetListFields,
-		},
-	}
+	"Ec2TagSetList": ubx.FieldSpec{
+		WireName: "ec2_tag_set_list",
+		Kind:     "list",
+		Fields:   DeploymentGroup_Ec2TagSet_Ec2TagSetListFields,
+	},
+}
 
 var DeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoList_ProdTrafficRouteFields = ubx.FieldMap{
-		"ListenerArns": ubx.FieldSpec{WireName: "listener_arns"},
-	}
+	"ListenerArns": ubx.FieldSpec{WireName: "listener_arns"},
+}
 
 var DeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoListFields = ubx.FieldMap{
-		"ProdTrafficRoute": ubx.FieldSpec{
-			WireName: "prod_traffic_route",
-			Kind: "object",
-			Fields: DeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoList_ProdTrafficRouteFields,
-		},
-		"TargetGroups": ubx.FieldSpec{
-			WireName: "target_groups",
-			Kind: "list",
-			Fields: DeploymentGroup_AlarmConfiguration_AlarmsFields,
-		},
-		"TestTrafficRoute": ubx.FieldSpec{
-			WireName: "test_traffic_route",
-			Kind: "object",
-			Fields: DeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoList_ProdTrafficRouteFields,
-		},
-	}
+	"ProdTrafficRoute": ubx.FieldSpec{
+		WireName: "prod_traffic_route",
+		Kind:     "object",
+		Fields:   DeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoList_ProdTrafficRouteFields,
+	},
+	"TargetGroups": ubx.FieldSpec{
+		WireName: "target_groups",
+		Kind:     "list",
+		Fields:   DeploymentGroup_AlarmConfiguration_AlarmsFields,
+	},
+	"TestTrafficRoute": ubx.FieldSpec{
+		WireName: "test_traffic_route",
+		Kind:     "object",
+		Fields:   DeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoList_ProdTrafficRouteFields,
+	},
+}
 
 var DeploymentGroup_LoadBalancerInfoFields = ubx.FieldMap{
-		"ElbInfoList": ubx.FieldSpec{
-			WireName: "elb_info_list",
-			Kind: "list",
-			Fields: DeploymentGroup_AlarmConfiguration_AlarmsFields,
-		},
-		"TargetGroupInfoList": ubx.FieldSpec{
-			WireName: "target_group_info_list",
-			Kind: "list",
-			Fields: DeploymentGroup_AlarmConfiguration_AlarmsFields,
-		},
-		"TargetGroupPairInfoList": ubx.FieldSpec{
-			WireName: "target_group_pair_info_list",
-			Kind: "list",
-			Fields: DeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoListFields,
-		},
-	}
+	"ElbInfoList": ubx.FieldSpec{
+		WireName: "elb_info_list",
+		Kind:     "list",
+		Fields:   DeploymentGroup_AlarmConfiguration_AlarmsFields,
+	},
+	"TargetGroupInfoList": ubx.FieldSpec{
+		WireName: "target_group_info_list",
+		Kind:     "list",
+		Fields:   DeploymentGroup_AlarmConfiguration_AlarmsFields,
+	},
+	"TargetGroupPairInfoList": ubx.FieldSpec{
+		WireName: "target_group_pair_info_list",
+		Kind:     "list",
+		Fields:   DeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoListFields,
+	},
+}
 
 var DeploymentGroup_OnPremisesTagSet_OnPremisesTagSetListFields = ubx.FieldMap{
-		"OnPremisesTagGroup": ubx.FieldSpec{
-			WireName: "on_premises_tag_group",
-			Kind: "list",
-			Fields: DeploymentGroup_Ec2TagFiltersFields,
-		},
-	}
+	"OnPremisesTagGroup": ubx.FieldSpec{
+		WireName: "on_premises_tag_group",
+		Kind:     "list",
+		Fields:   DeploymentGroup_Ec2TagFiltersFields,
+	},
+}
 
 var DeploymentGroup_OnPremisesTagSetFields = ubx.FieldMap{
-		"OnPremisesTagSetList": ubx.FieldSpec{
-			WireName: "on_premises_tag_set_list",
-			Kind: "list",
-			Fields: DeploymentGroup_OnPremisesTagSet_OnPremisesTagSetListFields,
-		},
-	}
+	"OnPremisesTagSetList": ubx.FieldSpec{
+		WireName: "on_premises_tag_set_list",
+		Kind:     "list",
+		Fields:   DeploymentGroup_OnPremisesTagSet_OnPremisesTagSetListFields,
+	},
+}
 
 var DeploymentGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DeploymentGroup_TriggerConfigurationsFields = ubx.FieldMap{
-		"TriggerEvents": ubx.FieldSpec{WireName: "trigger_events"},
-		"TriggerName": ubx.FieldSpec{WireName: "trigger_name"},
-		"TriggerTargetArn": ubx.FieldSpec{WireName: "trigger_target_arn"},
-	}
+	"TriggerEvents":    ubx.FieldSpec{WireName: "trigger_events"},
+	"TriggerName":      ubx.FieldSpec{WireName: "trigger_name"},
+	"TriggerTargetArn": ubx.FieldSpec{WireName: "trigger_target_arn"},
+}
 
 type DeploymentGroupConfig struct {
 	// Configures CloudWatch alarms for an AWS CodeDeploy deployment group.
@@ -449,75 +449,75 @@ var DeploymentGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AlarmConfiguration": ubx.FieldSpec{
 			WireName: "alarm_configuration",
-			Kind: "object",
-			Fields: DeploymentGroup_AlarmConfigurationFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_AlarmConfigurationFields,
 		},
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"AutoRollbackConfiguration": ubx.FieldSpec{
 			WireName: "auto_rollback_configuration",
-			Kind: "object",
-			Fields: DeploymentGroup_AutoRollbackConfigurationFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_AutoRollbackConfigurationFields,
 		},
 		"AutoScalingGroups": ubx.FieldSpec{WireName: "auto_scaling_groups"},
 		"BlueGreenDeploymentConfiguration": ubx.FieldSpec{
 			WireName: "blue_green_deployment_configuration",
-			Kind: "object",
-			Fields: DeploymentGroup_BlueGreenDeploymentConfigurationFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_BlueGreenDeploymentConfigurationFields,
 		},
 		"Deployment": ubx.FieldSpec{
 			WireName: "deployment",
-			Kind: "object",
-			Fields: DeploymentGroup_DeploymentFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_DeploymentFields,
 		},
 		"DeploymentConfigName": ubx.FieldSpec{WireName: "deployment_config_name"},
-		"DeploymentGroupName": ubx.FieldSpec{WireName: "deployment_group_name"},
+		"DeploymentGroupName":  ubx.FieldSpec{WireName: "deployment_group_name"},
 		"DeploymentStyle": ubx.FieldSpec{
 			WireName: "deployment_style",
-			Kind: "object",
-			Fields: DeploymentGroup_DeploymentStyleFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_DeploymentStyleFields,
 		},
 		"Ecsservices": ubx.FieldSpec{
 			WireName: "ecsservices",
-			Kind: "list",
-			Fields: DeploymentGroup_EcsservicesFields,
+			Kind:     "list",
+			Fields:   DeploymentGroup_EcsservicesFields,
 		},
 		"Ec2TagFilters": ubx.FieldSpec{
 			WireName: "ec2_tag_filters",
-			Kind: "list",
-			Fields: DeploymentGroup_Ec2TagFiltersFields,
+			Kind:     "list",
+			Fields:   DeploymentGroup_Ec2TagFiltersFields,
 		},
 		"Ec2TagSet": ubx.FieldSpec{
 			WireName: "ec2_tag_set",
-			Kind: "object",
-			Fields: DeploymentGroup_Ec2TagSetFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_Ec2TagSetFields,
 		},
 		"LoadBalancerInfo": ubx.FieldSpec{
 			WireName: "load_balancer_info",
-			Kind: "object",
-			Fields: DeploymentGroup_LoadBalancerInfoFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_LoadBalancerInfoFields,
 		},
 		"OnPremisesInstanceTagFilters": ubx.FieldSpec{
 			WireName: "on_premises_instance_tag_filters",
-			Kind: "list",
-			Fields: DeploymentGroup_Ec2TagFiltersFields,
+			Kind:     "list",
+			Fields:   DeploymentGroup_Ec2TagFiltersFields,
 		},
 		"OnPremisesTagSet": ubx.FieldSpec{
 			WireName: "on_premises_tag_set",
-			Kind: "object",
-			Fields: DeploymentGroup_OnPremisesTagSetFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_OnPremisesTagSetFields,
 		},
 		"OutdatedInstancesStrategy": ubx.FieldSpec{WireName: "outdated_instances_strategy"},
-		"ServiceRoleArn": ubx.FieldSpec{WireName: "service_role_arn"},
+		"ServiceRoleArn":            ubx.FieldSpec{WireName: "service_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DeploymentGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DeploymentGroup_TagsFields,
 		},
 		"TerminationHookEnabled": ubx.FieldSpec{WireName: "termination_hook_enabled"},
 		"TriggerConfigurations": ubx.FieldSpec{
 			WireName: "trigger_configurations",
-			Kind: "list",
-			Fields: DeploymentGroup_TriggerConfigurationsFields,
+			Kind:     "list",
+			Fields:   DeploymentGroup_TriggerConfigurationsFields,
 		},
 	},
 }

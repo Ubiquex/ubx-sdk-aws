@@ -32,8 +32,8 @@ type AiagentVersionAttrs struct {
 var AiagentVersion = ubx.ResourceBinding{
 	WireType: "aws_wisdom_aiagent_version",
 	Fields: ubx.FieldMap{
-		"AiagentId": ubx.FieldSpec{WireName: "aiagent_id"},
-		"AssistantId": ubx.FieldSpec{WireName: "assistant_id"},
+		"AiagentId":           ubx.FieldSpec{WireName: "aiagent_id"},
+		"AssistantId":         ubx.FieldSpec{WireName: "assistant_id"},
 		"ModifiedTimeSeconds": ubx.FieldSpec{WireName: "modified_time_seconds"},
 	},
 }

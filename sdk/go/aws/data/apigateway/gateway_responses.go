@@ -4,31 +4,31 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayResponses_Items struct {
-	DefaultResponse any
+	DefaultResponse    any
 	ResponseParameters any
-	ResponseTemplates any
-	ResponseType any
-	StatusCode any
+	ResponseTemplates  any
+	ResponseType       any
+	StatusCode         any
 }
 
 type GatewayResponsesConfig struct {
-	Limit any
-	Position any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 type GatewayResponsesAttrs struct {
-	Items any
-	Limit any
-	Position any
+	Items     any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 var GatewayResponses = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_gateway_responses",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Position":  ubx.FieldSpec{WireName: "position"},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

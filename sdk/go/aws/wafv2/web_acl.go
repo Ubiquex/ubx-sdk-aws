@@ -4,7 +4,7 @@ package wafv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebAcl_ApplicationConfig_Attributes struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -37,7 +37,7 @@ type WebAcl_DataProtectionConfig_DataProtections_Field struct {
 
 type WebAcl_DataProtectionConfig_DataProtections struct {
 	// The action that AWS WAF takes when it detects the sensitive data pattern defined by this data protection, such as 'BLOCK' to stop the request or 'COUNT' to observe and log it. (AI-inferred)
-	Action any
+	Action                  any
 	ExcludeRateBasedDetails any
 	// Exclude rule match details from AWS WAF logs for requests that match this data protection rule, preventing sensitive data that triggered the rule from being exposed in log output. (AI-inferred)
 	ExcludeRuleMatchDetails any
@@ -89,13 +89,13 @@ type WebAcl_DefaultAction struct {
 }
 
 type WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks_Prices struct {
-	Amount any
+	Amount   any
 	Currency any
 }
 
 type WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks struct {
-	Chain any
-	Prices any
+	Chain         any
+	Prices        any
 	WalletAddress any
 }
 
@@ -271,7 +271,7 @@ type WebAcl_Rules_Statement_ByteMatchStatement struct {
 	// Specifies the web request component (such as a header, query string, URI path, body, or HTTP method) that the byte match statement inspects for matching strings. (AI-inferred)
 	FieldToMatch any
 	// Defines how AWS WAF searches for the specified match string within the web request component, accepting values like EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, or CONTAINS_WORD. (AI-inferred)
-	PositionalConstraint any
+	PositionalConstraint        any
 	PreParseTextTransformations any
 	// Specifies the literal string (or base64-encoded byte sequence) that AWS WAF searches for in the request component inspected by this rule's byte match statement. (AI-inferred)
 	SearchString any
@@ -571,7 +571,7 @@ type WebAcl_Rules_Statement_RegexPatternSetReferenceStatement struct {
 
 type WebAcl_Rules_Statement_RuleGroupReferenceStatement struct {
 	// The Amazon Resource Name (ARN) of the AWS WAFv2 rule group that this statement references, which identifies the rule group to include in the web ACL's rule evaluation. (AI-inferred)
-	Arn any
+	Arn           any
 	ExcludedRules any
 	// Specifies a list of actions to override for specific rules within the referenced rule group, allowing you to change the action (e.g., Allow, Block, Count) of individual rules without modifying the rule group itself. (AI-inferred)
 	RuleActionOverrides any
@@ -683,934 +683,934 @@ type WebAcl_Tags struct {
 }
 
 var WebAcl_ApplicationConfig_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var WebAcl_ApplicationConfigFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: WebAcl_ApplicationConfig_AttributesFields,
-		},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   WebAcl_ApplicationConfig_AttributesFields,
+	},
+}
 
 var WebAcl_AssociationConfigFields = ubx.FieldMap{
-		"RequestBody": ubx.FieldSpec{WireName: "request_body"},
-	}
+	"RequestBody": ubx.FieldSpec{WireName: "request_body"},
+}
 
 var WebAcl_CaptchaConfig_ImmunityTimePropertyFields = ubx.FieldMap{
-		"ImmunityTime": ubx.FieldSpec{WireName: "immunity_time"},
-	}
+	"ImmunityTime": ubx.FieldSpec{WireName: "immunity_time"},
+}
 
 var WebAcl_CaptchaConfigFields = ubx.FieldMap{
-		"ImmunityTimeProperty": ubx.FieldSpec{
-			WireName: "immunity_time_property",
-			Kind: "object",
-			Fields: WebAcl_CaptchaConfig_ImmunityTimePropertyFields,
-		},
-	}
+	"ImmunityTimeProperty": ubx.FieldSpec{
+		WireName: "immunity_time_property",
+		Kind:     "object",
+		Fields:   WebAcl_CaptchaConfig_ImmunityTimePropertyFields,
+	},
+}
 
 var WebAcl_DataProtectionConfig_DataProtections_FieldFields = ubx.FieldMap{
-		"FieldKeys": ubx.FieldSpec{WireName: "field_keys"},
-		"FieldType": ubx.FieldSpec{WireName: "field_type"},
-	}
+	"FieldKeys": ubx.FieldSpec{WireName: "field_keys"},
+	"FieldType": ubx.FieldSpec{WireName: "field_type"},
+}
 
 var WebAcl_DataProtectionConfig_DataProtectionsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"ExcludeRateBasedDetails": ubx.FieldSpec{WireName: "exclude_rate_based_details"},
-		"ExcludeRuleMatchDetails": ubx.FieldSpec{WireName: "exclude_rule_match_details"},
-		"Field": ubx.FieldSpec{
-			WireName: "field",
-			Kind: "object",
-			Fields: WebAcl_DataProtectionConfig_DataProtections_FieldFields,
-		},
-	}
+	"Action":                  ubx.FieldSpec{WireName: "action"},
+	"ExcludeRateBasedDetails": ubx.FieldSpec{WireName: "exclude_rate_based_details"},
+	"ExcludeRuleMatchDetails": ubx.FieldSpec{WireName: "exclude_rule_match_details"},
+	"Field": ubx.FieldSpec{
+		WireName: "field",
+		Kind:     "object",
+		Fields:   WebAcl_DataProtectionConfig_DataProtections_FieldFields,
+	},
+}
 
 var WebAcl_DataProtectionConfigFields = ubx.FieldMap{
-		"DataProtections": ubx.FieldSpec{
-			WireName: "data_protections",
-			Kind: "list",
-			Fields: WebAcl_DataProtectionConfig_DataProtectionsFields,
-		},
-	}
+	"DataProtections": ubx.FieldSpec{
+		WireName: "data_protections",
+		Kind:     "list",
+		Fields:   WebAcl_DataProtectionConfig_DataProtectionsFields,
+	},
+}
 
 var WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var WebAcl_DefaultAction_Allow_CustomRequestHandlingFields = ubx.FieldMap{
-		"InsertHeaders": ubx.FieldSpec{
-			WireName: "insert_headers",
-			Kind: "list",
-			Fields: WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeadersFields,
-		},
-	}
+	"InsertHeaders": ubx.FieldSpec{
+		WireName: "insert_headers",
+		Kind:     "list",
+		Fields:   WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeadersFields,
+	},
+}
 
 var WebAcl_DefaultAction_AllowFields = ubx.FieldMap{
-		"CustomRequestHandling": ubx.FieldSpec{
-			WireName: "custom_request_handling",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_Allow_CustomRequestHandlingFields,
-		},
-	}
+	"CustomRequestHandling": ubx.FieldSpec{
+		WireName: "custom_request_handling",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_Allow_CustomRequestHandlingFields,
+	},
+}
 
 var WebAcl_DefaultAction_Block_CustomResponseFields = ubx.FieldMap{
-		"CustomResponseBodyKey": ubx.FieldSpec{WireName: "custom_response_body_key"},
-		"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
-		"ResponseHeaders": ubx.FieldSpec{
-			WireName: "response_headers",
-			Kind: "list",
-			Fields: WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeadersFields,
-		},
-	}
+	"CustomResponseBodyKey": ubx.FieldSpec{WireName: "custom_response_body_key"},
+	"ResponseCode":          ubx.FieldSpec{WireName: "response_code"},
+	"ResponseHeaders": ubx.FieldSpec{
+		WireName: "response_headers",
+		Kind:     "list",
+		Fields:   WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeadersFields,
+	},
+}
 
 var WebAcl_DefaultAction_BlockFields = ubx.FieldMap{
-		"CustomResponse": ubx.FieldSpec{
-			WireName: "custom_response",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_Block_CustomResponseFields,
-		},
-	}
+	"CustomResponse": ubx.FieldSpec{
+		WireName: "custom_response",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_Block_CustomResponseFields,
+	},
+}
 
 var WebAcl_DefaultActionFields = ubx.FieldMap{
-		"Allow": ubx.FieldSpec{
-			WireName: "allow",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_AllowFields,
-		},
-		"Block": ubx.FieldSpec{
-			WireName: "block",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_BlockFields,
-		},
-	}
+	"Allow": ubx.FieldSpec{
+		WireName: "allow",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_AllowFields,
+	},
+	"Block": ubx.FieldSpec{
+		WireName: "block",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_BlockFields,
+	},
+}
 
 var WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks_PricesFields = ubx.FieldMap{
-		"Amount": ubx.FieldSpec{WireName: "amount"},
-		"Currency": ubx.FieldSpec{WireName: "currency"},
-	}
+	"Amount":   ubx.FieldSpec{WireName: "amount"},
+	"Currency": ubx.FieldSpec{WireName: "currency"},
+}
 
 var WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworksFields = ubx.FieldMap{
-		"Chain": ubx.FieldSpec{WireName: "chain"},
-		"Prices": ubx.FieldSpec{
-			WireName: "prices",
-			Kind: "list",
-			Fields: WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks_PricesFields,
-		},
-		"WalletAddress": ubx.FieldSpec{WireName: "wallet_address"},
-	}
+	"Chain": ubx.FieldSpec{WireName: "chain"},
+	"Prices": ubx.FieldSpec{
+		WireName: "prices",
+		Kind:     "list",
+		Fields:   WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworks_PricesFields,
+	},
+	"WalletAddress": ubx.FieldSpec{WireName: "wallet_address"},
+}
 
 var WebAcl_MonetizationConfig_CryptoConfigFields = ubx.FieldMap{
-		"PaymentNetworks": ubx.FieldSpec{
-			WireName: "payment_networks",
-			Kind: "list",
-			Fields: WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworksFields,
-		},
-	}
+	"PaymentNetworks": ubx.FieldSpec{
+		WireName: "payment_networks",
+		Kind:     "list",
+		Fields:   WebAcl_MonetizationConfig_CryptoConfig_PaymentNetworksFields,
+	},
+}
 
 var WebAcl_MonetizationConfigFields = ubx.FieldMap{
-		"CryptoConfig": ubx.FieldSpec{
-			WireName: "crypto_config",
-			Kind: "object",
-			Fields: WebAcl_MonetizationConfig_CryptoConfigFields,
-		},
-		"CurrencyMode": ubx.FieldSpec{WireName: "currency_mode"},
-	}
+	"CryptoConfig": ubx.FieldSpec{
+		WireName: "crypto_config",
+		Kind:     "object",
+		Fields:   WebAcl_MonetizationConfig_CryptoConfigFields,
+	},
+	"CurrencyMode": ubx.FieldSpec{WireName: "currency_mode"},
+}
 
 var WebAcl_OnSourceDdoSprotectionConfigFields = ubx.FieldMap{
-		"AlblowReputationMode": ubx.FieldSpec{WireName: "alblow_reputation_mode"},
-	}
+	"AlblowReputationMode": ubx.FieldSpec{WireName: "alblow_reputation_mode"},
+}
 
 var WebAcl_Rules_Action_MonetizeFields = ubx.FieldMap{
-		"PriceMultiplier": ubx.FieldSpec{WireName: "price_multiplier"},
-	}
+	"PriceMultiplier": ubx.FieldSpec{WireName: "price_multiplier"},
+}
 
 var WebAcl_Rules_ActionFields = ubx.FieldMap{
-		"Allow": ubx.FieldSpec{
-			WireName: "allow",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_AllowFields,
-		},
-		"Block": ubx.FieldSpec{
-			WireName: "block",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_BlockFields,
-		},
-		"Captcha": ubx.FieldSpec{
-			WireName: "captcha",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_AllowFields,
-		},
-		"Challenge": ubx.FieldSpec{
-			WireName: "challenge",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_AllowFields,
-		},
-		"Count": ubx.FieldSpec{
-			WireName: "count",
-			Kind: "object",
-			Fields: WebAcl_DefaultAction_AllowFields,
-		},
-		"Monetize": ubx.FieldSpec{
-			WireName: "monetize",
-			Kind: "object",
-			Fields: WebAcl_Rules_Action_MonetizeFields,
-		},
-	}
+	"Allow": ubx.FieldSpec{
+		WireName: "allow",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_AllowFields,
+	},
+	"Block": ubx.FieldSpec{
+		WireName: "block",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_BlockFields,
+	},
+	"Captcha": ubx.FieldSpec{
+		WireName: "captcha",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_AllowFields,
+	},
+	"Challenge": ubx.FieldSpec{
+		WireName: "challenge",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_AllowFields,
+	},
+	"Count": ubx.FieldSpec{
+		WireName: "count",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultAction_AllowFields,
+	},
+	"Monetize": ubx.FieldSpec{
+		WireName: "monetize",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Action_MonetizeFields,
+	},
+}
 
 var WebAcl_Rules_OverrideActionFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"None": ubx.FieldSpec{WireName: "none"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"None":  ubx.FieldSpec{WireName: "none"},
+}
 
 var WebAcl_Rules_RuleLabelsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var WebAcl_Rules_Statement_AndStatementFields = ubx.FieldMap{
-		"Statements": ubx.FieldSpec{WireName: "statements"},
-	}
+	"Statements": ubx.FieldSpec{WireName: "statements"},
+}
 
 var WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields = ubx.FieldMap{
-		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-	}
+	"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
+	"HeaderName":       ubx.FieldSpec{WireName: "header_name"},
+}
 
 var WebAcl_Rules_Statement_AsnMatchStatementFields = ubx.FieldMap{
-		"AsnList": ubx.FieldSpec{WireName: "asn_list"},
-		"ForwardedIpconfig": ubx.FieldSpec{
-			WireName: "forwarded_ipconfig",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
-		},
-	}
+	"AsnList": ubx.FieldSpec{WireName: "asn_list"},
+	"ForwardedIpconfig": ubx.FieldSpec{
+		WireName: "forwarded_ipconfig",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
+	},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields = ubx.FieldMap{
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
-	}
+	"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"ExcludedCookies": ubx.FieldSpec{WireName: "excluded_cookies"},
-		"IncludedCookies": ubx.FieldSpec{WireName: "included_cookies"},
-	}
+	"All":             ubx.FieldSpec{WireName: "all"},
+	"ExcludedCookies": ubx.FieldSpec{WireName: "excluded_cookies"},
+	"IncludedCookies": ubx.FieldSpec{WireName: "included_cookies"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_CookiesFields = ubx.FieldMap{
-		"MatchPattern": ubx.FieldSpec{
-			WireName: "match_pattern",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields,
-		},
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
-	}
+	"MatchPattern": ubx.FieldSpec{
+		WireName: "match_pattern",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPatternFields,
+	},
+	"MatchScope":       ubx.FieldSpec{WireName: "match_scope"},
+	"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"ExcludedHeaders": ubx.FieldSpec{WireName: "excluded_headers"},
-		"IncludedHeaders": ubx.FieldSpec{WireName: "included_headers"},
-	}
+	"All":             ubx.FieldSpec{WireName: "all"},
+	"ExcludedHeaders": ubx.FieldSpec{WireName: "excluded_headers"},
+	"IncludedHeaders": ubx.FieldSpec{WireName: "included_headers"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_HeadersFields = ubx.FieldMap{
-		"MatchPattern": ubx.FieldSpec{
-			WireName: "match_pattern",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields,
-		},
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
-	}
+	"MatchPattern": ubx.FieldSpec{
+		WireName: "match_pattern",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPatternFields,
+	},
+	"MatchScope":       ubx.FieldSpec{WireName: "match_scope"},
+	"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields = ubx.FieldMap{
-		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
-	}
+	"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"IncludedPaths": ubx.FieldSpec{WireName: "included_paths"},
-	}
+	"All":           ubx.FieldSpec{WireName: "all"},
+	"IncludedPaths": ubx.FieldSpec{WireName: "included_paths"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields = ubx.FieldMap{
-		"InvalidFallbackBehavior": ubx.FieldSpec{WireName: "invalid_fallback_behavior"},
-		"MatchPattern": ubx.FieldSpec{
-			WireName: "match_pattern",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields,
-		},
-		"MatchScope": ubx.FieldSpec{WireName: "match_scope"},
-		"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
-	}
+	"InvalidFallbackBehavior": ubx.FieldSpec{WireName: "invalid_fallback_behavior"},
+	"MatchPattern": ubx.FieldSpec{
+		WireName: "match_pattern",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPatternFields,
+	},
+	"MatchScope":       ubx.FieldSpec{WireName: "match_scope"},
+	"OversizeHandling": ubx.FieldSpec{WireName: "oversize_handling"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields = ubx.FieldMap{
-		"AllQueryArguments": ubx.FieldSpec{WireName: "all_query_arguments"},
-		"Body": ubx.FieldSpec{
-			WireName: "body",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
-		},
-		"Cookies": ubx.FieldSpec{
-			WireName: "cookies",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_CookiesFields,
-		},
-		"HeaderOrder": ubx.FieldSpec{
-			WireName: "header_order",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
-		},
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_HeadersFields,
-		},
-		"Ja3Fingerprint": ubx.FieldSpec{
-			WireName: "ja3_fingerprint",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
-		},
-		"Ja4Fingerprint": ubx.FieldSpec{
-			WireName: "ja4_fingerprint",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
-		},
-		"JsonBody": ubx.FieldSpec{
-			WireName: "json_body",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields,
-		},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"SingleHeader": ubx.FieldSpec{
-			WireName: "single_header",
-			Kind: "object",
-			Fields: WebAcl_Rules_RuleLabelsFields,
-		},
-		"SingleQueryArgument": ubx.FieldSpec{
-			WireName: "single_query_argument",
-			Kind: "object",
-			Fields: WebAcl_Rules_RuleLabelsFields,
-		},
-		"UriFragment": ubx.FieldSpec{
-			WireName: "uri_fragment",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
-		},
-		"UriPath": ubx.FieldSpec{WireName: "uri_path"},
-	}
+	"AllQueryArguments": ubx.FieldSpec{WireName: "all_query_arguments"},
+	"Body": ubx.FieldSpec{
+		WireName: "body",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
+	},
+	"Cookies": ubx.FieldSpec{
+		WireName: "cookies",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_CookiesFields,
+	},
+	"HeaderOrder": ubx.FieldSpec{
+		WireName: "header_order",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_BodyFields,
+	},
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_HeadersFields,
+	},
+	"Ja3Fingerprint": ubx.FieldSpec{
+		WireName: "ja3_fingerprint",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+	},
+	"Ja4Fingerprint": ubx.FieldSpec{
+		WireName: "ja4_fingerprint",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+	},
+	"JsonBody": ubx.FieldSpec{
+		WireName: "json_body",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBodyFields,
+	},
+	"Method":      ubx.FieldSpec{WireName: "method"},
+	"QueryString": ubx.FieldSpec{WireName: "query_string"},
+	"SingleHeader": ubx.FieldSpec{
+		WireName: "single_header",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_RuleLabelsFields,
+	},
+	"SingleQueryArgument": ubx.FieldSpec{
+		WireName: "single_query_argument",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_RuleLabelsFields,
+	},
+	"UriFragment": ubx.FieldSpec{
+		WireName: "uri_fragment",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+	},
+	"UriPath": ubx.FieldSpec{WireName: "uri_path"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields = ubx.FieldMap{
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var WebAcl_Rules_Statement_ByteMatchStatementFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
-		"PreParseTextTransformations": ubx.FieldSpec{
-			WireName: "pre_parse_text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-		"SearchString": ubx.FieldSpec{WireName: "search_string"},
-		"SearchStringBase64": ubx.FieldSpec{WireName: "search_string_base64"},
-		"TextTransformations": ubx.FieldSpec{
-			WireName: "text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-	}
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+	},
+	"PositionalConstraint": ubx.FieldSpec{WireName: "positional_constraint"},
+	"PreParseTextTransformations": ubx.FieldSpec{
+		WireName: "pre_parse_text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+	"SearchString":       ubx.FieldSpec{WireName: "search_string"},
+	"SearchStringBase64": ubx.FieldSpec{WireName: "search_string_base64"},
+	"TextTransformations": ubx.FieldSpec{
+		WireName: "text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_GeoMatchStatementFields = ubx.FieldMap{
-		"CountryCodes": ubx.FieldSpec{WireName: "country_codes"},
-		"ForwardedIpconfig": ubx.FieldSpec{
-			WireName: "forwarded_ipconfig",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
-		},
-	}
+	"CountryCodes": ubx.FieldSpec{WireName: "country_codes"},
+	"ForwardedIpconfig": ubx.FieldSpec{
+		WireName: "forwarded_ipconfig",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
+	},
+}
 
 var WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfigFields = ubx.FieldMap{
-		"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-	}
+	"FallbackBehavior": ubx.FieldSpec{WireName: "fallback_behavior"},
+	"HeaderName":       ubx.FieldSpec{WireName: "header_name"},
+	"Position":         ubx.FieldSpec{WireName: "position"},
+}
 
 var WebAcl_Rules_Statement_IpsetReferenceStatementFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"IpsetForwardedIpconfig": ubx.FieldSpec{
-			WireName: "ipset_forwarded_ipconfig",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfigFields,
-		},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+	"IpsetForwardedIpconfig": ubx.FieldSpec{
+		WireName: "ipset_forwarded_ipconfig",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfigFields,
+	},
+}
 
 var WebAcl_Rules_Statement_LabelMatchStatementFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Scope": ubx.FieldSpec{WireName: "scope"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspectionFields = ubx.FieldMap{
-		"AddressFields": ubx.FieldSpec{
-			WireName: "address_fields",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-		"EmailField": ubx.FieldSpec{
-			WireName: "email_field",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-		"PasswordField": ubx.FieldSpec{
-			WireName: "password_field",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
-		"PhoneNumberFields": ubx.FieldSpec{
-			WireName: "phone_number_fields",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-		"UsernameField": ubx.FieldSpec{
-			WireName: "username_field",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-	}
+	"AddressFields": ubx.FieldSpec{
+		WireName: "address_fields",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+	"EmailField": ubx.FieldSpec{
+		WireName: "email_field",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+	"PasswordField": ubx.FieldSpec{
+		WireName: "password_field",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+	"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
+	"PhoneNumberFields": ubx.FieldSpec{
+		WireName: "phone_number_fields",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+	"UsernameField": ubx.FieldSpec{
+		WireName: "username_field",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContainsFields = ubx.FieldMap{
-		"FailureStrings": ubx.FieldSpec{WireName: "failure_strings"},
-		"SuccessStrings": ubx.FieldSpec{WireName: "success_strings"},
-	}
+	"FailureStrings": ubx.FieldSpec{WireName: "failure_strings"},
+	"SuccessStrings": ubx.FieldSpec{WireName: "success_strings"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_HeaderFields = ubx.FieldMap{
-		"FailureValues": ubx.FieldSpec{WireName: "failure_values"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SuccessValues": ubx.FieldSpec{WireName: "success_values"},
-	}
+	"FailureValues": ubx.FieldSpec{WireName: "failure_values"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"SuccessValues": ubx.FieldSpec{WireName: "success_values"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_JsonFields = ubx.FieldMap{
-		"FailureValues": ubx.FieldSpec{WireName: "failure_values"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"SuccessValues": ubx.FieldSpec{WireName: "success_values"},
-	}
+	"FailureValues": ubx.FieldSpec{WireName: "failure_values"},
+	"Identifier":    ubx.FieldSpec{WireName: "identifier"},
+	"SuccessValues": ubx.FieldSpec{WireName: "success_values"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCodeFields = ubx.FieldMap{
-		"FailureCodes": ubx.FieldSpec{WireName: "failure_codes"},
-		"SuccessCodes": ubx.FieldSpec{WireName: "success_codes"},
-	}
+	"FailureCodes": ubx.FieldSpec{WireName: "failure_codes"},
+	"SuccessCodes": ubx.FieldSpec{WireName: "success_codes"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspectionFields = ubx.FieldMap{
-		"BodyContains": ubx.FieldSpec{
-			WireName: "body_contains",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContainsFields,
-		},
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_HeaderFields,
-		},
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_JsonFields,
-		},
-		"StatusCode": ubx.FieldSpec{
-			WireName: "status_code",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCodeFields,
-		},
-	}
+	"BodyContains": ubx.FieldSpec{
+		WireName: "body_contains",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContainsFields,
+	},
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_HeaderFields,
+	},
+	"Json": ubx.FieldSpec{
+		WireName: "json",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_JsonFields,
+	},
+	"StatusCode": ubx.FieldSpec{
+		WireName: "status_code",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCodeFields,
+	},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSetFields = ubx.FieldMap{
-		"CreationPath": ubx.FieldSpec{WireName: "creation_path"},
-		"EnableRegexInPath": ubx.FieldSpec{WireName: "enable_regex_in_path"},
-		"RegistrationPagePath": ubx.FieldSpec{WireName: "registration_page_path"},
-		"RequestInspection": ubx.FieldSpec{
-			WireName: "request_inspection",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspectionFields,
-		},
-		"ResponseInspection": ubx.FieldSpec{
-			WireName: "response_inspection",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspectionFields,
-		},
-	}
+	"CreationPath":         ubx.FieldSpec{WireName: "creation_path"},
+	"EnableRegexInPath":    ubx.FieldSpec{WireName: "enable_regex_in_path"},
+	"RegistrationPagePath": ubx.FieldSpec{WireName: "registration_page_path"},
+	"RequestInspection": ubx.FieldSpec{
+		WireName: "request_inspection",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspectionFields,
+	},
+	"ResponseInspection": ubx.FieldSpec{
+		WireName: "response_inspection",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspectionFields,
+	},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressionsFields = ubx.FieldMap{
-		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
-	}
+	"RegexString": ubx.FieldSpec{WireName: "regex_string"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_ChallengeFields = ubx.FieldMap{
-		"ExemptUriRegularExpressions": ubx.FieldSpec{
-			WireName: "exempt_uri_regular_expressions",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressionsFields,
-		},
-		"Sensitivity": ubx.FieldSpec{WireName: "sensitivity"},
-		"UsageOfAction": ubx.FieldSpec{WireName: "usage_of_action"},
-	}
+	"ExemptUriRegularExpressions": ubx.FieldSpec{
+		WireName: "exempt_uri_regular_expressions",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressionsFields,
+	},
+	"Sensitivity":   ubx.FieldSpec{WireName: "sensitivity"},
+	"UsageOfAction": ubx.FieldSpec{WireName: "usage_of_action"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfigFields = ubx.FieldMap{
-		"Challenge": ubx.FieldSpec{
-			WireName: "challenge",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_ChallengeFields,
-		},
-	}
+	"Challenge": ubx.FieldSpec{
+		WireName: "challenge",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_ChallengeFields,
+	},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSetFields = ubx.FieldMap{
-		"ClientSideActionConfig": ubx.FieldSpec{
-			WireName: "client_side_action_config",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfigFields,
-		},
-		"SensitivityToBlock": ubx.FieldSpec{WireName: "sensitivity_to_block"},
-	}
+	"ClientSideActionConfig": ubx.FieldSpec{
+		WireName: "client_side_action_config",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfigFields,
+	},
+	"SensitivityToBlock": ubx.FieldSpec{WireName: "sensitivity_to_block"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspectionFields = ubx.FieldMap{
-		"PasswordField": ubx.FieldSpec{
-			WireName: "password_field",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
-		"UsernameField": ubx.FieldSpec{
-			WireName: "username_field",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-	}
+	"PasswordField": ubx.FieldSpec{
+		WireName: "password_field",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+	"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
+	"UsernameField": ubx.FieldSpec{
+		WireName: "username_field",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSetFields = ubx.FieldMap{
-		"EnableRegexInPath": ubx.FieldSpec{WireName: "enable_regex_in_path"},
-		"LoginPath": ubx.FieldSpec{WireName: "login_path"},
-		"RequestInspection": ubx.FieldSpec{
-			WireName: "request_inspection",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspectionFields,
-		},
-		"ResponseInspection": ubx.FieldSpec{
-			WireName: "response_inspection",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspectionFields,
-		},
-	}
+	"EnableRegexInPath": ubx.FieldSpec{WireName: "enable_regex_in_path"},
+	"LoginPath":         ubx.FieldSpec{WireName: "login_path"},
+	"RequestInspection": ubx.FieldSpec{
+		WireName: "request_inspection",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspectionFields,
+	},
+	"ResponseInspection": ubx.FieldSpec{
+		WireName: "response_inspection",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspectionFields,
+	},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSetFields = ubx.FieldMap{
-		"EnableMachineLearning": ubx.FieldSpec{WireName: "enable_machine_learning"},
-		"InspectionLevel": ubx.FieldSpec{WireName: "inspection_level"},
-	}
+	"EnableMachineLearning": ubx.FieldSpec{WireName: "enable_machine_learning"},
+	"InspectionLevel":       ubx.FieldSpec{WireName: "inspection_level"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigsFields = ubx.FieldMap{
-		"AwsmanagedRulesAcfpruleSet": ubx.FieldSpec{
-			WireName: "awsmanaged_rules_acfprule_set",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSetFields,
-		},
-		"AwsmanagedRulesAntiDdoSruleSet": ubx.FieldSpec{
-			WireName: "awsmanaged_rules_anti_ddo_srule_set",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSetFields,
-		},
-		"AwsmanagedRulesAtpruleSet": ubx.FieldSpec{
-			WireName: "awsmanaged_rules_atprule_set",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSetFields,
-		},
-		"AwsmanagedRulesBotControlRuleSet": ubx.FieldSpec{
-			WireName: "awsmanaged_rules_bot_control_rule_set",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSetFields,
-		},
-		"LoginPath": ubx.FieldSpec{WireName: "login_path"},
-		"PasswordField": ubx.FieldSpec{
-			WireName: "password_field",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
-		"UsernameField": ubx.FieldSpec{
-			WireName: "username_field",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
-		},
-	}
+	"AwsmanagedRulesAcfpruleSet": ubx.FieldSpec{
+		WireName: "awsmanaged_rules_acfprule_set",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSetFields,
+	},
+	"AwsmanagedRulesAntiDdoSruleSet": ubx.FieldSpec{
+		WireName: "awsmanaged_rules_anti_ddo_srule_set",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSetFields,
+	},
+	"AwsmanagedRulesAtpruleSet": ubx.FieldSpec{
+		WireName: "awsmanaged_rules_atprule_set",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSetFields,
+	},
+	"AwsmanagedRulesBotControlRuleSet": ubx.FieldSpec{
+		WireName: "awsmanaged_rules_bot_control_rule_set",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSetFields,
+	},
+	"LoginPath": ubx.FieldSpec{WireName: "login_path"},
+	"PasswordField": ubx.FieldSpec{
+		WireName: "password_field",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+	"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
+	"UsernameField": ubx.FieldSpec{
+		WireName: "username_field",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFieldsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverridesFields = ubx.FieldMap{
-		"ActionToUse": ubx.FieldSpec{
-			WireName: "action_to_use",
-			Kind: "object",
-			Fields: WebAcl_Rules_ActionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ActionToUse": ubx.FieldSpec{
+		WireName: "action_to_use",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_ActionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var WebAcl_Rules_Statement_ManagedRuleGroupStatementFields = ubx.FieldMap{
-		"ExcludedRules": ubx.FieldSpec{
-			WireName: "excluded_rules",
-			Kind: "list",
-			Fields: WebAcl_Rules_RuleLabelsFields,
-		},
-		"ManagedRuleGroupConfigs": ubx.FieldSpec{
-			WireName: "managed_rule_group_configs",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RuleActionOverrides": ubx.FieldSpec{
-			WireName: "rule_action_overrides",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverridesFields,
-		},
-		"ScopeDownStatement": ubx.FieldSpec{WireName: "scope_down_statement"},
-		"VendorName": ubx.FieldSpec{WireName: "vendor_name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"ExcludedRules": ubx.FieldSpec{
+		WireName: "excluded_rules",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_RuleLabelsFields,
+	},
+	"ManagedRuleGroupConfigs": ubx.FieldSpec{
+		WireName: "managed_rule_group_configs",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"RuleActionOverrides": ubx.FieldSpec{
+		WireName: "rule_action_overrides",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverridesFields,
+	},
+	"ScopeDownStatement": ubx.FieldSpec{WireName: "scope_down_statement"},
+	"VendorName":         ubx.FieldSpec{WireName: "vendor_name"},
+	"Version":            ubx.FieldSpec{WireName: "version"},
+}
 
 var WebAcl_Rules_Statement_NotStatementFields = ubx.FieldMap{
-		"Statement": ubx.FieldSpec{WireName: "statement"},
-	}
+	"Statement": ubx.FieldSpec{WireName: "statement"},
+}
 
 var WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TextTransformations": ubx.FieldSpec{
-			WireName: "text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"TextTransformations": ubx.FieldSpec{
+		WireName: "text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespaceFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields = ubx.FieldMap{
-		"TextTransformations": ubx.FieldSpec{
-			WireName: "text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-	}
+	"TextTransformations": ubx.FieldSpec{
+		WireName: "text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_RateBasedStatement_CustomKeysFields = ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"Cookie": ubx.FieldSpec{
-			WireName: "cookie",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
-		},
-		"ForwardedIp": ubx.FieldSpec{WireName: "forwarded_ip"},
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
-		},
-		"Httpmethod": ubx.FieldSpec{WireName: "httpmethod"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"Ja3Fingerprint": ubx.FieldSpec{
-			WireName: "ja3_fingerprint",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
-		},
-		"Ja4Fingerprint": ubx.FieldSpec{
-			WireName: "ja4_fingerprint",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
-		},
-		"LabelNamespace": ubx.FieldSpec{
-			WireName: "label_namespace",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespaceFields,
-		},
-		"QueryArgument": ubx.FieldSpec{
-			WireName: "query_argument",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
-		},
-		"QueryString": ubx.FieldSpec{
-			WireName: "query_string",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields,
-		},
-		"UriPath": ubx.FieldSpec{
-			WireName: "uri_path",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields,
-		},
-	}
+	"Asn": ubx.FieldSpec{WireName: "asn"},
+	"Cookie": ubx.FieldSpec{
+		WireName: "cookie",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
+	},
+	"ForwardedIp": ubx.FieldSpec{WireName: "forwarded_ip"},
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
+	},
+	"Httpmethod": ubx.FieldSpec{WireName: "httpmethod"},
+	"Ip":         ubx.FieldSpec{WireName: "ip"},
+	"Ja3Fingerprint": ubx.FieldSpec{
+		WireName: "ja3_fingerprint",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+	},
+	"Ja4Fingerprint": ubx.FieldSpec{
+		WireName: "ja4_fingerprint",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3FingerprintFields,
+	},
+	"LabelNamespace": ubx.FieldSpec{
+		WireName: "label_namespace",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespaceFields,
+	},
+	"QueryArgument": ubx.FieldSpec{
+		WireName: "query_argument",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_CookieFields,
+	},
+	"QueryString": ubx.FieldSpec{
+		WireName: "query_string",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields,
+	},
+	"UriPath": ubx.FieldSpec{
+		WireName: "uri_path",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryStringFields,
+	},
+}
 
 var WebAcl_Rules_Statement_RateBasedStatementFields = ubx.FieldMap{
-		"AggregateKeyType": ubx.FieldSpec{WireName: "aggregate_key_type"},
-		"CustomKeys": ubx.FieldSpec{
-			WireName: "custom_keys",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_RateBasedStatement_CustomKeysFields,
-		},
-		"EvaluationWindowSec": ubx.FieldSpec{WireName: "evaluation_window_sec"},
-		"ForwardedIpconfig": ubx.FieldSpec{
-			WireName: "forwarded_ipconfig",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
-		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ScopeDownStatement": ubx.FieldSpec{WireName: "scope_down_statement"},
-	}
+	"AggregateKeyType": ubx.FieldSpec{WireName: "aggregate_key_type"},
+	"CustomKeys": ubx.FieldSpec{
+		WireName: "custom_keys",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_RateBasedStatement_CustomKeysFields,
+	},
+	"EvaluationWindowSec": ubx.FieldSpec{WireName: "evaluation_window_sec"},
+	"ForwardedIpconfig": ubx.FieldSpec{
+		WireName: "forwarded_ipconfig",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfigFields,
+	},
+	"Limit":              ubx.FieldSpec{WireName: "limit"},
+	"ScopeDownStatement": ubx.FieldSpec{WireName: "scope_down_statement"},
+}
 
 var WebAcl_Rules_Statement_RegexMatchStatementFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"PreParseTextTransformations": ubx.FieldSpec{
-			WireName: "pre_parse_text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-		"RegexString": ubx.FieldSpec{WireName: "regex_string"},
-		"TextTransformations": ubx.FieldSpec{
-			WireName: "text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-	}
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+	},
+	"PreParseTextTransformations": ubx.FieldSpec{
+		WireName: "pre_parse_text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+	"RegexString": ubx.FieldSpec{WireName: "regex_string"},
+	"TextTransformations": ubx.FieldSpec{
+		WireName: "text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_RegexPatternSetReferenceStatementFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"PreParseTextTransformations": ubx.FieldSpec{
-			WireName: "pre_parse_text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-		"TextTransformations": ubx.FieldSpec{
-			WireName: "text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+	},
+	"PreParseTextTransformations": ubx.FieldSpec{
+		WireName: "pre_parse_text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+	"TextTransformations": ubx.FieldSpec{
+		WireName: "text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_RuleGroupReferenceStatementFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"ExcludedRules": ubx.FieldSpec{
-			WireName: "excluded_rules",
-			Kind: "list",
-			Fields: WebAcl_Rules_RuleLabelsFields,
-		},
-		"RuleActionOverrides": ubx.FieldSpec{
-			WireName: "rule_action_overrides",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverridesFields,
-		},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+	"ExcludedRules": ubx.FieldSpec{
+		WireName: "excluded_rules",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_RuleLabelsFields,
+	},
+	"RuleActionOverrides": ubx.FieldSpec{
+		WireName: "rule_action_overrides",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverridesFields,
+	},
+}
 
 var WebAcl_Rules_Statement_SizeConstraintStatementFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"PreParseTextTransformations": ubx.FieldSpec{
-			WireName: "pre_parse_text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"TextTransformations": ubx.FieldSpec{
-			WireName: "text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+	},
+	"PreParseTextTransformations": ubx.FieldSpec{
+		WireName: "pre_parse_text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+	"Size": ubx.FieldSpec{WireName: "size"},
+	"TextTransformations": ubx.FieldSpec{
+		WireName: "text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_SqliMatchStatementFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"PreParseTextTransformations": ubx.FieldSpec{
-			WireName: "pre_parse_text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-		"SensitivityLevel": ubx.FieldSpec{WireName: "sensitivity_level"},
-		"TextTransformations": ubx.FieldSpec{
-			WireName: "text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-	}
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+	},
+	"PreParseTextTransformations": ubx.FieldSpec{
+		WireName: "pre_parse_text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+	"SensitivityLevel": ubx.FieldSpec{WireName: "sensitivity_level"},
+	"TextTransformations": ubx.FieldSpec{
+		WireName: "text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+}
 
 var WebAcl_Rules_Statement_XssMatchStatementFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
-		},
-		"PreParseTextTransformations": ubx.FieldSpec{
-			WireName: "pre_parse_text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-		"TextTransformations": ubx.FieldSpec{
-			WireName: "text_transformations",
-			Kind: "list",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
-		},
-	}
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatchFields,
+	},
+	"PreParseTextTransformations": ubx.FieldSpec{
+		WireName: "pre_parse_text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+	"TextTransformations": ubx.FieldSpec{
+		WireName: "text_transformations",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformationsFields,
+	},
+}
 
 var WebAcl_Rules_StatementFields = ubx.FieldMap{
-		"AndStatement": ubx.FieldSpec{
-			WireName: "and_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_AndStatementFields,
-		},
-		"AsnMatchStatement": ubx.FieldSpec{
-			WireName: "asn_match_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_AsnMatchStatementFields,
-		},
-		"ByteMatchStatement": ubx.FieldSpec{
-			WireName: "byte_match_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ByteMatchStatementFields,
-		},
-		"GeoMatchStatement": ubx.FieldSpec{
-			WireName: "geo_match_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_GeoMatchStatementFields,
-		},
-		"IpsetReferenceStatement": ubx.FieldSpec{
-			WireName: "ipset_reference_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_IpsetReferenceStatementFields,
-		},
-		"LabelMatchStatement": ubx.FieldSpec{
-			WireName: "label_match_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_LabelMatchStatementFields,
-		},
-		"ManagedRuleGroupStatement": ubx.FieldSpec{
-			WireName: "managed_rule_group_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_ManagedRuleGroupStatementFields,
-		},
-		"NotStatement": ubx.FieldSpec{
-			WireName: "not_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_NotStatementFields,
-		},
-		"OrStatement": ubx.FieldSpec{
-			WireName: "or_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_AndStatementFields,
-		},
-		"RateBasedStatement": ubx.FieldSpec{
-			WireName: "rate_based_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RateBasedStatementFields,
-		},
-		"RegexMatchStatement": ubx.FieldSpec{
-			WireName: "regex_match_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RegexMatchStatementFields,
-		},
-		"RegexPatternSetReferenceStatement": ubx.FieldSpec{
-			WireName: "regex_pattern_set_reference_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RegexPatternSetReferenceStatementFields,
-		},
-		"RuleGroupReferenceStatement": ubx.FieldSpec{
-			WireName: "rule_group_reference_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_RuleGroupReferenceStatementFields,
-		},
-		"SizeConstraintStatement": ubx.FieldSpec{
-			WireName: "size_constraint_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_SizeConstraintStatementFields,
-		},
-		"SqliMatchStatement": ubx.FieldSpec{
-			WireName: "sqli_match_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_SqliMatchStatementFields,
-		},
-		"XssMatchStatement": ubx.FieldSpec{
-			WireName: "xss_match_statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_Statement_XssMatchStatementFields,
-		},
-	}
+	"AndStatement": ubx.FieldSpec{
+		WireName: "and_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_AndStatementFields,
+	},
+	"AsnMatchStatement": ubx.FieldSpec{
+		WireName: "asn_match_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_AsnMatchStatementFields,
+	},
+	"ByteMatchStatement": ubx.FieldSpec{
+		WireName: "byte_match_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ByteMatchStatementFields,
+	},
+	"GeoMatchStatement": ubx.FieldSpec{
+		WireName: "geo_match_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_GeoMatchStatementFields,
+	},
+	"IpsetReferenceStatement": ubx.FieldSpec{
+		WireName: "ipset_reference_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_IpsetReferenceStatementFields,
+	},
+	"LabelMatchStatement": ubx.FieldSpec{
+		WireName: "label_match_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_LabelMatchStatementFields,
+	},
+	"ManagedRuleGroupStatement": ubx.FieldSpec{
+		WireName: "managed_rule_group_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_ManagedRuleGroupStatementFields,
+	},
+	"NotStatement": ubx.FieldSpec{
+		WireName: "not_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_NotStatementFields,
+	},
+	"OrStatement": ubx.FieldSpec{
+		WireName: "or_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_AndStatementFields,
+	},
+	"RateBasedStatement": ubx.FieldSpec{
+		WireName: "rate_based_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RateBasedStatementFields,
+	},
+	"RegexMatchStatement": ubx.FieldSpec{
+		WireName: "regex_match_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RegexMatchStatementFields,
+	},
+	"RegexPatternSetReferenceStatement": ubx.FieldSpec{
+		WireName: "regex_pattern_set_reference_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RegexPatternSetReferenceStatementFields,
+	},
+	"RuleGroupReferenceStatement": ubx.FieldSpec{
+		WireName: "rule_group_reference_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_RuleGroupReferenceStatementFields,
+	},
+	"SizeConstraintStatement": ubx.FieldSpec{
+		WireName: "size_constraint_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_SizeConstraintStatementFields,
+	},
+	"SqliMatchStatement": ubx.FieldSpec{
+		WireName: "sqli_match_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_SqliMatchStatementFields,
+	},
+	"XssMatchStatement": ubx.FieldSpec{
+		WireName: "xss_match_statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_Statement_XssMatchStatementFields,
+	},
+}
 
 var WebAcl_Rules_VisibilityConfigFields = ubx.FieldMap{
-		"CloudWatchMetricsEnabled": ubx.FieldSpec{WireName: "cloud_watch_metrics_enabled"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"SampledRequestsEnabled": ubx.FieldSpec{WireName: "sampled_requests_enabled"},
-	}
+	"CloudWatchMetricsEnabled": ubx.FieldSpec{WireName: "cloud_watch_metrics_enabled"},
+	"MetricName":               ubx.FieldSpec{WireName: "metric_name"},
+	"SampledRequestsEnabled":   ubx.FieldSpec{WireName: "sampled_requests_enabled"},
+}
 
 var WebAcl_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: WebAcl_Rules_ActionFields,
-		},
-		"CaptchaConfig": ubx.FieldSpec{
-			WireName: "captcha_config",
-			Kind: "object",
-			Fields: WebAcl_CaptchaConfigFields,
-		},
-		"ChallengeConfig": ubx.FieldSpec{
-			WireName: "challenge_config",
-			Kind: "object",
-			Fields: WebAcl_CaptchaConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OverrideAction": ubx.FieldSpec{
-			WireName: "override_action",
-			Kind: "object",
-			Fields: WebAcl_Rules_OverrideActionFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RuleLabels": ubx.FieldSpec{
-			WireName: "rule_labels",
-			Kind: "list",
-			Fields: WebAcl_Rules_RuleLabelsFields,
-		},
-		"Statement": ubx.FieldSpec{
-			WireName: "statement",
-			Kind: "object",
-			Fields: WebAcl_Rules_StatementFields,
-		},
-		"VisibilityConfig": ubx.FieldSpec{
-			WireName: "visibility_config",
-			Kind: "object",
-			Fields: WebAcl_Rules_VisibilityConfigFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_ActionFields,
+	},
+	"CaptchaConfig": ubx.FieldSpec{
+		WireName: "captcha_config",
+		Kind:     "object",
+		Fields:   WebAcl_CaptchaConfigFields,
+	},
+	"ChallengeConfig": ubx.FieldSpec{
+		WireName: "challenge_config",
+		Kind:     "object",
+		Fields:   WebAcl_CaptchaConfigFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OverrideAction": ubx.FieldSpec{
+		WireName: "override_action",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_OverrideActionFields,
+	},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"RuleLabels": ubx.FieldSpec{
+		WireName: "rule_labels",
+		Kind:     "list",
+		Fields:   WebAcl_Rules_RuleLabelsFields,
+	},
+	"Statement": ubx.FieldSpec{
+		WireName: "statement",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_StatementFields,
+	},
+	"VisibilityConfig": ubx.FieldSpec{
+		WireName: "visibility_config",
+		Kind:     "object",
+		Fields:   WebAcl_Rules_VisibilityConfigFields,
+	},
+}
 
 var WebAcl_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WebAclConfig struct {
 	// Configures the ability for the WAF; console to store and retrieve application attributes during the webacl; creation process. Application attributes help WAF; give recommendations for protection packs.
@@ -1695,63 +1695,63 @@ var WebAcl = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationConfig": ubx.FieldSpec{
 			WireName: "application_config",
-			Kind: "object",
-			Fields: WebAcl_ApplicationConfigFields,
+			Kind:     "object",
+			Fields:   WebAcl_ApplicationConfigFields,
 		},
 		"AssociationConfig": ubx.FieldSpec{
 			WireName: "association_config",
-			Kind: "object",
-			Fields: WebAcl_AssociationConfigFields,
+			Kind:     "object",
+			Fields:   WebAcl_AssociationConfigFields,
 		},
 		"CaptchaConfig": ubx.FieldSpec{
 			WireName: "captcha_config",
-			Kind: "object",
-			Fields: WebAcl_CaptchaConfigFields,
+			Kind:     "object",
+			Fields:   WebAcl_CaptchaConfigFields,
 		},
 		"ChallengeConfig": ubx.FieldSpec{
 			WireName: "challenge_config",
-			Kind: "object",
-			Fields: WebAcl_CaptchaConfigFields,
+			Kind:     "object",
+			Fields:   WebAcl_CaptchaConfigFields,
 		},
 		"CustomResponseBodies": ubx.FieldSpec{WireName: "custom_response_bodies"},
 		"DataProtectionConfig": ubx.FieldSpec{
 			WireName: "data_protection_config",
-			Kind: "object",
-			Fields: WebAcl_DataProtectionConfigFields,
+			Kind:     "object",
+			Fields:   WebAcl_DataProtectionConfigFields,
 		},
 		"DefaultAction": ubx.FieldSpec{
 			WireName: "default_action",
-			Kind: "object",
-			Fields: WebAcl_DefaultActionFields,
+			Kind:     "object",
+			Fields:   WebAcl_DefaultActionFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"MonetizationConfig": ubx.FieldSpec{
 			WireName: "monetization_config",
-			Kind: "object",
-			Fields: WebAcl_MonetizationConfigFields,
+			Kind:     "object",
+			Fields:   WebAcl_MonetizationConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OnSourceDdoSprotectionConfig": ubx.FieldSpec{
 			WireName: "on_source_ddo_sprotection_config",
-			Kind: "object",
-			Fields: WebAcl_OnSourceDdoSprotectionConfigFields,
+			Kind:     "object",
+			Fields:   WebAcl_OnSourceDdoSprotectionConfigFields,
 		},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: WebAcl_RulesFields,
+			Kind:     "list",
+			Fields:   WebAcl_RulesFields,
 		},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WebAcl_TagsFields,
+			Kind:     "list",
+			Fields:   WebAcl_TagsFields,
 		},
 		"TokenDomains": ubx.FieldSpec{WireName: "token_domains"},
 		"VisibilityConfig": ubx.FieldSpec{
 			WireName: "visibility_config",
-			Kind: "object",
-			Fields: WebAcl_Rules_VisibilityConfigFields,
+			Kind:     "object",
+			Fields:   WebAcl_Rules_VisibilityConfigFields,
 		},
 	},
 }

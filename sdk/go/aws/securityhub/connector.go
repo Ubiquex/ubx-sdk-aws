@@ -4,7 +4,7 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connector_Issues struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -30,27 +30,27 @@ type Connector_Provider struct {
 }
 
 var Connector_Provider_Azure_ScopeConfigurationFields = ubx.FieldMap{
-		"ScopeType": ubx.FieldSpec{WireName: "scope_type"},
-		"ScopeValues": ubx.FieldSpec{WireName: "scope_values"},
-	}
+	"ScopeType":   ubx.FieldSpec{WireName: "scope_type"},
+	"ScopeValues": ubx.FieldSpec{WireName: "scope_values"},
+}
 
 var Connector_Provider_AzureFields = ubx.FieldMap{
-		"AwsconfigConnectorArn": ubx.FieldSpec{WireName: "awsconfig_connector_arn"},
-		"AzureRegions": ubx.FieldSpec{WireName: "azure_regions"},
-		"ScopeConfiguration": ubx.FieldSpec{
-			WireName: "scope_configuration",
-			Kind: "object",
-			Fields: Connector_Provider_Azure_ScopeConfigurationFields,
-		},
-	}
+	"AwsconfigConnectorArn": ubx.FieldSpec{WireName: "awsconfig_connector_arn"},
+	"AzureRegions":          ubx.FieldSpec{WireName: "azure_regions"},
+	"ScopeConfiguration": ubx.FieldSpec{
+		WireName: "scope_configuration",
+		Kind:     "object",
+		Fields:   Connector_Provider_Azure_ScopeConfigurationFields,
+	},
+}
 
 var Connector_ProviderFields = ubx.FieldMap{
-		"Azure": ubx.FieldSpec{
-			WireName: "azure",
-			Kind: "object",
-			Fields: Connector_Provider_AzureFields,
-		},
-	}
+	"Azure": ubx.FieldSpec{
+		WireName: "azure",
+		Kind:     "object",
+		Fields:   Connector_Provider_AzureFields,
+	},
+}
 
 type ConnectorConfig struct {
 	// The description of the connector.
@@ -98,11 +98,11 @@ var Connector = ubx.ResourceBinding{
 	WireType: "aws_security_hub_connector",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Provider": ubx.FieldSpec{
 			WireName: "provider",
-			Kind: "object",
-			Fields: Connector_ProviderFields,
+			Kind:     "object",
+			Fields:   Connector_ProviderFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

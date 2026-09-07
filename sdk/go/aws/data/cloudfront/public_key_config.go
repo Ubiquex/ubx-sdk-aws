@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicKeyConfig_PublicKeyConfig struct {
 	CallerReference any
-	Comment any
-	EncodedKey any
-	Name any
+	Comment         any
+	EncodedKey      any
+	Name            any
 }
 
 type PublicKeyConfigConfig struct {
@@ -16,7 +16,7 @@ type PublicKeyConfigConfig struct {
 
 type PublicKeyConfigAttrs struct {
 	Etag any
-	Id any
+	Id   any
 	// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p> <p>CloudFront supports signed URLs and signed cookies with RSA 2048 or ECDSA 256 key signatures. Field-level encryption is only compatible with RSA 2048 key signatures.</p>
 	PublicKeyConfig any
 }

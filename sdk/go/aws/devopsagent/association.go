@@ -34,9 +34,9 @@ type AssociationAttrs struct {
 var Association = ubx.ResourceBinding{
 	WireType: "aws_dev_ops_agent_association",
 	Fields: ubx.FieldMap{
-		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
+		"AgentSpaceId":         ubx.FieldSpec{WireName: "agent_space_id"},
+		"Configuration":        ubx.FieldSpec{WireName: "configuration"},
 		"LinkedAssociationIds": ubx.FieldSpec{WireName: "linked_association_ids"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
+		"ServiceId":            ubx.FieldSpec{WireName: "service_id"},
 	},
 }

@@ -4,28 +4,28 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResourceConfig struct {
-	Limit any
-	Marker any
+	Limit       any
+	Marker      any
 	ResourceArn any
 }
 
 type TagsForResourceAttrs struct {
-	Limit any
-	Marker any
+	Limit       any
+	Marker      any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_storagegateway_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"Marker":      ubx.FieldSpec{WireName: "marker"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

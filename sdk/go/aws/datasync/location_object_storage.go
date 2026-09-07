@@ -30,14 +30,14 @@ type LocationObjectStorage_Tags struct {
 }
 
 var LocationObjectStorage_CustomSecretConfigFields = ubx.FieldMap{
-		"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
+	"SecretArn":           ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var LocationObjectStorage_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationObjectStorageConfig struct {
 	// Optional. The access key is used if credentials are required to access the self-managed object storage server.
@@ -100,24 +100,24 @@ type LocationObjectStorageAttrs struct {
 var LocationObjectStorage = ubx.ResourceBinding{
 	WireType: "aws_data_sync_location_object_storage",
 	Fields: ubx.FieldMap{
-		"AccessKey": ubx.FieldSpec{WireName: "access_key"},
-		"AgentArns": ubx.FieldSpec{WireName: "agent_arns"},
+		"AccessKey":  ubx.FieldSpec{WireName: "access_key"},
+		"AgentArns":  ubx.FieldSpec{WireName: "agent_arns"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"CustomSecretConfig": ubx.FieldSpec{
 			WireName: "custom_secret_config",
-			Kind: "object",
-			Fields: LocationObjectStorage_CustomSecretConfigFields,
+			Kind:     "object",
+			Fields:   LocationObjectStorage_CustomSecretConfigFields,
 		},
-		"SecretKey": ubx.FieldSpec{WireName: "secret_key"},
+		"SecretKey":         ubx.FieldSpec{WireName: "secret_key"},
 		"ServerCertificate": ubx.FieldSpec{WireName: "server_certificate"},
-		"ServerHostname": ubx.FieldSpec{WireName: "server_hostname"},
-		"ServerPort": ubx.FieldSpec{WireName: "server_port"},
-		"ServerProtocol": ubx.FieldSpec{WireName: "server_protocol"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"ServerHostname":    ubx.FieldSpec{WireName: "server_hostname"},
+		"ServerPort":        ubx.FieldSpec{WireName: "server_port"},
+		"ServerProtocol":    ubx.FieldSpec{WireName: "server_protocol"},
+		"Subdirectory":      ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationObjectStorage_TagsFields,
+			Kind:     "list",
+			Fields:   LocationObjectStorage_TagsFields,
 		},
 	},
 }

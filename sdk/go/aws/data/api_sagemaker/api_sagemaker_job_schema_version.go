@@ -4,20 +4,20 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerJobSchemaVersionConfig struct {
-	JobCategory any
+	JobCategory            any
 	JobConfigSchemaVersion any
 }
 
 type ApiSagemakerJobSchemaVersionAttrs struct {
-	JobCategory any
-	JobConfigSchema any
+	JobCategory            any
+	JobConfigSchema        any
 	JobConfigSchemaVersion any
 }
 
 var ApiSagemakerJobSchemaVersion = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_job_schema_version",
 	Fields: ubx.FieldMap{
-		"JobCategory": ubx.FieldSpec{WireName: "job_category"},
+		"JobCategory":            ubx.FieldSpec{WireName: "job_category"},
 		"JobConfigSchemaVersion": ubx.FieldSpec{WireName: "job_config_schema_version"},
 	},
 }

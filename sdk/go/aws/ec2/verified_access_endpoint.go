@@ -70,68 +70,68 @@ type VerifiedAccessEndpoint_SseSpecification struct {
 }
 
 type VerifiedAccessEndpoint_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var VerifiedAccessEndpoint_CidrOptions_PortRangesFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var VerifiedAccessEndpoint_CidrOptionsFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"PortRanges": ubx.FieldSpec{
-			WireName: "port_ranges",
-			Kind: "list",
-			Fields: VerifiedAccessEndpoint_CidrOptions_PortRangesFields,
-		},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+	"PortRanges": ubx.FieldSpec{
+		WireName: "port_ranges",
+		Kind:     "list",
+		Fields:   VerifiedAccessEndpoint_CidrOptions_PortRangesFields,
+	},
+	"Protocol":  ubx.FieldSpec{WireName: "protocol"},
+	"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var VerifiedAccessEndpoint_LoadBalancerOptionsFields = ubx.FieldMap{
-		"LoadBalancerArn": ubx.FieldSpec{WireName: "load_balancer_arn"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PortRanges": ubx.FieldSpec{
-			WireName: "port_ranges",
-			Kind: "list",
-			Fields: VerifiedAccessEndpoint_CidrOptions_PortRangesFields,
-		},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"LoadBalancerArn": ubx.FieldSpec{WireName: "load_balancer_arn"},
+	"Port":            ubx.FieldSpec{WireName: "port"},
+	"PortRanges": ubx.FieldSpec{
+		WireName: "port_ranges",
+		Kind:     "list",
+		Fields:   VerifiedAccessEndpoint_CidrOptions_PortRangesFields,
+	},
+	"Protocol":  ubx.FieldSpec{WireName: "protocol"},
+	"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var VerifiedAccessEndpoint_NetworkInterfaceOptionsFields = ubx.FieldMap{
-		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PortRanges": ubx.FieldSpec{
-			WireName: "port_ranges",
-			Kind: "list",
-			Fields: VerifiedAccessEndpoint_CidrOptions_PortRangesFields,
-		},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
+	"Port":               ubx.FieldSpec{WireName: "port"},
+	"PortRanges": ubx.FieldSpec{
+		WireName: "port_ranges",
+		Kind:     "list",
+		Fields:   VerifiedAccessEndpoint_CidrOptions_PortRangesFields,
+	},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var VerifiedAccessEndpoint_RdsOptionsFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"RdsDbClusterArn": ubx.FieldSpec{WireName: "rds_db_cluster_arn"},
-		"RdsDbInstanceArn": ubx.FieldSpec{WireName: "rds_db_instance_arn"},
-		"RdsDbProxyArn": ubx.FieldSpec{WireName: "rds_db_proxy_arn"},
-		"RdsEndpoint": ubx.FieldSpec{WireName: "rds_endpoint"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"Port":             ubx.FieldSpec{WireName: "port"},
+	"Protocol":         ubx.FieldSpec{WireName: "protocol"},
+	"RdsDbClusterArn":  ubx.FieldSpec{WireName: "rds_db_cluster_arn"},
+	"RdsDbInstanceArn": ubx.FieldSpec{WireName: "rds_db_instance_arn"},
+	"RdsDbProxyArn":    ubx.FieldSpec{WireName: "rds_db_proxy_arn"},
+	"RdsEndpoint":      ubx.FieldSpec{WireName: "rds_endpoint"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var VerifiedAccessEndpoint_SseSpecificationFields = ubx.FieldMap{
-		"CustomerManagedKeyEnabled": ubx.FieldSpec{WireName: "customer_managed_key_enabled"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"CustomerManagedKeyEnabled": ubx.FieldSpec{WireName: "customer_managed_key_enabled"},
+	"KmsKeyArn":                 ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var VerifiedAccessEndpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VerifiedAccessEndpointConfig struct {
 	// The DNS name for users to reach your application.
@@ -221,43 +221,43 @@ var VerifiedAccessEndpoint = ubx.ResourceBinding{
 	WireType: "aws_ec2_verified_access_endpoint",
 	Fields: ubx.FieldMap{
 		"ApplicationDomain": ubx.FieldSpec{WireName: "application_domain"},
-		"AttachmentType": ubx.FieldSpec{WireName: "attachment_type"},
+		"AttachmentType":    ubx.FieldSpec{WireName: "attachment_type"},
 		"CidrOptions": ubx.FieldSpec{
 			WireName: "cidr_options",
-			Kind: "object",
-			Fields: VerifiedAccessEndpoint_CidrOptionsFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessEndpoint_CidrOptionsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"DomainCertificateArn": ubx.FieldSpec{WireName: "domain_certificate_arn"},
 		"EndpointDomainPrefix": ubx.FieldSpec{WireName: "endpoint_domain_prefix"},
-		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
+		"EndpointType":         ubx.FieldSpec{WireName: "endpoint_type"},
 		"LoadBalancerOptions": ubx.FieldSpec{
 			WireName: "load_balancer_options",
-			Kind: "object",
-			Fields: VerifiedAccessEndpoint_LoadBalancerOptionsFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessEndpoint_LoadBalancerOptionsFields,
 		},
 		"NetworkInterfaceOptions": ubx.FieldSpec{
 			WireName: "network_interface_options",
-			Kind: "object",
-			Fields: VerifiedAccessEndpoint_NetworkInterfaceOptionsFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessEndpoint_NetworkInterfaceOptionsFields,
 		},
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyEnabled": ubx.FieldSpec{WireName: "policy_enabled"},
+		"PolicyEnabled":  ubx.FieldSpec{WireName: "policy_enabled"},
 		"RdsOptions": ubx.FieldSpec{
 			WireName: "rds_options",
-			Kind: "object",
-			Fields: VerifiedAccessEndpoint_RdsOptionsFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessEndpoint_RdsOptionsFields,
 		},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
 		"SseSpecification": ubx.FieldSpec{
 			WireName: "sse_specification",
-			Kind: "object",
-			Fields: VerifiedAccessEndpoint_SseSpecificationFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessEndpoint_SseSpecificationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VerifiedAccessEndpoint_TagsFields,
+			Kind:     "list",
+			Fields:   VerifiedAccessEndpoint_TagsFields,
 		},
 		"VerifiedAccessGroupId": ubx.FieldSpec{WireName: "verified_access_group_id"},
 	},

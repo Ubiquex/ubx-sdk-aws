@@ -9,33 +9,33 @@ type ProcurementPortalPreferences_ProcurementPortalPreferences_Selector struct {
 }
 
 type ProcurementPortalPreferences_ProcurementPortalPreferences struct {
-	AwsAccountId any
-	BuyerDomain any
-	BuyerIdentifier any
-	CreateDate any
-	EinvoiceDeliveryEnabled any
-	EinvoiceDeliveryPreferenceStatus any
-	EinvoiceDeliveryPreferenceStatusReason any
-	LastUpdateDate any
-	ProcurementPortalName any
-	ProcurementPortalPreferenceArn any
-	PurchaseOrderRetrievalEnabled any
-	PurchaseOrderRetrievalPreferenceStatus any
+	AwsAccountId                                 any
+	BuyerDomain                                  any
+	BuyerIdentifier                              any
+	CreateDate                                   any
+	EinvoiceDeliveryEnabled                      any
+	EinvoiceDeliveryPreferenceStatus             any
+	EinvoiceDeliveryPreferenceStatusReason       any
+	LastUpdateDate                               any
+	ProcurementPortalName                        any
+	ProcurementPortalPreferenceArn               any
+	PurchaseOrderRetrievalEnabled                any
+	PurchaseOrderRetrievalPreferenceStatus       any
 	PurchaseOrderRetrievalPreferenceStatusReason any
-	Selector any
-	SupplierDomain any
-	SupplierIdentifier any
-	Version any
+	Selector                                     any
+	SupplierDomain                               any
+	SupplierIdentifier                           any
+	Version                                      any
 }
 
 type ProcurementPortalPreferencesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ProcurementPortalPreferencesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                   any
+	NextToken                    any
 	ProcurementPortalPreferences any
 }
 
@@ -43,6 +43,6 @@ var ProcurementPortalPreferences = ubx.DataSourceBinding{
 	WireType: "aws_invoicing_procurement_portal_preferences",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

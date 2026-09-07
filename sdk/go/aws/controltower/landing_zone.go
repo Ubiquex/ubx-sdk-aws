@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LandingZone_Tags struct {
 	// Key of a user-defined tag to apply to the AWS Control Tower landing zone resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var LandingZone_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LandingZoneConfig struct {
 	// The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
@@ -49,12 +49,12 @@ type LandingZoneAttrs struct {
 var LandingZone = ubx.ResourceBinding{
 	WireType: "aws_control_tower_landing_zone",
 	Fields: ubx.FieldMap{
-		"Manifest": ubx.FieldSpec{WireName: "manifest"},
+		"Manifest":         ubx.FieldSpec{WireName: "manifest"},
 		"RemediationTypes": ubx.FieldSpec{WireName: "remediation_types"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LandingZone_TagsFields,
+			Kind:     "list",
+			Fields:   LandingZone_TagsFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

@@ -8,13 +8,13 @@ type MessagingChimeChannelMessage_ChannelMessage_MessageAttributes struct {
 }
 
 type MessagingChimeChannelMessage_ChannelMessage_Sender struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type MessagingChimeChannelMessage_ChannelMessage_Status struct {
 	Detail any
-	Value any
+	Value  any
 }
 
 type MessagingChimeChannelMessage_ChannelMessage_Target struct {
@@ -22,30 +22,30 @@ type MessagingChimeChannelMessage_ChannelMessage_Target struct {
 }
 
 type MessagingChimeChannelMessage_ChannelMessage struct {
-	ChannelArn any
-	Content any
-	ContentType any
-	CreatedTimestamp any
-	LastEditedTimestamp any
+	ChannelArn           any
+	Content              any
+	ContentType          any
+	CreatedTimestamp     any
+	LastEditedTimestamp  any
 	LastUpdatedTimestamp any
-	MessageAttributes any
-	MessageId any
-	Metadata any
-	Persistence any
-	Redacted any
+	MessageAttributes    any
+	MessageId            any
+	Metadata             any
+	Persistence          any
+	Redacted             any
 	// <p>The details of a user or bot.</p>
 	Sender any
 	// <p>Stores information about a message status.</p>
-	Status any
+	Status       any
 	SubChannelId any
-	Target any
-	Type any
+	Target       any
+	Type         any
 }
 
 type MessagingChimeChannelMessageConfig struct {
-	ChannelArn any
-	ChimeBearer any
-	MessageId any
+	ChannelArn   any
+	ChimeBearer  any
+	MessageId    any
 	SubChannelId any
 }
 
@@ -53,17 +53,17 @@ type MessagingChimeChannelMessageAttrs struct {
 	ChannelArn any
 	// <p>The details of a message in a channel.</p>
 	ChannelMessage any
-	ChimeBearer any
-	MessageId any
-	SubChannelId any
+	ChimeBearer    any
+	MessageId      any
+	SubChannelId   any
 }
 
 var MessagingChimeChannelMessage = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channel_message",
 	Fields: ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
+		"ChannelArn":   ubx.FieldSpec{WireName: "channel_arn"},
+		"ChimeBearer":  ubx.FieldSpec{WireName: "chime_bearer"},
+		"MessageId":    ubx.FieldSpec{WireName: "message_id"},
 		"SubChannelId": ubx.FieldSpec{WireName: "sub_channel_id"},
 	},
 }

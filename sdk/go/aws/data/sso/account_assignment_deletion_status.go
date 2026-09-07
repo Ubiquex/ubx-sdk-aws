@@ -4,33 +4,33 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountAssignmentDeletionStatus_AccountAssignmentDeletionStatus struct {
-	CreatedDate any
-	FailureReason any
+	CreatedDate      any
+	FailureReason    any
 	PermissionSetArn any
-	PrincipalId any
-	PrincipalType any
-	RequestId any
-	Status any
-	TargetId any
-	TargetType any
+	PrincipalId      any
+	PrincipalType    any
+	RequestId        any
+	Status           any
+	TargetId         any
+	TargetType       any
 }
 
 type AccountAssignmentDeletionStatusConfig struct {
 	AccountAssignmentDeletionRequestId any
-	InstanceArn any
+	InstanceArn                        any
 }
 
 type AccountAssignmentDeletionStatusAttrs struct {
 	AccountAssignmentDeletionRequestId any
 	// <p>The status of the creation or deletion operation of an assignment that a principal needs to access an account.</p>
 	AccountAssignmentDeletionStatus any
-	InstanceArn any
+	InstanceArn                     any
 }
 
 var AccountAssignmentDeletionStatus = ubx.DataSourceBinding{
 	WireType: "aws_sso_account_assignment_deletion_status",
 	Fields: ubx.FieldMap{
 		"AccountAssignmentDeletionRequestId": ubx.FieldSpec{WireName: "account_assignment_deletion_request_id"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"InstanceArn":                        ubx.FieldSpec{WireName: "instance_arn"},
 	},
 }

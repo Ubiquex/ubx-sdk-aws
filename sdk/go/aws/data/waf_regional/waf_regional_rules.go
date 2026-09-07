@@ -4,25 +4,25 @@ package waf_regional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalRules_Rules struct {
-	Name any
+	Name   any
 	RuleId any
 }
 
 type WafRegionalRulesConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalRulesAttrs struct {
-	Limit any
+	Limit      any
 	NextMarker any
-	Rules any
+	Rules      any
 }
 
 var WafRegionalRules = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_rules",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

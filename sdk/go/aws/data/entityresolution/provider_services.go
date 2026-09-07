@@ -4,31 +4,31 @@ package entityresolution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProviderServices_ProviderServiceSummaries struct {
-	ProviderName any
-	ProviderServiceArn any
+	ProviderName               any
+	ProviderServiceArn         any
 	ProviderServiceDisplayName any
-	ProviderServiceName any
-	ProviderServiceType any
+	ProviderServiceName        any
+	ProviderServiceType        any
 }
 
 type ProviderServicesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ProviderName any
 }
 
 type ProviderServicesAttrs struct {
-	MaxResults any
-	NextToken any
-	ProviderName any
+	MaxResults               any
+	NextToken                any
+	ProviderName             any
 	ProviderServiceSummaries any
 }
 
 var ProviderServices = ubx.DataSourceBinding{
 	WireType: "aws_entityresolution_provider_services",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
 	},
 }

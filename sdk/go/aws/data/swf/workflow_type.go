@@ -8,33 +8,33 @@ type WorkflowType_Configuration_DefaultTaskList struct {
 }
 
 type WorkflowType_Configuration struct {
-	DefaultChildPolicy any
+	DefaultChildPolicy                  any
 	DefaultExecutionStartToCloseTimeout any
-	DefaultLambdaRole any
+	DefaultLambdaRole                   any
 	// <p>Represents a task list.</p>
-	DefaultTaskList any
-	DefaultTaskPriority any
+	DefaultTaskList                any
+	DefaultTaskPriority            any
 	DefaultTaskStartToCloseTimeout any
 }
 
 type WorkflowType_TypeInfo_WorkflowType struct {
-	Name any
+	Name    any
 	Version any
 }
 
 type WorkflowType_TypeInfo struct {
-	CreationDate any
+	CreationDate    any
 	DeprecationDate any
-	Description any
-	Status any
+	Description     any
+	Status          any
 	// <p>Represents a workflow type.</p>
 	WorkflowType any
 }
 
 var WorkflowType_TypeInfo_WorkflowTypeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 type WorkflowTypeConfig struct {
 	Domain any
@@ -45,7 +45,7 @@ type WorkflowTypeConfig struct {
 type WorkflowTypeAttrs struct {
 	// <p>The configuration settings of a workflow type.</p>
 	Configuration any
-	Domain any
+	Domain        any
 	// <p>Contains information about a workflow type.</p>
 	TypeInfo any
 	// <p>Represents a workflow type.</p>
@@ -58,8 +58,8 @@ var WorkflowType = ubx.DataSourceBinding{
 		"Domain": ubx.FieldSpec{WireName: "domain"},
 		"WorkflowType": ubx.FieldSpec{
 			WireName: "workflow_type",
-			Kind: "object",
-			Fields: WorkflowType_TypeInfo_WorkflowTypeFields,
+			Kind:     "object",
+			Fields:   WorkflowType_TypeInfo_WorkflowTypeFields,
 		},
 	},
 }

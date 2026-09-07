@@ -4,46 +4,46 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupJobSummaries_BackupJobSummaries struct {
-	AccountId any
-	Count any
-	EndTime any
+	AccountId       any
+	Count           any
+	EndTime         any
 	MessageCategory any
-	Region any
-	ResourceType any
-	StartTime any
-	State any
+	Region          any
+	ResourceType    any
+	StartTime       any
+	State           any
 }
 
 type BackupJobSummariesConfig struct {
-	AccountId any
+	AccountId         any
 	AggregationPeriod any
-	MaxResults any
-	MessageCategory any
-	NextToken any
-	ResourceType any
-	State any
+	MaxResults        any
+	MessageCategory   any
+	NextToken         any
+	ResourceType      any
+	State             any
 }
 
 type BackupJobSummariesAttrs struct {
-	AccountId any
-	AggregationPeriod any
+	AccountId          any
+	AggregationPeriod  any
 	BackupJobSummaries any
-	MaxResults any
-	MessageCategory any
-	NextToken any
-	ResourceType any
-	State any
+	MaxResults         any
+	MessageCategory    any
+	NextToken          any
+	ResourceType       any
+	State              any
 }
 
 var BackupJobSummaries = ubx.DataSourceBinding{
 	WireType: "aws_backup_backup_job_summaries",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"AggregationPeriod": ubx.FieldSpec{WireName: "aggregation_period"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MessageCategory": ubx.FieldSpec{WireName: "message_category"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"MessageCategory":   ubx.FieldSpec{WireName: "message_category"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"ResourceType":      ubx.FieldSpec{WireName: "resource_type"},
+		"State":             ubx.FieldSpec{WireName: "state"},
 	},
 }

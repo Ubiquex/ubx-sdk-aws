@@ -4,43 +4,43 @@ package mturk_requester
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MturkRequesterWorkersWithQualificationType_Qualifications_LocaleValue struct {
-	Country any
+	Country     any
 	Subdivision any
 }
 
 type MturkRequesterWorkersWithQualificationType_Qualifications struct {
-	GrantTime any
-	IntegerValue any
-	LocaleValue any
+	GrantTime           any
+	IntegerValue        any
+	LocaleValue         any
 	QualificationTypeId any
-	Status any
-	WorkerId any
+	Status              any
+	WorkerId            any
 }
 
 type MturkRequesterWorkersWithQualificationTypeConfig struct {
 	MaxResults any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-	NextToken any
+	NextToken           any
 	QualificationTypeId any
-	Status any
+	Status              any
 }
 
 type MturkRequesterWorkersWithQualificationTypeAttrs struct {
 	MaxResults any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-	NextToken any
-	NumResults any
+	NextToken           any
+	NumResults          any
 	QualificationTypeId any
-	Qualifications any
-	Status any
+	Qualifications      any
+	Status              any
 }
 
 var MturkRequesterWorkersWithQualificationType = ubx.DataSourceBinding{
 	WireType: "aws_mturk_requester_workers_with_qualification_type",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"QualificationTypeId": ubx.FieldSpec{WireName: "qualification_type_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":              ubx.FieldSpec{WireName: "status"},
 	},
 }

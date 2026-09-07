@@ -33,9 +33,9 @@ var Workflow = ubx.ResourceBinding{
 	WireType: "aws_glue_workflow",
 	Fields: ubx.FieldMap{
 		"DefaultRunProperties": ubx.FieldSpec{WireName: "default_run_properties"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MaxConcurrentRuns": ubx.FieldSpec{WireName: "max_concurrent_runs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"MaxConcurrentRuns":    ubx.FieldSpec{WireName: "max_concurrent_runs"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Tags":                 ubx.FieldSpec{WireName: "tags"},
 	},
 }

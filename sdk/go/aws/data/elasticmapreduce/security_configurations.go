@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityConfigurations_SecurityConfigurations struct {
 	CreationDateTime any
-	Name any
+	Name             any
 }
 
 type SecurityConfigurationsConfig struct {
@@ -13,7 +13,7 @@ type SecurityConfigurationsConfig struct {
 }
 
 type SecurityConfigurationsAttrs struct {
-	Marker any
+	Marker                 any
 	SecurityConfigurations any
 }
 

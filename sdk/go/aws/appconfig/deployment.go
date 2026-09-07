@@ -13,20 +13,20 @@ type Deployment_DynamicExtensionParameters struct {
 }
 
 type Deployment_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Deployment_DynamicExtensionParametersFields = ubx.FieldMap{
-		"ExtensionReference": ubx.FieldSpec{WireName: "extension_reference"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ExtensionReference": ubx.FieldSpec{WireName: "extension_reference"},
+	"ParameterName":      ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue":     ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var Deployment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeploymentConfig struct {
 	// The application ID.
@@ -77,22 +77,22 @@ type DeploymentAttrs struct {
 var Deployment = ubx.ResourceBinding{
 	WireType: "aws_app_config_deployment",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":          ubx.FieldSpec{WireName: "application_id"},
 		"ConfigurationProfileId": ubx.FieldSpec{WireName: "configuration_profile_id"},
-		"ConfigurationVersion": ubx.FieldSpec{WireName: "configuration_version"},
-		"DeploymentStrategyId": ubx.FieldSpec{WireName: "deployment_strategy_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ConfigurationVersion":   ubx.FieldSpec{WireName: "configuration_version"},
+		"DeploymentStrategyId":   ubx.FieldSpec{WireName: "deployment_strategy_id"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
 		"DynamicExtensionParameters": ubx.FieldSpec{
 			WireName: "dynamic_extension_parameters",
-			Kind: "list",
-			Fields: Deployment_DynamicExtensionParametersFields,
+			Kind:     "list",
+			Fields:   Deployment_DynamicExtensionParametersFields,
 		},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"EnvironmentId":    ubx.FieldSpec{WireName: "environment_id"},
 		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Deployment_TagsFields,
+			Kind:     "list",
+			Fields:   Deployment_TagsFields,
 		},
 	},
 }

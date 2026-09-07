@@ -4,42 +4,42 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instances_Instances struct {
-	CreationTime any
-	DnsName any
-	FleetArn any
-	FleetId any
-	InstanceId any
-	IpAddress any
-	Location any
+	CreationTime    any
+	DnsName         any
+	FleetArn        any
+	FleetId         any
+	InstanceId      any
+	IpAddress       any
+	Location        any
 	OperatingSystem any
-	Status any
-	Type any
+	Status          any
+	Type            any
 }
 
 type InstancesConfig struct {
-	FleetId any
+	FleetId    any
 	InstanceId any
-	Limit any
-	Location any
-	NextToken any
+	Limit      any
+	Location   any
+	NextToken  any
 }
 
 type InstancesAttrs struct {
-	FleetId any
+	FleetId    any
 	InstanceId any
-	Instances any
-	Limit any
-	Location any
-	NextToken any
+	Instances  any
+	Limit      any
+	Location   any
+	NextToken  any
 }
 
 var Instances = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_instances",
 	Fields: ubx.FieldMap{
-		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
+		"FleetId":    ubx.FieldSpec{WireName: "fleet_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Location":   ubx.FieldSpec{WireName: "location"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

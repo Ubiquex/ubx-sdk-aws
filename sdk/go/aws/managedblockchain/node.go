@@ -11,9 +11,9 @@ type Node_NodeConfiguration struct {
 }
 
 var Node_NodeConfigurationFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-	}
+	"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+	"InstanceType":     ubx.FieldSpec{WireName: "instance_type"},
+}
 
 type NodeConfig struct {
 	// The unique identifier of the Managed Blockchain member to which this node belongs. (AI-inferred)
@@ -40,12 +40,12 @@ type NodeAttrs struct {
 var Node = ubx.ResourceBinding{
 	WireType: "aws_managed_blockchain_node",
 	Fields: ubx.FieldMap{
-		"MemberId": ubx.FieldSpec{WireName: "member_id"},
+		"MemberId":  ubx.FieldSpec{WireName: "member_id"},
 		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
 		"NodeConfiguration": ubx.FieldSpec{
 			WireName: "node_configuration",
-			Kind: "object",
-			Fields: Node_NodeConfigurationFields,
+			Kind:     "object",
+			Fields:   Node_NodeConfigurationFields,
 		},
 	},
 }

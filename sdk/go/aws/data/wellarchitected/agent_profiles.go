@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentProfiles_Items_AggregationConfiguration struct {
 	AccessRoleArn any
-	AccountId any
-	Regions any
+	AccountId     any
+	Regions       any
 }
 
 type AgentProfiles_Items_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AgentProfiles_Items struct {
-	AggregationConfiguration any
-	Arn any
-	BusinessOverview any
-	CreatedAt any
-	CreatedBy any
-	DeletionProtection any
-	Description any
-	DisplayName any
+	AggregationConfiguration          any
+	Arn                               any
+	BusinessOverview                  any
+	CreatedAt                         any
+	CreatedBy                         any
+	DeletionProtection                any
+	Description                       any
+	DisplayName                       any
 	EligibleForArchitectureGeneration any
-	EligibleForScheduledGeneration any
-	ExecutionRoleArn any
-	FieldErrors any
-	LastModifiedAt any
-	LastModifiedBy any
-	Name any
-	Pillars any
-	Tags any
+	EligibleForScheduledGeneration    any
+	ExecutionRoleArn                  any
+	FieldErrors                       any
+	LastModifiedAt                    any
+	LastModifiedBy                    any
+	Name                              any
+	Pillars                           any
+	Tags                              any
 }
 
 type AgentProfilesConfig struct {
@@ -53,6 +53,6 @@ var AgentProfiles = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_agent_profiles",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

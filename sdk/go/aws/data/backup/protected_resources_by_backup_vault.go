@@ -4,35 +4,35 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProtectedResourcesByBackupVault_Results struct {
-	LastBackupTime any
-	LastBackupVaultArn any
+	LastBackupTime       any
+	LastBackupVaultArn   any
 	LastRecoveryPointArn any
-	ResourceArn any
-	ResourceName any
-	ResourceType any
+	ResourceArn          any
+	ResourceName         any
+	ResourceType         any
 }
 
 type ProtectedResourcesByBackupVaultConfig struct {
 	BackupVaultAccountId any
-	BackupVaultName any
-	MaxResults any
-	NextToken any
+	BackupVaultName      any
+	MaxResults           any
+	NextToken            any
 }
 
 type ProtectedResourcesByBackupVaultAttrs struct {
 	BackupVaultAccountId any
-	BackupVaultName any
-	MaxResults any
-	NextToken any
-	Results any
+	BackupVaultName      any
+	MaxResults           any
+	NextToken            any
+	Results              any
 }
 
 var ProtectedResourcesByBackupVault = ubx.DataSourceBinding{
 	WireType: "aws_backup_protected_resources_by_backup_vault",
 	Fields: ubx.FieldMap{
 		"BackupVaultAccountId": ubx.FieldSpec{WireName: "backup_vault_account_id"},
-		"BackupVaultName": ubx.FieldSpec{WireName: "backup_vault_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"BackupVaultName":      ubx.FieldSpec{WireName: "backup_vault_name"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

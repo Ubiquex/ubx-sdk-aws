@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcesForWebAclConfig struct {
 	ResourceType any
-	WebAclarn any
+	WebAclarn    any
 }
 
 type ResourcesForWebAclAttrs struct {
 	ResourceArns any
 	ResourceType any
-	WebAclarn any
+	WebAclarn    any
 }
 
 var ResourcesForWebAcl = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_resources_for_web_acl",
 	Fields: ubx.FieldMap{
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"WebAclarn": ubx.FieldSpec{WireName: "web_aclarn"},
+		"WebAclarn":    ubx.FieldSpec{WireName: "web_aclarn"},
 	},
 }

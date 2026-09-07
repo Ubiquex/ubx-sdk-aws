@@ -10,16 +10,16 @@ type IngestionDestinations_IngestionDestinations struct {
 type IngestionDestinationsConfig struct {
 	AppBundleIdentifier any
 	IngestionIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type IngestionDestinationsAttrs struct {
-	AppBundleIdentifier any
+	AppBundleIdentifier   any
 	IngestionDestinations any
-	IngestionIdentifier any
-	MaxResults any
-	NextToken any
+	IngestionIdentifier   any
+	MaxResults            any
+	NextToken             any
 }
 
 var IngestionDestinations = ubx.DataSourceBinding{
@@ -27,7 +27,7 @@ var IngestionDestinations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AppBundleIdentifier": ubx.FieldSpec{WireName: "app_bundle_identifier"},
 		"IngestionIdentifier": ubx.FieldSpec{WireName: "ingestion_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -11,9 +11,9 @@ type VocabularyFilter_Tags struct {
 }
 
 var VocabularyFilter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VocabularyFilterConfig struct {
 	// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files.
@@ -51,14 +51,14 @@ var VocabularyFilter = ubx.ResourceBinding{
 	WireType: "aws_transcribe_vocabulary_filter",
 	Fields: ubx.FieldMap{
 		"DataAccessRoleArn": ubx.FieldSpec{WireName: "data_access_role_arn"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"LanguageCode":      ubx.FieldSpec{WireName: "language_code"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VocabularyFilter_TagsFields,
+			Kind:     "list",
+			Fields:   VocabularyFilter_TagsFields,
 		},
 		"VocabularyFilterFileUri": ubx.FieldSpec{WireName: "vocabulary_filter_file_uri"},
-		"VocabularyFilterName": ubx.FieldSpec{WireName: "vocabulary_filter_name"},
-		"Words": ubx.FieldSpec{WireName: "words"},
+		"VocabularyFilterName":    ubx.FieldSpec{WireName: "vocabulary_filter_name"},
+		"Words":                   ubx.FieldSpec{WireName: "words"},
 	},
 }

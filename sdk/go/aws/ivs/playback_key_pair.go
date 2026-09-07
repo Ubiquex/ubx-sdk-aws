@@ -11,9 +11,9 @@ type PlaybackKeyPair_Tags struct {
 }
 
 var PlaybackKeyPair_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PlaybackKeyPairConfig struct {
 	// An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource. The value does not need to be unique.
@@ -40,12 +40,12 @@ type PlaybackKeyPairAttrs struct {
 var PlaybackKeyPair = ubx.ResourceBinding{
 	WireType: "aws_ivs_playback_key_pair",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"PublicKeyMaterial": ubx.FieldSpec{WireName: "public_key_material"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PlaybackKeyPair_TagsFields,
+			Kind:     "list",
+			Fields:   PlaybackKeyPair_TagsFields,
 		},
 	},
 }

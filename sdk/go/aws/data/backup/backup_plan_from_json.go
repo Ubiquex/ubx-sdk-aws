@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupPlanFromJson_BackupPlan_AdvancedBackupSettings struct {
 	BackupOptions any
-	ResourceType any
+	ResourceType  any
 }
 
 type BackupPlanFromJson_BackupPlan_Rules_CopyActions_Lifecycle struct {
-	DeleteAfterDays any
-	DeleteAfterEvent any
-	MoveToColdStorageAfterDays any
+	DeleteAfterDays                     any
+	DeleteAfterEvent                    any
+	MoveToColdStorageAfterDays          any
 	OptInToArchiveForSupportedResources any
 }
 
 type BackupPlanFromJson_BackupPlan_Rules_CopyActions struct {
 	DestinationBackupVaultArn any
-	Lifecycle any
+	Lifecycle                 any
 }
 
 type BackupPlanFromJson_BackupPlan_Rules_IndexActions struct {
@@ -26,37 +26,37 @@ type BackupPlanFromJson_BackupPlan_Rules_IndexActions struct {
 
 type BackupPlanFromJson_BackupPlan_Rules_ScanActions struct {
 	MalwareScanner any
-	ScanMode any
+	ScanMode       any
 }
 
 type BackupPlanFromJson_BackupPlan_Rules struct {
-	CompletionWindowMinutes any
-	CopyActions any
-	EnableContinuousBackup any
-	IndexActions any
-	Lifecycle any
-	RecoveryPointTags any
-	RuleId any
-	RuleName any
-	ScanActions any
-	ScheduleExpression any
-	ScheduleExpressionTimezone any
-	StartWindowMinutes any
-	TargetBackupVaultName any
+	CompletionWindowMinutes                any
+	CopyActions                            any
+	EnableContinuousBackup                 any
+	IndexActions                           any
+	Lifecycle                              any
+	RecoveryPointTags                      any
+	RuleId                                 any
+	RuleName                               any
+	ScanActions                            any
+	ScheduleExpression                     any
+	ScheduleExpressionTimezone             any
+	StartWindowMinutes                     any
+	TargetBackupVaultName                  any
 	TargetLogicallyAirGappedBackupVaultArn any
 }
 
 type BackupPlanFromJson_BackupPlan_ScanSettings struct {
 	MalwareScanner any
-	ResourceTypes any
+	ResourceTypes  any
 	ScannerRoleArn any
 }
 
 type BackupPlanFromJson_BackupPlan struct {
 	AdvancedBackupSettings any
-	BackupPlanName any
-	Rules any
-	ScanSettings any
+	BackupPlanName         any
+	Rules                  any
+	ScanSettings           any
 }
 
 type BackupPlanFromJsonConfig struct {
@@ -65,7 +65,7 @@ type BackupPlanFromJsonConfig struct {
 
 type BackupPlanFromJsonAttrs struct {
 	// <p>Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of Amazon Web Services resources.</p>
-	BackupPlan any
+	BackupPlan             any
 	BackupPlanTemplateJson any
 }
 

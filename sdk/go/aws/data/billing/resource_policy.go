@@ -8,7 +8,7 @@ type ResourcePolicyConfig struct {
 }
 
 type ResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

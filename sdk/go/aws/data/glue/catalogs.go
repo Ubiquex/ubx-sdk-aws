@@ -4,27 +4,27 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Catalogs_CatalogList_CatalogProperties_DataLakeAccessProperties struct {
-	CatalogType any
-	DataLakeAccess any
-	DataTransferRole any
-	KmsKey any
-	ManagedWorkgroupName any
+	CatalogType            any
+	DataLakeAccess         any
+	DataTransferRole       any
+	KmsKey                 any
+	ManagedWorkgroupName   any
 	ManagedWorkgroupStatus any
-	RedshiftDatabaseName any
-	StatusMessage any
+	RedshiftDatabaseName   any
+	StatusMessage          any
 }
 
 type Catalogs_CatalogList_CatalogProperties_IcebergOptimizationProperties struct {
-	Compaction any
-	LastUpdatedTime any
+	Compaction         any
+	LastUpdatedTime    any
 	OrphanFileDeletion any
-	Retention any
-	RoleArn any
+	Retention          any
+	RoleArn            any
 }
 
 type Catalogs_CatalogList_CatalogProperties struct {
-	CustomProperties any
-	DataLakeAccessProperties any
+	CustomProperties              any
+	DataLakeAccessProperties      any
 	IcebergOptimizationProperties any
 }
 
@@ -34,13 +34,13 @@ type Catalogs_CatalogList_CreateDatabaseDefaultPermissions_Principal struct {
 
 type Catalogs_CatalogList_CreateDatabaseDefaultPermissions struct {
 	Permissions any
-	Principal any
+	Principal   any
 }
 
 type Catalogs_CatalogList_FederatedCatalog struct {
 	ConnectionName any
 	ConnectionType any
-	Identifier any
+	Identifier     any
 }
 
 type Catalogs_CatalogList_TargetRedshiftCatalog struct {
@@ -49,47 +49,47 @@ type Catalogs_CatalogList_TargetRedshiftCatalog struct {
 
 type Catalogs_CatalogList struct {
 	AllowFullTableExternalDataAccess any
-	CatalogId any
-	CatalogProperties any
+	CatalogId                        any
+	CatalogProperties                any
 	CreateDatabaseDefaultPermissions any
-	CreateTableDefaultPermissions any
-	CreateTime any
-	Description any
-	FederatedCatalog any
-	Name any
-	Parameters any
-	ResourceArn any
-	TargetRedshiftCatalog any
-	UpdateTime any
+	CreateTableDefaultPermissions    any
+	CreateTime                       any
+	Description                      any
+	FederatedCatalog                 any
+	Name                             any
+	Parameters                       any
+	ResourceArn                      any
+	TargetRedshiftCatalog            any
+	UpdateTime                       any
 }
 
 type CatalogsConfig struct {
-	HasDatabases any
-	IncludeRoot any
-	MaxResults any
-	NextToken any
+	HasDatabases    any
+	IncludeRoot     any
+	MaxResults      any
+	NextToken       any
 	ParentCatalogId any
-	Recursive any
+	Recursive       any
 }
 
 type CatalogsAttrs struct {
-	CatalogList any
-	HasDatabases any
-	IncludeRoot any
-	MaxResults any
-	NextToken any
+	CatalogList     any
+	HasDatabases    any
+	IncludeRoot     any
+	MaxResults      any
+	NextToken       any
 	ParentCatalogId any
-	Recursive any
+	Recursive       any
 }
 
 var Catalogs = ubx.DataSourceBinding{
 	WireType: "aws_glue_catalogs",
 	Fields: ubx.FieldMap{
-		"HasDatabases": ubx.FieldSpec{WireName: "has_databases"},
-		"IncludeRoot": ubx.FieldSpec{WireName: "include_root"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"HasDatabases":    ubx.FieldSpec{WireName: "has_databases"},
+		"IncludeRoot":     ubx.FieldSpec{WireName: "include_root"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"ParentCatalogId": ubx.FieldSpec{WireName: "parent_catalog_id"},
-		"Recursive": ubx.FieldSpec{WireName: "recursive"},
+		"Recursive":       ubx.FieldSpec{WireName: "recursive"},
 	},
 }

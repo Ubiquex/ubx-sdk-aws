@@ -8,20 +8,20 @@ type ConfigurationSets_ConfigurationSets struct {
 }
 
 type ConfigurationSetsConfig struct {
-	MaxItems any
+	MaxItems  any
 	NextToken any
 }
 
 type ConfigurationSetsAttrs struct {
 	ConfigurationSets any
-	MaxItems any
-	NextToken any
+	MaxItems          any
+	NextToken         any
 }
 
 var ConfigurationSets = ubx.DataSourceBinding{
 	WireType: "aws_email_configuration_sets",
 	Fields: ubx.FieldMap{
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxItems":  ubx.FieldSpec{WireName: "max_items"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

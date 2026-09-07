@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Action_Action_Parameters struct {
 	Description any
-	Required any
+	Required    any
 }
 
 type Action_Action_Targets struct {
@@ -13,12 +13,12 @@ type Action_Action_Targets struct {
 }
 
 type Action_Action struct {
-	Arn any
+	Arn         any
 	Description any
-	Id any
-	Parameters any
-	Tags any
-	Targets any
+	Id          any
+	Parameters  any
+	Tags        any
+	Targets     any
 }
 
 type ActionConfig struct {
@@ -28,7 +28,7 @@ type ActionConfig struct {
 type ActionAttrs struct {
 	// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS actions</a> in the <i>Fault Injection Service User Guide</i>.</p>
 	Action any
-	Id any
+	Id     any
 }
 
 var Action = ubx.DataSourceBinding{

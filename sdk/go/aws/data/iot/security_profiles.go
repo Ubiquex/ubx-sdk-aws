@@ -4,22 +4,22 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityProfiles_SecurityProfileIdentifiers struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type SecurityProfilesConfig struct {
 	DimensionName any
-	MaxResults any
-	MetricName any
-	NextToken any
+	MaxResults    any
+	MetricName    any
+	NextToken     any
 }
 
 type SecurityProfilesAttrs struct {
-	DimensionName any
-	MaxResults any
-	MetricName any
-	NextToken any
+	DimensionName              any
+	MaxResults                 any
+	MetricName                 any
+	NextToken                  any
 	SecurityProfileIdentifiers any
 }
 
@@ -27,8 +27,8 @@ var SecurityProfiles = ubx.DataSourceBinding{
 	WireType: "aws_iot_security_profiles",
 	Fields: ubx.FieldMap{
 		"DimensionName": ubx.FieldSpec{WireName: "dimension_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

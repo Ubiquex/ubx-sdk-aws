@@ -13,21 +13,21 @@ type ExportAttrs struct {
 	// The domain name that uniquely identifies a SimpleDB domain within your account.
 	DomainName any
 	// A unique ARN identifier for the export.
-	ExportArn any
+	ExportArn            any
 	ExportDataCutoffTime any
-	ExportManifest any
+	ExportManifest       any
 	// The current state of the export. Current possible values include : PENDING - export request received, IN_PROGRESS - export is being processed, SUCCEEDED - export completed successfully, and FAILED - export encountered an error.
-	ExportStatus any
-	FailureCode any
+	ExportStatus   any
+	FailureCode    any
 	FailureMessage any
-	ItemsCount any
+	ItemsCount     any
 	// Timestamp when the export (or any other operation) was requested.
-	RequestedAt any
-	S3Bucket any
-	S3BucketOwner any
-	S3KeyPrefix any
+	RequestedAt    any
+	S3Bucket       any
+	S3BucketOwner  any
+	S3KeyPrefix    any
 	S3SseAlgorithm any
-	S3SseKmsKeyId any
+	S3SseKmsKeyId  any
 }
 
 var Export = ubx.DataSourceBinding{

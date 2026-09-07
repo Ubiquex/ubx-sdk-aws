@@ -12,6 +12,5 @@ type AwsorganizationsAccessStatusAttrs struct {
 
 var AwsorganizationsAccessStatus = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_awsorganizations_access_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

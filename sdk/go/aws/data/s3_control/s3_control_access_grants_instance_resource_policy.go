@@ -8,10 +8,10 @@ type S3ControlAccessGrantsInstanceResourcePolicyConfig struct {
 }
 
 type S3ControlAccessGrantsInstanceResourcePolicyAttrs struct {
-	AccountId any
-	CreatedAt any
+	AccountId    any
+	CreatedAt    any
 	Organization any
-	Policy any
+	Policy       any
 }
 
 var S3ControlAccessGrantsInstanceResourcePolicy = ubx.DataSourceBinding{

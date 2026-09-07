@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_AmazonMachineImageFulfillmentOption_OperatingSystems struct {
 	OperatingSystemFamilyName any
-	OperatingSystemName any
-	OperatingSystemVersion any
+	OperatingSystemName       any
+	OperatingSystemVersion    any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_AmazonMachineImageFulfillmentOption_Recommendation struct {
@@ -15,149 +15,149 @@ type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_AmazonMachineImag
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_AmazonMachineImageFulfillmentOption struct {
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionName any
-	FulfillmentOptionType any
-	FulfillmentOptionVersion any
-	OperatingSystems any
-	Recommendation any
-	ReleaseNotes any
-	UsageInstructions any
+	FulfillmentOptionId          any
+	FulfillmentOptionName        any
+	FulfillmentOptionType        any
+	FulfillmentOptionVersion     any
+	OperatingSystems             any
+	Recommendation               any
+	ReleaseNotes                 any
+	UsageInstructions            any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_ApiFulfillmentOption_AwsSupportedServices struct {
-	Description any
-	DisplayName any
+	Description          any
+	DisplayName          any
 	SupportedServiceType any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_ApiFulfillmentOption struct {
-	AwsSupportedServices any
+	AwsSupportedServices         any
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionType any
-	UsageInstructions any
+	FulfillmentOptionId          any
+	FulfillmentOptionType        any
+	UsageInstructions            any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_CloudFormationFulfillmentOption struct {
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionName any
-	FulfillmentOptionType any
-	FulfillmentOptionVersion any
-	ReleaseNotes any
-	UsageInstructions any
+	FulfillmentOptionId          any
+	FulfillmentOptionName        any
+	FulfillmentOptionType        any
+	FulfillmentOptionVersion     any
+	ReleaseNotes                 any
+	UsageInstructions            any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_ContainerFulfillmentOption_OperatingSystems struct {
 	OperatingSystemFamilyName any
-	OperatingSystemName any
+	OperatingSystemName       any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_ContainerFulfillmentOption struct {
-	AwsSupportedServices any
+	AwsSupportedServices         any
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionName any
-	FulfillmentOptionType any
-	FulfillmentOptionVersion any
-	OperatingSystems any
-	ReleaseNotes any
-	UsageInstructions any
+	FulfillmentOptionId          any
+	FulfillmentOptionName        any
+	FulfillmentOptionType        any
+	FulfillmentOptionVersion     any
+	OperatingSystems             any
+	ReleaseNotes                 any
+	UsageInstructions            any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_DataExchangeFulfillmentOption_DataArtifacts struct {
 	DataClassification any
-	Description any
-	ResourceArn any
-	ResourceType any
+	Description        any
+	ResourceArn        any
+	ResourceType       any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_DataExchangeFulfillmentOption struct {
-	DataArtifacts any
+	DataArtifacts                any
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionType any
+	FulfillmentOptionId          any
+	FulfillmentOptionType        any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_ProfessionalServicesFulfillmentOption struct {
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionType any
+	FulfillmentOptionId          any
+	FulfillmentOptionType        any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_SaasFulfillmentOption struct {
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionType any
-	FulfillmentUrl any
-	UsageInstructions any
+	FulfillmentOptionId          any
+	FulfillmentOptionType        any
+	FulfillmentUrl               any
+	UsageInstructions            any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_SageMakerAlgorithmFulfillmentOption_Recommendation struct {
-	RecommendedBatchTransformInstanceType any
+	RecommendedBatchTransformInstanceType    any
 	RecommendedRealtimeInferenceInstanceType any
-	RecommendedTrainingInstanceType any
+	RecommendedTrainingInstanceType          any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_SageMakerAlgorithmFulfillmentOption struct {
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionType any
-	FulfillmentOptionVersion any
-	Recommendation any
-	ReleaseNotes any
-	UsageInstructions any
+	FulfillmentOptionId          any
+	FulfillmentOptionType        any
+	FulfillmentOptionVersion     any
+	Recommendation               any
+	ReleaseNotes                 any
+	UsageInstructions            any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_SageMakerModelFulfillmentOption_Recommendation struct {
-	RecommendedBatchTransformInstanceType any
+	RecommendedBatchTransformInstanceType    any
 	RecommendedRealtimeInferenceInstanceType any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions_SageMakerModelFulfillmentOption struct {
 	FulfillmentOptionDisplayName any
-	FulfillmentOptionId any
-	FulfillmentOptionType any
-	FulfillmentOptionVersion any
-	Recommendation any
-	ReleaseNotes any
-	UsageInstructions any
+	FulfillmentOptionId          any
+	FulfillmentOptionType        any
+	FulfillmentOptionVersion     any
+	Recommendation               any
+	ReleaseNotes                 any
+	UsageInstructions            any
 }
 
 type DiscoveryMarketplaceFulfillmentOptions_FulfillmentOptions struct {
-	AmazonMachineImageFulfillmentOption any
-	ApiFulfillmentOption any
-	CloudFormationFulfillmentOption any
-	ContainerFulfillmentOption any
-	DataExchangeFulfillmentOption any
+	AmazonMachineImageFulfillmentOption       any
+	ApiFulfillmentOption                      any
+	CloudFormationFulfillmentOption           any
+	ContainerFulfillmentOption                any
+	DataExchangeFulfillmentOption             any
 	Ec2ImageBuilderComponentFulfillmentOption any
-	EksAddOnFulfillmentOption any
-	HelmFulfillmentOption any
-	ProfessionalServicesFulfillmentOption any
-	SaasFulfillmentOption any
-	SageMakerAlgorithmFulfillmentOption any
-	SageMakerModelFulfillmentOption any
+	EksAddOnFulfillmentOption                 any
+	HelmFulfillmentOption                     any
+	ProfessionalServicesFulfillmentOption     any
+	SaasFulfillmentOption                     any
+	SageMakerAlgorithmFulfillmentOption       any
+	SageMakerModelFulfillmentOption           any
 }
 
 type DiscoveryMarketplaceFulfillmentOptionsConfig struct {
 	MaxResults any
-	NextToken any
-	ProductId any
+	NextToken  any
+	ProductId  any
 }
 
 type DiscoveryMarketplaceFulfillmentOptionsAttrs struct {
 	FulfillmentOptions any
-	MaxResults any
-	NextToken any
-	ProductId any
+	MaxResults         any
+	NextToken          any
+	ProductId          any
 }
 
 var DiscoveryMarketplaceFulfillmentOptions = ubx.DataSourceBinding{
 	WireType: "aws_discovery_marketplace_fulfillment_options",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ProductId":  ubx.FieldSpec{WireName: "product_id"},
 	},
 }

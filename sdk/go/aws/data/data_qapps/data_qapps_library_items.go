@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQappsLibraryItems_LibraryItems_Categories struct {
 	AppCount any
-	Color any
-	Id any
-	Title any
+	Color    any
+	Id       any
+	Title    any
 }
 
 type DataQappsLibraryItems_LibraryItems struct {
-	AppId any
-	AppVersion any
-	Categories any
-	CreatedAt any
-	CreatedBy any
+	AppId         any
+	AppVersion    any
+	Categories    any
+	CreatedAt     any
+	CreatedBy     any
 	IsRatedByUser any
-	IsVerified any
+	IsVerified    any
 	LibraryItemId any
-	RatingCount any
-	Status any
-	UpdatedAt any
-	UpdatedBy any
-	UserCount any
+	RatingCount   any
+	Status        any
+	UpdatedAt     any
+	UpdatedBy     any
+	UserCount     any
 }
 
 type DataQappsLibraryItemsConfig struct {
 	CategoryId any
 	InstanceId any
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 }
 
 type DataQappsLibraryItemsAttrs struct {
-	CategoryId any
-	InstanceId any
+	CategoryId   any
+	InstanceId   any
 	LibraryItems any
-	Limit any
-	NextToken any
+	Limit        any
+	NextToken    any
 }
 
 var DataQappsLibraryItems = ubx.DataSourceBinding{
@@ -46,7 +46,7 @@ var DataQappsLibraryItems = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"CategoryId": ubx.FieldSpec{WireName: "category_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

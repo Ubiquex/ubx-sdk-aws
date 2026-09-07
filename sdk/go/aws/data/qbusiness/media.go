@@ -4,27 +4,27 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaConfig struct {
-	ApplicationId any
+	ApplicationId  any
 	ConversationId any
-	MediaId any
-	MessageId any
+	MediaId        any
+	MessageId      any
 }
 
 type MediaAttrs struct {
-	ApplicationId any
+	ApplicationId  any
 	ConversationId any
-	MediaBytes any
-	MediaId any
-	MediaMimeType any
-	MessageId any
+	MediaBytes     any
+	MediaId        any
+	MediaMimeType  any
+	MessageId      any
 }
 
 var Media = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_media",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":  ubx.FieldSpec{WireName: "application_id"},
 		"ConversationId": ubx.FieldSpec{WireName: "conversation_id"},
-		"MediaId": ubx.FieldSpec{WireName: "media_id"},
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
+		"MediaId":        ubx.FieldSpec{WireName: "media_id"},
+		"MessageId":      ubx.FieldSpec{WireName: "message_id"},
 	},
 }

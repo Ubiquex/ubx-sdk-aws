@@ -4,27 +4,27 @@ package application_signals
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationSignalsAuditFindings_AuditFindings_AuditorResults struct {
-	Auditor any
-	Data any
+	Auditor     any
+	Data        any
 	Description any
-	Severity any
+	Severity    any
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings_DependencyGraph_Edges struct {
-	ConnectionType any
+	ConnectionType    any
 	DestinationNodeId any
-	Duration any
-	SourceNodeId any
+	Duration          any
+	SourceNodeId      any
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings_DependencyGraph_Nodes struct {
-	Duration any
+	Duration      any
 	KeyAttributes any
-	Name any
-	NodeId any
-	Operation any
-	Status any
-	Type any
+	Name          any
+	NodeId        any
+	Operation     any
+	Status        any
+	Type          any
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings_DependencyGraph struct {
@@ -33,46 +33,46 @@ type ApplicationSignalsAuditFindings_AuditFindings_DependencyGraph struct {
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings_MetricGraph_MetricDataQueries_MetricStat_Metric_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings_MetricGraph_MetricDataQueries_MetricStat_Metric struct {
 	Dimensions any
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings_MetricGraph_MetricDataQueries_MetricStat struct {
 	Metric any
 	Period any
-	Stat any
-	Unit any
+	Stat   any
+	Unit   any
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings_MetricGraph_MetricDataQueries struct {
-	AccountId any
+	AccountId  any
 	Expression any
-	Id any
-	Label any
+	Id         any
+	Label      any
 	MetricStat any
-	Period any
+	Period     any
 	ReturnData any
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings_MetricGraph struct {
-	EndTime any
+	EndTime           any
 	MetricDataQueries any
-	StartTime any
+	StartTime         any
 }
 
 type ApplicationSignalsAuditFindings_AuditFindings struct {
-	AuditorResults any
+	AuditorResults  any
 	DependencyGraph any
-	KeyAttributes any
-	MetricGraph any
-	Operation any
-	Type any
+	KeyAttributes   any
+	MetricGraph     any
+	Operation       any
+	Type            any
 }
 
 type ApplicationSignalsAuditFindings_AuditTargets_Data_Canary struct {
@@ -81,27 +81,27 @@ type ApplicationSignalsAuditFindings_AuditTargets_Data_Canary struct {
 
 type ApplicationSignalsAuditFindings_AuditTargets_Data_Service struct {
 	AwsAccountId any
-	Environment any
-	Name any
-	Type any
+	Environment  any
+	Name         any
+	Type         any
 }
 
 type ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceOperation struct {
 	MetricType any
-	Operation any
-	Service any
+	Operation  any
+	Service    any
 }
 
 type ApplicationSignalsAuditFindings_AuditTargets_Data_Slo struct {
-	SloArn any
+	SloArn  any
 	SloName any
 }
 
 type ApplicationSignalsAuditFindings_AuditTargets_Data struct {
-	Canary any
-	Service any
+	Canary           any
+	Service          any
 	ServiceOperation any
-	Slo any
+	Slo              any
 }
 
 type ApplicationSignalsAuditFindings_AuditTargets struct {
@@ -110,82 +110,82 @@ type ApplicationSignalsAuditFindings_AuditTargets struct {
 }
 
 var ApplicationSignalsAuditFindings_AuditTargets_Data_CanaryFields = ubx.FieldMap{
-		"CanaryName": ubx.FieldSpec{WireName: "canary_name"},
-	}
+	"CanaryName": ubx.FieldSpec{WireName: "canary_name"},
+}
 
 var ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+	"Environment":  ubx.FieldSpec{WireName: "environment"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceOperationFields = ubx.FieldMap{
-		"MetricType": ubx.FieldSpec{WireName: "metric_type"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Service": ubx.FieldSpec{
-			WireName: "service",
-			Kind: "object",
-			Fields: ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceFields,
-		},
-	}
+	"MetricType": ubx.FieldSpec{WireName: "metric_type"},
+	"Operation":  ubx.FieldSpec{WireName: "operation"},
+	"Service": ubx.FieldSpec{
+		WireName: "service",
+		Kind:     "object",
+		Fields:   ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceFields,
+	},
+}
 
 var ApplicationSignalsAuditFindings_AuditTargets_Data_SloFields = ubx.FieldMap{
-		"SloArn": ubx.FieldSpec{WireName: "slo_arn"},
-		"SloName": ubx.FieldSpec{WireName: "slo_name"},
-	}
+	"SloArn":  ubx.FieldSpec{WireName: "slo_arn"},
+	"SloName": ubx.FieldSpec{WireName: "slo_name"},
+}
 
 var ApplicationSignalsAuditFindings_AuditTargets_DataFields = ubx.FieldMap{
-		"Canary": ubx.FieldSpec{
-			WireName: "canary",
-			Kind: "object",
-			Fields: ApplicationSignalsAuditFindings_AuditTargets_Data_CanaryFields,
-		},
-		"Service": ubx.FieldSpec{
-			WireName: "service",
-			Kind: "object",
-			Fields: ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceFields,
-		},
-		"ServiceOperation": ubx.FieldSpec{
-			WireName: "service_operation",
-			Kind: "object",
-			Fields: ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceOperationFields,
-		},
-		"Slo": ubx.FieldSpec{
-			WireName: "slo",
-			Kind: "object",
-			Fields: ApplicationSignalsAuditFindings_AuditTargets_Data_SloFields,
-		},
-	}
+	"Canary": ubx.FieldSpec{
+		WireName: "canary",
+		Kind:     "object",
+		Fields:   ApplicationSignalsAuditFindings_AuditTargets_Data_CanaryFields,
+	},
+	"Service": ubx.FieldSpec{
+		WireName: "service",
+		Kind:     "object",
+		Fields:   ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceFields,
+	},
+	"ServiceOperation": ubx.FieldSpec{
+		WireName: "service_operation",
+		Kind:     "object",
+		Fields:   ApplicationSignalsAuditFindings_AuditTargets_Data_ServiceOperationFields,
+	},
+	"Slo": ubx.FieldSpec{
+		WireName: "slo",
+		Kind:     "object",
+		Fields:   ApplicationSignalsAuditFindings_AuditTargets_Data_SloFields,
+	},
+}
 
 var ApplicationSignalsAuditFindings_AuditTargetsFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: ApplicationSignalsAuditFindings_AuditTargets_DataFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   ApplicationSignalsAuditFindings_AuditTargets_DataFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ApplicationSignalsAuditFindingsConfig struct {
 	AuditTargets any
-	Auditors any
-	DetailLevel any
-	EndTime any
-	MaxResults any
-	NextToken any
-	StartTime any
+	Auditors     any
+	DetailLevel  any
+	EndTime      any
+	MaxResults   any
+	NextToken    any
+	StartTime    any
 }
 
 type ApplicationSignalsAuditFindingsAttrs struct {
 	AuditFindings any
-	AuditTargets any
-	Auditors any
-	DetailLevel any
-	EndTime any
-	MaxResults any
-	NextToken any
-	StartTime any
+	AuditTargets  any
+	Auditors      any
+	DetailLevel   any
+	EndTime       any
+	MaxResults    any
+	NextToken     any
+	StartTime     any
 }
 
 var ApplicationSignalsAuditFindings = ubx.DataSourceBinding{
@@ -193,14 +193,14 @@ var ApplicationSignalsAuditFindings = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AuditTargets": ubx.FieldSpec{
 			WireName: "audit_targets",
-			Kind: "list",
-			Fields: ApplicationSignalsAuditFindings_AuditTargetsFields,
+			Kind:     "list",
+			Fields:   ApplicationSignalsAuditFindings_AuditTargetsFields,
 		},
-		"Auditors": ubx.FieldSpec{WireName: "auditors"},
+		"Auditors":    ubx.FieldSpec{WireName: "auditors"},
 		"DetailLevel": ubx.FieldSpec{WireName: "detail_level"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"EndTime":     ubx.FieldSpec{WireName: "end_time"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":   ubx.FieldSpec{WireName: "start_time"},
 	},
 }

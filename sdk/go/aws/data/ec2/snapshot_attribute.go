@@ -4,34 +4,34 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SnapshotAttribute_CreateVolumePermissions struct {
-	Group any
+	Group  any
 	UserId any
 }
 
 type SnapshotAttribute_ProductCodes struct {
-	ProductCodeId any
+	ProductCodeId   any
 	ProductCodeType any
 }
 
 type SnapshotAttributeConfig struct {
-	Attribute any
-	DryRun any
+	Attribute  any
+	DryRun     any
 	SnapshotId any
 }
 
 type SnapshotAttributeAttrs struct {
-	Attribute any
+	Attribute               any
 	CreateVolumePermissions any
-	DryRun any
-	ProductCodes any
-	SnapshotId any
+	DryRun                  any
+	ProductCodes            any
+	SnapshotId              any
 }
 
 var SnapshotAttribute = ubx.DataSourceBinding{
 	WireType: "aws_ec2_snapshot_attribute",
 	Fields: ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Attribute":  ubx.FieldSpec{WireName: "attribute"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
 	},
 }

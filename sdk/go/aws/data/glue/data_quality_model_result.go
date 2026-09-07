@@ -4,30 +4,30 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQualityModelResult_Model struct {
-	ActualValue any
-	Date any
+	ActualValue         any
+	Date                any
 	InclusionAnnotation any
-	LowerBound any
-	PredictedValue any
-	UpperBound any
+	LowerBound          any
+	PredictedValue      any
+	UpperBound          any
 }
 
 type DataQualityModelResultConfig struct {
-	ProfileId any
+	ProfileId   any
 	StatisticId any
 }
 
 type DataQualityModelResultAttrs struct {
 	CompletedOn any
-	Model any
-	ProfileId any
+	Model       any
+	ProfileId   any
 	StatisticId any
 }
 
 var DataQualityModelResult = ubx.DataSourceBinding{
 	WireType: "aws_glue_data_quality_model_result",
 	Fields: ubx.FieldMap{
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"ProfileId":   ubx.FieldSpec{WireName: "profile_id"},
 		"StatisticId": ubx.FieldSpec{WireName: "statistic_id"},
 	},
 }

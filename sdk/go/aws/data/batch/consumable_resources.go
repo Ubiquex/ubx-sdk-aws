@@ -4,34 +4,34 @@ package batch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConsumableResources_ConsumableResources struct {
-	ConsumableResourceArn any
+	ConsumableResourceArn  any
 	ConsumableResourceName any
-	InUseQuantity any
-	ResourceType any
-	TotalQuantity any
+	InUseQuantity          any
+	ResourceType           any
+	TotalQuantity          any
 }
 
 type ConsumableResources_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ConsumableResources_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ConsumableResourcesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ConsumableResourcesAttrs struct {
 	ConsumableResources any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters             any
+	MaxResults          any
+	NextToken           any
 }
 
 var ConsumableResources = ubx.DataSourceBinding{
@@ -39,10 +39,10 @@ var ConsumableResources = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ConsumableResources_FiltersFields,
+			Kind:     "list",
+			Fields:   ConsumableResources_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

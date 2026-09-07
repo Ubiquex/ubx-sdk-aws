@@ -25,23 +25,23 @@ type Worker_Tags struct {
 }
 
 var Worker_HostProperties_IpAddressesFields = ubx.FieldMap{
-		"IpV4Addresses": ubx.FieldSpec{WireName: "ip_v4_addresses"},
-		"IpV6Addresses": ubx.FieldSpec{WireName: "ip_v6_addresses"},
-	}
+	"IpV4Addresses": ubx.FieldSpec{WireName: "ip_v4_addresses"},
+	"IpV6Addresses": ubx.FieldSpec{WireName: "ip_v6_addresses"},
+}
 
 var Worker_HostPropertiesFields = ubx.FieldMap{
-		"HostName": ubx.FieldSpec{WireName: "host_name"},
-		"IpAddresses": ubx.FieldSpec{
-			WireName: "ip_addresses",
-			Kind: "object",
-			Fields: Worker_HostProperties_IpAddressesFields,
-		},
-	}
+	"HostName": ubx.FieldSpec{WireName: "host_name"},
+	"IpAddresses": ubx.FieldSpec{
+		WireName: "ip_addresses",
+		Kind:     "object",
+		Fields:   Worker_HostProperties_IpAddressesFields,
+	},
+}
 
 var Worker_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkerConfig struct {
 	// The farm ID.
@@ -78,17 +78,17 @@ type WorkerAttrs struct {
 var Worker = ubx.ResourceBinding{
 	WireType: "aws_deadline_worker",
 	Fields: ubx.FieldMap{
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
+		"FarmId":  ubx.FieldSpec{WireName: "farm_id"},
 		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
 		"HostProperties": ubx.FieldSpec{
 			WireName: "host_properties",
-			Kind: "object",
-			Fields: Worker_HostPropertiesFields,
+			Kind:     "object",
+			Fields:   Worker_HostPropertiesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Worker_TagsFields,
+			Kind:     "list",
+			Fields:   Worker_TagsFields,
 		},
 	},
 }

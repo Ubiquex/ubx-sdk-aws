@@ -34,10 +34,10 @@ type ContactChannelAttrs struct {
 var ContactChannel = ubx.ResourceBinding{
 	WireType: "aws_ssmcontacts_contact_channel",
 	Fields: ubx.FieldMap{
-		"ChannelAddress": ubx.FieldSpec{WireName: "channel_address"},
-		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"ChannelType": ubx.FieldSpec{WireName: "channel_type"},
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"ChannelAddress":  ubx.FieldSpec{WireName: "channel_address"},
+		"ChannelName":     ubx.FieldSpec{WireName: "channel_name"},
+		"ChannelType":     ubx.FieldSpec{WireName: "channel_type"},
+		"ContactId":       ubx.FieldSpec{WireName: "contact_id"},
 		"DeferActivation": ubx.FieldSpec{WireName: "defer_activation"},
 	},
 }

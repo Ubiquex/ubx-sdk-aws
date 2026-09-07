@@ -4,32 +4,32 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcOrigins_VpcOriginList_Items struct {
-	AccountId any
-	Arn any
-	CreatedTime any
-	Id any
-	LastModifiedTime any
-	Name any
+	AccountId         any
+	Arn               any
+	CreatedTime       any
+	Id                any
+	LastModifiedTime  any
+	Name              any
 	OriginEndpointArn any
-	Status any
+	Status            any
 }
 
 type VpcOrigins_VpcOriginList struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type VpcOriginsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type VpcOriginsAttrs struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	// <p>A list of CloudFront VPC origins.</p>
 	VpcOriginList any
@@ -38,7 +38,7 @@ type VpcOriginsAttrs struct {
 var VpcOrigins = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_vpc_origins",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

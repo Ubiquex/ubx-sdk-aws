@@ -11,9 +11,9 @@ type Dbinstance_Tags struct {
 }
 
 var Dbinstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbinstanceConfig struct {
 	// Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the DB instance's current version.
@@ -76,21 +76,21 @@ type DbinstanceAttrs struct {
 var Dbinstance = ubx.ResourceBinding{
 	WireType: "aws_neptune_dbinstance",
 	Fields: ubx.FieldMap{
-		"AllowMajorVersionUpgrade": ubx.FieldSpec{WireName: "allow_major_version_upgrade"},
-		"AutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
-		"DbinstanceClass": ubx.FieldSpec{WireName: "dbinstance_class"},
-		"DbinstanceIdentifier": ubx.FieldSpec{WireName: "dbinstance_identifier"},
-		"DbparameterGroupName": ubx.FieldSpec{WireName: "dbparameter_group_name"},
-		"DbsnapshotIdentifier": ubx.FieldSpec{WireName: "dbsnapshot_identifier"},
-		"DbsubnetGroupName": ubx.FieldSpec{WireName: "dbsubnet_group_name"},
+		"AllowMajorVersionUpgrade":   ubx.FieldSpec{WireName: "allow_major_version_upgrade"},
+		"AutoMinorVersionUpgrade":    ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
+		"AvailabilityZone":           ubx.FieldSpec{WireName: "availability_zone"},
+		"DbclusterIdentifier":        ubx.FieldSpec{WireName: "dbcluster_identifier"},
+		"DbinstanceClass":            ubx.FieldSpec{WireName: "dbinstance_class"},
+		"DbinstanceIdentifier":       ubx.FieldSpec{WireName: "dbinstance_identifier"},
+		"DbparameterGroupName":       ubx.FieldSpec{WireName: "dbparameter_group_name"},
+		"DbsnapshotIdentifier":       ubx.FieldSpec{WireName: "dbsnapshot_identifier"},
+		"DbsubnetGroupName":          ubx.FieldSpec{WireName: "dbsubnet_group_name"},
 		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
+		"PubliclyAccessible":         ubx.FieldSpec{WireName: "publicly_accessible"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dbinstance_TagsFields,
+			Kind:     "list",
+			Fields:   Dbinstance_TagsFields,
 		},
 	},
 }

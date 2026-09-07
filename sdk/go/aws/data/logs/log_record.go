@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LogRecordConfig struct {
 	LogRecordPointer any
-	Unmask any
+	Unmask           any
 }
 
 type LogRecordAttrs struct {
-	LogRecord any
+	LogRecord        any
 	LogRecordPointer any
-	Unmask any
+	Unmask           any
 }
 
 var LogRecord = ubx.DataSourceBinding{
 	WireType: "aws_logs_log_record",
 	Fields: ubx.FieldMap{
 		"LogRecordPointer": ubx.FieldSpec{WireName: "log_record_pointer"},
-		"Unmask": ubx.FieldSpec{WireName: "unmask"},
+		"Unmask":           ubx.FieldSpec{WireName: "unmask"},
 	},
 }

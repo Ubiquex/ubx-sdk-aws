@@ -4,27 +4,27 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LookupTables_LookupTables struct {
-	Description any
-	KmsKeyId any
+	Description     any
+	KmsKeyId        any
 	LastUpdatedTime any
-	LookupTableArn any
+	LookupTableArn  any
 	LookupTableName any
-	RecordsCount any
-	SizeBytes any
-	TableFields any
+	RecordsCount    any
+	SizeBytes       any
+	TableFields     any
 }
 
 type LookupTablesConfig struct {
 	LookupTableNamePrefix any
-	MaxResults any
+	MaxResults            any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
 
 type LookupTablesAttrs struct {
 	LookupTableNamePrefix any
-	LookupTables any
-	MaxResults any
+	LookupTables          any
+	MaxResults            any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
@@ -33,7 +33,7 @@ var LookupTables = ubx.DataSourceBinding{
 	WireType: "aws_logs_lookup_tables",
 	Fields: ubx.FieldMap{
 		"LookupTableNamePrefix": ubx.FieldSpec{WireName: "lookup_table_name_prefix"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,52 +4,52 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceProfilesForRole_InstanceProfiles_Roles_PermissionsBoundary struct {
-	PermissionsBoundaryArn any
+	PermissionsBoundaryArn  any
 	PermissionsBoundaryType any
 }
 
 type InstanceProfilesForRole_InstanceProfiles_Roles_RoleLastUsed struct {
 	LastUsedDate any
-	Region any
+	Region       any
 }
 
 type InstanceProfilesForRole_InstanceProfiles_Roles_SourceRoleTemplate struct {
-	TemplateArn any
+	TemplateArn          any
 	TemplateMinorVersion any
 }
 
 type InstanceProfilesForRole_InstanceProfiles_Roles_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type InstanceProfilesForRole_InstanceProfiles_Roles struct {
-	Arn any
+	Arn                      any
 	AssumeRolePolicyDocument any
-	CreateDate any
-	Description any
-	MaxSessionDuration any
-	Path any
-	PermissionsBoundary any
-	RoleId any
-	RoleLastUsed any
-	RoleName any
-	SourceRoleTemplate any
-	Tags any
+	CreateDate               any
+	Description              any
+	MaxSessionDuration       any
+	Path                     any
+	PermissionsBoundary      any
+	RoleId                   any
+	RoleLastUsed             any
+	RoleName                 any
+	SourceRoleTemplate       any
+	Tags                     any
 }
 
 type InstanceProfilesForRole_InstanceProfiles struct {
-	Arn any
-	CreateDate any
-	InstanceProfileId any
+	Arn                 any
+	CreateDate          any
+	InstanceProfileId   any
 	InstanceProfileName any
-	Path any
-	Roles any
-	Tags any
+	Path                any
+	Roles               any
+	Tags                any
 }
 
 type InstanceProfilesForRoleConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	RoleName any
 }
@@ -57,16 +57,16 @@ type InstanceProfilesForRoleConfig struct {
 type InstanceProfilesForRoleAttrs struct {
 	// <p>Contains a list of instance profiles.</p>
 	InstanceProfiles any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	RoleName any
+	IsTruncated      any
+	Marker           any
+	MaxItems         any
+	RoleName         any
 }
 
 var InstanceProfilesForRole = ubx.DataSourceBinding{
 	WireType: "aws_iam_instance_profiles_for_role",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"RoleName": ubx.FieldSpec{WireName: "role_name"},
 	},

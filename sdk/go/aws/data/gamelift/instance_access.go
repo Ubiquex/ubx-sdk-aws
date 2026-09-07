@@ -4,21 +4,21 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceAccess_InstanceAccess_Credentials struct {
-	Secret any
+	Secret   any
 	UserName any
 }
 
 type InstanceAccess_InstanceAccess struct {
 	// <p>A set of credentials that allow remote access to an instance in an EC2 managed fleet. These credentials are returned in response to a call to <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess</a>, which requests access for instances that are running game servers with the Amazon GameLift Servers server SDK version 4.x or earlier.</p>
-	Credentials any
-	FleetId any
-	InstanceId any
-	IpAddress any
+	Credentials     any
+	FleetId         any
+	InstanceId      any
+	IpAddress       any
 	OperatingSystem any
 }
 
 type InstanceAccessConfig struct {
-	FleetId any
+	FleetId    any
 	InstanceId any
 }
 
@@ -26,13 +26,13 @@ type InstanceAccessAttrs struct {
 	FleetId any
 	// <p>Information and credentials that you can use to remotely connect to an instance in an EC2 managed fleet. This data type is returned in response to a call to <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess</a>. </p>
 	InstanceAccess any
-	InstanceId any
+	InstanceId     any
 }
 
 var InstanceAccess = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_instance_access",
 	Fields: ubx.FieldMap{
-		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
+		"FleetId":    ubx.FieldSpec{WireName: "fleet_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

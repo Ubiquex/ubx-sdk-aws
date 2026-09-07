@@ -4,14 +4,14 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectionGroup_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ConnectionGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectionGroupConfig struct {
 	// The ID of the Anycast static IP list.
@@ -59,13 +59,13 @@ var ConnectionGroup = ubx.ResourceBinding{
 	WireType: "aws_cloud_front_connection_group",
 	Fields: ubx.FieldMap{
 		"AnycastIpListId": ubx.FieldSpec{WireName: "anycast_ip_list_id"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Ipv6Enabled": ubx.FieldSpec{WireName: "ipv6_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Enabled":         ubx.FieldSpec{WireName: "enabled"},
+		"Ipv6Enabled":     ubx.FieldSpec{WireName: "ipv6_enabled"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConnectionGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ConnectionGroup_TagsFields,
 		},
 	},
 }

@@ -91,88 +91,88 @@ type Bridge_Sources struct {
 }
 
 var Bridge_EgressGatewayBridgeFields = ubx.FieldMap{
-		"MaxBitrate": ubx.FieldSpec{WireName: "max_bitrate"},
-	}
+	"MaxBitrate": ubx.FieldSpec{WireName: "max_bitrate"},
+}
 
 var Bridge_IngressGatewayBridgeFields = ubx.FieldMap{
-		"MaxBitrate": ubx.FieldSpec{WireName: "max_bitrate"},
-		"MaxOutputs": ubx.FieldSpec{WireName: "max_outputs"},
-	}
+	"MaxBitrate": ubx.FieldSpec{WireName: "max_bitrate"},
+	"MaxOutputs": ubx.FieldSpec{WireName: "max_outputs"},
+}
 
 var Bridge_Outputs_NetworkOutputFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkName": ubx.FieldSpec{WireName: "network_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"IpAddress":   ubx.FieldSpec{WireName: "ip_address"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"NetworkName": ubx.FieldSpec{WireName: "network_name"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"Protocol":    ubx.FieldSpec{WireName: "protocol"},
+	"Ttl":         ubx.FieldSpec{WireName: "ttl"},
+}
 
 var Bridge_OutputsFields = ubx.FieldMap{
-		"NetworkOutput": ubx.FieldSpec{
-			WireName: "network_output",
-			Kind: "object",
-			Fields: Bridge_Outputs_NetworkOutputFields,
-		},
-	}
+	"NetworkOutput": ubx.FieldSpec{
+		WireName: "network_output",
+		Kind:     "object",
+		Fields:   Bridge_Outputs_NetworkOutputFields,
+	},
+}
 
 var Bridge_SourceFailoverConfig_SourcePriorityFields = ubx.FieldMap{
-		"PrimarySource": ubx.FieldSpec{WireName: "primary_source"},
-	}
+	"PrimarySource": ubx.FieldSpec{WireName: "primary_source"},
+}
 
 var Bridge_SourceFailoverConfigFields = ubx.FieldMap{
-		"FailoverMode": ubx.FieldSpec{WireName: "failover_mode"},
-		"SourcePriority": ubx.FieldSpec{
-			WireName: "source_priority",
-			Kind: "object",
-			Fields: Bridge_SourceFailoverConfig_SourcePriorityFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"FailoverMode": ubx.FieldSpec{WireName: "failover_mode"},
+	"SourcePriority": ubx.FieldSpec{
+		WireName: "source_priority",
+		Kind:     "object",
+		Fields:   Bridge_SourceFailoverConfig_SourcePriorityFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Bridge_Sources_FlowSource_FlowVpcInterfaceAttachmentFields = ubx.FieldMap{
-		"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
-	}
+	"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
+}
 
 var Bridge_Sources_FlowSourceFields = ubx.FieldMap{
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
-		"FlowVpcInterfaceAttachment": ubx.FieldSpec{
-			WireName: "flow_vpc_interface_attachment",
-			Kind: "object",
-			Fields: Bridge_Sources_FlowSource_FlowVpcInterfaceAttachmentFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
+	"FlowVpcInterfaceAttachment": ubx.FieldSpec{
+		WireName: "flow_vpc_interface_attachment",
+		Kind:     "object",
+		Fields:   Bridge_Sources_FlowSource_FlowVpcInterfaceAttachmentFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Bridge_Sources_NetworkSource_MulticastSourceSettingsFields = ubx.FieldMap{
-		"MulticastSourceIp": ubx.FieldSpec{WireName: "multicast_source_ip"},
-	}
+	"MulticastSourceIp": ubx.FieldSpec{WireName: "multicast_source_ip"},
+}
 
 var Bridge_Sources_NetworkSourceFields = ubx.FieldMap{
-		"MulticastIp": ubx.FieldSpec{WireName: "multicast_ip"},
-		"MulticastSourceSettings": ubx.FieldSpec{
-			WireName: "multicast_source_settings",
-			Kind: "object",
-			Fields: Bridge_Sources_NetworkSource_MulticastSourceSettingsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkName": ubx.FieldSpec{WireName: "network_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"MulticastIp": ubx.FieldSpec{WireName: "multicast_ip"},
+	"MulticastSourceSettings": ubx.FieldSpec{
+		WireName: "multicast_source_settings",
+		Kind:     "object",
+		Fields:   Bridge_Sources_NetworkSource_MulticastSourceSettingsFields,
+	},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"NetworkName": ubx.FieldSpec{WireName: "network_name"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"Protocol":    ubx.FieldSpec{WireName: "protocol"},
+}
 
 var Bridge_SourcesFields = ubx.FieldMap{
-		"FlowSource": ubx.FieldSpec{
-			WireName: "flow_source",
-			Kind: "object",
-			Fields: Bridge_Sources_FlowSourceFields,
-		},
-		"NetworkSource": ubx.FieldSpec{
-			WireName: "network_source",
-			Kind: "object",
-			Fields: Bridge_Sources_NetworkSourceFields,
-		},
-	}
+	"FlowSource": ubx.FieldSpec{
+		WireName: "flow_source",
+		Kind:     "object",
+		Fields:   Bridge_Sources_FlowSourceFields,
+	},
+	"NetworkSource": ubx.FieldSpec{
+		WireName: "network_source",
+		Kind:     "object",
+		Fields:   Bridge_Sources_NetworkSourceFields,
+	},
+}
 
 type BridgeConfig struct {
 	// Defines the egress gateway bridge settings for an AWS Elemental MediaConnect bridge, including the gateway instance ID and optional maximum bitrate for transmitting media flows to a remote network. (AI-inferred)
@@ -217,30 +217,30 @@ var Bridge = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EgressGatewayBridge": ubx.FieldSpec{
 			WireName: "egress_gateway_bridge",
-			Kind: "object",
-			Fields: Bridge_EgressGatewayBridgeFields,
+			Kind:     "object",
+			Fields:   Bridge_EgressGatewayBridgeFields,
 		},
 		"IngressGatewayBridge": ubx.FieldSpec{
 			WireName: "ingress_gateway_bridge",
-			Kind: "object",
-			Fields: Bridge_IngressGatewayBridgeFields,
+			Kind:     "object",
+			Fields:   Bridge_IngressGatewayBridgeFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Outputs": ubx.FieldSpec{
 			WireName: "outputs",
-			Kind: "list",
-			Fields: Bridge_OutputsFields,
+			Kind:     "list",
+			Fields:   Bridge_OutputsFields,
 		},
 		"PlacementArn": ubx.FieldSpec{WireName: "placement_arn"},
 		"SourceFailoverConfig": ubx.FieldSpec{
 			WireName: "source_failover_config",
-			Kind: "object",
-			Fields: Bridge_SourceFailoverConfigFields,
+			Kind:     "object",
+			Fields:   Bridge_SourceFailoverConfigFields,
 		},
 		"Sources": ubx.FieldSpec{
 			WireName: "sources",
-			Kind: "list",
-			Fields: Bridge_SourcesFields,
+			Kind:     "list",
+			Fields:   Bridge_SourcesFields,
 		},
 	},
 }

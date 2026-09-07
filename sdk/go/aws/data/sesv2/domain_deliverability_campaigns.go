@@ -4,47 +4,47 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainDeliverabilityCampaigns_DomainDeliverabilityCampaigns struct {
-	CampaignId any
-	DeleteRate any
-	Esps any
+	CampaignId        any
+	DeleteRate        any
+	Esps              any
 	FirstSeenDateTime any
-	FromAddress any
-	ImageUrl any
-	InboxCount any
-	LastSeenDateTime any
-	ProjectedVolume any
-	ReadDeleteRate any
-	ReadRate any
-	SendingIps any
-	SpamCount any
-	Subject any
+	FromAddress       any
+	ImageUrl          any
+	InboxCount        any
+	LastSeenDateTime  any
+	ProjectedVolume   any
+	ReadDeleteRate    any
+	ReadRate          any
+	SendingIps        any
+	SpamCount         any
+	Subject           any
 }
 
 type DomainDeliverabilityCampaignsConfig struct {
-	EndDate any
-	NextToken any
-	PageSize any
-	StartDate any
+	EndDate          any
+	NextToken        any
+	PageSize         any
+	StartDate        any
 	SubscribedDomain any
 }
 
 type DomainDeliverabilityCampaignsAttrs struct {
 	// <p></p>
 	DomainDeliverabilityCampaigns any
-	EndDate any
-	NextToken any
-	PageSize any
-	StartDate any
-	SubscribedDomain any
+	EndDate                       any
+	NextToken                     any
+	PageSize                      any
+	StartDate                     any
+	SubscribedDomain              any
 }
 
 var DomainDeliverabilityCampaigns = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_domain_deliverability_campaigns",
 	Fields: ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
+		"EndDate":          ubx.FieldSpec{WireName: "end_date"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":         ubx.FieldSpec{WireName: "page_size"},
+		"StartDate":        ubx.FieldSpec{WireName: "start_date"},
 		"SubscribedDomain": ubx.FieldSpec{WireName: "subscribed_domain"},
 	},
 }

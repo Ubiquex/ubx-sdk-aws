@@ -18,8 +18,8 @@ type AgentAlias_AgentAliasHistoryEvents struct {
 }
 
 var AgentAlias_AgentAliasHistoryEvents_RoutingConfigurationFields = ubx.FieldMap{
-		"AgentVersion": ubx.FieldSpec{WireName: "agent_version"},
-	}
+	"AgentVersion": ubx.FieldSpec{WireName: "agent_version"},
+}
 
 type AgentAliasConfig struct {
 	// Name for a resource.
@@ -63,12 +63,12 @@ var AgentAlias = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_alias",
 	Fields: ubx.FieldMap{
 		"AgentAliasName": ubx.FieldSpec{WireName: "agent_alias_name"},
-		"AgentId": ubx.FieldSpec{WireName: "agent_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AgentId":        ubx.FieldSpec{WireName: "agent_id"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"RoutingConfiguration": ubx.FieldSpec{
 			WireName: "routing_configuration",
-			Kind: "list",
-			Fields: AgentAlias_AgentAliasHistoryEvents_RoutingConfigurationFields,
+			Kind:     "list",
+			Fields:   AgentAlias_AgentAliasHistoryEvents_RoutingConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

@@ -4,33 +4,33 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceScans_ResourceScanSummaries struct {
-	EndTime any
+	EndTime             any
 	PercentageCompleted any
-	ResourceScanId any
-	ScanType any
-	StartTime any
-	Status any
-	StatusReason any
+	ResourceScanId      any
+	ScanType            any
+	StartTime           any
+	Status              any
+	StatusReason        any
 }
 
 type ResourceScansConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	ScanTypeFilter any
 }
 
 type ResourceScansAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 	ResourceScanSummaries any
-	ScanTypeFilter any
+	ScanTypeFilter        any
 }
 
 var ResourceScans = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_resource_scans",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ScanTypeFilter": ubx.FieldSpec{WireName: "scan_type_filter"},
 	},
 }

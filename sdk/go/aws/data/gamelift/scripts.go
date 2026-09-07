@@ -4,38 +4,38 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Scripts_Scripts_StorageLocation struct {
-	Bucket any
-	Key any
+	Bucket        any
+	Key           any
 	ObjectVersion any
-	RoleArn any
+	RoleArn       any
 }
 
 type Scripts_Scripts struct {
-	CreationTime any
-	Name any
-	NodeJsVersion any
-	ScriptArn any
-	ScriptId any
-	SizeOnDisk any
+	CreationTime    any
+	Name            any
+	NodeJsVersion   any
+	ScriptArn       any
+	ScriptId        any
+	SizeOnDisk      any
 	StorageLocation any
-	Version any
+	Version         any
 }
 
 type ScriptsConfig struct {
-	Limit any
+	Limit     any
 	NextToken any
 }
 
 type ScriptsAttrs struct {
-	Limit any
+	Limit     any
 	NextToken any
-	Scripts any
+	Scripts   any
 }
 
 var Scripts = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_scripts",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,37 +4,37 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcClassicLink_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type VpcClassicLink_Vpcs_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type VpcClassicLink_Vpcs struct {
 	ClassicLinkEnabled any
-	Tags any
-	VpcId any
+	Tags               any
+	VpcId              any
 }
 
 var VpcClassicLink_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type VpcClassicLinkConfig struct {
-	DryRun any
+	DryRun  any
 	Filters any
-	VpcIds any
+	VpcIds  any
 }
 
 type VpcClassicLinkAttrs struct {
-	DryRun any
+	DryRun  any
 	Filters any
-	VpcIds any
-	Vpcs any
+	VpcIds  any
+	Vpcs    any
 }
 
 var VpcClassicLink = ubx.DataSourceBinding{
@@ -43,8 +43,8 @@ var VpcClassicLink = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: VpcClassicLink_FiltersFields,
+			Kind:     "list",
+			Fields:   VpcClassicLink_FiltersFields,
 		},
 		"VpcIds": ubx.FieldSpec{WireName: "vpc_ids"},
 	},

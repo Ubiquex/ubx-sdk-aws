@@ -8,32 +8,32 @@ type SsmContactsContactChannels_ContactChannels_DeliveryAddress struct {
 }
 
 type SsmContactsContactChannels_ContactChannels struct {
-	ActivationStatus any
-	ContactArn any
+	ActivationStatus  any
+	ContactArn        any
 	ContactChannelArn any
-	DeliveryAddress any
-	Name any
-	Type any
+	DeliveryAddress   any
+	Name              any
+	Type              any
 }
 
 type SsmContactsContactChannelsConfig struct {
-	ContactId any
+	ContactId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SsmContactsContactChannelsAttrs struct {
 	ContactChannels any
-	ContactId any
-	MaxResults any
-	NextToken any
+	ContactId       any
+	MaxResults      any
+	NextToken       any
 }
 
 var SsmContactsContactChannels = ubx.DataSourceBinding{
 	WireType: "aws_ssm_contacts_contact_channels",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"ContactId":  ubx.FieldSpec{WireName: "contact_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPolicyConfig struct {
 	PolicyName any
-	UserName any
+	UserName   any
 }
 
 type UserPolicyAttrs struct {
 	PolicyDocument any
-	PolicyName any
-	UserName any
+	PolicyName     any
+	UserName       any
 }
 
 var UserPolicy = ubx.DataSourceBinding{
 	WireType: "aws_iam_user_policy",
 	Fields: ubx.FieldMap{
 		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"UserName":   ubx.FieldSpec{WireName: "user_name"},
 	},
 }

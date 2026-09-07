@@ -4,7 +4,7 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorTerminationHealth_TerminationHealth struct {
-	Source any
+	Source    any
 	Timestamp any
 }
 
@@ -15,7 +15,7 @@ type VoiceChimeVoiceConnectorTerminationHealthConfig struct {
 type VoiceChimeVoiceConnectorTerminationHealthAttrs struct {
 	// <p>The termination health details, including the source IP address and timestamp of the last successful <code>SIP OPTIONS</code> message from your SIP infrastructure.</p>
 	TerminationHealth any
-	VoiceConnectorId any
+	VoiceConnectorId  any
 }
 
 var VoiceChimeVoiceConnectorTerminationHealth = ubx.DataSourceBinding{

@@ -11,9 +11,9 @@ type Group_Policies struct {
 }
 
 var Group_PoliciesFields = ubx.FieldMap{
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-	}
+	"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+	"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
+}
 
 type GroupConfig struct {
 	// The name of the group to create. Do not include the path in this value. The group name must be unique within the account. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins". If you don't specify a name, CFN generates a unique physical ID and uses that ID for the group name. If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name. If you specify a name, you must specify the ``CAPABILITY_NAMED_IAM`` value to acknowledge your template's capabilities. For more information, see [Acknowledging Resources in Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities). Naming an IAM resource can cause an unrecoverable error if you reuse the same template in multiple Regions. To prevent this, we recommend using ``Fn::Join`` and ``AWS::Region`` to create a Region-specific name, as in the following example: ``{"Fn::Join": ["", [{"Ref": "AWS::Region"}, {"Ref": "MyResourceName"}]]}``.
@@ -42,13 +42,13 @@ type GroupAttrs struct {
 var Group = ubx.ResourceBinding{
 	WireType: "aws_iam_group",
 	Fields: ubx.FieldMap{
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"GroupName":         ubx.FieldSpec{WireName: "group_name"},
 		"ManagedPolicyArns": ubx.FieldSpec{WireName: "managed_policy_arns"},
-		"Path": ubx.FieldSpec{WireName: "path"},
+		"Path":              ubx.FieldSpec{WireName: "path"},
 		"Policies": ubx.FieldSpec{
 			WireName: "policies",
-			Kind: "list",
-			Fields: Group_PoliciesFields,
+			Kind:     "list",
+			Fields:   Group_PoliciesFields,
 		},
 	},
 }

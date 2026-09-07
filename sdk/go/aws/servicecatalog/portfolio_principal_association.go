@@ -29,8 +29,8 @@ var PortfolioPrincipalAssociation = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_portfolio_principal_association",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
-		"PrincipalArn": ubx.FieldSpec{WireName: "principal_arn"},
-		"PrincipalType": ubx.FieldSpec{WireName: "principal_type"},
+		"PortfolioId":    ubx.FieldSpec{WireName: "portfolio_id"},
+		"PrincipalArn":   ubx.FieldSpec{WireName: "principal_arn"},
+		"PrincipalType":  ubx.FieldSpec{WireName: "principal_type"},
 	},
 }

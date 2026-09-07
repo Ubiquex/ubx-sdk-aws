@@ -96,90 +96,90 @@ type ComponentVersion_LambdaFunction struct {
 }
 
 var ComponentVersion_LambdaFunction_ComponentLambdaParameters_EventSourcesFields = ubx.FieldMap{
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Topic": ubx.FieldSpec{WireName: "topic"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParams_DevicesFields = ubx.FieldMap{
-		"AddGroupOwner": ubx.FieldSpec{WireName: "add_group_owner"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-	}
+	"AddGroupOwner": ubx.FieldSpec{WireName: "add_group_owner"},
+	"Path":          ubx.FieldSpec{WireName: "path"},
+	"Permission":    ubx.FieldSpec{WireName: "permission"},
+}
 
 var ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParams_VolumesFields = ubx.FieldMap{
-		"AddGroupOwner": ubx.FieldSpec{WireName: "add_group_owner"},
-		"DestinationPath": ubx.FieldSpec{WireName: "destination_path"},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-		"SourcePath": ubx.FieldSpec{WireName: "source_path"},
-	}
+	"AddGroupOwner":   ubx.FieldSpec{WireName: "add_group_owner"},
+	"DestinationPath": ubx.FieldSpec{WireName: "destination_path"},
+	"Permission":      ubx.FieldSpec{WireName: "permission"},
+	"SourcePath":      ubx.FieldSpec{WireName: "source_path"},
+}
 
 var ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParamsFields = ubx.FieldMap{
-		"Devices": ubx.FieldSpec{
-			WireName: "devices",
-			Kind: "list",
-			Fields: ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParams_DevicesFields,
-		},
-		"MemorySizeInKb": ubx.FieldSpec{WireName: "memory_size_in_kb"},
-		"MountRosysfs": ubx.FieldSpec{WireName: "mount_rosysfs"},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParams_VolumesFields,
-		},
-	}
+	"Devices": ubx.FieldSpec{
+		WireName: "devices",
+		Kind:     "list",
+		Fields:   ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParams_DevicesFields,
+	},
+	"MemorySizeInKb": ubx.FieldSpec{WireName: "memory_size_in_kb"},
+	"MountRosysfs":   ubx.FieldSpec{WireName: "mount_rosysfs"},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParams_VolumesFields,
+	},
+}
 
 var ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParamsFields = ubx.FieldMap{
-		"ContainerParams": ubx.FieldSpec{
-			WireName: "container_params",
-			Kind: "object",
-			Fields: ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParamsFields,
-		},
-		"IsolationMode": ubx.FieldSpec{WireName: "isolation_mode"},
-	}
+	"ContainerParams": ubx.FieldSpec{
+		WireName: "container_params",
+		Kind:     "object",
+		Fields:   ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParams_ContainerParamsFields,
+	},
+	"IsolationMode": ubx.FieldSpec{WireName: "isolation_mode"},
+}
 
 var ComponentVersion_LambdaFunction_ComponentLambdaParametersFields = ubx.FieldMap{
-		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"EventSources": ubx.FieldSpec{
-			WireName: "event_sources",
-			Kind: "list",
-			Fields: ComponentVersion_LambdaFunction_ComponentLambdaParameters_EventSourcesFields,
-		},
-		"ExecArgs": ubx.FieldSpec{WireName: "exec_args"},
-		"InputPayloadEncodingType": ubx.FieldSpec{WireName: "input_payload_encoding_type"},
-		"LinuxProcessParams": ubx.FieldSpec{
-			WireName: "linux_process_params",
-			Kind: "object",
-			Fields: ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParamsFields,
-		},
-		"MaxIdleTimeInSeconds": ubx.FieldSpec{WireName: "max_idle_time_in_seconds"},
-		"MaxInstancesCount": ubx.FieldSpec{WireName: "max_instances_count"},
-		"MaxQueueSize": ubx.FieldSpec{WireName: "max_queue_size"},
-		"Pinned": ubx.FieldSpec{WireName: "pinned"},
-		"StatusTimeoutInSeconds": ubx.FieldSpec{WireName: "status_timeout_in_seconds"},
-		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
-	}
+	"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
+	"EventSources": ubx.FieldSpec{
+		WireName: "event_sources",
+		Kind:     "list",
+		Fields:   ComponentVersion_LambdaFunction_ComponentLambdaParameters_EventSourcesFields,
+	},
+	"ExecArgs":                 ubx.FieldSpec{WireName: "exec_args"},
+	"InputPayloadEncodingType": ubx.FieldSpec{WireName: "input_payload_encoding_type"},
+	"LinuxProcessParams": ubx.FieldSpec{
+		WireName: "linux_process_params",
+		Kind:     "object",
+		Fields:   ComponentVersion_LambdaFunction_ComponentLambdaParameters_LinuxProcessParamsFields,
+	},
+	"MaxIdleTimeInSeconds":   ubx.FieldSpec{WireName: "max_idle_time_in_seconds"},
+	"MaxInstancesCount":      ubx.FieldSpec{WireName: "max_instances_count"},
+	"MaxQueueSize":           ubx.FieldSpec{WireName: "max_queue_size"},
+	"Pinned":                 ubx.FieldSpec{WireName: "pinned"},
+	"StatusTimeoutInSeconds": ubx.FieldSpec{WireName: "status_timeout_in_seconds"},
+	"TimeoutInSeconds":       ubx.FieldSpec{WireName: "timeout_in_seconds"},
+}
 
 var ComponentVersion_LambdaFunction_ComponentPlatformsFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var ComponentVersion_LambdaFunctionFields = ubx.FieldMap{
-		"ComponentDependencies": ubx.FieldSpec{WireName: "component_dependencies"},
-		"ComponentLambdaParameters": ubx.FieldSpec{
-			WireName: "component_lambda_parameters",
-			Kind: "object",
-			Fields: ComponentVersion_LambdaFunction_ComponentLambdaParametersFields,
-		},
-		"ComponentName": ubx.FieldSpec{WireName: "component_name"},
-		"ComponentPlatforms": ubx.FieldSpec{
-			WireName: "component_platforms",
-			Kind: "list",
-			Fields: ComponentVersion_LambdaFunction_ComponentPlatformsFields,
-		},
-		"ComponentVersion": ubx.FieldSpec{WireName: "component_version"},
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-	}
+	"ComponentDependencies": ubx.FieldSpec{WireName: "component_dependencies"},
+	"ComponentLambdaParameters": ubx.FieldSpec{
+		WireName: "component_lambda_parameters",
+		Kind:     "object",
+		Fields:   ComponentVersion_LambdaFunction_ComponentLambdaParametersFields,
+	},
+	"ComponentName": ubx.FieldSpec{WireName: "component_name"},
+	"ComponentPlatforms": ubx.FieldSpec{
+		WireName: "component_platforms",
+		Kind:     "list",
+		Fields:   ComponentVersion_LambdaFunction_ComponentPlatformsFields,
+	},
+	"ComponentVersion": ubx.FieldSpec{WireName: "component_version"},
+	"LambdaArn":        ubx.FieldSpec{WireName: "lambda_arn"},
+}
 
 type ComponentVersionConfig struct {
 	// The inline recipe for the component, specified as a string in YAML or JSON format, which defines the component's metadata, artifacts, lifecycle, and configuration. (AI-inferred)
@@ -211,8 +211,8 @@ var ComponentVersion = ubx.ResourceBinding{
 		"InlineRecipe": ubx.FieldSpec{WireName: "inline_recipe"},
 		"LambdaFunction": ubx.FieldSpec{
 			WireName: "lambda_function",
-			Kind: "object",
-			Fields: ComponentVersion_LambdaFunctionFields,
+			Kind:     "object",
+			Fields:   ComponentVersion_LambdaFunctionFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

@@ -4,28 +4,28 @@ package sns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubscriptionsByTopic_Subscriptions struct {
-	Endpoint any
-	Owner any
-	Protocol any
+	Endpoint        any
+	Owner           any
+	Protocol        any
 	SubscriptionArn any
-	TopicArn any
+	TopicArn        any
 }
 
 type SubscriptionsByTopicConfig struct {
 	NextToken any
-	TopicArn any
+	TopicArn  any
 }
 
 type SubscriptionsByTopicAttrs struct {
-	NextToken any
+	NextToken     any
 	Subscriptions any
-	TopicArn any
+	TopicArn      any
 }
 
 var SubscriptionsByTopic = ubx.DataSourceBinding{
 	WireType: "aws_sns_subscriptions_by_topic",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+		"TopicArn":  ubx.FieldSpec{WireName: "topic_arn"},
 	},
 }

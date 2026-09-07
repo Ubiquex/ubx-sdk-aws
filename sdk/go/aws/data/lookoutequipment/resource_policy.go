@@ -8,11 +8,11 @@ type ResourcePolicyConfig struct {
 }
 
 type ResourcePolicyAttrs struct {
-	CreationTime any
+	CreationTime     any
 	LastModifiedTime any
 	PolicyRevisionId any
-	ResourceArn any
-	ResourcePolicy any
+	ResourceArn      any
+	ResourcePolicy   any
 }
 
 var ResourcePolicy = ubx.DataSourceBinding{

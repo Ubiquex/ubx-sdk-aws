@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Monitors_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 type Monitors_Monitors struct {
-	CreationTime any
+	CreationTime         any
 	LastModificationTime any
-	MonitorArn any
-	MonitorName any
-	ResourceArn any
-	Status any
+	MonitorArn           any
+	MonitorName          any
+	ResourceArn          any
+	Status               any
 }
 
 var Monitors_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type MonitorsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MonitorsAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	Monitors any
-	NextToken any
+	Monitors   any
+	NextToken  any
 }
 
 var Monitors = ubx.DataSourceBinding{
@@ -42,10 +42,10 @@ var Monitors = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Monitors_FiltersFields,
+			Kind:     "list",
+			Fields:   Monitors_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

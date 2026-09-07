@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Canaries_Canaries_ArtifactConfig_S3Encryption struct {
 	EncryptionMode any
-	KmsKeyArn any
+	KmsKeyArn      any
 }
 
 type Canaries_Canaries_ArtifactConfig struct {
@@ -18,58 +18,58 @@ type Canaries_Canaries_BrowserConfigs struct {
 
 type Canaries_Canaries_Code_Dependencies struct {
 	Reference any
-	Type any
+	Type      any
 }
 
 type Canaries_Canaries_Code struct {
-	BlueprintTypes any
-	Dependencies any
-	Handler any
+	BlueprintTypes    any
+	Dependencies      any
+	Handler           any
 	SourceLocationArn any
 }
 
 type Canaries_Canaries_DryRunConfig struct {
-	DryRunId any
+	DryRunId                  any
 	LastDryRunExecutionStatus any
 }
 
 type Canaries_Canaries_EngineConfigs struct {
 	BrowserType any
-	EngineArn any
+	EngineArn   any
 }
 
 type Canaries_Canaries_MultiLocationConfig_Replicas_ReplicationStatus struct {
-	State any
-	StateReason any
+	State           any
+	StateReason     any
 	StateReasonCode any
 }
 
 type Canaries_Canaries_MultiLocationConfig_Replicas_VpcConfig struct {
 	Ipv6AllowedForDualStack any
-	SecurityGroupIds any
-	SubnetIds any
-	VpcId any
+	SecurityGroupIds        any
+	SubnetIds               any
+	VpcId                   any
 }
 
 type Canaries_Canaries_MultiLocationConfig_Replicas struct {
-	CanaryState any
-	LastModified any
-	Location any
+	CanaryState       any
+	LastModified      any
+	Location          any
 	ReplicationStatus any
-	VpcConfig any
+	VpcConfig         any
 }
 
 type Canaries_Canaries_MultiLocationConfig struct {
-	LocationType any
-	PrimaryLocation any
-	Replicas any
+	LocationType     any
+	PrimaryLocation  any
+	Replicas         any
 	ReplicationState any
 }
 
 type Canaries_Canaries_RunConfig struct {
-	ActiveTracing any
+	ActiveTracing    any
 	EphemeralStorage any
-	MemoryInMb any
+	MemoryInMb       any
 	TimeoutInSeconds any
 }
 
@@ -79,73 +79,73 @@ type Canaries_Canaries_Schedule_RetryConfig struct {
 
 type Canaries_Canaries_Schedule struct {
 	DurationInSeconds any
-	Expression any
-	RetryConfig any
+	Expression        any
+	RetryConfig       any
 }
 
 type Canaries_Canaries_Timeline struct {
-	Created any
+	Created      any
 	LastModified any
-	LastStarted any
-	LastStopped any
+	LastStarted  any
+	LastStopped  any
 }
 
 type Canaries_Canaries_VisualReference_BaseScreenshots struct {
 	IgnoreCoordinates any
-	ScreenshotName any
+	ScreenshotName    any
 }
 
 type Canaries_Canaries_VisualReference struct {
 	BaseCanaryRunId any
 	BaseScreenshots any
-	BrowserType any
+	BrowserType     any
 }
 
 type Canaries_Canaries struct {
-	ArtifactConfig any
-	ArtifactS3Location any
-	BrowserConfigs any
-	Code any
-	DryRunConfig any
-	EngineArn any
-	EngineConfigs any
-	ExecutionRoleArn any
+	ArtifactConfig               any
+	ArtifactS3Location           any
+	BrowserConfigs               any
+	Code                         any
+	DryRunConfig                 any
+	EngineArn                    any
+	EngineConfigs                any
+	ExecutionRoleArn             any
 	FailureRetentionPeriodInDays any
-	Id any
-	KmsKeyArn any
-	MultiLocationConfig any
-	Name any
-	ProvisionedResourceCleanup any
-	RunConfig any
-	RuntimeVersion any
-	Schedule any
-	Status any
+	Id                           any
+	KmsKeyArn                    any
+	MultiLocationConfig          any
+	Name                         any
+	ProvisionedResourceCleanup   any
+	RunConfig                    any
+	RuntimeVersion               any
+	Schedule                     any
+	Status                       any
 	SuccessRetentionPeriodInDays any
-	Tags any
-	Timeline any
-	VisualReference any
-	VisualReferences any
-	VpcConfig any
+	Tags                         any
+	Timeline                     any
+	VisualReference              any
+	VisualReferences             any
+	VpcConfig                    any
 }
 
 type CanariesConfig struct {
 	MaxResults any
-	Names any
-	NextToken any
+	Names      any
+	NextToken  any
 }
 
 type CanariesAttrs struct {
-	Canaries any
+	Canaries   any
 	MaxResults any
-	Names any
-	NextToken any
+	Names      any
+	NextToken  any
 }
 
 var Canaries = ubx.DataSourceBinding{
 	WireType: "aws_synthetics_canaries",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Names":      ubx.FieldSpec{WireName: "names"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

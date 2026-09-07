@@ -4,34 +4,34 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DlpSettings_DlpSettingSummaries struct {
-	Arn any
-	CreatedAt any
+	Arn          any
+	CreatedAt    any
 	DlpSettingId any
-	Name any
+	Name         any
 	ProviderType any
-	Status any
-	UpdatedAt any
+	Status       any
+	UpdatedAt    any
 }
 
 type DlpSettingsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type DlpSettingsAttrs struct {
-	AwsAccountId any
+	AwsAccountId        any
 	DlpSettingSummaries any
-	MaxResults any
-	NextToken any
-	RequestId any
+	MaxResults          any
+	NextToken           any
+	RequestId           any
 }
 
 var DlpSettings = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_dlp_settings",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

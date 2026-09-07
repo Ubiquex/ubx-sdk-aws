@@ -12,6 +12,5 @@ type TaxInheritanceAttrs struct {
 
 var TaxInheritance = ubx.DataSourceBinding{
 	WireType: "aws_tax_tax_inheritance",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

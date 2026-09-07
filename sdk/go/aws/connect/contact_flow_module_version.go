@@ -27,6 +27,6 @@ var ContactFlowModuleVersion = ubx.ResourceBinding{
 	WireType: "aws_connect_contact_flow_module_version",
 	Fields: ubx.FieldMap{
 		"ContactFlowModuleId": ubx.FieldSpec{WireName: "contact_flow_module_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 	},
 }

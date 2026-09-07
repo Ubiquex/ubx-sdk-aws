@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tenants_Tenants struct {
 	CreatedTimestamp any
-	TenantArn any
-	TenantId any
-	TenantName any
+	TenantArn        any
+	TenantId         any
+	TenantName       any
 }
 
 type TenantsConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type TenantsAttrs struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 	// <p>A list of tenant information objects.</p>
 	Tenants any
 }
@@ -26,6 +26,6 @@ var Tenants = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_tenants",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

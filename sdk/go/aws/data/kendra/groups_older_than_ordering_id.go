@@ -4,34 +4,34 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupsOlderThanOrderingId_GroupsSummaries struct {
-	GroupId any
+	GroupId    any
 	OrderingId any
 }
 
 type GroupsOlderThanOrderingIdConfig struct {
 	DataSourceId any
-	IndexId any
-	MaxResults any
-	NextToken any
-	OrderingId any
+	IndexId      any
+	MaxResults   any
+	NextToken    any
+	OrderingId   any
 }
 
 type GroupsOlderThanOrderingIdAttrs struct {
-	DataSourceId any
+	DataSourceId    any
 	GroupsSummaries any
-	IndexId any
-	MaxResults any
-	NextToken any
-	OrderingId any
+	IndexId         any
+	MaxResults      any
+	NextToken       any
+	OrderingId      any
 }
 
 var GroupsOlderThanOrderingId = ubx.DataSourceBinding{
 	WireType: "aws_kendra_groups_older_than_ordering_id",
 	Fields: ubx.FieldMap{
 		"DataSourceId": ubx.FieldSpec{WireName: "data_source_id"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OrderingId": ubx.FieldSpec{WireName: "ordering_id"},
+		"IndexId":      ubx.FieldSpec{WireName: "index_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"OrderingId":   ubx.FieldSpec{WireName: "ordering_id"},
 	},
 }

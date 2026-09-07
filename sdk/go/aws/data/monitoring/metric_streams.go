@@ -4,30 +4,30 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricStreams_Entries struct {
-	Arn any
-	CreationDate any
-	FirehoseArn any
+	Arn            any
+	CreationDate   any
+	FirehoseArn    any
 	LastUpdateDate any
-	Name any
-	OutputFormat any
-	State any
+	Name           any
+	OutputFormat   any
+	State          any
 }
 
 type MetricStreamsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MetricStreamsAttrs struct {
-	Entries any
+	Entries    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var MetricStreams = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_metric_streams",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

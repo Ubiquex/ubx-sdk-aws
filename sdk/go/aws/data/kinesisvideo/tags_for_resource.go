@@ -4,20 +4,20 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResourceConfig struct {
-	NextToken any
+	NextToken   any
 	ResourceArn any
 }
 
 type TagsForResourceAttrs struct {
-	NextToken any
+	NextToken   any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

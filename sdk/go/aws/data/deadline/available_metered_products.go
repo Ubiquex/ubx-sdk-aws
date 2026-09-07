@@ -4,27 +4,27 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AvailableMeteredProducts_MeteredProducts struct {
-	Family any
-	Port any
+	Family    any
+	Port      any
 	ProductId any
-	Vendor any
+	Vendor    any
 }
 
 type AvailableMeteredProductsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AvailableMeteredProductsAttrs struct {
-	MaxResults any
+	MaxResults      any
 	MeteredProducts any
-	NextToken any
+	NextToken       any
 }
 
 var AvailableMeteredProducts = ubx.DataSourceBinding{
 	WireType: "aws_deadline_available_metered_products",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

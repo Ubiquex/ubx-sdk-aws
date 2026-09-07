@@ -20,15 +20,15 @@ type ModelsV2LexBotRecommendation_BotRecommendationResults_Statistics struct {
 
 type ModelsV2LexBotRecommendation_BotRecommendationResults struct {
 	AssociatedTranscriptsUrl any
-	BotLocaleExportUrl any
+	BotLocaleExportUrl       any
 	// <p>A statistical summary of the bot recommendation results.</p>
 	Statistics any
 }
 
 type ModelsV2LexBotRecommendation_EncryptionSetting struct {
 	AssociatedTranscriptsPassword any
-	BotLocaleExportPassword any
-	KmsKeyArn any
+	BotLocaleExportPassword       any
+	KmsKeyArn                     any
 }
 
 type ModelsV2LexBotRecommendation_TranscriptSourceSetting_S3BucketTranscriptSource_PathFormat struct {
@@ -36,7 +36,7 @@ type ModelsV2LexBotRecommendation_TranscriptSourceSetting_S3BucketTranscriptSour
 }
 
 type ModelsV2LexBotRecommendation_TranscriptSourceSetting_S3BucketTranscriptSource_TranscriptFilter_LexTranscriptFilter_DateRangeFilter struct {
-	EndDateTime any
+	EndDateTime   any
 	StartDateTime any
 }
 
@@ -53,7 +53,7 @@ type ModelsV2LexBotRecommendation_TranscriptSourceSetting_S3BucketTranscriptSour
 type ModelsV2LexBotRecommendation_TranscriptSourceSetting_S3BucketTranscriptSource struct {
 	KmsKeyArn any
 	// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
-	PathFormat any
+	PathFormat   any
 	S3BucketName any
 	// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript.</p>
 	TranscriptFilter any
@@ -66,25 +66,25 @@ type ModelsV2LexBotRecommendation_TranscriptSourceSetting struct {
 }
 
 type ModelsV2LexBotRecommendationConfig struct {
-	BotId any
+	BotId               any
 	BotRecommendationId any
-	BotVersion any
-	LocaleId any
+	BotVersion          any
+	LocaleId            any
 }
 
 type ModelsV2LexBotRecommendationAttrs struct {
-	BotId any
+	BotId               any
 	BotRecommendationId any
 	// <p>The object representing the URL of the bot definition, the URL of the associated transcript, and a statistical summary of the bot recommendation results.</p>
 	BotRecommendationResults any
-	BotRecommendationStatus any
-	BotVersion any
-	CreationDateTime any
+	BotRecommendationStatus  any
+	BotVersion               any
+	CreationDateTime         any
 	// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-	EncryptionSetting any
-	FailureReasons any
+	EncryptionSetting   any
+	FailureReasons      any
 	LastUpdatedDateTime any
-	LocaleId any
+	LocaleId            any
 	// <p>Indicates the setting of the location where the transcript is stored.</p>
 	TranscriptSourceSetting any
 }
@@ -92,9 +92,9 @@ type ModelsV2LexBotRecommendationAttrs struct {
 var ModelsV2LexBotRecommendation = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_bot_recommendation",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":               ubx.FieldSpec{WireName: "bot_id"},
 		"BotRecommendationId": ubx.FieldSpec{WireName: "bot_recommendation_id"},
-		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+		"BotVersion":          ubx.FieldSpec{WireName: "bot_version"},
+		"LocaleId":            ubx.FieldSpec{WireName: "locale_id"},
 	},
 }

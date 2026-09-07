@@ -4,51 +4,51 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Records_ChildShards_HashKeyRange struct {
-	EndingHashKey any
+	EndingHashKey   any
 	StartingHashKey any
 }
 
 type Records_ChildShards struct {
 	HashKeyRange any
 	ParentShards any
-	ShardId any
+	ShardId      any
 }
 
 type Records_Records struct {
 	ApproximateArrivalTimestamp any
-	Data any
-	EncryptionType any
-	PartitionKey any
-	SequenceNumber any
+	Data                        any
+	EncryptionType              any
+	PartitionKey                any
+	SequenceNumber              any
 }
 
 type RecordsConfig struct {
-	DryRun any
-	Limit any
+	DryRun        any
+	Limit         any
 	ShardIterator any
-	StreamArn any
-	StreamId any
+	StreamArn     any
+	StreamId      any
 }
 
 type RecordsAttrs struct {
-	ChildShards any
-	DryRun any
-	Limit any
+	ChildShards        any
+	DryRun             any
+	Limit              any
 	MillisBehindLatest any
-	NextShardIterator any
-	Records any
-	ShardIterator any
-	StreamArn any
-	StreamId any
+	NextShardIterator  any
+	Records            any
+	ShardIterator      any
+	StreamArn          any
+	StreamId           any
 }
 
 var Records = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_records",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
 		"ShardIterator": ubx.FieldSpec{WireName: "shard_iterator"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamArn":     ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamId":      ubx.FieldSpec{WireName: "stream_id"},
 	},
 }

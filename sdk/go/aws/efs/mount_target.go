@@ -38,11 +38,11 @@ type MountTargetAttrs struct {
 var MountTarget = ubx.ResourceBinding{
 	WireType: "aws_efs_mount_target",
 	Fields: ubx.FieldMap{
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+		"FileSystemId":   ubx.FieldSpec{WireName: "file_system_id"},
+		"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
+		"IpAddressType":  ubx.FieldSpec{WireName: "ip_address_type"},
+		"Ipv6Address":    ubx.FieldSpec{WireName: "ipv6_address"},
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":       ubx.FieldSpec{WireName: "subnet_id"},
 	},
 }

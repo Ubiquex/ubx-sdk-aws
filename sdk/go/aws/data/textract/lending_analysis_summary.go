@@ -17,20 +17,20 @@ type LendingAnalysisSummary_Summary_DocumentGroups_SplitDocuments struct {
 }
 
 type LendingAnalysisSummary_Summary_DocumentGroups struct {
-	DetectedSignatures any
-	SplitDocuments any
-	Type any
+	DetectedSignatures   any
+	SplitDocuments       any
+	Type                 any
 	UndetectedSignatures any
 }
 
 type LendingAnalysisSummary_Summary struct {
-	DocumentGroups any
+	DocumentGroups          any
 	UndetectedDocumentTypes any
 }
 
 type LendingAnalysisSummary_Warnings struct {
 	ErrorCode any
-	Pages any
+	Pages     any
 }
 
 type LendingAnalysisSummaryConfig struct {
@@ -41,11 +41,11 @@ type LendingAnalysisSummaryAttrs struct {
 	AnalyzeLendingModelVersion any
 	// <p>Information about the input document.</p>
 	DocumentMetadata any
-	JobId any
-	JobStatus any
-	StatusMessage any
+	JobId            any
+	JobStatus        any
+	StatusMessage    any
 	// <p>Contains information regarding DocumentGroups and UndetectedDocumentTypes.</p>
-	Summary any
+	Summary  any
 	Warnings any
 }
 

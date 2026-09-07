@@ -26,8 +26,8 @@ type SecretTargetAttachmentAttrs struct {
 var SecretTargetAttachment = ubx.ResourceBinding{
 	WireType: "aws_secrets_manager_secret_target_attachment",
 	Fields: ubx.FieldMap{
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
+		"SecretId":   ubx.FieldSpec{WireName: "secret_id"},
+		"TargetId":   ubx.FieldSpec{WireName: "target_id"},
 		"TargetType": ubx.FieldSpec{WireName: "target_type"},
 	},
 }

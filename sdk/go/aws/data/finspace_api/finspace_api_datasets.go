@@ -4,19 +4,19 @@ package finspace_api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FinspaceApiDatasets_Datasets_OwnerInfo struct {
-	Email any
-	Name any
+	Email       any
+	Name        any
 	PhoneNumber any
 }
 
 type FinspaceApiDatasets_Datasets_SchemaDefinition_TabularSchemaConfig_Columns struct {
 	ColumnDescription any
-	ColumnName any
-	DataType any
+	ColumnName        any
+	DataType          any
 }
 
 type FinspaceApiDatasets_Datasets_SchemaDefinition_TabularSchemaConfig struct {
-	Columns any
+	Columns           any
 	PrimaryKeyColumns any
 }
 
@@ -25,34 +25,34 @@ type FinspaceApiDatasets_Datasets_SchemaDefinition struct {
 }
 
 type FinspaceApiDatasets_Datasets struct {
-	Alias any
-	CreateTime any
-	DatasetArn any
+	Alias              any
+	CreateTime         any
+	DatasetArn         any
 	DatasetDescription any
-	DatasetId any
-	DatasetTitle any
-	Kind any
-	LastModifiedTime any
-	OwnerInfo any
-	SchemaDefinition any
+	DatasetId          any
+	DatasetTitle       any
+	Kind               any
+	LastModifiedTime   any
+	OwnerInfo          any
+	SchemaDefinition   any
 }
 
 type FinspaceApiDatasetsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FinspaceApiDatasetsAttrs struct {
 	// List of Dataset structures
-	Datasets any
+	Datasets   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var FinspaceApiDatasets = ubx.DataSourceBinding{
 	WireType: "aws_finspace_api_datasets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

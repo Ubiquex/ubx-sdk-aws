@@ -4,41 +4,41 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Metrics_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Metrics_Metrics struct {
 	Dimensions any
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 var Metrics_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MetricsConfig struct {
-	Dimensions any
+	Dimensions            any
 	IncludeLinkedAccounts any
-	MetricName any
-	Namespace any
-	NextToken any
-	OwningAccount any
-	RecentlyActive any
+	MetricName            any
+	Namespace             any
+	NextToken             any
+	OwningAccount         any
+	RecentlyActive        any
 }
 
 type MetricsAttrs struct {
-	Dimensions any
+	Dimensions            any
 	IncludeLinkedAccounts any
-	MetricName any
-	Metrics any
-	Namespace any
-	NextToken any
-	OwningAccount any
-	OwningAccounts any
-	RecentlyActive any
+	MetricName            any
+	Metrics               any
+	Namespace             any
+	NextToken             any
+	OwningAccount         any
+	OwningAccounts        any
+	RecentlyActive        any
 }
 
 var Metrics = ubx.DataSourceBinding{
@@ -46,14 +46,14 @@ var Metrics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Dimensions": ubx.FieldSpec{
 			WireName: "dimensions",
-			Kind: "list",
-			Fields: Metrics_DimensionsFields,
+			Kind:     "list",
+			Fields:   Metrics_DimensionsFields,
 		},
 		"IncludeLinkedAccounts": ubx.FieldSpec{WireName: "include_linked_accounts"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OwningAccount": ubx.FieldSpec{WireName: "owning_account"},
-		"RecentlyActive": ubx.FieldSpec{WireName: "recently_active"},
+		"MetricName":            ubx.FieldSpec{WireName: "metric_name"},
+		"Namespace":             ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"OwningAccount":         ubx.FieldSpec{WireName: "owning_account"},
+		"RecentlyActive":        ubx.FieldSpec{WireName: "recently_active"},
 	},
 }

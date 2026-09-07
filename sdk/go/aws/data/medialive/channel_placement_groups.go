@@ -4,13 +4,13 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChannelPlacementGroups_ChannelPlacementGroups struct {
-	Arn any
-	Channels any
+	Arn       any
+	Channels  any
 	ClusterId any
-	Id any
-	Name any
-	Nodes any
-	State any
+	Id        any
+	Name      any
+	Nodes     any
+	State     any
 }
 
 type ChannelPlacementGroupsConfig struct {
@@ -36,8 +36,8 @@ type ChannelPlacementGroupsAttrs struct {
 var ChannelPlacementGroups = ubx.DataSourceBinding{
 	WireType: "aws_medialive_channel_placement_groups",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+		"ClusterId":  ubx.FieldSpec{WireName: "cluster_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

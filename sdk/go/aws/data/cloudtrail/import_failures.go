@@ -4,31 +4,31 @@ package cloudtrail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImportFailures_Failures struct {
-	ErrorMessage any
-	ErrorType any
+	ErrorMessage    any
+	ErrorType       any
 	LastUpdatedTime any
-	Location any
-	Status any
+	Location        any
+	Status          any
 }
 
 type ImportFailuresConfig struct {
-	ImportId any
+	ImportId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ImportFailuresAttrs struct {
-	Failures any
-	ImportId any
+	Failures   any
+	ImportId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ImportFailures = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_import_failures",
 	Fields: ubx.FieldMap{
-		"ImportId": ubx.FieldSpec{WireName: "import_id"},
+		"ImportId":   ubx.FieldSpec{WireName: "import_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

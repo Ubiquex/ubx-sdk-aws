@@ -8,7 +8,7 @@ type ApplicationAssignmentConfigurationConfig struct {
 }
 
 type ApplicationAssignmentConfigurationAttrs struct {
-	ApplicationArn any
+	ApplicationArn     any
 	AssignmentRequired any
 }
 

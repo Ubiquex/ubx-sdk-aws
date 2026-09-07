@@ -52,57 +52,57 @@ type ConfigurationSetEventDestination_EventDestination struct {
 }
 
 var ConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurationsFields = ubx.FieldMap{
-		"DefaultDimensionValue": ubx.FieldSpec{WireName: "default_dimension_value"},
-		"DimensionName": ubx.FieldSpec{WireName: "dimension_name"},
-		"DimensionValueSource": ubx.FieldSpec{WireName: "dimension_value_source"},
-	}
+	"DefaultDimensionValue": ubx.FieldSpec{WireName: "default_dimension_value"},
+	"DimensionName":         ubx.FieldSpec{WireName: "dimension_name"},
+	"DimensionValueSource":  ubx.FieldSpec{WireName: "dimension_value_source"},
+}
 
 var ConfigurationSetEventDestination_EventDestination_CloudWatchDestinationFields = ubx.FieldMap{
-		"DimensionConfigurations": ubx.FieldSpec{
-			WireName: "dimension_configurations",
-			Kind: "list",
-			Fields: ConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurationsFields,
-		},
-	}
+	"DimensionConfigurations": ubx.FieldSpec{
+		WireName: "dimension_configurations",
+		Kind:     "list",
+		Fields:   ConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurationsFields,
+	},
+}
 
 var ConfigurationSetEventDestination_EventDestination_EventBridgeDestinationFields = ubx.FieldMap{
-		"EventBusArn": ubx.FieldSpec{WireName: "event_bus_arn"},
-	}
+	"EventBusArn": ubx.FieldSpec{WireName: "event_bus_arn"},
+}
 
 var ConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestinationFields = ubx.FieldMap{
-		"DeliveryStreamArn": ubx.FieldSpec{WireName: "delivery_stream_arn"},
-		"IamroleArn": ubx.FieldSpec{WireName: "iamrole_arn"},
-	}
+	"DeliveryStreamArn": ubx.FieldSpec{WireName: "delivery_stream_arn"},
+	"IamroleArn":        ubx.FieldSpec{WireName: "iamrole_arn"},
+}
 
 var ConfigurationSetEventDestination_EventDestination_SnsDestinationFields = ubx.FieldMap{
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ConfigurationSetEventDestination_EventDestinationFields = ubx.FieldMap{
-		"CloudWatchDestination": ubx.FieldSpec{
-			WireName: "cloud_watch_destination",
-			Kind: "object",
-			Fields: ConfigurationSetEventDestination_EventDestination_CloudWatchDestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EventBridgeDestination": ubx.FieldSpec{
-			WireName: "event_bridge_destination",
-			Kind: "object",
-			Fields: ConfigurationSetEventDestination_EventDestination_EventBridgeDestinationFields,
-		},
-		"KinesisFirehoseDestination": ubx.FieldSpec{
-			WireName: "kinesis_firehose_destination",
-			Kind: "object",
-			Fields: ConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestinationFields,
-		},
-		"MatchingEventTypes": ubx.FieldSpec{WireName: "matching_event_types"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SnsDestination": ubx.FieldSpec{
-			WireName: "sns_destination",
-			Kind: "object",
-			Fields: ConfigurationSetEventDestination_EventDestination_SnsDestinationFields,
-		},
-	}
+	"CloudWatchDestination": ubx.FieldSpec{
+		WireName: "cloud_watch_destination",
+		Kind:     "object",
+		Fields:   ConfigurationSetEventDestination_EventDestination_CloudWatchDestinationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"EventBridgeDestination": ubx.FieldSpec{
+		WireName: "event_bridge_destination",
+		Kind:     "object",
+		Fields:   ConfigurationSetEventDestination_EventDestination_EventBridgeDestinationFields,
+	},
+	"KinesisFirehoseDestination": ubx.FieldSpec{
+		WireName: "kinesis_firehose_destination",
+		Kind:     "object",
+		Fields:   ConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestinationFields,
+	},
+	"MatchingEventTypes": ubx.FieldSpec{WireName: "matching_event_types"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"SnsDestination": ubx.FieldSpec{
+		WireName: "sns_destination",
+		Kind:     "object",
+		Fields:   ConfigurationSetEventDestination_EventDestination_SnsDestinationFields,
+	},
+}
 
 type ConfigurationSetEventDestinationConfig struct {
 	// The name of the configuration set that contains the event destination.
@@ -126,8 +126,8 @@ var ConfigurationSetEventDestination = ubx.ResourceBinding{
 		"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
 		"EventDestination": ubx.FieldSpec{
 			WireName: "event_destination",
-			Kind: "object",
-			Fields: ConfigurationSetEventDestination_EventDestinationFields,
+			Kind:     "object",
+			Fields:   ConfigurationSetEventDestination_EventDestinationFields,
 		},
 	},
 }

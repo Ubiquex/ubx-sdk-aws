@@ -24,8 +24,8 @@ type PrimaryTaskSetAttrs struct {
 var PrimaryTaskSet = ubx.ResourceBinding{
 	WireType: "aws_ecs_primary_task_set",
 	Fields: ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"Cluster":   ubx.FieldSpec{WireName: "cluster"},
+		"Service":   ubx.FieldSpec{WireName: "service"},
 		"TaskSetId": ubx.FieldSpec{WireName: "task_set_id"},
 	},
 }

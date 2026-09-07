@@ -25,7 +25,7 @@ type BrowserCustom_EnterprisePolicies_Location struct {
 
 type BrowserCustom_EnterprisePolicies struct {
 	Location any
-	Type any
+	Type     any
 }
 
 type BrowserCustom_NetworkConfiguration_VpcConfig struct {
@@ -49,57 +49,57 @@ type BrowserCustom_RecordingConfig struct {
 }
 
 var BrowserCustom_BrowserSigningFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var BrowserCustom_Certificates_CertificateLocationFields = ubx.FieldMap{
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var BrowserCustom_CertificatesFields = ubx.FieldMap{
-		"CertificateLocation": ubx.FieldSpec{
-			WireName: "certificate_location",
-			Kind: "object",
-			Fields: BrowserCustom_Certificates_CertificateLocationFields,
-		},
-	}
+	"CertificateLocation": ubx.FieldSpec{
+		WireName: "certificate_location",
+		Kind:     "object",
+		Fields:   BrowserCustom_Certificates_CertificateLocationFields,
+	},
+}
 
 var BrowserCustom_EnterprisePolicies_LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+}
 
 var BrowserCustom_EnterprisePoliciesFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: BrowserCustom_EnterprisePolicies_LocationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   BrowserCustom_EnterprisePolicies_LocationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var BrowserCustom_NetworkConfiguration_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var BrowserCustom_NetworkConfigurationFields = ubx.FieldMap{
-		"NetworkMode": ubx.FieldSpec{WireName: "network_mode"},
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
-			Kind: "object",
-			Fields: BrowserCustom_NetworkConfiguration_VpcConfigFields,
-		},
-	}
+	"NetworkMode": ubx.FieldSpec{WireName: "network_mode"},
+	"VpcConfig": ubx.FieldSpec{
+		WireName: "vpc_config",
+		Kind:     "object",
+		Fields:   BrowserCustom_NetworkConfiguration_VpcConfigFields,
+	},
+}
 
 var BrowserCustom_RecordingConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: BrowserCustom_EnterprisePolicies_LocationFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   BrowserCustom_EnterprisePolicies_LocationFields,
+	},
+}
 
 type BrowserCustomConfig struct {
 	// Browser signing configuration
@@ -160,31 +160,31 @@ var BrowserCustom = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BrowserSigning": ubx.FieldSpec{
 			WireName: "browser_signing",
-			Kind: "object",
-			Fields: BrowserCustom_BrowserSigningFields,
+			Kind:     "object",
+			Fields:   BrowserCustom_BrowserSigningFields,
 		},
 		"Certificates": ubx.FieldSpec{
 			WireName: "certificates",
-			Kind: "list",
-			Fields: BrowserCustom_CertificatesFields,
+			Kind:     "list",
+			Fields:   BrowserCustom_CertificatesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EnterprisePolicies": ubx.FieldSpec{
 			WireName: "enterprise_policies",
-			Kind: "list",
-			Fields: BrowserCustom_EnterprisePoliciesFields,
+			Kind:     "list",
+			Fields:   BrowserCustom_EnterprisePoliciesFields,
 		},
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: BrowserCustom_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   BrowserCustom_NetworkConfigurationFields,
 		},
 		"RecordingConfig": ubx.FieldSpec{
 			WireName: "recording_config",
-			Kind: "object",
-			Fields: BrowserCustom_RecordingConfigFields,
+			Kind:     "object",
+			Fields:   BrowserCustom_RecordingConfigFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

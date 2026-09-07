@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExtensionAssociations_Items struct {
 	ExtensionArn any
-	Id any
-	ResourceArn any
+	Id           any
+	ResourceArn  any
 }
 
 type ExtensionAssociationsConfig struct {
-	ExtensionIdentifier any
+	ExtensionIdentifier    any
 	ExtensionVersionNumber any
-	MaxResults any
-	NextToken any
-	ResourceIdentifier any
+	MaxResults             any
+	NextToken              any
+	ResourceIdentifier     any
 }
 
 type ExtensionAssociationsAttrs struct {
-	ExtensionIdentifier any
+	ExtensionIdentifier    any
 	ExtensionVersionNumber any
-	Items any
-	MaxResults any
-	NextToken any
-	ResourceIdentifier any
+	Items                  any
+	MaxResults             any
+	NextToken              any
+	ResourceIdentifier     any
 }
 
 var ExtensionAssociations = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_extension_associations",
 	Fields: ubx.FieldMap{
-		"ExtensionIdentifier": ubx.FieldSpec{WireName: "extension_identifier"},
+		"ExtensionIdentifier":    ubx.FieldSpec{WireName: "extension_identifier"},
 		"ExtensionVersionNumber": ubx.FieldSpec{WireName: "extension_version_number"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"ResourceIdentifier":     ubx.FieldSpec{WireName: "resource_identifier"},
 	},
 }

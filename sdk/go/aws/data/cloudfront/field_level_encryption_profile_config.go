@@ -4,27 +4,27 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FieldLevelEncryptionProfileConfig_FieldLevelEncryptionProfileConfig_EncryptionEntities_Items_FieldPatterns struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type FieldLevelEncryptionProfileConfig_FieldLevelEncryptionProfileConfig_EncryptionEntities_Items struct {
 	FieldPatterns any
-	ProviderId any
-	PublicKeyId any
+	ProviderId    any
+	PublicKeyId   any
 }
 
 type FieldLevelEncryptionProfileConfig_FieldLevelEncryptionProfileConfig_EncryptionEntities struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type FieldLevelEncryptionProfileConfig_FieldLevelEncryptionProfileConfig struct {
 	CallerReference any
-	Comment any
+	Comment         any
 	// <p>Complex data type for field-level encryption profiles that includes all of the encryption entities.</p>
 	EncryptionEntities any
-	Name any
+	Name               any
 }
 
 type FieldLevelEncryptionProfileConfigConfig struct {
@@ -35,7 +35,7 @@ type FieldLevelEncryptionProfileConfigAttrs struct {
 	Etag any
 	// <p>A complex data type of profiles for the field-level encryption.</p>
 	FieldLevelEncryptionProfileConfig any
-	Id any
+	Id                                any
 }
 
 var FieldLevelEncryptionProfileConfig = ubx.DataSourceBinding{

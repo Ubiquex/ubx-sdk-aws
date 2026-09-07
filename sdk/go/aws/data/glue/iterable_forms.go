@@ -4,33 +4,33 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IterableForms_Items struct {
-	Description any
+	Description   any
 	GlossaryTerms any
-	ItemId any
-	ItemName any
+	ItemId        any
+	ItemName      any
 }
 
 type IterableFormsConfig struct {
-	AssetIdentifier any
+	AssetIdentifier  any
 	IterableFormName any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type IterableFormsAttrs struct {
-	AssetIdentifier any
-	Items any
+	AssetIdentifier  any
+	Items            any
 	IterableFormName any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var IterableForms = ubx.DataSourceBinding{
 	WireType: "aws_glue_iterable_forms",
 	Fields: ubx.FieldMap{
-		"AssetIdentifier": ubx.FieldSpec{WireName: "asset_identifier"},
+		"AssetIdentifier":  ubx.FieldSpec{WireName: "asset_identifier"},
 		"IterableFormName": ubx.FieldSpec{WireName: "iterable_form_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

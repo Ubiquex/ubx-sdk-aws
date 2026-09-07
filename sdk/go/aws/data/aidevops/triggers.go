@@ -12,19 +12,19 @@ type Triggers_Items_Condition struct {
 }
 
 type Triggers_Items struct {
-	Action any
+	Action       any
 	AgentSpaceId any
-	Condition any
-	CreatedAt any
-	Status any
-	TriggerId any
-	Type any
-	UpdatedAt any
+	Condition    any
+	CreatedAt    any
+	Status       any
+	TriggerId    any
+	Type         any
+	UpdatedAt    any
 }
 
 type TriggersConfig struct {
 	AgentSpaceId any
-	MaxResults any
+	MaxResults   any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
 	// <p>The status of a Trigger</p>
@@ -34,7 +34,7 @@ type TriggersConfig struct {
 type TriggersAttrs struct {
 	AgentSpaceId any
 	// <p>List of Triggers</p>
-	Items any
+	Items      any
 	MaxResults any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
@@ -46,8 +46,8 @@ var Triggers = ubx.DataSourceBinding{
 	WireType: "aws_aidevops_triggers",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
 	},
 }

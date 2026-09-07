@@ -25,19 +25,19 @@ type RepositoryCreationTemplate_ResourceTags struct {
 }
 
 var RepositoryCreationTemplate_EncryptionConfigurationFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKey":         ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var RepositoryCreationTemplate_ImageTagMutabilityExclusionFiltersFields = ubx.FieldMap{
-		"ImageTagMutabilityExclusionFilterType": ubx.FieldSpec{WireName: "image_tag_mutability_exclusion_filter_type"},
-		"ImageTagMutabilityExclusionFilterValue": ubx.FieldSpec{WireName: "image_tag_mutability_exclusion_filter_value"},
-	}
+	"ImageTagMutabilityExclusionFilterType":  ubx.FieldSpec{WireName: "image_tag_mutability_exclusion_filter_type"},
+	"ImageTagMutabilityExclusionFilterValue": ubx.FieldSpec{WireName: "image_tag_mutability_exclusion_filter_value"},
+}
 
 var RepositoryCreationTemplate_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RepositoryCreationTemplateConfig struct {
 	// A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH
@@ -92,27 +92,27 @@ type RepositoryCreationTemplateAttrs struct {
 var RepositoryCreationTemplate = ubx.ResourceBinding{
 	WireType: "aws_ecr_repository_creation_template",
 	Fields: ubx.FieldMap{
-		"AppliedFor": ubx.FieldSpec{WireName: "applied_for"},
+		"AppliedFor":    ubx.FieldSpec{WireName: "applied_for"},
 		"CustomRoleArn": ubx.FieldSpec{WireName: "custom_role_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: RepositoryCreationTemplate_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   RepositoryCreationTemplate_EncryptionConfigurationFields,
 		},
 		"ImageTagMutability": ubx.FieldSpec{WireName: "image_tag_mutability"},
 		"ImageTagMutabilityExclusionFilters": ubx.FieldSpec{
 			WireName: "image_tag_mutability_exclusion_filters",
-			Kind: "list",
-			Fields: RepositoryCreationTemplate_ImageTagMutabilityExclusionFiltersFields,
+			Kind:     "list",
+			Fields:   RepositoryCreationTemplate_ImageTagMutabilityExclusionFiltersFields,
 		},
-		"LifecyclePolicy": ubx.FieldSpec{WireName: "lifecycle_policy"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"LifecyclePolicy":  ubx.FieldSpec{WireName: "lifecycle_policy"},
+		"Prefix":           ubx.FieldSpec{WireName: "prefix"},
 		"RepositoryPolicy": ubx.FieldSpec{WireName: "repository_policy"},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: RepositoryCreationTemplate_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   RepositoryCreationTemplate_ResourceTagsFields,
 		},
 	},
 }

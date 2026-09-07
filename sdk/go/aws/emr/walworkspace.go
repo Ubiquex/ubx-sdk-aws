@@ -11,9 +11,9 @@ type Walworkspace_Tags struct {
 }
 
 var Walworkspace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WalworkspaceConfig struct {
 	// An array of key-value pairs to apply to this resource.
@@ -34,8 +34,8 @@ var Walworkspace = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Walworkspace_TagsFields,
+			Kind:     "list",
+			Fields:   Walworkspace_TagsFields,
 		},
 		"WalworkspaceName": ubx.FieldSpec{WireName: "walworkspace_name"},
 	},

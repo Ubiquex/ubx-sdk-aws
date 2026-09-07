@@ -55,52 +55,52 @@ type Table_Tags struct {
 }
 
 var Table_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocation_S3ConfigurationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"EncryptionOption": ubx.FieldSpec{WireName: "encryption_option"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"ObjectKeyPrefix": ubx.FieldSpec{WireName: "object_key_prefix"},
-	}
+	"BucketName":       ubx.FieldSpec{WireName: "bucket_name"},
+	"EncryptionOption": ubx.FieldSpec{WireName: "encryption_option"},
+	"KmsKeyId":         ubx.FieldSpec{WireName: "kms_key_id"},
+	"ObjectKeyPrefix":  ubx.FieldSpec{WireName: "object_key_prefix"},
+}
 
 var Table_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocationFields = ubx.FieldMap{
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: Table_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocation_S3ConfigurationFields,
-		},
-	}
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   Table_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocation_S3ConfigurationFields,
+	},
+}
 
 var Table_MagneticStoreWritePropertiesFields = ubx.FieldMap{
-		"EnableMagneticStoreWrites": ubx.FieldSpec{WireName: "enable_magnetic_store_writes"},
-		"MagneticStoreRejectedDataLocation": ubx.FieldSpec{
-			WireName: "magnetic_store_rejected_data_location",
-			Kind: "object",
-			Fields: Table_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocationFields,
-		},
-	}
+	"EnableMagneticStoreWrites": ubx.FieldSpec{WireName: "enable_magnetic_store_writes"},
+	"MagneticStoreRejectedDataLocation": ubx.FieldSpec{
+		WireName: "magnetic_store_rejected_data_location",
+		Kind:     "object",
+		Fields:   Table_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocationFields,
+	},
+}
 
 var Table_RetentionPropertiesFields = ubx.FieldMap{
-		"MagneticStoreRetentionPeriodInDays": ubx.FieldSpec{WireName: "magnetic_store_retention_period_in_days"},
-		"MemoryStoreRetentionPeriodInHours": ubx.FieldSpec{WireName: "memory_store_retention_period_in_hours"},
-	}
+	"MagneticStoreRetentionPeriodInDays": ubx.FieldSpec{WireName: "magnetic_store_retention_period_in_days"},
+	"MemoryStoreRetentionPeriodInHours":  ubx.FieldSpec{WireName: "memory_store_retention_period_in_hours"},
+}
 
 var Table_Schema_CompositePartitionKeyFields = ubx.FieldMap{
-		"EnforcementInRecord": ubx.FieldSpec{WireName: "enforcement_in_record"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"EnforcementInRecord": ubx.FieldSpec{WireName: "enforcement_in_record"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_SchemaFields = ubx.FieldMap{
-		"CompositePartitionKey": ubx.FieldSpec{
-			WireName: "composite_partition_key",
-			Kind: "list",
-			Fields: Table_Schema_CompositePartitionKeyFields,
-		},
-	}
+	"CompositePartitionKey": ubx.FieldSpec{
+		WireName: "composite_partition_key",
+		Kind:     "list",
+		Fields:   Table_Schema_CompositePartitionKeyFields,
+	},
+}
 
 var Table_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TableConfig struct {
 	// The name for the database which the table to be created belongs to.
@@ -142,24 +142,24 @@ var Table = ubx.ResourceBinding{
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"MagneticStoreWriteProperties": ubx.FieldSpec{
 			WireName: "magnetic_store_write_properties",
-			Kind: "object",
-			Fields: Table_MagneticStoreWritePropertiesFields,
+			Kind:     "object",
+			Fields:   Table_MagneticStoreWritePropertiesFields,
 		},
 		"RetentionProperties": ubx.FieldSpec{
 			WireName: "retention_properties",
-			Kind: "object",
-			Fields: Table_RetentionPropertiesFields,
+			Kind:     "object",
+			Fields:   Table_RetentionPropertiesFields,
 		},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Table_SchemaFields,
+			Kind:     "object",
+			Fields:   Table_SchemaFields,
 		},
 		"TableName": ubx.FieldSpec{WireName: "table_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Table_TagsFields,
+			Kind:     "list",
+			Fields:   Table_TagsFields,
 		},
 	},
 }

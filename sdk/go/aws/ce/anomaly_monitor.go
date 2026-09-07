@@ -11,9 +11,9 @@ type AnomalyMonitor_ResourceTags struct {
 }
 
 var AnomalyMonitor_ResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AnomalyMonitorConfig struct {
 	// The dimensions to evaluate
@@ -54,14 +54,14 @@ type AnomalyMonitorAttrs struct {
 var AnomalyMonitor = ubx.ResourceBinding{
 	WireType: "aws_ce_anomaly_monitor",
 	Fields: ubx.FieldMap{
-		"MonitorDimension": ubx.FieldSpec{WireName: "monitor_dimension"},
-		"MonitorName": ubx.FieldSpec{WireName: "monitor_name"},
+		"MonitorDimension":     ubx.FieldSpec{WireName: "monitor_dimension"},
+		"MonitorName":          ubx.FieldSpec{WireName: "monitor_name"},
 		"MonitorSpecification": ubx.FieldSpec{WireName: "monitor_specification"},
-		"MonitorType": ubx.FieldSpec{WireName: "monitor_type"},
+		"MonitorType":          ubx.FieldSpec{WireName: "monitor_type"},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: AnomalyMonitor_ResourceTagsFields,
+			Kind:     "list",
+			Fields:   AnomalyMonitor_ResourceTagsFields,
 		},
 	},
 }

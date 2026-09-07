@@ -4,38 +4,38 @@ package ssm_contacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmContactsPreviewRotationShifts_Overrides struct {
-	EndTime any
+	EndTime    any
 	NewMembers any
-	StartTime any
+	StartTime  any
 }
 
 type SsmContactsPreviewRotationShifts_Recurrence_DailySettings struct {
-	HourOfDay any
+	HourOfDay    any
 	MinuteOfHour any
 }
 
 type SsmContactsPreviewRotationShifts_Recurrence_MonthlySettings struct {
-	DayOfMonth any
+	DayOfMonth  any
 	HandOffTime any
 }
 
 type SsmContactsPreviewRotationShifts_Recurrence_ShiftCoverages struct {
-	End any
+	End   any
 	Start any
 }
 
 type SsmContactsPreviewRotationShifts_Recurrence_WeeklySettings struct {
-	DayOfWeek any
+	DayOfWeek   any
 	HandOffTime any
 }
 
 type SsmContactsPreviewRotationShifts_Recurrence struct {
-	DailySettings any
-	MonthlySettings any
-	NumberOfOnCalls any
+	DailySettings        any
+	MonthlySettings      any
+	NumberOfOnCalls      any
 	RecurrenceMultiplier any
-	ShiftCoverages any
-	WeeklySettings any
+	ShiftCoverages       any
+	WeeklySettings       any
 }
 
 type SsmContactsPreviewRotationShifts_RotationShifts_ShiftDetails struct {
@@ -43,109 +43,109 @@ type SsmContactsPreviewRotationShifts_RotationShifts_ShiftDetails struct {
 }
 
 type SsmContactsPreviewRotationShifts_RotationShifts struct {
-	ContactIds any
-	EndTime any
+	ContactIds   any
+	EndTime      any
 	ShiftDetails any
-	StartTime any
-	Type any
+	StartTime    any
+	Type         any
 }
 
 var SsmContactsPreviewRotationShifts_OverridesFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"NewMembers": ubx.FieldSpec{WireName: "new_members"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":    ubx.FieldSpec{WireName: "end_time"},
+	"NewMembers": ubx.FieldSpec{WireName: "new_members"},
+	"StartTime":  ubx.FieldSpec{WireName: "start_time"},
+}
 
 var SsmContactsPreviewRotationShifts_Recurrence_DailySettingsFields = ubx.FieldMap{
-		"HourOfDay": ubx.FieldSpec{WireName: "hour_of_day"},
-		"MinuteOfHour": ubx.FieldSpec{WireName: "minute_of_hour"},
-	}
+	"HourOfDay":    ubx.FieldSpec{WireName: "hour_of_day"},
+	"MinuteOfHour": ubx.FieldSpec{WireName: "minute_of_hour"},
+}
 
 var SsmContactsPreviewRotationShifts_Recurrence_MonthlySettingsFields = ubx.FieldMap{
-		"DayOfMonth": ubx.FieldSpec{WireName: "day_of_month"},
-		"HandOffTime": ubx.FieldSpec{
-			WireName: "hand_off_time",
-			Kind: "object",
-			Fields: SsmContactsPreviewRotationShifts_Recurrence_DailySettingsFields,
-		},
-	}
+	"DayOfMonth": ubx.FieldSpec{WireName: "day_of_month"},
+	"HandOffTime": ubx.FieldSpec{
+		WireName: "hand_off_time",
+		Kind:     "object",
+		Fields:   SsmContactsPreviewRotationShifts_Recurrence_DailySettingsFields,
+	},
+}
 
 var SsmContactsPreviewRotationShifts_Recurrence_WeeklySettingsFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"HandOffTime": ubx.FieldSpec{
-			WireName: "hand_off_time",
-			Kind: "object",
-			Fields: SsmContactsPreviewRotationShifts_Recurrence_DailySettingsFields,
-		},
-	}
+	"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+	"HandOffTime": ubx.FieldSpec{
+		WireName: "hand_off_time",
+		Kind:     "object",
+		Fields:   SsmContactsPreviewRotationShifts_Recurrence_DailySettingsFields,
+	},
+}
 
 var SsmContactsPreviewRotationShifts_RecurrenceFields = ubx.FieldMap{
-		"DailySettings": ubx.FieldSpec{
-			WireName: "daily_settings",
-			Kind: "list",
-			Fields: SsmContactsPreviewRotationShifts_Recurrence_DailySettingsFields,
-		},
-		"MonthlySettings": ubx.FieldSpec{
-			WireName: "monthly_settings",
-			Kind: "list",
-			Fields: SsmContactsPreviewRotationShifts_Recurrence_MonthlySettingsFields,
-		},
-		"NumberOfOnCalls": ubx.FieldSpec{WireName: "number_of_on_calls"},
-		"RecurrenceMultiplier": ubx.FieldSpec{WireName: "recurrence_multiplier"},
-		"ShiftCoverages": ubx.FieldSpec{WireName: "shift_coverages"},
-		"WeeklySettings": ubx.FieldSpec{
-			WireName: "weekly_settings",
-			Kind: "list",
-			Fields: SsmContactsPreviewRotationShifts_Recurrence_WeeklySettingsFields,
-		},
-	}
+	"DailySettings": ubx.FieldSpec{
+		WireName: "daily_settings",
+		Kind:     "list",
+		Fields:   SsmContactsPreviewRotationShifts_Recurrence_DailySettingsFields,
+	},
+	"MonthlySettings": ubx.FieldSpec{
+		WireName: "monthly_settings",
+		Kind:     "list",
+		Fields:   SsmContactsPreviewRotationShifts_Recurrence_MonthlySettingsFields,
+	},
+	"NumberOfOnCalls":      ubx.FieldSpec{WireName: "number_of_on_calls"},
+	"RecurrenceMultiplier": ubx.FieldSpec{WireName: "recurrence_multiplier"},
+	"ShiftCoverages":       ubx.FieldSpec{WireName: "shift_coverages"},
+	"WeeklySettings": ubx.FieldSpec{
+		WireName: "weekly_settings",
+		Kind:     "list",
+		Fields:   SsmContactsPreviewRotationShifts_Recurrence_WeeklySettingsFields,
+	},
+}
 
 type SsmContactsPreviewRotationShiftsConfig struct {
-	EndTime any
+	EndTime    any
 	MaxResults any
-	Members any
-	NextToken any
-	Overrides any
+	Members    any
+	NextToken  any
+	Overrides  any
 	// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
-	Recurrence any
+	Recurrence        any
 	RotationStartTime any
-	StartTime any
-	TimeZoneId any
+	StartTime         any
+	TimeZoneId        any
 }
 
 type SsmContactsPreviewRotationShiftsAttrs struct {
-	EndTime any
+	EndTime    any
 	MaxResults any
-	Members any
-	NextToken any
-	Overrides any
+	Members    any
+	NextToken  any
+	Overrides  any
 	// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
-	Recurrence any
-	RotationShifts any
+	Recurrence        any
+	RotationShifts    any
 	RotationStartTime any
-	StartTime any
-	TimeZoneId any
+	StartTime         any
+	TimeZoneId        any
 }
 
 var SsmContactsPreviewRotationShifts = ubx.DataSourceBinding{
 	WireType: "aws_ssm_contacts_preview_rotation_shifts",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Members": ubx.FieldSpec{WireName: "members"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Members":    ubx.FieldSpec{WireName: "members"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Overrides": ubx.FieldSpec{
 			WireName: "overrides",
-			Kind: "list",
-			Fields: SsmContactsPreviewRotationShifts_OverridesFields,
+			Kind:     "list",
+			Fields:   SsmContactsPreviewRotationShifts_OverridesFields,
 		},
 		"Recurrence": ubx.FieldSpec{
 			WireName: "recurrence",
-			Kind: "object",
-			Fields: SsmContactsPreviewRotationShifts_RecurrenceFields,
+			Kind:     "object",
+			Fields:   SsmContactsPreviewRotationShifts_RecurrenceFields,
 		},
 		"RotationStartTime": ubx.FieldSpec{WireName: "rotation_start_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TimeZoneId": ubx.FieldSpec{WireName: "time_zone_id"},
+		"StartTime":         ubx.FieldSpec{WireName: "start_time"},
+		"TimeZoneId":        ubx.FieldSpec{WireName: "time_zone_id"},
 	},
 }

@@ -4,21 +4,21 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workloads_WorkloadSummaries_Profiles struct {
-	ProfileArn any
+	ProfileArn     any
 	ProfileVersion any
 }
 
 type Workloads_WorkloadSummaries struct {
-	ImprovementStatus any
-	Lenses any
-	Owner any
+	ImprovementStatus     any
+	Lenses                any
+	Owner                 any
 	PrioritizedRiskCounts any
-	Profiles any
-	RiskCounts any
-	UpdatedAt any
-	WorkloadArn any
-	WorkloadId any
-	WorkloadName any
+	Profiles              any
+	RiskCounts            any
+	UpdatedAt             any
+	WorkloadArn           any
+	WorkloadId            any
+	WorkloadName          any
 }
 
 type WorkloadsConfig struct {
@@ -44,8 +44,8 @@ type WorkloadsAttrs struct {
 var Workloads = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_workloads",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"WorkloadNamePrefix": ubx.FieldSpec{WireName: "workload_name_prefix"},
 	},
 }

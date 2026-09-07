@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PerformanceAnalysisReportRecommendations_Recommendations struct {
 	RecommendationDescription any
-	RecommendationDetails any
-	RecommendationId any
+	RecommendationDetails     any
+	RecommendationId          any
 }
 
 type PerformanceAnalysisReportRecommendationsConfig struct {
-	AnalysisReportId any
-	Identifier any
-	MaxResults any
-	NextToken any
+	AnalysisReportId  any
+	Identifier        any
+	MaxResults        any
+	NextToken         any
 	RecommendationIds any
-	ServiceType any
+	ServiceType       any
 }
 
 type PerformanceAnalysisReportRecommendationsAttrs struct {
-	AnalysisReportId any
-	Identifier any
-	MaxResults any
-	NextToken any
+	AnalysisReportId  any
+	Identifier        any
+	MaxResults        any
+	NextToken         any
 	RecommendationIds any
-	Recommendations any
-	ServiceType any
+	Recommendations   any
+	ServiceType       any
 }
 
 var PerformanceAnalysisReportRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_pi_performance_analysis_report_recommendations",
 	Fields: ubx.FieldMap{
-		"AnalysisReportId": ubx.FieldSpec{WireName: "analysis_report_id"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AnalysisReportId":  ubx.FieldSpec{WireName: "analysis_report_id"},
+		"Identifier":        ubx.FieldSpec{WireName: "identifier"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"RecommendationIds": ubx.FieldSpec{WireName: "recommendation_ids"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
+		"ServiceType":       ubx.FieldSpec{WireName: "service_type"},
 	},
 }

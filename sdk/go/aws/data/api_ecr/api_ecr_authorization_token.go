@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrAuthorizationToken_AuthorizationData struct {
 	AuthorizationToken any
-	ExpiresAt any
-	ProxyEndpoint any
+	ExpiresAt          any
+	ProxyEndpoint      any
 }
 
 type ApiEcrAuthorizationTokenConfig struct {
@@ -15,7 +15,7 @@ type ApiEcrAuthorizationTokenConfig struct {
 
 type ApiEcrAuthorizationTokenAttrs struct {
 	AuthorizationData any
-	RegistryIds any
+	RegistryIds       any
 }
 
 var ApiEcrAuthorizationToken = ubx.DataSourceBinding{

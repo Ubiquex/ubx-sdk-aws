@@ -9,9 +9,9 @@ type Datasets_Datasets_FormatOptions_Csv struct {
 }
 
 type Datasets_Datasets_FormatOptions_Excel struct {
-	HeaderRow any
+	HeaderRow    any
 	SheetIndexes any
-	SheetNames any
+	SheetNames   any
 }
 
 type Datasets_Datasets_FormatOptions_Json struct {
@@ -19,29 +19,29 @@ type Datasets_Datasets_FormatOptions_Json struct {
 }
 
 type Datasets_Datasets_FormatOptions struct {
-	Csv any
+	Csv   any
 	Excel any
-	Json any
+	Json  any
 }
 
 type Datasets_Datasets_Input_DataCatalogInputDefinition_TempDirectory struct {
-	Bucket any
+	Bucket      any
 	BucketOwner any
-	Key any
+	Key         any
 }
 
 type Datasets_Datasets_Input_DataCatalogInputDefinition struct {
-	CatalogId any
-	DatabaseName any
-	TableName any
+	CatalogId     any
+	DatabaseName  any
+	TableName     any
 	TempDirectory any
 }
 
 type Datasets_Datasets_Input_DatabaseInputDefinition struct {
-	DatabaseTableName any
+	DatabaseTableName  any
 	GlueConnectionName any
-	QueryString any
-	TempDirectory any
+	QueryString        any
+	TempDirectory      any
 }
 
 type Datasets_Datasets_Input_Metadata struct {
@@ -50,73 +50,73 @@ type Datasets_Datasets_Input_Metadata struct {
 
 type Datasets_Datasets_Input struct {
 	DataCatalogInputDefinition any
-	DatabaseInputDefinition any
-	Metadata any
-	S3InputDefinition any
+	DatabaseInputDefinition    any
+	Metadata                   any
+	S3InputDefinition          any
 }
 
 type Datasets_Datasets_PathOptions_FilesLimit struct {
-	MaxFiles any
-	Order any
+	MaxFiles  any
+	Order     any
 	OrderedBy any
 }
 
 type Datasets_Datasets_PathOptions_LastModifiedDateCondition struct {
 	Expression any
-	ValuesMap any
+	ValuesMap  any
 }
 
 type Datasets_Datasets_PathOptions_Parameters_DatetimeOptions struct {
-	Format any
-	LocaleCode any
+	Format         any
+	LocaleCode     any
 	TimezoneOffset any
 }
 
 type Datasets_Datasets_PathOptions_Parameters struct {
-	CreateColumn any
+	CreateColumn    any
 	DatetimeOptions any
-	Filter any
-	Name any
-	Type any
+	Filter          any
+	Name            any
+	Type            any
 }
 
 type Datasets_Datasets_PathOptions struct {
-	FilesLimit any
+	FilesLimit                any
 	LastModifiedDateCondition any
-	Parameters any
+	Parameters                any
 }
 
 type Datasets_Datasets struct {
-	AccountId any
-	CreateDate any
-	CreatedBy any
-	Format any
-	FormatOptions any
-	Input any
-	LastModifiedBy any
+	AccountId        any
+	CreateDate       any
+	CreatedBy        any
+	Format           any
+	FormatOptions    any
+	Input            any
+	LastModifiedBy   any
 	LastModifiedDate any
-	Name any
-	PathOptions any
-	ResourceArn any
-	Source any
-	Tags any
+	Name             any
+	PathOptions      any
+	ResourceArn      any
+	Source           any
+	Tags             any
 }
 
 type DatasetsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DatasetsAttrs struct {
-	Datasets any
+	Datasets   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Datasets = ubx.DataSourceBinding{
 	WireType: "aws_databrew_datasets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

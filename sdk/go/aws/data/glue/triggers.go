@@ -8,63 +8,63 @@ type Triggers_Triggers_Actions_NotificationProperty struct {
 }
 
 type Triggers_Triggers_Actions struct {
-	Arguments any
-	CrawlerName any
-	JobName any
-	NotificationProperty any
+	Arguments             any
+	CrawlerName           any
+	JobName               any
+	NotificationProperty  any
 	SecurityConfiguration any
-	Timeout any
+	Timeout               any
 }
 
 type Triggers_Triggers_EventBatchingCondition struct {
-	BatchSize any
+	BatchSize   any
 	BatchWindow any
 }
 
 type Triggers_Triggers_Predicate_Conditions struct {
-	CrawlState any
-	CrawlerName any
-	JobName any
+	CrawlState      any
+	CrawlerName     any
+	JobName         any
 	LogicalOperator any
-	State any
+	State           any
 }
 
 type Triggers_Triggers_Predicate struct {
 	Conditions any
-	Logical any
+	Logical    any
 }
 
 type Triggers_Triggers struct {
-	Actions any
-	Description any
+	Actions                any
+	Description            any
 	EventBatchingCondition any
-	Id any
-	Name any
-	Predicate any
-	Schedule any
-	State any
-	Type any
-	WorkflowName any
+	Id                     any
+	Name                   any
+	Predicate              any
+	Schedule               any
+	State                  any
+	Type                   any
+	WorkflowName           any
 }
 
 type TriggersConfig struct {
 	DependentJobName any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type TriggersAttrs struct {
 	DependentJobName any
-	MaxResults any
-	NextToken any
-	Triggers any
+	MaxResults       any
+	NextToken        any
+	Triggers         any
 }
 
 var Triggers = ubx.DataSourceBinding{
 	WireType: "aws_glue_triggers",
 	Fields: ubx.FieldMap{
 		"DependentJobName": ubx.FieldSpec{WireName: "dependent_job_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,29 +4,29 @@ package forecast
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Datasets_Datasets struct {
-	CreationTime any
-	DatasetArn any
-	DatasetName any
-	DatasetType any
-	Domain any
+	CreationTime         any
+	DatasetArn           any
+	DatasetName          any
+	DatasetType          any
+	Domain               any
 	LastModificationTime any
 }
 
 type DatasetsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DatasetsAttrs struct {
-	Datasets any
+	Datasets   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Datasets = ubx.DataSourceBinding{
 	WireType: "aws_forecast_datasets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

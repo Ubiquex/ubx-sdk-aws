@@ -40,32 +40,32 @@ type Repository_Triggers struct {
 }
 
 var Repository_Code_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
-	}
+	"Bucket":        ubx.FieldSpec{WireName: "bucket"},
+	"Key":           ubx.FieldSpec{WireName: "key"},
+	"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
+}
 
 var Repository_CodeFields = ubx.FieldMap{
-		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Repository_Code_S3Fields,
-		},
-	}
+	"BranchName": ubx.FieldSpec{WireName: "branch_name"},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Repository_Code_S3Fields,
+	},
+}
 
 var Repository_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Repository_TriggersFields = ubx.FieldMap{
-		"Branches": ubx.FieldSpec{WireName: "branches"},
-		"CustomData": ubx.FieldSpec{WireName: "custom_data"},
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"Events": ubx.FieldSpec{WireName: "events"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Branches":       ubx.FieldSpec{WireName: "branches"},
+	"CustomData":     ubx.FieldSpec{WireName: "custom_data"},
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+	"Events":         ubx.FieldSpec{WireName: "events"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+}
 
 type RepositoryConfig struct {
 	// Information about code to be committed to a repository after it is created in an AWS CloudFormation stack. Information about code is only used in resource creation. Updates to a stack will not reflect changes made to code properties after initial resource creation.
@@ -112,21 +112,21 @@ var Repository = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Code": ubx.FieldSpec{
 			WireName: "code",
-			Kind: "object",
-			Fields: Repository_CodeFields,
+			Kind:     "object",
+			Fields:   Repository_CodeFields,
 		},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"KmsKeyId":              ubx.FieldSpec{WireName: "kms_key_id"},
 		"RepositoryDescription": ubx.FieldSpec{WireName: "repository_description"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"RepositoryName":        ubx.FieldSpec{WireName: "repository_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Repository_TagsFields,
+			Kind:     "list",
+			Fields:   Repository_TagsFields,
 		},
 		"Triggers": ubx.FieldSpec{
 			WireName: "triggers",
-			Kind: "list",
-			Fields: Repository_TriggersFields,
+			Kind:     "list",
+			Fields:   Repository_TriggersFields,
 		},
 	},
 }

@@ -4,58 +4,58 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DelegationRequests_DelegationRequests_Permissions_Parameters struct {
-	Name any
-	Type any
+	Name   any
+	Type   any
 	Values any
 }
 
 type DelegationRequests_DelegationRequests_Permissions struct {
-	Parameters any
+	Parameters        any
 	PolicyTemplateArn any
 }
 
 type DelegationRequests_DelegationRequests struct {
-	ApproverId any
-	CreateDate any
-	DelegationRequestId any
-	Description any
-	ExpirationTime any
-	Notes any
-	OnlySendByOwner any
-	OwnerAccountId any
-	OwnerId any
-	PermissionPolicy any
-	Permissions any
-	RedirectUrl any
-	RejectionReason any
-	RequestMessage any
-	RequestorId any
-	RequestorName any
+	ApproverId                    any
+	CreateDate                    any
+	DelegationRequestId           any
+	Description                   any
+	ExpirationTime                any
+	Notes                         any
+	OnlySendByOwner               any
+	OwnerAccountId                any
+	OwnerId                       any
+	PermissionPolicy              any
+	Permissions                   any
+	RedirectUrl                   any
+	RejectionReason               any
+	RequestMessage                any
+	RequestorId                   any
+	RequestorName                 any
 	RolePermissionRestrictionArns any
-	SessionDuration any
-	State any
-	UpdatedTime any
+	SessionDuration               any
+	State                         any
+	UpdatedTime                   any
 }
 
 type DelegationRequestsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
-	OwnerId any
+	OwnerId  any
 }
 
 type DelegationRequestsAttrs struct {
 	DelegationRequests any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	OwnerId any
+	IsTruncated        any
+	Marker             any
+	MaxItems           any
+	OwnerId            any
 }
 
 var DelegationRequests = ubx.DataSourceBinding{
 	WireType: "aws_iam_delegation_requests",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"OwnerId": ubx.FieldSpec{WireName: "owner_id"},
+		"OwnerId":  ubx.FieldSpec{WireName: "owner_id"},
 	},
 }

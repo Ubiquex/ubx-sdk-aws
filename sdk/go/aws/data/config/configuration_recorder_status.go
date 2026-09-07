@@ -4,36 +4,36 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationRecorderStatus_ConfigurationRecordersStatus struct {
-	Arn any
-	LastErrorCode any
-	LastErrorMessage any
-	LastStartTime any
-	LastStatus any
+	Arn                  any
+	LastErrorCode        any
+	LastErrorMessage     any
+	LastStartTime        any
+	LastStatus           any
 	LastStatusChangeTime any
-	LastStopTime any
-	Name any
-	Recording any
-	ServicePrincipal any
+	LastStopTime         any
+	Name                 any
+	Recording            any
+	ServicePrincipal     any
 }
 
 type ConfigurationRecorderStatusConfig struct {
-	Arn any
+	Arn                        any
 	ConfigurationRecorderNames any
-	ServicePrincipal any
+	ServicePrincipal           any
 }
 
 type ConfigurationRecorderStatusAttrs struct {
-	Arn any
-	ConfigurationRecorderNames any
+	Arn                          any
+	ConfigurationRecorderNames   any
 	ConfigurationRecordersStatus any
-	ServicePrincipal any
+	ServicePrincipal             any
 }
 
 var ConfigurationRecorderStatus = ubx.DataSourceBinding{
 	WireType: "aws_config_configuration_recorder_status",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":                        ubx.FieldSpec{WireName: "arn"},
 		"ConfigurationRecorderNames": ubx.FieldSpec{WireName: "configuration_recorder_names"},
-		"ServicePrincipal": ubx.FieldSpec{WireName: "service_principal"},
+		"ServicePrincipal":           ubx.FieldSpec{WireName: "service_principal"},
 	},
 }

@@ -4,29 +4,29 @@ package route53_recovery_readiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route53RecoveryReadinessRules_Rules struct {
-	ResourceType any
+	ResourceType    any
 	RuleDescription any
-	RuleId any
+	RuleId          any
 }
 
 type Route53RecoveryReadinessRulesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ResourceType any
 }
 
 type Route53RecoveryReadinessRulesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ResourceType any
-	Rules any
+	Rules        any
 }
 
 var Route53RecoveryReadinessRules = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_readiness_rules",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

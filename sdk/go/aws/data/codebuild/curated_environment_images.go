@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CuratedEnvironmentImages_Platforms_Languages_Images struct {
 	Description any
-	Name any
-	Versions any
+	Name        any
+	Versions    any
 }
 
 type CuratedEnvironmentImages_Platforms_Languages struct {
-	Images any
+	Images   any
 	Language any
 }
 
 type CuratedEnvironmentImages_Platforms struct {
 	Languages any
-	Platform any
+	Platform  any
 }
 
 type CuratedEnvironmentImagesConfig struct {
@@ -28,6 +28,5 @@ type CuratedEnvironmentImagesAttrs struct {
 
 var CuratedEnvironmentImages = ubx.DataSourceBinding{
 	WireType: "aws_codebuild_curated_environment_images",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -10,15 +10,15 @@ type Endpoints_Endpoints struct {
 type EndpointsConfig struct {
 	MaxResults any
 	// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
-	Mode any
+	Mode      any
 	NextToken any
 }
 
 type EndpointsAttrs struct {
-	Endpoints any
+	Endpoints  any
 	MaxResults any
 	// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
-	Mode any
+	Mode      any
 	NextToken any
 }
 
@@ -26,7 +26,7 @@ var Endpoints = ubx.DataSourceBinding{
 	WireType: "aws_mediaconvert_endpoints",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Mode":       ubx.FieldSpec{WireName: "mode"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,41 +4,41 @@ package mturk_requester
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MturkRequesterHits_Hits_QualificationRequirements_LocaleValues struct {
-	Country any
+	Country     any
 	Subdivision any
 }
 
 type MturkRequesterHits_Hits_QualificationRequirements struct {
-	ActionsGuarded any
-	Comparator any
-	IntegerValues any
-	LocaleValues any
+	ActionsGuarded      any
+	Comparator          any
+	IntegerValues       any
+	LocaleValues        any
 	QualificationTypeId any
-	RequiredToPreview any
+	RequiredToPreview   any
 }
 
 type MturkRequesterHits_Hits struct {
-	AssignmentDurationInSeconds any
-	AutoApprovalDelayInSeconds any
-	CreationTime any
-	Description any
-	Expiration any
-	HitgroupId any
-	Hitid any
-	HitlayoutId any
-	HitreviewStatus any
-	Hitstatus any
-	HittypeId any
-	Keywords any
-	MaxAssignments any
+	AssignmentDurationInSeconds  any
+	AutoApprovalDelayInSeconds   any
+	CreationTime                 any
+	Description                  any
+	Expiration                   any
+	HitgroupId                   any
+	Hitid                        any
+	HitlayoutId                  any
+	HitreviewStatus              any
+	Hitstatus                    any
+	HittypeId                    any
+	Keywords                     any
+	MaxAssignments               any
 	NumberOfAssignmentsAvailable any
 	NumberOfAssignmentsCompleted any
-	NumberOfAssignmentsPending any
-	QualificationRequirements any
-	Question any
-	RequesterAnnotation any
-	Reward any
-	Title any
+	NumberOfAssignmentsPending   any
+	QualificationRequirements    any
+	Question                     any
+	RequesterAnnotation          any
+	Reward                       any
+	Title                        any
 }
 
 type MturkRequesterHitsConfig struct {
@@ -48,10 +48,10 @@ type MturkRequesterHitsConfig struct {
 }
 
 type MturkRequesterHitsAttrs struct {
-	Hits any
+	Hits       any
 	MaxResults any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-	NextToken any
+	NextToken  any
 	NumResults any
 }
 
@@ -59,6 +59,6 @@ var MturkRequesterHits = ubx.DataSourceBinding{
 	WireType: "aws_mturk_requester_hits",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

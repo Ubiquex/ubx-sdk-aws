@@ -4,88 +4,88 @@ package compute_optimizer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerLicenseRecommendations_Errors struct {
-	Code any
+	Code       any
 	Identifier any
-	Message any
+	Message    any
 }
 
 type ComputeOptimizerLicenseRecommendations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ComputeOptimizerLicenseRecommendations_LicenseRecommendations_CurrentLicenseConfiguration_MetricsSource struct {
-	Provider any
+	Provider    any
 	ProviderArn any
 }
 
 type ComputeOptimizerLicenseRecommendations_LicenseRecommendations_CurrentLicenseConfiguration struct {
-	InstanceType any
-	LicenseEdition any
-	LicenseModel any
-	LicenseName any
-	LicenseVersion any
-	MetricsSource any
-	NumberOfCores any
+	InstanceType    any
+	LicenseEdition  any
+	LicenseModel    any
+	LicenseName     any
+	LicenseVersion  any
+	MetricsSource   any
+	NumberOfCores   any
 	OperatingSystem any
 }
 
 type ComputeOptimizerLicenseRecommendations_LicenseRecommendations_LicenseRecommendationOptions_SavingsOpportunity_EstimatedMonthlySavings struct {
 	Currency any
-	Value any
+	Value    any
 }
 
 type ComputeOptimizerLicenseRecommendations_LicenseRecommendations_LicenseRecommendationOptions_SavingsOpportunity struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings      any
 	SavingsOpportunityPercentage any
 }
 
 type ComputeOptimizerLicenseRecommendations_LicenseRecommendations_LicenseRecommendationOptions struct {
-	LicenseEdition any
-	LicenseModel any
-	OperatingSystem any
-	Rank any
+	LicenseEdition     any
+	LicenseModel       any
+	OperatingSystem    any
+	Rank               any
 	SavingsOpportunity any
 }
 
 type ComputeOptimizerLicenseRecommendations_LicenseRecommendations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ComputeOptimizerLicenseRecommendations_LicenseRecommendations struct {
-	AccountId any
-	CurrentLicenseConfiguration any
-	Finding any
-	FindingReasonCodes any
-	LastRefreshTimestamp any
+	AccountId                    any
+	CurrentLicenseConfiguration  any
+	Finding                      any
+	FindingReasonCodes           any
+	LastRefreshTimestamp         any
 	LicenseRecommendationOptions any
-	LookbackPeriodInDays any
-	ResourceArn any
-	Tags any
+	LookbackPeriodInDays         any
+	ResourceArn                  any
+	Tags                         any
 }
 
 var ComputeOptimizerLicenseRecommendations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ComputeOptimizerLicenseRecommendationsConfig struct {
-	AccountIds any
-	Filters any
-	MaxResults any
-	NextToken any
+	AccountIds   any
+	Filters      any
+	MaxResults   any
+	NextToken    any
 	ResourceArns any
 }
 
 type ComputeOptimizerLicenseRecommendationsAttrs struct {
-	AccountIds any
-	Errors any
-	Filters any
+	AccountIds             any
+	Errors                 any
+	Filters                any
 	LicenseRecommendations any
-	MaxResults any
-	NextToken any
-	ResourceArns any
+	MaxResults             any
+	NextToken              any
+	ResourceArns           any
 }
 
 var ComputeOptimizerLicenseRecommendations = ubx.DataSourceBinding{
@@ -94,11 +94,11 @@ var ComputeOptimizerLicenseRecommendations = ubx.DataSourceBinding{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComputeOptimizerLicenseRecommendations_FiltersFields,
+			Kind:     "list",
+			Fields:   ComputeOptimizerLicenseRecommendations_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
 	},
 }

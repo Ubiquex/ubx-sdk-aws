@@ -5,57 +5,57 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackResourceDrifts_StackResourceDrifts_ModuleInfo struct {
 	LogicalIdHierarchy any
-	TypeHierarchy any
+	TypeHierarchy      any
 }
 
 type StackResourceDrifts_StackResourceDrifts_PhysicalResourceIdContext struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type StackResourceDrifts_StackResourceDrifts_PropertyDifferences struct {
-	ActualValue any
+	ActualValue    any
 	DifferenceType any
-	ExpectedValue any
-	PropertyPath any
+	ExpectedValue  any
+	PropertyPath   any
 }
 
 type StackResourceDrifts_StackResourceDrifts struct {
-	ActualProperties any
-	DriftStatusReason any
-	ExpectedProperties any
-	LogicalResourceId any
-	ModuleInfo any
-	PhysicalResourceId any
+	ActualProperties          any
+	DriftStatusReason         any
+	ExpectedProperties        any
+	LogicalResourceId         any
+	ModuleInfo                any
+	PhysicalResourceId        any
 	PhysicalResourceIdContext any
-	PropertyDifferences any
-	ResourceType any
-	StackId any
-	StackResourceDriftStatus any
-	Timestamp any
+	PropertyDifferences       any
+	ResourceType              any
+	StackId                   any
+	StackResourceDriftStatus  any
+	Timestamp                 any
 }
 
 type StackResourceDriftsConfig struct {
-	MaxResults any
-	NextToken any
-	StackName any
+	MaxResults                      any
+	NextToken                       any
+	StackName                       any
 	StackResourceDriftStatusFilters any
 }
 
 type StackResourceDriftsAttrs struct {
-	MaxResults any
-	NextToken any
-	StackName any
+	MaxResults                      any
+	NextToken                       any
+	StackName                       any
 	StackResourceDriftStatusFilters any
-	StackResourceDrifts any
+	StackResourceDrifts             any
 }
 
 var StackResourceDrifts = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stack_resource_drifts",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"MaxResults":                      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                       ubx.FieldSpec{WireName: "next_token"},
+		"StackName":                       ubx.FieldSpec{WireName: "stack_name"},
 		"StackResourceDriftStatusFilters": ubx.FieldSpec{WireName: "stack_resource_drift_status_filters"},
 	},
 }

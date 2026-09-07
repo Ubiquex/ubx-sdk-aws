@@ -8,29 +8,29 @@ type EntitySecurityProfiles_SecurityProfiles struct {
 }
 
 type EntitySecurityProfilesConfig struct {
-	EntityArn any
+	EntityArn  any
 	EntityType any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EntitySecurityProfilesAttrs struct {
-	EntityArn any
-	EntityType any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	EntityArn        any
+	EntityType       any
+	InstanceId       any
+	MaxResults       any
+	NextToken        any
 	SecurityProfiles any
 }
 
 var EntitySecurityProfiles = ubx.DataSourceBinding{
 	WireType: "aws_connect_entity_security_profiles",
 	Fields: ubx.FieldMap{
-		"EntityArn": ubx.FieldSpec{WireName: "entity_arn"},
+		"EntityArn":  ubx.FieldSpec{WireName: "entity_arn"},
 		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

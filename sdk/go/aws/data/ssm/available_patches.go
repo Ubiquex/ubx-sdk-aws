@@ -4,52 +4,52 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AvailablePatches_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type AvailablePatches_Patches struct {
-	AdvisoryIds any
-	Arch any
-	BugzillaIds any
+	AdvisoryIds    any
+	Arch           any
+	BugzillaIds    any
 	Classification any
-	ContentUrl any
-	Cveids any
-	Description any
-	Epoch any
-	Id any
-	KbNumber any
-	Language any
-	MsrcNumber any
-	MsrcSeverity any
-	Name any
-	Product any
-	ProductFamily any
-	Release any
-	ReleaseDate any
-	Repository any
-	Severity any
-	Title any
-	Vendor any
-	Version any
+	ContentUrl     any
+	Cveids         any
+	Description    any
+	Epoch          any
+	Id             any
+	KbNumber       any
+	Language       any
+	MsrcNumber     any
+	MsrcSeverity   any
+	Name           any
+	Product        any
+	ProductFamily  any
+	Release        any
+	ReleaseDate    any
+	Repository     any
+	Severity       any
+	Title          any
+	Vendor         any
+	Version        any
 }
 
 var AvailablePatches_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type AvailablePatchesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AvailablePatchesAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Patches any
+	NextToken  any
+	Patches    any
 }
 
 var AvailablePatches = ubx.DataSourceBinding{
@@ -57,10 +57,10 @@ var AvailablePatches = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: AvailablePatches_FiltersFields,
+			Kind:     "list",
+			Fields:   AvailablePatches_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

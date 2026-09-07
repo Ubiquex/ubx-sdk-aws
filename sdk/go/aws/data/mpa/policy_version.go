@@ -4,16 +4,16 @@ package mpa
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PolicyVersion_PolicyVersion struct {
-	Arn any
-	CreationTime any
-	Document any
-	IsDefault any
+	Arn             any
+	CreationTime    any
+	Document        any
+	IsDefault       any
 	LastUpdatedTime any
-	Name any
-	PolicyArn any
-	PolicyType any
-	Status any
-	VersionId any
+	Name            any
+	PolicyArn       any
+	PolicyType      any
+	Status          any
+	VersionId       any
 }
 
 type PolicyVersionConfig struct {
@@ -22,7 +22,7 @@ type PolicyVersionConfig struct {
 
 type PolicyVersionAttrs struct {
 	// <p>Contains details for the version of a policy. Policies define what operations a team that define the permissions for team resources.</p>
-	PolicyVersion any
+	PolicyVersion    any
 	PolicyVersionArn any
 }
 

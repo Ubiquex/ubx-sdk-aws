@@ -4,7 +4,7 @@ package api_detective
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiDetectiveInvestigations_FilterCriteria_CreatedTime struct {
-	EndInclusive any
+	EndInclusive   any
 	StartInclusive any
 }
 
@@ -26,79 +26,79 @@ type ApiDetectiveInvestigations_FilterCriteria struct {
 }
 
 type ApiDetectiveInvestigations_InvestigationDetails struct {
-	CreatedTime any
-	EntityArn any
-	EntityType any
+	CreatedTime     any
+	EntityArn       any
+	EntityType      any
 	InvestigationId any
-	Severity any
-	State any
-	Status any
+	Severity        any
+	State           any
+	Status          any
 }
 
 type ApiDetectiveInvestigations_SortCriteria struct {
-	Field any
+	Field     any
 	SortOrder any
 }
 
 var ApiDetectiveInvestigations_FilterCriteria_CreatedTimeFields = ubx.FieldMap{
-		"EndInclusive": ubx.FieldSpec{WireName: "end_inclusive"},
-		"StartInclusive": ubx.FieldSpec{WireName: "start_inclusive"},
-	}
+	"EndInclusive":   ubx.FieldSpec{WireName: "end_inclusive"},
+	"StartInclusive": ubx.FieldSpec{WireName: "start_inclusive"},
+}
 
 var ApiDetectiveInvestigations_FilterCriteria_EntityArnFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ApiDetectiveInvestigations_FilterCriteriaFields = ubx.FieldMap{
-		"CreatedTime": ubx.FieldSpec{
-			WireName: "created_time",
-			Kind: "object",
-			Fields: ApiDetectiveInvestigations_FilterCriteria_CreatedTimeFields,
-		},
-		"EntityArn": ubx.FieldSpec{
-			WireName: "entity_arn",
-			Kind: "object",
-			Fields: ApiDetectiveInvestigations_FilterCriteria_EntityArnFields,
-		},
-		"Severity": ubx.FieldSpec{
-			WireName: "severity",
-			Kind: "object",
-			Fields: ApiDetectiveInvestigations_FilterCriteria_EntityArnFields,
-		},
-		"State": ubx.FieldSpec{
-			WireName: "state",
-			Kind: "object",
-			Fields: ApiDetectiveInvestigations_FilterCriteria_EntityArnFields,
-		},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: ApiDetectiveInvestigations_FilterCriteria_EntityArnFields,
-		},
-	}
+	"CreatedTime": ubx.FieldSpec{
+		WireName: "created_time",
+		Kind:     "object",
+		Fields:   ApiDetectiveInvestigations_FilterCriteria_CreatedTimeFields,
+	},
+	"EntityArn": ubx.FieldSpec{
+		WireName: "entity_arn",
+		Kind:     "object",
+		Fields:   ApiDetectiveInvestigations_FilterCriteria_EntityArnFields,
+	},
+	"Severity": ubx.FieldSpec{
+		WireName: "severity",
+		Kind:     "object",
+		Fields:   ApiDetectiveInvestigations_FilterCriteria_EntityArnFields,
+	},
+	"State": ubx.FieldSpec{
+		WireName: "state",
+		Kind:     "object",
+		Fields:   ApiDetectiveInvestigations_FilterCriteria_EntityArnFields,
+	},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   ApiDetectiveInvestigations_FilterCriteria_EntityArnFields,
+	},
+}
 
 var ApiDetectiveInvestigations_SortCriteriaFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Field":     ubx.FieldSpec{WireName: "field"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 type ApiDetectiveInvestigationsConfig struct {
 	// <p>Details on the criteria used to define the filter for investigation results.</p>
 	FilterCriteria any
-	GraphArn any
-	MaxResults any
-	NextToken any
+	GraphArn       any
+	MaxResults     any
+	NextToken      any
 	// <p>Details about the criteria used for sorting investigations.</p>
 	SortCriteria any
 }
 
 type ApiDetectiveInvestigationsAttrs struct {
 	// <p>Details on the criteria used to define the filter for investigation results.</p>
-	FilterCriteria any
-	GraphArn any
+	FilterCriteria       any
+	GraphArn             any
 	InvestigationDetails any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	// <p>Details about the criteria used for sorting investigations.</p>
 	SortCriteria any
 }
@@ -108,16 +108,16 @@ var ApiDetectiveInvestigations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterCriteria": ubx.FieldSpec{
 			WireName: "filter_criteria",
-			Kind: "object",
-			Fields: ApiDetectiveInvestigations_FilterCriteriaFields,
+			Kind:     "object",
+			Fields:   ApiDetectiveInvestigations_FilterCriteriaFields,
 		},
-		"GraphArn": ubx.FieldSpec{WireName: "graph_arn"},
+		"GraphArn":   ubx.FieldSpec{WireName: "graph_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortCriteria": ubx.FieldSpec{
 			WireName: "sort_criteria",
-			Kind: "object",
-			Fields: ApiDetectiveInvestigations_SortCriteriaFields,
+			Kind:     "object",
+			Fields:   ApiDetectiveInvestigations_SortCriteriaFields,
 		},
 	},
 }

@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightRules_InsightRules struct {
 	ApplyOnTransformedLogs any
-	Definition any
-	ManagedRule any
-	Name any
-	Schema any
-	State any
+	Definition             any
+	ManagedRule            any
+	Name                   any
+	Schema                 any
+	State                  any
 }
 
 type InsightRulesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InsightRulesAttrs struct {
 	InsightRules any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var InsightRules = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_insight_rules",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

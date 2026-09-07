@@ -4,59 +4,59 @@ package elasticmapreduce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Clusters_Clusters_Status_ErrorDetails struct {
-	ErrorCode any
-	ErrorData any
+	ErrorCode    any
+	ErrorData    any
 	ErrorMessage any
 }
 
 type Clusters_Clusters_Status_StateChangeReason struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Clusters_Clusters_Status_Timeline struct {
 	CreationDateTime any
-	EndDateTime any
-	ReadyDateTime any
+	EndDateTime      any
+	ReadyDateTime    any
 }
 
 type Clusters_Clusters_Status struct {
-	ErrorDetails any
-	State any
+	ErrorDetails      any
+	State             any
 	StateChangeReason any
-	Timeline any
+	Timeline          any
 }
 
 type Clusters_Clusters struct {
-	ClusterArn any
-	Id any
-	Name any
+	ClusterArn              any
+	Id                      any
+	Name                    any
 	NormalizedInstanceHours any
-	OutpostArn any
-	Status any
+	OutpostArn              any
+	Status                  any
 }
 
 type ClustersConfig struct {
 	ClusterStates any
-	CreatedAfter any
+	CreatedAfter  any
 	CreatedBefore any
-	Marker any
+	Marker        any
 }
 
 type ClustersAttrs struct {
 	ClusterStates any
-	Clusters any
-	CreatedAfter any
+	Clusters      any
+	CreatedAfter  any
 	CreatedBefore any
-	Marker any
+	Marker        any
 }
 
 var Clusters = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_clusters",
 	Fields: ubx.FieldMap{
 		"ClusterStates": ubx.FieldSpec{WireName: "cluster_states"},
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+		"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
 		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":        ubx.FieldSpec{WireName: "marker"},
 	},
 }

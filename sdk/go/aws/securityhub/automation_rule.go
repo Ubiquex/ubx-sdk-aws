@@ -174,271 +174,271 @@ type AutomationRule_Criteria struct {
 }
 
 var AutomationRule_Actions_FindingFieldsUpdate_NoteFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"UpdatedBy": ubx.FieldSpec{WireName: "updated_by"},
-	}
+	"Text":      ubx.FieldSpec{WireName: "text"},
+	"UpdatedBy": ubx.FieldSpec{WireName: "updated_by"},
+}
 
 var AutomationRule_Actions_FindingFieldsUpdate_RelatedFindingsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ProductArn": ubx.FieldSpec{WireName: "product_arn"},
-	}
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"ProductArn": ubx.FieldSpec{WireName: "product_arn"},
+}
 
 var AutomationRule_Actions_FindingFieldsUpdate_SeverityFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Normalized": ubx.FieldSpec{WireName: "normalized"},
-		"Product": ubx.FieldSpec{WireName: "product"},
-	}
+	"Label":      ubx.FieldSpec{WireName: "label"},
+	"Normalized": ubx.FieldSpec{WireName: "normalized"},
+	"Product":    ubx.FieldSpec{WireName: "product"},
+}
 
 var AutomationRule_Actions_FindingFieldsUpdate_WorkflowFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var AutomationRule_Actions_FindingFieldsUpdateFields = ubx.FieldMap{
-		"Confidence": ubx.FieldSpec{WireName: "confidence"},
-		"Criticality": ubx.FieldSpec{WireName: "criticality"},
-		"Note": ubx.FieldSpec{
-			WireName: "note",
-			Kind: "object",
-			Fields: AutomationRule_Actions_FindingFieldsUpdate_NoteFields,
-		},
-		"RelatedFindings": ubx.FieldSpec{
-			WireName: "related_findings",
-			Kind: "list",
-			Fields: AutomationRule_Actions_FindingFieldsUpdate_RelatedFindingsFields,
-		},
-		"Severity": ubx.FieldSpec{
-			WireName: "severity",
-			Kind: "object",
-			Fields: AutomationRule_Actions_FindingFieldsUpdate_SeverityFields,
-		},
-		"Types": ubx.FieldSpec{WireName: "types"},
-		"UserDefinedFields": ubx.FieldSpec{WireName: "user_defined_fields"},
-		"VerificationState": ubx.FieldSpec{WireName: "verification_state"},
-		"Workflow": ubx.FieldSpec{
-			WireName: "workflow",
-			Kind: "object",
-			Fields: AutomationRule_Actions_FindingFieldsUpdate_WorkflowFields,
-		},
-	}
+	"Confidence":  ubx.FieldSpec{WireName: "confidence"},
+	"Criticality": ubx.FieldSpec{WireName: "criticality"},
+	"Note": ubx.FieldSpec{
+		WireName: "note",
+		Kind:     "object",
+		Fields:   AutomationRule_Actions_FindingFieldsUpdate_NoteFields,
+	},
+	"RelatedFindings": ubx.FieldSpec{
+		WireName: "related_findings",
+		Kind:     "list",
+		Fields:   AutomationRule_Actions_FindingFieldsUpdate_RelatedFindingsFields,
+	},
+	"Severity": ubx.FieldSpec{
+		WireName: "severity",
+		Kind:     "object",
+		Fields:   AutomationRule_Actions_FindingFieldsUpdate_SeverityFields,
+	},
+	"Types":             ubx.FieldSpec{WireName: "types"},
+	"UserDefinedFields": ubx.FieldSpec{WireName: "user_defined_fields"},
+	"VerificationState": ubx.FieldSpec{WireName: "verification_state"},
+	"Workflow": ubx.FieldSpec{
+		WireName: "workflow",
+		Kind:     "object",
+		Fields:   AutomationRule_Actions_FindingFieldsUpdate_WorkflowFields,
+	},
+}
 
 var AutomationRule_ActionsFields = ubx.FieldMap{
-		"FindingFieldsUpdate": ubx.FieldSpec{
-			WireName: "finding_fields_update",
-			Kind: "object",
-			Fields: AutomationRule_Actions_FindingFieldsUpdateFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"FindingFieldsUpdate": ubx.FieldSpec{
+		WireName: "finding_fields_update",
+		Kind:     "object",
+		Fields:   AutomationRule_Actions_FindingFieldsUpdateFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AutomationRule_Criteria_AwsAccountIdFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var AutomationRule_Criteria_ConfidenceFields = ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Gte": ubx.FieldSpec{WireName: "gte"},
-		"Lte": ubx.FieldSpec{WireName: "lte"},
-	}
+	"Eq":  ubx.FieldSpec{WireName: "eq"},
+	"Gte": ubx.FieldSpec{WireName: "gte"},
+	"Lte": ubx.FieldSpec{WireName: "lte"},
+}
 
 var AutomationRule_Criteria_CreatedAt_DateRangeFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AutomationRule_Criteria_CreatedAtFields = ubx.FieldMap{
-		"DateRange": ubx.FieldSpec{
-			WireName: "date_range",
-			Kind: "object",
-			Fields: AutomationRule_Criteria_CreatedAt_DateRangeFields,
-		},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"DateRange": ubx.FieldSpec{
+		WireName: "date_range",
+		Kind:     "object",
+		Fields:   AutomationRule_Criteria_CreatedAt_DateRangeFields,
+	},
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var AutomationRule_Criteria_ResourceDetailsOtherFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var AutomationRule_CriteriaFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{
-			WireName: "aws_account_id",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"CompanyName": ubx.FieldSpec{
-			WireName: "company_name",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ComplianceAssociatedStandardsId": ubx.FieldSpec{
-			WireName: "compliance_associated_standards_id",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ComplianceSecurityControlId": ubx.FieldSpec{
-			WireName: "compliance_security_control_id",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ComplianceStatus": ubx.FieldSpec{
-			WireName: "compliance_status",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"Confidence": ubx.FieldSpec{
-			WireName: "confidence",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_ConfidenceFields,
-		},
-		"CreatedAt": ubx.FieldSpec{
-			WireName: "created_at",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_CreatedAtFields,
-		},
-		"Criticality": ubx.FieldSpec{
-			WireName: "criticality",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_ConfidenceFields,
-		},
-		"Description": ubx.FieldSpec{
-			WireName: "description",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"FirstObservedAt": ubx.FieldSpec{
-			WireName: "first_observed_at",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_CreatedAtFields,
-		},
-		"GeneratorId": ubx.FieldSpec{
-			WireName: "generator_id",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"Id": ubx.FieldSpec{
-			WireName: "id",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"LastObservedAt": ubx.FieldSpec{
-			WireName: "last_observed_at",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_CreatedAtFields,
-		},
-		"NoteText": ubx.FieldSpec{
-			WireName: "note_text",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"NoteUpdatedAt": ubx.FieldSpec{
-			WireName: "note_updated_at",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_CreatedAtFields,
-		},
-		"NoteUpdatedBy": ubx.FieldSpec{
-			WireName: "note_updated_by",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ProductArn": ubx.FieldSpec{
-			WireName: "product_arn",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ProductName": ubx.FieldSpec{
-			WireName: "product_name",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"RecordState": ubx.FieldSpec{
-			WireName: "record_state",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"RelatedFindingsId": ubx.FieldSpec{
-			WireName: "related_findings_id",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"RelatedFindingsProductArn": ubx.FieldSpec{
-			WireName: "related_findings_product_arn",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ResourceDetailsOther": ubx.FieldSpec{
-			WireName: "resource_details_other",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_ResourceDetailsOtherFields,
-		},
-		"ResourceId": ubx.FieldSpec{
-			WireName: "resource_id",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ResourcePartition": ubx.FieldSpec{
-			WireName: "resource_partition",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ResourceRegion": ubx.FieldSpec{
-			WireName: "resource_region",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"ResourceTags": ubx.FieldSpec{
-			WireName: "resource_tags",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_ResourceDetailsOtherFields,
-		},
-		"ResourceType": ubx.FieldSpec{
-			WireName: "resource_type",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"SeverityLabel": ubx.FieldSpec{
-			WireName: "severity_label",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"SourceUrl": ubx.FieldSpec{
-			WireName: "source_url",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"UpdatedAt": ubx.FieldSpec{
-			WireName: "updated_at",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_CreatedAtFields,
-		},
-		"UserDefinedFields": ubx.FieldSpec{
-			WireName: "user_defined_fields",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_ResourceDetailsOtherFields,
-		},
-		"VerificationState": ubx.FieldSpec{
-			WireName: "verification_state",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-		"WorkflowStatus": ubx.FieldSpec{
-			WireName: "workflow_status",
-			Kind: "list",
-			Fields: AutomationRule_Criteria_AwsAccountIdFields,
-		},
-	}
+	"AwsAccountId": ubx.FieldSpec{
+		WireName: "aws_account_id",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"CompanyName": ubx.FieldSpec{
+		WireName: "company_name",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ComplianceAssociatedStandardsId": ubx.FieldSpec{
+		WireName: "compliance_associated_standards_id",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ComplianceSecurityControlId": ubx.FieldSpec{
+		WireName: "compliance_security_control_id",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ComplianceStatus": ubx.FieldSpec{
+		WireName: "compliance_status",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"Confidence": ubx.FieldSpec{
+		WireName: "confidence",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_ConfidenceFields,
+	},
+	"CreatedAt": ubx.FieldSpec{
+		WireName: "created_at",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_CreatedAtFields,
+	},
+	"Criticality": ubx.FieldSpec{
+		WireName: "criticality",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_ConfidenceFields,
+	},
+	"Description": ubx.FieldSpec{
+		WireName: "description",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"FirstObservedAt": ubx.FieldSpec{
+		WireName: "first_observed_at",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_CreatedAtFields,
+	},
+	"GeneratorId": ubx.FieldSpec{
+		WireName: "generator_id",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"Id": ubx.FieldSpec{
+		WireName: "id",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"LastObservedAt": ubx.FieldSpec{
+		WireName: "last_observed_at",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_CreatedAtFields,
+	},
+	"NoteText": ubx.FieldSpec{
+		WireName: "note_text",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"NoteUpdatedAt": ubx.FieldSpec{
+		WireName: "note_updated_at",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_CreatedAtFields,
+	},
+	"NoteUpdatedBy": ubx.FieldSpec{
+		WireName: "note_updated_by",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ProductArn": ubx.FieldSpec{
+		WireName: "product_arn",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ProductName": ubx.FieldSpec{
+		WireName: "product_name",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"RecordState": ubx.FieldSpec{
+		WireName: "record_state",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"RelatedFindingsId": ubx.FieldSpec{
+		WireName: "related_findings_id",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"RelatedFindingsProductArn": ubx.FieldSpec{
+		WireName: "related_findings_product_arn",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ResourceDetailsOther": ubx.FieldSpec{
+		WireName: "resource_details_other",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_ResourceDetailsOtherFields,
+	},
+	"ResourceId": ubx.FieldSpec{
+		WireName: "resource_id",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ResourcePartition": ubx.FieldSpec{
+		WireName: "resource_partition",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ResourceRegion": ubx.FieldSpec{
+		WireName: "resource_region",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"ResourceTags": ubx.FieldSpec{
+		WireName: "resource_tags",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_ResourceDetailsOtherFields,
+	},
+	"ResourceType": ubx.FieldSpec{
+		WireName: "resource_type",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"SeverityLabel": ubx.FieldSpec{
+		WireName: "severity_label",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"SourceUrl": ubx.FieldSpec{
+		WireName: "source_url",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"UpdatedAt": ubx.FieldSpec{
+		WireName: "updated_at",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_CreatedAtFields,
+	},
+	"UserDefinedFields": ubx.FieldSpec{
+		WireName: "user_defined_fields",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_ResourceDetailsOtherFields,
+	},
+	"VerificationState": ubx.FieldSpec{
+		WireName: "verification_state",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+	"WorkflowStatus": ubx.FieldSpec{
+		WireName: "workflow_status",
+		Kind:     "list",
+		Fields:   AutomationRule_Criteria_AwsAccountIdFields,
+	},
+}
 
 type AutomationRuleConfig struct {
 	// One or more actions to update finding fields if a finding matches the conditions specified in ``Criteria``.
@@ -491,19 +491,19 @@ var AutomationRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: AutomationRule_ActionsFields,
+			Kind:     "list",
+			Fields:   AutomationRule_ActionsFields,
 		},
 		"Criteria": ubx.FieldSpec{
 			WireName: "criteria",
-			Kind: "object",
-			Fields: AutomationRule_CriteriaFields,
+			Kind:     "object",
+			Fields:   AutomationRule_CriteriaFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"IsTerminal": ubx.FieldSpec{WireName: "is_terminal"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"RuleOrder": ubx.FieldSpec{WireName: "rule_order"},
-		"RuleStatus": ubx.FieldSpec{WireName: "rule_status"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"IsTerminal":  ubx.FieldSpec{WireName: "is_terminal"},
+		"RuleName":    ubx.FieldSpec{WireName: "rule_name"},
+		"RuleOrder":   ubx.FieldSpec{WireName: "rule_order"},
+		"RuleStatus":  ubx.FieldSpec{WireName: "rule_status"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

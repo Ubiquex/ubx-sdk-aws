@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationAssociation_Tags struct {
 	// The key of a tag attached to the AWS Connect integration association, used to categorize or identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var IntegrationAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IntegrationAssociationConfig struct {
 	// Amazon Connect instance identifier
@@ -41,13 +41,13 @@ type IntegrationAssociationAttrs struct {
 var IntegrationAssociation = ubx.ResourceBinding{
 	WireType: "aws_connect_integration_association",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"IntegrationArn": ubx.FieldSpec{WireName: "integration_arn"},
+		"InstanceId":      ubx.FieldSpec{WireName: "instance_id"},
+		"IntegrationArn":  ubx.FieldSpec{WireName: "integration_arn"},
 		"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IntegrationAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   IntegrationAssociation_TagsFields,
 		},
 	},
 }

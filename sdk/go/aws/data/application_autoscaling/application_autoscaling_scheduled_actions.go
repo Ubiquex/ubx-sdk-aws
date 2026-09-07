@@ -9,46 +9,46 @@ type ApplicationAutoscalingScheduledActions_ScheduledActions_ScalableTargetActio
 }
 
 type ApplicationAutoscalingScheduledActions_ScheduledActions struct {
-	CreationTime any
-	EndTime any
-	ResourceId any
-	ScalableDimension any
+	CreationTime         any
+	EndTime              any
+	ResourceId           any
+	ScalableDimension    any
 	ScalableTargetAction any
-	Schedule any
-	ScheduledActionArn any
-	ScheduledActionName any
-	ServiceNamespace any
-	StartTime any
-	Timezone any
+	Schedule             any
+	ScheduledActionArn   any
+	ScheduledActionName  any
+	ServiceNamespace     any
+	StartTime            any
+	Timezone             any
 }
 
 type ApplicationAutoscalingScheduledActionsConfig struct {
-	MaxResults any
-	NextToken any
-	ResourceId any
-	ScalableDimension any
+	MaxResults           any
+	NextToken            any
+	ResourceId           any
+	ScalableDimension    any
 	ScheduledActionNames any
-	ServiceNamespace any
+	ServiceNamespace     any
 }
 
 type ApplicationAutoscalingScheduledActionsAttrs struct {
-	MaxResults any
-	NextToken any
-	ResourceId any
-	ScalableDimension any
+	MaxResults           any
+	NextToken            any
+	ResourceId           any
+	ScalableDimension    any
 	ScheduledActionNames any
-	ScheduledActions any
-	ServiceNamespace any
+	ScheduledActions     any
+	ServiceNamespace     any
 }
 
 var ApplicationAutoscalingScheduledActions = ubx.DataSourceBinding{
 	WireType: "aws_application_autoscaling_scheduled_actions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ScalableDimension": ubx.FieldSpec{WireName: "scalable_dimension"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
+		"ResourceId":           ubx.FieldSpec{WireName: "resource_id"},
+		"ScalableDimension":    ubx.FieldSpec{WireName: "scalable_dimension"},
 		"ScheduledActionNames": ubx.FieldSpec{WireName: "scheduled_action_names"},
-		"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
+		"ServiceNamespace":     ubx.FieldSpec{WireName: "service_namespace"},
 	},
 }

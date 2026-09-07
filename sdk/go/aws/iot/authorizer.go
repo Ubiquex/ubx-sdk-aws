@@ -11,9 +11,9 @@ type Authorizer_Tags struct {
 }
 
 var Authorizer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AuthorizerConfig struct {
 	// The Amazon Resource Name (ARN) of the Lambda function that AWS IoT invokes to authorize device connections for this authorizer. (AI-inferred)
@@ -59,16 +59,16 @@ var Authorizer = ubx.ResourceBinding{
 	WireType: "aws_io_t_authorizer",
 	Fields: ubx.FieldMap{
 		"AuthorizerFunctionArn": ubx.FieldSpec{WireName: "authorizer_function_arn"},
-		"AuthorizerName": ubx.FieldSpec{WireName: "authorizer_name"},
-		"EnableCachingForHttp": ubx.FieldSpec{WireName: "enable_caching_for_http"},
-		"SigningDisabled": ubx.FieldSpec{WireName: "signing_disabled"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"AuthorizerName":        ubx.FieldSpec{WireName: "authorizer_name"},
+		"EnableCachingForHttp":  ubx.FieldSpec{WireName: "enable_caching_for_http"},
+		"SigningDisabled":       ubx.FieldSpec{WireName: "signing_disabled"},
+		"Status":                ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Authorizer_TagsFields,
+			Kind:     "list",
+			Fields:   Authorizer_TagsFields,
 		},
-		"TokenKeyName": ubx.FieldSpec{WireName: "token_key_name"},
+		"TokenKeyName":           ubx.FieldSpec{WireName: "token_key_name"},
 		"TokenSigningPublicKeys": ubx.FieldSpec{WireName: "token_signing_public_keys"},
 	},
 }

@@ -22,20 +22,20 @@ type SizeConstraintSet_SizeConstraints struct {
 }
 
 var SizeConstraintSet_SizeConstraints_FieldToMatchFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var SizeConstraintSet_SizeConstraintsFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: SizeConstraintSet_SizeConstraints_FieldToMatchFields,
-		},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   SizeConstraintSet_SizeConstraints_FieldToMatchFields,
+	},
+	"Size":               ubx.FieldSpec{WireName: "size"},
+	"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
+}
 
 type SizeConstraintSetConfig struct {
 	// A friendly name used to identify the size constraint set in AWS WAF Regional, which must be unique within the account. (AI-inferred)
@@ -59,8 +59,8 @@ var SizeConstraintSet = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SizeConstraints": ubx.FieldSpec{
 			WireName: "size_constraints",
-			Kind: "list",
-			Fields: SizeConstraintSet_SizeConstraintsFields,
+			Kind:     "list",
+			Fields:   SizeConstraintSet_SizeConstraintsFields,
 		},
 	},
 }

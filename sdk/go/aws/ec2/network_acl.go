@@ -11,9 +11,9 @@ type NetworkAcl_Tags struct {
 }
 
 var NetworkAcl_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkAclConfig struct {
 	// The tags for the network ACL.
@@ -36,8 +36,8 @@ var NetworkAcl = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkAcl_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkAcl_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3OutpostsOutpostsWithS3_Outposts struct {
 	CapacityInBytes any
-	OutpostArn any
-	OutpostId any
-	OwnerId any
-	S3OutpostArn any
+	OutpostArn      any
+	OutpostId       any
+	OwnerId         any
+	S3OutpostArn    any
 }
 
 type S3OutpostsOutpostsWithS3Config struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type S3OutpostsOutpostsWithS3Attrs struct {
 	MaxResults any
-	NextToken any
-	Outposts any
+	NextToken  any
+	Outposts   any
 }
 
 var S3OutpostsOutpostsWithS3 = ubx.DataSourceBinding{
 	WireType: "aws_s3_outposts_outposts_with_s3",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

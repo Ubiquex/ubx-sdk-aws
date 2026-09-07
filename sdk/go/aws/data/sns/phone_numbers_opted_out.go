@@ -8,7 +8,7 @@ type PhoneNumbersOptedOutConfig struct {
 }
 
 type PhoneNumbersOptedOutAttrs struct {
-	NextToken any
+	NextToken    any
 	PhoneNumbers any
 }
 

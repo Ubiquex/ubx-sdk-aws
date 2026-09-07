@@ -4,26 +4,26 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PluginTypeMetadata_Items struct {
-	Category any
+	Category    any
 	Description any
-	Type any
+	Type        any
 }
 
 type PluginTypeMetadataConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PluginTypeMetadataAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var PluginTypeMetadata = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_plugin_type_metadata",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -8,37 +8,37 @@ type ConnectionGroups_AssociationFilter struct {
 }
 
 type ConnectionGroups_ConnectionGroups struct {
-	AnycastIpListId any
-	Arn any
-	CreatedTime any
-	Enabled any
-	Etag any
-	Id any
-	IsDefault any
+	AnycastIpListId  any
+	Arn              any
+	CreatedTime      any
+	Enabled          any
+	Etag             any
+	Id               any
+	IsDefault        any
 	LastModifiedTime any
-	Name any
-	RoutingEndpoint any
-	Status any
+	Name             any
+	RoutingEndpoint  any
+	Status           any
 }
 
 var ConnectionGroups_AssociationFilterFields = ubx.FieldMap{
-		"AnycastIpListId": ubx.FieldSpec{WireName: "anycast_ip_list_id"},
-	}
+	"AnycastIpListId": ubx.FieldSpec{WireName: "anycast_ip_list_id"},
+}
 
 type ConnectionGroupsConfig struct {
 	// <p>Contains information about what CloudFront resources your connection groups are associated with.</p>
 	AssociationFilter any
-	Marker any
-	MaxItems any
+	Marker            any
+	MaxItems          any
 }
 
 type ConnectionGroupsAttrs struct {
 	// <p>Contains information about what CloudFront resources your connection groups are associated with.</p>
 	AssociationFilter any
-	ConnectionGroups any
-	Marker any
-	MaxItems any
-	NextMarker any
+	ConnectionGroups  any
+	Marker            any
+	MaxItems          any
+	NextMarker        any
 }
 
 var ConnectionGroups = ubx.DataSourceBinding{
@@ -46,10 +46,10 @@ var ConnectionGroups = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AssociationFilter": ubx.FieldSpec{
 			WireName: "association_filter",
-			Kind: "object",
-			Fields: ConnectionGroups_AssociationFilterFields,
+			Kind:     "object",
+			Fields:   ConnectionGroups_AssociationFilterFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

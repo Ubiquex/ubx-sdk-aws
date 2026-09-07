@@ -4,25 +4,25 @@ package s3_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlJobTagging_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type S3ControlJobTaggingConfig struct {
 	AccountId any
-	JobId any
+	JobId     any
 }
 
 type S3ControlJobTaggingAttrs struct {
 	AccountId any
-	JobId any
-	Tags any
+	JobId     any
+	Tags      any
 }
 
 var S3ControlJobTagging = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_job_tagging",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":     ubx.FieldSpec{WireName: "job_id"},
 	},
 }

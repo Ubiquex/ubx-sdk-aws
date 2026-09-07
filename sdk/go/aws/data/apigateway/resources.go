@@ -4,11 +4,11 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Resources_Items_ResourceMethods_MethodIntegration_IntegrationResponses struct {
-	ContentHandling any
+	ContentHandling    any
 	ResponseParameters any
-	ResponseTemplates any
-	SelectionPattern any
-	StatusCode any
+	ResponseTemplates  any
+	SelectionPattern   any
+	StatusCode         any
 }
 
 type Resources_Items_ResourceMethods_MethodIntegration_TlsConfig struct {
@@ -16,74 +16,74 @@ type Resources_Items_ResourceMethods_MethodIntegration_TlsConfig struct {
 }
 
 type Resources_Items_ResourceMethods_MethodIntegration struct {
-	CacheKeyParameters any
-	CacheNamespace any
-	ConnectionId any
-	ConnectionType any
-	ContentHandling any
-	Credentials any
-	HttpMethod any
+	CacheKeyParameters   any
+	CacheNamespace       any
+	ConnectionId         any
+	ConnectionType       any
+	ContentHandling      any
+	Credentials          any
+	HttpMethod           any
 	IntegrationResponses any
-	IntegrationTarget any
-	PassthroughBehavior any
-	RequestParameters any
-	RequestTemplates any
+	IntegrationTarget    any
+	PassthroughBehavior  any
+	RequestParameters    any
+	RequestTemplates     any
 	ResponseTransferMode any
-	TimeoutInMillis any
-	TlsConfig any
-	Type any
-	Uri any
+	TimeoutInMillis      any
+	TlsConfig            any
+	Type                 any
+	Uri                  any
 }
 
 type Resources_Items_ResourceMethods_MethodResponses struct {
-	ResponseModels any
+	ResponseModels     any
 	ResponseParameters any
-	StatusCode any
+	StatusCode         any
 }
 
 type Resources_Items_ResourceMethods struct {
-	ApiKeyRequired any
+	ApiKeyRequired      any
 	AuthorizationScopes any
-	AuthorizationType any
-	AuthorizerId any
-	HttpMethod any
-	MethodIntegration any
-	MethodResponses any
-	OperationName any
-	RequestModels any
-	RequestParameters any
-	RequestValidatorId any
+	AuthorizationType   any
+	AuthorizerId        any
+	HttpMethod          any
+	MethodIntegration   any
+	MethodResponses     any
+	OperationName       any
+	RequestModels       any
+	RequestParameters   any
+	RequestValidatorId  any
 }
 
 type Resources_Items struct {
-	Id any
-	ParentId any
-	Path any
-	PathPart any
+	Id              any
+	ParentId        any
+	Path            any
+	PathPart        any
 	ResourceMethods any
 }
 
 type ResourcesConfig struct {
-	Embed any
-	Limit any
-	Position any
+	Embed     any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 type ResourcesAttrs struct {
-	Embed any
-	Items any
-	Limit any
-	Position any
+	Embed     any
+	Items     any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 var Resources = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_resources",
 	Fields: ubx.FieldMap{
-		"Embed": ubx.FieldSpec{WireName: "embed"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Embed":     ubx.FieldSpec{WireName: "embed"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Position":  ubx.FieldSpec{WireName: "position"},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

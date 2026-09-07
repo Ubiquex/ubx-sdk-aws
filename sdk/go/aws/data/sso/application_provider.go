@@ -6,11 +6,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ApplicationProvider_DisplayData struct {
 	Description any
 	DisplayName any
-	IconUrl any
+	IconUrl     any
 }
 
 type ApplicationProvider_ResourceServerConfig_Scopes struct {
-	DetailedTitle any
+	DetailedTitle   any
 	LongDescription any
 }
 
@@ -25,7 +25,7 @@ type ApplicationProviderConfig struct {
 type ApplicationProviderAttrs struct {
 	ApplicationProviderArn any
 	// <p>A structure that describes how the portal represents an application provider.</p>
-	DisplayData any
+	DisplayData        any
 	FederationProtocol any
 	// <p>A structure that describes the configuration of a resource server.</p>
 	ResourceServerConfig any

@@ -4,40 +4,40 @@ package notifications
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MemberAccounts_MemberAccounts struct {
-	AccountId any
+	AccountId                    any
 	NotificationConfigurationArn any
-	OrganizationalUnitId any
-	Status any
-	StatusReason any
+	OrganizationalUnitId         any
+	Status                       any
+	StatusReason                 any
 }
 
 type MemberAccountsConfig struct {
-	MaxResults any
-	MemberAccount any
-	NextToken any
+	MaxResults                   any
+	MemberAccount                any
+	NextToken                    any
 	NotificationConfigurationArn any
-	OrganizationalUnitId any
-	Status any
+	OrganizationalUnitId         any
+	Status                       any
 }
 
 type MemberAccountsAttrs struct {
-	MaxResults any
-	MemberAccount any
-	MemberAccounts any
-	NextToken any
+	MaxResults                   any
+	MemberAccount                any
+	MemberAccounts               any
+	NextToken                    any
 	NotificationConfigurationArn any
-	OrganizationalUnitId any
-	Status any
+	OrganizationalUnitId         any
+	Status                       any
 }
 
 var MemberAccounts = ubx.DataSourceBinding{
 	WireType: "aws_notifications_member_accounts",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MemberAccount": ubx.FieldSpec{WireName: "member_account"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                   ubx.FieldSpec{WireName: "max_results"},
+		"MemberAccount":                ubx.FieldSpec{WireName: "member_account"},
+		"NextToken":                    ubx.FieldSpec{WireName: "next_token"},
 		"NotificationConfigurationArn": ubx.FieldSpec{WireName: "notification_configuration_arn"},
-		"OrganizationalUnitId": ubx.FieldSpec{WireName: "organizational_unit_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"OrganizationalUnitId":         ubx.FieldSpec{WireName: "organizational_unit_id"},
+		"Status":                       ubx.FieldSpec{WireName: "status"},
 	},
 }

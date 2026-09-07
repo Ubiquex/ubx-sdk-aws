@@ -4,51 +4,51 @@ package catalog_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogMarketplaceChangeSets_ChangeSetSummaryList struct {
-	ChangeSetArn any
-	ChangeSetId any
+	ChangeSetArn  any
+	ChangeSetId   any
 	ChangeSetName any
-	EndTime any
-	EntityIdList any
-	FailureCode any
-	StartTime any
-	Status any
+	EndTime       any
+	EntityIdList  any
+	FailureCode   any
+	StartTime     any
+	Status        any
 }
 
 type CatalogMarketplaceChangeSets_FilterList struct {
-	Name any
+	Name      any
 	ValueList any
 }
 
 type CatalogMarketplaceChangeSets_Sort struct {
-	SortBy any
+	SortBy    any
 	SortOrder any
 }
 
 var CatalogMarketplaceChangeSets_FilterListFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ValueList": ubx.FieldSpec{WireName: "value_list"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ValueList": ubx.FieldSpec{WireName: "value_list"},
+}
 
 var CatalogMarketplaceChangeSets_SortFields = ubx.FieldMap{
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 type CatalogMarketplaceChangeSetsConfig struct {
-	Catalog any
+	Catalog    any
 	FilterList any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
 	Sort any
 }
 
 type CatalogMarketplaceChangeSetsAttrs struct {
-	Catalog any
+	Catalog              any
 	ChangeSetSummaryList any
-	FilterList any
-	MaxResults any
-	NextToken any
+	FilterList           any
+	MaxResults           any
+	NextToken            any
 	// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
 	Sort any
 }
@@ -59,15 +59,15 @@ var CatalogMarketplaceChangeSets = ubx.DataSourceBinding{
 		"Catalog": ubx.FieldSpec{WireName: "catalog"},
 		"FilterList": ubx.FieldSpec{
 			WireName: "filter_list",
-			Kind: "list",
-			Fields: CatalogMarketplaceChangeSets_FilterListFields,
+			Kind:     "list",
+			Fields:   CatalogMarketplaceChangeSets_FilterListFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Sort": ubx.FieldSpec{
 			WireName: "sort",
-			Kind: "object",
-			Fields: CatalogMarketplaceChangeSets_SortFields,
+			Kind:     "object",
+			Fields:   CatalogMarketplaceChangeSets_SortFields,
 		},
 	},
 }

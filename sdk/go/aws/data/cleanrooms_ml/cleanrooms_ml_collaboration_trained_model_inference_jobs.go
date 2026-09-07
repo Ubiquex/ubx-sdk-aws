@@ -8,55 +8,55 @@ type CleanroomsMlCollaborationTrainedModelInferenceJobs_CollaborationTrainedMode
 }
 
 type CleanroomsMlCollaborationTrainedModelInferenceJobs_CollaborationTrainedModelInferenceJobs_OutputConfiguration struct {
-	Accept any
+	Accept  any
 	Members any
 }
 
 type CleanroomsMlCollaborationTrainedModelInferenceJobs_CollaborationTrainedModelInferenceJobs struct {
-	CollaborationIdentifier any
+	CollaborationIdentifier                any
 	ConfiguredModelAlgorithmAssociationArn any
-	CreateTime any
-	CreatorAccountId any
-	Description any
-	LogsStatus any
-	LogsStatusDetails any
-	MembershipIdentifier any
-	MetricsStatus any
-	MetricsStatusDetails any
-	MlModelInferencePayerAccountId any
-	Name any
-	OutputConfiguration any
-	Status any
-	TrainedModelArn any
-	TrainedModelInferenceJobArn any
-	TrainedModelVersionIdentifier any
-	UpdateTime any
+	CreateTime                             any
+	CreatorAccountId                       any
+	Description                            any
+	LogsStatus                             any
+	LogsStatusDetails                      any
+	MembershipIdentifier                   any
+	MetricsStatus                          any
+	MetricsStatusDetails                   any
+	MlModelInferencePayerAccountId         any
+	Name                                   any
+	OutputConfiguration                    any
+	Status                                 any
+	TrainedModelArn                        any
+	TrainedModelInferenceJobArn            any
+	TrainedModelVersionIdentifier          any
+	UpdateTime                             any
 }
 
 type CleanroomsMlCollaborationTrainedModelInferenceJobsConfig struct {
-	CollaborationIdentifier any
-	MaxResults any
-	NextToken any
-	TrainedModelArn any
+	CollaborationIdentifier       any
+	MaxResults                    any
+	NextToken                     any
+	TrainedModelArn               any
 	TrainedModelVersionIdentifier any
 }
 
 type CleanroomsMlCollaborationTrainedModelInferenceJobsAttrs struct {
-	CollaborationIdentifier any
+	CollaborationIdentifier                any
 	CollaborationTrainedModelInferenceJobs any
-	MaxResults any
-	NextToken any
-	TrainedModelArn any
-	TrainedModelVersionIdentifier any
+	MaxResults                             any
+	NextToken                              any
+	TrainedModelArn                        any
+	TrainedModelVersionIdentifier          any
 }
 
 var CleanroomsMlCollaborationTrainedModelInferenceJobs = ubx.DataSourceBinding{
 	WireType: "aws_cleanrooms_ml_collaboration_trained_model_inference_jobs",
 	Fields: ubx.FieldMap{
-		"CollaborationIdentifier": ubx.FieldSpec{WireName: "collaboration_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TrainedModelArn": ubx.FieldSpec{WireName: "trained_model_arn"},
+		"CollaborationIdentifier":       ubx.FieldSpec{WireName: "collaboration_identifier"},
+		"MaxResults":                    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                     ubx.FieldSpec{WireName: "next_token"},
+		"TrainedModelArn":               ubx.FieldSpec{WireName: "trained_model_arn"},
 		"TrainedModelVersionIdentifier": ubx.FieldSpec{WireName: "trained_model_version_identifier"},
 	},
 }

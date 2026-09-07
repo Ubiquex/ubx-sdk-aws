@@ -11,9 +11,9 @@ type UserPoolResourceServer_Scopes struct {
 }
 
 var UserPoolResourceServer_ScopesFields = ubx.FieldMap{
-		"ScopeDescription": ubx.FieldSpec{WireName: "scope_description"},
-		"ScopeName": ubx.FieldSpec{WireName: "scope_name"},
-	}
+	"ScopeDescription": ubx.FieldSpec{WireName: "scope_description"},
+	"ScopeName":        ubx.FieldSpec{WireName: "scope_name"},
+}
 
 type UserPoolResourceServerConfig struct {
 	// The unique identifier for the resource server, typically a URI (e.g., https://my-api.example.com), used by clients to reference the resource server and its scopes in OAuth flows. (AI-inferred)
@@ -41,11 +41,11 @@ var UserPoolResourceServer = ubx.ResourceBinding{
 	WireType: "aws_cognito_user_pool_resource_server",
 	Fields: ubx.FieldMap{
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Scopes": ubx.FieldSpec{
 			WireName: "scopes",
-			Kind: "list",
-			Fields: UserPoolResourceServer_ScopesFields,
+			Kind:     "list",
+			Fields:   UserPoolResourceServer_ScopesFields,
 		},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},

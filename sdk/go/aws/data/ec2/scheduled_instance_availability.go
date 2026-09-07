@@ -4,89 +4,89 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduledInstanceAvailability_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ScheduledInstanceAvailability_FirstSlotStartTimeRange struct {
 	EarliestTime any
-	LatestTime any
+	LatestTime   any
 }
 
 type ScheduledInstanceAvailability_Recurrence struct {
-	Frequency any
-	Interval any
-	OccurrenceDays any
+	Frequency               any
+	Interval                any
+	OccurrenceDays          any
 	OccurrenceRelativeToEnd any
-	OccurrenceUnit any
+	OccurrenceUnit          any
 }
 
 type ScheduledInstanceAvailability_ScheduledInstanceAvailabilitySet_Recurrence struct {
-	Frequency any
-	Interval any
-	OccurrenceDaySet any
+	Frequency               any
+	Interval                any
+	OccurrenceDaySet        any
 	OccurrenceRelativeToEnd any
-	OccurrenceUnit any
+	OccurrenceUnit          any
 }
 
 type ScheduledInstanceAvailability_ScheduledInstanceAvailabilitySet struct {
-	AvailabilityZone any
-	AvailableInstanceCount any
-	FirstSlotStartTime any
-	HourlyPrice any
-	InstanceType any
-	MaxTermDurationInDays any
-	MinTermDurationInDays any
-	NetworkPlatform any
-	Platform any
-	PurchaseToken any
-	Recurrence any
-	SlotDurationInHours any
+	AvailabilityZone            any
+	AvailableInstanceCount      any
+	FirstSlotStartTime          any
+	HourlyPrice                 any
+	InstanceType                any
+	MaxTermDurationInDays       any
+	MinTermDurationInDays       any
+	NetworkPlatform             any
+	Platform                    any
+	PurchaseToken               any
+	Recurrence                  any
+	SlotDurationInHours         any
 	TotalScheduledInstanceHours any
 }
 
 var ScheduledInstanceAvailability_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ScheduledInstanceAvailability_FirstSlotStartTimeRangeFields = ubx.FieldMap{
-		"EarliestTime": ubx.FieldSpec{WireName: "earliest_time"},
-		"LatestTime": ubx.FieldSpec{WireName: "latest_time"},
-	}
+	"EarliestTime": ubx.FieldSpec{WireName: "earliest_time"},
+	"LatestTime":   ubx.FieldSpec{WireName: "latest_time"},
+}
 
 var ScheduledInstanceAvailability_RecurrenceFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"OccurrenceDays": ubx.FieldSpec{WireName: "occurrence_days"},
-		"OccurrenceRelativeToEnd": ubx.FieldSpec{WireName: "occurrence_relative_to_end"},
-		"OccurrenceUnit": ubx.FieldSpec{WireName: "occurrence_unit"},
-	}
+	"Frequency":               ubx.FieldSpec{WireName: "frequency"},
+	"Interval":                ubx.FieldSpec{WireName: "interval"},
+	"OccurrenceDays":          ubx.FieldSpec{WireName: "occurrence_days"},
+	"OccurrenceRelativeToEnd": ubx.FieldSpec{WireName: "occurrence_relative_to_end"},
+	"OccurrenceUnit":          ubx.FieldSpec{WireName: "occurrence_unit"},
+}
 
 type ScheduledInstanceAvailabilityConfig struct {
-	DryRun any
+	DryRun  any
 	Filters any
 	// <p>Describes the time period for a Scheduled Instance to start its first schedule. The time period must span less than one day.</p>
 	FirstSlotStartTimeRange any
-	MaxResults any
-	MaxSlotDurationInHours any
-	MinSlotDurationInHours any
-	NextToken any
+	MaxResults              any
+	MaxSlotDurationInHours  any
+	MinSlotDurationInHours  any
+	NextToken               any
 	// <p>Describes the recurring schedule for a Scheduled Instance.</p>
 	Recurrence any
 }
 
 type ScheduledInstanceAvailabilityAttrs struct {
-	DryRun any
+	DryRun  any
 	Filters any
 	// <p>Describes the time period for a Scheduled Instance to start its first schedule. The time period must span less than one day.</p>
 	FirstSlotStartTimeRange any
-	MaxResults any
-	MaxSlotDurationInHours any
-	MinSlotDurationInHours any
-	NextToken any
+	MaxResults              any
+	MaxSlotDurationInHours  any
+	MinSlotDurationInHours  any
+	NextToken               any
 	// <p>Describes the recurring schedule for a Scheduled Instance.</p>
-	Recurrence any
+	Recurrence                       any
 	ScheduledInstanceAvailabilitySet any
 }
 
@@ -96,22 +96,22 @@ var ScheduledInstanceAvailability = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ScheduledInstanceAvailability_FiltersFields,
+			Kind:     "list",
+			Fields:   ScheduledInstanceAvailability_FiltersFields,
 		},
 		"FirstSlotStartTimeRange": ubx.FieldSpec{
 			WireName: "first_slot_start_time_range",
-			Kind: "object",
-			Fields: ScheduledInstanceAvailability_FirstSlotStartTimeRangeFields,
+			Kind:     "object",
+			Fields:   ScheduledInstanceAvailability_FirstSlotStartTimeRangeFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
 		"MaxSlotDurationInHours": ubx.FieldSpec{WireName: "max_slot_duration_in_hours"},
 		"MinSlotDurationInHours": ubx.FieldSpec{WireName: "min_slot_duration_in_hours"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 		"Recurrence": ubx.FieldSpec{
 			WireName: "recurrence",
-			Kind: "object",
-			Fields: ScheduledInstanceAvailability_RecurrenceFields,
+			Kind:     "object",
+			Fields:   ScheduledInstanceAvailability_RecurrenceFields,
 		},
 	},
 }

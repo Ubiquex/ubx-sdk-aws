@@ -37,36 +37,36 @@ type Workteam_Tags struct {
 }
 
 var Workteam_MemberDefinitions_CognitoMemberDefinitionFields = ubx.FieldMap{
-		"CognitoClientId": ubx.FieldSpec{WireName: "cognito_client_id"},
-		"CognitoUserGroup": ubx.FieldSpec{WireName: "cognito_user_group"},
-		"CognitoUserPool": ubx.FieldSpec{WireName: "cognito_user_pool"},
-	}
+	"CognitoClientId":  ubx.FieldSpec{WireName: "cognito_client_id"},
+	"CognitoUserGroup": ubx.FieldSpec{WireName: "cognito_user_group"},
+	"CognitoUserPool":  ubx.FieldSpec{WireName: "cognito_user_pool"},
+}
 
 var Workteam_MemberDefinitions_OidcMemberDefinitionFields = ubx.FieldMap{
-		"OidcGroups": ubx.FieldSpec{WireName: "oidc_groups"},
-	}
+	"OidcGroups": ubx.FieldSpec{WireName: "oidc_groups"},
+}
 
 var Workteam_MemberDefinitionsFields = ubx.FieldMap{
-		"CognitoMemberDefinition": ubx.FieldSpec{
-			WireName: "cognito_member_definition",
-			Kind: "object",
-			Fields: Workteam_MemberDefinitions_CognitoMemberDefinitionFields,
-		},
-		"OidcMemberDefinition": ubx.FieldSpec{
-			WireName: "oidc_member_definition",
-			Kind: "object",
-			Fields: Workteam_MemberDefinitions_OidcMemberDefinitionFields,
-		},
-	}
+	"CognitoMemberDefinition": ubx.FieldSpec{
+		WireName: "cognito_member_definition",
+		Kind:     "object",
+		Fields:   Workteam_MemberDefinitions_CognitoMemberDefinitionFields,
+	},
+	"OidcMemberDefinition": ubx.FieldSpec{
+		WireName: "oidc_member_definition",
+		Kind:     "object",
+		Fields:   Workteam_MemberDefinitions_OidcMemberDefinitionFields,
+	},
+}
 
 var Workteam_NotificationConfigurationFields = ubx.FieldMap{
-		"NotificationTopicArn": ubx.FieldSpec{WireName: "notification_topic_arn"},
-	}
+	"NotificationTopicArn": ubx.FieldSpec{WireName: "notification_topic_arn"},
+}
 
 var Workteam_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkteamConfig struct {
 	// A description of the SageMaker work team that provides details about the team's purpose or composition. (AI-inferred)
@@ -106,20 +106,20 @@ var Workteam = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"MemberDefinitions": ubx.FieldSpec{
 			WireName: "member_definitions",
-			Kind: "list",
-			Fields: Workteam_MemberDefinitionsFields,
+			Kind:     "list",
+			Fields:   Workteam_MemberDefinitionsFields,
 		},
 		"NotificationConfiguration": ubx.FieldSpec{
 			WireName: "notification_configuration",
-			Kind: "object",
-			Fields: Workteam_NotificationConfigurationFields,
+			Kind:     "object",
+			Fields:   Workteam_NotificationConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workteam_TagsFields,
+			Kind:     "list",
+			Fields:   Workteam_TagsFields,
 		},
 		"WorkforceName": ubx.FieldSpec{WireName: "workforce_name"},
-		"WorkteamName": ubx.FieldSpec{WireName: "workteam_name"},
+		"WorkteamName":  ubx.FieldSpec{WireName: "workteam_name"},
 	},
 }

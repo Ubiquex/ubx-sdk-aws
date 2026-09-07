@@ -37,40 +37,40 @@ type DataTransformationProfile_Tags struct {
 }
 
 var DataTransformationProfile_Source_ExistingVersionedProfileIdFields = ubx.FieldMap{
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+	"Version":   ubx.FieldSpec{WireName: "version"},
+}
 
 var DataTransformationProfile_Source_ProfileMappingFields = ubx.FieldMap{
-		"ProfileMapping": ubx.FieldSpec{WireName: "profile_mapping"},
-	}
+	"ProfileMapping": ubx.FieldSpec{WireName: "profile_mapping"},
+}
 
 var DataTransformationProfile_Source_StarterProfileFields = ubx.FieldMap{
-		"StarterProfileName": ubx.FieldSpec{WireName: "starter_profile_name"},
-	}
+	"StarterProfileName": ubx.FieldSpec{WireName: "starter_profile_name"},
+}
 
 var DataTransformationProfile_SourceFields = ubx.FieldMap{
-		"ExistingVersionedProfileId": ubx.FieldSpec{
-			WireName: "existing_versioned_profile_id",
-			Kind: "object",
-			Fields: DataTransformationProfile_Source_ExistingVersionedProfileIdFields,
-		},
-		"ProfileMapping": ubx.FieldSpec{
-			WireName: "profile_mapping",
-			Kind: "object",
-			Fields: DataTransformationProfile_Source_ProfileMappingFields,
-		},
-		"StarterProfile": ubx.FieldSpec{
-			WireName: "starter_profile",
-			Kind: "object",
-			Fields: DataTransformationProfile_Source_StarterProfileFields,
-		},
-	}
+	"ExistingVersionedProfileId": ubx.FieldSpec{
+		WireName: "existing_versioned_profile_id",
+		Kind:     "object",
+		Fields:   DataTransformationProfile_Source_ExistingVersionedProfileIdFields,
+	},
+	"ProfileMapping": ubx.FieldSpec{
+		WireName: "profile_mapping",
+		Kind:     "object",
+		Fields:   DataTransformationProfile_Source_ProfileMappingFields,
+	},
+	"StarterProfile": ubx.FieldSpec{
+		WireName: "starter_profile",
+		Kind:     "object",
+		Fields:   DataTransformationProfile_Source_StarterProfileFields,
+	},
+}
 
 var DataTransformationProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataTransformationProfileConfig struct {
 	// The identifier (key ID or ARN) of a customer-managed KMS key used to encrypt the profile's template content at rest. If omitted, an AWS owned key is used.
@@ -111,19 +111,19 @@ type DataTransformationProfileAttrs struct {
 var DataTransformationProfile = ubx.ResourceBinding{
 	WireType: "aws_health_lake_data_transformation_profile",
 	Fields: ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"KmsKeyId":           ubx.FieldSpec{WireName: "kms_key_id"},
 		"ProfileDescription": ubx.FieldSpec{WireName: "profile_description"},
-		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
+		"ProfileName":        ubx.FieldSpec{WireName: "profile_name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: DataTransformationProfile_SourceFields,
+			Kind:     "object",
+			Fields:   DataTransformationProfile_SourceFields,
 		},
 		"SourceFormat": ubx.FieldSpec{WireName: "source_format"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataTransformationProfile_TagsFields,
+			Kind:     "list",
+			Fields:   DataTransformationProfile_TagsFields,
 		},
 	},
 }

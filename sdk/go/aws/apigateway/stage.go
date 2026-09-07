@@ -52,34 +52,34 @@ type Stage_Tags struct {
 }
 
 var Stage_AccessLogSettingFields = ubx.FieldMap{
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-	}
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+	"Format":         ubx.FieldSpec{WireName: "format"},
+}
 
 var Stage_CanarySettingFields = ubx.FieldMap{
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"PercentTraffic": ubx.FieldSpec{WireName: "percent_traffic"},
-		"StageVariableOverrides": ubx.FieldSpec{WireName: "stage_variable_overrides"},
-		"UseStageCache": ubx.FieldSpec{WireName: "use_stage_cache"},
-	}
+	"DeploymentId":           ubx.FieldSpec{WireName: "deployment_id"},
+	"PercentTraffic":         ubx.FieldSpec{WireName: "percent_traffic"},
+	"StageVariableOverrides": ubx.FieldSpec{WireName: "stage_variable_overrides"},
+	"UseStageCache":          ubx.FieldSpec{WireName: "use_stage_cache"},
+}
 
 var Stage_MethodSettingsFields = ubx.FieldMap{
-		"CacheDataEncrypted": ubx.FieldSpec{WireName: "cache_data_encrypted"},
-		"CacheTtlInSeconds": ubx.FieldSpec{WireName: "cache_ttl_in_seconds"},
-		"CachingEnabled": ubx.FieldSpec{WireName: "caching_enabled"},
-		"DataTraceEnabled": ubx.FieldSpec{WireName: "data_trace_enabled"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"LoggingLevel": ubx.FieldSpec{WireName: "logging_level"},
-		"MetricsEnabled": ubx.FieldSpec{WireName: "metrics_enabled"},
-		"ResourcePath": ubx.FieldSpec{WireName: "resource_path"},
-		"ThrottlingBurstLimit": ubx.FieldSpec{WireName: "throttling_burst_limit"},
-		"ThrottlingRateLimit": ubx.FieldSpec{WireName: "throttling_rate_limit"},
-	}
+	"CacheDataEncrypted":   ubx.FieldSpec{WireName: "cache_data_encrypted"},
+	"CacheTtlInSeconds":    ubx.FieldSpec{WireName: "cache_ttl_in_seconds"},
+	"CachingEnabled":       ubx.FieldSpec{WireName: "caching_enabled"},
+	"DataTraceEnabled":     ubx.FieldSpec{WireName: "data_trace_enabled"},
+	"HttpMethod":           ubx.FieldSpec{WireName: "http_method"},
+	"LoggingLevel":         ubx.FieldSpec{WireName: "logging_level"},
+	"MetricsEnabled":       ubx.FieldSpec{WireName: "metrics_enabled"},
+	"ResourcePath":         ubx.FieldSpec{WireName: "resource_path"},
+	"ThrottlingBurstLimit": ubx.FieldSpec{WireName: "throttling_burst_limit"},
+	"ThrottlingRateLimit":  ubx.FieldSpec{WireName: "throttling_rate_limit"},
+}
 
 var Stage_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StageConfig struct {
 	// The ``AccessLogSetting`` property type specifies settings for logging access in this stage. ``AccessLogSetting`` is a property of the [AWS::ApiGateway::Stage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html) resource.
@@ -148,33 +148,33 @@ var Stage = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessLogSetting": ubx.FieldSpec{
 			WireName: "access_log_setting",
-			Kind: "object",
-			Fields: Stage_AccessLogSettingFields,
+			Kind:     "object",
+			Fields:   Stage_AccessLogSettingFields,
 		},
 		"CacheClusterEnabled": ubx.FieldSpec{WireName: "cache_cluster_enabled"},
-		"CacheClusterSize": ubx.FieldSpec{WireName: "cache_cluster_size"},
+		"CacheClusterSize":    ubx.FieldSpec{WireName: "cache_cluster_size"},
 		"CanarySetting": ubx.FieldSpec{
 			WireName: "canary_setting",
-			Kind: "object",
-			Fields: Stage_CanarySettingFields,
+			Kind:     "object",
+			Fields:   Stage_CanarySettingFields,
 		},
-		"ClientCertificateId": ubx.FieldSpec{WireName: "client_certificate_id"},
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ClientCertificateId":  ubx.FieldSpec{WireName: "client_certificate_id"},
+		"DeploymentId":         ubx.FieldSpec{WireName: "deployment_id"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"DocumentationVersion": ubx.FieldSpec{WireName: "documentation_version"},
 		"MethodSettings": ubx.FieldSpec{
 			WireName: "method_settings",
-			Kind: "list",
-			Fields: Stage_MethodSettingsFields,
+			Kind:     "list",
+			Fields:   Stage_MethodSettingsFields,
 		},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 		"StageName": ubx.FieldSpec{WireName: "stage_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Stage_TagsFields,
+			Kind:     "list",
+			Fields:   Stage_TagsFields,
 		},
 		"TracingEnabled": ubx.FieldSpec{WireName: "tracing_enabled"},
-		"Variables": ubx.FieldSpec{WireName: "variables"},
+		"Variables":      ubx.FieldSpec{WireName: "variables"},
 	},
 }

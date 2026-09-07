@@ -8,7 +8,7 @@ type MountTargetSecurityGroupsConfig struct {
 }
 
 type MountTargetSecurityGroupsAttrs struct {
-	MountTargetId any
+	MountTargetId  any
 	SecurityGroups any
 }
 

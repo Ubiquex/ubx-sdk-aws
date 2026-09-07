@@ -4,23 +4,23 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CidrBlocks_CidrBlocks struct {
-	CidrBlock any
+	CidrBlock    any
 	LocationName any
 }
 
 type CidrBlocksConfig struct {
 	CollectionId any
 	LocationName any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type CidrBlocksAttrs struct {
-	CidrBlocks any
+	CidrBlocks   any
 	CollectionId any
 	LocationName any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var CidrBlocks = ubx.DataSourceBinding{
@@ -28,7 +28,7 @@ var CidrBlocks = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
 		"LocationName": ubx.FieldSpec{WireName: "location_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

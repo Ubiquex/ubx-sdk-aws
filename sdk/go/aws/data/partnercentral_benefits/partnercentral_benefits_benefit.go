@@ -4,27 +4,27 @@ package partnercentral_benefits
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PartnercentralBenefitsBenefitConfig struct {
-	Catalog any
+	Catalog    any
 	Identifier any
 }
 
 type PartnercentralBenefitsBenefitAttrs struct {
-	Arn any
+	Arn                  any
 	BenefitRequestSchema any
-	Catalog any
-	Description any
-	FulfillmentTypes any
-	Id any
-	Identifier any
-	Name any
-	Programs any
-	Status any
+	Catalog              any
+	Description          any
+	FulfillmentTypes     any
+	Id                   any
+	Identifier           any
+	Name                 any
+	Programs             any
+	Status               any
 }
 
 var PartnercentralBenefitsBenefit = ubx.DataSourceBinding{
 	WireType: "aws_partnercentral_benefits_benefit",
 	Fields: ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
+		"Catalog":    ubx.FieldSpec{WireName: "catalog"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	},
 }

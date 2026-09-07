@@ -25,6 +25,5 @@ type AutomatedDiscoveryConfigurationAttrs struct {
 
 var AutomatedDiscoveryConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_macie2_automated_discovery_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

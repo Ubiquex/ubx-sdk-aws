@@ -20,15 +20,15 @@ type Map_Tags struct {
 }
 
 var Map_ConfigurationFields = ubx.FieldMap{
-		"CustomLayers": ubx.FieldSpec{WireName: "custom_layers"},
-		"PoliticalView": ubx.FieldSpec{WireName: "political_view"},
-		"Style": ubx.FieldSpec{WireName: "style"},
-	}
+	"CustomLayers":  ubx.FieldSpec{WireName: "custom_layers"},
+	"PoliticalView": ubx.FieldSpec{WireName: "political_view"},
+	"Style":         ubx.FieldSpec{WireName: "style"},
+}
 
 var Map_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MapConfig struct {
 	// Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred)
@@ -69,16 +69,16 @@ var Map = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Map_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Map_ConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"MapName": ubx.FieldSpec{WireName: "map_name"},
+		"MapName":     ubx.FieldSpec{WireName: "map_name"},
 		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Map_TagsFields,
+			Kind:     "list",
+			Fields:   Map_TagsFields,
 		},
 	},
 }

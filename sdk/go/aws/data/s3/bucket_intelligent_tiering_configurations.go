@@ -4,53 +4,53 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketIntelligentTieringConfigurations_IntelligentTieringConfigurationList_Filter_And_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BucketIntelligentTieringConfigurations_IntelligentTieringConfigurationList_Filter_And struct {
 	Prefix any
-	Tags any
+	Tags   any
 }
 
 type BucketIntelligentTieringConfigurations_IntelligentTieringConfigurationList_Filter struct {
-	And any
+	And    any
 	Prefix any
-	Tag any
+	Tag    any
 }
 
 type BucketIntelligentTieringConfigurations_IntelligentTieringConfigurationList_Tierings struct {
 	AccessTier any
-	Days any
+	Days       any
 }
 
 type BucketIntelligentTieringConfigurations_IntelligentTieringConfigurationList struct {
-	Filter any
-	Id any
-	Status any
+	Filter   any
+	Id       any
+	Status   any
 	Tierings any
 }
 
 type BucketIntelligentTieringConfigurationsConfig struct {
-	Bucket any
-	ContinuationToken any
+	Bucket              any
+	ContinuationToken   any
 	ExpectedBucketOwner any
 }
 
 type BucketIntelligentTieringConfigurationsAttrs struct {
-	Bucket any
-	ContinuationToken any
-	ExpectedBucketOwner any
+	Bucket                              any
+	ContinuationToken                   any
+	ExpectedBucketOwner                 any
 	IntelligentTieringConfigurationList any
-	IsTruncated any
-	NextContinuationToken any
+	IsTruncated                         any
+	NextContinuationToken               any
 }
 
 var BucketIntelligentTieringConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_intelligent_tiering_configurations",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ContinuationToken": ubx.FieldSpec{WireName: "continuation_token"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
+		"ContinuationToken":   ubx.FieldSpec{WireName: "continuation_token"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

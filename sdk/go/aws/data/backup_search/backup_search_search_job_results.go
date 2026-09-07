@@ -4,50 +4,50 @@ package backup_search
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupSearchSearchJobResults_Results_EbsresultItem struct {
-	BackupResourceArn any
-	BackupVaultName any
-	CreationTime any
-	FilePath any
-	FileSize any
+	BackupResourceArn    any
+	BackupVaultName      any
+	CreationTime         any
+	FilePath             any
+	FileSize             any
 	FileSystemIdentifier any
-	LastModifiedTime any
-	SourceResourceArn any
+	LastModifiedTime     any
+	SourceResourceArn    any
 }
 
 type BackupSearchSearchJobResults_Results_S3ResultItem struct {
 	BackupResourceArn any
-	BackupVaultName any
-	CreationTime any
-	Etag any
-	ObjectKey any
-	ObjectSize any
+	BackupVaultName   any
+	CreationTime      any
+	Etag              any
+	ObjectKey         any
+	ObjectSize        any
 	SourceResourceArn any
-	VersionId any
+	VersionId         any
 }
 
 type BackupSearchSearchJobResults_Results struct {
 	EbsresultItem any
-	S3ResultItem any
+	S3ResultItem  any
 }
 
 type BackupSearchSearchJobResultsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	SearchJobIdentifier any
 }
 
 type BackupSearchSearchJobResultsAttrs struct {
-	MaxResults any
-	NextToken any
-	Results any
+	MaxResults          any
+	NextToken           any
+	Results             any
 	SearchJobIdentifier any
 }
 
 var BackupSearchSearchJobResults = ubx.DataSourceBinding{
 	WireType: "aws_backup_search_search_job_results",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"SearchJobIdentifier": ubx.FieldSpec{WireName: "search_job_identifier"},
 	},
 }

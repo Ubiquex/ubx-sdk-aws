@@ -4,35 +4,35 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QuickConnects_QuickConnectSummaryList struct {
-	Arn any
-	Id any
+	Arn                any
+	Id                 any
 	LastModifiedRegion any
-	LastModifiedTime any
-	Name any
-	QuickConnectType any
+	LastModifiedTime   any
+	Name               any
+	QuickConnectType   any
 }
 
 type QuickConnectsConfig struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId        any
+	MaxResults        any
+	NextToken         any
 	QuickConnectTypes any
 }
 
 type QuickConnectsAttrs struct {
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId              any
+	MaxResults              any
+	NextToken               any
 	QuickConnectSummaryList any
-	QuickConnectTypes any
+	QuickConnectTypes       any
 }
 
 var QuickConnects = ubx.DataSourceBinding{
 	WireType: "aws_connect_quick_connects",
 	Fields: ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":        ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"QuickConnectTypes": ubx.FieldSpec{WireName: "quick_connect_types"},
 	},
 }

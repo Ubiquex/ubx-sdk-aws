@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContactFlowModuleAliases_ContactFlowModuleAliasSummaryList struct {
 	AliasDescription any
-	AliasId any
-	AliasName any
-	Arn any
+	AliasId          any
+	AliasName        any
+	Arn              any
 	LastModifiedTime any
-	Version any
+	Version          any
 }
 
 type ContactFlowModuleAliasesConfig struct {
 	ContactFlowModuleId any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId          any
+	MaxResults          any
+	NextToken           any
 }
 
 type ContactFlowModuleAliasesAttrs struct {
 	ContactFlowModuleAliasSummaryList any
-	ContactFlowModuleId any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	ContactFlowModuleId               any
+	InstanceId                        any
+	MaxResults                        any
+	NextToken                         any
 }
 
 var ContactFlowModuleAliases = ubx.DataSourceBinding{
 	WireType: "aws_connect_contact_flow_module_aliases",
 	Fields: ubx.FieldMap{
 		"ContactFlowModuleId": ubx.FieldSpec{WireName: "contact_flow_module_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":          ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,25 +4,25 @@ package kms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ParametersForImportConfig struct {
-	KeyId any
+	KeyId             any
 	WrappingAlgorithm any
-	WrappingKeySpec any
+	WrappingKeySpec   any
 }
 
 type ParametersForImportAttrs struct {
-	ImportToken any
-	KeyId any
+	ImportToken       any
+	KeyId             any
 	ParametersValidTo any
-	PublicKey any
+	PublicKey         any
 	WrappingAlgorithm any
-	WrappingKeySpec any
+	WrappingKeySpec   any
 }
 
 var ParametersForImport = ubx.DataSourceBinding{
 	WireType: "aws_kms_parameters_for_import",
 	Fields: ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
+		"KeyId":             ubx.FieldSpec{WireName: "key_id"},
 		"WrappingAlgorithm": ubx.FieldSpec{WireName: "wrapping_algorithm"},
-		"WrappingKeySpec": ubx.FieldSpec{WireName: "wrapping_key_spec"},
+		"WrappingKeySpec":   ubx.FieldSpec{WireName: "wrapping_key_spec"},
 	},
 }

@@ -24,9 +24,9 @@ type Vpcconnection_Tags struct {
 }
 
 var Vpcconnection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcconnectionConfig struct {
 	// Indicates the current availability status of the QuickSight VPC connection, using values such as AVAILABLE, UNAVAILABLE, or PARTIALLY_AVAILABLE, which reflects whether the connection is ready for use in SPICE data ingestion. (AI-inferred)
@@ -86,16 +86,16 @@ var Vpcconnection = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_vpcconnection",
 	Fields: ubx.FieldMap{
 		"AvailabilityStatus": ubx.FieldSpec{WireName: "availability_status"},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DnsResolvers": ubx.FieldSpec{WireName: "dns_resolvers"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"AwsAccountId":       ubx.FieldSpec{WireName: "aws_account_id"},
+		"DnsResolvers":       ubx.FieldSpec{WireName: "dns_resolvers"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"RoleArn":            ubx.FieldSpec{WireName: "role_arn"},
+		"SecurityGroupIds":   ubx.FieldSpec{WireName: "security_group_ids"},
+		"SubnetIds":          ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Vpcconnection_TagsFields,
+			Kind:     "list",
+			Fields:   Vpcconnection_TagsFields,
 		},
 		"VpcconnectionId": ubx.FieldSpec{WireName: "vpcconnection_id"},
 	},

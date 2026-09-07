@@ -63,51 +63,51 @@ type Connector_Tags struct {
 }
 
 var Connector_As2Config_AsyncMdnConfigFields = ubx.FieldMap{
-		"ServerIds": ubx.FieldSpec{WireName: "server_ids"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ServerIds": ubx.FieldSpec{WireName: "server_ids"},
+	"Url":       ubx.FieldSpec{WireName: "url"},
+}
 
 var Connector_As2ConfigFields = ubx.FieldMap{
-		"AsyncMdnConfig": ubx.FieldSpec{
-			WireName: "async_mdn_config",
-			Kind: "object",
-			Fields: Connector_As2Config_AsyncMdnConfigFields,
-		},
-		"BasicAuthSecretId": ubx.FieldSpec{WireName: "basic_auth_secret_id"},
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"EncryptionAlgorithm": ubx.FieldSpec{WireName: "encryption_algorithm"},
-		"LocalProfileId": ubx.FieldSpec{WireName: "local_profile_id"},
-		"MdnResponse": ubx.FieldSpec{WireName: "mdn_response"},
-		"MdnSigningAlgorithm": ubx.FieldSpec{WireName: "mdn_signing_algorithm"},
-		"MessageSubject": ubx.FieldSpec{WireName: "message_subject"},
-		"PartnerProfileId": ubx.FieldSpec{WireName: "partner_profile_id"},
-		"PreserveContentType": ubx.FieldSpec{WireName: "preserve_content_type"},
-		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
-	}
+	"AsyncMdnConfig": ubx.FieldSpec{
+		WireName: "async_mdn_config",
+		Kind:     "object",
+		Fields:   Connector_As2Config_AsyncMdnConfigFields,
+	},
+	"BasicAuthSecretId":   ubx.FieldSpec{WireName: "basic_auth_secret_id"},
+	"Compression":         ubx.FieldSpec{WireName: "compression"},
+	"EncryptionAlgorithm": ubx.FieldSpec{WireName: "encryption_algorithm"},
+	"LocalProfileId":      ubx.FieldSpec{WireName: "local_profile_id"},
+	"MdnResponse":         ubx.FieldSpec{WireName: "mdn_response"},
+	"MdnSigningAlgorithm": ubx.FieldSpec{WireName: "mdn_signing_algorithm"},
+	"MessageSubject":      ubx.FieldSpec{WireName: "message_subject"},
+	"PartnerProfileId":    ubx.FieldSpec{WireName: "partner_profile_id"},
+	"PreserveContentType": ubx.FieldSpec{WireName: "preserve_content_type"},
+	"SigningAlgorithm":    ubx.FieldSpec{WireName: "signing_algorithm"},
+}
 
 var Connector_EgressConfig_VpcLatticeFields = ubx.FieldMap{
-		"PortNumber": ubx.FieldSpec{WireName: "port_number"},
-		"ResourceConfigurationArn": ubx.FieldSpec{WireName: "resource_configuration_arn"},
-	}
+	"PortNumber":               ubx.FieldSpec{WireName: "port_number"},
+	"ResourceConfigurationArn": ubx.FieldSpec{WireName: "resource_configuration_arn"},
+}
 
 var Connector_EgressConfigFields = ubx.FieldMap{
-		"VpcLattice": ubx.FieldSpec{
-			WireName: "vpc_lattice",
-			Kind: "object",
-			Fields: Connector_EgressConfig_VpcLatticeFields,
-		},
-	}
+	"VpcLattice": ubx.FieldSpec{
+		WireName: "vpc_lattice",
+		Kind:     "object",
+		Fields:   Connector_EgressConfig_VpcLatticeFields,
+	},
+}
 
 var Connector_SftpConfigFields = ubx.FieldMap{
-		"MaxConcurrentConnections": ubx.FieldSpec{WireName: "max_concurrent_connections"},
-		"TrustedHostKeys": ubx.FieldSpec{WireName: "trusted_host_keys"},
-		"UserSecretId": ubx.FieldSpec{WireName: "user_secret_id"},
-	}
+	"MaxConcurrentConnections": ubx.FieldSpec{WireName: "max_concurrent_connections"},
+	"TrustedHostKeys":          ubx.FieldSpec{WireName: "trusted_host_keys"},
+	"UserSecretId":             ubx.FieldSpec{WireName: "user_secret_id"},
+}
 
 var Connector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectorConfig struct {
 	// Specifies the access role for the connector.
@@ -171,27 +171,27 @@ var Connector = ubx.ResourceBinding{
 		"AccessRole": ubx.FieldSpec{WireName: "access_role"},
 		"As2Config": ubx.FieldSpec{
 			WireName: "as2_config",
-			Kind: "object",
-			Fields: Connector_As2ConfigFields,
+			Kind:     "object",
+			Fields:   Connector_As2ConfigFields,
 		},
 		"EgressConfig": ubx.FieldSpec{
 			WireName: "egress_config",
-			Kind: "object",
-			Fields: Connector_EgressConfigFields,
+			Kind:     "object",
+			Fields:   Connector_EgressConfigFields,
 		},
-		"EgressType": ubx.FieldSpec{WireName: "egress_type"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"LoggingRole": ubx.FieldSpec{WireName: "logging_role"},
+		"EgressType":         ubx.FieldSpec{WireName: "egress_type"},
+		"IpAddressType":      ubx.FieldSpec{WireName: "ip_address_type"},
+		"LoggingRole":        ubx.FieldSpec{WireName: "logging_role"},
 		"SecurityPolicyName": ubx.FieldSpec{WireName: "security_policy_name"},
 		"SftpConfig": ubx.FieldSpec{
 			WireName: "sftp_config",
-			Kind: "object",
-			Fields: Connector_SftpConfigFields,
+			Kind:     "object",
+			Fields:   Connector_SftpConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Connector_TagsFields,
+			Kind:     "list",
+			Fields:   Connector_TagsFields,
 		},
 		"Url": ubx.FieldSpec{WireName: "url"},
 	},

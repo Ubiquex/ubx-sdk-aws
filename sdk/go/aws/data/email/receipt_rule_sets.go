@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReceiptRuleSets_RuleSets struct {
 	CreatedTimestamp any
-	Name any
+	Name             any
 }
 
 type ReceiptRuleSetsConfig struct {
@@ -14,7 +14,7 @@ type ReceiptRuleSetsConfig struct {
 
 type ReceiptRuleSetsAttrs struct {
 	NextToken any
-	RuleSets any
+	RuleSets  any
 }
 
 var ReceiptRuleSets = ubx.DataSourceBinding{

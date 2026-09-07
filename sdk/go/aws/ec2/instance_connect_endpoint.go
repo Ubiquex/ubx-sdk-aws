@@ -19,14 +19,14 @@ type InstanceConnectEndpoint_PublicDnsNames struct {
 
 type InstanceConnectEndpoint_Tags struct {
 	// The key of a tag attached to the EC2 Instance Connect Endpoint, used to identify, categorize, and filter the resource within AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var InstanceConnectEndpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InstanceConnectEndpointConfig struct {
 	// The client token of the instance connect endpoint.
@@ -79,14 +79,14 @@ type InstanceConnectEndpointAttrs struct {
 var InstanceConnectEndpoint = ubx.ResourceBinding{
 	WireType: "aws_ec2_instance_connect_endpoint",
 	Fields: ubx.FieldMap{
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
+		"ClientToken":      ubx.FieldSpec{WireName: "client_token"},
 		"PreserveClientIp": ubx.FieldSpec{WireName: "preserve_client_ip"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":         ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InstanceConnectEndpoint_TagsFields,
+			Kind:     "list",
+			Fields:   InstanceConnectEndpoint_TagsFields,
 		},
 	},
 }

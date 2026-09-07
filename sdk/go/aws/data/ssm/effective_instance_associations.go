@@ -4,23 +4,23 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EffectiveInstanceAssociations_Associations struct {
-	AssociationId any
+	AssociationId      any
 	AssociationVersion any
-	Content any
-	InstanceId any
+	Content            any
+	InstanceId         any
 }
 
 type EffectiveInstanceAssociationsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EffectiveInstanceAssociationsAttrs struct {
 	Associations any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
 }
 
 var EffectiveInstanceAssociations = ubx.DataSourceBinding{
@@ -28,6 +28,6 @@ var EffectiveInstanceAssociations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

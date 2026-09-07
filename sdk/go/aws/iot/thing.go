@@ -9,8 +9,8 @@ type Thing_AttributePayload struct {
 }
 
 var Thing_AttributePayloadFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+}
 
 type ThingConfig struct {
 	// Specifies the thing's attribute payload, including a map of attribute names to values and whether to merge with existing attributes on update. (AI-inferred)
@@ -35,8 +35,8 @@ var Thing = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AttributePayload": ubx.FieldSpec{
 			WireName: "attribute_payload",
-			Kind: "object",
-			Fields: Thing_AttributePayloadFields,
+			Kind:     "object",
+			Fields:   Thing_AttributePayloadFields,
 		},
 		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
 	},

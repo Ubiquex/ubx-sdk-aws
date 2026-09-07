@@ -75,74 +75,74 @@ type IdentitySource_Details struct {
 }
 
 var IdentitySource_Configuration_CognitoUserPoolConfiguration_GroupConfigurationFields = ubx.FieldMap{
-		"GroupEntityType": ubx.FieldSpec{WireName: "group_entity_type"},
-	}
+	"GroupEntityType": ubx.FieldSpec{WireName: "group_entity_type"},
+}
 
 var IdentitySource_Configuration_CognitoUserPoolConfigurationFields = ubx.FieldMap{
-		"ClientIds": ubx.FieldSpec{WireName: "client_ids"},
-		"GroupConfiguration": ubx.FieldSpec{
-			WireName: "group_configuration",
-			Kind: "object",
-			Fields: IdentitySource_Configuration_CognitoUserPoolConfiguration_GroupConfigurationFields,
-		},
-		"UserPoolArn": ubx.FieldSpec{WireName: "user_pool_arn"},
-	}
+	"ClientIds": ubx.FieldSpec{WireName: "client_ids"},
+	"GroupConfiguration": ubx.FieldSpec{
+		WireName: "group_configuration",
+		Kind:     "object",
+		Fields:   IdentitySource_Configuration_CognitoUserPoolConfiguration_GroupConfigurationFields,
+	},
+	"UserPoolArn": ubx.FieldSpec{WireName: "user_pool_arn"},
+}
 
 var IdentitySource_Configuration_OpenIdConnectConfiguration_GroupConfigurationFields = ubx.FieldMap{
-		"GroupClaim": ubx.FieldSpec{WireName: "group_claim"},
-		"GroupEntityType": ubx.FieldSpec{WireName: "group_entity_type"},
-	}
+	"GroupClaim":      ubx.FieldSpec{WireName: "group_claim"},
+	"GroupEntityType": ubx.FieldSpec{WireName: "group_entity_type"},
+}
 
 var IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_AccessTokenOnlyFields = ubx.FieldMap{
-		"Audiences": ubx.FieldSpec{WireName: "audiences"},
-		"PrincipalIdClaim": ubx.FieldSpec{WireName: "principal_id_claim"},
-	}
+	"Audiences":        ubx.FieldSpec{WireName: "audiences"},
+	"PrincipalIdClaim": ubx.FieldSpec{WireName: "principal_id_claim"},
+}
 
 var IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_IdentityTokenOnlyFields = ubx.FieldMap{
-		"ClientIds": ubx.FieldSpec{WireName: "client_ids"},
-		"PrincipalIdClaim": ubx.FieldSpec{WireName: "principal_id_claim"},
-	}
+	"ClientIds":        ubx.FieldSpec{WireName: "client_ids"},
+	"PrincipalIdClaim": ubx.FieldSpec{WireName: "principal_id_claim"},
+}
 
 var IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelectionFields = ubx.FieldMap{
-		"AccessTokenOnly": ubx.FieldSpec{
-			WireName: "access_token_only",
-			Kind: "object",
-			Fields: IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_AccessTokenOnlyFields,
-		},
-		"IdentityTokenOnly": ubx.FieldSpec{
-			WireName: "identity_token_only",
-			Kind: "object",
-			Fields: IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_IdentityTokenOnlyFields,
-		},
-	}
+	"AccessTokenOnly": ubx.FieldSpec{
+		WireName: "access_token_only",
+		Kind:     "object",
+		Fields:   IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_AccessTokenOnlyFields,
+	},
+	"IdentityTokenOnly": ubx.FieldSpec{
+		WireName: "identity_token_only",
+		Kind:     "object",
+		Fields:   IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_IdentityTokenOnlyFields,
+	},
+}
 
 var IdentitySource_Configuration_OpenIdConnectConfigurationFields = ubx.FieldMap{
-		"EntityIdPrefix": ubx.FieldSpec{WireName: "entity_id_prefix"},
-		"GroupConfiguration": ubx.FieldSpec{
-			WireName: "group_configuration",
-			Kind: "object",
-			Fields: IdentitySource_Configuration_OpenIdConnectConfiguration_GroupConfigurationFields,
-		},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"TokenSelection": ubx.FieldSpec{
-			WireName: "token_selection",
-			Kind: "object",
-			Fields: IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelectionFields,
-		},
-	}
+	"EntityIdPrefix": ubx.FieldSpec{WireName: "entity_id_prefix"},
+	"GroupConfiguration": ubx.FieldSpec{
+		WireName: "group_configuration",
+		Kind:     "object",
+		Fields:   IdentitySource_Configuration_OpenIdConnectConfiguration_GroupConfigurationFields,
+	},
+	"Issuer": ubx.FieldSpec{WireName: "issuer"},
+	"TokenSelection": ubx.FieldSpec{
+		WireName: "token_selection",
+		Kind:     "object",
+		Fields:   IdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelectionFields,
+	},
+}
 
 var IdentitySource_ConfigurationFields = ubx.FieldMap{
-		"CognitoUserPoolConfiguration": ubx.FieldSpec{
-			WireName: "cognito_user_pool_configuration",
-			Kind: "object",
-			Fields: IdentitySource_Configuration_CognitoUserPoolConfigurationFields,
-		},
-		"OpenIdConnectConfiguration": ubx.FieldSpec{
-			WireName: "open_id_connect_configuration",
-			Kind: "object",
-			Fields: IdentitySource_Configuration_OpenIdConnectConfigurationFields,
-		},
-	}
+	"CognitoUserPoolConfiguration": ubx.FieldSpec{
+		WireName: "cognito_user_pool_configuration",
+		Kind:     "object",
+		Fields:   IdentitySource_Configuration_CognitoUserPoolConfigurationFields,
+	},
+	"OpenIdConnectConfiguration": ubx.FieldSpec{
+		WireName: "open_id_connect_configuration",
+		Kind:     "object",
+		Fields:   IdentitySource_Configuration_OpenIdConnectConfigurationFields,
+	},
+}
 
 type IdentitySourceConfig struct {
 	// Specifies the identity provider configuration for the identity source, such as Amazon Cognito user pool details (UserPoolArn, ClientId) or an OpenID Connect provider (issuer, client ID, etc.), which Amazon Verified Permissions uses to authenticate and authorize principals. (AI-inferred)
@@ -171,10 +171,10 @@ var IdentitySource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: IdentitySource_ConfigurationFields,
+			Kind:     "object",
+			Fields:   IdentitySource_ConfigurationFields,
 		},
-		"PolicyStoreId": ubx.FieldSpec{WireName: "policy_store_id"},
+		"PolicyStoreId":       ubx.FieldSpec{WireName: "policy_store_id"},
 		"PrincipalEntityType": ubx.FieldSpec{WireName: "principal_entity_type"},
 	},
 }

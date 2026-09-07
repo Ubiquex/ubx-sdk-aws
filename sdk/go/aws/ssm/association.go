@@ -32,28 +32,28 @@ type Association_Targets struct {
 }
 
 var Association_OutputLocation_S3LocationFields = ubx.FieldMap{
-		"OutputS3BucketName": ubx.FieldSpec{WireName: "output_s3_bucket_name"},
-		"OutputS3KeyPrefix": ubx.FieldSpec{WireName: "output_s3_key_prefix"},
-		"OutputS3Region": ubx.FieldSpec{WireName: "output_s3_region"},
-	}
+	"OutputS3BucketName": ubx.FieldSpec{WireName: "output_s3_bucket_name"},
+	"OutputS3KeyPrefix":  ubx.FieldSpec{WireName: "output_s3_key_prefix"},
+	"OutputS3Region":     ubx.FieldSpec{WireName: "output_s3_region"},
+}
 
 var Association_OutputLocationFields = ubx.FieldMap{
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: Association_OutputLocation_S3LocationFields,
-		},
-	}
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   Association_OutputLocation_S3LocationFields,
+	},
+}
 
 var Association_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Association_TargetsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type AssociationConfig struct {
 	// When true, the SSM association is applied only at the interval specified by its cron schedule, and it will not also run during a configured maintenance window. (AI-inferred)
@@ -142,35 +142,35 @@ type AssociationAttrs struct {
 var Association = ubx.ResourceBinding{
 	WireType: "aws_ssm_association",
 	Fields: ubx.FieldMap{
-		"ApplyOnlyAtCronInterval": ubx.FieldSpec{WireName: "apply_only_at_cron_interval"},
+		"ApplyOnlyAtCronInterval":       ubx.FieldSpec{WireName: "apply_only_at_cron_interval"},
 		"AssociationDispatchAssumeRole": ubx.FieldSpec{WireName: "association_dispatch_assume_role"},
-		"AssociationName": ubx.FieldSpec{WireName: "association_name"},
+		"AssociationName":               ubx.FieldSpec{WireName: "association_name"},
 		"AutomationTargetParameterName": ubx.FieldSpec{WireName: "automation_target_parameter_name"},
-		"CalendarNames": ubx.FieldSpec{WireName: "calendar_names"},
-		"ComplianceSeverity": ubx.FieldSpec{WireName: "compliance_severity"},
-		"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxConcurrency": ubx.FieldSpec{WireName: "max_concurrency"},
-		"MaxErrors": ubx.FieldSpec{WireName: "max_errors"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CalendarNames":                 ubx.FieldSpec{WireName: "calendar_names"},
+		"ComplianceSeverity":            ubx.FieldSpec{WireName: "compliance_severity"},
+		"DocumentVersion":               ubx.FieldSpec{WireName: "document_version"},
+		"InstanceId":                    ubx.FieldSpec{WireName: "instance_id"},
+		"MaxConcurrency":                ubx.FieldSpec{WireName: "max_concurrency"},
+		"MaxErrors":                     ubx.FieldSpec{WireName: "max_errors"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"OutputLocation": ubx.FieldSpec{
 			WireName: "output_location",
-			Kind: "object",
-			Fields: Association_OutputLocationFields,
+			Kind:     "object",
+			Fields:   Association_OutputLocationFields,
 		},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Parameters":         ubx.FieldSpec{WireName: "parameters"},
 		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-		"ScheduleOffset": ubx.FieldSpec{WireName: "schedule_offset"},
-		"SyncCompliance": ubx.FieldSpec{WireName: "sync_compliance"},
+		"ScheduleOffset":     ubx.FieldSpec{WireName: "schedule_offset"},
+		"SyncCompliance":     ubx.FieldSpec{WireName: "sync_compliance"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Association_TagsFields,
+			Kind:     "list",
+			Fields:   Association_TagsFields,
 		},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: Association_TargetsFields,
+			Kind:     "list",
+			Fields:   Association_TargetsFields,
 		},
 		"WaitForSuccessTimeoutSeconds": ubx.FieldSpec{WireName: "wait_for_success_timeout_seconds"},
 	},

@@ -10,7 +10,7 @@ type IntegrationResourceProperty_SourceProcessingProperties struct {
 
 type IntegrationResourceProperty_Tags struct {
 	// The key of a tag assigned to the AWS Glue integration resource, enabling you to categorize and manage the integration according to your organizational conventions. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -26,20 +26,20 @@ type IntegrationResourceProperty_TargetProcessingProperties struct {
 }
 
 var IntegrationResourceProperty_SourceProcessingPropertiesFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var IntegrationResourceProperty_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var IntegrationResourceProperty_TargetProcessingPropertiesFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"EventBusArn": ubx.FieldSpec{WireName: "event_bus_arn"},
-		"KmsArn": ubx.FieldSpec{WireName: "kms_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
+	"EventBusArn":    ubx.FieldSpec{WireName: "event_bus_arn"},
+	"KmsArn":         ubx.FieldSpec{WireName: "kms_arn"},
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+}
 
 type IntegrationResourcePropertyConfig struct {
 	// The connection ARN of the source, or the database ARN of the target.
@@ -71,18 +71,18 @@ var IntegrationResourceProperty = ubx.ResourceBinding{
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 		"SourceProcessingProperties": ubx.FieldSpec{
 			WireName: "source_processing_properties",
-			Kind: "object",
-			Fields: IntegrationResourceProperty_SourceProcessingPropertiesFields,
+			Kind:     "object",
+			Fields:   IntegrationResourceProperty_SourceProcessingPropertiesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IntegrationResourceProperty_TagsFields,
+			Kind:     "list",
+			Fields:   IntegrationResourceProperty_TagsFields,
 		},
 		"TargetProcessingProperties": ubx.FieldSpec{
 			WireName: "target_processing_properties",
-			Kind: "object",
-			Fields: IntegrationResourceProperty_TargetProcessingPropertiesFields,
+			Kind:     "object",
+			Fields:   IntegrationResourceProperty_TargetProcessingPropertiesFields,
 		},
 	},
 }

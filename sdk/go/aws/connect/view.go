@@ -11,9 +11,9 @@ type View_Tags struct {
 }
 
 var View_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ViewConfig struct {
 	// The actions of the view in an array.
@@ -54,14 +54,14 @@ type ViewAttrs struct {
 var View = ubx.ResourceBinding{
 	WireType: "aws_connect_view",
 	Fields: ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
+		"Actions":     ubx.FieldSpec{WireName: "actions"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: View_TagsFields,
+			Kind:     "list",
+			Fields:   View_TagsFields,
 		},
 		"Template": ubx.FieldSpec{WireName: "template"},
 	},

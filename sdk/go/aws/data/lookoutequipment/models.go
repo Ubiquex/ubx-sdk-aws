@@ -9,52 +9,52 @@ type Models_ModelSummaries_ModelDiagnosticsOutputConfiguration_S3OutputConfigura
 }
 
 type Models_ModelSummaries_ModelDiagnosticsOutputConfiguration struct {
-	KmsKeyId any
+	KmsKeyId              any
 	S3OutputConfiguration any
 }
 
 type Models_ModelSummaries struct {
-	ActiveModelVersion any
-	ActiveModelVersionArn any
-	CreatedAt any
-	DatasetArn any
-	DatasetName any
+	ActiveModelVersion                    any
+	ActiveModelVersionArn                 any
+	CreatedAt                             any
+	DatasetArn                            any
+	DatasetName                           any
 	LatestScheduledRetrainingModelVersion any
-	LatestScheduledRetrainingStartTime any
-	LatestScheduledRetrainingStatus any
-	ModelArn any
-	ModelDiagnosticsOutputConfiguration any
-	ModelName any
-	ModelQuality any
-	NextScheduledRetrainingStartDate any
-	RetrainingSchedulerStatus any
-	Status any
+	LatestScheduledRetrainingStartTime    any
+	LatestScheduledRetrainingStatus       any
+	ModelArn                              any
+	ModelDiagnosticsOutputConfiguration   any
+	ModelName                             any
+	ModelQuality                          any
+	NextScheduledRetrainingStartDate      any
+	RetrainingSchedulerStatus             any
+	Status                                any
 }
 
 type ModelsConfig struct {
 	DatasetNameBeginsWith any
-	MaxResults any
-	ModelNameBeginsWith any
-	NextToken any
-	Status any
+	MaxResults            any
+	ModelNameBeginsWith   any
+	NextToken             any
+	Status                any
 }
 
 type ModelsAttrs struct {
 	DatasetNameBeginsWith any
-	MaxResults any
-	ModelNameBeginsWith any
-	ModelSummaries any
-	NextToken any
-	Status any
+	MaxResults            any
+	ModelNameBeginsWith   any
+	ModelSummaries        any
+	NextToken             any
+	Status                any
 }
 
 var Models = ubx.DataSourceBinding{
 	WireType: "aws_lookoutequipment_models",
 	Fields: ubx.FieldMap{
 		"DatasetNameBeginsWith": ubx.FieldSpec{WireName: "dataset_name_begins_with"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"ModelNameBeginsWith": ubx.FieldSpec{WireName: "model_name_begins_with"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"ModelNameBeginsWith":   ubx.FieldSpec{WireName: "model_name_begins_with"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"Status":                ubx.FieldSpec{WireName: "status"},
 	},
 }

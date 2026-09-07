@@ -10,9 +10,9 @@ type Connection_Tags struct {
 }
 
 var Connection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectionConfig struct {
 	// The bandwidth of the connection.
@@ -57,16 +57,16 @@ type ConnectionAttrs struct {
 var Connection = ubx.ResourceBinding{
 	WireType: "aws_direct_connect_connection",
 	Fields: ubx.FieldMap{
-		"Bandwidth": ubx.FieldSpec{WireName: "bandwidth"},
+		"Bandwidth":      ubx.FieldSpec{WireName: "bandwidth"},
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"LagId": ubx.FieldSpec{WireName: "lag_id"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
-		"RequestMacsec": ubx.FieldSpec{WireName: "request_macsec"},
+		"LagId":          ubx.FieldSpec{WireName: "lag_id"},
+		"Location":       ubx.FieldSpec{WireName: "location"},
+		"ProviderName":   ubx.FieldSpec{WireName: "provider_name"},
+		"RequestMacsec":  ubx.FieldSpec{WireName: "request_macsec"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Connection_TagsFields,
+			Kind:     "list",
+			Fields:   Connection_TagsFields,
 		},
 	},
 }

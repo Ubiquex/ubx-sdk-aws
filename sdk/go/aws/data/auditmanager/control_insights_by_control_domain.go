@@ -4,38 +4,38 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ControlInsightsByControlDomain_ControlInsightsMetadata_EvidenceInsights struct {
-	CompliantEvidenceCount any
+	CompliantEvidenceCount    any
 	InconclusiveEvidenceCount any
 	NoncompliantEvidenceCount any
 }
 
 type ControlInsightsByControlDomain_ControlInsightsMetadata struct {
 	EvidenceInsights any
-	Id any
-	LastUpdated any
-	Name any
+	Id               any
+	LastUpdated      any
+	Name             any
 }
 
 type ControlInsightsByControlDomainConfig struct {
 	ControlDomainId any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ControlInsightsByControlDomainAttrs struct {
-	ControlDomainId any
+	ControlDomainId         any
 	ControlInsightsMetadata any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ControlInsightsByControlDomain = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_control_insights_by_control_domain",
 	Fields: ubx.FieldMap{
 		"ControlDomainId": ubx.FieldSpec{WireName: "control_domain_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

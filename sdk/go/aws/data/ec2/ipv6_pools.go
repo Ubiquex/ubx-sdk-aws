@@ -4,7 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ipv6Pools_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -13,37 +13,37 @@ type Ipv6Pools_Ipv6Pools_PoolCidrBlocks struct {
 }
 
 type Ipv6Pools_Ipv6Pools_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Ipv6Pools_Ipv6Pools struct {
-	Description any
+	Description    any
 	PoolCidrBlocks any
-	PoolId any
-	Tags any
+	PoolId         any
+	Tags           any
 }
 
 var Ipv6Pools_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type Ipv6PoolsConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
-	PoolIds any
+	NextToken  any
+	PoolIds    any
 }
 
 type Ipv6PoolsAttrs struct {
-	DryRun any
-	Filters any
-	Ipv6Pools any
+	DryRun     any
+	Filters    any
+	Ipv6Pools  any
 	MaxResults any
-	NextToken any
-	PoolIds any
+	NextToken  any
+	PoolIds    any
 }
 
 var Ipv6Pools = ubx.DataSourceBinding{
@@ -52,11 +52,11 @@ var Ipv6Pools = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Ipv6Pools_FiltersFields,
+			Kind:     "list",
+			Fields:   Ipv6Pools_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PoolIds": ubx.FieldSpec{WireName: "pool_ids"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PoolIds":    ubx.FieldSpec{WireName: "pool_ids"},
 	},
 }

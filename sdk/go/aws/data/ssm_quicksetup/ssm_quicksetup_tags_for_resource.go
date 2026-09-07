@@ -4,7 +4,7 @@ package ssm_quicksetup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmQuicksetupTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type SsmQuicksetupTagsForResourceConfig struct {
 
 type SsmQuicksetupTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var SsmQuicksetupTagsForResource = ubx.DataSourceBinding{

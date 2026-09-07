@@ -4,22 +4,22 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutpostBillingInformation_Subscriptions struct {
-	BeginDate any
-	Currency any
-	EndDate any
+	BeginDate             any
+	Currency              any
+	EndDate               any
 	MonthlyRecurringPrice any
-	OrderIds any
-	SubscriptionId any
-	SubscriptionStatus any
-	SubscriptionType any
-	UpfrontPrice any
+	OrderIds              any
+	SubscriptionId        any
+	SubscriptionStatus    any
+	SubscriptionType      any
+	UpfrontPrice          any
 }
 
 type OutpostBillingInformationConfig struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken         any
 	OutpostIdentifier any
 }
 
@@ -28,18 +28,18 @@ type OutpostBillingInformationAttrs struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken         any
 	OutpostIdentifier any
-	PaymentOption any
-	PaymentTerm any
-	Subscriptions any
+	PaymentOption     any
+	PaymentTerm       any
+	Subscriptions     any
 }
 
 var OutpostBillingInformation = ubx.DataSourceBinding{
 	WireType: "aws_outposts_outpost_billing_information",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"OutpostIdentifier": ubx.FieldSpec{WireName: "outpost_identifier"},
 	},
 }

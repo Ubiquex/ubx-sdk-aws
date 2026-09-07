@@ -4,35 +4,35 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamingDistributionConfig_StreamingDistributionConfig_Aliases struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type StreamingDistributionConfig_StreamingDistributionConfig_Logging struct {
-	Bucket any
+	Bucket  any
 	Enabled any
-	Prefix any
+	Prefix  any
 }
 
 type StreamingDistributionConfig_StreamingDistributionConfig_S3Origin struct {
-	DomainName any
+	DomainName           any
 	OriginAccessIdentity any
 }
 
 type StreamingDistributionConfig_StreamingDistributionConfig_TrustedSigners struct {
-	Enabled any
-	Items any
+	Enabled  any
+	Items    any
 	Quantity any
 }
 
 type StreamingDistributionConfig_StreamingDistributionConfig struct {
 	// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
-	Aliases any
+	Aliases         any
 	CallerReference any
-	Comment any
-	Enabled any
+	Comment         any
+	Enabled         any
 	// <p>A complex type that controls whether access logs are written for this streaming distribution.</p>
-	Logging any
+	Logging    any
 	PriceClass any
 	// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
 	S3Origin any
@@ -46,7 +46,7 @@ type StreamingDistributionConfigConfig struct {
 
 type StreamingDistributionConfigAttrs struct {
 	Etag any
-	Id any
+	Id   any
 	// <p>The RTMP distribution's configuration information.</p>
 	StreamingDistributionConfig any
 }

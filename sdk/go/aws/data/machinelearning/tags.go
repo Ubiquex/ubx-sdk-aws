@@ -4,25 +4,25 @@ package machinelearning
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tags_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsConfig struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
 }
 
 type TagsAttrs struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
-	Tags any
+	Tags         any
 }
 
 var Tags = ubx.DataSourceBinding{
 	WireType: "aws_machinelearning_tags",
 	Fields: ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

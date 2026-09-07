@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlacementGroup_Tags struct {
 	// The key (name) of a user-defined tag applied to the placement group, used to categorize and identify the resource in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var PlacementGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PlacementGroupConfig struct {
 	// The ID of a parent placement group. Valid for strategies that support parent group linking.
@@ -47,14 +47,14 @@ type PlacementGroupAttrs struct {
 var PlacementGroup = ubx.ResourceBinding{
 	WireType: "aws_placement_group",
 	Fields: ubx.FieldMap{
-		"ParentGroupId": ubx.FieldSpec{WireName: "parent_group_id"},
+		"ParentGroupId":  ubx.FieldSpec{WireName: "parent_group_id"},
 		"PartitionCount": ubx.FieldSpec{WireName: "partition_count"},
-		"SpreadLevel": ubx.FieldSpec{WireName: "spread_level"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
+		"SpreadLevel":    ubx.FieldSpec{WireName: "spread_level"},
+		"Strategy":       ubx.FieldSpec{WireName: "strategy"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PlacementGroup_TagsFields,
+			Kind:     "list",
+			Fields:   PlacementGroup_TagsFields,
 		},
 	},
 }

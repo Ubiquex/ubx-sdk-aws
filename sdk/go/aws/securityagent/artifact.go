@@ -34,9 +34,9 @@ type ArtifactAttrs struct {
 var Artifact = ubx.ResourceBinding{
 	WireType: "aws_security_agent_artifact",
 	Fields: ubx.FieldMap{
-		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
+		"AgentSpaceId":    ubx.FieldSpec{WireName: "agent_space_id"},
 		"ArtifactContent": ubx.FieldSpec{WireName: "artifact_content"},
-		"ArtifactType": ubx.FieldSpec{WireName: "artifact_type"},
-		"FileName": ubx.FieldSpec{WireName: "file_name"},
+		"ArtifactType":    ubx.FieldSpec{WireName: "artifact_type"},
+		"FileName":        ubx.FieldSpec{WireName: "file_name"},
 	},
 }

@@ -20,29 +20,29 @@ type ResourceConfiguration_ResourceConfigurationDefinition struct {
 }
 
 type ResourceConfiguration_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ResourceConfiguration_ResourceConfigurationDefinition_DnsResourceFields = ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-	}
+	"DomainName":    ubx.FieldSpec{WireName: "domain_name"},
+	"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
+}
 
 var ResourceConfiguration_ResourceConfigurationDefinitionFields = ubx.FieldMap{
-		"ArnResource": ubx.FieldSpec{WireName: "arn_resource"},
-		"DnsResource": ubx.FieldSpec{
-			WireName: "dns_resource",
-			Kind: "object",
-			Fields: ResourceConfiguration_ResourceConfigurationDefinition_DnsResourceFields,
-		},
-		"IpResource": ubx.FieldSpec{WireName: "ip_resource"},
-	}
+	"ArnResource": ubx.FieldSpec{WireName: "arn_resource"},
+	"DnsResource": ubx.FieldSpec{
+		WireName: "dns_resource",
+		Kind:     "object",
+		Fields:   ResourceConfiguration_ResourceConfigurationDefinition_DnsResourceFields,
+	},
+	"IpResource": ubx.FieldSpec{WireName: "ip_resource"},
+}
 
 var ResourceConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResourceConfigurationConfig struct {
 	// Specifies whether this resource configuration can be associated with a service network that is shared across AWS accounts, typically via AWS Resource Access Manager (RAM). (AI-inferred)
@@ -110,25 +110,25 @@ var ResourceConfiguration = ubx.ResourceBinding{
 	WireType: "aws_vpc_lattice_resource_configuration",
 	Fields: ubx.FieldMap{
 		"AllowAssociationToSharableServiceNetwork": ubx.FieldSpec{WireName: "allow_association_to_sharable_service_network"},
-		"CustomDomainName": ubx.FieldSpec{WireName: "custom_domain_name"},
-		"DomainVerificationId": ubx.FieldSpec{WireName: "domain_verification_id"},
-		"GroupDomain": ubx.FieldSpec{WireName: "group_domain"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PortRanges": ubx.FieldSpec{WireName: "port_ranges"},
-		"ProtocolType": ubx.FieldSpec{WireName: "protocol_type"},
-		"ResourceConfigurationAuthType": ubx.FieldSpec{WireName: "resource_configuration_auth_type"},
+		"CustomDomainName":                         ubx.FieldSpec{WireName: "custom_domain_name"},
+		"DomainVerificationId":                     ubx.FieldSpec{WireName: "domain_verification_id"},
+		"GroupDomain":                              ubx.FieldSpec{WireName: "group_domain"},
+		"Name":                                     ubx.FieldSpec{WireName: "name"},
+		"PortRanges":                               ubx.FieldSpec{WireName: "port_ranges"},
+		"ProtocolType":                             ubx.FieldSpec{WireName: "protocol_type"},
+		"ResourceConfigurationAuthType":            ubx.FieldSpec{WireName: "resource_configuration_auth_type"},
 		"ResourceConfigurationDefinition": ubx.FieldSpec{
 			WireName: "resource_configuration_definition",
-			Kind: "object",
-			Fields: ResourceConfiguration_ResourceConfigurationDefinitionFields,
+			Kind:     "object",
+			Fields:   ResourceConfiguration_ResourceConfigurationDefinitionFields,
 		},
 		"ResourceConfigurationGroupId": ubx.FieldSpec{WireName: "resource_configuration_group_id"},
-		"ResourceConfigurationType": ubx.FieldSpec{WireName: "resource_configuration_type"},
-		"ResourceGatewayId": ubx.FieldSpec{WireName: "resource_gateway_id"},
+		"ResourceConfigurationType":    ubx.FieldSpec{WireName: "resource_configuration_type"},
+		"ResourceGatewayId":            ubx.FieldSpec{WireName: "resource_gateway_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResourceConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   ResourceConfiguration_TagsFields,
 		},
 	},
 }

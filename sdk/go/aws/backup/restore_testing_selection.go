@@ -18,22 +18,22 @@ type RestoreTestingSelection_ProtectedResourceConditions struct {
 }
 
 var RestoreTestingSelection_ProtectedResourceConditions_StringEqualsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var RestoreTestingSelection_ProtectedResourceConditionsFields = ubx.FieldMap{
-		"StringEquals": ubx.FieldSpec{
-			WireName: "string_equals",
-			Kind: "list",
-			Fields: RestoreTestingSelection_ProtectedResourceConditions_StringEqualsFields,
-		},
-		"StringNotEquals": ubx.FieldSpec{
-			WireName: "string_not_equals",
-			Kind: "list",
-			Fields: RestoreTestingSelection_ProtectedResourceConditions_StringEqualsFields,
-		},
-	}
+	"StringEquals": ubx.FieldSpec{
+		WireName: "string_equals",
+		Kind:     "list",
+		Fields:   RestoreTestingSelection_ProtectedResourceConditions_StringEqualsFields,
+	},
+	"StringNotEquals": ubx.FieldSpec{
+		WireName: "string_not_equals",
+		Kind:     "list",
+		Fields:   RestoreTestingSelection_ProtectedResourceConditions_StringEqualsFields,
+	},
+}
 
 type RestoreTestingSelectionConfig struct {
 	// The ARN of the IAM role that AWS Backup assumes to perform restore testing for the resources included in this restore testing selection. (AI-inferred)
@@ -76,17 +76,17 @@ type RestoreTestingSelectionAttrs struct {
 var RestoreTestingSelection = ubx.ResourceBinding{
 	WireType: "aws_backup_restore_testing_selection",
 	Fields: ubx.FieldMap{
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
+		"IamRoleArn":            ubx.FieldSpec{WireName: "iam_role_arn"},
 		"ProtectedResourceArns": ubx.FieldSpec{WireName: "protected_resource_arns"},
 		"ProtectedResourceConditions": ubx.FieldSpec{
 			WireName: "protected_resource_conditions",
-			Kind: "object",
-			Fields: RestoreTestingSelection_ProtectedResourceConditionsFields,
+			Kind:     "object",
+			Fields:   RestoreTestingSelection_ProtectedResourceConditionsFields,
 		},
-		"ProtectedResourceType": ubx.FieldSpec{WireName: "protected_resource_type"},
-		"RestoreMetadataOverrides": ubx.FieldSpec{WireName: "restore_metadata_overrides"},
-		"RestoreTestingPlanName": ubx.FieldSpec{WireName: "restore_testing_plan_name"},
+		"ProtectedResourceType":       ubx.FieldSpec{WireName: "protected_resource_type"},
+		"RestoreMetadataOverrides":    ubx.FieldSpec{WireName: "restore_metadata_overrides"},
+		"RestoreTestingPlanName":      ubx.FieldSpec{WireName: "restore_testing_plan_name"},
 		"RestoreTestingSelectionName": ubx.FieldSpec{WireName: "restore_testing_selection_name"},
-		"ValidationWindowHours": ubx.FieldSpec{WireName: "validation_window_hours"},
+		"ValidationWindowHours":       ubx.FieldSpec{WireName: "validation_window_hours"},
 	},
 }

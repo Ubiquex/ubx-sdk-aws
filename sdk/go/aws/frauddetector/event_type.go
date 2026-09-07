@@ -53,9 +53,9 @@ type EventType_EventVariables struct {
 }
 
 var EventType_EntityTypes_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventTypeConfig struct {
 	// The description of the event type.
@@ -91,11 +91,11 @@ var EventType = ubx.ResourceBinding{
 	WireType: "aws_fraud_detector_event_type",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventType_EntityTypes_TagsFields,
+			Kind:     "list",
+			Fields:   EventType_EntityTypes_TagsFields,
 		},
 	},
 }

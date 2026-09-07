@@ -13,6 +13,5 @@ type GlobalSettingsAttrs struct {
 
 var GlobalSettings = ubx.DataSourceBinding{
 	WireType: "aws_backup_global_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

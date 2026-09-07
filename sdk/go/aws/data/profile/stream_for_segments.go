@@ -4,9 +4,9 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamForSegments_AssociatedSegments struct {
-	Message any
+	Message     any
 	SegmentName any
-	Status any
+	Status      any
 }
 
 type StreamForSegmentsConfig struct {
@@ -14,14 +14,14 @@ type StreamForSegmentsConfig struct {
 }
 
 type StreamForSegmentsAttrs struct {
-	AssociatedAt any
+	AssociatedAt       any
 	AssociatedSegments any
-	DestinationArn any
+	DestinationArn     any
 	DestinationRoleArn any
-	DisassociatedAt any
-	DomainName any
-	FailureReason any
-	State any
+	DisassociatedAt    any
+	DomainName         any
+	FailureReason      any
+	State              any
 }
 
 var StreamForSegments = ubx.DataSourceBinding{

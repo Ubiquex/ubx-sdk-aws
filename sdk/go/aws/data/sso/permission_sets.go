@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionSetsConfig struct {
 	InstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type PermissionSetsAttrs struct {
-	InstanceArn any
-	MaxResults any
-	NextToken any
+	InstanceArn    any
+	MaxResults     any
+	NextToken      any
 	PermissionSets any
 }
 
@@ -20,7 +20,7 @@ var PermissionSets = ubx.DataSourceBinding{
 	WireType: "aws_sso_permission_sets",
 	Fields: ubx.FieldMap{
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

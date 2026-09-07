@@ -32,18 +32,18 @@ type CapacityReservation_TagSpecifications struct {
 }
 
 var CapacityReservation_TagSpecifications_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CapacityReservation_TagSpecificationsFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: CapacityReservation_TagSpecifications_TagsFields,
-		},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   CapacityReservation_TagSpecifications_TagsFields,
+	},
+}
 
 type CapacityReservationConfig struct {
 	// The Availability Zone where the capacity reservation is created, used to reserve compute capacity in that specific zone for EC2 instances. (AI-inferred)
@@ -140,24 +140,24 @@ type CapacityReservationAttrs struct {
 var CapacityReservation = ubx.ResourceBinding{
 	WireType: "aws_ec2_capacity_reservation",
 	Fields: ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"EndDateType": ubx.FieldSpec{WireName: "end_date_type"},
-		"EphemeralStorage": ubx.FieldSpec{WireName: "ephemeral_storage"},
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
+		"AvailabilityZone":      ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZoneId":    ubx.FieldSpec{WireName: "availability_zone_id"},
+		"EbsOptimized":          ubx.FieldSpec{WireName: "ebs_optimized"},
+		"EndDate":               ubx.FieldSpec{WireName: "end_date"},
+		"EndDateType":           ubx.FieldSpec{WireName: "end_date_type"},
+		"EphemeralStorage":      ubx.FieldSpec{WireName: "ephemeral_storage"},
+		"InstanceCount":         ubx.FieldSpec{WireName: "instance_count"},
 		"InstanceMatchCriteria": ubx.FieldSpec{WireName: "instance_match_criteria"},
-		"InstancePlatform": ubx.FieldSpec{WireName: "instance_platform"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"OutPostArn": ubx.FieldSpec{WireName: "out_post_arn"},
-		"PlacementGroupArn": ubx.FieldSpec{WireName: "placement_group_arn"},
+		"InstancePlatform":      ubx.FieldSpec{WireName: "instance_platform"},
+		"InstanceType":          ubx.FieldSpec{WireName: "instance_type"},
+		"OutPostArn":            ubx.FieldSpec{WireName: "out_post_arn"},
+		"PlacementGroupArn":     ubx.FieldSpec{WireName: "placement_group_arn"},
 		"TagSpecifications": ubx.FieldSpec{
 			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: CapacityReservation_TagSpecificationsFields,
+			Kind:     "list",
+			Fields:   CapacityReservation_TagSpecificationsFields,
 		},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
+		"Tenancy":                         ubx.FieldSpec{WireName: "tenancy"},
 		"UnusedReservationBillingOwnerId": ubx.FieldSpec{WireName: "unused_reservation_billing_owner_id"},
 	},
 }

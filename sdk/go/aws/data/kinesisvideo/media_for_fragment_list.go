@@ -4,24 +4,24 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaForFragmentListConfig struct {
-	Fragments any
-	StreamArn any
+	Fragments  any
+	StreamArn  any
 	StreamName any
 }
 
 type MediaForFragmentListAttrs struct {
 	ContentType any
-	Fragments any
-	Payload any
-	StreamArn any
-	StreamName any
+	Fragments   any
+	Payload     any
+	StreamArn   any
+	StreamName  any
 }
 
 var MediaForFragmentList = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_media_for_fragment_list",
 	Fields: ubx.FieldMap{
-		"Fragments": ubx.FieldSpec{WireName: "fragments"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"Fragments":  ubx.FieldSpec{WireName: "fragments"},
+		"StreamArn":  ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

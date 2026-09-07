@@ -4,48 +4,48 @@ package route53domains
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domains_Domains struct {
-	AutoRenew any
-	DomainName any
-	Expiry any
+	AutoRenew    any
+	DomainName   any
+	Expiry       any
 	TransferLock any
 }
 
 type Domains_FilterConditions struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type Domains_SortCondition struct {
-	Name any
+	Name      any
 	SortOrder any
 }
 
 var Domains_FilterConditionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var Domains_SortConditionFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 type DomainsConfig struct {
 	FilterConditions any
-	Marker any
-	MaxItems any
+	Marker           any
+	MaxItems         any
 	// <p>Information for sorting a list of domains.</p>
 	SortCondition any
 }
 
 type DomainsAttrs struct {
-	Domains any
+	Domains          any
 	FilterConditions any
-	Marker any
-	MaxItems any
-	NextPageMarker any
+	Marker           any
+	MaxItems         any
+	NextPageMarker   any
 	// <p>Information for sorting a list of domains.</p>
 	SortCondition any
 }
@@ -55,15 +55,15 @@ var Domains = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterConditions": ubx.FieldSpec{
 			WireName: "filter_conditions",
-			Kind: "list",
-			Fields: Domains_FilterConditionsFields,
+			Kind:     "list",
+			Fields:   Domains_FilterConditionsFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"SortCondition": ubx.FieldSpec{
 			WireName: "sort_condition",
-			Kind: "object",
-			Fields: Domains_SortConditionFields,
+			Kind:     "object",
+			Fields:   Domains_SortConditionFields,
 		},
 	},
 }

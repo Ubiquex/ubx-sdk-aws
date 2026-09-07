@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityChimeAppInstanceUsers_AppInstanceUsers struct {
 	AppInstanceUserArn any
-	Metadata any
-	Name any
+	Metadata           any
+	Name               any
 }
 
 type IdentityChimeAppInstanceUsersConfig struct {
 	AppInstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type IdentityChimeAppInstanceUsersAttrs struct {
-	AppInstanceArn any
+	AppInstanceArn   any
 	AppInstanceUsers any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var IdentityChimeAppInstanceUsers = ubx.DataSourceBinding{
 	WireType: "aws_identity_chime_app_instance_users",
 	Fields: ubx.FieldMap{
 		"AppInstanceArn": ubx.FieldSpec{WireName: "app_instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

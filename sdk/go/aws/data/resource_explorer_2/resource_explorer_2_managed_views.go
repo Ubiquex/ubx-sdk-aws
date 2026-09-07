@@ -4,23 +4,23 @@ package resource_explorer_2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceExplorer2ManagedViewsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ServicePrincipal any
 }
 
 type ResourceExplorer2ManagedViewsAttrs struct {
-	ManagedViews any
-	MaxResults any
-	NextToken any
+	ManagedViews     any
+	MaxResults       any
+	NextToken        any
 	ServicePrincipal any
 }
 
 var ResourceExplorer2ManagedViews = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_managed_views",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"ServicePrincipal": ubx.FieldSpec{WireName: "service_principal"},
 	},
 }

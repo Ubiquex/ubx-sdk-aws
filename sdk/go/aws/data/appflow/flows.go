@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Flows_Flows_LastRunExecutionDetails struct {
 	MostRecentExecutionMessage any
-	MostRecentExecutionStatus any
-	MostRecentExecutionTime any
+	MostRecentExecutionStatus  any
+	MostRecentExecutionTime    any
 }
 
 type Flows_Flows struct {
-	CreatedAt any
-	CreatedBy any
-	Description any
+	CreatedAt                 any
+	CreatedBy                 any
+	Description               any
 	DestinationConnectorLabel any
-	DestinationConnectorType any
-	FlowArn any
-	FlowName any
-	FlowStatus any
-	LastRunExecutionDetails any
-	LastUpdatedAt any
-	LastUpdatedBy any
-	SourceConnectorLabel any
-	SourceConnectorType any
-	Tags any
-	TriggerType any
+	DestinationConnectorType  any
+	FlowArn                   any
+	FlowName                  any
+	FlowStatus                any
+	LastRunExecutionDetails   any
+	LastUpdatedAt             any
+	LastUpdatedBy             any
+	SourceConnectorLabel      any
+	SourceConnectorType       any
+	Tags                      any
+	TriggerType               any
 }
 
 type FlowsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FlowsAttrs struct {
-	Flows any
+	Flows      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Flows = ubx.DataSourceBinding{
 	WireType: "aws_appflow_flows",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

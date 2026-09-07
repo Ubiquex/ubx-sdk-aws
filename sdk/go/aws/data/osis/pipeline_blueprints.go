@@ -4,11 +4,11 @@ package osis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PipelineBlueprints_Blueprints struct {
-	BlueprintName any
+	BlueprintName      any
 	DisplayDescription any
-	DisplayName any
-	Service any
-	UseCase any
+	DisplayName        any
+	Service            any
+	UseCase            any
 }
 
 type PipelineBlueprintsConfig struct {
@@ -20,6 +20,5 @@ type PipelineBlueprintsAttrs struct {
 
 var PipelineBlueprints = ubx.DataSourceBinding{
 	WireType: "aws_osis_pipeline_blueprints",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

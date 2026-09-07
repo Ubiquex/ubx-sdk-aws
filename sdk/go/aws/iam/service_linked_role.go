@@ -27,7 +27,7 @@ var ServiceLinkedRole = ubx.ResourceBinding{
 	WireType: "aws_iam_service_linked_role",
 	Fields: ubx.FieldMap{
 		"AwsserviceName": ubx.FieldSpec{WireName: "awsservice_name"},
-		"CustomSuffix": ubx.FieldSpec{WireName: "custom_suffix"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CustomSuffix":   ubx.FieldSpec{WireName: "custom_suffix"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 	},
 }

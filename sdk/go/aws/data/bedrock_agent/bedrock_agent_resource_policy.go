@@ -8,9 +8,9 @@ type BedrockAgentResourcePolicyConfig struct {
 }
 
 type BedrockAgentResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
-	RevisionId any
+	RevisionId  any
 }
 
 var BedrockAgentResourcePolicy = ubx.DataSourceBinding{

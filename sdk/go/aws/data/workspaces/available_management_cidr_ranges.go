@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AvailableManagementCidrRangesConfig struct {
 	ManagementCidrRangeConstraint any
-	MaxResults any
-	NextToken any
+	MaxResults                    any
+	NextToken                     any
 }
 
 type AvailableManagementCidrRangesAttrs struct {
 	ManagementCidrRangeConstraint any
-	ManagementCidrRanges any
-	MaxResults any
-	NextToken any
+	ManagementCidrRanges          any
+	MaxResults                    any
+	NextToken                     any
 }
 
 var AvailableManagementCidrRanges = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_available_management_cidr_ranges",
 	Fields: ubx.FieldMap{
 		"ManagementCidrRangeConstraint": ubx.FieldSpec{WireName: "management_cidr_range_constraint"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -11,9 +11,9 @@ type ThreatIntelSet_Tags struct {
 }
 
 var ThreatIntelSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ThreatIntelSetConfig struct {
 	// Whether the threat intel set is activated (enabled) for use by GuardDuty, as opposed to being created but inactive. (AI-inferred)
@@ -54,16 +54,16 @@ type ThreatIntelSetAttrs struct {
 var ThreatIntelSet = ubx.ResourceBinding{
 	WireType: "aws_guard_duty_threat_intel_set",
 	Fields: ubx.FieldMap{
-		"Activate": ubx.FieldSpec{WireName: "activate"},
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
+		"Activate":            ubx.FieldSpec{WireName: "activate"},
+		"DetectorId":          ubx.FieldSpec{WireName: "detector_id"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Format":              ubx.FieldSpec{WireName: "format"},
+		"Location":            ubx.FieldSpec{WireName: "location"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ThreatIntelSet_TagsFields,
+			Kind:     "list",
+			Fields:   ThreatIntelSet_TagsFields,
 		},
 	},
 }

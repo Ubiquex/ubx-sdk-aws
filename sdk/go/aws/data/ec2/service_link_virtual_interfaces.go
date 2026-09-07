@@ -4,50 +4,50 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceLinkVirtualInterfaces_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ServiceLinkVirtualInterfaces_ServiceLinkVirtualInterfaces_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ServiceLinkVirtualInterfaces_ServiceLinkVirtualInterfaces struct {
-	ConfigurationState any
-	LocalAddress any
-	OutpostArn any
-	OutpostId any
-	OutpostLagId any
-	OwnerId any
-	PeerAddress any
-	PeerBgpAsn any
+	ConfigurationState             any
+	LocalAddress                   any
+	OutpostArn                     any
+	OutpostId                      any
+	OutpostLagId                   any
+	OwnerId                        any
+	PeerAddress                    any
+	PeerBgpAsn                     any
 	ServiceLinkVirtualInterfaceArn any
-	ServiceLinkVirtualInterfaceId any
-	Tags any
-	Vlan any
+	ServiceLinkVirtualInterfaceId  any
+	Tags                           any
+	Vlan                           any
 }
 
 var ServiceLinkVirtualInterfaces_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ServiceLinkVirtualInterfacesConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                         any
+	Filters                        any
+	MaxResults                     any
+	NextToken                      any
 	ServiceLinkVirtualInterfaceIds any
 }
 
 type ServiceLinkVirtualInterfacesAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                         any
+	Filters                        any
+	MaxResults                     any
+	NextToken                      any
 	ServiceLinkVirtualInterfaceIds any
-	ServiceLinkVirtualInterfaces any
+	ServiceLinkVirtualInterfaces   any
 }
 
 var ServiceLinkVirtualInterfaces = ubx.DataSourceBinding{
@@ -56,11 +56,11 @@ var ServiceLinkVirtualInterfaces = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ServiceLinkVirtualInterfaces_FiltersFields,
+			Kind:     "list",
+			Fields:   ServiceLinkVirtualInterfaces_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                      ubx.FieldSpec{WireName: "next_token"},
 		"ServiceLinkVirtualInterfaceIds": ubx.FieldSpec{WireName: "service_link_virtual_interface_ids"},
 	},
 }

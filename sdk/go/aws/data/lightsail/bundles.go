@@ -4,40 +4,40 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Bundles_Bundles struct {
-	BundleId any
-	CpuCount any
-	DiskSizeInGb any
-	InstanceType any
-	IsActive any
-	Name any
-	Power any
-	Price any
+	BundleId               any
+	CpuCount               any
+	DiskSizeInGb           any
+	InstanceType           any
+	IsActive               any
+	Name                   any
+	Power                  any
+	Price                  any
 	PublicIpv4AddressCount any
-	RamSizeInGb any
+	RamSizeInGb            any
 	SupportedAppCategories any
-	SupportedPlatforms any
-	TransferPerMonthInGb any
+	SupportedPlatforms     any
+	TransferPerMonthInGb   any
 }
 
 type BundlesConfig struct {
-	AppCategory any
+	AppCategory     any
 	IncludeInactive any
-	PageToken any
+	PageToken       any
 }
 
 type BundlesAttrs struct {
-	AppCategory any
-	Bundles any
+	AppCategory     any
+	Bundles         any
 	IncludeInactive any
-	NextPageToken any
-	PageToken any
+	NextPageToken   any
+	PageToken       any
 }
 
 var Bundles = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_bundles",
 	Fields: ubx.FieldMap{
-		"AppCategory": ubx.FieldSpec{WireName: "app_category"},
+		"AppCategory":     ubx.FieldSpec{WireName: "app_category"},
 		"IncludeInactive": ubx.FieldSpec{WireName: "include_inactive"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageToken":       ubx.FieldSpec{WireName: "page_token"},
 	},
 }

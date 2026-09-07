@@ -4,9 +4,9 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverDnssecConfig_ResolverDnssecconfig struct {
-	Id any
-	OwnerId any
-	ResourceId any
+	Id               any
+	OwnerId          any
+	ResourceId       any
 	ValidationStatus any
 }
 
@@ -17,7 +17,7 @@ type ResolverDnssecConfigConfig struct {
 type ResolverDnssecConfigAttrs struct {
 	// <p>A complex type that contains information about a configuration for DNSSEC validation.</p>
 	ResolverDnssecconfig any
-	ResourceId any
+	ResourceId           any
 }
 
 var ResolverDnssecConfig = ubx.DataSourceBinding{

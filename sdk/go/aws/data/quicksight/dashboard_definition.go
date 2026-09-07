@@ -67,7 +67,7 @@ type DashboardDefinition_Definition_AnalysisDefaults_DefaultNewSheetConfiguratio
 type DashboardDefinition_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptions_ScreenCanvasSizeOptions struct {
 	// String based length that is composed of value and unit in px
 	OptimizedViewPortWidth any
-	ResizeOption any
+	ResizeOption           any
 }
 
 type DashboardDefinition_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptions struct {
@@ -100,9 +100,9 @@ type DashboardDefinition_Definition_AnalysisDefaults_DefaultNewSheetConfiguratio
 
 type DashboardDefinition_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptions struct {
 	// <p>The configuration of spacing (often a margin or padding).</p>
-	PaperMargin any
+	PaperMargin      any
 	PaperOrientation any
-	PaperSize any
+	PaperSize        any
 }
 
 type DashboardDefinition_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions struct {
@@ -125,7 +125,7 @@ type DashboardDefinition_Definition_AnalysisDefaults_DefaultNewSheetConfiguratio
 	InteractiveLayoutConfiguration any
 	// <p>The options that determine the default settings for a paginated layout configuration.</p>
 	PaginatedLayoutConfiguration any
-	SheetContentType any
+	SheetContentType             any
 }
 
 type DashboardDefinition_Definition_AnalysisDefaults struct {
@@ -135,14 +135,14 @@ type DashboardDefinition_Definition_AnalysisDefaults struct {
 
 type DashboardDefinition_Definition_CalculatedFields struct {
 	DataSetIdentifier any
-	Expression any
-	Name any
-	TopicIdentifier any
+	Expression        any
+	Name              any
+	TopicIdentifier   any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_ColorsConfiguration_CustomColors struct {
-	Color any
-	FieldValue any
+	Color        any
+	FieldValue   any
 	SpecialValue any
 }
 
@@ -151,17 +151,17 @@ type DashboardDefinition_Definition_ColumnConfigurations_ColorsConfiguration str
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_Column struct {
-	ColumnName any
+	ColumnName        any
 	DataSetIdentifier any
-	TopicIdentifier any
+	TopicIdentifier   any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_DecalSettingsConfiguration_CustomDecalSettings struct {
-	DecalColor any
+	DecalColor       any
 	DecalPatternType any
-	DecalStyleType any
-	DecalVisibility any
-	ElementValue any
+	DecalStyleType   any
+	DecalVisibility  any
+	ElementValue     any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_DecalSettingsConfiguration struct {
@@ -182,55 +182,55 @@ type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_Dat
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfiguration_ThousandsSeparator struct {
 	GroupingStyle any
-	Symbol any
-	Visibility any
+	Symbol        any
+	Visibility    any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfiguration struct {
-	DecimalSeparator any
+	DecimalSeparator   any
 	ThousandsSeparator any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration struct {
-	DecimalPlacesConfiguration any
-	NegativeValueConfiguration any
+	DecimalPlacesConfiguration   any
+	NegativeValueConfiguration   any
 	NullValueFormatConfiguration any
-	NumberScale any
-	Prefix any
-	SeparatorConfiguration any
-	Suffix any
-	Symbol any
+	NumberScale                  any
+	Prefix                       any
+	SeparatorConfiguration       any
+	Suffix                       any
+	Symbol                       any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_NumberDisplayFormatConfiguration struct {
-	DecimalPlacesConfiguration any
-	NegativeValueConfiguration any
+	DecimalPlacesConfiguration   any
+	NegativeValueConfiguration   any
 	NullValueFormatConfiguration any
-	NumberScale any
-	Prefix any
-	SeparatorConfiguration any
-	Suffix any
+	NumberScale                  any
+	Prefix                       any
+	SeparatorConfiguration       any
+	Suffix                       any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_PercentageDisplayFormatConfiguration struct {
-	DecimalPlacesConfiguration any
-	NegativeValueConfiguration any
+	DecimalPlacesConfiguration   any
+	NegativeValueConfiguration   any
 	NullValueFormatConfiguration any
-	Prefix any
-	SeparatorConfiguration any
-	Suffix any
+	Prefix                       any
+	SeparatorConfiguration       any
+	Suffix                       any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration struct {
-	CurrencyDisplayFormatConfiguration any
-	NumberDisplayFormatConfiguration any
+	CurrencyDisplayFormatConfiguration   any
+	NumberDisplayFormatConfiguration     any
 	PercentageDisplayFormatConfiguration any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration struct {
-	DateTimeFormat any
+	DateTimeFormat               any
 	NullValueFormatConfiguration any
-	NumericFormatConfiguration any
+	NumericFormatConfiguration   any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfiguration struct {
@@ -239,21 +239,21 @@ type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_Num
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfiguration struct {
 	NullValueFormatConfiguration any
-	NumericFormatConfiguration any
+	NumericFormatConfiguration   any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations_FormatConfiguration struct {
 	DateTimeFormatConfiguration any
-	NumberFormatConfiguration any
-	StringFormatConfiguration any
+	NumberFormatConfiguration   any
+	StringFormatConfiguration   any
 }
 
 type DashboardDefinition_Definition_ColumnConfigurations struct {
-	ColorsConfiguration any
-	Column any
+	ColorsConfiguration        any
+	Column                     any
 	DecalSettingsConfiguration any
-	FormatConfiguration any
-	Role any
+	FormatConfiguration        any
+	Role                       any
 }
 
 type DashboardDefinition_Definition_DataSetIdentifierDeclarations struct {
@@ -262,29 +262,29 @@ type DashboardDefinition_Definition_DataSetIdentifierDeclarations struct {
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterConfiguration struct {
-	CategoryValue any
-	MatchOperator any
-	NullOption any
-	ParameterName any
+	CategoryValue    any
+	MatchOperator    any
+	NullOption       any
+	ParameterName    any
 	SelectAllOptions any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterListConfiguration struct {
-	CategoryValues any
-	MatchOperator any
-	NullOption any
+	CategoryValues   any
+	MatchOperator    any
+	NullOption       any
 	SelectAllOptions any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_Configuration struct {
-	CustomFilterConfiguration any
+	CustomFilterConfiguration     any
 	CustomFilterListConfiguration any
-	FilterListConfiguration any
+	FilterListConfiguration       any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptions struct {
 	InfoIconText any
-	Visibility any
+	Visibility   any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration_FontSize struct {
@@ -297,37 +297,37 @@ type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultF
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration struct {
-	FontColor any
+	FontColor      any
 	FontDecoration any
-	FontFamily any
-	FontSize any
-	FontStyle any
-	FontWeight any
+	FontFamily     any
+	FontSize       any
+	FontStyle      any
+	FontWeight     any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions struct {
-	CustomLabel any
+	CustomLabel       any
 	FontConfiguration any
-	Visibility any
+	Visibility        any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions struct {
-	DateIconVisibility any
-	DateTimeFormat any
+	DateIconVisibility   any
+	DateTimeFormat       any
 	HelperTextVisibility any
 	InfoIconLabelOptions any
-	TitleOptions any
+	TitleOptions         any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions struct {
-	CommitMode any
+	CommitMode     any
 	DisplayOptions any
-	Type any
+	Type           any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_ControlSortConfigurations_ControlColumnSort_AggregationFunction_AttributeAggregationFunction struct {
 	SimpleAttributeAggregation any
-	ValueForMultipleValues any
+	ValueForMultipleValues     any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_ControlSortConfigurations_ControlColumnSort_AggregationFunction_NumericalAggregationFunction_PercentileAggregation struct {
@@ -335,21 +335,21 @@ type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultF
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_ControlSortConfigurations_ControlColumnSort_AggregationFunction_NumericalAggregationFunction struct {
-	PercentileAggregation any
+	PercentileAggregation      any
 	SimpleNumericalAggregation any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_ControlSortConfigurations_ControlColumnSort_AggregationFunction struct {
-	AttributeAggregationFunction any
+	AttributeAggregationFunction   any
 	CategoricalAggregationFunction any
-	DateAggregationFunction any
-	NumericalAggregationFunction any
+	DateAggregationFunction        any
+	NumericalAggregationFunction   any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_ControlSortConfigurations_ControlColumnSort struct {
 	AggregationFunction any
-	Column any
-	SortDirection any
+	Column              any
+	SortDirection       any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_ControlSortConfigurations_SelectableValuesSort struct {
@@ -357,7 +357,7 @@ type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultF
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_ControlSortConfigurations struct {
-	ControlColumnSort any
+	ControlColumnSort    any
 	SelectableValuesSort any
 }
 
@@ -367,8 +367,8 @@ type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultF
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions struct {
 	InfoIconLabelOptions any
-	SelectAllOptions any
-	TitleOptions any
+	SelectAllOptions     any
+	TitleOptions         any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValues struct {
@@ -376,59 +376,59 @@ type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultF
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions struct {
-	CommitMode any
+	CommitMode                any
 	ControlSortConfigurations any
-	DisplayOptions any
-	SelectableValues any
-	Type any
+	DisplayOptions            any
+	SelectableValues          any
+	Type                      any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptions struct {
 	InfoIconLabelOptions any
-	SearchOptions any
-	SelectAllOptions any
-	TitleOptions any
+	SearchOptions        any
+	SelectAllOptions     any
+	TitleOptions         any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions struct {
 	ControlSortConfigurations any
-	DisplayOptions any
-	SelectableValues any
-	Type any
+	DisplayOptions            any
+	SelectableValues          any
+	Type                      any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions_DisplayOptions struct {
-	DateTimeFormat any
+	DateTimeFormat       any
 	InfoIconLabelOptions any
-	TitleOptions any
+	TitleOptions         any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions struct {
-	CommitMode any
+	CommitMode     any
 	DisplayOptions any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptions struct {
 	InfoIconLabelOptions any
-	TitleOptions any
+	TitleOptions         any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions struct {
 	DisplayOptions any
-	MaximumValue any
-	MinimumValue any
-	StepSize any
-	Type any
+	MaximumValue   any
+	MinimumValue   any
+	StepSize       any
+	Type           any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptions struct {
 	InfoIconLabelOptions any
-	PlaceholderOptions any
-	TitleOptions any
+	PlaceholderOptions   any
+	TitleOptions         any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions struct {
-	Delimiter any
+	Delimiter      any
 	DisplayOptions any
 }
 
@@ -437,36 +437,36 @@ type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultF
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions struct {
-	DefaultDateTimePickerOptions any
-	DefaultDropdownOptions any
-	DefaultListOptions any
+	DefaultDateTimePickerOptions   any
+	DefaultDropdownOptions         any
+	DefaultListOptions             any
 	DefaultRelativeDateTimeOptions any
-	DefaultSliderOptions any
-	DefaultTextAreaOptions any
-	DefaultTextFieldOptions any
+	DefaultSliderOptions           any
+	DefaultTextAreaOptions         any
+	DefaultTextFieldOptions        any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlTitleFormatText struct {
 	PlainText any
-	RichText any
+	RichText  any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration struct {
-	ControlOptions any
+	ControlOptions         any
 	ControlTitleFormatText any
-	Title any
+	Title                  any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_CategoryFilter struct {
-	Column any
-	Configuration any
+	Column                            any
+	Configuration                     any
 	DefaultFilterControlConfiguration any
-	FilterId any
+	FilterId                          any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_NestedFilter_InnerFilter_CategoryInnerFilter struct {
-	Column any
-	Configuration any
+	Column                            any
+	Configuration                     any
 	DefaultFilterControlConfiguration any
 }
 
@@ -475,125 +475,125 @@ type DashboardDefinition_Definition_FilterGroups_Filters_NestedFilter_InnerFilte
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_NestedFilter struct {
-	Column any
-	FilterId any
+	Column          any
+	FilterId        any
 	IncludeInnerSet any
-	InnerFilter any
+	InnerFilter     any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_NumericEqualityFilter struct {
-	AggregationFunction any
-	Column any
+	AggregationFunction               any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	FilterId any
-	MatchOperator any
-	NullOption any
-	ParameterName any
-	SelectAllOptions any
-	Value any
+	FilterId                          any
+	MatchOperator                     any
+	NullOption                        any
+	ParameterName                     any
+	SelectAllOptions                  any
+	Value                             any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_NumericRangeFilter_RangeMaximum struct {
-	Parameter any
+	Parameter   any
 	StaticValue any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_NumericRangeFilter struct {
-	AggregationFunction any
-	Column any
+	AggregationFunction               any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	FilterId any
-	IncludeMaximum any
-	IncludeMinimum any
-	NullOption any
-	RangeMaximum any
-	RangeMinimum any
-	SelectAllOptions any
+	FilterId                          any
+	IncludeMaximum                    any
+	IncludeMinimum                    any
+	NullOption                        any
+	RangeMaximum                      any
+	RangeMinimum                      any
+	SelectAllOptions                  any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_RelativeDatesFilter_AnchorDateConfiguration struct {
-	AnchorOption any
+	AnchorOption  any
 	ParameterName any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_RelativeDatesFilter_ExcludePeriodConfiguration struct {
-	Amount any
+	Amount      any
 	Granularity any
-	Status any
+	Status      any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_RelativeDatesFilter struct {
-	AnchorDateConfiguration any
-	Column any
+	AnchorDateConfiguration           any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	ExcludePeriodConfiguration any
-	FilterId any
-	MinimumGranularity any
-	NullOption any
-	ParameterName any
-	RelativeDateType any
-	RelativeDateValue any
-	TimeGranularity any
+	ExcludePeriodConfiguration        any
+	FilterId                          any
+	MinimumGranularity                any
+	NullOption                        any
+	ParameterName                     any
+	RelativeDateType                  any
+	RelativeDateValue                 any
+	TimeGranularity                   any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDate struct {
 	DataSetIdentifier any
-	Expression any
+	Expression        any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_TimeEqualityFilter struct {
-	Column any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	FilterId any
-	ParameterName any
-	RollingDate any
-	TimeGranularity any
-	Value any
+	FilterId                          any
+	ParameterName                     any
+	RollingDate                       any
+	TimeGranularity                   any
+	Value                             any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_TimeRangeFilter_RangeMaximumValue struct {
-	Parameter any
+	Parameter   any
 	RollingDate any
 	StaticValue any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_TimeRangeFilter struct {
-	Column any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	ExcludePeriodConfiguration any
-	FilterId any
-	IncludeMaximum any
-	IncludeMinimum any
-	NullOption any
-	RangeMaximumValue any
-	RangeMinimumValue any
-	TimeGranularity any
+	ExcludePeriodConfiguration        any
+	FilterId                          any
+	IncludeMaximum                    any
+	IncludeMinimum                    any
+	NullOption                        any
+	RangeMaximumValue                 any
+	RangeMinimumValue                 any
+	TimeGranularity                   any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters_TopBottomFilter struct {
-	AggregationSortConfigurations any
-	Column any
+	AggregationSortConfigurations     any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	FilterId any
-	Limit any
-	ParameterName any
-	TimeGranularity any
+	FilterId                          any
+	Limit                             any
+	ParameterName                     any
+	TimeGranularity                   any
 }
 
 type DashboardDefinition_Definition_FilterGroups_Filters struct {
-	CategoryFilter any
-	NestedFilter any
+	CategoryFilter        any
+	NestedFilter          any
 	NumericEqualityFilter any
-	NumericRangeFilter any
-	RelativeDatesFilter any
-	TimeEqualityFilter any
-	TimeRangeFilter any
-	TopBottomFilter any
+	NumericRangeFilter    any
+	RelativeDatesFilter   any
+	TimeEqualityFilter    any
+	TimeRangeFilter       any
+	TopBottomFilter       any
 }
 
 type DashboardDefinition_Definition_FilterGroups_ScopeConfiguration_SelectedSheets_SheetVisualScopingConfigurations struct {
-	Scope any
-	SheetId any
+	Scope     any
+	SheetId   any
 	VisualIds any
 }
 
@@ -602,16 +602,16 @@ type DashboardDefinition_Definition_FilterGroups_ScopeConfiguration_SelectedShee
 }
 
 type DashboardDefinition_Definition_FilterGroups_ScopeConfiguration struct {
-	AllSheets any
+	AllSheets      any
 	SelectedSheets any
 }
 
 type DashboardDefinition_Definition_FilterGroups struct {
-	CrossDataset any
-	FilterGroupId any
-	Filters any
+	CrossDataset       any
+	FilterGroupId      any
+	Filters            any
 	ScopeConfiguration any
-	Status any
+	Status             any
 }
 
 type DashboardDefinition_Definition_Options_CustomActionDefaults_HighlightOperation struct {
@@ -624,14 +624,14 @@ type DashboardDefinition_Definition_Options_CustomActionDefaults struct {
 }
 
 type DashboardDefinition_Definition_Options_VisualMessages_NoDataMessage struct {
-	Description any
+	Description           any
 	DescriptionVisibility any
-	Enabled any
-	LinkText any
-	LinkUrl any
-	LinkVisibility any
-	Title any
-	TitleVisibility any
+	Enabled               any
+	LinkText              any
+	LinkUrl               any
+	LinkVisibility        any
+	Title                 any
+	TitleVisibility       any
 }
 
 type DashboardDefinition_Definition_Options_VisualMessages struct {
@@ -641,43 +641,43 @@ type DashboardDefinition_Definition_Options_VisualMessages struct {
 
 type DashboardDefinition_Definition_Options struct {
 	// <p>A list of custom actions applied to visuals in an analysis or sheet.</p>
-	CustomActionDefaults any
-	ExcludedDataSetArns any
+	CustomActionDefaults    any
+	ExcludedDataSetArns     any
 	QbusinessInsightsStatus any
-	Timezone any
+	Timezone                any
 	// <p>The messages that are displayed on a visual under specific conditions, such as when the visual returns no data.</p>
 	VisualMessages any
-	WeekStart any
+	WeekStart      any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValue struct {
 	DefaultValueColumn any
-	GroupNameColumn any
-	UserNameColumn any
+	GroupNameColumn    any
+	UserNameColumn     any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues struct {
 	DynamicValue any
-	RollingDate any
+	RollingDate  any
 	StaticValues any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParameters struct {
-	DataSetIdentifier any
+	DataSetIdentifier    any
 	DataSetParameterName any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_DateTimeParameterDeclaration_ValueWhenUnset struct {
-	CustomValue any
+	CustomValue          any
 	ValueWhenUnsetOption any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_DateTimeParameterDeclaration struct {
-	DefaultValues any
+	DefaultValues           any
 	MappedDataSetParameters any
-	Name any
-	TimeGranularity any
-	ValueWhenUnset any
+	Name                    any
+	TimeGranularity         any
+	ValueWhenUnset          any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_DecimalParameterDeclaration_DefaultValues struct {
@@ -686,16 +686,16 @@ type DashboardDefinition_Definition_ParameterDeclarations_DecimalParameterDeclar
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_DecimalParameterDeclaration_ValueWhenUnset struct {
-	CustomValue any
+	CustomValue          any
 	ValueWhenUnsetOption any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_DecimalParameterDeclaration struct {
-	DefaultValues any
+	DefaultValues           any
 	MappedDataSetParameters any
-	Name any
-	ParameterValueType any
-	ValueWhenUnset any
+	Name                    any
+	ParameterValueType      any
+	ValueWhenUnset          any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_StringParameterDeclaration_DefaultValues struct {
@@ -704,22 +704,22 @@ type DashboardDefinition_Definition_ParameterDeclarations_StringParameterDeclara
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations_StringParameterDeclaration struct {
-	DefaultValues any
+	DefaultValues           any
 	MappedDataSetParameters any
-	Name any
-	ParameterValueType any
-	ValueWhenUnset any
+	Name                    any
+	ParameterValueType      any
+	ValueWhenUnset          any
 }
 
 type DashboardDefinition_Definition_ParameterDeclarations struct {
 	DateTimeParameterDeclaration any
-	DecimalParameterDeclaration any
-	IntegerParameterDeclaration any
-	StringParameterDeclaration any
+	DecimalParameterDeclaration  any
+	IntegerParameterDeclaration  any
+	StringParameterDeclaration   any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfiguration_SourceControls struct {
-	ColumnToMatch any
+	ColumnToMatch        any
 	SourceSheetControlId any
 }
 
@@ -729,92 +729,92 @@ type DashboardDefinition_Definition_Sheets_FilterControls_CrossSheet_CascadingCo
 
 type DashboardDefinition_Definition_Sheets_FilterControls_CrossSheet struct {
 	CascadingControlConfiguration any
-	FilterControlId any
-	SourceFilterId any
+	FilterControlId               any
+	SourceFilterId                any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls_DateTimePicker struct {
-	CommitMode any
+	CommitMode             any
 	ControlTitleFormatText any
-	DisplayOptions any
-	FilterControlId any
-	SourceFilterId any
-	Title any
-	Type any
+	DisplayOptions         any
+	FilterControlId        any
+	SourceFilterId         any
+	Title                  any
+	Type                   any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls_Dropdown struct {
 	CascadingControlConfiguration any
-	CommitMode any
-	ControlSortConfigurations any
-	ControlTitleFormatText any
-	DisplayOptions any
-	FilterControlId any
-	SelectableValues any
-	SourceFilterId any
-	Title any
-	Type any
+	CommitMode                    any
+	ControlSortConfigurations     any
+	ControlTitleFormatText        any
+	DisplayOptions                any
+	FilterControlId               any
+	SelectableValues              any
+	SourceFilterId                any
+	Title                         any
+	Type                          any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls_List struct {
 	CascadingControlConfiguration any
-	ControlSortConfigurations any
-	ControlTitleFormatText any
-	DisplayOptions any
-	FilterControlId any
-	SelectableValues any
-	SourceFilterId any
-	Title any
-	Type any
+	ControlSortConfigurations     any
+	ControlTitleFormatText        any
+	DisplayOptions                any
+	FilterControlId               any
+	SelectableValues              any
+	SourceFilterId                any
+	Title                         any
+	Type                          any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls_RelativeDateTime struct {
-	CommitMode any
+	CommitMode             any
 	ControlTitleFormatText any
-	DisplayOptions any
-	FilterControlId any
-	SourceFilterId any
-	Title any
+	DisplayOptions         any
+	FilterControlId        any
+	SourceFilterId         any
+	Title                  any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls_Slider struct {
 	ControlTitleFormatText any
-	DisplayOptions any
-	FilterControlId any
-	MaximumValue any
-	MinimumValue any
-	SourceFilterId any
-	StepSize any
-	Title any
-	Type any
+	DisplayOptions         any
+	FilterControlId        any
+	MaximumValue           any
+	MinimumValue           any
+	SourceFilterId         any
+	StepSize               any
+	Title                  any
+	Type                   any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls_TextArea struct {
 	ControlTitleFormatText any
-	Delimiter any
-	DisplayOptions any
-	FilterControlId any
-	SourceFilterId any
-	Title any
+	Delimiter              any
+	DisplayOptions         any
+	FilterControlId        any
+	SourceFilterId         any
+	Title                  any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls_TextField struct {
 	ControlTitleFormatText any
-	DisplayOptions any
-	FilterControlId any
-	SourceFilterId any
-	Title any
+	DisplayOptions         any
+	FilterControlId        any
+	SourceFilterId         any
+	Title                  any
 }
 
 type DashboardDefinition_Definition_Sheets_FilterControls struct {
-	CrossSheet any
-	DateTimePicker any
-	Dropdown any
-	List any
+	CrossSheet       any
+	DateTimePicker   any
+	Dropdown         any
+	List             any
 	RelativeDateTime any
-	Slider any
-	TextArea any
-	TextField any
+	Slider           any
+	TextArea         any
+	TextField        any
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperation_LocalNavigationConfiguration struct {
@@ -827,27 +827,27 @@ type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_Navig
 
 type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfiguration_CustomValues struct {
 	DateTimeValues any
-	DecimalValues any
-	IntegerValues any
-	StringValues any
+	DecimalValues  any
+	IntegerValues  any
+	StringValues   any
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfiguration struct {
-	CustomValues any
+	CustomValues     any
 	IncludeNullValue any
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value struct {
 	CustomValuesConfiguration any
-	SelectAllValueOptions any
-	SourceColumn any
-	SourceField any
-	SourceParameterName any
+	SelectAllValueOptions     any
+	SourceColumn              any
+	SourceField               any
+	SourceParameterName       any
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations struct {
 	DestinationParameterName any
-	Value any
+	Value                    any
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation struct {
@@ -855,22 +855,22 @@ type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_SetPa
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations_Urloperation struct {
-	Urltarget any
+	Urltarget   any
 	Urltemplate any
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Actions_ActionOperations struct {
-	NavigationOperation any
+	NavigationOperation    any
 	SetParametersOperation any
-	Urloperation any
+	Urloperation           any
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Actions struct {
 	ActionOperations any
-	CustomActionId any
-	Name any
-	Status any
-	Trigger any
+	CustomActionId   any
+	Name             any
+	Status           any
+	Trigger          any
 }
 
 type DashboardDefinition_Definition_Sheets_Images_Interactions struct {
@@ -895,86 +895,86 @@ type DashboardDefinition_Definition_Sheets_Images_Tooltip_TooltipText struct {
 
 type DashboardDefinition_Definition_Sheets_Images_Tooltip struct {
 	TooltipText any
-	Visibility any
+	Visibility  any
 }
 
 type DashboardDefinition_Definition_Sheets_Images struct {
-	Actions any
+	Actions             any
 	ImageContentAltText any
-	Interactions any
-	Scaling any
-	SheetImageId any
-	Source any
-	Tooltip any
+	Interactions        any
+	Scaling             any
+	SheetImageId        any
+	Source              any
+	Tooltip             any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyle struct {
-	Color any
+	Color      any
 	Visibility any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BorderStyle struct {
-	Color any
+	Color      any
 	Visibility any
-	Width any
+	Width      any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_RenderingRules struct {
 	ConfigurationOverrides any
-	Expression any
+	Expression             any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements struct {
-	BackgroundStyle any
-	BorderRadius any
-	BorderStyle any
-	ElementId any
-	ElementType any
-	Height any
-	LoadingAnimation any
-	Padding any
-	RenderingRules any
+	BackgroundStyle     any
+	BorderRadius        any
+	BorderStyle         any
+	ElementId           any
+	ElementType         any
+	Height              any
+	LoadingAnimation    any
+	Padding             any
+	RenderingRules      any
 	SelectedBorderStyle any
-	Visibility any
-	Width any
-	XaxisLocation any
-	YaxisLocation any
+	Visibility          any
+	Width               any
+	XaxisLocation       any
+	YaxisLocation       any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Groups_Members struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Groups struct {
-	Id any
+	Id      any
 	Members any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_FreeFormLayout struct {
 	CanvasSizeOptions any
-	Elements any
-	Groups any
+	Elements          any
+	Groups            any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_GridLayout_Elements struct {
-	BackgroundStyle any
-	BorderRadius any
-	BorderStyle any
-	ColumnIndex any
-	ColumnSpan any
-	ElementId any
-	ElementType any
-	LoadingAnimation any
-	Padding any
-	RowIndex any
-	RowSpan any
+	BackgroundStyle     any
+	BorderRadius        any
+	BorderStyle         any
+	ColumnIndex         any
+	ColumnSpan          any
+	ElementId           any
+	ElementType         any
+	LoadingAnimation    any
+	Padding             any
+	RowIndex            any
+	RowSpan             any
 	SelectedBorderStyle any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_GridLayout struct {
 	CanvasSizeOptions any
-	Elements any
+	Elements          any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_Layout_FreeFormLayout struct {
@@ -999,56 +999,56 @@ type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLay
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetrics struct {
 	AggregationFunction any
-	Direction any
-	SortBy any
+	Direction           any
+	SortBy              any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration struct {
-	Column any
-	Limit any
+	Column        any
+	Limit         any
 	SortByMetrics any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations struct {
 	DynamicCategoryDimensionConfiguration any
-	DynamicNumericDimensionConfiguration any
+	DynamicNumericDimensionConfiguration  any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration struct {
 	DimensionConfigurations any
-	NonRepeatingVisuals any
-	PageBreakConfiguration any
+	NonRepeatingVisuals     any
+	PageBreakConfiguration  any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Style struct {
-	Height any
+	Height  any
 	Padding any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections struct {
-	Content any
+	Content                any
 	PageBreakConfiguration any
-	RepeatConfiguration any
-	SectionId any
-	Style any
+	RepeatConfiguration    any
+	SectionId              any
+	Style                  any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_FooterSections struct {
-	Layout any
+	Layout    any
 	SectionId any
-	Style any
+	Style     any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration_SectionBasedLayout struct {
-	BodySections any
+	BodySections      any
 	CanvasSizeOptions any
-	FooterSections any
-	HeaderSections any
+	FooterSections    any
+	HeaderSections    any
 }
 
 type DashboardDefinition_Definition_Sheets_Layouts_Configuration struct {
-	FreeFormLayout any
-	GridLayout any
+	FreeFormLayout     any
+	GridLayout         any
 	SectionBasedLayout any
 }
 
@@ -1058,77 +1058,77 @@ type DashboardDefinition_Definition_Sheets_Layouts struct {
 
 type DashboardDefinition_Definition_Sheets_ParameterControls_DateTimePicker struct {
 	ControlTitleFormatText any
-	DisplayOptions any
-	ParameterControlId any
-	SourceParameterName any
-	Title any
+	DisplayOptions         any
+	ParameterControlId     any
+	SourceParameterName    any
+	Title                  any
 }
 
 type DashboardDefinition_Definition_Sheets_ParameterControls_Dropdown_SelectableValues struct {
 	LinkToDataSetColumn any
-	Values any
+	Values              any
 }
 
 type DashboardDefinition_Definition_Sheets_ParameterControls_Dropdown struct {
 	CascadingControlConfiguration any
-	CommitMode any
-	ControlSortConfigurations any
-	ControlTitleFormatText any
-	DisplayOptions any
-	ParameterControlId any
-	SelectableValues any
-	SourceParameterName any
-	Title any
-	Type any
+	CommitMode                    any
+	ControlSortConfigurations     any
+	ControlTitleFormatText        any
+	DisplayOptions                any
+	ParameterControlId            any
+	SelectableValues              any
+	SourceParameterName           any
+	Title                         any
+	Type                          any
 }
 
 type DashboardDefinition_Definition_Sheets_ParameterControls_List struct {
 	CascadingControlConfiguration any
-	ControlSortConfigurations any
-	ControlTitleFormatText any
-	DisplayOptions any
-	ParameterControlId any
-	SelectableValues any
-	SourceParameterName any
-	Title any
-	Type any
+	ControlSortConfigurations     any
+	ControlTitleFormatText        any
+	DisplayOptions                any
+	ParameterControlId            any
+	SelectableValues              any
+	SourceParameterName           any
+	Title                         any
+	Type                          any
 }
 
 type DashboardDefinition_Definition_Sheets_ParameterControls_Slider struct {
 	ControlTitleFormatText any
-	DisplayOptions any
-	MaximumValue any
-	MinimumValue any
-	ParameterControlId any
-	SourceParameterName any
-	StepSize any
-	Title any
+	DisplayOptions         any
+	MaximumValue           any
+	MinimumValue           any
+	ParameterControlId     any
+	SourceParameterName    any
+	StepSize               any
+	Title                  any
 }
 
 type DashboardDefinition_Definition_Sheets_ParameterControls_TextArea struct {
 	ControlTitleFormatText any
-	Delimiter any
-	DisplayOptions any
-	ParameterControlId any
-	SourceParameterName any
-	Title any
+	Delimiter              any
+	DisplayOptions         any
+	ParameterControlId     any
+	SourceParameterName    any
+	Title                  any
 }
 
 type DashboardDefinition_Definition_Sheets_ParameterControls_TextField struct {
 	ControlTitleFormatText any
-	DisplayOptions any
-	ParameterControlId any
-	SourceParameterName any
-	Title any
+	DisplayOptions         any
+	ParameterControlId     any
+	SourceParameterName    any
+	Title                  any
 }
 
 type DashboardDefinition_Definition_Sheets_ParameterControls struct {
 	DateTimePicker any
-	Dropdown any
-	List any
-	Slider any
-	TextArea any
-	TextField any
+	Dropdown       any
+	List           any
+	Slider         any
+	TextArea       any
+	TextField      any
 }
 
 type DashboardDefinition_Definition_Sheets_SheetControlLayouts_Configuration struct {
@@ -1144,20 +1144,20 @@ type DashboardDefinition_Definition_Sheets_TextBoxes_Interactions struct {
 }
 
 type DashboardDefinition_Definition_Sheets_TextBoxes struct {
-	Content any
-	Interactions any
+	Content        any
+	Interactions   any
 	SheetTextBoxId any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_SelectedFieldsConfiguration struct {
-	SelectedColumns any
+	SelectedColumns      any
 	SelectedFieldOptions any
-	SelectedFields any
+	SelectedFields       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfiguration_SameSheetTargetVisualConfiguration struct {
 	TargetVisualOptions any
-	TargetVisuals any
+	TargetVisuals       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfiguration struct {
@@ -1166,22 +1166,22 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_Actions_Action
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation struct {
 	SelectedFieldsConfiguration any
-	TargetVisualsConfiguration any
+	TargetVisualsConfiguration  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations struct {
-	FilterOperation any
-	NavigationOperation any
+	FilterOperation        any
+	NavigationOperation    any
 	SetParametersOperation any
-	Urloperation any
+	Urloperation           any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_Actions struct {
 	ActionOperations any
-	CustomActionId any
-	Name any
-	Status any
-	Trigger any
+	CustomActionId   any
+	Name             any
+	Status           any
+	Trigger          any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_DateAxisOptions struct {
@@ -1195,12 +1195,12 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Range struct {
 	DataDriven any
-	MinMax any
+	MinMax     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_Linear struct {
 	StepCount any
-	StepSize any
+	StepSize  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_Logarithmic struct {
@@ -1208,7 +1208,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale struct {
-	Linear any
+	Linear      any
 	Logarithmic any
 }
 
@@ -1218,13 +1218,13 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions struct {
-	DateAxisOptions any
+	DateAxisOptions    any
 	NumericAxisOptions any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRange_PercentRange struct {
 	From any
-	To any
+	To   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRange struct {
@@ -1232,155 +1232,155 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions struct {
-	Visibility any
+	Visibility   any
 	VisibleRange any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_TickLabelOptions struct {
-	LabelOptions any
+	LabelOptions  any
 	RotationAngle any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis struct {
 	AxisLineVisibility any
-	AxisOffset any
-	DataOptions any
+	AxisOffset         any
+	DataOptions        any
 	GridLineVisibility any
-	ScrollbarOptions any
-	TickLabelOptions any
+	ScrollbarOptions   any
+	TickLabelOptions   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptions_ApplyTo struct {
-	Column any
+	Column  any
 	FieldId any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptions struct {
-	ApplyTo any
-	CustomLabel any
+	ApplyTo           any
+	CustomLabel       any
 	FontConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions struct {
-	AxisLabelOptions any
+	AxisLabelOptions   any
 	SortIconVisibility any
-	Visibility any
+	Visibility         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaults struct {
 	ContributorDimensions any
-	MeasureFieldId any
+	MeasureFieldId        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_DataPathLabelType struct {
-	FieldId any
+	FieldId    any
 	FieldValue any
 	Visibility any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_FieldLabelType struct {
-	FieldId any
+	FieldId    any
 	Visibility any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes struct {
-	DataPathLabelType any
-	FieldLabelType any
-	MaximumLabelType any
-	MinimumLabelType any
+	DataPathLabelType  any
+	FieldLabelType     any
+	MaximumLabelType   any
+	MinimumLabelType   any
 	RangeEndsLabelType any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels struct {
 	CategoryLabelVisibility any
-	DataLabelTypes any
-	LabelColor any
-	LabelContent any
-	LabelFontConfiguration any
-	MeasureLabelVisibility any
-	Overlap any
-	Position any
-	TotalsVisibility any
-	Visibility any
+	DataLabelTypes          any
+	LabelColor              any
+	LabelContent            any
+	LabelFontConfiguration  any
+	MeasureLabelVisibility  any
+	Overlap                 any
+	Position                any
+	TotalsVisibility        any
+	Visibility              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DefaultSeriesSettings_BorderSettings struct {
-	BorderColor any
+	BorderColor      any
 	BorderVisibility any
-	BorderWidth any
+	BorderWidth      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DefaultSeriesSettings struct {
 	BorderSettings any
-	DecalSettings any
+	DecalSettings  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_CategoricalDimensionField struct {
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
-	HierarchyId any
+	HierarchyId         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_DateDimensionField struct {
-	Column any
-	DateGranularity any
-	FieldId any
+	Column              any
+	DateGranularity     any
+	FieldId             any
 	FormatConfiguration any
-	HierarchyId any
+	HierarchyId         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_NumericalDimensionField struct {
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
-	HierarchyId any
+	HierarchyId         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category struct {
 	CategoricalDimensionField any
-	DateDimensionField any
-	NumericalDimensionField any
+	DateDimensionField        any
+	NumericalDimensionField   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CalculatedMeasureField struct {
 	Expression any
-	FieldId any
+	FieldId    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CategoricalMeasureField struct {
 	AggregationFunction any
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_DateMeasureField struct {
 	AggregationFunction any
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_NumericalMeasureField struct {
 	AggregationFunction any
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values struct {
-	CalculatedMeasureField any
+	CalculatedMeasureField  any
 	CategoricalMeasureField any
-	DateMeasureField any
-	NumericalMeasureField any
+	DateMeasureField        any
+	NumericalMeasureField   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells struct {
-	Category any
-	Colors any
+	Category       any
+	Colors         any
 	SmallMultiples any
-	Values any
+	Values         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells struct {
@@ -1389,21 +1389,21 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Interactions struct {
 	ContextMenuOption any
-	VisualMenuOption any
+	VisualMenuOption  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Legend struct {
-	Height any
-	Position any
-	Title any
+	Height                 any
+	Position               any
+	Title                  any
 	ValueFontConfiguration any
-	Visibility any
-	Width any
+	Visibility             any
+	Width                  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_DynamicConfiguration struct {
-	Calculation any
-	Column any
+	Calculation                any
+	Column                     any
 	MeasureAggregationFunction any
 }
 
@@ -1412,10 +1412,10 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration struct {
-	AxisBinding any
+	AxisBinding          any
 	DynamicConfiguration any
-	SeriesType any
-	StaticConfiguration any
+	SeriesType           any
+	StaticConfiguration  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_CustomLabelConfiguration struct {
@@ -1424,125 +1424,125 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_ValueLabelConfiguration struct {
 	FormatConfiguration any
-	RelativePosition any
+	RelativePosition    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration struct {
 	CustomLabelConfiguration any
-	FontColor any
-	FontConfiguration any
-	HorizontalPosition any
-	ValueLabelConfiguration any
-	VerticalPosition any
+	FontColor                any
+	FontConfiguration        any
+	HorizontalPosition       any
+	ValueLabelConfiguration  any
+	VerticalPosition         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_StyleConfiguration struct {
-	Color any
+	Color   any
 	Pattern any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines struct {
-	DataConfiguration any
+	DataConfiguration  any
 	LabelConfiguration any
-	Status any
+	Status             any
 	StyleConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Series_DataFieldBarSeriesItem struct {
-	FieldId any
+	FieldId    any
 	FieldValue any
-	Settings any
+	Settings   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Series_FieldBarSeriesItem struct {
-	FieldId any
+	FieldId  any
 	Settings any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Series struct {
 	DataFieldBarSeriesItem any
-	FieldBarSeriesItem any
+	FieldBarSeriesItem     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfiguration_Title struct {
-	FontConfiguration any
+	FontConfiguration       any
 	HorizontalTextAlignment any
-	Visibility any
+	Visibility              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfiguration struct {
-	BackgroundColor any
+	BackgroundColor      any
 	BackgroundVisibility any
-	BorderColor any
-	BorderStyle any
-	BorderThickness any
-	BorderVisibility any
-	GutterSpacing any
-	GutterVisibility any
-	Title any
+	BorderColor          any
+	BorderStyle          any
+	BorderThickness      any
+	BorderVisibility     any
+	GutterSpacing        any
+	GutterVisibility     any
+	Title                any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_Xaxis struct {
 	Placement any
-	Scale any
+	Scale     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions struct {
-	MaxVisibleColumns any
-	MaxVisibleRows any
+	MaxVisibleColumns  any
+	MaxVisibleRows     any
 	PanelConfiguration any
-	Xaxis any
-	Yaxis any
+	Xaxis              any
+	Yaxis              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimit struct {
-	ItemsLimit any
+	ItemsLimit      any
 	OtherCategories any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort_FieldSort struct {
 	Direction any
-	FieldId any
+	FieldId   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort struct {
 	ColumnSort any
-	FieldSort any
+	FieldSort  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration struct {
-	CategoryItemsLimit any
-	CategorySort any
-	ColorItemsLimit any
-	ColorSort any
+	CategoryItemsLimit               any
+	CategorySort                     any
+	ColorItemsLimit                  any
+	ColorSort                        any
 	SmallMultiplesLimitConfiguration any
-	SmallMultiplesSort any
+	SmallMultiplesSort               any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_ColumnTooltipItem struct {
-	Aggregation any
-	Column any
-	Label any
+	Aggregation   any
+	Column        any
+	Label         any
 	TooltipTarget any
-	Visibility any
+	Visibility    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_FieldTooltipItem struct {
-	FieldId any
-	Label any
+	FieldId       any
+	Label         any
 	TooltipTarget any
-	Visibility any
+	Visibility    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields struct {
 	ColumnTooltipItem any
-	FieldTooltipItem any
+	FieldTooltipItem  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip struct {
 	AggregationVisibility any
-	TooltipFields any
-	TooltipTitleType any
+	TooltipFields         any
+	TooltipTitleType      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_SheetTooltip struct {
@@ -1550,10 +1550,10 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip struct {
-	FieldBasedTooltip any
+	FieldBasedTooltip   any
 	SelectedTooltipType any
-	SheetTooltip any
-	TooltipVisibility any
+	SheetTooltip        any
+	TooltipVisibility   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_Element_DataPathType struct {
@@ -1562,80 +1562,80 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfigura
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_Element struct {
 	DataPathType any
-	FieldId any
-	FieldValue any
+	FieldId      any
+	FieldValue   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap struct {
-	Color any
-	Element any
+	Color           any
+	Element         any
 	TimeGranularity any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette struct {
 	ChartColor any
-	ColorMap any
+	ColorMap   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration struct {
-	BarsArrangement any
-	CategoryAxis any
-	CategoryLabelOptions any
-	ColorLabelOptions any
+	BarsArrangement              any
+	CategoryAxis                 any
+	CategoryLabelOptions         any
+	ColorLabelOptions            any
 	ContributionAnalysisDefaults any
-	DataLabels any
-	DefaultSeriesSettings any
-	FieldWells any
-	Interactions any
-	Legend any
-	Orientation any
-	ReferenceLines any
-	Series any
-	SmallMultiplesOptions any
-	SortConfiguration any
-	Tooltip any
-	ValueAxis any
-	ValueLabelOptions any
-	VisualPalette any
+	DataLabels                   any
+	DefaultSeriesSettings        any
+	FieldWells                   any
+	Interactions                 any
+	Legend                       any
+	Orientation                  any
+	ReferenceLines               any
+	Series                       any
+	SmallMultiplesOptions        any
+	SortConfiguration            any
+	Tooltip                      any
+	ValueAxis                    any
+	ValueLabelOptions            any
+	VisualPalette                any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_CategoryFilter struct {
 	CategoryValues any
-	Column any
+	Column         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_NumericEqualityFilter struct {
 	Column any
-	Value any
+	Value  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_TimeRangeFilter struct {
-	Column any
-	RangeMaximum any
-	RangeMinimum any
+	Column          any
+	RangeMaximum    any
+	RangeMinimum    any
 	TimeGranularity any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters struct {
-	CategoryFilter any
+	CategoryFilter        any
 	NumericEqualityFilter any
-	TimeRangeFilter any
+	TimeRangeFilter       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy struct {
 	DrillDownFilters any
-	HierarchyId any
+	HierarchyId      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_ExplicitHierarchy struct {
-	Columns any
+	Columns          any
 	DrillDownFilters any
-	HierarchyId any
+	HierarchyId      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies struct {
-	DateTimeHierarchy any
-	ExplicitHierarchy any
+	DateTimeHierarchy   any
+	ExplicitHierarchy   any
 	PredefinedHierarchy any
 }
 
@@ -1645,13 +1645,13 @@ type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual_Subtitle struc
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BarChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptions_StyleOptions struct {
@@ -1660,13 +1660,13 @@ type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfigurat
 
 type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptions struct {
 	AllDataPointsVisibility any
-	OutlierVisibility any
-	StyleOptions any
+	OutlierVisibility       any
+	StyleOptions            any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells_BoxPlotAggregatedFieldWells struct {
 	GroupBy any
-	Values any
+	Values  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells struct {
@@ -1675,64 +1675,64 @@ type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfigurat
 
 type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration_PaginationConfiguration struct {
 	PageNumber any
-	PageSize any
+	PageSize   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration struct {
-	CategorySort any
+	CategorySort            any
 	PaginationConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration struct {
-	BoxPlotOptions any
-	CategoryAxis any
-	CategoryLabelOptions any
-	FieldWells any
-	Interactions any
-	Legend any
+	BoxPlotOptions             any
+	CategoryAxis               any
+	CategoryLabelOptions       any
+	FieldWells                 any
+	Interactions               any
+	Legend                     any
 	PrimaryYaxisDisplayOptions any
-	PrimaryYaxisLabelOptions any
-	ReferenceLines any
-	SortConfiguration any
-	Tooltip any
-	VisualPalette any
+	PrimaryYaxisLabelOptions   any
+	ReferenceLines             any
+	SortConfiguration          any
+	Tooltip                    any
+	VisualPalette              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_BoxPlotVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_DefaultSeriesSettings_LineStyleSettings struct {
 	LineInterpolation any
-	LineStyle any
-	LineVisibility any
-	LineWidth any
+	LineStyle         any
+	LineVisibility    any
+	LineWidth         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_DefaultSeriesSettings_MarkerStyleSettings struct {
-	MarkerColor any
-	MarkerShape any
-	MarkerSize any
+	MarkerColor      any
+	MarkerShape      any
+	MarkerSize       any
 	MarkerVisibility any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_DefaultSeriesSettings struct {
-	BorderSettings any
-	DecalSettings any
-	LineStyleSettings any
+	BorderSettings      any
+	DecalSettings       any
+	LineStyleSettings   any
 	MarkerStyleSettings any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_FieldWells_ComboChartAggregatedFieldWells struct {
-	BarValues any
-	Category any
-	Colors any
+	BarValues  any
+	Category   any
+	Colors     any
 	LineValues any
 }
 
@@ -1741,19 +1741,19 @@ type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfigu
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_Series_DataFieldComboSeriesItem struct {
-	FieldId any
+	FieldId    any
 	FieldValue any
-	Settings any
+	Settings   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_Series_FieldComboSeriesItem struct {
-	FieldId any
+	FieldId  any
 	Settings any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_Series struct {
 	DataFieldComboSeriesItem any
-	FieldComboSeriesItem any
+	FieldComboSeriesItem     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptions_YaxisOptions struct {
@@ -1766,72 +1766,72 @@ type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfigu
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SortConfiguration struct {
 	CategoryItemsLimit any
-	CategorySort any
-	ColorItemsLimit any
-	ColorSort any
+	CategorySort       any
+	ColorItemsLimit    any
+	ColorSort          any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration struct {
-	BarDataLabels any
-	BarsArrangement any
-	CategoryAxis any
-	CategoryLabelOptions any
-	ColorLabelOptions any
-	DefaultSeriesSettings any
-	FieldWells any
-	Interactions any
-	Legend any
-	LineDataLabels any
-	PrimaryYaxisDisplayOptions any
-	PrimaryYaxisLabelOptions any
-	ReferenceLines any
+	BarDataLabels                any
+	BarsArrangement              any
+	CategoryAxis                 any
+	CategoryLabelOptions         any
+	ColorLabelOptions            any
+	DefaultSeriesSettings        any
+	FieldWells                   any
+	Interactions                 any
+	Legend                       any
+	LineDataLabels               any
+	PrimaryYaxisDisplayOptions   any
+	PrimaryYaxisLabelOptions     any
+	ReferenceLines               any
 	SecondaryYaxisDisplayOptions any
-	SecondaryYaxisLabelOptions any
-	Series any
-	SingleAxisOptions any
-	SortConfiguration any
-	Tooltip any
-	VisualPalette any
+	SecondaryYaxisLabelOptions   any
+	Series                       any
+	SingleAxisOptions            any
+	SortConfiguration            any
+	Tooltip                      any
+	VisualPalette                any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ComboChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_CustomContentVisual_ChartConfiguration struct {
-	ContentType any
-	ContentUrl any
+	ContentType  any
+	ContentUrl   any
 	ImageScaling any
 	Interactions any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_CustomContentVisual struct {
-	Actions any
-	ChartConfiguration any
-	DataSetIdentifier any
-	Subtitle any
-	Title any
-	TopicIdentifier any
+	Actions              any
+	ChartConfiguration   any
+	DataSetIdentifier    any
+	Subtitle             any
+	Title                any
+	TopicIdentifier      any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_EmptyVisual struct {
-	Actions any
+	Actions           any
 	DataSetIdentifier any
-	TopicIdentifier any
-	VisualId any
+	TopicIdentifier   any
+	VisualId          any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWells_FilledMapAggregatedFieldWells struct {
 	Geospatial any
-	Values any
+	Values     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWells struct {
@@ -1847,30 +1847,30 @@ type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ChartConfigur
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions_Bounds struct {
-	East any
+	East  any
 	North any
 	South any
-	West any
+	West  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions struct {
-	Bounds any
+	Bounds      any
 	MapZoomMode any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration struct {
-	FieldWells any
-	Interactions any
-	Legend any
-	MapStyleOptions any
+	FieldWells        any
+	Interactions      any
+	Legend            any
+	MapStyleOptions   any
 	SortConfiguration any
-	Tooltip any
-	WindowOptions any
+	Tooltip           any
+	WindowOptions     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient_Color_Stops struct {
-	Color any
-	DataValue any
+	Color          any
+	DataValue      any
 	GradientOffset any
 }
 
@@ -1879,18 +1879,18 @@ type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFo
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient struct {
-	Color any
+	Color      any
 	Expression any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Solid struct {
-	Color any
+	Color      any
 	Expression any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor struct {
 	Gradient any
-	Solid any
+	Solid    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format struct {
@@ -1899,7 +1899,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFo
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape struct {
 	FieldId any
-	Format any
+	Format  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions struct {
@@ -1911,20 +1911,20 @@ type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFo
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_GeocodingPreferences_Preference_Coordinate struct {
-	Latitude any
+	Latitude  any
 	Longitude any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_GeocodingPreferences_Preference_GeocoderHierarchy struct {
-	City any
-	Country any
-	County any
+	City     any
+	Country  any
+	County   any
 	PostCode any
-	State any
+	State    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_GeocodingPreferences_Preference struct {
-	Coordinate any
+	Coordinate        any
 	GeocoderHierarchy any
 }
 
@@ -1934,30 +1934,30 @@ type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual_GeocodingPref
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FilledMapVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
+	Actions               any
+	ChartConfiguration    any
+	ColumnHierarchies     any
 	ConditionalFormatting any
-	GeocodingPreferences any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	GeocodingPreferences  any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_DataLabelOptions struct {
 	CategoryLabelVisibility any
-	LabelColor any
-	LabelFontConfiguration any
-	MeasureDataLabelStyle any
-	MeasureLabelVisibility any
-	Position any
-	Visibility any
+	LabelColor              any
+	LabelFontConfiguration  any
+	MeasureDataLabelStyle   any
+	MeasureLabelVisibility  any
+	Position                any
+	Visibility              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWells_FunnelChartAggregatedFieldWells struct {
 	Category any
-	Values any
+	Values   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWells struct {
@@ -1966,28 +1966,28 @@ type DashboardDefinition_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfig
 
 type DashboardDefinition_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_SortConfiguration struct {
 	CategoryItemsLimit any
-	CategorySort any
+	CategorySort       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration struct {
 	CategoryLabelOptions any
-	DataLabelOptions any
-	FieldWells any
-	Interactions any
-	SortConfiguration any
-	Tooltip any
-	ValueLabelOptions any
-	VisualPalette any
+	DataLabelOptions     any
+	FieldWells           any
+	Interactions         any
+	SortConfiguration    any
+	Tooltip              any
+	ValueLabelOptions    any
+	VisualPalette        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_FunnelChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_ColorConfiguration struct {
@@ -1997,11 +1997,11 @@ type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfigu
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_FieldWells struct {
 	TargetValues any
-	Values any
+	Values       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_Arc struct {
-	ArcAngle any
+	ArcAngle     any
 	ArcThickness any
 }
 
@@ -2011,12 +2011,12 @@ type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfigu
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcAxis struct {
-	Range any
+	Range        any
 	ReserveRange any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_Comparison_ComparisonFormat struct {
-	NumberDisplayFormatConfiguration any
+	NumberDisplayFormatConfiguration     any
 	PercentageDisplayFormatConfiguration any
 }
 
@@ -2026,21 +2026,21 @@ type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfigu
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions struct {
-	Arc any
-	ArcAxis any
-	Comparison any
-	PrimaryValueDisplayType any
+	Arc                           any
+	ArcAxis                       any
+	Comparison                    any
+	PrimaryValueDisplayType       any
 	PrimaryValueFontConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration struct {
 	ColorConfiguration any
-	DataLabels any
-	FieldWells any
-	GaugeChartOptions any
-	Interactions any
-	TooltipOptions any
-	VisualPalette any
+	DataLabels         any
+	FieldWells         any
+	GaugeChartOptions  any
+	Interactions       any
+	TooltipOptions     any
+	VisualPalette      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_Arc struct {
@@ -2052,34 +2052,34 @@ type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalF
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition_IconOptions struct {
-	Icon any
+	Icon        any
 	UnicodeIcon any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition struct {
-	Color any
+	Color                any
 	DisplayConfiguration any
-	Expression any
-	IconOptions any
+	Expression           any
+	IconOptions          any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_IconSet struct {
-	Expression any
+	Expression  any
 	IconSetType any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon struct {
 	CustomCondition any
-	IconSet any
+	IconSet         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue struct {
-	Icon any
+	Icon      any
 	TextColor any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions struct {
-	Arc any
+	Arc          any
 	PrimaryValue any
 }
 
@@ -2088,19 +2088,19 @@ type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalF
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GaugeChartVisual struct {
-	Actions any
-	ChartConfiguration any
+	Actions               any
+	ChartConfiguration    any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWells_GeospatialMapAggregatedFieldWells struct {
-	Colors any
+	Colors     any
 	Geospatial any
-	Values any
+	Values     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWells struct {
@@ -2129,47 +2129,47 @@ type DashboardDefinition_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConf
 
 type DashboardDefinition_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions struct {
 	ClusterMarkerConfiguration any
-	HeatmapConfiguration any
-	SelectedPointStyle any
+	HeatmapConfiguration       any
+	SelectedPointStyle         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration struct {
-	FieldWells any
-	Interactions any
-	Legend any
-	MapStyleOptions any
+	FieldWells        any
+	Interactions      any
+	Legend            any
+	MapStyleOptions   any
 	PointStyleOptions any
-	Tooltip any
-	VisualPalette any
-	WindowOptions any
+	Tooltip           any
+	VisualPalette     any
+	WindowOptions     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_GeospatialMapVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
 	GeocodingPreferences any
-	Subtitle any
-	Title any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_Colors struct {
-	Color any
+	Color     any
 	DataValue any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale struct {
-	ColorFillType any
-	Colors any
+	ColorFillType  any
+	Colors         any
 	NullValueColor any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells_HeatMapAggregatedFieldWells struct {
 	Columns any
-	Rows any
-	Values any
+	Rows    any
+	Values  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells struct {
@@ -2178,45 +2178,45 @@ type DashboardDefinition_Definition_Sheets_Visuals_HeatMapVisual_ChartConfigurat
 
 type DashboardDefinition_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_SortConfiguration struct {
 	HeatMapColumnItemsLimitConfiguration any
-	HeatMapColumnSort any
-	HeatMapRowItemsLimitConfiguration any
-	HeatMapRowSort any
+	HeatMapColumnSort                    any
+	HeatMapRowItemsLimitConfiguration    any
+	HeatMapRowSort                       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration struct {
-	ColorScale any
+	ColorScale               any
 	ColumnAxisDisplayOptions any
-	ColumnLabelOptions any
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Legend any
-	RowAxisDisplayOptions any
-	RowLabelOptions any
-	SortConfiguration any
-	Tooltip any
+	ColumnLabelOptions       any
+	DataLabels               any
+	FieldWells               any
+	Interactions             any
+	Legend                   any
+	RowAxisDisplayOptions    any
+	RowLabelOptions          any
+	SortConfiguration        any
+	Tooltip                  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HeatMapVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptions_BinWidth struct {
 	BinCountLimit any
-	Value any
+	Value         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptions struct {
-	BinCount any
-	BinWidth any
+	BinCount        any
+	BinWidth        any
 	SelectedBinType any
-	StartValue any
+	StartValue      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_FieldWells_HistogramAggregatedFieldWells struct {
@@ -2228,122 +2228,122 @@ type DashboardDefinition_Definition_Sheets_Visuals_HistogramVisual_ChartConfigur
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration struct {
-	BinOptions any
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Tooltip any
-	VisualPalette any
+	BinOptions          any
+	DataLabels          any
+	FieldWells          any
+	Interactions        any
+	Tooltip             any
+	VisualPalette       any
 	XaxisDisplayOptions any
-	XaxisLabelOptions any
+	XaxisLabelOptions   any
 	YaxisDisplayOptions any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_HistogramVisual struct {
-	Actions any
-	ChartConfiguration any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_Forecast struct {
-	ComputationId any
+	ComputationId          any
 	CustomSeasonalityValue any
-	LowerBoundary any
-	Name any
-	PeriodsBackward any
-	PeriodsForward any
-	PredictionInterval any
-	Seasonality any
-	Time any
-	UpperBoundary any
-	Value any
+	LowerBoundary          any
+	Name                   any
+	PeriodsBackward        any
+	PeriodsForward         any
+	PredictionInterval     any
+	Seasonality            any
+	Time                   any
+	UpperBoundary          any
+	Value                  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_GrowthRate struct {
 	ComputationId any
-	Name any
-	PeriodSize any
-	Time any
-	Value any
+	Name          any
+	PeriodSize    any
+	Time          any
+	Value         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MaximumMinimum struct {
 	ComputationId any
-	Name any
-	Time any
-	Type any
-	Value any
+	Name          any
+	Time          any
+	Type          any
+	Value         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MetricComparison struct {
 	ComputationId any
-	FromValue any
-	Name any
-	TargetValue any
-	Time any
+	FromValue     any
+	Name          any
+	TargetValue   any
+	Time          any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodOverPeriod struct {
 	ComputationId any
-	Name any
-	Time any
-	Value any
+	Name          any
+	Time          any
+	Value         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodToDate struct {
-	ComputationId any
-	Name any
+	ComputationId         any
+	Name                  any
 	PeriodTimeGranularity any
-	Time any
-	Value any
+	Time                  any
+	Value                 any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomMovers struct {
-	Category any
+	Category      any
 	ComputationId any
-	MoverSize any
-	Name any
-	SortOrder any
-	Time any
-	Type any
-	Value any
+	MoverSize     any
+	Name          any
+	SortOrder     any
+	Time          any
+	Type          any
+	Value         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomRanked struct {
-	Category any
+	Category      any
 	ComputationId any
-	Name any
-	ResultSize any
-	Type any
-	Value any
+	Name          any
+	ResultSize    any
+	Type          any
+	Value         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TotalAggregation struct {
 	ComputationId any
-	Name any
-	Value any
+	Name          any
+	Value         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_UniqueValues struct {
-	Category any
+	Category      any
 	ComputationId any
-	Name any
+	Name          any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations struct {
-	Forecast any
-	GrowthRate any
-	MaximumMinimum any
+	Forecast         any
+	GrowthRate       any
+	MaximumMinimum   any
 	MetricComparison any
 	PeriodOverPeriod any
-	PeriodToDate any
-	TopBottomMovers any
-	TopBottomRanked any
+	PeriodToDate     any
+	TopBottomMovers  any
+	TopBottomRanked  any
 	TotalAggregation any
-	UniqueValues any
+	UniqueValues     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_CustomNarrative struct {
@@ -2351,33 +2351,33 @@ type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfigur
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration struct {
-	Computations any
+	Computations    any
 	CustomNarrative any
-	Interactions any
+	Interactions    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_InsightVisual struct {
-	Actions any
-	DataSetIdentifier any
+	Actions              any
+	DataSetIdentifier    any
 	InsightConfiguration any
-	Subtitle any
-	Title any
-	TopicIdentifier any
+	Subtitle             any
+	Title                any
+	TopicIdentifier      any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_FieldWells struct {
 	TargetValues any
-	TrendGroups any
-	Values any
+	TrendGroups  any
+	Values       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_Sparkline struct {
-	Color any
+	Color             any
 	TooltipVisibility any
-	Type any
-	Visibility any
+	Type              any
+	Visibility        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_VisualLayoutOptions_StandardLayout struct {
@@ -2389,15 +2389,15 @@ type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions struct {
-	Comparison any
-	PrimaryValueDisplayType any
-	PrimaryValueFontConfiguration any
-	ProgressBar any
-	SecondaryValue any
+	Comparison                      any
+	PrimaryValueDisplayType         any
+	PrimaryValueFontConfiguration   any
+	ProgressBar                     any
+	SecondaryValue                  any
 	SecondaryValueFontConfiguration any
-	Sparkline any
-	TrendArrows any
-	VisualLayoutOptions any
+	Sparkline                       any
+	TrendArrows                     any
+	VisualLayoutOptions             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_SortConfiguration struct {
@@ -2405,17 +2405,17 @@ type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration struct {
-	FieldWells any
-	Interactions any
-	Kpioptions any
+	FieldWells        any
+	Interactions      any
+	Kpioptions        any
 	SortConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatting_ConditionalFormattingOptions struct {
-	ActualValue any
+	ActualValue     any
 	ComparisonValue any
-	PrimaryValue any
-	ProgressBar any
+	PrimaryValue    any
+	ProgressBar     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatting struct {
@@ -2423,14 +2423,14 @@ type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatti
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_Kpivisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
+	Actions               any
+	ChartConfiguration    any
+	ColumnHierarchies     any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_DataSource struct {
@@ -2439,28 +2439,28 @@ type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigura
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_ColorField struct {
 	ColorDimensionsFields any
-	ColorValuesFields any
+	ColorValuesFields     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyField struct {
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition struct {
-	ColorField any
+	ColorField      any
 	DatasetKeyField any
-	ShapeKeyField any
+	ShapeKeyField   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_CategoryDataColors struct {
-	Color any
+	Color     any
 	DataValue any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettings_SymbolStyle struct {
-	FillColor any
+	FillColor   any
 	StrokeColor any
 	StrokeWidth any
 }
@@ -2471,16 +2471,16 @@ type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigura
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical struct {
 	CategoryDataColors any
-	DefaultOpacity any
-	NullDataSettings any
+	DefaultOpacity     any
+	NullDataSettings   any
 	NullDataVisibility any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Gradient struct {
-	DefaultOpacity any
-	NullDataSettings any
+	DefaultOpacity     any
+	NullDataSettings   any
 	NullDataVisibility any
-	StepColors any
+	StepColors         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Solid struct {
@@ -2490,8 +2490,8 @@ type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigura
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor struct {
 	Categorical any
-	Gradient any
-	Solid any
+	Gradient    any
+	Solid       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidth struct {
@@ -2517,9 +2517,9 @@ type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigura
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style_CircleSymbolStyle struct {
 	CircleRadius any
-	FillColor any
-	StrokeColor any
-	StrokeWidth any
+	FillColor    any
+	StrokeColor  any
+	StrokeWidth  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style struct {
@@ -2531,7 +2531,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayer_Style_PolygonSymbolStyle struct {
-	FillColor any
+	FillColor   any
 	StrokeColor any
 	StrokeWidth any
 }
@@ -2545,56 +2545,56 @@ type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition struct {
-	LineLayer any
-	PointLayer any
+	LineLayer    any
+	PointLayer   any
 	PolygonLayer any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers struct {
-	Actions any
-	DataSource any
-	JoinDefinition any
-	Label any
+	Actions         any
+	DataSource      any
+	JoinDefinition  any
+	Label           any
 	LayerDefinition any
-	LayerId any
-	LayerType any
-	Tooltip any
-	Visibility any
+	LayerId         any
+	LayerType       any
+	Tooltip         any
+	Visibility      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapState struct {
-	Bounds any
+	Bounds        any
 	MapNavigation any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapStyle struct {
-	BackgroundColor any
-	BaseMapStyle any
+	BackgroundColor   any
+	BaseMapStyle      any
 	BaseMapVisibility any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration struct {
 	Interactions any
-	Legend any
-	MapLayers any
-	MapState any
-	MapStyle any
+	Legend       any
+	MapLayers    any
+	MapState     any
+	MapStyle     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LayerMapVisual struct {
-	ChartConfiguration any
-	DataSetIdentifier any
-	Subtitle any
-	Title any
-	TopicIdentifier any
+	ChartConfiguration   any
+	DataSetIdentifier    any
+	Subtitle             any
+	Title                any
+	TopicIdentifier      any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings struct {
-	AxisBinding any
-	DecalSettings any
-	LineStyleSettings any
+	AxisBinding         any
+	DecalSettings       any
+	LineStyleSettings   any
 	MarkerStyleSettings any
 }
 
@@ -2603,23 +2603,23 @@ type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfigur
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_ForecastProperties struct {
-	LowerBoundary any
-	PeriodsBackward any
-	PeriodsForward any
+	LowerBoundary      any
+	PeriodsBackward    any
+	PeriodsForward     any
 	PredictionInterval any
-	Seasonality any
-	UpperBoundary any
+	Seasonality        any
+	UpperBoundary      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfPointScenario struct {
-	Date any
+	Date  any
 	Value any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfRangeScenario struct {
-	EndDate any
+	EndDate   any
 	StartDate any
-	Value any
+	Value     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario struct {
@@ -2629,7 +2629,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfigur
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations struct {
 	ForecastProperties any
-	Scenario any
+	Scenario           any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptions_MissingDataConfigurations struct {
@@ -2637,74 +2637,74 @@ type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfigur
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptions struct {
-	AxisOptions any
+	AxisOptions               any
 	MissingDataConfigurations any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem_Settings struct {
-	DecalSettings any
-	LineStyleSettings any
+	DecalSettings       any
+	LineStyleSettings   any
 	MarkerStyleSettings any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem struct {
 	AxisBinding any
-	FieldId any
-	FieldValue any
-	Settings any
+	FieldId     any
+	FieldValue  any
+	Settings    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_FieldSeriesItem struct {
 	AxisBinding any
-	FieldId any
-	Settings any
+	FieldId     any
+	Settings    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series struct {
 	DataFieldSeriesItem any
-	FieldSeriesItem any
+	FieldSeriesItem     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_SortConfiguration struct {
-	CategoryItemsLimitConfiguration any
-	CategorySort any
-	ColorItemsLimitConfiguration any
+	CategoryItemsLimitConfiguration  any
+	CategorySort                     any
+	ColorItemsLimitConfiguration     any
 	SmallMultiplesLimitConfiguration any
-	SmallMultiplesSort any
+	SmallMultiplesSort               any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration struct {
 	ContributionAnalysisDefaults any
-	DataLabels any
-	DefaultSeriesSettings any
-	FieldWells any
-	ForecastConfigurations any
-	Interactions any
-	Legend any
-	PrimaryYaxisDisplayOptions any
-	PrimaryYaxisLabelOptions any
-	ReferenceLines any
+	DataLabels                   any
+	DefaultSeriesSettings        any
+	FieldWells                   any
+	ForecastConfigurations       any
+	Interactions                 any
+	Legend                       any
+	PrimaryYaxisDisplayOptions   any
+	PrimaryYaxisLabelOptions     any
+	ReferenceLines               any
 	SecondaryYaxisDisplayOptions any
-	SecondaryYaxisLabelOptions any
-	Series any
-	SingleAxisOptions any
-	SmallMultiplesOptions any
-	SortConfiguration any
-	Tooltip any
-	Type any
-	VisualPalette any
-	XaxisDisplayOptions any
-	XaxisLabelOptions any
+	SecondaryYaxisLabelOptions   any
+	Series                       any
+	SingleAxisOptions            any
+	SmallMultiplesOptions        any
+	SortConfiguration            any
+	Tooltip                      any
+	Type                         any
+	VisualPalette                any
+	XaxisDisplayOptions          any
+	XaxisLabelOptions            any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_LineChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions_ArcOptions struct {
@@ -2716,14 +2716,14 @@ type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions struct {
-	ArcOptions any
+	ArcOptions         any
 	DonutCenterOptions any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWells_PieChartAggregatedFieldWells struct {
-	Category any
+	Category       any
 	SmallMultiples any
-	Values any
+	Values         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWells struct {
@@ -2731,40 +2731,40 @@ type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual_ChartConfigura
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_SortConfiguration struct {
-	CategoryItemsLimit any
-	CategorySort any
+	CategoryItemsLimit               any
+	CategorySort                     any
 	SmallMultiplesLimitConfiguration any
-	SmallMultiplesSort any
+	SmallMultiplesSort               any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration struct {
-	CategoryLabelOptions any
+	CategoryLabelOptions         any
 	ContributionAnalysisDefaults any
-	DataLabels any
-	DonutOptions any
-	FieldWells any
-	Interactions any
-	Legend any
-	SmallMultiplesOptions any
-	SortConfiguration any
-	Tooltip any
-	ValueLabelOptions any
-	VisualPalette any
+	DataLabels                   any
+	DonutOptions                 any
+	FieldWells                   any
+	Interactions                 any
+	Legend                       any
+	SmallMultiplesOptions        any
+	SortConfiguration            any
+	Tooltip                      any
+	ValueLabelOptions            any
+	VisualPalette                any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PieChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_DashboardCustomizationVisualOptions_FieldsConfiguration struct {
 	AdditionalFields any
-	Status any
+	Status           any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_DashboardCustomizationVisualOptions struct {
@@ -2773,28 +2773,28 @@ type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigu
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptions_Target struct {
 	FieldDataPathValues any
-	FieldId any
+	FieldId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptions struct {
-	State any
+	State  any
 	Target any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_DataPathOptions struct {
 	DataPathList any
-	Width any
+	Width        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions struct {
 	CustomLabel any
-	FieldId any
-	Visibility any
+	FieldId     any
+	Visibility  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions struct {
 	CollapseStateOptions any
-	DataPathOptions any
+	DataPathOptions      any
 	SelectedFieldOptions any
 }
 
@@ -2804,7 +2804,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigu
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_PaginatedReportOptions struct {
 	OverflowColumnHeaderVisibility any
-	VerticalOverflowVisibility any
+	VerticalOverflowVisibility     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortBy_DataPath struct {
@@ -2813,14 +2813,14 @@ type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigu
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortBy struct {
-	Column any
+	Column   any
 	DataPath any
-	Field any
+	Field    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions struct {
 	FieldId any
-	SortBy any
+	SortBy  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration struct {
@@ -2828,61 +2828,61 @@ type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigu
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_Bottom struct {
-	Color any
-	Style any
+	Color     any
+	Style     any
 	Thickness any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder struct {
-	Bottom any
+	Bottom          any
 	InnerHorizontal any
-	InnerVertical any
-	Left any
-	Right any
-	Top any
+	InnerVertical   any
+	Left            any
+	Right           any
+	Top             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border struct {
 	SideSpecificBorder any
-	UniformBorder any
+	UniformBorder      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle struct {
-	BackgroundColor any
-	Border any
-	FontConfiguration any
-	Height any
+	BackgroundColor         any
+	Border                  any
+	FontConfiguration       any
+	Height                  any
 	HorizontalTextAlignment any
-	TextWrap any
-	VerticalTextAlignment any
-	Visibility any
+	TextWrap                any
+	VerticalTextAlignment   any
+	Visibility              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowAlternateColorOptions struct {
-	RowAlternateColors any
-	Status any
+	RowAlternateColors        any
+	Status                    any
 	UsePrimaryBackgroundColor any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowsLabelOptions struct {
 	CustomLabel any
-	Visibility any
+	Visibility  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions struct {
-	CellStyle any
+	CellStyle                        any
 	CollapsedRowDimensionsVisibility any
-	ColumnHeaderStyle any
-	ColumnNamesVisibility any
-	DefaultCellWidth any
-	MetricPlacement any
-	RowAlternateColorOptions any
-	RowFieldNamesStyle any
-	RowHeaderStyle any
-	RowsLabelOptions any
-	RowsLayout any
-	SingleMetricVisibility any
-	ToggleButtonsVisibility any
+	ColumnHeaderStyle                any
+	ColumnNamesVisibility            any
+	DefaultCellWidth                 any
+	MetricPlacement                  any
+	RowAlternateColorOptions         any
+	RowFieldNamesStyle               any
+	RowHeaderStyle                   any
+	RowsLabelOptions                 any
+	RowsLayout                       any
+	SingleMetricVisibility           any
+	ToggleButtonsVisibility          any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions_FieldLevelOptions struct {
@@ -2894,14 +2894,14 @@ type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigu
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions struct {
-	CustomLabel any
-	FieldLevel any
-	FieldLevelOptions any
+	CustomLabel           any
+	FieldLevel            any
+	FieldLevelOptions     any
 	MetricHeaderCellStyle any
-	StyleTargets any
-	TotalCellStyle any
-	TotalsVisibility any
-	ValueCellStyle any
+	StyleTargets          any
+	TotalCellStyle        any
+	TotalsVisibility      any
+	ValueCellStyle        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptions_TotalAggregationFunction struct {
@@ -2909,38 +2909,38 @@ type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigu
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptions struct {
-	FieldId any
+	FieldId                  any
 	TotalAggregationFunction any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions struct {
-	CustomLabel any
-	MetricHeaderCellStyle any
-	Placement any
-	ScrollStatus any
+	CustomLabel             any
+	MetricHeaderCellStyle   any
+	Placement               any
+	ScrollStatus            any
 	TotalAggregationOptions any
-	TotalCellStyle any
-	TotalsVisibility any
-	ValueCellStyle any
+	TotalCellStyle          any
+	TotalsVisibility        any
+	ValueCellStyle          any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions struct {
 	ColumnSubtotalOptions any
-	ColumnTotalOptions any
-	RowSubtotalOptions any
-	RowTotalOptions any
+	ColumnTotalOptions    any
+	RowSubtotalOptions    any
+	RowTotalOptions       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration struct {
 	DashboardCustomizationVisualOptions any
-	FieldOptions any
-	FieldWells any
-	Interactions any
-	PaginatedReportOptions any
-	SortConfiguration any
-	TableOptions any
-	Tooltip any
-	TotalOptions any
+	FieldOptions                        any
+	FieldWells                          any
+	Interactions                        any
+	PaginatedReportOptions              any
+	SortConfiguration                   any
+	TableOptions                        any
+	Tooltip                             any
+	TotalOptions                        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_Scope struct {
@@ -2949,14 +2949,14 @@ type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ConditionalF
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_TextFormat struct {
 	BackgroundColor any
-	Icon any
-	TextColor any
+	Icon            any
+	TextColor       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell struct {
-	FieldId any
-	Scope any
-	Scopes any
+	FieldId    any
+	Scope      any
+	Scopes     any
 	TextFormat any
 }
 
@@ -2969,19 +2969,19 @@ type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual_ConditionalF
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PivotTableVisual struct {
-	Actions any
-	ChartConfiguration any
+	Actions               any
+	ChartConfiguration    any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_FieldWells struct {
-	AxisName any
-	Dimensions any
-	Measures any
+	AxisName     any
+	Dimensions   any
+	Measures     any
 	Unaggregated any
 }
 
@@ -2991,7 +2991,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual_ChartConfigurati
 
 type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration_PluginVisualTableQuerySort struct {
 	ItemsLimitConfiguration any
-	RowSort any
+	RowSort                 any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration struct {
@@ -2999,7 +2999,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual_ChartConfigurati
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOptions_VisualProperties struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -3008,19 +3008,19 @@ type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual_ChartConfigurati
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration struct {
-	FieldWells any
+	FieldWells        any
 	SortConfiguration any
-	VisualOptions any
+	VisualOptions     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_PluginVisual struct {
-	Actions any
-	ChartConfiguration any
-	PluginArn any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	PluginArn            any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_BaseSeriesSettings struct {
@@ -3029,8 +3029,8 @@ type DashboardDefinition_Definition_Sheets_Visuals_RadarChartVisual_ChartConfigu
 
 type DashboardDefinition_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWells_RadarChartAggregatedFieldWells struct {
 	Category any
-	Color any
-	Values any
+	Color    any
+	Values   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWells struct {
@@ -3039,37 +3039,37 @@ type DashboardDefinition_Definition_Sheets_Visuals_RadarChartVisual_ChartConfigu
 
 type DashboardDefinition_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration struct {
 	AlternateBandColorsVisibility any
-	AlternateBandEvenColor any
-	AlternateBandOddColor any
-	AxesRangeScale any
-	BaseSeriesSettings any
-	CategoryAxis any
-	CategoryLabelOptions any
-	ColorAxis any
-	ColorLabelOptions any
-	FieldWells any
-	Interactions any
-	Legend any
-	Shape any
-	SortConfiguration any
-	StartAngle any
-	VisualPalette any
+	AlternateBandEvenColor        any
+	AlternateBandOddColor         any
+	AxesRangeScale                any
+	BaseSeriesSettings            any
+	CategoryAxis                  any
+	CategoryLabelOptions          any
+	ColorAxis                     any
+	ColorLabelOptions             any
+	FieldWells                    any
+	Interactions                  any
+	Legend                        any
+	Shape                         any
+	SortConfiguration             any
+	StartAngle                    any
+	VisualPalette                 any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_RadarChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWells_SankeyDiagramAggregatedFieldWells struct {
 	Destination any
-	Source any
-	Weight any
+	Source      any
+	Weight      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWells struct {
@@ -3078,45 +3078,45 @@ type DashboardDefinition_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConf
 
 type DashboardDefinition_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_SortConfiguration struct {
 	DestinationItemsLimit any
-	SourceItemsLimit any
-	WeightSort any
+	SourceItemsLimit      any
+	WeightSort            any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration struct {
-	DataLabels any
-	FieldWells any
-	Interactions any
+	DataLabels        any
+	FieldWells        any
+	Interactions      any
 	SortConfiguration any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_SankeyDiagramVisual struct {
-	Actions any
-	ChartConfiguration any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotCategoricallyAggregatedFieldWells struct {
 	Category any
-	Label any
-	Size any
-	Xaxis any
-	Yaxis any
+	Label    any
+	Size     any
+	Xaxis    any
+	Yaxis    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotUnaggregatedFieldWells struct {
 	Category any
-	Label any
-	Size any
-	Xaxis any
-	Yaxis any
+	Label    any
+	Size     any
+	Xaxis    any
+	Yaxis    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells struct {
 	ScatterPlotCategoricallyAggregatedFieldWells any
-	ScatterPlotUnaggregatedFieldWells any
+	ScatterPlotUnaggregatedFieldWells            any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_SortConfiguration struct {
@@ -3124,27 +3124,27 @@ type DashboardDefinition_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfig
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration struct {
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Legend any
-	SortConfiguration any
-	Tooltip any
-	VisualPalette any
+	DataLabels          any
+	FieldWells          any
+	Interactions        any
+	Legend              any
+	SortConfiguration   any
+	Tooltip             any
+	VisualPalette       any
 	XaxisDisplayOptions any
-	XaxisLabelOptions any
+	XaxisLabelOptions   any
 	YaxisDisplayOptions any
-	YaxisLabelOptions any
+	YaxisLabelOptions   any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_ScatterPlotVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_PinnedFieldOptions struct {
@@ -3165,7 +3165,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguratio
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content_CustomTextContent struct {
 	FontConfiguration any
-	Value any
+	Value             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content struct {
@@ -3175,32 +3175,32 @@ type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguratio
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration struct {
 	Content any
-	Target any
+	Target  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling struct {
 	ImageConfiguration any
-	LinkConfiguration any
+	LinkConfiguration  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions struct {
 	CustomLabel any
-	FieldId any
-	Urlstyling any
-	Visibility any
-	Width any
+	FieldId     any
+	Urlstyling  any
+	Visibility  any
+	Width       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_TransposedTableOptions struct {
 	ColumnIndex any
-	ColumnType any
+	ColumnType  any
 	ColumnWidth any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions struct {
-	Order any
-	PinnedFieldOptions any
-	SelectedFieldOptions any
+	Order                  any
+	PinnedFieldOptions     any
+	SelectedFieldOptions   any
 	TransposedTableOptions any
 }
 
@@ -3209,80 +3209,80 @@ type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguratio
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWells struct {
-	TableAggregatedFieldWells any
+	TableAggregatedFieldWells   any
 	TableUnaggregatedFieldWells any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_SortConfiguration struct {
 	PaginationConfiguration any
-	RowSort any
+	RowSort                 any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizations_DataBars struct {
-	FieldId any
+	FieldId       any
 	NegativeColor any
 	PositiveColor any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizations_Sparklines struct {
-	AllPointsMarker any
-	FieldId any
-	LineColor any
+	AllPointsMarker   any
+	FieldId           any
+	LineColor         any
 	LineInterpolation any
-	MaxValueMarker any
-	MinValueMarker any
-	VisualType any
-	XaxisField any
-	YaxisBehavior any
+	MaxValueMarker    any
+	MinValueMarker    any
+	VisualType        any
+	XaxisField        any
+	YaxisBehavior     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizations struct {
-	DataBars any
+	DataBars   any
 	Sparklines any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableOptions struct {
-	CellStyle any
-	HeaderStyle any
-	Orientation any
+	CellStyle                any
+	HeaderStyle              any
+	Orientation              any
 	RowAlternateColorOptions any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TotalOptions struct {
-	CustomLabel any
-	Placement any
-	ScrollStatus any
+	CustomLabel             any
+	Placement               any
+	ScrollStatus            any
 	TotalAggregationOptions any
-	TotalCellStyle any
-	TotalsVisibility any
+	TotalCellStyle          any
+	TotalsVisibility        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ChartConfiguration struct {
 	DashboardCustomizationVisualOptions any
-	FieldOptions any
-	FieldWells any
-	Interactions any
-	PaginatedReportOptions any
-	SortConfiguration any
-	TableInlineVisualizations any
-	TableOptions any
-	Tooltip any
-	TotalOptions any
+	FieldOptions                        any
+	FieldWells                          any
+	Interactions                        any
+	PaginatedReportOptions              any
+	SortConfiguration                   any
+	TableInlineVisualizations           any
+	TableOptions                        any
+	Tooltip                             any
+	TotalOptions                        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell struct {
-	FieldId any
+	FieldId    any
 	TextFormat any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_Row struct {
 	BackgroundColor any
-	TextColor any
+	TextColor       any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions struct {
 	Cell any
-	Row any
+	Row  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting struct {
@@ -3290,19 +3290,19 @@ type DashboardDefinition_Definition_Sheets_Visuals_TableVisual_ConditionalFormat
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TableVisual struct {
-	Actions any
-	ChartConfiguration any
+	Actions               any
+	ChartConfiguration    any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWells_TreeMapAggregatedFieldWells struct {
 	Colors any
 	Groups any
-	Sizes any
+	Sizes  any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWells struct {
@@ -3311,36 +3311,36 @@ type DashboardDefinition_Definition_Sheets_Visuals_TreeMapVisual_ChartConfigurat
 
 type DashboardDefinition_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_SortConfiguration struct {
 	TreeMapGroupItemsLimitConfiguration any
-	TreeMapSort any
+	TreeMapSort                         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration struct {
 	ColorLabelOptions any
-	ColorScale any
-	DataLabels any
-	FieldWells any
+	ColorScale        any
+	DataLabels        any
+	FieldWells        any
 	GroupLabelOptions any
-	Interactions any
-	Legend any
-	SizeLabelOptions any
+	Interactions      any
+	Legend            any
+	SizeLabelOptions  any
 	SortConfiguration any
-	Tooltip any
+	Tooltip           any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_TreeMapVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfiguration_GroupColorConfiguration struct {
 	NegativeBarColor any
 	PositiveBarColor any
-	TotalBarColor any
+	TotalBarColor    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfiguration struct {
@@ -3350,7 +3350,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfigur
 type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWells_WaterfallChartAggregatedFieldWells struct {
 	Breakdowns any
 	Categories any
-	Values any
+	Values     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWells struct {
@@ -3359,7 +3359,7 @@ type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfigur
 
 type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_SortConfiguration struct {
 	BreakdownItemsLimit any
-	CategorySort any
+	CategorySort        any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_WaterfallChartOptions struct {
@@ -3368,32 +3368,32 @@ type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfigur
 
 type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration struct {
 	CategoryAxisDisplayOptions any
-	CategoryAxisLabelOptions any
-	ColorConfiguration any
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Legend any
+	CategoryAxisLabelOptions   any
+	ColorConfiguration         any
+	DataLabels                 any
+	FieldWells                 any
+	Interactions               any
+	Legend                     any
 	PrimaryYaxisDisplayOptions any
-	PrimaryYaxisLabelOptions any
-	SortConfiguration any
-	VisualPalette any
-	WaterfallChartOptions any
+	PrimaryYaxisLabelOptions   any
+	SortConfiguration          any
+	VisualPalette              any
+	WaterfallChartOptions      any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WaterfallVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWells_WordCloudAggregatedFieldWells struct {
 	GroupBy any
-	Size any
+	Size    any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWells struct {
@@ -3401,80 +3401,80 @@ type DashboardDefinition_Definition_Sheets_Visuals_WordCloudVisual_ChartConfigur
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_WordCloudOptions struct {
-	CloudLayout any
+	CloudLayout         any
 	MaximumStringLength any
-	WordCasing any
-	WordOrientation any
-	WordPadding any
-	WordScaling any
+	WordCasing          any
+	WordOrientation     any
+	WordPadding         any
+	WordScaling         any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration struct {
 	CategoryLabelOptions any
-	FieldWells any
-	Interactions any
-	SortConfiguration any
-	WordCloudOptions any
+	FieldWells           any
+	Interactions         any
+	SortConfiguration    any
+	WordCloudOptions     any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals_WordCloudVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type DashboardDefinition_Definition_Sheets_Visuals struct {
-	BarChartVisual any
-	BoxPlotVisual any
-	ComboChartVisual any
+	BarChartVisual      any
+	BoxPlotVisual       any
+	ComboChartVisual    any
 	CustomContentVisual any
-	EmptyVisual any
-	FilledMapVisual any
-	FunnelChartVisual any
-	GaugeChartVisual any
+	EmptyVisual         any
+	FilledMapVisual     any
+	FunnelChartVisual   any
+	GaugeChartVisual    any
 	GeospatialMapVisual any
-	HeatMapVisual any
-	HistogramVisual any
-	InsightVisual any
-	Kpivisual any
-	LayerMapVisual any
-	LineChartVisual any
-	PieChartVisual any
-	PivotTableVisual any
-	PluginVisual any
-	RadarChartVisual any
+	HeatMapVisual       any
+	HistogramVisual     any
+	InsightVisual       any
+	Kpivisual           any
+	LayerMapVisual      any
+	LineChartVisual     any
+	PieChartVisual      any
+	PivotTableVisual    any
+	PluginVisual        any
+	RadarChartVisual    any
 	SankeyDiagramVisual any
-	ScatterPlotVisual any
-	TableVisual any
-	TreeMapVisual any
-	WaterfallVisual any
-	WordCloudVisual any
+	ScatterPlotVisual   any
+	TableVisual         any
+	TreeMapVisual       any
+	WaterfallVisual     any
+	WordCloudVisual     any
 }
 
 type DashboardDefinition_Definition_Sheets struct {
-	ContentType any
+	ContentType          any
 	CustomActionDefaults any
-	Description any
-	FilterControls any
-	Images any
-	Layouts any
-	Name any
-	ParameterControls any
-	SheetControlLayouts any
-	SheetId any
-	TextBoxes any
-	Title any
-	Visuals any
+	Description          any
+	FilterControls       any
+	Images               any
+	Layouts              any
+	Name                 any
+	ParameterControls    any
+	SheetControlLayouts  any
+	SheetId              any
+	TextBoxes            any
+	Title                any
+	Visuals              any
 }
 
 type DashboardDefinition_Definition_StaticFiles_ImageStaticFile_Source_S3Options struct {
 	BucketName any
-	ObjectKey any
-	Region any
+	ObjectKey  any
+	Region     any
 }
 
 type DashboardDefinition_Definition_StaticFiles_ImageStaticFile_Source_UrlOptions struct {
@@ -3482,47 +3482,47 @@ type DashboardDefinition_Definition_StaticFiles_ImageStaticFile_Source_UrlOption
 }
 
 type DashboardDefinition_Definition_StaticFiles_ImageStaticFile_Source struct {
-	S3Options any
+	S3Options  any
 	UrlOptions any
 }
 
 type DashboardDefinition_Definition_StaticFiles_ImageStaticFile struct {
-	Source any
+	Source       any
 	StaticFileId any
 }
 
 type DashboardDefinition_Definition_StaticFiles struct {
-	ImageStaticFile any
+	ImageStaticFile   any
 	SpatialStaticFile any
 }
 
 type DashboardDefinition_Definition_TooltipSheets struct {
-	Images any
-	Layouts any
-	Name any
-	SheetId any
+	Images    any
+	Layouts   any
+	Name      any
+	SheetId   any
 	TextBoxes any
-	Visuals any
+	Visuals   any
 }
 
 type DashboardDefinition_Definition_TopicIdentifierDeclarations struct {
 	Identifier any
-	TopicArn any
+	TopicArn   any
 }
 
 type DashboardDefinition_Definition struct {
 	// <p>The configuration for default analysis settings.</p>
-	AnalysisDefaults any
-	CalculatedFields any
-	ColumnConfigurations any
+	AnalysisDefaults              any
+	CalculatedFields              any
+	ColumnConfigurations          any
 	DataSetIdentifierDeclarations any
-	FilterGroups any
+	FilterGroups                  any
 	// <p>An array of analysis level configurations.</p>
-	Options any
-	ParameterDeclarations any
-	Sheets any
-	StaticFiles any
-	TooltipSheets any
+	Options                     any
+	ParameterDeclarations       any
+	Sheets                      any
+	StaticFiles                 any
+	TooltipSheets               any
 	TopicIdentifierDeclarations any
 }
 
@@ -3531,41 +3531,41 @@ type DashboardDefinition_Errors_ViolatedEntities struct {
 }
 
 type DashboardDefinition_Errors struct {
-	Message any
-	Type any
+	Message          any
+	Type             any
 	ViolatedEntities any
 }
 
 type DashboardDefinitionConfig struct {
-	AliasName any
-	AwsAccountId any
-	DashboardId any
+	AliasName     any
+	AwsAccountId  any
+	DashboardId   any
 	VersionNumber any
 }
 
 type DashboardDefinitionAttrs struct {
-	AliasName any
+	AliasName    any
 	AwsAccountId any
-	DashboardId any
+	DashboardId  any
 	// <p>Dashboard publish options.</p>
 	DashboardPublishOptions any
 	// <p>The contents of a dashboard.</p>
-	Definition any
-	Errors any
-	Name any
-	RequestId any
+	Definition     any
+	Errors         any
+	Name           any
+	RequestId      any
 	ResourceStatus any
-	Status any
-	ThemeArn any
-	VersionNumber any
+	Status         any
+	ThemeArn       any
+	VersionNumber  any
 }
 
 var DashboardDefinition = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_dashboard_definition",
 	Fields: ubx.FieldMap{
-		"AliasName": ubx.FieldSpec{WireName: "alias_name"},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DashboardId": ubx.FieldSpec{WireName: "dashboard_id"},
+		"AliasName":     ubx.FieldSpec{WireName: "alias_name"},
+		"AwsAccountId":  ubx.FieldSpec{WireName: "aws_account_id"},
+		"DashboardId":   ubx.FieldSpec{WireName: "dashboard_id"},
 		"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
 	},
 }

@@ -4,12 +4,12 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_GameServerContainerDefinition_DependsOn struct {
-	Condition any
+	Condition     any
 	ContainerName any
 }
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_GameServerContainerDefinition_EnvironmentOverride struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -18,15 +18,15 @@ type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_GameServerContai
 }
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_GameServerContainerDefinition_MountPoints struct {
-	AccessLevel any
+	AccessLevel   any
 	ContainerPath any
-	InstancePath any
+	InstancePath  any
 }
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_GameServerContainerDefinition_PortConfiguration_ContainerPortRanges struct {
 	FromPort any
 	Protocol any
-	ToPort any
+	ToPort   any
 }
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_GameServerContainerDefinition_PortConfiguration struct {
@@ -34,74 +34,74 @@ type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_GameServerContai
 }
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_GameServerContainerDefinition struct {
-	ContainerName any
-	DependsOn any
+	ContainerName       any
+	DependsOn           any
 	EnvironmentOverride any
-	ImageUri any
-	LinuxCapabilities any
-	MountPoints any
-	PortConfiguration any
+	ImageUri            any
+	LinuxCapabilities   any
+	MountPoints         any
+	PortConfiguration   any
 	ResolvedImageDigest any
-	ServerSdkVersion any
+	ServerSdkVersion    any
 }
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_SupportContainerDefinitions_HealthCheck struct {
-	Command any
-	Interval any
-	Retries any
+	Command     any
+	Interval    any
+	Retries     any
 	StartPeriod any
-	Timeout any
+	Timeout     any
 }
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions_SupportContainerDefinitions struct {
-	ContainerName any
-	DependsOn any
-	EnvironmentOverride any
-	Essential any
-	HealthCheck any
-	ImageUri any
-	LinuxCapabilities any
+	ContainerName            any
+	DependsOn                any
+	EnvironmentOverride      any
+	Essential                any
+	HealthCheck              any
+	ImageUri                 any
+	LinuxCapabilities        any
 	MemoryHardLimitMebibytes any
-	MountPoints any
-	PortConfiguration any
-	ResolvedImageDigest any
-	Vcpu any
+	MountPoints              any
+	PortConfiguration        any
+	ResolvedImageDigest      any
+	Vcpu                     any
 }
 
 type ContainerGroupDefinitionVersions_ContainerGroupDefinitions struct {
-	ContainerGroupDefinitionArn any
-	ContainerGroupType any
-	CreationTime any
+	ContainerGroupDefinitionArn   any
+	ContainerGroupType            any
+	CreationTime                  any
 	GameServerContainerDefinition any
-	Name any
-	OperatingSystem any
-	Status any
-	StatusReason any
-	SupportContainerDefinitions any
-	TotalMemoryLimitMebibytes any
-	TotalVcpuLimit any
-	VersionDescription any
-	VersionNumber any
+	Name                          any
+	OperatingSystem               any
+	Status                        any
+	StatusReason                  any
+	SupportContainerDefinitions   any
+	TotalMemoryLimitMebibytes     any
+	TotalVcpuLimit                any
+	VersionDescription            any
+	VersionNumber                 any
 }
 
 type ContainerGroupDefinitionVersionsConfig struct {
-	Limit any
-	Name any
+	Limit     any
+	Name      any
 	NextToken any
 }
 
 type ContainerGroupDefinitionVersionsAttrs struct {
 	ContainerGroupDefinitions any
-	Limit any
-	Name any
-	NextToken any
+	Limit                     any
+	Name                      any
+	NextToken                 any
 }
 
 var ContainerGroupDefinitionVersions = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_container_group_definition_versions",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

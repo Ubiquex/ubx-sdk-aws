@@ -11,9 +11,9 @@ type ScheduledAudit_Tags struct {
 }
 
 var ScheduledAudit_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ScheduledAuditConfig struct {
 	// The day of the month on which the scheduled audit takes place. Can be 1 through 31 or LAST. This field is required if the frequency parameter is set to MONTHLY.
@@ -50,14 +50,14 @@ type ScheduledAuditAttrs struct {
 var ScheduledAudit = ubx.ResourceBinding{
 	WireType: "aws_io_t_scheduled_audit",
 	Fields: ubx.FieldMap{
-		"DayOfMonth": ubx.FieldSpec{WireName: "day_of_month"},
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
+		"DayOfMonth":         ubx.FieldSpec{WireName: "day_of_month"},
+		"DayOfWeek":          ubx.FieldSpec{WireName: "day_of_week"},
+		"Frequency":          ubx.FieldSpec{WireName: "frequency"},
 		"ScheduledAuditName": ubx.FieldSpec{WireName: "scheduled_audit_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ScheduledAudit_TagsFields,
+			Kind:     "list",
+			Fields:   ScheduledAudit_TagsFields,
 		},
 		"TargetCheckNames": ubx.FieldSpec{WireName: "target_check_names"},
 	},

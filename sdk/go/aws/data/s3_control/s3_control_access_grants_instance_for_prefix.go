@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlAccessGrantsInstanceForPrefixConfig struct {
 	AccountId any
-	S3Prefix any
+	S3Prefix  any
 }
 
 type S3ControlAccessGrantsInstanceForPrefixAttrs struct {
 	AccessGrantsInstanceArn any
-	AccessGrantsInstanceId any
-	AccountId any
-	S3Prefix any
+	AccessGrantsInstanceId  any
+	AccountId               any
+	S3Prefix                any
 }
 
 var S3ControlAccessGrantsInstanceForPrefix = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_access_grants_instance_for_prefix",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"S3Prefix": ubx.FieldSpec{WireName: "s3_prefix"},
+		"S3Prefix":  ubx.FieldSpec{WireName: "s3_prefix"},
 	},
 }

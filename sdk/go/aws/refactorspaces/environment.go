@@ -11,9 +11,9 @@ type Environment_Tags struct {
 }
 
 var Environment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnvironmentConfig struct {
 	// The description field is an optional string that holds a user-defined, human-readable description of the Refactor Spaces environment, used to provide additional context about the environment's purpose or contents. (AI-inferred)
@@ -46,13 +46,13 @@ type EnvironmentAttrs struct {
 var Environment = ubx.ResourceBinding{
 	WireType: "aws_refactor_spaces_environment",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"NetworkFabricType": ubx.FieldSpec{WireName: "network_fabric_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Environment_TagsFields,
+			Kind:     "list",
+			Fields:   Environment_TagsFields,
 		},
 	},
 }

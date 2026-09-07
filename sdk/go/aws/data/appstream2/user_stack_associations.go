@@ -4,26 +4,26 @@ package appstream2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserStackAssociations_UserStackAssociations struct {
-	AuthenticationType any
+	AuthenticationType    any
 	SendEmailNotification any
-	StackName any
-	UserName any
+	StackName             any
+	UserName              any
 }
 
 type UserStackAssociationsConfig struct {
 	AuthenticationType any
-	MaxResults any
-	NextToken any
-	StackName any
-	UserName any
+	MaxResults         any
+	NextToken          any
+	StackName          any
+	UserName           any
 }
 
 type UserStackAssociationsAttrs struct {
-	AuthenticationType any
-	MaxResults any
-	NextToken any
-	StackName any
-	UserName any
+	AuthenticationType    any
+	MaxResults            any
+	NextToken             any
+	StackName             any
+	UserName              any
 	UserStackAssociations any
 }
 
@@ -31,9 +31,9 @@ var UserStackAssociations = ubx.DataSourceBinding{
 	WireType: "aws_appstream2_user_stack_associations",
 	Fields: ubx.FieldMap{
 		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"StackName":          ubx.FieldSpec{WireName: "stack_name"},
+		"UserName":           ubx.FieldSpec{WireName: "user_name"},
 	},
 }

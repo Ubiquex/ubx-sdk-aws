@@ -9,90 +9,90 @@ type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions_
 
 type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions_ConfigurationOptions_Double struct {
 	DefaultValue any
-	Max any
-	Min any
+	Max          any
+	Min          any
 }
 
 type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions_ConfigurationOptions_Enum struct {
 	AllowedValues any
-	DefaultValue any
+	DefaultValue  any
 }
 
 type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions_ConfigurationOptions_EnumList struct {
 	AllowedValues any
-	DefaultValue any
-	MaxItems any
+	DefaultValue  any
+	MaxItems      any
 }
 
 type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions_ConfigurationOptions_IntegerList struct {
 	DefaultValue any
-	Max any
-	MaxItems any
-	Min any
+	Max          any
+	MaxItems     any
+	Min          any
 }
 
 type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions_ConfigurationOptions_String struct {
-	DefaultValue any
+	DefaultValue          any
 	ExpressionDescription any
-	Re2Expression any
+	Re2Expression         any
 }
 
 type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions_ConfigurationOptions_StringList struct {
-	DefaultValue any
+	DefaultValue          any
 	ExpressionDescription any
-	MaxItems any
-	Re2Expression any
+	MaxItems              any
+	Re2Expression         any
 }
 
 type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions_ConfigurationOptions struct {
-	Boolean any
-	Double any
-	Enum any
-	EnumList any
-	Integer any
+	Boolean     any
+	Double      any
+	Enum        any
+	EnumList    any
+	Integer     any
 	IntegerList any
-	String any
-	StringList any
+	String      any
+	StringList  any
 }
 
 type SecurityControlDefinitions_SecurityControlDefinitions_ParameterDefinitions struct {
 	ConfigurationOptions any
-	Description any
+	Description          any
 }
 
 type SecurityControlDefinitions_SecurityControlDefinitions struct {
 	CurrentRegionAvailability any
-	CustomizableProperties any
-	Description any
-	ParameterDefinitions any
-	Provider any
-	RemediationUrl any
-	SecurityControlId any
-	SeverityRating any
-	Title any
+	CustomizableProperties    any
+	Description               any
+	ParameterDefinitions      any
+	Provider                  any
+	RemediationUrl            any
+	SecurityControlId         any
+	SeverityRating            any
+	Title                     any
 }
 
 type SecurityControlDefinitionsConfig struct {
-	MaxResults any
-	NextToken any
-	Providers any
+	MaxResults   any
+	NextToken    any
+	Providers    any
 	StandardsArn any
 }
 
 type SecurityControlDefinitionsAttrs struct {
-	MaxResults any
-	NextToken any
-	Providers any
+	MaxResults                 any
+	NextToken                  any
+	Providers                  any
 	SecurityControlDefinitions any
-	StandardsArn any
+	StandardsArn               any
 }
 
 var SecurityControlDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_security_control_definitions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Providers": ubx.FieldSpec{WireName: "providers"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"Providers":    ubx.FieldSpec{WireName: "providers"},
 		"StandardsArn": ubx.FieldSpec{WireName: "standards_arn"},
 	},
 }

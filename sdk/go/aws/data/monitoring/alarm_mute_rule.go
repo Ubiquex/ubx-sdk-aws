@@ -8,9 +8,9 @@ type AlarmMuteRule_MuteTargets struct {
 }
 
 type AlarmMuteRule_Rule_Schedule struct {
-	Duration any
+	Duration   any
 	Expression any
-	Timezone any
+	Timezone   any
 }
 
 type AlarmMuteRule_Rule struct {
@@ -23,19 +23,19 @@ type AlarmMuteRuleConfig struct {
 }
 
 type AlarmMuteRuleAttrs struct {
-	AlarmMuteRuleArn any
-	AlarmMuteRuleName any
-	Description any
-	ExpireDate any
+	AlarmMuteRuleArn     any
+	AlarmMuteRuleName    any
+	Description          any
+	ExpireDate           any
 	LastUpdatedTimestamp any
 	// <p>Specifies which alarms an alarm mute rule applies to.</p> <p>You can target up to 100 specific alarms by name. When a mute rule is active, the targeted alarms continue to evaluate metrics and transition between states, but their configured actions are muted.</p>
 	MuteTargets any
-	MuteType any
-	Name any
+	MuteType    any
+	Name        any
 	// <p>Defines the schedule configuration for an alarm mute rule.</p> <p>The rule contains a schedule that specifies when and how long alarms should be muted. The schedule can be a recurring pattern using cron expressions or a one-time mute window using at expressions.</p>
-	Rule any
+	Rule      any
 	StartDate any
-	Status any
+	Status    any
 }
 
 var AlarmMuteRule = ubx.DataSourceBinding{

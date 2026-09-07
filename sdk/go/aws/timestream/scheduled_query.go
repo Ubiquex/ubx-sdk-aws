@@ -98,101 +98,101 @@ type ScheduledQuery_TargetConfiguration struct {
 }
 
 var ScheduledQuery_ErrorReportConfiguration_S3ConfigurationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"EncryptionOption": ubx.FieldSpec{WireName: "encryption_option"},
-		"ObjectKeyPrefix": ubx.FieldSpec{WireName: "object_key_prefix"},
-	}
+	"BucketName":       ubx.FieldSpec{WireName: "bucket_name"},
+	"EncryptionOption": ubx.FieldSpec{WireName: "encryption_option"},
+	"ObjectKeyPrefix":  ubx.FieldSpec{WireName: "object_key_prefix"},
+}
 
 var ScheduledQuery_ErrorReportConfigurationFields = ubx.FieldMap{
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_ErrorReportConfiguration_S3ConfigurationFields,
-		},
-	}
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   ScheduledQuery_ErrorReportConfiguration_S3ConfigurationFields,
+	},
+}
 
 var ScheduledQuery_NotificationConfiguration_SnsConfigurationFields = ubx.FieldMap{
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ScheduledQuery_NotificationConfigurationFields = ubx.FieldMap{
-		"SnsConfiguration": ubx.FieldSpec{
-			WireName: "sns_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_NotificationConfiguration_SnsConfigurationFields,
-		},
-	}
+	"SnsConfiguration": ubx.FieldSpec{
+		WireName: "sns_configuration",
+		Kind:     "object",
+		Fields:   ScheduledQuery_NotificationConfiguration_SnsConfigurationFields,
+	},
+}
 
 var ScheduledQuery_ScheduleConfigurationFields = ubx.FieldMap{
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-	}
+	"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+}
 
 var ScheduledQuery_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ScheduledQuery_TargetConfiguration_TimestreamConfiguration_DimensionMappingsFields = ubx.FieldMap{
-		"DimensionValueType": ubx.FieldSpec{WireName: "dimension_value_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DimensionValueType": ubx.FieldSpec{WireName: "dimension_value_type"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+}
 
 var ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings_MultiMeasureAttributeMappingsFields = ubx.FieldMap{
-		"MeasureValueType": ubx.FieldSpec{WireName: "measure_value_type"},
-		"SourceColumn": ubx.FieldSpec{WireName: "source_column"},
-		"TargetMultiMeasureAttributeName": ubx.FieldSpec{WireName: "target_multi_measure_attribute_name"},
-	}
+	"MeasureValueType":                ubx.FieldSpec{WireName: "measure_value_type"},
+	"SourceColumn":                    ubx.FieldSpec{WireName: "source_column"},
+	"TargetMultiMeasureAttributeName": ubx.FieldSpec{WireName: "target_multi_measure_attribute_name"},
+}
 
 var ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappingsFields = ubx.FieldMap{
-		"MeasureName": ubx.FieldSpec{WireName: "measure_name"},
-		"MeasureValueType": ubx.FieldSpec{WireName: "measure_value_type"},
-		"MultiMeasureAttributeMappings": ubx.FieldSpec{
-			WireName: "multi_measure_attribute_mappings",
-			Kind: "list",
-			Fields: ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings_MultiMeasureAttributeMappingsFields,
-		},
-		"SourceColumn": ubx.FieldSpec{WireName: "source_column"},
-		"TargetMeasureName": ubx.FieldSpec{WireName: "target_measure_name"},
-	}
+	"MeasureName":      ubx.FieldSpec{WireName: "measure_name"},
+	"MeasureValueType": ubx.FieldSpec{WireName: "measure_value_type"},
+	"MultiMeasureAttributeMappings": ubx.FieldSpec{
+		WireName: "multi_measure_attribute_mappings",
+		Kind:     "list",
+		Fields:   ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings_MultiMeasureAttributeMappingsFields,
+	},
+	"SourceColumn":      ubx.FieldSpec{WireName: "source_column"},
+	"TargetMeasureName": ubx.FieldSpec{WireName: "target_measure_name"},
+}
 
 var ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MultiMeasureMappingsFields = ubx.FieldMap{
-		"MultiMeasureAttributeMappings": ubx.FieldSpec{
-			WireName: "multi_measure_attribute_mappings",
-			Kind: "list",
-			Fields: ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings_MultiMeasureAttributeMappingsFields,
-		},
-		"TargetMultiMeasureName": ubx.FieldSpec{WireName: "target_multi_measure_name"},
-	}
+	"MultiMeasureAttributeMappings": ubx.FieldSpec{
+		WireName: "multi_measure_attribute_mappings",
+		Kind:     "list",
+		Fields:   ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings_MultiMeasureAttributeMappingsFields,
+	},
+	"TargetMultiMeasureName": ubx.FieldSpec{WireName: "target_multi_measure_name"},
+}
 
 var ScheduledQuery_TargetConfiguration_TimestreamConfigurationFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"DimensionMappings": ubx.FieldSpec{
-			WireName: "dimension_mappings",
-			Kind: "list",
-			Fields: ScheduledQuery_TargetConfiguration_TimestreamConfiguration_DimensionMappingsFields,
-		},
-		"MeasureNameColumn": ubx.FieldSpec{WireName: "measure_name_column"},
-		"MixedMeasureMappings": ubx.FieldSpec{
-			WireName: "mixed_measure_mappings",
-			Kind: "list",
-			Fields: ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappingsFields,
-		},
-		"MultiMeasureMappings": ubx.FieldSpec{
-			WireName: "multi_measure_mappings",
-			Kind: "object",
-			Fields: ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MultiMeasureMappingsFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"TimeColumn": ubx.FieldSpec{WireName: "time_column"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"DimensionMappings": ubx.FieldSpec{
+		WireName: "dimension_mappings",
+		Kind:     "list",
+		Fields:   ScheduledQuery_TargetConfiguration_TimestreamConfiguration_DimensionMappingsFields,
+	},
+	"MeasureNameColumn": ubx.FieldSpec{WireName: "measure_name_column"},
+	"MixedMeasureMappings": ubx.FieldSpec{
+		WireName: "mixed_measure_mappings",
+		Kind:     "list",
+		Fields:   ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappingsFields,
+	},
+	"MultiMeasureMappings": ubx.FieldSpec{
+		WireName: "multi_measure_mappings",
+		Kind:     "object",
+		Fields:   ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MultiMeasureMappingsFields,
+	},
+	"TableName":  ubx.FieldSpec{WireName: "table_name"},
+	"TimeColumn": ubx.FieldSpec{WireName: "time_column"},
+}
 
 var ScheduledQuery_TargetConfigurationFields = ubx.FieldMap{
-		"TimestreamConfiguration": ubx.FieldSpec{
-			WireName: "timestream_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_TargetConfiguration_TimestreamConfigurationFields,
-		},
-	}
+	"TimestreamConfiguration": ubx.FieldSpec{
+		WireName: "timestream_configuration",
+		Kind:     "object",
+		Fields:   ScheduledQuery_TargetConfiguration_TimestreamConfigurationFields,
+	},
+}
 
 type ScheduledQueryConfig struct {
 	// Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request. If CreateScheduledQuery is called without a ClientToken, the Query SDK generates a ClientToken on your behalf. After 8 hours, any request with the same ClientToken is treated as a new request.
@@ -264,32 +264,32 @@ var ScheduledQuery = ubx.ResourceBinding{
 		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
 		"ErrorReportConfiguration": ubx.FieldSpec{
 			WireName: "error_report_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_ErrorReportConfigurationFields,
+			Kind:     "object",
+			Fields:   ScheduledQuery_ErrorReportConfigurationFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"NotificationConfiguration": ubx.FieldSpec{
 			WireName: "notification_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_NotificationConfigurationFields,
+			Kind:     "object",
+			Fields:   ScheduledQuery_NotificationConfigurationFields,
 		},
 		"QueryString": ubx.FieldSpec{WireName: "query_string"},
 		"ScheduleConfiguration": ubx.FieldSpec{
 			WireName: "schedule_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_ScheduleConfigurationFields,
+			Kind:     "object",
+			Fields:   ScheduledQuery_ScheduleConfigurationFields,
 		},
 		"ScheduledQueryExecutionRoleArn": ubx.FieldSpec{WireName: "scheduled_query_execution_role_arn"},
-		"ScheduledQueryName": ubx.FieldSpec{WireName: "scheduled_query_name"},
+		"ScheduledQueryName":             ubx.FieldSpec{WireName: "scheduled_query_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ScheduledQuery_TagsFields,
+			Kind:     "list",
+			Fields:   ScheduledQuery_TagsFields,
 		},
 		"TargetConfiguration": ubx.FieldSpec{
 			WireName: "target_configuration",
-			Kind: "object",
-			Fields: ScheduledQuery_TargetConfigurationFields,
+			Kind:     "object",
+			Fields:   ScheduledQuery_TargetConfigurationFields,
 		},
 	},
 }

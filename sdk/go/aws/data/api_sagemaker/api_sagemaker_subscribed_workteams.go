@@ -4,31 +4,31 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerSubscribedWorkteams_SubscribedWorkteams struct {
-	ListingId any
+	ListingId              any
 	MarketplaceDescription any
-	MarketplaceTitle any
-	SellerName any
-	WorkteamArn any
+	MarketplaceTitle       any
+	SellerName             any
+	WorkteamArn            any
 }
 
 type ApiSagemakerSubscribedWorkteamsConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 type ApiSagemakerSubscribedWorkteamsAttrs struct {
-	MaxResults any
-	NameContains any
-	NextToken any
+	MaxResults          any
+	NameContains        any
+	NextToken           any
 	SubscribedWorkteams any
 }
 
 var ApiSagemakerSubscribedWorkteams = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_subscribed_workteams",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

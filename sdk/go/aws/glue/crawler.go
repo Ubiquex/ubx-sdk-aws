@@ -124,114 +124,114 @@ type Crawler_Targets struct {
 }
 
 var Crawler_LakeFormationConfigurationFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UseLakeFormationCredentials": ubx.FieldSpec{WireName: "use_lake_formation_credentials"},
-	}
+	"AccountId":                   ubx.FieldSpec{WireName: "account_id"},
+	"UseLakeFormationCredentials": ubx.FieldSpec{WireName: "use_lake_formation_credentials"},
+}
 
 var Crawler_RecrawlPolicyFields = ubx.FieldMap{
-		"RecrawlBehavior": ubx.FieldSpec{WireName: "recrawl_behavior"},
-	}
+	"RecrawlBehavior": ubx.FieldSpec{WireName: "recrawl_behavior"},
+}
 
 var Crawler_ScheduleFields = ubx.FieldMap{
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-	}
+	"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+}
 
 var Crawler_SchemaChangePolicyFields = ubx.FieldMap{
-		"DeleteBehavior": ubx.FieldSpec{WireName: "delete_behavior"},
-		"UpdateBehavior": ubx.FieldSpec{WireName: "update_behavior"},
-	}
+	"DeleteBehavior": ubx.FieldSpec{WireName: "delete_behavior"},
+	"UpdateBehavior": ubx.FieldSpec{WireName: "update_behavior"},
+}
 
 var Crawler_Targets_CatalogTargetsFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"DlqEventQueueArn": ubx.FieldSpec{WireName: "dlq_event_queue_arn"},
-		"EventQueueArn": ubx.FieldSpec{WireName: "event_queue_arn"},
-		"Tables": ubx.FieldSpec{WireName: "tables"},
-	}
+	"ConnectionName":   ubx.FieldSpec{WireName: "connection_name"},
+	"DatabaseName":     ubx.FieldSpec{WireName: "database_name"},
+	"DlqEventQueueArn": ubx.FieldSpec{WireName: "dlq_event_queue_arn"},
+	"EventQueueArn":    ubx.FieldSpec{WireName: "event_queue_arn"},
+	"Tables":           ubx.FieldSpec{WireName: "tables"},
+}
 
 var Crawler_Targets_DeltaTargetsFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"CreateNativeDeltaTable": ubx.FieldSpec{WireName: "create_native_delta_table"},
-		"DeltaTables": ubx.FieldSpec{WireName: "delta_tables"},
-		"WriteManifest": ubx.FieldSpec{WireName: "write_manifest"},
-	}
+	"ConnectionName":         ubx.FieldSpec{WireName: "connection_name"},
+	"CreateNativeDeltaTable": ubx.FieldSpec{WireName: "create_native_delta_table"},
+	"DeltaTables":            ubx.FieldSpec{WireName: "delta_tables"},
+	"WriteManifest":          ubx.FieldSpec{WireName: "write_manifest"},
+}
 
 var Crawler_Targets_DynamoDbtargetsFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ScanAll": ubx.FieldSpec{WireName: "scan_all"},
-		"ScanRate": ubx.FieldSpec{WireName: "scan_rate"},
-	}
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"ScanAll":  ubx.FieldSpec{WireName: "scan_all"},
+	"ScanRate": ubx.FieldSpec{WireName: "scan_rate"},
+}
 
 var Crawler_Targets_HudiTargetsFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"Exclusions": ubx.FieldSpec{WireName: "exclusions"},
-		"MaximumTraversalDepth": ubx.FieldSpec{WireName: "maximum_traversal_depth"},
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-	}
+	"ConnectionName":        ubx.FieldSpec{WireName: "connection_name"},
+	"Exclusions":            ubx.FieldSpec{WireName: "exclusions"},
+	"MaximumTraversalDepth": ubx.FieldSpec{WireName: "maximum_traversal_depth"},
+	"Paths":                 ubx.FieldSpec{WireName: "paths"},
+}
 
 var Crawler_Targets_JdbcTargetsFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"EnableAdditionalMetadata": ubx.FieldSpec{WireName: "enable_additional_metadata"},
-		"Exclusions": ubx.FieldSpec{WireName: "exclusions"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"ConnectionName":           ubx.FieldSpec{WireName: "connection_name"},
+	"EnableAdditionalMetadata": ubx.FieldSpec{WireName: "enable_additional_metadata"},
+	"Exclusions":               ubx.FieldSpec{WireName: "exclusions"},
+	"Path":                     ubx.FieldSpec{WireName: "path"},
+}
 
 var Crawler_Targets_MongoDbtargetsFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
+	"Path":           ubx.FieldSpec{WireName: "path"},
+}
 
 var Crawler_Targets_S3TargetsFields = ubx.FieldMap{
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"DlqEventQueueArn": ubx.FieldSpec{WireName: "dlq_event_queue_arn"},
-		"EventQueueArn": ubx.FieldSpec{WireName: "event_queue_arn"},
-		"Exclusions": ubx.FieldSpec{WireName: "exclusions"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"SampleSize": ubx.FieldSpec{WireName: "sample_size"},
-	}
+	"ConnectionName":   ubx.FieldSpec{WireName: "connection_name"},
+	"DlqEventQueueArn": ubx.FieldSpec{WireName: "dlq_event_queue_arn"},
+	"EventQueueArn":    ubx.FieldSpec{WireName: "event_queue_arn"},
+	"Exclusions":       ubx.FieldSpec{WireName: "exclusions"},
+	"Path":             ubx.FieldSpec{WireName: "path"},
+	"SampleSize":       ubx.FieldSpec{WireName: "sample_size"},
+}
 
 var Crawler_TargetsFields = ubx.FieldMap{
-		"CatalogTargets": ubx.FieldSpec{
-			WireName: "catalog_targets",
-			Kind: "list",
-			Fields: Crawler_Targets_CatalogTargetsFields,
-		},
-		"DeltaTargets": ubx.FieldSpec{
-			WireName: "delta_targets",
-			Kind: "list",
-			Fields: Crawler_Targets_DeltaTargetsFields,
-		},
-		"DynamoDbtargets": ubx.FieldSpec{
-			WireName: "dynamo_dbtargets",
-			Kind: "list",
-			Fields: Crawler_Targets_DynamoDbtargetsFields,
-		},
-		"HudiTargets": ubx.FieldSpec{
-			WireName: "hudi_targets",
-			Kind: "list",
-			Fields: Crawler_Targets_HudiTargetsFields,
-		},
-		"IcebergTargets": ubx.FieldSpec{
-			WireName: "iceberg_targets",
-			Kind: "list",
-			Fields: Crawler_Targets_HudiTargetsFields,
-		},
-		"JdbcTargets": ubx.FieldSpec{
-			WireName: "jdbc_targets",
-			Kind: "list",
-			Fields: Crawler_Targets_JdbcTargetsFields,
-		},
-		"MongoDbtargets": ubx.FieldSpec{
-			WireName: "mongo_dbtargets",
-			Kind: "list",
-			Fields: Crawler_Targets_MongoDbtargetsFields,
-		},
-		"S3Targets": ubx.FieldSpec{
-			WireName: "s3_targets",
-			Kind: "list",
-			Fields: Crawler_Targets_S3TargetsFields,
-		},
-	}
+	"CatalogTargets": ubx.FieldSpec{
+		WireName: "catalog_targets",
+		Kind:     "list",
+		Fields:   Crawler_Targets_CatalogTargetsFields,
+	},
+	"DeltaTargets": ubx.FieldSpec{
+		WireName: "delta_targets",
+		Kind:     "list",
+		Fields:   Crawler_Targets_DeltaTargetsFields,
+	},
+	"DynamoDbtargets": ubx.FieldSpec{
+		WireName: "dynamo_dbtargets",
+		Kind:     "list",
+		Fields:   Crawler_Targets_DynamoDbtargetsFields,
+	},
+	"HudiTargets": ubx.FieldSpec{
+		WireName: "hudi_targets",
+		Kind:     "list",
+		Fields:   Crawler_Targets_HudiTargetsFields,
+	},
+	"IcebergTargets": ubx.FieldSpec{
+		WireName: "iceberg_targets",
+		Kind:     "list",
+		Fields:   Crawler_Targets_HudiTargetsFields,
+	},
+	"JdbcTargets": ubx.FieldSpec{
+		WireName: "jdbc_targets",
+		Kind:     "list",
+		Fields:   Crawler_Targets_JdbcTargetsFields,
+	},
+	"MongoDbtargets": ubx.FieldSpec{
+		WireName: "mongo_dbtargets",
+		Kind:     "list",
+		Fields:   Crawler_Targets_MongoDbtargetsFields,
+	},
+	"S3Targets": ubx.FieldSpec{
+		WireName: "s3_targets",
+		Kind:     "list",
+		Fields:   Crawler_Targets_S3TargetsFields,
+	},
+}
 
 type CrawlerConfig struct {
 	// A list of UTF-8 strings that specify the names of custom classifiers that are associated with the crawler.
@@ -298,39 +298,39 @@ type CrawlerAttrs struct {
 var Crawler = ubx.ResourceBinding{
 	WireType: "aws_glue_crawler",
 	Fields: ubx.FieldMap{
-		"Classifiers": ubx.FieldSpec{WireName: "classifiers"},
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
+		"Classifiers":                  ubx.FieldSpec{WireName: "classifiers"},
+		"Configuration":                ubx.FieldSpec{WireName: "configuration"},
 		"CrawlerSecurityConfiguration": ubx.FieldSpec{WireName: "crawler_security_configuration"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"DatabaseName":                 ubx.FieldSpec{WireName: "database_name"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
 		"LakeFormationConfiguration": ubx.FieldSpec{
 			WireName: "lake_formation_configuration",
-			Kind: "object",
-			Fields: Crawler_LakeFormationConfigurationFields,
+			Kind:     "object",
+			Fields:   Crawler_LakeFormationConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RecrawlPolicy": ubx.FieldSpec{
 			WireName: "recrawl_policy",
-			Kind: "object",
-			Fields: Crawler_RecrawlPolicyFields,
+			Kind:     "object",
+			Fields:   Crawler_RecrawlPolicyFields,
 		},
 		"Role": ubx.FieldSpec{WireName: "role"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: Crawler_ScheduleFields,
+			Kind:     "object",
+			Fields:   Crawler_ScheduleFields,
 		},
 		"SchemaChangePolicy": ubx.FieldSpec{
 			WireName: "schema_change_policy",
-			Kind: "object",
-			Fields: Crawler_SchemaChangePolicyFields,
+			Kind:     "object",
+			Fields:   Crawler_SchemaChangePolicyFields,
 		},
 		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "object",
-			Fields: Crawler_TargetsFields,
+			Kind:     "object",
+			Fields:   Crawler_TargetsFields,
 		},
 	},
 }

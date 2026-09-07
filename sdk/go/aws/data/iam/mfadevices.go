@@ -4,30 +4,30 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Mfadevices_Mfadevices struct {
-	EnableDate any
+	EnableDate   any
 	SerialNumber any
-	UserName any
+	UserName     any
 }
 
 type MfadevicesConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	UserName any
 }
 
 type MfadevicesAttrs struct {
 	IsTruncated any
-	Marker any
-	MaxItems any
+	Marker      any
+	MaxItems    any
 	// <p>Contains a list of MFA devices.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADevices.html">ListMFADevices</a> and <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListVirtualMFADevices.html">ListVirtualMFADevices</a> operations. </p>
 	Mfadevices any
-	UserName any
+	UserName   any
 }
 
 var Mfadevices = ubx.DataSourceBinding{
 	WireType: "aws_iam_mfadevices",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},

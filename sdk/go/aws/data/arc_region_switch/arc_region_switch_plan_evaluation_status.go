@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArcRegionSwitchPlanEvaluationStatus_Warnings_Workflow struct {
 	Action any
-	Name any
+	Name   any
 }
 
 type ArcRegionSwitchPlanEvaluationStatus_Warnings struct {
-	ResourceArn any
-	StepName any
-	Version any
-	WarningMessage any
-	WarningStatus any
+	ResourceArn        any
+	StepName           any
+	Version            any
+	WarningMessage     any
+	WarningStatus      any
 	WarningUpdatedTime any
-	Workflow any
+	Workflow           any
 }
 
 type ArcRegionSwitchPlanEvaluationStatusConfig struct {
 	MaxResults any
-	NextToken any
-	PlanArn any
+	NextToken  any
+	PlanArn    any
 }
 
 type ArcRegionSwitchPlanEvaluationStatusAttrs struct {
-	EvaluationState any
+	EvaluationState      any
 	LastEvaluatedVersion any
-	LastEvaluationTime any
-	MaxResults any
-	NextToken any
-	PlanArn any
-	Region any
-	Warnings any
+	LastEvaluationTime   any
+	MaxResults           any
+	NextToken            any
+	PlanArn              any
+	Region               any
+	Warnings             any
 }
 
 var ArcRegionSwitchPlanEvaluationStatus = ubx.DataSourceBinding{
 	WireType: "aws_arc_region_switch_plan_evaluation_status",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PlanArn": ubx.FieldSpec{WireName: "plan_arn"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PlanArn":    ubx.FieldSpec{WireName: "plan_arn"},
 	},
 }

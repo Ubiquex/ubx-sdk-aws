@@ -9,7 +9,7 @@ type DataQappsTagsForResourceConfig struct {
 
 type DataQappsTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var DataQappsTagsForResource = ubx.DataSourceBinding{

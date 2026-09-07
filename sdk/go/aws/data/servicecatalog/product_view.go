@@ -4,37 +4,37 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProductView_ProductViewSummary struct {
-	Distributor any
-	HasDefaultPath any
-	Id any
-	Name any
-	Owner any
-	ProductId any
-	ShortDescription any
+	Distributor        any
+	HasDefaultPath     any
+	Id                 any
+	Name               any
+	Owner              any
+	ProductId          any
+	ShortDescription   any
 	SupportDescription any
-	SupportEmail any
-	SupportUrl any
-	Type any
+	SupportEmail       any
+	SupportUrl         any
+	Type               any
 }
 
 type ProductView_ProvisioningArtifacts struct {
 	CreatedTime any
 	Description any
-	Guidance any
-	Id any
-	Name any
+	Guidance    any
+	Id          any
+	Name        any
 }
 
 type ProductViewConfig struct {
 	AcceptLanguage any
-	Id any
+	Id             any
 }
 
 type ProductViewAttrs struct {
 	AcceptLanguage any
-	Id any
+	Id             any
 	// <p>Summary information about a product view.</p>
-	ProductViewSummary any
+	ProductViewSummary    any
 	ProvisioningArtifacts any
 }
 
@@ -42,6 +42,6 @@ var ProductView = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_product_view",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
 	},
 }

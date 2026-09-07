@@ -4,25 +4,25 @@ package cloudhsm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigConfig struct {
-	ClientArn any
+	ClientArn     any
 	ClientVersion any
-	HapgList any
+	HapgList      any
 }
 
 type ConfigAttrs struct {
-	ClientArn any
+	ClientArn     any
 	ClientVersion any
-	ConfigCred any
-	ConfigFile any
-	ConfigType any
-	HapgList any
+	ConfigCred    any
+	ConfigFile    any
+	ConfigType    any
+	HapgList      any
 }
 
 var Config = ubx.DataSourceBinding{
 	WireType: "aws_cloudhsm_config",
 	Fields: ubx.FieldMap{
-		"ClientArn": ubx.FieldSpec{WireName: "client_arn"},
+		"ClientArn":     ubx.FieldSpec{WireName: "client_arn"},
 		"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
-		"HapgList": ubx.FieldSpec{WireName: "hapg_list"},
+		"HapgList":      ubx.FieldSpec{WireName: "hapg_list"},
 	},
 }

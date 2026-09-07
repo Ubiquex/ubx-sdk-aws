@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetFiles_Items struct {
 	CreatedAt any
-	Metadata any
-	Path any
+	Metadata  any
+	Path      any
 	UpdatedAt any
-	Version any
+	Version   any
 }
 
 type AssetFilesConfig struct {
 	AgentSpaceId any
 	// <p>Generic resource identifier (allows alphanumeric characters, hyphens, and underscores; 1-128 characters)</p>
-	AssetId any
+	AssetId      any
 	AssetVersion any
-	MaxResults any
+	MaxResults   any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
 }
@@ -24,10 +24,10 @@ type AssetFilesConfig struct {
 type AssetFilesAttrs struct {
 	AgentSpaceId any
 	// <p>Generic resource identifier (allows alphanumeric characters, hyphens, and underscores; 1-128 characters)</p>
-	AssetId any
+	AssetId      any
 	AssetVersion any
-	Items any
-	MaxResults any
+	Items        any
+	MaxResults   any
 	// <p>Pagination token for list operations (1-2048 characters)</p>
 	NextToken any
 }
@@ -36,9 +36,9 @@ var AssetFiles = ubx.DataSourceBinding{
 	WireType: "aws_aidevops_asset_files",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
+		"AssetId":      ubx.FieldSpec{WireName: "asset_id"},
 		"AssetVersion": ubx.FieldSpec{WireName: "asset_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,9 +4,9 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2LoggingOptions_EventConfigurations struct {
-	EventType any
+	EventType      any
 	LogDestination any
-	LogLevel any
+	LogLevel       any
 }
 
 type V2LoggingOptionsConfig struct {
@@ -14,11 +14,11 @@ type V2LoggingOptionsConfig struct {
 }
 
 type V2LoggingOptionsAttrs struct {
-	DefaultLogLevel any
-	DisableAllLogs any
+	DefaultLogLevel     any
+	DisableAllLogs      any
 	EventConfigurations any
-	RoleArn any
-	Verbose any
+	RoleArn             any
+	Verbose             any
 }
 
 var V2LoggingOptions = ubx.DataSourceBinding{

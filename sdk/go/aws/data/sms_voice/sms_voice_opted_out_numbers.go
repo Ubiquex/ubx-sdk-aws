@@ -4,29 +4,29 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceOptedOutNumbers_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var SmsVoiceOptedOutNumbers_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SmsVoiceOptedOutNumbersConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	OptOutListName any
+	Filters         any
+	MaxResults      any
+	NextToken       any
+	OptOutListName  any
 	OptedOutNumbers any
 }
 
 type SmsVoiceOptedOutNumbersAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	OptOutListArn any
-	OptOutListName any
+	Filters         any
+	MaxResults      any
+	NextToken       any
+	OptOutListArn   any
+	OptOutListName  any
 	OptedOutNumbers any
 }
 
@@ -35,12 +35,12 @@ var SmsVoiceOptedOutNumbers = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoiceOptedOutNumbers_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoiceOptedOutNumbers_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OptOutListName": ubx.FieldSpec{WireName: "opt_out_list_name"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"OptOutListName":  ubx.FieldSpec{WireName: "opt_out_list_name"},
 		"OptedOutNumbers": ubx.FieldSpec{WireName: "opted_out_numbers"},
 	},
 }

@@ -4,29 +4,29 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SegmentMembership_Failures struct {
-	Message any
+	Message   any
 	ProfileId any
-	Status any
+	Status    any
 }
 
 type SegmentMembership_Profiles_Profile_Address struct {
-	Address1 any
-	Address2 any
-	Address3 any
-	Address4 any
-	City any
-	Country any
-	County any
+	Address1   any
+	Address2   any
+	Address3   any
+	Address4   any
+	City       any
+	Country    any
+	County     any
 	PostalCode any
-	Province any
-	State any
+	Province   any
+	State      any
 }
 
 type SegmentMembership_Profiles_Profile_EngagementPreferences_Email struct {
 	ContactType any
-	KeyName any
-	KeyValue any
-	ProfileId any
+	KeyName     any
+	KeyValue    any
+	ProfileId   any
 }
 
 type SegmentMembership_Profiles_Profile_EngagementPreferences struct {
@@ -36,65 +36,65 @@ type SegmentMembership_Profiles_Profile_EngagementPreferences struct {
 
 type SegmentMembership_Profiles_Profile_FoundByItems struct {
 	KeyName any
-	Values any
+	Values  any
 }
 
 type SegmentMembership_Profiles_Profile struct {
-	AccountNumber any
+	AccountNumber         any
 	AdditionalInformation any
-	Address any
-	Attributes any
-	BillingAddress any
-	BirthDate any
-	BusinessEmailAddress any
-	BusinessName any
-	BusinessPhoneNumber any
-	EmailAddress any
+	Address               any
+	Attributes            any
+	BillingAddress        any
+	BirthDate             any
+	BusinessEmailAddress  any
+	BusinessName          any
+	BusinessPhoneNumber   any
+	EmailAddress          any
 	EngagementPreferences any
-	FirstName any
-	FoundByItems any
-	Gender any
-	GenderString any
-	HomePhoneNumber any
-	LastName any
-	MailingAddress any
-	MiddleName any
-	MobilePhoneNumber any
-	PartyType any
-	PartyTypeString any
-	PersonalEmailAddress any
-	PhoneNumber any
-	ProfileId any
-	ProfileType any
-	ShippingAddress any
+	FirstName             any
+	FoundByItems          any
+	Gender                any
+	GenderString          any
+	HomePhoneNumber       any
+	LastName              any
+	MailingAddress        any
+	MiddleName            any
+	MobilePhoneNumber     any
+	PartyType             any
+	PartyTypeString       any
+	PersonalEmailAddress  any
+	PhoneNumber           any
+	ProfileId             any
+	ProfileType           any
+	ShippingAddress       any
 }
 
 type SegmentMembership_Profiles struct {
-	Profile any
-	ProfileId any
+	Profile     any
+	ProfileId   any
 	QueryResult any
 }
 
 type SegmentMembershipConfig struct {
-	DomainName any
-	ProfileIds any
+	DomainName            any
+	ProfileIds            any
 	SegmentDefinitionName any
 }
 
 type SegmentMembershipAttrs struct {
-	DomainName any
-	Failures any
-	LastComputedAt any
-	ProfileIds any
-	Profiles any
+	DomainName            any
+	Failures              any
+	LastComputedAt        any
+	ProfileIds            any
+	Profiles              any
 	SegmentDefinitionName any
 }
 
 var SegmentMembership = ubx.DataSourceBinding{
 	WireType: "aws_profile_segment_membership",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"ProfileIds": ubx.FieldSpec{WireName: "profile_ids"},
+		"DomainName":            ubx.FieldSpec{WireName: "domain_name"},
+		"ProfileIds":            ubx.FieldSpec{WireName: "profile_ids"},
 		"SegmentDefinitionName": ubx.FieldSpec{WireName: "segment_definition_name"},
 	},
 }

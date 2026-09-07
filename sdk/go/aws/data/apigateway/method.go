@@ -4,11 +4,11 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Method_MethodIntegration_IntegrationResponses struct {
-	ContentHandling any
+	ContentHandling    any
 	ResponseParameters any
-	ResponseTemplates any
-	SelectionPattern any
-	StatusCode any
+	ResponseTemplates  any
+	SelectionPattern   any
+	StatusCode         any
 }
 
 type Method_MethodIntegration_TlsConfig struct {
@@ -16,54 +16,54 @@ type Method_MethodIntegration_TlsConfig struct {
 }
 
 type Method_MethodIntegration struct {
-	CacheKeyParameters any
-	CacheNamespace any
-	ConnectionId any
-	ConnectionType any
-	ContentHandling any
-	Credentials any
-	HttpMethod any
+	CacheKeyParameters   any
+	CacheNamespace       any
+	ConnectionId         any
+	ConnectionType       any
+	ContentHandling      any
+	Credentials          any
+	HttpMethod           any
 	IntegrationResponses any
-	IntegrationTarget any
-	PassthroughBehavior any
-	RequestParameters any
-	RequestTemplates any
+	IntegrationTarget    any
+	PassthroughBehavior  any
+	RequestParameters    any
+	RequestTemplates     any
 	ResponseTransferMode any
-	TimeoutInMillis any
+	TimeoutInMillis      any
 	// <p>Specifies the TLS configuration for an integration.</p>
 	TlsConfig any
 	// <p>The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend; <code>AWS</code> with any Amazon Web Services service endpoints; <code>MOCK</code> for testing without actually invoking the backend; <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with the Lambda proxy integration. </p>
 	Type any
-	Uri any
+	Uri  any
 }
 
 type Method_MethodResponses struct {
-	ResponseModels any
+	ResponseModels     any
 	ResponseParameters any
-	StatusCode any
+	StatusCode         any
 }
 
 type MethodConfig struct {
 	HttpMethod any
 	ResourceId any
-	RestApiId any
+	RestApiId  any
 }
 
 type MethodAttrs struct {
-	ApiKeyRequired any
+	ApiKeyRequired      any
 	AuthorizationScopes any
-	AuthorizationType any
-	AuthorizerId any
-	HttpMethod any
+	AuthorizationType   any
+	AuthorizerId        any
+	HttpMethod          any
 	// <p>Represents an <code>HTTP</code>, <code>HTTP_PROXY</code>, <code>AWS</code>, <code>AWS_PROXY</code>, or Mock integration.</p>
-	MethodIntegration any
-	MethodResponses any
-	OperationName any
-	RequestModels any
-	RequestParameters any
+	MethodIntegration  any
+	MethodResponses    any
+	OperationName      any
+	RequestModels      any
+	RequestParameters  any
 	RequestValidatorId any
-	ResourceId any
-	RestApiId any
+	ResourceId         any
+	RestApiId          any
 }
 
 var Method = ubx.DataSourceBinding{
@@ -71,6 +71,6 @@ var Method = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"RestApiId":  ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

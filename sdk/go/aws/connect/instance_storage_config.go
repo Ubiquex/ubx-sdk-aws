@@ -39,37 +39,37 @@ type InstanceStorageConfig_S3Config struct {
 }
 
 var InstanceStorageConfig_KinesisFirehoseConfigFields = ubx.FieldMap{
-		"FirehoseArn": ubx.FieldSpec{WireName: "firehose_arn"},
-	}
+	"FirehoseArn": ubx.FieldSpec{WireName: "firehose_arn"},
+}
 
 var InstanceStorageConfig_KinesisStreamConfigFields = ubx.FieldMap{
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-	}
+	"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+}
 
 var InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KeyId":          ubx.FieldSpec{WireName: "key_id"},
+}
 
 var InstanceStorageConfig_KinesisVideoStreamConfigFields = ubx.FieldMap{
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields,
-		},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"RetentionPeriodHours": ubx.FieldSpec{WireName: "retention_period_hours"},
-	}
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields,
+	},
+	"Prefix":               ubx.FieldSpec{WireName: "prefix"},
+	"RetentionPeriodHours": ubx.FieldSpec{WireName: "retention_period_hours"},
+}
 
 var InstanceStorageConfig_S3ConfigFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields,
-		},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfigFields,
+	},
+}
 
 type InstanceStorageConfigConfig struct {
 	// Connect Instance ID with which the storage config will be associated
@@ -113,24 +113,24 @@ var InstanceStorageConfig = ubx.ResourceBinding{
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"KinesisFirehoseConfig": ubx.FieldSpec{
 			WireName: "kinesis_firehose_config",
-			Kind: "object",
-			Fields: InstanceStorageConfig_KinesisFirehoseConfigFields,
+			Kind:     "object",
+			Fields:   InstanceStorageConfig_KinesisFirehoseConfigFields,
 		},
 		"KinesisStreamConfig": ubx.FieldSpec{
 			WireName: "kinesis_stream_config",
-			Kind: "object",
-			Fields: InstanceStorageConfig_KinesisStreamConfigFields,
+			Kind:     "object",
+			Fields:   InstanceStorageConfig_KinesisStreamConfigFields,
 		},
 		"KinesisVideoStreamConfig": ubx.FieldSpec{
 			WireName: "kinesis_video_stream_config",
-			Kind: "object",
-			Fields: InstanceStorageConfig_KinesisVideoStreamConfigFields,
+			Kind:     "object",
+			Fields:   InstanceStorageConfig_KinesisVideoStreamConfigFields,
 		},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 		"S3Config": ubx.FieldSpec{
 			WireName: "s3_config",
-			Kind: "object",
-			Fields: InstanceStorageConfig_S3ConfigFields,
+			Kind:     "object",
+			Fields:   InstanceStorageConfig_S3ConfigFields,
 		},
 		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
 	},

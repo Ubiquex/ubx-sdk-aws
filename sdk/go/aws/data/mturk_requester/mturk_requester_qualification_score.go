@@ -4,36 +4,36 @@ package mturk_requester
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MturkRequesterQualificationScore_Qualification_LocaleValue struct {
-	Country any
+	Country     any
 	Subdivision any
 }
 
 type MturkRequesterQualificationScore_Qualification struct {
-	GrantTime any
+	GrantTime    any
 	IntegerValue any
 	// <p>The Locale data structure represents a geographical region or location.</p>
-	LocaleValue any
+	LocaleValue         any
 	QualificationTypeId any
-	Status any
-	WorkerId any
+	Status              any
+	WorkerId            any
 }
 
 type MturkRequesterQualificationScoreConfig struct {
 	QualificationTypeId any
-	WorkerId any
+	WorkerId            any
 }
 
 type MturkRequesterQualificationScoreAttrs struct {
 	// <p>The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).</p>
-	Qualification any
+	Qualification       any
 	QualificationTypeId any
-	WorkerId any
+	WorkerId            any
 }
 
 var MturkRequesterQualificationScore = ubx.DataSourceBinding{
 	WireType: "aws_mturk_requester_qualification_score",
 	Fields: ubx.FieldMap{
 		"QualificationTypeId": ubx.FieldSpec{WireName: "qualification_type_id"},
-		"WorkerId": ubx.FieldSpec{WireName: "worker_id"},
+		"WorkerId":            ubx.FieldSpec{WireName: "worker_id"},
 	},
 }

@@ -24,9 +24,9 @@ type Package_Tags struct {
 }
 
 var Package_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PackageConfig struct {
 	// The unique name of the Panorama package that identifies it within your AWS account and is used when creating or referencing the package in the AWS Panorama console and API. (AI-inferred)
@@ -56,8 +56,8 @@ var Package = ubx.ResourceBinding{
 		"PackageName": ubx.FieldSpec{WireName: "package_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Package_TagsFields,
+			Kind:     "list",
+			Fields:   Package_TagsFields,
 		},
 	},
 }

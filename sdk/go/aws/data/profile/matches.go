@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Matches_Matches struct {
 	ConfidenceScore any
-	MatchId any
-	ProfileIds any
+	MatchId         any
+	ProfileIds      any
 }
 
 type MatchesConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MatchesAttrs struct {
-	DomainName any
+	DomainName          any
 	MatchGenerationDate any
-	Matches any
-	MaxResults any
-	NextToken any
-	PotentialMatches any
+	Matches             any
+	MaxResults          any
+	NextToken           any
+	PotentialMatches    any
 }
 
 var Matches = ubx.DataSourceBinding{
@@ -29,6 +29,6 @@ var Matches = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

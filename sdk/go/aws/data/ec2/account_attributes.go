@@ -8,25 +8,25 @@ type AccountAttributes_AccountAttributes_AttributeValues struct {
 }
 
 type AccountAttributes_AccountAttributes struct {
-	AttributeName any
+	AttributeName   any
 	AttributeValues any
 }
 
 type AccountAttributesConfig struct {
 	AttributeNames any
-	DryRun any
+	DryRun         any
 }
 
 type AccountAttributesAttrs struct {
 	AccountAttributes any
-	AttributeNames any
-	DryRun any
+	AttributeNames    any
+	DryRun            any
 }
 
 var AccountAttributes = ubx.DataSourceBinding{
 	WireType: "aws_ec2_account_attributes",
 	Fields: ubx.FieldMap{
 		"AttributeNames": ubx.FieldSpec{WireName: "attribute_names"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":         ubx.FieldSpec{WireName: "dry_run"},
 	},
 }

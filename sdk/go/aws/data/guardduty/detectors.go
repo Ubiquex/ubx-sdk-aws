@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DetectorsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DetectorsAttrs struct {
 	DetectorIds any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var Detectors = ubx.DataSourceBinding{
 	WireType: "aws_guardduty_detectors",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

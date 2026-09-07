@@ -22,20 +22,20 @@ type SizeConstraintSet_SizeConstraints struct {
 }
 
 var SizeConstraintSet_SizeConstraints_FieldToMatchFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var SizeConstraintSet_SizeConstraintsFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: SizeConstraintSet_SizeConstraints_FieldToMatchFields,
-		},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   SizeConstraintSet_SizeConstraints_FieldToMatchFields,
+	},
+	"Size":               ubx.FieldSpec{WireName: "size"},
+	"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
+}
 
 type SizeConstraintSetConfig struct {
 	// The name of the WAF size constraint set, which must be unique within your AWS account and region, and is used to identify this set in web ACL rules. (AI-inferred)
@@ -59,8 +59,8 @@ var SizeConstraintSet = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SizeConstraints": ubx.FieldSpec{
 			WireName: "size_constraints",
-			Kind: "list",
-			Fields: SizeConstraintSet_SizeConstraintsFields,
+			Kind:     "list",
+			Fields:   SizeConstraintSet_SizeConstraintsFields,
 		},
 	},
 }

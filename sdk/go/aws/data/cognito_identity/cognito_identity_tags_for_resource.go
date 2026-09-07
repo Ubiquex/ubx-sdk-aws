@@ -9,7 +9,7 @@ type CognitoIdentityTagsForResourceConfig struct {
 
 type CognitoIdentityTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var CognitoIdentityTagsForResource = ubx.DataSourceBinding{

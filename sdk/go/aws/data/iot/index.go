@@ -8,9 +8,9 @@ type IndexConfig struct {
 }
 
 type IndexAttrs struct {
-	IndexName any
+	IndexName   any
 	IndexStatus any
-	Schema any
+	Schema      any
 }
 
 var Index = ubx.DataSourceBinding{

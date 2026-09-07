@@ -20,15 +20,15 @@ type Domain_Tags struct {
 }
 
 var Domain_SingleSignOnFields = ubx.FieldMap{
-		"IdcInstanceArn": ubx.FieldSpec{WireName: "idc_instance_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UserAssignment": ubx.FieldSpec{WireName: "user_assignment"},
-	}
+	"IdcInstanceArn": ubx.FieldSpec{WireName: "idc_instance_arn"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+	"UserAssignment": ubx.FieldSpec{WireName: "user_assignment"},
+}
 
 var Domain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainConfig struct {
 	// The description of the Amazon DataZone domain.
@@ -87,21 +87,21 @@ type DomainAttrs struct {
 var Domain = ubx.ResourceBinding{
 	WireType: "aws_data_zone_domain",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"DomainExecutionRole": ubx.FieldSpec{WireName: "domain_execution_role"},
-		"DomainVersion": ubx.FieldSpec{WireName: "domain_version"},
-		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
+		"DomainVersion":       ubx.FieldSpec{WireName: "domain_version"},
+		"KmsKeyIdentifier":    ubx.FieldSpec{WireName: "kms_key_identifier"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"ServiceRole":         ubx.FieldSpec{WireName: "service_role"},
 		"SingleSignOn": ubx.FieldSpec{
 			WireName: "single_sign_on",
-			Kind: "object",
-			Fields: Domain_SingleSignOnFields,
+			Kind:     "object",
+			Fields:   Domain_SingleSignOnFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Domain_TagsFields,
+			Kind:     "list",
+			Fields:   Domain_TagsFields,
 		},
 	},
 }

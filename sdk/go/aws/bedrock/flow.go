@@ -18,7 +18,7 @@ type Flow_Definition_Connections_Configuration_Data struct {
 type Flow_Definition_Connections_Configuration struct {
 	// Defines the conditional configuration for a connection between nodes in a Bedrock flow, specifying the condition expression that determines whether the flow traverses this connection. (AI-inferred)
 	Conditional any
-	Data any
+	Data        any
 }
 
 type Flow_Definition_Connections struct {
@@ -154,7 +154,7 @@ type Flow_Definition_Nodes_Configuration_KnowledgeBase struct {
 	// Specifies the unique identifier of the Amazon Bedrock foundation model used by the knowledge base node to generate responses based on retrieved information. (AI-inferred)
 	ModelId any
 	// Specifies the maximum number of retrieved knowledge base results to include in the prompt when the flow node queries the connected knowledge base. (AI-inferred)
-	NumberOfResults any
+	NumberOfResults            any
 	OrchestrationConfiguration any
 	// Specifies a prompt template for the knowledge base node, used to construct the query sent to the model with placeholders for user input and retrieved context. (AI-inferred)
 	PromptTemplate any
@@ -336,414 +336,414 @@ type Flow_Validations struct {
 }
 
 var Flow_Definition_Connections_Configuration_ConditionalFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+}
 
 var Flow_Definition_Connections_Configuration_DataFields = ubx.FieldMap{
-		"SourceOutput": ubx.FieldSpec{WireName: "source_output"},
-		"TargetInput": ubx.FieldSpec{WireName: "target_input"},
-	}
+	"SourceOutput": ubx.FieldSpec{WireName: "source_output"},
+	"TargetInput":  ubx.FieldSpec{WireName: "target_input"},
+}
 
 var Flow_Definition_Connections_ConfigurationFields = ubx.FieldMap{
-		"Conditional": ubx.FieldSpec{
-			WireName: "conditional",
-			Kind: "object",
-			Fields: Flow_Definition_Connections_Configuration_ConditionalFields,
-		},
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: Flow_Definition_Connections_Configuration_DataFields,
-		},
-	}
+	"Conditional": ubx.FieldSpec{
+		WireName: "conditional",
+		Kind:     "object",
+		Fields:   Flow_Definition_Connections_Configuration_ConditionalFields,
+	},
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Flow_Definition_Connections_Configuration_DataFields,
+	},
+}
 
 var Flow_Definition_ConnectionsFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Connections_ConfigurationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Connections_ConfigurationFields,
+	},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Target": ubx.FieldSpec{WireName: "target"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var Flow_Definition_Nodes_Configuration_AgentFields = ubx.FieldMap{
-		"AgentAliasArn": ubx.FieldSpec{WireName: "agent_alias_arn"},
-	}
+	"AgentAliasArn": ubx.FieldSpec{WireName: "agent_alias_arn"},
+}
 
 var Flow_Definition_Nodes_Configuration_Condition_ConditionsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var Flow_Definition_Nodes_Configuration_ConditionFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Flow_Definition_Nodes_Configuration_Condition_ConditionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Flow_Definition_Nodes_Configuration_Condition_ConditionsFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_InlineCodeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-	}
+	"Code":     ubx.FieldSpec{WireName: "code"},
+	"Language": ubx.FieldSpec{WireName: "language"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_GuardrailConfigurationFields = ubx.FieldMap{
-		"GuardrailIdentifier": ubx.FieldSpec{WireName: "guardrail_identifier"},
-		"GuardrailVersion": ubx.FieldSpec{WireName: "guardrail_version"},
-	}
+	"GuardrailIdentifier": ubx.FieldSpec{WireName: "guardrail_identifier"},
+	"GuardrailVersion":    ubx.FieldSpec{WireName: "guardrail_version"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfiguration_TextFields = ubx.FieldMap{
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"MaxTokens":     ubx.FieldSpec{WireName: "max_tokens"},
+	"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
+	"Temperature":   ubx.FieldSpec{WireName: "temperature"},
+	"TopP":          ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfigurationFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfiguration_TextFields,
-		},
-	}
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfiguration_TextFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PerformanceConfigFields = ubx.FieldMap{
-		"Latency": ubx.FieldSpec{WireName: "latency"},
-	}
+	"Latency": ubx.FieldSpec{WireName: "latency"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PromptTemplateFields = ubx.FieldMap{
-		"TextPromptTemplate": ubx.FieldSpec{WireName: "text_prompt_template"},
-	}
+	"TextPromptTemplate": ubx.FieldSpec{WireName: "text_prompt_template"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfigurationFields = ubx.FieldMap{
-		"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
-		"InferenceConfig": ubx.FieldSpec{
-			WireName: "inference_config",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfigurationFields,
-		},
-		"PerformanceConfig": ubx.FieldSpec{
-			WireName: "performance_config",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PerformanceConfigFields,
-		},
-		"PromptTemplate": ubx.FieldSpec{
-			WireName: "prompt_template",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PromptTemplateFields,
-		},
-	}
+	"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
+	"InferenceConfig": ubx.FieldSpec{
+		WireName: "inference_config",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfigurationFields,
+	},
+	"PerformanceConfig": ubx.FieldSpec{
+		WireName: "performance_config",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PerformanceConfigFields,
+	},
+	"PromptTemplate": ubx.FieldSpec{
+		WireName: "prompt_template",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PromptTemplateFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration_FieldsToExcludeFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfigurationFields = ubx.FieldMap{
-		"FieldsToExclude": ubx.FieldSpec{
-			WireName: "fields_to_exclude",
-			Kind: "list",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration_FieldsToExcludeFields,
-		},
-		"FieldsToInclude": ubx.FieldSpec{
-			WireName: "fields_to_include",
-			Kind: "list",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration_FieldsToExcludeFields,
-		},
-	}
+	"FieldsToExclude": ubx.FieldSpec{
+		WireName: "fields_to_exclude",
+		Kind:     "list",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration_FieldsToExcludeFields,
+	},
+	"FieldsToInclude": ubx.FieldSpec{
+		WireName: "fields_to_include",
+		Kind:     "list",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration_FieldsToExcludeFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfigurationFields = ubx.FieldMap{
-		"SelectionMode": ubx.FieldSpec{WireName: "selection_mode"},
-		"SelectiveModeConfiguration": ubx.FieldSpec{
-			WireName: "selective_mode_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfigurationFields,
-		},
-	}
+	"SelectionMode": ubx.FieldSpec{WireName: "selection_mode"},
+	"SelectiveModeConfiguration": ubx.FieldSpec{
+		WireName: "selective_mode_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfigurationFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_ModelConfigurationFields = ubx.FieldMap{
-		"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
-		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
-	}
+	"AdditionalModelRequestFields": ubx.FieldSpec{WireName: "additional_model_request_fields"},
+	"ModelArn":                     ubx.FieldSpec{WireName: "model_arn"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfigurationFields = ubx.FieldMap{
-		"MetadataConfiguration": ubx.FieldSpec{
-			WireName: "metadata_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfigurationFields,
-		},
-		"ModelConfiguration": ubx.FieldSpec{
-			WireName: "model_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_ModelConfigurationFields,
-		},
-		"NumberOfRerankedResults": ubx.FieldSpec{WireName: "number_of_reranked_results"},
-	}
+	"MetadataConfiguration": ubx.FieldSpec{
+		WireName: "metadata_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfigurationFields,
+	},
+	"ModelConfiguration": ubx.FieldSpec{
+		WireName: "model_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_ModelConfigurationFields,
+	},
+	"NumberOfRerankedResults": ubx.FieldSpec{WireName: "number_of_reranked_results"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfigurationFields = ubx.FieldMap{
-		"BedrockRerankingConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_reranking_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfigurationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"BedrockRerankingConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_reranking_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfigurationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Flow_Definition_Nodes_Configuration_KnowledgeBaseFields = ubx.FieldMap{
-		"GuardrailConfiguration": ubx.FieldSpec{
-			WireName: "guardrail_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_GuardrailConfigurationFields,
-		},
-		"InferenceConfiguration": ubx.FieldSpec{
-			WireName: "inference_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfigurationFields,
-		},
-		"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"NumberOfResults": ubx.FieldSpec{WireName: "number_of_results"},
-		"OrchestrationConfiguration": ubx.FieldSpec{
-			WireName: "orchestration_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfigurationFields,
-		},
-		"PromptTemplate": ubx.FieldSpec{
-			WireName: "prompt_template",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PromptTemplateFields,
-		},
-		"RerankingConfiguration": ubx.FieldSpec{
-			WireName: "reranking_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfigurationFields,
-		},
-	}
+	"GuardrailConfiguration": ubx.FieldSpec{
+		WireName: "guardrail_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_GuardrailConfigurationFields,
+	},
+	"InferenceConfiguration": ubx.FieldSpec{
+		WireName: "inference_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfigurationFields,
+	},
+	"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
+	"ModelId":         ubx.FieldSpec{WireName: "model_id"},
+	"NumberOfResults": ubx.FieldSpec{WireName: "number_of_results"},
+	"OrchestrationConfiguration": ubx.FieldSpec{
+		WireName: "orchestration_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfigurationFields,
+	},
+	"PromptTemplate": ubx.FieldSpec{
+		WireName: "prompt_template",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PromptTemplateFields,
+	},
+	"RerankingConfiguration": ubx.FieldSpec{
+		WireName: "reranking_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfigurationFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_LambdaFunctionFields = ubx.FieldMap{
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-	}
+	"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
+}
 
 var Flow_Definition_Nodes_Configuration_LexFields = ubx.FieldMap{
-		"BotAliasArn": ubx.FieldSpec{WireName: "bot_alias_arn"},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
-	}
+	"BotAliasArn": ubx.FieldSpec{WireName: "bot_alias_arn"},
+	"LocaleId":    ubx.FieldSpec{WireName: "locale_id"},
+}
 
 var Flow_Definition_Nodes_Configuration_LoopFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{WireName: "definition"},
-	}
+	"Definition": ubx.FieldSpec{WireName: "definition"},
+}
 
 var Flow_Definition_Nodes_Configuration_LoopControllerFields = ubx.FieldMap{
-		"ContinueCondition": ubx.FieldSpec{
-			WireName: "continue_condition",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_Condition_ConditionsFields,
-		},
-		"MaxIterations": ubx.FieldSpec{WireName: "max_iterations"},
-	}
+	"ContinueCondition": ubx.FieldSpec{
+		WireName: "continue_condition",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_Condition_ConditionsFields,
+	},
+	"MaxIterations": ubx.FieldSpec{WireName: "max_iterations"},
+}
 
 var Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_Text_InputVariablesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_TextFields = ubx.FieldMap{
-		"InputVariables": ubx.FieldSpec{
-			WireName: "input_variables",
-			Kind: "list",
-			Fields: Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_Text_InputVariablesFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"InputVariables": ubx.FieldSpec{
+		WireName: "input_variables",
+		Kind:     "list",
+		Fields:   Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_Text_InputVariablesFields,
+	},
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfigurationFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_TextFields,
-		},
-	}
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_TextFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_InlineFields = ubx.FieldMap{
-		"InferenceConfiguration": ubx.FieldSpec{
-			WireName: "inference_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfigurationFields,
-		},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"TemplateConfiguration": ubx.FieldSpec{
-			WireName: "template_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfigurationFields,
-		},
-		"TemplateType": ubx.FieldSpec{WireName: "template_type"},
-	}
+	"InferenceConfiguration": ubx.FieldSpec{
+		WireName: "inference_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfigurationFields,
+	},
+	"ModelId": ubx.FieldSpec{WireName: "model_id"},
+	"TemplateConfiguration": ubx.FieldSpec{
+		WireName: "template_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfigurationFields,
+	},
+	"TemplateType": ubx.FieldSpec{WireName: "template_type"},
+}
 
 var Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_ResourceFields = ubx.FieldMap{
-		"PromptArn": ubx.FieldSpec{WireName: "prompt_arn"},
-	}
+	"PromptArn": ubx.FieldSpec{WireName: "prompt_arn"},
+}
 
 var Flow_Definition_Nodes_Configuration_Prompt_SourceConfigurationFields = ubx.FieldMap{
-		"Inline": ubx.FieldSpec{
-			WireName: "inline",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_InlineFields,
-		},
-		"Resource": ubx.FieldSpec{
-			WireName: "resource",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_ResourceFields,
-		},
-	}
+	"Inline": ubx.FieldSpec{
+		WireName: "inline",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_InlineFields,
+	},
+	"Resource": ubx.FieldSpec{
+		WireName: "resource",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_ResourceFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_PromptFields = ubx.FieldMap{
-		"GuardrailConfiguration": ubx.FieldSpec{
-			WireName: "guardrail_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBase_GuardrailConfigurationFields,
-		},
-		"SourceConfiguration": ubx.FieldSpec{
-			WireName: "source_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_Prompt_SourceConfigurationFields,
-		},
-	}
+	"GuardrailConfiguration": ubx.FieldSpec{
+		WireName: "guardrail_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBase_GuardrailConfigurationFields,
+	},
+	"SourceConfiguration": ubx.FieldSpec{
+		WireName: "source_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_Prompt_SourceConfigurationFields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfiguration_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+}
 
 var Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfigurationFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfiguration_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfiguration_S3Fields,
+	},
+}
 
 var Flow_Definition_Nodes_Configuration_RetrievalFields = ubx.FieldMap{
-		"ServiceConfiguration": ubx.FieldSpec{
-			WireName: "service_configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfigurationFields,
-		},
-	}
+	"ServiceConfiguration": ubx.FieldSpec{
+		WireName: "service_configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfigurationFields,
+	},
+}
 
 var Flow_Definition_Nodes_ConfigurationFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{
-			WireName: "agent",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_AgentFields,
-		},
-		"Collector": ubx.FieldSpec{WireName: "collector"},
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_ConditionFields,
-		},
-		"InlineCode": ubx.FieldSpec{
-			WireName: "inline_code",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_InlineCodeFields,
-		},
-		"Input": ubx.FieldSpec{WireName: "input"},
-		"Iterator": ubx.FieldSpec{WireName: "iterator"},
-		"KnowledgeBase": ubx.FieldSpec{
-			WireName: "knowledge_base",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_KnowledgeBaseFields,
-		},
-		"LambdaFunction": ubx.FieldSpec{
-			WireName: "lambda_function",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_LambdaFunctionFields,
-		},
-		"Lex": ubx.FieldSpec{
-			WireName: "lex",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_LexFields,
-		},
-		"Loop": ubx.FieldSpec{
-			WireName: "loop",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_LoopFields,
-		},
-		"LoopController": ubx.FieldSpec{
-			WireName: "loop_controller",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_LoopControllerFields,
-		},
-		"LoopInput": ubx.FieldSpec{WireName: "loop_input"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-		"Prompt": ubx.FieldSpec{
-			WireName: "prompt",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_PromptFields,
-		},
-		"Retrieval": ubx.FieldSpec{
-			WireName: "retrieval",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_RetrievalFields,
-		},
-		"Storage": ubx.FieldSpec{
-			WireName: "storage",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_Configuration_RetrievalFields,
-		},
-	}
+	"Agent": ubx.FieldSpec{
+		WireName: "agent",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_AgentFields,
+	},
+	"Collector": ubx.FieldSpec{WireName: "collector"},
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_ConditionFields,
+	},
+	"InlineCode": ubx.FieldSpec{
+		WireName: "inline_code",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_InlineCodeFields,
+	},
+	"Input":    ubx.FieldSpec{WireName: "input"},
+	"Iterator": ubx.FieldSpec{WireName: "iterator"},
+	"KnowledgeBase": ubx.FieldSpec{
+		WireName: "knowledge_base",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_KnowledgeBaseFields,
+	},
+	"LambdaFunction": ubx.FieldSpec{
+		WireName: "lambda_function",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_LambdaFunctionFields,
+	},
+	"Lex": ubx.FieldSpec{
+		WireName: "lex",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_LexFields,
+	},
+	"Loop": ubx.FieldSpec{
+		WireName: "loop",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_LoopFields,
+	},
+	"LoopController": ubx.FieldSpec{
+		WireName: "loop_controller",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_LoopControllerFields,
+	},
+	"LoopInput": ubx.FieldSpec{WireName: "loop_input"},
+	"Output":    ubx.FieldSpec{WireName: "output"},
+	"Prompt": ubx.FieldSpec{
+		WireName: "prompt",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_PromptFields,
+	},
+	"Retrieval": ubx.FieldSpec{
+		WireName: "retrieval",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_RetrievalFields,
+	},
+	"Storage": ubx.FieldSpec{
+		WireName: "storage",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_Configuration_RetrievalFields,
+	},
+}
 
 var Flow_Definition_Nodes_InputsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Category":   ubx.FieldSpec{WireName: "category"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Flow_Definition_Nodes_OutputsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Flow_Definition_NodesFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: Flow_Definition_Nodes_ConfigurationFields,
-		},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "list",
-			Fields: Flow_Definition_Nodes_InputsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "list",
-			Fields: Flow_Definition_Nodes_OutputsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   Flow_Definition_Nodes_ConfigurationFields,
+	},
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "list",
+		Fields:   Flow_Definition_Nodes_InputsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "list",
+		Fields:   Flow_Definition_Nodes_OutputsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Flow_DefinitionFields = ubx.FieldMap{
-		"Connections": ubx.FieldSpec{
-			WireName: "connections",
-			Kind: "list",
-			Fields: Flow_Definition_ConnectionsFields,
-		},
-		"Nodes": ubx.FieldSpec{
-			WireName: "nodes",
-			Kind: "list",
-			Fields: Flow_Definition_NodesFields,
-		},
-	}
+	"Connections": ubx.FieldSpec{
+		WireName: "connections",
+		Kind:     "list",
+		Fields:   Flow_Definition_ConnectionsFields,
+	},
+	"Nodes": ubx.FieldSpec{
+		WireName: "nodes",
+		Kind:     "list",
+		Fields:   Flow_Definition_NodesFields,
+	},
+}
 
 var Flow_DefinitionS3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 type FlowConfig struct {
 	// A KMS key ARN
@@ -811,20 +811,20 @@ var Flow = ubx.ResourceBinding{
 		"CustomerEncryptionKeyArn": ubx.FieldSpec{WireName: "customer_encryption_key_arn"},
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: Flow_DefinitionFields,
+			Kind:     "object",
+			Fields:   Flow_DefinitionFields,
 		},
 		"DefinitionS3Location": ubx.FieldSpec{
 			WireName: "definition_s3_location",
-			Kind: "object",
-			Fields: Flow_DefinitionS3LocationFields,
+			Kind:     "object",
+			Fields:   Flow_DefinitionS3LocationFields,
 		},
-		"DefinitionString": ubx.FieldSpec{WireName: "definition_string"},
+		"DefinitionString":        ubx.FieldSpec{WireName: "definition_string"},
 		"DefinitionSubstitutions": ubx.FieldSpec{WireName: "definition_substitutions"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TestAliasTags": ubx.FieldSpec{WireName: "test_alias_tags"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"ExecutionRoleArn":        ubx.FieldSpec{WireName: "execution_role_arn"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"Tags":                    ubx.FieldSpec{WireName: "tags"},
+		"TestAliasTags":           ubx.FieldSpec{WireName: "test_alias_tags"},
 	},
 }

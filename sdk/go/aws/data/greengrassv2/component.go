@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Component_Platforms struct {
 	Attributes any
-	Name any
+	Name       any
 }
 
 type Component_Status struct {
-	ComponentState any
-	Errors any
-	Message any
-	VendorGuidance any
+	ComponentState        any
+	Errors                any
+	Message               any
+	VendorGuidance        any
 	VendorGuidanceMessage any
 }
 
@@ -21,16 +21,16 @@ type ComponentConfig struct {
 }
 
 type ComponentAttrs struct {
-	Arn any
-	ComponentName any
-	ComponentVersion any
+	Arn               any
+	ComponentName     any
+	ComponentVersion  any
 	CreationTimestamp any
-	Description any
-	Platforms any
-	Publisher any
+	Description       any
+	Platforms         any
+	Publisher         any
 	// <p>Contains the status of a component version in the IoT Greengrass service.</p>
 	Status any
-	Tags any
+	Tags   any
 }
 
 var Component = ubx.DataSourceBinding{

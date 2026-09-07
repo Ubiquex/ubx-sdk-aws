@@ -8,21 +8,21 @@ type BootstrapBrokersConfig struct {
 }
 
 type BootstrapBrokersAttrs struct {
-	BootstrapBrokerString any
-	BootstrapBrokerStringIpv6 any
-	BootstrapBrokerStringPublicSaslIam any
-	BootstrapBrokerStringPublicSaslScram any
-	BootstrapBrokerStringPublicTls any
-	BootstrapBrokerStringSaslIam any
-	BootstrapBrokerStringSaslIamIpv6 any
-	BootstrapBrokerStringSaslScram any
-	BootstrapBrokerStringSaslScramIpv6 any
-	BootstrapBrokerStringTls any
-	BootstrapBrokerStringTlsIpv6 any
-	BootstrapBrokerStringVpcConnectivitySaslIam any
+	BootstrapBrokerString                         any
+	BootstrapBrokerStringIpv6                     any
+	BootstrapBrokerStringPublicSaslIam            any
+	BootstrapBrokerStringPublicSaslScram          any
+	BootstrapBrokerStringPublicTls                any
+	BootstrapBrokerStringSaslIam                  any
+	BootstrapBrokerStringSaslIamIpv6              any
+	BootstrapBrokerStringSaslScram                any
+	BootstrapBrokerStringSaslScramIpv6            any
+	BootstrapBrokerStringTls                      any
+	BootstrapBrokerStringTlsIpv6                  any
+	BootstrapBrokerStringVpcConnectivitySaslIam   any
 	BootstrapBrokerStringVpcConnectivitySaslScram any
-	BootstrapBrokerStringVpcConnectivityTls any
-	ClusterArn any
+	BootstrapBrokerStringVpcConnectivityTls       any
+	ClusterArn                                    any
 }
 
 var BootstrapBrokers = ubx.DataSourceBinding{

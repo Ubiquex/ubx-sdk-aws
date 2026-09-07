@@ -4,32 +4,32 @@ package eks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UpdatesConfig struct {
-	AddonName any
+	AddonName      any
 	CapabilityName any
-	MaxResults any
-	Name any
-	NextToken any
-	NodegroupName any
+	MaxResults     any
+	Name           any
+	NextToken      any
+	NodegroupName  any
 }
 
 type UpdatesAttrs struct {
-	AddonName any
+	AddonName      any
 	CapabilityName any
-	MaxResults any
-	Name any
-	NextToken any
-	NodegroupName any
-	UpdateIds any
+	MaxResults     any
+	Name           any
+	NextToken      any
+	NodegroupName  any
+	UpdateIds      any
 }
 
 var Updates = ubx.DataSourceBinding{
 	WireType: "aws_eks_updates",
 	Fields: ubx.FieldMap{
-		"AddonName": ubx.FieldSpec{WireName: "addon_name"},
+		"AddonName":      ubx.FieldSpec{WireName: "addon_name"},
 		"CapabilityName": ubx.FieldSpec{WireName: "capability_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"NodegroupName": ubx.FieldSpec{WireName: "nodegroup_name"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"NodegroupName":  ubx.FieldSpec{WireName: "nodegroup_name"},
 	},
 }

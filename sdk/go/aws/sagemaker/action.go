@@ -30,22 +30,22 @@ type Action_Tags struct {
 }
 
 var Action_MetadataPropertiesFields = ubx.FieldMap{
-		"CommitId": ubx.FieldSpec{WireName: "commit_id"},
-		"GeneratedBy": ubx.FieldSpec{WireName: "generated_by"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"CommitId":    ubx.FieldSpec{WireName: "commit_id"},
+	"GeneratedBy": ubx.FieldSpec{WireName: "generated_by"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+	"Repository":  ubx.FieldSpec{WireName: "repository"},
+}
 
 var Action_SourceFields = ubx.FieldMap{
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
-	}
+	"SourceId":   ubx.FieldSpec{WireName: "source_id"},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+	"SourceUri":  ubx.FieldSpec{WireName: "source_uri"},
+}
 
 var Action_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ActionConfig struct {
 	// The name of the action. Must be unique to your account in an AWS Region.
@@ -94,25 +94,25 @@ type ActionAttrs struct {
 var Action = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_action",
 	Fields: ubx.FieldMap{
-		"ActionName": ubx.FieldSpec{WireName: "action_name"},
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
+		"ActionName":  ubx.FieldSpec{WireName: "action_name"},
+		"ActionType":  ubx.FieldSpec{WireName: "action_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"MetadataProperties": ubx.FieldSpec{
 			WireName: "metadata_properties",
-			Kind: "object",
-			Fields: Action_MetadataPropertiesFields,
+			Kind:     "object",
+			Fields:   Action_MetadataPropertiesFields,
 		},
 		"Properties": ubx.FieldSpec{WireName: "properties"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Action_SourceFields,
+			Kind:     "object",
+			Fields:   Action_SourceFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Action_TagsFields,
+			Kind:     "list",
+			Fields:   Action_TagsFields,
 		},
 	},
 }

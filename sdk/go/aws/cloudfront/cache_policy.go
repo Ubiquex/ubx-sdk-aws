@@ -53,52 +53,52 @@ type CachePolicy_CachePolicyConfig struct {
 }
 
 var CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_CookiesConfigFields = ubx.FieldMap{
-		"CookieBehavior": ubx.FieldSpec{WireName: "cookie_behavior"},
-		"Cookies": ubx.FieldSpec{WireName: "cookies"},
-	}
+	"CookieBehavior": ubx.FieldSpec{WireName: "cookie_behavior"},
+	"Cookies":        ubx.FieldSpec{WireName: "cookies"},
+}
 
 var CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_HeadersConfigFields = ubx.FieldMap{
-		"HeaderBehavior": ubx.FieldSpec{WireName: "header_behavior"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-	}
+	"HeaderBehavior": ubx.FieldSpec{WireName: "header_behavior"},
+	"Headers":        ubx.FieldSpec{WireName: "headers"},
+}
 
 var CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_QueryStringsConfigFields = ubx.FieldMap{
-		"QueryStringBehavior": ubx.FieldSpec{WireName: "query_string_behavior"},
-		"QueryStrings": ubx.FieldSpec{WireName: "query_strings"},
-	}
+	"QueryStringBehavior": ubx.FieldSpec{WireName: "query_string_behavior"},
+	"QueryStrings":        ubx.FieldSpec{WireName: "query_strings"},
+}
 
 var CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOriginFields = ubx.FieldMap{
-		"CookiesConfig": ubx.FieldSpec{
-			WireName: "cookies_config",
-			Kind: "object",
-			Fields: CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_CookiesConfigFields,
-		},
-		"EnableAcceptEncodingBrotli": ubx.FieldSpec{WireName: "enable_accept_encoding_brotli"},
-		"EnableAcceptEncodingGzip": ubx.FieldSpec{WireName: "enable_accept_encoding_gzip"},
-		"HeadersConfig": ubx.FieldSpec{
-			WireName: "headers_config",
-			Kind: "object",
-			Fields: CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_HeadersConfigFields,
-		},
-		"QueryStringsConfig": ubx.FieldSpec{
-			WireName: "query_strings_config",
-			Kind: "object",
-			Fields: CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_QueryStringsConfigFields,
-		},
-	}
+	"CookiesConfig": ubx.FieldSpec{
+		WireName: "cookies_config",
+		Kind:     "object",
+		Fields:   CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_CookiesConfigFields,
+	},
+	"EnableAcceptEncodingBrotli": ubx.FieldSpec{WireName: "enable_accept_encoding_brotli"},
+	"EnableAcceptEncodingGzip":   ubx.FieldSpec{WireName: "enable_accept_encoding_gzip"},
+	"HeadersConfig": ubx.FieldSpec{
+		WireName: "headers_config",
+		Kind:     "object",
+		Fields:   CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_HeadersConfigFields,
+	},
+	"QueryStringsConfig": ubx.FieldSpec{
+		WireName: "query_strings_config",
+		Kind:     "object",
+		Fields:   CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_QueryStringsConfigFields,
+	},
+}
 
 var CachePolicy_CachePolicyConfigFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
-		"MaxTtl": ubx.FieldSpec{WireName: "max_ttl"},
-		"MinTtl": ubx.FieldSpec{WireName: "min_ttl"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParametersInCacheKeyAndForwardedToOrigin": ubx.FieldSpec{
-			WireName: "parameters_in_cache_key_and_forwarded_to_origin",
-			Kind: "object",
-			Fields: CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOriginFields,
-		},
-	}
+	"Comment":    ubx.FieldSpec{WireName: "comment"},
+	"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
+	"MaxTtl":     ubx.FieldSpec{WireName: "max_ttl"},
+	"MinTtl":     ubx.FieldSpec{WireName: "min_ttl"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"ParametersInCacheKeyAndForwardedToOrigin": ubx.FieldSpec{
+		WireName: "parameters_in_cache_key_and_forwarded_to_origin",
+		Kind:     "object",
+		Fields:   CachePolicy_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOriginFields,
+	},
+}
 
 type CachePolicyConfig struct {
 	// A cache policy configuration. This configuration determines the following: + The values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer. + The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache. If your minimum TTL is greater than 0, CloudFront will cache content for at least the duration specified in the cache policy's minimum TTL, even if the ``Cache-Control: no-cache``, ``no-store``, or ``private`` directives are present in the origin headers. The headers, cookies, and query strings that are included in the cache key are also included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find a valid object in its cache that matches the request's cache key. If you want to send values to the origin but *not* include them in the cache key, use ``OriginRequestPolicy``.
@@ -119,8 +119,8 @@ var CachePolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CachePolicyConfig": ubx.FieldSpec{
 			WireName: "cache_policy_config",
-			Kind: "object",
-			Fields: CachePolicy_CachePolicyConfigFields,
+			Kind:     "object",
+			Fields:   CachePolicy_CachePolicyConfigFields,
 		},
 	},
 }

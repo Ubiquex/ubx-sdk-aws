@@ -4,43 +4,43 @@ package translate
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ParallelData_ParallelDataPropertiesList_EncryptionKey struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type ParallelData_ParallelDataPropertiesList_ParallelDataConfig struct {
 	Format any
-	S3Uri any
+	S3Uri  any
 }
 
 type ParallelData_ParallelDataPropertiesList struct {
-	Arn any
-	CreatedAt any
-	Description any
-	EncryptionKey any
-	FailedRecordCount any
-	ImportedDataSize any
-	ImportedRecordCount any
-	LastUpdatedAt any
-	LatestUpdateAttemptAt any
+	Arn                       any
+	CreatedAt                 any
+	Description               any
+	EncryptionKey             any
+	FailedRecordCount         any
+	ImportedDataSize          any
+	ImportedRecordCount       any
+	LastUpdatedAt             any
+	LatestUpdateAttemptAt     any
 	LatestUpdateAttemptStatus any
-	Message any
-	Name any
-	ParallelDataConfig any
-	SkippedRecordCount any
-	SourceLanguageCode any
-	Status any
-	TargetLanguageCodes any
+	Message                   any
+	Name                      any
+	ParallelDataConfig        any
+	SkippedRecordCount        any
+	SourceLanguageCode        any
+	Status                    any
+	TargetLanguageCodes       any
 }
 
 type ParallelDataConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ParallelDataAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                 any
+	NextToken                  any
 	ParallelDataPropertiesList any
 }
 
@@ -48,6 +48,6 @@ var ParallelData = ubx.DataSourceBinding{
 	WireType: "aws_translate_parallel_data",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

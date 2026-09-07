@@ -4,27 +4,27 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dashboards_DashboardEntries struct {
-	DashboardArn any
+	DashboardArn  any
 	DashboardName any
-	LastModified any
-	Size any
+	LastModified  any
+	Size          any
 }
 
 type DashboardsConfig struct {
 	DashboardNamePrefix any
-	NextToken any
+	NextToken           any
 }
 
 type DashboardsAttrs struct {
-	DashboardEntries any
+	DashboardEntries    any
 	DashboardNamePrefix any
-	NextToken any
+	NextToken           any
 }
 
 var Dashboards = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_dashboards",
 	Fields: ubx.FieldMap{
 		"DashboardNamePrefix": ubx.FieldSpec{WireName: "dashboard_name_prefix"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

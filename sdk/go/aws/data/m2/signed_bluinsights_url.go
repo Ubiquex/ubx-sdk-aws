@@ -12,6 +12,5 @@ type SignedBluinsightsUrlAttrs struct {
 
 var SignedBluinsightsUrl = ubx.DataSourceBinding{
 	WireType: "aws_m2_signed_bluinsights_url",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

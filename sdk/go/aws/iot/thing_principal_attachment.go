@@ -26,8 +26,8 @@ type ThingPrincipalAttachmentAttrs struct {
 var ThingPrincipalAttachment = ubx.ResourceBinding{
 	WireType: "aws_io_t_thing_principal_attachment",
 	Fields: ubx.FieldMap{
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
+		"Principal":          ubx.FieldSpec{WireName: "principal"},
+		"ThingName":          ubx.FieldSpec{WireName: "thing_name"},
 		"ThingPrincipalType": ubx.FieldSpec{WireName: "thing_principal_type"},
 	},
 }

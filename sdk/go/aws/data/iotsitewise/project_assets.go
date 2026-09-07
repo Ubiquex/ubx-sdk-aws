@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProjectAssetsConfig struct {
 	MaxResults any
-	NextToken any
-	ProjectId any
+	NextToken  any
+	ProjectId  any
 }
 
 type ProjectAssetsAttrs struct {
-	AssetIds any
+	AssetIds   any
 	MaxResults any
-	NextToken any
-	ProjectId any
+	NextToken  any
+	ProjectId  any
 }
 
 var ProjectAssets = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_project_assets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
 	},
 }

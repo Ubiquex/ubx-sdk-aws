@@ -5,65 +5,65 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimePhoneNumbers_PhoneNumbers_Associations struct {
 	AssociatedTimestamp any
-	Name any
-	Value any
+	Name                any
+	Value               any
 }
 
 type VoiceChimePhoneNumbers_PhoneNumbers_Capabilities struct {
-	InboundCall any
-	InboundMms any
-	InboundSms any
+	InboundCall  any
+	InboundMms   any
+	InboundSms   any
 	OutboundCall any
-	OutboundMms any
-	OutboundSms any
+	OutboundMms  any
+	OutboundSms  any
 }
 
 type VoiceChimePhoneNumbers_PhoneNumbers struct {
-	Associations any
-	CallingName any
+	Associations      any
+	CallingName       any
 	CallingNameStatus any
-	Capabilities any
-	Country any
-	CreatedTimestamp any
+	Capabilities      any
+	Country           any
+	CreatedTimestamp  any
 	DeletionTimestamp any
-	E164PhoneNumber any
-	Name any
-	OrderId any
-	PhoneNumberArn any
-	PhoneNumberId any
-	ProductType any
-	Status any
-	Type any
-	UpdatedTimestamp any
+	E164PhoneNumber   any
+	Name              any
+	OrderId           any
+	PhoneNumberArn    any
+	PhoneNumberId     any
+	ProductType       any
+	Status            any
+	Type              any
+	UpdatedTimestamp  any
 }
 
 type VoiceChimePhoneNumbersConfig struct {
-	FilterName any
+	FilterName  any
 	FilterValue any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ProductType any
-	Status any
+	Status      any
 }
 
 type VoiceChimePhoneNumbersAttrs struct {
-	FilterName any
-	FilterValue any
-	MaxResults any
-	NextToken any
+	FilterName   any
+	FilterValue  any
+	MaxResults   any
+	NextToken    any
 	PhoneNumbers any
-	ProductType any
-	Status any
+	ProductType  any
+	Status       any
 }
 
 var VoiceChimePhoneNumbers = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_phone_numbers",
 	Fields: ubx.FieldMap{
-		"FilterName": ubx.FieldSpec{WireName: "filter_name"},
+		"FilterName":  ubx.FieldSpec{WireName: "filter_name"},
 		"FilterValue": ubx.FieldSpec{WireName: "filter_value"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ProductType": ubx.FieldSpec{WireName: "product_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 	},
 }

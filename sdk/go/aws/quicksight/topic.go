@@ -49,7 +49,7 @@ type Topic_DataSets_CalculatedFields_DefaultFormatting_DisplayFormatOptions stru
 	FractionDigits any
 	// Specifies the grouping separator (e.g., comma, period, or space) used to group digits in the default numeric display format of the calculated field within the QuickSight topic's dataset. (AI-inferred)
 	GroupingSeparator any
-	NegativeFormat any
+	NegativeFormat    any
 	// The prefix is a string prepended to the displayed value of a calculated field (e.g., a currency symbol like '$') when using a custom display format in QuickSight topics. (AI-inferred)
 	Prefix any
 	// Specifies the text to append to the formatted value in a QuickSight calculated field's display format, such as a currency symbol or percentage sign. (AI-inferred)
@@ -339,334 +339,334 @@ type Topic_Tags struct {
 }
 
 var Topic_ConfigOptionsFields = ubx.FieldMap{
-		"QbusinessInsightsEnabled": ubx.FieldSpec{WireName: "qbusiness_insights_enabled"},
-	}
+	"QbusinessInsightsEnabled": ubx.FieldSpec{WireName: "qbusiness_insights_enabled"},
+}
 
 var Topic_CustomInstructionsFields = ubx.FieldMap{
-		"CustomInstructionsString": ubx.FieldSpec{WireName: "custom_instructions_string"},
-	}
+	"CustomInstructionsString": ubx.FieldSpec{WireName: "custom_instructions_string"},
+}
 
 var Topic_DataSets_CalculatedFields_CellValueSynonymsFields = ubx.FieldMap{
-		"CellValue": ubx.FieldSpec{WireName: "cell_value"},
-		"Synonyms": ubx.FieldSpec{WireName: "synonyms"},
-	}
+	"CellValue": ubx.FieldSpec{WireName: "cell_value"},
+	"Synonyms":  ubx.FieldSpec{WireName: "synonyms"},
+}
 
 var Topic_DataSets_CalculatedFields_ComparativeOrderFields = ubx.FieldMap{
-		"SpecifedOrder": ubx.FieldSpec{WireName: "specifed_order"},
-		"TreatUndefinedSpecifiedValues": ubx.FieldSpec{WireName: "treat_undefined_specified_values"},
-		"UseOrdering": ubx.FieldSpec{WireName: "use_ordering"},
-	}
+	"SpecifedOrder":                 ubx.FieldSpec{WireName: "specifed_order"},
+	"TreatUndefinedSpecifiedValues": ubx.FieldSpec{WireName: "treat_undefined_specified_values"},
+	"UseOrdering":                   ubx.FieldSpec{WireName: "use_ordering"},
+}
 
 var Topic_DataSets_CalculatedFields_DefaultFormatting_DisplayFormatOptions_NegativeFormatFields = ubx.FieldMap{
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	"Suffix": ubx.FieldSpec{WireName: "suffix"},
+}
 
 var Topic_DataSets_CalculatedFields_DefaultFormatting_DisplayFormatOptionsFields = ubx.FieldMap{
-		"BlankCellFormat": ubx.FieldSpec{WireName: "blank_cell_format"},
-		"CurrencySymbol": ubx.FieldSpec{WireName: "currency_symbol"},
-		"DateFormat": ubx.FieldSpec{WireName: "date_format"},
-		"DecimalSeparator": ubx.FieldSpec{WireName: "decimal_separator"},
-		"FractionDigits": ubx.FieldSpec{WireName: "fraction_digits"},
-		"GroupingSeparator": ubx.FieldSpec{WireName: "grouping_separator"},
-		"NegativeFormat": ubx.FieldSpec{
-			WireName: "negative_format",
-			Kind: "object",
-			Fields: Topic_DataSets_CalculatedFields_DefaultFormatting_DisplayFormatOptions_NegativeFormatFields,
-		},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-		"UnitScaler": ubx.FieldSpec{WireName: "unit_scaler"},
-		"UseBlankCellFormat": ubx.FieldSpec{WireName: "use_blank_cell_format"},
-		"UseGrouping": ubx.FieldSpec{WireName: "use_grouping"},
-	}
+	"BlankCellFormat":   ubx.FieldSpec{WireName: "blank_cell_format"},
+	"CurrencySymbol":    ubx.FieldSpec{WireName: "currency_symbol"},
+	"DateFormat":        ubx.FieldSpec{WireName: "date_format"},
+	"DecimalSeparator":  ubx.FieldSpec{WireName: "decimal_separator"},
+	"FractionDigits":    ubx.FieldSpec{WireName: "fraction_digits"},
+	"GroupingSeparator": ubx.FieldSpec{WireName: "grouping_separator"},
+	"NegativeFormat": ubx.FieldSpec{
+		WireName: "negative_format",
+		Kind:     "object",
+		Fields:   Topic_DataSets_CalculatedFields_DefaultFormatting_DisplayFormatOptions_NegativeFormatFields,
+	},
+	"Prefix":             ubx.FieldSpec{WireName: "prefix"},
+	"Suffix":             ubx.FieldSpec{WireName: "suffix"},
+	"UnitScaler":         ubx.FieldSpec{WireName: "unit_scaler"},
+	"UseBlankCellFormat": ubx.FieldSpec{WireName: "use_blank_cell_format"},
+	"UseGrouping":        ubx.FieldSpec{WireName: "use_grouping"},
+}
 
 var Topic_DataSets_CalculatedFields_DefaultFormattingFields = ubx.FieldMap{
-		"DisplayFormat": ubx.FieldSpec{WireName: "display_format"},
-		"DisplayFormatOptions": ubx.FieldSpec{
-			WireName: "display_format_options",
-			Kind: "object",
-			Fields: Topic_DataSets_CalculatedFields_DefaultFormatting_DisplayFormatOptionsFields,
-		},
-	}
+	"DisplayFormat": ubx.FieldSpec{WireName: "display_format"},
+	"DisplayFormatOptions": ubx.FieldSpec{
+		WireName: "display_format_options",
+		Kind:     "object",
+		Fields:   Topic_DataSets_CalculatedFields_DefaultFormatting_DisplayFormatOptionsFields,
+	},
+}
 
 var Topic_DataSets_CalculatedFields_SemanticTypeFields = ubx.FieldMap{
-		"FalseyCellValue": ubx.FieldSpec{WireName: "falsey_cell_value"},
-		"FalseyCellValueSynonyms": ubx.FieldSpec{WireName: "falsey_cell_value_synonyms"},
-		"SubTypeName": ubx.FieldSpec{WireName: "sub_type_name"},
-		"TruthyCellValue": ubx.FieldSpec{WireName: "truthy_cell_value"},
-		"TruthyCellValueSynonyms": ubx.FieldSpec{WireName: "truthy_cell_value_synonyms"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-		"TypeParameters": ubx.FieldSpec{WireName: "type_parameters"},
-	}
+	"FalseyCellValue":         ubx.FieldSpec{WireName: "falsey_cell_value"},
+	"FalseyCellValueSynonyms": ubx.FieldSpec{WireName: "falsey_cell_value_synonyms"},
+	"SubTypeName":             ubx.FieldSpec{WireName: "sub_type_name"},
+	"TruthyCellValue":         ubx.FieldSpec{WireName: "truthy_cell_value"},
+	"TruthyCellValueSynonyms": ubx.FieldSpec{WireName: "truthy_cell_value_synonyms"},
+	"TypeName":                ubx.FieldSpec{WireName: "type_name"},
+	"TypeParameters":          ubx.FieldSpec{WireName: "type_parameters"},
+}
 
 var Topic_DataSets_CalculatedFieldsFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"AllowedAggregations": ubx.FieldSpec{WireName: "allowed_aggregations"},
-		"CalculatedFieldDescription": ubx.FieldSpec{WireName: "calculated_field_description"},
-		"CalculatedFieldName": ubx.FieldSpec{WireName: "calculated_field_name"},
-		"CalculatedFieldSynonyms": ubx.FieldSpec{WireName: "calculated_field_synonyms"},
-		"CellValueSynonyms": ubx.FieldSpec{
-			WireName: "cell_value_synonyms",
-			Kind: "list",
-			Fields: Topic_DataSets_CalculatedFields_CellValueSynonymsFields,
-		},
-		"ColumnDataRole": ubx.FieldSpec{WireName: "column_data_role"},
-		"ComparativeOrder": ubx.FieldSpec{
-			WireName: "comparative_order",
-			Kind: "object",
-			Fields: Topic_DataSets_CalculatedFields_ComparativeOrderFields,
-		},
-		"DefaultFormatting": ubx.FieldSpec{
-			WireName: "default_formatting",
-			Kind: "object",
-			Fields: Topic_DataSets_CalculatedFields_DefaultFormattingFields,
-		},
-		"DisableIndexing": ubx.FieldSpec{WireName: "disable_indexing"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"IsIncludedInTopic": ubx.FieldSpec{WireName: "is_included_in_topic"},
-		"NeverAggregateInFilter": ubx.FieldSpec{WireName: "never_aggregate_in_filter"},
-		"NonAdditive": ubx.FieldSpec{WireName: "non_additive"},
-		"NotAllowedAggregations": ubx.FieldSpec{WireName: "not_allowed_aggregations"},
-		"SemanticType": ubx.FieldSpec{
-			WireName: "semantic_type",
-			Kind: "object",
-			Fields: Topic_DataSets_CalculatedFields_SemanticTypeFields,
-		},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-	}
+	"Aggregation":                ubx.FieldSpec{WireName: "aggregation"},
+	"AllowedAggregations":        ubx.FieldSpec{WireName: "allowed_aggregations"},
+	"CalculatedFieldDescription": ubx.FieldSpec{WireName: "calculated_field_description"},
+	"CalculatedFieldName":        ubx.FieldSpec{WireName: "calculated_field_name"},
+	"CalculatedFieldSynonyms":    ubx.FieldSpec{WireName: "calculated_field_synonyms"},
+	"CellValueSynonyms": ubx.FieldSpec{
+		WireName: "cell_value_synonyms",
+		Kind:     "list",
+		Fields:   Topic_DataSets_CalculatedFields_CellValueSynonymsFields,
+	},
+	"ColumnDataRole": ubx.FieldSpec{WireName: "column_data_role"},
+	"ComparativeOrder": ubx.FieldSpec{
+		WireName: "comparative_order",
+		Kind:     "object",
+		Fields:   Topic_DataSets_CalculatedFields_ComparativeOrderFields,
+	},
+	"DefaultFormatting": ubx.FieldSpec{
+		WireName: "default_formatting",
+		Kind:     "object",
+		Fields:   Topic_DataSets_CalculatedFields_DefaultFormattingFields,
+	},
+	"DisableIndexing":        ubx.FieldSpec{WireName: "disable_indexing"},
+	"Expression":             ubx.FieldSpec{WireName: "expression"},
+	"IsIncludedInTopic":      ubx.FieldSpec{WireName: "is_included_in_topic"},
+	"NeverAggregateInFilter": ubx.FieldSpec{WireName: "never_aggregate_in_filter"},
+	"NonAdditive":            ubx.FieldSpec{WireName: "non_additive"},
+	"NotAllowedAggregations": ubx.FieldSpec{WireName: "not_allowed_aggregations"},
+	"SemanticType": ubx.FieldSpec{
+		WireName: "semantic_type",
+		Kind:     "object",
+		Fields:   Topic_DataSets_CalculatedFields_SemanticTypeFields,
+	},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+}
 
 var Topic_DataSets_ColumnsFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"AllowedAggregations": ubx.FieldSpec{WireName: "allowed_aggregations"},
-		"CellValueSynonyms": ubx.FieldSpec{
-			WireName: "cell_value_synonyms",
-			Kind: "list",
-			Fields: Topic_DataSets_CalculatedFields_CellValueSynonymsFields,
-		},
-		"ColumnDataRole": ubx.FieldSpec{WireName: "column_data_role"},
-		"ColumnDescription": ubx.FieldSpec{WireName: "column_description"},
-		"ColumnFriendlyName": ubx.FieldSpec{WireName: "column_friendly_name"},
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"ColumnSynonyms": ubx.FieldSpec{WireName: "column_synonyms"},
-		"ComparativeOrder": ubx.FieldSpec{
-			WireName: "comparative_order",
-			Kind: "object",
-			Fields: Topic_DataSets_CalculatedFields_ComparativeOrderFields,
-		},
-		"DefaultFormatting": ubx.FieldSpec{
-			WireName: "default_formatting",
-			Kind: "object",
-			Fields: Topic_DataSets_CalculatedFields_DefaultFormattingFields,
-		},
-		"DisableIndexing": ubx.FieldSpec{WireName: "disable_indexing"},
-		"IsIncludedInTopic": ubx.FieldSpec{WireName: "is_included_in_topic"},
-		"NeverAggregateInFilter": ubx.FieldSpec{WireName: "never_aggregate_in_filter"},
-		"NonAdditive": ubx.FieldSpec{WireName: "non_additive"},
-		"NotAllowedAggregations": ubx.FieldSpec{WireName: "not_allowed_aggregations"},
-		"SemanticType": ubx.FieldSpec{
-			WireName: "semantic_type",
-			Kind: "object",
-			Fields: Topic_DataSets_CalculatedFields_SemanticTypeFields,
-		},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-	}
+	"Aggregation":         ubx.FieldSpec{WireName: "aggregation"},
+	"AllowedAggregations": ubx.FieldSpec{WireName: "allowed_aggregations"},
+	"CellValueSynonyms": ubx.FieldSpec{
+		WireName: "cell_value_synonyms",
+		Kind:     "list",
+		Fields:   Topic_DataSets_CalculatedFields_CellValueSynonymsFields,
+	},
+	"ColumnDataRole":     ubx.FieldSpec{WireName: "column_data_role"},
+	"ColumnDescription":  ubx.FieldSpec{WireName: "column_description"},
+	"ColumnFriendlyName": ubx.FieldSpec{WireName: "column_friendly_name"},
+	"ColumnName":         ubx.FieldSpec{WireName: "column_name"},
+	"ColumnSynonyms":     ubx.FieldSpec{WireName: "column_synonyms"},
+	"ComparativeOrder": ubx.FieldSpec{
+		WireName: "comparative_order",
+		Kind:     "object",
+		Fields:   Topic_DataSets_CalculatedFields_ComparativeOrderFields,
+	},
+	"DefaultFormatting": ubx.FieldSpec{
+		WireName: "default_formatting",
+		Kind:     "object",
+		Fields:   Topic_DataSets_CalculatedFields_DefaultFormattingFields,
+	},
+	"DisableIndexing":        ubx.FieldSpec{WireName: "disable_indexing"},
+	"IsIncludedInTopic":      ubx.FieldSpec{WireName: "is_included_in_topic"},
+	"NeverAggregateInFilter": ubx.FieldSpec{WireName: "never_aggregate_in_filter"},
+	"NonAdditive":            ubx.FieldSpec{WireName: "non_additive"},
+	"NotAllowedAggregations": ubx.FieldSpec{WireName: "not_allowed_aggregations"},
+	"SemanticType": ubx.FieldSpec{
+		WireName: "semantic_type",
+		Kind:     "object",
+		Fields:   Topic_DataSets_CalculatedFields_SemanticTypeFields,
+	},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+}
 
 var Topic_DataSets_DataAggregationFields = ubx.FieldMap{
-		"DatasetRowDateGranularity": ubx.FieldSpec{WireName: "dataset_row_date_granularity"},
-		"DefaultDateColumnName": ubx.FieldSpec{WireName: "default_date_column_name"},
-	}
+	"DatasetRowDateGranularity": ubx.FieldSpec{WireName: "dataset_row_date_granularity"},
+	"DefaultDateColumnName":     ubx.FieldSpec{WireName: "default_date_column_name"},
+}
 
 var Topic_DataSets_Filters_CategoryFilter_Constant_CollectiveConstantFields = ubx.FieldMap{
-		"ValueList": ubx.FieldSpec{WireName: "value_list"},
-	}
+	"ValueList": ubx.FieldSpec{WireName: "value_list"},
+}
 
 var Topic_DataSets_Filters_CategoryFilter_ConstantFields = ubx.FieldMap{
-		"CollectiveConstant": ubx.FieldSpec{
-			WireName: "collective_constant",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_CategoryFilter_Constant_CollectiveConstantFields,
-		},
-		"ConstantType": ubx.FieldSpec{WireName: "constant_type"},
-		"SingularConstant": ubx.FieldSpec{WireName: "singular_constant"},
-	}
+	"CollectiveConstant": ubx.FieldSpec{
+		WireName: "collective_constant",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_CategoryFilter_Constant_CollectiveConstantFields,
+	},
+	"ConstantType":     ubx.FieldSpec{WireName: "constant_type"},
+	"SingularConstant": ubx.FieldSpec{WireName: "singular_constant"},
+}
 
 var Topic_DataSets_Filters_CategoryFilterFields = ubx.FieldMap{
-		"CategoryFilterFunction": ubx.FieldSpec{WireName: "category_filter_function"},
-		"CategoryFilterType": ubx.FieldSpec{WireName: "category_filter_type"},
-		"Constant": ubx.FieldSpec{
-			WireName: "constant",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_CategoryFilter_ConstantFields,
-		},
-		"Inverse": ubx.FieldSpec{WireName: "inverse"},
-	}
+	"CategoryFilterFunction": ubx.FieldSpec{WireName: "category_filter_function"},
+	"CategoryFilterType":     ubx.FieldSpec{WireName: "category_filter_type"},
+	"Constant": ubx.FieldSpec{
+		WireName: "constant",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_CategoryFilter_ConstantFields,
+	},
+	"Inverse": ubx.FieldSpec{WireName: "inverse"},
+}
 
 var Topic_DataSets_Filters_DateRangeFilter_Constant_RangeConstantFields = ubx.FieldMap{
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-	}
+	"Maximum": ubx.FieldSpec{WireName: "maximum"},
+	"Minimum": ubx.FieldSpec{WireName: "minimum"},
+}
 
 var Topic_DataSets_Filters_DateRangeFilter_ConstantFields = ubx.FieldMap{
-		"ConstantType": ubx.FieldSpec{WireName: "constant_type"},
-		"RangeConstant": ubx.FieldSpec{
-			WireName: "range_constant",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_DateRangeFilter_Constant_RangeConstantFields,
-		},
-	}
+	"ConstantType": ubx.FieldSpec{WireName: "constant_type"},
+	"RangeConstant": ubx.FieldSpec{
+		WireName: "range_constant",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_DateRangeFilter_Constant_RangeConstantFields,
+	},
+}
 
 var Topic_DataSets_Filters_DateRangeFilterFields = ubx.FieldMap{
-		"Constant": ubx.FieldSpec{
-			WireName: "constant",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_DateRangeFilter_ConstantFields,
-		},
-		"Inclusive": ubx.FieldSpec{WireName: "inclusive"},
-	}
+	"Constant": ubx.FieldSpec{
+		WireName: "constant",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_DateRangeFilter_ConstantFields,
+	},
+	"Inclusive": ubx.FieldSpec{WireName: "inclusive"},
+}
 
 var Topic_DataSets_Filters_NumericEqualityFilter_ConstantFields = ubx.FieldMap{
-		"ConstantType": ubx.FieldSpec{WireName: "constant_type"},
-		"SingularConstant": ubx.FieldSpec{WireName: "singular_constant"},
-	}
+	"ConstantType":     ubx.FieldSpec{WireName: "constant_type"},
+	"SingularConstant": ubx.FieldSpec{WireName: "singular_constant"},
+}
 
 var Topic_DataSets_Filters_NumericEqualityFilterFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"Constant": ubx.FieldSpec{
-			WireName: "constant",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_NumericEqualityFilter_ConstantFields,
-		},
-	}
+	"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
+	"Constant": ubx.FieldSpec{
+		WireName: "constant",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_NumericEqualityFilter_ConstantFields,
+	},
+}
 
 var Topic_DataSets_Filters_NumericRangeFilterFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"Constant": ubx.FieldSpec{
-			WireName: "constant",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_DateRangeFilter_ConstantFields,
-		},
-		"Inclusive": ubx.FieldSpec{WireName: "inclusive"},
-	}
+	"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
+	"Constant": ubx.FieldSpec{
+		WireName: "constant",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_DateRangeFilter_ConstantFields,
+	},
+	"Inclusive": ubx.FieldSpec{WireName: "inclusive"},
+}
 
 var Topic_DataSets_Filters_RelativeDateFilterFields = ubx.FieldMap{
-		"Constant": ubx.FieldSpec{
-			WireName: "constant",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_NumericEqualityFilter_ConstantFields,
-		},
-		"RelativeDateFilterFunction": ubx.FieldSpec{WireName: "relative_date_filter_function"},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-	}
+	"Constant": ubx.FieldSpec{
+		WireName: "constant",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_NumericEqualityFilter_ConstantFields,
+	},
+	"RelativeDateFilterFunction": ubx.FieldSpec{WireName: "relative_date_filter_function"},
+	"TimeGranularity":            ubx.FieldSpec{WireName: "time_granularity"},
+}
 
 var Topic_DataSets_FiltersFields = ubx.FieldMap{
-		"CategoryFilter": ubx.FieldSpec{
-			WireName: "category_filter",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_CategoryFilterFields,
-		},
-		"DateRangeFilter": ubx.FieldSpec{
-			WireName: "date_range_filter",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_DateRangeFilterFields,
-		},
-		"FilterClass": ubx.FieldSpec{WireName: "filter_class"},
-		"FilterDescription": ubx.FieldSpec{WireName: "filter_description"},
-		"FilterName": ubx.FieldSpec{WireName: "filter_name"},
-		"FilterSynonyms": ubx.FieldSpec{WireName: "filter_synonyms"},
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-		"NumericEqualityFilter": ubx.FieldSpec{
-			WireName: "numeric_equality_filter",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_NumericEqualityFilterFields,
-		},
-		"NumericRangeFilter": ubx.FieldSpec{
-			WireName: "numeric_range_filter",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_NumericRangeFilterFields,
-		},
-		"OperandFieldName": ubx.FieldSpec{WireName: "operand_field_name"},
-		"RelativeDateFilter": ubx.FieldSpec{
-			WireName: "relative_date_filter",
-			Kind: "object",
-			Fields: Topic_DataSets_Filters_RelativeDateFilterFields,
-		},
-	}
+	"CategoryFilter": ubx.FieldSpec{
+		WireName: "category_filter",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_CategoryFilterFields,
+	},
+	"DateRangeFilter": ubx.FieldSpec{
+		WireName: "date_range_filter",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_DateRangeFilterFields,
+	},
+	"FilterClass":       ubx.FieldSpec{WireName: "filter_class"},
+	"FilterDescription": ubx.FieldSpec{WireName: "filter_description"},
+	"FilterName":        ubx.FieldSpec{WireName: "filter_name"},
+	"FilterSynonyms":    ubx.FieldSpec{WireName: "filter_synonyms"},
+	"FilterType":        ubx.FieldSpec{WireName: "filter_type"},
+	"NumericEqualityFilter": ubx.FieldSpec{
+		WireName: "numeric_equality_filter",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_NumericEqualityFilterFields,
+	},
+	"NumericRangeFilter": ubx.FieldSpec{
+		WireName: "numeric_range_filter",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_NumericRangeFilterFields,
+	},
+	"OperandFieldName": ubx.FieldSpec{WireName: "operand_field_name"},
+	"RelativeDateFilter": ubx.FieldSpec{
+		WireName: "relative_date_filter",
+		Kind:     "object",
+		Fields:   Topic_DataSets_Filters_RelativeDateFilterFields,
+	},
+}
 
 var Topic_DataSets_NamedEntities_Definition_MetricFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"AggregationFunctionParameters": ubx.FieldSpec{WireName: "aggregation_function_parameters"},
-	}
+	"Aggregation":                   ubx.FieldSpec{WireName: "aggregation"},
+	"AggregationFunctionParameters": ubx.FieldSpec{WireName: "aggregation_function_parameters"},
+}
 
 var Topic_DataSets_NamedEntities_DefinitionFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: Topic_DataSets_NamedEntities_Definition_MetricFields,
-		},
-		"PropertyName": ubx.FieldSpec{WireName: "property_name"},
-		"PropertyRole": ubx.FieldSpec{WireName: "property_role"},
-		"PropertyUsage": ubx.FieldSpec{WireName: "property_usage"},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   Topic_DataSets_NamedEntities_Definition_MetricFields,
+	},
+	"PropertyName":  ubx.FieldSpec{WireName: "property_name"},
+	"PropertyRole":  ubx.FieldSpec{WireName: "property_role"},
+	"PropertyUsage": ubx.FieldSpec{WireName: "property_usage"},
+}
 
 var Topic_DataSets_NamedEntities_SemanticEntityTypeFields = ubx.FieldMap{
-		"SubTypeName": ubx.FieldSpec{WireName: "sub_type_name"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-		"TypeParameters": ubx.FieldSpec{WireName: "type_parameters"},
-	}
+	"SubTypeName":    ubx.FieldSpec{WireName: "sub_type_name"},
+	"TypeName":       ubx.FieldSpec{WireName: "type_name"},
+	"TypeParameters": ubx.FieldSpec{WireName: "type_parameters"},
+}
 
 var Topic_DataSets_NamedEntitiesFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{
-			WireName: "definition",
-			Kind: "list",
-			Fields: Topic_DataSets_NamedEntities_DefinitionFields,
-		},
-		"EntityDescription": ubx.FieldSpec{WireName: "entity_description"},
-		"EntityName": ubx.FieldSpec{WireName: "entity_name"},
-		"EntitySynonyms": ubx.FieldSpec{WireName: "entity_synonyms"},
-		"SemanticEntityType": ubx.FieldSpec{
-			WireName: "semantic_entity_type",
-			Kind: "object",
-			Fields: Topic_DataSets_NamedEntities_SemanticEntityTypeFields,
-		},
-	}
+	"Definition": ubx.FieldSpec{
+		WireName: "definition",
+		Kind:     "list",
+		Fields:   Topic_DataSets_NamedEntities_DefinitionFields,
+	},
+	"EntityDescription": ubx.FieldSpec{WireName: "entity_description"},
+	"EntityName":        ubx.FieldSpec{WireName: "entity_name"},
+	"EntitySynonyms":    ubx.FieldSpec{WireName: "entity_synonyms"},
+	"SemanticEntityType": ubx.FieldSpec{
+		WireName: "semantic_entity_type",
+		Kind:     "object",
+		Fields:   Topic_DataSets_NamedEntities_SemanticEntityTypeFields,
+	},
+}
 
 var Topic_DataSetsFields = ubx.FieldMap{
-		"CalculatedFields": ubx.FieldSpec{
-			WireName: "calculated_fields",
-			Kind: "list",
-			Fields: Topic_DataSets_CalculatedFieldsFields,
-		},
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Topic_DataSets_ColumnsFields,
-		},
-		"DataAggregation": ubx.FieldSpec{
-			WireName: "data_aggregation",
-			Kind: "object",
-			Fields: Topic_DataSets_DataAggregationFields,
-		},
-		"DatasetArn": ubx.FieldSpec{WireName: "dataset_arn"},
-		"DatasetDescription": ubx.FieldSpec{WireName: "dataset_description"},
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: Topic_DataSets_FiltersFields,
-		},
-		"NamedEntities": ubx.FieldSpec{
-			WireName: "named_entities",
-			Kind: "list",
-			Fields: Topic_DataSets_NamedEntitiesFields,
-		},
-	}
+	"CalculatedFields": ubx.FieldSpec{
+		WireName: "calculated_fields",
+		Kind:     "list",
+		Fields:   Topic_DataSets_CalculatedFieldsFields,
+	},
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Topic_DataSets_ColumnsFields,
+	},
+	"DataAggregation": ubx.FieldSpec{
+		WireName: "data_aggregation",
+		Kind:     "object",
+		Fields:   Topic_DataSets_DataAggregationFields,
+	},
+	"DatasetArn":         ubx.FieldSpec{WireName: "dataset_arn"},
+	"DatasetDescription": ubx.FieldSpec{WireName: "dataset_description"},
+	"DatasetName":        ubx.FieldSpec{WireName: "dataset_name"},
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   Topic_DataSets_FiltersFields,
+	},
+	"NamedEntities": ubx.FieldSpec{
+		WireName: "named_entities",
+		Kind:     "list",
+		Fields:   Topic_DataSets_NamedEntitiesFields,
+	},
+}
 
 var Topic_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TopicConfig struct {
 	// The AWS account ID that owns the QuickSight topic; if omitted, defaults to the account where the CloudFormation stack is running. (AI-inferred)
@@ -722,28 +722,28 @@ var Topic = ubx.ResourceBinding{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"ConfigOptions": ubx.FieldSpec{
 			WireName: "config_options",
-			Kind: "object",
-			Fields: Topic_ConfigOptionsFields,
+			Kind:     "object",
+			Fields:   Topic_ConfigOptionsFields,
 		},
 		"CustomInstructions": ubx.FieldSpec{
 			WireName: "custom_instructions",
-			Kind: "object",
-			Fields: Topic_CustomInstructionsFields,
+			Kind:     "object",
+			Fields:   Topic_CustomInstructionsFields,
 		},
 		"DataSets": ubx.FieldSpec{
 			WireName: "data_sets",
-			Kind: "list",
-			Fields: Topic_DataSetsFields,
+			Kind:     "list",
+			Fields:   Topic_DataSetsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"FolderArns": ubx.FieldSpec{WireName: "folder_arns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"FolderArns":  ubx.FieldSpec{WireName: "folder_arns"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Topic_TagsFields,
+			Kind:     "list",
+			Fields:   Topic_TagsFields,
 		},
-		"TopicId": ubx.FieldSpec{WireName: "topic_id"},
+		"TopicId":               ubx.FieldSpec{WireName: "topic_id"},
 		"UserExperienceVersion": ubx.FieldSpec{WireName: "user_experience_version"},
 	},
 }

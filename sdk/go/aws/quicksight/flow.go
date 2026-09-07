@@ -11,13 +11,13 @@ type Flow_Permissions struct {
 
 type Flow_StepAliases struct {
 	StepAlias any
-	StepId any
+	StepId    any
 }
 
 var Flow_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 type FlowConfig struct {
 	// The AWS account ID this flow belongs to. (AI-inferred)
@@ -60,14 +60,14 @@ type FlowAttrs struct {
 var Flow = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_flow",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AwsAccountId":   ubx.FieldSpec{WireName: "aws_account_id"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"FlowDefinition": ubx.FieldSpec{WireName: "flow_definition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: Flow_PermissionsFields,
+			Kind:     "list",
+			Fields:   Flow_PermissionsFields,
 		},
 	},
 }

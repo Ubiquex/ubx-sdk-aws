@@ -4,42 +4,42 @@ package ram
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SourceAssociations_SourceAssociations struct {
-	CreationTime any
-	LastUpdatedTime any
+	CreationTime     any
+	LastUpdatedTime  any
 	ResourceShareArn any
-	SourceId any
-	SourceType any
-	Status any
-	StatusMessage any
+	SourceId         any
+	SourceType       any
+	Status           any
+	StatusMessage    any
 }
 
 type SourceAssociationsConfig struct {
 	AssociationStatus any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	ResourceShareArns any
-	SourceId any
-	SourceType any
+	SourceId          any
+	SourceType        any
 }
 
 type SourceAssociationsAttrs struct {
-	AssociationStatus any
-	MaxResults any
-	NextToken any
-	ResourceShareArns any
+	AssociationStatus  any
+	MaxResults         any
+	NextToken          any
+	ResourceShareArns  any
 	SourceAssociations any
-	SourceId any
-	SourceType any
+	SourceId           any
+	SourceType         any
 }
 
 var SourceAssociations = ubx.DataSourceBinding{
 	WireType: "aws_ram_source_associations",
 	Fields: ubx.FieldMap{
 		"AssociationStatus": ubx.FieldSpec{WireName: "association_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"ResourceShareArns": ubx.FieldSpec{WireName: "resource_share_arns"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+		"SourceId":          ubx.FieldSpec{WireName: "source_id"},
+		"SourceType":        ubx.FieldSpec{WireName: "source_type"},
 	},
 }

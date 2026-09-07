@@ -4,38 +4,38 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainConflicts_DomainConflicts struct {
-	AccountId any
-	Domain any
-	ResourceId any
+	AccountId    any
+	Domain       any
+	ResourceId   any
 	ResourceType any
 }
 
 type DomainConflicts_DomainControlValidationResource struct {
-	DistributionId any
+	DistributionId       any
 	DistributionTenantId any
 }
 
 var DomainConflicts_DomainControlValidationResourceFields = ubx.FieldMap{
-		"DistributionId": ubx.FieldSpec{WireName: "distribution_id"},
-		"DistributionTenantId": ubx.FieldSpec{WireName: "distribution_tenant_id"},
-	}
+	"DistributionId":       ubx.FieldSpec{WireName: "distribution_id"},
+	"DistributionTenantId": ubx.FieldSpec{WireName: "distribution_tenant_id"},
+}
 
 type DomainConflictsConfig struct {
 	Domain any
 	// <p>The IDs for the distribution resources.</p>
 	DomainControlValidationResource any
-	Marker any
-	MaxItems any
+	Marker                          any
+	MaxItems                        any
 }
 
 type DomainConflictsAttrs struct {
-	Domain any
+	Domain          any
 	DomainConflicts any
 	// <p>The IDs for the distribution resources.</p>
 	DomainControlValidationResource any
-	Marker any
-	MaxItems any
-	NextMarker any
+	Marker                          any
+	MaxItems                        any
+	NextMarker                      any
 }
 
 var DomainConflicts = ubx.DataSourceBinding{
@@ -44,10 +44,10 @@ var DomainConflicts = ubx.DataSourceBinding{
 		"Domain": ubx.FieldSpec{WireName: "domain"},
 		"DomainControlValidationResource": ubx.FieldSpec{
 			WireName: "domain_control_validation_resource",
-			Kind: "object",
-			Fields: DomainConflicts_DomainControlValidationResourceFields,
+			Kind:     "object",
+			Fields:   DomainConflicts_DomainControlValidationResourceFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

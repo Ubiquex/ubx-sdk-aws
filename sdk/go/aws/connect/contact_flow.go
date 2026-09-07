@@ -11,9 +11,9 @@ type ContactFlow_Tags struct {
 }
 
 var ContactFlow_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ContactFlowConfig struct {
 	// The content of the contact flow in JSON format.
@@ -54,15 +54,15 @@ type ContactFlowAttrs struct {
 var ContactFlow = ubx.ResourceBinding{
 	WireType: "aws_connect_contact_flow",
 	Fields: ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
+		"Content":     ubx.FieldSpec{WireName: "content"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"State":       ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ContactFlow_TagsFields,
+			Kind:     "list",
+			Fields:   ContactFlow_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

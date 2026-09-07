@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Glossaries_Items struct {
 	Description any
-	Id any
-	Name any
+	Id          any
+	Name        any
 }
 
 type GlossariesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type GlossariesAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Glossaries = ubx.DataSourceBinding{
 	WireType: "aws_glue_glossaries",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,25 +4,25 @@ package waf_regional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalSqlInjectionMatchSets_SqlInjectionMatchSets struct {
-	Name any
+	Name                   any
 	SqlInjectionMatchSetId any
 }
 
 type WafRegionalSqlInjectionMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalSqlInjectionMatchSetsAttrs struct {
-	Limit any
-	NextMarker any
+	Limit                 any
+	NextMarker            any
 	SqlInjectionMatchSets any
 }
 
 var WafRegionalSqlInjectionMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_sql_injection_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

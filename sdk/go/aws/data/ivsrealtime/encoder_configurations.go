@@ -4,26 +4,26 @@ package ivsrealtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EncoderConfigurations_EncoderConfigurations struct {
-	Arn any
+	Arn  any
 	Name any
 	Tags any
 }
 
 type EncoderConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EncoderConfigurationsAttrs struct {
 	EncoderConfigurations any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 var EncoderConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_ivsrealtime_encoder_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

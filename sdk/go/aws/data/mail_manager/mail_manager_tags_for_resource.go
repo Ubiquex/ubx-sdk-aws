@@ -4,7 +4,7 @@ package mail_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type MailManagerTagsForResourceConfig struct {
 
 type MailManagerTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var MailManagerTagsForResource = ubx.DataSourceBinding{

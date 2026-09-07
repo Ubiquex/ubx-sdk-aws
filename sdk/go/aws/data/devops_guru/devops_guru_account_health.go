@@ -8,14 +8,13 @@ type DevopsGuruAccountHealthConfig struct {
 
 type DevopsGuruAccountHealthAttrs struct {
 	AnalyzedResourceCount any
-	MetricsAnalyzed any
+	MetricsAnalyzed       any
 	OpenProactiveInsights any
-	OpenReactiveInsights any
-	ResourceHours any
+	OpenReactiveInsights  any
+	ResourceHours         any
 }
 
 var DevopsGuruAccountHealth = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_account_health",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

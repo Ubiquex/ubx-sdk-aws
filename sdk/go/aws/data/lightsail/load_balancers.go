@@ -4,46 +4,46 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancers_LoadBalancers_InstanceHealthSummary struct {
-	InstanceHealth any
+	InstanceHealth       any
 	InstanceHealthReason any
-	InstanceName any
+	InstanceName         any
 }
 
 type LoadBalancers_LoadBalancers_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type LoadBalancers_LoadBalancers_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type LoadBalancers_LoadBalancers_TlsCertificateSummaries struct {
 	IsAttached any
-	Name any
+	Name       any
 }
 
 type LoadBalancers_LoadBalancers struct {
-	Arn any
-	ConfigurationOptions any
-	CreatedAt any
-	DnsName any
-	HealthCheckPath any
+	Arn                     any
+	ConfigurationOptions    any
+	CreatedAt               any
+	DnsName                 any
+	HealthCheckPath         any
 	HttpsRedirectionEnabled any
-	InstanceHealthSummary any
-	InstancePort any
-	IpAddressType any
-	Location any
-	Name any
-	Protocol any
-	PublicPorts any
-	ResourceType any
-	State any
-	SupportCode any
-	Tags any
+	InstanceHealthSummary   any
+	InstancePort            any
+	IpAddressType           any
+	Location                any
+	Name                    any
+	Protocol                any
+	PublicPorts             any
+	ResourceType            any
+	State                   any
+	SupportCode             any
+	Tags                    any
 	TlsCertificateSummaries any
-	TlsPolicyName any
+	TlsPolicyName           any
 }
 
 type LoadBalancersConfig struct {
@@ -53,7 +53,7 @@ type LoadBalancersConfig struct {
 type LoadBalancersAttrs struct {
 	LoadBalancers any
 	NextPageToken any
-	PageToken any
+	PageToken     any
 }
 
 var LoadBalancers = ubx.DataSourceBinding{

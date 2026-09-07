@@ -8,7 +8,7 @@ type EndpointAttributesConfig struct {
 }
 
 type EndpointAttributesAttrs struct {
-	Attributes any
+	Attributes  any
 	EndpointArn any
 }
 

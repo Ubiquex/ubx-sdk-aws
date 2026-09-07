@@ -4,41 +4,41 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProvisionedProductPlans_AccessLevelFilter struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ProvisionedProductPlans_ProvisionedProductPlans struct {
-	PlanId any
-	PlanName any
-	PlanType any
-	ProvisionProductId any
-	ProvisionProductName any
+	PlanId                 any
+	PlanName               any
+	PlanType               any
+	ProvisionProductId     any
+	ProvisionProductName   any
 	ProvisioningArtifactId any
 }
 
 var ProvisionedProductPlans_AccessLevelFilterFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProvisionedProductPlansConfig struct {
 	AcceptLanguage any
 	// <p>The access level to use to filter results.</p>
-	AccessLevelFilter any
-	PageSize any
-	PageToken any
+	AccessLevelFilter  any
+	PageSize           any
+	PageToken          any
 	ProvisionProductId any
 }
 
 type ProvisionedProductPlansAttrs struct {
 	AcceptLanguage any
 	// <p>The access level to use to filter results.</p>
-	AccessLevelFilter any
-	NextPageToken any
-	PageSize any
-	PageToken any
-	ProvisionProductId any
+	AccessLevelFilter       any
+	NextPageToken           any
+	PageSize                any
+	PageToken               any
+	ProvisionProductId      any
 	ProvisionedProductPlans any
 }
 
@@ -48,11 +48,11 @@ var ProvisionedProductPlans = ubx.DataSourceBinding{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
 		"AccessLevelFilter": ubx.FieldSpec{
 			WireName: "access_level_filter",
-			Kind: "object",
-			Fields: ProvisionedProductPlans_AccessLevelFilterFields,
+			Kind:     "object",
+			Fields:   ProvisionedProductPlans_AccessLevelFilterFields,
 		},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageSize":           ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":          ubx.FieldSpec{WireName: "page_token"},
 		"ProvisionProductId": ubx.FieldSpec{WireName: "provision_product_id"},
 	},
 }

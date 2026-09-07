@@ -51,47 +51,47 @@ type StreamingDistribution_Tags struct {
 }
 
 var StreamingDistribution_StreamingDistributionConfig_LoggingFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Prefix":  ubx.FieldSpec{WireName: "prefix"},
+}
 
 var StreamingDistribution_StreamingDistributionConfig_S3OriginFields = ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"OriginAccessIdentity": ubx.FieldSpec{WireName: "origin_access_identity"},
-	}
+	"DomainName":           ubx.FieldSpec{WireName: "domain_name"},
+	"OriginAccessIdentity": ubx.FieldSpec{WireName: "origin_access_identity"},
+}
 
 var StreamingDistribution_StreamingDistributionConfig_TrustedSignersFields = ubx.FieldMap{
-		"AwsAccountNumbers": ubx.FieldSpec{WireName: "aws_account_numbers"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"AwsAccountNumbers": ubx.FieldSpec{WireName: "aws_account_numbers"},
+	"Enabled":           ubx.FieldSpec{WireName: "enabled"},
+}
 
 var StreamingDistribution_StreamingDistributionConfigFields = ubx.FieldMap{
-		"Aliases": ubx.FieldSpec{WireName: "aliases"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Logging": ubx.FieldSpec{
-			WireName: "logging",
-			Kind: "object",
-			Fields: StreamingDistribution_StreamingDistributionConfig_LoggingFields,
-		},
-		"PriceClass": ubx.FieldSpec{WireName: "price_class"},
-		"S3Origin": ubx.FieldSpec{
-			WireName: "s3_origin",
-			Kind: "object",
-			Fields: StreamingDistribution_StreamingDistributionConfig_S3OriginFields,
-		},
-		"TrustedSigners": ubx.FieldSpec{
-			WireName: "trusted_signers",
-			Kind: "object",
-			Fields: StreamingDistribution_StreamingDistributionConfig_TrustedSignersFields,
-		},
-	}
+	"Aliases": ubx.FieldSpec{WireName: "aliases"},
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Logging": ubx.FieldSpec{
+		WireName: "logging",
+		Kind:     "object",
+		Fields:   StreamingDistribution_StreamingDistributionConfig_LoggingFields,
+	},
+	"PriceClass": ubx.FieldSpec{WireName: "price_class"},
+	"S3Origin": ubx.FieldSpec{
+		WireName: "s3_origin",
+		Kind:     "object",
+		Fields:   StreamingDistribution_StreamingDistributionConfig_S3OriginFields,
+	},
+	"TrustedSigners": ubx.FieldSpec{
+		WireName: "trusted_signers",
+		Kind:     "object",
+		Fields:   StreamingDistribution_StreamingDistributionConfig_TrustedSignersFields,
+	},
+}
 
 var StreamingDistribution_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StreamingDistributionConfig struct {
 	// The required configuration object for the CloudFront streaming distribution, specifying the S3 origin, enabled flag, optional aliases, comment, logging settings, and trusted signers for RTMP streaming. (AI-inferred)
@@ -116,13 +116,13 @@ var StreamingDistribution = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"StreamingDistributionConfig": ubx.FieldSpec{
 			WireName: "streaming_distribution_config",
-			Kind: "object",
-			Fields: StreamingDistribution_StreamingDistributionConfigFields,
+			Kind:     "object",
+			Fields:   StreamingDistribution_StreamingDistributionConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StreamingDistribution_TagsFields,
+			Kind:     "list",
+			Fields:   StreamingDistribution_TagsFields,
 		},
 	},
 }

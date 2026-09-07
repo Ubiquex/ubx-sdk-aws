@@ -4,62 +4,62 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContactEvaluations_EvaluationSummaryList_Acknowledgement struct {
-	AcknowledgedBy any
-	AcknowledgedTime any
+	AcknowledgedBy      any
+	AcknowledgedTime    any
 	AcknowledgerComment any
 }
 
 type ContactEvaluations_EvaluationSummaryList_ContactParticipant struct {
-	ContactParticipantId any
+	ContactParticipantId   any
 	ContactParticipantRole any
 }
 
 type ContactEvaluations_EvaluationSummaryList_Score struct {
-	AppliedWeight any
-	AutomaticFail any
-	EarnedPoints any
-	MaxBasePoint any
-	NotApplicable any
-	Percentage any
+	AppliedWeight       any
+	AutomaticFail       any
+	EarnedPoints        any
+	MaxBasePoint        any
+	NotApplicable       any
+	Percentage          any
 	PerformanceCategory any
 }
 
 type ContactEvaluations_EvaluationSummaryList struct {
-	Acknowledgement any
+	Acknowledgement       any
 	AutoEvaluationEnabled any
-	AutoEvaluationStatus any
-	CalibrationSessionId any
-	ContactParticipant any
-	CreatedTime any
-	EvaluationArn any
-	EvaluationFormId any
-	EvaluationFormTitle any
-	EvaluationId any
-	EvaluationType any
-	EvaluatorArn any
-	LastModifiedTime any
-	Score any
-	Status any
+	AutoEvaluationStatus  any
+	CalibrationSessionId  any
+	ContactParticipant    any
+	CreatedTime           any
+	EvaluationArn         any
+	EvaluationFormId      any
+	EvaluationFormTitle   any
+	EvaluationId          any
+	EvaluationType        any
+	EvaluatorArn          any
+	LastModifiedTime      any
+	Score                 any
+	Status                any
 }
 
 type ContactEvaluationsConfig struct {
-	ContactId any
+	ContactId  any
 	InstanceId any
-	NextToken any
+	NextToken  any
 }
 
 type ContactEvaluationsAttrs struct {
-	ContactId any
+	ContactId             any
 	EvaluationSummaryList any
-	InstanceId any
-	NextToken any
+	InstanceId            any
+	NextToken             any
 }
 
 var ContactEvaluations = ubx.DataSourceBinding{
 	WireType: "aws_connect_contact_evaluations",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"ContactId":  ubx.FieldSpec{WireName: "contact_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

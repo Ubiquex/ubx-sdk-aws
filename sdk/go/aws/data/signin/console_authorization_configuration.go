@@ -10,7 +10,7 @@ type ConsoleAuthorizationConfigurationConfig struct {
 
 type ConsoleAuthorizationConfigurationAttrs struct {
 	ConsoleAuthorizationEnabled any
-	Scope any
+	Scope                       any
 	// Target account identifier for console authorization
 	TargetId any
 }

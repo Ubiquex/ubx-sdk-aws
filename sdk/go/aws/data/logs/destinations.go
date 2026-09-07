@@ -4,25 +4,25 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Destinations_Destinations struct {
-	AccessPolicy any
-	Arn any
-	CreationTime any
+	AccessPolicy    any
+	Arn             any
+	CreationTime    any
 	DestinationName any
-	RoleArn any
-	TargetArn any
+	RoleArn         any
+	TargetArn       any
 }
 
 type DestinationsConfig struct {
 	DestinationNamePrefix any
-	Limit any
+	Limit                 any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
 
 type DestinationsAttrs struct {
 	DestinationNamePrefix any
-	Destinations any
-	Limit any
+	Destinations          any
+	Limit                 any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
@@ -31,7 +31,7 @@ var Destinations = ubx.DataSourceBinding{
 	WireType: "aws_logs_destinations",
 	Fields: ubx.FieldMap{
 		"DestinationNamePrefix": ubx.FieldSpec{WireName: "destination_name_prefix"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                 ubx.FieldSpec{WireName: "limit"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

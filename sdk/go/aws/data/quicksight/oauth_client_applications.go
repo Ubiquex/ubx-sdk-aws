@@ -8,36 +8,36 @@ type OauthClientApplications_OauthClientApplications_IdentityProviderVpcConnecti
 }
 
 type OauthClientApplications_OauthClientApplications struct {
-	Arn any
-	CreatedTime any
-	DataSourceType any
+	Arn                                     any
+	CreatedTime                             any
+	DataSourceType                          any
 	IdentityProviderVpcConnectionProperties any
-	LastUpdatedTime any
-	Name any
-	OauthClientApplicationId any
-	OauthClientAuthenticationType any
+	LastUpdatedTime                         any
+	Name                                    any
+	OauthClientApplicationId                any
+	OauthClientAuthenticationType           any
 }
 
 type OauthClientApplicationsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type OauthClientApplicationsAttrs struct {
-	AwsAccountId any
-	MaxResults any
-	NextToken any
+	AwsAccountId            any
+	MaxResults              any
+	NextToken               any
 	OauthClientApplications any
-	RequestId any
-	Status any
+	RequestId               any
+	Status                  any
 }
 
 var OauthClientApplications = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_oauth_client_applications",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

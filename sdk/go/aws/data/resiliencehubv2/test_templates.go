@@ -4,8 +4,8 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestTemplates_TestTemplates struct {
-	Description any
-	Name any
+	Description     any
+	Name            any
 	TestTemplateArn any
 }
 
@@ -18,6 +18,5 @@ type TestTemplatesAttrs struct {
 
 var TestTemplates = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_test_templates",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

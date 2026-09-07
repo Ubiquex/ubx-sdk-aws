@@ -10,9 +10,9 @@ type ClientCertificate_Tags struct {
 }
 
 var ClientCertificate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClientCertificateConfig struct {
 	// A user-provided description for the client certificate, used to annotate or identify it. (AI-inferred)
@@ -36,8 +36,8 @@ var ClientCertificate = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ClientCertificate_TagsFields,
+			Kind:     "list",
+			Fields:   ClientCertificate_TagsFields,
 		},
 	},
 }

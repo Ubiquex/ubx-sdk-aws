@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FhirexportJobs_ExportJobPropertiesList_OutputDataConfig_S3Configuration struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type FhirexportJobs_ExportJobPropertiesList_OutputDataConfig struct {
@@ -14,14 +14,14 @@ type FhirexportJobs_ExportJobPropertiesList_OutputDataConfig struct {
 
 type FhirexportJobs_ExportJobPropertiesList struct {
 	DataAccessRoleArn any
-	DatastoreId any
-	EndTime any
-	JobId any
-	JobName any
-	JobStatus any
-	Message any
-	OutputDataConfig any
-	SubmitTime any
+	DatastoreId       any
+	EndTime           any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	Message           any
+	OutputDataConfig  any
+	SubmitTime        any
 }
 
 type FhirexportJobsConfig struct {
@@ -43,7 +43,7 @@ type FhirexportJobsConfig struct {
 
 type FhirexportJobsAttrs struct {
 	// The identifier of a data store.
-	DatastoreId any
+	DatastoreId             any
 	ExportJobPropertiesList any
 	// The human-readable name of a job.
 	JobName any
@@ -62,12 +62,12 @@ type FhirexportJobsAttrs struct {
 var FhirexportJobs = ubx.DataSourceBinding{
 	WireType: "aws_healthlake_fhirexport_jobs",
 	Fields: ubx.FieldMap{
-		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SubmittedAfter": ubx.FieldSpec{WireName: "submitted_after"},
+		"DatastoreId":     ubx.FieldSpec{WireName: "datastore_id"},
+		"JobName":         ubx.FieldSpec{WireName: "job_name"},
+		"JobStatus":       ubx.FieldSpec{WireName: "job_status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"SubmittedAfter":  ubx.FieldSpec{WireName: "submitted_after"},
 		"SubmittedBefore": ubx.FieldSpec{WireName: "submitted_before"},
 	},
 }

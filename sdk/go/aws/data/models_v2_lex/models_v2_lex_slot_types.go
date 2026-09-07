@@ -4,54 +4,54 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexSlotTypes_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexSlotTypes_SlotTypeSummaries struct {
-	Description any
-	LastUpdatedDateTime any
+	Description             any
+	LastUpdatedDateTime     any
 	ParentSlotTypeSignature any
-	SlotTypeCategory any
-	SlotTypeId any
-	SlotTypeName any
+	SlotTypeCategory        any
+	SlotTypeId              any
+	SlotTypeName            any
 }
 
 type ModelsV2LexSlotTypes_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 var ModelsV2LexSlotTypes_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ModelsV2LexSlotTypes_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexSlotTypesConfig struct {
-	BotId any
+	BotId      any
 	BotVersion any
-	Filters any
-	LocaleId any
+	Filters    any
+	LocaleId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies attributes for sorting a list of slot types.</p>
 	SortBy any
 }
 
 type ModelsV2LexSlotTypesAttrs struct {
-	BotId any
-	BotVersion any
-	Filters any
-	LocaleId any
-	MaxResults any
-	NextToken any
+	BotId             any
+	BotVersion        any
+	Filters           any
+	LocaleId          any
+	MaxResults        any
+	NextToken         any
 	SlotTypeSummaries any
 	// <p>Specifies attributes for sorting a list of slot types.</p>
 	SortBy any
@@ -60,20 +60,20 @@ type ModelsV2LexSlotTypesAttrs struct {
 var ModelsV2LexSlotTypes = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_slot_types",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexSlotTypes_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexSlotTypes_FiltersFields,
 		},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+		"LocaleId":   ubx.FieldSpec{WireName: "locale_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexSlotTypes_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexSlotTypes_SortByFields,
 		},
 	},
 }

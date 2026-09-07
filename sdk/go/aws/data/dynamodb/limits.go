@@ -7,14 +7,13 @@ type LimitsConfig struct {
 }
 
 type LimitsAttrs struct {
-	AccountMaxReadCapacityUnits any
+	AccountMaxReadCapacityUnits  any
 	AccountMaxWriteCapacityUnits any
-	TableMaxReadCapacityUnits any
-	TableMaxWriteCapacityUnits any
+	TableMaxReadCapacityUnits    any
+	TableMaxWriteCapacityUnits   any
 }
 
 var Limits = ubx.DataSourceBinding{
 	WireType: "aws_dynamodb_limits",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

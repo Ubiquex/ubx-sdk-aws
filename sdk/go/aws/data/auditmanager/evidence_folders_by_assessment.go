@@ -4,46 +4,46 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EvidenceFoldersByAssessment_EvidenceFolders struct {
-	AssessmentId any
-	AssessmentReportSelectionCount any
-	Author any
-	ControlId any
-	ControlName any
-	ControlSetId any
-	DataSource any
-	Date any
-	EvidenceAwsServiceSourceCount any
-	EvidenceByTypeComplianceCheckCount any
+	AssessmentId                             any
+	AssessmentReportSelectionCount           any
+	Author                                   any
+	ControlId                                any
+	ControlName                              any
+	ControlSetId                             any
+	DataSource                               any
+	Date                                     any
+	EvidenceAwsServiceSourceCount            any
+	EvidenceByTypeComplianceCheckCount       any
 	EvidenceByTypeComplianceCheckIssuesCount any
-	EvidenceByTypeConfigurationDataCount any
-	EvidenceByTypeManualCount any
-	EvidenceByTypeUserActivityCount any
-	EvidenceResourcesIncludedCount any
-	Id any
-	Name any
-	TotalEvidence any
+	EvidenceByTypeConfigurationDataCount     any
+	EvidenceByTypeManualCount                any
+	EvidenceByTypeUserActivityCount          any
+	EvidenceResourcesIncludedCount           any
+	Id                                       any
+	Name                                     any
+	TotalEvidence                            any
 }
 
 type EvidenceFoldersByAssessmentConfig struct {
 	AssessmentId any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EvidenceFoldersByAssessmentAttrs struct {
-	AssessmentId any
+	AssessmentId    any
 	EvidenceFolders any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var EvidenceFoldersByAssessment = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_evidence_folders_by_assessment",
 	Fields: ubx.FieldMap{
 		"AssessmentId": ubx.FieldSpec{WireName: "assessment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

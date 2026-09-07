@@ -4,63 +4,63 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReservedInstancesExchangeQuote_ReservedInstanceValueRollup struct {
-	HourlyPrice any
-	RemainingTotalValue any
+	HourlyPrice           any
+	RemainingTotalValue   any
 	RemainingUpfrontValue any
 }
 
 type ReservedInstancesExchangeQuote_ReservedInstanceValueSet struct {
-	ReservationValue any
+	ReservationValue   any
 	ReservedInstanceId any
 }
 
 type ReservedInstancesExchangeQuote_TargetConfigurationValueSet_TargetConfiguration struct {
 	InstanceCount any
-	OfferingId any
+	OfferingId    any
 }
 
 type ReservedInstancesExchangeQuote_TargetConfigurationValueSet struct {
-	ReservationValue any
+	ReservationValue    any
 	TargetConfiguration any
 }
 
 var ReservedInstancesExchangeQuote_TargetConfigurationValueSet_TargetConfigurationFields = ubx.FieldMap{
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"OfferingId": ubx.FieldSpec{WireName: "offering_id"},
-	}
+	"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
+	"OfferingId":    ubx.FieldSpec{WireName: "offering_id"},
+}
 
 type ReservedInstancesExchangeQuoteConfig struct {
-	DryRun any
-	ReservedInstanceIds any
+	DryRun               any
+	ReservedInstanceIds  any
 	TargetConfigurations any
 }
 
 type ReservedInstancesExchangeQuoteAttrs struct {
-	CurrencyCode any
-	DryRun any
-	IsValidExchange any
+	CurrencyCode                        any
+	DryRun                              any
+	IsValidExchange                     any
 	OutputReservedInstancesWillExpireAt any
-	PaymentDue any
-	ReservedInstanceIds any
+	PaymentDue                          any
+	ReservedInstanceIds                 any
 	// <p>The cost associated with the Reserved Instance.</p>
 	ReservedInstanceValueRollup any
-	ReservedInstanceValueSet any
+	ReservedInstanceValueSet    any
 	// <p>The cost associated with the Reserved Instance.</p>
 	TargetConfigurationValueRollup any
-	TargetConfigurationValueSet any
-	TargetConfigurations any
-	ValidationFailureReason any
+	TargetConfigurationValueSet    any
+	TargetConfigurations           any
+	ValidationFailureReason        any
 }
 
 var ReservedInstancesExchangeQuote = ubx.DataSourceBinding{
 	WireType: "aws_ec2_reserved_instances_exchange_quote",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":              ubx.FieldSpec{WireName: "dry_run"},
 		"ReservedInstanceIds": ubx.FieldSpec{WireName: "reserved_instance_ids"},
 		"TargetConfigurations": ubx.FieldSpec{
 			WireName: "target_configurations",
-			Kind: "list",
-			Fields: ReservedInstancesExchangeQuote_TargetConfigurationValueSet_TargetConfigurationFields,
+			Kind:     "list",
+			Fields:   ReservedInstancesExchangeQuote_TargetConfigurationValueSet_TargetConfigurationFields,
 		},
 	},
 }

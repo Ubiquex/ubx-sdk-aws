@@ -21,9 +21,9 @@ type ConnectionAlias_Tags struct {
 }
 
 var ConnectionAlias_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectionAliasConfig struct {
 	// The fully qualified domain name (FQDN) that serves as the custom connection string for the WorkSpaces connection alias, such as 'www.example.com', which must be a valid domain you own and that users will use to connect to their WorkSpaces. (AI-inferred)
@@ -51,8 +51,8 @@ var ConnectionAlias = ubx.ResourceBinding{
 		"ConnectionString": ubx.FieldSpec{WireName: "connection_string"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConnectionAlias_TagsFields,
+			Kind:     "list",
+			Fields:   ConnectionAlias_TagsFields,
 		},
 	},
 }

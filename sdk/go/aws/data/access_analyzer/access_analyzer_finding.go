@@ -5,48 +5,48 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessAnalyzerFinding_Finding_Sources_Detail struct {
 	AccessPointAccount any
-	AccessPointArn any
+	AccessPointArn     any
 }
 
 type AccessAnalyzerFinding_Finding_Sources struct {
 	Detail any
-	Type any
+	Type   any
 }
 
 type AccessAnalyzerFinding_Finding struct {
-	Action any
-	AnalyzedAt any
-	Condition any
-	CreatedAt any
-	Error any
-	Id any
-	IsPublic any
-	Principal any
-	Resource any
+	Action                           any
+	AnalyzedAt                       any
+	Condition                        any
+	CreatedAt                        any
+	Error                            any
+	Id                               any
+	IsPublic                         any
+	Principal                        any
+	Resource                         any
 	ResourceControlPolicyRestriction any
-	ResourceOwnerAccount any
-	ResourceType any
-	Sources any
-	Status any
-	UpdatedAt any
+	ResourceOwnerAccount             any
+	ResourceType                     any
+	Sources                          any
+	Status                           any
+	UpdatedAt                        any
 }
 
 type AccessAnalyzerFindingConfig struct {
 	AnalyzerArn any
-	Id any
+	Id          any
 }
 
 type AccessAnalyzerFindingAttrs struct {
 	AnalyzerArn any
 	// <p>Contains information about a finding.</p>
 	Finding any
-	Id any
+	Id      any
 }
 
 var AccessAnalyzerFinding = ubx.DataSourceBinding{
 	WireType: "aws_access_analyzer_finding",
 	Fields: ubx.FieldMap{
 		"AnalyzerArn": ubx.FieldSpec{WireName: "analyzer_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
 	},
 }

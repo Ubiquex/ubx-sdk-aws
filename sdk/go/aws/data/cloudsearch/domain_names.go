@@ -13,6 +13,5 @@ type DomainNamesAttrs struct {
 
 var DomainNames = ubx.DataSourceBinding{
 	WireType: "aws_cloudsearch_domain_names",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

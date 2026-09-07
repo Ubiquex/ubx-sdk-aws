@@ -36,11 +36,11 @@ type MemberAttrs struct {
 var Member = ubx.ResourceBinding{
 	WireType: "aws_guard_duty_member",
 	Fields: ubx.FieldMap{
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
+		"DetectorId":               ubx.FieldSpec{WireName: "detector_id"},
 		"DisableEmailNotification": ubx.FieldSpec{WireName: "disable_email_notification"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"MemberId": ubx.FieldSpec{WireName: "member_id"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Email":                    ubx.FieldSpec{WireName: "email"},
+		"MemberId":                 ubx.FieldSpec{WireName: "member_id"},
+		"Message":                  ubx.FieldSpec{WireName: "message"},
+		"Status":                   ubx.FieldSpec{WireName: "status"},
 	},
 }

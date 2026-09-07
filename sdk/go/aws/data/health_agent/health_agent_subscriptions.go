@@ -4,34 +4,34 @@ package health_agent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HealthAgentSubscriptions_Subscriptions struct {
-	ActivatedAt any
-	Arn any
-	CreatedAt any
-	DeactivatedAt any
-	DomainId any
-	LastUpdatedAt any
-	Status any
+	ActivatedAt    any
+	Arn            any
+	CreatedAt      any
+	DeactivatedAt  any
+	DomainId       any
+	LastUpdatedAt  any
+	Status         any
 	SubscriptionId any
 }
 
 type HealthAgentSubscriptionsConfig struct {
-	DomainId any
+	DomainId   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type HealthAgentSubscriptionsAttrs struct {
-	DomainId any
-	MaxResults any
-	NextToken any
+	DomainId      any
+	MaxResults    any
+	NextToken     any
 	Subscriptions any
 }
 
 var HealthAgentSubscriptions = ubx.DataSourceBinding{
 	WireType: "aws_health_agent_subscriptions",
 	Fields: ubx.FieldMap{
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
+		"DomainId":   ubx.FieldSpec{WireName: "domain_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

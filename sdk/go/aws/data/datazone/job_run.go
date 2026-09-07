@@ -4,10 +4,10 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobRun_Details_LineageRunDetails_SqlQueryRunDetails struct {
-	ErrorMessages any
-	NumQueriesFailed any
-	QueryEndTime any
-	QueryStartTime any
+	ErrorMessages         any
+	NumQueriesFailed      any
+	QueryEndTime          any
+	QueryStartTime        any
 	TotalQueriesProcessed any
 }
 
@@ -25,32 +25,32 @@ type JobRun_Error struct {
 
 type JobRunConfig struct {
 	DomainIdentifier any
-	Identifier any
+	Identifier       any
 }
 
 type JobRunAttrs struct {
 	CreatedAt any
 	CreatedBy any
 	// <p>The details of a job run.</p>
-	Details any
-	DomainId any
+	Details          any
+	DomainId         any
 	DomainIdentifier any
-	EndTime any
+	EndTime          any
 	// <p>The job run error.</p>
-	Error any
-	Id any
+	Error      any
+	Id         any
 	Identifier any
-	JobId any
-	JobType any
-	RunMode any
-	StartTime any
-	Status any
+	JobId      any
+	JobType    any
+	RunMode    any
+	StartTime  any
+	Status     any
 }
 
 var JobRun = ubx.DataSourceBinding{
 	WireType: "aws_datazone_job_run",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Identifier":       ubx.FieldSpec{WireName: "identifier"},
 	},
 }

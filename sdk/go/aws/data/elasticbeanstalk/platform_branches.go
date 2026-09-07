@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlatformBranches_Filters struct {
 	Attribute any
-	Operator any
-	Values any
+	Operator  any
+	Values    any
 }
 
 type PlatformBranches_PlatformBranchSummaryList struct {
-	BranchName any
-	BranchOrder any
-	LifecycleState any
-	PlatformName any
+	BranchName        any
+	BranchOrder       any
+	LifecycleState    any
+	PlatformName      any
 	SupportedTierList any
 }
 
 var PlatformBranches_FiltersFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Operator":  ubx.FieldSpec{WireName: "operator"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type PlatformBranchesConfig struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 type PlatformBranchesAttrs struct {
-	Filters any
-	MaxRecords any
-	NextToken any
+	Filters                   any
+	MaxRecords                any
+	NextToken                 any
 	PlatformBranchSummaryList any
 }
 
@@ -41,10 +41,10 @@ var PlatformBranches = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: PlatformBranches_FiltersFields,
+			Kind:     "list",
+			Fields:   PlatformBranches_FiltersFields,
 		},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

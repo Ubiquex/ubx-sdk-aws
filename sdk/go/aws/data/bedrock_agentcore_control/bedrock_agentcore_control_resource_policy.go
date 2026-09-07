@@ -8,7 +8,7 @@ type BedrockAgentcoreControlResourcePolicyConfig struct {
 }
 
 type BedrockAgentcoreControlResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

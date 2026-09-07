@@ -40,15 +40,15 @@ type OnlineEvaluationConfig_OutputConfig struct {
 
 type OnlineEvaluationConfig_Rule_Filters_Value struct {
 	BooleanValue any
-	DoubleValue any
+	DoubleValue  any
 	// Provides the string to match in a rule filter for the Bedrock Agent Core online evaluation configuration, when the filter's value type is STRING, to determine which interactions are evaluated. (AI-inferred)
 	StringValue any
 }
 
 type OnlineEvaluationConfig_Rule_Filters struct {
-	Key any
+	Key      any
 	Operator any
-	Value any
+	Value    any
 }
 
 type OnlineEvaluationConfig_Rule_SamplingConfig struct {
@@ -72,81 +72,81 @@ type OnlineEvaluationConfig_Rule struct {
 
 type OnlineEvaluationConfig_Tags struct {
 	// The key of a tag attached to the Bedrock agent core online evaluation configuration, used to organize and identify the resource by custom metadata such as environment or project. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var OnlineEvaluationConfig_ClusteringConfigFields = ubx.FieldMap{
-		"Frequencies": ubx.FieldSpec{WireName: "frequencies"},
-	}
+	"Frequencies": ubx.FieldSpec{WireName: "frequencies"},
+}
 
 var OnlineEvaluationConfig_DataSourceConfig_CloudWatchLogsFields = ubx.FieldMap{
-		"LogGroupNames": ubx.FieldSpec{WireName: "log_group_names"},
-		"ServiceNames": ubx.FieldSpec{WireName: "service_names"},
-	}
+	"LogGroupNames": ubx.FieldSpec{WireName: "log_group_names"},
+	"ServiceNames":  ubx.FieldSpec{WireName: "service_names"},
+}
 
 var OnlineEvaluationConfig_DataSourceConfigFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: OnlineEvaluationConfig_DataSourceConfig_CloudWatchLogsFields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   OnlineEvaluationConfig_DataSourceConfig_CloudWatchLogsFields,
+	},
+}
 
 var OnlineEvaluationConfig_EvaluatorsFields = ubx.FieldMap{
-		"EvaluatorId": ubx.FieldSpec{WireName: "evaluator_id"},
-	}
+	"EvaluatorId": ubx.FieldSpec{WireName: "evaluator_id"},
+}
 
 var OnlineEvaluationConfig_InsightsFields = ubx.FieldMap{
-		"InsightId": ubx.FieldSpec{WireName: "insight_id"},
-	}
+	"InsightId": ubx.FieldSpec{WireName: "insight_id"},
+}
 
 var OnlineEvaluationConfig_Rule_Filters_ValueFields = ubx.FieldMap{
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+	"DoubleValue":  ubx.FieldSpec{WireName: "double_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+}
 
 var OnlineEvaluationConfig_Rule_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: OnlineEvaluationConfig_Rule_Filters_ValueFields,
-		},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   OnlineEvaluationConfig_Rule_Filters_ValueFields,
+	},
+}
 
 var OnlineEvaluationConfig_Rule_SamplingConfigFields = ubx.FieldMap{
-		"SamplingPercentage": ubx.FieldSpec{WireName: "sampling_percentage"},
-	}
+	"SamplingPercentage": ubx.FieldSpec{WireName: "sampling_percentage"},
+}
 
 var OnlineEvaluationConfig_Rule_SessionConfigFields = ubx.FieldMap{
-		"SessionTimeoutMinutes": ubx.FieldSpec{WireName: "session_timeout_minutes"},
-	}
+	"SessionTimeoutMinutes": ubx.FieldSpec{WireName: "session_timeout_minutes"},
+}
 
 var OnlineEvaluationConfig_RuleFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: OnlineEvaluationConfig_Rule_FiltersFields,
-		},
-		"SamplingConfig": ubx.FieldSpec{
-			WireName: "sampling_config",
-			Kind: "object",
-			Fields: OnlineEvaluationConfig_Rule_SamplingConfigFields,
-		},
-		"SessionConfig": ubx.FieldSpec{
-			WireName: "session_config",
-			Kind: "object",
-			Fields: OnlineEvaluationConfig_Rule_SessionConfigFields,
-		},
-	}
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   OnlineEvaluationConfig_Rule_FiltersFields,
+	},
+	"SamplingConfig": ubx.FieldSpec{
+		WireName: "sampling_config",
+		Kind:     "object",
+		Fields:   OnlineEvaluationConfig_Rule_SamplingConfigFields,
+	},
+	"SessionConfig": ubx.FieldSpec{
+		WireName: "session_config",
+		Kind:     "object",
+		Fields:   OnlineEvaluationConfig_Rule_SessionConfigFields,
+	},
+}
 
 var OnlineEvaluationConfig_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OnlineEvaluationConfigConfig struct {
 	// The configuration for clustering analysis of evaluation results.
@@ -211,37 +211,37 @@ var OnlineEvaluationConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusteringConfig": ubx.FieldSpec{
 			WireName: "clustering_config",
-			Kind: "object",
-			Fields: OnlineEvaluationConfig_ClusteringConfigFields,
+			Kind:     "object",
+			Fields:   OnlineEvaluationConfig_ClusteringConfigFields,
 		},
 		"DataSourceConfig": ubx.FieldSpec{
 			WireName: "data_source_config",
-			Kind: "object",
-			Fields: OnlineEvaluationConfig_DataSourceConfigFields,
+			Kind:     "object",
+			Fields:   OnlineEvaluationConfig_DataSourceConfigFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
 		"EvaluationExecutionRoleArn": ubx.FieldSpec{WireName: "evaluation_execution_role_arn"},
 		"Evaluators": ubx.FieldSpec{
 			WireName: "evaluators",
-			Kind: "list",
-			Fields: OnlineEvaluationConfig_EvaluatorsFields,
+			Kind:     "list",
+			Fields:   OnlineEvaluationConfig_EvaluatorsFields,
 		},
 		"ExecutionStatus": ubx.FieldSpec{WireName: "execution_status"},
 		"Insights": ubx.FieldSpec{
 			WireName: "insights",
-			Kind: "list",
-			Fields: OnlineEvaluationConfig_InsightsFields,
+			Kind:     "list",
+			Fields:   OnlineEvaluationConfig_InsightsFields,
 		},
 		"OnlineEvaluationConfigName": ubx.FieldSpec{WireName: "online_evaluation_config_name"},
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "object",
-			Fields: OnlineEvaluationConfig_RuleFields,
+			Kind:     "object",
+			Fields:   OnlineEvaluationConfig_RuleFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OnlineEvaluationConfig_TagsFields,
+			Kind:     "list",
+			Fields:   OnlineEvaluationConfig_TagsFields,
 		},
 	},
 }

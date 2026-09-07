@@ -11,7 +11,7 @@ type ApiIotwirelessWirelessDeviceImportTask_Sidewalk struct {
 	DeviceCreationFileList any
 	// <p>The Positioning object of the Sidewalk device.</p>
 	Positioning any
-	Role any
+	Role        any
 }
 
 type ApiIotwirelessWirelessDeviceImportTaskConfig struct {
@@ -19,18 +19,18 @@ type ApiIotwirelessWirelessDeviceImportTaskConfig struct {
 }
 
 type ApiIotwirelessWirelessDeviceImportTaskAttrs struct {
-	Arn any
-	CreationTime any
-	DestinationName any
-	FailedImportedDeviceCount any
-	Id any
+	Arn                            any
+	CreationTime                   any
+	DestinationName                any
+	FailedImportedDeviceCount      any
+	Id                             any
 	InitializedImportedDeviceCount any
-	OnboardedImportedDeviceCount any
-	PendingImportedDeviceCount any
-	Positioning any
+	OnboardedImportedDeviceCount   any
+	PendingImportedDeviceCount     any
+	Positioning                    any
 	// <p>Sidewalk-related information for devices in an import task that are being onboarded.</p>
-	Sidewalk any
-	Status any
+	Sidewalk     any
+	Status       any
 	StatusReason any
 }
 

@@ -4,32 +4,32 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type User_User struct {
-	Active any
-	Arn any
-	CustomPermissionsName any
-	Email any
+	Active                              any
+	Arn                                 any
+	CustomPermissionsName               any
+	Email                               any
 	ExternalLoginFederationProviderType any
-	ExternalLoginFederationProviderUrl any
-	ExternalLoginId any
-	IdentityType any
-	PrincipalId any
-	Role any
-	UserName any
+	ExternalLoginFederationProviderUrl  any
+	ExternalLoginId                     any
+	IdentityType                        any
+	PrincipalId                         any
+	Role                                any
+	UserName                            any
 }
 
 type UserConfig struct {
 	AwsAccountId any
-	Namespace any
-	UserName any
+	Namespace    any
+	UserName     any
 }
 
 type UserAttrs struct {
 	AwsAccountId any
-	Namespace any
-	RequestId any
-	Status any
+	Namespace    any
+	RequestId    any
+	Status       any
 	// <p>A registered user of Quick Sight. </p>
-	User any
+	User     any
 	UserName any
 }
 
@@ -37,7 +37,7 @@ var User = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_user",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"Namespace":    ubx.FieldSpec{WireName: "namespace"},
+		"UserName":     ubx.FieldSpec{WireName: "user_name"},
 	},
 }

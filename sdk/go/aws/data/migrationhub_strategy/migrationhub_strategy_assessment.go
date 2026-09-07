@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyAssessment_AssessmentTargets struct {
 	Condition any
-	Name any
-	Values any
+	Name      any
+	Values    any
 }
 
 type MigrationhubStrategyAssessment_DataCollectionDetails struct {
 	CompletionTime any
-	Failed any
-	InProgress any
-	Servers any
-	StartTime any
-	Status any
-	StatusMessage any
-	Success any
+	Failed         any
+	InProgress     any
+	Servers        any
+	StartTime      any
+	Status         any
+	StatusMessage  any
+	Success        any
 }
 
 type MigrationhubStrategyAssessmentConfig struct {
@@ -28,7 +28,7 @@ type MigrationhubStrategyAssessmentAttrs struct {
 	AssessmentTargets any
 	// <p> Detailed information about an assessment. </p>
 	DataCollectionDetails any
-	Id any
+	Id                    any
 }
 
 var MigrationhubStrategyAssessment = ubx.DataSourceBinding{

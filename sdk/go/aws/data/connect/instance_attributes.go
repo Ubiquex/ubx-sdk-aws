@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceAttributes_Attributes struct {
 	AttributeType any
-	Value any
+	Value         any
 }
 
 type InstanceAttributesConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InstanceAttributesAttrs struct {
 	Attributes any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var InstanceAttributes = ubx.DataSourceBinding{
@@ -26,6 +26,6 @@ var InstanceAttributes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

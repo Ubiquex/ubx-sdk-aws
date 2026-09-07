@@ -4,13 +4,13 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregateConformancePackComplianceSummary_AggregateConformancePackComplianceSummaries_ComplianceSummary struct {
-	CompliantConformancePackCount any
+	CompliantConformancePackCount    any
 	NonCompliantConformancePackCount any
 }
 
 type AggregateConformancePackComplianceSummary_AggregateConformancePackComplianceSummaries struct {
 	ComplianceSummary any
-	GroupName any
+	GroupName         any
 }
 
 type AggregateConformancePackComplianceSummary_Filters struct {
@@ -19,27 +19,27 @@ type AggregateConformancePackComplianceSummary_Filters struct {
 }
 
 var AggregateConformancePackComplianceSummary_FiltersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-	}
+	"AccountId": ubx.FieldSpec{WireName: "account_id"},
+	"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
+}
 
 type AggregateConformancePackComplianceSummaryConfig struct {
 	ConfigurationAggregatorName any
 	// <p>Filters the results based on account ID and region. </p>
-	Filters any
+	Filters    any
 	GroupByKey any
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 }
 
 type AggregateConformancePackComplianceSummaryAttrs struct {
 	AggregateConformancePackComplianceSummaries any
-	ConfigurationAggregatorName any
+	ConfigurationAggregatorName                 any
 	// <p>Filters the results based on account ID and region. </p>
-	Filters any
+	Filters    any
 	GroupByKey any
-	Limit any
-	NextToken any
+	Limit      any
+	NextToken  any
 }
 
 var AggregateConformancePackComplianceSummary = ubx.DataSourceBinding{
@@ -48,11 +48,11 @@ var AggregateConformancePackComplianceSummary = ubx.DataSourceBinding{
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: AggregateConformancePackComplianceSummary_FiltersFields,
+			Kind:     "object",
+			Fields:   AggregateConformancePackComplianceSummary_FiltersFields,
 		},
 		"GroupByKey": ubx.FieldSpec{WireName: "group_by_key"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

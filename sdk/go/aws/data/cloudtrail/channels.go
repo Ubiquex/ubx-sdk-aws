@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Channels_Channels struct {
 	ChannelArn any
-	Name any
+	Name       any
 }
 
 type ChannelsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ChannelsAttrs struct {
-	Channels any
+	Channels   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Channels = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_channels",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

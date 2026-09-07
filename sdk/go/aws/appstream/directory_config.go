@@ -18,14 +18,14 @@ type DirectoryConfig_ServiceAccountCredentials struct {
 }
 
 var DirectoryConfig_CertificateBasedAuthPropertiesFields = ubx.FieldMap{
-		"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"CertificateAuthorityArn": ubx.FieldSpec{WireName: "certificate_authority_arn"},
+	"Status":                  ubx.FieldSpec{WireName: "status"},
+}
 
 var DirectoryConfig_ServiceAccountCredentialsFields = ubx.FieldMap{
-		"AccountName": ubx.FieldSpec{WireName: "account_name"},
-		"AccountPassword": ubx.FieldSpec{WireName: "account_password"},
-	}
+	"AccountName":     ubx.FieldSpec{WireName: "account_name"},
+	"AccountPassword": ubx.FieldSpec{WireName: "account_password"},
+}
 
 type DirectoryConfigConfig struct {
 	// Configures certificate-based authentication for the AppStream 2.0 directory configuration, specifying the status (enabled/disabled) and the ARN of the certificate authority used to issue and validate user certificates. (AI-inferred)
@@ -54,15 +54,15 @@ var DirectoryConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CertificateBasedAuthProperties": ubx.FieldSpec{
 			WireName: "certificate_based_auth_properties",
-			Kind: "object",
-			Fields: DirectoryConfig_CertificateBasedAuthPropertiesFields,
+			Kind:     "object",
+			Fields:   DirectoryConfig_CertificateBasedAuthPropertiesFields,
 		},
-		"DirectoryName": ubx.FieldSpec{WireName: "directory_name"},
+		"DirectoryName":                        ubx.FieldSpec{WireName: "directory_name"},
 		"OrganizationalUnitDistinguishedNames": ubx.FieldSpec{WireName: "organizational_unit_distinguished_names"},
 		"ServiceAccountCredentials": ubx.FieldSpec{
 			WireName: "service_account_credentials",
-			Kind: "object",
-			Fields: DirectoryConfig_ServiceAccountCredentialsFields,
+			Kind:     "object",
+			Fields:   DirectoryConfig_ServiceAccountCredentialsFields,
 		},
 	},
 }

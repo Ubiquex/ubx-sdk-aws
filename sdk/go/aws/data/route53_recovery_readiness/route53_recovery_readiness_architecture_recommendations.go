@@ -8,25 +8,25 @@ type Route53RecoveryReadinessArchitectureRecommendations_Recommendations struct 
 }
 
 type Route53RecoveryReadinessArchitectureRecommendationsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 	RecoveryGroupName any
 }
 
 type Route53RecoveryReadinessArchitectureRecommendationsAttrs struct {
 	// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
 	LastAuditTimestamp any
-	MaxResults any
-	NextToken any
-	Recommendations any
-	RecoveryGroupName any
+	MaxResults         any
+	NextToken          any
+	Recommendations    any
+	RecoveryGroupName  any
 }
 
 var Route53RecoveryReadinessArchitectureRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_readiness_architecture_recommendations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"RecoveryGroupName": ubx.FieldSpec{WireName: "recovery_group_name"},
 	},
 }

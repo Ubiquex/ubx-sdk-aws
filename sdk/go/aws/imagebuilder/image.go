@@ -71,52 +71,52 @@ type Image_Workflows struct {
 }
 
 var Image_DeletionSettingsFields = ubx.FieldMap{
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-	}
+	"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
+}
 
 var Image_ImagePipelineExecutionSettingsFields = ubx.FieldMap{
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"OnUpdate": ubx.FieldSpec{WireName: "on_update"},
-	}
+	"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
+	"OnUpdate":     ubx.FieldSpec{WireName: "on_update"},
+}
 
 var Image_ImageScanningConfiguration_EcrConfigurationFields = ubx.FieldMap{
-		"ContainerTags": ubx.FieldSpec{WireName: "container_tags"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
-	}
+	"ContainerTags":  ubx.FieldSpec{WireName: "container_tags"},
+	"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+}
 
 var Image_ImageScanningConfigurationFields = ubx.FieldMap{
-		"EcrConfiguration": ubx.FieldSpec{
-			WireName: "ecr_configuration",
-			Kind: "object",
-			Fields: Image_ImageScanningConfiguration_EcrConfigurationFields,
-		},
-		"ImageScanningEnabled": ubx.FieldSpec{WireName: "image_scanning_enabled"},
-	}
+	"EcrConfiguration": ubx.FieldSpec{
+		WireName: "ecr_configuration",
+		Kind:     "object",
+		Fields:   Image_ImageScanningConfiguration_EcrConfigurationFields,
+	},
+	"ImageScanningEnabled": ubx.FieldSpec{WireName: "image_scanning_enabled"},
+}
 
 var Image_ImageTestsConfigurationFields = ubx.FieldMap{
-		"ImageTestsEnabled": ubx.FieldSpec{WireName: "image_tests_enabled"},
-		"TimeoutMinutes": ubx.FieldSpec{WireName: "timeout_minutes"},
-	}
+	"ImageTestsEnabled": ubx.FieldSpec{WireName: "image_tests_enabled"},
+	"TimeoutMinutes":    ubx.FieldSpec{WireName: "timeout_minutes"},
+}
 
 var Image_LoggingConfigurationFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-	}
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+}
 
 var Image_Workflows_ParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Image_WorkflowsFields = ubx.FieldMap{
-		"OnFailure": ubx.FieldSpec{WireName: "on_failure"},
-		"ParallelGroup": ubx.FieldSpec{WireName: "parallel_group"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: Image_Workflows_ParametersFields,
-		},
-		"WorkflowArn": ubx.FieldSpec{WireName: "workflow_arn"},
-	}
+	"OnFailure":     ubx.FieldSpec{WireName: "on_failure"},
+	"ParallelGroup": ubx.FieldSpec{WireName: "parallel_group"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   Image_Workflows_ParametersFields,
+	},
+	"WorkflowArn": ubx.FieldSpec{WireName: "workflow_arn"},
+}
 
 type ImageConfig struct {
 	// The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.
@@ -192,39 +192,39 @@ var Image = ubx.ResourceBinding{
 		"ContainerRecipeArn": ubx.FieldSpec{WireName: "container_recipe_arn"},
 		"DeletionSettings": ubx.FieldSpec{
 			WireName: "deletion_settings",
-			Kind: "object",
-			Fields: Image_DeletionSettingsFields,
+			Kind:     "object",
+			Fields:   Image_DeletionSettingsFields,
 		},
 		"DistributionConfigurationArn": ubx.FieldSpec{WireName: "distribution_configuration_arn"},
 		"EnhancedImageMetadataEnabled": ubx.FieldSpec{WireName: "enhanced_image_metadata_enabled"},
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
+		"ExecutionRole":                ubx.FieldSpec{WireName: "execution_role"},
 		"ImagePipelineExecutionSettings": ubx.FieldSpec{
 			WireName: "image_pipeline_execution_settings",
-			Kind: "object",
-			Fields: Image_ImagePipelineExecutionSettingsFields,
+			Kind:     "object",
+			Fields:   Image_ImagePipelineExecutionSettingsFields,
 		},
 		"ImageRecipeArn": ubx.FieldSpec{WireName: "image_recipe_arn"},
 		"ImageScanningConfiguration": ubx.FieldSpec{
 			WireName: "image_scanning_configuration",
-			Kind: "object",
-			Fields: Image_ImageScanningConfigurationFields,
+			Kind:     "object",
+			Fields:   Image_ImageScanningConfigurationFields,
 		},
 		"ImageTestsConfiguration": ubx.FieldSpec{
 			WireName: "image_tests_configuration",
-			Kind: "object",
-			Fields: Image_ImageTestsConfigurationFields,
+			Kind:     "object",
+			Fields:   Image_ImageTestsConfigurationFields,
 		},
 		"InfrastructureConfigurationArn": ubx.FieldSpec{WireName: "infrastructure_configuration_arn"},
 		"LoggingConfiguration": ubx.FieldSpec{
 			WireName: "logging_configuration",
-			Kind: "object",
-			Fields: Image_LoggingConfigurationFields,
+			Kind:     "object",
+			Fields:   Image_LoggingConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Workflows": ubx.FieldSpec{
 			WireName: "workflows",
-			Kind: "list",
-			Fields: Image_WorkflowsFields,
+			Kind:     "list",
+			Fields:   Image_WorkflowsFields,
 		},
 	},
 }

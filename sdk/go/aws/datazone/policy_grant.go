@@ -26,7 +26,7 @@ type PolicyGrant_Detail struct {
 	// For an AWS DataZone policy grant, this nested object configures the CreateAssetType policy, where its 'include_child_domain_units' field determines whether the permission to create asset types also applies to child domain units. (AI-inferred)
 	CreateAssetType any
 	// Configures the 'Create Domain Unit' policy grant detail, an empty object that, when present, grants the principal permission to create domain units within the DataZone domain. (AI-inferred)
-	CreateDomainUnit any
+	CreateDomainUnit  any
 	CreateEnvironment any
 	// Specifies the policy grant detail that grants the principal permission to create an environment from a blueprint in Amazon Data Zone. (AI-inferred)
 	CreateEnvironmentFromBlueprint any
@@ -107,142 +107,142 @@ type PolicyGrant_Principal struct {
 }
 
 var PolicyGrant_Detail_AddToProjectMemberPoolFields = ubx.FieldMap{
-		"IncludeChildDomainUnits": ubx.FieldSpec{WireName: "include_child_domain_units"},
-	}
+	"IncludeChildDomainUnits": ubx.FieldSpec{WireName: "include_child_domain_units"},
+}
 
 var PolicyGrant_Detail_CreateEnvironmentProfileFields = ubx.FieldMap{
-		"DomainUnitId": ubx.FieldSpec{WireName: "domain_unit_id"},
-	}
+	"DomainUnitId": ubx.FieldSpec{WireName: "domain_unit_id"},
+}
 
 var PolicyGrant_Detail_CreateProjectFromProjectProfileFields = ubx.FieldMap{
-		"IncludeChildDomainUnits": ubx.FieldSpec{WireName: "include_child_domain_units"},
-		"ProjectProfiles": ubx.FieldSpec{WireName: "project_profiles"},
-	}
+	"IncludeChildDomainUnits": ubx.FieldSpec{WireName: "include_child_domain_units"},
+	"ProjectProfiles":         ubx.FieldSpec{WireName: "project_profiles"},
+}
 
 var PolicyGrant_DetailFields = ubx.FieldMap{
-		"AddToProjectMemberPool": ubx.FieldSpec{
-			WireName: "add_to_project_member_pool",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_AddToProjectMemberPoolFields,
-		},
-		"CreateAssetType": ubx.FieldSpec{
-			WireName: "create_asset_type",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_AddToProjectMemberPoolFields,
-		},
-		"CreateDomainUnit": ubx.FieldSpec{
-			WireName: "create_domain_unit",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_AddToProjectMemberPoolFields,
-		},
-		"CreateEnvironment": ubx.FieldSpec{WireName: "create_environment"},
-		"CreateEnvironmentFromBlueprint": ubx.FieldSpec{WireName: "create_environment_from_blueprint"},
-		"CreateEnvironmentProfile": ubx.FieldSpec{
-			WireName: "create_environment_profile",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_CreateEnvironmentProfileFields,
-		},
-		"CreateFormType": ubx.FieldSpec{
-			WireName: "create_form_type",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_AddToProjectMemberPoolFields,
-		},
-		"CreateGlossary": ubx.FieldSpec{
-			WireName: "create_glossary",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_AddToProjectMemberPoolFields,
-		},
-		"CreateProject": ubx.FieldSpec{
-			WireName: "create_project",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_AddToProjectMemberPoolFields,
-		},
-		"CreateProjectFromProjectProfile": ubx.FieldSpec{
-			WireName: "create_project_from_project_profile",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_CreateProjectFromProjectProfileFields,
-		},
-		"DelegateCreateEnvironmentProfile": ubx.FieldSpec{WireName: "delegate_create_environment_profile"},
-		"OverrideDomainUnitOwners": ubx.FieldSpec{
-			WireName: "override_domain_unit_owners",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_AddToProjectMemberPoolFields,
-		},
-		"OverrideProjectOwners": ubx.FieldSpec{
-			WireName: "override_project_owners",
-			Kind: "object",
-			Fields: PolicyGrant_Detail_AddToProjectMemberPoolFields,
-		},
-	}
+	"AddToProjectMemberPool": ubx.FieldSpec{
+		WireName: "add_to_project_member_pool",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_AddToProjectMemberPoolFields,
+	},
+	"CreateAssetType": ubx.FieldSpec{
+		WireName: "create_asset_type",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_AddToProjectMemberPoolFields,
+	},
+	"CreateDomainUnit": ubx.FieldSpec{
+		WireName: "create_domain_unit",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_AddToProjectMemberPoolFields,
+	},
+	"CreateEnvironment":              ubx.FieldSpec{WireName: "create_environment"},
+	"CreateEnvironmentFromBlueprint": ubx.FieldSpec{WireName: "create_environment_from_blueprint"},
+	"CreateEnvironmentProfile": ubx.FieldSpec{
+		WireName: "create_environment_profile",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_CreateEnvironmentProfileFields,
+	},
+	"CreateFormType": ubx.FieldSpec{
+		WireName: "create_form_type",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_AddToProjectMemberPoolFields,
+	},
+	"CreateGlossary": ubx.FieldSpec{
+		WireName: "create_glossary",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_AddToProjectMemberPoolFields,
+	},
+	"CreateProject": ubx.FieldSpec{
+		WireName: "create_project",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_AddToProjectMemberPoolFields,
+	},
+	"CreateProjectFromProjectProfile": ubx.FieldSpec{
+		WireName: "create_project_from_project_profile",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_CreateProjectFromProjectProfileFields,
+	},
+	"DelegateCreateEnvironmentProfile": ubx.FieldSpec{WireName: "delegate_create_environment_profile"},
+	"OverrideDomainUnitOwners": ubx.FieldSpec{
+		WireName: "override_domain_unit_owners",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_AddToProjectMemberPoolFields,
+	},
+	"OverrideProjectOwners": ubx.FieldSpec{
+		WireName: "override_project_owners",
+		Kind:     "object",
+		Fields:   PolicyGrant_Detail_AddToProjectMemberPoolFields,
+	},
+}
 
 var PolicyGrant_Principal_DomainUnit_DomainUnitGrantFilterFields = ubx.FieldMap{
-		"AllDomainUnitsGrantFilter": ubx.FieldSpec{WireName: "all_domain_units_grant_filter"},
-	}
+	"AllDomainUnitsGrantFilter": ubx.FieldSpec{WireName: "all_domain_units_grant_filter"},
+}
 
 var PolicyGrant_Principal_DomainUnitFields = ubx.FieldMap{
-		"DomainUnitDesignation": ubx.FieldSpec{WireName: "domain_unit_designation"},
-		"DomainUnitGrantFilter": ubx.FieldSpec{
-			WireName: "domain_unit_grant_filter",
-			Kind: "object",
-			Fields: PolicyGrant_Principal_DomainUnit_DomainUnitGrantFilterFields,
-		},
-		"DomainUnitIdentifier": ubx.FieldSpec{WireName: "domain_unit_identifier"},
-	}
+	"DomainUnitDesignation": ubx.FieldSpec{WireName: "domain_unit_designation"},
+	"DomainUnitGrantFilter": ubx.FieldSpec{
+		WireName: "domain_unit_grant_filter",
+		Kind:     "object",
+		Fields:   PolicyGrant_Principal_DomainUnit_DomainUnitGrantFilterFields,
+	},
+	"DomainUnitIdentifier": ubx.FieldSpec{WireName: "domain_unit_identifier"},
+}
 
 var PolicyGrant_Principal_GroupFields = ubx.FieldMap{
-		"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
-	}
+	"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
+}
 
 var PolicyGrant_Principal_Project_ProjectGrantFilter_DomainUnitFilterFields = ubx.FieldMap{
-		"DomainUnit": ubx.FieldSpec{WireName: "domain_unit"},
-		"IncludeChildDomainUnits": ubx.FieldSpec{WireName: "include_child_domain_units"},
-	}
+	"DomainUnit":              ubx.FieldSpec{WireName: "domain_unit"},
+	"IncludeChildDomainUnits": ubx.FieldSpec{WireName: "include_child_domain_units"},
+}
 
 var PolicyGrant_Principal_Project_ProjectGrantFilterFields = ubx.FieldMap{
-		"DomainUnitFilter": ubx.FieldSpec{
-			WireName: "domain_unit_filter",
-			Kind: "object",
-			Fields: PolicyGrant_Principal_Project_ProjectGrantFilter_DomainUnitFilterFields,
-		},
-	}
+	"DomainUnitFilter": ubx.FieldSpec{
+		WireName: "domain_unit_filter",
+		Kind:     "object",
+		Fields:   PolicyGrant_Principal_Project_ProjectGrantFilter_DomainUnitFilterFields,
+	},
+}
 
 var PolicyGrant_Principal_ProjectFields = ubx.FieldMap{
-		"ProjectDesignation": ubx.FieldSpec{WireName: "project_designation"},
-		"ProjectGrantFilter": ubx.FieldSpec{
-			WireName: "project_grant_filter",
-			Kind: "object",
-			Fields: PolicyGrant_Principal_Project_ProjectGrantFilterFields,
-		},
-		"ProjectIdentifier": ubx.FieldSpec{WireName: "project_identifier"},
-	}
+	"ProjectDesignation": ubx.FieldSpec{WireName: "project_designation"},
+	"ProjectGrantFilter": ubx.FieldSpec{
+		WireName: "project_grant_filter",
+		Kind:     "object",
+		Fields:   PolicyGrant_Principal_Project_ProjectGrantFilterFields,
+	},
+	"ProjectIdentifier": ubx.FieldSpec{WireName: "project_identifier"},
+}
 
 var PolicyGrant_Principal_UserFields = ubx.FieldMap{
-		"AllUsersGrantFilter": ubx.FieldSpec{WireName: "all_users_grant_filter"},
-		"UserIdentifier": ubx.FieldSpec{WireName: "user_identifier"},
-	}
+	"AllUsersGrantFilter": ubx.FieldSpec{WireName: "all_users_grant_filter"},
+	"UserIdentifier":      ubx.FieldSpec{WireName: "user_identifier"},
+}
 
 var PolicyGrant_PrincipalFields = ubx.FieldMap{
-		"DomainUnit": ubx.FieldSpec{
-			WireName: "domain_unit",
-			Kind: "object",
-			Fields: PolicyGrant_Principal_DomainUnitFields,
-		},
-		"Group": ubx.FieldSpec{
-			WireName: "group",
-			Kind: "object",
-			Fields: PolicyGrant_Principal_GroupFields,
-		},
-		"Project": ubx.FieldSpec{
-			WireName: "project",
-			Kind: "object",
-			Fields: PolicyGrant_Principal_ProjectFields,
-		},
-		"User": ubx.FieldSpec{
-			WireName: "user",
-			Kind: "object",
-			Fields: PolicyGrant_Principal_UserFields,
-		},
-	}
+	"DomainUnit": ubx.FieldSpec{
+		WireName: "domain_unit",
+		Kind:     "object",
+		Fields:   PolicyGrant_Principal_DomainUnitFields,
+	},
+	"Group": ubx.FieldSpec{
+		WireName: "group",
+		Kind:     "object",
+		Fields:   PolicyGrant_Principal_GroupFields,
+	},
+	"Project": ubx.FieldSpec{
+		WireName: "project",
+		Kind:     "object",
+		Fields:   PolicyGrant_Principal_ProjectFields,
+	},
+	"User": ubx.FieldSpec{
+		WireName: "user",
+		Kind:     "object",
+		Fields:   PolicyGrant_Principal_UserFields,
+	},
+}
 
 type PolicyGrantConfig struct {
 	// The details of this policy grant, specific to its own policy type. (AI-inferred)
@@ -285,17 +285,17 @@ var PolicyGrant = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Detail": ubx.FieldSpec{
 			WireName: "detail",
-			Kind: "object",
-			Fields: PolicyGrant_DetailFields,
+			Kind:     "object",
+			Fields:   PolicyGrant_DetailFields,
 		},
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
 		"EntityIdentifier": ubx.FieldSpec{WireName: "entity_identifier"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
+		"EntityType":       ubx.FieldSpec{WireName: "entity_type"},
+		"PolicyType":       ubx.FieldSpec{WireName: "policy_type"},
 		"Principal": ubx.FieldSpec{
 			WireName: "principal",
-			Kind: "object",
-			Fields: PolicyGrant_PrincipalFields,
+			Kind:     "object",
+			Fields:   PolicyGrant_PrincipalFields,
 		},
 	},
 }

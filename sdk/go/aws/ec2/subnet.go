@@ -19,20 +19,20 @@ type Subnet_PrivateDnsNameOptionsOnLaunch struct {
 
 type Subnet_Tags struct {
 	// The case-sensitive key of a tag applied to the subnet, used to identify and categorize the resource for cost allocation, access control, and operational management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Subnet_PrivateDnsNameOptionsOnLaunchFields = ubx.FieldMap{
-		"EnableResourceNameDnsAaaarecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_aaaarecord"},
-		"EnableResourceNameDnsArecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_arecord"},
-		"HostnameType": ubx.FieldSpec{WireName: "hostname_type"},
-	}
+	"EnableResourceNameDnsAaaarecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_aaaarecord"},
+	"EnableResourceNameDnsArecord":    ubx.FieldSpec{WireName: "enable_resource_name_dns_arecord"},
+	"HostnameType":                    ubx.FieldSpec{WireName: "hostname_type"},
+}
 
 var Subnet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SubnetConfig struct {
 	// Indicates whether a network interface created in this subnet receives an IPv6 address. The default value is ``false``. If you specify ``AssignIpv6AddressOnCreation``, you must also specify an IPv6 CIDR block.
@@ -120,28 +120,28 @@ var Subnet = ubx.ResourceBinding{
 	WireType: "aws_subnet",
 	Fields: ubx.FieldMap{
 		"AssignIpv6AddressOnCreation": ubx.FieldSpec{WireName: "assign_ipv6_address_on_creation"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"EnableDns64": ubx.FieldSpec{WireName: "enable_dns64"},
-		"EnableLniAtDeviceIndex": ubx.FieldSpec{WireName: "enable_lni_at_device_index"},
-		"Ipv4IpamPoolId": ubx.FieldSpec{WireName: "ipv4_ipam_pool_id"},
-		"Ipv4NetmaskLength": ubx.FieldSpec{WireName: "ipv4_netmask_length"},
-		"Ipv6CidrBlock": ubx.FieldSpec{WireName: "ipv6_cidr_block"},
-		"Ipv6IpamPoolId": ubx.FieldSpec{WireName: "ipv6_ipam_pool_id"},
-		"Ipv6Native": ubx.FieldSpec{WireName: "ipv6_native"},
-		"Ipv6NetmaskLength": ubx.FieldSpec{WireName: "ipv6_netmask_length"},
-		"MapPublicIpOnLaunch": ubx.FieldSpec{WireName: "map_public_ip_on_launch"},
-		"OutpostArn": ubx.FieldSpec{WireName: "outpost_arn"},
+		"AvailabilityZone":            ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZoneId":          ubx.FieldSpec{WireName: "availability_zone_id"},
+		"CidrBlock":                   ubx.FieldSpec{WireName: "cidr_block"},
+		"EnableDns64":                 ubx.FieldSpec{WireName: "enable_dns64"},
+		"EnableLniAtDeviceIndex":      ubx.FieldSpec{WireName: "enable_lni_at_device_index"},
+		"Ipv4IpamPoolId":              ubx.FieldSpec{WireName: "ipv4_ipam_pool_id"},
+		"Ipv4NetmaskLength":           ubx.FieldSpec{WireName: "ipv4_netmask_length"},
+		"Ipv6CidrBlock":               ubx.FieldSpec{WireName: "ipv6_cidr_block"},
+		"Ipv6IpamPoolId":              ubx.FieldSpec{WireName: "ipv6_ipam_pool_id"},
+		"Ipv6Native":                  ubx.FieldSpec{WireName: "ipv6_native"},
+		"Ipv6NetmaskLength":           ubx.FieldSpec{WireName: "ipv6_netmask_length"},
+		"MapPublicIpOnLaunch":         ubx.FieldSpec{WireName: "map_public_ip_on_launch"},
+		"OutpostArn":                  ubx.FieldSpec{WireName: "outpost_arn"},
 		"PrivateDnsNameOptionsOnLaunch": ubx.FieldSpec{
 			WireName: "private_dns_name_options_on_launch",
-			Kind: "object",
-			Fields: Subnet_PrivateDnsNameOptionsOnLaunchFields,
+			Kind:     "object",
+			Fields:   Subnet_PrivateDnsNameOptionsOnLaunchFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Subnet_TagsFields,
+			Kind:     "list",
+			Fields:   Subnet_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

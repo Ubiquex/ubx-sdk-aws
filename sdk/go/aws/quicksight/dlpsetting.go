@@ -33,46 +33,46 @@ type Dlpsetting_ProviderConfig struct {
 
 type Dlpsetting_Tags struct {
 	// The key of a tag assigned to the QuickSight Data Loss Prevention (DLP) setting, used for organizing and identifying the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Dlpsetting_ProviderConfig_MicrosoftPurview_CredentialsFields = ubx.FieldMap{
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Dlpsetting_ProviderConfig_MicrosoftPurview_LabelActionMappingsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"LabelId": ubx.FieldSpec{WireName: "label_id"},
-		"LabelName": ubx.FieldSpec{WireName: "label_name"},
-	}
+	"Action":    ubx.FieldSpec{WireName: "action"},
+	"LabelId":   ubx.FieldSpec{WireName: "label_id"},
+	"LabelName": ubx.FieldSpec{WireName: "label_name"},
+}
 
 var Dlpsetting_ProviderConfig_MicrosoftPurviewFields = ubx.FieldMap{
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "object",
-			Fields: Dlpsetting_ProviderConfig_MicrosoftPurview_CredentialsFields,
-		},
-		"LabelActionMappings": ubx.FieldSpec{
-			WireName: "label_action_mappings",
-			Kind: "list",
-			Fields: Dlpsetting_ProviderConfig_MicrosoftPurview_LabelActionMappingsFields,
-		},
-		"UnmappedAction": ubx.FieldSpec{WireName: "unmapped_action"},
-	}
+	"Credentials": ubx.FieldSpec{
+		WireName: "credentials",
+		Kind:     "object",
+		Fields:   Dlpsetting_ProviderConfig_MicrosoftPurview_CredentialsFields,
+	},
+	"LabelActionMappings": ubx.FieldSpec{
+		WireName: "label_action_mappings",
+		Kind:     "list",
+		Fields:   Dlpsetting_ProviderConfig_MicrosoftPurview_LabelActionMappingsFields,
+	},
+	"UnmappedAction": ubx.FieldSpec{WireName: "unmapped_action"},
+}
 
 var Dlpsetting_ProviderConfigFields = ubx.FieldMap{
-		"MicrosoftPurview": ubx.FieldSpec{
-			WireName: "microsoft_purview",
-			Kind: "object",
-			Fields: Dlpsetting_ProviderConfig_MicrosoftPurviewFields,
-		},
-	}
+	"MicrosoftPurview": ubx.FieldSpec{
+		WireName: "microsoft_purview",
+		Kind:     "object",
+		Fields:   Dlpsetting_ProviderConfig_MicrosoftPurviewFields,
+	},
+}
 
 var Dlpsetting_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DlpsettingConfig struct {
 	// The AWS account ID for which the QuickSight data loss prevention settings are configured. (AI-inferred)
@@ -125,19 +125,19 @@ var Dlpsetting = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"DlpSettingId": ubx.FieldSpec{WireName: "dlp_setting_id"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"ProviderConfig": ubx.FieldSpec{
 			WireName: "provider_config",
-			Kind: "object",
-			Fields: Dlpsetting_ProviderConfigFields,
+			Kind:     "object",
+			Fields:   Dlpsetting_ProviderConfigFields,
 		},
 		"ProviderOutageAction": ubx.FieldSpec{WireName: "provider_outage_action"},
-		"ProviderType": ubx.FieldSpec{WireName: "provider_type"},
+		"ProviderType":         ubx.FieldSpec{WireName: "provider_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dlpsetting_TagsFields,
+			Kind:     "list",
+			Fields:   Dlpsetting_TagsFields,
 		},
 	},
 }

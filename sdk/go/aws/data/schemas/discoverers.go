@@ -4,35 +4,35 @@ package schemas
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Discoverers_Discoverers struct {
-	CrossAccount any
+	CrossAccount  any
 	DiscovererArn any
-	DiscovererId any
-	SourceArn any
-	State any
-	Tags any
+	DiscovererId  any
+	SourceArn     any
+	State         any
+	Tags          any
 }
 
 type DiscoverersConfig struct {
 	DiscovererIdPrefix any
-	Limit any
-	NextToken any
-	SourceArnPrefix any
+	Limit              any
+	NextToken          any
+	SourceArnPrefix    any
 }
 
 type DiscoverersAttrs struct {
 	DiscovererIdPrefix any
-	Discoverers any
-	Limit any
-	NextToken any
-	SourceArnPrefix any
+	Discoverers        any
+	Limit              any
+	NextToken          any
+	SourceArnPrefix    any
 }
 
 var Discoverers = ubx.DataSourceBinding{
 	WireType: "aws_schemas_discoverers",
 	Fields: ubx.FieldMap{
 		"DiscovererIdPrefix": ubx.FieldSpec{WireName: "discoverer_id_prefix"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SourceArnPrefix": ubx.FieldSpec{WireName: "source_arn_prefix"},
+		"Limit":              ubx.FieldSpec{WireName: "limit"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"SourceArnPrefix":    ubx.FieldSpec{WireName: "source_arn_prefix"},
 	},
 }

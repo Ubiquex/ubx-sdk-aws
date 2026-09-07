@@ -4,25 +4,25 @@ package dynamodb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsOfResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsOfResourceConfig struct {
-	NextToken any
+	NextToken   any
 	ResourceArn any
 }
 
 type TagsOfResourceAttrs struct {
-	NextToken any
+	NextToken   any
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TagsOfResource = ubx.DataSourceBinding{
 	WireType: "aws_dynamodb_tags_of_resource",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

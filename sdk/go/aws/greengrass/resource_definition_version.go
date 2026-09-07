@@ -81,96 +81,96 @@ type ResourceDefinitionVersion_Resources struct {
 }
 
 var ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSettingFields = ubx.FieldMap{
-		"AutoAddGroupOwner": ubx.FieldSpec{WireName: "auto_add_group_owner"},
-		"GroupOwner": ubx.FieldSpec{WireName: "group_owner"},
-	}
+	"AutoAddGroupOwner": ubx.FieldSpec{WireName: "auto_add_group_owner"},
+	"GroupOwner":        ubx.FieldSpec{WireName: "group_owner"},
+}
 
 var ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceDataFields = ubx.FieldMap{
-		"GroupOwnerSetting": ubx.FieldSpec{
-			WireName: "group_owner_setting",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSettingFields,
-		},
-		"SourcePath": ubx.FieldSpec{WireName: "source_path"},
-	}
+	"GroupOwnerSetting": ubx.FieldSpec{
+		WireName: "group_owner_setting",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSettingFields,
+	},
+	"SourcePath": ubx.FieldSpec{WireName: "source_path"},
+}
 
 var ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalVolumeResourceDataFields = ubx.FieldMap{
-		"DestinationPath": ubx.FieldSpec{WireName: "destination_path"},
-		"GroupOwnerSetting": ubx.FieldSpec{
-			WireName: "group_owner_setting",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSettingFields,
-		},
-		"SourcePath": ubx.FieldSpec{WireName: "source_path"},
-	}
+	"DestinationPath": ubx.FieldSpec{WireName: "destination_path"},
+	"GroupOwnerSetting": ubx.FieldSpec{
+		WireName: "group_owner_setting",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSettingFields,
+	},
+	"SourcePath": ubx.FieldSpec{WireName: "source_path"},
+}
 
 var ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSettingFields = ubx.FieldMap{
-		"GroupOwner": ubx.FieldSpec{WireName: "group_owner"},
-		"GroupPermission": ubx.FieldSpec{WireName: "group_permission"},
-	}
+	"GroupOwner":      ubx.FieldSpec{WireName: "group_owner"},
+	"GroupPermission": ubx.FieldSpec{WireName: "group_permission"},
+}
 
 var ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceDataFields = ubx.FieldMap{
-		"DestinationPath": ubx.FieldSpec{WireName: "destination_path"},
-		"OwnerSetting": ubx.FieldSpec{
-			WireName: "owner_setting",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSettingFields,
-		},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"DestinationPath": ubx.FieldSpec{WireName: "destination_path"},
+	"OwnerSetting": ubx.FieldSpec{
+		WireName: "owner_setting",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSettingFields,
+	},
+	"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var ResourceDefinitionVersion_Resources_ResourceDataContainer_SageMakerMachineLearningModelResourceDataFields = ubx.FieldMap{
-		"DestinationPath": ubx.FieldSpec{WireName: "destination_path"},
-		"OwnerSetting": ubx.FieldSpec{
-			WireName: "owner_setting",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSettingFields,
-		},
-		"SageMakerJobArn": ubx.FieldSpec{WireName: "sage_maker_job_arn"},
-	}
+	"DestinationPath": ubx.FieldSpec{WireName: "destination_path"},
+	"OwnerSetting": ubx.FieldSpec{
+		WireName: "owner_setting",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSettingFields,
+	},
+	"SageMakerJobArn": ubx.FieldSpec{WireName: "sage_maker_job_arn"},
+}
 
 var ResourceDefinitionVersion_Resources_ResourceDataContainer_SecretsManagerSecretResourceDataFields = ubx.FieldMap{
-		"AdditionalStagingLabelsToDownload": ubx.FieldSpec{WireName: "additional_staging_labels_to_download"},
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"AdditionalStagingLabelsToDownload": ubx.FieldSpec{WireName: "additional_staging_labels_to_download"},
+	"Arn":                               ubx.FieldSpec{WireName: "arn"},
+}
 
 var ResourceDefinitionVersion_Resources_ResourceDataContainerFields = ubx.FieldMap{
-		"LocalDeviceResourceData": ubx.FieldSpec{
-			WireName: "local_device_resource_data",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceDataFields,
-		},
-		"LocalVolumeResourceData": ubx.FieldSpec{
-			WireName: "local_volume_resource_data",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalVolumeResourceDataFields,
-		},
-		"S3MachineLearningModelResourceData": ubx.FieldSpec{
-			WireName: "s3_machine_learning_model_resource_data",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceDataFields,
-		},
-		"SageMakerMachineLearningModelResourceData": ubx.FieldSpec{
-			WireName: "sage_maker_machine_learning_model_resource_data",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_SageMakerMachineLearningModelResourceDataFields,
-		},
-		"SecretsManagerSecretResourceData": ubx.FieldSpec{
-			WireName: "secrets_manager_secret_resource_data",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainer_SecretsManagerSecretResourceDataFields,
-		},
-	}
+	"LocalDeviceResourceData": ubx.FieldSpec{
+		WireName: "local_device_resource_data",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceDataFields,
+	},
+	"LocalVolumeResourceData": ubx.FieldSpec{
+		WireName: "local_volume_resource_data",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalVolumeResourceDataFields,
+	},
+	"S3MachineLearningModelResourceData": ubx.FieldSpec{
+		WireName: "s3_machine_learning_model_resource_data",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceDataFields,
+	},
+	"SageMakerMachineLearningModelResourceData": ubx.FieldSpec{
+		WireName: "sage_maker_machine_learning_model_resource_data",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_SageMakerMachineLearningModelResourceDataFields,
+	},
+	"SecretsManagerSecretResourceData": ubx.FieldSpec{
+		WireName: "secrets_manager_secret_resource_data",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainer_SecretsManagerSecretResourceDataFields,
+	},
+}
 
 var ResourceDefinitionVersion_ResourcesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceDataContainer": ubx.FieldSpec{
-			WireName: "resource_data_container",
-			Kind: "object",
-			Fields: ResourceDefinitionVersion_Resources_ResourceDataContainerFields,
-		},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ResourceDataContainer": ubx.FieldSpec{
+		WireName: "resource_data_container",
+		Kind:     "object",
+		Fields:   ResourceDefinitionVersion_Resources_ResourceDataContainerFields,
+	},
+}
 
 type ResourceDefinitionVersionConfig struct {
 	// The ID of the AWS Greengrass resource definition that this version belongs to, required to associate the version with an existing resource definition. (AI-inferred)
@@ -194,8 +194,8 @@ var ResourceDefinitionVersion = ubx.ResourceBinding{
 		"ResourceDefinitionId": ubx.FieldSpec{WireName: "resource_definition_id"},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind: "list",
-			Fields: ResourceDefinitionVersion_ResourcesFields,
+			Kind:     "list",
+			Fields:   ResourceDefinitionVersion_ResourcesFields,
 		},
 	},
 }

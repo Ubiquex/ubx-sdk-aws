@@ -4,60 +4,60 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ParametersByPath_ParameterFilters struct {
-	Key any
+	Key    any
 	Option any
 	Values any
 }
 
 type ParametersByPath_Parameters struct {
-	Arn any
-	DataType any
+	Arn              any
+	DataType         any
 	LastModifiedDate any
-	Name any
-	Selector any
-	SourceResult any
-	Type any
-	Value any
-	Version any
+	Name             any
+	Selector         any
+	SourceResult     any
+	Type             any
+	Value            any
+	Version          any
 }
 
 var ParametersByPath_ParameterFiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Option": ubx.FieldSpec{WireName: "option"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Option": ubx.FieldSpec{WireName: "option"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ParametersByPathConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ParameterFilters any
-	Path any
-	Recursive any
-	WithDecryption any
+	Path             any
+	Recursive        any
+	WithDecryption   any
 }
 
 type ParametersByPathAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ParameterFilters any
-	Parameters any
-	Path any
-	Recursive any
-	WithDecryption any
+	Parameters       any
+	Path             any
+	Recursive        any
+	WithDecryption   any
 }
 
 var ParametersByPath = ubx.DataSourceBinding{
 	WireType: "aws_ssm_parameters_by_path",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ParameterFilters": ubx.FieldSpec{
 			WireName: "parameter_filters",
-			Kind: "list",
-			Fields: ParametersByPath_ParameterFiltersFields,
+			Kind:     "list",
+			Fields:   ParametersByPath_ParameterFiltersFields,
 		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Recursive": ubx.FieldSpec{WireName: "recursive"},
+		"Path":           ubx.FieldSpec{WireName: "path"},
+		"Recursive":      ubx.FieldSpec{WireName: "recursive"},
 		"WithDecryption": ubx.FieldSpec{WireName: "with_decryption"},
 	},
 }

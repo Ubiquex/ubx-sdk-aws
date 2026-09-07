@@ -69,55 +69,55 @@ type StackSet_Tags struct {
 }
 
 var StackSet_AutoDeploymentFields = ubx.FieldMap{
-		"DependsOn": ubx.FieldSpec{WireName: "depends_on"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"RetainStacksOnAccountRemoval": ubx.FieldSpec{WireName: "retain_stacks_on_account_removal"},
-	}
+	"DependsOn":                    ubx.FieldSpec{WireName: "depends_on"},
+	"Enabled":                      ubx.FieldSpec{WireName: "enabled"},
+	"RetainStacksOnAccountRemoval": ubx.FieldSpec{WireName: "retain_stacks_on_account_removal"},
+}
 
 var StackSet_ManagedExecutionFields = ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
-	}
+	"Active": ubx.FieldSpec{WireName: "active"},
+}
 
 var StackSet_OperationPreferencesFields = ubx.FieldMap{
-		"ConcurrencyMode": ubx.FieldSpec{WireName: "concurrency_mode"},
-		"FailureToleranceCount": ubx.FieldSpec{WireName: "failure_tolerance_count"},
-		"FailureTolerancePercentage": ubx.FieldSpec{WireName: "failure_tolerance_percentage"},
-		"MaxConcurrentCount": ubx.FieldSpec{WireName: "max_concurrent_count"},
-		"MaxConcurrentPercentage": ubx.FieldSpec{WireName: "max_concurrent_percentage"},
-		"RegionConcurrencyType": ubx.FieldSpec{WireName: "region_concurrency_type"},
-		"RegionOrder": ubx.FieldSpec{WireName: "region_order"},
-	}
+	"ConcurrencyMode":            ubx.FieldSpec{WireName: "concurrency_mode"},
+	"FailureToleranceCount":      ubx.FieldSpec{WireName: "failure_tolerance_count"},
+	"FailureTolerancePercentage": ubx.FieldSpec{WireName: "failure_tolerance_percentage"},
+	"MaxConcurrentCount":         ubx.FieldSpec{WireName: "max_concurrent_count"},
+	"MaxConcurrentPercentage":    ubx.FieldSpec{WireName: "max_concurrent_percentage"},
+	"RegionConcurrencyType":      ubx.FieldSpec{WireName: "region_concurrency_type"},
+	"RegionOrder":                ubx.FieldSpec{WireName: "region_order"},
+}
 
 var StackSet_ParametersFields = ubx.FieldMap{
-		"ParameterKey": ubx.FieldSpec{WireName: "parameter_key"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterKey":   ubx.FieldSpec{WireName: "parameter_key"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var StackSet_StackInstancesGroup_DeploymentTargetsFields = ubx.FieldMap{
-		"AccountFilterType": ubx.FieldSpec{WireName: "account_filter_type"},
-		"Accounts": ubx.FieldSpec{WireName: "accounts"},
-		"AccountsUrl": ubx.FieldSpec{WireName: "accounts_url"},
-		"OrganizationalUnitIds": ubx.FieldSpec{WireName: "organizational_unit_ids"},
-	}
+	"AccountFilterType":     ubx.FieldSpec{WireName: "account_filter_type"},
+	"Accounts":              ubx.FieldSpec{WireName: "accounts"},
+	"AccountsUrl":           ubx.FieldSpec{WireName: "accounts_url"},
+	"OrganizationalUnitIds": ubx.FieldSpec{WireName: "organizational_unit_ids"},
+}
 
 var StackSet_StackInstancesGroupFields = ubx.FieldMap{
-		"DeploymentTargets": ubx.FieldSpec{
-			WireName: "deployment_targets",
-			Kind: "object",
-			Fields: StackSet_StackInstancesGroup_DeploymentTargetsFields,
-		},
-		"ParameterOverrides": ubx.FieldSpec{
-			WireName: "parameter_overrides",
-			Kind: "list",
-			Fields: StackSet_ParametersFields,
-		},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-	}
+	"DeploymentTargets": ubx.FieldSpec{
+		WireName: "deployment_targets",
+		Kind:     "object",
+		Fields:   StackSet_StackInstancesGroup_DeploymentTargetsFields,
+	},
+	"ParameterOverrides": ubx.FieldSpec{
+		WireName: "parameter_overrides",
+		Kind:     "list",
+		Fields:   StackSet_ParametersFields,
+	},
+	"Regions": ubx.FieldSpec{WireName: "regions"},
+}
 
 var StackSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StackSetConfig struct {
 	// The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account.
@@ -193,41 +193,41 @@ var StackSet = ubx.ResourceBinding{
 		"AdministrationRoleArn": ubx.FieldSpec{WireName: "administration_role_arn"},
 		"AutoDeployment": ubx.FieldSpec{
 			WireName: "auto_deployment",
-			Kind: "object",
-			Fields: StackSet_AutoDeploymentFields,
+			Kind:     "object",
+			Fields:   StackSet_AutoDeploymentFields,
 		},
-		"CallAs": ubx.FieldSpec{WireName: "call_as"},
-		"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CallAs":            ubx.FieldSpec{WireName: "call_as"},
+		"Capabilities":      ubx.FieldSpec{WireName: "capabilities"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"ExecutionRoleName": ubx.FieldSpec{WireName: "execution_role_name"},
 		"ManagedExecution": ubx.FieldSpec{
 			WireName: "managed_execution",
-			Kind: "object",
-			Fields: StackSet_ManagedExecutionFields,
+			Kind:     "object",
+			Fields:   StackSet_ManagedExecutionFields,
 		},
 		"OperationPreferences": ubx.FieldSpec{
 			WireName: "operation_preferences",
-			Kind: "object",
-			Fields: StackSet_OperationPreferencesFields,
+			Kind:     "object",
+			Fields:   StackSet_OperationPreferencesFields,
 		},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: StackSet_ParametersFields,
+			Kind:     "list",
+			Fields:   StackSet_ParametersFields,
 		},
 		"PermissionModel": ubx.FieldSpec{WireName: "permission_model"},
 		"StackInstancesGroup": ubx.FieldSpec{
 			WireName: "stack_instances_group",
-			Kind: "list",
-			Fields: StackSet_StackInstancesGroupFields,
+			Kind:     "list",
+			Fields:   StackSet_StackInstancesGroupFields,
 		},
 		"StackSetName": ubx.FieldSpec{WireName: "stack_set_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StackSet_TagsFields,
+			Kind:     "list",
+			Fields:   StackSet_TagsFields,
 		},
 		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
-		"TemplateUrl": ubx.FieldSpec{WireName: "template_url"},
+		"TemplateUrl":  ubx.FieldSpec{WireName: "template_url"},
 	},
 }

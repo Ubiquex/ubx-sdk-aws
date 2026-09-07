@@ -4,29 +4,29 @@ package ingest_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IngestTimestreamDatabases_Databases struct {
-	Arn any
-	CreationTime any
-	DatabaseName any
-	KmsKeyId any
+	Arn             any
+	CreationTime    any
+	DatabaseName    any
+	KmsKeyId        any
 	LastUpdatedTime any
-	TableCount any
+	TableCount      any
 }
 
 type IngestTimestreamDatabasesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IngestTimestreamDatabasesAttrs struct {
-	Databases any
+	Databases  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var IngestTimestreamDatabases = ubx.DataSourceBinding{
 	WireType: "aws_ingest_timestream_databases",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -12,6 +12,5 @@ type ResourceExplorer2DefaultViewAttrs struct {
 
 var ResourceExplorer2DefaultView = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_default_view",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

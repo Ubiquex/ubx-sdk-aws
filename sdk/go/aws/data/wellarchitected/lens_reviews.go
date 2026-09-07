@@ -4,20 +4,20 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LensReviews_LensReviewSummaries_Profiles struct {
-	ProfileArn any
+	ProfileArn     any
 	ProfileVersion any
 }
 
 type LensReviews_LensReviewSummaries struct {
-	LensAlias any
-	LensArn any
-	LensName any
-	LensStatus any
-	LensVersion any
+	LensAlias             any
+	LensArn               any
+	LensName              any
+	LensStatus            any
+	LensVersion           any
 	PrioritizedRiskCounts any
-	Profiles any
-	RiskCounts any
-	UpdatedAt any
+	Profiles              any
+	RiskCounts            any
+	UpdatedAt             any
 }
 
 type LensReviewsConfig struct {
@@ -47,9 +47,9 @@ type LensReviewsAttrs struct {
 var LensReviews = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_lens_reviews",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
 		"MilestoneNumber": ubx.FieldSpec{WireName: "milestone_number"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"WorkloadId":      ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

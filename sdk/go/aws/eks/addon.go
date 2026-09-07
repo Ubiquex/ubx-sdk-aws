@@ -22,18 +22,18 @@ type Addon_Tags struct {
 }
 
 var Addon_NamespaceConfigFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var Addon_PodIdentityAssociationsFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var Addon_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AddonConfig struct {
 	// Name of Addon
@@ -86,27 +86,27 @@ type AddonAttrs struct {
 var Addon = ubx.ResourceBinding{
 	WireType: "aws_eks_addon",
 	Fields: ubx.FieldMap{
-		"AddonName": ubx.FieldSpec{WireName: "addon_name"},
-		"AddonVersion": ubx.FieldSpec{WireName: "addon_version"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"AddonName":           ubx.FieldSpec{WireName: "addon_name"},
+		"AddonVersion":        ubx.FieldSpec{WireName: "addon_version"},
+		"ClusterName":         ubx.FieldSpec{WireName: "cluster_name"},
 		"ConfigurationValues": ubx.FieldSpec{WireName: "configuration_values"},
 		"NamespaceConfig": ubx.FieldSpec{
 			WireName: "namespace_config",
-			Kind: "object",
-			Fields: Addon_NamespaceConfigFields,
+			Kind:     "object",
+			Fields:   Addon_NamespaceConfigFields,
 		},
 		"PodIdentityAssociations": ubx.FieldSpec{
 			WireName: "pod_identity_associations",
-			Kind: "list",
-			Fields: Addon_PodIdentityAssociationsFields,
+			Kind:     "list",
+			Fields:   Addon_PodIdentityAssociationsFields,
 		},
-		"PreserveOnDelete": ubx.FieldSpec{WireName: "preserve_on_delete"},
-		"ResolveConflicts": ubx.FieldSpec{WireName: "resolve_conflicts"},
+		"PreserveOnDelete":      ubx.FieldSpec{WireName: "preserve_on_delete"},
+		"ResolveConflicts":      ubx.FieldSpec{WireName: "resolve_conflicts"},
 		"ServiceAccountRoleArn": ubx.FieldSpec{WireName: "service_account_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Addon_TagsFields,
+			Kind:     "list",
+			Fields:   Addon_TagsFields,
 		},
 	},
 }

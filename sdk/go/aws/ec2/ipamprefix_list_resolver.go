@@ -4,19 +4,19 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamprefixListResolver_Rules_Conditions_ResourceTag struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type IpamprefixListResolver_Rules_Conditions struct {
-	Cidr any
+	Cidr       any
 	IpamPoolId any
-	Operation any
+	Operation  any
 	// Limits the rule to prefix list entries that are associated with the given AWS resource ID, such as a VPC or subnet. (AI-inferred)
-	ResourceId any
-	ResourceOwner any
+	ResourceId     any
+	ResourceOwner  any
 	ResourceRegion any
-	ResourceTag any
+	ResourceTag    any
 }
 
 type IpamprefixListResolver_Rules struct {
@@ -25,41 +25,41 @@ type IpamprefixListResolver_Rules struct {
 	IpamScopeId any
 	// Specifies the type of AWS resource (e.g., VPC, subnet) that a rule matches when resolving resources into the prefix list. (AI-inferred)
 	ResourceType any
-	RuleType any
+	RuleType     any
 	// Specifies the static CIDR block included in a rule entry for the prefix list resolver, defining the IP address range used to match traffic. (AI-inferred)
 	StaticCidr any
 }
 
 var IpamprefixListResolver_Rules_Conditions_ResourceTagFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var IpamprefixListResolver_Rules_ConditionsFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"IpamPoolId": ubx.FieldSpec{WireName: "ipam_pool_id"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceOwner": ubx.FieldSpec{WireName: "resource_owner"},
-		"ResourceRegion": ubx.FieldSpec{WireName: "resource_region"},
-		"ResourceTag": ubx.FieldSpec{
-			WireName: "resource_tag",
-			Kind: "object",
-			Fields: IpamprefixListResolver_Rules_Conditions_ResourceTagFields,
-		},
-	}
+	"Cidr":           ubx.FieldSpec{WireName: "cidr"},
+	"IpamPoolId":     ubx.FieldSpec{WireName: "ipam_pool_id"},
+	"Operation":      ubx.FieldSpec{WireName: "operation"},
+	"ResourceId":     ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceOwner":  ubx.FieldSpec{WireName: "resource_owner"},
+	"ResourceRegion": ubx.FieldSpec{WireName: "resource_region"},
+	"ResourceTag": ubx.FieldSpec{
+		WireName: "resource_tag",
+		Kind:     "object",
+		Fields:   IpamprefixListResolver_Rules_Conditions_ResourceTagFields,
+	},
+}
 
 var IpamprefixListResolver_RulesFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: IpamprefixListResolver_Rules_ConditionsFields,
-		},
-		"IpamScopeId": ubx.FieldSpec{WireName: "ipam_scope_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"RuleType": ubx.FieldSpec{WireName: "rule_type"},
-		"StaticCidr": ubx.FieldSpec{WireName: "static_cidr"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   IpamprefixListResolver_Rules_ConditionsFields,
+	},
+	"IpamScopeId":  ubx.FieldSpec{WireName: "ipam_scope_id"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"RuleType":     ubx.FieldSpec{WireName: "rule_type"},
+	"StaticCidr":   ubx.FieldSpec{WireName: "static_cidr"},
+}
 
 type IpamprefixListResolverConfig struct {
 	// The address family of the address space in this Prefix List Resolver. Either IPv4 or IPv6.
@@ -97,17 +97,17 @@ var IpamprefixListResolver = ubx.ResourceBinding{
 	WireType: "aws_ec2_ipamprefix_list_resolver",
 	Fields: ubx.FieldMap{
 		"AddressFamily": ubx.FieldSpec{WireName: "address_family"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IpamId": ubx.FieldSpec{WireName: "ipam_id"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"IpamId":        ubx.FieldSpec{WireName: "ipam_id"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: IpamprefixListResolver_RulesFields,
+			Kind:     "list",
+			Fields:   IpamprefixListResolver_RulesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IpamprefixListResolver_Rules_Conditions_ResourceTagFields,
+			Kind:     "list",
+			Fields:   IpamprefixListResolver_Rules_Conditions_ResourceTagFields,
 		},
 	},
 }

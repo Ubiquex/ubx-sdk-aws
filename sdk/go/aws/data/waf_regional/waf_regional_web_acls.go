@@ -4,25 +4,25 @@ package waf_regional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalWebAcls_WebAcls struct {
-	Name any
+	Name     any
 	WebAclid any
 }
 
 type WafRegionalWebAclsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalWebAclsAttrs struct {
-	Limit any
+	Limit      any
 	NextMarker any
-	WebAcls any
+	WebAcls    any
 }
 
 var WafRegionalWebAcls = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_web_acls",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

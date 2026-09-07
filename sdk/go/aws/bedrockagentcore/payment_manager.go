@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue struct {
 	// Specifies the exact string value that the custom JWT authorizer expects for a configured claim in a token, which must be matched to authorize a payment-related request. (AI-inferred)
-	MatchValueString any
+	MatchValueString     any
 	MatchValueStringList any
 }
 
 type PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue struct {
 	ClaimMatchOperator any
-	ClaimMatchValue any
+	ClaimMatchValue    any
 }
 
 type PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
 	AuthorizingClaimMatchValue any
-	InboundTokenClaimName any
+	InboundTokenClaimName      any
 	// Specifies the expected data type (such as string, number, or boolean) of the inbound JWT token's claim value for this custom claim, enabling the authorizer to correctly parse and validate it. (AI-inferred)
 	InboundTokenClaimValueType any
 }
@@ -24,11 +24,11 @@ type PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims str
 type PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer struct {
 	// The list of allowed audience values that the JWT token's audience claim must match for the custom JWT authorizer to authorize requests. (AI-inferred)
 	AllowedAudience any
-	AllowedClients any
+	AllowedClients  any
 	// Defines the list of OAuth 2.0 scopes that must be present in the JWT token's scope claim for the custom JWT authorizer to grant access. (AI-inferred)
 	AllowedScopes any
-	CustomClaims any
-	DiscoveryUrl any
+	CustomClaims  any
+	DiscoveryUrl  any
 }
 
 type PaymentManager_AuthorizerConfiguration struct {
@@ -36,7 +36,7 @@ type PaymentManager_AuthorizerConfiguration struct {
 }
 
 type PaymentManager_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -45,53 +45,53 @@ type PaymentManager_WorkloadIdentityDetails struct {
 }
 
 var PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields = ubx.FieldMap{
-		"MatchValueString": ubx.FieldSpec{WireName: "match_value_string"},
-		"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
-	}
+	"MatchValueString":     ubx.FieldSpec{WireName: "match_value_string"},
+	"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
+}
 
 var PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields = ubx.FieldMap{
-		"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
-		"ClaimMatchValue": ubx.FieldSpec{
-			WireName: "claim_match_value",
-			Kind: "object",
-			Fields: PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
-		},
-	}
+	"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
+	"ClaimMatchValue": ubx.FieldSpec{
+		WireName: "claim_match_value",
+		Kind:     "object",
+		Fields:   PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
+	},
+}
 
 var PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields = ubx.FieldMap{
-		"AuthorizingClaimMatchValue": ubx.FieldSpec{
-			WireName: "authorizing_claim_match_value",
-			Kind: "object",
-			Fields: PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
-		},
-		"InboundTokenClaimName": ubx.FieldSpec{WireName: "inbound_token_claim_name"},
-		"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
-	}
+	"AuthorizingClaimMatchValue": ubx.FieldSpec{
+		WireName: "authorizing_claim_match_value",
+		Kind:     "object",
+		Fields:   PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
+	},
+	"InboundTokenClaimName":      ubx.FieldSpec{WireName: "inbound_token_claim_name"},
+	"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
+}
 
 var PaymentManager_AuthorizerConfiguration_CustomJwtauthorizerFields = ubx.FieldMap{
-		"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
-		"AllowedClients": ubx.FieldSpec{WireName: "allowed_clients"},
-		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
-		"CustomClaims": ubx.FieldSpec{
-			WireName: "custom_claims",
-			Kind: "list",
-			Fields: PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
-		},
-		"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
-	}
+	"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
+	"AllowedClients":  ubx.FieldSpec{WireName: "allowed_clients"},
+	"AllowedScopes":   ubx.FieldSpec{WireName: "allowed_scopes"},
+	"CustomClaims": ubx.FieldSpec{
+		WireName: "custom_claims",
+		Kind:     "list",
+		Fields:   PaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
+	},
+	"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
+}
 
 var PaymentManager_AuthorizerConfigurationFields = ubx.FieldMap{
-		"CustomJwtauthorizer": ubx.FieldSpec{
-			WireName: "custom_jwtauthorizer",
-			Kind: "object",
-			Fields: PaymentManager_AuthorizerConfiguration_CustomJwtauthorizerFields,
-		},
-	}
+	"CustomJwtauthorizer": ubx.FieldSpec{
+		WireName: "custom_jwtauthorizer",
+		Kind:     "object",
+		Fields:   PaymentManager_AuthorizerConfiguration_CustomJwtauthorizerFields,
+	},
+}
 
 var PaymentManager_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PaymentManagerConfig struct {
 	// Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
@@ -140,17 +140,17 @@ var PaymentManager = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AuthorizerConfiguration": ubx.FieldSpec{
 			WireName: "authorizer_configuration",
-			Kind: "object",
-			Fields: PaymentManager_AuthorizerConfigurationFields,
+			Kind:     "object",
+			Fields:   PaymentManager_AuthorizerConfigurationFields,
 		},
 		"AuthorizerType": ubx.FieldSpec{WireName: "authorizer_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PaymentManager_TagsFields,
+			Kind:     "list",
+			Fields:   PaymentManager_TagsFields,
 		},
 	},
 }

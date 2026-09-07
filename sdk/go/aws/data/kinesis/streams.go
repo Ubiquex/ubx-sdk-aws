@@ -8,33 +8,33 @@ type Streams_StreamSummaries_StreamModeDetails struct {
 }
 
 type Streams_StreamSummaries struct {
-	StreamArn any
+	StreamArn               any
 	StreamCreationTimestamp any
-	StreamModeDetails any
-	StreamName any
-	StreamStatus any
+	StreamModeDetails       any
+	StreamName              any
+	StreamStatus            any
 }
 
 type StreamsConfig struct {
 	ExclusiveStartStreamName any
-	Limit any
-	NextToken any
+	Limit                    any
+	NextToken                any
 }
 
 type StreamsAttrs struct {
 	ExclusiveStartStreamName any
-	HasMoreStreams any
-	Limit any
-	NextToken any
-	StreamNames any
-	StreamSummaries any
+	HasMoreStreams           any
+	Limit                    any
+	NextToken                any
+	StreamNames              any
+	StreamSummaries          any
 }
 
 var Streams = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_streams",
 	Fields: ubx.FieldMap{
 		"ExclusiveStartStreamName": ubx.FieldSpec{WireName: "exclusive_start_stream_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                    ubx.FieldSpec{WireName: "limit"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 	},
 }

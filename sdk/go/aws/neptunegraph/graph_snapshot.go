@@ -11,9 +11,9 @@ type GraphSnapshot_Tags struct {
 }
 
 var GraphSnapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GraphSnapshotConfig struct {
 	// The unique identifier of the Neptune Analytics graph to create the snapshot from.
@@ -47,11 +47,11 @@ var GraphSnapshot = ubx.ResourceBinding{
 	WireType: "aws_neptune_graph_graph_snapshot",
 	Fields: ubx.FieldMap{
 		"GraphIdentifier": ubx.FieldSpec{WireName: "graph_identifier"},
-		"SnapshotName": ubx.FieldSpec{WireName: "snapshot_name"},
+		"SnapshotName":    ubx.FieldSpec{WireName: "snapshot_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GraphSnapshot_TagsFields,
+			Kind:     "list",
+			Fields:   GraphSnapshot_TagsFields,
 		},
 	},
 }

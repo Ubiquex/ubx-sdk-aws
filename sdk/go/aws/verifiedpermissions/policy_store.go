@@ -35,36 +35,36 @@ type PolicyStore_Schema struct {
 
 type PolicyStore_Tags struct {
 	// The key of a tag that can be assigned to the AWS Verified Permissions policy store to help organize, identify, and manage the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var PolicyStore_DeletionProtectionFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var PolicyStore_EncryptionSettings_KmsEncryptionSettingsFields = ubx.FieldMap{
-		"EncryptionContext": ubx.FieldSpec{WireName: "encryption_context"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"EncryptionContext": ubx.FieldSpec{WireName: "encryption_context"},
+	"Key":               ubx.FieldSpec{WireName: "key"},
+}
 
 var PolicyStore_EncryptionSettingsFields = ubx.FieldMap{
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"KmsEncryptionSettings": ubx.FieldSpec{
-			WireName: "kms_encryption_settings",
-			Kind: "object",
-			Fields: PolicyStore_EncryptionSettings_KmsEncryptionSettingsFields,
-		},
-	}
+	"Default": ubx.FieldSpec{WireName: "default"},
+	"KmsEncryptionSettings": ubx.FieldSpec{
+		WireName: "kms_encryption_settings",
+		Kind:     "object",
+		Fields:   PolicyStore_EncryptionSettings_KmsEncryptionSettingsFields,
+	},
+}
 
 var PolicyStore_SchemaFields = ubx.FieldMap{
-		"CedarJson": ubx.FieldSpec{WireName: "cedar_json"},
-	}
+	"CedarJson": ubx.FieldSpec{WireName: "cedar_json"},
+}
 
 var PolicyStore_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PolicyStoreConfig struct {
 	// Whether deletion protection is enabled for this policy store, which prevents the policy store from being deleted until the setting is disabled. (AI-inferred)
@@ -107,29 +107,29 @@ var PolicyStore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeletionProtection": ubx.FieldSpec{
 			WireName: "deletion_protection",
-			Kind: "object",
-			Fields: PolicyStore_DeletionProtectionFields,
+			Kind:     "object",
+			Fields:   PolicyStore_DeletionProtectionFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptionSettings": ubx.FieldSpec{
 			WireName: "encryption_settings",
-			Kind: "object",
-			Fields: PolicyStore_EncryptionSettingsFields,
+			Kind:     "object",
+			Fields:   PolicyStore_EncryptionSettingsFields,
 		},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: PolicyStore_SchemaFields,
+			Kind:     "object",
+			Fields:   PolicyStore_SchemaFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PolicyStore_TagsFields,
+			Kind:     "list",
+			Fields:   PolicyStore_TagsFields,
 		},
 		"ValidationSettings": ubx.FieldSpec{
 			WireName: "validation_settings",
-			Kind: "object",
-			Fields: PolicyStore_DeletionProtectionFields,
+			Kind:     "object",
+			Fields:   PolicyStore_DeletionProtectionFields,
 		},
 	},
 }

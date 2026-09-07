@@ -55,7 +55,7 @@ type Fleet_Configuration_CustomerManaged_WorkerCapabilities struct {
 	CustomAmounts any
 	// Specifies custom worker attributes as key-value pairs that define the worker's capabilities, allowing Deadline Cloud to match jobs to appropriate customer-managed fleet workers. (AI-inferred)
 	CustomAttributes any
-	MemoryMiB any
+	MemoryMiB        any
 	// Specifies the operating system family (e.g., Linux or Windows) that workers in a customer-managed fleet must match for task scheduling. (AI-inferred)
 	OsFamily any
 	// Specifies the minimum and maximum number of vCPUs that each worker instance can have in the customer-managed fleet. (AI-inferred)
@@ -128,7 +128,7 @@ type Fleet_Configuration_ServiceManagedEc2_InstanceMarketOptions struct {
 
 type Fleet_Configuration_ServiceManagedEc2_PersistentVolumeConfiguration struct {
 	// The provisioned IOPS (input/output operations per second) for the persistent EBS volume attached to instances in the service-managed EC2 fleet, determining storage performance. (AI-inferred)
-	Iops any
+	Iops             any
 	LastUsedTtlHours any
 	// Specifies the absolute file path within the fleet's service-managed EC2 worker instances where the configured persistent volume will be mounted, enabling shared storage access. (AI-inferred)
 	MountPath any
@@ -180,207 +180,207 @@ type Fleet_Tags struct {
 }
 
 var Fleet_Configuration_CustomerManaged_AutoScalingConfigurationFields = ubx.FieldMap{
-		"ScaleOutWorkersPerMinute": ubx.FieldSpec{WireName: "scale_out_workers_per_minute"},
-		"StandbyWorkerCount": ubx.FieldSpec{WireName: "standby_worker_count"},
-		"WorkerIdleDurationSeconds": ubx.FieldSpec{WireName: "worker_idle_duration_seconds"},
-	}
+	"ScaleOutWorkersPerMinute":  ubx.FieldSpec{WireName: "scale_out_workers_per_minute"},
+	"StandbyWorkerCount":        ubx.FieldSpec{WireName: "standby_worker_count"},
+	"WorkerIdleDurationSeconds": ubx.FieldSpec{WireName: "worker_idle_duration_seconds"},
+}
 
 var Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var Fleet_Capabilities_AmountsFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Max":  ubx.FieldSpec{WireName: "max"},
+	"Min":  ubx.FieldSpec{WireName: "min"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Fleet_Capabilities_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Fleet_Configuration_CustomerManaged_WorkerCapabilitiesFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{
-			WireName: "accelerator_count",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
-		},
-		"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
-			WireName: "accelerator_total_memory_mi_b",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
-		},
-		"AcceleratorTypes": ubx.FieldSpec{WireName: "accelerator_types"},
-		"CpuArchitectureType": ubx.FieldSpec{WireName: "cpu_architecture_type"},
-		"CustomAmounts": ubx.FieldSpec{
-			WireName: "custom_amounts",
-			Kind: "list",
-			Fields: Fleet_Capabilities_AmountsFields,
-		},
-		"CustomAttributes": ubx.FieldSpec{
-			WireName: "custom_attributes",
-			Kind: "list",
-			Fields: Fleet_Capabilities_AttributesFields,
-		},
-		"MemoryMiB": ubx.FieldSpec{
-			WireName: "memory_mi_b",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
-		},
-		"OsFamily": ubx.FieldSpec{WireName: "os_family"},
-		"VcpuCount": ubx.FieldSpec{
-			WireName: "vcpu_count",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
-		},
-	}
+	"AcceleratorCount": ubx.FieldSpec{
+		WireName: "accelerator_count",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
+	},
+	"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
+		WireName: "accelerator_total_memory_mi_b",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
+	},
+	"AcceleratorTypes":    ubx.FieldSpec{WireName: "accelerator_types"},
+	"CpuArchitectureType": ubx.FieldSpec{WireName: "cpu_architecture_type"},
+	"CustomAmounts": ubx.FieldSpec{
+		WireName: "custom_amounts",
+		Kind:     "list",
+		Fields:   Fleet_Capabilities_AmountsFields,
+	},
+	"CustomAttributes": ubx.FieldSpec{
+		WireName: "custom_attributes",
+		Kind:     "list",
+		Fields:   Fleet_Capabilities_AttributesFields,
+	},
+	"MemoryMiB": ubx.FieldSpec{
+		WireName: "memory_mi_b",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
+	},
+	"OsFamily": ubx.FieldSpec{WireName: "os_family"},
+	"VcpuCount": ubx.FieldSpec{
+		WireName: "vcpu_count",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
+	},
+}
 
 var Fleet_Configuration_CustomerManagedFields = ubx.FieldMap{
-		"AutoScalingConfiguration": ubx.FieldSpec{
-			WireName: "auto_scaling_configuration",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_AutoScalingConfigurationFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"StorageProfileId": ubx.FieldSpec{WireName: "storage_profile_id"},
-		"TagPropagationMode": ubx.FieldSpec{WireName: "tag_propagation_mode"},
-		"WorkerCapabilities": ubx.FieldSpec{
-			WireName: "worker_capabilities",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_WorkerCapabilitiesFields,
-		},
-	}
+	"AutoScalingConfiguration": ubx.FieldSpec{
+		WireName: "auto_scaling_configuration",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_AutoScalingConfigurationFields,
+	},
+	"Mode":               ubx.FieldSpec{WireName: "mode"},
+	"StorageProfileId":   ubx.FieldSpec{WireName: "storage_profile_id"},
+	"TagPropagationMode": ubx.FieldSpec{WireName: "tag_propagation_mode"},
+	"WorkerCapabilities": ubx.FieldSpec{
+		WireName: "worker_capabilities",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_WorkerCapabilitiesFields,
+	},
+}
 
 var Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_AcceleratorCapabilities_SelectionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Runtime": ubx.FieldSpec{WireName: "runtime"},
+}
 
 var Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_AcceleratorCapabilitiesFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{
-			WireName: "count",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
-		},
-		"Selections": ubx.FieldSpec{
-			WireName: "selections",
-			Kind: "list",
-			Fields: Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_AcceleratorCapabilities_SelectionsFields,
-		},
-	}
+	"Count": ubx.FieldSpec{
+		WireName: "count",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
+	},
+	"Selections": ubx.FieldSpec{
+		WireName: "selections",
+		Kind:     "list",
+		Fields:   Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_AcceleratorCapabilities_SelectionsFields,
+	},
+}
 
 var Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_RootEbsVolumeFields = ubx.FieldMap{
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"SizeGiB": ubx.FieldSpec{WireName: "size_gi_b"},
-		"ThroughputMiB": ubx.FieldSpec{WireName: "throughput_mi_b"},
-	}
+	"Iops":          ubx.FieldSpec{WireName: "iops"},
+	"SizeGiB":       ubx.FieldSpec{WireName: "size_gi_b"},
+	"ThroughputMiB": ubx.FieldSpec{WireName: "throughput_mi_b"},
+}
 
 var Fleet_Configuration_ServiceManagedEc2_InstanceCapabilitiesFields = ubx.FieldMap{
-		"AcceleratorCapabilities": ubx.FieldSpec{
-			WireName: "accelerator_capabilities",
-			Kind: "object",
-			Fields: Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_AcceleratorCapabilitiesFields,
-		},
-		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
-		"CpuArchitectureType": ubx.FieldSpec{WireName: "cpu_architecture_type"},
-		"CustomAmounts": ubx.FieldSpec{
-			WireName: "custom_amounts",
-			Kind: "list",
-			Fields: Fleet_Capabilities_AmountsFields,
-		},
-		"CustomAttributes": ubx.FieldSpec{
-			WireName: "custom_attributes",
-			Kind: "list",
-			Fields: Fleet_Capabilities_AttributesFields,
-		},
-		"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
-		"MemoryMiB": ubx.FieldSpec{
-			WireName: "memory_mi_b",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
-		},
-		"OsFamily": ubx.FieldSpec{WireName: "os_family"},
-		"RootEbsVolume": ubx.FieldSpec{
-			WireName: "root_ebs_volume",
-			Kind: "object",
-			Fields: Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_RootEbsVolumeFields,
-		},
-		"VcpuCount": ubx.FieldSpec{
-			WireName: "vcpu_count",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
-		},
-	}
+	"AcceleratorCapabilities": ubx.FieldSpec{
+		WireName: "accelerator_capabilities",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_AcceleratorCapabilitiesFields,
+	},
+	"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
+	"CpuArchitectureType":  ubx.FieldSpec{WireName: "cpu_architecture_type"},
+	"CustomAmounts": ubx.FieldSpec{
+		WireName: "custom_amounts",
+		Kind:     "list",
+		Fields:   Fleet_Capabilities_AmountsFields,
+	},
+	"CustomAttributes": ubx.FieldSpec{
+		WireName: "custom_attributes",
+		Kind:     "list",
+		Fields:   Fleet_Capabilities_AttributesFields,
+	},
+	"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
+	"MemoryMiB": ubx.FieldSpec{
+		WireName: "memory_mi_b",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
+	},
+	"OsFamily": ubx.FieldSpec{WireName: "os_family"},
+	"RootEbsVolume": ubx.FieldSpec{
+		WireName: "root_ebs_volume",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_RootEbsVolumeFields,
+	},
+	"VcpuCount": ubx.FieldSpec{
+		WireName: "vcpu_count",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCountFields,
+	},
+}
 
 var Fleet_Configuration_ServiceManagedEc2_InstanceMarketOptionsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Fleet_Configuration_ServiceManagedEc2_PersistentVolumeConfigurationFields = ubx.FieldMap{
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"LastUsedTtlHours": ubx.FieldSpec{WireName: "last_used_ttl_hours"},
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"SizeGiB": ubx.FieldSpec{WireName: "size_gi_b"},
-		"ThroughputMiB": ubx.FieldSpec{WireName: "throughput_mi_b"},
-	}
+	"Iops":             ubx.FieldSpec{WireName: "iops"},
+	"LastUsedTtlHours": ubx.FieldSpec{WireName: "last_used_ttl_hours"},
+	"MountPath":        ubx.FieldSpec{WireName: "mount_path"},
+	"SizeGiB":          ubx.FieldSpec{WireName: "size_gi_b"},
+	"ThroughputMiB":    ubx.FieldSpec{WireName: "throughput_mi_b"},
+}
 
 var Fleet_Configuration_ServiceManagedEc2_VpcConfigurationFields = ubx.FieldMap{
-		"ResourceConfigurationArns": ubx.FieldSpec{WireName: "resource_configuration_arns"},
-	}
+	"ResourceConfigurationArns": ubx.FieldSpec{WireName: "resource_configuration_arns"},
+}
 
 var Fleet_Configuration_ServiceManagedEc2Fields = ubx.FieldMap{
-		"AutoScalingConfiguration": ubx.FieldSpec{
-			WireName: "auto_scaling_configuration",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManaged_AutoScalingConfigurationFields,
-		},
-		"InstanceCapabilities": ubx.FieldSpec{
-			WireName: "instance_capabilities",
-			Kind: "object",
-			Fields: Fleet_Configuration_ServiceManagedEc2_InstanceCapabilitiesFields,
-		},
-		"InstanceMarketOptions": ubx.FieldSpec{
-			WireName: "instance_market_options",
-			Kind: "object",
-			Fields: Fleet_Configuration_ServiceManagedEc2_InstanceMarketOptionsFields,
-		},
-		"PersistentVolumeConfiguration": ubx.FieldSpec{
-			WireName: "persistent_volume_configuration",
-			Kind: "object",
-			Fields: Fleet_Configuration_ServiceManagedEc2_PersistentVolumeConfigurationFields,
-		},
-		"StorageProfileId": ubx.FieldSpec{WireName: "storage_profile_id"},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: Fleet_Configuration_ServiceManagedEc2_VpcConfigurationFields,
-		},
-	}
+	"AutoScalingConfiguration": ubx.FieldSpec{
+		WireName: "auto_scaling_configuration",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManaged_AutoScalingConfigurationFields,
+	},
+	"InstanceCapabilities": ubx.FieldSpec{
+		WireName: "instance_capabilities",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_ServiceManagedEc2_InstanceCapabilitiesFields,
+	},
+	"InstanceMarketOptions": ubx.FieldSpec{
+		WireName: "instance_market_options",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_ServiceManagedEc2_InstanceMarketOptionsFields,
+	},
+	"PersistentVolumeConfiguration": ubx.FieldSpec{
+		WireName: "persistent_volume_configuration",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_ServiceManagedEc2_PersistentVolumeConfigurationFields,
+	},
+	"StorageProfileId": ubx.FieldSpec{WireName: "storage_profile_id"},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_ServiceManagedEc2_VpcConfigurationFields,
+	},
+}
 
 var Fleet_ConfigurationFields = ubx.FieldMap{
-		"CustomerManaged": ubx.FieldSpec{
-			WireName: "customer_managed",
-			Kind: "object",
-			Fields: Fleet_Configuration_CustomerManagedFields,
-		},
-		"ServiceManagedEc2": ubx.FieldSpec{
-			WireName: "service_managed_ec2",
-			Kind: "object",
-			Fields: Fleet_Configuration_ServiceManagedEc2Fields,
-		},
-	}
+	"CustomerManaged": ubx.FieldSpec{
+		WireName: "customer_managed",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_CustomerManagedFields,
+	},
+	"ServiceManagedEc2": ubx.FieldSpec{
+		WireName: "service_managed_ec2",
+		Kind:     "object",
+		Fields:   Fleet_Configuration_ServiceManagedEc2Fields,
+	},
+}
 
 var Fleet_HostConfigurationFields = ubx.FieldMap{
-		"ScriptBody": ubx.FieldSpec{WireName: "script_body"},
-		"ScriptTimeoutSeconds": ubx.FieldSpec{WireName: "script_timeout_seconds"},
-	}
+	"ScriptBody":           ubx.FieldSpec{WireName: "script_body"},
+	"ScriptTimeoutSeconds": ubx.FieldSpec{WireName: "script_timeout_seconds"},
+}
 
 var Fleet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FleetConfig struct {
 	// Defines the compute environment for the fleet, selecting either a service-managed Amazon EC2 configuration (specifying instance types, allocation strategy, and capacity) or a customer-managed configuration (specifying worker capabilities such as operating system, CPU, and memory). (AI-inferred)
@@ -441,24 +441,24 @@ var Fleet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Fleet_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Fleet_ConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
+		"FarmId":      ubx.FieldSpec{WireName: "farm_id"},
 		"HostConfiguration": ubx.FieldSpec{
 			WireName: "host_configuration",
-			Kind: "object",
-			Fields: Fleet_HostConfigurationFields,
+			Kind:     "object",
+			Fields:   Fleet_HostConfigurationFields,
 		},
 		"MaxWorkerCount": ubx.FieldSpec{WireName: "max_worker_count"},
 		"MinWorkerCount": ubx.FieldSpec{WireName: "min_worker_count"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Fleet_TagsFields,
+			Kind:     "list",
+			Fields:   Fleet_TagsFields,
 		},
 	},
 }

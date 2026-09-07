@@ -9,77 +9,77 @@ type DbengineVersions_DbengineVersions_ServerlessV2FeaturesSupport struct {
 }
 
 type DbengineVersions_DbengineVersions_ValidUpgradeTarget struct {
-	AutoUpgrade any
-	Description any
-	Engine any
-	EngineVersion any
+	AutoUpgrade           any
+	Description           any
+	Engine                any
+	EngineVersion         any
 	IsMajorVersionUpgrade any
 }
 
 type DbengineVersions_DbengineVersions struct {
-	DbengineDescription any
-	DbengineVersionDescription any
-	DbparameterGroupFamily any
-	Engine any
-	EngineVersion any
-	ExportableLogTypes any
-	ServerlessV2FeaturesSupport any
-	SupportedCacertificateIdentifiers any
+	DbengineDescription                       any
+	DbengineVersionDescription                any
+	DbparameterGroupFamily                    any
+	Engine                                    any
+	EngineVersion                             any
+	ExportableLogTypes                        any
+	ServerlessV2FeaturesSupport               any
+	SupportedCacertificateIdentifiers         any
 	SupportsCertificateRotationWithoutRestart any
-	SupportsLogExportsToCloudwatchLogs any
-	ValidUpgradeTarget any
+	SupportsLogExportsToCloudwatchLogs        any
+	ValidUpgradeTarget                        any
 }
 
 type DbengineVersions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var DbengineVersions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DbengineVersionsConfig struct {
-	DbparameterGroupFamily any
-	DefaultOnly any
-	Engine any
-	EngineVersion any
-	Filters any
+	DbparameterGroupFamily     any
+	DefaultOnly                any
+	Engine                     any
+	EngineVersion              any
+	Filters                    any
 	ListSupportedCharacterSets any
-	ListSupportedTimezones any
-	Marker any
-	MaxRecords any
+	ListSupportedTimezones     any
+	Marker                     any
+	MaxRecords                 any
 }
 
 type DbengineVersionsAttrs struct {
-	DbengineVersions any
-	DbparameterGroupFamily any
-	DefaultOnly any
-	Engine any
-	EngineVersion any
-	Filters any
+	DbengineVersions           any
+	DbparameterGroupFamily     any
+	DefaultOnly                any
+	Engine                     any
+	EngineVersion              any
+	Filters                    any
 	ListSupportedCharacterSets any
-	ListSupportedTimezones any
-	Marker any
-	MaxRecords any
+	ListSupportedTimezones     any
+	Marker                     any
+	MaxRecords                 any
 }
 
 var DbengineVersions = ubx.DataSourceBinding{
 	WireType: "aws_docdb_dbengine_versions",
 	Fields: ubx.FieldMap{
 		"DbparameterGroupFamily": ubx.FieldSpec{WireName: "dbparameter_group_family"},
-		"DefaultOnly": ubx.FieldSpec{WireName: "default_only"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
+		"DefaultOnly":            ubx.FieldSpec{WireName: "default_only"},
+		"Engine":                 ubx.FieldSpec{WireName: "engine"},
+		"EngineVersion":          ubx.FieldSpec{WireName: "engine_version"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DbengineVersions_FiltersFields,
+			Kind:     "list",
+			Fields:   DbengineVersions_FiltersFields,
 		},
 		"ListSupportedCharacterSets": ubx.FieldSpec{WireName: "list_supported_character_sets"},
-		"ListSupportedTimezones": ubx.FieldSpec{WireName: "list_supported_timezones"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"ListSupportedTimezones":     ubx.FieldSpec{WireName: "list_supported_timezones"},
+		"Marker":                     ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":                 ubx.FieldSpec{WireName: "max_records"},
 	},
 }

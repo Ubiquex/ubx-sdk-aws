@@ -4,14 +4,14 @@ package frauddetector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var List_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ListConfig struct {
 	// The description of the list.
@@ -49,12 +49,12 @@ var List = ubx.ResourceBinding{
 	WireType: "aws_fraud_detector_list",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Elements": ubx.FieldSpec{WireName: "elements"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Elements":    ubx.FieldSpec{WireName: "elements"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: List_TagsFields,
+			Kind:     "list",
+			Fields:   List_TagsFields,
 		},
 		"VariableType": ubx.FieldSpec{WireName: "variable_type"},
 	},

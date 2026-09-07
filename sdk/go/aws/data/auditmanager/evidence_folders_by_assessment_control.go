@@ -4,52 +4,52 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EvidenceFoldersByAssessmentControl_EvidenceFolders struct {
-	AssessmentId any
-	AssessmentReportSelectionCount any
-	Author any
-	ControlId any
-	ControlName any
-	ControlSetId any
-	DataSource any
-	Date any
-	EvidenceAwsServiceSourceCount any
-	EvidenceByTypeComplianceCheckCount any
+	AssessmentId                             any
+	AssessmentReportSelectionCount           any
+	Author                                   any
+	ControlId                                any
+	ControlName                              any
+	ControlSetId                             any
+	DataSource                               any
+	Date                                     any
+	EvidenceAwsServiceSourceCount            any
+	EvidenceByTypeComplianceCheckCount       any
 	EvidenceByTypeComplianceCheckIssuesCount any
-	EvidenceByTypeConfigurationDataCount any
-	EvidenceByTypeManualCount any
-	EvidenceByTypeUserActivityCount any
-	EvidenceResourcesIncludedCount any
-	Id any
-	Name any
-	TotalEvidence any
+	EvidenceByTypeConfigurationDataCount     any
+	EvidenceByTypeManualCount                any
+	EvidenceByTypeUserActivityCount          any
+	EvidenceResourcesIncludedCount           any
+	Id                                       any
+	Name                                     any
+	TotalEvidence                            any
 }
 
 type EvidenceFoldersByAssessmentControlConfig struct {
 	AssessmentId any
-	ControlId any
+	ControlId    any
 	ControlSetId any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EvidenceFoldersByAssessmentControlAttrs struct {
-	AssessmentId any
-	ControlId any
-	ControlSetId any
+	AssessmentId    any
+	ControlId       any
+	ControlSetId    any
 	EvidenceFolders any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var EvidenceFoldersByAssessmentControl = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_evidence_folders_by_assessment_control",
 	Fields: ubx.FieldMap{
 		"AssessmentId": ubx.FieldSpec{WireName: "assessment_id"},
-		"ControlId": ubx.FieldSpec{WireName: "control_id"},
+		"ControlId":    ubx.FieldSpec{WireName: "control_id"},
 		"ControlSetId": ubx.FieldSpec{WireName: "control_set_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

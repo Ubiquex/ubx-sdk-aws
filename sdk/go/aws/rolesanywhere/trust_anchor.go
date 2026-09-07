@@ -8,7 +8,7 @@ type TrustAnchor_NotificationSettings struct {
 	Channel any
 	// A boolean that indicates whether notifications for the associated event (e.g., CA certificate expiration) are enabled for this trust anchor. (AI-inferred)
 	Enabled any
-	Event any
+	Event   any
 	// The number of days before a certificate expires that triggers the notification event defined in this notification setting. (AI-inferred)
 	Threshold any
 }
@@ -35,30 +35,30 @@ type TrustAnchor_Tags struct {
 }
 
 var TrustAnchor_NotificationSettingsFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Event": ubx.FieldSpec{WireName: "event"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Channel":   ubx.FieldSpec{WireName: "channel"},
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"Event":     ubx.FieldSpec{WireName: "event"},
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var TrustAnchor_Source_SourceDataFields = ubx.FieldMap{
-		"AcmPcaArn": ubx.FieldSpec{WireName: "acm_pca_arn"},
-		"X509CertificateData": ubx.FieldSpec{WireName: "x509_certificate_data"},
-	}
+	"AcmPcaArn":           ubx.FieldSpec{WireName: "acm_pca_arn"},
+	"X509CertificateData": ubx.FieldSpec{WireName: "x509_certificate_data"},
+}
 
 var TrustAnchor_SourceFields = ubx.FieldMap{
-		"SourceData": ubx.FieldSpec{
-			WireName: "source_data",
-			Kind: "object",
-			Fields: TrustAnchor_Source_SourceDataFields,
-		},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"SourceData": ubx.FieldSpec{
+		WireName: "source_data",
+		Kind:     "object",
+		Fields:   TrustAnchor_Source_SourceDataFields,
+	},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 var TrustAnchor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrustAnchorConfig struct {
 	// Indicates whether the trust anchor is enabled for use with IAM Roles Anywhere. (AI-inferred)
@@ -94,21 +94,21 @@ var TrustAnchor = ubx.ResourceBinding{
 	WireType: "aws_roles_anywhere_trust_anchor",
 	Fields: ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"NotificationSettings": ubx.FieldSpec{
 			WireName: "notification_settings",
-			Kind: "list",
-			Fields: TrustAnchor_NotificationSettingsFields,
+			Kind:     "list",
+			Fields:   TrustAnchor_NotificationSettingsFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: TrustAnchor_SourceFields,
+			Kind:     "object",
+			Fields:   TrustAnchor_SourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrustAnchor_TagsFields,
+			Kind:     "list",
+			Fields:   TrustAnchor_TagsFields,
 		},
 	},
 }

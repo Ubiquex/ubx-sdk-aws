@@ -8,46 +8,46 @@ type ConnectionFunctions_ConnectionFunctions_ConnectionFunctionConfig_KeyValueSt
 }
 
 type ConnectionFunctions_ConnectionFunctions_ConnectionFunctionConfig_KeyValueStoreAssociations struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type ConnectionFunctions_ConnectionFunctions_ConnectionFunctionConfig struct {
-	Comment any
+	Comment                   any
 	KeyValueStoreAssociations any
-	Runtime any
+	Runtime                   any
 }
 
 type ConnectionFunctions_ConnectionFunctions struct {
-	ConnectionFunctionArn any
+	ConnectionFunctionArn    any
 	ConnectionFunctionConfig any
-	CreatedTime any
-	Id any
-	LastModifiedTime any
-	Name any
-	Stage any
-	Status any
+	CreatedTime              any
+	Id                       any
+	LastModifiedTime         any
+	Name                     any
+	Stage                    any
+	Status                   any
 }
 
 type ConnectionFunctionsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
-	Stage any
+	Stage    any
 }
 
 type ConnectionFunctionsAttrs struct {
 	ConnectionFunctions any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Stage any
+	Marker              any
+	MaxItems            any
+	NextMarker          any
+	Stage               any
 }
 
 var ConnectionFunctions = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_connection_functions",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
+		"Stage":    ubx.FieldSpec{WireName: "stage"},
 	},
 }

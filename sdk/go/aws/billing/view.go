@@ -21,48 +21,48 @@ type View_DataFilterExpression struct {
 	// The dimensions property of the data filter expression specifies dimension filters (such as service or region) that restrict the billing view to only include matching billing data. (AI-inferred)
 	Dimensions any
 	// Specifies tag key-value pairs used by the data filter expression to include only resources that have those tags in the billing view. (AI-inferred)
-	Tags any
+	Tags      any
 	TimeRange any
 }
 
 type View_Tags struct {
 	// The key (name) of a tag attached to this billing view, used for cost allocation and management in AWS Billing. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var View_DataFilterExpression_DimensionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var View_DataFilterExpression_TimeRangeFields = ubx.FieldMap{
-		"BeginDateInclusive": ubx.FieldSpec{WireName: "begin_date_inclusive"},
-		"EndDateInclusive": ubx.FieldSpec{WireName: "end_date_inclusive"},
-	}
+	"BeginDateInclusive": ubx.FieldSpec{WireName: "begin_date_inclusive"},
+	"EndDateInclusive":   ubx.FieldSpec{WireName: "end_date_inclusive"},
+}
 
 var View_DataFilterExpressionFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "object",
-			Fields: View_DataFilterExpression_DimensionsFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: View_DataFilterExpression_DimensionsFields,
-		},
-		"TimeRange": ubx.FieldSpec{
-			WireName: "time_range",
-			Kind: "object",
-			Fields: View_DataFilterExpression_TimeRangeFields,
-		},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "object",
+		Fields:   View_DataFilterExpression_DimensionsFields,
+	},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   View_DataFilterExpression_DimensionsFields,
+	},
+	"TimeRange": ubx.FieldSpec{
+		WireName: "time_range",
+		Kind:     "object",
+		Fields:   View_DataFilterExpression_TimeRangeFields,
+	},
+}
 
 var View_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ViewConfig struct {
 	// DataFilterExpression selects which cost and usage records are included in the billing view by specifying dimension filters such as service, region, record type, or linked account. (AI-inferred)
@@ -105,16 +105,16 @@ var View = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataFilterExpression": ubx.FieldSpec{
 			WireName: "data_filter_expression",
-			Kind: "object",
-			Fields: View_DataFilterExpressionFields,
+			Kind:     "object",
+			Fields:   View_DataFilterExpressionFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SourceViews": ubx.FieldSpec{WireName: "source_views"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: View_TagsFields,
+			Kind:     "list",
+			Fields:   View_TagsFields,
 		},
 	},
 }

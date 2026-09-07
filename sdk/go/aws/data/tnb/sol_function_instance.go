@@ -4,7 +4,7 @@ package tnb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SolFunctionInstance_InstantiatedVnfInfo_VnfcResourceInfo_Metadata struct {
-	Cluster any
+	Cluster   any
 	HelmChart any
 	NodeGroup any
 }
@@ -14,12 +14,12 @@ type SolFunctionInstance_InstantiatedVnfInfo_VnfcResourceInfo struct {
 }
 
 type SolFunctionInstance_InstantiatedVnfInfo struct {
-	VnfState any
+	VnfState         any
 	VnfcResourceInfo any
 }
 
 type SolFunctionInstance_Metadata struct {
-	CreatedAt any
+	CreatedAt    any
 	LastModified any
 }
 
@@ -29,20 +29,20 @@ type SolFunctionInstanceConfig struct {
 
 type SolFunctionInstanceAttrs struct {
 	Arn any
-	Id any
+	Id  any
 	// <p>Information about the network function.</p> <p>A network function instance is a function in a function package .</p>
 	InstantiatedVnfInfo any
-	InstantiationState any
+	InstantiationState  any
 	// <p>The metadata of a network function instance.</p> <p>A network function instance is a function in a function package .</p>
-	Metadata any
-	NsInstanceId any
-	Tags any
-	VnfInstanceId any
-	VnfPkgId any
+	Metadata       any
+	NsInstanceId   any
+	Tags           any
+	VnfInstanceId  any
+	VnfPkgId       any
 	VnfProductName any
-	VnfProvider any
-	VnfdId any
-	VnfdVersion any
+	VnfProvider    any
+	VnfdId         any
+	VnfdVersion    any
 }
 
 var SolFunctionInstance = ubx.DataSourceBinding{

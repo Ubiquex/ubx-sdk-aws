@@ -16,17 +16,17 @@ type DataLakeSettings_CreateDatabaseDefaultPermissions struct {
 }
 
 var DataLakeSettings_AdminsFields = ubx.FieldMap{
-		"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
-	}
+	"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
+}
 
 var DataLakeSettings_CreateDatabaseDefaultPermissionsFields = ubx.FieldMap{
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"Principal": ubx.FieldSpec{
-			WireName: "principal",
-			Kind: "object",
-			Fields: DataLakeSettings_AdminsFields,
-		},
-	}
+	"Permissions": ubx.FieldSpec{WireName: "permissions"},
+	"Principal": ubx.FieldSpec{
+		WireName: "principal",
+		Kind:     "object",
+		Fields:   DataLakeSettings_AdminsFields,
+	},
+}
 
 type DataLakeSettingsConfig struct {
 	// Specifies the list of data lake administrator principals (e.g., IAM users, roles, or AWS accounts) who are granted administrative permissions on the Lake Formation data catalog and resources. (AI-inferred)
@@ -85,33 +85,33 @@ var DataLakeSettings = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Admins": ubx.FieldSpec{
 			WireName: "admins",
-			Kind: "list",
-			Fields: DataLakeSettings_AdminsFields,
+			Kind:     "list",
+			Fields:   DataLakeSettings_AdminsFields,
 		},
-		"AllowExternalDataFiltering": ubx.FieldSpec{WireName: "allow_external_data_filtering"},
+		"AllowExternalDataFiltering":       ubx.FieldSpec{WireName: "allow_external_data_filtering"},
 		"AllowFullTableExternalDataAccess": ubx.FieldSpec{WireName: "allow_full_table_external_data_access"},
-		"AuthorizedSessionTagValueList": ubx.FieldSpec{WireName: "authorized_session_tag_value_list"},
+		"AuthorizedSessionTagValueList":    ubx.FieldSpec{WireName: "authorized_session_tag_value_list"},
 		"CreateDatabaseDefaultPermissions": ubx.FieldSpec{
 			WireName: "create_database_default_permissions",
-			Kind: "list",
-			Fields: DataLakeSettings_CreateDatabaseDefaultPermissionsFields,
+			Kind:     "list",
+			Fields:   DataLakeSettings_CreateDatabaseDefaultPermissionsFields,
 		},
 		"CreateTableDefaultPermissions": ubx.FieldSpec{
 			WireName: "create_table_default_permissions",
-			Kind: "list",
-			Fields: DataLakeSettings_CreateDatabaseDefaultPermissionsFields,
+			Kind:     "list",
+			Fields:   DataLakeSettings_CreateDatabaseDefaultPermissionsFields,
 		},
 		"ExternalDataFilteringAllowList": ubx.FieldSpec{
 			WireName: "external_data_filtering_allow_list",
-			Kind: "list",
-			Fields: DataLakeSettings_AdminsFields,
+			Kind:     "list",
+			Fields:   DataLakeSettings_AdminsFields,
 		},
 		"MutationType": ubx.FieldSpec{WireName: "mutation_type"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Parameters":   ubx.FieldSpec{WireName: "parameters"},
 		"ReadOnlyAdmins": ubx.FieldSpec{
 			WireName: "read_only_admins",
-			Kind: "list",
-			Fields: DataLakeSettings_AdminsFields,
+			Kind:     "list",
+			Fields:   DataLakeSettings_AdminsFields,
 		},
 		"TrustedResourceOwners": ubx.FieldSpec{WireName: "trusted_resource_owners"},
 	},

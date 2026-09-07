@@ -103,69 +103,69 @@ type LoadBalancer_Tags struct {
 }
 
 var LoadBalancer_AccessLoggingPolicyFields = ubx.FieldMap{
-		"EmitInterval": ubx.FieldSpec{WireName: "emit_interval"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"S3BucketName": ubx.FieldSpec{WireName: "s3_bucket_name"},
-		"S3BucketPrefix": ubx.FieldSpec{WireName: "s3_bucket_prefix"},
-	}
+	"EmitInterval":   ubx.FieldSpec{WireName: "emit_interval"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"S3BucketName":   ubx.FieldSpec{WireName: "s3_bucket_name"},
+	"S3BucketPrefix": ubx.FieldSpec{WireName: "s3_bucket_prefix"},
+}
 
 var LoadBalancer_AppCookieStickinessPolicyFields = ubx.FieldMap{
-		"CookieName": ubx.FieldSpec{WireName: "cookie_name"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-	}
+	"CookieName": ubx.FieldSpec{WireName: "cookie_name"},
+	"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
+}
 
 var LoadBalancer_ConnectionDrainingPolicyFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+}
 
 var LoadBalancer_ConnectionSettingsFields = ubx.FieldMap{
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-	}
+	"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
+}
 
 var LoadBalancer_HealthCheckFields = ubx.FieldMap{
-		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
-	}
+	"HealthyThreshold":   ubx.FieldSpec{WireName: "healthy_threshold"},
+	"Interval":           ubx.FieldSpec{WireName: "interval"},
+	"Target":             ubx.FieldSpec{WireName: "target"},
+	"Timeout":            ubx.FieldSpec{WireName: "timeout"},
+	"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
+}
 
 var LoadBalancer_LbcookieStickinessPolicyFields = ubx.FieldMap{
-		"CookieExpirationPeriod": ubx.FieldSpec{WireName: "cookie_expiration_period"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-	}
+	"CookieExpirationPeriod": ubx.FieldSpec{WireName: "cookie_expiration_period"},
+	"PolicyName":             ubx.FieldSpec{WireName: "policy_name"},
+}
 
 var LoadBalancer_ListenersFields = ubx.FieldMap{
-		"InstancePort": ubx.FieldSpec{WireName: "instance_port"},
-		"InstanceProtocol": ubx.FieldSpec{WireName: "instance_protocol"},
-		"LoadBalancerPort": ubx.FieldSpec{WireName: "load_balancer_port"},
-		"PolicyNames": ubx.FieldSpec{WireName: "policy_names"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SslcertificateId": ubx.FieldSpec{WireName: "sslcertificate_id"},
-	}
+	"InstancePort":     ubx.FieldSpec{WireName: "instance_port"},
+	"InstanceProtocol": ubx.FieldSpec{WireName: "instance_protocol"},
+	"LoadBalancerPort": ubx.FieldSpec{WireName: "load_balancer_port"},
+	"PolicyNames":      ubx.FieldSpec{WireName: "policy_names"},
+	"Protocol":         ubx.FieldSpec{WireName: "protocol"},
+	"SslcertificateId": ubx.FieldSpec{WireName: "sslcertificate_id"},
+}
 
 var LoadBalancer_Policies_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var LoadBalancer_PoliciesFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: LoadBalancer_Policies_AttributesFields,
-		},
-		"InstancePorts": ubx.FieldSpec{WireName: "instance_ports"},
-		"LoadBalancerPorts": ubx.FieldSpec{WireName: "load_balancer_ports"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   LoadBalancer_Policies_AttributesFields,
+	},
+	"InstancePorts":     ubx.FieldSpec{WireName: "instance_ports"},
+	"LoadBalancerPorts": ubx.FieldSpec{WireName: "load_balancer_ports"},
+	"PolicyName":        ubx.FieldSpec{WireName: "policy_name"},
+	"PolicyType":        ubx.FieldSpec{WireName: "policy_type"},
+}
 
 var LoadBalancer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LoadBalancerConfig struct {
 	// Information about where and how access logs are stored for the load balancer.
@@ -250,55 +250,55 @@ var LoadBalancer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessLoggingPolicy": ubx.FieldSpec{
 			WireName: "access_logging_policy",
-			Kind: "object",
-			Fields: LoadBalancer_AccessLoggingPolicyFields,
+			Kind:     "object",
+			Fields:   LoadBalancer_AccessLoggingPolicyFields,
 		},
 		"AppCookieStickinessPolicy": ubx.FieldSpec{
 			WireName: "app_cookie_stickiness_policy",
-			Kind: "list",
-			Fields: LoadBalancer_AppCookieStickinessPolicyFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_AppCookieStickinessPolicyFields,
 		},
 		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
 		"ConnectionDrainingPolicy": ubx.FieldSpec{
 			WireName: "connection_draining_policy",
-			Kind: "object",
-			Fields: LoadBalancer_ConnectionDrainingPolicyFields,
+			Kind:     "object",
+			Fields:   LoadBalancer_ConnectionDrainingPolicyFields,
 		},
 		"ConnectionSettings": ubx.FieldSpec{
 			WireName: "connection_settings",
-			Kind: "object",
-			Fields: LoadBalancer_ConnectionSettingsFields,
+			Kind:     "object",
+			Fields:   LoadBalancer_ConnectionSettingsFields,
 		},
 		"CrossZone": ubx.FieldSpec{WireName: "cross_zone"},
 		"HealthCheck": ubx.FieldSpec{
 			WireName: "health_check",
-			Kind: "object",
-			Fields: LoadBalancer_HealthCheckFields,
+			Kind:     "object",
+			Fields:   LoadBalancer_HealthCheckFields,
 		},
 		"Instances": ubx.FieldSpec{WireName: "instances"},
 		"LbcookieStickinessPolicy": ubx.FieldSpec{
 			WireName: "lbcookie_stickiness_policy",
-			Kind: "list",
-			Fields: LoadBalancer_LbcookieStickinessPolicyFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_LbcookieStickinessPolicyFields,
 		},
 		"Listeners": ubx.FieldSpec{
 			WireName: "listeners",
-			Kind: "list",
-			Fields: LoadBalancer_ListenersFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_ListenersFields,
 		},
 		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
 		"Policies": ubx.FieldSpec{
 			WireName: "policies",
-			Kind: "list",
-			Fields: LoadBalancer_PoliciesFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_PoliciesFields,
 		},
-		"Scheme": ubx.FieldSpec{WireName: "scheme"},
+		"Scheme":         ubx.FieldSpec{WireName: "scheme"},
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
+		"Subnets":        ubx.FieldSpec{WireName: "subnets"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LoadBalancer_TagsFields,
+			Kind:     "list",
+			Fields:   LoadBalancer_TagsFields,
 		},
 	},
 }

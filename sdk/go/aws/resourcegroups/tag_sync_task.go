@@ -36,9 +36,9 @@ type TagSyncTaskAttrs struct {
 var TagSyncTask = ubx.ResourceBinding{
 	WireType: "aws_resource_groups_tag_sync_task",
 	Fields: ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
+		"Group":    ubx.FieldSpec{WireName: "group"},
+		"RoleArn":  ubx.FieldSpec{WireName: "role_arn"},
+		"TagKey":   ubx.FieldSpec{WireName: "tag_key"},
 		"TagValue": ubx.FieldSpec{WireName: "tag_value"},
 	},
 }

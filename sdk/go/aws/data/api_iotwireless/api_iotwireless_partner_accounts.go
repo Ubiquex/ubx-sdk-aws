@@ -4,28 +4,28 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessPartnerAccounts_Sidewalk struct {
-	AmazonId any
-	Arn any
+	AmazonId    any
+	Arn         any
 	Fingerprint any
 }
 
 type ApiIotwirelessPartnerAccountsConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotwirelessPartnerAccountsAttrs struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
-	Sidewalk any
+	NextToken  any
+	Sidewalk   any
 }
 
 var ApiIotwirelessPartnerAccounts = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_partner_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

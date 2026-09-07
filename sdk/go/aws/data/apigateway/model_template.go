@@ -11,7 +11,7 @@ type ModelTemplateConfig struct {
 type ModelTemplateAttrs struct {
 	ModelName any
 	RestApiId any
-	Value any
+	Value     any
 }
 
 var ModelTemplate = ubx.DataSourceBinding{

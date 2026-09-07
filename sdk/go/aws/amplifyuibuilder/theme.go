@@ -17,18 +17,18 @@ type Theme_Overrides struct {
 }
 
 var Theme_Overrides_ValueFields = ubx.FieldMap{
-		"Children": ubx.FieldSpec{WireName: "children"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Children": ubx.FieldSpec{WireName: "children"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var Theme_OverridesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Theme_Overrides_ValueFields,
-		},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Theme_Overrides_ValueFields,
+	},
+}
 
 type ThemeConfig struct {
 	// The unique ID of the Amplify application that this UI Builder theme belongs to. (AI-inferred)
@@ -69,19 +69,19 @@ type ThemeAttrs struct {
 var Theme = ubx.ResourceBinding{
 	WireType: "aws_amplify_uibuilder_theme",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":           ubx.FieldSpec{WireName: "app_id"},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"Overrides": ubx.FieldSpec{
 			WireName: "overrides",
-			Kind: "list",
-			Fields: Theme_OverridesFields,
+			Kind:     "list",
+			Fields:   Theme_OverridesFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Values": ubx.FieldSpec{
 			WireName: "values",
-			Kind: "list",
-			Fields: Theme_OverridesFields,
+			Kind:     "list",
+			Fields:   Theme_OverridesFields,
 		},
 	},
 }

@@ -21,13 +21,13 @@ type ApplicationInferenceProfile_Tags struct {
 }
 
 var ApplicationInferenceProfile_ModelSourceFields = ubx.FieldMap{
-		"CopyFrom": ubx.FieldSpec{WireName: "copy_from"},
-	}
+	"CopyFrom": ubx.FieldSpec{WireName: "copy_from"},
+}
 
 var ApplicationInferenceProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationInferenceProfileConfig struct {
 	// Description of the inference profile
@@ -70,17 +70,17 @@ type ApplicationInferenceProfileAttrs struct {
 var ApplicationInferenceProfile = ubx.ResourceBinding{
 	WireType: "aws_bedrock_application_inference_profile",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"InferenceProfileName": ubx.FieldSpec{WireName: "inference_profile_name"},
 		"ModelSource": ubx.FieldSpec{
 			WireName: "model_source",
-			Kind: "object",
-			Fields: ApplicationInferenceProfile_ModelSourceFields,
+			Kind:     "object",
+			Fields:   ApplicationInferenceProfile_ModelSourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ApplicationInferenceProfile_TagsFields,
+			Kind:     "list",
+			Fields:   ApplicationInferenceProfile_TagsFields,
 		},
 	},
 }

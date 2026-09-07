@@ -34,30 +34,30 @@ type SessionLogger_Tags struct {
 }
 
 var SessionLogger_EventFilterFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"All":     ubx.FieldSpec{WireName: "all"},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var SessionLogger_LogConfiguration_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-		"FolderStructure": ubx.FieldSpec{WireName: "folder_structure"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-		"LogFileFormat": ubx.FieldSpec{WireName: "log_file_format"},
-	}
+	"Bucket":          ubx.FieldSpec{WireName: "bucket"},
+	"BucketOwner":     ubx.FieldSpec{WireName: "bucket_owner"},
+	"FolderStructure": ubx.FieldSpec{WireName: "folder_structure"},
+	"KeyPrefix":       ubx.FieldSpec{WireName: "key_prefix"},
+	"LogFileFormat":   ubx.FieldSpec{WireName: "log_file_format"},
+}
 
 var SessionLogger_LogConfigurationFields = ubx.FieldMap{
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: SessionLogger_LogConfiguration_S3Fields,
-		},
-	}
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   SessionLogger_LogConfiguration_S3Fields,
+	},
+}
 
 var SessionLogger_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SessionLoggerConfig struct {
 	// A map of key-value pairs that serve as additional encryption context for the KMS key used to encrypt session log data, providing extra authenticated data to the encryption/decryption process. (AI-inferred)
@@ -67,7 +67,7 @@ type SessionLoggerConfig struct {
 	// Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
 	DisplayName any
 	// The filter that specifies which session events this session logger monitors. (AI-inferred)
-	EventFilter any
+	EventFilter      any
 	LogConfiguration any
 	// The tags assigned to this session logger. (AI-inferred)
 	Tags any
@@ -85,7 +85,7 @@ type SessionLoggerAttrs struct {
 	// Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
 	DisplayName any
 	// The filter that specifies which session events this session logger monitors. (AI-inferred)
-	EventFilter any
+	EventFilter      any
 	LogConfiguration any
 	// The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces Web session logger and is used to attach the logger to a WorkSpaces Web portal for session logging. (AI-inferred)
 	SessionLoggerArn any
@@ -97,22 +97,22 @@ var SessionLogger = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_web_session_logger",
 	Fields: ubx.FieldMap{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
-		"CustomerManagedKey": ubx.FieldSpec{WireName: "customer_managed_key"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CustomerManagedKey":          ubx.FieldSpec{WireName: "customer_managed_key"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"EventFilter": ubx.FieldSpec{
 			WireName: "event_filter",
-			Kind: "object",
-			Fields: SessionLogger_EventFilterFields,
+			Kind:     "object",
+			Fields:   SessionLogger_EventFilterFields,
 		},
 		"LogConfiguration": ubx.FieldSpec{
 			WireName: "log_configuration",
-			Kind: "object",
-			Fields: SessionLogger_LogConfigurationFields,
+			Kind:     "object",
+			Fields:   SessionLogger_LogConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SessionLogger_TagsFields,
+			Kind:     "list",
+			Fields:   SessionLogger_TagsFields,
 		},
 	},
 }

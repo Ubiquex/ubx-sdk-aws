@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkResourceRelationships_Relationships struct {
 	From any
-	To any
+	To   any
 }
 
 type NetworkResourceRelationshipsConfig struct {
-	AccountId any
-	AwsRegion any
-	CoreNetworkId any
-	GlobalNetworkId any
-	MaxResults any
-	NextToken any
+	AccountId            any
+	AwsRegion            any
+	CoreNetworkId        any
+	GlobalNetworkId      any
+	MaxResults           any
+	NextToken            any
 	RegisteredGatewayArn any
-	ResourceArn any
-	ResourceType any
+	ResourceArn          any
+	ResourceType         any
 }
 
 type NetworkResourceRelationshipsAttrs struct {
-	AccountId any
-	AwsRegion any
-	CoreNetworkId any
-	GlobalNetworkId any
-	MaxResults any
-	NextToken any
+	AccountId            any
+	AwsRegion            any
+	CoreNetworkId        any
+	GlobalNetworkId      any
+	MaxResults           any
+	NextToken            any
 	RegisteredGatewayArn any
-	Relationships any
-	ResourceArn any
-	ResourceType any
+	Relationships        any
+	ResourceArn          any
+	ResourceType         any
 }
 
 var NetworkResourceRelationships = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_network_resource_relationships",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AccountId":            ubx.FieldSpec{WireName: "account_id"},
+		"AwsRegion":            ubx.FieldSpec{WireName: "aws_region"},
+		"CoreNetworkId":        ubx.FieldSpec{WireName: "core_network_id"},
+		"GlobalNetworkId":      ubx.FieldSpec{WireName: "global_network_id"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"RegisteredGatewayArn": ubx.FieldSpec{WireName: "registered_gateway_arn"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceArn":          ubx.FieldSpec{WireName: "resource_arn"},
+		"ResourceType":         ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

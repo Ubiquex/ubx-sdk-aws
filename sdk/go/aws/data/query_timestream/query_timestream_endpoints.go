@@ -4,7 +4,7 @@ package query_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryTimestreamEndpoints_Endpoints struct {
-	Address any
+	Address              any
 	CachePeriodInMinutes any
 }
 
@@ -17,6 +17,5 @@ type QueryTimestreamEndpointsAttrs struct {
 
 var QueryTimestreamEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_query_timestream_endpoints",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

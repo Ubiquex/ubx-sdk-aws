@@ -9,26 +9,26 @@ type BudgetsForResource_Budgets struct {
 
 type BudgetsForResourceConfig struct {
 	AcceptLanguage any
-	PageSize any
-	PageToken any
-	ResourceId any
+	PageSize       any
+	PageToken      any
+	ResourceId     any
 }
 
 type BudgetsForResourceAttrs struct {
 	AcceptLanguage any
-	Budgets any
-	NextPageToken any
-	PageSize any
-	PageToken any
-	ResourceId any
+	Budgets        any
+	NextPageToken  any
+	PageSize       any
+	PageToken      any
+	ResourceId     any
 }
 
 var BudgetsForResource = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_budgets_for_resource",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":      ubx.FieldSpec{WireName: "page_token"},
+		"ResourceId":     ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

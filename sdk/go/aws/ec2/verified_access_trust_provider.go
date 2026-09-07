@@ -60,40 +60,40 @@ type VerifiedAccessTrustProvider_Tags struct {
 }
 
 var VerifiedAccessTrustProvider_DeviceOptionsFields = ubx.FieldMap{
-		"PublicSigningKeyUrl": ubx.FieldSpec{WireName: "public_signing_key_url"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"PublicSigningKeyUrl": ubx.FieldSpec{WireName: "public_signing_key_url"},
+	"TenantId":            ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var VerifiedAccessTrustProvider_NativeApplicationOidcOptionsFields = ubx.FieldMap{
-		"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"PublicSigningKeyEndpoint": ubx.FieldSpec{WireName: "public_signing_key_endpoint"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-		"UserInfoEndpoint": ubx.FieldSpec{WireName: "user_info_endpoint"},
-	}
+	"AuthorizationEndpoint":    ubx.FieldSpec{WireName: "authorization_endpoint"},
+	"ClientId":                 ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":             ubx.FieldSpec{WireName: "client_secret"},
+	"Issuer":                   ubx.FieldSpec{WireName: "issuer"},
+	"PublicSigningKeyEndpoint": ubx.FieldSpec{WireName: "public_signing_key_endpoint"},
+	"Scope":                    ubx.FieldSpec{WireName: "scope"},
+	"TokenEndpoint":            ubx.FieldSpec{WireName: "token_endpoint"},
+	"UserInfoEndpoint":         ubx.FieldSpec{WireName: "user_info_endpoint"},
+}
 
 var VerifiedAccessTrustProvider_OidcOptionsFields = ubx.FieldMap{
-		"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-		"UserInfoEndpoint": ubx.FieldSpec{WireName: "user_info_endpoint"},
-	}
+	"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
+	"ClientId":              ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":          ubx.FieldSpec{WireName: "client_secret"},
+	"Issuer":                ubx.FieldSpec{WireName: "issuer"},
+	"Scope":                 ubx.FieldSpec{WireName: "scope"},
+	"TokenEndpoint":         ubx.FieldSpec{WireName: "token_endpoint"},
+	"UserInfoEndpoint":      ubx.FieldSpec{WireName: "user_info_endpoint"},
+}
 
 var VerifiedAccessTrustProvider_SseSpecificationFields = ubx.FieldMap{
-		"CustomerManagedKeyEnabled": ubx.FieldSpec{WireName: "customer_managed_key_enabled"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"CustomerManagedKeyEnabled": ubx.FieldSpec{WireName: "customer_managed_key_enabled"},
+	"KmsKeyArn":                 ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var VerifiedAccessTrustProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VerifiedAccessTrustProviderConfig struct {
 	// A description for the Amazon Web Services Verified Access trust provider.
@@ -153,32 +153,32 @@ var VerifiedAccessTrustProvider = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DeviceOptions": ubx.FieldSpec{
 			WireName: "device_options",
-			Kind: "object",
-			Fields: VerifiedAccessTrustProvider_DeviceOptionsFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessTrustProvider_DeviceOptionsFields,
 		},
 		"DeviceTrustProviderType": ubx.FieldSpec{WireName: "device_trust_provider_type"},
 		"NativeApplicationOidcOptions": ubx.FieldSpec{
 			WireName: "native_application_oidc_options",
-			Kind: "object",
-			Fields: VerifiedAccessTrustProvider_NativeApplicationOidcOptionsFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessTrustProvider_NativeApplicationOidcOptionsFields,
 		},
 		"OidcOptions": ubx.FieldSpec{
 			WireName: "oidc_options",
-			Kind: "object",
-			Fields: VerifiedAccessTrustProvider_OidcOptionsFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessTrustProvider_OidcOptionsFields,
 		},
 		"PolicyReferenceName": ubx.FieldSpec{WireName: "policy_reference_name"},
 		"SseSpecification": ubx.FieldSpec{
 			WireName: "sse_specification",
-			Kind: "object",
-			Fields: VerifiedAccessTrustProvider_SseSpecificationFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessTrustProvider_SseSpecificationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VerifiedAccessTrustProvider_TagsFields,
+			Kind:     "list",
+			Fields:   VerifiedAccessTrustProvider_TagsFields,
 		},
-		"TrustProviderType": ubx.FieldSpec{WireName: "trust_provider_type"},
+		"TrustProviderType":     ubx.FieldSpec{WireName: "trust_provider_type"},
 		"UserTrustProviderType": ubx.FieldSpec{WireName: "user_trust_provider_type"},
 	},
 }

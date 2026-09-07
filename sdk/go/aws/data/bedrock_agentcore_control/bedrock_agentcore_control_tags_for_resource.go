@@ -9,7 +9,7 @@ type BedrockAgentcoreControlTagsForResourceConfig struct {
 
 type BedrockAgentcoreControlTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var BedrockAgentcoreControlTagsForResource = ubx.DataSourceBinding{

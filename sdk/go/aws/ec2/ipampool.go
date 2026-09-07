@@ -27,20 +27,20 @@ type Ipampool_SourceResource struct {
 }
 
 var Ipampool_AllocationResourceTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Ipampool_ProvisionedCidrsFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+}
 
 var Ipampool_SourceResourceFields = ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceOwner": ubx.FieldSpec{WireName: "resource_owner"},
-		"ResourceRegion": ubx.FieldSpec{WireName: "resource_region"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"ResourceId":     ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceOwner":  ubx.FieldSpec{WireName: "resource_owner"},
+	"ResourceRegion": ubx.FieldSpec{WireName: "resource_region"},
+	"ResourceType":   ubx.FieldSpec{WireName: "resource_type"},
+}
 
 type IpampoolConfig struct {
 	// The address family of the address space in this pool. Either IPv4 or IPv6.
@@ -131,37 +131,37 @@ type IpampoolAttrs struct {
 var Ipampool = ubx.ResourceBinding{
 	WireType: "aws_ec2_ipampool",
 	Fields: ubx.FieldMap{
-		"AddressFamily": ubx.FieldSpec{WireName: "address_family"},
+		"AddressFamily":                  ubx.FieldSpec{WireName: "address_family"},
 		"AllocationDefaultNetmaskLength": ubx.FieldSpec{WireName: "allocation_default_netmask_length"},
-		"AllocationMaxNetmaskLength": ubx.FieldSpec{WireName: "allocation_max_netmask_length"},
-		"AllocationMinNetmaskLength": ubx.FieldSpec{WireName: "allocation_min_netmask_length"},
+		"AllocationMaxNetmaskLength":     ubx.FieldSpec{WireName: "allocation_max_netmask_length"},
+		"AllocationMinNetmaskLength":     ubx.FieldSpec{WireName: "allocation_min_netmask_length"},
 		"AllocationResourceTags": ubx.FieldSpec{
 			WireName: "allocation_resource_tags",
-			Kind: "list",
-			Fields: Ipampool_AllocationResourceTagsFields,
+			Kind:     "list",
+			Fields:   Ipampool_AllocationResourceTagsFields,
 		},
-		"AutoImport": ubx.FieldSpec{WireName: "auto_import"},
-		"AwsService": ubx.FieldSpec{WireName: "aws_service"},
+		"AutoImport":  ubx.FieldSpec{WireName: "auto_import"},
+		"AwsService":  ubx.FieldSpec{WireName: "aws_service"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IpamScopeId": ubx.FieldSpec{WireName: "ipam_scope_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Locale":      ubx.FieldSpec{WireName: "locale"},
 		"ProvisionedCidrs": ubx.FieldSpec{
 			WireName: "provisioned_cidrs",
-			Kind: "list",
-			Fields: Ipampool_ProvisionedCidrsFields,
+			Kind:     "list",
+			Fields:   Ipampool_ProvisionedCidrsFields,
 		},
-		"PublicIpSource": ubx.FieldSpec{WireName: "public_ip_source"},
+		"PublicIpSource":       ubx.FieldSpec{WireName: "public_ip_source"},
 		"PubliclyAdvertisable": ubx.FieldSpec{WireName: "publicly_advertisable"},
-		"SourceIpamPoolId": ubx.FieldSpec{WireName: "source_ipam_pool_id"},
+		"SourceIpamPoolId":     ubx.FieldSpec{WireName: "source_ipam_pool_id"},
 		"SourceResource": ubx.FieldSpec{
 			WireName: "source_resource",
-			Kind: "object",
-			Fields: Ipampool_SourceResourceFields,
+			Kind:     "object",
+			Fields:   Ipampool_SourceResourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Ipampool_AllocationResourceTagsFields,
+			Kind:     "list",
+			Fields:   Ipampool_AllocationResourceTagsFields,
 		},
 	},
 }

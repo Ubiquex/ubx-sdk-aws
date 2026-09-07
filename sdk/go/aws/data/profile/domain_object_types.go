@@ -4,24 +4,24 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainObjectTypes_Items struct {
-	CreatedAt any
-	Description any
-	LastUpdatedAt any
+	CreatedAt      any
+	Description    any
+	LastUpdatedAt  any
 	ObjectTypeName any
-	Tags any
+	Tags           any
 }
 
 type DomainObjectTypesConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DomainObjectTypesAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var DomainObjectTypes = ubx.DataSourceBinding{
@@ -29,6 +29,6 @@ var DomainObjectTypes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

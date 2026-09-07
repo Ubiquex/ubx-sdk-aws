@@ -10,9 +10,9 @@ type TrafficDistributionGroup_Tags struct {
 }
 
 var TrafficDistributionGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrafficDistributionGroupConfig struct {
 	// A description for the traffic distribution group.
@@ -47,11 +47,11 @@ var TrafficDistributionGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrafficDistributionGroup_TagsFields,
+			Kind:     "list",
+			Fields:   TrafficDistributionGroup_TagsFields,
 		},
 	},
 }

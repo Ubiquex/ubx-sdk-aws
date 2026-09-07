@@ -11,9 +11,9 @@ type ModelManifest_Tags struct {
 }
 
 var ModelManifest_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ModelManifestConfig struct {
 	// An optional textual description that helps identify the purpose or contents of the vehicle model manifest in AWS IoT FleetWise. (AI-inferred)
@@ -54,15 +54,15 @@ type ModelManifestAttrs struct {
 var ModelManifest = ubx.ResourceBinding{
 	WireType: "aws_io_tfleet_wise_model_manifest",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nodes": ubx.FieldSpec{WireName: "nodes"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Nodes":            ubx.FieldSpec{WireName: "nodes"},
 		"SignalCatalogArn": ubx.FieldSpec{WireName: "signal_catalog_arn"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ModelManifest_TagsFields,
+			Kind:     "list",
+			Fields:   ModelManifest_TagsFields,
 		},
 	},
 }

@@ -4,33 +4,33 @@ package ingest_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IngestTimestreamBatchLoadTasks_BatchLoadTasks struct {
-	CreationTime any
-	DatabaseName any
+	CreationTime    any
+	DatabaseName    any
 	LastUpdatedTime any
-	ResumableUntil any
-	TableName any
-	TaskId any
-	TaskStatus any
+	ResumableUntil  any
+	TableName       any
+	TaskId          any
+	TaskStatus      any
 }
 
 type IngestTimestreamBatchLoadTasksConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	TaskStatus any
 }
 
 type IngestTimestreamBatchLoadTasksAttrs struct {
 	BatchLoadTasks any
-	MaxResults any
-	NextToken any
-	TaskStatus any
+	MaxResults     any
+	NextToken      any
+	TaskStatus     any
 }
 
 var IngestTimestreamBatchLoadTasks = ubx.DataSourceBinding{
 	WireType: "aws_ingest_timestream_batch_load_tasks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"TaskStatus": ubx.FieldSpec{WireName: "task_status"},
 	},
 }

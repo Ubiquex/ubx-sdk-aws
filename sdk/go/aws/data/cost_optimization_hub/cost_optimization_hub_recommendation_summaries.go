@@ -4,72 +4,72 @@ package cost_optimization_hub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CostOptimizationHubRecommendationSummaries_Filter_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CostOptimizationHubRecommendationSummaries_Filter struct {
-	AccountIds any
-	ActionTypes any
+	AccountIds            any
+	ActionTypes           any
 	ImplementationEfforts any
-	RecommendationIds any
-	Regions any
-	ResourceArns any
-	ResourceIds any
-	ResourceTypes any
-	RestartNeeded any
-	RollbackPossible any
-	Tags any
+	RecommendationIds     any
+	Regions               any
+	ResourceArns          any
+	ResourceIds           any
+	ResourceTypes         any
+	RestartNeeded         any
+	RollbackPossible      any
+	Tags                  any
 }
 
 type CostOptimizationHubRecommendationSummaries_Items struct {
 	EstimatedMonthlySavings any
-	Group any
-	RecommendationCount any
+	Group                   any
+	RecommendationCount     any
 }
 
 var CostOptimizationHubRecommendationSummaries_Filter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CostOptimizationHubRecommendationSummaries_FilterFields = ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"ActionTypes": ubx.FieldSpec{WireName: "action_types"},
-		"ImplementationEfforts": ubx.FieldSpec{WireName: "implementation_efforts"},
-		"RecommendationIds": ubx.FieldSpec{WireName: "recommendation_ids"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
-		"ResourceIds": ubx.FieldSpec{WireName: "resource_ids"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-		"RestartNeeded": ubx.FieldSpec{WireName: "restart_needed"},
-		"RollbackPossible": ubx.FieldSpec{WireName: "rollback_possible"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: CostOptimizationHubRecommendationSummaries_Filter_TagsFields,
-		},
-	}
+	"AccountIds":            ubx.FieldSpec{WireName: "account_ids"},
+	"ActionTypes":           ubx.FieldSpec{WireName: "action_types"},
+	"ImplementationEfforts": ubx.FieldSpec{WireName: "implementation_efforts"},
+	"RecommendationIds":     ubx.FieldSpec{WireName: "recommendation_ids"},
+	"Regions":               ubx.FieldSpec{WireName: "regions"},
+	"ResourceArns":          ubx.FieldSpec{WireName: "resource_arns"},
+	"ResourceIds":           ubx.FieldSpec{WireName: "resource_ids"},
+	"ResourceTypes":         ubx.FieldSpec{WireName: "resource_types"},
+	"RestartNeeded":         ubx.FieldSpec{WireName: "restart_needed"},
+	"RollbackPossible":      ubx.FieldSpec{WireName: "rollback_possible"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   CostOptimizationHubRecommendationSummaries_Filter_TagsFields,
+	},
+}
 
 type CostOptimizationHubRecommendationSummariesConfig struct {
 	// <p>Describes a filter that returns a more specific list of recommendations. Filters recommendations by different dimensions.</p>
-	Filter any
-	GroupBy any
+	Filter     any
+	GroupBy    any
 	MaxResults any
-	Metrics any
-	NextToken any
+	Metrics    any
+	NextToken  any
 }
 
 type CostOptimizationHubRecommendationSummariesAttrs struct {
-	CurrencyCode any
+	CurrencyCode                 any
 	EstimatedTotalDedupedSavings any
 	// <p>Describes a filter that returns a more specific list of recommendations. Filters recommendations by different dimensions.</p>
-	Filter any
-	GroupBy any
-	Items any
+	Filter     any
+	GroupBy    any
+	Items      any
 	MaxResults any
-	Metrics any
-	NextToken any
+	Metrics    any
+	NextToken  any
 }
 
 var CostOptimizationHubRecommendationSummaries = ubx.DataSourceBinding{
@@ -77,12 +77,12 @@ var CostOptimizationHubRecommendationSummaries = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: CostOptimizationHubRecommendationSummaries_FilterFields,
+			Kind:     "object",
+			Fields:   CostOptimizationHubRecommendationSummaries_FilterFields,
 		},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
+		"GroupBy":    ubx.FieldSpec{WireName: "group_by"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Metrics":    ubx.FieldSpec{WireName: "metrics"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

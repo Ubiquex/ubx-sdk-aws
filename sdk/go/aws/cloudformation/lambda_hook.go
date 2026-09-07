@@ -54,50 +54,50 @@ type LambdaHook_TargetFilters struct {
 }
 
 var LambdaHook_LoggingConfigFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"LogRoleArn": ubx.FieldSpec{WireName: "log_role_arn"},
-	}
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+	"LogRoleArn":   ubx.FieldSpec{WireName: "log_role_arn"},
+}
 
 var LambdaHook_StackFilters_StackNamesFields = ubx.FieldMap{
-		"Exclude": ubx.FieldSpec{WireName: "exclude"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Exclude": ubx.FieldSpec{WireName: "exclude"},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var LambdaHook_StackFilters_StackRolesFields = ubx.FieldMap{
-		"Exclude": ubx.FieldSpec{WireName: "exclude"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Exclude": ubx.FieldSpec{WireName: "exclude"},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var LambdaHook_StackFiltersFields = ubx.FieldMap{
-		"FilteringCriteria": ubx.FieldSpec{WireName: "filtering_criteria"},
-		"StackNames": ubx.FieldSpec{
-			WireName: "stack_names",
-			Kind: "object",
-			Fields: LambdaHook_StackFilters_StackNamesFields,
-		},
-		"StackRoles": ubx.FieldSpec{
-			WireName: "stack_roles",
-			Kind: "object",
-			Fields: LambdaHook_StackFilters_StackRolesFields,
-		},
-	}
+	"FilteringCriteria": ubx.FieldSpec{WireName: "filtering_criteria"},
+	"StackNames": ubx.FieldSpec{
+		WireName: "stack_names",
+		Kind:     "object",
+		Fields:   LambdaHook_StackFilters_StackNamesFields,
+	},
+	"StackRoles": ubx.FieldSpec{
+		WireName: "stack_roles",
+		Kind:     "object",
+		Fields:   LambdaHook_StackFilters_StackRolesFields,
+	},
+}
 
 var LambdaHook_TargetFilters_TargetsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"InvocationPoint": ubx.FieldSpec{WireName: "invocation_point"},
-		"TargetName": ubx.FieldSpec{WireName: "target_name"},
-	}
+	"Action":          ubx.FieldSpec{WireName: "action"},
+	"InvocationPoint": ubx.FieldSpec{WireName: "invocation_point"},
+	"TargetName":      ubx.FieldSpec{WireName: "target_name"},
+}
 
 var LambdaHook_TargetFiltersFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"InvocationPoints": ubx.FieldSpec{WireName: "invocation_points"},
-		"TargetNames": ubx.FieldSpec{WireName: "target_names"},
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "list",
-			Fields: LambdaHook_TargetFilters_TargetsFields,
-		},
-	}
+	"Actions":          ubx.FieldSpec{WireName: "actions"},
+	"InvocationPoints": ubx.FieldSpec{WireName: "invocation_points"},
+	"TargetNames":      ubx.FieldSpec{WireName: "target_names"},
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "list",
+		Fields:   LambdaHook_TargetFilters_TargetsFields,
+	},
+}
 
 type LambdaHookConfig struct {
 	// The typename alias for the hook.
@@ -150,26 +150,26 @@ type LambdaHookAttrs struct {
 var LambdaHook = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_lambda_hook",
 	Fields: ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"AutoUpdate": ubx.FieldSpec{WireName: "auto_update"},
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"FailureMode": ubx.FieldSpec{WireName: "failure_mode"},
-		"HookStatus": ubx.FieldSpec{WireName: "hook_status"},
+		"Alias":          ubx.FieldSpec{WireName: "alias"},
+		"AutoUpdate":     ubx.FieldSpec{WireName: "auto_update"},
+		"ExecutionRole":  ubx.FieldSpec{WireName: "execution_role"},
+		"FailureMode":    ubx.FieldSpec{WireName: "failure_mode"},
+		"HookStatus":     ubx.FieldSpec{WireName: "hook_status"},
 		"LambdaFunction": ubx.FieldSpec{WireName: "lambda_function"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: LambdaHook_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   LambdaHook_LoggingConfigFields,
 		},
 		"StackFilters": ubx.FieldSpec{
 			WireName: "stack_filters",
-			Kind: "object",
-			Fields: LambdaHook_StackFiltersFields,
+			Kind:     "object",
+			Fields:   LambdaHook_StackFiltersFields,
 		},
 		"TargetFilters": ubx.FieldSpec{
 			WireName: "target_filters",
-			Kind: "object",
-			Fields: LambdaHook_TargetFiltersFields,
+			Kind:     "object",
+			Fields:   LambdaHook_TargetFiltersFields,
 		},
 		"TargetOperations": ubx.FieldSpec{WireName: "target_operations"},
 	},

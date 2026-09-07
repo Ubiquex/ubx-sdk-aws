@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RetrievedTracesGraph_Services_Links struct {
 	DestinationTraceIds any
-	ReferenceType any
-	SourceTraceId any
+	ReferenceType       any
+	SourceTraceId       any
 }
 
 type RetrievedTracesGraph_Services_Service_DurationHistogram struct {
@@ -15,15 +15,15 @@ type RetrievedTracesGraph_Services_Service_DurationHistogram struct {
 }
 
 type RetrievedTracesGraph_Services_Service_Edges_Aliases struct {
-	Name any
+	Name  any
 	Names any
-	Type any
+	Type  any
 }
 
 type RetrievedTracesGraph_Services_Service_Edges_SummaryStatistics_ErrorStatistics struct {
-	OtherCount any
+	OtherCount    any
 	ThrottleCount any
-	TotalCount any
+	TotalCount    any
 }
 
 type RetrievedTracesGraph_Services_Service_Edges_SummaryStatistics_FaultStatistics struct {
@@ -32,61 +32,61 @@ type RetrievedTracesGraph_Services_Service_Edges_SummaryStatistics_FaultStatisti
 }
 
 type RetrievedTracesGraph_Services_Service_Edges_SummaryStatistics struct {
-	ErrorStatistics any
-	FaultStatistics any
-	OkCount any
-	TotalCount any
+	ErrorStatistics   any
+	FaultStatistics   any
+	OkCount           any
+	TotalCount        any
 	TotalResponseTime any
 }
 
 type RetrievedTracesGraph_Services_Service_Edges struct {
-	Aliases any
-	EdgeType any
-	EndTime any
+	Aliases                   any
+	EdgeType                  any
+	EndTime                   any
 	ReceivedEventAgeHistogram any
-	ReferenceId any
-	ResponseTimeHistogram any
-	StartTime any
-	SummaryStatistics any
+	ReferenceId               any
+	ResponseTimeHistogram     any
+	StartTime                 any
+	SummaryStatistics         any
 }
 
 type RetrievedTracesGraph_Services_Service struct {
-	AccountId any
-	DurationHistogram any
-	Edges any
-	EndTime any
-	Name any
-	Names any
-	ReferenceId any
+	AccountId             any
+	DurationHistogram     any
+	Edges                 any
+	EndTime               any
+	Name                  any
+	Names                 any
+	ReferenceId           any
 	ResponseTimeHistogram any
-	Root any
-	StartTime any
-	State any
-	SummaryStatistics any
-	Type any
+	Root                  any
+	StartTime             any
+	State                 any
+	SummaryStatistics     any
+	Type                  any
 }
 
 type RetrievedTracesGraph_Services struct {
-	Links any
+	Links   any
 	Service any
 }
 
 type RetrievedTracesGraphConfig struct {
-	NextToken any
+	NextToken      any
 	RetrievalToken any
 }
 
 type RetrievedTracesGraphAttrs struct {
-	NextToken any
+	NextToken       any
 	RetrievalStatus any
-	RetrievalToken any
-	Services any
+	RetrievalToken  any
+	Services        any
 }
 
 var RetrievedTracesGraph = ubx.DataSourceBinding{
 	WireType: "aws_xray_retrieved_traces_graph",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"RetrievalToken": ubx.FieldSpec{WireName: "retrieval_token"},
 	},
 }

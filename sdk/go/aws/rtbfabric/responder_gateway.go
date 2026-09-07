@@ -8,7 +8,7 @@ type ResponderGateway_ListenerConfig struct {
 }
 
 type ResponderGateway_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -17,17 +17,17 @@ type ResponderGateway_TrustStoreConfiguration struct {
 }
 
 var ResponderGateway_ListenerConfigFields = ubx.FieldMap{
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
-	}
+	"Protocols": ubx.FieldSpec{WireName: "protocols"},
+}
 
 var ResponderGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ResponderGateway_TrustStoreConfigurationFields = ubx.FieldMap{
-		"CertificateAuthorityCertificates": ubx.FieldSpec{WireName: "certificate_authority_certificates"},
-	}
+	"CertificateAuthorityCertificates": ubx.FieldSpec{WireName: "certificate_authority_certificates"},
+}
 
 type ResponderGatewayConfig struct {
 	// The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
@@ -105,28 +105,28 @@ var ResponderGateway = ubx.ResourceBinding{
 	WireType: "aws_rtbfabric_responder_gateway",
 	Fields: ubx.FieldMap{
 		"AcmCertificateArn": ubx.FieldSpec{WireName: "acm_certificate_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"GatewayType": ubx.FieldSpec{WireName: "gateway_type"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"DomainName":        ubx.FieldSpec{WireName: "domain_name"},
+		"GatewayType":       ubx.FieldSpec{WireName: "gateway_type"},
 		"ListenerConfig": ubx.FieldSpec{
 			WireName: "listener_config",
-			Kind: "object",
-			Fields: ResponderGateway_ListenerConfigFields,
+			Kind:     "object",
+			Fields:   ResponderGateway_ListenerConfigFields,
 		},
 		"ManagedEndpointConfiguration": ubx.FieldSpec{WireName: "managed_endpoint_configuration"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"Port":                         ubx.FieldSpec{WireName: "port"},
+		"Protocol":                     ubx.FieldSpec{WireName: "protocol"},
+		"SecurityGroupIds":             ubx.FieldSpec{WireName: "security_group_ids"},
+		"SubnetIds":                    ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResponderGateway_TagsFields,
+			Kind:     "list",
+			Fields:   ResponderGateway_TagsFields,
 		},
 		"TrustStoreConfiguration": ubx.FieldSpec{
 			WireName: "trust_store_configuration",
-			Kind: "object",
-			Fields: ResponderGateway_TrustStoreConfigurationFields,
+			Kind:     "object",
+			Fields:   ResponderGateway_TrustStoreConfigurationFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

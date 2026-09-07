@@ -108,127 +108,127 @@ type ContainerGroupDefinition_SupportContainerDefinitions struct {
 
 type ContainerGroupDefinition_Tags struct {
 	// The key of a tag applied to an Amazon GameLift container group definition, enabling resource organization and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ContainerGroupDefinition_GameServerContainerDefinition_DependsOnFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-	}
+	"Condition":     ubx.FieldSpec{WireName: "condition"},
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+}
 
 var ContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverrideFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ContainerGroupDefinition_GameServerContainerDefinition_LinuxCapabilitiesFields = ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var ContainerGroupDefinition_GameServerContainerDefinition_MountPointsFields = ubx.FieldMap{
-		"AccessLevel": ubx.FieldSpec{WireName: "access_level"},
-		"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
-		"InstancePath": ubx.FieldSpec{WireName: "instance_path"},
-	}
+	"AccessLevel":   ubx.FieldSpec{WireName: "access_level"},
+	"ContainerPath": ubx.FieldSpec{WireName: "container_path"},
+	"InstancePath":  ubx.FieldSpec{WireName: "instance_path"},
+}
 
 var ContainerGroupDefinition_GameServerContainerDefinition_PortConfiguration_ContainerPortRangesFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var ContainerGroupDefinition_GameServerContainerDefinition_PortConfigurationFields = ubx.FieldMap{
-		"ContainerPortRanges": ubx.FieldSpec{
-			WireName: "container_port_ranges",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_PortConfiguration_ContainerPortRangesFields,
-		},
-	}
+	"ContainerPortRanges": ubx.FieldSpec{
+		WireName: "container_port_ranges",
+		Kind:     "list",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_PortConfiguration_ContainerPortRangesFields,
+	},
+}
 
 var ContainerGroupDefinition_GameServerContainerDefinitionFields = ubx.FieldMap{
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"DependsOn": ubx.FieldSpec{
-			WireName: "depends_on",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_DependsOnFields,
-		},
-		"EnvironmentOverride": ubx.FieldSpec{
-			WireName: "environment_override",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverrideFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"LinuxCapabilities": ubx.FieldSpec{
-			WireName: "linux_capabilities",
-			Kind: "object",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_LinuxCapabilitiesFields,
-		},
-		"MountPoints": ubx.FieldSpec{
-			WireName: "mount_points",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_MountPointsFields,
-		},
-		"PortConfiguration": ubx.FieldSpec{
-			WireName: "port_configuration",
-			Kind: "object",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_PortConfigurationFields,
-		},
-		"ResolvedImageDigest": ubx.FieldSpec{WireName: "resolved_image_digest"},
-		"ServerSdkVersion": ubx.FieldSpec{WireName: "server_sdk_version"},
-	}
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+	"DependsOn": ubx.FieldSpec{
+		WireName: "depends_on",
+		Kind:     "list",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_DependsOnFields,
+	},
+	"EnvironmentOverride": ubx.FieldSpec{
+		WireName: "environment_override",
+		Kind:     "list",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverrideFields,
+	},
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+	"LinuxCapabilities": ubx.FieldSpec{
+		WireName: "linux_capabilities",
+		Kind:     "object",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_LinuxCapabilitiesFields,
+	},
+	"MountPoints": ubx.FieldSpec{
+		WireName: "mount_points",
+		Kind:     "list",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_MountPointsFields,
+	},
+	"PortConfiguration": ubx.FieldSpec{
+		WireName: "port_configuration",
+		Kind:     "object",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_PortConfigurationFields,
+	},
+	"ResolvedImageDigest": ubx.FieldSpec{WireName: "resolved_image_digest"},
+	"ServerSdkVersion":    ubx.FieldSpec{WireName: "server_sdk_version"},
+}
 
 var ContainerGroupDefinition_SupportContainerDefinitions_HealthCheckFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Retries": ubx.FieldSpec{WireName: "retries"},
-		"StartPeriod": ubx.FieldSpec{WireName: "start_period"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Command":     ubx.FieldSpec{WireName: "command"},
+	"Interval":    ubx.FieldSpec{WireName: "interval"},
+	"Retries":     ubx.FieldSpec{WireName: "retries"},
+	"StartPeriod": ubx.FieldSpec{WireName: "start_period"},
+	"Timeout":     ubx.FieldSpec{WireName: "timeout"},
+}
 
 var ContainerGroupDefinition_SupportContainerDefinitionsFields = ubx.FieldMap{
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"DependsOn": ubx.FieldSpec{
-			WireName: "depends_on",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_DependsOnFields,
-		},
-		"EnvironmentOverride": ubx.FieldSpec{
-			WireName: "environment_override",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverrideFields,
-		},
-		"Essential": ubx.FieldSpec{WireName: "essential"},
-		"HealthCheck": ubx.FieldSpec{
-			WireName: "health_check",
-			Kind: "object",
-			Fields: ContainerGroupDefinition_SupportContainerDefinitions_HealthCheckFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"LinuxCapabilities": ubx.FieldSpec{
-			WireName: "linux_capabilities",
-			Kind: "object",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_LinuxCapabilitiesFields,
-		},
-		"MemoryHardLimitMebibytes": ubx.FieldSpec{WireName: "memory_hard_limit_mebibytes"},
-		"MountPoints": ubx.FieldSpec{
-			WireName: "mount_points",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_MountPointsFields,
-		},
-		"PortConfiguration": ubx.FieldSpec{
-			WireName: "port_configuration",
-			Kind: "object",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinition_PortConfigurationFields,
-		},
-		"ResolvedImageDigest": ubx.FieldSpec{WireName: "resolved_image_digest"},
-		"Vcpu": ubx.FieldSpec{WireName: "vcpu"},
-	}
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+	"DependsOn": ubx.FieldSpec{
+		WireName: "depends_on",
+		Kind:     "list",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_DependsOnFields,
+	},
+	"EnvironmentOverride": ubx.FieldSpec{
+		WireName: "environment_override",
+		Kind:     "list",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverrideFields,
+	},
+	"Essential": ubx.FieldSpec{WireName: "essential"},
+	"HealthCheck": ubx.FieldSpec{
+		WireName: "health_check",
+		Kind:     "object",
+		Fields:   ContainerGroupDefinition_SupportContainerDefinitions_HealthCheckFields,
+	},
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+	"LinuxCapabilities": ubx.FieldSpec{
+		WireName: "linux_capabilities",
+		Kind:     "object",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_LinuxCapabilitiesFields,
+	},
+	"MemoryHardLimitMebibytes": ubx.FieldSpec{WireName: "memory_hard_limit_mebibytes"},
+	"MountPoints": ubx.FieldSpec{
+		WireName: "mount_points",
+		Kind:     "list",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_MountPointsFields,
+	},
+	"PortConfiguration": ubx.FieldSpec{
+		WireName: "port_configuration",
+		Kind:     "object",
+		Fields:   ContainerGroupDefinition_GameServerContainerDefinition_PortConfigurationFields,
+	},
+	"ResolvedImageDigest": ubx.FieldSpec{WireName: "resolved_image_digest"},
+	"Vcpu":                ubx.FieldSpec{WireName: "vcpu"},
+}
 
 var ContainerGroupDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ContainerGroupDefinitionConfig struct {
 	// The scope of the container group
@@ -292,24 +292,24 @@ var ContainerGroupDefinition = ubx.ResourceBinding{
 		"ContainerGroupType": ubx.FieldSpec{WireName: "container_group_type"},
 		"GameServerContainerDefinition": ubx.FieldSpec{
 			WireName: "game_server_container_definition",
-			Kind: "object",
-			Fields: ContainerGroupDefinition_GameServerContainerDefinitionFields,
+			Kind:     "object",
+			Fields:   ContainerGroupDefinition_GameServerContainerDefinitionFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"OperatingSystem":     ubx.FieldSpec{WireName: "operating_system"},
 		"SourceVersionNumber": ubx.FieldSpec{WireName: "source_version_number"},
 		"SupportContainerDefinitions": ubx.FieldSpec{
 			WireName: "support_container_definitions",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_SupportContainerDefinitionsFields,
+			Kind:     "list",
+			Fields:   ContainerGroupDefinition_SupportContainerDefinitionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ContainerGroupDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   ContainerGroupDefinition_TagsFields,
 		},
 		"TotalMemoryLimitMebibytes": ubx.FieldSpec{WireName: "total_memory_limit_mebibytes"},
-		"TotalVcpuLimit": ubx.FieldSpec{WireName: "total_vcpu_limit"},
-		"VersionDescription": ubx.FieldSpec{WireName: "version_description"},
+		"TotalVcpuLimit":            ubx.FieldSpec{WireName: "total_vcpu_limit"},
+		"VersionDescription":        ubx.FieldSpec{WireName: "version_description"},
 	},
 }

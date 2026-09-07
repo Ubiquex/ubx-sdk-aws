@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DefaultParameters_Parameters_NodeTypeSpecificValues struct {
 	NodeType any
-	Value any
+	Value    any
 }
 
 type DefaultParameters_Parameters struct {
-	AllowedValues any
-	ChangeType any
-	DataType any
-	Description any
-	IsModifiable any
+	AllowedValues          any
+	ChangeType             any
+	DataType               any
+	Description            any
+	IsModifiable           any
 	NodeTypeSpecificValues any
-	ParameterName any
-	ParameterType any
-	ParameterValue any
-	Source any
+	ParameterName          any
+	ParameterType          any
+	ParameterValue         any
+	Source                 any
 }
 
 type DefaultParametersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DefaultParametersAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	Parameters any
 }
 
@@ -36,6 +36,6 @@ var DefaultParameters = ubx.DataSourceBinding{
 	WireType: "aws_dax_default_parameters",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

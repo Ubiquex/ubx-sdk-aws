@@ -99,132 +99,132 @@ type Segment_SegmentGroups struct {
 }
 
 var Segment_Dimensions_Behavior_RecencyFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"RecencyType": ubx.FieldSpec{WireName: "recency_type"},
-	}
+	"Duration":    ubx.FieldSpec{WireName: "duration"},
+	"RecencyType": ubx.FieldSpec{WireName: "recency_type"},
+}
 
 var Segment_Dimensions_BehaviorFields = ubx.FieldMap{
-		"Recency": ubx.FieldSpec{
-			WireName: "recency",
-			Kind: "object",
-			Fields: Segment_Dimensions_Behavior_RecencyFields,
-		},
-	}
+	"Recency": ubx.FieldSpec{
+		WireName: "recency",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Behavior_RecencyFields,
+	},
+}
 
 var Segment_Dimensions_Demographic_AppVersionFields = ubx.FieldMap{
-		"DimensionType": ubx.FieldSpec{WireName: "dimension_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"DimensionType": ubx.FieldSpec{WireName: "dimension_type"},
+	"Values":        ubx.FieldSpec{WireName: "values"},
+}
 
 var Segment_Dimensions_DemographicFields = ubx.FieldMap{
-		"AppVersion": ubx.FieldSpec{
-			WireName: "app_version",
-			Kind: "object",
-			Fields: Segment_Dimensions_Demographic_AppVersionFields,
-		},
-		"Channel": ubx.FieldSpec{
-			WireName: "channel",
-			Kind: "object",
-			Fields: Segment_Dimensions_Demographic_AppVersionFields,
-		},
-		"DeviceType": ubx.FieldSpec{
-			WireName: "device_type",
-			Kind: "object",
-			Fields: Segment_Dimensions_Demographic_AppVersionFields,
-		},
-		"Make": ubx.FieldSpec{
-			WireName: "make",
-			Kind: "object",
-			Fields: Segment_Dimensions_Demographic_AppVersionFields,
-		},
-		"Model": ubx.FieldSpec{
-			WireName: "model",
-			Kind: "object",
-			Fields: Segment_Dimensions_Demographic_AppVersionFields,
-		},
-		"Platform": ubx.FieldSpec{
-			WireName: "platform",
-			Kind: "object",
-			Fields: Segment_Dimensions_Demographic_AppVersionFields,
-		},
-	}
+	"AppVersion": ubx.FieldSpec{
+		WireName: "app_version",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Demographic_AppVersionFields,
+	},
+	"Channel": ubx.FieldSpec{
+		WireName: "channel",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Demographic_AppVersionFields,
+	},
+	"DeviceType": ubx.FieldSpec{
+		WireName: "device_type",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Demographic_AppVersionFields,
+	},
+	"Make": ubx.FieldSpec{
+		WireName: "make",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Demographic_AppVersionFields,
+	},
+	"Model": ubx.FieldSpec{
+		WireName: "model",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Demographic_AppVersionFields,
+	},
+	"Platform": ubx.FieldSpec{
+		WireName: "platform",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Demographic_AppVersionFields,
+	},
+}
 
 var Segment_Dimensions_Location_Gpspoint_CoordinatesFields = ubx.FieldMap{
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-	}
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+}
 
 var Segment_Dimensions_Location_GpspointFields = ubx.FieldMap{
-		"Coordinates": ubx.FieldSpec{
-			WireName: "coordinates",
-			Kind: "object",
-			Fields: Segment_Dimensions_Location_Gpspoint_CoordinatesFields,
-		},
-		"RangeInKilometers": ubx.FieldSpec{WireName: "range_in_kilometers"},
-	}
+	"Coordinates": ubx.FieldSpec{
+		WireName: "coordinates",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Location_Gpspoint_CoordinatesFields,
+	},
+	"RangeInKilometers": ubx.FieldSpec{WireName: "range_in_kilometers"},
+}
 
 var Segment_Dimensions_LocationFields = ubx.FieldMap{
-		"Country": ubx.FieldSpec{
-			WireName: "country",
-			Kind: "object",
-			Fields: Segment_Dimensions_Demographic_AppVersionFields,
-		},
-		"Gpspoint": ubx.FieldSpec{
-			WireName: "gpspoint",
-			Kind: "object",
-			Fields: Segment_Dimensions_Location_GpspointFields,
-		},
-	}
+	"Country": ubx.FieldSpec{
+		WireName: "country",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Demographic_AppVersionFields,
+	},
+	"Gpspoint": ubx.FieldSpec{
+		WireName: "gpspoint",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_Location_GpspointFields,
+	},
+}
 
 var Segment_DimensionsFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"Behavior": ubx.FieldSpec{
-			WireName: "behavior",
-			Kind: "object",
-			Fields: Segment_Dimensions_BehaviorFields,
-		},
-		"Demographic": ubx.FieldSpec{
-			WireName: "demographic",
-			Kind: "object",
-			Fields: Segment_Dimensions_DemographicFields,
-		},
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: Segment_Dimensions_LocationFields,
-		},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"UserAttributes": ubx.FieldSpec{WireName: "user_attributes"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"Behavior": ubx.FieldSpec{
+		WireName: "behavior",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_BehaviorFields,
+	},
+	"Demographic": ubx.FieldSpec{
+		WireName: "demographic",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_DemographicFields,
+	},
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   Segment_Dimensions_LocationFields,
+	},
+	"Metrics":        ubx.FieldSpec{WireName: "metrics"},
+	"UserAttributes": ubx.FieldSpec{WireName: "user_attributes"},
+}
 
 var Segment_SegmentGroups_Groups_SourceSegmentsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Segment_SegmentGroups_GroupsFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: Segment_DimensionsFields,
-		},
-		"SourceSegments": ubx.FieldSpec{
-			WireName: "source_segments",
-			Kind: "list",
-			Fields: Segment_SegmentGroups_Groups_SourceSegmentsFields,
-		},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   Segment_DimensionsFields,
+	},
+	"SourceSegments": ubx.FieldSpec{
+		WireName: "source_segments",
+		Kind:     "list",
+		Fields:   Segment_SegmentGroups_Groups_SourceSegmentsFields,
+	},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Segment_SegmentGroupsFields = ubx.FieldMap{
-		"Groups": ubx.FieldSpec{
-			WireName: "groups",
-			Kind: "list",
-			Fields: Segment_SegmentGroups_GroupsFields,
-		},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Groups": ubx.FieldSpec{
+		WireName: "groups",
+		Kind:     "list",
+		Fields:   Segment_SegmentGroups_GroupsFields,
+	},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 type SegmentConfig struct {
 	// The unique identifier of the Amazon Pinpoint application (project) that the segment belongs to. (AI-inferred)
@@ -262,14 +262,14 @@ var Segment = ubx.ResourceBinding{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"Dimensions": ubx.FieldSpec{
 			WireName: "dimensions",
-			Kind: "object",
-			Fields: Segment_DimensionsFields,
+			Kind:     "object",
+			Fields:   Segment_DimensionsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SegmentGroups": ubx.FieldSpec{
 			WireName: "segment_groups",
-			Kind: "object",
-			Fields: Segment_SegmentGroupsFields,
+			Kind:     "object",
+			Fields:   Segment_SegmentGroupsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

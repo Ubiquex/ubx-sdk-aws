@@ -4,23 +4,23 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssociatedApprovalRuleTemplatesForRepositoryConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	RepositoryName any
 }
 
 type AssociatedApprovalRuleTemplatesForRepositoryAttrs struct {
 	ApprovalRuleTemplateNames any
-	MaxResults any
-	NextToken any
-	RepositoryName any
+	MaxResults                any
+	NextToken                 any
+	RepositoryName            any
 }
 
 var AssociatedApprovalRuleTemplatesForRepository = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_associated_approval_rule_templates_for_repository",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

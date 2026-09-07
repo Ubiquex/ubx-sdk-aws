@@ -4,32 +4,32 @@ package s3_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlAccessGrantsInstances_AccessGrantsInstancesList struct {
-	AccessGrantsInstanceArn any
-	AccessGrantsInstanceId any
-	CreatedAt any
+	AccessGrantsInstanceArn      any
+	AccessGrantsInstanceId       any
+	CreatedAt                    any
 	IdentityCenterApplicationArn any
-	IdentityCenterArn any
-	IdentityCenterInstanceArn any
+	IdentityCenterArn            any
+	IdentityCenterInstanceArn    any
 }
 
 type S3ControlAccessGrantsInstancesConfig struct {
-	AccountId any
+	AccountId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type S3ControlAccessGrantsInstancesAttrs struct {
 	AccessGrantsInstancesList any
-	AccountId any
-	MaxResults any
-	NextToken any
+	AccountId                 any
+	MaxResults                any
+	NextToken                 any
 }
 
 var S3ControlAccessGrantsInstances = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_access_grants_instances",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

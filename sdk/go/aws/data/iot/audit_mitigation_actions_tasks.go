@@ -4,41 +4,41 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuditMitigationActionsTasks_Tasks struct {
-	StartTime any
-	TaskId any
+	StartTime  any
+	TaskId     any
 	TaskStatus any
 }
 
 type AuditMitigationActionsTasksConfig struct {
 	AuditTaskId any
-	EndTime any
-	FindingId any
-	MaxResults any
-	NextToken any
-	StartTime any
-	TaskStatus any
+	EndTime     any
+	FindingId   any
+	MaxResults  any
+	NextToken   any
+	StartTime   any
+	TaskStatus  any
 }
 
 type AuditMitigationActionsTasksAttrs struct {
 	AuditTaskId any
-	EndTime any
-	FindingId any
-	MaxResults any
-	NextToken any
-	StartTime any
-	TaskStatus any
-	Tasks any
+	EndTime     any
+	FindingId   any
+	MaxResults  any
+	NextToken   any
+	StartTime   any
+	TaskStatus  any
+	Tasks       any
 }
 
 var AuditMitigationActionsTasks = ubx.DataSourceBinding{
 	WireType: "aws_iot_audit_mitigation_actions_tasks",
 	Fields: ubx.FieldMap{
 		"AuditTaskId": ubx.FieldSpec{WireName: "audit_task_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"FindingId": ubx.FieldSpec{WireName: "finding_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TaskStatus": ubx.FieldSpec{WireName: "task_status"},
+		"EndTime":     ubx.FieldSpec{WireName: "end_time"},
+		"FindingId":   ubx.FieldSpec{WireName: "finding_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":   ubx.FieldSpec{WireName: "start_time"},
+		"TaskStatus":  ubx.FieldSpec{WireName: "task_status"},
 	},
 }

@@ -4,42 +4,42 @@ package observabilityadmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceTelemetry_TelemetryConfigurations struct {
-	AccountIdentifier any
-	LastUpdateTimeStamp any
-	ResourceIdentifier any
-	ResourceTags any
-	ResourceType any
+	AccountIdentifier           any
+	LastUpdateTimeStamp         any
+	ResourceIdentifier          any
+	ResourceTags                any
+	ResourceType                any
 	TelemetryConfigurationState any
-	TelemetrySourceType any
+	TelemetrySourceType         any
 }
 
 type ResourceTelemetryConfig struct {
-	MaxResults any
-	NextToken any
-	ResourceIdentifierPrefix any
-	ResourceTags any
-	ResourceTypes any
+	MaxResults                  any
+	NextToken                   any
+	ResourceIdentifierPrefix    any
+	ResourceTags                any
+	ResourceTypes               any
 	TelemetryConfigurationState any
 }
 
 type ResourceTelemetryAttrs struct {
-	MaxResults any
-	NextToken any
-	ResourceIdentifierPrefix any
-	ResourceTags any
-	ResourceTypes any
+	MaxResults                  any
+	NextToken                   any
+	ResourceIdentifierPrefix    any
+	ResourceTags                any
+	ResourceTypes               any
 	TelemetryConfigurationState any
-	TelemetryConfigurations any
+	TelemetryConfigurations     any
 }
 
 var ResourceTelemetry = ubx.DataSourceBinding{
 	WireType: "aws_observabilityadmin_resource_telemetry",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceIdentifierPrefix": ubx.FieldSpec{WireName: "resource_identifier_prefix"},
-		"ResourceTags": ubx.FieldSpec{WireName: "resource_tags"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+		"MaxResults":                  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
+		"ResourceIdentifierPrefix":    ubx.FieldSpec{WireName: "resource_identifier_prefix"},
+		"ResourceTags":                ubx.FieldSpec{WireName: "resource_tags"},
+		"ResourceTypes":               ubx.FieldSpec{WireName: "resource_types"},
 		"TelemetryConfigurationState": ubx.FieldSpec{WireName: "telemetry_configuration_state"},
 	},
 }

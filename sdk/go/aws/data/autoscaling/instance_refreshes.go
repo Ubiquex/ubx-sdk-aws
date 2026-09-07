@@ -4,9 +4,9 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_LaunchTemplate struct {
-	LaunchTemplateId any
+	LaunchTemplateId   any
 	LaunchTemplateName any
-	Version any
+	Version            any
 }
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPolicy_InstancesDistribution_DistributionSegments struct {
@@ -14,13 +14,13 @@ type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPoli
 }
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPolicy_InstancesDistribution struct {
-	DistributionSegments any
-	OnDemandAllocationStrategy any
-	OnDemandBaseCapacity any
+	DistributionSegments                any
+	OnDemandAllocationStrategy          any
+	OnDemandBaseCapacity                any
 	OnDemandPercentageAboveBaseCapacity any
-	SpotAllocationStrategy any
-	SpotInstancePools any
-	SpotMaxPrice any
+	SpotAllocationStrategy              any
+	SpotInstancePools                   any
+	SpotMaxPrice                        any
 }
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCount struct {
@@ -41,53 +41,53 @@ type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPoli
 }
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements struct {
-	AcceleratorCount any
-	AcceleratorManufacturers any
-	AcceleratorNames any
-	AcceleratorTotalMemoryMiB any
-	AcceleratorTypes any
-	AllowedInstanceTypes any
-	BareMetal any
-	BaselineEbsBandwidthMbps any
-	BaselinePerformanceFactors any
-	BurstablePerformance any
-	CpuManufacturers any
-	ExcludedInstanceTypes any
-	InstanceGenerations any
-	LocalStorage any
-	LocalStorageTypes any
+	AcceleratorCount                               any
+	AcceleratorManufacturers                       any
+	AcceleratorNames                               any
+	AcceleratorTotalMemoryMiB                      any
+	AcceleratorTypes                               any
+	AllowedInstanceTypes                           any
+	BareMetal                                      any
+	BaselineEbsBandwidthMbps                       any
+	BaselinePerformanceFactors                     any
+	BurstablePerformance                           any
+	CpuManufacturers                               any
+	ExcludedInstanceTypes                          any
+	InstanceGenerations                            any
+	LocalStorage                                   any
+	LocalStorageTypes                              any
 	MaxSpotPriceAsPercentageOfOptimalOnDemandPrice any
-	MemoryGiBperVcpu any
-	MemoryMiB any
-	NetworkBandwidthGbps any
-	NetworkInterfaceCount any
-	OnDemandMaxPricePercentageOverLowestPrice any
-	RequireHibernateSupport any
-	SpotMaxPricePercentageOverLowestPrice any
-	TotalLocalStorageGb any
-	VcpuCount any
+	MemoryGiBperVcpu                               any
+	MemoryMiB                                      any
+	NetworkBandwidthGbps                           any
+	NetworkInterfaceCount                          any
+	OnDemandMaxPricePercentageOverLowestPrice      any
+	RequireHibernateSupport                        any
+	SpotMaxPricePercentageOverLowestPrice          any
+	TotalLocalStorageGb                            any
+	VcpuCount                                      any
 }
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPolicy_LaunchTemplate_Overrides struct {
-	ImageId any
-	InstanceRequirements any
-	InstanceType any
+	ImageId                     any
+	InstanceRequirements        any
+	InstanceType                any
 	LaunchTemplateSpecification any
-	WeightedCapacity any
+	WeightedCapacity            any
 }
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPolicy_LaunchTemplate struct {
 	LaunchTemplateSpecification any
-	Overrides any
+	Overrides                   any
 }
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration_MixedInstancesPolicy struct {
 	InstancesDistribution any
-	LaunchTemplate any
+	LaunchTemplate        any
 }
 
 type InstanceRefreshes_InstanceRefreshes_DesiredConfiguration struct {
-	LaunchTemplate any
+	LaunchTemplate       any
 	MixedInstancesPolicy any
 }
 
@@ -96,21 +96,21 @@ type InstanceRefreshes_InstanceRefreshes_Preferences_AlarmSpecification struct {
 }
 
 type InstanceRefreshes_InstanceRefreshes_Preferences struct {
-	AlarmSpecification any
-	AutoRollback any
-	BakeTime any
-	CheckpointDelay any
-	CheckpointPercentages any
-	InstanceWarmup any
-	MaxHealthyPercentage any
-	MinHealthyPercentage any
+	AlarmSpecification        any
+	AutoRollback              any
+	BakeTime                  any
+	CheckpointDelay           any
+	CheckpointPercentages     any
+	InstanceWarmup            any
+	MaxHealthyPercentage      any
+	MinHealthyPercentage      any
 	ScaleInProtectedInstances any
-	SkipMatching any
-	StandbyInstances any
+	SkipMatching              any
+	StandbyInstances          any
 }
 
 type InstanceRefreshes_InstanceRefreshes_ProgressDetails_LivePoolProgress struct {
-	InstancesToUpdate any
+	InstancesToUpdate  any
 	PercentageComplete any
 }
 
@@ -120,50 +120,50 @@ type InstanceRefreshes_InstanceRefreshes_ProgressDetails struct {
 }
 
 type InstanceRefreshes_InstanceRefreshes_RollbackDetails struct {
-	InstancesToUpdateOnRollback any
+	InstancesToUpdateOnRollback  any
 	PercentageCompleteOnRollback any
-	ProgressDetailsOnRollback any
-	RollbackReason any
-	RollbackStartTime any
+	ProgressDetailsOnRollback    any
+	RollbackReason               any
+	RollbackStartTime            any
 }
 
 type InstanceRefreshes_InstanceRefreshes struct {
 	AutoScalingGroupName any
 	DesiredConfiguration any
-	EndTime any
-	InstanceRefreshId any
-	InstancesToUpdate any
-	PercentageComplete any
-	Preferences any
-	ProgressDetails any
-	RollbackDetails any
-	StartTime any
-	Status any
-	StatusReason any
-	Strategy any
+	EndTime              any
+	InstanceRefreshId    any
+	InstancesToUpdate    any
+	PercentageComplete   any
+	Preferences          any
+	ProgressDetails      any
+	RollbackDetails      any
+	StartTime            any
+	Status               any
+	StatusReason         any
+	Strategy             any
 }
 
 type InstanceRefreshesConfig struct {
 	AutoScalingGroupName any
-	InstanceRefreshIds any
-	MaxRecords any
-	NextToken any
+	InstanceRefreshIds   any
+	MaxRecords           any
+	NextToken            any
 }
 
 type InstanceRefreshesAttrs struct {
 	AutoScalingGroupName any
-	InstanceRefreshIds any
-	InstanceRefreshes any
-	MaxRecords any
-	NextToken any
+	InstanceRefreshIds   any
+	InstanceRefreshes    any
+	MaxRecords           any
+	NextToken            any
 }
 
 var InstanceRefreshes = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_instance_refreshes",
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"InstanceRefreshIds": ubx.FieldSpec{WireName: "instance_refresh_ids"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceRefreshIds":   ubx.FieldSpec{WireName: "instance_refresh_ids"},
+		"MaxRecords":           ubx.FieldSpec{WireName: "max_records"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

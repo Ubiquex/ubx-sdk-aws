@@ -10,9 +10,9 @@ type TransitGatewayPolicyTable_Tags struct {
 }
 
 var TransitGatewayPolicyTable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayPolicyTableConfig struct {
 	// Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
@@ -39,8 +39,8 @@ var TransitGatewayPolicyTable = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayPolicyTable_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayPolicyTable_TagsFields,
 		},
 		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
 	},

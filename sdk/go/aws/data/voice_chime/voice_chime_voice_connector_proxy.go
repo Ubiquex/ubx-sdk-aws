@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorProxy_Proxy struct {
 	DefaultSessionExpiryMinutes any
-	Disabled any
-	FallBackPhoneNumber any
-	PhoneNumberCountries any
+	Disabled                    any
+	FallBackPhoneNumber         any
+	PhoneNumberCountries        any
 }
 
 type VoiceChimeVoiceConnectorProxyConfig struct {
@@ -16,7 +16,7 @@ type VoiceChimeVoiceConnectorProxyConfig struct {
 
 type VoiceChimeVoiceConnectorProxyAttrs struct {
 	// <p>The proxy configuration for an Amazon Chime SDK Voice Connector.</p>
-	Proxy any
+	Proxy            any
 	VoiceConnectorId any
 }
 

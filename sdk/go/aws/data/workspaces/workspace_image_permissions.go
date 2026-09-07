@@ -8,23 +8,23 @@ type WorkspaceImagePermissions_ImagePermissions struct {
 }
 
 type WorkspaceImagePermissionsConfig struct {
-	ImageId any
+	ImageId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WorkspaceImagePermissionsAttrs struct {
-	ImageId any
+	ImageId          any
 	ImagePermissions any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var WorkspaceImagePermissions = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_workspace_image_permissions",
 	Fields: ubx.FieldMap{
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
+		"ImageId":    ubx.FieldSpec{WireName: "image_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

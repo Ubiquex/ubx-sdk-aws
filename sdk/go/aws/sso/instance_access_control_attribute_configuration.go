@@ -21,25 +21,25 @@ type InstanceAccessControlAttributeConfiguration_InstanceAccessControlAttributeC
 }
 
 var InstanceAccessControlAttributeConfiguration_AccessControlAttributes_ValueFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Source": ubx.FieldSpec{WireName: "source"},
+}
 
 var InstanceAccessControlAttributeConfiguration_AccessControlAttributesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: InstanceAccessControlAttributeConfiguration_AccessControlAttributes_ValueFields,
-		},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   InstanceAccessControlAttributeConfiguration_AccessControlAttributes_ValueFields,
+	},
+}
 
 var InstanceAccessControlAttributeConfiguration_InstanceAccessControlAttributeConfigurationFields = ubx.FieldMap{
-		"AccessControlAttributes": ubx.FieldSpec{
-			WireName: "access_control_attributes",
-			Kind: "list",
-			Fields: InstanceAccessControlAttributeConfiguration_AccessControlAttributesFields,
-		},
-	}
+	"AccessControlAttributes": ubx.FieldSpec{
+		WireName: "access_control_attributes",
+		Kind:     "list",
+		Fields:   InstanceAccessControlAttributeConfiguration_AccessControlAttributesFields,
+	},
+}
 
 type InstanceAccessControlAttributeConfigurationConfig struct {
 	// The list of access control attributes that define the user attributes (such as email or department) used in attribute-based access control (ABAC) rules for the AWS SSO (IAM Identity Center) instance. (AI-inferred)
@@ -64,13 +64,13 @@ var InstanceAccessControlAttributeConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessControlAttributes": ubx.FieldSpec{
 			WireName: "access_control_attributes",
-			Kind: "list",
-			Fields: InstanceAccessControlAttributeConfiguration_AccessControlAttributesFields,
+			Kind:     "list",
+			Fields:   InstanceAccessControlAttributeConfiguration_AccessControlAttributesFields,
 		},
 		"InstanceAccessControlAttributeConfiguration": ubx.FieldSpec{
 			WireName: "instance_access_control_attribute_configuration",
-			Kind: "object",
-			Fields: InstanceAccessControlAttributeConfiguration_InstanceAccessControlAttributeConfigurationFields,
+			Kind:     "object",
+			Fields:   InstanceAccessControlAttributeConfiguration_InstanceAccessControlAttributeConfigurationFields,
 		},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 	},

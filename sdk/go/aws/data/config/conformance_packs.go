@@ -4,45 +4,45 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConformancePacks_ConformancePackDetails_ConformancePackInputParameters struct {
-	ParameterName any
+	ParameterName  any
 	ParameterValue any
 }
 
 type ConformancePacks_ConformancePackDetails_TemplateSsmdocumentDetails struct {
-	DocumentName any
+	DocumentName    any
 	DocumentVersion any
 }
 
 type ConformancePacks_ConformancePackDetails struct {
-	ConformancePackArn any
-	ConformancePackId any
+	ConformancePackArn             any
+	ConformancePackId              any
 	ConformancePackInputParameters any
-	ConformancePackName any
-	CreatedBy any
-	DeliveryS3Bucket any
-	DeliveryS3KeyPrefix any
-	LastUpdateRequestedTime any
-	TemplateSsmdocumentDetails any
+	ConformancePackName            any
+	CreatedBy                      any
+	DeliveryS3Bucket               any
+	DeliveryS3KeyPrefix            any
+	LastUpdateRequestedTime        any
+	TemplateSsmdocumentDetails     any
 }
 
 type ConformancePacksConfig struct {
 	ConformancePackNames any
-	Limit any
-	NextToken any
+	Limit                any
+	NextToken            any
 }
 
 type ConformancePacksAttrs struct {
 	ConformancePackDetails any
-	ConformancePackNames any
-	Limit any
-	NextToken any
+	ConformancePackNames   any
+	Limit                  any
+	NextToken              any
 }
 
 var ConformancePacks = ubx.DataSourceBinding{
 	WireType: "aws_config_conformance_packs",
 	Fields: ubx.FieldMap{
 		"ConformancePackNames": ubx.FieldSpec{WireName: "conformance_pack_names"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

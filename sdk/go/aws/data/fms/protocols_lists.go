@@ -4,22 +4,22 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProtocolsLists_ProtocolsLists struct {
-	ListArn any
-	ListId any
-	ListName any
+	ListArn       any
+	ListId        any
+	ListName      any
 	ProtocolsList any
 }
 
 type ProtocolsListsConfig struct {
 	DefaultLists any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type ProtocolsListsAttrs struct {
-	DefaultLists any
-	MaxResults any
-	NextToken any
+	DefaultLists   any
+	MaxResults     any
+	NextToken      any
 	ProtocolsLists any
 }
 
@@ -27,7 +27,7 @@ var ProtocolsLists = ubx.DataSourceBinding{
 	WireType: "aws_fms_protocols_lists",
 	Fields: ubx.FieldMap{
 		"DefaultLists": ubx.FieldSpec{WireName: "default_lists"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

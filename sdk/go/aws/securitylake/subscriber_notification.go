@@ -24,21 +24,21 @@ type SubscriberNotification_NotificationConfiguration struct {
 }
 
 var SubscriberNotification_NotificationConfiguration_HttpsNotificationConfigurationFields = ubx.FieldMap{
-		"AuthorizationApiKeyName": ubx.FieldSpec{WireName: "authorization_api_key_name"},
-		"AuthorizationApiKeyValue": ubx.FieldSpec{WireName: "authorization_api_key_value"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"TargetRoleArn": ubx.FieldSpec{WireName: "target_role_arn"},
-	}
+	"AuthorizationApiKeyName":  ubx.FieldSpec{WireName: "authorization_api_key_name"},
+	"AuthorizationApiKeyValue": ubx.FieldSpec{WireName: "authorization_api_key_value"},
+	"Endpoint":                 ubx.FieldSpec{WireName: "endpoint"},
+	"HttpMethod":               ubx.FieldSpec{WireName: "http_method"},
+	"TargetRoleArn":            ubx.FieldSpec{WireName: "target_role_arn"},
+}
 
 var SubscriberNotification_NotificationConfigurationFields = ubx.FieldMap{
-		"HttpsNotificationConfiguration": ubx.FieldSpec{
-			WireName: "https_notification_configuration",
-			Kind: "object",
-			Fields: SubscriberNotification_NotificationConfiguration_HttpsNotificationConfigurationFields,
-		},
-		"SqsNotificationConfiguration": ubx.FieldSpec{WireName: "sqs_notification_configuration"},
-	}
+	"HttpsNotificationConfiguration": ubx.FieldSpec{
+		WireName: "https_notification_configuration",
+		Kind:     "object",
+		Fields:   SubscriberNotification_NotificationConfiguration_HttpsNotificationConfigurationFields,
+	},
+	"SqsNotificationConfiguration": ubx.FieldSpec{WireName: "sqs_notification_configuration"},
+}
 
 type SubscriberNotificationConfig struct {
 	// Configuration specifying how to notify the subscriber of new data, either via an SQS queue or an HTTPS endpoint. (AI-inferred)
@@ -61,8 +61,8 @@ var SubscriberNotification = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"NotificationConfiguration": ubx.FieldSpec{
 			WireName: "notification_configuration",
-			Kind: "object",
-			Fields: SubscriberNotification_NotificationConfigurationFields,
+			Kind:     "object",
+			Fields:   SubscriberNotification_NotificationConfigurationFields,
 		},
 		"SubscriberArn": ubx.FieldSpec{WireName: "subscriber_arn"},
 	},

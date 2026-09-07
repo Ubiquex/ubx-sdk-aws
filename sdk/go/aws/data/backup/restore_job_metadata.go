@@ -8,7 +8,7 @@ type RestoreJobMetadataConfig struct {
 }
 
 type RestoreJobMetadataAttrs struct {
-	Metadata any
+	Metadata     any
 	RestoreJobId any
 }
 

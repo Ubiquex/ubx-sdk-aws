@@ -9,7 +9,7 @@ type RefactorSpacesResourcePolicyConfig struct {
 
 type RefactorSpacesResourcePolicyAttrs struct {
 	Identifier any
-	Policy any
+	Policy     any
 }
 
 var RefactorSpacesResourcePolicy = ubx.DataSourceBinding{

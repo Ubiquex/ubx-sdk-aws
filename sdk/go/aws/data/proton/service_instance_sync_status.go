@@ -4,34 +4,34 @@ package proton
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceInstanceSyncStatus_DesiredState struct {
-	Branch any
-	Directory any
-	RepositoryName any
+	Branch             any
+	Directory          any
+	RepositoryName     any
 	RepositoryProvider any
-	Sha any
+	Sha                any
 }
 
 type ServiceInstanceSyncStatus_LatestSuccessfulSync_Events struct {
-	Event any
+	Event      any
 	ExternalId any
-	Time any
-	Type any
+	Time       any
+	Type       any
 }
 
 type ServiceInstanceSyncStatus_LatestSuccessfulSync struct {
 	Events any
 	// <p>Revision detail data for a commit and push that activates a sync attempt</p>
 	InitialRevision any
-	StartedAt any
-	Status any
-	Target any
+	StartedAt       any
+	Status          any
+	Target          any
 	// <p>Revision detail data for a commit and push that activates a sync attempt</p>
 	TargetRevision any
 }
 
 type ServiceInstanceSyncStatusConfig struct {
 	ServiceInstanceName any
-	ServiceName any
+	ServiceName         any
 }
 
 type ServiceInstanceSyncStatusAttrs struct {
@@ -40,15 +40,15 @@ type ServiceInstanceSyncStatusAttrs struct {
 	// <p>Detail data for a resource sync attempt activated by a push to a repository.</p>
 	LatestSuccessfulSync any
 	// <p>Detail data for a resource sync attempt activated by a push to a repository.</p>
-	LatestSync any
+	LatestSync          any
 	ServiceInstanceName any
-	ServiceName any
+	ServiceName         any
 }
 
 var ServiceInstanceSyncStatus = ubx.DataSourceBinding{
 	WireType: "aws_proton_service_instance_sync_status",
 	Fields: ubx.FieldMap{
 		"ServiceInstanceName": ubx.FieldSpec{WireName: "service_instance_name"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+		"ServiceName":         ubx.FieldSpec{WireName: "service_name"},
 	},
 }

@@ -9,7 +9,7 @@ type SsmSapTagsForResourceConfig struct {
 
 type SsmSapTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var SsmSapTagsForResource = ubx.DataSourceBinding{

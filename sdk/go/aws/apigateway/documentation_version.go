@@ -24,8 +24,8 @@ type DocumentationVersionAttrs struct {
 var DocumentationVersion = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_documentation_version",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"DocumentationVersion": ubx.FieldSpec{WireName: "documentation_version"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"RestApiId":            ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

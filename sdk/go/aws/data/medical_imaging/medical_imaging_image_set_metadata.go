@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MedicalImagingImageSetMetadataConfig struct {
 	DatastoreId any
-	ImageSetId any
-	VersionId any
+	ImageSetId  any
+	VersionId   any
 }
 
 type MedicalImagingImageSetMetadataAttrs struct {
-	ContentEncoding any
-	ContentType any
-	DatastoreId any
-	ImageSetId any
+	ContentEncoding      any
+	ContentType          any
+	DatastoreId          any
+	ImageSetId           any
 	ImageSetMetadataBlob any
-	VersionId any
+	VersionId            any
 }
 
 var MedicalImagingImageSetMetadata = ubx.DataSourceBinding{
 	WireType: "aws_medical_imaging_image_set_metadata",
 	Fields: ubx.FieldMap{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"ImageSetId": ubx.FieldSpec{WireName: "image_set_id"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+		"ImageSetId":  ubx.FieldSpec{WireName: "image_set_id"},
+		"VersionId":   ubx.FieldSpec{WireName: "version_id"},
 	},
 }

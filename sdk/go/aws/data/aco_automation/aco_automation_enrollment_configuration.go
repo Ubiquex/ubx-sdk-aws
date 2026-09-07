@@ -9,12 +9,11 @@ type AcoAutomationEnrollmentConfigurationConfig struct {
 type AcoAutomationEnrollmentConfigurationAttrs struct {
 	LastUpdatedTimestamp any
 	OrganizationRuleMode any
-	Status any
-	StatusReason any
+	Status               any
+	StatusReason         any
 }
 
 var AcoAutomationEnrollmentConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_aco_automation_enrollment_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

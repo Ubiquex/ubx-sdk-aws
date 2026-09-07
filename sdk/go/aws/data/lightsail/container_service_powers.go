@@ -4,11 +4,11 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContainerServicePowers_Powers struct {
-	CpuCount any
-	IsActive any
-	Name any
-	PowerId any
-	Price any
+	CpuCount    any
+	IsActive    any
+	Name        any
+	PowerId     any
+	Price       any
 	RamSizeInGb any
 }
 
@@ -21,6 +21,5 @@ type ContainerServicePowersAttrs struct {
 
 var ContainerServicePowers = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_container_service_powers",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

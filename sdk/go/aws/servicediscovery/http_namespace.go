@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HttpNamespace_Tags struct {
 	// Specifies the key (name) of a tag applied to the AWS CloudFormation Service Discovery HTTP namespace, forming the key half of a key-value tag pair. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var HttpNamespace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type HttpNamespaceConfig struct {
 	// A description for the namespace.
@@ -40,11 +40,11 @@ var HttpNamespace = ubx.ResourceBinding{
 	WireType: "aws_service_discovery_http_namespace",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: HttpNamespace_TagsFields,
+			Kind:     "list",
+			Fields:   HttpNamespace_TagsFields,
 		},
 	},
 }

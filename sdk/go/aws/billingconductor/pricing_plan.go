@@ -11,9 +11,9 @@ type PricingPlan_Tags struct {
 }
 
 var PricingPlan_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PricingPlanConfig struct {
 	// The description of this Billing Conductor pricing plan. (AI-inferred)
@@ -22,7 +22,7 @@ type PricingPlanConfig struct {
 	Name any
 	// The ARNs of the pricing rules to associate with this pricing plan. (AI-inferred)
 	PricingRuleArns any
-	Tags any
+	Tags            any
 }
 
 type PricingPlanAttrs struct {
@@ -46,13 +46,13 @@ type PricingPlanAttrs struct {
 var PricingPlan = ubx.ResourceBinding{
 	WireType: "aws_billing_conductor_pricing_plan",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"PricingRuleArns": ubx.FieldSpec{WireName: "pricing_rule_arns"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PricingPlan_TagsFields,
+			Kind:     "list",
+			Fields:   PricingPlan_TagsFields,
 		},
 	},
 }

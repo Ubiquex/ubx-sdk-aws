@@ -4,44 +4,44 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerProjects_ProjectSummaryList struct {
-	CreationTime any
-	ProjectArn any
+	CreationTime       any
+	ProjectArn         any
 	ProjectDescription any
-	ProjectId any
-	ProjectName any
-	ProjectStatus any
+	ProjectId          any
+	ProjectName        any
+	ProjectStatus      any
 }
 
 type ApiSagemakerProjectsConfig struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	MaxResults any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	MaxResults         any
+	NameContains       any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
 }
 
 type ApiSagemakerProjectsAttrs struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	MaxResults any
-	NameContains any
-	NextToken any
+	MaxResults         any
+	NameContains       any
+	NextToken          any
 	ProjectSummaryList any
-	SortBy any
-	SortOrder any
+	SortBy             any
+	SortOrder          any
 }
 
 var ApiSagemakerProjects = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_projects",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
 		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NameContains":       ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":             ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":          ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SlackWorkspaceConfigurations_SlackWorkspaceConfigurations struct {
 	AllowOrganizationMemberAccount any
-	TeamId any
-	TeamName any
+	TeamId                         any
+	TeamName                       any
 }
 
 type SlackWorkspaceConfigurationsConfig struct {
@@ -14,7 +14,7 @@ type SlackWorkspaceConfigurationsConfig struct {
 }
 
 type SlackWorkspaceConfigurationsAttrs struct {
-	NextToken any
+	NextToken                    any
 	SlackWorkspaceConfigurations any
 }
 

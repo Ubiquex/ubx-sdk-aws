@@ -11,9 +11,9 @@ type StateTemplate_Tags struct {
 }
 
 var StateTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StateTemplateConfig struct {
 	// Specifies a list of extra dimension signals (e.g., Vehicle.Make, Vehicle.Class) to be collected alongside the signals defined in the state template, enriching the vehicle data with additional metadata. (AI-inferred)
@@ -60,16 +60,16 @@ type StateTemplateAttrs struct {
 var StateTemplate = ubx.ResourceBinding{
 	WireType: "aws_io_tfleet_wise_state_template",
 	Fields: ubx.FieldMap{
-		"DataExtraDimensions": ubx.FieldSpec{WireName: "data_extra_dimensions"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"DataExtraDimensions":     ubx.FieldSpec{WireName: "data_extra_dimensions"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
 		"MetadataExtraDimensions": ubx.FieldSpec{WireName: "metadata_extra_dimensions"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SignalCatalogArn": ubx.FieldSpec{WireName: "signal_catalog_arn"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"SignalCatalogArn":        ubx.FieldSpec{WireName: "signal_catalog_arn"},
 		"StateTemplateProperties": ubx.FieldSpec{WireName: "state_template_properties"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StateTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   StateTemplate_TagsFields,
 		},
 	},
 }

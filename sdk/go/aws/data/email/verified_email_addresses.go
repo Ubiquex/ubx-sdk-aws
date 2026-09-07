@@ -12,6 +12,5 @@ type VerifiedEmailAddressesAttrs struct {
 
 var VerifiedEmailAddresses = ubx.DataSourceBinding{
 	WireType: "aws_email_verified_email_addresses",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

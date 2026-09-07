@@ -4,37 +4,37 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Streams_StreamInfoList struct {
-	CreationTime any
+	CreationTime         any
 	DataRetentionInHours any
-	DeviceName any
-	KmsKeyId any
-	MediaType any
-	Status any
-	StreamArn any
-	StreamName any
-	Version any
+	DeviceName           any
+	KmsKeyId             any
+	MediaType            any
+	Status               any
+	StreamArn            any
+	StreamName           any
+	Version              any
 }
 
 type Streams_StreamNameCondition struct {
 	ComparisonOperator any
-	ComparisonValue any
+	ComparisonValue    any
 }
 
 var Streams_StreamNameConditionFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"ComparisonValue": ubx.FieldSpec{WireName: "comparison_value"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"ComparisonValue":    ubx.FieldSpec{WireName: "comparison_value"},
+}
 
 type StreamsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. </p>
 	StreamNameCondition any
 }
 
 type StreamsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	StreamInfoList any
 	// <p>Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. </p>
 	StreamNameCondition any
@@ -44,11 +44,11 @@ var Streams = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_streams",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"StreamNameCondition": ubx.FieldSpec{
 			WireName: "stream_name_condition",
-			Kind: "object",
-			Fields: Streams_StreamNameConditionFields,
+			Kind:     "object",
+			Fields:   Streams_StreamNameConditionFields,
 		},
 	},
 }

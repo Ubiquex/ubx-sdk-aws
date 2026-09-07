@@ -11,9 +11,9 @@ type SoftwarePackage_Tags struct {
 }
 
 var SoftwarePackage_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SoftwarePackageConfig struct {
 	// A free-form text description of the software package (up to 1024 characters) that provides details about its purpose or contents. (AI-inferred)
@@ -42,8 +42,8 @@ var SoftwarePackage = ubx.ResourceBinding{
 		"PackageName": ubx.FieldSpec{WireName: "package_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SoftwarePackage_TagsFields,
+			Kind:     "list",
+			Fields:   SoftwarePackage_TagsFields,
 		},
 	},
 }

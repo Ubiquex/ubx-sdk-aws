@@ -4,48 +4,48 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteServerRoutingDatabase_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type RouteServerRoutingDatabase_Routes_RouteInstallationDetails struct {
-	RouteInstallationStatus any
+	RouteInstallationStatus       any
 	RouteInstallationStatusReason any
-	RouteTableId any
+	RouteTableId                  any
 }
 
 type RouteServerRoutingDatabase_Routes struct {
-	AsPaths any
-	Med any
-	NextHopIp any
-	Prefix any
+	AsPaths                  any
+	Med                      any
+	NextHopIp                any
+	Prefix                   any
 	RouteInstallationDetails any
-	RouteServerEndpointId any
-	RouteServerPeerId any
-	RouteStatus any
+	RouteServerEndpointId    any
+	RouteServerPeerId        any
+	RouteStatus              any
 }
 
 var RouteServerRoutingDatabase_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type RouteServerRoutingDatabaseConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun        any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	RouteServerId any
 }
 
 type RouteServerRoutingDatabaseAttrs struct {
 	AreRoutesPersisted any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	RouteServerId any
-	Routes any
+	DryRun             any
+	Filters            any
+	MaxResults         any
+	NextToken          any
+	RouteServerId      any
+	Routes             any
 }
 
 var RouteServerRoutingDatabase = ubx.DataSourceBinding{
@@ -54,11 +54,11 @@ var RouteServerRoutingDatabase = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: RouteServerRoutingDatabase_FiltersFields,
+			Kind:     "list",
+			Fields:   RouteServerRoutingDatabase_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"RouteServerId": ubx.FieldSpec{WireName: "route_server_id"},
 	},
 }

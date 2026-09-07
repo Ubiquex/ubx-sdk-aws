@@ -4,36 +4,36 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountAssignments_AccountAssignments struct {
-	AccountId any
+	AccountId        any
 	PermissionSetArn any
-	PrincipalId any
-	PrincipalType any
+	PrincipalId      any
+	PrincipalType    any
 }
 
 type AccountAssignmentsConfig struct {
-	AccountId any
-	InstanceArn any
-	MaxResults any
-	NextToken any
+	AccountId        any
+	InstanceArn      any
+	MaxResults       any
+	NextToken        any
 	PermissionSetArn any
 }
 
 type AccountAssignmentsAttrs struct {
 	AccountAssignments any
-	AccountId any
-	InstanceArn any
-	MaxResults any
-	NextToken any
-	PermissionSetArn any
+	AccountId          any
+	InstanceArn        any
+	MaxResults         any
+	NextToken          any
+	PermissionSetArn   any
 }
 
 var AccountAssignments = ubx.DataSourceBinding{
 	WireType: "aws_sso_account_assignments",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"InstanceArn":      ubx.FieldSpec{WireName: "instance_arn"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"PermissionSetArn": ubx.FieldSpec{WireName: "permission_set_arn"},
 	},
 }

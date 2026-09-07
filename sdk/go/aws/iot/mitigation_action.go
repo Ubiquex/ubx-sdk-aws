@@ -55,64 +55,64 @@ type MitigationAction_Tags struct {
 }
 
 var MitigationAction_ActionParams_AddThingsToThingGroupParamsFields = ubx.FieldMap{
-		"OverrideDynamicGroups": ubx.FieldSpec{WireName: "override_dynamic_groups"},
-		"ThingGroupNames": ubx.FieldSpec{WireName: "thing_group_names"},
-	}
+	"OverrideDynamicGroups": ubx.FieldSpec{WireName: "override_dynamic_groups"},
+	"ThingGroupNames":       ubx.FieldSpec{WireName: "thing_group_names"},
+}
 
 var MitigationAction_ActionParams_EnableIoTloggingParamsFields = ubx.FieldMap{
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-		"RoleArnForLogging": ubx.FieldSpec{WireName: "role_arn_for_logging"},
-	}
+	"LogLevel":          ubx.FieldSpec{WireName: "log_level"},
+	"RoleArnForLogging": ubx.FieldSpec{WireName: "role_arn_for_logging"},
+}
 
 var MitigationAction_ActionParams_PublishFindingToSnsParamsFields = ubx.FieldMap{
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var MitigationAction_ActionParams_ReplaceDefaultPolicyVersionParamsFields = ubx.FieldMap{
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
-	}
+	"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+}
 
 var MitigationAction_ActionParams_UpdateCacertificateParamsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+}
 
 var MitigationAction_ActionParamsFields = ubx.FieldMap{
-		"AddThingsToThingGroupParams": ubx.FieldSpec{
-			WireName: "add_things_to_thing_group_params",
-			Kind: "object",
-			Fields: MitigationAction_ActionParams_AddThingsToThingGroupParamsFields,
-		},
-		"EnableIoTloggingParams": ubx.FieldSpec{
-			WireName: "enable_io_tlogging_params",
-			Kind: "object",
-			Fields: MitigationAction_ActionParams_EnableIoTloggingParamsFields,
-		},
-		"PublishFindingToSnsParams": ubx.FieldSpec{
-			WireName: "publish_finding_to_sns_params",
-			Kind: "object",
-			Fields: MitigationAction_ActionParams_PublishFindingToSnsParamsFields,
-		},
-		"ReplaceDefaultPolicyVersionParams": ubx.FieldSpec{
-			WireName: "replace_default_policy_version_params",
-			Kind: "object",
-			Fields: MitigationAction_ActionParams_ReplaceDefaultPolicyVersionParamsFields,
-		},
-		"UpdateCacertificateParams": ubx.FieldSpec{
-			WireName: "update_cacertificate_params",
-			Kind: "object",
-			Fields: MitigationAction_ActionParams_UpdateCacertificateParamsFields,
-		},
-		"UpdateDeviceCertificateParams": ubx.FieldSpec{
-			WireName: "update_device_certificate_params",
-			Kind: "object",
-			Fields: MitigationAction_ActionParams_UpdateCacertificateParamsFields,
-		},
-	}
+	"AddThingsToThingGroupParams": ubx.FieldSpec{
+		WireName: "add_things_to_thing_group_params",
+		Kind:     "object",
+		Fields:   MitigationAction_ActionParams_AddThingsToThingGroupParamsFields,
+	},
+	"EnableIoTloggingParams": ubx.FieldSpec{
+		WireName: "enable_io_tlogging_params",
+		Kind:     "object",
+		Fields:   MitigationAction_ActionParams_EnableIoTloggingParamsFields,
+	},
+	"PublishFindingToSnsParams": ubx.FieldSpec{
+		WireName: "publish_finding_to_sns_params",
+		Kind:     "object",
+		Fields:   MitigationAction_ActionParams_PublishFindingToSnsParamsFields,
+	},
+	"ReplaceDefaultPolicyVersionParams": ubx.FieldSpec{
+		WireName: "replace_default_policy_version_params",
+		Kind:     "object",
+		Fields:   MitigationAction_ActionParams_ReplaceDefaultPolicyVersionParamsFields,
+	},
+	"UpdateCacertificateParams": ubx.FieldSpec{
+		WireName: "update_cacertificate_params",
+		Kind:     "object",
+		Fields:   MitigationAction_ActionParams_UpdateCacertificateParamsFields,
+	},
+	"UpdateDeviceCertificateParams": ubx.FieldSpec{
+		WireName: "update_device_certificate_params",
+		Kind:     "object",
+		Fields:   MitigationAction_ActionParams_UpdateCacertificateParamsFields,
+	},
+}
 
 var MitigationAction_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MitigationActionConfig struct {
 	// A unique identifier for the mitigation action.
@@ -146,14 +146,14 @@ var MitigationAction = ubx.ResourceBinding{
 		"ActionName": ubx.FieldSpec{WireName: "action_name"},
 		"ActionParams": ubx.FieldSpec{
 			WireName: "action_params",
-			Kind: "object",
-			Fields: MitigationAction_ActionParamsFields,
+			Kind:     "object",
+			Fields:   MitigationAction_ActionParamsFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MitigationAction_TagsFields,
+			Kind:     "list",
+			Fields:   MitigationAction_TagsFields,
 		},
 	},
 }

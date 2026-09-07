@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalGatewayRouteTable_Tags struct {
 	// The key of a user-defined tag that can be attached to an EC2 Local Gateway Route Table for resource identification and management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var LocalGatewayRouteTable_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocalGatewayRouteTableConfig struct {
 	// The ID of the local gateway.
@@ -46,11 +46,11 @@ var LocalGatewayRouteTable = ubx.ResourceBinding{
 	WireType: "aws_ec2_local_gateway_route_table",
 	Fields: ubx.FieldMap{
 		"LocalGatewayId": ubx.FieldSpec{WireName: "local_gateway_id"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Mode":           ubx.FieldSpec{WireName: "mode"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocalGatewayRouteTable_TagsFields,
+			Kind:     "list",
+			Fields:   LocalGatewayRouteTable_TagsFields,
 		},
 	},
 }

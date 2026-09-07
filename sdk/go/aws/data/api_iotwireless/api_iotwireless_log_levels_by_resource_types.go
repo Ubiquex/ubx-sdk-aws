@@ -4,14 +4,14 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessLogLevelsByResourceTypes_FuotaTaskLogOptions_Events struct {
-	Event any
+	Event    any
 	LogLevel any
 }
 
 type ApiIotwirelessLogLevelsByResourceTypes_FuotaTaskLogOptions struct {
-	Events any
+	Events   any
 	LogLevel any
-	Type any
+	Type     any
 }
 
 type ApiIotwirelessLogLevelsByResourceTypesConfig struct {
@@ -30,6 +30,5 @@ type ApiIotwirelessLogLevelsByResourceTypesAttrs struct {
 
 var ApiIotwirelessLogLevelsByResourceTypes = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_log_levels_by_resource_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessPartnerAccount_Sidewalk struct {
 	// <p>The Sidewalk Amazon ID.</p>
-	AmazonId any
-	Arn any
+	AmazonId    any
+	Arn         any
 	Fingerprint any
 }
 
 type ApiIotwirelessPartnerAccountConfig struct {
 	PartnerAccountId any
-	PartnerType any
+	PartnerType      any
 }
 
 type ApiIotwirelessPartnerAccountAttrs struct {
-	AccountLinked any
+	AccountLinked    any
 	PartnerAccountId any
-	PartnerType any
+	PartnerType      any
 	// <p>Information about a Sidewalk account.</p>
 	Sidewalk any
 }
@@ -27,6 +27,6 @@ var ApiIotwirelessPartnerAccount = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_partner_account",
 	Fields: ubx.FieldMap{
 		"PartnerAccountId": ubx.FieldSpec{WireName: "partner_account_id"},
-		"PartnerType": ubx.FieldSpec{WireName: "partner_type"},
+		"PartnerType":      ubx.FieldSpec{WireName: "partner_type"},
 	},
 }

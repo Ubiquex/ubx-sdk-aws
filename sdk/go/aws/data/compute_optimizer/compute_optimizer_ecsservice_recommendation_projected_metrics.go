@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerEcsserviceRecommendationProjectedMetrics_RecommendedOptionProjectedMetrics_ProjectedMetrics struct {
 	LowerBoundValues any
-	Name any
-	Timestamps any
+	Name             any
+	Timestamps       any
 	UpperBoundValues any
 }
 
 type ComputeOptimizerEcsserviceRecommendationProjectedMetrics_RecommendedOptionProjectedMetrics struct {
-	ProjectedMetrics any
-	RecommendedCpuUnits any
+	ProjectedMetrics      any
+	RecommendedCpuUnits   any
 	RecommendedMemorySize any
 }
 
 type ComputeOptimizerEcsserviceRecommendationProjectedMetricsConfig struct {
-	EndTime any
-	Period any
+	EndTime    any
+	Period     any
 	ServiceArn any
-	StartTime any
-	Stat any
+	StartTime  any
+	Stat       any
 }
 
 type ComputeOptimizerEcsserviceRecommendationProjectedMetricsAttrs struct {
-	EndTime any
-	Period any
+	EndTime                           any
+	Period                            any
 	RecommendedOptionProjectedMetrics any
-	ServiceArn any
-	StartTime any
-	Stat any
+	ServiceArn                        any
+	StartTime                         any
+	Stat                              any
 }
 
 var ComputeOptimizerEcsserviceRecommendationProjectedMetrics = ubx.DataSourceBinding{
 	WireType: "aws_compute_optimizer_ecsservice_recommendation_projected_metrics",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Period": ubx.FieldSpec{WireName: "period"},
+		"EndTime":    ubx.FieldSpec{WireName: "end_time"},
+		"Period":     ubx.FieldSpec{WireName: "period"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
+		"Stat":       ubx.FieldSpec{WireName: "stat"},
 	},
 }

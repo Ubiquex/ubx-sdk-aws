@@ -4,25 +4,25 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CheckDetails_CheckDetails struct {
-	AccountId any
-	ChoiceId any
-	Description any
+	AccountId        any
+	ChoiceId         any
+	Description      any
 	FlaggedResources any
-	Id any
-	LensArn any
-	Name any
-	PillarId any
-	Provider any
-	QuestionId any
-	Reason any
-	Status any
-	UpdatedAt any
+	Id               any
+	LensArn          any
+	Name             any
+	PillarId         any
+	Provider         any
+	QuestionId       any
+	Reason           any
+	Status           any
+	UpdatedAt        any
 }
 
 type CheckDetailsConfig struct {
 	// <p>The ID of a choice.</p>
 	ChoiceId any
-	LensArn any
+	LensArn  any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
@@ -39,7 +39,7 @@ type CheckDetailsAttrs struct {
 	CheckDetails any
 	// <p>The ID of a choice.</p>
 	ChoiceId any
-	LensArn any
+	LensArn  any
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
@@ -55,11 +55,11 @@ type CheckDetailsAttrs struct {
 var CheckDetails = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_check_details",
 	Fields: ubx.FieldMap{
-		"ChoiceId": ubx.FieldSpec{WireName: "choice_id"},
-		"LensArn": ubx.FieldSpec{WireName: "lens_arn"},
+		"ChoiceId":   ubx.FieldSpec{WireName: "choice_id"},
+		"LensArn":    ubx.FieldSpec{WireName: "lens_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PillarId": ubx.FieldSpec{WireName: "pillar_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PillarId":   ubx.FieldSpec{WireName: "pillar_id"},
 		"QuestionId": ubx.FieldSpec{WireName: "question_id"},
 		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
 	},

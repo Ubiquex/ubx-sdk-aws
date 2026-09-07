@@ -4,17 +4,17 @@ package api_tunneling_iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiTunnelingIotTunnel_Tunnel_DestinationConfig struct {
-	Services any
+	Services  any
 	ThingName any
 }
 
 type ApiTunnelingIotTunnel_Tunnel_DestinationConnectionState struct {
 	LastUpdatedAt any
-	Status any
+	Status        any
 }
 
 type ApiTunnelingIotTunnel_Tunnel_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -23,21 +23,21 @@ type ApiTunnelingIotTunnel_Tunnel_TimeoutConfig struct {
 }
 
 type ApiTunnelingIotTunnel_Tunnel struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
 	// <p>The destination configuration.</p>
 	DestinationConfig any
 	// <p>The state of a connection.</p>
 	DestinationConnectionState any
-	LastUpdatedAt any
+	LastUpdatedAt              any
 	// <p>The state of a connection.</p>
 	SourceConnectionState any
-	Status any
-	Tags any
+	Status                any
+	Tags                  any
 	// <p>Tunnel timeout configuration.</p>
 	TimeoutConfig any
-	TunnelArn any
-	TunnelId any
+	TunnelArn     any
+	TunnelId      any
 }
 
 type ApiTunnelingIotTunnelConfig struct {
@@ -46,7 +46,7 @@ type ApiTunnelingIotTunnelConfig struct {
 
 type ApiTunnelingIotTunnelAttrs struct {
 	// <p>A connection between a source computer and a destination device.</p>
-	Tunnel any
+	Tunnel   any
 	TunnelId any
 }
 

@@ -407,419 +407,419 @@ type LaunchTemplate_LaunchTemplateData struct {
 }
 
 var LaunchTemplate_LaunchTemplateData_BlockDeviceMappings_EbsFields = ubx.FieldMap{
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"EbsCardIndex": ubx.FieldSpec{WireName: "ebs_card_index"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeInitializationRate": ubx.FieldSpec{WireName: "volume_initialization_rate"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"DeleteOnTermination":      ubx.FieldSpec{WireName: "delete_on_termination"},
+	"EbsCardIndex":             ubx.FieldSpec{WireName: "ebs_card_index"},
+	"Encrypted":                ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":                     ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":                 ubx.FieldSpec{WireName: "kms_key_id"},
+	"SnapshotId":               ubx.FieldSpec{WireName: "snapshot_id"},
+	"Throughput":               ubx.FieldSpec{WireName: "throughput"},
+	"VolumeInitializationRate": ubx.FieldSpec{WireName: "volume_initialization_rate"},
+	"VolumeSize":               ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType":               ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var LaunchTemplate_LaunchTemplateData_BlockDeviceMappingsFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Ebs": ubx.FieldSpec{
-			WireName: "ebs",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_BlockDeviceMappings_EbsFields,
-		},
-		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
-		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Ebs": ubx.FieldSpec{
+		WireName: "ebs",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_BlockDeviceMappings_EbsFields,
+	},
+	"NoDevice":    ubx.FieldSpec{WireName: "no_device"},
+	"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+}
 
 var LaunchTemplate_LaunchTemplateData_CapacityReservationSpecification_CapacityReservationTargetFields = ubx.FieldMap{
-		"CapacityReservationId": ubx.FieldSpec{WireName: "capacity_reservation_id"},
-		"CapacityReservationResourceGroupArn": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arn"},
-	}
+	"CapacityReservationId":               ubx.FieldSpec{WireName: "capacity_reservation_id"},
+	"CapacityReservationResourceGroupArn": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arn"},
+}
 
 var LaunchTemplate_LaunchTemplateData_CapacityReservationSpecificationFields = ubx.FieldMap{
-		"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
-		"CapacityReservationTarget": ubx.FieldSpec{
-			WireName: "capacity_reservation_target",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_CapacityReservationSpecification_CapacityReservationTargetFields,
-		},
-	}
+	"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
+	"CapacityReservationTarget": ubx.FieldSpec{
+		WireName: "capacity_reservation_target",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_CapacityReservationSpecification_CapacityReservationTargetFields,
+	},
+}
 
 var LaunchTemplate_LaunchTemplateData_CpuOptionsFields = ubx.FieldMap{
-		"AmdSevSnp": ubx.FieldSpec{WireName: "amd_sev_snp"},
-		"CoreCount": ubx.FieldSpec{WireName: "core_count"},
-		"NestedVirtualization": ubx.FieldSpec{WireName: "nested_virtualization"},
-		"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
-	}
+	"AmdSevSnp":            ubx.FieldSpec{WireName: "amd_sev_snp"},
+	"CoreCount":            ubx.FieldSpec{WireName: "core_count"},
+	"NestedVirtualization": ubx.FieldSpec{WireName: "nested_virtualization"},
+	"ThreadsPerCore":       ubx.FieldSpec{WireName: "threads_per_core"},
+}
 
 var LaunchTemplate_LaunchTemplateData_CreditSpecificationFields = ubx.FieldMap{
-		"CpuCredits": ubx.FieldSpec{WireName: "cpu_credits"},
-	}
+	"CpuCredits": ubx.FieldSpec{WireName: "cpu_credits"},
+}
 
 var LaunchTemplate_LaunchTemplateData_EnclaveOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var LaunchTemplate_LaunchTemplateData_HibernationOptionsFields = ubx.FieldMap{
-		"Configured": ubx.FieldSpec{WireName: "configured"},
-	}
+	"Configured": ubx.FieldSpec{WireName: "configured"},
+}
 
 var LaunchTemplate_LaunchTemplateData_IamInstanceProfileFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Arn":  ubx.FieldSpec{WireName: "arn"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var LaunchTemplate_LaunchTemplateData_InstanceMarketOptions_SpotOptionsFields = ubx.FieldMap{
-		"BlockDurationMinutes": ubx.FieldSpec{WireName: "block_duration_minutes"},
-		"InstanceInterruptionBehavior": ubx.FieldSpec{WireName: "instance_interruption_behavior"},
-		"MaxPrice": ubx.FieldSpec{WireName: "max_price"},
-		"SpotInstanceType": ubx.FieldSpec{WireName: "spot_instance_type"},
-		"ValidUntil": ubx.FieldSpec{WireName: "valid_until"},
-	}
+	"BlockDurationMinutes":         ubx.FieldSpec{WireName: "block_duration_minutes"},
+	"InstanceInterruptionBehavior": ubx.FieldSpec{WireName: "instance_interruption_behavior"},
+	"MaxPrice":                     ubx.FieldSpec{WireName: "max_price"},
+	"SpotInstanceType":             ubx.FieldSpec{WireName: "spot_instance_type"},
+	"ValidUntil":                   ubx.FieldSpec{WireName: "valid_until"},
+}
 
 var LaunchTemplate_LaunchTemplateData_InstanceMarketOptionsFields = ubx.FieldMap{
-		"MarketType": ubx.FieldSpec{WireName: "market_type"},
-		"SpotOptions": ubx.FieldSpec{
-			WireName: "spot_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceMarketOptions_SpotOptionsFields,
-		},
-	}
+	"MarketType": ubx.FieldSpec{WireName: "market_type"},
+	"SpotOptions": ubx.FieldSpec{
+		WireName: "spot_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceMarketOptions_SpotOptionsFields,
+	},
+}
 
 var LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields = ubx.FieldMap{
-		"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
-	}
+	"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
+}
 
 var LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_CpuFields = ubx.FieldMap{
-		"References": ubx.FieldSpec{
-			WireName: "references",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields,
-		},
-	}
+	"References": ubx.FieldSpec{
+		WireName: "references",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_Cpu_ReferencesFields,
+	},
+}
 
 var LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactorsFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{
-			WireName: "cpu",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_CpuFields,
-		},
-	}
+	"Cpu": ubx.FieldSpec{
+		WireName: "cpu",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_CpuFields,
+	},
+}
 
 var LaunchTemplate_LaunchTemplateData_InstanceRequirementsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{
-			WireName: "accelerator_count",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-		"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
-		"AcceleratorNames": ubx.FieldSpec{WireName: "accelerator_names"},
-		"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
-			WireName: "accelerator_total_memory_mi_b",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-		"AcceleratorTypes": ubx.FieldSpec{WireName: "accelerator_types"},
-		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
-		"BareMetal": ubx.FieldSpec{WireName: "bare_metal"},
-		"BaselineEbsBandwidthMbps": ubx.FieldSpec{
-			WireName: "baseline_ebs_bandwidth_mbps",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-		"BaselinePerformanceFactors": ubx.FieldSpec{
-			WireName: "baseline_performance_factors",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactorsFields,
-		},
-		"BurstablePerformance": ubx.FieldSpec{WireName: "burstable_performance"},
-		"CpuManufacturers": ubx.FieldSpec{WireName: "cpu_manufacturers"},
-		"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
-		"InstanceGenerations": ubx.FieldSpec{WireName: "instance_generations"},
-		"LocalStorage": ubx.FieldSpec{WireName: "local_storage"},
-		"LocalStorageTypes": ubx.FieldSpec{WireName: "local_storage_types"},
-		"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
-		"MemoryGiBperVcpu": ubx.FieldSpec{
-			WireName: "memory_gi_bper_vcpu",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-		"MemoryMiB": ubx.FieldSpec{
-			WireName: "memory_mi_b",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-		"NetworkBandwidthGbps": ubx.FieldSpec{
-			WireName: "network_bandwidth_gbps",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-		"NetworkInterfaceCount": ubx.FieldSpec{
-			WireName: "network_interface_count",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-		"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
-		"RequireHibernateSupport": ubx.FieldSpec{WireName: "require_hibernate_support"},
-		"SpotMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
-		"TotalLocalStorageGb": ubx.FieldSpec{
-			WireName: "total_local_storage_gb",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-		"VcpuCount": ubx.FieldSpec{
-			WireName: "vcpu_count",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
-		},
-	}
+	"AcceleratorCount": ubx.FieldSpec{
+		WireName: "accelerator_count",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+	"AcceleratorManufacturers": ubx.FieldSpec{WireName: "accelerator_manufacturers"},
+	"AcceleratorNames":         ubx.FieldSpec{WireName: "accelerator_names"},
+	"AcceleratorTotalMemoryMiB": ubx.FieldSpec{
+		WireName: "accelerator_total_memory_mi_b",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+	"AcceleratorTypes":     ubx.FieldSpec{WireName: "accelerator_types"},
+	"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
+	"BareMetal":            ubx.FieldSpec{WireName: "bare_metal"},
+	"BaselineEbsBandwidthMbps": ubx.FieldSpec{
+		WireName: "baseline_ebs_bandwidth_mbps",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+	"BaselinePerformanceFactors": ubx.FieldSpec{
+		WireName: "baseline_performance_factors",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactorsFields,
+	},
+	"BurstablePerformance":                           ubx.FieldSpec{WireName: "burstable_performance"},
+	"CpuManufacturers":                               ubx.FieldSpec{WireName: "cpu_manufacturers"},
+	"ExcludedInstanceTypes":                          ubx.FieldSpec{WireName: "excluded_instance_types"},
+	"InstanceGenerations":                            ubx.FieldSpec{WireName: "instance_generations"},
+	"LocalStorage":                                   ubx.FieldSpec{WireName: "local_storage"},
+	"LocalStorageTypes":                              ubx.FieldSpec{WireName: "local_storage_types"},
+	"MaxSpotPriceAsPercentageOfOptimalOnDemandPrice": ubx.FieldSpec{WireName: "max_spot_price_as_percentage_of_optimal_on_demand_price"},
+	"MemoryGiBperVcpu": ubx.FieldSpec{
+		WireName: "memory_gi_bper_vcpu",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+	"MemoryMiB": ubx.FieldSpec{
+		WireName: "memory_mi_b",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+	"NetworkBandwidthGbps": ubx.FieldSpec{
+		WireName: "network_bandwidth_gbps",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+	"NetworkInterfaceCount": ubx.FieldSpec{
+		WireName: "network_interface_count",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+	"OnDemandMaxPricePercentageOverLowestPrice": ubx.FieldSpec{WireName: "on_demand_max_price_percentage_over_lowest_price"},
+	"RequireHibernateSupport":                   ubx.FieldSpec{WireName: "require_hibernate_support"},
+	"SpotMaxPricePercentageOverLowestPrice":     ubx.FieldSpec{WireName: "spot_max_price_percentage_over_lowest_price"},
+	"TotalLocalStorageGb": ubx.FieldSpec{
+		WireName: "total_local_storage_gb",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+	"VcpuCount": ubx.FieldSpec{
+		WireName: "vcpu_count",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirements_AcceleratorCountFields,
+	},
+}
 
 var LaunchTemplate_LaunchTemplateData_LicenseSpecificationsFields = ubx.FieldMap{
-		"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
-	}
+	"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
+}
 
 var LaunchTemplate_LaunchTemplateData_MaintenanceOptionsFields = ubx.FieldMap{
-		"AutoRecovery": ubx.FieldSpec{WireName: "auto_recovery"},
-	}
+	"AutoRecovery": ubx.FieldSpec{WireName: "auto_recovery"},
+}
 
 var LaunchTemplate_LaunchTemplateData_MetadataOptionsFields = ubx.FieldMap{
-		"HttpEndpoint": ubx.FieldSpec{WireName: "http_endpoint"},
-		"HttpProtocolIpv6": ubx.FieldSpec{WireName: "http_protocol_ipv6"},
-		"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
-		"HttpTokens": ubx.FieldSpec{WireName: "http_tokens"},
-		"InstanceMetadataTags": ubx.FieldSpec{WireName: "instance_metadata_tags"},
-	}
+	"HttpEndpoint":            ubx.FieldSpec{WireName: "http_endpoint"},
+	"HttpProtocolIpv6":        ubx.FieldSpec{WireName: "http_protocol_ipv6"},
+	"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
+	"HttpTokens":              ubx.FieldSpec{WireName: "http_tokens"},
+	"InstanceMetadataTags":    ubx.FieldSpec{WireName: "instance_metadata_tags"},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkInterfaces_ConnectionTrackingSpecificationFields = ubx.FieldMap{
-		"TcpEstablishedTimeout": ubx.FieldSpec{WireName: "tcp_established_timeout"},
-		"UdpStreamTimeout": ubx.FieldSpec{WireName: "udp_stream_timeout"},
-		"UdpTimeout": ubx.FieldSpec{WireName: "udp_timeout"},
-	}
+	"TcpEstablishedTimeout": ubx.FieldSpec{WireName: "tcp_established_timeout"},
+	"UdpStreamTimeout":      ubx.FieldSpec{WireName: "udp_stream_timeout"},
+	"UdpTimeout":            ubx.FieldSpec{WireName: "udp_timeout"},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields = ubx.FieldMap{
-		"EnaSrdUdpEnabled": ubx.FieldSpec{WireName: "ena_srd_udp_enabled"},
-	}
+	"EnaSrdUdpEnabled": ubx.FieldSpec{WireName: "ena_srd_udp_enabled"},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecificationFields = ubx.FieldMap{
-		"EnaSrdEnabled": ubx.FieldSpec{WireName: "ena_srd_enabled"},
-		"EnaSrdUdpSpecification": ubx.FieldSpec{
-			WireName: "ena_srd_udp_specification",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
-		},
-	}
+	"EnaSrdEnabled": ubx.FieldSpec{WireName: "ena_srd_enabled"},
+	"EnaSrdUdpSpecification": ubx.FieldSpec{
+		WireName: "ena_srd_udp_specification",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
+	},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv4PrefixesFields = ubx.FieldMap{
-		"Ipv4Prefix": ubx.FieldSpec{WireName: "ipv4_prefix"},
-	}
+	"Ipv4Prefix": ubx.FieldSpec{WireName: "ipv4_prefix"},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv6AddressesFields = ubx.FieldMap{
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-	}
+	"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv6PrefixesFields = ubx.FieldMap{
-		"Ipv6Prefix": ubx.FieldSpec{WireName: "ipv6_prefix"},
-	}
+	"Ipv6Prefix": ubx.FieldSpec{WireName: "ipv6_prefix"},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkInterfaces_PrivateIpAddressesFields = ubx.FieldMap{
-		"Primary": ubx.FieldSpec{WireName: "primary"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-	}
+	"Primary":          ubx.FieldSpec{WireName: "primary"},
+	"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkInterfacesFields = ubx.FieldMap{
-		"AssociateCarrierIpAddress": ubx.FieldSpec{WireName: "associate_carrier_ip_address"},
-		"AssociatePublicIpAddress": ubx.FieldSpec{WireName: "associate_public_ip_address"},
-		"ConnectionTrackingSpecification": ubx.FieldSpec{
-			WireName: "connection_tracking_specification",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkInterfaces_ConnectionTrackingSpecificationFields,
-		},
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
-		"EnaQueueCount": ubx.FieldSpec{WireName: "ena_queue_count"},
-		"EnaSrdSpecification": ubx.FieldSpec{
-			WireName: "ena_srd_specification",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecificationFields,
-		},
-		"Groups": ubx.FieldSpec{WireName: "groups"},
-		"InterfaceType": ubx.FieldSpec{WireName: "interface_type"},
-		"Ipv4PrefixCount": ubx.FieldSpec{WireName: "ipv4_prefix_count"},
-		"Ipv4Prefixes": ubx.FieldSpec{
-			WireName: "ipv4_prefixes",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv4PrefixesFields,
-		},
-		"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
-		"Ipv6Addresses": ubx.FieldSpec{
-			WireName: "ipv6_addresses",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv6AddressesFields,
-		},
-		"Ipv6PrefixCount": ubx.FieldSpec{WireName: "ipv6_prefix_count"},
-		"Ipv6Prefixes": ubx.FieldSpec{
-			WireName: "ipv6_prefixes",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv6PrefixesFields,
-		},
-		"NetworkCardIndex": ubx.FieldSpec{WireName: "network_card_index"},
-		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
-		"PrimaryIpv6": ubx.FieldSpec{WireName: "primary_ipv6"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-		"PrivateIpAddresses": ubx.FieldSpec{
-			WireName: "private_ip_addresses",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkInterfaces_PrivateIpAddressesFields,
-		},
-		"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"AssociateCarrierIpAddress": ubx.FieldSpec{WireName: "associate_carrier_ip_address"},
+	"AssociatePublicIpAddress":  ubx.FieldSpec{WireName: "associate_public_ip_address"},
+	"ConnectionTrackingSpecification": ubx.FieldSpec{
+		WireName: "connection_tracking_specification",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkInterfaces_ConnectionTrackingSpecificationFields,
+	},
+	"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"DeviceIndex":         ubx.FieldSpec{WireName: "device_index"},
+	"EnaQueueCount":       ubx.FieldSpec{WireName: "ena_queue_count"},
+	"EnaSrdSpecification": ubx.FieldSpec{
+		WireName: "ena_srd_specification",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecificationFields,
+	},
+	"Groups":          ubx.FieldSpec{WireName: "groups"},
+	"InterfaceType":   ubx.FieldSpec{WireName: "interface_type"},
+	"Ipv4PrefixCount": ubx.FieldSpec{WireName: "ipv4_prefix_count"},
+	"Ipv4Prefixes": ubx.FieldSpec{
+		WireName: "ipv4_prefixes",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv4PrefixesFields,
+	},
+	"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
+	"Ipv6Addresses": ubx.FieldSpec{
+		WireName: "ipv6_addresses",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv6AddressesFields,
+	},
+	"Ipv6PrefixCount": ubx.FieldSpec{WireName: "ipv6_prefix_count"},
+	"Ipv6Prefixes": ubx.FieldSpec{
+		WireName: "ipv6_prefixes",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkInterfaces_Ipv6PrefixesFields,
+	},
+	"NetworkCardIndex":   ubx.FieldSpec{WireName: "network_card_index"},
+	"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
+	"PrimaryIpv6":        ubx.FieldSpec{WireName: "primary_ipv6"},
+	"PrivateIpAddress":   ubx.FieldSpec{WireName: "private_ip_address"},
+	"PrivateIpAddresses": ubx.FieldSpec{
+		WireName: "private_ip_addresses",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkInterfaces_PrivateIpAddressesFields,
+	},
+	"SecondaryPrivateIpAddressCount": ubx.FieldSpec{WireName: "secondary_private_ip_address_count"},
+	"SubnetId":                       ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var LaunchTemplate_LaunchTemplateData_NetworkPerformanceOptionsFields = ubx.FieldMap{
-		"BandwidthWeighting": ubx.FieldSpec{WireName: "bandwidth_weighting"},
-	}
+	"BandwidthWeighting": ubx.FieldSpec{WireName: "bandwidth_weighting"},
+}
 
 var LaunchTemplate_LaunchTemplateData_PlacementFields = ubx.FieldMap{
-		"Affinity": ubx.FieldSpec{WireName: "affinity"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"HostId": ubx.FieldSpec{WireName: "host_id"},
-		"HostResourceGroupArn": ubx.FieldSpec{WireName: "host_resource_group_arn"},
-		"PartitionNumber": ubx.FieldSpec{WireName: "partition_number"},
-		"SpreadDomain": ubx.FieldSpec{WireName: "spread_domain"},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
-	}
+	"Affinity":             ubx.FieldSpec{WireName: "affinity"},
+	"AvailabilityZone":     ubx.FieldSpec{WireName: "availability_zone"},
+	"GroupId":              ubx.FieldSpec{WireName: "group_id"},
+	"GroupName":            ubx.FieldSpec{WireName: "group_name"},
+	"HostId":               ubx.FieldSpec{WireName: "host_id"},
+	"HostResourceGroupArn": ubx.FieldSpec{WireName: "host_resource_group_arn"},
+	"PartitionNumber":      ubx.FieldSpec{WireName: "partition_number"},
+	"SpreadDomain":         ubx.FieldSpec{WireName: "spread_domain"},
+	"Tenancy":              ubx.FieldSpec{WireName: "tenancy"},
+}
 
 var LaunchTemplate_LaunchTemplateData_PrivateDnsNameOptionsFields = ubx.FieldMap{
-		"EnableResourceNameDnsAaaarecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_aaaarecord"},
-		"EnableResourceNameDnsArecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_arecord"},
-		"HostnameType": ubx.FieldSpec{WireName: "hostname_type"},
-	}
+	"EnableResourceNameDnsAaaarecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_aaaarecord"},
+	"EnableResourceNameDnsArecord":    ubx.FieldSpec{WireName: "enable_resource_name_dns_arecord"},
+	"HostnameType":                    ubx.FieldSpec{WireName: "hostname_type"},
+}
 
 var LaunchTemplate_LaunchTemplateData_TagSpecifications_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var LaunchTemplate_LaunchTemplateData_TagSpecificationsFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_TagSpecifications_TagsFields,
-		},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_TagSpecifications_TagsFields,
+	},
+}
 
 var LaunchTemplate_LaunchTemplateDataFields = ubx.FieldMap{
-		"BlockDeviceMappings": ubx.FieldSpec{
-			WireName: "block_device_mappings",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_BlockDeviceMappingsFields,
-		},
-		"CapacityReservationSpecification": ubx.FieldSpec{
-			WireName: "capacity_reservation_specification",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_CapacityReservationSpecificationFields,
-		},
-		"CpuOptions": ubx.FieldSpec{
-			WireName: "cpu_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_CpuOptionsFields,
-		},
-		"CreditSpecification": ubx.FieldSpec{
-			WireName: "credit_specification",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_CreditSpecificationFields,
-		},
-		"DisableApiStop": ubx.FieldSpec{WireName: "disable_api_stop"},
-		"DisableApiTermination": ubx.FieldSpec{WireName: "disable_api_termination"},
-		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
-		"EnclaveOptions": ubx.FieldSpec{
-			WireName: "enclave_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_EnclaveOptionsFields,
-		},
-		"HibernationOptions": ubx.FieldSpec{
-			WireName: "hibernation_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_HibernationOptionsFields,
-		},
-		"IamInstanceProfile": ubx.FieldSpec{
-			WireName: "iam_instance_profile",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_IamInstanceProfileFields,
-		},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
-		"InstanceInitiatedShutdownBehavior": ubx.FieldSpec{WireName: "instance_initiated_shutdown_behavior"},
-		"InstanceMarketOptions": ubx.FieldSpec{
-			WireName: "instance_market_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceMarketOptionsFields,
-		},
-		"InstanceRequirements": ubx.FieldSpec{
-			WireName: "instance_requirements",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_InstanceRequirementsFields,
-		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"KernelId": ubx.FieldSpec{WireName: "kernel_id"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"LicenseSpecifications": ubx.FieldSpec{
-			WireName: "license_specifications",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_LicenseSpecificationsFields,
-		},
-		"MaintenanceOptions": ubx.FieldSpec{
-			WireName: "maintenance_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_MaintenanceOptionsFields,
-		},
-		"MetadataOptions": ubx.FieldSpec{
-			WireName: "metadata_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_MetadataOptionsFields,
-		},
-		"Monitoring": ubx.FieldSpec{
-			WireName: "monitoring",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_EnclaveOptionsFields,
-		},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkInterfacesFields,
-		},
-		"NetworkPerformanceOptions": ubx.FieldSpec{
-			WireName: "network_performance_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_NetworkPerformanceOptionsFields,
-		},
-		"Placement": ubx.FieldSpec{
-			WireName: "placement",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_PlacementFields,
-		},
-		"PrivateDnsNameOptions": ubx.FieldSpec{
-			WireName: "private_dns_name_options",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateData_PrivateDnsNameOptionsFields,
-		},
-		"RamDiskId": ubx.FieldSpec{WireName: "ram_disk_id"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"TagSpecifications": ubx.FieldSpec{
-			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_TagSpecificationsFields,
-		},
-		"UserData": ubx.FieldSpec{WireName: "user_data"},
-	}
+	"BlockDeviceMappings": ubx.FieldSpec{
+		WireName: "block_device_mappings",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_BlockDeviceMappingsFields,
+	},
+	"CapacityReservationSpecification": ubx.FieldSpec{
+		WireName: "capacity_reservation_specification",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_CapacityReservationSpecificationFields,
+	},
+	"CpuOptions": ubx.FieldSpec{
+		WireName: "cpu_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_CpuOptionsFields,
+	},
+	"CreditSpecification": ubx.FieldSpec{
+		WireName: "credit_specification",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_CreditSpecificationFields,
+	},
+	"DisableApiStop":        ubx.FieldSpec{WireName: "disable_api_stop"},
+	"DisableApiTermination": ubx.FieldSpec{WireName: "disable_api_termination"},
+	"EbsOptimized":          ubx.FieldSpec{WireName: "ebs_optimized"},
+	"EnclaveOptions": ubx.FieldSpec{
+		WireName: "enclave_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_EnclaveOptionsFields,
+	},
+	"HibernationOptions": ubx.FieldSpec{
+		WireName: "hibernation_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_HibernationOptionsFields,
+	},
+	"IamInstanceProfile": ubx.FieldSpec{
+		WireName: "iam_instance_profile",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_IamInstanceProfileFields,
+	},
+	"ImageId":                           ubx.FieldSpec{WireName: "image_id"},
+	"InstanceInitiatedShutdownBehavior": ubx.FieldSpec{WireName: "instance_initiated_shutdown_behavior"},
+	"InstanceMarketOptions": ubx.FieldSpec{
+		WireName: "instance_market_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceMarketOptionsFields,
+	},
+	"InstanceRequirements": ubx.FieldSpec{
+		WireName: "instance_requirements",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_InstanceRequirementsFields,
+	},
+	"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+	"KernelId":     ubx.FieldSpec{WireName: "kernel_id"},
+	"KeyName":      ubx.FieldSpec{WireName: "key_name"},
+	"LicenseSpecifications": ubx.FieldSpec{
+		WireName: "license_specifications",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_LicenseSpecificationsFields,
+	},
+	"MaintenanceOptions": ubx.FieldSpec{
+		WireName: "maintenance_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_MaintenanceOptionsFields,
+	},
+	"MetadataOptions": ubx.FieldSpec{
+		WireName: "metadata_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_MetadataOptionsFields,
+	},
+	"Monitoring": ubx.FieldSpec{
+		WireName: "monitoring",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_EnclaveOptionsFields,
+	},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkInterfacesFields,
+	},
+	"NetworkPerformanceOptions": ubx.FieldSpec{
+		WireName: "network_performance_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_NetworkPerformanceOptionsFields,
+	},
+	"Placement": ubx.FieldSpec{
+		WireName: "placement",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_PlacementFields,
+	},
+	"PrivateDnsNameOptions": ubx.FieldSpec{
+		WireName: "private_dns_name_options",
+		Kind:     "object",
+		Fields:   LaunchTemplate_LaunchTemplateData_PrivateDnsNameOptionsFields,
+	},
+	"RamDiskId":        ubx.FieldSpec{WireName: "ram_disk_id"},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SecurityGroups":   ubx.FieldSpec{WireName: "security_groups"},
+	"TagSpecifications": ubx.FieldSpec{
+		WireName: "tag_specifications",
+		Kind:     "list",
+		Fields:   LaunchTemplate_LaunchTemplateData_TagSpecificationsFields,
+	},
+	"UserData": ubx.FieldSpec{WireName: "user_data"},
+}
 
 type LaunchTemplateConfig struct {
 	// The information to include in the launch template. You must specify at least one parameter for the launch template data.
@@ -854,14 +854,14 @@ var LaunchTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"LaunchTemplateData": ubx.FieldSpec{
 			WireName: "launch_template_data",
-			Kind: "object",
-			Fields: LaunchTemplate_LaunchTemplateDataFields,
+			Kind:     "object",
+			Fields:   LaunchTemplate_LaunchTemplateDataFields,
 		},
 		"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
 		"TagSpecifications": ubx.FieldSpec{
 			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: LaunchTemplate_LaunchTemplateData_TagSpecificationsFields,
+			Kind:     "list",
+			Fields:   LaunchTemplate_LaunchTemplateData_TagSpecificationsFields,
 		},
 		"VersionDescription": ubx.FieldSpec{WireName: "version_description"},
 	},

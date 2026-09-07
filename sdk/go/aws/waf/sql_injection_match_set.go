@@ -18,18 +18,18 @@ type SqlInjectionMatchSet_SqlInjectionMatchTuples struct {
 }
 
 var SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatchFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var SqlInjectionMatchSet_SqlInjectionMatchTuplesFields = ubx.FieldMap{
-		"FieldToMatch": ubx.FieldSpec{
-			WireName: "field_to_match",
-			Kind: "object",
-			Fields: SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatchFields,
-		},
-		"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
-	}
+	"FieldToMatch": ubx.FieldSpec{
+		WireName: "field_to_match",
+		Kind:     "object",
+		Fields:   SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatchFields,
+	},
+	"TextTransformation": ubx.FieldSpec{WireName: "text_transformation"},
+}
 
 type SqlInjectionMatchSetConfig struct {
 	// Specifies a unique, immutable name for the WAF SQL injection match set, used as its friendly identifier in the AWS WAF console and API. (AI-inferred)
@@ -53,8 +53,8 @@ var SqlInjectionMatchSet = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SqlInjectionMatchTuples": ubx.FieldSpec{
 			WireName: "sql_injection_match_tuples",
-			Kind: "list",
-			Fields: SqlInjectionMatchSet_SqlInjectionMatchTuplesFields,
+			Kind:     "list",
+			Fields:   SqlInjectionMatchSet_SqlInjectionMatchTuplesFields,
 		},
 	},
 }

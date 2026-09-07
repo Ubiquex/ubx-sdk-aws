@@ -21,14 +21,14 @@ type TelemetryPipelines_Pipeline_Tags struct {
 
 type TelemetryPipelines_Pipeline struct {
 	// The ARN (Amazon Resource Name) of a telemetry pipeline, which uniquely identifies the pipeline within the AWS Observability Admin service. (AI-inferred)
-	Arn any
+	Arn           any
 	Configuration any
 	// The Unix epoch timestamp (in seconds) indicating when the telemetry pipeline was created. (AI-inferred)
 	CreatedTimeStamp any
 	// The timestamp (epoch time) indicating when the telemetry pipeline was last updated. (AI-inferred)
 	LastUpdateTimeStamp any
 	// The user-defined name that uniquely identifies a telemetry pipeline within the AWS Observability Admin TelemetryPipelines resource. (AI-inferred)
-	Name any
+	Name   any
 	Status any
 	// Provides the reason text for the telemetry pipeline's current status, including error details when the pipeline is in a failed or non-active state. (AI-inferred)
 	StatusReason any
@@ -37,13 +37,13 @@ type TelemetryPipelines_Pipeline struct {
 }
 
 var TelemetryPipelines_ConfigurationFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-	}
+	"Body": ubx.FieldSpec{WireName: "body"},
+}
 
 var TelemetryPipelines_Pipeline_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TelemetryPipelinesConfig struct {
 	// The configuration defining how this telemetry pipeline collects and routes observability data. (AI-inferred)
@@ -78,14 +78,14 @@ var TelemetryPipelines = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: TelemetryPipelines_ConfigurationFields,
+			Kind:     "object",
+			Fields:   TelemetryPipelines_ConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TelemetryPipelines_Pipeline_TagsFields,
+			Kind:     "list",
+			Fields:   TelemetryPipelines_Pipeline_TagsFields,
 		},
 	},
 }

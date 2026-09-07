@@ -10,9 +10,9 @@ type Eip_Tags struct {
 }
 
 var Eip_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EipConfig struct {
 	// An Elastic IP address or a carrier IP address in a Wavelength Zone.
@@ -59,16 +59,16 @@ type EipAttrs struct {
 var Eip = ubx.ResourceBinding{
 	WireType: "aws_eip",
 	Fields: ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"IpamPoolId": ubx.FieldSpec{WireName: "ipam_pool_id"},
+		"Address":            ubx.FieldSpec{WireName: "address"},
+		"Domain":             ubx.FieldSpec{WireName: "domain"},
+		"InstanceId":         ubx.FieldSpec{WireName: "instance_id"},
+		"IpamPoolId":         ubx.FieldSpec{WireName: "ipam_pool_id"},
 		"NetworkBorderGroup": ubx.FieldSpec{WireName: "network_border_group"},
-		"PublicIpv4Pool": ubx.FieldSpec{WireName: "public_ipv4_pool"},
+		"PublicIpv4Pool":     ubx.FieldSpec{WireName: "public_ipv4_pool"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Eip_TagsFields,
+			Kind:     "list",
+			Fields:   Eip_TagsFields,
 		},
 		"TransferAddress": ubx.FieldSpec{WireName: "transfer_address"},
 	},

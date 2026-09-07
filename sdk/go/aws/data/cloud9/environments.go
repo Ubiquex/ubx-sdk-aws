@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Environments_Environments_Lifecycle struct {
 	FailureResource any
-	Reason any
-	Status any
+	Reason          any
+	Status          any
 }
 
 type Environments_Environments struct {
-	Arn any
-	ConnectionType any
-	Description any
-	Id any
-	Lifecycle any
+	Arn                      any
+	ConnectionType           any
+	Description              any
+	Id                       any
+	Lifecycle                any
 	ManagedCredentialsStatus any
-	Name any
-	OwnerArn any
-	Type any
+	Name                     any
+	OwnerArn                 any
+	Type                     any
 }
 
 type EnvironmentsConfig struct {
@@ -27,7 +27,7 @@ type EnvironmentsConfig struct {
 
 type EnvironmentsAttrs struct {
 	EnvironmentIds any
-	Environments any
+	Environments   any
 }
 
 var Environments = ubx.DataSourceBinding{

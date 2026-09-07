@@ -4,44 +4,44 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProjectProfiles_Items struct {
-	CreatedAt any
-	CreatedBy any
-	Description any
-	DomainId any
-	DomainUnitId any
-	Id any
+	CreatedAt     any
+	CreatedBy     any
+	Description   any
+	DomainId      any
+	DomainUnitId  any
+	Id            any
 	LastUpdatedAt any
-	Name any
-	Status any
+	Name          any
+	Status        any
 }
 
 type ProjectProfilesConfig struct {
 	DomainIdentifier any
-	MaxResults any
-	Name any
-	NextToken any
-	SortBy any
-	SortOrder any
+	MaxResults       any
+	Name             any
+	NextToken        any
+	SortBy           any
+	SortOrder        any
 }
 
 type ProjectProfilesAttrs struct {
 	DomainIdentifier any
-	Items any
-	MaxResults any
-	Name any
-	NextToken any
-	SortBy any
-	SortOrder any
+	Items            any
+	MaxResults       any
+	Name             any
+	NextToken        any
+	SortBy           any
+	SortOrder        any
 }
 
 var ProjectProfiles = ubx.DataSourceBinding{
 	WireType: "aws_datazone_project_profiles",
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":           ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":        ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

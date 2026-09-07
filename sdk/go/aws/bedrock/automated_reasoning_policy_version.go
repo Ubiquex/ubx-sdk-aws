@@ -4,14 +4,14 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutomatedReasoningPolicyVersion_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AutomatedReasoningPolicyVersion_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AutomatedReasoningPolicyVersionConfig struct {
 	// The hash for this version
@@ -49,11 +49,11 @@ var AutomatedReasoningPolicyVersion = ubx.ResourceBinding{
 	WireType: "aws_bedrock_automated_reasoning_policy_version",
 	Fields: ubx.FieldMap{
 		"LastUpdatedDefinitionHash": ubx.FieldSpec{WireName: "last_updated_definition_hash"},
-		"PolicyArn": ubx.FieldSpec{WireName: "policy_arn"},
+		"PolicyArn":                 ubx.FieldSpec{WireName: "policy_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AutomatedReasoningPolicyVersion_TagsFields,
+			Kind:     "list",
+			Fields:   AutomatedReasoningPolicyVersion_TagsFields,
 		},
 	},
 }

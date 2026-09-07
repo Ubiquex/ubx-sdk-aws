@@ -9,8 +9,8 @@ type EnvironmentStatusConfig struct {
 
 type EnvironmentStatusAttrs struct {
 	EnvironmentId any
-	Message any
-	Status any
+	Message       any
+	Status        any
 }
 
 var EnvironmentStatus = ubx.DataSourceBinding{

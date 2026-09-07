@@ -4,63 +4,63 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLicenseManagerReportGenerators_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LicenseManagerLicenseManagerReportGenerators_ReportGenerators_ReportContext struct {
-	LicenseAssetGroupArns any
+	LicenseAssetGroupArns    any
 	LicenseConfigurationArns any
-	ReportEndDate any
-	ReportStartDate any
+	ReportEndDate            any
+	ReportStartDate          any
 }
 
 type LicenseManagerLicenseManagerReportGenerators_ReportGenerators_ReportFrequency struct {
 	Period any
-	Value any
+	Value  any
 }
 
 type LicenseManagerLicenseManagerReportGenerators_ReportGenerators_S3Location struct {
-	Bucket any
+	Bucket    any
 	KeyPrefix any
 }
 
 type LicenseManagerLicenseManagerReportGenerators_ReportGenerators_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type LicenseManagerLicenseManagerReportGenerators_ReportGenerators struct {
-	CreateTime any
-	Description any
-	LastReportGenerationTime any
-	LastRunFailureReason any
-	LastRunStatus any
+	CreateTime                       any
+	Description                      any
+	LastReportGenerationTime         any
+	LastRunFailureReason             any
+	LastRunStatus                    any
 	LicenseManagerReportGeneratorArn any
-	ReportContext any
-	ReportCreatorAccount any
-	ReportFrequency any
-	ReportGeneratorName any
-	ReportType any
-	S3Location any
-	Tags any
+	ReportContext                    any
+	ReportCreatorAccount             any
+	ReportFrequency                  any
+	ReportGeneratorName              any
+	ReportType                       any
+	S3Location                       any
+	Tags                             any
 }
 
 var LicenseManagerLicenseManagerReportGenerators_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerLicenseManagerReportGeneratorsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LicenseManagerLicenseManagerReportGeneratorsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters          any
+	MaxResults       any
+	NextToken        any
 	ReportGenerators any
 }
 
@@ -69,10 +69,10 @@ var LicenseManagerLicenseManagerReportGenerators = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerLicenseManagerReportGenerators_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerLicenseManagerReportGenerators_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

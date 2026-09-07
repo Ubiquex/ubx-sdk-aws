@@ -9,7 +9,7 @@ type BuildsConfig struct {
 }
 
 type BuildsAttrs struct {
-	Ids any
+	Ids       any
 	NextToken any
 	SortOrder any
 }

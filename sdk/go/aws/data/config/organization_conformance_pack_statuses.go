@@ -4,31 +4,31 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConformancePackStatuses_OrganizationConformancePackStatuses struct {
-	ErrorCode any
-	ErrorMessage any
-	LastUpdateTime any
+	ErrorCode                       any
+	ErrorMessage                    any
+	LastUpdateTime                  any
 	OrganizationConformancePackName any
-	Status any
+	Status                          any
 }
 
 type OrganizationConformancePackStatusesConfig struct {
-	Limit any
-	NextToken any
+	Limit                            any
+	NextToken                        any
 	OrganizationConformancePackNames any
 }
 
 type OrganizationConformancePackStatusesAttrs struct {
-	Limit any
-	NextToken any
-	OrganizationConformancePackNames any
+	Limit                               any
+	NextToken                           any
+	OrganizationConformancePackNames    any
 	OrganizationConformancePackStatuses any
 }
 
 var OrganizationConformancePackStatuses = ubx.DataSourceBinding{
 	WireType: "aws_config_organization_conformance_pack_statuses",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                            ubx.FieldSpec{WireName: "limit"},
+		"NextToken":                        ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationConformancePackNames": ubx.FieldSpec{WireName: "organization_conformance_pack_names"},
 	},
 }

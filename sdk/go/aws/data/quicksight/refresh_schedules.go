@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RefreshSchedules_RefreshSchedules_ScheduleFrequency_RefreshOnDay struct {
 	DayOfMonth any
-	DayOfWeek any
+	DayOfWeek  any
 }
 
 type RefreshSchedules_RefreshSchedules_ScheduleFrequency struct {
-	Interval any
+	Interval     any
 	RefreshOnDay any
 	TimeOfTheDay any
-	Timezone any
+	Timezone     any
 }
 
 type RefreshSchedules_RefreshSchedules struct {
-	Arn any
-	RefreshType any
-	ScheduleFrequency any
-	ScheduleId any
+	Arn                any
+	RefreshType        any
+	ScheduleFrequency  any
+	ScheduleId         any
 	StartAfterDateTime any
 }
 
 type RefreshSchedulesConfig struct {
 	AwsAccountId any
-	DataSetId any
+	DataSetId    any
 }
 
 type RefreshSchedulesAttrs struct {
-	AwsAccountId any
-	DataSetId any
+	AwsAccountId     any
+	DataSetId        any
 	RefreshSchedules any
-	RequestId any
-	Status any
+	RequestId        any
+	Status           any
 }
 
 var RefreshSchedules = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_refresh_schedules",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"DataSetId":    ubx.FieldSpec{WireName: "data_set_id"},
 	},
 }

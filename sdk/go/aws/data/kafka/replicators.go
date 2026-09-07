@@ -8,14 +8,14 @@ type Replicators_Replicators_KafkaClustersSummary_AmazonMskCluster struct {
 }
 
 type Replicators_Replicators_KafkaClustersSummary_ApacheKafkaCluster struct {
-	ApacheKafkaClusterId any
+	ApacheKafkaClusterId  any
 	BootstrapBrokerString any
 }
 
 type Replicators_Replicators_KafkaClustersSummary struct {
-	AmazonMskCluster any
+	AmazonMskCluster   any
 	ApacheKafkaCluster any
-	KafkaClusterAlias any
+	KafkaClusterAlias  any
 }
 
 type Replicators_Replicators_ReplicationInfoSummaryList struct {
@@ -24,35 +24,35 @@ type Replicators_Replicators_ReplicationInfoSummaryList struct {
 }
 
 type Replicators_Replicators struct {
-	CreationTime any
-	CurrentVersion any
-	IsReplicatorReference any
-	KafkaClustersSummary any
+	CreationTime               any
+	CurrentVersion             any
+	IsReplicatorReference      any
+	KafkaClustersSummary       any
 	ReplicationInfoSummaryList any
-	ReplicatorArn any
-	ReplicatorName any
-	ReplicatorResourceArn any
-	ReplicatorState any
+	ReplicatorArn              any
+	ReplicatorName             any
+	ReplicatorResourceArn      any
+	ReplicatorState            any
 }
 
 type ReplicatorsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	ReplicatorNameFilter any
 }
 
 type ReplicatorsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	ReplicatorNameFilter any
-	Replicators any
+	Replicators          any
 }
 
 var Replicators = ubx.DataSourceBinding{
 	WireType: "aws_kafka_replicators",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ReplicatorNameFilter": ubx.FieldSpec{WireName: "replicator_name_filter"},
 	},
 }

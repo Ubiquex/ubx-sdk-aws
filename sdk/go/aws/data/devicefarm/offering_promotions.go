@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OfferingPromotions_OfferingPromotions struct {
 	Description any
-	Id any
+	Id          any
 }
 
 type OfferingPromotionsConfig struct {
@@ -13,7 +13,7 @@ type OfferingPromotionsConfig struct {
 }
 
 type OfferingPromotionsAttrs struct {
-	NextToken any
+	NextToken          any
 	OfferingPromotions any
 }
 

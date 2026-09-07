@@ -12,19 +12,19 @@ type Application_ApiGatewayProxy struct {
 
 type Application_Tags struct {
 	// The key portion of a tag attached to the AWS Refactor Spaces application, used to categorize the resource for cost allocation, access control, and operational management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Application_ApiGatewayProxyFields = ubx.FieldMap{
-		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
-		"StageName": ubx.FieldSpec{WireName: "stage_name"},
-	}
+	"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
+	"StageName":    ubx.FieldSpec{WireName: "stage_name"},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// Defines the Amazon API Gateway proxy configuration, including the endpoint type and stage name, for the Refactor Spaces application. (AI-inferred)
@@ -77,16 +77,16 @@ var Application = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApiGatewayProxy": ubx.FieldSpec{
 			WireName: "api_gateway_proxy",
-			Kind: "object",
-			Fields: Application_ApiGatewayProxyFields,
+			Kind:     "object",
+			Fields:   Application_ApiGatewayProxyFields,
 		},
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProxyType": ubx.FieldSpec{WireName: "proxy_type"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"ProxyType":             ubx.FieldSpec{WireName: "proxy_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

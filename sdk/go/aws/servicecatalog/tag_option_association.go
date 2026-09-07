@@ -20,7 +20,7 @@ type TagOptionAssociationAttrs struct {
 var TagOptionAssociation = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_tag_option_association",
 	Fields: ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":  ubx.FieldSpec{WireName: "resource_id"},
 		"TagOptionId": ubx.FieldSpec{WireName: "tag_option_id"},
 	},
 }

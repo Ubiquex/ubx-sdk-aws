@@ -9,8 +9,8 @@ type ComponentPolicyConfig struct {
 
 type ComponentPolicyAttrs struct {
 	ComponentArn any
-	Policy any
-	RequestId any
+	Policy       any
+	RequestId    any
 }
 
 var ComponentPolicy = ubx.DataSourceBinding{

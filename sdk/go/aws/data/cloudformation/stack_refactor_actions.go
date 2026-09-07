@@ -5,50 +5,50 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackRefactorActions_StackRefactorActions_ResourceMapping_Destination struct {
 	LogicalResourceId any
-	StackName any
+	StackName         any
 }
 
 type StackRefactorActions_StackRefactorActions_ResourceMapping struct {
 	Destination any
-	Source any
+	Source      any
 }
 
 type StackRefactorActions_StackRefactorActions_TagResources struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type StackRefactorActions_StackRefactorActions struct {
-	Action any
-	Description any
-	Detection any
-	DetectionReason any
-	Entity any
+	Action             any
+	Description        any
+	Detection          any
+	DetectionReason    any
+	Entity             any
 	PhysicalResourceId any
 	ResourceIdentifier any
-	ResourceMapping any
-	TagResources any
-	UntagResources any
+	ResourceMapping    any
+	TagResources       any
+	UntagResources     any
 }
 
 type StackRefactorActionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	StackRefactorId any
 }
 
 type StackRefactorActionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	StackRefactorActions any
-	StackRefactorId any
+	StackRefactorId      any
 }
 
 var StackRefactorActions = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stack_refactor_actions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"StackRefactorId": ubx.FieldSpec{WireName: "stack_refactor_id"},
 	},
 }

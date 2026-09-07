@@ -4,16 +4,16 @@ package amplify
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Apps_Apps_AutoBranchCreationConfig struct {
-	BasicAuthCredentials any
-	BuildSpec any
-	EnableAutoBuild any
-	EnableBasicAuth any
-	EnablePerformanceMode any
-	EnablePullRequestPreview any
-	EnvironmentVariables any
-	Framework any
+	BasicAuthCredentials       any
+	BuildSpec                  any
+	EnableAutoBuild            any
+	EnableBasicAuth            any
+	EnablePerformanceMode      any
+	EnablePullRequestPreview   any
+	EnvironmentVariables       any
+	Framework                  any
 	PullRequestEnvironmentName any
-	Stage any
+	Stage                      any
 }
 
 type Apps_Apps_CacheConfig struct {
@@ -22,9 +22,9 @@ type Apps_Apps_CacheConfig struct {
 
 type Apps_Apps_CustomRules struct {
 	Condition any
-	Source any
-	Status any
-	Target any
+	Source    any
+	Status    any
+	Target    any
 }
 
 type Apps_Apps_JobConfig struct {
@@ -32,65 +32,65 @@ type Apps_Apps_JobConfig struct {
 }
 
 type Apps_Apps_ProductionBranch struct {
-	BranchName any
+	BranchName     any
 	LastDeployTime any
-	Status any
-	ThumbnailUrl any
+	Status         any
+	ThumbnailUrl   any
 }
 
 type Apps_Apps_WafConfiguration struct {
 	StatusReason any
-	WafStatus any
-	WebAclArn any
+	WafStatus    any
+	WebAclArn    any
 }
 
 type Apps_Apps struct {
-	AppArn any
-	AppId any
-	AutoBranchCreationConfig any
+	AppArn                     any
+	AppId                      any
+	AutoBranchCreationConfig   any
 	AutoBranchCreationPatterns any
-	BasicAuthCredentials any
-	BuildSpec any
-	CacheConfig any
-	ComputeRoleArn any
-	CreateTime any
-	CustomHeaders any
-	CustomRules any
-	DefaultDomain any
-	Description any
-	EnableAutoBranchCreation any
-	EnableBasicAuth any
-	EnableBranchAutoBuild any
-	EnableBranchAutoDeletion any
-	EnvironmentVariables any
-	IamServiceRoleArn any
-	JobConfig any
-	Name any
-	Platform any
-	ProductionBranch any
-	Repository any
-	RepositoryCloneMethod any
-	Tags any
-	UpdateTime any
-	WafConfiguration any
-	WebhookCreateTime any
+	BasicAuthCredentials       any
+	BuildSpec                  any
+	CacheConfig                any
+	ComputeRoleArn             any
+	CreateTime                 any
+	CustomHeaders              any
+	CustomRules                any
+	DefaultDomain              any
+	Description                any
+	EnableAutoBranchCreation   any
+	EnableBasicAuth            any
+	EnableBranchAutoBuild      any
+	EnableBranchAutoDeletion   any
+	EnvironmentVariables       any
+	IamServiceRoleArn          any
+	JobConfig                  any
+	Name                       any
+	Platform                   any
+	ProductionBranch           any
+	Repository                 any
+	RepositoryCloneMethod      any
+	Tags                       any
+	UpdateTime                 any
+	WafConfiguration           any
+	WebhookCreateTime          any
 }
 
 type AppsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AppsAttrs struct {
-	Apps any
+	Apps       any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Apps = ubx.DataSourceBinding{
 	WireType: "aws_amplify_apps",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

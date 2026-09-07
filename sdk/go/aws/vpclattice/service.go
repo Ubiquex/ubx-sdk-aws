@@ -12,14 +12,14 @@ type Service_DnsEntry struct {
 
 type Service_Tags struct {
 	// The key component of a tag pair attached to an AWS VPC Lattice service, allowing you to assign custom metadata for organizing and managing the service. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Service_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceConfig struct {
 	// Specifies the authentication type for the VPC Lattice service, which can be either NONE (no authentication) or AWS_IAM (requiring IAM-based authentication for requests). (AI-inferred)
@@ -66,15 +66,15 @@ type ServiceAttrs struct {
 var Service = ubx.ResourceBinding{
 	WireType: "aws_vpc_lattice_service",
 	Fields: ubx.FieldMap{
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"CustomDomainName": ubx.FieldSpec{WireName: "custom_domain_name"},
+		"AuthType":           ubx.FieldSpec{WireName: "auth_type"},
+		"CertificateArn":     ubx.FieldSpec{WireName: "certificate_arn"},
+		"CustomDomainName":   ubx.FieldSpec{WireName: "custom_domain_name"},
 		"IdleTimeoutSeconds": ubx.FieldSpec{WireName: "idle_timeout_seconds"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Service_TagsFields,
+			Kind:     "list",
+			Fields:   Service_TagsFields,
 		},
 	},
 }

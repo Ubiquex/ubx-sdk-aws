@@ -9,12 +9,12 @@ type Dbinstance_AdditionalStorageVolumes struct {
 	// The number of provisioned IOPS to allocate for the additional storage volume on the RDS instance, applicable when the volume's storage type is a provisioned-IOPS type such as io1 or io2. (AI-inferred)
 	Iops any
 	// The maximum storage size, in gigabytes, to which this additional storage volume can be automatically scaled when automatic storage expansion is enabled for the DB instance. (AI-inferred)
-	MaxAllocatedStorage any
+	MaxAllocatedStorage             any
 	StorageOperationPercentProgress any
-	StorageOperationStatus any
+	StorageOperationStatus          any
 	// Specifies the storage throughput in MiB/s for the additional storage volume when using the gp3 storage type. (AI-inferred)
 	StorageThroughput any
-	StorageType any
+	StorageType       any
 	// Specifies the name of an additional storage volume for the DB instance, which must be unique among all additional storage volumes on the instance. (AI-inferred)
 	VolumeName any
 }
@@ -74,19 +74,19 @@ type Dbinstance_Tags struct {
 }
 
 var Dbinstance_AssociatedRolesFields = ubx.FieldMap{
-		"FeatureName": ubx.FieldSpec{WireName: "feature_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"FeatureName": ubx.FieldSpec{WireName: "feature_name"},
+	"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Dbinstance_ProcessorFeaturesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Dbinstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbinstanceConfig struct {
 	// The amount of storage in gibibytes (GiB) to be initially allocated for the database instance. If any value is set in the ``Iops`` parameter, ``AllocatedStorage`` must be at least 100 GiB, which corresponds to the minimum Iops value of 1,000. If you increase the ``Iops`` value (in 1,000 IOPS increments), then you must also increase the ``AllocatedStorage`` value (in 100-GiB increments). *Amazon Aurora* Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume. *Db2* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000. + Provisioned IOPS storage (io1): Must be an integer from 100 to 64000. *MySQL* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. + Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. + Magnetic storage (standard): Must be an integer from 5 to 3072. *MariaDB* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. + Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. + Magnetic storage (standard): Must be an integer from 5 to 3072. *PostgreSQL* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. + Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. + Magnetic storage (standard): Must be an integer from 5 to 3072. *Oracle* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. + Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. + Magnetic storage (standard): Must be an integer from 10 to 3072. *SQL Server* Constraints to the amount of storage for each storage type are the following: + General Purpose (SSD) storage (gp2): + Enterprise and Standard editions: Must be an integer from 20 to 16384. + Web and Express editions: Must be an integer from 20 to 16384. + Provisioned IOPS storage (io1): + Enterprise and Standard editions: Must be an integer from 20 to 16384. + Web and Express editions: Must be an integer from 20 to 16384. + Magnetic storage (standard): + Enterprise and Standard editions: Must be an integer from 20 to 1024. + Web and Express editions: Must be an integer from 20 to 1024.
@@ -433,9 +433,9 @@ type DbinstanceAttrs struct {
 	// The status_infos field is a read-only list of status information objects for the DB instance, each containing a status type, status value, a descriptive message, and a boolean indicating whether the status is normal. (AI-inferred)
 	StatusInfos any
 	// A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted. If you specify the ``KmsKeyId`` property, then you must enable encryption. If you specify the ``SourceDBInstanceIdentifier`` or ``SourceDbiResourceId`` property, don't specify this property. The value is inherited from the source DB instance, and if the DB instance is encrypted, the specified ``KmsKeyId`` property is used. If you specify the ``SourceDBInstanceAutomatedBackupsArn`` property, don't specify this property. The value is inherited from the source DB instance automated backup. If you specify ``DBSnapshotIdentifier`` property, don't specify this property. The value is inherited from the snapshot. *Amazon Aurora* Not applicable. The encryption for DB instances is managed by the DB cluster.
-	StorageEncrypted any
+	StorageEncrypted                any
 	StorageOperationPercentProgress any
-	StorageOperationStatus any
+	StorageOperationStatus          any
 	// Specifies the storage throughput value, in mebibyte per second (MiBps), for the DB instance. This setting applies only to the ``gp3`` storage type. This setting doesn't apply to RDS Custom or Amazon Aurora.
 	StorageThroughput any
 	// The storage type to associate with the DB instance. If you specify ``io1``, ``io2``, or ``gp3``, you must also include a value for the ``Iops`` parameter. This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster. Valid Values: ``gp2 | gp3 | io1 | io2 | standard`` Default: ``io1``, if the ``Iops`` parameter is specified. Otherwise, ``gp3``.
@@ -459,98 +459,98 @@ type DbinstanceAttrs struct {
 var Dbinstance = ubx.ResourceBinding{
 	WireType: "aws_rds_dbinstance",
 	Fields: ubx.FieldMap{
-		"AllocatedStorage": ubx.FieldSpec{WireName: "allocated_storage"},
+		"AllocatedStorage":         ubx.FieldSpec{WireName: "allocated_storage"},
 		"AllowMajorVersionUpgrade": ubx.FieldSpec{WireName: "allow_major_version_upgrade"},
-		"ApplyImmediately": ubx.FieldSpec{WireName: "apply_immediately"},
+		"ApplyImmediately":         ubx.FieldSpec{WireName: "apply_immediately"},
 		"AssociatedRoles": ubx.FieldSpec{
 			WireName: "associated_roles",
-			Kind: "list",
-			Fields: Dbinstance_AssociatedRolesFields,
+			Kind:     "list",
+			Fields:   Dbinstance_AssociatedRolesFields,
 		},
-		"AutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
-		"AutomaticBackupReplicationKmsKeyId": ubx.FieldSpec{WireName: "automatic_backup_replication_kms_key_id"},
-		"AutomaticBackupReplicationRegion": ubx.FieldSpec{WireName: "automatic_backup_replication_region"},
+		"AutoMinorVersionUpgrade":                   ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
+		"AutomaticBackupReplicationKmsKeyId":        ubx.FieldSpec{WireName: "automatic_backup_replication_kms_key_id"},
+		"AutomaticBackupReplicationRegion":          ubx.FieldSpec{WireName: "automatic_backup_replication_region"},
 		"AutomaticBackupReplicationRetentionPeriod": ubx.FieldSpec{WireName: "automatic_backup_replication_retention_period"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"BackupRetentionPeriod": ubx.FieldSpec{WireName: "backup_retention_period"},
-		"BackupTarget": ubx.FieldSpec{WireName: "backup_target"},
-		"CacertificateIdentifier": ubx.FieldSpec{WireName: "cacertificate_identifier"},
-		"CertificateRotationRestart": ubx.FieldSpec{WireName: "certificate_rotation_restart"},
-		"CharacterSetName": ubx.FieldSpec{WireName: "character_set_name"},
-		"CopyTagsToSnapshot": ubx.FieldSpec{WireName: "copy_tags_to_snapshot"},
-		"CustomIaminstanceProfile": ubx.FieldSpec{WireName: "custom_iaminstance_profile"},
-		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
-		"DbclusterSnapshotIdentifier": ubx.FieldSpec{WireName: "dbcluster_snapshot_identifier"},
-		"DbinstanceClass": ubx.FieldSpec{WireName: "dbinstance_class"},
-		"DbinstanceIdentifier": ubx.FieldSpec{WireName: "dbinstance_identifier"},
-		"Dbname": ubx.FieldSpec{WireName: "dbname"},
-		"DbparameterGroupName": ubx.FieldSpec{WireName: "dbparameter_group_name"},
-		"DbsecurityGroups": ubx.FieldSpec{WireName: "dbsecurity_groups"},
-		"DbsnapshotIdentifier": ubx.FieldSpec{WireName: "dbsnapshot_identifier"},
-		"DbsubnetGroupName": ubx.FieldSpec{WireName: "dbsubnet_group_name"},
-		"DbsystemId": ubx.FieldSpec{WireName: "dbsystem_id"},
-		"DatabaseInsightsMode": ubx.FieldSpec{WireName: "database_insights_mode"},
-		"DedicatedLogVolume": ubx.FieldSpec{WireName: "dedicated_log_volume"},
-		"DeleteAutomatedBackups": ubx.FieldSpec{WireName: "delete_automated_backups"},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainAuthSecretArn": ubx.FieldSpec{WireName: "domain_auth_secret_arn"},
-		"DomainDnsIps": ubx.FieldSpec{WireName: "domain_dns_ips"},
-		"DomainFqdn": ubx.FieldSpec{WireName: "domain_fqdn"},
-		"DomainIamroleName": ubx.FieldSpec{WireName: "domain_iamrole_name"},
-		"DomainOu": ubx.FieldSpec{WireName: "domain_ou"},
-		"EnableCloudwatchLogsExports": ubx.FieldSpec{WireName: "enable_cloudwatch_logs_exports"},
-		"EnableIamdatabaseAuthentication": ubx.FieldSpec{WireName: "enable_iamdatabase_authentication"},
-		"EnablePerformanceInsights": ubx.FieldSpec{WireName: "enable_performance_insights"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineLifecycleSupport": ubx.FieldSpec{WireName: "engine_lifecycle_support"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"LicenseModel": ubx.FieldSpec{WireName: "license_model"},
-		"ManageMasterUserPassword": ubx.FieldSpec{WireName: "manage_master_user_password"},
-		"MasterUserAuthenticationType": ubx.FieldSpec{WireName: "master_user_authentication_type"},
-		"MasterUserPassword": ubx.FieldSpec{WireName: "master_user_password"},
-		"MasterUsername": ubx.FieldSpec{WireName: "master_username"},
-		"MaxAllocatedStorage": ubx.FieldSpec{WireName: "max_allocated_storage"},
-		"MonitoringInterval": ubx.FieldSpec{WireName: "monitoring_interval"},
-		"MonitoringRoleArn": ubx.FieldSpec{WireName: "monitoring_role_arn"},
-		"MultiAz": ubx.FieldSpec{WireName: "multi_az"},
-		"NcharCharacterSetName": ubx.FieldSpec{WireName: "nchar_character_set_name"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"OptionGroupName": ubx.FieldSpec{WireName: "option_group_name"},
-		"PerformanceInsightsKmskeyId": ubx.FieldSpec{WireName: "performance_insights_kmskey_id"},
-		"PerformanceInsightsRetentionPeriod": ubx.FieldSpec{WireName: "performance_insights_retention_period"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PreferredBackupWindow": ubx.FieldSpec{WireName: "preferred_backup_window"},
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+		"AvailabilityZone":                          ubx.FieldSpec{WireName: "availability_zone"},
+		"BackupRetentionPeriod":                     ubx.FieldSpec{WireName: "backup_retention_period"},
+		"BackupTarget":                              ubx.FieldSpec{WireName: "backup_target"},
+		"CacertificateIdentifier":                   ubx.FieldSpec{WireName: "cacertificate_identifier"},
+		"CertificateRotationRestart":                ubx.FieldSpec{WireName: "certificate_rotation_restart"},
+		"CharacterSetName":                          ubx.FieldSpec{WireName: "character_set_name"},
+		"CopyTagsToSnapshot":                        ubx.FieldSpec{WireName: "copy_tags_to_snapshot"},
+		"CustomIaminstanceProfile":                  ubx.FieldSpec{WireName: "custom_iaminstance_profile"},
+		"DbclusterIdentifier":                       ubx.FieldSpec{WireName: "dbcluster_identifier"},
+		"DbclusterSnapshotIdentifier":               ubx.FieldSpec{WireName: "dbcluster_snapshot_identifier"},
+		"DbinstanceClass":                           ubx.FieldSpec{WireName: "dbinstance_class"},
+		"DbinstanceIdentifier":                      ubx.FieldSpec{WireName: "dbinstance_identifier"},
+		"Dbname":                                    ubx.FieldSpec{WireName: "dbname"},
+		"DbparameterGroupName":                      ubx.FieldSpec{WireName: "dbparameter_group_name"},
+		"DbsecurityGroups":                          ubx.FieldSpec{WireName: "dbsecurity_groups"},
+		"DbsnapshotIdentifier":                      ubx.FieldSpec{WireName: "dbsnapshot_identifier"},
+		"DbsubnetGroupName":                         ubx.FieldSpec{WireName: "dbsubnet_group_name"},
+		"DbsystemId":                                ubx.FieldSpec{WireName: "dbsystem_id"},
+		"DatabaseInsightsMode":                      ubx.FieldSpec{WireName: "database_insights_mode"},
+		"DedicatedLogVolume":                        ubx.FieldSpec{WireName: "dedicated_log_volume"},
+		"DeleteAutomatedBackups":                    ubx.FieldSpec{WireName: "delete_automated_backups"},
+		"DeletionProtection":                        ubx.FieldSpec{WireName: "deletion_protection"},
+		"Domain":                                    ubx.FieldSpec{WireName: "domain"},
+		"DomainAuthSecretArn":                       ubx.FieldSpec{WireName: "domain_auth_secret_arn"},
+		"DomainDnsIps":                              ubx.FieldSpec{WireName: "domain_dns_ips"},
+		"DomainFqdn":                                ubx.FieldSpec{WireName: "domain_fqdn"},
+		"DomainIamroleName":                         ubx.FieldSpec{WireName: "domain_iamrole_name"},
+		"DomainOu":                                  ubx.FieldSpec{WireName: "domain_ou"},
+		"EnableCloudwatchLogsExports":               ubx.FieldSpec{WireName: "enable_cloudwatch_logs_exports"},
+		"EnableIamdatabaseAuthentication":           ubx.FieldSpec{WireName: "enable_iamdatabase_authentication"},
+		"EnablePerformanceInsights":                 ubx.FieldSpec{WireName: "enable_performance_insights"},
+		"Engine":                                    ubx.FieldSpec{WireName: "engine"},
+		"EngineLifecycleSupport":                    ubx.FieldSpec{WireName: "engine_lifecycle_support"},
+		"EngineVersion":                             ubx.FieldSpec{WireName: "engine_version"},
+		"Iops":                                      ubx.FieldSpec{WireName: "iops"},
+		"KmsKeyId":                                  ubx.FieldSpec{WireName: "kms_key_id"},
+		"LicenseModel":                              ubx.FieldSpec{WireName: "license_model"},
+		"ManageMasterUserPassword":                  ubx.FieldSpec{WireName: "manage_master_user_password"},
+		"MasterUserAuthenticationType":              ubx.FieldSpec{WireName: "master_user_authentication_type"},
+		"MasterUserPassword":                        ubx.FieldSpec{WireName: "master_user_password"},
+		"MasterUsername":                            ubx.FieldSpec{WireName: "master_username"},
+		"MaxAllocatedStorage":                       ubx.FieldSpec{WireName: "max_allocated_storage"},
+		"MonitoringInterval":                        ubx.FieldSpec{WireName: "monitoring_interval"},
+		"MonitoringRoleArn":                         ubx.FieldSpec{WireName: "monitoring_role_arn"},
+		"MultiAz":                                   ubx.FieldSpec{WireName: "multi_az"},
+		"NcharCharacterSetName":                     ubx.FieldSpec{WireName: "nchar_character_set_name"},
+		"NetworkType":                               ubx.FieldSpec{WireName: "network_type"},
+		"OptionGroupName":                           ubx.FieldSpec{WireName: "option_group_name"},
+		"PerformanceInsightsKmskeyId":               ubx.FieldSpec{WireName: "performance_insights_kmskey_id"},
+		"PerformanceInsightsRetentionPeriod":        ubx.FieldSpec{WireName: "performance_insights_retention_period"},
+		"Port":                                      ubx.FieldSpec{WireName: "port"},
+		"PreferredBackupWindow":                     ubx.FieldSpec{WireName: "preferred_backup_window"},
+		"PreferredMaintenanceWindow":                ubx.FieldSpec{WireName: "preferred_maintenance_window"},
 		"ProcessorFeatures": ubx.FieldSpec{
 			WireName: "processor_features",
-			Kind: "list",
-			Fields: Dbinstance_ProcessorFeaturesFields,
+			Kind:     "list",
+			Fields:   Dbinstance_ProcessorFeaturesFields,
 		},
-		"PromotionTier": ubx.FieldSpec{WireName: "promotion_tier"},
-		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
-		"ReplicaMode": ubx.FieldSpec{WireName: "replica_mode"},
-		"RestoreTime": ubx.FieldSpec{WireName: "restore_time"},
-		"SourceDbclusterIdentifier": ubx.FieldSpec{WireName: "source_dbcluster_identifier"},
+		"PromotionTier":                       ubx.FieldSpec{WireName: "promotion_tier"},
+		"PubliclyAccessible":                  ubx.FieldSpec{WireName: "publicly_accessible"},
+		"ReplicaMode":                         ubx.FieldSpec{WireName: "replica_mode"},
+		"RestoreTime":                         ubx.FieldSpec{WireName: "restore_time"},
+		"SourceDbclusterIdentifier":           ubx.FieldSpec{WireName: "source_dbcluster_identifier"},
 		"SourceDbinstanceAutomatedBackupsArn": ubx.FieldSpec{WireName: "source_dbinstance_automated_backups_arn"},
-		"SourceDbinstanceIdentifier": ubx.FieldSpec{WireName: "source_dbinstance_identifier"},
-		"SourceDbiResourceId": ubx.FieldSpec{WireName: "source_dbi_resource_id"},
-		"SourceRegion": ubx.FieldSpec{WireName: "source_region"},
-		"StorageEncrypted": ubx.FieldSpec{WireName: "storage_encrypted"},
-		"StorageThroughput": ubx.FieldSpec{WireName: "storage_throughput"},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
+		"SourceDbinstanceIdentifier":          ubx.FieldSpec{WireName: "source_dbinstance_identifier"},
+		"SourceDbiResourceId":                 ubx.FieldSpec{WireName: "source_dbi_resource_id"},
+		"SourceRegion":                        ubx.FieldSpec{WireName: "source_region"},
+		"StorageEncrypted":                    ubx.FieldSpec{WireName: "storage_encrypted"},
+		"StorageThroughput":                   ubx.FieldSpec{WireName: "storage_throughput"},
+		"StorageType":                         ubx.FieldSpec{WireName: "storage_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dbinstance_TagsFields,
+			Kind:     "list",
+			Fields:   Dbinstance_TagsFields,
 		},
-		"TdeCredentialArn": ubx.FieldSpec{WireName: "tde_credential_arn"},
-		"TdeCredentialPassword": ubx.FieldSpec{WireName: "tde_credential_password"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
+		"TdeCredentialArn":            ubx.FieldSpec{WireName: "tde_credential_arn"},
+		"TdeCredentialPassword":       ubx.FieldSpec{WireName: "tde_credential_password"},
+		"Timezone":                    ubx.FieldSpec{WireName: "timezone"},
 		"UseDefaultProcessorFeatures": ubx.FieldSpec{WireName: "use_default_processor_features"},
-		"UseLatestRestorableTime": ubx.FieldSpec{WireName: "use_latest_restorable_time"},
-		"VpcsecurityGroups": ubx.FieldSpec{WireName: "vpcsecurity_groups"},
+		"UseLatestRestorableTime":     ubx.FieldSpec{WireName: "use_latest_restorable_time"},
+		"VpcsecurityGroups":           ubx.FieldSpec{WireName: "vpcsecurity_groups"},
 	},
 }

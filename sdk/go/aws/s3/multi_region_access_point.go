@@ -22,16 +22,16 @@ type MultiRegionAccessPoint_Regions struct {
 }
 
 var MultiRegionAccessPoint_PublicAccessBlockConfigurationFields = ubx.FieldMap{
-		"BlockPublicAcls": ubx.FieldSpec{WireName: "block_public_acls"},
-		"BlockPublicPolicy": ubx.FieldSpec{WireName: "block_public_policy"},
-		"IgnorePublicAcls": ubx.FieldSpec{WireName: "ignore_public_acls"},
-		"RestrictPublicBuckets": ubx.FieldSpec{WireName: "restrict_public_buckets"},
-	}
+	"BlockPublicAcls":       ubx.FieldSpec{WireName: "block_public_acls"},
+	"BlockPublicPolicy":     ubx.FieldSpec{WireName: "block_public_policy"},
+	"IgnorePublicAcls":      ubx.FieldSpec{WireName: "ignore_public_acls"},
+	"RestrictPublicBuckets": ubx.FieldSpec{WireName: "restrict_public_buckets"},
+}
 
 var MultiRegionAccessPoint_RegionsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BucketAccountId": ubx.FieldSpec{WireName: "bucket_account_id"},
-	}
+	"Bucket":          ubx.FieldSpec{WireName: "bucket"},
+	"BucketAccountId": ubx.FieldSpec{WireName: "bucket_account_id"},
+}
 
 type MultiRegionAccessPointConfig struct {
 	// The name you want to assign to this Multi Region Access Point.
@@ -61,13 +61,13 @@ var MultiRegionAccessPoint = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PublicAccessBlockConfiguration": ubx.FieldSpec{
 			WireName: "public_access_block_configuration",
-			Kind: "object",
-			Fields: MultiRegionAccessPoint_PublicAccessBlockConfigurationFields,
+			Kind:     "object",
+			Fields:   MultiRegionAccessPoint_PublicAccessBlockConfigurationFields,
 		},
 		"Regions": ubx.FieldSpec{
 			WireName: "regions",
-			Kind: "list",
-			Fields: MultiRegionAccessPoint_RegionsFields,
+			Kind:     "list",
+			Fields:   MultiRegionAccessPoint_RegionsFields,
 		},
 	},
 }

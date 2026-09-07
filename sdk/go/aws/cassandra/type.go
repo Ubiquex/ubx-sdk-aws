@@ -11,9 +11,9 @@ type Type_Fields struct {
 }
 
 var Type_FieldsFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"FieldType": ubx.FieldSpec{WireName: "field_type"},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"FieldType": ubx.FieldSpec{WireName: "field_type"},
+}
 
 type TypeConfig struct {
 	// Field definitions of the User-Defined Type
@@ -48,10 +48,10 @@ var Type = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "list",
-			Fields: Type_FieldsFields,
+			Kind:     "list",
+			Fields:   Type_FieldsFields,
 		},
 		"KeyspaceName": ubx.FieldSpec{WireName: "keyspace_name"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"TypeName":     ubx.FieldSpec{WireName: "type_name"},
 	},
 }

@@ -4,63 +4,63 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityReservationBillingRequests_CapacityReservationBillingRequests_CapacityReservationInfo struct {
-	AvailabilityZone any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	InstanceType any
-	Tenancy any
+	InstanceType       any
+	Tenancy            any
 }
 
 type CapacityReservationBillingRequests_CapacityReservationBillingRequests struct {
-	CapacityReservationId any
-	CapacityReservationInfo any
-	LastUpdateTime any
-	RequestedBy any
-	Status any
-	StatusMessage any
+	CapacityReservationId           any
+	CapacityReservationInfo         any
+	LastUpdateTime                  any
+	RequestedBy                     any
+	Status                          any
+	StatusMessage                   any
 	UnusedReservationBillingOwnerId any
 }
 
 type CapacityReservationBillingRequests_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var CapacityReservationBillingRequests_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type CapacityReservationBillingRequestsConfig struct {
 	CapacityReservationIds any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	Role any
+	DryRun                 any
+	Filters                any
+	MaxResults             any
+	NextToken              any
+	Role                   any
 }
 
 type CapacityReservationBillingRequestsAttrs struct {
 	CapacityReservationBillingRequests any
-	CapacityReservationIds any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	Role any
+	CapacityReservationIds             any
+	DryRun                             any
+	Filters                            any
+	MaxResults                         any
+	NextToken                          any
+	Role                               any
 }
 
 var CapacityReservationBillingRequests = ubx.DataSourceBinding{
 	WireType: "aws_ec2_capacity_reservation_billing_requests",
 	Fields: ubx.FieldMap{
 		"CapacityReservationIds": ubx.FieldSpec{WireName: "capacity_reservation_ids"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":                 ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: CapacityReservationBillingRequests_FiltersFields,
+			Kind:     "list",
+			Fields:   CapacityReservationBillingRequests_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Role": ubx.FieldSpec{WireName: "role"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Role":       ubx.FieldSpec{WireName: "role"},
 	},
 }

@@ -4,33 +4,33 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OpsMetadata_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type OpsMetadata_OpsMetadataList struct {
-	CreationDate any
+	CreationDate     any
 	LastModifiedDate any
 	LastModifiedUser any
-	OpsMetadataArn any
-	ResourceId any
+	OpsMetadataArn   any
+	ResourceId       any
 }
 
 var OpsMetadata_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type OpsMetadataConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type OpsMetadataAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters         any
+	MaxResults      any
+	NextToken       any
 	OpsMetadataList any
 }
 
@@ -39,10 +39,10 @@ var OpsMetadata = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: OpsMetadata_FiltersFields,
+			Kind:     "list",
+			Fields:   OpsMetadata_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

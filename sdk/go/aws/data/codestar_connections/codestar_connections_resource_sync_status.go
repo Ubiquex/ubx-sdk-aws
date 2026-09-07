@@ -4,35 +4,35 @@ package codestar_connections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarConnectionsResourceSyncStatus_DesiredState struct {
-	Branch any
-	Directory any
-	OwnerId any
-	ProviderType any
+	Branch         any
+	Directory      any
+	OwnerId        any
+	ProviderType   any
 	RepositoryName any
-	Sha any
+	Sha            any
 }
 
 type CodestarConnectionsResourceSyncStatus_LatestSuccessfulSync_Events struct {
-	Event any
+	Event      any
 	ExternalId any
-	Time any
-	Type any
+	Time       any
+	Type       any
 }
 
 type CodestarConnectionsResourceSyncStatus_LatestSuccessfulSync struct {
 	Events any
 	// <p>Information about the revision for a specific sync event, such as the branch, owner ID, and name of the repository.</p>
 	InitialRevision any
-	StartedAt any
-	Status any
-	Target any
+	StartedAt       any
+	Status          any
+	Target          any
 	// <p>Information about the revision for a specific sync event, such as the branch, owner ID, and name of the repository.</p>
 	TargetRevision any
 }
 
 type CodestarConnectionsResourceSyncStatusConfig struct {
 	ResourceName any
-	SyncType any
+	SyncType     any
 }
 
 type CodestarConnectionsResourceSyncStatusAttrs struct {
@@ -41,15 +41,15 @@ type CodestarConnectionsResourceSyncStatusAttrs struct {
 	// <p>Information about a resource sync attempt.</p>
 	LatestSuccessfulSync any
 	// <p>Information about a resource sync attempt.</p>
-	LatestSync any
+	LatestSync   any
 	ResourceName any
-	SyncType any
+	SyncType     any
 }
 
 var CodestarConnectionsResourceSyncStatus = ubx.DataSourceBinding{
 	WireType: "aws_codestar_connections_resource_sync_status",
 	Fields: ubx.FieldMap{
 		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"SyncType":     ubx.FieldSpec{WireName: "sync_type"},
 	},
 }

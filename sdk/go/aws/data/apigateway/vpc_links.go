@@ -4,30 +4,30 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcLinks_Items struct {
-	Description any
-	Id any
-	Name any
-	Status any
+	Description   any
+	Id            any
+	Name          any
+	Status        any
 	StatusMessage any
-	Tags any
-	TargetArns any
+	Tags          any
+	TargetArns    any
 }
 
 type VpcLinksConfig struct {
-	Limit any
+	Limit    any
 	Position any
 }
 
 type VpcLinksAttrs struct {
-	Items any
-	Limit any
+	Items    any
+	Limit    any
 	Position any
 }
 
 var VpcLinks = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_vpc_links",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":    ubx.FieldSpec{WireName: "limit"},
 		"Position": ubx.FieldSpec{WireName: "position"},
 	},
 }

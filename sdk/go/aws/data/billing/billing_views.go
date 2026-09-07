@@ -4,63 +4,63 @@ package billing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BillingViews_ActiveTimeRange struct {
-	ActiveAfterInclusive any
+	ActiveAfterInclusive  any
 	ActiveBeforeInclusive any
 }
 
 type BillingViews_BillingViews_HealthStatus struct {
-	StatusCode any
+	StatusCode    any
 	StatusReasons any
 }
 
 type BillingViews_BillingViews struct {
-	Arn any
+	Arn             any
 	BillingViewType any
-	Description any
-	HealthStatus any
-	Name any
-	OwnerAccountId any
+	Description     any
+	HealthStatus    any
+	Name            any
+	OwnerAccountId  any
 	SourceAccountId any
 }
 
 type BillingViews_Names struct {
 	SearchOption any
-	SearchValue any
+	SearchValue  any
 }
 
 var BillingViews_ActiveTimeRangeFields = ubx.FieldMap{
-		"ActiveAfterInclusive": ubx.FieldSpec{WireName: "active_after_inclusive"},
-		"ActiveBeforeInclusive": ubx.FieldSpec{WireName: "active_before_inclusive"},
-	}
+	"ActiveAfterInclusive":  ubx.FieldSpec{WireName: "active_after_inclusive"},
+	"ActiveBeforeInclusive": ubx.FieldSpec{WireName: "active_before_inclusive"},
+}
 
 var BillingViews_NamesFields = ubx.FieldMap{
-		"SearchOption": ubx.FieldSpec{WireName: "search_option"},
-		"SearchValue": ubx.FieldSpec{WireName: "search_value"},
-	}
+	"SearchOption": ubx.FieldSpec{WireName: "search_option"},
+	"SearchValue":  ubx.FieldSpec{WireName: "search_value"},
+}
 
 type BillingViewsConfig struct {
 	// <p>A time range with a start and end time.</p>
-	ActiveTimeRange any
-	Arns any
+	ActiveTimeRange  any
+	Arns             any
 	BillingViewTypes any
-	MaxResults any
-	Names any
-	NextToken any
-	OwnerAccountId any
-	SourceAccountId any
+	MaxResults       any
+	Names            any
+	NextToken        any
+	OwnerAccountId   any
+	SourceAccountId  any
 }
 
 type BillingViewsAttrs struct {
 	// <p>A time range with a start and end time.</p>
-	ActiveTimeRange any
-	Arns any
+	ActiveTimeRange  any
+	Arns             any
 	BillingViewTypes any
-	BillingViews any
-	MaxResults any
-	Names any
-	NextToken any
-	OwnerAccountId any
-	SourceAccountId any
+	BillingViews     any
+	MaxResults       any
+	Names            any
+	NextToken        any
+	OwnerAccountId   any
+	SourceAccountId  any
 }
 
 var BillingViews = ubx.DataSourceBinding{
@@ -68,19 +68,19 @@ var BillingViews = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ActiveTimeRange": ubx.FieldSpec{
 			WireName: "active_time_range",
-			Kind: "object",
-			Fields: BillingViews_ActiveTimeRangeFields,
+			Kind:     "object",
+			Fields:   BillingViews_ActiveTimeRangeFields,
 		},
-		"Arns": ubx.FieldSpec{WireName: "arns"},
+		"Arns":             ubx.FieldSpec{WireName: "arns"},
 		"BillingViewTypes": ubx.FieldSpec{WireName: "billing_view_types"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
 		"Names": ubx.FieldSpec{
 			WireName: "names",
-			Kind: "list",
-			Fields: BillingViews_NamesFields,
+			Kind:     "list",
+			Fields:   BillingViews_NamesFields,
 		},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OwnerAccountId": ubx.FieldSpec{WireName: "owner_account_id"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"OwnerAccountId":  ubx.FieldSpec{WireName: "owner_account_id"},
 		"SourceAccountId": ubx.FieldSpec{WireName: "source_account_id"},
 	},
 }

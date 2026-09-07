@@ -11,9 +11,9 @@ type DeploymentStrategy_Tags struct {
 }
 
 var DeploymentStrategy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeploymentStrategyConfig struct {
 	// Total amount of time for a deployment to last.
@@ -59,16 +59,16 @@ var DeploymentStrategy = ubx.ResourceBinding{
 	WireType: "aws_app_config_deployment_strategy",
 	Fields: ubx.FieldMap{
 		"DeploymentDurationInMinutes": ubx.FieldSpec{WireName: "deployment_duration_in_minutes"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FinalBakeTimeInMinutes": ubx.FieldSpec{WireName: "final_bake_time_in_minutes"},
-		"GrowthFactor": ubx.FieldSpec{WireName: "growth_factor"},
-		"GrowthType": ubx.FieldSpec{WireName: "growth_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReplicateTo": ubx.FieldSpec{WireName: "replicate_to"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"FinalBakeTimeInMinutes":      ubx.FieldSpec{WireName: "final_bake_time_in_minutes"},
+		"GrowthFactor":                ubx.FieldSpec{WireName: "growth_factor"},
+		"GrowthType":                  ubx.FieldSpec{WireName: "growth_type"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
+		"ReplicateTo":                 ubx.FieldSpec{WireName: "replicate_to"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DeploymentStrategy_TagsFields,
+			Kind:     "list",
+			Fields:   DeploymentStrategy_TagsFields,
 		},
 	},
 }

@@ -27,30 +27,30 @@ type Dataset_Tags struct {
 }
 
 var Dataset_Source_InlineExamplesFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{WireName: "examples"},
-	}
+	"Examples": ubx.FieldSpec{WireName: "examples"},
+}
 
 var Dataset_Source_S3SourceFields = ubx.FieldMap{
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var Dataset_SourceFields = ubx.FieldMap{
-		"InlineExamples": ubx.FieldSpec{
-			WireName: "inline_examples",
-			Kind: "object",
-			Fields: Dataset_Source_InlineExamplesFields,
-		},
-		"S3Source": ubx.FieldSpec{
-			WireName: "s3_source",
-			Kind: "object",
-			Fields: Dataset_Source_S3SourceFields,
-		},
-	}
+	"InlineExamples": ubx.FieldSpec{
+		WireName: "inline_examples",
+		Kind:     "object",
+		Fields:   Dataset_Source_InlineExamplesFields,
+	},
+	"S3Source": ubx.FieldSpec{
+		WireName: "s3_source",
+		Kind:     "object",
+		Fields:   Dataset_Source_S3SourceFields,
+	},
+}
 
 var Dataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetConfig struct {
 	// Human-readable name for the dataset. Unique within the account (case-insensitive). Immutable after creation.
@@ -99,17 +99,17 @@ var Dataset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"SchemaType": ubx.FieldSpec{WireName: "schema_type"},
+		"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
+		"SchemaType":  ubx.FieldSpec{WireName: "schema_type"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Dataset_SourceFields,
+			Kind:     "object",
+			Fields:   Dataset_SourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dataset_TagsFields,
+			Kind:     "list",
+			Fields:   Dataset_TagsFields,
 		},
 	},
 }

@@ -64,61 +64,61 @@ type Endpoint_Tags struct {
 }
 
 var Endpoint_ConfigurationOverrides_ApplicationConfigurationFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"Configurations": ubx.FieldSpec{WireName: "configurations"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"Classification": ubx.FieldSpec{WireName: "classification"},
+	"Configurations": ubx.FieldSpec{WireName: "configurations"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+}
 
 var Endpoint_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfigurationFields = ubx.FieldMap{
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"LogStreamNamePrefix": ubx.FieldSpec{WireName: "log_stream_name_prefix"},
-	}
+	"LogGroupName":        ubx.FieldSpec{WireName: "log_group_name"},
+	"LogStreamNamePrefix": ubx.FieldSpec{WireName: "log_stream_name_prefix"},
+}
 
 var Endpoint_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfigurationFields = ubx.FieldMap{
-		"MaxFilesToKeep": ubx.FieldSpec{WireName: "max_files_to_keep"},
-		"RotationSize": ubx.FieldSpec{WireName: "rotation_size"},
-	}
+	"MaxFilesToKeep": ubx.FieldSpec{WireName: "max_files_to_keep"},
+	"RotationSize":   ubx.FieldSpec{WireName: "rotation_size"},
+}
 
 var Endpoint_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfigurationFields = ubx.FieldMap{
-		"LogUri": ubx.FieldSpec{WireName: "log_uri"},
-	}
+	"LogUri": ubx.FieldSpec{WireName: "log_uri"},
+}
 
 var Endpoint_ConfigurationOverrides_MonitoringConfigurationFields = ubx.FieldMap{
-		"CloudWatchMonitoringConfiguration": ubx.FieldSpec{
-			WireName: "cloud_watch_monitoring_configuration",
-			Kind: "object",
-			Fields: Endpoint_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfigurationFields,
-		},
-		"ContainerLogRotationConfiguration": ubx.FieldSpec{
-			WireName: "container_log_rotation_configuration",
-			Kind: "object",
-			Fields: Endpoint_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfigurationFields,
-		},
-		"PersistentAppUi": ubx.FieldSpec{WireName: "persistent_app_ui"},
-		"S3MonitoringConfiguration": ubx.FieldSpec{
-			WireName: "s3_monitoring_configuration",
-			Kind: "object",
-			Fields: Endpoint_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfigurationFields,
-		},
-	}
+	"CloudWatchMonitoringConfiguration": ubx.FieldSpec{
+		WireName: "cloud_watch_monitoring_configuration",
+		Kind:     "object",
+		Fields:   Endpoint_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfigurationFields,
+	},
+	"ContainerLogRotationConfiguration": ubx.FieldSpec{
+		WireName: "container_log_rotation_configuration",
+		Kind:     "object",
+		Fields:   Endpoint_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfigurationFields,
+	},
+	"PersistentAppUi": ubx.FieldSpec{WireName: "persistent_app_ui"},
+	"S3MonitoringConfiguration": ubx.FieldSpec{
+		WireName: "s3_monitoring_configuration",
+		Kind:     "object",
+		Fields:   Endpoint_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfigurationFields,
+	},
+}
 
 var Endpoint_ConfigurationOverridesFields = ubx.FieldMap{
-		"ApplicationConfiguration": ubx.FieldSpec{
-			WireName: "application_configuration",
-			Kind: "list",
-			Fields: Endpoint_ConfigurationOverrides_ApplicationConfigurationFields,
-		},
-		"MonitoringConfiguration": ubx.FieldSpec{
-			WireName: "monitoring_configuration",
-			Kind: "object",
-			Fields: Endpoint_ConfigurationOverrides_MonitoringConfigurationFields,
-		},
-	}
+	"ApplicationConfiguration": ubx.FieldSpec{
+		WireName: "application_configuration",
+		Kind:     "list",
+		Fields:   Endpoint_ConfigurationOverrides_ApplicationConfigurationFields,
+	},
+	"MonitoringConfiguration": ubx.FieldSpec{
+		WireName: "monitoring_configuration",
+		Kind:     "object",
+		Fields:   Endpoint_ConfigurationOverrides_MonitoringConfigurationFields,
+	},
+}
 
 var Endpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EndpointConfig struct {
 	// Specifies configuration overrides for the EMR on EKS managed endpoint, including application configurations (e.g., Spark properties) and monitoring configurations (e.g., CloudWatch logging and metrics). (AI-inferred)
@@ -183,19 +183,19 @@ var Endpoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConfigurationOverrides": ubx.FieldSpec{
 			WireName: "configuration_overrides",
-			Kind: "object",
-			Fields: Endpoint_ConfigurationOverridesFields,
+			Kind:     "object",
+			Fields:   Endpoint_ConfigurationOverridesFields,
 		},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReleaseLabel": ubx.FieldSpec{WireName: "release_label"},
+		"ExecutionRoleArn":            ubx.FieldSpec{WireName: "execution_role_arn"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
+		"ReleaseLabel":                ubx.FieldSpec{WireName: "release_label"},
 		"SessionIdleTimeoutInMinutes": ubx.FieldSpec{WireName: "session_idle_timeout_in_minutes"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Endpoint_TagsFields,
+			Kind:     "list",
+			Fields:   Endpoint_TagsFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
 		"VirtualClusterId": ubx.FieldSpec{WireName: "virtual_cluster_id"},
 	},
 }

@@ -18,29 +18,29 @@ type LinkRoutingRule_Conditions struct {
 	// Exact path match — must start with /. Mutually exclusive with PathPrefix.
 	PathExact any
 	// Path prefix matching — strict starts-with, must start with /. Mutually exclusive with PathExact.
-	PathPrefix any
+	PathPrefix        any
 	QueryStringEquals any
 	// Query string key presence check (any value accepted).
 	QueryStringExists any
 }
 
 var LinkRoutingRule_Conditions_QueryStringEqualsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var LinkRoutingRule_ConditionsFields = ubx.FieldMap{
-		"HostHeader": ubx.FieldSpec{WireName: "host_header"},
-		"HostHeaderWildcard": ubx.FieldSpec{WireName: "host_header_wildcard"},
-		"PathExact": ubx.FieldSpec{WireName: "path_exact"},
-		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
-		"QueryStringEquals": ubx.FieldSpec{
-			WireName: "query_string_equals",
-			Kind: "object",
-			Fields: LinkRoutingRule_Conditions_QueryStringEqualsFields,
-		},
-		"QueryStringExists": ubx.FieldSpec{WireName: "query_string_exists"},
-	}
+	"HostHeader":         ubx.FieldSpec{WireName: "host_header"},
+	"HostHeaderWildcard": ubx.FieldSpec{WireName: "host_header_wildcard"},
+	"PathExact":          ubx.FieldSpec{WireName: "path_exact"},
+	"PathPrefix":         ubx.FieldSpec{WireName: "path_prefix"},
+	"QueryStringEquals": ubx.FieldSpec{
+		WireName: "query_string_equals",
+		Kind:     "object",
+		Fields:   LinkRoutingRule_Conditions_QueryStringEqualsFields,
+	},
+	"QueryStringExists": ubx.FieldSpec{WireName: "query_string_exists"},
+}
 
 type LinkRoutingRuleConfig struct {
 	// Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive.
@@ -83,16 +83,16 @@ var LinkRoutingRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "object",
-			Fields: LinkRoutingRule_ConditionsFields,
+			Kind:     "object",
+			Fields:   LinkRoutingRule_ConditionsFields,
 		},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"LinkId": ubx.FieldSpec{WireName: "link_id"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"LinkId":    ubx.FieldSpec{WireName: "link_id"},
+		"Priority":  ubx.FieldSpec{WireName: "priority"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LinkRoutingRule_Conditions_QueryStringEqualsFields,
+			Kind:     "list",
+			Fields:   LinkRoutingRule_Conditions_QueryStringEqualsFields,
 		},
 	},
 }

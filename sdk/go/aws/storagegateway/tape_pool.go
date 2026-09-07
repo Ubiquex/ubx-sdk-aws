@@ -11,9 +11,9 @@ type TapePool_Tags struct {
 }
 
 var TapePool_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TapePoolConfig struct {
 	// The name of the custom tape pool.
@@ -48,14 +48,14 @@ type TapePoolAttrs struct {
 var TapePool = ubx.ResourceBinding{
 	WireType: "aws_storage_gateway_tape_pool",
 	Fields: ubx.FieldMap{
-		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
+		"PoolName":                ubx.FieldSpec{WireName: "pool_name"},
 		"RetentionLockTimeInDays": ubx.FieldSpec{WireName: "retention_lock_time_in_days"},
-		"RetentionLockType": ubx.FieldSpec{WireName: "retention_lock_type"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+		"RetentionLockType":       ubx.FieldSpec{WireName: "retention_lock_type"},
+		"StorageClass":            ubx.FieldSpec{WireName: "storage_class"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TapePool_TagsFields,
+			Kind:     "list",
+			Fields:   TapePool_TagsFields,
 		},
 	},
 }

@@ -4,18 +4,18 @@ package resource_explorer_2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceExplorer2StreamingAccessForServices_StreamingAccessForServices struct {
-	CreatedAt any
+	CreatedAt        any
 	ServicePrincipal any
 }
 
 type ResourceExplorer2StreamingAccessForServicesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceExplorer2StreamingAccessForServicesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                 any
+	NextToken                  any
 	StreamingAccessForServices any
 }
 
@@ -23,6 +23,6 @@ var ResourceExplorer2StreamingAccessForServices = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_streaming_access_for_services",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

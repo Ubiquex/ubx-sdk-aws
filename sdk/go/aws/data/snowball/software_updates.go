@@ -8,7 +8,7 @@ type SoftwareUpdatesConfig struct {
 }
 
 type SoftwareUpdatesAttrs struct {
-	JobId any
+	JobId      any
 	UpdatesUri any
 }
 

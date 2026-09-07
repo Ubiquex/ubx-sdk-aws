@@ -4,7 +4,7 @@ package api_ecr_public
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrPublicTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type ApiEcrPublicTagsForResourceConfig struct {
 
 type ApiEcrPublicTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ApiEcrPublicTagsForResource = ubx.DataSourceBinding{

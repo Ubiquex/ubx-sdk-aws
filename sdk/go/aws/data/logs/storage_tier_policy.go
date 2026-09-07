@@ -8,11 +8,10 @@ type StorageTierPolicyConfig struct {
 
 type StorageTierPolicyAttrs struct {
 	LastUpdatedTime any
-	StorageTier any
+	StorageTier     any
 }
 
 var StorageTierPolicy = ubx.DataSourceBinding{
 	WireType: "aws_logs_storage_tier_policy",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

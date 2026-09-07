@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientProperties_ClientPropertiesList_ClientProperties struct {
 	ClientExperiencePolicy any
-	LogUploadEnabled any
-	ReconnectEnabled any
+	LogUploadEnabled       any
+	ReconnectEnabled       any
 }
 
 type ClientProperties_ClientPropertiesList struct {
 	ClientProperties any
-	ResourceId any
+	ResourceId       any
 }
 
 type ClientPropertiesConfig struct {
@@ -20,7 +20,7 @@ type ClientPropertiesConfig struct {
 
 type ClientPropertiesAttrs struct {
 	ClientPropertiesList any
-	ResourceIds any
+	ResourceIds          any
 }
 
 var ClientProperties = ubx.DataSourceBinding{

@@ -4,33 +4,33 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Members_Members struct {
-	AccountId any
+	AccountId       any
 	AdministratorId any
-	Email any
-	InvitedAt any
-	MasterId any
-	MemberStatus any
-	UpdatedAt any
+	Email           any
+	InvitedAt       any
+	MasterId        any
+	MemberStatus    any
+	UpdatedAt       any
 }
 
 type MembersConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	OnlyAssociated any
 }
 
 type MembersAttrs struct {
-	MaxResults any
-	Members any
-	NextToken any
+	MaxResults     any
+	Members        any
+	NextToken      any
 	OnlyAssociated any
 }
 
 var Members = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_members",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OnlyAssociated": ubx.FieldSpec{WireName: "only_associated"},
 	},
 }

@@ -14,7 +14,7 @@ type LoggingOptionsConfig struct {
 type LoggingOptionsAttrs struct {
 	// <p>Contains logging options.</p>
 	LoggingOptions any
-	WorkspaceName any
+	WorkspaceName  any
 }
 
 var LoggingOptions = ubx.DataSourceBinding{

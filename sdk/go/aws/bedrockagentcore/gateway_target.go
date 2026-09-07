@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type GatewayTarget_AuthorizationData_Oauth2 struct {
 	// The authorization URL of the OAuth2 configuration that the Bedrock agent core gateway target uses to redirect users for authentication and consent. (AI-inferred)
 	AuthorizationUrl any
-	UserId any
+	UserId           any
 }
 
 type GatewayTarget_AuthorizationData struct {
@@ -19,13 +19,13 @@ type GatewayTarget_CredentialProviderConfigurations_CredentialProvider_ApiKeyCre
 	CredentialLocation any
 	// Specifies the name of the secret or parameter (e.g., in AWS Secrets Manager) that holds the API key used by the credential provider for the Bedrock agent's core gateway target. (AI-inferred)
 	CredentialParameterName any
-	CredentialPrefix any
-	ProviderArn any
+	CredentialPrefix        any
+	ProviderArn             any
 }
 
 type GatewayTarget_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider struct {
 	// For a core gateway target, this region specifies the AWS Region where the IAM role is assumed by the function executor's credential provider, enabling cross-region access to resources. (AI-inferred)
-	Region any
+	Region  any
 	Service any
 }
 
@@ -38,7 +38,7 @@ type GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCred
 	// The default redirect URI to which the OAuth authorization server sends users after successful authentication, used by the OAuth credential provider for this agent core gateway target. (AI-inferred)
 	DefaultReturnUrl any
 	// The OAuth 2.0 grant type used to request the access token from the token endpoint, such as client_credentials. (AI-inferred)
-	GrantType any
+	GrantType   any
 	ProviderArn any
 	// The list of OAuth 2.0 scopes that the credential provider requests when obtaining an access token for calling the core gateway target. (AI-inferred)
 	Scopes any
@@ -47,12 +47,12 @@ type GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCred
 type GatewayTarget_CredentialProviderConfigurations_CredentialProvider struct {
 	// Configures the API key credential provider for the Bedrock agent core gateway target, typically referencing a Secrets Manager secret to retrieve the API key and an optional header name for authentication. (AI-inferred)
 	ApiKeyCredentialProvider any
-	IamCredentialProvider any
-	OauthCredentialProvider any
+	IamCredentialProvider    any
+	OauthCredentialProvider  any
 }
 
 type GatewayTarget_CredentialProviderConfigurations struct {
-	CredentialProvider any
+	CredentialProvider     any
 	CredentialProviderType any
 }
 
@@ -69,12 +69,12 @@ type GatewayTarget_PrivateEndpoint_ManagedVpcResource struct {
 	// Specifies the IP address type (IPv4, IPv6, or dualstack) used for the private endpoint connection within the managed VPC resource. (AI-inferred)
 	EndpointIpAddressType any
 	// Specifies the DNS domain name used for routing requests through the private endpoint to the managed VPC resource. (AI-inferred)
-	RoutingDomain any
+	RoutingDomain    any
 	SecurityGroupIds any
 	// The subnet IDs within the managed VPC resource where the private endpoint's elastic network interfaces are placed, determining the network availability and routing for the endpoint. (AI-inferred)
 	SubnetIds any
 	// Specifies the tags to apply to the AWS-managed VPC resource provisioned for the private endpoint of this Bedrock agent core gateway target. (AI-inferred)
-	Tags any
+	Tags          any
 	VpcIdentifier any
 }
 
@@ -85,14 +85,14 @@ type GatewayTarget_PrivateEndpoint_SelfManagedLatticeResource struct {
 
 type GatewayTarget_PrivateEndpoint struct {
 	// Defines the Amazon resource inside the Bedrock-managed VPC that the core gateway target's private endpoint is attached to. (AI-inferred)
-	ManagedVpcResource any
+	ManagedVpcResource         any
 	SelfManagedLatticeResource any
 }
 
 type GatewayTarget_PrivateEndpointManagedResources struct {
-	Domain any
+	Domain                 any
 	ResourceAssociationArn any
-	ResourceGatewayArn any
+	ResourceGatewayArn     any
 }
 
 type GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3 struct {
@@ -117,7 +117,7 @@ type GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime struct {
 	Arn any
 	// Specifies the version qualifier (e.g., an agent alias or 'DRAFT') used by the agent core runtime to select which version of the Bedrock agent the gateway target routes requests to. (AI-inferred)
 	Qualifier any
-	Schema any
+	Schema    any
 }
 
 type GatewayTarget_TargetConfiguration_Http_Connector_Source struct {
@@ -126,7 +126,7 @@ type GatewayTarget_TargetConfiguration_Http_Connector_Source struct {
 
 type GatewayTarget_TargetConfiguration_Http_Connector struct {
 	Parameters any
-	Source any
+	Source     any
 }
 
 type GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfiguration struct {
@@ -137,16 +137,16 @@ type GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfiguration 
 
 type GatewayTarget_TargetConfiguration_Http_Passthrough struct {
 	// The endpoint URL to which the gateway forwards HTTP requests when using passthrough mode. (AI-inferred)
-	Endpoint any
-	ProtocolType any
-	Schema any
+	Endpoint                any
+	ProtocolType            any
+	Schema                  any
 	StickinessConfiguration any
 }
 
 type GatewayTarget_TargetConfiguration_Http struct {
 	AgentcoreRuntime any
-	Connector any
-	Passthrough any
+	Connector        any
+	Passthrough      any
 }
 
 type GatewayTarget_TargetConfiguration_Inference_Connector struct {
@@ -155,7 +155,7 @@ type GatewayTarget_TargetConfiguration_Inference_Connector struct {
 
 type GatewayTarget_TargetConfiguration_Inference_Provider_ModelMapping_ProviderPrefix struct {
 	Separator any
-	Strip any
+	Strip     any
 }
 
 type GatewayTarget_TargetConfiguration_Inference_Provider_ModelMapping struct {
@@ -168,20 +168,20 @@ type GatewayTarget_TargetConfiguration_Inference_Provider_Operations_Models stru
 }
 
 type GatewayTarget_TargetConfiguration_Inference_Provider_Operations struct {
-	Models any
-	Path any
+	Models       any
+	Path         any
 	ProviderPath any
 }
 
 type GatewayTarget_TargetConfiguration_Inference_Provider struct {
-	Endpoint any
+	Endpoint     any
 	ModelMapping any
-	Operations any
+	Operations   any
 }
 
 type GatewayTarget_TargetConfiguration_Inference struct {
 	Connector any
-	Provider any
+	Provider  any
 }
 
 type GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolFilters struct {
@@ -194,7 +194,7 @@ type GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguratio
 type GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolOverrides struct {
 	// In the tool_overrides of the MCP API gateway tool configuration, the description field specifies the custom description that will replace the tool's original description when exposed to the agent model. (AI-inferred)
 	Description any
-	Method any
+	Method      any
 	// Specifies the name of the MCP tool whose settings are being overridden in this API Gateway tool configuration for the Bedrock agent core gateway target. (AI-inferred)
 	Name any
 	// The API Gateway resource path that overrides the default tool endpoint path for the MCP tool configuration when invoked through the Bedrock agent's core gateway target. (AI-inferred)
@@ -218,30 +218,30 @@ type GatewayTarget_TargetConfiguration_Mcp_ApiGateway struct {
 
 type GatewayTarget_TargetConfiguration_Mcp_Connector_Configurations_ParameterOverrides struct {
 	Description any
-	Path any
-	Visible any
+	Path        any
+	Visible     any
 }
 
 type GatewayTarget_TargetConfiguration_Mcp_Connector_Configurations struct {
 	// Provides a human-readable description of a specific MCP connector configuration entry, used to document and identify the purpose of that configuration within the Bedrock Agent core gateway target. (AI-inferred)
 	Description any
-	Name any
+	Name        any
 	// Overrides the default parameter values of the MCP connector configuration used by the Bedrock agent's core gateway target, allowing custom values for keys such as endpoint or authentication settings. (AI-inferred)
 	ParameterOverrides any
-	ParameterValues any
+	ParameterValues    any
 }
 
 type GatewayTarget_TargetConfiguration_Mcp_Connector struct {
 	Configurations any
-	Enabled any
-	Source any
+	Enabled        any
+	Source         any
 }
 
 type GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchema struct {
 	// Provides a human-readable description of the input JSON schema that defines the parameters expected by the MCP tool's Lambda function. (AI-inferred)
 	Description any
 	// Defines the JSON schema for each element of an array-valued input property within the tool's inline input schema, specifying the expected type and structure for array items passed to the MCP Lambda tool. (AI-inferred)
-	Items any
+	Items      any
 	Properties any
 	// Specifies the list of property names that must be present in the tool's input payload, as defined by the JSON schema in the inline payload. (AI-inferred)
 	Required any
@@ -276,10 +276,10 @@ type GatewayTarget_TargetConfiguration_Mcp_Lambda struct {
 
 type GatewayTarget_TargetConfiguration_Mcp_McpServer struct {
 	// The endpoint URL of the MCP (Model Context Protocol) server that the core gateway target connects to for accessing external tools and data sources. (AI-inferred)
-	Endpoint any
+	Endpoint    any
 	ListingMode any
 	// The JSON Schema that defines the input parameters for each tool exposed by the Amazon Bedrock agent's Model Context Protocol (MCP) server, enabling the agent to invoke those tools with correctly formatted arguments. (AI-inferred)
-	McpToolSchema any
+	McpToolSchema    any
 	ResourcePriority any
 }
 
@@ -300,415 +300,414 @@ type GatewayTarget_TargetConfiguration_Mcp struct {
 
 type GatewayTarget_TargetConfiguration struct {
 	// Specifies the HTTP target configuration for the Bedrock agent core gateway, including the endpoint URL and HTTP method used to forward requests. (AI-inferred)
-	Http any
+	Http      any
 	Inference any
 	// Defines the Model Context Protocol (MCP) configuration for this Bedrock agent core gateway target, specifying how the agent connects to an external MCP server to access its tools. (AI-inferred)
 	Mcp any
 }
 
 var GatewayTarget_CredentialProviderConfigurations_CredentialProvider_ApiKeyCredentialProviderFields = ubx.FieldMap{
-		"CredentialLocation": ubx.FieldSpec{WireName: "credential_location"},
-		"CredentialParameterName": ubx.FieldSpec{WireName: "credential_parameter_name"},
-		"CredentialPrefix": ubx.FieldSpec{WireName: "credential_prefix"},
-		"ProviderArn": ubx.FieldSpec{WireName: "provider_arn"},
-	}
+	"CredentialLocation":      ubx.FieldSpec{WireName: "credential_location"},
+	"CredentialParameterName": ubx.FieldSpec{WireName: "credential_parameter_name"},
+	"CredentialPrefix":        ubx.FieldSpec{WireName: "credential_prefix"},
+	"ProviderArn":             ubx.FieldSpec{WireName: "provider_arn"},
+}
 
 var GatewayTarget_CredentialProviderConfigurations_CredentialProvider_IamCredentialProviderFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Region":  ubx.FieldSpec{WireName: "region"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
-var GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider_GrantTypeFields = ubx.FieldMap{
-	}
+var GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider_GrantTypeFields = ubx.FieldMap{}
 
 var GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProviderFields = ubx.FieldMap{
-		"CustomParameters": ubx.FieldSpec{WireName: "custom_parameters"},
-		"DefaultReturnUrl": ubx.FieldSpec{WireName: "default_return_url"},
-		"GrantType": ubx.FieldSpec{
-			WireName: "grant_type",
-			Kind: "object",
-			Fields: GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider_GrantTypeFields,
-		},
-		"ProviderArn": ubx.FieldSpec{WireName: "provider_arn"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"CustomParameters": ubx.FieldSpec{WireName: "custom_parameters"},
+	"DefaultReturnUrl": ubx.FieldSpec{WireName: "default_return_url"},
+	"GrantType": ubx.FieldSpec{
+		WireName: "grant_type",
+		Kind:     "object",
+		Fields:   GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider_GrantTypeFields,
+	},
+	"ProviderArn": ubx.FieldSpec{WireName: "provider_arn"},
+	"Scopes":      ubx.FieldSpec{WireName: "scopes"},
+}
 
 var GatewayTarget_CredentialProviderConfigurations_CredentialProviderFields = ubx.FieldMap{
-		"ApiKeyCredentialProvider": ubx.FieldSpec{
-			WireName: "api_key_credential_provider",
-			Kind: "object",
-			Fields: GatewayTarget_CredentialProviderConfigurations_CredentialProvider_ApiKeyCredentialProviderFields,
-		},
-		"IamCredentialProvider": ubx.FieldSpec{
-			WireName: "iam_credential_provider",
-			Kind: "object",
-			Fields: GatewayTarget_CredentialProviderConfigurations_CredentialProvider_IamCredentialProviderFields,
-		},
-		"OauthCredentialProvider": ubx.FieldSpec{
-			WireName: "oauth_credential_provider",
-			Kind: "object",
-			Fields: GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProviderFields,
-		},
-	}
+	"ApiKeyCredentialProvider": ubx.FieldSpec{
+		WireName: "api_key_credential_provider",
+		Kind:     "object",
+		Fields:   GatewayTarget_CredentialProviderConfigurations_CredentialProvider_ApiKeyCredentialProviderFields,
+	},
+	"IamCredentialProvider": ubx.FieldSpec{
+		WireName: "iam_credential_provider",
+		Kind:     "object",
+		Fields:   GatewayTarget_CredentialProviderConfigurations_CredentialProvider_IamCredentialProviderFields,
+	},
+	"OauthCredentialProvider": ubx.FieldSpec{
+		WireName: "oauth_credential_provider",
+		Kind:     "object",
+		Fields:   GatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProviderFields,
+	},
+}
 
 var GatewayTarget_CredentialProviderConfigurationsFields = ubx.FieldMap{
-		"CredentialProvider": ubx.FieldSpec{
-			WireName: "credential_provider",
-			Kind: "object",
-			Fields: GatewayTarget_CredentialProviderConfigurations_CredentialProviderFields,
-		},
-		"CredentialProviderType": ubx.FieldSpec{WireName: "credential_provider_type"},
-	}
+	"CredentialProvider": ubx.FieldSpec{
+		WireName: "credential_provider",
+		Kind:     "object",
+		Fields:   GatewayTarget_CredentialProviderConfigurations_CredentialProviderFields,
+	},
+	"CredentialProviderType": ubx.FieldSpec{WireName: "credential_provider_type"},
+}
 
 var GatewayTarget_MetadataConfigurationFields = ubx.FieldMap{
-		"AllowedQueryParameters": ubx.FieldSpec{WireName: "allowed_query_parameters"},
-		"AllowedRequestHeaders": ubx.FieldSpec{WireName: "allowed_request_headers"},
-		"AllowedResponseHeaders": ubx.FieldSpec{WireName: "allowed_response_headers"},
-	}
+	"AllowedQueryParameters": ubx.FieldSpec{WireName: "allowed_query_parameters"},
+	"AllowedRequestHeaders":  ubx.FieldSpec{WireName: "allowed_request_headers"},
+	"AllowedResponseHeaders": ubx.FieldSpec{WireName: "allowed_response_headers"},
+}
 
 var GatewayTarget_PrivateEndpoint_ManagedVpcResourceFields = ubx.FieldMap{
-		"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
-		"RoutingDomain": ubx.FieldSpec{WireName: "routing_domain"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"VpcIdentifier": ubx.FieldSpec{WireName: "vpc_identifier"},
-	}
+	"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
+	"RoutingDomain":         ubx.FieldSpec{WireName: "routing_domain"},
+	"SecurityGroupIds":      ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":             ubx.FieldSpec{WireName: "subnet_ids"},
+	"Tags":                  ubx.FieldSpec{WireName: "tags"},
+	"VpcIdentifier":         ubx.FieldSpec{WireName: "vpc_identifier"},
+}
 
 var GatewayTarget_PrivateEndpoint_SelfManagedLatticeResourceFields = ubx.FieldMap{
-		"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
-	}
+	"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
+}
 
 var GatewayTarget_PrivateEndpointFields = ubx.FieldMap{
-		"ManagedVpcResource": ubx.FieldSpec{
-			WireName: "managed_vpc_resource",
-			Kind: "object",
-			Fields: GatewayTarget_PrivateEndpoint_ManagedVpcResourceFields,
-		},
-		"SelfManagedLatticeResource": ubx.FieldSpec{
-			WireName: "self_managed_lattice_resource",
-			Kind: "object",
-			Fields: GatewayTarget_PrivateEndpoint_SelfManagedLatticeResourceFields,
-		},
-	}
+	"ManagedVpcResource": ubx.FieldSpec{
+		WireName: "managed_vpc_resource",
+		Kind:     "object",
+		Fields:   GatewayTarget_PrivateEndpoint_ManagedVpcResourceFields,
+	},
+	"SelfManagedLatticeResource": ubx.FieldSpec{
+		WireName: "self_managed_lattice_resource",
+		Kind:     "object",
+		Fields:   GatewayTarget_PrivateEndpoint_SelfManagedLatticeResourceFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3Fields = ubx.FieldMap{
-		"BucketOwnerAccountId": ubx.FieldSpec{WireName: "bucket_owner_account_id"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"BucketOwnerAccountId": ubx.FieldSpec{WireName: "bucket_owner_account_id"},
+	"Uri":                  ubx.FieldSpec{WireName: "uri"},
+}
 
 var GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields = ubx.FieldMap{
-		"InlinePayload": ubx.FieldSpec{WireName: "inline_payload"},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3Fields,
-		},
-	}
+	"InlinePayload": ubx.FieldSpec{WireName: "inline_payload"},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3Fields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_SchemaFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields,
-		},
-	}
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Qualifier": ubx.FieldSpec{WireName: "qualifier"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_SchemaFields,
-		},
-	}
+	"Arn":       ubx.FieldSpec{WireName: "arn"},
+	"Qualifier": ubx.FieldSpec{WireName: "qualifier"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_SchemaFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Http_Connector_SourceFields = ubx.FieldMap{
-		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
-	}
+	"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
+}
 
 var GatewayTarget_TargetConfiguration_Http_ConnectorFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
-		},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfigurationFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"Timeout":    ubx.FieldSpec{WireName: "timeout"},
+}
 
 var GatewayTarget_TargetConfiguration_Http_PassthroughFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"ProtocolType": ubx.FieldSpec{WireName: "protocol_type"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_SchemaFields,
-		},
-		"StickinessConfiguration": ubx.FieldSpec{
-			WireName: "stickiness_configuration",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfigurationFields,
-		},
-	}
+	"Endpoint":     ubx.FieldSpec{WireName: "endpoint"},
+	"ProtocolType": ubx.FieldSpec{WireName: "protocol_type"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_SchemaFields,
+	},
+	"StickinessConfiguration": ubx.FieldSpec{
+		WireName: "stickiness_configuration",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfigurationFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_HttpFields = ubx.FieldMap{
-		"AgentcoreRuntime": ubx.FieldSpec{
-			WireName: "agentcore_runtime",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields,
-		},
-		"Connector": ubx.FieldSpec{
-			WireName: "connector",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_ConnectorFields,
-		},
-		"Passthrough": ubx.FieldSpec{
-			WireName: "passthrough",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_PassthroughFields,
-		},
-	}
+	"AgentcoreRuntime": ubx.FieldSpec{
+		WireName: "agentcore_runtime",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntimeFields,
+	},
+	"Connector": ubx.FieldSpec{
+		WireName: "connector",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_ConnectorFields,
+	},
+	"Passthrough": ubx.FieldSpec{
+		WireName: "passthrough",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_PassthroughFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Inference_ConnectorFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
-		},
-	}
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Inference_Provider_ModelMapping_ProviderPrefixFields = ubx.FieldMap{
-		"Separator": ubx.FieldSpec{WireName: "separator"},
-		"Strip": ubx.FieldSpec{WireName: "strip"},
-	}
+	"Separator": ubx.FieldSpec{WireName: "separator"},
+	"Strip":     ubx.FieldSpec{WireName: "strip"},
+}
 
 var GatewayTarget_TargetConfiguration_Inference_Provider_ModelMappingFields = ubx.FieldMap{
-		"ProviderPrefix": ubx.FieldSpec{
-			WireName: "provider_prefix",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Inference_Provider_ModelMapping_ProviderPrefixFields,
-		},
-	}
+	"ProviderPrefix": ubx.FieldSpec{
+		WireName: "provider_prefix",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Inference_Provider_ModelMapping_ProviderPrefixFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Inference_Provider_Operations_ModelsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-	}
+	"Model": ubx.FieldSpec{WireName: "model"},
+}
 
 var GatewayTarget_TargetConfiguration_Inference_Provider_OperationsFields = ubx.FieldMap{
-		"Models": ubx.FieldSpec{
-			WireName: "models",
-			Kind: "list",
-			Fields: GatewayTarget_TargetConfiguration_Inference_Provider_Operations_ModelsFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ProviderPath": ubx.FieldSpec{WireName: "provider_path"},
-	}
+	"Models": ubx.FieldSpec{
+		WireName: "models",
+		Kind:     "list",
+		Fields:   GatewayTarget_TargetConfiguration_Inference_Provider_Operations_ModelsFields,
+	},
+	"Path":         ubx.FieldSpec{WireName: "path"},
+	"ProviderPath": ubx.FieldSpec{WireName: "provider_path"},
+}
 
 var GatewayTarget_TargetConfiguration_Inference_ProviderFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"ModelMapping": ubx.FieldSpec{
-			WireName: "model_mapping",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Inference_Provider_ModelMappingFields,
-		},
-		"Operations": ubx.FieldSpec{
-			WireName: "operations",
-			Kind: "list",
-			Fields: GatewayTarget_TargetConfiguration_Inference_Provider_OperationsFields,
-		},
-	}
+	"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+	"ModelMapping": ubx.FieldSpec{
+		WireName: "model_mapping",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Inference_Provider_ModelMappingFields,
+	},
+	"Operations": ubx.FieldSpec{
+		WireName: "operations",
+		Kind:     "list",
+		Fields:   GatewayTarget_TargetConfiguration_Inference_Provider_OperationsFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_InferenceFields = ubx.FieldMap{
-		"Connector": ubx.FieldSpec{
-			WireName: "connector",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Inference_ConnectorFields,
-		},
-		"Provider": ubx.FieldSpec{
-			WireName: "provider",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Inference_ProviderFields,
-		},
-	}
+	"Connector": ubx.FieldSpec{
+		WireName: "connector",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Inference_ConnectorFields,
+	},
+	"Provider": ubx.FieldSpec{
+		WireName: "provider",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Inference_ProviderFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolFiltersFields = ubx.FieldMap{
-		"FilterPath": ubx.FieldSpec{WireName: "filter_path"},
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-	}
+	"FilterPath": ubx.FieldSpec{WireName: "filter_path"},
+	"Methods":    ubx.FieldSpec{WireName: "methods"},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolOverridesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Method":      ubx.FieldSpec{WireName: "method"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Path":        ubx.FieldSpec{WireName: "path"},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfigurationFields = ubx.FieldMap{
-		"ToolFilters": ubx.FieldSpec{
-			WireName: "tool_filters",
-			Kind: "list",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolFiltersFields,
-		},
-		"ToolOverrides": ubx.FieldSpec{
-			WireName: "tool_overrides",
-			Kind: "list",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolOverridesFields,
-		},
-	}
+	"ToolFilters": ubx.FieldSpec{
+		WireName: "tool_filters",
+		Kind:     "list",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolFiltersFields,
+	},
+	"ToolOverrides": ubx.FieldSpec{
+		WireName: "tool_overrides",
+		Kind:     "list",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolOverridesFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_ApiGatewayFields = ubx.FieldMap{
-		"ApiGatewayToolConfiguration": ubx.FieldSpec{
-			WireName: "api_gateway_tool_configuration",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfigurationFields,
-		},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
-	}
+	"ApiGatewayToolConfiguration": ubx.FieldSpec{
+		WireName: "api_gateway_tool_configuration",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfigurationFields,
+	},
+	"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+	"Stage":     ubx.FieldSpec{WireName: "stage"},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_Connector_Configurations_ParameterOverridesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Visible": ubx.FieldSpec{WireName: "visible"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Path":        ubx.FieldSpec{WireName: "path"},
+	"Visible":     ubx.FieldSpec{WireName: "visible"},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_Connector_ConfigurationsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParameterOverrides": ubx.FieldSpec{
-			WireName: "parameter_overrides",
-			Kind: "list",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_Connector_Configurations_ParameterOverridesFields,
-		},
-		"ParameterValues": ubx.FieldSpec{WireName: "parameter_values"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"ParameterOverrides": ubx.FieldSpec{
+		WireName: "parameter_overrides",
+		Kind:     "list",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_Connector_Configurations_ParameterOverridesFields,
+	},
+	"ParameterValues": ubx.FieldSpec{WireName: "parameter_values"},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_ConnectorFields = ubx.FieldMap{
-		"Configurations": ubx.FieldSpec{
-			WireName: "configurations",
-			Kind: "list",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_Connector_ConfigurationsFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
-		},
-	}
+	"Configurations": ubx.FieldSpec{
+		WireName: "configurations",
+		Kind:     "list",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_Connector_ConfigurationsFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_Connector_SourceFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchemaFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Items":       ubx.FieldSpec{WireName: "items"},
+	"Properties":  ubx.FieldSpec{WireName: "properties"},
+	"Required":    ubx.FieldSpec{WireName: "required"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayloadFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchemaFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputSchema": ubx.FieldSpec{
-			WireName: "output_schema",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchemaFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchemaFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OutputSchema": ubx.FieldSpec{
+		WireName: "output_schema",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchemaFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchemaFields = ubx.FieldMap{
-		"InlinePayload": ubx.FieldSpec{
-			WireName: "inline_payload",
-			Kind: "list",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayloadFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3Fields,
-		},
-	}
+	"InlinePayload": ubx.FieldSpec{
+		WireName: "inline_payload",
+		Kind:     "list",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayloadFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3Fields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_LambdaFields = ubx.FieldMap{
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-		"ToolSchema": ubx.FieldSpec{
-			WireName: "tool_schema",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchemaFields,
-		},
-	}
+	"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
+	"ToolSchema": ubx.FieldSpec{
+		WireName: "tool_schema",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchemaFields,
+	},
+}
 
 var GatewayTarget_TargetConfiguration_Mcp_McpServerFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"ListingMode": ubx.FieldSpec{WireName: "listing_mode"},
-		"McpToolSchema": ubx.FieldSpec{
-			WireName: "mcp_tool_schema",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields,
-		},
-		"ResourcePriority": ubx.FieldSpec{WireName: "resource_priority"},
-	}
+	"Endpoint":    ubx.FieldSpec{WireName: "endpoint"},
+	"ListingMode": ubx.FieldSpec{WireName: "listing_mode"},
+	"McpToolSchema": ubx.FieldSpec{
+		WireName: "mcp_tool_schema",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields,
+	},
+	"ResourcePriority": ubx.FieldSpec{WireName: "resource_priority"},
+}
 
 var GatewayTarget_TargetConfiguration_McpFields = ubx.FieldMap{
-		"ApiGateway": ubx.FieldSpec{
-			WireName: "api_gateway",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_ApiGatewayFields,
-		},
-		"Connector": ubx.FieldSpec{
-			WireName: "connector",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_ConnectorFields,
-		},
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_LambdaFields,
-		},
-		"McpServer": ubx.FieldSpec{
-			WireName: "mcp_server",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Mcp_McpServerFields,
-		},
-		"OpenApiSchema": ubx.FieldSpec{
-			WireName: "open_api_schema",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields,
-		},
-		"SmithyModel": ubx.FieldSpec{
-			WireName: "smithy_model",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields,
-		},
-	}
+	"ApiGateway": ubx.FieldSpec{
+		WireName: "api_gateway",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_ApiGatewayFields,
+	},
+	"Connector": ubx.FieldSpec{
+		WireName: "connector",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_ConnectorFields,
+	},
+	"Lambda": ubx.FieldSpec{
+		WireName: "lambda",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_LambdaFields,
+	},
+	"McpServer": ubx.FieldSpec{
+		WireName: "mcp_server",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Mcp_McpServerFields,
+	},
+	"OpenApiSchema": ubx.FieldSpec{
+		WireName: "open_api_schema",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields,
+	},
+	"SmithyModel": ubx.FieldSpec{
+		WireName: "smithy_model",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_SourceFields,
+	},
+}
 
 var GatewayTarget_TargetConfigurationFields = ubx.FieldMap{
-		"Http": ubx.FieldSpec{
-			WireName: "http",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_HttpFields,
-		},
-		"Inference": ubx.FieldSpec{
-			WireName: "inference",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_InferenceFields,
-		},
-		"Mcp": ubx.FieldSpec{
-			WireName: "mcp",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfiguration_McpFields,
-		},
-	}
+	"Http": ubx.FieldSpec{
+		WireName: "http",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_HttpFields,
+	},
+	"Inference": ubx.FieldSpec{
+		WireName: "inference",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_InferenceFields,
+	},
+	"Mcp": ubx.FieldSpec{
+		WireName: "mcp",
+		Kind:     "object",
+		Fields:   GatewayTarget_TargetConfiguration_McpFields,
+	},
+}
 
 type GatewayTargetConfig struct {
 	// The credential provider configurations for this gateway target. (AI-inferred)
@@ -716,7 +715,7 @@ type GatewayTargetConfig struct {
 	// The description for the gateway target. (AI-inferred)
 	Description any
 	// The gateway ID for the gateway target. (AI-inferred)
-	GatewayIdentifier any
+	GatewayIdentifier     any
 	MetadataConfiguration any
 	// The name of the gateway target. (AI-inferred)
 	Name any
@@ -739,7 +738,7 @@ type GatewayTargetAttrs struct {
 	// The gateway ID for the gateway target. (AI-inferred)
 	GatewayIdentifier any
 	// The timestamp when the target was last synchronized. (AI-inferred)
-	LastSynchronizedAt any
+	LastSynchronizedAt    any
 	MetadataConfiguration any
 	// The name of the gateway target. (AI-inferred)
 	Name any
@@ -766,26 +765,26 @@ var GatewayTarget = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CredentialProviderConfigurations": ubx.FieldSpec{
 			WireName: "credential_provider_configurations",
-			Kind: "list",
-			Fields: GatewayTarget_CredentialProviderConfigurationsFields,
+			Kind:     "list",
+			Fields:   GatewayTarget_CredentialProviderConfigurationsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"GatewayIdentifier": ubx.FieldSpec{WireName: "gateway_identifier"},
 		"MetadataConfiguration": ubx.FieldSpec{
 			WireName: "metadata_configuration",
-			Kind: "object",
-			Fields: GatewayTarget_MetadataConfigurationFields,
+			Kind:     "object",
+			Fields:   GatewayTarget_MetadataConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrivateEndpoint": ubx.FieldSpec{
 			WireName: "private_endpoint",
-			Kind: "object",
-			Fields: GatewayTarget_PrivateEndpointFields,
+			Kind:     "object",
+			Fields:   GatewayTarget_PrivateEndpointFields,
 		},
 		"TargetConfiguration": ubx.FieldSpec{
 			WireName: "target_configuration",
-			Kind: "object",
-			Fields: GatewayTarget_TargetConfigurationFields,
+			Kind:     "object",
+			Fields:   GatewayTarget_TargetConfigurationFields,
 		},
 	},
 }

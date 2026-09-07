@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationStatusCheck_HealthCheckPaths_Destinations struct {
 	SecurityGroupId any
-	SubnetId any
+	SubnetId        any
 }
 
 type ApplicationStatusCheck_HealthCheckPaths struct {
 	Destinations any
-	Source any
+	Source       any
 }
 
 type ApplicationStatusCheck_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ApplicationStatusCheck_HealthCheckPaths_DestinationsFields = ubx.FieldMap{
-		"SecurityGroupId": ubx.FieldSpec{WireName: "security_group_id"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"SecurityGroupId": ubx.FieldSpec{WireName: "security_group_id"},
+	"SubnetId":        ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var ApplicationStatusCheck_HealthCheckPathsFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: ApplicationStatusCheck_HealthCheckPaths_DestinationsFields,
-		},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: ApplicationStatusCheck_HealthCheckPaths_DestinationsFields,
-		},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   ApplicationStatusCheck_HealthCheckPaths_DestinationsFields,
+	},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   ApplicationStatusCheck_HealthCheckPaths_DestinationsFields,
+	},
+}
 
 var ApplicationStatusCheck_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationStatusCheckConfig struct {
 	// Whether this check is included in the rolled-up application status.
@@ -116,27 +116,27 @@ type ApplicationStatusCheckAttrs struct {
 var ApplicationStatusCheck = ubx.ResourceBinding{
 	WireType: "aws_ec2_application_status_check",
 	Fields: ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
+		"Aggregation":      ubx.FieldSpec{WireName: "aggregation"},
+		"DeviceIndex":      ubx.FieldSpec{WireName: "device_index"},
 		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
 		"HealthCheckPaths": ubx.FieldSpec{
 			WireName: "health_check_paths",
-			Kind: "list",
-			Fields: ApplicationStatusCheck_HealthCheckPathsFields,
+			Kind:     "list",
+			Fields:   ApplicationStatusCheck_HealthCheckPathsFields,
 		},
 		"InitializationGracePeriodSeconds": ubx.FieldSpec{WireName: "initialization_grace_period_seconds"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"IpScope": ubx.FieldSpec{WireName: "ip_scope"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"StatusCodeMatcher": ubx.FieldSpec{WireName: "status_code_matcher"},
-		"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
+		"Interval":                         ubx.FieldSpec{WireName: "interval"},
+		"IpScope":                          ubx.FieldSpec{WireName: "ip_scope"},
+		"IpVersion":                        ubx.FieldSpec{WireName: "ip_version"},
+		"Path":                             ubx.FieldSpec{WireName: "path"},
+		"Port":                             ubx.FieldSpec{WireName: "port"},
+		"Protocol":                         ubx.FieldSpec{WireName: "protocol"},
+		"StatusCodeMatcher":                ubx.FieldSpec{WireName: "status_code_matcher"},
+		"SuccessThreshold":                 ubx.FieldSpec{WireName: "success_threshold"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ApplicationStatusCheck_TagsFields,
+			Kind:     "list",
+			Fields:   ApplicationStatusCheck_TagsFields,
 		},
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 	},

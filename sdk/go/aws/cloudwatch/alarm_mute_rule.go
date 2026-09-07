@@ -30,27 +30,27 @@ type AlarmMuteRule_Tags struct {
 }
 
 var AlarmMuteRule_MuteTargetsFields = ubx.FieldMap{
-		"AlarmNames": ubx.FieldSpec{WireName: "alarm_names"},
-	}
+	"AlarmNames": ubx.FieldSpec{WireName: "alarm_names"},
+}
 
 var AlarmMuteRule_Rule_ScheduleFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Duration":   ubx.FieldSpec{WireName: "duration"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Timezone":   ubx.FieldSpec{WireName: "timezone"},
+}
 
 var AlarmMuteRule_RuleFields = ubx.FieldMap{
-		"Schedule": ubx.FieldSpec{
-			WireName: "schedule",
-			Kind: "object",
-			Fields: AlarmMuteRule_Rule_ScheduleFields,
-		},
-	}
+	"Schedule": ubx.FieldSpec{
+		WireName: "schedule",
+		Kind:     "object",
+		Fields:   AlarmMuteRule_Rule_ScheduleFields,
+	},
+}
 
 var AlarmMuteRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AlarmMuteRuleConfig struct {
 	// The description of the AlarmMuteRule
@@ -98,23 +98,23 @@ var AlarmMuteRule = ubx.ResourceBinding{
 	WireType: "aws_cloud_watch_alarm_mute_rule",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExpireDate": ubx.FieldSpec{WireName: "expire_date"},
+		"ExpireDate":  ubx.FieldSpec{WireName: "expire_date"},
 		"MuteTargets": ubx.FieldSpec{
 			WireName: "mute_targets",
-			Kind: "object",
-			Fields: AlarmMuteRule_MuteTargetsFields,
+			Kind:     "object",
+			Fields:   AlarmMuteRule_MuteTargetsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rule": ubx.FieldSpec{
 			WireName: "rule",
-			Kind: "object",
-			Fields: AlarmMuteRule_RuleFields,
+			Kind:     "object",
+			Fields:   AlarmMuteRule_RuleFields,
 		},
 		"StartDate": ubx.FieldSpec{WireName: "start_date"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AlarmMuteRule_TagsFields,
+			Kind:     "list",
+			Fields:   AlarmMuteRule_TagsFields,
 		},
 	},
 }

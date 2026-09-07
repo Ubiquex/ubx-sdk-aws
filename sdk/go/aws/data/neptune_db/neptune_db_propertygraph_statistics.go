@@ -4,19 +4,19 @@ package neptune_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneDbPropertygraphStatistics_Payload_SignatureInfo struct {
-	InstanceCount any
+	InstanceCount  any
 	PredicateCount any
 	SignatureCount any
 }
 
 type NeptuneDbPropertygraphStatistics_Payload struct {
-	Active any
+	Active      any
 	AutoCompute any
-	Date any
-	Note any
+	Date        any
+	Note        any
 	// <p>Information about the characteristic sets generated in the statistics.</p>
 	SignatureInfo any
-	StatisticsId any
+	StatisticsId  any
 }
 
 type NeptuneDbPropertygraphStatisticsConfig struct {
@@ -25,11 +25,10 @@ type NeptuneDbPropertygraphStatisticsConfig struct {
 type NeptuneDbPropertygraphStatisticsAttrs struct {
 	// <p>Contains statistics information. The DFE engine uses information about the data in your Neptune graph to make effective trade-offs when planning query execution. This information takes the form of statistics that include so-called characteristic sets and predicate statistics that can guide query planning. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html">Managing statistics for the Neptune DFE to use</a>.</p>
 	Payload any
-	Status any
+	Status  any
 }
 
 var NeptuneDbPropertygraphStatistics = ubx.DataSourceBinding{
 	WireType: "aws_neptune_db_propertygraph_statistics",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

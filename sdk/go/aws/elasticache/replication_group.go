@@ -69,49 +69,49 @@ type ReplicationGroup_Tags struct {
 }
 
 var ReplicationGroup_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetailsFields = ubx.FieldMap{
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-	}
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+}
 
 var ReplicationGroup_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetailsFields = ubx.FieldMap{
-		"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
-	}
+	"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
+}
 
 var ReplicationGroup_LogDeliveryConfigurations_DestinationDetailsFields = ubx.FieldMap{
-		"CloudWatchLogsDetails": ubx.FieldSpec{
-			WireName: "cloud_watch_logs_details",
-			Kind: "object",
-			Fields: ReplicationGroup_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetailsFields,
-		},
-		"KinesisFirehoseDetails": ubx.FieldSpec{
-			WireName: "kinesis_firehose_details",
-			Kind: "object",
-			Fields: ReplicationGroup_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetailsFields,
-		},
-	}
+	"CloudWatchLogsDetails": ubx.FieldSpec{
+		WireName: "cloud_watch_logs_details",
+		Kind:     "object",
+		Fields:   ReplicationGroup_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetailsFields,
+	},
+	"KinesisFirehoseDetails": ubx.FieldSpec{
+		WireName: "kinesis_firehose_details",
+		Kind:     "object",
+		Fields:   ReplicationGroup_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetailsFields,
+	},
+}
 
 var ReplicationGroup_LogDeliveryConfigurationsFields = ubx.FieldMap{
-		"DestinationDetails": ubx.FieldSpec{
-			WireName: "destination_details",
-			Kind: "object",
-			Fields: ReplicationGroup_LogDeliveryConfigurations_DestinationDetailsFields,
-		},
-		"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
-		"LogFormat": ubx.FieldSpec{WireName: "log_format"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-	}
+	"DestinationDetails": ubx.FieldSpec{
+		WireName: "destination_details",
+		Kind:     "object",
+		Fields:   ReplicationGroup_LogDeliveryConfigurations_DestinationDetailsFields,
+	},
+	"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
+	"LogFormat":       ubx.FieldSpec{WireName: "log_format"},
+	"LogType":         ubx.FieldSpec{WireName: "log_type"},
+}
 
 var ReplicationGroup_NodeGroupConfigurationFields = ubx.FieldMap{
-		"NodeGroupId": ubx.FieldSpec{WireName: "node_group_id"},
-		"PrimaryAvailabilityZone": ubx.FieldSpec{WireName: "primary_availability_zone"},
-		"ReplicaAvailabilityZones": ubx.FieldSpec{WireName: "replica_availability_zones"},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-		"Slots": ubx.FieldSpec{WireName: "slots"},
-	}
+	"NodeGroupId":              ubx.FieldSpec{WireName: "node_group_id"},
+	"PrimaryAvailabilityZone":  ubx.FieldSpec{WireName: "primary_availability_zone"},
+	"ReplicaAvailabilityZones": ubx.FieldSpec{WireName: "replica_availability_zones"},
+	"ReplicaCount":             ubx.FieldSpec{WireName: "replica_count"},
+	"Slots":                    ubx.FieldSpec{WireName: "slots"},
+}
 
 var ReplicationGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReplicationGroupConfig struct {
 	// A flag that enables encryption at rest when set to true.AtRestEncryptionEnabled after the replication group is created. To enable encryption at rest on a replication group you must set AtRestEncryptionEnabled to true when you create the replication group.
@@ -292,57 +292,57 @@ type ReplicationGroupAttrs struct {
 var ReplicationGroup = ubx.ResourceBinding{
 	WireType: "aws_elasti_cache_replication_group",
 	Fields: ubx.FieldMap{
-		"AtRestEncryptionEnabled": ubx.FieldSpec{WireName: "at_rest_encryption_enabled"},
-		"AuthToken": ubx.FieldSpec{WireName: "auth_token"},
-		"AutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
+		"AtRestEncryptionEnabled":  ubx.FieldSpec{WireName: "at_rest_encryption_enabled"},
+		"AuthToken":                ubx.FieldSpec{WireName: "auth_token"},
+		"AutoMinorVersionUpgrade":  ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
 		"AutomaticFailoverEnabled": ubx.FieldSpec{WireName: "automatic_failover_enabled"},
-		"CacheNodeType": ubx.FieldSpec{WireName: "cache_node_type"},
-		"CacheParameterGroupName": ubx.FieldSpec{WireName: "cache_parameter_group_name"},
-		"CacheSecurityGroupNames": ubx.FieldSpec{WireName: "cache_security_group_names"},
-		"CacheSubnetGroupName": ubx.FieldSpec{WireName: "cache_subnet_group_name"},
-		"ClusterMode": ubx.FieldSpec{WireName: "cluster_mode"},
-		"DataTieringEnabled": ubx.FieldSpec{WireName: "data_tiering_enabled"},
-		"Durability": ubx.FieldSpec{WireName: "durability"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
+		"CacheNodeType":            ubx.FieldSpec{WireName: "cache_node_type"},
+		"CacheParameterGroupName":  ubx.FieldSpec{WireName: "cache_parameter_group_name"},
+		"CacheSecurityGroupNames":  ubx.FieldSpec{WireName: "cache_security_group_names"},
+		"CacheSubnetGroupName":     ubx.FieldSpec{WireName: "cache_subnet_group_name"},
+		"ClusterMode":              ubx.FieldSpec{WireName: "cluster_mode"},
+		"DataTieringEnabled":       ubx.FieldSpec{WireName: "data_tiering_enabled"},
+		"Durability":               ubx.FieldSpec{WireName: "durability"},
+		"Engine":                   ubx.FieldSpec{WireName: "engine"},
+		"EngineVersion":            ubx.FieldSpec{WireName: "engine_version"},
 		"GlobalReplicationGroupId": ubx.FieldSpec{WireName: "global_replication_group_id"},
-		"IpDiscovery": ubx.FieldSpec{WireName: "ip_discovery"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"IpDiscovery":              ubx.FieldSpec{WireName: "ip_discovery"},
+		"KmsKeyId":                 ubx.FieldSpec{WireName: "kms_key_id"},
 		"LogDeliveryConfigurations": ubx.FieldSpec{
 			WireName: "log_delivery_configurations",
-			Kind: "list",
-			Fields: ReplicationGroup_LogDeliveryConfigurationsFields,
+			Kind:     "list",
+			Fields:   ReplicationGroup_LogDeliveryConfigurationsFields,
 		},
 		"MultiAzenabled": ubx.FieldSpec{WireName: "multi_azenabled"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
+		"NetworkType":    ubx.FieldSpec{WireName: "network_type"},
 		"NodeGroupConfiguration": ubx.FieldSpec{
 			WireName: "node_group_configuration",
-			Kind: "list",
-			Fields: ReplicationGroup_NodeGroupConfigurationFields,
+			Kind:     "list",
+			Fields:   ReplicationGroup_NodeGroupConfigurationFields,
 		},
-		"NotificationTopicArn": ubx.FieldSpec{WireName: "notification_topic_arn"},
-		"NumCacheClusters": ubx.FieldSpec{WireName: "num_cache_clusters"},
-		"NumNodeGroups": ubx.FieldSpec{WireName: "num_node_groups"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PreferredCacheClusterAzs": ubx.FieldSpec{WireName: "preferred_cache_cluster_azs"},
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"PrimaryClusterId": ubx.FieldSpec{WireName: "primary_cluster_id"},
-		"ReplicasPerNodeGroup": ubx.FieldSpec{WireName: "replicas_per_node_group"},
+		"NotificationTopicArn":        ubx.FieldSpec{WireName: "notification_topic_arn"},
+		"NumCacheClusters":            ubx.FieldSpec{WireName: "num_cache_clusters"},
+		"NumNodeGroups":               ubx.FieldSpec{WireName: "num_node_groups"},
+		"Port":                        ubx.FieldSpec{WireName: "port"},
+		"PreferredCacheClusterAzs":    ubx.FieldSpec{WireName: "preferred_cache_cluster_azs"},
+		"PreferredMaintenanceWindow":  ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+		"PrimaryClusterId":            ubx.FieldSpec{WireName: "primary_cluster_id"},
+		"ReplicasPerNodeGroup":        ubx.FieldSpec{WireName: "replicas_per_node_group"},
 		"ReplicationGroupDescription": ubx.FieldSpec{WireName: "replication_group_description"},
-		"ReplicationGroupId": ubx.FieldSpec{WireName: "replication_group_id"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SnapshotArns": ubx.FieldSpec{WireName: "snapshot_arns"},
-		"SnapshotName": ubx.FieldSpec{WireName: "snapshot_name"},
-		"SnapshotRetentionLimit": ubx.FieldSpec{WireName: "snapshot_retention_limit"},
-		"SnapshotWindow": ubx.FieldSpec{WireName: "snapshot_window"},
-		"SnapshottingClusterId": ubx.FieldSpec{WireName: "snapshotting_cluster_id"},
+		"ReplicationGroupId":          ubx.FieldSpec{WireName: "replication_group_id"},
+		"SecurityGroupIds":            ubx.FieldSpec{WireName: "security_group_ids"},
+		"SnapshotArns":                ubx.FieldSpec{WireName: "snapshot_arns"},
+		"SnapshotName":                ubx.FieldSpec{WireName: "snapshot_name"},
+		"SnapshotRetentionLimit":      ubx.FieldSpec{WireName: "snapshot_retention_limit"},
+		"SnapshotWindow":              ubx.FieldSpec{WireName: "snapshot_window"},
+		"SnapshottingClusterId":       ubx.FieldSpec{WireName: "snapshotting_cluster_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReplicationGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ReplicationGroup_TagsFields,
 		},
 		"TransitEncryptionEnabled": ubx.FieldSpec{WireName: "transit_encryption_enabled"},
-		"TransitEncryptionMode": ubx.FieldSpec{WireName: "transit_encryption_mode"},
-		"UserGroupIds": ubx.FieldSpec{WireName: "user_group_ids"},
+		"TransitEncryptionMode":    ubx.FieldSpec{WireName: "transit_encryption_mode"},
+		"UserGroupIds":             ubx.FieldSpec{WireName: "user_group_ids"},
 	},
 }

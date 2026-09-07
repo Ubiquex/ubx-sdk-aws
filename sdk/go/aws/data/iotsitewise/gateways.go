@@ -4,7 +4,7 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Gateways_GatewaySummaries_GatewayCapabilitySummaries struct {
-	CapabilityNamespace any
+	CapabilityNamespace  any
 	CapabilitySyncStatus any
 }
 
@@ -14,7 +14,7 @@ type Gateways_GatewaySummaries_GatewayPlatform_Greengrass struct {
 
 type Gateways_GatewaySummaries_GatewayPlatform_GreengrassV2 struct {
 	CoreDeviceOperatingSystem any
-	CoreDeviceThingName any
+	CoreDeviceThingName       any
 }
 
 type Gateways_GatewaySummaries_GatewayPlatform_SiemensIe struct {
@@ -22,36 +22,36 @@ type Gateways_GatewaySummaries_GatewayPlatform_SiemensIe struct {
 }
 
 type Gateways_GatewaySummaries_GatewayPlatform struct {
-	Greengrass any
+	Greengrass   any
 	GreengrassV2 any
-	SiemensIe any
+	SiemensIe    any
 }
 
 type Gateways_GatewaySummaries struct {
-	CreationDate any
+	CreationDate               any
 	GatewayCapabilitySummaries any
-	GatewayId any
-	GatewayName any
-	GatewayPlatform any
-	GatewayVersion any
-	LastUpdateDate any
+	GatewayId                  any
+	GatewayName                any
+	GatewayPlatform            any
+	GatewayVersion             any
+	LastUpdateDate             any
 }
 
 type GatewaysConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type GatewaysAttrs struct {
 	GatewaySummaries any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var Gateways = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_gateways",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

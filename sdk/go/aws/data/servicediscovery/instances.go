@@ -4,30 +4,30 @@ package servicediscovery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instances_Instances struct {
-	Attributes any
+	Attributes       any
 	CreatedByAccount any
-	Id any
+	Id               any
 }
 
 type InstancesConfig struct {
 	MaxResults any
-	NextToken any
-	ServiceId any
+	NextToken  any
+	ServiceId  any
 }
 
 type InstancesAttrs struct {
-	Instances any
-	MaxResults any
-	NextToken any
+	Instances     any
+	MaxResults    any
+	NextToken     any
 	ResourceOwner any
-	ServiceId any
+	ServiceId     any
 }
 
 var Instances = ubx.DataSourceBinding{
 	WireType: "aws_servicediscovery_instances",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ServiceId":  ubx.FieldSpec{WireName: "service_id"},
 	},
 }

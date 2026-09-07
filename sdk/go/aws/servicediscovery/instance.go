@@ -23,6 +23,6 @@ var Instance = ubx.ResourceBinding{
 	WireType: "aws_service_discovery_instance",
 	Fields: ubx.FieldMap{
 		"InstanceAttributes": ubx.FieldSpec{WireName: "instance_attributes"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
+		"ServiceId":          ubx.FieldSpec{WireName: "service_id"},
 	},
 }

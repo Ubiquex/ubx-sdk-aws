@@ -4,26 +4,26 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceTpmEkPubConfig struct {
-	DryRun any
+	DryRun     any
 	InstanceId any
-	KeyFormat any
-	KeyType any
+	KeyFormat  any
+	KeyType    any
 }
 
 type InstanceTpmEkPubAttrs struct {
-	DryRun any
+	DryRun     any
 	InstanceId any
-	KeyFormat any
-	KeyType any
-	KeyValue any
+	KeyFormat  any
+	KeyType    any
+	KeyValue   any
 }
 
 var InstanceTpmEkPub = ubx.DataSourceBinding{
 	WireType: "aws_ec2_instance_tpm_ek_pub",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"KeyFormat": ubx.FieldSpec{WireName: "key_format"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
+		"KeyFormat":  ubx.FieldSpec{WireName: "key_format"},
+		"KeyType":    ubx.FieldSpec{WireName: "key_type"},
 	},
 }

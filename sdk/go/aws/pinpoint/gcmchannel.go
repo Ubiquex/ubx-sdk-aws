@@ -34,10 +34,10 @@ type GcmchannelAttrs struct {
 var Gcmchannel = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_gcmchannel",
 	Fields: ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApiKey":                      ubx.FieldSpec{WireName: "api_key"},
+		"ApplicationId":               ubx.FieldSpec{WireName: "application_id"},
 		"DefaultAuthenticationMethod": ubx.FieldSpec{WireName: "default_authentication_method"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ServiceJson": ubx.FieldSpec{WireName: "service_json"},
+		"Enabled":                     ubx.FieldSpec{WireName: "enabled"},
+		"ServiceJson":                 ubx.FieldSpec{WireName: "service_json"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediapackageVodPackagingGroups_PackagingGroups_Authorization struct {
 	CdnIdentifierSecret any
-	SecretsRoleArn any
+	SecretsRoleArn      any
 }
 
 type MediapackageVodPackagingGroups_PackagingGroups_EgressAccessLogs struct {
@@ -14,23 +14,23 @@ type MediapackageVodPackagingGroups_PackagingGroups_EgressAccessLogs struct {
 
 type MediapackageVodPackagingGroups_PackagingGroups struct {
 	ApproximateAssetCount any
-	Arn any
-	Authorization any
-	CreatedAt any
-	DomainName any
-	EgressAccessLogs any
-	Id any
-	Tags any
+	Arn                   any
+	Authorization         any
+	CreatedAt             any
+	DomainName            any
+	EgressAccessLogs      any
+	Id                    any
+	Tags                  any
 }
 
 type MediapackageVodPackagingGroupsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MediapackageVodPackagingGroupsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	PackagingGroups any
 }
 
@@ -38,6 +38,6 @@ var MediapackageVodPackagingGroups = ubx.DataSourceBinding{
 	WireType: "aws_mediapackage_vod_packaging_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

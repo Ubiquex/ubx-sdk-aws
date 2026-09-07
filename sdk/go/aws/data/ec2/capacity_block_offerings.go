@@ -4,64 +4,64 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityBlockOfferings_CapacityBlockOfferings struct {
-	AvailabilityZone any
-	CapacityBlockDurationHours any
+	AvailabilityZone             any
+	CapacityBlockDurationHours   any
 	CapacityBlockDurationMinutes any
-	CapacityBlockOfferingId any
-	CurrencyCode any
-	EndDate any
-	InstanceCount any
-	InstanceType any
-	StartDate any
-	Tenancy any
-	UltraserverCount any
-	UltraserverType any
-	UpfrontFee any
-	ZoneType any
+	CapacityBlockOfferingId      any
+	CurrencyCode                 any
+	EndDate                      any
+	InstanceCount                any
+	InstanceType                 any
+	StartDate                    any
+	Tenancy                      any
+	UltraserverCount             any
+	UltraserverType              any
+	UpfrontFee                   any
+	ZoneType                     any
 }
 
 type CapacityBlockOfferingsConfig struct {
-	AllAvailabilityZones any
+	AllAvailabilityZones  any
 	CapacityDurationHours any
-	DryRun any
-	EndDateRange any
-	InstanceCount any
-	InstanceType any
-	MaxResults any
-	NextToken any
-	StartDateRange any
-	UltraserverCount any
-	UltraserverType any
+	DryRun                any
+	EndDateRange          any
+	InstanceCount         any
+	InstanceType          any
+	MaxResults            any
+	NextToken             any
+	StartDateRange        any
+	UltraserverCount      any
+	UltraserverType       any
 }
 
 type CapacityBlockOfferingsAttrs struct {
-	AllAvailabilityZones any
+	AllAvailabilityZones   any
 	CapacityBlockOfferings any
-	CapacityDurationHours any
-	DryRun any
-	EndDateRange any
-	InstanceCount any
-	InstanceType any
-	MaxResults any
-	NextToken any
-	StartDateRange any
-	UltraserverCount any
-	UltraserverType any
+	CapacityDurationHours  any
+	DryRun                 any
+	EndDateRange           any
+	InstanceCount          any
+	InstanceType           any
+	MaxResults             any
+	NextToken              any
+	StartDateRange         any
+	UltraserverCount       any
+	UltraserverType        any
 }
 
 var CapacityBlockOfferings = ubx.DataSourceBinding{
 	WireType: "aws_ec2_capacity_block_offerings",
 	Fields: ubx.FieldMap{
-		"AllAvailabilityZones": ubx.FieldSpec{WireName: "all_availability_zones"},
+		"AllAvailabilityZones":  ubx.FieldSpec{WireName: "all_availability_zones"},
 		"CapacityDurationHours": ubx.FieldSpec{WireName: "capacity_duration_hours"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"EndDateRange": ubx.FieldSpec{WireName: "end_date_range"},
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartDateRange": ubx.FieldSpec{WireName: "start_date_range"},
-		"UltraserverCount": ubx.FieldSpec{WireName: "ultraserver_count"},
-		"UltraserverType": ubx.FieldSpec{WireName: "ultraserver_type"},
+		"DryRun":                ubx.FieldSpec{WireName: "dry_run"},
+		"EndDateRange":          ubx.FieldSpec{WireName: "end_date_range"},
+		"InstanceCount":         ubx.FieldSpec{WireName: "instance_count"},
+		"InstanceType":          ubx.FieldSpec{WireName: "instance_type"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"StartDateRange":        ubx.FieldSpec{WireName: "start_date_range"},
+		"UltraserverCount":      ubx.FieldSpec{WireName: "ultraserver_count"},
+		"UltraserverType":       ubx.FieldSpec{WireName: "ultraserver_type"},
 	},
 }

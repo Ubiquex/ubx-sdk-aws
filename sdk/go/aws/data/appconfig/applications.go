@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Applications_Items struct {
 	Description any
-	Id any
-	Name any
+	Id          any
+	Name        any
 }
 
 type ApplicationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApplicationsAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Applications = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_applications",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

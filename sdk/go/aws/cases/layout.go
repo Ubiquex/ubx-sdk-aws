@@ -44,59 +44,59 @@ type Layout_Tags struct {
 }
 
 var Layout_Content_Basic_MoreInfo_Sections_FieldGroup_FieldsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var Layout_Content_Basic_MoreInfo_Sections_FieldGroupFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Layout_Content_Basic_MoreInfo_Sections_FieldGroup_FieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Layout_Content_Basic_MoreInfo_Sections_FieldGroup_FieldsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Layout_Content_Basic_MoreInfo_SectionsFields = ubx.FieldMap{
-		"FieldGroup": ubx.FieldSpec{
-			WireName: "field_group",
-			Kind: "object",
-			Fields: Layout_Content_Basic_MoreInfo_Sections_FieldGroupFields,
-		},
-	}
+	"FieldGroup": ubx.FieldSpec{
+		WireName: "field_group",
+		Kind:     "object",
+		Fields:   Layout_Content_Basic_MoreInfo_Sections_FieldGroupFields,
+	},
+}
 
 var Layout_Content_Basic_MoreInfoFields = ubx.FieldMap{
-		"Sections": ubx.FieldSpec{
-			WireName: "sections",
-			Kind: "list",
-			Fields: Layout_Content_Basic_MoreInfo_SectionsFields,
-		},
-	}
+	"Sections": ubx.FieldSpec{
+		WireName: "sections",
+		Kind:     "list",
+		Fields:   Layout_Content_Basic_MoreInfo_SectionsFields,
+	},
+}
 
 var Layout_Content_BasicFields = ubx.FieldMap{
-		"MoreInfo": ubx.FieldSpec{
-			WireName: "more_info",
-			Kind: "object",
-			Fields: Layout_Content_Basic_MoreInfoFields,
-		},
-		"TopPanel": ubx.FieldSpec{
-			WireName: "top_panel",
-			Kind: "object",
-			Fields: Layout_Content_Basic_MoreInfoFields,
-		},
-	}
+	"MoreInfo": ubx.FieldSpec{
+		WireName: "more_info",
+		Kind:     "object",
+		Fields:   Layout_Content_Basic_MoreInfoFields,
+	},
+	"TopPanel": ubx.FieldSpec{
+		WireName: "top_panel",
+		Kind:     "object",
+		Fields:   Layout_Content_Basic_MoreInfoFields,
+	},
+}
 
 var Layout_ContentFields = ubx.FieldMap{
-		"Basic": ubx.FieldSpec{
-			WireName: "basic",
-			Kind: "object",
-			Fields: Layout_Content_BasicFields,
-		},
-	}
+	"Basic": ubx.FieldSpec{
+		WireName: "basic",
+		Kind:     "object",
+		Fields:   Layout_Content_BasicFields,
+	},
+}
 
 var Layout_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LayoutConfig struct {
 	// Defines the layout structure and field organization for the case interface. Specifies which fields appear in the top panel and More Info tab, and their display order.
@@ -133,15 +133,15 @@ var Layout = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: Layout_ContentFields,
+			Kind:     "object",
+			Fields:   Layout_ContentFields,
 		},
 		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Layout_TagsFields,
+			Kind:     "list",
+			Fields:   Layout_TagsFields,
 		},
 	},
 }

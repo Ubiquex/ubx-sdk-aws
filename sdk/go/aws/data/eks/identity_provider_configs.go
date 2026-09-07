@@ -10,22 +10,22 @@ type IdentityProviderConfigs_IdentityProviderConfigs struct {
 
 type IdentityProviderConfigsConfig struct {
 	ClusterName any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type IdentityProviderConfigsAttrs struct {
-	ClusterName any
+	ClusterName             any
 	IdentityProviderConfigs any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 var IdentityProviderConfigs = ubx.DataSourceBinding{
 	WireType: "aws_eks_identity_provider_configs",
 	Fields: ubx.FieldMap{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

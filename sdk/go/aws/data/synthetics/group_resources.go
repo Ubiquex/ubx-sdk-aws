@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupResourcesConfig struct {
 	GroupIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type GroupResourcesAttrs struct {
 	GroupIdentifier any
-	MaxResults any
-	NextToken any
-	Resources any
+	MaxResults      any
+	NextToken       any
+	Resources       any
 }
 
 var GroupResources = ubx.DataSourceBinding{
 	WireType: "aws_synthetics_group_resources",
 	Fields: ubx.FieldMap{
 		"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

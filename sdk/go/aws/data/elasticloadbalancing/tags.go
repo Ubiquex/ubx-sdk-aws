@@ -4,13 +4,13 @@ package elasticloadbalancing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tags_TagDescriptions_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Tags_TagDescriptions struct {
 	LoadBalancerName any
-	Tags any
+	Tags             any
 }
 
 type TagsConfig struct {
@@ -19,7 +19,7 @@ type TagsConfig struct {
 
 type TagsAttrs struct {
 	LoadBalancerNames any
-	TagDescriptions any
+	TagDescriptions   any
 }
 
 var Tags = ubx.DataSourceBinding{

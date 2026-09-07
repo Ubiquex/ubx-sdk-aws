@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkRoutes_CoreNetworkSegmentEdge struct {
 	CoreNetworkId any
-	EdgeLocation any
-	SegmentName any
+	EdgeLocation  any
+	SegmentName   any
 }
 
 type NetworkRoutes_NetworkRoutes_Destinations struct {
-	CoreNetworkAttachmentId any
-	EdgeLocation any
-	NetworkFunctionGroupName any
-	ResourceId any
-	ResourceType any
-	SegmentName any
+	CoreNetworkAttachmentId    any
+	EdgeLocation               any
+	NetworkFunctionGroupName   any
+	ResourceId                 any
+	ResourceType               any
+	SegmentName                any
 	TransitGatewayAttachmentId any
 }
 
 type NetworkRoutes_NetworkRoutes struct {
 	DestinationCidrBlock any
-	Destinations any
-	PrefixListId any
-	State any
-	Type any
+	Destinations         any
+	PrefixListId         any
+	State                any
+	Type                 any
 }
 
 type NetworkRoutes_RouteTableIdentifier_CoreNetworkNetworkFunctionGroup struct {
-	CoreNetworkId any
-	EdgeLocation any
+	CoreNetworkId            any
+	EdgeLocation             any
 	NetworkFunctionGroupName any
 }
 
@@ -37,86 +37,86 @@ type NetworkRoutes_RouteTableIdentifier struct {
 	// <p>Describes a core network </p>
 	CoreNetworkNetworkFunctionGroup any
 	// <p>Returns details about a core network edge.</p>
-	CoreNetworkSegmentEdge any
+	CoreNetworkSegmentEdge      any
 	TransitGatewayRouteTableArn any
 }
 
 var NetworkRoutes_RouteTableIdentifier_CoreNetworkNetworkFunctionGroupFields = ubx.FieldMap{
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"EdgeLocation": ubx.FieldSpec{WireName: "edge_location"},
-		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
-	}
+	"CoreNetworkId":            ubx.FieldSpec{WireName: "core_network_id"},
+	"EdgeLocation":             ubx.FieldSpec{WireName: "edge_location"},
+	"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
+}
 
 var NetworkRoutes_CoreNetworkSegmentEdgeFields = ubx.FieldMap{
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"EdgeLocation": ubx.FieldSpec{WireName: "edge_location"},
-		"SegmentName": ubx.FieldSpec{WireName: "segment_name"},
-	}
+	"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
+	"EdgeLocation":  ubx.FieldSpec{WireName: "edge_location"},
+	"SegmentName":   ubx.FieldSpec{WireName: "segment_name"},
+}
 
 var NetworkRoutes_RouteTableIdentifierFields = ubx.FieldMap{
-		"CoreNetworkNetworkFunctionGroup": ubx.FieldSpec{
-			WireName: "core_network_network_function_group",
-			Kind: "object",
-			Fields: NetworkRoutes_RouteTableIdentifier_CoreNetworkNetworkFunctionGroupFields,
-		},
-		"CoreNetworkSegmentEdge": ubx.FieldSpec{
-			WireName: "core_network_segment_edge",
-			Kind: "object",
-			Fields: NetworkRoutes_CoreNetworkSegmentEdgeFields,
-		},
-		"TransitGatewayRouteTableArn": ubx.FieldSpec{WireName: "transit_gateway_route_table_arn"},
-	}
+	"CoreNetworkNetworkFunctionGroup": ubx.FieldSpec{
+		WireName: "core_network_network_function_group",
+		Kind:     "object",
+		Fields:   NetworkRoutes_RouteTableIdentifier_CoreNetworkNetworkFunctionGroupFields,
+	},
+	"CoreNetworkSegmentEdge": ubx.FieldSpec{
+		WireName: "core_network_segment_edge",
+		Kind:     "object",
+		Fields:   NetworkRoutes_CoreNetworkSegmentEdgeFields,
+	},
+	"TransitGatewayRouteTableArn": ubx.FieldSpec{WireName: "transit_gateway_route_table_arn"},
+}
 
 type NetworkRoutesConfig struct {
-	DestinationFilters any
-	ExactCidrMatches any
-	GlobalNetworkId any
+	DestinationFilters   any
+	ExactCidrMatches     any
+	GlobalNetworkId      any
 	LongestPrefixMatches any
-	PrefixListIds any
+	PrefixListIds        any
 	// <p>Describes a route table.</p>
 	RouteTableIdentifier any
-	States any
-	SubnetOfMatches any
-	SupernetOfMatches any
-	Types any
+	States               any
+	SubnetOfMatches      any
+	SupernetOfMatches    any
+	Types                any
 }
 
 type NetworkRoutesAttrs struct {
 	// <p>Returns details about a core network edge.</p>
 	CoreNetworkSegmentEdge any
-	DestinationFilters any
-	ExactCidrMatches any
-	GlobalNetworkId any
-	LongestPrefixMatches any
-	NetworkRoutes any
-	PrefixListIds any
-	RouteTableArn any
+	DestinationFilters     any
+	ExactCidrMatches       any
+	GlobalNetworkId        any
+	LongestPrefixMatches   any
+	NetworkRoutes          any
+	PrefixListIds          any
+	RouteTableArn          any
 	// <p>Describes a route table.</p>
 	RouteTableIdentifier any
-	RouteTableTimestamp any
-	RouteTableType any
-	States any
-	SubnetOfMatches any
-	SupernetOfMatches any
-	Types any
+	RouteTableTimestamp  any
+	RouteTableType       any
+	States               any
+	SubnetOfMatches      any
+	SupernetOfMatches    any
+	Types                any
 }
 
 var NetworkRoutes = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_network_routes",
 	Fields: ubx.FieldMap{
-		"DestinationFilters": ubx.FieldSpec{WireName: "destination_filters"},
-		"ExactCidrMatches": ubx.FieldSpec{WireName: "exact_cidr_matches"},
-		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
+		"DestinationFilters":   ubx.FieldSpec{WireName: "destination_filters"},
+		"ExactCidrMatches":     ubx.FieldSpec{WireName: "exact_cidr_matches"},
+		"GlobalNetworkId":      ubx.FieldSpec{WireName: "global_network_id"},
 		"LongestPrefixMatches": ubx.FieldSpec{WireName: "longest_prefix_matches"},
-		"PrefixListIds": ubx.FieldSpec{WireName: "prefix_list_ids"},
+		"PrefixListIds":        ubx.FieldSpec{WireName: "prefix_list_ids"},
 		"RouteTableIdentifier": ubx.FieldSpec{
 			WireName: "route_table_identifier",
-			Kind: "object",
-			Fields: NetworkRoutes_RouteTableIdentifierFields,
+			Kind:     "object",
+			Fields:   NetworkRoutes_RouteTableIdentifierFields,
 		},
-		"States": ubx.FieldSpec{WireName: "states"},
-		"SubnetOfMatches": ubx.FieldSpec{WireName: "subnet_of_matches"},
+		"States":            ubx.FieldSpec{WireName: "states"},
+		"SubnetOfMatches":   ubx.FieldSpec{WireName: "subnet_of_matches"},
 		"SupernetOfMatches": ubx.FieldSpec{WireName: "supernet_of_matches"},
-		"Types": ubx.FieldSpec{WireName: "types"},
+		"Types":             ubx.FieldSpec{WireName: "types"},
 	},
 }

@@ -9,27 +9,27 @@ type ApiDetectiveDatasourcePackages_DatasourcePackages_LastIngestStateChange str
 
 type ApiDetectiveDatasourcePackages_DatasourcePackages struct {
 	DatasourcePackageIngestState any
-	LastIngestStateChange any
+	LastIngestStateChange        any
 }
 
 type ApiDetectiveDatasourcePackagesConfig struct {
-	GraphArn any
+	GraphArn   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiDetectiveDatasourcePackagesAttrs struct {
 	DatasourcePackages any
-	GraphArn any
-	MaxResults any
-	NextToken any
+	GraphArn           any
+	MaxResults         any
+	NextToken          any
 }
 
 var ApiDetectiveDatasourcePackages = ubx.DataSourceBinding{
 	WireType: "aws_api_detective_datasource_packages",
 	Fields: ubx.FieldMap{
-		"GraphArn": ubx.FieldSpec{WireName: "graph_arn"},
+		"GraphArn":   ubx.FieldSpec{WireName: "graph_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,25 +4,25 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetExportJobs_DatasetExportJobs struct {
-	CreationDateTime any
+	CreationDateTime    any
 	DatasetExportJobArn any
-	FailureReason any
-	JobName any
+	FailureReason       any
+	JobName             any
 	LastUpdatedDateTime any
-	Status any
+	Status              any
 }
 
 type DatasetExportJobsConfig struct {
 	DatasetArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DatasetExportJobsAttrs struct {
-	DatasetArn any
+	DatasetArn        any
 	DatasetExportJobs any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var DatasetExportJobs = ubx.DataSourceBinding{
@@ -30,6 +30,6 @@ var DatasetExportJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DatasetArn": ubx.FieldSpec{WireName: "dataset_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

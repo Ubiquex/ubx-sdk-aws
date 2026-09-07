@@ -8,7 +8,7 @@ type Route53RecoveryControlConfigResourcePolicyConfig struct {
 }
 
 type Route53RecoveryControlConfigResourcePolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

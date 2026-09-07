@@ -9,9 +9,9 @@ type ExpenseAnalysis_DocumentMetadata struct {
 
 type ExpenseAnalysis_ExpenseDocuments_Blocks_Geometry_BoundingBox struct {
 	Height any
-	Left any
-	Top any
-	Width any
+	Left   any
+	Top    any
+	Width  any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_Blocks_Geometry_Polygon struct {
@@ -20,68 +20,68 @@ type ExpenseAnalysis_ExpenseDocuments_Blocks_Geometry_Polygon struct {
 }
 
 type ExpenseAnalysis_ExpenseDocuments_Blocks_Geometry struct {
-	BoundingBox any
-	Polygon any
+	BoundingBox   any
+	Polygon       any
 	RotationAngle any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_Blocks_Query struct {
 	Alias any
 	Pages any
-	Text any
+	Text  any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_Blocks_Relationships struct {
-	Ids any
+	Ids  any
 	Type any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_Blocks struct {
-	BlockType any
-	ColumnIndex any
-	ColumnSpan any
-	Confidence any
-	EntityTypes any
-	Geometry any
-	Id any
-	Page any
-	Query any
-	Relationships any
-	RowIndex any
-	RowSpan any
+	BlockType       any
+	ColumnIndex     any
+	ColumnSpan      any
+	Confidence      any
+	EntityTypes     any
+	Geometry        any
+	Id              any
+	Page            any
+	Query           any
+	Relationships   any
+	RowIndex        any
+	RowSpan         any
 	SelectionStatus any
-	Text any
-	TextType any
+	Text            any
+	TextType        any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_LineItemGroups_LineItems_LineItemExpenseFields_Currency struct {
-	Code any
+	Code       any
 	Confidence any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_LineItemGroups_LineItems_LineItemExpenseFields_GroupProperties struct {
-	Id any
+	Id    any
 	Types any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_LineItemGroups_LineItems_LineItemExpenseFields_LabelDetection struct {
 	Confidence any
-	Geometry any
-	Text any
+	Geometry   any
+	Text       any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_LineItemGroups_LineItems_LineItemExpenseFields_Type struct {
 	Confidence any
-	Text any
+	Text       any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_LineItemGroups_LineItems_LineItemExpenseFields struct {
-	Currency any
+	Currency        any
 	GroupProperties any
-	LabelDetection any
-	PageNumber any
-	Type any
-	ValueDetection any
+	LabelDetection  any
+	PageNumber      any
+	Type            any
+	ValueDetection  any
 }
 
 type ExpenseAnalysis_ExpenseDocuments_LineItemGroups_LineItems struct {
@@ -90,25 +90,25 @@ type ExpenseAnalysis_ExpenseDocuments_LineItemGroups_LineItems struct {
 
 type ExpenseAnalysis_ExpenseDocuments_LineItemGroups struct {
 	LineItemGroupIndex any
-	LineItems any
+	LineItems          any
 }
 
 type ExpenseAnalysis_ExpenseDocuments struct {
-	Blocks any
-	ExpenseIndex any
+	Blocks         any
+	ExpenseIndex   any
 	LineItemGroups any
-	SummaryFields any
+	SummaryFields  any
 }
 
 type ExpenseAnalysis_Warnings struct {
 	ErrorCode any
-	Pages any
+	Pages     any
 }
 
 type ExpenseAnalysisConfig struct {
-	JobId any
+	JobId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ExpenseAnalysisAttrs struct {
@@ -116,19 +116,19 @@ type ExpenseAnalysisAttrs struct {
 	// <p>Information about the input document.</p>
 	DocumentMetadata any
 	ExpenseDocuments any
-	JobId any
-	JobStatus any
-	MaxResults any
-	NextToken any
-	StatusMessage any
-	Warnings any
+	JobId            any
+	JobStatus        any
+	MaxResults       any
+	NextToken        any
+	StatusMessage    any
+	Warnings         any
 }
 
 var ExpenseAnalysis = ubx.DataSourceBinding{
 	WireType: "aws_textract_expense_analysis",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,54 +4,54 @@ package admin_wickr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdminWickrSecurityGroupUsers_Users struct {
-	Cell any
+	Cell              any
 	ChallengeFailures any
-	CodeValidation any
-	CountryCode any
-	FirstName any
-	InviteCode any
-	IsAdmin any
-	IsInviteExpired any
-	IsUser any
-	LastName any
-	OtpEnabled any
-	ScimId any
-	SecurityGroups any
-	Status any
-	Suspended any
-	Type any
-	Uname any
-	UserId any
-	Username any
+	CodeValidation    any
+	CountryCode       any
+	FirstName         any
+	InviteCode        any
+	IsAdmin           any
+	IsInviteExpired   any
+	IsUser            any
+	LastName          any
+	OtpEnabled        any
+	ScimId            any
+	SecurityGroups    any
+	Status            any
+	Suspended         any
+	Type              any
+	Uname             any
+	UserId            any
+	Username          any
 }
 
 type AdminWickrSecurityGroupUsersConfig struct {
-	GroupId any
-	MaxResults any
-	NetworkId any
-	NextToken any
+	GroupId       any
+	MaxResults    any
+	NetworkId     any
+	NextToken     any
 	SortDirection any
-	SortFields any
+	SortFields    any
 }
 
 type AdminWickrSecurityGroupUsersAttrs struct {
-	GroupId any
-	MaxResults any
-	NetworkId any
-	NextToken any
+	GroupId       any
+	MaxResults    any
+	NetworkId     any
+	NextToken     any
 	SortDirection any
-	SortFields any
-	Users any
+	SortFields    any
+	Users         any
 }
 
 var AdminWickrSecurityGroupUsers = ubx.DataSourceBinding{
 	WireType: "aws_admin_wickr_security_group_users",
 	Fields: ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"GroupId":       ubx.FieldSpec{WireName: "group_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NetworkId":     ubx.FieldSpec{WireName: "network_id"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
-		"SortFields": ubx.FieldSpec{WireName: "sort_fields"},
+		"SortFields":    ubx.FieldSpec{WireName: "sort_fields"},
 	},
 }

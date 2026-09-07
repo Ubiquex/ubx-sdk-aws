@@ -34,9 +34,9 @@ type SubnetCidrBlockAttrs struct {
 var SubnetCidrBlock = ubx.ResourceBinding{
 	WireType: "aws_ec2_subnet_cidr_block",
 	Fields: ubx.FieldMap{
-		"Ipv6CidrBlock": ubx.FieldSpec{WireName: "ipv6_cidr_block"},
-		"Ipv6IpamPoolId": ubx.FieldSpec{WireName: "ipv6_ipam_pool_id"},
+		"Ipv6CidrBlock":     ubx.FieldSpec{WireName: "ipv6_cidr_block"},
+		"Ipv6IpamPoolId":    ubx.FieldSpec{WireName: "ipv6_ipam_pool_id"},
 		"Ipv6NetmaskLength": ubx.FieldSpec{WireName: "ipv6_netmask_length"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":          ubx.FieldSpec{WireName: "subnet_id"},
 	},
 }

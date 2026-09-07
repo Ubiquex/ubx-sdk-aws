@@ -12,12 +12,12 @@ type A2iRuntimeSagemakerHumanLoopConfig struct {
 }
 
 type A2iRuntimeSagemakerHumanLoopAttrs struct {
-	CreationTime any
-	FailureCode any
-	FailureReason any
+	CreationTime      any
+	FailureCode       any
+	FailureReason     any
 	FlowDefinitionArn any
-	HumanLoopArn any
-	HumanLoopName any
+	HumanLoopArn      any
+	HumanLoopName     any
 	// <p>Information about where the human output will be stored.</p>
 	HumanLoopOutput any
 	HumanLoopStatus any

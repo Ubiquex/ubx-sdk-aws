@@ -24,8 +24,8 @@ type UserPoolUicustomizationAttachmentAttrs struct {
 var UserPoolUicustomizationAttachment = ubx.ResourceBinding{
 	WireType: "aws_cognito_user_pool_uicustomization_attachment",
 	Fields: ubx.FieldMap{
-		"Css": ubx.FieldSpec{WireName: "css"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"Css":        ubx.FieldSpec{WireName: "css"},
+		"ClientId":   ubx.FieldSpec{WireName: "client_id"},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

@@ -4,14 +4,14 @@ package iottwinmaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyncResources_Filters struct {
-	ExternalId any
-	ResourceId any
+	ExternalId   any
+	ResourceId   any
 	ResourceType any
-	State any
+	State        any
 }
 
 type SyncResources_SyncResources_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -21,35 +21,35 @@ type SyncResources_SyncResources_Status struct {
 }
 
 type SyncResources_SyncResources struct {
-	ExternalId any
-	ResourceId any
-	ResourceType any
-	Status any
+	ExternalId     any
+	ResourceId     any
+	ResourceType   any
+	Status         any
 	UpdateDateTime any
 }
 
 var SyncResources_FiltersFields = ubx.FieldMap{
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ExternalId":   ubx.FieldSpec{WireName: "external_id"},
+	"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"State":        ubx.FieldSpec{WireName: "state"},
+}
 
 type SyncResourcesConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	SyncSource any
+	Filters     any
+	MaxResults  any
+	NextToken   any
+	SyncSource  any
 	WorkspaceId any
 }
 
 type SyncResourcesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	SyncResources any
-	SyncSource any
-	WorkspaceId any
+	SyncSource    any
+	WorkspaceId   any
 }
 
 var SyncResources = ubx.DataSourceBinding{
@@ -57,12 +57,12 @@ var SyncResources = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SyncResources_FiltersFields,
+			Kind:     "list",
+			Fields:   SyncResources_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SyncSource": ubx.FieldSpec{WireName: "sync_source"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"SyncSource":  ubx.FieldSpec{WireName: "sync_source"},
 		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

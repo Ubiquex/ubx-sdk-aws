@@ -21,6 +21,6 @@ var ApplicationFleetAssociation = ubx.ResourceBinding{
 	WireType: "aws_app_stream_application_fleet_association",
 	Fields: ubx.FieldMap{
 		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
-		"FleetName": ubx.FieldSpec{WireName: "fleet_name"},
+		"FleetName":      ubx.FieldSpec{WireName: "fleet_name"},
 	},
 }

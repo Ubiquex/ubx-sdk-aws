@@ -9,18 +9,18 @@ type Workspace_EncryptionConfiguration struct {
 }
 
 type Workspace_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Workspace_EncryptionConfigurationFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+}
 
 var Workspace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkspaceConfig struct {
 	// The encryption configuration for the workspace.
@@ -61,16 +61,16 @@ var Workspace = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Workspace_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Workspace_EncryptionConfigurationFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workspace_TagsFields,
+			Kind:     "list",
+			Fields:   Workspace_TagsFields,
 		},
 		"WorkspaceDescription": ubx.FieldSpec{WireName: "workspace_description"},
-		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
+		"WorkspaceName":        ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

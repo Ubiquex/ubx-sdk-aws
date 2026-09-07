@@ -4,41 +4,41 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostReservationOfferings_Filter struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type HostReservationOfferings_OfferingSet struct {
-	CurrencyCode any
-	Duration any
-	HourlyPrice any
+	CurrencyCode   any
+	Duration       any
+	HourlyPrice    any
 	InstanceFamily any
-	OfferingId any
-	PaymentOption any
-	UpfrontPrice any
+	OfferingId     any
+	PaymentOption  any
+	UpfrontPrice   any
 }
 
 var HostReservationOfferings_FilterFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type HostReservationOfferingsConfig struct {
-	Filter any
+	Filter      any
 	MaxDuration any
-	MaxResults any
+	MaxResults  any
 	MinDuration any
-	NextToken any
-	OfferingId any
+	NextToken   any
+	OfferingId  any
 }
 
 type HostReservationOfferingsAttrs struct {
-	Filter any
+	Filter      any
 	MaxDuration any
-	MaxResults any
+	MaxResults  any
 	MinDuration any
-	NextToken any
-	OfferingId any
+	NextToken   any
+	OfferingId  any
 	OfferingSet any
 }
 
@@ -47,13 +47,13 @@ var HostReservationOfferings = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "list",
-			Fields: HostReservationOfferings_FilterFields,
+			Kind:     "list",
+			Fields:   HostReservationOfferings_FilterFields,
 		},
 		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
 		"MinDuration": ubx.FieldSpec{WireName: "min_duration"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OfferingId": ubx.FieldSpec{WireName: "offering_id"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"OfferingId":  ubx.FieldSpec{WireName: "offering_id"},
 	},
 }

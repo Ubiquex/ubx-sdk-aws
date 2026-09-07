@@ -25,6 +25,6 @@ var FindingAggregator = ubx.ResourceBinding{
 	WireType: "aws_security_hub_finding_aggregator",
 	Fields: ubx.FieldMap{
 		"RegionLinkingMode": ubx.FieldSpec{WireName: "region_linking_mode"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
+		"Regions":           ubx.FieldSpec{WireName: "regions"},
 	},
 }

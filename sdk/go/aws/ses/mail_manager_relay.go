@@ -12,19 +12,19 @@ type MailManagerRelay_Authentication struct {
 
 type MailManagerRelay_Tags struct {
 	// The key of a tag attached to the SES Mail Manager Relay resource, used to identify and organize the relay within AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var MailManagerRelay_AuthenticationFields = ubx.FieldMap{
-		"NoAuthentication": ubx.FieldSpec{WireName: "no_authentication"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"NoAuthentication": ubx.FieldSpec{WireName: "no_authentication"},
+	"SecretArn":        ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var MailManagerRelay_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MailManagerRelayConfig struct {
 	// Specifies the authentication mechanism and credentials used by this SES Mail Manager relay to connect to the destination SMTP server, such as basic authentication or no authentication. (AI-inferred)
@@ -61,16 +61,16 @@ var MailManagerRelay = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authentication": ubx.FieldSpec{
 			WireName: "authentication",
-			Kind: "object",
-			Fields: MailManagerRelay_AuthenticationFields,
+			Kind:     "object",
+			Fields:   MailManagerRelay_AuthenticationFields,
 		},
-		"RelayName": ubx.FieldSpec{WireName: "relay_name"},
+		"RelayName":  ubx.FieldSpec{WireName: "relay_name"},
 		"ServerName": ubx.FieldSpec{WireName: "server_name"},
 		"ServerPort": ubx.FieldSpec{WireName: "server_port"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MailManagerRelay_TagsFields,
+			Kind:     "list",
+			Fields:   MailManagerRelay_TagsFields,
 		},
 	},
 }

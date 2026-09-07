@@ -10,43 +10,43 @@ type DatasetDataSegments_DataSegments_EndTimestamp struct {
 
 type DatasetDataSegments_DataSegments_Enrichment struct {
 	LastEnrichedAt any
-	Status any
+	Status         any
 }
 
 type DatasetDataSegments_DataSegments struct {
-	Alias any
-	DataType any
-	EndTimestamp any
-	Enrichment any
+	Alias           any
+	DataType        any
+	EndTimestamp    any
+	Enrichment      any
 	SourceDatasetId any
-	StartTimestamp any
-	TimeSeriesId any
+	StartTimestamp  any
+	TimeSeriesId    any
 }
 
 type DatasetDataSegmentsConfig struct {
-	DatasetId any
+	DatasetId      any
 	DatasetVersion any
-	MaxResults any
-	NextToken any
-	WorkspaceName any
+	MaxResults     any
+	NextToken      any
+	WorkspaceName  any
 }
 
 type DatasetDataSegmentsAttrs struct {
-	DataSegments any
-	DatasetId any
+	DataSegments   any
+	DatasetId      any
 	DatasetVersion any
-	MaxResults any
-	NextToken any
-	WorkspaceName any
+	MaxResults     any
+	NextToken      any
+	WorkspaceName  any
 }
 
 var DatasetDataSegments = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_dataset_data_segments",
 	Fields: ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+		"DatasetId":      ubx.FieldSpec{WireName: "dataset_id"},
 		"DatasetVersion": ubx.FieldSpec{WireName: "dataset_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"WorkspaceName":  ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

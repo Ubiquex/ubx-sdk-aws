@@ -4,29 +4,29 @@ package signer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilePermissions_Permissions struct {
-	Action any
-	Principal any
+	Action         any
+	Principal      any
 	ProfileVersion any
-	StatementId any
+	StatementId    any
 }
 
 type ProfilePermissionsConfig struct {
-	NextToken any
+	NextToken   any
 	ProfileName any
 }
 
 type ProfilePermissionsAttrs struct {
-	NextToken any
-	Permissions any
+	NextToken       any
+	Permissions     any
 	PolicySizeBytes any
-	ProfileName any
-	RevisionId any
+	ProfileName     any
+	RevisionId      any
 }
 
 var ProfilePermissions = ubx.DataSourceBinding{
 	WireType: "aws_signer_profile_permissions",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
 	},
 }

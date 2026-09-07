@@ -18,14 +18,14 @@ type DeliveryDestination_Tags struct {
 }
 
 var DeliveryDestination_DeliveryDestinationPolicyFields = ubx.FieldMap{
-		"DeliveryDestinationName": ubx.FieldSpec{WireName: "delivery_destination_name"},
-		"DeliveryDestinationPolicy": ubx.FieldSpec{WireName: "delivery_destination_policy"},
-	}
+	"DeliveryDestinationName":   ubx.FieldSpec{WireName: "delivery_destination_name"},
+	"DeliveryDestinationPolicy": ubx.FieldSpec{WireName: "delivery_destination_policy"},
+}
 
 var DeliveryDestination_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeliveryDestinationConfig struct {
 	// The IAM resource policy attached to the delivery destination, specifying which AWS accounts or services are granted permission to deliver log events to this destination. (AI-inferred)
@@ -64,17 +64,17 @@ var DeliveryDestination = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeliveryDestinationPolicy": ubx.FieldSpec{
 			WireName: "delivery_destination_policy",
-			Kind: "object",
-			Fields: DeliveryDestination_DeliveryDestinationPolicyFields,
+			Kind:     "object",
+			Fields:   DeliveryDestination_DeliveryDestinationPolicyFields,
 		},
 		"DeliveryDestinationType": ubx.FieldSpec{WireName: "delivery_destination_type"},
-		"DestinationResourceArn": ubx.FieldSpec{WireName: "destination_resource_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
+		"DestinationResourceArn":  ubx.FieldSpec{WireName: "destination_resource_arn"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"OutputFormat":            ubx.FieldSpec{WireName: "output_format"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DeliveryDestination_TagsFields,
+			Kind:     "list",
+			Fields:   DeliveryDestination_TagsFields,
 		},
 	},
 }

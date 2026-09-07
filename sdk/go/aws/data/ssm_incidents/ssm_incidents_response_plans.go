@@ -4,19 +4,19 @@ package ssm_incidents
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmIncidentsResponsePlans_ResponsePlanSummaries struct {
-	Arn any
+	Arn         any
 	DisplayName any
-	Name any
+	Name        any
 }
 
 type SsmIncidentsResponsePlansConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SsmIncidentsResponsePlansAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 	ResponsePlanSummaries any
 }
 
@@ -24,6 +24,6 @@ var SsmIncidentsResponsePlans = ubx.DataSourceBinding{
 	WireType: "aws_ssm_incidents_response_plans",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

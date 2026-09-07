@@ -7,16 +7,15 @@ type EncryptionConfigurationConfig struct {
 }
 
 type EncryptionConfigurationAttrs struct {
-	CreationTime any
-	EncryptionStatus any
-	EncryptionType any
-	ErrorMessage any
-	KmsKeyId any
+	CreationTime         any
+	EncryptionStatus     any
+	EncryptionType       any
+	ErrorMessage         any
+	KmsKeyId             any
 	LastModificationTime any
 }
 
 var EncryptionConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_iotfleetwise_encryption_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

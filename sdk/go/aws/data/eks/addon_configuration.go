@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AddonConfiguration_PodIdentityConfiguration struct {
 	RecommendedManagedPolicies any
-	ServiceAccount any
+	ServiceAccount             any
 }
 
 type AddonConfigurationConfig struct {
-	AddonName any
+	AddonName    any
 	AddonVersion any
 }
 
 type AddonConfigurationAttrs struct {
-	AddonName any
-	AddonVersion any
-	ConfigurationSchema any
+	AddonName                any
+	AddonVersion             any
+	ConfigurationSchema      any
 	PodIdentityConfiguration any
 }
 
 var AddonConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_eks_addon_configuration",
 	Fields: ubx.FieldMap{
-		"AddonName": ubx.FieldSpec{WireName: "addon_name"},
+		"AddonName":    ubx.FieldSpec{WireName: "addon_name"},
 		"AddonVersion": ubx.FieldSpec{WireName: "addon_version"},
 	},
 }

@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Services_Filters struct {
 	Condition any
-	Name any
-	Values any
+	Name      any
+	Values    any
 }
 
 type Services_Services_DnsConfig_DnsRecords struct {
-	Ttl any
+	Ttl  any
 	Type any
 }
 
 type Services_Services_DnsConfig struct {
-	DnsRecords any
-	NamespaceId any
+	DnsRecords    any
+	NamespaceId   any
 	RoutingPolicy any
 }
 
 type Services_Services_HealthCheckConfig struct {
 	FailureThreshold any
-	ResourcePath any
-	Type any
+	ResourcePath     any
+	Type             any
 }
 
 type Services_Services_HealthCheckCustomConfig struct {
@@ -31,37 +31,37 @@ type Services_Services_HealthCheckCustomConfig struct {
 }
 
 type Services_Services struct {
-	Arn any
-	CreateDate any
-	CreatedByAccount any
-	Description any
-	DnsConfig any
-	HealthCheckConfig any
+	Arn                     any
+	CreateDate              any
+	CreatedByAccount        any
+	Description             any
+	DnsConfig               any
+	HealthCheckConfig       any
 	HealthCheckCustomConfig any
-	Id any
-	InstanceCount any
-	Name any
-	ResourceOwner any
-	Type any
+	Id                      any
+	InstanceCount           any
+	Name                    any
+	ResourceOwner           any
+	Type                    any
 }
 
 var Services_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type ServicesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ServicesAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Services any
+	NextToken  any
+	Services   any
 }
 
 var Services = ubx.DataSourceBinding{
@@ -69,10 +69,10 @@ var Services = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Services_FiltersFields,
+			Kind:     "list",
+			Fields:   Services_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

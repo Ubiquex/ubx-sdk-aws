@@ -4,7 +4,7 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Attachments_Attachments_CopyFrom_Conversation struct {
-	AttachmentId any
+	AttachmentId   any
 	ConversationId any
 }
 
@@ -13,47 +13,47 @@ type Attachments_Attachments_CopyFrom struct {
 }
 
 type Attachments_Attachments_Error struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type Attachments_Attachments struct {
-	AttachmentId any
+	AttachmentId   any
 	ConversationId any
-	CopyFrom any
-	CreatedAt any
-	Error any
-	FileSize any
-	FileType any
-	Md5chksum any
-	Name any
-	Status any
+	CopyFrom       any
+	CreatedAt      any
+	Error          any
+	FileSize       any
+	FileType       any
+	Md5chksum      any
+	Name           any
+	Status         any
 }
 
 type AttachmentsConfig struct {
-	ApplicationId any
+	ApplicationId  any
 	ConversationId any
-	MaxResults any
-	NextToken any
-	UserId any
+	MaxResults     any
+	NextToken      any
+	UserId         any
 }
 
 type AttachmentsAttrs struct {
-	ApplicationId any
-	Attachments any
+	ApplicationId  any
+	Attachments    any
 	ConversationId any
-	MaxResults any
-	NextToken any
-	UserId any
+	MaxResults     any
+	NextToken      any
+	UserId         any
 }
 
 var Attachments = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_attachments",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":  ubx.FieldSpec{WireName: "application_id"},
 		"ConversationId": ubx.FieldSpec{WireName: "conversation_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"UserId":         ubx.FieldSpec{WireName: "user_id"},
 	},
 }

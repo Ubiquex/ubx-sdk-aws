@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Asset_Files struct {
 	ContentBytes any
-	ContentText any
-	Metadata any
-	Path any
+	ContentText  any
+	Metadata     any
+	Path         any
 }
 
 var Asset_FilesFields = ubx.FieldMap{
-		"ContentBytes": ubx.FieldSpec{WireName: "content_bytes"},
-		"ContentText": ubx.FieldSpec{WireName: "content_text"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"ContentBytes": ubx.FieldSpec{WireName: "content_bytes"},
+	"ContentText":  ubx.FieldSpec{WireName: "content_text"},
+	"Metadata":     ubx.FieldSpec{WireName: "metadata"},
+	"Path":         ubx.FieldSpec{WireName: "path"},
+}
 
 type AssetConfig struct {
 	// The unique identifier of the parent Agent Space. The asset is created as a child of this agent space.
@@ -57,13 +57,13 @@ var Asset = ubx.ResourceBinding{
 	WireType: "aws_dev_ops_agent_asset",
 	Fields: ubx.FieldMap{
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
-		"AssetType": ubx.FieldSpec{WireName: "asset_type"},
+		"AssetType":    ubx.FieldSpec{WireName: "asset_type"},
 		"Files": ubx.FieldSpec{
 			WireName: "files",
-			Kind: "list",
-			Fields: Asset_FilesFields,
+			Kind:     "list",
+			Fields:   Asset_FilesFields,
 		},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Zip": ubx.FieldSpec{WireName: "zip"},
+		"Zip":      ubx.FieldSpec{WireName: "zip"},
 	},
 }

@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallDomainList_Tags struct {
 	// The key of a tag attached to the Route 53 Resolver firewall domain list, used to assign metadata for identifying and organizing the resource in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var FirewallDomainList_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallDomainListConfig struct {
 	// S3 URL to import domains from.
@@ -58,12 +58,12 @@ var FirewallDomainList = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_firewall_domain_list",
 	Fields: ubx.FieldMap{
 		"DomainFileUrl": ubx.FieldSpec{WireName: "domain_file_url"},
-		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Domains":       ubx.FieldSpec{WireName: "domains"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FirewallDomainList_TagsFields,
+			Kind:     "list",
+			Fields:   FirewallDomainList_TagsFields,
 		},
 	},
 }

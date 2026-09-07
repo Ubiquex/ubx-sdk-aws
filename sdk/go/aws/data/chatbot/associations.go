@@ -9,22 +9,22 @@ type Associations_Associations struct {
 
 type AssociationsConfig struct {
 	ChatConfiguration any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 type AssociationsAttrs struct {
-	Associations any
+	Associations      any
 	ChatConfiguration any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var Associations = ubx.DataSourceBinding{
 	WireType: "aws_chatbot_associations",
 	Fields: ubx.FieldMap{
 		"ChatConfiguration": ubx.FieldSpec{WireName: "chat_configuration"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

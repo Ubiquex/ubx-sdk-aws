@@ -10,45 +10,45 @@ type MediapackageVodPackagingConfigurations_PackagingConfigurations_CmafPackage_
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_CmafPackage_Encryption_SpekeKeyProvider struct {
 	EncryptionContractConfiguration any
-	RoleArn any
-	SystemIds any
-	Url any
+	RoleArn                         any
+	SystemIds                       any
+	Url                             any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_CmafPackage_Encryption struct {
 	ConstantInitializationVector any
-	SpekeKeyProvider any
+	SpekeKeyProvider             any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_CmafPackage_HlsManifests_StreamSelection struct {
 	MaxVideoBitsPerSecond any
 	MinVideoBitsPerSecond any
-	StreamOrder any
+	StreamOrder           any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_CmafPackage_HlsManifests struct {
-	AdMarkers any
-	IncludeIframeOnlyStream any
-	ManifestName any
+	AdMarkers                      any
+	IncludeIframeOnlyStream        any
+	ManifestName                   any
 	ProgramDateTimeIntervalSeconds any
-	RepeatExtXkey any
-	StreamSelection any
+	RepeatExtXkey                  any
+	StreamSelection                any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_CmafPackage struct {
-	Encryption any
-	HlsManifests any
+	Encryption                            any
+	HlsManifests                          any
 	IncludeEncoderConfigurationInSegments any
-	SegmentDurationSeconds any
+	SegmentDurationSeconds                any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_DashPackage_DashManifests struct {
-	ManifestLayout any
-	ManifestName any
+	ManifestLayout       any
+	ManifestName         any
 	MinBufferTimeSeconds any
-	Profile any
-	ScteMarkersSource any
-	StreamSelection any
+	Profile              any
+	ScteMarkersSource    any
+	StreamSelection      any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_DashPackage_Encryption struct {
@@ -56,70 +56,70 @@ type MediapackageVodPackagingConfigurations_PackagingConfigurations_DashPackage_
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_DashPackage struct {
-	DashManifests any
-	Encryption any
+	DashManifests                         any
+	Encryption                            any
 	IncludeEncoderConfigurationInSegments any
-	IncludeIframeOnlyStream any
-	PeriodTriggers any
-	SegmentDurationSeconds any
-	SegmentTemplateFormat any
+	IncludeIframeOnlyStream               any
+	PeriodTriggers                        any
+	SegmentDurationSeconds                any
+	SegmentTemplateFormat                 any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_HlsPackage_Encryption struct {
 	ConstantInitializationVector any
-	EncryptionMethod any
-	SpekeKeyProvider any
+	EncryptionMethod             any
+	SpekeKeyProvider             any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_HlsPackage struct {
-	Encryption any
-	HlsManifests any
-	IncludeDvbSubtitles any
+	Encryption             any
+	HlsManifests           any
+	IncludeDvbSubtitles    any
 	SegmentDurationSeconds any
 	UseAudioRenditionGroup any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_MssPackage_MssManifests struct {
-	ManifestName any
+	ManifestName    any
 	StreamSelection any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations_MssPackage struct {
-	Encryption any
-	MssManifests any
+	Encryption             any
+	MssManifests           any
 	SegmentDurationSeconds any
 }
 
 type MediapackageVodPackagingConfigurations_PackagingConfigurations struct {
-	Arn any
-	CmafPackage any
-	CreatedAt any
-	DashPackage any
-	HlsPackage any
-	Id any
-	MssPackage any
+	Arn              any
+	CmafPackage      any
+	CreatedAt        any
+	DashPackage      any
+	HlsPackage       any
+	Id               any
+	MssPackage       any
 	PackagingGroupId any
-	Tags any
+	Tags             any
 }
 
 type MediapackageVodPackagingConfigurationsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	PackagingGroupId any
 }
 
 type MediapackageVodPackagingConfigurationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 	PackagingConfigurations any
-	PackagingGroupId any
+	PackagingGroupId        any
 }
 
 var MediapackageVodPackagingConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_mediapackage_vod_packaging_configurations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"PackagingGroupId": ubx.FieldSpec{WireName: "packaging_group_id"},
 	},
 }

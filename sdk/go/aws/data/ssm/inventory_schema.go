@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InventorySchema_Schemas_Attributes struct {
 	DataType any
-	Name any
+	Name     any
 }
 
 type InventorySchema_Schemas struct {
-	Attributes any
+	Attributes  any
 	DisplayName any
-	TypeName any
-	Version any
+	TypeName    any
+	Version     any
 }
 
 type InventorySchemaConfig struct {
 	Aggregator any
 	MaxResults any
-	NextToken any
-	SubType any
-	TypeName any
+	NextToken  any
+	SubType    any
+	TypeName   any
 }
 
 type InventorySchemaAttrs struct {
 	Aggregator any
 	MaxResults any
-	NextToken any
-	Schemas any
-	SubType any
-	TypeName any
+	NextToken  any
+	Schemas    any
+	SubType    any
+	TypeName   any
 }
 
 var InventorySchema = ubx.DataSourceBinding{
@@ -37,8 +37,8 @@ var InventorySchema = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Aggregator": ubx.FieldSpec{WireName: "aggregator"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SubType": ubx.FieldSpec{WireName: "sub_type"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SubType":    ubx.FieldSpec{WireName: "sub_type"},
+		"TypeName":   ubx.FieldSpec{WireName: "type_name"},
 	},
 }

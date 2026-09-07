@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServicecatalogAppregistryAssociatedAttributeGroupsConfig struct {
 	Application any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type ServicecatalogAppregistryAssociatedAttributeGroupsAttrs struct {
-	Application any
+	Application     any
 	AttributeGroups any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 var ServicecatalogAppregistryAssociatedAttributeGroups = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_appregistry_associated_attribute_groups",
 	Fields: ubx.FieldMap{
 		"Application": ubx.FieldSpec{WireName: "application"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

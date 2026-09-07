@@ -8,30 +8,30 @@ type Fhirdatastores_DatastorePropertiesList_AnalyticsConfiguration struct {
 }
 
 type Fhirdatastores_DatastorePropertiesList_BackupStatusInfo_Configuration struct {
-	BackupTagsEnabled any
-	BackupType any
+	BackupTagsEnabled     any
+	BackupType            any
 	RetentionPeriodInDays any
-	Status any
+	Status                any
 }
 
 type Fhirdatastores_DatastorePropertiesList_BackupStatusInfo struct {
-	BackupEnabledAt any
-	Configuration any
-	EarliestRestorePoint any
-	LatestRestorePoint any
+	BackupEnabledAt                any
+	Configuration                  any
+	EarliestRestorePoint           any
+	LatestRestorePoint             any
 	ScheduledPermanentDeletionTime any
 }
 
 type Fhirdatastores_DatastorePropertiesList_ErrorCause struct {
 	ErrorCategory any
-	ErrorMessage any
+	ErrorMessage  any
 }
 
 type Fhirdatastores_DatastorePropertiesList_IdentityProviderConfiguration struct {
-	AuthorizationStrategy any
+	AuthorizationStrategy           any
 	FineGrainedAuthorizationEnabled any
-	IdpLambdaArn any
-	Metadata any
+	IdpLambdaArn                    any
+	Metadata                        any
 }
 
 type Fhirdatastores_DatastorePropertiesList_PreloadDataConfig struct {
@@ -43,7 +43,7 @@ type Fhirdatastores_DatastorePropertiesList_ProfileConfiguration struct {
 }
 
 type Fhirdatastores_DatastorePropertiesList_SseConfiguration_KmsEncryptionConfig struct {
-	CmkType any
+	CmkType  any
 	KmsKeyId any
 }
 
@@ -52,21 +52,21 @@ type Fhirdatastores_DatastorePropertiesList_SseConfiguration struct {
 }
 
 type Fhirdatastores_DatastorePropertiesList struct {
-	AnalyticsConfiguration any
-	BackupStatusInfo any
-	CreatedAt any
-	DatastoreArn any
-	DatastoreEndpoint any
-	DatastoreId any
-	DatastoreName any
-	DatastoreStatus any
-	DatastoreTypeVersion any
-	ErrorCause any
+	AnalyticsConfiguration        any
+	BackupStatusInfo              any
+	CreatedAt                     any
+	DatastoreArn                  any
+	DatastoreEndpoint             any
+	DatastoreId                   any
+	DatastoreName                 any
+	DatastoreStatus               any
+	DatastoreTypeVersion          any
+	ErrorCause                    any
 	IdentityProviderConfiguration any
-	NlpConfiguration any
-	PreloadDataConfig any
-	ProfileConfiguration any
-	SseConfiguration any
+	NlpConfiguration              any
+	PreloadDataConfig             any
+	ProfileConfiguration          any
+	SseConfiguration              any
 }
 
 type Fhirdatastores_Filter struct {
@@ -81,11 +81,11 @@ type Fhirdatastores_Filter struct {
 }
 
 var Fhirdatastores_FilterFields = ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"DatastoreName": ubx.FieldSpec{WireName: "datastore_name"},
-		"DatastoreStatus": ubx.FieldSpec{WireName: "datastore_status"},
-	}
+	"CreatedAfter":    ubx.FieldSpec{WireName: "created_after"},
+	"CreatedBefore":   ubx.FieldSpec{WireName: "created_before"},
+	"DatastoreName":   ubx.FieldSpec{WireName: "datastore_name"},
+	"DatastoreStatus": ubx.FieldSpec{WireName: "datastore_status"},
+}
 
 type FhirdatastoresConfig struct {
 	// <p>The filters applied to a data store query.</p>
@@ -111,10 +111,10 @@ var Fhirdatastores = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Fhirdatastores_FilterFields,
+			Kind:     "object",
+			Fields:   Fhirdatastores_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

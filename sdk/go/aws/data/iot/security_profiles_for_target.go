@@ -4,7 +4,7 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityProfilesForTarget_SecurityProfileTargetMappings_SecurityProfileIdentifier struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
@@ -14,30 +14,30 @@ type SecurityProfilesForTarget_SecurityProfileTargetMappings_Target struct {
 
 type SecurityProfilesForTarget_SecurityProfileTargetMappings struct {
 	SecurityProfileIdentifier any
-	Target any
+	Target                    any
 }
 
 type SecurityProfilesForTargetConfig struct {
-	MaxResults any
-	NextToken any
-	Recursive any
+	MaxResults               any
+	NextToken                any
+	Recursive                any
 	SecurityProfileTargetArn any
 }
 
 type SecurityProfilesForTargetAttrs struct {
-	MaxResults any
-	NextToken any
-	Recursive any
-	SecurityProfileTargetArn any
+	MaxResults                    any
+	NextToken                     any
+	Recursive                     any
+	SecurityProfileTargetArn      any
 	SecurityProfileTargetMappings any
 }
 
 var SecurityProfilesForTarget = ubx.DataSourceBinding{
 	WireType: "aws_iot_security_profiles_for_target",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Recursive": ubx.FieldSpec{WireName: "recursive"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
+		"Recursive":                ubx.FieldSpec{WireName: "recursive"},
 		"SecurityProfileTargetArn": ubx.FieldSpec{WireName: "security_profile_target_arn"},
 	},
 }

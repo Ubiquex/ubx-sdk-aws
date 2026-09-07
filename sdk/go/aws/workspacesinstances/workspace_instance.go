@@ -11,9 +11,9 @@ type WorkspaceInstance_Ec2ManagedInstance struct {
 type WorkspaceInstance_ManagedInstance_BlockDeviceMappings_Ebs struct {
 	// Specifies whether the EBS volume for the managed instance's block device mapping is encrypted at rest, enabling AWS EBS encryption for that volume. (AI-inferred)
 	Encrypted any
-	Iops any
+	Iops      any
 	// The KMS key ID used to encrypt the EBS volume defined in the block device mapping of the managed instance for this WorkSpace instance. (AI-inferred)
-	KmsKeyId any
+	KmsKeyId   any
 	Throughput any
 	// The size of the EBS volume (in GiB) for the block device mapping on the managed instance, determining the storage capacity of the device. (AI-inferred)
 	VolumeSize any
@@ -25,7 +25,7 @@ type WorkspaceInstance_ManagedInstance_BlockDeviceMappings struct {
 	// Specifies the Amazon EBS volume configuration (such as volume size, type, IOPS, encryption, snapshot ID, and delete-on-termination behavior) for the block device mapping attached to the managed instance. (AI-inferred)
 	Ebs any
 	// When set, this field suppresses the block device mapping, preventing the specified device from being exposed to the managed instance. (AI-inferred)
-	NoDevice any
+	NoDevice    any
 	VirtualName any
 }
 
@@ -87,7 +87,7 @@ type WorkspaceInstance_ManagedInstance_MetadataOptions struct {
 	HttpProtocolIpv6 any
 	// Specifies the maximum number of network hops allowed for the instance metadata service (IMDS) HTTP PUT responses, controlling the token's reachability to prevent unauthorized access to instance metadata. (AI-inferred)
 	HttpPutResponseHopLimit any
-	HttpTokens any
+	HttpTokens              any
 	// Specifies whether the managed instance can retrieve the instance's tags through the instance metadata service (allowed values are typically 'enabled' or 'disabled'). (AI-inferred)
 	InstanceMetadataTags any
 }
@@ -111,10 +111,10 @@ type WorkspaceInstance_ManagedInstance_Placement struct {
 	// Sets the Availability Zone in which the underlying managed instance of this WorkSpace is launched, allowing the workload to be placed in a specific AWS data center. (AI-inferred)
 	AvailabilityZone any
 	// Specifies the ID of the EC2 placement group into which the WorkSpace's managed instance is launched, enabling low-latency, high-bandwidth network communication with other instances in the same placement group. (AI-inferred)
-	GroupId any
-	GroupName any
+	GroupId         any
+	GroupName       any
 	PartitionNumber any
-	Tenancy any
+	Tenancy         any
 }
 
 type WorkspaceInstance_ManagedInstance_PrivateDnsNameOptions struct {
@@ -128,14 +128,14 @@ type WorkspaceInstance_ManagedInstance_PrivateDnsNameOptions struct {
 
 type WorkspaceInstance_ManagedInstance_TagSpecifications_Tags struct {
 	// The key of a tag to apply to the managed WorkSpace instance within its tag specification. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 type WorkspaceInstance_ManagedInstance_TagSpecifications struct {
 	// Identifies the AWS resource type that the tag specification applies to, such as 'instance' for tagging the managed EC2 instance backing a WorkSpace. (AI-inferred)
 	ResourceType any
-	Tags any
+	Tags         any
 }
 
 type WorkspaceInstance_ManagedInstance struct {
@@ -143,11 +143,11 @@ type WorkspaceInstance_ManagedInstance struct {
 	// Specifies the EC2 Capacity Reservation targeting options for the underlying managed instance of the WorkSpace, such as launching into a specific Capacity Reservation or using the default on-demand preference. (AI-inferred)
 	CapacityReservationSpecification any
 	// Specifies the CPU options, such as core count and threads per core, for the underlying managed EC2 instance that runs the WorkSpace. (AI-inferred)
-	CpuOptions any
+	CpuOptions          any
 	CreditSpecification any
 	// When set to true, this prevents the underlying managed EC2 instance for the WorkSpace from being stopped through the EC2 StopInstances API operation, allowing it to be stopped only by a user shutdown from within the operating system. (AI-inferred)
 	DisableApiStop any
-	EbsOptimized any
+	EbsOptimized   any
 	// When enabled, assigns an IPv6 address to the primary network interface of the managed WorkSpace instance. (AI-inferred)
 	EnablePrimaryIpv6 any
 	// Specifies the Nitro Enclaves options for the underlying managed EC2 instance of this WorkSpace, controlling whether enclaves are enabled on that instance. (AI-inferred)
@@ -158,231 +158,231 @@ type WorkspaceInstance_ManagedInstance struct {
 	// The unique identifier of the Amazon WorkSpaces image used to create the WorkSpace instance, determining its operating system and preinstalled software. (AI-inferred)
 	ImageId any
 	// The compute type for the managed WorkSpace instance (e.g., STANDARD, PERFORMANCE, POWER, GRAPHICS) that determines the CPU, memory, and GPU capacity allocated to the virtual desktop. (AI-inferred)
-	InstanceType any
+	InstanceType     any
 	Ipv6AddressCount any
 	// The name of the EC2 key pair that encrypts the WorkSpace user's password when the WorkSpace is created. (AI-inferred)
 	KeyName any
 	// A list of license configuration ARNs that are associated with the managed instance for license tracking and compliance. (AI-inferred)
 	LicenseSpecifications any
-	MaintenanceOptions any
+	MaintenanceOptions    any
 	// Controls the Instance Metadata Service (IMDS) on the managed instance, including whether HTTP requests are allowed, whether IMDSv2 tokens are required, and the maximum hop limit. (AI-inferred)
 	MetadataOptions any
-	Monitoring any
+	Monitoring      any
 	// Provides a list of network interfaces attached to the managed EC2 instance, including their IP addresses and network configuration. (AI-inferred)
 	NetworkInterfaces any
 	// Specifies the network performance options for the managed instance, mirroring EC2's NetworkPerformanceOptions object which typically includes a bandwidth-weighted ENA flag to optimize network throughput. (AI-inferred)
 	NetworkPerformanceOptions any
-	Placement any
-	PrivateDnsNameOptions any
+	Placement                 any
+	PrivateDnsNameOptions     any
 	// The ID of the subnet in which the WorkSpace's underlying managed EC2 instance is launched. (AI-inferred)
-	SubnetId any
+	SubnetId          any
 	TagSpecifications any
 	// Defines the user data script executed on the WorkSpace's managed instance during provisioning, enabling automated setup like software installation or registry changes. (AI-inferred)
 	UserData any
 }
 
 var WorkspaceInstance_ManagedInstance_BlockDeviceMappings_EbsFields = ubx.FieldMap{
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Encrypted":  ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":       ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":   ubx.FieldSpec{WireName: "kms_key_id"},
+	"Throughput": ubx.FieldSpec{WireName: "throughput"},
+	"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var WorkspaceInstance_ManagedInstance_BlockDeviceMappingsFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Ebs": ubx.FieldSpec{
-			WireName: "ebs",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_BlockDeviceMappings_EbsFields,
-		},
-		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
-		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Ebs": ubx.FieldSpec{
+		WireName: "ebs",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_BlockDeviceMappings_EbsFields,
+	},
+	"NoDevice":    ubx.FieldSpec{WireName: "no_device"},
+	"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+}
 
 var WorkspaceInstance_ManagedInstance_CapacityReservationSpecification_CapacityReservationTargetFields = ubx.FieldMap{
-		"CapacityReservationId": ubx.FieldSpec{WireName: "capacity_reservation_id"},
-		"CapacityReservationResourceGroupArn": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arn"},
-	}
+	"CapacityReservationId":               ubx.FieldSpec{WireName: "capacity_reservation_id"},
+	"CapacityReservationResourceGroupArn": ubx.FieldSpec{WireName: "capacity_reservation_resource_group_arn"},
+}
 
 var WorkspaceInstance_ManagedInstance_CapacityReservationSpecificationFields = ubx.FieldMap{
-		"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
-		"CapacityReservationTarget": ubx.FieldSpec{
-			WireName: "capacity_reservation_target",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_CapacityReservationSpecification_CapacityReservationTargetFields,
-		},
-	}
+	"CapacityReservationPreference": ubx.FieldSpec{WireName: "capacity_reservation_preference"},
+	"CapacityReservationTarget": ubx.FieldSpec{
+		WireName: "capacity_reservation_target",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_CapacityReservationSpecification_CapacityReservationTargetFields,
+	},
+}
 
 var WorkspaceInstance_ManagedInstance_CpuOptionsFields = ubx.FieldMap{
-		"CoreCount": ubx.FieldSpec{WireName: "core_count"},
-		"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
-	}
+	"CoreCount":      ubx.FieldSpec{WireName: "core_count"},
+	"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
+}
 
 var WorkspaceInstance_ManagedInstance_CreditSpecificationFields = ubx.FieldMap{
-		"CpuCredits": ubx.FieldSpec{WireName: "cpu_credits"},
-	}
+	"CpuCredits": ubx.FieldSpec{WireName: "cpu_credits"},
+}
 
 var WorkspaceInstance_ManagedInstance_EnclaveOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var WorkspaceInstance_ManagedInstance_HibernationOptionsFields = ubx.FieldMap{
-		"Configured": ubx.FieldSpec{WireName: "configured"},
-	}
+	"Configured": ubx.FieldSpec{WireName: "configured"},
+}
 
 var WorkspaceInstance_ManagedInstance_IamInstanceProfileFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Arn":  ubx.FieldSpec{WireName: "arn"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var WorkspaceInstance_ManagedInstance_LicenseSpecificationsFields = ubx.FieldMap{
-		"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
-	}
+	"LicenseConfigurationArn": ubx.FieldSpec{WireName: "license_configuration_arn"},
+}
 
 var WorkspaceInstance_ManagedInstance_MaintenanceOptionsFields = ubx.FieldMap{
-		"AutoRecovery": ubx.FieldSpec{WireName: "auto_recovery"},
-	}
+	"AutoRecovery": ubx.FieldSpec{WireName: "auto_recovery"},
+}
 
 var WorkspaceInstance_ManagedInstance_MetadataOptionsFields = ubx.FieldMap{
-		"HttpEndpoint": ubx.FieldSpec{WireName: "http_endpoint"},
-		"HttpProtocolIpv6": ubx.FieldSpec{WireName: "http_protocol_ipv6"},
-		"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
-		"HttpTokens": ubx.FieldSpec{WireName: "http_tokens"},
-		"InstanceMetadataTags": ubx.FieldSpec{WireName: "instance_metadata_tags"},
-	}
+	"HttpEndpoint":            ubx.FieldSpec{WireName: "http_endpoint"},
+	"HttpProtocolIpv6":        ubx.FieldSpec{WireName: "http_protocol_ipv6"},
+	"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
+	"HttpTokens":              ubx.FieldSpec{WireName: "http_tokens"},
+	"InstanceMetadataTags":    ubx.FieldSpec{WireName: "instance_metadata_tags"},
+}
 
 var WorkspaceInstance_ManagedInstance_NetworkInterfacesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
-		"Groups": ubx.FieldSpec{WireName: "groups"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
+	"Groups":      ubx.FieldSpec{WireName: "groups"},
+	"SubnetId":    ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var WorkspaceInstance_ManagedInstance_NetworkPerformanceOptionsFields = ubx.FieldMap{
-		"BandwidthWeighting": ubx.FieldSpec{WireName: "bandwidth_weighting"},
-	}
+	"BandwidthWeighting": ubx.FieldSpec{WireName: "bandwidth_weighting"},
+}
 
 var WorkspaceInstance_ManagedInstance_PlacementFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"PartitionNumber": ubx.FieldSpec{WireName: "partition_number"},
-		"Tenancy": ubx.FieldSpec{WireName: "tenancy"},
-	}
+	"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+	"GroupId":          ubx.FieldSpec{WireName: "group_id"},
+	"GroupName":        ubx.FieldSpec{WireName: "group_name"},
+	"PartitionNumber":  ubx.FieldSpec{WireName: "partition_number"},
+	"Tenancy":          ubx.FieldSpec{WireName: "tenancy"},
+}
 
 var WorkspaceInstance_ManagedInstance_PrivateDnsNameOptionsFields = ubx.FieldMap{
-		"EnableResourceNameDnsAaaarecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_aaaarecord"},
-		"EnableResourceNameDnsArecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_arecord"},
-		"HostnameType": ubx.FieldSpec{WireName: "hostname_type"},
-	}
+	"EnableResourceNameDnsAaaarecord": ubx.FieldSpec{WireName: "enable_resource_name_dns_aaaarecord"},
+	"EnableResourceNameDnsArecord":    ubx.FieldSpec{WireName: "enable_resource_name_dns_arecord"},
+	"HostnameType":                    ubx.FieldSpec{WireName: "hostname_type"},
+}
 
 var WorkspaceInstance_ManagedInstance_TagSpecifications_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var WorkspaceInstance_ManagedInstance_TagSpecificationsFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: WorkspaceInstance_ManagedInstance_TagSpecifications_TagsFields,
-		},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   WorkspaceInstance_ManagedInstance_TagSpecifications_TagsFields,
+	},
+}
 
 var WorkspaceInstance_ManagedInstanceFields = ubx.FieldMap{
-		"BlockDeviceMappings": ubx.FieldSpec{
-			WireName: "block_device_mappings",
-			Kind: "list",
-			Fields: WorkspaceInstance_ManagedInstance_BlockDeviceMappingsFields,
-		},
-		"CapacityReservationSpecification": ubx.FieldSpec{
-			WireName: "capacity_reservation_specification",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_CapacityReservationSpecificationFields,
-		},
-		"CpuOptions": ubx.FieldSpec{
-			WireName: "cpu_options",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_CpuOptionsFields,
-		},
-		"CreditSpecification": ubx.FieldSpec{
-			WireName: "credit_specification",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_CreditSpecificationFields,
-		},
-		"DisableApiStop": ubx.FieldSpec{WireName: "disable_api_stop"},
-		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
-		"EnablePrimaryIpv6": ubx.FieldSpec{WireName: "enable_primary_ipv6"},
-		"EnclaveOptions": ubx.FieldSpec{
-			WireName: "enclave_options",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_EnclaveOptionsFields,
-		},
-		"HibernationOptions": ubx.FieldSpec{
-			WireName: "hibernation_options",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_HibernationOptionsFields,
-		},
-		"IamInstanceProfile": ubx.FieldSpec{
-			WireName: "iam_instance_profile",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_IamInstanceProfileFields,
-		},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"LicenseSpecifications": ubx.FieldSpec{
-			WireName: "license_specifications",
-			Kind: "list",
-			Fields: WorkspaceInstance_ManagedInstance_LicenseSpecificationsFields,
-		},
-		"MaintenanceOptions": ubx.FieldSpec{
-			WireName: "maintenance_options",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_MaintenanceOptionsFields,
-		},
-		"MetadataOptions": ubx.FieldSpec{
-			WireName: "metadata_options",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_MetadataOptionsFields,
-		},
-		"Monitoring": ubx.FieldSpec{
-			WireName: "monitoring",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_EnclaveOptionsFields,
-		},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: WorkspaceInstance_ManagedInstance_NetworkInterfacesFields,
-		},
-		"NetworkPerformanceOptions": ubx.FieldSpec{
-			WireName: "network_performance_options",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_NetworkPerformanceOptionsFields,
-		},
-		"Placement": ubx.FieldSpec{
-			WireName: "placement",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_PlacementFields,
-		},
-		"PrivateDnsNameOptions": ubx.FieldSpec{
-			WireName: "private_dns_name_options",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstance_PrivateDnsNameOptionsFields,
-		},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"TagSpecifications": ubx.FieldSpec{
-			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: WorkspaceInstance_ManagedInstance_TagSpecificationsFields,
-		},
-		"UserData": ubx.FieldSpec{WireName: "user_data"},
-	}
+	"BlockDeviceMappings": ubx.FieldSpec{
+		WireName: "block_device_mappings",
+		Kind:     "list",
+		Fields:   WorkspaceInstance_ManagedInstance_BlockDeviceMappingsFields,
+	},
+	"CapacityReservationSpecification": ubx.FieldSpec{
+		WireName: "capacity_reservation_specification",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_CapacityReservationSpecificationFields,
+	},
+	"CpuOptions": ubx.FieldSpec{
+		WireName: "cpu_options",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_CpuOptionsFields,
+	},
+	"CreditSpecification": ubx.FieldSpec{
+		WireName: "credit_specification",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_CreditSpecificationFields,
+	},
+	"DisableApiStop":    ubx.FieldSpec{WireName: "disable_api_stop"},
+	"EbsOptimized":      ubx.FieldSpec{WireName: "ebs_optimized"},
+	"EnablePrimaryIpv6": ubx.FieldSpec{WireName: "enable_primary_ipv6"},
+	"EnclaveOptions": ubx.FieldSpec{
+		WireName: "enclave_options",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_EnclaveOptionsFields,
+	},
+	"HibernationOptions": ubx.FieldSpec{
+		WireName: "hibernation_options",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_HibernationOptionsFields,
+	},
+	"IamInstanceProfile": ubx.FieldSpec{
+		WireName: "iam_instance_profile",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_IamInstanceProfileFields,
+	},
+	"ImageId":          ubx.FieldSpec{WireName: "image_id"},
+	"InstanceType":     ubx.FieldSpec{WireName: "instance_type"},
+	"Ipv6AddressCount": ubx.FieldSpec{WireName: "ipv6_address_count"},
+	"KeyName":          ubx.FieldSpec{WireName: "key_name"},
+	"LicenseSpecifications": ubx.FieldSpec{
+		WireName: "license_specifications",
+		Kind:     "list",
+		Fields:   WorkspaceInstance_ManagedInstance_LicenseSpecificationsFields,
+	},
+	"MaintenanceOptions": ubx.FieldSpec{
+		WireName: "maintenance_options",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_MaintenanceOptionsFields,
+	},
+	"MetadataOptions": ubx.FieldSpec{
+		WireName: "metadata_options",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_MetadataOptionsFields,
+	},
+	"Monitoring": ubx.FieldSpec{
+		WireName: "monitoring",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_EnclaveOptionsFields,
+	},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   WorkspaceInstance_ManagedInstance_NetworkInterfacesFields,
+	},
+	"NetworkPerformanceOptions": ubx.FieldSpec{
+		WireName: "network_performance_options",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_NetworkPerformanceOptionsFields,
+	},
+	"Placement": ubx.FieldSpec{
+		WireName: "placement",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_PlacementFields,
+	},
+	"PrivateDnsNameOptions": ubx.FieldSpec{
+		WireName: "private_dns_name_options",
+		Kind:     "object",
+		Fields:   WorkspaceInstance_ManagedInstance_PrivateDnsNameOptionsFields,
+	},
+	"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+	"TagSpecifications": ubx.FieldSpec{
+		WireName: "tag_specifications",
+		Kind:     "list",
+		Fields:   WorkspaceInstance_ManagedInstance_TagSpecificationsFields,
+	},
+	"UserData": ubx.FieldSpec{WireName: "user_data"},
+}
 
 type WorkspaceInstanceConfig struct {
 	// Whether this WorkSpaces Instance is managed by AWS. (AI-inferred)
@@ -409,13 +409,13 @@ var WorkspaceInstance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ManagedInstance": ubx.FieldSpec{
 			WireName: "managed_instance",
-			Kind: "object",
-			Fields: WorkspaceInstance_ManagedInstanceFields,
+			Kind:     "object",
+			Fields:   WorkspaceInstance_ManagedInstanceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WorkspaceInstance_ManagedInstance_TagSpecifications_TagsFields,
+			Kind:     "list",
+			Fields:   WorkspaceInstance_ManagedInstance_TagSpecifications_TagsFields,
 		},
 	},
 }

@@ -12,6 +12,5 @@ type LifecycleHookTypesAttrs struct {
 
 var LifecycleHookTypes = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_lifecycle_hook_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,13 +4,13 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Alerts_Alerts struct {
-	AlertType any
+	AlertType        any
 	ClearedTimestamp any
-	Id any
-	Message any
-	PipelineId any
-	SetTimestamp any
-	State any
+	Id               any
+	Message          any
+	PipelineId       any
+	SetTimestamp     any
+	State            any
 }
 
 type AlertsConfig struct {
@@ -40,9 +40,9 @@ type AlertsAttrs struct {
 var Alerts = ubx.DataSourceBinding{
 	WireType: "aws_medialive_alerts",
 	Fields: ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ChannelId":   ubx.FieldSpec{WireName: "channel_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"StateFilter": ubx.FieldSpec{WireName: "state_filter"},
 	},
 }

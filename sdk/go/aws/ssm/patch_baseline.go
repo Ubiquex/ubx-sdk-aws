@@ -44,53 +44,53 @@ type PatchBaseline_Sources struct {
 
 type PatchBaseline_Tags struct {
 	// The key of a tag attached to the patch baseline, used to organize and identify the baseline for cost, environment, or operational purposes. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields = ubx.FieldMap{
-		"PatchFilters": ubx.FieldSpec{
-			WireName: "patch_filters",
-			Kind: "list",
-			Fields: PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFiltersFields,
-		},
-	}
+	"PatchFilters": ubx.FieldSpec{
+		WireName: "patch_filters",
+		Kind:     "list",
+		Fields:   PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFiltersFields,
+	},
+}
 
 var PatchBaseline_ApprovalRules_PatchRulesFields = ubx.FieldMap{
-		"ApproveAfterDays": ubx.FieldSpec{WireName: "approve_after_days"},
-		"ApproveUntilDate": ubx.FieldSpec{WireName: "approve_until_date"},
-		"ComplianceLevel": ubx.FieldSpec{WireName: "compliance_level"},
-		"EnableNonSecurity": ubx.FieldSpec{WireName: "enable_non_security"},
-		"PatchFilterGroup": ubx.FieldSpec{
-			WireName: "patch_filter_group",
-			Kind: "object",
-			Fields: PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields,
-		},
-	}
+	"ApproveAfterDays":  ubx.FieldSpec{WireName: "approve_after_days"},
+	"ApproveUntilDate":  ubx.FieldSpec{WireName: "approve_until_date"},
+	"ComplianceLevel":   ubx.FieldSpec{WireName: "compliance_level"},
+	"EnableNonSecurity": ubx.FieldSpec{WireName: "enable_non_security"},
+	"PatchFilterGroup": ubx.FieldSpec{
+		WireName: "patch_filter_group",
+		Kind:     "object",
+		Fields:   PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields,
+	},
+}
 
 var PatchBaseline_ApprovalRulesFields = ubx.FieldMap{
-		"PatchRules": ubx.FieldSpec{
-			WireName: "patch_rules",
-			Kind: "list",
-			Fields: PatchBaseline_ApprovalRules_PatchRulesFields,
-		},
-	}
+	"PatchRules": ubx.FieldSpec{
+		WireName: "patch_rules",
+		Kind:     "list",
+		Fields:   PatchBaseline_ApprovalRules_PatchRulesFields,
+	},
+}
 
 var PatchBaseline_SourcesFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Products": ubx.FieldSpec{WireName: "products"},
-	}
+	"Configuration": ubx.FieldSpec{WireName: "configuration"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Products":      ubx.FieldSpec{WireName: "products"},
+}
 
 var PatchBaseline_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PatchBaselineConfig struct {
 	// A set of rules defining the approval rules for a patch baseline.
@@ -165,34 +165,34 @@ var PatchBaseline = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApprovalRules": ubx.FieldSpec{
 			WireName: "approval_rules",
-			Kind: "object",
-			Fields: PatchBaseline_ApprovalRulesFields,
+			Kind:     "object",
+			Fields:   PatchBaseline_ApprovalRulesFields,
 		},
-		"ApprovedPatches": ubx.FieldSpec{WireName: "approved_patches"},
-		"ApprovedPatchesComplianceLevel": ubx.FieldSpec{WireName: "approved_patches_compliance_level"},
-		"ApprovedPatchesEnableNonSecurity": ubx.FieldSpec{WireName: "approved_patches_enable_non_security"},
+		"ApprovedPatches":                          ubx.FieldSpec{WireName: "approved_patches"},
+		"ApprovedPatchesComplianceLevel":           ubx.FieldSpec{WireName: "approved_patches_compliance_level"},
+		"ApprovedPatchesEnableNonSecurity":         ubx.FieldSpec{WireName: "approved_patches_enable_non_security"},
 		"AvailableSecurityUpdatesComplianceStatus": ubx.FieldSpec{WireName: "available_security_updates_compliance_status"},
-		"DefaultBaseline": ubx.FieldSpec{WireName: "default_baseline"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"DefaultBaseline":                          ubx.FieldSpec{WireName: "default_baseline"},
+		"Description":                              ubx.FieldSpec{WireName: "description"},
 		"GlobalFilters": ubx.FieldSpec{
 			WireName: "global_filters",
-			Kind: "object",
-			Fields: PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields,
+			Kind:     "object",
+			Fields:   PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroupFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"PatchGroups": ubx.FieldSpec{WireName: "patch_groups"},
-		"RejectedPatches": ubx.FieldSpec{WireName: "rejected_patches"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"OperatingSystem":       ubx.FieldSpec{WireName: "operating_system"},
+		"PatchGroups":           ubx.FieldSpec{WireName: "patch_groups"},
+		"RejectedPatches":       ubx.FieldSpec{WireName: "rejected_patches"},
 		"RejectedPatchesAction": ubx.FieldSpec{WireName: "rejected_patches_action"},
 		"Sources": ubx.FieldSpec{
 			WireName: "sources",
-			Kind: "list",
-			Fields: PatchBaseline_SourcesFields,
+			Kind:     "list",
+			Fields:   PatchBaseline_SourcesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PatchBaseline_TagsFields,
+			Kind:     "list",
+			Fields:   PatchBaseline_TagsFields,
 		},
 	},
 }

@@ -4,41 +4,41 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integrations_Items struct {
-	CreatedAt any
-	DomainName any
+	CreatedAt         any
+	DomainName        any
 	EventTriggerNames any
-	IsUnstructured any
-	LastUpdatedAt any
-	ObjectTypeName any
-	ObjectTypeNames any
-	RoleArn any
-	Scope any
-	Tags any
-	Uri any
-	WorkflowId any
+	IsUnstructured    any
+	LastUpdatedAt     any
+	ObjectTypeName    any
+	ObjectTypeNames   any
+	RoleArn           any
+	Scope             any
+	Tags              any
+	Uri               any
+	WorkflowId        any
 }
 
 type IntegrationsConfig struct {
-	DomainName any
+	DomainName    any
 	IncludeHidden any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type IntegrationsAttrs struct {
-	DomainName any
+	DomainName    any
 	IncludeHidden any
-	Items any
-	MaxResults any
-	NextToken any
+	Items         any
+	MaxResults    any
+	NextToken     any
 }
 
 var Integrations = ubx.DataSourceBinding{
 	WireType: "aws_profile_integrations",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":    ubx.FieldSpec{WireName: "domain_name"},
 		"IncludeHidden": ubx.FieldSpec{WireName: "include_hidden"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

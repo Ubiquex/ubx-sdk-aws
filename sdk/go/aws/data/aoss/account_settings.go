@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountSettings_AccountSettingsDetail_CapacityLimits struct {
 	MaxIndexingCapacityInOcu any
-	MaxSearchCapacityInOcu any
+	MaxSearchCapacityInOcu   any
 }
 
 type AccountSettings_AccountSettingsDetail struct {
@@ -23,6 +23,5 @@ type AccountSettingsAttrs struct {
 
 var AccountSettings = ubx.DataSourceBinding{
 	WireType: "aws_aoss_account_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

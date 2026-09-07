@@ -4,12 +4,12 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetModelProperties_AssetModelPropertySummaries_InterfaceSummaries struct {
-	InterfaceAssetModelId any
+	InterfaceAssetModelId         any
 	InterfaceAssetModelPropertyId any
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Path struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -34,19 +34,19 @@ type AssetModelProperties_AssetModelPropertySummaries_Type_Metric_ProcessingConf
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Type_Metric_Variables_Value struct {
-	HierarchyId any
-	PropertyId any
+	HierarchyId  any
+	PropertyId   any
 	PropertyPath any
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Type_Metric_Variables struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Type_Metric_Window_Tumbling struct {
 	Interval any
-	Offset any
+	Offset   any
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Type_Metric_Window struct {
@@ -54,67 +54,67 @@ type AssetModelProperties_AssetModelPropertySummaries_Type_Metric_Window struct 
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Type_Metric struct {
-	Expression any
+	Expression       any
 	ProcessingConfig any
-	Variables any
-	Window any
+	Variables        any
+	Window           any
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Type_Transform_ProcessingConfig struct {
-	ComputeLocation any
+	ComputeLocation  any
 	ForwardingConfig any
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Type_Transform struct {
-	Expression any
+	Expression       any
 	ProcessingConfig any
-	Variables any
+	Variables        any
 }
 
 type AssetModelProperties_AssetModelPropertySummaries_Type struct {
-	Attribute any
+	Attribute   any
 	Measurement any
-	Metric any
-	Transform any
+	Metric      any
+	Transform   any
 }
 
 type AssetModelProperties_AssetModelPropertySummaries struct {
 	AssetModelCompositeModelId any
-	DataType any
-	DataTypeSpec any
-	ExternalId any
-	Id any
-	InterfaceSummaries any
-	Name any
-	Path any
-	Type any
-	Unit any
+	DataType                   any
+	DataTypeSpec               any
+	ExternalId                 any
+	Id                         any
+	InterfaceSummaries         any
+	Name                       any
+	Path                       any
+	Type                       any
+	Unit                       any
 }
 
 type AssetModelPropertiesConfig struct {
-	AssetModelId any
+	AssetModelId      any
 	AssetModelVersion any
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter            any
+	MaxResults        any
+	NextToken         any
 }
 
 type AssetModelPropertiesAttrs struct {
-	AssetModelId any
+	AssetModelId                any
 	AssetModelPropertySummaries any
-	AssetModelVersion any
-	Filter any
-	MaxResults any
-	NextToken any
+	AssetModelVersion           any
+	Filter                      any
+	MaxResults                  any
+	NextToken                   any
 }
 
 var AssetModelProperties = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_asset_model_properties",
 	Fields: ubx.FieldMap{
-		"AssetModelId": ubx.FieldSpec{WireName: "asset_model_id"},
+		"AssetModelId":      ubx.FieldSpec{WireName: "asset_model_id"},
 		"AssetModelVersion": ubx.FieldSpec{WireName: "asset_model_version"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Filter":            ubx.FieldSpec{WireName: "filter"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

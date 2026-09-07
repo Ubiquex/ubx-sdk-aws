@@ -65,50 +65,50 @@ type Pipeline_VpcEndpoints struct {
 }
 
 var Pipeline_BufferOptionsFields = ubx.FieldMap{
-		"PersistentBufferEnabled": ubx.FieldSpec{WireName: "persistent_buffer_enabled"},
-	}
+	"PersistentBufferEnabled": ubx.FieldSpec{WireName: "persistent_buffer_enabled"},
+}
 
 var Pipeline_EncryptionAtRestOptionsFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var Pipeline_LogPublishingOptions_CloudWatchLogDestinationFields = ubx.FieldMap{
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-	}
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+}
 
 var Pipeline_LogPublishingOptionsFields = ubx.FieldMap{
-		"CloudWatchLogDestination": ubx.FieldSpec{
-			WireName: "cloud_watch_log_destination",
-			Kind: "object",
-			Fields: Pipeline_LogPublishingOptions_CloudWatchLogDestinationFields,
-		},
-		"IsLoggingEnabled": ubx.FieldSpec{WireName: "is_logging_enabled"},
-	}
+	"CloudWatchLogDestination": ubx.FieldSpec{
+		WireName: "cloud_watch_log_destination",
+		Kind:     "object",
+		Fields:   Pipeline_LogPublishingOptions_CloudWatchLogDestinationFields,
+	},
+	"IsLoggingEnabled": ubx.FieldSpec{WireName: "is_logging_enabled"},
+}
 
 var Pipeline_ResourcePolicyFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-	}
+	"Policy": ubx.FieldSpec{WireName: "policy"},
+}
 
 var Pipeline_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptionsFields = ubx.FieldMap{
-		"AttachToVpc": ubx.FieldSpec{WireName: "attach_to_vpc"},
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-	}
+	"AttachToVpc": ubx.FieldSpec{WireName: "attach_to_vpc"},
+	"CidrBlock":   ubx.FieldSpec{WireName: "cidr_block"},
+}
 
 var Pipeline_VpcEndpoints_VpcOptionsFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcAttachmentOptions": ubx.FieldSpec{
-			WireName: "vpc_attachment_options",
-			Kind: "object",
-			Fields: Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptionsFields,
-		},
-		"VpcEndpointManagement": ubx.FieldSpec{WireName: "vpc_endpoint_management"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+	"VpcAttachmentOptions": ubx.FieldSpec{
+		WireName: "vpc_attachment_options",
+		Kind:     "object",
+		Fields:   Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptionsFields,
+	},
+	"VpcEndpointManagement": ubx.FieldSpec{WireName: "vpc_endpoint_management"},
+}
 
 type PipelineConfig struct {
 	// Key-value pairs to configure buffering.
@@ -173,38 +173,38 @@ var Pipeline = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BufferOptions": ubx.FieldSpec{
 			WireName: "buffer_options",
-			Kind: "object",
-			Fields: Pipeline_BufferOptionsFields,
+			Kind:     "object",
+			Fields:   Pipeline_BufferOptionsFields,
 		},
 		"EncryptionAtRestOptions": ubx.FieldSpec{
 			WireName: "encryption_at_rest_options",
-			Kind: "object",
-			Fields: Pipeline_EncryptionAtRestOptionsFields,
+			Kind:     "object",
+			Fields:   Pipeline_EncryptionAtRestOptionsFields,
 		},
 		"LogPublishingOptions": ubx.FieldSpec{
 			WireName: "log_publishing_options",
-			Kind: "object",
-			Fields: Pipeline_LogPublishingOptionsFields,
+			Kind:     "object",
+			Fields:   Pipeline_LogPublishingOptionsFields,
 		},
-		"MaxUnits": ubx.FieldSpec{WireName: "max_units"},
-		"MinUnits": ubx.FieldSpec{WireName: "min_units"},
+		"MaxUnits":                  ubx.FieldSpec{WireName: "max_units"},
+		"MinUnits":                  ubx.FieldSpec{WireName: "min_units"},
 		"PipelineConfigurationBody": ubx.FieldSpec{WireName: "pipeline_configuration_body"},
-		"PipelineName": ubx.FieldSpec{WireName: "pipeline_name"},
-		"PipelineRoleArn": ubx.FieldSpec{WireName: "pipeline_role_arn"},
+		"PipelineName":              ubx.FieldSpec{WireName: "pipeline_name"},
+		"PipelineRoleArn":           ubx.FieldSpec{WireName: "pipeline_role_arn"},
 		"ResourcePolicy": ubx.FieldSpec{
 			WireName: "resource_policy",
-			Kind: "object",
-			Fields: Pipeline_ResourcePolicyFields,
+			Kind:     "object",
+			Fields:   Pipeline_ResourcePolicyFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Pipeline_TagsFields,
+			Kind:     "list",
+			Fields:   Pipeline_TagsFields,
 		},
 		"VpcOptions": ubx.FieldSpec{
 			WireName: "vpc_options",
-			Kind: "object",
-			Fields: Pipeline_VpcEndpoints_VpcOptionsFields,
+			Kind:     "object",
+			Fields:   Pipeline_VpcEndpoints_VpcOptionsFields,
 		},
 	},
 }

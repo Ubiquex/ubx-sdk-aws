@@ -4,21 +4,21 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamKeys_StreamKeys struct {
-	Arn any
+	Arn        any
 	ChannelArn any
-	Tags any
+	Tags       any
 }
 
 type StreamKeysConfig struct {
 	ChannelArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type StreamKeysAttrs struct {
 	ChannelArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	StreamKeys any
 }
 
@@ -27,6 +27,6 @@ var StreamKeys = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

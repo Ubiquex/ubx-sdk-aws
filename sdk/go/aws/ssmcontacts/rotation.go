@@ -53,54 +53,54 @@ type Rotation_Tags struct {
 }
 
 var Rotation_Recurrence_MonthlySettingsFields = ubx.FieldMap{
-		"DayOfMonth": ubx.FieldSpec{WireName: "day_of_month"},
-		"HandOffTime": ubx.FieldSpec{WireName: "hand_off_time"},
-	}
+	"DayOfMonth":  ubx.FieldSpec{WireName: "day_of_month"},
+	"HandOffTime": ubx.FieldSpec{WireName: "hand_off_time"},
+}
 
 var Rotation_Recurrence_ShiftCoverages_CoverageTimesFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Rotation_Recurrence_ShiftCoveragesFields = ubx.FieldMap{
-		"CoverageTimes": ubx.FieldSpec{
-			WireName: "coverage_times",
-			Kind: "list",
-			Fields: Rotation_Recurrence_ShiftCoverages_CoverageTimesFields,
-		},
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-	}
+	"CoverageTimes": ubx.FieldSpec{
+		WireName: "coverage_times",
+		Kind:     "list",
+		Fields:   Rotation_Recurrence_ShiftCoverages_CoverageTimesFields,
+	},
+	"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+}
 
 var Rotation_Recurrence_WeeklySettingsFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"HandOffTime": ubx.FieldSpec{WireName: "hand_off_time"},
-	}
+	"DayOfWeek":   ubx.FieldSpec{WireName: "day_of_week"},
+	"HandOffTime": ubx.FieldSpec{WireName: "hand_off_time"},
+}
 
 var Rotation_RecurrenceFields = ubx.FieldMap{
-		"DailySettings": ubx.FieldSpec{WireName: "daily_settings"},
-		"MonthlySettings": ubx.FieldSpec{
-			WireName: "monthly_settings",
-			Kind: "list",
-			Fields: Rotation_Recurrence_MonthlySettingsFields,
-		},
-		"NumberOfOnCalls": ubx.FieldSpec{WireName: "number_of_on_calls"},
-		"RecurrenceMultiplier": ubx.FieldSpec{WireName: "recurrence_multiplier"},
-		"ShiftCoverages": ubx.FieldSpec{
-			WireName: "shift_coverages",
-			Kind: "list",
-			Fields: Rotation_Recurrence_ShiftCoveragesFields,
-		},
-		"WeeklySettings": ubx.FieldSpec{
-			WireName: "weekly_settings",
-			Kind: "list",
-			Fields: Rotation_Recurrence_WeeklySettingsFields,
-		},
-	}
+	"DailySettings": ubx.FieldSpec{WireName: "daily_settings"},
+	"MonthlySettings": ubx.FieldSpec{
+		WireName: "monthly_settings",
+		Kind:     "list",
+		Fields:   Rotation_Recurrence_MonthlySettingsFields,
+	},
+	"NumberOfOnCalls":      ubx.FieldSpec{WireName: "number_of_on_calls"},
+	"RecurrenceMultiplier": ubx.FieldSpec{WireName: "recurrence_multiplier"},
+	"ShiftCoverages": ubx.FieldSpec{
+		WireName: "shift_coverages",
+		Kind:     "list",
+		Fields:   Rotation_Recurrence_ShiftCoveragesFields,
+	},
+	"WeeklySettings": ubx.FieldSpec{
+		WireName: "weekly_settings",
+		Kind:     "list",
+		Fields:   Rotation_Recurrence_WeeklySettingsFields,
+	},
+}
 
 var Rotation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RotationConfig struct {
 	// Members of the rotation
@@ -138,17 +138,17 @@ var Rotation = ubx.ResourceBinding{
 	WireType: "aws_ssmcontacts_rotation",
 	Fields: ubx.FieldMap{
 		"ContactIds": ubx.FieldSpec{WireName: "contact_ids"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Recurrence": ubx.FieldSpec{
 			WireName: "recurrence",
-			Kind: "object",
-			Fields: Rotation_RecurrenceFields,
+			Kind:     "object",
+			Fields:   Rotation_RecurrenceFields,
 		},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Rotation_TagsFields,
+			Kind:     "list",
+			Fields:   Rotation_TagsFields,
 		},
 		"TimeZoneId": ubx.FieldSpec{WireName: "time_zone_id"},
 	},

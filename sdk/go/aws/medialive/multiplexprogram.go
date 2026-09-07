@@ -74,60 +74,60 @@ type Multiplexprogram_PipelineDetails struct {
 }
 
 var Multiplexprogram_MultiplexProgramSettings_ServiceDescriptorFields = ubx.FieldMap{
-		"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	}
+	"ProviderName": ubx.FieldSpec{WireName: "provider_name"},
+	"ServiceName":  ubx.FieldSpec{WireName: "service_name"},
+}
 
 var Multiplexprogram_MultiplexProgramSettings_VideoSettings_StatmuxSettingsFields = ubx.FieldMap{
-		"MaximumBitrate": ubx.FieldSpec{WireName: "maximum_bitrate"},
-		"MinimumBitrate": ubx.FieldSpec{WireName: "minimum_bitrate"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-	}
+	"MaximumBitrate": ubx.FieldSpec{WireName: "maximum_bitrate"},
+	"MinimumBitrate": ubx.FieldSpec{WireName: "minimum_bitrate"},
+	"Priority":       ubx.FieldSpec{WireName: "priority"},
+}
 
 var Multiplexprogram_MultiplexProgramSettings_VideoSettingsFields = ubx.FieldMap{
-		"ConstantBitrate": ubx.FieldSpec{WireName: "constant_bitrate"},
-		"StatmuxSettings": ubx.FieldSpec{
-			WireName: "statmux_settings",
-			Kind: "object",
-			Fields: Multiplexprogram_MultiplexProgramSettings_VideoSettings_StatmuxSettingsFields,
-		},
-	}
+	"ConstantBitrate": ubx.FieldSpec{WireName: "constant_bitrate"},
+	"StatmuxSettings": ubx.FieldSpec{
+		WireName: "statmux_settings",
+		Kind:     "object",
+		Fields:   Multiplexprogram_MultiplexProgramSettings_VideoSettings_StatmuxSettingsFields,
+	},
+}
 
 var Multiplexprogram_MultiplexProgramSettingsFields = ubx.FieldMap{
-		"PreferredChannelPipeline": ubx.FieldSpec{WireName: "preferred_channel_pipeline"},
-		"ProgramNumber": ubx.FieldSpec{WireName: "program_number"},
-		"ServiceDescriptor": ubx.FieldSpec{
-			WireName: "service_descriptor",
-			Kind: "object",
-			Fields: Multiplexprogram_MultiplexProgramSettings_ServiceDescriptorFields,
-		},
-		"VideoSettings": ubx.FieldSpec{
-			WireName: "video_settings",
-			Kind: "object",
-			Fields: Multiplexprogram_MultiplexProgramSettings_VideoSettingsFields,
-		},
-	}
+	"PreferredChannelPipeline": ubx.FieldSpec{WireName: "preferred_channel_pipeline"},
+	"ProgramNumber":            ubx.FieldSpec{WireName: "program_number"},
+	"ServiceDescriptor": ubx.FieldSpec{
+		WireName: "service_descriptor",
+		Kind:     "object",
+		Fields:   Multiplexprogram_MultiplexProgramSettings_ServiceDescriptorFields,
+	},
+	"VideoSettings": ubx.FieldSpec{
+		WireName: "video_settings",
+		Kind:     "object",
+		Fields:   Multiplexprogram_MultiplexProgramSettings_VideoSettingsFields,
+	},
+}
 
 var Multiplexprogram_PacketIdentifiersMapFields = ubx.FieldMap{
-		"AudioPids": ubx.FieldSpec{WireName: "audio_pids"},
-		"DvbSubPids": ubx.FieldSpec{WireName: "dvb_sub_pids"},
-		"DvbTeletextPid": ubx.FieldSpec{WireName: "dvb_teletext_pid"},
-		"EtvPlatformPid": ubx.FieldSpec{WireName: "etv_platform_pid"},
-		"EtvSignalPid": ubx.FieldSpec{WireName: "etv_signal_pid"},
-		"KlvDataPids": ubx.FieldSpec{WireName: "klv_data_pids"},
-		"PcrPid": ubx.FieldSpec{WireName: "pcr_pid"},
-		"PmtPid": ubx.FieldSpec{WireName: "pmt_pid"},
-		"PrivateMetadataPid": ubx.FieldSpec{WireName: "private_metadata_pid"},
-		"Scte27Pids": ubx.FieldSpec{WireName: "scte27_pids"},
-		"Scte35Pid": ubx.FieldSpec{WireName: "scte35_pid"},
-		"TimedMetadataPid": ubx.FieldSpec{WireName: "timed_metadata_pid"},
-		"VideoPid": ubx.FieldSpec{WireName: "video_pid"},
-	}
+	"AudioPids":          ubx.FieldSpec{WireName: "audio_pids"},
+	"DvbSubPids":         ubx.FieldSpec{WireName: "dvb_sub_pids"},
+	"DvbTeletextPid":     ubx.FieldSpec{WireName: "dvb_teletext_pid"},
+	"EtvPlatformPid":     ubx.FieldSpec{WireName: "etv_platform_pid"},
+	"EtvSignalPid":       ubx.FieldSpec{WireName: "etv_signal_pid"},
+	"KlvDataPids":        ubx.FieldSpec{WireName: "klv_data_pids"},
+	"PcrPid":             ubx.FieldSpec{WireName: "pcr_pid"},
+	"PmtPid":             ubx.FieldSpec{WireName: "pmt_pid"},
+	"PrivateMetadataPid": ubx.FieldSpec{WireName: "private_metadata_pid"},
+	"Scte27Pids":         ubx.FieldSpec{WireName: "scte27_pids"},
+	"Scte35Pid":          ubx.FieldSpec{WireName: "scte35_pid"},
+	"TimedMetadataPid":   ubx.FieldSpec{WireName: "timed_metadata_pid"},
+	"VideoPid":           ubx.FieldSpec{WireName: "video_pid"},
+}
 
 var Multiplexprogram_PipelineDetailsFields = ubx.FieldMap{
-		"ActiveChannelPipeline": ubx.FieldSpec{WireName: "active_channel_pipeline"},
-		"PipelineId": ubx.FieldSpec{WireName: "pipeline_id"},
-	}
+	"ActiveChannelPipeline": ubx.FieldSpec{WireName: "active_channel_pipeline"},
+	"PipelineId":            ubx.FieldSpec{WireName: "pipeline_id"},
+}
 
 type MultiplexprogramConfig struct {
 	// The ID of the multiplex that the program belongs to.
@@ -167,20 +167,20 @@ var Multiplexprogram = ubx.ResourceBinding{
 		"MultiplexId": ubx.FieldSpec{WireName: "multiplex_id"},
 		"MultiplexProgramSettings": ubx.FieldSpec{
 			WireName: "multiplex_program_settings",
-			Kind: "object",
-			Fields: Multiplexprogram_MultiplexProgramSettingsFields,
+			Kind:     "object",
+			Fields:   Multiplexprogram_MultiplexProgramSettingsFields,
 		},
 		"PacketIdentifiersMap": ubx.FieldSpec{
 			WireName: "packet_identifiers_map",
-			Kind: "object",
-			Fields: Multiplexprogram_PacketIdentifiersMapFields,
+			Kind:     "object",
+			Fields:   Multiplexprogram_PacketIdentifiersMapFields,
 		},
 		"PipelineDetails": ubx.FieldSpec{
 			WireName: "pipeline_details",
-			Kind: "list",
-			Fields: Multiplexprogram_PipelineDetailsFields,
+			Kind:     "list",
+			Fields:   Multiplexprogram_PipelineDetailsFields,
 		},
 		"PreferredChannelPipeline": ubx.FieldSpec{WireName: "preferred_channel_pipeline"},
-		"ProgramName": ubx.FieldSpec{WireName: "program_name"},
+		"ProgramName":              ubx.FieldSpec{WireName: "program_name"},
 	},
 }

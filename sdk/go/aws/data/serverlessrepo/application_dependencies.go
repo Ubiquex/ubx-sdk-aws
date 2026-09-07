@@ -4,31 +4,31 @@ package serverlessrepo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationDependencies_Dependencies struct {
-	ApplicationId any
+	ApplicationId   any
 	SemanticVersion any
 }
 
 type ApplicationDependenciesConfig struct {
-	ApplicationId any
-	MaxItems any
-	NextToken any
+	ApplicationId   any
+	MaxItems        any
+	NextToken       any
 	SemanticVersion any
 }
 
 type ApplicationDependenciesAttrs struct {
-	ApplicationId any
-	Dependencies any
-	MaxItems any
-	NextToken any
+	ApplicationId   any
+	Dependencies    any
+	MaxItems        any
+	NextToken       any
 	SemanticVersion any
 }
 
 var ApplicationDependencies = ubx.DataSourceBinding{
 	WireType: "aws_serverlessrepo_application_dependencies",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ApplicationId":   ubx.FieldSpec{WireName: "application_id"},
+		"MaxItems":        ubx.FieldSpec{WireName: "max_items"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"SemanticVersion": ubx.FieldSpec{WireName: "semantic_version"},
 	},
 }

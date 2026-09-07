@@ -14,65 +14,65 @@ type InterpolatedAssetPropertyValues_InterpolatedAssetPropertyValues_Value_NullV
 
 type InterpolatedAssetPropertyValues_InterpolatedAssetPropertyValues_Value struct {
 	BooleanValue any
-	DoubleValue any
+	DoubleValue  any
 	IntegerValue any
-	NullValue any
-	StringValue any
+	NullValue    any
+	StringValue  any
 }
 
 type InterpolatedAssetPropertyValues_InterpolatedAssetPropertyValues struct {
 	Timestamp any
-	Value any
+	Value     any
 }
 
 type InterpolatedAssetPropertyValuesConfig struct {
-	AssetId any
-	EndTimeInSeconds any
-	EndTimeOffsetInNanos any
-	IntervalInSeconds any
+	AssetId                 any
+	EndTimeInSeconds        any
+	EndTimeOffsetInNanos    any
+	IntervalInSeconds       any
 	IntervalWindowInSeconds any
-	MaxResults any
-	NextToken any
-	PropertyAlias any
-	PropertyId any
-	Quality any
-	StartTimeInSeconds any
-	StartTimeOffsetInNanos any
-	Type any
+	MaxResults              any
+	NextToken               any
+	PropertyAlias           any
+	PropertyId              any
+	Quality                 any
+	StartTimeInSeconds      any
+	StartTimeOffsetInNanos  any
+	Type                    any
 }
 
 type InterpolatedAssetPropertyValuesAttrs struct {
-	AssetId any
-	EndTimeInSeconds any
-	EndTimeOffsetInNanos any
+	AssetId                         any
+	EndTimeInSeconds                any
+	EndTimeOffsetInNanos            any
 	InterpolatedAssetPropertyValues any
-	IntervalInSeconds any
-	IntervalWindowInSeconds any
-	MaxResults any
-	NextToken any
-	PropertyAlias any
-	PropertyId any
-	Quality any
-	StartTimeInSeconds any
-	StartTimeOffsetInNanos any
-	Type any
+	IntervalInSeconds               any
+	IntervalWindowInSeconds         any
+	MaxResults                      any
+	NextToken                       any
+	PropertyAlias                   any
+	PropertyId                      any
+	Quality                         any
+	StartTimeInSeconds              any
+	StartTimeOffsetInNanos          any
+	Type                            any
 }
 
 var InterpolatedAssetPropertyValues = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_interpolated_asset_property_values",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"EndTimeInSeconds": ubx.FieldSpec{WireName: "end_time_in_seconds"},
-		"EndTimeOffsetInNanos": ubx.FieldSpec{WireName: "end_time_offset_in_nanos"},
-		"IntervalInSeconds": ubx.FieldSpec{WireName: "interval_in_seconds"},
+		"AssetId":                 ubx.FieldSpec{WireName: "asset_id"},
+		"EndTimeInSeconds":        ubx.FieldSpec{WireName: "end_time_in_seconds"},
+		"EndTimeOffsetInNanos":    ubx.FieldSpec{WireName: "end_time_offset_in_nanos"},
+		"IntervalInSeconds":       ubx.FieldSpec{WireName: "interval_in_seconds"},
 		"IntervalWindowInSeconds": ubx.FieldSpec{WireName: "interval_window_in_seconds"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
-		"PropertyId": ubx.FieldSpec{WireName: "property_id"},
-		"Quality": ubx.FieldSpec{WireName: "quality"},
-		"StartTimeInSeconds": ubx.FieldSpec{WireName: "start_time_in_seconds"},
-		"StartTimeOffsetInNanos": ubx.FieldSpec{WireName: "start_time_offset_in_nanos"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"PropertyAlias":           ubx.FieldSpec{WireName: "property_alias"},
+		"PropertyId":              ubx.FieldSpec{WireName: "property_id"},
+		"Quality":                 ubx.FieldSpec{WireName: "quality"},
+		"StartTimeInSeconds":      ubx.FieldSpec{WireName: "start_time_in_seconds"},
+		"StartTimeOffsetInNanos":  ubx.FieldSpec{WireName: "start_time_offset_in_nanos"},
+		"Type":                    ubx.FieldSpec{WireName: "type"},
 	},
 }

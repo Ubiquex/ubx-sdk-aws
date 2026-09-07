@@ -29,29 +29,29 @@ type DirectConnectGatewayAttachment_ProposedSegmentChange struct {
 }
 
 var DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChange_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"NetworkFunctionGroupName": ubx.FieldSpec{WireName: "network_function_group_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"NetworkFunctionGroupName":   ubx.FieldSpec{WireName: "network_function_group_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 var DirectConnectGatewayAttachment_ProposedSegmentChangeFields = ubx.FieldMap{
-		"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
-		"SegmentName": ubx.FieldSpec{WireName: "segment_name"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
-		},
-	}
+	"AttachmentPolicyRuleNumber": ubx.FieldSpec{WireName: "attachment_policy_rule_number"},
+	"SegmentName":                ubx.FieldSpec{WireName: "segment_name"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+	},
+}
 
 type DirectConnectGatewayAttachmentConfig struct {
 	// The ID of a core network for the Direct Connect Gateway attachment.
@@ -114,24 +114,24 @@ type DirectConnectGatewayAttachmentAttrs struct {
 var DirectConnectGatewayAttachment = ubx.ResourceBinding{
 	WireType: "aws_network_manager_direct_connect_gateway_attachment",
 	Fields: ubx.FieldMap{
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
+		"CoreNetworkId":           ubx.FieldSpec{WireName: "core_network_id"},
 		"DirectConnectGatewayArn": ubx.FieldSpec{WireName: "direct_connect_gateway_arn"},
-		"EdgeLocations": ubx.FieldSpec{WireName: "edge_locations"},
+		"EdgeLocations":           ubx.FieldSpec{WireName: "edge_locations"},
 		"ProposedNetworkFunctionGroupChange": ubx.FieldSpec{
 			WireName: "proposed_network_function_group_change",
-			Kind: "object",
-			Fields: DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChangeFields,
+			Kind:     "object",
+			Fields:   DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChangeFields,
 		},
 		"ProposedSegmentChange": ubx.FieldSpec{
 			WireName: "proposed_segment_change",
-			Kind: "object",
-			Fields: DirectConnectGatewayAttachment_ProposedSegmentChangeFields,
+			Kind:     "object",
+			Fields:   DirectConnectGatewayAttachment_ProposedSegmentChangeFields,
 		},
 		"RoutingPolicyLabel": ubx.FieldSpec{WireName: "routing_policy_label"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
+			Kind:     "list",
+			Fields:   DirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChange_TagsFields,
 		},
 	},
 }

@@ -11,9 +11,9 @@ type DbparameterGroup_Tags struct {
 }
 
 var DbparameterGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbparameterGroupConfig struct {
 	// The name of the DB parameter group. Constraints: + Must be 1 to 255 letters, numbers, or hyphens. + First character must be a letter + Can't end with a hyphen or contain two consecutive hyphens If you don't specify a value for ``DBParameterGroupName`` property, a name is automatically created for the DB parameter group. This value is stored as a lowercase string.
@@ -47,13 +47,13 @@ var DbparameterGroup = ubx.ResourceBinding{
 	WireType: "aws_rds_dbparameter_group",
 	Fields: ubx.FieldMap{
 		"DbparameterGroupName": ubx.FieldSpec{WireName: "dbparameter_group_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Family": ubx.FieldSpec{WireName: "family"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"Family":               ubx.FieldSpec{WireName: "family"},
+		"Parameters":           ubx.FieldSpec{WireName: "parameters"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DbparameterGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DbparameterGroup_TagsFields,
 		},
 	},
 }

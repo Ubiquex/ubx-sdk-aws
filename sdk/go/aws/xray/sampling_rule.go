@@ -68,7 +68,7 @@ type SamplingRule_SamplingRuleUpdate struct {
 	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
 	RuleArn any
 	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
-	RuleName any
+	RuleName          any
 	SamplingRateBoost any
 	// Matches the name that the service uses to identify itself in segments.
 	ServiceName any
@@ -86,65 +86,65 @@ type SamplingRule_Tags struct {
 }
 
 var SamplingRule_SamplingRule_SamplingRateBoostFields = ubx.FieldMap{
-		"CooldownWindowMinutes": ubx.FieldSpec{WireName: "cooldown_window_minutes"},
-		"MaxRate": ubx.FieldSpec{WireName: "max_rate"},
-	}
+	"CooldownWindowMinutes": ubx.FieldSpec{WireName: "cooldown_window_minutes"},
+	"MaxRate":               ubx.FieldSpec{WireName: "max_rate"},
+}
 
 var SamplingRule_SamplingRuleFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"FixedRate": ubx.FieldSpec{WireName: "fixed_rate"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Httpmethod": ubx.FieldSpec{WireName: "httpmethod"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"ReservoirSize": ubx.FieldSpec{WireName: "reservoir_size"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"RuleArn": ubx.FieldSpec{WireName: "rule_arn"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"SamplingRateBoost": ubx.FieldSpec{
-			WireName: "sampling_rate_boost",
-			Kind: "object",
-			Fields: SamplingRule_SamplingRule_SamplingRateBoostFields,
-		},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
-		"Urlpath": ubx.FieldSpec{WireName: "urlpath"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Attributes":    ubx.FieldSpec{WireName: "attributes"},
+	"FixedRate":     ubx.FieldSpec{WireName: "fixed_rate"},
+	"Host":          ubx.FieldSpec{WireName: "host"},
+	"Httpmethod":    ubx.FieldSpec{WireName: "httpmethod"},
+	"Priority":      ubx.FieldSpec{WireName: "priority"},
+	"ReservoirSize": ubx.FieldSpec{WireName: "reservoir_size"},
+	"ResourceArn":   ubx.FieldSpec{WireName: "resource_arn"},
+	"RuleArn":       ubx.FieldSpec{WireName: "rule_arn"},
+	"RuleName":      ubx.FieldSpec{WireName: "rule_name"},
+	"SamplingRateBoost": ubx.FieldSpec{
+		WireName: "sampling_rate_boost",
+		Kind:     "object",
+		Fields:   SamplingRule_SamplingRule_SamplingRateBoostFields,
+	},
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+	"ServiceType": ubx.FieldSpec{WireName: "service_type"},
+	"Urlpath":     ubx.FieldSpec{WireName: "urlpath"},
+	"Version":     ubx.FieldSpec{WireName: "version"},
+}
 
 var SamplingRule_SamplingRuleRecordFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"SamplingRule": ubx.FieldSpec{
-			WireName: "sampling_rule",
-			Kind: "object",
-			Fields: SamplingRule_SamplingRuleFields,
-		},
-	}
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"SamplingRule": ubx.FieldSpec{
+		WireName: "sampling_rule",
+		Kind:     "object",
+		Fields:   SamplingRule_SamplingRuleFields,
+	},
+}
 
 var SamplingRule_SamplingRuleUpdateFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"FixedRate": ubx.FieldSpec{WireName: "fixed_rate"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Httpmethod": ubx.FieldSpec{WireName: "httpmethod"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"ReservoirSize": ubx.FieldSpec{WireName: "reservoir_size"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"RuleArn": ubx.FieldSpec{WireName: "rule_arn"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"SamplingRateBoost": ubx.FieldSpec{
-			WireName: "sampling_rate_boost",
-			Kind: "object",
-			Fields: SamplingRule_SamplingRule_SamplingRateBoostFields,
-		},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
-		"Urlpath": ubx.FieldSpec{WireName: "urlpath"},
-	}
+	"Attributes":    ubx.FieldSpec{WireName: "attributes"},
+	"FixedRate":     ubx.FieldSpec{WireName: "fixed_rate"},
+	"Host":          ubx.FieldSpec{WireName: "host"},
+	"Httpmethod":    ubx.FieldSpec{WireName: "httpmethod"},
+	"Priority":      ubx.FieldSpec{WireName: "priority"},
+	"ReservoirSize": ubx.FieldSpec{WireName: "reservoir_size"},
+	"ResourceArn":   ubx.FieldSpec{WireName: "resource_arn"},
+	"RuleArn":       ubx.FieldSpec{WireName: "rule_arn"},
+	"RuleName":      ubx.FieldSpec{WireName: "rule_name"},
+	"SamplingRateBoost": ubx.FieldSpec{
+		WireName: "sampling_rate_boost",
+		Kind:     "object",
+		Fields:   SamplingRule_SamplingRule_SamplingRateBoostFields,
+	},
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+	"ServiceType": ubx.FieldSpec{WireName: "service_type"},
+	"Urlpath":     ubx.FieldSpec{WireName: "urlpath"},
+}
 
 var SamplingRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SamplingRuleConfig struct {
 	// The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
@@ -180,23 +180,23 @@ var SamplingRule = ubx.ResourceBinding{
 		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
 		"SamplingRule": ubx.FieldSpec{
 			WireName: "sampling_rule",
-			Kind: "object",
-			Fields: SamplingRule_SamplingRuleFields,
+			Kind:     "object",
+			Fields:   SamplingRule_SamplingRuleFields,
 		},
 		"SamplingRuleRecord": ubx.FieldSpec{
 			WireName: "sampling_rule_record",
-			Kind: "object",
-			Fields: SamplingRule_SamplingRuleRecordFields,
+			Kind:     "object",
+			Fields:   SamplingRule_SamplingRuleRecordFields,
 		},
 		"SamplingRuleUpdate": ubx.FieldSpec{
 			WireName: "sampling_rule_update",
-			Kind: "object",
-			Fields: SamplingRule_SamplingRuleUpdateFields,
+			Kind:     "object",
+			Fields:   SamplingRule_SamplingRuleUpdateFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SamplingRule_TagsFields,
+			Kind:     "list",
+			Fields:   SamplingRule_TagsFields,
 		},
 	},
 }

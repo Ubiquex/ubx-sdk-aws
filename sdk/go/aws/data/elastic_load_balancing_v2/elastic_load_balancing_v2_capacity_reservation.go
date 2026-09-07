@@ -4,14 +4,14 @@ package elastic_load_balancing_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ElasticLoadBalancingV2CapacityReservation_CapacityReservationState_State struct {
-	Code any
+	Code   any
 	Reason any
 }
 
 type ElasticLoadBalancingV2CapacityReservation_CapacityReservationState struct {
-	AvailabilityZone any
+	AvailabilityZone       any
 	EffectiveCapacityUnits any
-	State any
+	State                  any
 }
 
 type ElasticLoadBalancingV2CapacityReservation_MinimumLoadBalancerCapacity struct {
@@ -23,10 +23,10 @@ type ElasticLoadBalancingV2CapacityReservationConfig struct {
 }
 
 type ElasticLoadBalancingV2CapacityReservationAttrs struct {
-	CapacityReservationState any
+	CapacityReservationState  any
 	DecreaseRequestsRemaining any
-	LastModifiedTime any
-	LoadBalancerArn any
+	LastModifiedTime          any
+	LoadBalancerArn           any
 	// <p>The minimum capacity for a load balancer.</p>
 	MinimumLoadBalancerCapacity any
 }

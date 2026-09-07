@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Command_MandatoryParameters_DefaultValue struct {
 	// The boolean default value used for this mandatory command parameter when a device executing the command does not supply a value for it. (AI-inferred)
-	B any
+	B   any
 	Bin any
 	// This number specifies the default value for a mandatory parameter in an AWS IoT Command. (AI-inferred)
 	D any
@@ -39,16 +39,16 @@ type Command_MandatoryParameters_ValueConditions_Operand struct {
 
 type Command_MandatoryParameters_ValueConditions struct {
 	ComparisonOperator any
-	Operand any
+	Operand            any
 }
 
 type Command_MandatoryParameters struct {
 	DefaultValue any
 	// Provides a human-readable description of a mandatory parameter that must be supplied when invoking this AWS IoT command. (AI-inferred)
 	Description any
-	Name any
+	Name        any
 	// Defines the data type of a mandatory parameter in an AWS IoT command, restricting the parameter value to a supported primitive type such as STRING, INTEGER, BOOLEAN, FLOAT, or BINARY. (AI-inferred)
-	Type any
+	Type  any
 	Value any
 	// Defines the validation conditions (such as equality or range constraints) that the value of each mandatory command parameter must satisfy when the command is invoked in AWS IoT. (AI-inferred)
 	ValueConditions any
@@ -70,88 +70,88 @@ type Command_Preprocessor struct {
 }
 
 type Command_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Command_MandatoryParameters_DefaultValueFields = ubx.FieldMap{
-		"B": ubx.FieldSpec{WireName: "b"},
-		"Bin": ubx.FieldSpec{WireName: "bin"},
-		"D": ubx.FieldSpec{WireName: "d"},
-		"I": ubx.FieldSpec{WireName: "i"},
-		"L": ubx.FieldSpec{WireName: "l"},
-		"S": ubx.FieldSpec{WireName: "s"},
-		"Ul": ubx.FieldSpec{WireName: "ul"},
-	}
+	"B":   ubx.FieldSpec{WireName: "b"},
+	"Bin": ubx.FieldSpec{WireName: "bin"},
+	"D":   ubx.FieldSpec{WireName: "d"},
+	"I":   ubx.FieldSpec{WireName: "i"},
+	"L":   ubx.FieldSpec{WireName: "l"},
+	"S":   ubx.FieldSpec{WireName: "s"},
+	"Ul":  ubx.FieldSpec{WireName: "ul"},
+}
 
 var Command_MandatoryParameters_ValueConditions_Operand_NumberRangeFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var Command_MandatoryParameters_ValueConditions_OperandFields = ubx.FieldMap{
-		"Number": ubx.FieldSpec{WireName: "number"},
-		"NumberRange": ubx.FieldSpec{
-			WireName: "number_range",
-			Kind: "object",
-			Fields: Command_MandatoryParameters_ValueConditions_Operand_NumberRangeFields,
-		},
-		"Numbers": ubx.FieldSpec{WireName: "numbers"},
-		"String": ubx.FieldSpec{WireName: "string"},
-		"Strings": ubx.FieldSpec{WireName: "strings"},
-	}
+	"Number": ubx.FieldSpec{WireName: "number"},
+	"NumberRange": ubx.FieldSpec{
+		WireName: "number_range",
+		Kind:     "object",
+		Fields:   Command_MandatoryParameters_ValueConditions_Operand_NumberRangeFields,
+	},
+	"Numbers": ubx.FieldSpec{WireName: "numbers"},
+	"String":  ubx.FieldSpec{WireName: "string"},
+	"Strings": ubx.FieldSpec{WireName: "strings"},
+}
 
 var Command_MandatoryParameters_ValueConditionsFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"Operand": ubx.FieldSpec{
-			WireName: "operand",
-			Kind: "object",
-			Fields: Command_MandatoryParameters_ValueConditions_OperandFields,
-		},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"Operand": ubx.FieldSpec{
+		WireName: "operand",
+		Kind:     "object",
+		Fields:   Command_MandatoryParameters_ValueConditions_OperandFields,
+	},
+}
 
 var Command_MandatoryParametersFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{
-			WireName: "default_value",
-			Kind: "object",
-			Fields: Command_MandatoryParameters_DefaultValueFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Command_MandatoryParameters_DefaultValueFields,
-		},
-		"ValueConditions": ubx.FieldSpec{
-			WireName: "value_conditions",
-			Kind: "list",
-			Fields: Command_MandatoryParameters_ValueConditionsFields,
-		},
-	}
+	"DefaultValue": ubx.FieldSpec{
+		WireName: "default_value",
+		Kind:     "object",
+		Fields:   Command_MandatoryParameters_DefaultValueFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Command_MandatoryParameters_DefaultValueFields,
+	},
+	"ValueConditions": ubx.FieldSpec{
+		WireName: "value_conditions",
+		Kind:     "list",
+		Fields:   Command_MandatoryParameters_ValueConditionsFields,
+	},
+}
 
 var Command_PayloadFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-	}
+	"Content":     ubx.FieldSpec{WireName: "content"},
+	"ContentType": ubx.FieldSpec{WireName: "content_type"},
+}
 
 var Command_Preprocessor_AwsJsonSubstitutionFields = ubx.FieldMap{
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-	}
+	"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
+}
 
 var Command_PreprocessorFields = ubx.FieldMap{
-		"AwsJsonSubstitution": ubx.FieldSpec{
-			WireName: "aws_json_substitution",
-			Kind: "object",
-			Fields: Command_Preprocessor_AwsJsonSubstitutionFields,
-		},
-	}
+	"AwsJsonSubstitution": ubx.FieldSpec{
+		WireName: "aws_json_substitution",
+		Kind:     "object",
+		Fields:   Command_Preprocessor_AwsJsonSubstitutionFields,
+	},
+}
 
 var Command_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CommandConfig struct {
 	// The unique identifier for the command.
@@ -220,35 +220,35 @@ type CommandAttrs struct {
 var Command = ubx.ResourceBinding{
 	WireType: "aws_io_t_command",
 	Fields: ubx.FieldMap{
-		"CommandId": ubx.FieldSpec{WireName: "command_id"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CommandId":     ubx.FieldSpec{WireName: "command_id"},
+		"CreatedAt":     ubx.FieldSpec{WireName: "created_at"},
+		"Deprecated":    ubx.FieldSpec{WireName: "deprecated"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
 		"LastUpdatedAt": ubx.FieldSpec{WireName: "last_updated_at"},
 		"MandatoryParameters": ubx.FieldSpec{
 			WireName: "mandatory_parameters",
-			Kind: "list",
-			Fields: Command_MandatoryParametersFields,
+			Kind:     "list",
+			Fields:   Command_MandatoryParametersFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 		"Payload": ubx.FieldSpec{
 			WireName: "payload",
-			Kind: "object",
-			Fields: Command_PayloadFields,
+			Kind:     "object",
+			Fields:   Command_PayloadFields,
 		},
 		"PayloadTemplate": ubx.FieldSpec{WireName: "payload_template"},
 		"PendingDeletion": ubx.FieldSpec{WireName: "pending_deletion"},
 		"Preprocessor": ubx.FieldSpec{
 			WireName: "preprocessor",
-			Kind: "object",
-			Fields: Command_PreprocessorFields,
+			Kind:     "object",
+			Fields:   Command_PreprocessorFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Command_TagsFields,
+			Kind:     "list",
+			Fields:   Command_TagsFields,
 		},
 	},
 }

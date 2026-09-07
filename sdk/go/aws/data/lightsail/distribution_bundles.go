@@ -4,10 +4,10 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DistributionBundles_Bundles struct {
-	BundleId any
-	IsActive any
-	Name any
-	Price any
+	BundleId             any
+	IsActive             any
+	Name                 any
+	Price                any
 	TransferPerMonthInGb any
 }
 
@@ -20,6 +20,5 @@ type DistributionBundlesAttrs struct {
 
 var DistributionBundles = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_distribution_bundles",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

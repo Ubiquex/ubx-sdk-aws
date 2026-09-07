@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainStatisticsReport_DailyVolumes_DomainIspPlacements struct {
 	InboxPercentage any
-	InboxRawCount any
-	IspName any
-	SpamPercentage any
-	SpamRawCount any
+	InboxRawCount   any
+	IspName         any
+	SpamPercentage  any
+	SpamRawCount    any
 }
 
 type DomainStatisticsReport_DailyVolumes_VolumeStatistics struct {
-	InboxRawCount any
+	InboxRawCount  any
 	ProjectedInbox any
-	ProjectedSpam any
-	SpamRawCount any
+	ProjectedSpam  any
+	SpamRawCount   any
 }
 
 type DomainStatisticsReport_DailyVolumes struct {
 	DomainIspPlacements any
-	StartDate any
-	VolumeStatistics any
+	StartDate           any
+	VolumeStatistics    any
 }
 
 type DomainStatisticsReport_OverallVolume struct {
@@ -33,25 +33,25 @@ type DomainStatisticsReport_OverallVolume struct {
 }
 
 type DomainStatisticsReportConfig struct {
-	Domain any
-	EndDate any
+	Domain    any
+	EndDate   any
 	StartDate any
 }
 
 type DomainStatisticsReportAttrs struct {
 	DailyVolumes any
-	Domain any
-	EndDate any
+	Domain       any
+	EndDate      any
 	// <p>An object that contains information about email that was sent from the selected domain.</p>
 	OverallVolume any
-	StartDate any
+	StartDate     any
 }
 
 var DomainStatisticsReport = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_domain_statistics_report",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
+		"Domain":    ubx.FieldSpec{WireName: "domain"},
+		"EndDate":   ubx.FieldSpec{WireName: "end_date"},
 		"StartDate": ubx.FieldSpec{WireName: "start_date"},
 	},
 }

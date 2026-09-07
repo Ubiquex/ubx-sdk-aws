@@ -281,325 +281,325 @@ type ModelPackage_ValidationSpecification struct {
 }
 
 var ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource_S3DataSource_ModelAccessConfigFields = ubx.FieldMap{
-		"AcceptEula": ubx.FieldSpec{WireName: "accept_eula"},
-	}
+	"AcceptEula": ubx.FieldSpec{WireName: "accept_eula"},
+}
 
 var ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource_S3DataSourceFields = ubx.FieldMap{
-		"CompressionType": ubx.FieldSpec{WireName: "compression_type"},
-		"ModelAccessConfig": ubx.FieldSpec{
-			WireName: "model_access_config",
-			Kind: "object",
-			Fields: ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource_S3DataSource_ModelAccessConfigFields,
-		},
-		"S3DataType": ubx.FieldSpec{WireName: "s3_data_type"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"CompressionType": ubx.FieldSpec{WireName: "compression_type"},
+	"ModelAccessConfig": ubx.FieldSpec{
+		WireName: "model_access_config",
+		Kind:     "object",
+		Fields:   ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource_S3DataSource_ModelAccessConfigFields,
+	},
+	"S3DataType": ubx.FieldSpec{WireName: "s3_data_type"},
+	"S3Uri":      ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSourceFields = ubx.FieldMap{
-		"S3DataSource": ubx.FieldSpec{
-			WireName: "s3_data_source",
-			Kind: "object",
-			Fields: ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource_S3DataSourceFields,
-		},
-	}
+	"S3DataSource": ubx.FieldSpec{
+		WireName: "s3_data_source",
+		Kind:     "object",
+		Fields:   ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource_S3DataSourceFields,
+	},
+}
 
 var ModelPackage_AdditionalInferenceSpecifications_Containers_ModelInputFields = ubx.FieldMap{
-		"DataInputConfig": ubx.FieldSpec{WireName: "data_input_config"},
-	}
+	"DataInputConfig": ubx.FieldSpec{WireName: "data_input_config"},
+}
 
 var ModelPackage_AdditionalInferenceSpecifications_ContainersFields = ubx.FieldMap{
-		"ContainerHostname": ubx.FieldSpec{WireName: "container_hostname"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Framework": ubx.FieldSpec{WireName: "framework"},
-		"FrameworkVersion": ubx.FieldSpec{WireName: "framework_version"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-		"ModelDataSource": ubx.FieldSpec{
-			WireName: "model_data_source",
-			Kind: "object",
-			Fields: ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSourceFields,
-		},
-		"ModelDataUrl": ubx.FieldSpec{WireName: "model_data_url"},
-		"ModelInput": ubx.FieldSpec{
-			WireName: "model_input",
-			Kind: "object",
-			Fields: ModelPackage_AdditionalInferenceSpecifications_Containers_ModelInputFields,
-		},
-		"NearestModelName": ubx.FieldSpec{WireName: "nearest_model_name"},
-	}
+	"ContainerHostname": ubx.FieldSpec{WireName: "container_hostname"},
+	"Environment":       ubx.FieldSpec{WireName: "environment"},
+	"Framework":         ubx.FieldSpec{WireName: "framework"},
+	"FrameworkVersion":  ubx.FieldSpec{WireName: "framework_version"},
+	"Image":             ubx.FieldSpec{WireName: "image"},
+	"ImageDigest":       ubx.FieldSpec{WireName: "image_digest"},
+	"ModelDataSource": ubx.FieldSpec{
+		WireName: "model_data_source",
+		Kind:     "object",
+		Fields:   ModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSourceFields,
+	},
+	"ModelDataUrl": ubx.FieldSpec{WireName: "model_data_url"},
+	"ModelInput": ubx.FieldSpec{
+		WireName: "model_input",
+		Kind:     "object",
+		Fields:   ModelPackage_AdditionalInferenceSpecifications_Containers_ModelInputFields,
+	},
+	"NearestModelName": ubx.FieldSpec{WireName: "nearest_model_name"},
+}
 
 var ModelPackage_AdditionalInferenceSpecificationsFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: ModelPackage_AdditionalInferenceSpecifications_ContainersFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SupportedContentTypes": ubx.FieldSpec{WireName: "supported_content_types"},
-		"SupportedRealtimeInferenceInstanceTypes": ubx.FieldSpec{WireName: "supported_realtime_inference_instance_types"},
-		"SupportedResponseMimetypes": ubx.FieldSpec{WireName: "supported_response_mimetypes"},
-		"SupportedTransformInstanceTypes": ubx.FieldSpec{WireName: "supported_transform_instance_types"},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   ModelPackage_AdditionalInferenceSpecifications_ContainersFields,
+	},
+	"Description":           ubx.FieldSpec{WireName: "description"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"SupportedContentTypes": ubx.FieldSpec{WireName: "supported_content_types"},
+	"SupportedRealtimeInferenceInstanceTypes": ubx.FieldSpec{WireName: "supported_realtime_inference_instance_types"},
+	"SupportedResponseMimetypes":              ubx.FieldSpec{WireName: "supported_response_mimetypes"},
+	"SupportedTransformInstanceTypes":         ubx.FieldSpec{WireName: "supported_transform_instance_types"},
+}
 
 var ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields = ubx.FieldMap{
-		"ContentDigest": ubx.FieldSpec{WireName: "content_digest"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"ContentDigest": ubx.FieldSpec{WireName: "content_digest"},
+	"ContentType":   ubx.FieldSpec{WireName: "content_type"},
+	"S3Uri":         ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var ModelPackage_DriftCheckBaselines_BiasFields = ubx.FieldMap{
-		"ConfigFile": ubx.FieldSpec{
-			WireName: "config_file",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-		"PostTrainingConstraints": ubx.FieldSpec{
-			WireName: "post_training_constraints",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-		"PreTrainingConstraints": ubx.FieldSpec{
-			WireName: "pre_training_constraints",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-	}
+	"ConfigFile": ubx.FieldSpec{
+		WireName: "config_file",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+	"PostTrainingConstraints": ubx.FieldSpec{
+		WireName: "post_training_constraints",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+	"PreTrainingConstraints": ubx.FieldSpec{
+		WireName: "pre_training_constraints",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+}
 
 var ModelPackage_DriftCheckBaselines_ExplainabilityFields = ubx.FieldMap{
-		"ConfigFile": ubx.FieldSpec{
-			WireName: "config_file",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-		"Constraints": ubx.FieldSpec{
-			WireName: "constraints",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-	}
+	"ConfigFile": ubx.FieldSpec{
+		WireName: "config_file",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+	"Constraints": ubx.FieldSpec{
+		WireName: "constraints",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+}
 
 var ModelPackage_DriftCheckBaselines_ModelDataQualityFields = ubx.FieldMap{
-		"Constraints": ubx.FieldSpec{
-			WireName: "constraints",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-		"Statistics": ubx.FieldSpec{
-			WireName: "statistics",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-	}
+	"Constraints": ubx.FieldSpec{
+		WireName: "constraints",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+	"Statistics": ubx.FieldSpec{
+		WireName: "statistics",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+}
 
 var ModelPackage_DriftCheckBaselinesFields = ubx.FieldMap{
-		"Bias": ubx.FieldSpec{
-			WireName: "bias",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_BiasFields,
-		},
-		"Explainability": ubx.FieldSpec{
-			WireName: "explainability",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_ExplainabilityFields,
-		},
-		"ModelDataQuality": ubx.FieldSpec{
-			WireName: "model_data_quality",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_ModelDataQualityFields,
-		},
-		"ModelQuality": ubx.FieldSpec{
-			WireName: "model_quality",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_ModelDataQualityFields,
-		},
-	}
+	"Bias": ubx.FieldSpec{
+		WireName: "bias",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_BiasFields,
+	},
+	"Explainability": ubx.FieldSpec{
+		WireName: "explainability",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_ExplainabilityFields,
+	},
+	"ModelDataQuality": ubx.FieldSpec{
+		WireName: "model_data_quality",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_ModelDataQualityFields,
+	},
+	"ModelQuality": ubx.FieldSpec{
+		WireName: "model_quality",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_ModelDataQualityFields,
+	},
+}
 
 var ModelPackage_InferenceSpecificationFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: ModelPackage_AdditionalInferenceSpecifications_ContainersFields,
-		},
-		"SupportedContentTypes": ubx.FieldSpec{WireName: "supported_content_types"},
-		"SupportedRealtimeInferenceInstanceTypes": ubx.FieldSpec{WireName: "supported_realtime_inference_instance_types"},
-		"SupportedResponseMimetypes": ubx.FieldSpec{WireName: "supported_response_mimetypes"},
-		"SupportedTransformInstanceTypes": ubx.FieldSpec{WireName: "supported_transform_instance_types"},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   ModelPackage_AdditionalInferenceSpecifications_ContainersFields,
+	},
+	"SupportedContentTypes":                   ubx.FieldSpec{WireName: "supported_content_types"},
+	"SupportedRealtimeInferenceInstanceTypes": ubx.FieldSpec{WireName: "supported_realtime_inference_instance_types"},
+	"SupportedResponseMimetypes":              ubx.FieldSpec{WireName: "supported_response_mimetypes"},
+	"SupportedTransformInstanceTypes":         ubx.FieldSpec{WireName: "supported_transform_instance_types"},
+}
 
 var ModelPackage_MetadataPropertiesFields = ubx.FieldMap{
-		"CommitId": ubx.FieldSpec{WireName: "commit_id"},
-		"GeneratedBy": ubx.FieldSpec{WireName: "generated_by"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"CommitId":    ubx.FieldSpec{WireName: "commit_id"},
+	"GeneratedBy": ubx.FieldSpec{WireName: "generated_by"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+	"Repository":  ubx.FieldSpec{WireName: "repository"},
+}
 
 var ModelPackage_ModelCardFields = ubx.FieldMap{
-		"ModelCardContent": ubx.FieldSpec{WireName: "model_card_content"},
-		"ModelCardStatus": ubx.FieldSpec{WireName: "model_card_status"},
-	}
+	"ModelCardContent": ubx.FieldSpec{WireName: "model_card_content"},
+	"ModelCardStatus":  ubx.FieldSpec{WireName: "model_card_status"},
+}
 
 var ModelPackage_ModelMetrics_BiasFields = ubx.FieldMap{
-		"PostTrainingReport": ubx.FieldSpec{
-			WireName: "post_training_report",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-		"PreTrainingReport": ubx.FieldSpec{
-			WireName: "pre_training_report",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-		"Report": ubx.FieldSpec{
-			WireName: "report",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-	}
+	"PostTrainingReport": ubx.FieldSpec{
+		WireName: "post_training_report",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+	"PreTrainingReport": ubx.FieldSpec{
+		WireName: "pre_training_report",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+	"Report": ubx.FieldSpec{
+		WireName: "report",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+}
 
 var ModelPackage_ModelMetrics_ExplainabilityFields = ubx.FieldMap{
-		"Report": ubx.FieldSpec{
-			WireName: "report",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
-		},
-	}
+	"Report": ubx.FieldSpec{
+		WireName: "report",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_Bias_ConfigFileFields,
+	},
+}
 
 var ModelPackage_ModelMetricsFields = ubx.FieldMap{
-		"Bias": ubx.FieldSpec{
-			WireName: "bias",
-			Kind: "object",
-			Fields: ModelPackage_ModelMetrics_BiasFields,
-		},
-		"Explainability": ubx.FieldSpec{
-			WireName: "explainability",
-			Kind: "object",
-			Fields: ModelPackage_ModelMetrics_ExplainabilityFields,
-		},
-		"ModelDataQuality": ubx.FieldSpec{
-			WireName: "model_data_quality",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_ModelDataQualityFields,
-		},
-		"ModelQuality": ubx.FieldSpec{
-			WireName: "model_quality",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselines_ModelDataQualityFields,
-		},
-	}
+	"Bias": ubx.FieldSpec{
+		WireName: "bias",
+		Kind:     "object",
+		Fields:   ModelPackage_ModelMetrics_BiasFields,
+	},
+	"Explainability": ubx.FieldSpec{
+		WireName: "explainability",
+		Kind:     "object",
+		Fields:   ModelPackage_ModelMetrics_ExplainabilityFields,
+	},
+	"ModelDataQuality": ubx.FieldSpec{
+		WireName: "model_data_quality",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_ModelDataQualityFields,
+	},
+	"ModelQuality": ubx.FieldSpec{
+		WireName: "model_quality",
+		Kind:     "object",
+		Fields:   ModelPackage_DriftCheckBaselines_ModelDataQualityFields,
+	},
+}
 
 var ModelPackage_ModelPackageStatusDetails_ValidationStatusesFields = ubx.FieldMap{
-		"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+}
 
 var ModelPackage_ModelPackageStatusDetailsFields = ubx.FieldMap{
-		"ValidationStatuses": ubx.FieldSpec{
-			WireName: "validation_statuses",
-			Kind: "list",
-			Fields: ModelPackage_ModelPackageStatusDetails_ValidationStatusesFields,
-		},
-	}
+	"ValidationStatuses": ubx.FieldSpec{
+		WireName: "validation_statuses",
+		Kind:     "list",
+		Fields:   ModelPackage_ModelPackageStatusDetails_ValidationStatusesFields,
+	},
+}
 
 var ModelPackage_SecurityConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var ModelPackage_SourceAlgorithmSpecification_SourceAlgorithmsFields = ubx.FieldMap{
-		"AlgorithmName": ubx.FieldSpec{WireName: "algorithm_name"},
-		"ModelDataUrl": ubx.FieldSpec{WireName: "model_data_url"},
-	}
+	"AlgorithmName": ubx.FieldSpec{WireName: "algorithm_name"},
+	"ModelDataUrl":  ubx.FieldSpec{WireName: "model_data_url"},
+}
 
 var ModelPackage_SourceAlgorithmSpecificationFields = ubx.FieldMap{
-		"SourceAlgorithms": ubx.FieldSpec{
-			WireName: "source_algorithms",
-			Kind: "list",
-			Fields: ModelPackage_SourceAlgorithmSpecification_SourceAlgorithmsFields,
-		},
-	}
+	"SourceAlgorithms": ubx.FieldSpec{
+		WireName: "source_algorithms",
+		Kind:     "list",
+		Fields:   ModelPackage_SourceAlgorithmSpecification_SourceAlgorithmsFields,
+	},
+}
 
 var ModelPackage_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput_DataSource_S3DataSourceFields = ubx.FieldMap{
-		"S3DataType": ubx.FieldSpec{WireName: "s3_data_type"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"S3DataType": ubx.FieldSpec{WireName: "s3_data_type"},
+	"S3Uri":      ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput_DataSourceFields = ubx.FieldMap{
-		"S3DataSource": ubx.FieldSpec{
-			WireName: "s3_data_source",
-			Kind: "object",
-			Fields: ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput_DataSource_S3DataSourceFields,
-		},
-	}
+	"S3DataSource": ubx.FieldSpec{
+		WireName: "s3_data_source",
+		Kind:     "object",
+		Fields:   ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput_DataSource_S3DataSourceFields,
+	},
+}
 
 var ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInputFields = ubx.FieldMap{
-		"CompressionType": ubx.FieldSpec{WireName: "compression_type"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"DataSource": ubx.FieldSpec{
-			WireName: "data_source",
-			Kind: "object",
-			Fields: ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput_DataSourceFields,
-		},
-		"SplitType": ubx.FieldSpec{WireName: "split_type"},
-	}
+	"CompressionType": ubx.FieldSpec{WireName: "compression_type"},
+	"ContentType":     ubx.FieldSpec{WireName: "content_type"},
+	"DataSource": ubx.FieldSpec{
+		WireName: "data_source",
+		Kind:     "object",
+		Fields:   ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput_DataSourceFields,
+	},
+	"SplitType": ubx.FieldSpec{WireName: "split_type"},
+}
 
 var ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformOutputFields = ubx.FieldMap{
-		"Accept": ubx.FieldSpec{WireName: "accept"},
-		"AssembleWith": ubx.FieldSpec{WireName: "assemble_with"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"S3OutputPath": ubx.FieldSpec{WireName: "s3_output_path"},
-	}
+	"Accept":       ubx.FieldSpec{WireName: "accept"},
+	"AssembleWith": ubx.FieldSpec{WireName: "assemble_with"},
+	"KmsKeyId":     ubx.FieldSpec{WireName: "kms_key_id"},
+	"S3OutputPath": ubx.FieldSpec{WireName: "s3_output_path"},
+}
 
 var ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformResourcesFields = ubx.FieldMap{
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
-	}
+	"InstanceCount":  ubx.FieldSpec{WireName: "instance_count"},
+	"InstanceType":   ubx.FieldSpec{WireName: "instance_type"},
+	"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
+}
 
 var ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinitionFields = ubx.FieldMap{
-		"BatchStrategy": ubx.FieldSpec{WireName: "batch_strategy"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"MaxConcurrentTransforms": ubx.FieldSpec{WireName: "max_concurrent_transforms"},
-		"MaxPayloadInMb": ubx.FieldSpec{WireName: "max_payload_in_mb"},
-		"TransformInput": ubx.FieldSpec{
-			WireName: "transform_input",
-			Kind: "object",
-			Fields: ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInputFields,
-		},
-		"TransformOutput": ubx.FieldSpec{
-			WireName: "transform_output",
-			Kind: "object",
-			Fields: ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformOutputFields,
-		},
-		"TransformResources": ubx.FieldSpec{
-			WireName: "transform_resources",
-			Kind: "object",
-			Fields: ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformResourcesFields,
-		},
-	}
+	"BatchStrategy":           ubx.FieldSpec{WireName: "batch_strategy"},
+	"Environment":             ubx.FieldSpec{WireName: "environment"},
+	"MaxConcurrentTransforms": ubx.FieldSpec{WireName: "max_concurrent_transforms"},
+	"MaxPayloadInMb":          ubx.FieldSpec{WireName: "max_payload_in_mb"},
+	"TransformInput": ubx.FieldSpec{
+		WireName: "transform_input",
+		Kind:     "object",
+		Fields:   ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInputFields,
+	},
+	"TransformOutput": ubx.FieldSpec{
+		WireName: "transform_output",
+		Kind:     "object",
+		Fields:   ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformOutputFields,
+	},
+	"TransformResources": ubx.FieldSpec{
+		WireName: "transform_resources",
+		Kind:     "object",
+		Fields:   ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformResourcesFields,
+	},
+}
 
 var ModelPackage_ValidationSpecification_ValidationProfilesFields = ubx.FieldMap{
-		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
-		"TransformJobDefinition": ubx.FieldSpec{
-			WireName: "transform_job_definition",
-			Kind: "object",
-			Fields: ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinitionFields,
-		},
-	}
+	"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
+	"TransformJobDefinition": ubx.FieldSpec{
+		WireName: "transform_job_definition",
+		Kind:     "object",
+		Fields:   ModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinitionFields,
+	},
+}
 
 var ModelPackage_ValidationSpecificationFields = ubx.FieldMap{
-		"ValidationProfiles": ubx.FieldSpec{
-			WireName: "validation_profiles",
-			Kind: "list",
-			Fields: ModelPackage_ValidationSpecification_ValidationProfilesFields,
-		},
-		"ValidationRole": ubx.FieldSpec{WireName: "validation_role"},
-	}
+	"ValidationProfiles": ubx.FieldSpec{
+		WireName: "validation_profiles",
+		Kind:     "list",
+		Fields:   ModelPackage_ValidationSpecification_ValidationProfilesFields,
+	},
+	"ValidationRole": ubx.FieldSpec{WireName: "validation_role"},
+}
 
 type ModelPackageConfig struct {
 	// An array of additional Inference Specification objects.
@@ -724,77 +724,77 @@ var ModelPackage = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalInferenceSpecifications": ubx.FieldSpec{
 			WireName: "additional_inference_specifications",
-			Kind: "list",
-			Fields: ModelPackage_AdditionalInferenceSpecificationsFields,
+			Kind:     "list",
+			Fields:   ModelPackage_AdditionalInferenceSpecificationsFields,
 		},
 		"AdditionalInferenceSpecificationsToAdd": ubx.FieldSpec{
 			WireName: "additional_inference_specifications_to_add",
-			Kind: "list",
-			Fields: ModelPackage_AdditionalInferenceSpecificationsFields,
+			Kind:     "list",
+			Fields:   ModelPackage_AdditionalInferenceSpecificationsFields,
 		},
-		"ApprovalDescription": ubx.FieldSpec{WireName: "approval_description"},
-		"CertifyForMarketplace": ubx.FieldSpec{WireName: "certify_for_marketplace"},
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
+		"ApprovalDescription":        ubx.FieldSpec{WireName: "approval_description"},
+		"CertifyForMarketplace":      ubx.FieldSpec{WireName: "certify_for_marketplace"},
+		"ClientToken":                ubx.FieldSpec{WireName: "client_token"},
 		"CustomerMetadataProperties": ubx.FieldSpec{WireName: "customer_metadata_properties"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":                     ubx.FieldSpec{WireName: "domain"},
 		"DriftCheckBaselines": ubx.FieldSpec{
 			WireName: "drift_check_baselines",
-			Kind: "object",
-			Fields: ModelPackage_DriftCheckBaselinesFields,
+			Kind:     "object",
+			Fields:   ModelPackage_DriftCheckBaselinesFields,
 		},
 		"InferenceSpecification": ubx.FieldSpec{
 			WireName: "inference_specification",
-			Kind: "object",
-			Fields: ModelPackage_InferenceSpecificationFields,
+			Kind:     "object",
+			Fields:   ModelPackage_InferenceSpecificationFields,
 		},
 		"MetadataProperties": ubx.FieldSpec{
 			WireName: "metadata_properties",
-			Kind: "object",
-			Fields: ModelPackage_MetadataPropertiesFields,
+			Kind:     "object",
+			Fields:   ModelPackage_MetadataPropertiesFields,
 		},
 		"ModelApprovalStatus": ubx.FieldSpec{WireName: "model_approval_status"},
 		"ModelCard": ubx.FieldSpec{
 			WireName: "model_card",
-			Kind: "object",
-			Fields: ModelPackage_ModelCardFields,
+			Kind:     "object",
+			Fields:   ModelPackage_ModelCardFields,
 		},
 		"ModelMetrics": ubx.FieldSpec{
 			WireName: "model_metrics",
-			Kind: "object",
-			Fields: ModelPackage_ModelMetricsFields,
+			Kind:     "object",
+			Fields:   ModelPackage_ModelMetricsFields,
 		},
 		"ModelPackageDescription": ubx.FieldSpec{WireName: "model_package_description"},
-		"ModelPackageGroupName": ubx.FieldSpec{WireName: "model_package_group_name"},
-		"ModelPackageName": ubx.FieldSpec{WireName: "model_package_name"},
+		"ModelPackageGroupName":   ubx.FieldSpec{WireName: "model_package_group_name"},
+		"ModelPackageName":        ubx.FieldSpec{WireName: "model_package_name"},
 		"ModelPackageStatusDetails": ubx.FieldSpec{
 			WireName: "model_package_status_details",
-			Kind: "object",
-			Fields: ModelPackage_ModelPackageStatusDetailsFields,
+			Kind:     "object",
+			Fields:   ModelPackage_ModelPackageStatusDetailsFields,
 		},
 		"ModelPackageVersion": ubx.FieldSpec{WireName: "model_package_version"},
-		"SamplePayloadUrl": ubx.FieldSpec{WireName: "sample_payload_url"},
+		"SamplePayloadUrl":    ubx.FieldSpec{WireName: "sample_payload_url"},
 		"SecurityConfig": ubx.FieldSpec{
 			WireName: "security_config",
-			Kind: "object",
-			Fields: ModelPackage_SecurityConfigFields,
+			Kind:     "object",
+			Fields:   ModelPackage_SecurityConfigFields,
 		},
 		"SkipModelValidation": ubx.FieldSpec{WireName: "skip_model_validation"},
 		"SourceAlgorithmSpecification": ubx.FieldSpec{
 			WireName: "source_algorithm_specification",
-			Kind: "object",
-			Fields: ModelPackage_SourceAlgorithmSpecificationFields,
+			Kind:     "object",
+			Fields:   ModelPackage_SourceAlgorithmSpecificationFields,
 		},
 		"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ModelPackage_TagsFields,
+			Kind:     "list",
+			Fields:   ModelPackage_TagsFields,
 		},
 		"Task": ubx.FieldSpec{WireName: "task"},
 		"ValidationSpecification": ubx.FieldSpec{
 			WireName: "validation_specification",
-			Kind: "object",
-			Fields: ModelPackage_ValidationSpecificationFields,
+			Kind:     "object",
+			Fields:   ModelPackage_ValidationSpecificationFields,
 		},
 	},
 }

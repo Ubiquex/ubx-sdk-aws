@@ -12,16 +12,16 @@ type ResourceScanConfig struct {
 }
 
 type ResourceScanAttrs struct {
-	EndTime any
+	EndTime             any
 	PercentageCompleted any
-	ResourceScanId any
-	ResourceTypes any
-	ResourcesRead any
-	ResourcesScanned any
-	ScanFilters any
-	StartTime any
-	Status any
-	StatusReason any
+	ResourceScanId      any
+	ResourceTypes       any
+	ResourcesRead       any
+	ResourcesScanned    any
+	ScanFilters         any
+	StartTime           any
+	Status              any
+	StatusReason        any
 }
 
 var ResourceScan = ubx.DataSourceBinding{

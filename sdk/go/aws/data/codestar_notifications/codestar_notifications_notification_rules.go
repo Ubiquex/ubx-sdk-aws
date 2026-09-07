@@ -4,30 +4,30 @@ package codestar_notifications
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarNotificationsNotificationRules_Filters struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type CodestarNotificationsNotificationRules_NotificationRules struct {
 	Arn any
-	Id any
+	Id  any
 }
 
 var CodestarNotificationsNotificationRules_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CodestarNotificationsNotificationRulesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CodestarNotificationsNotificationRulesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters           any
+	MaxResults        any
+	NextToken         any
 	NotificationRules any
 }
 
@@ -36,10 +36,10 @@ var CodestarNotificationsNotificationRules = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: CodestarNotificationsNotificationRules_FiltersFields,
+			Kind:     "list",
+			Fields:   CodestarNotificationsNotificationRules_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

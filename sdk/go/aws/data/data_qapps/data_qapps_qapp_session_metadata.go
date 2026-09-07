@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQappsQappSessionMetadata_SharingConfiguration struct {
 	AcceptResponses any
-	Enabled any
-	RevealCards any
+	Enabled         any
+	RevealCards     any
 }
 
 type DataQappsQappSessionMetadataConfig struct {
 	InstanceId any
-	SessionId any
+	SessionId  any
 }
 
 type DataQappsQappSessionMetadataAttrs struct {
-	InstanceId any
-	SessionArn any
-	SessionId any
-	SessionName any
+	InstanceId   any
+	SessionArn   any
+	SessionId    any
+	SessionName  any
 	SessionOwner any
 	// <p>The sharing configuration of an Amazon Q App data collection session.</p>
 	SharingConfiguration any
@@ -28,6 +28,6 @@ var DataQappsQappSessionMetadata = ubx.DataSourceBinding{
 	WireType: "aws_data_qapps_qapp_session_metadata",
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"SessionId":  ubx.FieldSpec{WireName: "session_id"},
 	},
 }

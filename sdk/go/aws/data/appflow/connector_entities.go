@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectorEntities_ConnectorEntityMap struct {
 	HasNestedEntities any
-	Label any
-	Name any
+	Label             any
+	Name              any
 }
 
 type ConnectorEntitiesConfig struct {
-	ApiVersion any
+	ApiVersion           any
 	ConnectorProfileName any
-	ConnectorType any
-	EntitiesPath any
-	MaxResults any
-	NextToken any
+	ConnectorType        any
+	EntitiesPath         any
+	MaxResults           any
+	NextToken            any
 }
 
 type ConnectorEntitiesAttrs struct {
-	ApiVersion any
-	ConnectorEntityMap any
+	ApiVersion           any
+	ConnectorEntityMap   any
 	ConnectorProfileName any
-	ConnectorType any
-	EntitiesPath any
-	MaxResults any
-	NextToken any
+	ConnectorType        any
+	EntitiesPath         any
+	MaxResults           any
+	NextToken            any
 }
 
 var ConnectorEntities = ubx.DataSourceBinding{
 	WireType: "aws_appflow_connector_entities",
 	Fields: ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+		"ApiVersion":           ubx.FieldSpec{WireName: "api_version"},
 		"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
-		"ConnectorType": ubx.FieldSpec{WireName: "connector_type"},
-		"EntitiesPath": ubx.FieldSpec{WireName: "entities_path"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ConnectorType":        ubx.FieldSpec{WireName: "connector_type"},
+		"EntitiesPath":         ubx.FieldSpec{WireName: "entities_path"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

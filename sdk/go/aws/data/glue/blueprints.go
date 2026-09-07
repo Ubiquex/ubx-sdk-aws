@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BlueprintsConfig struct {
 	MaxResults any
-	NextToken any
-	Tags any
+	NextToken  any
+	Tags       any
 }
 
 type BlueprintsAttrs struct {
 	Blueprints any
 	MaxResults any
-	NextToken any
-	Tags any
+	NextToken  any
+	Tags       any
 }
 
 var Blueprints = ubx.DataSourceBinding{
 	WireType: "aws_glue_blueprints",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Tags":       ubx.FieldSpec{WireName: "tags"},
 	},
 }

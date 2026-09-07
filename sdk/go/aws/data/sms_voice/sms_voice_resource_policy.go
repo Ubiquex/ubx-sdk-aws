@@ -9,8 +9,8 @@ type SmsVoiceResourcePolicyConfig struct {
 
 type SmsVoiceResourcePolicyAttrs struct {
 	CreatedTimestamp any
-	Policy any
-	ResourceArn any
+	Policy           any
+	ResourceArn      any
 }
 
 var SmsVoiceResourcePolicy = ubx.DataSourceBinding{

@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaPipelinesChimeMediaPipelines_MediaPipelines struct {
 	MediaPipelineArn any
-	MediaPipelineId any
+	MediaPipelineId  any
 }
 
 type MediaPipelinesChimeMediaPipelinesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MediaPipelinesChimeMediaPipelinesAttrs struct {
-	MaxResults any
+	MaxResults     any
 	MediaPipelines any
-	NextToken any
+	NextToken      any
 }
 
 var MediaPipelinesChimeMediaPipelines = ubx.DataSourceBinding{
 	WireType: "aws_media_pipelines_chime_media_pipelines",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

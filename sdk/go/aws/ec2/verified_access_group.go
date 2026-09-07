@@ -12,19 +12,19 @@ type VerifiedAccessGroup_SseSpecification struct {
 
 type VerifiedAccessGroup_Tags struct {
 	// The key of a user-defined tag attached to the EC2 Verified Access Group, used to organize and identify the resource in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var VerifiedAccessGroup_SseSpecificationFields = ubx.FieldMap{
-		"CustomerManagedKeyEnabled": ubx.FieldSpec{WireName: "customer_managed_key_enabled"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"CustomerManagedKeyEnabled": ubx.FieldSpec{WireName: "customer_managed_key_enabled"},
+	"KmsKeyArn":                 ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var VerifiedAccessGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VerifiedAccessGroupConfig struct {
 	// A description for the AWS Verified Access group.
@@ -69,18 +69,18 @@ type VerifiedAccessGroupAttrs struct {
 var VerifiedAccessGroup = ubx.ResourceBinding{
 	WireType: "aws_ec2_verified_access_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyEnabled": ubx.FieldSpec{WireName: "policy_enabled"},
+		"PolicyEnabled":  ubx.FieldSpec{WireName: "policy_enabled"},
 		"SseSpecification": ubx.FieldSpec{
 			WireName: "sse_specification",
-			Kind: "object",
-			Fields: VerifiedAccessGroup_SseSpecificationFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessGroup_SseSpecificationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VerifiedAccessGroup_TagsFields,
+			Kind:     "list",
+			Fields:   VerifiedAccessGroup_TagsFields,
 		},
 		"VerifiedAccessInstanceId": ubx.FieldSpec{WireName: "verified_access_instance_id"},
 	},

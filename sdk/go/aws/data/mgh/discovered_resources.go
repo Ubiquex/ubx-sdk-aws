@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveredResources_DiscoveredResourceList struct {
 	ConfigurationId any
-	Description any
+	Description     any
 }
 
 type DiscoveredResourcesConfig struct {
-	MaxResults any
-	MigrationTaskName any
-	NextToken any
+	MaxResults           any
+	MigrationTaskName    any
+	NextToken            any
 	ProgressUpdateStream any
 }
 
 type DiscoveredResourcesAttrs struct {
 	DiscoveredResourceList any
-	MaxResults any
-	MigrationTaskName any
-	NextToken any
-	ProgressUpdateStream any
+	MaxResults             any
+	MigrationTaskName      any
+	NextToken              any
+	ProgressUpdateStream   any
 }
 
 var DiscoveredResources = ubx.DataSourceBinding{
 	WireType: "aws_mgh_discovered_resources",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MigrationTaskName": ubx.FieldSpec{WireName: "migration_task_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"MigrationTaskName":    ubx.FieldSpec{WireName: "migration_task_name"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ProgressUpdateStream": ubx.FieldSpec{WireName: "progress_update_stream"},
 	},
 }

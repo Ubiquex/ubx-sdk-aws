@@ -4,33 +4,33 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Documents_DocumentDetailList_Error struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type Documents_DocumentDetailList struct {
-	CreatedAt any
+	CreatedAt  any
 	DocumentId any
-	Error any
-	Status any
-	UpdatedAt any
+	Error      any
+	Status     any
+	UpdatedAt  any
 }
 
 type DocumentsConfig struct {
 	ApplicationId any
 	DataSourceIds any
-	IndexId any
-	MaxResults any
-	NextToken any
+	IndexId       any
+	MaxResults    any
+	NextToken     any
 }
 
 type DocumentsAttrs struct {
-	ApplicationId any
-	DataSourceIds any
+	ApplicationId      any
+	DataSourceIds      any
 	DocumentDetailList any
-	IndexId any
-	MaxResults any
-	NextToken any
+	IndexId            any
+	MaxResults         any
+	NextToken          any
 }
 
 var Documents = ubx.DataSourceBinding{
@@ -38,8 +38,8 @@ var Documents = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"DataSourceIds": ubx.FieldSpec{WireName: "data_source_ids"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"IndexId":       ubx.FieldSpec{WireName: "index_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

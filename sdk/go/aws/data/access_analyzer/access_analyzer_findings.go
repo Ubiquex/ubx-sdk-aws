@@ -5,71 +5,71 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessAnalyzerFindings_Filter struct {
 	Contains any
-	Eq any
-	Exists any
-	Neq any
+	Eq       any
+	Exists   any
+	Neq      any
 }
 
 type AccessAnalyzerFindings_Findings_Sources_Detail struct {
 	AccessPointAccount any
-	AccessPointArn any
+	AccessPointArn     any
 }
 
 type AccessAnalyzerFindings_Findings_Sources struct {
 	Detail any
-	Type any
+	Type   any
 }
 
 type AccessAnalyzerFindings_Findings struct {
-	Action any
-	AnalyzedAt any
-	Condition any
-	CreatedAt any
-	Error any
-	Id any
-	IsPublic any
-	Principal any
-	Resource any
+	Action                           any
+	AnalyzedAt                       any
+	Condition                        any
+	CreatedAt                        any
+	Error                            any
+	Id                               any
+	IsPublic                         any
+	Principal                        any
+	Resource                         any
 	ResourceControlPolicyRestriction any
-	ResourceOwnerAccount any
-	ResourceType any
-	Sources any
-	Status any
-	UpdatedAt any
+	ResourceOwnerAccount             any
+	ResourceType                     any
+	Sources                          any
+	Status                           any
+	UpdatedAt                        any
 }
 
 type AccessAnalyzerFindings_Sort struct {
 	AttributeName any
-	OrderBy any
+	OrderBy       any
 }
 
 var AccessAnalyzerFindings_FilterFields = ubx.FieldMap{
-		"Contains": ubx.FieldSpec{WireName: "contains"},
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Exists": ubx.FieldSpec{WireName: "exists"},
-		"Neq": ubx.FieldSpec{WireName: "neq"},
-	}
+	"Contains": ubx.FieldSpec{WireName: "contains"},
+	"Eq":       ubx.FieldSpec{WireName: "eq"},
+	"Exists":   ubx.FieldSpec{WireName: "exists"},
+	"Neq":      ubx.FieldSpec{WireName: "neq"},
+}
 
 var AccessAnalyzerFindings_SortFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+}
 
 type AccessAnalyzerFindingsConfig struct {
 	AnalyzerArn any
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter      any
+	MaxResults  any
+	NextToken   any
 	// <p>The criteria used to sort.</p>
 	Sort any
 }
 
 type AccessAnalyzerFindingsAttrs struct {
 	AnalyzerArn any
-	Filter any
-	Findings any
-	MaxResults any
-	NextToken any
+	Filter      any
+	Findings    any
+	MaxResults  any
+	NextToken   any
 	// <p>The criteria used to sort.</p>
 	Sort any
 }
@@ -80,15 +80,15 @@ var AccessAnalyzerFindings = ubx.DataSourceBinding{
 		"AnalyzerArn": ubx.FieldSpec{WireName: "analyzer_arn"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "map",
-			Fields: AccessAnalyzerFindings_FilterFields,
+			Kind:     "map",
+			Fields:   AccessAnalyzerFindings_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"Sort": ubx.FieldSpec{
 			WireName: "sort",
-			Kind: "object",
-			Fields: AccessAnalyzerFindings_SortFields,
+			Kind:     "object",
+			Fields:   AccessAnalyzerFindings_SortFields,
 		},
 	},
 }

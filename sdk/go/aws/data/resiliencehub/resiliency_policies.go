@@ -9,27 +9,27 @@ type ResiliencyPolicies_ResiliencyPolicies_Policy struct {
 }
 
 type ResiliencyPolicies_ResiliencyPolicies struct {
-	CreationTime any
+	CreationTime           any
 	DataLocationConstraint any
-	EstimatedCostTier any
-	Policy any
-	PolicyArn any
-	PolicyDescription any
-	PolicyName any
-	Tags any
-	Tier any
+	EstimatedCostTier      any
+	Policy                 any
+	PolicyArn              any
+	PolicyDescription      any
+	PolicyName             any
+	Tags                   any
+	Tier                   any
 }
 
 type ResiliencyPoliciesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	PolicyName any
 }
 
 type ResiliencyPoliciesAttrs struct {
-	MaxResults any
-	NextToken any
-	PolicyName any
+	MaxResults         any
+	NextToken          any
+	PolicyName         any
 	ResiliencyPolicies any
 }
 
@@ -37,7 +37,7 @@ var ResiliencyPolicies = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_resiliency_policies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
 	},
 }

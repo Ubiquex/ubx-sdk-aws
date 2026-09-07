@@ -8,7 +8,7 @@ type Asset_AssetHierarchies struct {
 	ChildAssetId any
 	// Defines an optional external identifier for this asset hierarchy, allowing it to be referenced or matched with external systems in AWS IoT SiteWise. (AI-inferred)
 	ExternalId any
-	Id any
+	Id         any
 	// The logical ID of the asset hierarchy, which must match a hierarchy logical ID defined in the asset model and uniquely identifies the parent–child relationship between the asset and its child asset. (AI-inferred)
 	LogicalId any
 }
@@ -36,9 +36,9 @@ type Asset_Tags struct {
 }
 
 var Asset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssetConfig struct {
 	// A description for the asset
@@ -78,13 +78,13 @@ var Asset = ubx.ResourceBinding{
 	WireType: "aws_io_tsite_wise_asset",
 	Fields: ubx.FieldMap{
 		"AssetDescription": ubx.FieldSpec{WireName: "asset_description"},
-		"AssetExternalId": ubx.FieldSpec{WireName: "asset_external_id"},
-		"AssetModelId": ubx.FieldSpec{WireName: "asset_model_id"},
-		"AssetName": ubx.FieldSpec{WireName: "asset_name"},
+		"AssetExternalId":  ubx.FieldSpec{WireName: "asset_external_id"},
+		"AssetModelId":     ubx.FieldSpec{WireName: "asset_model_id"},
+		"AssetName":        ubx.FieldSpec{WireName: "asset_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Asset_TagsFields,
+			Kind:     "list",
+			Fields:   Asset_TagsFields,
 		},
 	},
 }

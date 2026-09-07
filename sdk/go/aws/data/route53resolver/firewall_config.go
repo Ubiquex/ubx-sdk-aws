@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallConfig_FirewallConfig struct {
 	FirewallFailOpen any
-	Id any
-	OwnerId any
-	ResourceId any
+	Id               any
+	OwnerId          any
+	ResourceId       any
 }
 
 type FirewallConfigConfig struct {
@@ -17,7 +17,7 @@ type FirewallConfigConfig struct {
 type FirewallConfigAttrs struct {
 	// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
 	FirewallConfig any
-	ResourceId any
+	ResourceId     any
 }
 
 var FirewallConfig = ubx.DataSourceBinding{

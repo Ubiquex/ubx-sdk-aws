@@ -10,25 +10,25 @@ type LoggingConfigurations_LoggingConfigurations_RedactedFields struct {
 
 type LoggingConfigurations_LoggingConfigurations struct {
 	LogDestinationConfigs any
-	RedactedFields any
-	ResourceArn any
+	RedactedFields        any
+	ResourceArn           any
 }
 
 type LoggingConfigurationsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type LoggingConfigurationsAttrs struct {
-	Limit any
+	Limit                 any
 	LoggingConfigurations any
-	NextMarker any
+	NextMarker            any
 }
 
 var LoggingConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_waf_logging_configurations",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

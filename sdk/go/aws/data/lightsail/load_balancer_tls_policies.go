@@ -4,11 +4,11 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancerTlsPolicies_TlsPolicies struct {
-	Ciphers any
+	Ciphers     any
 	Description any
-	IsDefault any
-	Name any
-	Protocols any
+	IsDefault   any
+	Name        any
+	Protocols   any
 }
 
 type LoadBalancerTlsPoliciesConfig struct {
@@ -17,8 +17,8 @@ type LoadBalancerTlsPoliciesConfig struct {
 
 type LoadBalancerTlsPoliciesAttrs struct {
 	NextPageToken any
-	PageToken any
-	TlsPolicies any
+	PageToken     any
+	TlsPolicies   any
 }
 
 var LoadBalancerTlsPolicies = ubx.DataSourceBinding{

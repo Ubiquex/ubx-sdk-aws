@@ -39,13 +39,13 @@ type FirewallRuleGroup_FirewallRules struct {
 	FirewallDomainListId any
 	// Controls whether Route 53 Resolver DNS Firewall inspects the DNS redirection (CNAME) chain to evaluate the ultimate target domain against the rule's domain list, accepting values like INSPECT_REDIRECTION or TRUST_REDIRECTION. (AI-inferred)
 	FirewallDomainRedirectionAction any
-	FirewallRuleType any
+	FirewallRuleType                any
 	// The unique ID of the Route 53 Resolver DNS Firewall threat protection whose managed threat list this rule uses to match DNS queries, used when the rule is based on a threat protection rather than a customer-defined domain list. (AI-inferred)
 	FirewallThreatProtectionId any
 	// The evaluation priority for this firewall rule within the rule group, where lower numbers are evaluated first (range 1-10000). (AI-inferred)
 	Priority any
 	// The DNS query type (QTYPE) that this firewall rule applies to, such as A, AAAA, or MX, where an unspecified value matches all query types. (AI-inferred)
-	Qtype any
+	Qtype  any
 	Status any
 }
 
@@ -57,9 +57,9 @@ type FirewallRuleGroup_Tags struct {
 }
 
 var FirewallRuleGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallRuleGroupConfig struct {
 	// FirewallRuleGroupName
@@ -103,8 +103,8 @@ var FirewallRuleGroup = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FirewallRuleGroup_TagsFields,
+			Kind:     "list",
+			Fields:   FirewallRuleGroup_TagsFields,
 		},
 	},
 }

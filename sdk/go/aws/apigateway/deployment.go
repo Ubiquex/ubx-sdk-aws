@@ -91,71 +91,71 @@ type Deployment_StageDescription struct {
 }
 
 var Deployment_DeploymentCanarySettingsFields = ubx.FieldMap{
-		"PercentTraffic": ubx.FieldSpec{WireName: "percent_traffic"},
-		"StageVariableOverrides": ubx.FieldSpec{WireName: "stage_variable_overrides"},
-		"UseStageCache": ubx.FieldSpec{WireName: "use_stage_cache"},
-	}
+	"PercentTraffic":         ubx.FieldSpec{WireName: "percent_traffic"},
+	"StageVariableOverrides": ubx.FieldSpec{WireName: "stage_variable_overrides"},
+	"UseStageCache":          ubx.FieldSpec{WireName: "use_stage_cache"},
+}
 
 var Deployment_StageDescription_AccessLogSettingFields = ubx.FieldMap{
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-	}
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+	"Format":         ubx.FieldSpec{WireName: "format"},
+}
 
 var Deployment_StageDescription_MethodSettingsFields = ubx.FieldMap{
-		"CacheDataEncrypted": ubx.FieldSpec{WireName: "cache_data_encrypted"},
-		"CacheTtlInSeconds": ubx.FieldSpec{WireName: "cache_ttl_in_seconds"},
-		"CachingEnabled": ubx.FieldSpec{WireName: "caching_enabled"},
-		"DataTraceEnabled": ubx.FieldSpec{WireName: "data_trace_enabled"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"LoggingLevel": ubx.FieldSpec{WireName: "logging_level"},
-		"MetricsEnabled": ubx.FieldSpec{WireName: "metrics_enabled"},
-		"ResourcePath": ubx.FieldSpec{WireName: "resource_path"},
-		"ThrottlingBurstLimit": ubx.FieldSpec{WireName: "throttling_burst_limit"},
-		"ThrottlingRateLimit": ubx.FieldSpec{WireName: "throttling_rate_limit"},
-	}
+	"CacheDataEncrypted":   ubx.FieldSpec{WireName: "cache_data_encrypted"},
+	"CacheTtlInSeconds":    ubx.FieldSpec{WireName: "cache_ttl_in_seconds"},
+	"CachingEnabled":       ubx.FieldSpec{WireName: "caching_enabled"},
+	"DataTraceEnabled":     ubx.FieldSpec{WireName: "data_trace_enabled"},
+	"HttpMethod":           ubx.FieldSpec{WireName: "http_method"},
+	"LoggingLevel":         ubx.FieldSpec{WireName: "logging_level"},
+	"MetricsEnabled":       ubx.FieldSpec{WireName: "metrics_enabled"},
+	"ResourcePath":         ubx.FieldSpec{WireName: "resource_path"},
+	"ThrottlingBurstLimit": ubx.FieldSpec{WireName: "throttling_burst_limit"},
+	"ThrottlingRateLimit":  ubx.FieldSpec{WireName: "throttling_rate_limit"},
+}
 
 var Deployment_StageDescription_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Deployment_StageDescriptionFields = ubx.FieldMap{
-		"AccessLogSetting": ubx.FieldSpec{
-			WireName: "access_log_setting",
-			Kind: "object",
-			Fields: Deployment_StageDescription_AccessLogSettingFields,
-		},
-		"CacheClusterEnabled": ubx.FieldSpec{WireName: "cache_cluster_enabled"},
-		"CacheClusterSize": ubx.FieldSpec{WireName: "cache_cluster_size"},
-		"CacheDataEncrypted": ubx.FieldSpec{WireName: "cache_data_encrypted"},
-		"CacheTtlInSeconds": ubx.FieldSpec{WireName: "cache_ttl_in_seconds"},
-		"CachingEnabled": ubx.FieldSpec{WireName: "caching_enabled"},
-		"CanarySetting": ubx.FieldSpec{
-			WireName: "canary_setting",
-			Kind: "object",
-			Fields: Deployment_DeploymentCanarySettingsFields,
-		},
-		"ClientCertificateId": ubx.FieldSpec{WireName: "client_certificate_id"},
-		"DataTraceEnabled": ubx.FieldSpec{WireName: "data_trace_enabled"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DocumentationVersion": ubx.FieldSpec{WireName: "documentation_version"},
-		"LoggingLevel": ubx.FieldSpec{WireName: "logging_level"},
-		"MethodSettings": ubx.FieldSpec{
-			WireName: "method_settings",
-			Kind: "list",
-			Fields: Deployment_StageDescription_MethodSettingsFields,
-		},
-		"MetricsEnabled": ubx.FieldSpec{WireName: "metrics_enabled"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Deployment_StageDescription_TagsFields,
-		},
-		"ThrottlingBurstLimit": ubx.FieldSpec{WireName: "throttling_burst_limit"},
-		"ThrottlingRateLimit": ubx.FieldSpec{WireName: "throttling_rate_limit"},
-		"TracingEnabled": ubx.FieldSpec{WireName: "tracing_enabled"},
-		"Variables": ubx.FieldSpec{WireName: "variables"},
-	}
+	"AccessLogSetting": ubx.FieldSpec{
+		WireName: "access_log_setting",
+		Kind:     "object",
+		Fields:   Deployment_StageDescription_AccessLogSettingFields,
+	},
+	"CacheClusterEnabled": ubx.FieldSpec{WireName: "cache_cluster_enabled"},
+	"CacheClusterSize":    ubx.FieldSpec{WireName: "cache_cluster_size"},
+	"CacheDataEncrypted":  ubx.FieldSpec{WireName: "cache_data_encrypted"},
+	"CacheTtlInSeconds":   ubx.FieldSpec{WireName: "cache_ttl_in_seconds"},
+	"CachingEnabled":      ubx.FieldSpec{WireName: "caching_enabled"},
+	"CanarySetting": ubx.FieldSpec{
+		WireName: "canary_setting",
+		Kind:     "object",
+		Fields:   Deployment_DeploymentCanarySettingsFields,
+	},
+	"ClientCertificateId":  ubx.FieldSpec{WireName: "client_certificate_id"},
+	"DataTraceEnabled":     ubx.FieldSpec{WireName: "data_trace_enabled"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"DocumentationVersion": ubx.FieldSpec{WireName: "documentation_version"},
+	"LoggingLevel":         ubx.FieldSpec{WireName: "logging_level"},
+	"MethodSettings": ubx.FieldSpec{
+		WireName: "method_settings",
+		Kind:     "list",
+		Fields:   Deployment_StageDescription_MethodSettingsFields,
+	},
+	"MetricsEnabled": ubx.FieldSpec{WireName: "metrics_enabled"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Deployment_StageDescription_TagsFields,
+	},
+	"ThrottlingBurstLimit": ubx.FieldSpec{WireName: "throttling_burst_limit"},
+	"ThrottlingRateLimit":  ubx.FieldSpec{WireName: "throttling_rate_limit"},
+	"TracingEnabled":       ubx.FieldSpec{WireName: "tracing_enabled"},
+	"Variables":            ubx.FieldSpec{WireName: "variables"},
+}
 
 type DeploymentConfig struct {
 	// The ``DeploymentCanarySettings`` property type specifies settings for the canary deployment.
@@ -190,15 +190,15 @@ var Deployment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeploymentCanarySettings": ubx.FieldSpec{
 			WireName: "deployment_canary_settings",
-			Kind: "object",
-			Fields: Deployment_DeploymentCanarySettingsFields,
+			Kind:     "object",
+			Fields:   Deployment_DeploymentCanarySettingsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"RestApiId":   ubx.FieldSpec{WireName: "rest_api_id"},
 		"StageDescription": ubx.FieldSpec{
 			WireName: "stage_description",
-			Kind: "object",
-			Fields: Deployment_StageDescriptionFields,
+			Kind:     "object",
+			Fields:   Deployment_StageDescriptionFields,
 		},
 		"StageName": ubx.FieldSpec{WireName: "stage_name"},
 	},

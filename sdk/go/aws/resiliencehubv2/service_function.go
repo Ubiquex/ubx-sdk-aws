@@ -40,7 +40,7 @@ var ServiceFunction = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Criticality": ubx.FieldSpec{WireName: "criticality"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"ServiceArn":  ubx.FieldSpec{WireName: "service_arn"},
 	},
 }

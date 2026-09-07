@@ -41,9 +41,9 @@ type ConfigurationAttrs struct {
 var Configuration = ubx.ResourceBinding{
 	WireType: "aws_msk_configuration",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"KafkaVersionsList": ubx.FieldSpec{WireName: "kafka_versions_list"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServerProperties": ubx.FieldSpec{WireName: "server_properties"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"ServerProperties":  ubx.FieldSpec{WireName: "server_properties"},
 	},
 }

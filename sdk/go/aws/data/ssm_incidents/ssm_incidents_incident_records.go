@@ -5,72 +5,72 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmIncidentsIncidentRecords_Filters_Condition_Equals struct {
 	IntegerValues any
-	StringValues any
+	StringValues  any
 }
 
 type SsmIncidentsIncidentRecords_Filters_Condition struct {
-	After any
+	After  any
 	Before any
 	Equals any
 }
 
 type SsmIncidentsIncidentRecords_Filters struct {
 	Condition any
-	Key any
+	Key       any
 }
 
 type SsmIncidentsIncidentRecords_IncidentRecordSummaries_IncidentRecordSource struct {
-	CreatedBy any
-	InvokedBy any
+	CreatedBy   any
+	InvokedBy   any
 	ResourceArn any
-	Source any
+	Source      any
 }
 
 type SsmIncidentsIncidentRecords_IncidentRecordSummaries struct {
-	Arn any
-	CreationTime any
-	Impact any
+	Arn                  any
+	CreationTime         any
+	Impact               any
 	IncidentRecordSource any
-	ResolvedTime any
-	Status any
-	Title any
+	ResolvedTime         any
+	Status               any
+	Title                any
 }
 
 var SsmIncidentsIncidentRecords_Filters_Condition_EqualsFields = ubx.FieldMap{
-		"IntegerValues": ubx.FieldSpec{WireName: "integer_values"},
-		"StringValues": ubx.FieldSpec{WireName: "string_values"},
-	}
+	"IntegerValues": ubx.FieldSpec{WireName: "integer_values"},
+	"StringValues":  ubx.FieldSpec{WireName: "string_values"},
+}
 
 var SsmIncidentsIncidentRecords_Filters_ConditionFields = ubx.FieldMap{
-		"After": ubx.FieldSpec{WireName: "after"},
-		"Before": ubx.FieldSpec{WireName: "before"},
-		"Equals": ubx.FieldSpec{
-			WireName: "equals",
-			Kind: "object",
-			Fields: SsmIncidentsIncidentRecords_Filters_Condition_EqualsFields,
-		},
-	}
+	"After":  ubx.FieldSpec{WireName: "after"},
+	"Before": ubx.FieldSpec{WireName: "before"},
+	"Equals": ubx.FieldSpec{
+		WireName: "equals",
+		Kind:     "object",
+		Fields:   SsmIncidentsIncidentRecords_Filters_Condition_EqualsFields,
+	},
+}
 
 var SsmIncidentsIncidentRecords_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: SsmIncidentsIncidentRecords_Filters_ConditionFields,
-		},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   SsmIncidentsIncidentRecords_Filters_ConditionFields,
+	},
+	"Key": ubx.FieldSpec{WireName: "key"},
+}
 
 type SsmIncidentsIncidentRecordsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SsmIncidentsIncidentRecordsAttrs struct {
-	Filters any
+	Filters                 any
 	IncidentRecordSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 var SsmIncidentsIncidentRecords = ubx.DataSourceBinding{
@@ -78,10 +78,10 @@ var SsmIncidentsIncidentRecords = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SsmIncidentsIncidentRecords_FiltersFields,
+			Kind:     "list",
+			Fields:   SsmIncidentsIncidentRecords_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

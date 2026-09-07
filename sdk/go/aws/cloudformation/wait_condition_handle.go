@@ -13,6 +13,5 @@ type WaitConditionHandleAttrs struct {
 
 var WaitConditionHandle = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_wait_condition_handle",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

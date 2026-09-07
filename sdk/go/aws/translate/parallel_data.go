@@ -25,19 +25,19 @@ type ParallelData_Tags struct {
 }
 
 var ParallelData_EncryptionKeyFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ParallelData_ParallelDataConfigFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"S3Uri":  ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var ParallelData_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ParallelDataConfig struct {
 	// A custom description for the parallel data resource.
@@ -91,19 +91,19 @@ var ParallelData = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptionKey": ubx.FieldSpec{
 			WireName: "encryption_key",
-			Kind: "object",
-			Fields: ParallelData_EncryptionKeyFields,
+			Kind:     "object",
+			Fields:   ParallelData_EncryptionKeyFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ParallelDataConfig": ubx.FieldSpec{
 			WireName: "parallel_data_config",
-			Kind: "object",
-			Fields: ParallelData_ParallelDataConfigFields,
+			Kind:     "object",
+			Fields:   ParallelData_ParallelDataConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ParallelData_TagsFields,
+			Kind:     "list",
+			Fields:   ParallelData_TagsFields,
 		},
 	},
 }

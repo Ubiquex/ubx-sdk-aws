@@ -4,19 +4,19 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChangeSets_Summaries struct {
-	ChangeSetId any
-	ChangeSetName any
-	CreationTime any
-	Description any
-	ExecutionStatus any
+	ChangeSetId             any
+	ChangeSetName           any
+	CreationTime            any
+	Description             any
+	ExecutionStatus         any
 	ImportExistingResources any
-	IncludeNestedStacks any
-	ParentChangeSetId any
-	RootChangeSetId any
-	StackId any
-	StackName any
-	Status any
-	StatusReason any
+	IncludeNestedStacks     any
+	ParentChangeSetId       any
+	RootChangeSetId         any
+	StackId                 any
+	StackName               any
+	Status                  any
+	StatusReason            any
 }
 
 type ChangeSetsConfig struct {

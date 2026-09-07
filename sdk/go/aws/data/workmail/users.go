@@ -4,49 +4,49 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Users_Filters struct {
-	DisplayNamePrefix any
+	DisplayNamePrefix            any
 	IdentityProviderUserIdPrefix any
-	PrimaryEmailPrefix any
-	State any
-	UsernamePrefix any
+	PrimaryEmailPrefix           any
+	State                        any
+	UsernamePrefix               any
 }
 
 type Users_Users struct {
-	DisabledDate any
-	DisplayName any
-	Email any
-	EnabledDate any
-	Id any
+	DisabledDate                    any
+	DisplayName                     any
+	Email                           any
+	EnabledDate                     any
+	Id                              any
 	IdentityProviderIdentityStoreId any
-	IdentityProviderUserId any
-	Name any
-	State any
-	UserRole any
+	IdentityProviderUserId          any
+	Name                            any
+	State                           any
+	UserRole                        any
 }
 
 var Users_FiltersFields = ubx.FieldMap{
-		"DisplayNamePrefix": ubx.FieldSpec{WireName: "display_name_prefix"},
-		"IdentityProviderUserIdPrefix": ubx.FieldSpec{WireName: "identity_provider_user_id_prefix"},
-		"PrimaryEmailPrefix": ubx.FieldSpec{WireName: "primary_email_prefix"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UsernamePrefix": ubx.FieldSpec{WireName: "username_prefix"},
-	}
+	"DisplayNamePrefix":            ubx.FieldSpec{WireName: "display_name_prefix"},
+	"IdentityProviderUserIdPrefix": ubx.FieldSpec{WireName: "identity_provider_user_id_prefix"},
+	"PrimaryEmailPrefix":           ubx.FieldSpec{WireName: "primary_email_prefix"},
+	"State":                        ubx.FieldSpec{WireName: "state"},
+	"UsernamePrefix":               ubx.FieldSpec{WireName: "username_prefix"},
+}
 
 type UsersConfig struct {
 	// <p> Filtering options for <i>ListUsers</i> operation. This is only used as input to Operation.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 type UsersAttrs struct {
 	// <p> Filtering options for <i>ListUsers</i> operation. This is only used as input to Operation.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
-	Users any
+	Users          any
 }
 
 var Users = ubx.DataSourceBinding{
@@ -54,11 +54,11 @@ var Users = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: Users_FiltersFields,
+			Kind:     "object",
+			Fields:   Users_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

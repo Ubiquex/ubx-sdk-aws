@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightSelectors_InsightSelectors struct {
 	EventCategories any
-	InsightType any
+	InsightType     any
 }
 
 type InsightSelectorsConfig struct {
 	EventDataStore any
-	TrailName any
+	TrailName      any
 }
 
 type InsightSelectorsAttrs struct {
-	EventDataStore any
-	EventDataStoreArn any
-	InsightSelectors any
+	EventDataStore      any
+	EventDataStoreArn   any
+	InsightSelectors    any
 	InsightsDestination any
-	TrailArn any
-	TrailName any
+	TrailArn            any
+	TrailName           any
 }
 
 var InsightSelectors = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_insight_selectors",
 	Fields: ubx.FieldMap{
 		"EventDataStore": ubx.FieldSpec{WireName: "event_data_store"},
-		"TrailName": ubx.FieldSpec{WireName: "trail_name"},
+		"TrailName":      ubx.FieldSpec{WireName: "trail_name"},
 	},
 }

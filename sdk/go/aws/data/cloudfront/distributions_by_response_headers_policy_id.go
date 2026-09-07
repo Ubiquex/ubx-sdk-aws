@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DistributionsByResponseHeadersPolicyId_DistributionIdList struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type DistributionsByResponseHeadersPolicyIdConfig struct {
-	Marker any
-	MaxItems any
+	Marker                  any
+	MaxItems                any
 	ResponseHeadersPolicyId any
 }
 
 type DistributionsByResponseHeadersPolicyIdAttrs struct {
 	// <p>A list of distribution IDs.</p>
-	DistributionIdList any
-	Marker any
-	MaxItems any
+	DistributionIdList      any
+	Marker                  any
+	MaxItems                any
 	ResponseHeadersPolicyId any
 }
 
 var DistributionsByResponseHeadersPolicyId = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_distributions_by_response_headers_policy_id",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":                  ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":                ubx.FieldSpec{WireName: "max_items"},
 		"ResponseHeadersPolicyId": ubx.FieldSpec{WireName: "response_headers_policy_id"},
 	},
 }

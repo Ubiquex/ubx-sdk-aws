@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomEntityTypes_CustomEntityTypes struct {
 	ContextWords any
-	Name any
-	RegexString any
+	Name         any
+	RegexString  any
 }
 
 type CustomEntityTypesConfig struct {
 	MaxResults any
-	NextToken any
-	Tags any
+	NextToken  any
+	Tags       any
 }
 
 type CustomEntityTypesAttrs struct {
 	CustomEntityTypes any
-	MaxResults any
-	NextToken any
-	Tags any
+	MaxResults        any
+	NextToken         any
+	Tags              any
 }
 
 var CustomEntityTypes = ubx.DataSourceBinding{
 	WireType: "aws_glue_custom_entity_types",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Tags":       ubx.FieldSpec{WireName: "tags"},
 	},
 }

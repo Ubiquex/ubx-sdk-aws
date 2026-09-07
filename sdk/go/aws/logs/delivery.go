@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Delivery_Tags struct {
 	// The key of a tag attached to this CloudWatch Logs delivery, used to assign metadata for identifying, organizing, and managing the delivery resource, including cost allocation and access control. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Delivery_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeliveryConfig struct {
 	// Amazon Resource Name (ARN) that uniquely identify AWS resource.
@@ -57,16 +57,16 @@ type DeliveryAttrs struct {
 var Delivery = ubx.ResourceBinding{
 	WireType: "aws_logs_delivery",
 	Fields: ubx.FieldMap{
-		"DeliveryDestinationArn": ubx.FieldSpec{WireName: "delivery_destination_arn"},
-		"DeliverySourceName": ubx.FieldSpec{WireName: "delivery_source_name"},
-		"FieldDelimiter": ubx.FieldSpec{WireName: "field_delimiter"},
-		"RecordFields": ubx.FieldSpec{WireName: "record_fields"},
+		"DeliveryDestinationArn":     ubx.FieldSpec{WireName: "delivery_destination_arn"},
+		"DeliverySourceName":         ubx.FieldSpec{WireName: "delivery_source_name"},
+		"FieldDelimiter":             ubx.FieldSpec{WireName: "field_delimiter"},
+		"RecordFields":               ubx.FieldSpec{WireName: "record_fields"},
 		"S3EnableHiveCompatiblePath": ubx.FieldSpec{WireName: "s3_enable_hive_compatible_path"},
-		"S3SuffixPath": ubx.FieldSpec{WireName: "s3_suffix_path"},
+		"S3SuffixPath":               ubx.FieldSpec{WireName: "s3_suffix_path"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Delivery_TagsFields,
+			Kind:     "list",
+			Fields:   Delivery_TagsFields,
 		},
 	},
 }

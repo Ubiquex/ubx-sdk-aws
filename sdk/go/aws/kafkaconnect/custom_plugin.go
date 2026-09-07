@@ -32,23 +32,23 @@ type CustomPlugin_Tags struct {
 }
 
 var CustomPlugin_Location_S3LocationFields = ubx.FieldMap{
-		"BucketArn": ubx.FieldSpec{WireName: "bucket_arn"},
-		"FileKey": ubx.FieldSpec{WireName: "file_key"},
-		"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
-	}
+	"BucketArn":     ubx.FieldSpec{WireName: "bucket_arn"},
+	"FileKey":       ubx.FieldSpec{WireName: "file_key"},
+	"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
+}
 
 var CustomPlugin_LocationFields = ubx.FieldMap{
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: CustomPlugin_Location_S3LocationFields,
-		},
-	}
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   CustomPlugin_Location_S3LocationFields,
+	},
+}
 
 var CustomPlugin_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomPluginConfig struct {
 	// The type of the plugin file.
@@ -89,14 +89,14 @@ var CustomPlugin = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Location": ubx.FieldSpec{
 			WireName: "location",
-			Kind: "object",
-			Fields: CustomPlugin_LocationFields,
+			Kind:     "object",
+			Fields:   CustomPlugin_LocationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomPlugin_TagsFields,
+			Kind:     "list",
+			Fields:   CustomPlugin_TagsFields,
 		},
 	},
 }

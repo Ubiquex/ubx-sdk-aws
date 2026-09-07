@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterVersions_ClusterVersions struct {
 	ClusterParameterGroupFamily any
-	ClusterVersion any
-	Description any
+	ClusterVersion              any
+	Description                 any
 }
 
 type ClusterVersionsConfig struct {
 	ClusterParameterGroupFamily any
-	ClusterVersion any
-	Marker any
-	MaxRecords any
+	ClusterVersion              any
+	Marker                      any
+	MaxRecords                  any
 }
 
 type ClusterVersionsAttrs struct {
 	ClusterParameterGroupFamily any
-	ClusterVersion any
-	ClusterVersions any
-	Marker any
-	MaxRecords any
+	ClusterVersion              any
+	ClusterVersions             any
+	Marker                      any
+	MaxRecords                  any
 }
 
 var ClusterVersions = ubx.DataSourceBinding{
 	WireType: "aws_redshift_cluster_versions",
 	Fields: ubx.FieldMap{
 		"ClusterParameterGroupFamily": ubx.FieldSpec{WireName: "cluster_parameter_group_family"},
-		"ClusterVersion": ubx.FieldSpec{WireName: "cluster_version"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"ClusterVersion":              ubx.FieldSpec{WireName: "cluster_version"},
+		"Marker":                      ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":                  ubx.FieldSpec{WireName: "max_records"},
 	},
 }

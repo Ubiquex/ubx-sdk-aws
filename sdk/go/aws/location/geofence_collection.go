@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GeofenceCollection_Tags struct {
 	// The key of a tag attached to the AWS Location geofence collection, used to label the resource with custom metadata for identification, organization, and access control. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var GeofenceCollection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GeofenceCollectionConfig struct {
 	// The name of the geofence collection, which must be unique within the AWS account and region and serves as the collection's identifier. (AI-inferred)
@@ -55,15 +55,15 @@ type GeofenceCollectionAttrs struct {
 var GeofenceCollection = ubx.ResourceBinding{
 	WireType: "aws_location_geofence_collection",
 	Fields: ubx.FieldMap{
-		"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
+		"CollectionName":        ubx.FieldSpec{WireName: "collection_name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"KmsKeyId":              ubx.FieldSpec{WireName: "kms_key_id"},
+		"PricingPlan":           ubx.FieldSpec{WireName: "pricing_plan"},
 		"PricingPlanDataSource": ubx.FieldSpec{WireName: "pricing_plan_data_source"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GeofenceCollection_TagsFields,
+			Kind:     "list",
+			Fields:   GeofenceCollection_TagsFields,
 		},
 	},
 }

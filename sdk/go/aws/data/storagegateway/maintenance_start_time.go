@@ -14,14 +14,14 @@ type MaintenanceStartTimeConfig struct {
 
 type MaintenanceStartTimeAttrs struct {
 	DayOfMonth any
-	DayOfWeek any
+	DayOfWeek  any
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
-	HourOfDay any
+	GatewayArn   any
+	HourOfDay    any
 	MinuteOfHour any
 	// <p>A set of variables indicating the software update preferences for the gateway.</p>
 	SoftwareUpdatePreferences any
-	Timezone any
+	Timezone                  any
 }
 
 var MaintenanceStartTime = ubx.DataSourceBinding{

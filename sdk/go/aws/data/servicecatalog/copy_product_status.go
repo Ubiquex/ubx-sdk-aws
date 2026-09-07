@@ -4,22 +4,22 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CopyProductStatusConfig struct {
-	AcceptLanguage any
+	AcceptLanguage   any
 	CopyProductToken any
 }
 
 type CopyProductStatusAttrs struct {
-	AcceptLanguage any
+	AcceptLanguage    any
 	CopyProductStatus any
-	CopyProductToken any
-	StatusDetail any
-	TargetProductId any
+	CopyProductToken  any
+	StatusDetail      any
+	TargetProductId   any
 }
 
 var CopyProductStatus = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_copy_product_status",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
+		"AcceptLanguage":   ubx.FieldSpec{WireName: "accept_language"},
 		"CopyProductToken": ubx.FieldSpec{WireName: "copy_product_token"},
 	},
 }

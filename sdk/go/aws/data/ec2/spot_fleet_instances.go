@@ -4,33 +4,33 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpotFleetInstances_ActiveInstances struct {
-	InstanceHealth any
-	InstanceId any
-	InstanceType any
+	InstanceHealth        any
+	InstanceId            any
+	InstanceType          any
 	SpotInstanceRequestId any
 }
 
 type SpotFleetInstancesConfig struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun             any
+	MaxResults         any
+	NextToken          any
 	SpotFleetRequestId any
 }
 
 type SpotFleetInstancesAttrs struct {
-	ActiveInstances any
-	DryRun any
-	MaxResults any
-	NextToken any
+	ActiveInstances    any
+	DryRun             any
+	MaxResults         any
+	NextToken          any
 	SpotFleetRequestId any
 }
 
 var SpotFleetInstances = ubx.DataSourceBinding{
 	WireType: "aws_ec2_spot_fleet_instances",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DryRun":             ubx.FieldSpec{WireName: "dry_run"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"SpotFleetRequestId": ubx.FieldSpec{WireName: "spot_fleet_request_id"},
 	},
 }

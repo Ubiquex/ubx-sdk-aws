@@ -29,23 +29,23 @@ type LocationSmb_MountOptions struct {
 
 type LocationSmb_Tags struct {
 	// The key of a tag to assign to the DataSync SMB location, used to categorize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var LocationSmb_CustomSecretConfigFields = ubx.FieldMap{
-		"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"SecretAccessRoleArn": ubx.FieldSpec{WireName: "secret_access_role_arn"},
+	"SecretArn":           ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var LocationSmb_MountOptionsFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var LocationSmb_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationSmbConfig struct {
 	// The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
@@ -120,30 +120,30 @@ type LocationSmbAttrs struct {
 var LocationSmb = ubx.ResourceBinding{
 	WireType: "aws_data_sync_location_smb",
 	Fields: ubx.FieldMap{
-		"AgentArns": ubx.FieldSpec{WireName: "agent_arns"},
+		"AgentArns":          ubx.FieldSpec{WireName: "agent_arns"},
 		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
 		"CustomSecretConfig": ubx.FieldSpec{
 			WireName: "custom_secret_config",
-			Kind: "object",
-			Fields: LocationSmb_CustomSecretConfigFields,
+			Kind:     "object",
+			Fields:   LocationSmb_CustomSecretConfigFields,
 		},
-		"DnsIpAddresses": ubx.FieldSpec{WireName: "dns_ip_addresses"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"KerberosKeytab": ubx.FieldSpec{WireName: "kerberos_keytab"},
-		"KerberosKrb5Conf": ubx.FieldSpec{WireName: "kerberos_krb5_conf"},
+		"DnsIpAddresses":    ubx.FieldSpec{WireName: "dns_ip_addresses"},
+		"Domain":            ubx.FieldSpec{WireName: "domain"},
+		"KerberosKeytab":    ubx.FieldSpec{WireName: "kerberos_keytab"},
+		"KerberosKrb5Conf":  ubx.FieldSpec{WireName: "kerberos_krb5_conf"},
 		"KerberosPrincipal": ubx.FieldSpec{WireName: "kerberos_principal"},
 		"MountOptions": ubx.FieldSpec{
 			WireName: "mount_options",
-			Kind: "object",
-			Fields: LocationSmb_MountOptionsFields,
+			Kind:     "object",
+			Fields:   LocationSmb_MountOptionsFields,
 		},
-		"Password": ubx.FieldSpec{WireName: "password"},
+		"Password":       ubx.FieldSpec{WireName: "password"},
 		"ServerHostname": ubx.FieldSpec{WireName: "server_hostname"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"Subdirectory":   ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationSmb_TagsFields,
+			Kind:     "list",
+			Fields:   LocationSmb_TagsFields,
 		},
 		"User": ubx.FieldSpec{WireName: "user"},
 	},

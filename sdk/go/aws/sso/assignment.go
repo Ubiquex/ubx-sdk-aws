@@ -36,11 +36,11 @@ type AssignmentAttrs struct {
 var Assignment = ubx.ResourceBinding{
 	WireType: "aws_sso_assignment",
 	Fields: ubx.FieldMap{
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
+		"InstanceArn":      ubx.FieldSpec{WireName: "instance_arn"},
 		"PermissionSetArn": ubx.FieldSpec{WireName: "permission_set_arn"},
-		"PrincipalId": ubx.FieldSpec{WireName: "principal_id"},
-		"PrincipalType": ubx.FieldSpec{WireName: "principal_type"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
+		"PrincipalId":      ubx.FieldSpec{WireName: "principal_id"},
+		"PrincipalType":    ubx.FieldSpec{WireName: "principal_type"},
+		"TargetId":         ubx.FieldSpec{WireName: "target_id"},
+		"TargetType":       ubx.FieldSpec{WireName: "target_type"},
 	},
 }

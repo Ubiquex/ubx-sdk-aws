@@ -9,56 +9,56 @@ type ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails_
 
 type ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails_PreferredResources struct {
 	EffectiveIncludeList any
-	ExcludeList any
-	IncludeList any
-	Name any
+	ExcludeList          any
+	IncludeList          any
+	Name                 any
 }
 
 type ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails_Scope struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails_UtilizationPreferences_MetricParameters struct {
-	Headroom any
+	Headroom  any
 	Threshold any
 }
 
 type ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails_UtilizationPreferences struct {
-	MetricName any
+	MetricName       any
 	MetricParameters any
 }
 
 type ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails struct {
 	EnhancedInfrastructureMetrics any
-	ExternalMetricsPreference any
-	InferredWorkloadTypes any
-	LookBackPeriod any
-	PreferredResources any
-	ResourceType any
-	SavingsEstimationMode any
-	Scope any
-	UtilizationPreferences any
+	ExternalMetricsPreference     any
+	InferredWorkloadTypes         any
+	LookBackPeriod                any
+	PreferredResources            any
+	ResourceType                  any
+	SavingsEstimationMode         any
+	Scope                         any
+	UtilizationPreferences        any
 }
 
 var ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails_ScopeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ComputeOptimizerRecommendationPreferencesConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ResourceType any
 	// <p>Describes the scope of a recommendation preference.</p> <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note> <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p> </note>
 	Scope any
 }
 
 type ComputeOptimizerRecommendationPreferencesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                       any
+	NextToken                        any
 	RecommendationPreferencesDetails any
-	ResourceType any
+	ResourceType                     any
 	// <p>Describes the scope of a recommendation preference.</p> <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note> <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p> </note>
 	Scope any
 }
@@ -66,13 +66,13 @@ type ComputeOptimizerRecommendationPreferencesAttrs struct {
 var ComputeOptimizerRecommendationPreferences = ubx.DataSourceBinding{
 	WireType: "aws_compute_optimizer_recommendation_preferences",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind: "object",
-			Fields: ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails_ScopeFields,
+			Kind:     "object",
+			Fields:   ComputeOptimizerRecommendationPreferences_RecommendationPreferencesDetails_ScopeFields,
 		},
 	},
 }

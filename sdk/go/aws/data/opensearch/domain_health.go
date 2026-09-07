@@ -4,12 +4,12 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainHealth_EnvironmentInformation_AvailabilityZoneInformation struct {
-	AvailabilityZoneName any
-	AvailableDataNodeCount any
+	AvailabilityZoneName    any
+	AvailableDataNodeCount  any
 	ConfiguredDataNodeCount any
-	TotalShards any
-	TotalUnAssignedShards any
-	ZoneStatus any
+	TotalShards             any
+	TotalUnAssignedShards   any
+	ZoneStatus              any
 }
 
 type DomainHealth_EnvironmentInformation struct {
@@ -23,20 +23,20 @@ type DomainHealthConfig struct {
 
 type DomainHealthAttrs struct {
 	ActiveAvailabilityZoneCount any
-	AvailabilityZoneCount any
-	ClusterHealth any
-	DataNodeCount any
-	DedicatedMaster any
+	AvailabilityZoneCount       any
+	ClusterHealth               any
+	DataNodeCount               any
+	DedicatedMaster             any
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-	DomainName any
-	DomainState any
-	EnvironmentInformation any
-	MasterEligibleNodeCount any
-	MasterNode any
+	DomainName                   any
+	DomainState                  any
+	EnvironmentInformation       any
+	MasterEligibleNodeCount      any
+	MasterNode                   any
 	StandByAvailabilityZoneCount any
-	TotalShards any
-	TotalUnAssignedShards any
-	WarmNodeCount any
+	TotalShards                  any
+	TotalUnAssignedShards        any
+	WarmNodeCount                any
 }
 
 var DomainHealth = ubx.DataSourceBinding{

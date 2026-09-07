@@ -34,39 +34,39 @@ type CodeSecurityIntegration_UpdateIntegrationDetails struct {
 }
 
 var CodeSecurityIntegration_CreateIntegrationDetails_GitlabSelfManagedFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"InstanceUrl": ubx.FieldSpec{WireName: "instance_url"},
-	}
+	"AccessToken": ubx.FieldSpec{WireName: "access_token"},
+	"InstanceUrl": ubx.FieldSpec{WireName: "instance_url"},
+}
 
 var CodeSecurityIntegration_CreateIntegrationDetailsFields = ubx.FieldMap{
-		"GitlabSelfManaged": ubx.FieldSpec{
-			WireName: "gitlab_self_managed",
-			Kind: "object",
-			Fields: CodeSecurityIntegration_CreateIntegrationDetails_GitlabSelfManagedFields,
-		},
-	}
+	"GitlabSelfManaged": ubx.FieldSpec{
+		WireName: "gitlab_self_managed",
+		Kind:     "object",
+		Fields:   CodeSecurityIntegration_CreateIntegrationDetails_GitlabSelfManagedFields,
+	},
+}
 
 var CodeSecurityIntegration_UpdateIntegrationDetails_GithubFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"InstallationId": ubx.FieldSpec{WireName: "installation_id"},
-	}
+	"Code":           ubx.FieldSpec{WireName: "code"},
+	"InstallationId": ubx.FieldSpec{WireName: "installation_id"},
+}
 
 var CodeSecurityIntegration_UpdateIntegrationDetails_GitlabSelfManagedFields = ubx.FieldMap{
-		"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
-	}
+	"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
+}
 
 var CodeSecurityIntegration_UpdateIntegrationDetailsFields = ubx.FieldMap{
-		"Github": ubx.FieldSpec{
-			WireName: "github",
-			Kind: "object",
-			Fields: CodeSecurityIntegration_UpdateIntegrationDetails_GithubFields,
-		},
-		"GitlabSelfManaged": ubx.FieldSpec{
-			WireName: "gitlab_self_managed",
-			Kind: "object",
-			Fields: CodeSecurityIntegration_UpdateIntegrationDetails_GitlabSelfManagedFields,
-		},
-	}
+	"Github": ubx.FieldSpec{
+		WireName: "github",
+		Kind:     "object",
+		Fields:   CodeSecurityIntegration_UpdateIntegrationDetails_GithubFields,
+	},
+	"GitlabSelfManaged": ubx.FieldSpec{
+		WireName: "gitlab_self_managed",
+		Kind:     "object",
+		Fields:   CodeSecurityIntegration_UpdateIntegrationDetails_GitlabSelfManagedFields,
+	},
+}
 
 type CodeSecurityIntegrationConfig struct {
 	// Specifies the event type and API call used to create the Inspector v2 code security integration, defining when and how the integration is established for a repository. (AI-inferred)
@@ -76,7 +76,7 @@ type CodeSecurityIntegrationConfig struct {
 	// The tags assigned to this Inspector code security integration. (AI-inferred)
 	Tags any
 	// Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred)
-	Type any
+	Type                     any
 	UpdateIntegrationDetails any
 }
 
@@ -100,7 +100,7 @@ type CodeSecurityIntegrationAttrs struct {
 	// The tags assigned to this Inspector code security integration. (AI-inferred)
 	Tags any
 	// Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred)
-	Type any
+	Type                     any
 	UpdateIntegrationDetails any
 }
 
@@ -109,16 +109,16 @@ var CodeSecurityIntegration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CreateIntegrationDetails": ubx.FieldSpec{
 			WireName: "create_integration_details",
-			Kind: "object",
-			Fields: CodeSecurityIntegration_CreateIntegrationDetailsFields,
+			Kind:     "object",
+			Fields:   CodeSecurityIntegration_CreateIntegrationDetailsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"UpdateIntegrationDetails": ubx.FieldSpec{
 			WireName: "update_integration_details",
-			Kind: "object",
-			Fields: CodeSecurityIntegration_UpdateIntegrationDetailsFields,
+			Kind:     "object",
+			Fields:   CodeSecurityIntegration_UpdateIntegrationDetailsFields,
 		},
 	},
 }

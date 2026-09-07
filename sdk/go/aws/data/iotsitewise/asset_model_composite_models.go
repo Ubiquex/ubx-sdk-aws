@@ -4,40 +4,40 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetModelCompositeModels_AssetModelCompositeModelSummaries_Path struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type AssetModelCompositeModels_AssetModelCompositeModelSummaries struct {
 	Description any
-	ExternalId any
-	Id any
-	Name any
-	Path any
-	Type any
+	ExternalId  any
+	Id          any
+	Name        any
+	Path        any
+	Type        any
 }
 
 type AssetModelCompositeModelsConfig struct {
-	AssetModelId any
+	AssetModelId      any
 	AssetModelVersion any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 type AssetModelCompositeModelsAttrs struct {
 	AssetModelCompositeModelSummaries any
-	AssetModelId any
-	AssetModelVersion any
-	MaxResults any
-	NextToken any
+	AssetModelId                      any
+	AssetModelVersion                 any
+	MaxResults                        any
+	NextToken                         any
 }
 
 var AssetModelCompositeModels = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_asset_model_composite_models",
 	Fields: ubx.FieldMap{
-		"AssetModelId": ubx.FieldSpec{WireName: "asset_model_id"},
+		"AssetModelId":      ubx.FieldSpec{WireName: "asset_model_id"},
 		"AssetModelVersion": ubx.FieldSpec{WireName: "asset_model_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

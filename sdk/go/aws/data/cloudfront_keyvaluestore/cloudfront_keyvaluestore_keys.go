@@ -4,28 +4,28 @@ package cloudfront_keyvaluestore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudfrontKeyvaluestoreKeys_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CloudfrontKeyvaluestoreKeysConfig struct {
-	KvsArn any
+	KvsArn     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CloudfrontKeyvaluestoreKeysAttrs struct {
-	Items any
-	KvsArn any
+	Items      any
+	KvsArn     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var CloudfrontKeyvaluestoreKeys = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_keyvaluestore_keys",
 	Fields: ubx.FieldMap{
-		"KvsArn": ubx.FieldSpec{WireName: "kvs_arn"},
+		"KvsArn":     ubx.FieldSpec{WireName: "kvs_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

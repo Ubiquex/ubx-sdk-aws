@@ -10,9 +10,9 @@ type Dimension_Tags struct {
 }
 
 var Dimension_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DimensionConfig struct {
 	// A unique identifier for the dimension.
@@ -41,12 +41,12 @@ type DimensionAttrs struct {
 var Dimension = ubx.ResourceBinding{
 	WireType: "aws_io_t_dimension",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"StringValues": ubx.FieldSpec{WireName: "string_values"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dimension_TagsFields,
+			Kind:     "list",
+			Fields:   Dimension_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

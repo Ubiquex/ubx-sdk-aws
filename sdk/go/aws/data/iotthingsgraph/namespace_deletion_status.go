@@ -7,15 +7,14 @@ type NamespaceDeletionStatusConfig struct {
 }
 
 type NamespaceDeletionStatusAttrs struct {
-	ErrorCode any
-	ErrorMessage any
-	NamespaceArn any
+	ErrorCode     any
+	ErrorMessage  any
+	NamespaceArn  any
 	NamespaceName any
-	Status any
+	Status        any
 }
 
 var NamespaceDeletionStatus = ubx.DataSourceBinding{
 	WireType: "aws_iotthingsgraph_namespace_deletion_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

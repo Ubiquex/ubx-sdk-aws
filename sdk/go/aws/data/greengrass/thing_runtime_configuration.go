@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThingRuntimeConfiguration_RuntimeConfiguration_TelemetryConfiguration struct {
 	ConfigurationSyncStatus any
-	Telemetry any
+	Telemetry               any
 }
 
 type ThingRuntimeConfiguration_RuntimeConfiguration struct {
@@ -20,7 +20,7 @@ type ThingRuntimeConfigurationConfig struct {
 type ThingRuntimeConfigurationAttrs struct {
 	// Runtime configuration for a thing.
 	RuntimeConfiguration any
-	ThingName any
+	ThingName            any
 }
 
 var ThingRuntimeConfiguration = ubx.DataSourceBinding{

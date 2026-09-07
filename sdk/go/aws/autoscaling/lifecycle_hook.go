@@ -44,13 +44,13 @@ type LifecycleHookAttrs struct {
 var LifecycleHook = ubx.ResourceBinding{
 	WireType: "aws_auto_scaling_lifecycle_hook",
 	Fields: ubx.FieldMap{
-		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"DefaultResult": ubx.FieldSpec{WireName: "default_result"},
-		"HeartbeatTimeout": ubx.FieldSpec{WireName: "heartbeat_timeout"},
-		"LifecycleHookName": ubx.FieldSpec{WireName: "lifecycle_hook_name"},
-		"LifecycleTransition": ubx.FieldSpec{WireName: "lifecycle_transition"},
-		"NotificationMetadata": ubx.FieldSpec{WireName: "notification_metadata"},
+		"AutoScalingGroupName":  ubx.FieldSpec{WireName: "auto_scaling_group_name"},
+		"DefaultResult":         ubx.FieldSpec{WireName: "default_result"},
+		"HeartbeatTimeout":      ubx.FieldSpec{WireName: "heartbeat_timeout"},
+		"LifecycleHookName":     ubx.FieldSpec{WireName: "lifecycle_hook_name"},
+		"LifecycleTransition":   ubx.FieldSpec{WireName: "lifecycle_transition"},
+		"NotificationMetadata":  ubx.FieldSpec{WireName: "notification_metadata"},
 		"NotificationTargetArn": ubx.FieldSpec{WireName: "notification_target_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":               ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

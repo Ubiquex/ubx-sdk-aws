@@ -8,73 +8,73 @@ type S3ControlBucketLifecycleConfiguration_Rules_AbortIncompleteMultipartUpload 
 }
 
 type S3ControlBucketLifecycleConfiguration_Rules_Expiration struct {
-	Date any
-	Days any
+	Date                      any
+	Days                      any
 	ExpiredObjectDeleteMarker any
 }
 
 type S3ControlBucketLifecycleConfiguration_Rules_Filter_And_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type S3ControlBucketLifecycleConfiguration_Rules_Filter_And struct {
 	ObjectSizeGreaterThan any
-	ObjectSizeLessThan any
-	Prefix any
-	Tags any
+	ObjectSizeLessThan    any
+	Prefix                any
+	Tags                  any
 }
 
 type S3ControlBucketLifecycleConfiguration_Rules_Filter struct {
-	And any
+	And                   any
 	ObjectSizeGreaterThan any
-	ObjectSizeLessThan any
-	Prefix any
-	Tag any
+	ObjectSizeLessThan    any
+	Prefix                any
+	Tag                   any
 }
 
 type S3ControlBucketLifecycleConfiguration_Rules_NoncurrentVersionExpiration struct {
 	NewerNoncurrentVersions any
-	NoncurrentDays any
+	NoncurrentDays          any
 }
 
 type S3ControlBucketLifecycleConfiguration_Rules_NoncurrentVersionTransitions struct {
 	NoncurrentDays any
-	StorageClass any
+	StorageClass   any
 }
 
 type S3ControlBucketLifecycleConfiguration_Rules_Transitions struct {
-	Date any
-	Days any
+	Date         any
+	Days         any
 	StorageClass any
 }
 
 type S3ControlBucketLifecycleConfiguration_Rules struct {
 	AbortIncompleteMultipartUpload any
-	Expiration any
-	Filter any
-	Id any
-	NoncurrentVersionExpiration any
-	NoncurrentVersionTransitions any
-	Status any
-	Transitions any
+	Expiration                     any
+	Filter                         any
+	Id                             any
+	NoncurrentVersionExpiration    any
+	NoncurrentVersionTransitions   any
+	Status                         any
+	Transitions                    any
 }
 
 type S3ControlBucketLifecycleConfigurationConfig struct {
 	AccountId any
-	Bucket any
+	Bucket    any
 }
 
 type S3ControlBucketLifecycleConfigurationAttrs struct {
 	AccountId any
-	Bucket any
-	Rules any
+	Bucket    any
+	Rules     any
 }
 
 var S3ControlBucketLifecycleConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_bucket_lifecycle_configuration",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":    ubx.FieldSpec{WireName: "bucket"},
 	},
 }

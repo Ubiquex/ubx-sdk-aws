@@ -9,8 +9,8 @@ type ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption struct {
 }
 
 var ApplicationCloudWatchLoggingOption_CloudWatchLoggingOptionFields = ubx.FieldMap{
-		"LogStreamArn": ubx.FieldSpec{WireName: "log_stream_arn"},
-	}
+	"LogStreamArn": ubx.FieldSpec{WireName: "log_stream_arn"},
+}
 
 type ApplicationCloudWatchLoggingOptionConfig struct {
 	// The name of the Kinesis Data Analytics for Apache Flink application to which this CloudWatch logging option is attached. (AI-inferred)
@@ -34,8 +34,8 @@ var ApplicationCloudWatchLoggingOption = ubx.ResourceBinding{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"CloudWatchLoggingOption": ubx.FieldSpec{
 			WireName: "cloud_watch_logging_option",
-			Kind: "object",
-			Fields: ApplicationCloudWatchLoggingOption_CloudWatchLoggingOptionFields,
+			Kind:     "object",
+			Fields:   ApplicationCloudWatchLoggingOption_CloudWatchLoggingOptionFields,
 		},
 	},
 }

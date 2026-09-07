@@ -4,7 +4,7 @@ package finspace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KxEnvironments_Environments_CustomDnsconfiguration struct {
-	CustomDnsserverIp any
+	CustomDnsserverIp   any
 	CustomDnsserverName any
 }
 
@@ -15,59 +15,59 @@ type KxEnvironments_Environments_TransitGatewayConfiguration_AttachmentNetworkAc
 
 type KxEnvironments_Environments_TransitGatewayConfiguration_AttachmentNetworkAclConfiguration_PortRange struct {
 	From any
-	To any
+	To   any
 }
 
 type KxEnvironments_Environments_TransitGatewayConfiguration_AttachmentNetworkAclConfiguration struct {
-	CidrBlock any
+	CidrBlock    any
 	IcmpTypeCode any
-	PortRange any
-	Protocol any
-	RuleAction any
-	RuleNumber any
+	PortRange    any
+	Protocol     any
+	RuleAction   any
+	RuleNumber   any
 }
 
 type KxEnvironments_Environments_TransitGatewayConfiguration struct {
 	AttachmentNetworkAclConfiguration any
-	RoutableCidrspace any
-	TransitGatewayId any
+	RoutableCidrspace                 any
+	TransitGatewayId                  any
 }
 
 type KxEnvironments_Environments struct {
-	AvailabilityZoneIds any
-	AwsAccountId any
-	CertificateAuthorityArn any
-	CreationTimestamp any
-	CustomDnsconfiguration any
-	DedicatedServiceAccountId any
-	Description any
-	DnsStatus any
-	EnvironmentArn any
-	EnvironmentId any
-	ErrorMessage any
-	KmsKeyId any
-	Name any
-	Status any
-	TgwStatus any
+	AvailabilityZoneIds         any
+	AwsAccountId                any
+	CertificateAuthorityArn     any
+	CreationTimestamp           any
+	CustomDnsconfiguration      any
+	DedicatedServiceAccountId   any
+	Description                 any
+	DnsStatus                   any
+	EnvironmentArn              any
+	EnvironmentId               any
+	ErrorMessage                any
+	KmsKeyId                    any
+	Name                        any
+	Status                      any
+	TgwStatus                   any
 	TransitGatewayConfiguration any
-	UpdateTimestamp any
+	UpdateTimestamp             any
 }
 
 type KxEnvironmentsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type KxEnvironmentsAttrs struct {
 	Environments any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var KxEnvironments = ubx.DataSourceBinding{
 	WireType: "aws_finspace_kx_environments",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

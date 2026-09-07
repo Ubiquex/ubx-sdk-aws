@@ -4,35 +4,35 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyslogConfigurations_SyslogConfigurations struct {
-	CreatedAt any
-	LogGroupArn any
-	SourceType any
+	CreatedAt     any
+	LogGroupArn   any
+	SourceType    any
 	VpcEndpointId any
 }
 
 type SyslogConfigurationsConfig struct {
 	LogGroupIdentifier any
-	MaxResults any
+	MaxResults         any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken     any
 	VpcEndpointId any
 }
 
 type SyslogConfigurationsAttrs struct {
 	LogGroupIdentifier any
-	MaxResults any
+	MaxResults         any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken            any
 	SyslogConfigurations any
-	VpcEndpointId any
+	VpcEndpointId        any
 }
 
 var SyslogConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_logs_syslog_configurations",
 	Fields: ubx.FieldMap{
 		"LogGroupIdentifier": ubx.FieldSpec{WireName: "log_group_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"VpcEndpointId":      ubx.FieldSpec{WireName: "vpc_endpoint_id"},
 	},
 }

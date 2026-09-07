@@ -8,28 +8,28 @@ type Attacks_AttackSummaries_AttackVectors struct {
 }
 
 type Attacks_AttackSummaries struct {
-	AttackId any
+	AttackId      any
 	AttackVectors any
-	EndTime any
-	ResourceArn any
-	StartTime any
+	EndTime       any
+	ResourceArn   any
+	StartTime     any
 }
 
 type Attacks_EndTime struct {
 	FromInclusive any
-	ToExclusive any
+	ToExclusive   any
 }
 
 var Attacks_EndTimeFields = ubx.FieldMap{
-		"FromInclusive": ubx.FieldSpec{WireName: "from_inclusive"},
-		"ToExclusive": ubx.FieldSpec{WireName: "to_exclusive"},
-	}
+	"FromInclusive": ubx.FieldSpec{WireName: "from_inclusive"},
+	"ToExclusive":   ubx.FieldSpec{WireName: "to_exclusive"},
+}
 
 type AttacksConfig struct {
 	// <p>The time range. </p>
-	EndTime any
-	MaxResults any
-	NextToken any
+	EndTime      any
+	MaxResults   any
+	NextToken    any
 	ResourceArns any
 	// <p>The time range. </p>
 	StartTime any
@@ -38,9 +38,9 @@ type AttacksConfig struct {
 type AttacksAttrs struct {
 	AttackSummaries any
 	// <p>The time range. </p>
-	EndTime any
-	MaxResults any
-	NextToken any
+	EndTime      any
+	MaxResults   any
+	NextToken    any
 	ResourceArns any
 	// <p>The time range. </p>
 	StartTime any
@@ -51,16 +51,16 @@ var Attacks = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"EndTime": ubx.FieldSpec{
 			WireName: "end_time",
-			Kind: "object",
-			Fields: Attacks_EndTimeFields,
+			Kind:     "object",
+			Fields:   Attacks_EndTimeFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
 		"StartTime": ubx.FieldSpec{
 			WireName: "start_time",
-			Kind: "object",
-			Fields: Attacks_EndTimeFields,
+			Kind:     "object",
+			Fields:   Attacks_EndTimeFields,
 		},
 	},
 }

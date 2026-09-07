@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ActionConnectors_ActionConnectorSummaries_Error struct {
 	Message any
-	Type any
+	Type    any
 }
 
 type ActionConnectors_ActionConnectorSummaries struct {
 	ActionConnectorId any
-	Arn any
-	CreatedTime any
-	Error any
-	LastUpdatedTime any
-	Name any
-	Status any
-	Type any
+	Arn               any
+	CreatedTime       any
+	Error             any
+	LastUpdatedTime   any
+	Name              any
+	Status            any
+	Type              any
 }
 
 type ActionConnectorsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type ActionConnectorsAttrs struct {
 	ActionConnectorSummaries any
-	AwsAccountId any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
+	AwsAccountId             any
+	MaxResults               any
+	NextToken                any
+	RequestId                any
+	Status                   any
 }
 
 var ActionConnectors = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_action_connectors",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

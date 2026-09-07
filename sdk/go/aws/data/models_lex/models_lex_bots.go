@@ -4,32 +4,32 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexBots_Bots struct {
-	CreatedDate any
-	Description any
+	CreatedDate     any
+	Description     any
 	LastUpdatedDate any
-	Name any
-	Status any
-	Version any
+	Name            any
+	Status          any
+	Version         any
 }
 
 type ModelsLexBotsConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 type ModelsLexBotsAttrs struct {
-	Bots any
-	MaxResults any
+	Bots         any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 var ModelsLexBots = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_bots",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

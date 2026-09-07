@@ -15,11 +15,11 @@ type DeviceDefinitionVersion_Devices struct {
 }
 
 var DeviceDefinitionVersion_DevicesFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"SyncShadow": ubx.FieldSpec{WireName: "sync_shadow"},
-		"ThingArn": ubx.FieldSpec{WireName: "thing_arn"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+	"Id":             ubx.FieldSpec{WireName: "id"},
+	"SyncShadow":     ubx.FieldSpec{WireName: "sync_shadow"},
+	"ThingArn":       ubx.FieldSpec{WireName: "thing_arn"},
+}
 
 type DeviceDefinitionVersionConfig struct {
 	// The ID of the Greengrass device definition to which this version belongs, required to scope the version resource within a specific device definition. (AI-inferred)
@@ -43,8 +43,8 @@ var DeviceDefinitionVersion = ubx.ResourceBinding{
 		"DeviceDefinitionId": ubx.FieldSpec{WireName: "device_definition_id"},
 		"Devices": ubx.FieldSpec{
 			WireName: "devices",
-			Kind: "list",
-			Fields: DeviceDefinitionVersion_DevicesFields,
+			Kind:     "list",
+			Fields:   DeviceDefinitionVersion_DevicesFields,
 		},
 	},
 }

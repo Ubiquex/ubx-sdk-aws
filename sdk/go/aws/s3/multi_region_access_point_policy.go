@@ -28,6 +28,6 @@ var MultiRegionAccessPointPolicy = ubx.ResourceBinding{
 	WireType: "aws_s3_multi_region_access_point_policy",
 	Fields: ubx.FieldMap{
 		"MrapName": ubx.FieldSpec{WireName: "mrap_name"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":   ubx.FieldSpec{WireName: "policy"},
 	},
 }

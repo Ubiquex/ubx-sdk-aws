@@ -4,37 +4,37 @@ package networkmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayRegistrations_TransitGatewayRegistrations_State struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type TransitGatewayRegistrations_TransitGatewayRegistrations struct {
-	GlobalNetworkId any
-	State any
+	GlobalNetworkId   any
+	State             any
 	TransitGatewayArn any
 }
 
 type TransitGatewayRegistrationsConfig struct {
-	GlobalNetworkId any
-	MaxResults any
-	NextToken any
+	GlobalNetworkId    any
+	MaxResults         any
+	NextToken          any
 	TransitGatewayArns any
 }
 
 type TransitGatewayRegistrationsAttrs struct {
-	GlobalNetworkId any
-	MaxResults any
-	NextToken any
-	TransitGatewayArns any
+	GlobalNetworkId             any
+	MaxResults                  any
+	NextToken                   any
+	TransitGatewayArns          any
 	TransitGatewayRegistrations any
 }
 
 var TransitGatewayRegistrations = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_transit_gateway_registrations",
 	Fields: ubx.FieldMap{
-		"GlobalNetworkId": ubx.FieldSpec{WireName: "global_network_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"GlobalNetworkId":    ubx.FieldSpec{WireName: "global_network_id"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayArns": ubx.FieldSpec{WireName: "transit_gateway_arns"},
 	},
 }

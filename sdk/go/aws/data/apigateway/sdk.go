@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SdkConfig struct {
 	Parameters any
-	RestApiId any
-	SdkType any
-	StageName any
+	RestApiId  any
+	SdkType    any
+	StageName  any
 }
 
 type SdkAttrs struct {
-	Body any
+	Body               any
 	ContentDisposition any
-	ContentType any
-	Parameters any
-	RestApiId any
-	SdkType any
-	StageName any
+	ContentType        any
+	Parameters         any
+	RestApiId          any
+	SdkType            any
+	StageName          any
 }
 
 var Sdk = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_sdk",
 	Fields: ubx.FieldMap{
 		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"SdkType": ubx.FieldSpec{WireName: "sdk_type"},
-		"StageName": ubx.FieldSpec{WireName: "stage_name"},
+		"RestApiId":  ubx.FieldSpec{WireName: "rest_api_id"},
+		"SdkType":    ubx.FieldSpec{WireName: "sdk_type"},
+		"StageName":  ubx.FieldSpec{WireName: "stage_name"},
 	},
 }

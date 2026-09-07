@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityAggregatesForOrganization_OrganizationEntityAggregates_Accounts struct {
 	AccountId any
-	Count any
-	Statuses any
+	Count     any
+	Statuses  any
 }
 
 type EntityAggregatesForOrganization_OrganizationEntityAggregates struct {
 	Accounts any
-	Count any
+	Count    any
 	EventArn any
 	Statuses any
 }
 
 type EntityAggregatesForOrganizationConfig struct {
 	AwsAccountIds any
-	EventArns any
+	EventArns     any
 }
 
 type EntityAggregatesForOrganizationAttrs struct {
-	AwsAccountIds any
-	EventArns any
+	AwsAccountIds                any
+	EventArns                    any
 	OrganizationEntityAggregates any
 }
 
@@ -31,6 +31,6 @@ var EntityAggregatesForOrganization = ubx.DataSourceBinding{
 	WireType: "aws_health_entity_aggregates_for_organization",
 	Fields: ubx.FieldMap{
 		"AwsAccountIds": ubx.FieldSpec{WireName: "aws_account_ids"},
-		"EventArns": ubx.FieldSpec{WireName: "event_arns"},
+		"EventArns":     ubx.FieldSpec{WireName: "event_arns"},
 	},
 }

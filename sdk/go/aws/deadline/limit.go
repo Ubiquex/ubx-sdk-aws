@@ -37,9 +37,9 @@ var Limit = ubx.ResourceBinding{
 	WireType: "aws_deadline_limit",
 	Fields: ubx.FieldMap{
 		"AmountRequirementName": ubx.FieldSpec{WireName: "amount_requirement_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
-		"MaxCount": ubx.FieldSpec{WireName: "max_count"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+		"FarmId":                ubx.FieldSpec{WireName: "farm_id"},
+		"MaxCount":              ubx.FieldSpec{WireName: "max_count"},
 	},
 }

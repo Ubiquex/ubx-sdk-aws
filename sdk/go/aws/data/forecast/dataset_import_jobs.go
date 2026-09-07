@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetImportJobs_DatasetImportJobs_DataSource_S3Config struct {
 	KmskeyArn any
-	Path any
-	RoleArn any
+	Path      any
+	RoleArn   any
 }
 
 type DatasetImportJobs_DatasetImportJobs_DataSource struct {
@@ -14,39 +14,39 @@ type DatasetImportJobs_DatasetImportJobs_DataSource struct {
 }
 
 type DatasetImportJobs_DatasetImportJobs struct {
-	CreationTime any
-	DataSource any
-	DatasetImportJobArn any
+	CreationTime         any
+	DataSource           any
+	DatasetImportJobArn  any
 	DatasetImportJobName any
-	ImportMode any
+	ImportMode           any
 	LastModificationTime any
-	Message any
-	Status any
+	Message              any
+	Status               any
 }
 
 type DatasetImportJobs_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 var DatasetImportJobs_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetImportJobsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DatasetImportJobsAttrs struct {
 	DatasetImportJobs any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters           any
+	MaxResults        any
+	NextToken         any
 }
 
 var DatasetImportJobs = ubx.DataSourceBinding{
@@ -54,10 +54,10 @@ var DatasetImportJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DatasetImportJobs_FiltersFields,
+			Kind:     "list",
+			Fields:   DatasetImportJobs_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

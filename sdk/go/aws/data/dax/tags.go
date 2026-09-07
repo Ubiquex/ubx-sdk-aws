@@ -4,25 +4,25 @@ package dax
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tags_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsConfig struct {
-	NextToken any
+	NextToken    any
 	ResourceName any
 }
 
 type TagsAttrs struct {
-	NextToken any
+	NextToken    any
 	ResourceName any
-	Tags any
+	Tags         any
 }
 
 var Tags = ubx.DataSourceBinding{
 	WireType: "aws_dax_tags",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
 	},
 }

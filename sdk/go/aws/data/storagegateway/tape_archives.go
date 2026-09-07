@@ -4,31 +4,31 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TapeArchives_TapeArchives struct {
-	CompletionTime any
-	Kmskey any
-	PoolEntryDate any
-	PoolId any
+	CompletionTime     any
+	Kmskey             any
+	PoolEntryDate      any
+	PoolId             any
 	RetentionStartDate any
-	RetrievedTo any
-	TapeArn any
-	TapeBarcode any
-	TapeCreatedDate any
-	TapeSizeInBytes any
-	TapeStatus any
-	TapeUsedInBytes any
-	Worm any
+	RetrievedTo        any
+	TapeArn            any
+	TapeBarcode        any
+	TapeCreatedDate    any
+	TapeSizeInBytes    any
+	TapeStatus         any
+	TapeUsedInBytes    any
+	Worm               any
 }
 
 type TapeArchivesConfig struct {
-	Limit any
+	Limit  any
 	Marker any
 	// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
 	TapeArns any
 }
 
 type TapeArchivesAttrs struct {
-	Limit any
-	Marker any
+	Limit        any
+	Marker       any
 	TapeArchives any
 	// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
 	TapeArns any
@@ -37,8 +37,8 @@ type TapeArchivesAttrs struct {
 var TapeArchives = ubx.DataSourceBinding{
 	WireType: "aws_storagegateway_tape_archives",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Limit":    ubx.FieldSpec{WireName: "limit"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"TapeArns": ubx.FieldSpec{WireName: "tape_arns"},
 	},
 }

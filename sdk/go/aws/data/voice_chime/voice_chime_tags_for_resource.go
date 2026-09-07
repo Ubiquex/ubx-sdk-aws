@@ -4,7 +4,7 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type VoiceChimeTagsForResourceConfig struct {
 
 type VoiceChimeTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var VoiceChimeTagsForResource = ubx.DataSourceBinding{

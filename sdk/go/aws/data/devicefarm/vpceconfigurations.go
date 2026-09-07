@@ -4,21 +4,21 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vpceconfigurations_VpceConfigurations struct {
-	Arn any
-	ServiceDnsName any
+	Arn                          any
+	ServiceDnsName               any
 	VpceConfigurationDescription any
-	VpceConfigurationName any
-	VpceServiceName any
+	VpceConfigurationName        any
+	VpceServiceName              any
 }
 
 type VpceconfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VpceconfigurationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	VpceConfigurations any
 }
 
@@ -26,6 +26,6 @@ var Vpceconfigurations = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_vpceconfigurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

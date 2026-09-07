@@ -4,8 +4,8 @@ package email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityMailFromDomainAttributes_MailFromDomainAttributes struct {
-	BehaviorOnMxfailure any
-	MailFromDomain any
+	BehaviorOnMxfailure  any
+	MailFromDomain       any
 	MailFromDomainStatus any
 }
 
@@ -14,7 +14,7 @@ type IdentityMailFromDomainAttributesConfig struct {
 }
 
 type IdentityMailFromDomainAttributesAttrs struct {
-	Identities any
+	Identities               any
 	MailFromDomainAttributes any
 }
 

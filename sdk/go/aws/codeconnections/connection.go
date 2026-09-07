@@ -10,9 +10,9 @@ type Connection_Tags struct {
 }
 
 var Connection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectionConfig struct {
 	// The name of the connection. Connection names must be unique in an AWS user account.
@@ -46,12 +46,12 @@ var Connection = ubx.ResourceBinding{
 	WireType: "aws_code_connections_connection",
 	Fields: ubx.FieldMap{
 		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"HostArn": ubx.FieldSpec{WireName: "host_arn"},
-		"ProviderType": ubx.FieldSpec{WireName: "provider_type"},
+		"HostArn":        ubx.FieldSpec{WireName: "host_arn"},
+		"ProviderType":   ubx.FieldSpec{WireName: "provider_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Connection_TagsFields,
+			Kind:     "list",
+			Fields:   Connection_TagsFields,
 		},
 	},
 }

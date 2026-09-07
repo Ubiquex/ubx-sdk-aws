@@ -4,47 +4,47 @@ package lookoutequipment
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Labels_LabelSummaries struct {
-	CreatedAt any
-	EndTime any
-	Equipment any
-	FaultCode any
-	LabelGroupArn any
+	CreatedAt      any
+	EndTime        any
+	Equipment      any
+	FaultCode      any
+	LabelGroupArn  any
 	LabelGroupName any
-	LabelId any
-	Rating any
-	StartTime any
+	LabelId        any
+	Rating         any
+	StartTime      any
 }
 
 type LabelsConfig struct {
-	Equipment any
-	FaultCode any
-	IntervalEndTime any
+	Equipment         any
+	FaultCode         any
+	IntervalEndTime   any
 	IntervalStartTime any
-	LabelGroupName any
-	MaxResults any
-	NextToken any
+	LabelGroupName    any
+	MaxResults        any
+	NextToken         any
 }
 
 type LabelsAttrs struct {
-	Equipment any
-	FaultCode any
-	IntervalEndTime any
+	Equipment         any
+	FaultCode         any
+	IntervalEndTime   any
 	IntervalStartTime any
-	LabelGroupName any
-	LabelSummaries any
-	MaxResults any
-	NextToken any
+	LabelGroupName    any
+	LabelSummaries    any
+	MaxResults        any
+	NextToken         any
 }
 
 var Labels = ubx.DataSourceBinding{
 	WireType: "aws_lookoutequipment_labels",
 	Fields: ubx.FieldMap{
-		"Equipment": ubx.FieldSpec{WireName: "equipment"},
-		"FaultCode": ubx.FieldSpec{WireName: "fault_code"},
-		"IntervalEndTime": ubx.FieldSpec{WireName: "interval_end_time"},
+		"Equipment":         ubx.FieldSpec{WireName: "equipment"},
+		"FaultCode":         ubx.FieldSpec{WireName: "fault_code"},
+		"IntervalEndTime":   ubx.FieldSpec{WireName: "interval_end_time"},
 		"IntervalStartTime": ubx.FieldSpec{WireName: "interval_start_time"},
-		"LabelGroupName": ubx.FieldSpec{WireName: "label_group_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"LabelGroupName":    ubx.FieldSpec{WireName: "label_group_name"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

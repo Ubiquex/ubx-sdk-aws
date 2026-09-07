@@ -13,24 +13,24 @@ type PolicyGrants_GrantList_Detail_CreateEnvironmentProfile struct {
 
 type PolicyGrants_GrantList_Detail_CreateProjectFromProjectProfile struct {
 	IncludeChildDomainUnits any
-	ProjectProfiles any
+	ProjectProfiles         any
 }
 
 type PolicyGrants_GrantList_Detail struct {
-	AddToProjectMemberPool any
-	CreateAssetType any
-	CreateDomainUnit any
-	CreateEnvironment any
-	CreateEnvironmentFromBlueprint any
-	CreateEnvironmentProfile any
-	CreateFormType any
-	CreateGlossary any
-	CreateProject any
-	CreateProjectFromProjectProfile any
+	AddToProjectMemberPool           any
+	CreateAssetType                  any
+	CreateDomainUnit                 any
+	CreateEnvironment                any
+	CreateEnvironmentFromBlueprint   any
+	CreateEnvironmentProfile         any
+	CreateFormType                   any
+	CreateGlossary                   any
+	CreateProject                    any
+	CreateProjectFromProjectProfile  any
 	DelegateCreateEnvironmentProfile any
-	OverrideDomainUnitOwners any
-	OverrideProjectOwners any
-	UseAssetType any
+	OverrideDomainUnitOwners         any
+	OverrideProjectOwners            any
+	UseAssetType                     any
 }
 
 type PolicyGrants_GrantList_Principal_DomainUnit_DomainUnitGrantFilter struct {
@@ -40,7 +40,7 @@ type PolicyGrants_GrantList_Principal_DomainUnit_DomainUnitGrantFilter struct {
 type PolicyGrants_GrantList_Principal_DomainUnit struct {
 	DomainUnitDesignation any
 	DomainUnitGrantFilter any
-	DomainUnitIdentifier any
+	DomainUnitIdentifier  any
 }
 
 type PolicyGrants_GrantList_Principal_Group struct {
@@ -48,7 +48,7 @@ type PolicyGrants_GrantList_Principal_Group struct {
 }
 
 type PolicyGrants_GrantList_Principal_Project_ProjectGrantFilter_DomainUnitFilter struct {
-	DomainUnit any
+	DomainUnit              any
 	IncludeChildDomainUnits any
 }
 
@@ -59,46 +59,46 @@ type PolicyGrants_GrantList_Principal_Project_ProjectGrantFilter struct {
 type PolicyGrants_GrantList_Principal_Project struct {
 	ProjectDesignation any
 	ProjectGrantFilter any
-	ProjectIdentifier any
+	ProjectIdentifier  any
 }
 
 type PolicyGrants_GrantList_Principal_User struct {
 	AllUsersGrantFilter any
-	UserIdentifier any
+	UserIdentifier      any
 }
 
 type PolicyGrants_GrantList_Principal struct {
 	DomainUnit any
-	Group any
-	Project any
-	User any
+	Group      any
+	Project    any
+	User       any
 }
 
 type PolicyGrants_GrantList struct {
 	CreatedAt any
 	CreatedBy any
-	Detail any
-	GrantId any
+	Detail    any
+	GrantId   any
 	Principal any
 }
 
 type PolicyGrantsConfig struct {
 	DomainIdentifier any
 	EntityIdentifier any
-	EntityType any
-	MaxResults any
-	NextToken any
-	PolicyType any
+	EntityType       any
+	MaxResults       any
+	NextToken        any
+	PolicyType       any
 }
 
 type PolicyGrantsAttrs struct {
 	DomainIdentifier any
 	EntityIdentifier any
-	EntityType any
-	GrantList any
-	MaxResults any
-	NextToken any
-	PolicyType any
+	EntityType       any
+	GrantList        any
+	MaxResults       any
+	NextToken        any
+	PolicyType       any
 }
 
 var PolicyGrants = ubx.DataSourceBinding{
@@ -106,9 +106,9 @@ var PolicyGrants = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
 		"EntityIdentifier": ubx.FieldSpec{WireName: "entity_identifier"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
+		"EntityType":       ubx.FieldSpec{WireName: "entity_type"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"PolicyType":       ubx.FieldSpec{WireName: "policy_type"},
 	},
 }

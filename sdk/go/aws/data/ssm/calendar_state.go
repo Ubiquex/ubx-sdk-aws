@@ -4,21 +4,21 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CalendarStateConfig struct {
-	AtTime any
+	AtTime        any
 	CalendarNames any
 }
 
 type CalendarStateAttrs struct {
-	AtTime any
-	CalendarNames any
+	AtTime             any
+	CalendarNames      any
 	NextTransitionTime any
-	State any
+	State              any
 }
 
 var CalendarState = ubx.DataSourceBinding{
 	WireType: "aws_ssm_calendar_state",
 	Fields: ubx.FieldMap{
-		"AtTime": ubx.FieldSpec{WireName: "at_time"},
+		"AtTime":        ubx.FieldSpec{WireName: "at_time"},
 		"CalendarNames": ubx.FieldSpec{WireName: "calendar_names"},
 	},
 }

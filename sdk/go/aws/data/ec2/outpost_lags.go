@@ -4,45 +4,45 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutpostLags_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type OutpostLags_OutpostLags_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type OutpostLags_OutpostLags struct {
 	LocalGatewayVirtualInterfaceIds any
-	OutpostArn any
-	OutpostLagId any
-	OwnerId any
-	ServiceLinkVirtualInterfaceIds any
-	State any
-	Tags any
+	OutpostArn                      any
+	OutpostLagId                    any
+	OwnerId                         any
+	ServiceLinkVirtualInterfaceIds  any
+	State                           any
+	Tags                            any
 }
 
 var OutpostLags_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type OutpostLagsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun        any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	OutpostLagIds any
 }
 
 type OutpostLagsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun        any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	OutpostLagIds any
-	OutpostLags any
+	OutpostLags   any
 }
 
 var OutpostLags = ubx.DataSourceBinding{
@@ -51,11 +51,11 @@ var OutpostLags = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: OutpostLags_FiltersFields,
+			Kind:     "list",
+			Fields:   OutpostLags_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"OutpostLagIds": ubx.FieldSpec{WireName: "outpost_lag_ids"},
 	},
 }

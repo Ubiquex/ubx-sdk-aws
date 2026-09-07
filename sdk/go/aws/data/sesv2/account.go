@@ -10,12 +10,12 @@ type Account_Details_ReviewDetails struct {
 
 type Account_Details struct {
 	AdditionalContactEmailAddresses any
-	ContactLanguage any
-	MailType any
+	ContactLanguage                 any
+	MailType                        any
 	// <p>An object that contains information about your account details review.</p>
-	ReviewDetails any
+	ReviewDetails      any
 	UseCaseDescription any
-	WebsiteUrl any
+	WebsiteUrl         any
 }
 
 type Account_PricingAttributes struct {
@@ -26,8 +26,8 @@ type Account_PricingAttributes struct {
 }
 
 type Account_SendQuota struct {
-	Max24HourSend any
-	MaxSendRate any
+	Max24HourSend   any
+	MaxSendRate     any
 	SentLast24Hours any
 }
 
@@ -66,7 +66,7 @@ type Account_VdmAttributes struct {
 	DashboardAttributes any
 	// <p>An object containing additional settings for your VDM configuration as applicable to the Guardian.</p>
 	GuardianAttributes any
-	VdmEnabled any
+	VdmEnabled         any
 }
 
 type AccountConfig struct {
@@ -75,13 +75,13 @@ type AccountConfig struct {
 type AccountAttrs struct {
 	DedicatedIpAutoWarmupEnabled any
 	// <p>An object that contains information about your account details.</p>
-	Details any
+	Details           any
 	EnforcementStatus any
 	// <p>The pricing attributes that apply to your Amazon SES account, including the currently active pricing plan and any scheduled change.</p>
-	PricingAttributes any
+	PricingAttributes       any
 	ProductionAccessEnabled any
 	// <p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.</p>
-	SendQuota any
+	SendQuota      any
 	SendingEnabled any
 	// <p>An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.</p>
 	SuppressionAttributes any
@@ -91,6 +91,5 @@ type AccountAttrs struct {
 
 var Account = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

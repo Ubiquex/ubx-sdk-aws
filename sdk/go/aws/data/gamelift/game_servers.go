@@ -4,40 +4,40 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GameServers_GameServers struct {
-	ClaimStatus any
-	ConnectionInfo any
-	GameServerData any
-	GameServerGroupArn any
+	ClaimStatus         any
+	ConnectionInfo      any
+	GameServerData      any
+	GameServerGroupArn  any
 	GameServerGroupName any
-	GameServerId any
-	InstanceId any
-	LastClaimTime any
+	GameServerId        any
+	InstanceId          any
+	LastClaimTime       any
 	LastHealthCheckTime any
-	RegistrationTime any
-	UtilizationStatus any
+	RegistrationTime    any
+	UtilizationStatus   any
 }
 
 type GameServersConfig struct {
 	GameServerGroupName any
-	Limit any
-	NextToken any
-	SortOrder any
+	Limit               any
+	NextToken           any
+	SortOrder           any
 }
 
 type GameServersAttrs struct {
 	GameServerGroupName any
-	GameServers any
-	Limit any
-	NextToken any
-	SortOrder any
+	GameServers         any
+	Limit               any
+	NextToken           any
+	SortOrder           any
 }
 
 var GameServers = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_game_servers",
 	Fields: ubx.FieldMap{
 		"GameServerGroupName": ubx.FieldSpec{WireName: "game_server_group_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"SortOrder":           ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

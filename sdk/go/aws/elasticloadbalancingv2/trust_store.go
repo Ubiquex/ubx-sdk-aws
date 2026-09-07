@@ -10,9 +10,9 @@ type TrustStore_Tags struct {
 }
 
 var TrustStore_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TrustStoreConfig struct {
 	// The name of the S3 bucket to fetch the CA certificate bundle from.
@@ -49,14 +49,14 @@ type TrustStoreAttrs struct {
 var TrustStore = ubx.ResourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_trust_store",
 	Fields: ubx.FieldMap{
-		"CaCertificatesBundleS3Bucket": ubx.FieldSpec{WireName: "ca_certificates_bundle_s3_bucket"},
-		"CaCertificatesBundleS3Key": ubx.FieldSpec{WireName: "ca_certificates_bundle_s3_key"},
+		"CaCertificatesBundleS3Bucket":        ubx.FieldSpec{WireName: "ca_certificates_bundle_s3_bucket"},
+		"CaCertificatesBundleS3Key":           ubx.FieldSpec{WireName: "ca_certificates_bundle_s3_key"},
 		"CaCertificatesBundleS3ObjectVersion": ubx.FieldSpec{WireName: "ca_certificates_bundle_s3_object_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                                ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TrustStore_TagsFields,
+			Kind:     "list",
+			Fields:   TrustStore_TagsFields,
 		},
 	},
 }

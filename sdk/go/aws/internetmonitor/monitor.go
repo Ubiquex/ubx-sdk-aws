@@ -44,44 +44,44 @@ type Monitor_Tags struct {
 }
 
 var Monitor_HealthEventsConfig_AvailabilityLocalHealthEventsConfigFields = ubx.FieldMap{
-		"HealthScoreThreshold": ubx.FieldSpec{WireName: "health_score_threshold"},
-		"MinTrafficImpact": ubx.FieldSpec{WireName: "min_traffic_impact"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"HealthScoreThreshold": ubx.FieldSpec{WireName: "health_score_threshold"},
+	"MinTrafficImpact":     ubx.FieldSpec{WireName: "min_traffic_impact"},
+	"Status":               ubx.FieldSpec{WireName: "status"},
+}
 
 var Monitor_HealthEventsConfigFields = ubx.FieldMap{
-		"AvailabilityLocalHealthEventsConfig": ubx.FieldSpec{
-			WireName: "availability_local_health_events_config",
-			Kind: "object",
-			Fields: Monitor_HealthEventsConfig_AvailabilityLocalHealthEventsConfigFields,
-		},
-		"AvailabilityScoreThreshold": ubx.FieldSpec{WireName: "availability_score_threshold"},
-		"PerformanceLocalHealthEventsConfig": ubx.FieldSpec{
-			WireName: "performance_local_health_events_config",
-			Kind: "object",
-			Fields: Monitor_HealthEventsConfig_AvailabilityLocalHealthEventsConfigFields,
-		},
-		"PerformanceScoreThreshold": ubx.FieldSpec{WireName: "performance_score_threshold"},
-	}
+	"AvailabilityLocalHealthEventsConfig": ubx.FieldSpec{
+		WireName: "availability_local_health_events_config",
+		Kind:     "object",
+		Fields:   Monitor_HealthEventsConfig_AvailabilityLocalHealthEventsConfigFields,
+	},
+	"AvailabilityScoreThreshold": ubx.FieldSpec{WireName: "availability_score_threshold"},
+	"PerformanceLocalHealthEventsConfig": ubx.FieldSpec{
+		WireName: "performance_local_health_events_config",
+		Kind:     "object",
+		Fields:   Monitor_HealthEventsConfig_AvailabilityLocalHealthEventsConfigFields,
+	},
+	"PerformanceScoreThreshold": ubx.FieldSpec{WireName: "performance_score_threshold"},
+}
 
 var Monitor_InternetMeasurementsLogDelivery_S3ConfigFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"LogDeliveryStatus": ubx.FieldSpec{WireName: "log_delivery_status"},
-	}
+	"BucketName":        ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix":      ubx.FieldSpec{WireName: "bucket_prefix"},
+	"LogDeliveryStatus": ubx.FieldSpec{WireName: "log_delivery_status"},
+}
 
 var Monitor_InternetMeasurementsLogDeliveryFields = ubx.FieldMap{
-		"S3Config": ubx.FieldSpec{
-			WireName: "s3_config",
-			Kind: "object",
-			Fields: Monitor_InternetMeasurementsLogDelivery_S3ConfigFields,
-		},
-	}
+	"S3Config": ubx.FieldSpec{
+		WireName: "s3_config",
+		Kind:     "object",
+		Fields:   Monitor_InternetMeasurementsLogDelivery_S3ConfigFields,
+	},
+}
 
 var Monitor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MonitorConfig struct {
 	// Configures the thresholds and conditions that determine when Internet Monitor generates health events based on measured availability and performance degradation. (AI-inferred)
@@ -152,26 +152,26 @@ var Monitor = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"HealthEventsConfig": ubx.FieldSpec{
 			WireName: "health_events_config",
-			Kind: "object",
-			Fields: Monitor_HealthEventsConfigFields,
+			Kind:     "object",
+			Fields:   Monitor_HealthEventsConfigFields,
 		},
 		"IncludeLinkedAccounts": ubx.FieldSpec{WireName: "include_linked_accounts"},
 		"InternetMeasurementsLogDelivery": ubx.FieldSpec{
 			WireName: "internet_measurements_log_delivery",
-			Kind: "object",
-			Fields: Monitor_InternetMeasurementsLogDeliveryFields,
+			Kind:     "object",
+			Fields:   Monitor_InternetMeasurementsLogDeliveryFields,
 		},
-		"LinkedAccountId": ubx.FieldSpec{WireName: "linked_account_id"},
+		"LinkedAccountId":          ubx.FieldSpec{WireName: "linked_account_id"},
 		"MaxCityNetworksToMonitor": ubx.FieldSpec{WireName: "max_city_networks_to_monitor"},
-		"MonitorName": ubx.FieldSpec{WireName: "monitor_name"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"ResourcesToAdd": ubx.FieldSpec{WireName: "resources_to_add"},
-		"ResourcesToRemove": ubx.FieldSpec{WireName: "resources_to_remove"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MonitorName":              ubx.FieldSpec{WireName: "monitor_name"},
+		"Resources":                ubx.FieldSpec{WireName: "resources"},
+		"ResourcesToAdd":           ubx.FieldSpec{WireName: "resources_to_add"},
+		"ResourcesToRemove":        ubx.FieldSpec{WireName: "resources_to_remove"},
+		"Status":                   ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Monitor_TagsFields,
+			Kind:     "list",
+			Fields:   Monitor_TagsFields,
 		},
 		"TrafficPercentageToMonitor": ubx.FieldSpec{WireName: "traffic_percentage_to_monitor"},
 	},

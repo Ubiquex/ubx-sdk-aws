@@ -4,7 +4,7 @@ package mediatailor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Function_CustomOutputConfiguration struct {
-	Output any
+	Output  any
 	Runtime any
 }
 
@@ -12,12 +12,12 @@ type Function_HttpRequestConfiguration struct {
 	// The body of the HTTP request.
 	Body any
 	// A map of custom HTTP headers that the MediaTailor function includes in outgoing requests to its configured endpoint, enabling authentication or environment-specific header values. (AI-inferred)
-	Headers any
+	Headers    any
 	MethodType any
-	Output any
+	Output     any
 	// The timeout in milliseconds for the HTTP request. Maximum value is 2000.
 	RequestTimeoutMilliseconds any
-	Runtime any
+	Runtime                    any
 	// The URL endpoint for the HTTP request.
 	Url any
 }
@@ -31,7 +31,7 @@ type Function_SequentialExecutorConfiguration_FunctionList struct {
 type Function_SequentialExecutorConfiguration struct {
 	// The list of functions to execute sequentially.
 	FunctionList any
-	Output any
+	Output       any
 	// The runtime environment in which the MediaTailor function's code executes when using the sequential executor configuration, specifying the programming language and version. (AI-inferred)
 	Runtime any
 	// The timeout in milliseconds for the entire sequential execution chain.
@@ -39,45 +39,45 @@ type Function_SequentialExecutorConfiguration struct {
 }
 
 type Function_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Function_CustomOutputConfigurationFields = ubx.FieldMap{
-		"Output": ubx.FieldSpec{WireName: "output"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-	}
+	"Output":  ubx.FieldSpec{WireName: "output"},
+	"Runtime": ubx.FieldSpec{WireName: "runtime"},
+}
 
 var Function_HttpRequestConfigurationFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"MethodType": ubx.FieldSpec{WireName: "method_type"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-		"RequestTimeoutMilliseconds": ubx.FieldSpec{WireName: "request_timeout_milliseconds"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Body":                       ubx.FieldSpec{WireName: "body"},
+	"Headers":                    ubx.FieldSpec{WireName: "headers"},
+	"MethodType":                 ubx.FieldSpec{WireName: "method_type"},
+	"Output":                     ubx.FieldSpec{WireName: "output"},
+	"RequestTimeoutMilliseconds": ubx.FieldSpec{WireName: "request_timeout_milliseconds"},
+	"Runtime":                    ubx.FieldSpec{WireName: "runtime"},
+	"Url":                        ubx.FieldSpec{WireName: "url"},
+}
 
 var Function_SequentialExecutorConfiguration_FunctionListFields = ubx.FieldMap{
-		"FunctionId": ubx.FieldSpec{WireName: "function_id"},
-		"RunCondition": ubx.FieldSpec{WireName: "run_condition"},
-	}
+	"FunctionId":   ubx.FieldSpec{WireName: "function_id"},
+	"RunCondition": ubx.FieldSpec{WireName: "run_condition"},
+}
 
 var Function_SequentialExecutorConfigurationFields = ubx.FieldMap{
-		"FunctionList": ubx.FieldSpec{
-			WireName: "function_list",
-			Kind: "list",
-			Fields: Function_SequentialExecutorConfiguration_FunctionListFields,
-		},
-		"Output": ubx.FieldSpec{WireName: "output"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"TimeoutMilliseconds": ubx.FieldSpec{WireName: "timeout_milliseconds"},
-	}
+	"FunctionList": ubx.FieldSpec{
+		WireName: "function_list",
+		Kind:     "list",
+		Fields:   Function_SequentialExecutorConfiguration_FunctionListFields,
+	},
+	"Output":              ubx.FieldSpec{WireName: "output"},
+	"Runtime":             ubx.FieldSpec{WireName: "runtime"},
+	"TimeoutMilliseconds": ubx.FieldSpec{WireName: "timeout_milliseconds"},
+}
 
 var Function_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FunctionConfig struct {
 	// Configuration for custom output functions.
@@ -120,26 +120,26 @@ var Function = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomOutputConfiguration": ubx.FieldSpec{
 			WireName: "custom_output_configuration",
-			Kind: "object",
-			Fields: Function_CustomOutputConfigurationFields,
+			Kind:     "object",
+			Fields:   Function_CustomOutputConfigurationFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FunctionId": ubx.FieldSpec{WireName: "function_id"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"FunctionId":   ubx.FieldSpec{WireName: "function_id"},
 		"FunctionType": ubx.FieldSpec{WireName: "function_type"},
 		"HttpRequestConfiguration": ubx.FieldSpec{
 			WireName: "http_request_configuration",
-			Kind: "object",
-			Fields: Function_HttpRequestConfigurationFields,
+			Kind:     "object",
+			Fields:   Function_HttpRequestConfigurationFields,
 		},
 		"SequentialExecutorConfiguration": ubx.FieldSpec{
 			WireName: "sequential_executor_configuration",
-			Kind: "object",
-			Fields: Function_SequentialExecutorConfigurationFields,
+			Kind:     "object",
+			Fields:   Function_SequentialExecutorConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Function_TagsFields,
+			Kind:     "list",
+			Fields:   Function_TagsFields,
 		},
 	},
 }

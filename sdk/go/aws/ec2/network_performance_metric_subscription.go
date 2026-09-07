@@ -29,8 +29,8 @@ var NetworkPerformanceMetricSubscription = ubx.ResourceBinding{
 	WireType: "aws_ec2_network_performance_metric_subscription",
 	Fields: ubx.FieldMap{
 		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
+		"Metric":      ubx.FieldSpec{WireName: "metric"},
+		"Source":      ubx.FieldSpec{WireName: "source"},
+		"Statistic":   ubx.FieldSpec{WireName: "statistic"},
 	},
 }

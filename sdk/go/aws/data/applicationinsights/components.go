@@ -4,36 +4,36 @@ package applicationinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Components_ApplicationComponentList struct {
-	ComponentName any
+	ComponentName    any
 	ComponentRemarks any
 	DetectedWorkload any
-	Monitor any
-	OsType any
-	ResourceType any
-	Tier any
+	Monitor          any
+	OsType           any
+	ResourceType     any
+	Tier             any
 }
 
 type ComponentsConfig struct {
-	AccountId any
-	MaxResults any
-	NextToken any
+	AccountId         any
+	MaxResults        any
+	NextToken         any
 	ResourceGroupName any
 }
 
 type ComponentsAttrs struct {
-	AccountId any
+	AccountId                any
 	ApplicationComponentList any
-	MaxResults any
-	NextToken any
-	ResourceGroupName any
+	MaxResults               any
+	NextToken                any
+	ResourceGroupName        any
 }
 
 var Components = ubx.DataSourceBinding{
 	WireType: "aws_applicationinsights_components",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"ResourceGroupName": ubx.FieldSpec{WireName: "resource_group_name"},
 	},
 }

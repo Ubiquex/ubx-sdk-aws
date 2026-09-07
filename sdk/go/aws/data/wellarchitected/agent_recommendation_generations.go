@@ -4,23 +4,23 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentRecommendationGenerations_Items struct {
-	CreatedAt any
-	CreatedBy any
+	CreatedAt               any
+	CreatedBy               any
 	EstimatedCompletionTime any
-	Id any
-	LastModifiedAt any
-	LastModifiedBy any
-	Name any
-	ProfileArn any
-	Status any
+	Id                      any
+	LastModifiedAt          any
+	LastModifiedBy          any
+	Name                    any
+	ProfileArn              any
+	Status                  any
 }
 
 type AgentRecommendationGenerationsConfig struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
-	ProfileArn any
+	NextToken          any
+	ProfileArn         any
 	RecommendationType any
 }
 
@@ -29,17 +29,17 @@ type AgentRecommendationGenerationsAttrs struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
-	ProfileArn any
+	NextToken          any
+	ProfileArn         any
 	RecommendationType any
 }
 
 var AgentRecommendationGenerations = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_agent_recommendation_generations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProfileArn": ubx.FieldSpec{WireName: "profile_arn"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"ProfileArn":         ubx.FieldSpec{WireName: "profile_arn"},
 		"RecommendationType": ubx.FieldSpec{WireName: "recommendation_type"},
 	},
 }

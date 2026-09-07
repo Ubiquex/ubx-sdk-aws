@@ -9,41 +9,41 @@ type Recommenders_Recommenders_RecommenderConfig_TrainingDataConfig struct {
 }
 
 type Recommenders_Recommenders_RecommenderConfig struct {
-	EnableMetadataWithRecommendations any
-	ItemExplorationConfig any
+	EnableMetadataWithRecommendations  any
+	ItemExplorationConfig              any
 	MinRecommendationRequestsPerSecond any
-	TrainingDataConfig any
+	TrainingDataConfig                 any
 }
 
 type Recommenders_Recommenders struct {
-	CreationDateTime any
-	DatasetGroupArn any
+	CreationDateTime    any
+	DatasetGroupArn     any
 	LastUpdatedDateTime any
-	Name any
-	RecipeArn any
-	RecommenderArn any
-	RecommenderConfig any
-	Status any
+	Name                any
+	RecipeArn           any
+	RecommenderArn      any
+	RecommenderConfig   any
+	Status              any
 }
 
 type RecommendersConfig struct {
 	DatasetGroupArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type RecommendersAttrs struct {
 	DatasetGroupArn any
-	MaxResults any
-	NextToken any
-	Recommenders any
+	MaxResults      any
+	NextToken       any
+	Recommenders    any
 }
 
 var Recommenders = ubx.DataSourceBinding{
 	WireType: "aws_personalize_recommenders",
 	Fields: ubx.FieldMap{
 		"DatasetGroupArn": ubx.FieldSpec{WireName: "dataset_group_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

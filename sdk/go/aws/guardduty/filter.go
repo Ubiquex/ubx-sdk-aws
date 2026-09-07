@@ -16,13 +16,13 @@ type Filter_Tags struct {
 }
 
 var Filter_FindingCriteriaFields = ubx.FieldMap{
-		"Criterion": ubx.FieldSpec{WireName: "criterion"},
-	}
+	"Criterion": ubx.FieldSpec{WireName: "criterion"},
+}
 
 var Filter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FilterConfig struct {
 	// Specifies the action taken by the GuardDuty filter when a finding matches the filter criteria, either 'NOOP' to leave the finding's state unchanged or 'ARCHIVE' to archive the finding. (AI-inferred)
@@ -61,20 +61,20 @@ type FilterAttrs struct {
 var Filter = ubx.ResourceBinding{
 	WireType: "aws_guard_duty_filter",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":      ubx.FieldSpec{WireName: "action"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
+		"DetectorId":  ubx.FieldSpec{WireName: "detector_id"},
 		"FindingCriteria": ubx.FieldSpec{
 			WireName: "finding_criteria",
-			Kind: "object",
-			Fields: Filter_FindingCriteriaFields,
+			Kind:     "object",
+			Fields:   Filter_FindingCriteriaFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rank": ubx.FieldSpec{WireName: "rank"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Filter_TagsFields,
+			Kind:     "list",
+			Fields:   Filter_TagsFields,
 		},
 	},
 }

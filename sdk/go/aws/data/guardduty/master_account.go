@@ -4,9 +4,9 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MasterAccount_Master struct {
-	AccountId any
-	InvitationId any
-	InvitedAt any
+	AccountId          any
+	InvitationId       any
+	InvitedAt          any
 	RelationshipStatus any
 }
 

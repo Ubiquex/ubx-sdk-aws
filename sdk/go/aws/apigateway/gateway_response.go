@@ -35,9 +35,9 @@ var GatewayResponse = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_gateway_response",
 	Fields: ubx.FieldMap{
 		"ResponseParameters": ubx.FieldSpec{WireName: "response_parameters"},
-		"ResponseTemplates": ubx.FieldSpec{WireName: "response_templates"},
-		"ResponseType": ubx.FieldSpec{WireName: "response_type"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
+		"ResponseTemplates":  ubx.FieldSpec{WireName: "response_templates"},
+		"ResponseType":       ubx.FieldSpec{WireName: "response_type"},
+		"RestApiId":          ubx.FieldSpec{WireName: "rest_api_id"},
+		"StatusCode":         ubx.FieldSpec{WireName: "status_code"},
 	},
 }

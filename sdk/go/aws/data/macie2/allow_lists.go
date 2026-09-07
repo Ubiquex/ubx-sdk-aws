@@ -4,29 +4,29 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AllowLists_AllowLists struct {
-	Arn any
-	CreatedAt any
+	Arn         any
+	CreatedAt   any
 	Description any
-	Id any
-	Name any
-	UpdatedAt any
+	Id          any
+	Name        any
+	UpdatedAt   any
 }
 
 type AllowListsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AllowListsAttrs struct {
 	AllowLists any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var AllowLists = ubx.DataSourceBinding{
 	WireType: "aws_macie2_allow_lists",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

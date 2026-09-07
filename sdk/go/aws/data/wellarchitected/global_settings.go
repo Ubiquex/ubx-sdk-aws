@@ -4,12 +4,12 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalSettings_JiraConfiguration struct {
-	IntegrationStatus any
+	IntegrationStatus     any
 	IssueManagementStatus any
-	IssueManagementType any
-	JiraProjectKey any
-	StatusMessage any
-	Subdomain any
+	IssueManagementType   any
+	JiraProjectKey        any
+	StatusMessage         any
+	Subdomain             any
 }
 
 type GlobalSettingsConfig struct {
@@ -18,12 +18,11 @@ type GlobalSettingsConfig struct {
 type GlobalSettingsAttrs struct {
 	DiscoveryIntegrationStatus any
 	// <p>Account-level: Output configuration of the Jira integration.</p>
-	JiraConfiguration any
+	JiraConfiguration         any
 	OrganizationSharingStatus any
 }
 
 var GlobalSettings = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_global_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

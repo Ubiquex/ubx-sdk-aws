@@ -16,13 +16,13 @@ type NotebookInstance_Tags struct {
 }
 
 var NotebookInstance_InstanceMetadataServiceConfigurationFields = ubx.FieldMap{
-		"MinimumInstanceMetadataServiceVersion": ubx.FieldSpec{WireName: "minimum_instance_metadata_service_version"},
-	}
+	"MinimumInstanceMetadataServiceVersion": ubx.FieldSpec{WireName: "minimum_instance_metadata_service_version"},
+}
 
 var NotebookInstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NotebookInstanceConfig struct {
 	// Specifies the Elastic Inference accelerator type(s) to attach to the SageMaker notebook instance for accelerating inference workloads. (AI-inferred)
@@ -99,28 +99,28 @@ type NotebookInstanceAttrs struct {
 var NotebookInstance = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_notebook_instance",
 	Fields: ubx.FieldMap{
-		"AcceleratorTypes": ubx.FieldSpec{WireName: "accelerator_types"},
+		"AcceleratorTypes":           ubx.FieldSpec{WireName: "accelerator_types"},
 		"AdditionalCodeRepositories": ubx.FieldSpec{WireName: "additional_code_repositories"},
-		"DefaultCodeRepository": ubx.FieldSpec{WireName: "default_code_repository"},
-		"DirectInternetAccess": ubx.FieldSpec{WireName: "direct_internet_access"},
+		"DefaultCodeRepository":      ubx.FieldSpec{WireName: "default_code_repository"},
+		"DirectInternetAccess":       ubx.FieldSpec{WireName: "direct_internet_access"},
 		"InstanceMetadataServiceConfiguration": ubx.FieldSpec{
 			WireName: "instance_metadata_service_configuration",
-			Kind: "object",
-			Fields: NotebookInstance_InstanceMetadataServiceConfigurationFields,
+			Kind:     "object",
+			Fields:   NotebookInstance_InstanceMetadataServiceConfigurationFields,
 		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"LifecycleConfigName": ubx.FieldSpec{WireName: "lifecycle_config_name"},
+		"InstanceType":         ubx.FieldSpec{WireName: "instance_type"},
+		"KmsKeyId":             ubx.FieldSpec{WireName: "kms_key_id"},
+		"LifecycleConfigName":  ubx.FieldSpec{WireName: "lifecycle_config_name"},
 		"NotebookInstanceName": ubx.FieldSpec{WireName: "notebook_instance_name"},
-		"PlatformIdentifier": ubx.FieldSpec{WireName: "platform_identifier"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"RootAccess": ubx.FieldSpec{WireName: "root_access"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"PlatformIdentifier":   ubx.FieldSpec{WireName: "platform_identifier"},
+		"RoleArn":              ubx.FieldSpec{WireName: "role_arn"},
+		"RootAccess":           ubx.FieldSpec{WireName: "root_access"},
+		"SecurityGroupIds":     ubx.FieldSpec{WireName: "security_group_ids"},
+		"SubnetId":             ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NotebookInstance_TagsFields,
+			Kind:     "list",
+			Fields:   NotebookInstance_TagsFields,
 		},
 		"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
 	},

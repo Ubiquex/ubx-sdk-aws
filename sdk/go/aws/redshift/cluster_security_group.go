@@ -10,9 +10,9 @@ type ClusterSecurityGroup_Tags struct {
 }
 
 var ClusterSecurityGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterSecurityGroupConfig struct {
 	// The required description for the Redshift cluster security group, which provides a human-readable explanation of the security group's purpose. (AI-inferred)
@@ -36,8 +36,8 @@ var ClusterSecurityGroup = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ClusterSecurityGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ClusterSecurityGroup_TagsFields,
 		},
 	},
 }

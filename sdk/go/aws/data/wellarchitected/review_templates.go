@@ -4,13 +4,13 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReviewTemplates_ReviewTemplates struct {
-	Description any
-	Lenses any
-	Owner any
-	TemplateArn any
+	Description  any
+	Lenses       any
+	Owner        any
+	TemplateArn  any
 	TemplateName any
 	UpdateStatus any
-	UpdatedAt any
+	UpdatedAt    any
 }
 
 type ReviewTemplatesConfig struct {
@@ -24,7 +24,7 @@ type ReviewTemplatesAttrs struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken       any
 	ReviewTemplates any
 }
 
@@ -32,6 +32,6 @@ var ReviewTemplates = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_review_templates",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

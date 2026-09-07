@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DelegatedServicesForAccount_DelegatedServices struct {
 	DelegationEnabledDate any
-	ServicePrincipal any
+	ServicePrincipal      any
 }
 
 type DelegatedServicesForAccountConfig struct {
-	AccountId any
+	AccountId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DelegatedServicesForAccountAttrs struct {
-	AccountId any
+	AccountId         any
 	DelegatedServices any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var DelegatedServicesForAccount = ubx.DataSourceBinding{
 	WireType: "aws_organizations_delegated_services_for_account",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

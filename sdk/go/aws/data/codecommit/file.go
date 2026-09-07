@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FileConfig struct {
 	CommitSpecifier any
-	FilePath any
-	RepositoryName any
+	FilePath        any
+	RepositoryName  any
 }
 
 type FileAttrs struct {
-	BlobId any
-	CommitId any
+	BlobId          any
+	CommitId        any
 	CommitSpecifier any
-	FileContent any
-	FileMode any
-	FilePath any
-	FileSize any
-	RepositoryName any
+	FileContent     any
+	FileMode        any
+	FilePath        any
+	FileSize        any
+	RepositoryName  any
 }
 
 var File = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_file",
 	Fields: ubx.FieldMap{
 		"CommitSpecifier": ubx.FieldSpec{WireName: "commit_specifier"},
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"FilePath":        ubx.FieldSpec{WireName: "file_path"},
+		"RepositoryName":  ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

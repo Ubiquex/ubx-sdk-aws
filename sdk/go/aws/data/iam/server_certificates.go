@@ -4,33 +4,33 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServerCertificates_ServerCertificateMetadataList struct {
-	Arn any
-	Expiration any
-	Path any
-	ServerCertificateId any
+	Arn                   any
+	Expiration            any
+	Path                  any
+	ServerCertificateId   any
 	ServerCertificateName any
-	UploadDate any
+	UploadDate            any
 }
 
 type ServerCertificatesConfig struct {
-	Marker any
-	MaxItems any
+	Marker     any
+	MaxItems   any
 	PathPrefix any
 }
 
 type ServerCertificatesAttrs struct {
-	IsTruncated any
-	Marker any
-	MaxItems any
-	PathPrefix any
+	IsTruncated                   any
+	Marker                        any
+	MaxItems                      any
+	PathPrefix                    any
 	ServerCertificateMetadataList any
 }
 
 var ServerCertificates = ubx.DataSourceBinding{
 	WireType: "aws_iam_server_certificates",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":   ubx.FieldSpec{WireName: "max_items"},
 		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
 	},
 }

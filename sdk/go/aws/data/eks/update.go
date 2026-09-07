@@ -9,52 +9,52 @@ type Update_Update_Cancellation struct {
 }
 
 type Update_Update_Errors struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
-	ResourceIds any
+	ResourceIds  any
 }
 
 type Update_Update_Params struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type Update_Update struct {
 	// <p>Contains information about the latest cancellation of an update to an Amazon EKS cluster.</p>
 	Cancellation any
-	CreatedAt any
-	Errors any
-	Id any
-	Params any
-	Status any
-	Type any
+	CreatedAt    any
+	Errors       any
+	Id           any
+	Params       any
+	Status       any
+	Type         any
 }
 
 type UpdateConfig struct {
-	AddonName any
+	AddonName      any
 	CapabilityName any
-	Name any
-	NodegroupName any
-	UpdateId any
+	Name           any
+	NodegroupName  any
+	UpdateId       any
 }
 
 type UpdateAttrs struct {
-	AddonName any
+	AddonName      any
 	CapabilityName any
-	Name any
-	NodegroupName any
+	Name           any
+	NodegroupName  any
 	// <p>An object representing an asynchronous update.</p>
-	Update any
+	Update   any
 	UpdateId any
 }
 
 var Update = ubx.DataSourceBinding{
 	WireType: "aws_eks_update",
 	Fields: ubx.FieldMap{
-		"AddonName": ubx.FieldSpec{WireName: "addon_name"},
+		"AddonName":      ubx.FieldSpec{WireName: "addon_name"},
 		"CapabilityName": ubx.FieldSpec{WireName: "capability_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodegroupName": ubx.FieldSpec{WireName: "nodegroup_name"},
-		"UpdateId": ubx.FieldSpec{WireName: "update_id"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"NodegroupName":  ubx.FieldSpec{WireName: "nodegroup_name"},
+		"UpdateId":       ubx.FieldSpec{WireName: "update_id"},
 	},
 }

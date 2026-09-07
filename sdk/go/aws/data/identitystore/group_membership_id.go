@@ -8,33 +8,33 @@ type GroupMembershipId_MemberId struct {
 }
 
 var GroupMembershipId_MemberIdFields = ubx.FieldMap{
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"UserId": ubx.FieldSpec{WireName: "user_id"},
+}
 
 type GroupMembershipIdConfig struct {
-	GroupId any
+	GroupId         any
 	IdentityStoreId any
 	// <p>An object containing the identifier of a group member.</p>
 	MemberId any
 }
 
 type GroupMembershipIdAttrs struct {
-	GroupId any
+	GroupId         any
 	IdentityStoreId any
 	// <p>An object containing the identifier of a group member.</p>
-	MemberId any
+	MemberId     any
 	MembershipId any
 }
 
 var GroupMembershipId = ubx.DataSourceBinding{
 	WireType: "aws_identitystore_group_membership_id",
 	Fields: ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"GroupId":         ubx.FieldSpec{WireName: "group_id"},
 		"IdentityStoreId": ubx.FieldSpec{WireName: "identity_store_id"},
 		"MemberId": ubx.FieldSpec{
 			WireName: "member_id",
-			Kind: "object",
-			Fields: GroupMembershipId_MemberIdFields,
+			Kind:     "object",
+			Fields:   GroupMembershipId_MemberIdFields,
 		},
 	},
 }

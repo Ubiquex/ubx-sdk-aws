@@ -53,56 +53,56 @@ type Flywheel_TaskConfig struct {
 }
 
 var Flywheel_DataSecurityConfig_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+}
 
 var Flywheel_DataSecurityConfigFields = ubx.FieldMap{
-		"DataLakeKmsKeyId": ubx.FieldSpec{WireName: "data_lake_kms_key_id"},
-		"ModelKmsKeyId": ubx.FieldSpec{WireName: "model_kms_key_id"},
-		"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
-			Kind: "object",
-			Fields: Flywheel_DataSecurityConfig_VpcConfigFields,
-		},
-	}
+	"DataLakeKmsKeyId": ubx.FieldSpec{WireName: "data_lake_kms_key_id"},
+	"ModelKmsKeyId":    ubx.FieldSpec{WireName: "model_kms_key_id"},
+	"VolumeKmsKeyId":   ubx.FieldSpec{WireName: "volume_kms_key_id"},
+	"VpcConfig": ubx.FieldSpec{
+		WireName: "vpc_config",
+		Kind:     "object",
+		Fields:   Flywheel_DataSecurityConfig_VpcConfigFields,
+	},
+}
 
 var Flywheel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Flywheel_TaskConfig_DocumentClassificationConfigFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"Mode":   ubx.FieldSpec{WireName: "mode"},
+}
 
 var Flywheel_TaskConfig_EntityRecognitionConfig_EntityTypesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Flywheel_TaskConfig_EntityRecognitionConfigFields = ubx.FieldMap{
-		"EntityTypes": ubx.FieldSpec{
-			WireName: "entity_types",
-			Kind: "list",
-			Fields: Flywheel_TaskConfig_EntityRecognitionConfig_EntityTypesFields,
-		},
-	}
+	"EntityTypes": ubx.FieldSpec{
+		WireName: "entity_types",
+		Kind:     "list",
+		Fields:   Flywheel_TaskConfig_EntityRecognitionConfig_EntityTypesFields,
+	},
+}
 
 var Flywheel_TaskConfigFields = ubx.FieldMap{
-		"DocumentClassificationConfig": ubx.FieldSpec{
-			WireName: "document_classification_config",
-			Kind: "object",
-			Fields: Flywheel_TaskConfig_DocumentClassificationConfigFields,
-		},
-		"EntityRecognitionConfig": ubx.FieldSpec{
-			WireName: "entity_recognition_config",
-			Kind: "object",
-			Fields: Flywheel_TaskConfig_EntityRecognitionConfigFields,
-		},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-	}
+	"DocumentClassificationConfig": ubx.FieldSpec{
+		WireName: "document_classification_config",
+		Kind:     "object",
+		Fields:   Flywheel_TaskConfig_DocumentClassificationConfigFields,
+	},
+	"EntityRecognitionConfig": ubx.FieldSpec{
+		WireName: "entity_recognition_config",
+		Kind:     "object",
+		Fields:   Flywheel_TaskConfig_EntityRecognitionConfigFields,
+	},
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+}
 
 type FlywheelConfig struct {
 	// The Amazon Resource Name (ARN) of the model that is currently active for the flywheel, used for performing inference and can be updated to switch to a different trained model version. (AI-inferred)
@@ -147,25 +147,25 @@ type FlywheelAttrs struct {
 var Flywheel = ubx.ResourceBinding{
 	WireType: "aws_comprehend_flywheel",
 	Fields: ubx.FieldMap{
-		"ActiveModelArn": ubx.FieldSpec{WireName: "active_model_arn"},
+		"ActiveModelArn":    ubx.FieldSpec{WireName: "active_model_arn"},
 		"DataAccessRoleArn": ubx.FieldSpec{WireName: "data_access_role_arn"},
-		"DataLakeS3Uri": ubx.FieldSpec{WireName: "data_lake_s3_uri"},
+		"DataLakeS3Uri":     ubx.FieldSpec{WireName: "data_lake_s3_uri"},
 		"DataSecurityConfig": ubx.FieldSpec{
 			WireName: "data_security_config",
-			Kind: "object",
-			Fields: Flywheel_DataSecurityConfigFields,
+			Kind:     "object",
+			Fields:   Flywheel_DataSecurityConfigFields,
 		},
 		"FlywheelName": ubx.FieldSpec{WireName: "flywheel_name"},
-		"ModelType": ubx.FieldSpec{WireName: "model_type"},
+		"ModelType":    ubx.FieldSpec{WireName: "model_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Flywheel_TagsFields,
+			Kind:     "list",
+			Fields:   Flywheel_TagsFields,
 		},
 		"TaskConfig": ubx.FieldSpec{
 			WireName: "task_config",
-			Kind: "object",
-			Fields: Flywheel_TaskConfigFields,
+			Kind:     "object",
+			Fields:   Flywheel_TaskConfigFields,
 		},
 	},
 }

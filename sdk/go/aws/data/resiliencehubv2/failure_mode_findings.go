@@ -4,15 +4,15 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FailureModeFindings_FindingsSummary struct {
-	Description any
+	Description     any
 	FailureCategory any
-	FindingId any
-	Name any
+	FindingId       any
+	Name            any
 	PolicyComponent any
-	ServiceArn any
-	Severity any
-	Status any
-	UpdatedAt any
+	ServiceArn      any
+	Severity        any
+	Status          any
+	UpdatedAt       any
 }
 
 type FailureModeFindingsConfig struct {
@@ -23,8 +23,8 @@ type FailureModeFindingsConfig struct {
 	NextToken any
 	// <p>ARN identifier.</p>
 	ServiceArn any
-	Severity any
-	Status any
+	Severity   any
+	Status     any
 }
 
 type FailureModeFindingsAttrs struct {
@@ -36,18 +36,18 @@ type FailureModeFindingsAttrs struct {
 	NextToken any
 	// <p>ARN identifier.</p>
 	ServiceArn any
-	Severity any
-	Status any
+	Severity   any
+	Status     any
 }
 
 var FailureModeFindings = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_failure_mode_findings",
 	Fields: ubx.FieldMap{
 		"FailureCategory": ubx.FieldSpec{WireName: "failure_category"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"ServiceArn":      ubx.FieldSpec{WireName: "service_arn"},
+		"Severity":        ubx.FieldSpec{WireName: "severity"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 	},
 }

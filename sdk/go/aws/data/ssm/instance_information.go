@@ -4,68 +4,68 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceInformation_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type InstanceInformation_InstanceInformationFilterList struct {
-	Key any
+	Key      any
 	ValueSet any
 }
 
 type InstanceInformation_InstanceInformationList_AssociationOverview struct {
-	DetailedStatus any
+	DetailedStatus                           any
 	InstanceAssociationStatusAggregatedCount any
 }
 
 type InstanceInformation_InstanceInformationList struct {
-	ActivationId any
-	AgentVersion any
-	AssociationOverview any
-	AssociationStatus any
-	ComputerName any
-	IamRole any
-	InstanceId any
-	Ipaddress any
-	IsLatestVersion any
-	LastAssociationExecutionDate any
-	LastPingDateTime any
+	ActivationId                           any
+	AgentVersion                           any
+	AssociationOverview                    any
+	AssociationStatus                      any
+	ComputerName                           any
+	IamRole                                any
+	InstanceId                             any
+	Ipaddress                              any
+	IsLatestVersion                        any
+	LastAssociationExecutionDate           any
+	LastPingDateTime                       any
 	LastSuccessfulAssociationExecutionDate any
-	Name any
-	PingStatus any
-	PlatformName any
-	PlatformType any
-	PlatformVersion any
-	RegistrationDate any
-	ResourceType any
-	SourceId any
-	SourceLocation any
-	SourceType any
+	Name                                   any
+	PingStatus                             any
+	PlatformName                           any
+	PlatformType                           any
+	PlatformVersion                        any
+	RegistrationDate                       any
+	ResourceType                           any
+	SourceId                               any
+	SourceLocation                         any
+	SourceType                             any
 }
 
 var InstanceInformation_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var InstanceInformation_InstanceInformationFilterListFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ValueSet": ubx.FieldSpec{WireName: "value_set"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"ValueSet": ubx.FieldSpec{WireName: "value_set"},
+}
 
 type InstanceInformationConfig struct {
-	Filters any
+	Filters                       any
 	InstanceInformationFilterList any
-	MaxResults any
-	NextToken any
+	MaxResults                    any
+	NextToken                     any
 }
 
 type InstanceInformationAttrs struct {
-	Filters any
+	Filters                       any
 	InstanceInformationFilterList any
-	InstanceInformationList any
-	MaxResults any
-	NextToken any
+	InstanceInformationList       any
+	MaxResults                    any
+	NextToken                     any
 }
 
 var InstanceInformation = ubx.DataSourceBinding{
@@ -73,15 +73,15 @@ var InstanceInformation = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstanceInformation_FiltersFields,
+			Kind:     "list",
+			Fields:   InstanceInformation_FiltersFields,
 		},
 		"InstanceInformationFilterList": ubx.FieldSpec{
 			WireName: "instance_information_filter_list",
-			Kind: "list",
-			Fields: InstanceInformation_InstanceInformationFilterListFields,
+			Kind:     "list",
+			Fields:   InstanceInformation_InstanceInformationFilterListFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,16 +4,16 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutomaticTapeCreationPolicies_AutomaticTapeCreationPolicyInfos_AutomaticTapeCreationRules struct {
-	MinimumNumTapes any
-	PoolId any
+	MinimumNumTapes   any
+	PoolId            any
 	TapeBarcodePrefix any
-	TapeSizeInBytes any
-	Worm any
+	TapeSizeInBytes   any
+	Worm              any
 }
 
 type AutomaticTapeCreationPolicies_AutomaticTapeCreationPolicyInfos struct {
 	AutomaticTapeCreationRules any
-	GatewayArn any
+	GatewayArn                 any
 }
 
 type AutomaticTapeCreationPoliciesConfig struct {

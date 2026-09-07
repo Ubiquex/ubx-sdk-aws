@@ -23,22 +23,22 @@ type AssessmentFramework_Tags struct {
 }
 
 var AssessmentFramework_ControlSets_ControlsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var AssessmentFramework_ControlSetsFields = ubx.FieldMap{
-		"Controls": ubx.FieldSpec{
-			WireName: "controls",
-			Kind: "list",
-			Fields: AssessmentFramework_ControlSets_ControlsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Controls": ubx.FieldSpec{
+		WireName: "controls",
+		Kind:     "list",
+		Fields:   AssessmentFramework_ControlSets_ControlsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var AssessmentFramework_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssessmentFrameworkConfig struct {
 	// The compliance type that the framework supports, such as CIS or HIPAA.
@@ -86,15 +86,15 @@ var AssessmentFramework = ubx.ResourceBinding{
 		"ComplianceType": ubx.FieldSpec{WireName: "compliance_type"},
 		"ControlSets": ubx.FieldSpec{
 			WireName: "control_sets",
-			Kind: "list",
-			Fields: AssessmentFramework_ControlSetsFields,
+			Kind:     "list",
+			Fields:   AssessmentFramework_ControlSetsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AssessmentFramework_TagsFields,
+			Kind:     "list",
+			Fields:   AssessmentFramework_TagsFields,
 		},
 	},
 }

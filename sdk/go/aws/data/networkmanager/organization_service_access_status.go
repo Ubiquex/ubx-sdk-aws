@@ -4,25 +4,25 @@ package networkmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationServiceAccessStatus_OrganizationStatus_AccountStatusList struct {
-	AccountId any
+	AccountId           any
 	SlrdeploymentStatus any
 }
 
 type OrganizationServiceAccessStatus_OrganizationStatus struct {
-	AccountStatusList any
+	AccountStatusList                  any
 	OrganizationAwsServiceAccessStatus any
-	OrganizationId any
-	SlrdeploymentStatus any
+	OrganizationId                     any
+	SlrdeploymentStatus                any
 }
 
 type OrganizationServiceAccessStatusConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type OrganizationServiceAccessStatusAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The status of an Amazon Web Services Organization and the accounts within that organization.</p>
 	OrganizationStatus any
 }
@@ -31,6 +31,6 @@ var OrganizationServiceAccessStatus = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_organization_service_access_status",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

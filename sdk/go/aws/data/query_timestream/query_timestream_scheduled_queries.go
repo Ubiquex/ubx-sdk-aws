@@ -4,9 +4,9 @@ package query_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryTimestreamScheduledQueries_ScheduledQueries_ErrorReportConfiguration_S3Configuration struct {
-	BucketName any
+	BucketName       any
 	EncryptionOption any
-	ObjectKeyPrefix any
+	ObjectKeyPrefix  any
 }
 
 type QueryTimestreamScheduledQueries_ScheduledQueries_ErrorReportConfiguration struct {
@@ -15,7 +15,7 @@ type QueryTimestreamScheduledQueries_ScheduledQueries_ErrorReportConfiguration s
 
 type QueryTimestreamScheduledQueries_ScheduledQueries_TargetDestination_TimestreamDestination struct {
 	DatabaseName any
-	TableName any
+	TableName    any
 }
 
 type QueryTimestreamScheduledQueries_ScheduledQueries_TargetDestination struct {
@@ -23,25 +23,25 @@ type QueryTimestreamScheduledQueries_ScheduledQueries_TargetDestination struct {
 }
 
 type QueryTimestreamScheduledQueries_ScheduledQueries struct {
-	Arn any
-	CreationTime any
+	Arn                      any
+	CreationTime             any
 	ErrorReportConfiguration any
-	LastRunStatus any
-	Name any
-	NextInvocationTime any
-	PreviousInvocationTime any
-	State any
-	TargetDestination any
+	LastRunStatus            any
+	Name                     any
+	NextInvocationTime       any
+	PreviousInvocationTime   any
+	State                    any
+	TargetDestination        any
 }
 
 type QueryTimestreamScheduledQueriesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type QueryTimestreamScheduledQueriesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ScheduledQueries any
 }
 
@@ -49,6 +49,6 @@ var QueryTimestreamScheduledQueries = ubx.DataSourceBinding{
 	WireType: "aws_query_timestream_scheduled_queries",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

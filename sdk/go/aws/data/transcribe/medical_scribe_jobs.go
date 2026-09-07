@@ -4,36 +4,36 @@ package transcribe
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MedicalScribeJobs_MedicalScribeJobSummaries struct {
-	CompletionTime any
-	CreationTime any
-	FailureReason any
-	LanguageCode any
-	MedicalScribeJobName any
+	CompletionTime         any
+	CreationTime           any
+	FailureReason          any
+	LanguageCode           any
+	MedicalScribeJobName   any
 	MedicalScribeJobStatus any
-	StartTime any
+	StartTime              any
 }
 
 type MedicalScribeJobsConfig struct {
 	JobNameContains any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults      any
+	NextToken       any
+	Status          any
 }
 
 type MedicalScribeJobsAttrs struct {
-	JobNameContains any
-	MaxResults any
+	JobNameContains           any
+	MaxResults                any
 	MedicalScribeJobSummaries any
-	NextToken any
-	Status any
+	NextToken                 any
+	Status                    any
 }
 
 var MedicalScribeJobs = ubx.DataSourceBinding{
 	WireType: "aws_transcribe_medical_scribe_jobs",
 	Fields: ubx.FieldMap{
 		"JobNameContains": ubx.FieldSpec{WireName: "job_name_contains"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 	},
 }

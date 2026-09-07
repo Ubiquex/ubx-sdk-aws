@@ -11,9 +11,9 @@ type Ledger_Tags struct {
 }
 
 var Ledger_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LedgerConfig struct {
 	// Enables or disables deletion protection for the ledger, preventing the ledger from being deleted when enabled. (AI-inferred)
@@ -47,13 +47,13 @@ var Ledger = ubx.ResourceBinding{
 	WireType: "aws_qldb_ledger",
 	Fields: ubx.FieldMap{
 		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PermissionsMode": ubx.FieldSpec{WireName: "permissions_mode"},
+		"KmsKey":             ubx.FieldSpec{WireName: "kms_key"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"PermissionsMode":    ubx.FieldSpec{WireName: "permissions_mode"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Ledger_TagsFields,
+			Kind:     "list",
+			Fields:   Ledger_TagsFields,
 		},
 	},
 }

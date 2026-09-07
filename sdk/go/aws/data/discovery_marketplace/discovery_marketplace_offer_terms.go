@@ -4,109 +4,109 @@ package discovery_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_ByolPricingTerm struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_ConfigurableUpfrontPricingTerm_RateCards_Constraints struct {
 	MultipleDimensionSelection any
-	QuantityConfiguration any
+	QuantityConfiguration      any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_ConfigurableUpfrontPricingTerm_RateCards_RateCard_DimensionLabels struct {
 	DisplayName any
-	LabelType any
-	LabelValue any
+	LabelType   any
+	LabelValue  any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_ConfigurableUpfrontPricingTerm_RateCards_RateCard struct {
-	Description any
-	DimensionKey any
+	Description     any
+	DimensionKey    any
 	DimensionLabels any
-	DisplayName any
-	Price any
-	Unit any
+	DisplayName     any
+	Price           any
+	Unit            any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_ConfigurableUpfrontPricingTerm_RateCards_Selector struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_ConfigurableUpfrontPricingTerm_RateCards struct {
 	Constraints any
-	RateCard any
-	Selector any
+	RateCard    any
+	Selector    any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_ConfigurableUpfrontPricingTerm struct {
 	CurrencyCode any
-	Id any
-	RateCards any
-	Type any
+	Id           any
+	RateCards    any
+	Type         any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_FixedUpfrontPricingTerm_Grants struct {
-	Description any
-	DimensionKey any
+	Description     any
+	DimensionKey    any
 	DimensionLabels any
-	DisplayName any
-	MaxQuantity any
-	Unit any
+	DisplayName     any
+	MaxQuantity     any
+	Unit            any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_FixedUpfrontPricingTerm struct {
 	CurrencyCode any
-	Duration any
-	Grants any
-	Id any
-	Price any
-	Type any
+	Duration     any
+	Grants       any
+	Id           any
+	Price        any
+	Type         any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_FreeTrialPricingTerm struct {
 	Duration any
-	Grants any
-	Id any
-	Type any
+	Grants   any
+	Id       any
+	Type     any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_LegalTerm_Documents struct {
-	Type any
-	Url any
+	Type    any
+	Url     any
 	Version any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_LegalTerm struct {
 	Documents any
-	Id any
-	Type any
+	Id        any
+	Type      any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_NetPaymentTerm struct {
-	Id any
+	Id               any
 	PaymentDuePeriod any
-	Type any
+	Type             any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_PaymentScheduleTerm_Schedule struct {
 	ChargeAmount any
-	ChargeDate any
+	ChargeDate   any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_PaymentScheduleTerm struct {
 	CurrencyCode any
-	Id any
-	Schedule any
-	Type any
+	Id           any
+	Schedule     any
+	Type         any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_RecurringPaymentTerm struct {
 	BillingPeriod any
-	CurrencyCode any
-	Id any
-	Price any
-	Type any
+	CurrencyCode  any
+	Id            any
+	Price         any
+	Type          any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease_FixedPercentage struct {
@@ -127,7 +127,7 @@ type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_PriceIncrease struct 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate_Schedule struct {
 	ChargeDateOffset any
 	ChargePercentage any
-	DayOfMonth any
+	DayOfMonth       any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates_PaymentScheduleTermTemplate struct {
@@ -140,18 +140,18 @@ type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm_TermTemplates struct 
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_RenewalTerm struct {
 	AdjustmentDeadline any
-	Id any
-	LockoutPeriod any
-	MaxRenewals any
-	PriceIncrease any
-	TermTemplates any
-	Type any
+	Id                 any
+	LockoutPeriod      any
+	MaxRenewals        any
+	PriceIncrease      any
+	TermTemplates      any
+	Type               any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_SupportTerm struct {
-	Id any
+	Id           any
 	RefundPolicy any
-	Type any
+	Type         any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_UsageBasedPricingTerm_RateCards struct {
@@ -160,52 +160,52 @@ type DiscoveryMarketplaceOfferTerms_OfferTerms_UsageBasedPricingTerm_RateCards s
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_UsageBasedPricingTerm struct {
 	CurrencyCode any
-	Id any
-	RateCards any
-	Type any
+	Id           any
+	RateCards    any
+	Type         any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_ValidityTerm struct {
-	AgreementDuration any
-	AgreementEndDate any
+	AgreementDuration  any
+	AgreementEndDate   any
 	AgreementStartDate any
-	Id any
-	Type any
+	Id                 any
+	Type               any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms_VariablePaymentTerm struct {
-	CurrencyCode any
-	Id any
+	CurrencyCode         any
+	Id                   any
 	MaxTotalChargeAmount any
-	Type any
+	Type                 any
 }
 
 type DiscoveryMarketplaceOfferTerms_OfferTerms struct {
-	ByolPricingTerm any
+	ByolPricingTerm                any
 	ConfigurableUpfrontPricingTerm any
-	FixedUpfrontPricingTerm any
-	FreeTrialPricingTerm any
-	LegalTerm any
-	NetPaymentTerm any
-	PaymentScheduleTerm any
-	RecurringPaymentTerm any
-	RenewalTerm any
-	SupportTerm any
-	UsageBasedPricingTerm any
-	ValidityTerm any
-	VariablePaymentTerm any
+	FixedUpfrontPricingTerm        any
+	FreeTrialPricingTerm           any
+	LegalTerm                      any
+	NetPaymentTerm                 any
+	PaymentScheduleTerm            any
+	RecurringPaymentTerm           any
+	RenewalTerm                    any
+	SupportTerm                    any
+	UsageBasedPricingTerm          any
+	ValidityTerm                   any
+	VariablePaymentTerm            any
 }
 
 type DiscoveryMarketplaceOfferTermsConfig struct {
 	MaxResults any
-	NextToken any
-	OfferId any
+	NextToken  any
+	OfferId    any
 }
 
 type DiscoveryMarketplaceOfferTermsAttrs struct {
 	MaxResults any
-	NextToken any
-	OfferId any
+	NextToken  any
+	OfferId    any
 	OfferTerms any
 }
 
@@ -213,7 +213,7 @@ var DiscoveryMarketplaceOfferTerms = ubx.DataSourceBinding{
 	WireType: "aws_discovery_marketplace_offer_terms",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OfferId": ubx.FieldSpec{WireName: "offer_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"OfferId":    ubx.FieldSpec{WireName: "offer_id"},
 	},
 }

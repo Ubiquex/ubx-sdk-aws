@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailboxDetailsConfig struct {
 	OrganizationId any
-	UserId any
+	UserId         any
 }
 
 type MailboxDetailsAttrs struct {
-	MailboxQuota any
-	MailboxSize any
+	MailboxQuota   any
+	MailboxSize    any
 	OrganizationId any
-	UserId any
+	UserId         any
 }
 
 var MailboxDetails = ubx.DataSourceBinding{
 	WireType: "aws_workmail_mailbox_details",
 	Fields: ubx.FieldMap{
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":         ubx.FieldSpec{WireName: "user_id"},
 	},
 }

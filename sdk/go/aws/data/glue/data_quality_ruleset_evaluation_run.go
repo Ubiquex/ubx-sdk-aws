@@ -4,49 +4,49 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQualityRulesetEvaluationRun_AdditionalDataSources_DataQualityGlueTable struct {
-	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
+	AdditionalOptions  any
+	CatalogId          any
+	ConnectionName     any
+	DatabaseName       any
 	PreProcessingQuery any
-	TableName any
+	TableName          any
 }
 
 type DataQualityRulesetEvaluationRun_AdditionalDataSources_GlueTable struct {
 	AdditionalOptions any
-	CatalogId any
-	ConnectionName any
-	DatabaseName any
-	TableName any
+	CatalogId         any
+	ConnectionName    any
+	DatabaseName      any
+	TableName         any
 }
 
 type DataQualityRulesetEvaluationRun_AdditionalDataSources struct {
 	DataQualityGlueTable any
-	GlueTable any
+	GlueTable            any
 }
 
 type DataQualityRulesetEvaluationRun_AdditionalRunOptions_DataQualityRuleResults_CatalogTableConfig struct {
-	CatalogId any
+	CatalogId    any
 	DatabaseName any
-	S3Location any
-	TableName any
+	S3Location   any
+	TableName    any
 }
 
 type DataQualityRulesetEvaluationRun_AdditionalRunOptions_DataQualityRuleResults struct {
 	// <p>The configuration for a Glue Data Catalog table used to store data quality results.</p>
-	CatalogTableConfig any
+	CatalogTableConfig                 any
 	WriteDataQualityRuleResultsEnabled any
 }
 
 type DataQualityRulesetEvaluationRun_AdditionalRunOptions_ObservationResults struct {
 	// <p>The configuration for a Glue Data Catalog table used to store data quality results.</p>
-	CatalogTableConfig any
+	CatalogTableConfig             any
 	WriteObservationResultsEnabled any
 }
 
 type DataQualityRulesetEvaluationRun_AdditionalRunOptions_ProfilingResults_DistributionResults struct {
 	// <p>The configuration for a Glue Data Catalog table used to store data quality results.</p>
-	CatalogTableConfig any
+	CatalogTableConfig              any
 	WriteDistributionResultsEnabled any
 }
 
@@ -54,30 +54,30 @@ type DataQualityRulesetEvaluationRun_AdditionalRunOptions_ProfilingResults struc
 	// <p>The configuration for a Glue Data Catalog table used to store data quality results.</p>
 	CatalogTableConfig any
 	// <p>The configuration for writing distribution results.</p>
-	DistributionResults any
+	DistributionResults          any
 	WriteProfilingResultsEnabled any
 }
 
 type DataQualityRulesetEvaluationRun_AdditionalRunOptions_RowLevelResults struct {
 	// <p>The configuration for a Glue Data Catalog table used to store data quality results.</p>
 	CatalogTableConfig any
-	MaxRowsToWrite any
-	ResultType any
+	MaxRowsToWrite     any
+	ResultType         any
 }
 
 type DataQualityRulesetEvaluationRun_AdditionalRunOptions struct {
-	CloudWatchMetricsEnabled any
+	CloudWatchMetricsEnabled      any
 	CompositeRuleEvaluationMethod any
-	CustomLogGroupPrefix any
+	CustomLogGroupPrefix          any
 	// <p>The configuration for writing data quality rule results.</p>
 	DataQualityRuleResults any
-	ObservationMode any
+	ObservationMode        any
 	// <p>The configuration for writing observation results.</p>
 	ObservationResults any
-	ObservationScope any
+	ObservationScope   any
 	// <p>The configuration for writing profiling results.</p>
 	ProfilingResults any
-	ResultsS3Prefix any
+	ResultsS3Prefix  any
 	// <p>The configuration for writing row-level evaluation results.</p>
 	RowLevelResults any
 }
@@ -90,20 +90,20 @@ type DataQualityRulesetEvaluationRunAttrs struct {
 	AdditionalDataSources any
 	// <p>Additional run options you can specify for an evaluation run.</p>
 	AdditionalRunOptions any
-	CompletedOn any
+	CompletedOn          any
 	// <p>A data source (an Glue table) for which you want data quality results.</p>
-	DataSource any
-	ErrorString any
-	ExecutionTime any
-	LastModifiedOn any
+	DataSource      any
+	ErrorString     any
+	ExecutionTime   any
+	LastModifiedOn  any
 	NumberOfWorkers any
-	ResultIds any
-	Role any
-	RulesetNames any
-	RunId any
-	StartedOn any
-	Status any
-	Timeout any
+	ResultIds       any
+	Role            any
+	RulesetNames    any
+	RunId           any
+	StartedOn       any
+	Status          any
+	Timeout         any
 }
 
 var DataQualityRulesetEvaluationRun = ubx.DataSourceBinding{

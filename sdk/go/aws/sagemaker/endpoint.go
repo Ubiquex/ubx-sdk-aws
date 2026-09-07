@@ -73,88 +73,88 @@ type Endpoint_Tags struct {
 }
 
 var Endpoint_DeploymentConfig_AutoRollbackConfiguration_AlarmsFields = ubx.FieldMap{
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
-	}
+	"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
+}
 
 var Endpoint_DeploymentConfig_AutoRollbackConfigurationFields = ubx.FieldMap{
-		"Alarms": ubx.FieldSpec{
-			WireName: "alarms",
-			Kind: "list",
-			Fields: Endpoint_DeploymentConfig_AutoRollbackConfiguration_AlarmsFields,
-		},
-	}
+	"Alarms": ubx.FieldSpec{
+		WireName: "alarms",
+		Kind:     "list",
+		Fields:   Endpoint_DeploymentConfig_AutoRollbackConfiguration_AlarmsFields,
+	},
+}
 
 var Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfigurationFields = ubx.FieldMap{
-		"CanarySize": ubx.FieldSpec{
-			WireName: "canary_size",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields,
-		},
-		"LinearStepSize": ubx.FieldSpec{
-			WireName: "linear_step_size",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WaitIntervalInSeconds": ubx.FieldSpec{WireName: "wait_interval_in_seconds"},
-	}
+	"CanarySize": ubx.FieldSpec{
+		WireName: "canary_size",
+		Kind:     "object",
+		Fields:   Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields,
+	},
+	"LinearStepSize": ubx.FieldSpec{
+		WireName: "linear_step_size",
+		Kind:     "object",
+		Fields:   Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields,
+	},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+	"WaitIntervalInSeconds": ubx.FieldSpec{WireName: "wait_interval_in_seconds"},
+}
 
 var Endpoint_DeploymentConfig_BlueGreenUpdatePolicyFields = ubx.FieldMap{
-		"MaximumExecutionTimeoutInSeconds": ubx.FieldSpec{WireName: "maximum_execution_timeout_in_seconds"},
-		"TerminationWaitInSeconds": ubx.FieldSpec{WireName: "termination_wait_in_seconds"},
-		"TrafficRoutingConfiguration": ubx.FieldSpec{
-			WireName: "traffic_routing_configuration",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfigurationFields,
-		},
-	}
+	"MaximumExecutionTimeoutInSeconds": ubx.FieldSpec{WireName: "maximum_execution_timeout_in_seconds"},
+	"TerminationWaitInSeconds":         ubx.FieldSpec{WireName: "termination_wait_in_seconds"},
+	"TrafficRoutingConfiguration": ubx.FieldSpec{
+		WireName: "traffic_routing_configuration",
+		Kind:     "object",
+		Fields:   Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfigurationFields,
+	},
+}
 
 var Endpoint_DeploymentConfig_RollingUpdatePolicyFields = ubx.FieldMap{
-		"MaximumBatchSize": ubx.FieldSpec{
-			WireName: "maximum_batch_size",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields,
-		},
-		"MaximumExecutionTimeoutInSeconds": ubx.FieldSpec{WireName: "maximum_execution_timeout_in_seconds"},
-		"RollbackMaximumBatchSize": ubx.FieldSpec{
-			WireName: "rollback_maximum_batch_size",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields,
-		},
-		"WaitIntervalInSeconds": ubx.FieldSpec{WireName: "wait_interval_in_seconds"},
-	}
+	"MaximumBatchSize": ubx.FieldSpec{
+		WireName: "maximum_batch_size",
+		Kind:     "object",
+		Fields:   Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields,
+	},
+	"MaximumExecutionTimeoutInSeconds": ubx.FieldSpec{WireName: "maximum_execution_timeout_in_seconds"},
+	"RollbackMaximumBatchSize": ubx.FieldSpec{
+		WireName: "rollback_maximum_batch_size",
+		Kind:     "object",
+		Fields:   Endpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySizeFields,
+	},
+	"WaitIntervalInSeconds": ubx.FieldSpec{WireName: "wait_interval_in_seconds"},
+}
 
 var Endpoint_DeploymentConfigFields = ubx.FieldMap{
-		"AutoRollbackConfiguration": ubx.FieldSpec{
-			WireName: "auto_rollback_configuration",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfig_AutoRollbackConfigurationFields,
-		},
-		"BlueGreenUpdatePolicy": ubx.FieldSpec{
-			WireName: "blue_green_update_policy",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfig_BlueGreenUpdatePolicyFields,
-		},
-		"RollingUpdatePolicy": ubx.FieldSpec{
-			WireName: "rolling_update_policy",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfig_RollingUpdatePolicyFields,
-		},
-	}
+	"AutoRollbackConfiguration": ubx.FieldSpec{
+		WireName: "auto_rollback_configuration",
+		Kind:     "object",
+		Fields:   Endpoint_DeploymentConfig_AutoRollbackConfigurationFields,
+	},
+	"BlueGreenUpdatePolicy": ubx.FieldSpec{
+		WireName: "blue_green_update_policy",
+		Kind:     "object",
+		Fields:   Endpoint_DeploymentConfig_BlueGreenUpdatePolicyFields,
+	},
+	"RollingUpdatePolicy": ubx.FieldSpec{
+		WireName: "rolling_update_policy",
+		Kind:     "object",
+		Fields:   Endpoint_DeploymentConfig_RollingUpdatePolicyFields,
+	},
+}
 
 var Endpoint_ExcludeRetainedVariantPropertiesFields = ubx.FieldMap{
-		"VariantPropertyType": ubx.FieldSpec{WireName: "variant_property_type"},
-	}
+	"VariantPropertyType": ubx.FieldSpec{WireName: "variant_property_type"},
+}
 
 var Endpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EndpointConfig_ struct {
 	// Configures how the SageMaker endpoint is deployed or updated, including rolling update policies such as blue/green or canary deployments. (AI-inferred)
@@ -197,22 +197,22 @@ var Endpoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeploymentConfig": ubx.FieldSpec{
 			WireName: "deployment_config",
-			Kind: "object",
-			Fields: Endpoint_DeploymentConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_DeploymentConfigFields,
 		},
 		"EndpointConfigName": ubx.FieldSpec{WireName: "endpoint_config_name"},
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
+		"EndpointName":       ubx.FieldSpec{WireName: "endpoint_name"},
 		"ExcludeRetainedVariantProperties": ubx.FieldSpec{
 			WireName: "exclude_retained_variant_properties",
-			Kind: "list",
-			Fields: Endpoint_ExcludeRetainedVariantPropertiesFields,
+			Kind:     "list",
+			Fields:   Endpoint_ExcludeRetainedVariantPropertiesFields,
 		},
 		"RetainAllVariantProperties": ubx.FieldSpec{WireName: "retain_all_variant_properties"},
-		"RetainDeploymentConfig": ubx.FieldSpec{WireName: "retain_deployment_config"},
+		"RetainDeploymentConfig":     ubx.FieldSpec{WireName: "retain_deployment_config"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Endpoint_TagsFields,
+			Kind:     "list",
+			Fields:   Endpoint_TagsFields,
 		},
 	},
 }

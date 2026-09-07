@@ -4,31 +4,31 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexSlotTypes_SlotTypes struct {
-	CreatedDate any
-	Description any
+	CreatedDate     any
+	Description     any
 	LastUpdatedDate any
-	Name any
-	Version any
+	Name            any
+	Version         any
 }
 
 type ModelsLexSlotTypesConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 type ModelsLexSlotTypesAttrs struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
-	SlotTypes any
+	NextToken    any
+	SlotTypes    any
 }
 
 var ModelsLexSlotTypes = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_slot_types",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -11,9 +11,9 @@ type SlackChannelConfiguration_Tags struct {
 }
 
 var SlackChannelConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SlackChannelConfigurationConfig struct {
 	// The name of the configuration
@@ -66,18 +66,18 @@ type SlackChannelConfigurationAttrs struct {
 var SlackChannelConfiguration = ubx.ResourceBinding{
 	WireType: "aws_chatbot_slack_channel_configuration",
 	Fields: ubx.FieldMap{
-		"ConfigurationName": ubx.FieldSpec{WireName: "configuration_name"},
+		"ConfigurationName":         ubx.FieldSpec{WireName: "configuration_name"},
 		"CustomizationResourceArns": ubx.FieldSpec{WireName: "customization_resource_arns"},
-		"GuardrailPolicies": ubx.FieldSpec{WireName: "guardrail_policies"},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"LoggingLevel": ubx.FieldSpec{WireName: "logging_level"},
-		"SlackChannelId": ubx.FieldSpec{WireName: "slack_channel_id"},
-		"SlackWorkspaceId": ubx.FieldSpec{WireName: "slack_workspace_id"},
-		"SnsTopicArns": ubx.FieldSpec{WireName: "sns_topic_arns"},
+		"GuardrailPolicies":         ubx.FieldSpec{WireName: "guardrail_policies"},
+		"IamRoleArn":                ubx.FieldSpec{WireName: "iam_role_arn"},
+		"LoggingLevel":              ubx.FieldSpec{WireName: "logging_level"},
+		"SlackChannelId":            ubx.FieldSpec{WireName: "slack_channel_id"},
+		"SlackWorkspaceId":          ubx.FieldSpec{WireName: "slack_workspace_id"},
+		"SnsTopicArns":              ubx.FieldSpec{WireName: "sns_topic_arns"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SlackChannelConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   SlackChannelConfiguration_TagsFields,
 		},
 		"UserRoleRequired": ubx.FieldSpec{WireName: "user_role_required"},
 	},

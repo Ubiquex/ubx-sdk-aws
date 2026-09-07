@@ -4,24 +4,24 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataTables_DataTableSummaryList struct {
-	Arn any
-	Id any
+	Arn                any
+	Id                 any
 	LastModifiedRegion any
-	LastModifiedTime any
-	Name any
+	LastModifiedTime   any
+	Name               any
 }
 
 type DataTablesConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DataTablesAttrs struct {
 	DataTableSummaryList any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId           any
+	MaxResults           any
+	NextToken            any
 }
 
 var DataTables = ubx.DataSourceBinding{
@@ -29,6 +29,6 @@ var DataTables = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

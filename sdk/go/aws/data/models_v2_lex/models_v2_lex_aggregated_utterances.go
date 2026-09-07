@@ -4,17 +4,17 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexAggregatedUtterances_AggregatedUtterancesSummaries struct {
-	ContainsDataFromDeletedResources any
-	HitCount any
-	MissedCount any
-	Utterance any
+	ContainsDataFromDeletedResources            any
+	HitCount                                    any
+	MissedCount                                 any
+	Utterance                                   any
 	UtteranceFirstRecordedInAggregationDuration any
-	UtteranceLastRecordedInAggregationDuration any
+	UtteranceLastRecordedInAggregationDuration  any
 }
 
 type ModelsV2LexAggregatedUtterances_AggregationDuration_RelativeAggregationDuration struct {
 	TimeDimension any
-	TimeValue any
+	TimeValue     any
 }
 
 type ModelsV2LexAggregatedUtterances_AggregationDuration struct {
@@ -23,50 +23,50 @@ type ModelsV2LexAggregatedUtterances_AggregationDuration struct {
 }
 
 type ModelsV2LexAggregatedUtterances_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexAggregatedUtterances_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 var ModelsV2LexAggregatedUtterances_AggregationDuration_RelativeAggregationDurationFields = ubx.FieldMap{
-		"TimeDimension": ubx.FieldSpec{WireName: "time_dimension"},
-		"TimeValue": ubx.FieldSpec{WireName: "time_value"},
-	}
+	"TimeDimension": ubx.FieldSpec{WireName: "time_dimension"},
+	"TimeValue":     ubx.FieldSpec{WireName: "time_value"},
+}
 
 var ModelsV2LexAggregatedUtterances_AggregationDurationFields = ubx.FieldMap{
-		"RelativeAggregationDuration": ubx.FieldSpec{
-			WireName: "relative_aggregation_duration",
-			Kind: "object",
-			Fields: ModelsV2LexAggregatedUtterances_AggregationDuration_RelativeAggregationDurationFields,
-		},
-	}
+	"RelativeAggregationDuration": ubx.FieldSpec{
+		WireName: "relative_aggregation_duration",
+		Kind:     "object",
+		Fields:   ModelsV2LexAggregatedUtterances_AggregationDuration_RelativeAggregationDurationFields,
+	},
+}
 
 var ModelsV2LexAggregatedUtterances_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ModelsV2LexAggregatedUtterances_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexAggregatedUtterancesConfig struct {
 	// <p>Provides parameters for setting the time window and duration for aggregating utterance data.</p>
 	AggregationDuration any
-	BotAliasId any
-	BotId any
-	BotVersion any
-	Filters any
-	LocaleId any
-	MaxResults any
-	NextToken any
+	BotAliasId          any
+	BotId               any
+	BotVersion          any
+	Filters             any
+	LocaleId            any
+	MaxResults          any
+	NextToken           any
 	// <p>Specifies attributes for sorting a list of utterances.</p>
 	SortBy any
 }
@@ -74,17 +74,17 @@ type ModelsV2LexAggregatedUtterancesConfig struct {
 type ModelsV2LexAggregatedUtterancesAttrs struct {
 	AggregatedUtterancesSummaries any
 	// <p>Provides parameters for setting the time window and duration for aggregating utterance data.</p>
-	AggregationDuration any
+	AggregationDuration              any
 	AggregationLastRefreshedDateTime any
-	AggregationWindowEndTime any
-	AggregationWindowStartTime any
-	BotAliasId any
-	BotId any
-	BotVersion any
-	Filters any
-	LocaleId any
-	MaxResults any
-	NextToken any
+	AggregationWindowEndTime         any
+	AggregationWindowStartTime       any
+	BotAliasId                       any
+	BotId                            any
+	BotVersion                       any
+	Filters                          any
+	LocaleId                         any
+	MaxResults                       any
+	NextToken                        any
 	// <p>Specifies attributes for sorting a list of utterances.</p>
 	SortBy any
 }
@@ -94,24 +94,24 @@ var ModelsV2LexAggregatedUtterances = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregationDuration": ubx.FieldSpec{
 			WireName: "aggregation_duration",
-			Kind: "object",
-			Fields: ModelsV2LexAggregatedUtterances_AggregationDurationFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexAggregatedUtterances_AggregationDurationFields,
 		},
 		"BotAliasId": ubx.FieldSpec{WireName: "bot_alias_id"},
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexAggregatedUtterances_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexAggregatedUtterances_FiltersFields,
 		},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+		"LocaleId":   ubx.FieldSpec{WireName: "locale_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexAggregatedUtterances_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexAggregatedUtterances_SortByFields,
 		},
 	},
 }

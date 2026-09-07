@@ -4,29 +4,29 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CompositionRelationships_CompositionRelationshipSummaries struct {
-	AssetModelCompositeModelId any
+	AssetModelCompositeModelId   any
 	AssetModelCompositeModelType any
-	AssetModelId any
+	AssetModelId                 any
 }
 
 type CompositionRelationshipsConfig struct {
 	AssetModelId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type CompositionRelationshipsAttrs struct {
-	AssetModelId any
+	AssetModelId                     any
 	CompositionRelationshipSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults                       any
+	NextToken                        any
 }
 
 var CompositionRelationships = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_composition_relationships",
 	Fields: ubx.FieldMap{
 		"AssetModelId": ubx.FieldSpec{WireName: "asset_model_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

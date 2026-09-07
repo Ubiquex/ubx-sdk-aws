@@ -32,21 +32,21 @@ type ReplicationConfig_Tags struct {
 }
 
 var ReplicationConfig_ComputeConfigFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"DnsNameServers": ubx.FieldSpec{WireName: "dns_name_servers"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MaxCapacityUnits": ubx.FieldSpec{WireName: "max_capacity_units"},
-		"MinCapacityUnits": ubx.FieldSpec{WireName: "min_capacity_units"},
-		"MultiAz": ubx.FieldSpec{WireName: "multi_az"},
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"ReplicationSubnetGroupId": ubx.FieldSpec{WireName: "replication_subnet_group_id"},
-		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
-	}
+	"AvailabilityZone":           ubx.FieldSpec{WireName: "availability_zone"},
+	"DnsNameServers":             ubx.FieldSpec{WireName: "dns_name_servers"},
+	"KmsKeyId":                   ubx.FieldSpec{WireName: "kms_key_id"},
+	"MaxCapacityUnits":           ubx.FieldSpec{WireName: "max_capacity_units"},
+	"MinCapacityUnits":           ubx.FieldSpec{WireName: "min_capacity_units"},
+	"MultiAz":                    ubx.FieldSpec{WireName: "multi_az"},
+	"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+	"ReplicationSubnetGroupId":   ubx.FieldSpec{WireName: "replication_subnet_group_id"},
+	"VpcSecurityGroupIds":        ubx.FieldSpec{WireName: "vpc_security_group_ids"},
+}
 
 var ReplicationConfig_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReplicationConfigConfig struct {
 	// Configuration parameters for provisioning a AWS DMS Serverless replication
@@ -101,20 +101,20 @@ var ReplicationConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputeConfig": ubx.FieldSpec{
 			WireName: "compute_config",
-			Kind: "object",
-			Fields: ReplicationConfig_ComputeConfigFields,
+			Kind:     "object",
+			Fields:   ReplicationConfig_ComputeConfigFields,
 		},
 		"ReplicationConfigIdentifier": ubx.FieldSpec{WireName: "replication_config_identifier"},
-		"ReplicationSettings": ubx.FieldSpec{WireName: "replication_settings"},
-		"ReplicationType": ubx.FieldSpec{WireName: "replication_type"},
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
-		"SourceEndpointArn": ubx.FieldSpec{WireName: "source_endpoint_arn"},
-		"SupplementalSettings": ubx.FieldSpec{WireName: "supplemental_settings"},
-		"TableMappings": ubx.FieldSpec{WireName: "table_mappings"},
+		"ReplicationSettings":         ubx.FieldSpec{WireName: "replication_settings"},
+		"ReplicationType":             ubx.FieldSpec{WireName: "replication_type"},
+		"ResourceIdentifier":          ubx.FieldSpec{WireName: "resource_identifier"},
+		"SourceEndpointArn":           ubx.FieldSpec{WireName: "source_endpoint_arn"},
+		"SupplementalSettings":        ubx.FieldSpec{WireName: "supplemental_settings"},
+		"TableMappings":               ubx.FieldSpec{WireName: "table_mappings"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReplicationConfig_TagsFields,
+			Kind:     "list",
+			Fields:   ReplicationConfig_TagsFields,
 		},
 		"TargetEndpointArn": ubx.FieldSpec{WireName: "target_endpoint_arn"},
 	},

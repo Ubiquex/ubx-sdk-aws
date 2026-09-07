@@ -4,30 +4,30 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeviceDefinitionVersions_Versions struct {
-	Arn any
+	Arn               any
 	CreationTimestamp any
-	Id any
-	Version any
+	Id                any
+	Version           any
 }
 
 type DeviceDefinitionVersionsConfig struct {
 	DeviceDefinitionId any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 type DeviceDefinitionVersionsAttrs struct {
 	DeviceDefinitionId any
-	MaxResults any
-	NextToken any
-	Versions any
+	MaxResults         any
+	NextToken          any
+	Versions           any
 }
 
 var DeviceDefinitionVersions = ubx.DataSourceBinding{
 	WireType: "aws_greengrass_device_definition_versions",
 	Fields: ubx.FieldMap{
 		"DeviceDefinitionId": ubx.FieldSpec{WireName: "device_definition_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

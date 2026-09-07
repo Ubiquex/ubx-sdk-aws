@@ -4,7 +4,7 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImageBuildVersions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -18,62 +18,62 @@ type ImageBuildVersions_ImageSummaryList_OutputResources_Amis_State struct {
 }
 
 type ImageBuildVersions_ImageSummaryList_OutputResources_Amis struct {
-	AccountId any
+	AccountId   any
 	Description any
-	Image any
-	Name any
-	Region any
-	State any
+	Image       any
+	Name        any
+	Region      any
+	State       any
 }
 
 type ImageBuildVersions_ImageSummaryList_OutputResources_Containers struct {
 	ImageUris any
-	Region any
+	Region    any
 }
 
 type ImageBuildVersions_ImageSummaryList_OutputResources struct {
-	Amis any
+	Amis       any
 	Containers any
 }
 
 type ImageBuildVersions_ImageSummaryList struct {
-	Arn any
-	BuildType any
-	DateCreated any
-	DeprecationTime any
-	ImageSource any
+	Arn                  any
+	BuildType            any
+	DateCreated          any
+	DeprecationTime      any
+	ImageSource          any
 	LifecycleExecutionId any
 	LoggingConfiguration any
-	Name any
-	OsVersion any
-	OutputResources any
-	Owner any
-	Platform any
-	State any
-	Tags any
-	Type any
-	Version any
+	Name                 any
+	OsVersion            any
+	OutputResources      any
+	Owner                any
+	Platform             any
+	State                any
+	Tags                 any
+	Type                 any
+	Version              any
 }
 
 var ImageBuildVersions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImageBuildVersionsConfig struct {
-	Filters any
+	Filters         any
 	ImageVersionArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type ImageBuildVersionsAttrs struct {
-	Filters any
+	Filters          any
 	ImageSummaryList any
-	ImageVersionArn any
-	MaxResults any
-	NextToken any
-	RequestId any
+	ImageVersionArn  any
+	MaxResults       any
+	NextToken        any
+	RequestId        any
 }
 
 var ImageBuildVersions = ubx.DataSourceBinding{
@@ -81,11 +81,11 @@ var ImageBuildVersions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ImageBuildVersions_FiltersFields,
+			Kind:     "list",
+			Fields:   ImageBuildVersions_FiltersFields,
 		},
 		"ImageVersionArn": ubx.FieldSpec{WireName: "image_version_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

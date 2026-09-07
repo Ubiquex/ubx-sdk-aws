@@ -8,7 +8,7 @@ type Route53RecoveryReadinessResourceSets_ResourceSets_Resources_DnsTargetResour
 }
 
 type Route53RecoveryReadinessResourceSets_ResourceSets_Resources_DnsTargetResource_TargetResource_R53Resource struct {
-	DomainName any
+	DomainName  any
 	RecordSetId any
 }
 
@@ -18,36 +18,36 @@ type Route53RecoveryReadinessResourceSets_ResourceSets_Resources_DnsTargetResour
 }
 
 type Route53RecoveryReadinessResourceSets_ResourceSets_Resources_DnsTargetResource struct {
-	DomainName any
-	HostedZoneArn any
-	RecordSetId any
-	RecordType any
+	DomainName     any
+	HostedZoneArn  any
+	RecordSetId    any
+	RecordType     any
 	TargetResource any
 }
 
 type Route53RecoveryReadinessResourceSets_ResourceSets_Resources struct {
-	ComponentId any
+	ComponentId       any
 	DnsTargetResource any
-	ReadinessScopes any
-	ResourceArn any
+	ReadinessScopes   any
+	ResourceArn       any
 }
 
 type Route53RecoveryReadinessResourceSets_ResourceSets struct {
-	ResourceSetArn any
+	ResourceSetArn  any
 	ResourceSetName any
 	ResourceSetType any
-	Resources any
-	Tags any
+	Resources       any
+	Tags            any
 }
 
 type Route53RecoveryReadinessResourceSetsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type Route53RecoveryReadinessResourceSetsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ResourceSets any
 }
 
@@ -55,6 +55,6 @@ var Route53RecoveryReadinessResourceSets = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_readiness_resource_sets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

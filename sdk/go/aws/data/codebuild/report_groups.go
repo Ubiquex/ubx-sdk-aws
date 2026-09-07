@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportGroupsConfig struct {
 	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
+	NextToken  any
+	SortBy     any
+	SortOrder  any
 }
 
 type ReportGroupsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	ReportGroups any
-	SortBy any
-	SortOrder any
+	SortBy       any
+	SortOrder    any
 }
 
 var ReportGroups = ubx.DataSourceBinding{
 	WireType: "aws_codebuild_report_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":     ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

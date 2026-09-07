@@ -4,33 +4,33 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpnTunnelReplacementStatus_MaintenanceDetails struct {
-	LastMaintenanceApplied any
+	LastMaintenanceApplied      any
 	MaintenanceAutoAppliedAfter any
-	PendingMaintenance any
+	PendingMaintenance          any
 }
 
 type VpnTunnelReplacementStatusConfig struct {
-	DryRun any
-	VpnConnectionId any
+	DryRun                    any
+	VpnConnectionId           any
 	VpnTunnelOutsideIpAddress any
 }
 
 type VpnTunnelReplacementStatusAttrs struct {
 	CustomerGatewayId any
-	DryRun any
+	DryRun            any
 	// <p>Details for Site-to-Site VPN tunnel endpoint maintenance events.</p>
-	MaintenanceDetails any
-	TransitGatewayId any
-	VpnConnectionId any
-	VpnGatewayId any
+	MaintenanceDetails        any
+	TransitGatewayId          any
+	VpnConnectionId           any
+	VpnGatewayId              any
 	VpnTunnelOutsideIpAddress any
 }
 
 var VpnTunnelReplacementStatus = ubx.DataSourceBinding{
 	WireType: "aws_ec2_vpn_tunnel_replacement_status",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"VpnConnectionId": ubx.FieldSpec{WireName: "vpn_connection_id"},
+		"DryRun":                    ubx.FieldSpec{WireName: "dry_run"},
+		"VpnConnectionId":           ubx.FieldSpec{WireName: "vpn_connection_id"},
 		"VpnTunnelOutsideIpAddress": ubx.FieldSpec{WireName: "vpn_tunnel_outside_ip_address"},
 	},
 }

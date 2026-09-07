@@ -11,9 +11,9 @@ type TransitGatewayPeering_Tags struct {
 }
 
 var TransitGatewayPeering_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayPeeringConfig struct {
 	// The Id of the core network that you want to peer a transit gateway to.
@@ -59,8 +59,8 @@ var TransitGatewayPeering = ubx.ResourceBinding{
 		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayPeering_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayPeering_TagsFields,
 		},
 		"TransitGatewayArn": ubx.FieldSpec{WireName: "transit_gateway_arn"},
 	},

@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BucketStatistics_BucketCountByEffectivePermission struct {
 	PubliclyAccessible any
-	PubliclyReadable any
-	PubliclyWritable any
-	Unknown any
+	PubliclyReadable   any
+	PubliclyWritable   any
+	Unknown            any
 }
 
 type BucketStatistics_BucketCountByEncryptionType struct {
-	KmsManaged any
-	S3Managed any
+	KmsManaged  any
+	S3Managed   any
 	Unencrypted any
-	Unknown any
+	Unknown     any
 }
 
 type BucketStatistics_BucketCountByObjectEncryptionRequirement struct {
 	AllowsUnencryptedObjectUploads any
 	DeniesUnencryptedObjectUploads any
-	Unknown any
+	Unknown                        any
 }
 
 type BucketStatistics_BucketCountBySharedAccessType struct {
-	External any
-	Internal any
+	External  any
+	Internal  any
 	NotShared any
-	Unknown any
+	Unknown   any
 }
 
 type BucketStatistics_BucketStatisticsBySensitivity_ClassificationError struct {
 	ClassifiableSizeInBytes any
 	PubliclyAccessibleCount any
-	TotalCount any
-	TotalSizeInBytes any
+	TotalCount              any
+	TotalSizeInBytes        any
 }
 
 type BucketStatistics_BucketStatisticsBySensitivity struct {
@@ -49,9 +49,9 @@ type BucketStatistics_BucketStatisticsBySensitivity struct {
 }
 
 type BucketStatistics_UnclassifiableObjectCount struct {
-	FileType any
+	FileType     any
 	StorageClass any
-	Total any
+	Total        any
 }
 
 type BucketStatisticsConfig struct {
@@ -59,7 +59,7 @@ type BucketStatisticsConfig struct {
 }
 
 type BucketStatisticsAttrs struct {
-	AccountId any
+	AccountId   any
 	BucketCount any
 	// <p>Provides information about the number of S3 buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
 	BucketCountByEffectivePermission any
@@ -71,12 +71,12 @@ type BucketStatisticsAttrs struct {
 	BucketCountBySharedAccessType any
 	// <p>Provides aggregated statistical data for sensitive data discovery metrics that apply to S3 buckets, grouped by bucket sensitivity score (sensitivityScore). If automated sensitive data discovery is currently disabled for your account, the value for most of these metrics is 0.</p>
 	BucketStatisticsBySensitivity any
-	ClassifiableObjectCount any
-	ClassifiableSizeInBytes any
-	LastUpdated any
-	ObjectCount any
-	SizeInBytes any
-	SizeInBytesCompressed any
+	ClassifiableObjectCount       any
+	ClassifiableSizeInBytes       any
+	LastUpdated                   any
+	ObjectCount                   any
+	SizeInBytes                   any
+	SizeInBytesCompressed         any
 	// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, storage size values are based on the size of the latest version of each applicable object in the bucket.</p>
 	UnclassifiableObjectCount any
 	// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, storage size values are based on the size of the latest version of each applicable object in the bucket.</p>

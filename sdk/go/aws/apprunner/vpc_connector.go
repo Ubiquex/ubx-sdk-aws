@@ -11,9 +11,9 @@ type VpcConnector_Tags struct {
 }
 
 var VpcConnector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcConnectorConfig struct {
 	// A list of IDs of security groups that App Runner should use for access to AWS resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.
@@ -45,11 +45,11 @@ var VpcConnector = ubx.ResourceBinding{
 	WireType: "aws_app_runner_vpc_connector",
 	Fields: ubx.FieldMap{
 		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
+		"Subnets":        ubx.FieldSpec{WireName: "subnets"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VpcConnector_TagsFields,
+			Kind:     "list",
+			Fields:   VpcConnector_TagsFields,
 		},
 		"VpcConnectorName": ubx.FieldSpec{WireName: "vpc_connector_name"},
 	},

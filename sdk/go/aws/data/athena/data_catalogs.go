@@ -4,31 +4,31 @@ package athena
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataCatalogs_DataCatalogsSummary struct {
-	CatalogName any
+	CatalogName    any
 	ConnectionType any
-	Error any
-	Status any
-	Type any
+	Error          any
+	Status         any
+	Type           any
 }
 
 type DataCatalogsConfig struct {
 	MaxResults any
-	NextToken any
-	WorkGroup any
+	NextToken  any
+	WorkGroup  any
 }
 
 type DataCatalogsAttrs struct {
 	DataCatalogsSummary any
-	MaxResults any
-	NextToken any
-	WorkGroup any
+	MaxResults          any
+	NextToken           any
+	WorkGroup           any
 }
 
 var DataCatalogs = ubx.DataSourceBinding{
 	WireType: "aws_athena_data_catalogs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"WorkGroup":  ubx.FieldSpec{WireName: "work_group"},
 	},
 }

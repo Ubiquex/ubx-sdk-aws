@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Runs_Runs_Counters struct {
 	Errored any
-	Failed any
-	Passed any
+	Failed  any
+	Passed  any
 	Skipped any
 	Stopped any
-	Total any
-	Warned any
+	Total   any
+	Warned  any
 }
 
 type Runs_Runs_CustomerArtifactPaths struct {
-	AndroidPaths any
+	AndroidPaths    any
 	DeviceHostPaths any
-	IosPaths any
+	IosPaths        any
 }
 
 type Runs_Runs_DeviceMinutes struct {
-	Metered any
-	Total any
+	Metered   any
+	Total     any
 	Unmetered any
 }
 
@@ -32,133 +32,133 @@ type Runs_Runs_DeviceProxy struct {
 
 type Runs_Runs_DeviceSelectionResult_Filters struct {
 	Attribute any
-	Operator any
-	Values any
+	Operator  any
+	Values    any
 }
 
 type Runs_Runs_DeviceSelectionResult struct {
-	Filters any
+	Filters             any
 	MatchedDevicesCount any
-	MaxDevices any
+	MaxDevices          any
 }
 
 type Runs_Runs_EnvironmentVariables struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Runs_Runs_Insights_JobReport_Metrics struct {
 	AverageJobExecutionDurationSeconds any
-	JobsErrored any
-	JobsFailed any
-	JobsPassed any
-	JobsPassedPercentage any
-	JobsSkipped any
-	JobsStopped any
-	JobsTotal any
-	MedianJobExecutionDurationSeconds any
-	TotalJobExecutionDurationSeconds any
+	JobsErrored                        any
+	JobsFailed                         any
+	JobsPassed                         any
+	JobsPassedPercentage               any
+	JobsSkipped                        any
+	JobsStopped                        any
+	JobsTotal                          any
+	MedianJobExecutionDurationSeconds  any
+	TotalJobExecutionDurationSeconds   any
 }
 
 type Runs_Runs_Insights_JobReport struct {
 	JobDetailsUrl any
-	Message any
-	Metrics any
+	Message       any
+	Metrics       any
 }
 
 type Runs_Runs_Insights struct {
 	JobReport any
-	Status any
+	Status    any
 }
 
 type Runs_Runs_Location struct {
-	Latitude any
+	Latitude  any
 	Longitude any
 }
 
 type Runs_Runs_NetworkProfile struct {
-	Arn any
-	Description any
+	Arn                   any
+	Description           any
 	DownlinkBandwidthBits any
-	DownlinkDelayMs any
-	DownlinkJitterMs any
-	DownlinkLossPercent any
-	Name any
-	Type any
-	UplinkBandwidthBits any
-	UplinkDelayMs any
-	UplinkJitterMs any
-	UplinkLossPercent any
+	DownlinkDelayMs       any
+	DownlinkJitterMs      any
+	DownlinkLossPercent   any
+	Name                  any
+	Type                  any
+	UplinkBandwidthBits   any
+	UplinkDelayMs         any
+	UplinkJitterMs        any
+	UplinkLossPercent     any
 }
 
 type Runs_Runs_Radios struct {
 	Bluetooth any
-	Gps any
-	Nfc any
-	Wifi any
+	Gps       any
+	Nfc       any
+	Wifi      any
 }
 
 type Runs_Runs_VpcConfig struct {
 	SecurityGroupIds any
-	SubnetIds any
-	VpcId any
+	SubnetIds        any
+	VpcId            any
 }
 
 type Runs_Runs struct {
-	AppUpload any
-	Arn any
-	BillingMethod any
-	CompletedJobs any
-	Counters any
-	Created any
+	AppUpload             any
+	Arn                   any
+	BillingMethod         any
+	CompletedJobs         any
+	Counters              any
+	Created               any
 	CustomerArtifactPaths any
-	DeviceMinutes any
-	DevicePoolArn any
-	DeviceProxy any
+	DeviceMinutes         any
+	DevicePoolArn         any
+	DeviceProxy           any
 	DeviceSelectionResult any
-	EnvironmentVariables any
-	EventCount any
-	ExecutionRoleArn any
-	Insights any
-	InsightsTypes any
-	JobTimeoutMinutes any
-	Locale any
-	Location any
-	Message any
-	Name any
-	NetworkProfile any
-	ParsingResultUrl any
-	Platform any
-	Radios any
-	Result any
-	ResultCode any
-	Seed any
-	SkipAppResign any
-	Started any
-	Status any
-	Stopped any
-	TestSpecArn any
-	TotalJobs any
-	Type any
-	VpcConfig any
-	WebUrl any
+	EnvironmentVariables  any
+	EventCount            any
+	ExecutionRoleArn      any
+	Insights              any
+	InsightsTypes         any
+	JobTimeoutMinutes     any
+	Locale                any
+	Location              any
+	Message               any
+	Name                  any
+	NetworkProfile        any
+	ParsingResultUrl      any
+	Platform              any
+	Radios                any
+	Result                any
+	ResultCode            any
+	Seed                  any
+	SkipAppResign         any
+	Started               any
+	Status                any
+	Stopped               any
+	TestSpecArn           any
+	TotalJobs             any
+	Type                  any
+	VpcConfig             any
+	WebUrl                any
 }
 
 type RunsConfig struct {
-	Arn any
+	Arn       any
 	NextToken any
 }
 
 type RunsAttrs struct {
-	Arn any
+	Arn       any
 	NextToken any
-	Runs any
+	Runs      any
 }
 
 var Runs = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_runs",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":       ubx.FieldSpec{WireName: "arn"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

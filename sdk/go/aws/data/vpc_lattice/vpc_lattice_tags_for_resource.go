@@ -9,7 +9,7 @@ type VpcLatticeTagsForResourceConfig struct {
 
 type VpcLatticeTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var VpcLatticeTagsForResource = ubx.DataSourceBinding{

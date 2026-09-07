@@ -4,65 +4,65 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationalDatabases_RelationalDatabases_Hardware struct {
-	CpuCount any
+	CpuCount     any
 	DiskSizeInGb any
-	RamSizeInGb any
+	RamSizeInGb  any
 }
 
 type RelationalDatabases_RelationalDatabases_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type RelationalDatabases_RelationalDatabases_MasterEndpoint struct {
 	Address any
-	Port any
+	Port    any
 }
 
 type RelationalDatabases_RelationalDatabases_PendingMaintenanceActions struct {
-	Action any
+	Action           any
 	CurrentApplyDate any
-	Description any
+	Description      any
 }
 
 type RelationalDatabases_RelationalDatabases_PendingModifiedValues struct {
 	BackupRetentionEnabled any
-	EngineVersion any
-	MasterUserPassword any
+	EngineVersion          any
+	MasterUserPassword     any
 }
 
 type RelationalDatabases_RelationalDatabases_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type RelationalDatabases_RelationalDatabases struct {
-	Arn any
-	BackupRetentionEnabled any
-	CaCertificateIdentifier any
-	CreatedAt any
-	Engine any
-	EngineVersion any
-	Hardware any
-	LatestRestorableTime any
-	Location any
-	MasterDatabaseName any
-	MasterEndpoint any
-	MasterUsername any
-	Name any
-	ParameterApplyStatus any
-	PendingMaintenanceActions any
-	PendingModifiedValues any
-	PreferredBackupWindow any
-	PreferredMaintenanceWindow any
-	PubliclyAccessible any
+	Arn                           any
+	BackupRetentionEnabled        any
+	CaCertificateIdentifier       any
+	CreatedAt                     any
+	Engine                        any
+	EngineVersion                 any
+	Hardware                      any
+	LatestRestorableTime          any
+	Location                      any
+	MasterDatabaseName            any
+	MasterEndpoint                any
+	MasterUsername                any
+	Name                          any
+	ParameterApplyStatus          any
+	PendingMaintenanceActions     any
+	PendingModifiedValues         any
+	PreferredBackupWindow         any
+	PreferredMaintenanceWindow    any
+	PubliclyAccessible            any
 	RelationalDatabaseBlueprintId any
-	RelationalDatabaseBundleId any
-	ResourceType any
-	SecondaryAvailabilityZone any
-	State any
-	SupportCode any
-	Tags any
+	RelationalDatabaseBundleId    any
+	ResourceType                  any
+	SecondaryAvailabilityZone     any
+	State                         any
+	SupportCode                   any
+	Tags                          any
 }
 
 type RelationalDatabasesConfig struct {
@@ -70,8 +70,8 @@ type RelationalDatabasesConfig struct {
 }
 
 type RelationalDatabasesAttrs struct {
-	NextPageToken any
-	PageToken any
+	NextPageToken       any
+	PageToken           any
 	RelationalDatabases any
 }
 

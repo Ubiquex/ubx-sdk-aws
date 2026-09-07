@@ -4,22 +4,22 @@ package migrationhub_strategy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyServerStrategies_ServerStrategies_Recommendation_TransformationTool struct {
-	Description any
-	Name any
+	Description                       any
+	Name                              any
 	TranformationToolInstallationLink any
 }
 
 type MigrationhubStrategyServerStrategies_ServerStrategies_Recommendation struct {
-	Strategy any
-	TargetDestination any
+	Strategy           any
+	TargetDestination  any
 	TransformationTool any
 }
 
 type MigrationhubStrategyServerStrategies_ServerStrategies struct {
-	IsPreferred any
+	IsPreferred                   any
 	NumberOfApplicationComponents any
-	Recommendation any
-	Status any
+	Recommendation                any
+	Status                        any
 }
 
 type MigrationhubStrategyServerStrategiesConfig struct {
@@ -27,7 +27,7 @@ type MigrationhubStrategyServerStrategiesConfig struct {
 }
 
 type MigrationhubStrategyServerStrategiesAttrs struct {
-	ServerId any
+	ServerId         any
 	ServerStrategies any
 }
 

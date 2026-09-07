@@ -10,9 +10,9 @@ type OptOutList_Tags struct {
 }
 
 var OptOutList_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OptOutListConfig struct {
 	// The name of the new OptOutList.
@@ -36,8 +36,8 @@ var OptOutList = ubx.ResourceBinding{
 		"OptOutListName": ubx.FieldSpec{WireName: "opt_out_list_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OptOutList_TagsFields,
+			Kind:     "list",
+			Fields:   OptOutList_TagsFields,
 		},
 	},
 }

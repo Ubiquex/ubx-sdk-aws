@@ -16,13 +16,13 @@ type EventIntegration_Tags struct {
 }
 
 var EventIntegration_EventFilterFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Source": ubx.FieldSpec{WireName: "source"},
+}
 
 var EventIntegration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventIntegrationConfig struct {
 	// The event integration description.
@@ -55,18 +55,18 @@ type EventIntegrationAttrs struct {
 var EventIntegration = ubx.ResourceBinding{
 	WireType: "aws_app_integrations_event_integration",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"EventBridgeBus": ubx.FieldSpec{WireName: "event_bridge_bus"},
 		"EventFilter": ubx.FieldSpec{
 			WireName: "event_filter",
-			Kind: "object",
-			Fields: EventIntegration_EventFilterFields,
+			Kind:     "object",
+			Fields:   EventIntegration_EventFilterFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventIntegration_TagsFields,
+			Kind:     "list",
+			Fields:   EventIntegration_TagsFields,
 		},
 	},
 }

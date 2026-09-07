@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tables_Tables struct {
 	KeyspaceName any
-	ResourceArn any
-	TableName any
+	ResourceArn  any
+	TableName    any
 }
 
 type TablesConfig struct {
 	KeyspaceName any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type TablesAttrs struct {
 	KeyspaceName any
-	MaxResults any
-	NextToken any
-	Tables any
+	MaxResults   any
+	NextToken    any
+	Tables       any
 }
 
 var Tables = ubx.DataSourceBinding{
 	WireType: "aws_cassandra_tables",
 	Fields: ubx.FieldMap{
 		"KeyspaceName": ubx.FieldSpec{WireName: "keyspace_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

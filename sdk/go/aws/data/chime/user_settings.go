@@ -4,9 +4,9 @@ package chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserSettings_UserSettings_Telephony struct {
-	InboundCalling any
+	InboundCalling  any
 	OutboundCalling any
-	Sms any
+	Sms             any
 }
 
 type UserSettings_UserSettings struct {
@@ -16,12 +16,12 @@ type UserSettings_UserSettings struct {
 
 type UserSettingsConfig struct {
 	AccountId any
-	UserId any
+	UserId    any
 }
 
 type UserSettingsAttrs struct {
 	AccountId any
-	UserId any
+	UserId    any
 	// <p>Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging.</p>
 	UserSettings any
 }
@@ -30,6 +30,6 @@ var UserSettings = ubx.DataSourceBinding{
 	WireType: "aws_chime_user_settings",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmSapDatabases_Databases struct {
 	ApplicationId any
-	Arn any
-	ComponentId any
-	DatabaseId any
-	DatabaseType any
-	Tags any
+	Arn           any
+	ComponentId   any
+	DatabaseId    any
+	DatabaseType  any
+	Tags          any
 }
 
 type SsmSapDatabasesConfig struct {
 	ApplicationId any
-	ComponentId any
-	MaxResults any
-	NextToken any
+	ComponentId   any
+	MaxResults    any
+	NextToken     any
 }
 
 type SsmSapDatabasesAttrs struct {
 	ApplicationId any
-	ComponentId any
-	Databases any
-	MaxResults any
-	NextToken any
+	ComponentId   any
+	Databases     any
+	MaxResults    any
+	NextToken     any
 }
 
 var SsmSapDatabases = ubx.DataSourceBinding{
 	WireType: "aws_ssm_sap_databases",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"ComponentId": ubx.FieldSpec{WireName: "component_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ComponentId":   ubx.FieldSpec{WireName: "component_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

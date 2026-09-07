@@ -4,38 +4,38 @@ package tnb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SolFunctionPackages_FunctionPackages_Metadata struct {
-	CreatedAt any
+	CreatedAt    any
 	LastModified any
 }
 
 type SolFunctionPackages_FunctionPackages struct {
-	Arn any
-	Id any
-	Metadata any
-	OnboardingState any
+	Arn              any
+	Id               any
+	Metadata         any
+	OnboardingState  any
 	OperationalState any
-	UsageState any
-	VnfProductName any
-	VnfProvider any
-	VnfdId any
-	VnfdVersion any
+	UsageState       any
+	VnfProductName   any
+	VnfProvider      any
+	VnfdId           any
+	VnfdVersion      any
 }
 
 type SolFunctionPackagesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SolFunctionPackagesAttrs struct {
 	FunctionPackages any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var SolFunctionPackages = ubx.DataSourceBinding{
 	WireType: "aws_tnb_sol_function_packages",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

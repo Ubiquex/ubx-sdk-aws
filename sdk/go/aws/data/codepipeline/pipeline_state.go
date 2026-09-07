@@ -4,71 +4,71 @@ package codepipeline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PipelineState_StageStates_ActionStates_CurrentRevision struct {
-	Created any
+	Created          any
 	RevisionChangeId any
-	RevisionId any
+	RevisionId       any
 }
 
 type PipelineState_StageStates_ActionStates_LatestExecution_ErrorDetails struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type PipelineState_StageStates_ActionStates_LatestExecution struct {
-	ActionExecutionId any
-	ErrorDetails any
-	ExternalExecutionId any
+	ActionExecutionId    any
+	ErrorDetails         any
+	ExternalExecutionId  any
 	ExternalExecutionUrl any
-	LastStatusChange any
-	LastUpdatedBy any
-	LogStreamArn any
-	PercentComplete any
-	Status any
-	Summary any
-	Token any
+	LastStatusChange     any
+	LastUpdatedBy        any
+	LogStreamArn         any
+	PercentComplete      any
+	Status               any
+	Summary              any
+	Token                any
 }
 
 type PipelineState_StageStates_ActionStates struct {
-	ActionName any
+	ActionName      any
 	CurrentRevision any
-	EntityUrl any
+	EntityUrl       any
 	LatestExecution any
-	RevisionUrl any
+	RevisionUrl     any
 }
 
 type PipelineState_StageStates_BeforeEntryConditionState_ConditionStates_LatestExecution struct {
 	LastStatusChange any
-	Status any
-	Summary any
+	Status           any
+	Summary          any
 }
 
 type PipelineState_StageStates_BeforeEntryConditionState_ConditionStates_RuleStates_LatestExecution struct {
-	ErrorDetails any
-	ExternalExecutionId any
+	ErrorDetails         any
+	ExternalExecutionId  any
 	ExternalExecutionUrl any
-	LastStatusChange any
-	LastUpdatedBy any
-	RuleExecutionId any
-	Status any
-	Summary any
-	Token any
+	LastStatusChange     any
+	LastUpdatedBy        any
+	RuleExecutionId      any
+	Status               any
+	Summary              any
+	Token                any
 }
 
 type PipelineState_StageStates_BeforeEntryConditionState_ConditionStates_RuleStates struct {
 	CurrentRevision any
-	EntityUrl any
+	EntityUrl       any
 	LatestExecution any
-	RevisionUrl any
-	RuleName any
+	RevisionUrl     any
+	RuleName        any
 }
 
 type PipelineState_StageStates_BeforeEntryConditionState_ConditionStates struct {
 	LatestExecution any
-	RuleStates any
+	RuleStates      any
 }
 
 type PipelineState_StageStates_BeforeEntryConditionState_LatestExecution struct {
-	Status any
+	Status  any
 	Summary any
 }
 
@@ -79,34 +79,34 @@ type PipelineState_StageStates_BeforeEntryConditionState struct {
 
 type PipelineState_StageStates_InboundExecution struct {
 	PipelineExecutionId any
-	Status any
-	Type any
+	Status              any
+	Type                any
 }
 
 type PipelineState_StageStates_InboundTransitionState struct {
 	DisabledReason any
-	Enabled any
-	LastChangedAt any
-	LastChangedBy any
+	Enabled        any
+	LastChangedAt  any
+	LastChangedBy  any
 }
 
 type PipelineState_StageStates_RetryStageMetadata struct {
-	AutoStageRetryAttempt any
-	LatestRetryTrigger any
+	AutoStageRetryAttempt   any
+	LatestRetryTrigger      any
 	ManualStageRetryAttempt any
 }
 
 type PipelineState_StageStates struct {
-	ActionStates any
+	ActionStates              any
 	BeforeEntryConditionState any
-	InboundExecution any
-	InboundExecutions any
-	InboundTransitionState any
-	LatestExecution any
-	OnFailureConditionState any
-	OnSuccessConditionState any
-	RetryStageMetadata any
-	StageName any
+	InboundExecution          any
+	InboundExecutions         any
+	InboundTransitionState    any
+	LatestExecution           any
+	OnFailureConditionState   any
+	OnSuccessConditionState   any
+	RetryStageMetadata        any
+	StageName                 any
 }
 
 type PipelineStateConfig struct {
@@ -114,12 +114,12 @@ type PipelineStateConfig struct {
 }
 
 type PipelineStateAttrs struct {
-	Created any
-	Name any
-	PipelineName any
+	Created         any
+	Name            any
+	PipelineName    any
 	PipelineVersion any
-	StageStates any
-	Updated any
+	StageStates     any
+	Updated         any
 }
 
 var PipelineState = ubx.DataSourceBinding{

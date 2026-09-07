@@ -4,7 +4,7 @@ package catalog_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogMarketplaceTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type CatalogMarketplaceTagsForResourceConfig struct {
 
 type CatalogMarketplaceTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var CatalogMarketplaceTagsForResource = ubx.DataSourceBinding{

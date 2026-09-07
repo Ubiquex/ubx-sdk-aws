@@ -4,42 +4,42 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ByoipCidrs_ByoipCidrs_AsnAssociations struct {
-	Asn any
-	Cidr any
-	State any
+	Asn           any
+	Cidr          any
+	State         any
 	StatusMessage any
 }
 
 type ByoipCidrs_ByoipCidrs struct {
-	AdvertisementType any
-	AsnAssociations any
-	Cidr any
-	Description any
-	IpamPoolId any
+	AdvertisementType  any
+	AsnAssociations    any
+	Cidr               any
+	Description        any
+	IpamPoolId         any
 	NetworkBorderGroup any
-	PoolId any
-	State any
-	StatusMessage any
+	PoolId             any
+	State              any
+	StatusMessage      any
 }
 
 type ByoipCidrsConfig struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ByoipCidrsAttrs struct {
 	ByoipCidrs any
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ByoipCidrs = ubx.DataSourceBinding{
 	WireType: "aws_ec2_byoip_cidrs",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,40 +4,40 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationPolicyAssociations_ConfigurationPolicyAssociationSummaries struct {
-	AssociationStatus any
+	AssociationStatus        any
 	AssociationStatusMessage any
-	AssociationType any
-	ConfigurationPolicyId any
-	TargetId any
-	TargetType any
-	UpdatedAt any
+	AssociationType          any
+	ConfigurationPolicyId    any
+	TargetId                 any
+	TargetType               any
+	UpdatedAt                any
 }
 
 type ConfigurationPolicyAssociations_Filters struct {
-	AssociationStatus any
-	AssociationType any
+	AssociationStatus     any
+	AssociationType       any
 	ConfigurationPolicyId any
 }
 
 var ConfigurationPolicyAssociations_FiltersFields = ubx.FieldMap{
-		"AssociationStatus": ubx.FieldSpec{WireName: "association_status"},
-		"AssociationType": ubx.FieldSpec{WireName: "association_type"},
-		"ConfigurationPolicyId": ubx.FieldSpec{WireName: "configuration_policy_id"},
-	}
+	"AssociationStatus":     ubx.FieldSpec{WireName: "association_status"},
+	"AssociationType":       ubx.FieldSpec{WireName: "association_type"},
+	"ConfigurationPolicyId": ubx.FieldSpec{WireName: "configuration_policy_id"},
+}
 
 type ConfigurationPolicyAssociationsConfig struct {
 	// <p> Options for filtering the <code>ListConfigurationPolicyAssociations</code> response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration policy, <code>AssociationType</code>, or <code>AssociationStatus</code>. </p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ConfigurationPolicyAssociationsAttrs struct {
 	ConfigurationPolicyAssociationSummaries any
 	// <p> Options for filtering the <code>ListConfigurationPolicyAssociations</code> response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration policy, <code>AssociationType</code>, or <code>AssociationStatus</code>. </p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ConfigurationPolicyAssociations = ubx.DataSourceBinding{
@@ -45,10 +45,10 @@ var ConfigurationPolicyAssociations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ConfigurationPolicyAssociations_FiltersFields,
+			Kind:     "object",
+			Fields:   ConfigurationPolicyAssociations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

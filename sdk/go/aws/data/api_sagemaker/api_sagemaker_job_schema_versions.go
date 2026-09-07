@@ -9,22 +9,22 @@ type ApiSagemakerJobSchemaVersions_JobConfigSchemas struct {
 
 type ApiSagemakerJobSchemaVersionsConfig struct {
 	JobCategory any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type ApiSagemakerJobSchemaVersionsAttrs struct {
-	JobCategory any
+	JobCategory      any
 	JobConfigSchemas any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var ApiSagemakerJobSchemaVersions = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_job_schema_versions",
 	Fields: ubx.FieldMap{
 		"JobCategory": ubx.FieldSpec{WireName: "job_category"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

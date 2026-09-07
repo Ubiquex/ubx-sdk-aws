@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CardinalityConfig struct {
 	AggregationField any
-	IndexName any
-	QueryString any
-	QueryVersion any
+	IndexName        any
+	QueryString      any
+	QueryVersion     any
 }
 
 type CardinalityAttrs struct {
 	AggregationField any
-	Cardinality any
-	IndexName any
-	QueryString any
-	QueryVersion any
+	Cardinality      any
+	IndexName        any
+	QueryString      any
+	QueryVersion     any
 }
 
 var Cardinality = ubx.DataSourceBinding{
 	WireType: "aws_iot_cardinality",
 	Fields: ubx.FieldMap{
 		"AggregationField": ubx.FieldSpec{WireName: "aggregation_field"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
-		"QueryVersion": ubx.FieldSpec{WireName: "query_version"},
+		"IndexName":        ubx.FieldSpec{WireName: "index_name"},
+		"QueryString":      ubx.FieldSpec{WireName: "query_string"},
+		"QueryVersion":     ubx.FieldSpec{WireName: "query_version"},
 	},
 }

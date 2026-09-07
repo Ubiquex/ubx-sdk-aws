@@ -8,11 +8,10 @@ type LoggingOptionsConfig struct {
 
 type LoggingOptionsAttrs struct {
 	LogLevel any
-	RoleArn any
+	RoleArn  any
 }
 
 var LoggingOptions = ubx.DataSourceBinding{
 	WireType: "aws_iot_logging_options",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

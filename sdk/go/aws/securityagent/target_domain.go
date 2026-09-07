@@ -4,7 +4,7 @@ package securityagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetDomain_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -34,9 +34,9 @@ type TargetDomain_VerificationDetails struct {
 }
 
 var TargetDomain_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TargetDomainConfig struct {
 	// Tags for the target domain
@@ -73,10 +73,10 @@ var TargetDomain = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TargetDomain_TagsFields,
+			Kind:     "list",
+			Fields:   TargetDomain_TagsFields,
 		},
-		"TargetDomainName": ubx.FieldSpec{WireName: "target_domain_name"},
+		"TargetDomainName":   ubx.FieldSpec{WireName: "target_domain_name"},
 		"VerificationMethod": ubx.FieldSpec{WireName: "verification_method"},
 	},
 }

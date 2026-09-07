@@ -8,7 +8,7 @@ type ElasticLoadBalancingV2TrustStoreCaCertificatesBundleConfig struct {
 }
 
 type ElasticLoadBalancingV2TrustStoreCaCertificatesBundleAttrs struct {
-	Location any
+	Location      any
 	TrustStoreArn any
 }
 

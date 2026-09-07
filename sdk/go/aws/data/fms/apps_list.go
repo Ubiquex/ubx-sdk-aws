@@ -4,38 +4,38 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppsList_AppsList_AppsList struct {
-	AppName any
-	Port any
+	AppName  any
+	Port     any
 	Protocol any
 }
 
 type AppsList_AppsList struct {
-	AppsList any
-	CreateTime any
-	LastUpdateTime any
-	ListId any
-	ListName any
-	ListUpdateToken any
+	AppsList         any
+	CreateTime       any
+	LastUpdateTime   any
+	ListId           any
+	ListName         any
+	ListUpdateToken  any
 	PreviousAppsList any
 }
 
 type AppsListConfig struct {
 	DefaultList any
-	ListId any
+	ListId      any
 }
 
 type AppsListAttrs struct {
 	// <p>An Firewall Manager applications list.</p>
-	AppsList any
+	AppsList    any
 	AppsListArn any
 	DefaultList any
-	ListId any
+	ListId      any
 }
 
 var AppsList = ubx.DataSourceBinding{
 	WireType: "aws_fms_apps_list",
 	Fields: ubx.FieldMap{
 		"DefaultList": ubx.FieldSpec{WireName: "default_list"},
-		"ListId": ubx.FieldSpec{WireName: "list_id"},
+		"ListId":      ubx.FieldSpec{WireName: "list_id"},
 	},
 }

@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspacesWebSession_Session struct {
 	ClientIpAddresses any
-	EndTime any
-	PortalArn any
-	SessionId any
-	StartTime any
-	Status any
-	Username any
+	EndTime           any
+	PortalArn         any
+	SessionId         any
+	StartTime         any
+	Status            any
+	Username          any
 }
 
 type WorkspacesWebSessionConfig struct {
-	PortalId any
+	PortalId  any
 	SessionId any
 }
 
 type WorkspacesWebSessionAttrs struct {
 	PortalId any
 	// <p>Information about a secure browser session.</p>
-	Session any
+	Session   any
 	SessionId any
 }
 
 var WorkspacesWebSession = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_web_session",
 	Fields: ubx.FieldMap{
-		"PortalId": ubx.FieldSpec{WireName: "portal_id"},
+		"PortalId":  ubx.FieldSpec{WireName: "portal_id"},
 		"SessionId": ubx.FieldSpec{WireName: "session_id"},
 	},
 }

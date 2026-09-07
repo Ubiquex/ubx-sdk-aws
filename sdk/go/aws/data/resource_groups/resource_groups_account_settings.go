@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceGroupsAccountSettings_AccountSettings struct {
 	GroupLifecycleEventsDesiredStatus any
-	GroupLifecycleEventsStatus any
+	GroupLifecycleEventsStatus        any
 	GroupLifecycleEventsStatusMessage any
 }
 
@@ -19,6 +19,5 @@ type ResourceGroupsAccountSettingsAttrs struct {
 
 var ResourceGroupsAccountSettings = ubx.DataSourceBinding{
 	WireType: "aws_resource_groups_account_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

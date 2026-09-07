@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Versions_Versions struct {
 	ExpirationDate any
-	Version any
+	Version        any
 }
 
 type VersionsConfig struct {
@@ -18,6 +18,5 @@ type VersionsAttrs struct {
 
 var Versions = ubx.DataSourceBinding{
 	WireType: "aws_medialive_versions",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

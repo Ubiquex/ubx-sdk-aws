@@ -6,13 +6,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ApprovalPolicy_ApplicableTo struct {
 	// Required when type = GROUP. One or more group ARNs.
 	GroupArns any
-	Type any
+	Type      any
 }
 
 var ApprovalPolicy_ApplicableToFields = ubx.FieldMap{
-		"GroupArns": ubx.FieldSpec{WireName: "group_arns"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"GroupArns": ubx.FieldSpec{WireName: "group_arns"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 type ApprovalPolicyConfig struct {
 	// List of governed actions a policy applies to.
@@ -60,13 +60,13 @@ var ApprovalPolicy = ubx.ResourceBinding{
 		"Actions": ubx.FieldSpec{WireName: "actions"},
 		"ApplicableTo": ubx.FieldSpec{
 			WireName: "applicable_to",
-			Kind: "object",
-			Fields: ApprovalPolicy_ApplicableToFields,
+			Kind:     "object",
+			Fields:   ApprovalPolicy_ApplicableToFields,
 		},
 		"ApprovalGroups": ubx.FieldSpec{WireName: "approval_groups"},
-		"AssetTypes": ubx.FieldSpec{WireName: "asset_types"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
+		"AssetTypes":     ubx.FieldSpec{WireName: "asset_types"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"PolicyId":       ubx.FieldSpec{WireName: "policy_id"},
 	},
 }

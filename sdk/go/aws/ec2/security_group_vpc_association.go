@@ -27,6 +27,6 @@ var SecurityGroupVpcAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_security_group_vpc_association",
 	Fields: ubx.FieldMap{
 		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":   ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

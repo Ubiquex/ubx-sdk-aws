@@ -12,19 +12,19 @@ type EnabledBaseline_Parameters struct {
 
 type EnabledBaseline_Tags struct {
 	// The key of a tag assigned to the AWS Control Tower enabled baseline, used to categorize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var EnabledBaseline_ParametersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var EnabledBaseline_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnabledBaselineConfig struct {
 	// The ARN of the AWS Control Tower baseline to enable for the specified account. (AI-inferred)
@@ -58,16 +58,16 @@ var EnabledBaseline = ubx.ResourceBinding{
 	WireType: "aws_control_tower_enabled_baseline",
 	Fields: ubx.FieldMap{
 		"BaselineIdentifier": ubx.FieldSpec{WireName: "baseline_identifier"},
-		"BaselineVersion": ubx.FieldSpec{WireName: "baseline_version"},
+		"BaselineVersion":    ubx.FieldSpec{WireName: "baseline_version"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: EnabledBaseline_ParametersFields,
+			Kind:     "list",
+			Fields:   EnabledBaseline_ParametersFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EnabledBaseline_TagsFields,
+			Kind:     "list",
+			Fields:   EnabledBaseline_TagsFields,
 		},
 		"TargetIdentifier": ubx.FieldSpec{WireName: "target_identifier"},
 	},

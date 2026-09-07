@@ -4,32 +4,32 @@ package discovery_marketplace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryMarketplaceProduct_Categories struct {
-	CategoryId any
+	CategoryId  any
 	DisplayName any
 }
 
 type DiscoveryMarketplaceProduct_FulfillmentOptionSummaries struct {
-	DisplayName any
+	DisplayName           any
 	FulfillmentOptionType any
 }
 
 type DiscoveryMarketplaceProduct_Manufacturer struct {
-	DisplayName any
+	DisplayName     any
 	SellerProfileId any
 }
 
 type DiscoveryMarketplaceProduct_PromotionalMedia_EmbeddedImage struct {
 	Description any
-	Title any
-	Url any
+	Title       any
+	Url         any
 }
 
 type DiscoveryMarketplaceProduct_PromotionalMedia_EmbeddedVideo struct {
 	Description any
-	Preview any
-	Thumbnail any
-	Title any
-	Url any
+	Preview     any
+	Thumbnail   any
+	Title       any
+	Url         any
 }
 
 type DiscoveryMarketplaceProduct_PromotionalMedia struct {
@@ -38,16 +38,16 @@ type DiscoveryMarketplaceProduct_PromotionalMedia struct {
 }
 
 type DiscoveryMarketplaceProduct_Resources struct {
-	ContentType any
-	DisplayName any
+	ContentType  any
+	DisplayName  any
 	ResourceType any
-	Value any
+	Value        any
 }
 
 type DiscoveryMarketplaceProduct_SellerEngagements struct {
-	ContentType any
+	ContentType    any
 	EngagementType any
-	Value any
+	Value          any
 }
 
 type DiscoveryMarketplaceProductConfig struct {
@@ -55,21 +55,21 @@ type DiscoveryMarketplaceProductConfig struct {
 }
 
 type DiscoveryMarketplaceProductAttrs struct {
-	Catalog any
-	Categories any
-	DeployedOnAws any
+	Catalog                    any
+	Categories                 any
+	DeployedOnAws              any
 	FulfillmentOptionSummaries any
-	Highlights any
-	LogoThumbnailUrl any
-	LongDescription any
+	Highlights                 any
+	LogoThumbnailUrl           any
+	LongDescription            any
 	// <p>Information about a seller, including the profile identifier and display name.</p>
-	Manufacturer any
-	ProductId any
-	ProductName any
-	PromotionalMedia any
-	Resources any
+	Manufacturer      any
+	ProductId         any
+	ProductName       any
+	PromotionalMedia  any
+	Resources         any
 	SellerEngagements any
-	ShortDescription any
+	ShortDescription  any
 }
 
 var DiscoveryMarketplaceProduct = ubx.DataSourceBinding{

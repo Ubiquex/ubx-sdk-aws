@@ -19,7 +19,7 @@ type DataAutomationProject_CustomOutputConfiguration struct {
 
 type DataAutomationProject_OverrideConfiguration_Audio_LanguageConfiguration struct {
 	// Specifies the language code used for generative AI output when processing audio content in the project's override configuration, such as the language for summaries or insights generated from the audio. (AI-inferred)
-	GenerativeOutputLanguage any
+	GenerativeOutputLanguage  any
 	IdentifyMultipleLanguages any
 	// Specifies the list of languages expected in the audio input, which the data automation project uses to process and extract information from the audio. (AI-inferred)
 	InputLanguages any
@@ -32,7 +32,7 @@ type DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing struct
 
 type DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration_PiiEntitiesConfiguration struct {
 	// Specifies the list of personally identifiable information (PII) entity types to detect and redact in audio content, overriding the project's default sensitive data configuration for audio. (AI-inferred)
-	PiiEntityTypes any
+	PiiEntityTypes    any
 	RedactionMaskMode any
 }
 
@@ -48,7 +48,7 @@ type DataAutomationProject_OverrideConfiguration_Audio struct {
 	// Specifies the language (such as ENGLISH or MULTI_LANGUAGE) to apply when processing audio files in the data automation project, determining how speech is transcribed and analyzed. (AI-inferred)
 	LanguageConfiguration any
 	// Specifies the audio modality processing configuration, letting you choose between automatic processing of audio data or overriding it with a custom blueprint ARN. (AI-inferred)
-	ModalityProcessing any
+	ModalityProcessing         any
 	SensitiveDataConfiguration any
 }
 
@@ -69,14 +69,14 @@ type DataAutomationProject_OverrideConfiguration_Image struct {
 
 type DataAutomationProject_OverrideConfiguration_ModalityRouting struct {
 	Jpeg any
-	Mov any
+	Mov  any
 	// When set, this field maps the MP4 media type to a specific Amazon Bedrock Data Automation blueprint ARN for the project's override configuration, so MP4 video inputs are processed using that blueprint instead of the project's default routing. (AI-inferred)
 	Mp4 any
 	Png any
 }
 
 type DataAutomationProject_OverrideConfiguration struct {
-	Audio any
+	Audio    any
 	Document any
 	// Specifies the override settings for how image data is processed in the data automation project, including the extraction type used when extracting content from images. (AI-inferred)
 	Image any
@@ -102,7 +102,7 @@ type DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category
 	State any
 	// Provides category-specific configuration for the selected audio extraction type (such as transcript or sentiment), with its nested fields varying based on the category's 'type' value, to tailor how that category is extracted from the audio input. (AI-inferred)
 	TypeConfiguration any
-	Types any
+	Types             any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Audio_Extraction struct {
@@ -154,12 +154,12 @@ type DataAutomationProject_StandardOutputConfiguration_Document struct {
 type DataAutomationProject_StandardOutputConfiguration_Image_Extraction struct {
 	// Specifies the configuration for bounding box extraction from images in the standard output of a Bedrock Data Automation project, typically including an enable/disable setting that controls whether bounding box coordinates are generated. (AI-inferred)
 	BoundingBox any
-	Category any
+	Category    any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Image struct {
 	// Defines the extraction configuration for image files in the standard output configuration, specifying which extraction types (e.g., text extraction) are enabled for the data automation project. (AI-inferred)
-	Extraction any
+	Extraction      any
 	GenerativeField any
 }
 
@@ -181,286 +181,286 @@ type DataAutomationProject_Tags struct {
 }
 
 var DataAutomationProject_CustomOutputConfiguration_BlueprintsFields = ubx.FieldMap{
-		"BlueprintArn": ubx.FieldSpec{WireName: "blueprint_arn"},
-		"BlueprintStage": ubx.FieldSpec{WireName: "blueprint_stage"},
-		"BlueprintVersion": ubx.FieldSpec{WireName: "blueprint_version"},
-	}
+	"BlueprintArn":     ubx.FieldSpec{WireName: "blueprint_arn"},
+	"BlueprintStage":   ubx.FieldSpec{WireName: "blueprint_stage"},
+	"BlueprintVersion": ubx.FieldSpec{WireName: "blueprint_version"},
+}
 
 var DataAutomationProject_CustomOutputConfigurationFields = ubx.FieldMap{
-		"Blueprints": ubx.FieldSpec{
-			WireName: "blueprints",
-			Kind: "list",
-			Fields: DataAutomationProject_CustomOutputConfiguration_BlueprintsFields,
-		},
-	}
+	"Blueprints": ubx.FieldSpec{
+		WireName: "blueprints",
+		Kind:     "list",
+		Fields:   DataAutomationProject_CustomOutputConfiguration_BlueprintsFields,
+	},
+}
 
 var DataAutomationProject_OverrideConfiguration_Audio_LanguageConfigurationFields = ubx.FieldMap{
-		"GenerativeOutputLanguage": ubx.FieldSpec{WireName: "generative_output_language"},
-		"IdentifyMultipleLanguages": ubx.FieldSpec{WireName: "identify_multiple_languages"},
-		"InputLanguages": ubx.FieldSpec{WireName: "input_languages"},
-	}
+	"GenerativeOutputLanguage":  ubx.FieldSpec{WireName: "generative_output_language"},
+	"IdentifyMultipleLanguages": ubx.FieldSpec{WireName: "identify_multiple_languages"},
+	"InputLanguages":            ubx.FieldSpec{WireName: "input_languages"},
+}
 
 var DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration_PiiEntitiesConfigurationFields = ubx.FieldMap{
-		"PiiEntityTypes": ubx.FieldSpec{WireName: "pii_entity_types"},
-		"RedactionMaskMode": ubx.FieldSpec{WireName: "redaction_mask_mode"},
-	}
+	"PiiEntityTypes":    ubx.FieldSpec{WireName: "pii_entity_types"},
+	"RedactionMaskMode": ubx.FieldSpec{WireName: "redaction_mask_mode"},
+}
 
 var DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfigurationFields = ubx.FieldMap{
-		"DetectionMode": ubx.FieldSpec{WireName: "detection_mode"},
-		"DetectionScope": ubx.FieldSpec{WireName: "detection_scope"},
-		"PiiEntitiesConfiguration": ubx.FieldSpec{
-			WireName: "pii_entities_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration_PiiEntitiesConfigurationFields,
-		},
-	}
+	"DetectionMode":  ubx.FieldSpec{WireName: "detection_mode"},
+	"DetectionScope": ubx.FieldSpec{WireName: "detection_scope"},
+	"PiiEntitiesConfiguration": ubx.FieldSpec{
+		WireName: "pii_entities_configuration",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration_PiiEntitiesConfigurationFields,
+	},
+}
 
 var DataAutomationProject_OverrideConfiguration_AudioFields = ubx.FieldMap{
-		"LanguageConfiguration": ubx.FieldSpec{
-			WireName: "language_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_LanguageConfigurationFields,
-		},
-		"ModalityProcessing": ubx.FieldSpec{
-			WireName: "modality_processing",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-		"SensitiveDataConfiguration": ubx.FieldSpec{
-			WireName: "sensitive_data_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfigurationFields,
-		},
-	}
+	"LanguageConfiguration": ubx.FieldSpec{
+		WireName: "language_configuration",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_LanguageConfigurationFields,
+	},
+	"ModalityProcessing": ubx.FieldSpec{
+		WireName: "modality_processing",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+	"SensitiveDataConfiguration": ubx.FieldSpec{
+		WireName: "sensitive_data_configuration",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfigurationFields,
+	},
+}
 
 var DataAutomationProject_OverrideConfiguration_DocumentFields = ubx.FieldMap{
-		"ModalityProcessing": ubx.FieldSpec{
-			WireName: "modality_processing",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-		"SensitiveDataConfiguration": ubx.FieldSpec{
-			WireName: "sensitive_data_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfigurationFields,
-		},
-		"Splitter": ubx.FieldSpec{
-			WireName: "splitter",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-	}
+	"ModalityProcessing": ubx.FieldSpec{
+		WireName: "modality_processing",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+	"SensitiveDataConfiguration": ubx.FieldSpec{
+		WireName: "sensitive_data_configuration",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfigurationFields,
+	},
+	"Splitter": ubx.FieldSpec{
+		WireName: "splitter",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+}
 
 var DataAutomationProject_OverrideConfiguration_ImageFields = ubx.FieldMap{
-		"ModalityProcessing": ubx.FieldSpec{
-			WireName: "modality_processing",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-		"SensitiveDataConfiguration": ubx.FieldSpec{
-			WireName: "sensitive_data_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfigurationFields,
-		},
-	}
+	"ModalityProcessing": ubx.FieldSpec{
+		WireName: "modality_processing",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+	"SensitiveDataConfiguration": ubx.FieldSpec{
+		WireName: "sensitive_data_configuration",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfigurationFields,
+	},
+}
 
 var DataAutomationProject_OverrideConfiguration_ModalityRoutingFields = ubx.FieldMap{
-		"Jpeg": ubx.FieldSpec{WireName: "jpeg"},
-		"Mov": ubx.FieldSpec{WireName: "mov"},
-		"Mp4": ubx.FieldSpec{WireName: "mp4"},
-		"Png": ubx.FieldSpec{WireName: "png"},
-	}
+	"Jpeg": ubx.FieldSpec{WireName: "jpeg"},
+	"Mov":  ubx.FieldSpec{WireName: "mov"},
+	"Mp4":  ubx.FieldSpec{WireName: "mp4"},
+	"Png":  ubx.FieldSpec{WireName: "png"},
+}
 
 var DataAutomationProject_OverrideConfigurationFields = ubx.FieldMap{
-		"Audio": ubx.FieldSpec{
-			WireName: "audio",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_AudioFields,
-		},
-		"Document": ubx.FieldSpec{
-			WireName: "document",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_DocumentFields,
-		},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_ImageFields,
-		},
-		"ModalityRouting": ubx.FieldSpec{
-			WireName: "modality_routing",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_ModalityRoutingFields,
-		},
-		"Video": ubx.FieldSpec{
-			WireName: "video",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_ImageFields,
-		},
-	}
+	"Audio": ubx.FieldSpec{
+		WireName: "audio",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_AudioFields,
+	},
+	"Document": ubx.FieldSpec{
+		WireName: "document",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_DocumentFields,
+	},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_ImageFields,
+	},
+	"ModalityRouting": ubx.FieldSpec{
+		WireName: "modality_routing",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_ModalityRoutingFields,
+	},
+	"Video": ubx.FieldSpec{
+		WireName: "video",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_ImageFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfiguration_TranscriptFields = ubx.FieldMap{
-		"ChannelLabeling": ubx.FieldSpec{
-			WireName: "channel_labeling",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-		"SpeakerLabeling": ubx.FieldSpec{
-			WireName: "speaker_labeling",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-	}
+	"ChannelLabeling": ubx.FieldSpec{
+		WireName: "channel_labeling",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+	"SpeakerLabeling": ubx.FieldSpec{
+		WireName: "speaker_labeling",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfigurationFields = ubx.FieldMap{
-		"Transcript": ubx.FieldSpec{
-			WireName: "transcript",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfiguration_TranscriptFields,
-		},
-	}
+	"Transcript": ubx.FieldSpec{
+		WireName: "transcript",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfiguration_TranscriptFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_CategoryFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TypeConfiguration": ubx.FieldSpec{
-			WireName: "type_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfigurationFields,
-		},
-		"Types": ubx.FieldSpec{WireName: "types"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+	"TypeConfiguration": ubx.FieldSpec{
+		WireName: "type_configuration",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfigurationFields,
+	},
+	"Types": ubx.FieldSpec{WireName: "types"},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Audio_ExtractionFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_CategoryFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_CategoryFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeFieldFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Types": ubx.FieldSpec{WireName: "types"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+	"Types": ubx.FieldSpec{WireName: "types"},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_AudioFields = ubx.FieldMap{
-		"Extraction": ubx.FieldSpec{
-			WireName: "extraction",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Audio_ExtractionFields,
-		},
-		"GenerativeField": ubx.FieldSpec{
-			WireName: "generative_field",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeFieldFields,
-		},
-	}
+	"Extraction": ubx.FieldSpec{
+		WireName: "extraction",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Audio_ExtractionFields,
+	},
+	"GenerativeField": ubx.FieldSpec{
+		WireName: "generative_field",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeFieldFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Document_Extraction_GranularityFields = ubx.FieldMap{
-		"Types": ubx.FieldSpec{WireName: "types"},
-	}
+	"Types": ubx.FieldSpec{WireName: "types"},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Document_ExtractionFields = ubx.FieldMap{
-		"BoundingBox": ubx.FieldSpec{
-			WireName: "bounding_box",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-		"Granularity": ubx.FieldSpec{
-			WireName: "granularity",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Document_Extraction_GranularityFields,
-		},
-	}
+	"BoundingBox": ubx.FieldSpec{
+		WireName: "bounding_box",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+	"Granularity": ubx.FieldSpec{
+		WireName: "granularity",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Document_Extraction_GranularityFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Document_OutputFormatFields = ubx.FieldMap{
-		"AdditionalFileFormat": ubx.FieldSpec{
-			WireName: "additional_file_format",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-		"TextFormat": ubx.FieldSpec{
-			WireName: "text_format",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Document_Extraction_GranularityFields,
-		},
-	}
+	"AdditionalFileFormat": ubx.FieldSpec{
+		WireName: "additional_file_format",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+	"TextFormat": ubx.FieldSpec{
+		WireName: "text_format",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Document_Extraction_GranularityFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_DocumentFields = ubx.FieldMap{
-		"Extraction": ubx.FieldSpec{
-			WireName: "extraction",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Document_ExtractionFields,
-		},
-		"GenerativeField": ubx.FieldSpec{
-			WireName: "generative_field",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-		"OutputFormat": ubx.FieldSpec{
-			WireName: "output_format",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Document_OutputFormatFields,
-		},
-	}
+	"Extraction": ubx.FieldSpec{
+		WireName: "extraction",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Document_ExtractionFields,
+	},
+	"GenerativeField": ubx.FieldSpec{
+		WireName: "generative_field",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+	"OutputFormat": ubx.FieldSpec{
+		WireName: "output_format",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Document_OutputFormatFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_Image_ExtractionFields = ubx.FieldMap{
-		"BoundingBox": ubx.FieldSpec{
-			WireName: "bounding_box",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
-		},
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeFieldFields,
-		},
-	}
+	"BoundingBox": ubx.FieldSpec{
+		WireName: "bounding_box",
+		Kind:     "object",
+		Fields:   DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessingFields,
+	},
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeFieldFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfiguration_ImageFields = ubx.FieldMap{
-		"Extraction": ubx.FieldSpec{
-			WireName: "extraction",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Image_ExtractionFields,
-		},
-		"GenerativeField": ubx.FieldSpec{
-			WireName: "generative_field",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeFieldFields,
-		},
-	}
+	"Extraction": ubx.FieldSpec{
+		WireName: "extraction",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Image_ExtractionFields,
+	},
+	"GenerativeField": ubx.FieldSpec{
+		WireName: "generative_field",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeFieldFields,
+	},
+}
 
 var DataAutomationProject_StandardOutputConfigurationFields = ubx.FieldMap{
-		"Audio": ubx.FieldSpec{
-			WireName: "audio",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_AudioFields,
-		},
-		"Document": ubx.FieldSpec{
-			WireName: "document",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_DocumentFields,
-		},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_ImageFields,
-		},
-		"Video": ubx.FieldSpec{
-			WireName: "video",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfiguration_ImageFields,
-		},
-	}
+	"Audio": ubx.FieldSpec{
+		WireName: "audio",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_AudioFields,
+	},
+	"Document": ubx.FieldSpec{
+		WireName: "document",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_DocumentFields,
+	},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_ImageFields,
+	},
+	"Video": ubx.FieldSpec{
+		WireName: "video",
+		Kind:     "object",
+		Fields:   DataAutomationProject_StandardOutputConfiguration_ImageFields,
+	},
+}
 
 var DataAutomationProject_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataAutomationProjectConfig struct {
 	// Custom output configuration
@@ -519,28 +519,28 @@ var DataAutomationProject = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomOutputConfiguration": ubx.FieldSpec{
 			WireName: "custom_output_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_CustomOutputConfigurationFields,
+			Kind:     "object",
+			Fields:   DataAutomationProject_CustomOutputConfigurationFields,
 		},
 		"KmsEncryptionContext": ubx.FieldSpec{WireName: "kms_encryption_context"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"KmsKeyId":             ubx.FieldSpec{WireName: "kms_key_id"},
 		"OverrideConfiguration": ubx.FieldSpec{
 			WireName: "override_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_OverrideConfigurationFields,
+			Kind:     "object",
+			Fields:   DataAutomationProject_OverrideConfigurationFields,
 		},
 		"ProjectDescription": ubx.FieldSpec{WireName: "project_description"},
-		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
-		"ProjectType": ubx.FieldSpec{WireName: "project_type"},
+		"ProjectName":        ubx.FieldSpec{WireName: "project_name"},
+		"ProjectType":        ubx.FieldSpec{WireName: "project_type"},
 		"StandardOutputConfiguration": ubx.FieldSpec{
 			WireName: "standard_output_configuration",
-			Kind: "object",
-			Fields: DataAutomationProject_StandardOutputConfigurationFields,
+			Kind:     "object",
+			Fields:   DataAutomationProject_StandardOutputConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataAutomationProject_TagsFields,
+			Kind:     "list",
+			Fields:   DataAutomationProject_TagsFields,
 		},
 	},
 }

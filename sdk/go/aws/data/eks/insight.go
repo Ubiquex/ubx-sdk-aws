@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Insight_Insight_CategorySpecificSummary_AddonCompatibilityDetails struct {
 	CompatibleVersions any
-	Name any
+	Name               any
 }
 
 type Insight_Insight_CategorySpecificSummary_DeprecationDetails_ClientStats struct {
-	LastRequestTime any
+	LastRequestTime            any
 	NumberOfRequestsLast30Days any
-	UserAgent any
+	UserAgent                  any
 }
 
 type Insight_Insight_CategorySpecificSummary_DeprecationDetails struct {
-	ClientStats any
-	ReplacedWith any
+	ClientStats                    any
+	ReplacedWith                   any
 	StartServingReplacementVersion any
-	StopServingVersion any
-	Usage any
+	StopServingVersion             any
+	Usage                          any
 }
 
 type Insight_Insight_CategorySpecificSummary struct {
 	AddonCompatibilityDetails any
-	DeprecationDetails any
+	DeprecationDetails        any
 }
 
 type Insight_Insight_InsightStatus struct {
@@ -33,36 +33,36 @@ type Insight_Insight_InsightStatus struct {
 }
 
 type Insight_Insight_Resources struct {
-	Arn any
-	InsightStatus any
+	Arn                   any
+	InsightStatus         any
 	KubernetesResourceUri any
 }
 
 type Insight_Insight struct {
 	AdditionalInfo any
-	Category any
+	Category       any
 	// <p>Summary information that relates to the category of the insight. Currently only returned with certain insights having category <code>UPGRADE_READINESS</code>.</p>
 	CategorySpecificSummary any
-	Description any
-	Id any
+	Description             any
+	Id                      any
 	// <p>The status of the insight.</p>
-	InsightStatus any
-	KubernetesVersion any
-	LastRefreshTime any
+	InsightStatus      any
+	KubernetesVersion  any
+	LastRefreshTime    any
 	LastTransitionTime any
-	Name any
-	Recommendation any
-	Resources any
+	Name               any
+	Recommendation     any
+	Resources          any
 }
 
 type InsightConfig struct {
 	ClusterName any
-	Id any
+	Id          any
 }
 
 type InsightAttrs struct {
 	ClusterName any
-	Id any
+	Id          any
 	// <p>A check that provides recommendations to remedy potential upgrade-impacting issues.</p>
 	Insight any
 }
@@ -71,6 +71,6 @@ var Insight = ubx.DataSourceBinding{
 	WireType: "aws_eks_insight",
 	Fields: ubx.FieldMap{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
 	},
 }

@@ -4,21 +4,21 @@ package polly
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpeechSynthesisTask_SynthesisTask struct {
-	CreationTime any
-	Engine any
-	LanguageCode any
-	LexiconNames any
-	OutputFormat any
-	OutputUri any
+	CreationTime      any
+	Engine            any
+	LanguageCode      any
+	LexiconNames      any
+	OutputFormat      any
+	OutputUri         any
 	RequestCharacters any
-	SampleRate any
-	SnsTopicArn any
-	SpeechMarkTypes any
-	TaskId any
-	TaskStatus any
-	TaskStatusReason any
-	TextType any
-	VoiceId any
+	SampleRate        any
+	SnsTopicArn       any
+	SpeechMarkTypes   any
+	TaskId            any
+	TaskStatus        any
+	TaskStatusReason  any
+	TextType          any
+	VoiceId           any
 }
 
 type SpeechSynthesisTaskConfig struct {
@@ -28,7 +28,7 @@ type SpeechSynthesisTaskConfig struct {
 type SpeechSynthesisTaskAttrs struct {
 	// <p>SynthesisTask object that provides information about a speech synthesis task.</p>
 	SynthesisTask any
-	TaskId any
+	TaskId        any
 }
 
 var SpeechSynthesisTask = ubx.DataSourceBinding{

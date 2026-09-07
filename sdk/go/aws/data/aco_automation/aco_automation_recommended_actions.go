@@ -4,15 +4,15 @@ package aco_automation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcoAutomationRecommendedActions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type AcoAutomationRecommendedActions_RecommendedActions_CurrentResourceDetails_EbsVolume_Configuration struct {
-	Iops any
-	SizeInGib any
+	Iops       any
+	SizeInGib  any
 	Throughput any
-	Type any
+	Type       any
 }
 
 type AcoAutomationRecommendedActions_RecommendedActions_CurrentResourceDetails_EbsVolume struct {
@@ -24,50 +24,50 @@ type AcoAutomationRecommendedActions_RecommendedActions_CurrentResourceDetails s
 }
 
 type AcoAutomationRecommendedActions_RecommendedActions_EstimatedMonthlySavings struct {
-	AfterDiscountSavings any
+	AfterDiscountSavings  any
 	BeforeDiscountSavings any
-	Currency any
+	Currency              any
 	SavingsEstimationMode any
 }
 
 type AcoAutomationRecommendedActions_RecommendedActions_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AcoAutomationRecommendedActions_RecommendedActions struct {
-	AccountId any
-	CurrentResourceDetails any
-	CurrentResourceSummary any
-	EstimatedMonthlySavings any
-	LookBackPeriodInDays any
-	RecommendedActionId any
-	RecommendedActionType any
+	AccountId                  any
+	CurrentResourceDetails     any
+	CurrentResourceSummary     any
+	EstimatedMonthlySavings    any
+	LookBackPeriodInDays       any
+	RecommendedActionId        any
+	RecommendedActionType      any
 	RecommendedResourceDetails any
 	RecommendedResourceSummary any
-	Region any
-	ResourceArn any
-	ResourceId any
-	ResourceTags any
-	ResourceType any
-	RestartNeeded any
+	Region                     any
+	ResourceArn                any
+	ResourceId                 any
+	ResourceTags               any
+	ResourceType               any
+	RestartNeeded              any
 }
 
 var AcoAutomationRecommendedActions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type AcoAutomationRecommendedActionsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AcoAutomationRecommendedActionsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 	RecommendedActions any
 }
 
@@ -76,10 +76,10 @@ var AcoAutomationRecommendedActions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: AcoAutomationRecommendedActions_FiltersFields,
+			Kind:     "list",
+			Fields:   AcoAutomationRecommendedActions_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

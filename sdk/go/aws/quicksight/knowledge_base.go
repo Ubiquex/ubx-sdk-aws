@@ -30,7 +30,7 @@ type KnowledgeBase_MediaExtractionConfiguration_ImageExtractionConfiguration str
 type KnowledgeBase_MediaExtractionConfiguration_VideoExtractionConfiguration struct {
 	// Determines whether video files in the knowledge base are processed to extract text and metadata for Amazon QuickSight Q to use when answering questions, with accepted values `ENABLED` and `DISABLED`. (AI-inferred)
 	VideoExtractionStatus any
-	VideoExtractionType any
+	VideoExtractionType   any
 }
 
 type KnowledgeBase_MediaExtractionConfiguration struct {
@@ -47,72 +47,72 @@ type KnowledgeBase_Permissions struct {
 	Actions any
 	// The IAM principal (user, group, or role) that is granted the specified permissions on the QuickSight knowledge base. (AI-inferred)
 	Principal any
-	Resource any
+	Resource  any
 }
 
 type KnowledgeBase_Tags struct {
 	// The key of a user-defined tag applied to the QuickSight knowledge base, used to organize and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var KnowledgeBase_AccessControlConfigurationFields = ubx.FieldMap{
-		"IsAclenabled": ubx.FieldSpec{WireName: "is_aclenabled"},
-	}
+	"IsAclenabled": ubx.FieldSpec{WireName: "is_aclenabled"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfiguration_TemplateConfigurationFields = ubx.FieldMap{
-		"Template": ubx.FieldSpec{WireName: "template"},
-	}
+	"Template": ubx.FieldSpec{WireName: "template"},
+}
 
 var KnowledgeBase_KnowledgeBaseConfigurationFields = ubx.FieldMap{
-		"TemplateConfiguration": ubx.FieldSpec{
-			WireName: "template_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfiguration_TemplateConfigurationFields,
-		},
-	}
+	"TemplateConfiguration": ubx.FieldSpec{
+		WireName: "template_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_KnowledgeBaseConfiguration_TemplateConfigurationFields,
+	},
+}
 
 var KnowledgeBase_MediaExtractionConfiguration_AudioExtractionConfigurationFields = ubx.FieldMap{
-		"AudioExtractionStatus": ubx.FieldSpec{WireName: "audio_extraction_status"},
-	}
+	"AudioExtractionStatus": ubx.FieldSpec{WireName: "audio_extraction_status"},
+}
 
 var KnowledgeBase_MediaExtractionConfiguration_ImageExtractionConfigurationFields = ubx.FieldMap{
-		"ImageExtractionStatus": ubx.FieldSpec{WireName: "image_extraction_status"},
-	}
+	"ImageExtractionStatus": ubx.FieldSpec{WireName: "image_extraction_status"},
+}
 
 var KnowledgeBase_MediaExtractionConfiguration_VideoExtractionConfigurationFields = ubx.FieldMap{
-		"VideoExtractionStatus": ubx.FieldSpec{WireName: "video_extraction_status"},
-		"VideoExtractionType": ubx.FieldSpec{WireName: "video_extraction_type"},
-	}
+	"VideoExtractionStatus": ubx.FieldSpec{WireName: "video_extraction_status"},
+	"VideoExtractionType":   ubx.FieldSpec{WireName: "video_extraction_type"},
+}
 
 var KnowledgeBase_MediaExtractionConfigurationFields = ubx.FieldMap{
-		"AudioExtractionConfiguration": ubx.FieldSpec{
-			WireName: "audio_extraction_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_MediaExtractionConfiguration_AudioExtractionConfigurationFields,
-		},
-		"ImageExtractionConfiguration": ubx.FieldSpec{
-			WireName: "image_extraction_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_MediaExtractionConfiguration_ImageExtractionConfigurationFields,
-		},
-		"VideoExtractionConfiguration": ubx.FieldSpec{
-			WireName: "video_extraction_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_MediaExtractionConfiguration_VideoExtractionConfigurationFields,
-		},
-	}
+	"AudioExtractionConfiguration": ubx.FieldSpec{
+		WireName: "audio_extraction_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_MediaExtractionConfiguration_AudioExtractionConfigurationFields,
+	},
+	"ImageExtractionConfiguration": ubx.FieldSpec{
+		WireName: "image_extraction_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_MediaExtractionConfiguration_ImageExtractionConfigurationFields,
+	},
+	"VideoExtractionConfiguration": ubx.FieldSpec{
+		WireName: "video_extraction_configuration",
+		Kind:     "object",
+		Fields:   KnowledgeBase_MediaExtractionConfiguration_VideoExtractionConfigurationFields,
+	},
+}
 
 var KnowledgeBase_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+	"Resource":  ubx.FieldSpec{WireName: "resource"},
+}
 
 var KnowledgeBase_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type KnowledgeBaseConfig struct {
 	// Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred)
@@ -125,9 +125,9 @@ type KnowledgeBaseConfig struct {
 	Description any
 	// Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred)
 	IsEmailNotificationOptedForIngestionFailures any
-	KnowledgeBaseConfiguration any
+	KnowledgeBaseConfiguration                   any
 	// The unique identifier (knowledge base ID) that must be specified to create and reference the knowledge base within Amazon QuickSight Q. (AI-inferred)
-	KnowledgeBaseId any
+	KnowledgeBaseId              any
 	MediaExtractionConfiguration any
 	// The name of this QuickSight knowledge base. (AI-inferred)
 	Name any
@@ -155,12 +155,12 @@ type KnowledgeBaseAttrs struct {
 	// Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred)
 	IsEmailNotificationOptedForIngestionFailures any
 	// The Amazon Resource Name (ARN) uniquely identifying the QuickSight knowledge base in AWS. (AI-inferred)
-	KnowledgeBaseArn any
+	KnowledgeBaseArn           any
 	KnowledgeBaseConfiguration any
 	// The unique identifier (knowledge base ID) that must be specified to create and reference the knowledge base within Amazon QuickSight Q. (AI-inferred)
 	KnowledgeBaseId any
 	// The total size of the knowledge base content in bytes, as computed by Amazon QuickSight. (AI-inferred)
-	KnowledgeBaseSizeBytes any
+	KnowledgeBaseSizeBytes       any
 	MediaExtractionConfiguration any
 	// The name of this QuickSight knowledge base. (AI-inferred)
 	Name any
@@ -185,35 +185,35 @@ var KnowledgeBase = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessControlConfiguration": ubx.FieldSpec{
 			WireName: "access_control_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_AccessControlConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_AccessControlConfigurationFields,
 		},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+		"AwsAccountId":  ubx.FieldSpec{WireName: "aws_account_id"},
 		"DataSourceArn": ubx.FieldSpec{WireName: "data_source_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"IsEmailNotificationOptedForIngestionFailures": ubx.FieldSpec{WireName: "is_email_notification_opted_for_ingestion_failures"},
 		"KnowledgeBaseConfiguration": ubx.FieldSpec{
 			WireName: "knowledge_base_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_KnowledgeBaseConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_KnowledgeBaseConfigurationFields,
 		},
 		"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
 		"MediaExtractionConfiguration": ubx.FieldSpec{
 			WireName: "media_extraction_configuration",
-			Kind: "object",
-			Fields: KnowledgeBase_MediaExtractionConfigurationFields,
+			Kind:     "object",
+			Fields:   KnowledgeBase_MediaExtractionConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: KnowledgeBase_PermissionsFields,
+			Kind:     "list",
+			Fields:   KnowledgeBase_PermissionsFields,
 		},
 		"PrimaryOwnerArn": ubx.FieldSpec{WireName: "primary_owner_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: KnowledgeBase_TagsFields,
+			Kind:     "list",
+			Fields:   KnowledgeBase_TagsFields,
 		},
 	},
 }

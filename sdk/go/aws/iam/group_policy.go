@@ -24,8 +24,8 @@ type GroupPolicyAttrs struct {
 var GroupPolicy = ubx.ResourceBinding{
 	WireType: "aws_iam_group_policy",
 	Fields: ubx.FieldMap{
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"GroupName":      ubx.FieldSpec{WireName: "group_name"},
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
+		"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
 	},
 }

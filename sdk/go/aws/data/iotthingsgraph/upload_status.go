@@ -8,13 +8,13 @@ type UploadStatusConfig struct {
 }
 
 type UploadStatusAttrs struct {
-	CreatedDate any
-	FailureReason any
-	NamespaceArn any
-	NamespaceName any
+	CreatedDate      any
+	FailureReason    any
+	NamespaceArn     any
+	NamespaceName    any
 	NamespaceVersion any
-	UploadId any
-	UploadStatus any
+	UploadId         any
+	UploadStatus     any
 }
 
 var UploadStatus = ubx.DataSourceBinding{

@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Predictors_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 type Predictors_Predictors_ReferencePredictorSummary struct {
-	Arn any
+	Arn   any
 	State any
 }
 
 type Predictors_Predictors struct {
-	CreationTime any
-	DatasetGroupArn any
-	IsAutoPredictor any
-	LastModificationTime any
-	Message any
-	PredictorArn any
-	PredictorName any
+	CreationTime              any
+	DatasetGroupArn           any
+	IsAutoPredictor           any
+	LastModificationTime      any
+	Message                   any
+	PredictorArn              any
+	PredictorName             any
 	ReferencePredictorSummary any
-	Status any
+	Status                    any
 }
 
 var Predictors_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type PredictorsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PredictorsAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	Predictors any
 }
 
@@ -50,10 +50,10 @@ var Predictors = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Predictors_FiltersFields,
+			Kind:     "list",
+			Fields:   Predictors_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

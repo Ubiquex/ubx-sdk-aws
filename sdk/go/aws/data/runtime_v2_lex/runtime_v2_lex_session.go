@@ -8,22 +8,22 @@ type RuntimeV2LexSession_Interpretations_Intent_Slots_SubSlots struct {
 
 type RuntimeV2LexSession_Interpretations_Intent_Slots_Value struct {
 	InterpretedValue any
-	OriginalValue any
-	ResolvedValues any
+	OriginalValue    any
+	ResolvedValues   any
 }
 
 type RuntimeV2LexSession_Interpretations_Intent_Slots struct {
-	Shape any
+	Shape    any
 	SubSlots any
-	Value any
-	Values any
+	Value    any
+	Values   any
 }
 
 type RuntimeV2LexSession_Interpretations_Intent struct {
 	ConfirmationState any
-	Name any
-	Slots any
-	State any
+	Name              any
+	Slots             any
+	State             any
 }
 
 type RuntimeV2LexSession_Interpretations_NluConfidence struct {
@@ -31,51 +31,51 @@ type RuntimeV2LexSession_Interpretations_NluConfidence struct {
 }
 
 type RuntimeV2LexSession_Interpretations_SentimentResponse_SentimentScore struct {
-	Mixed any
+	Mixed    any
 	Negative any
-	Neutral any
+	Neutral  any
 	Positive any
 }
 
 type RuntimeV2LexSession_Interpretations_SentimentResponse struct {
-	Sentiment any
+	Sentiment      any
 	SentimentScore any
 }
 
 type RuntimeV2LexSession_Interpretations struct {
-	Intent any
+	Intent               any
 	InterpretationSource any
-	NluConfidence any
-	SentimentResponse any
+	NluConfidence        any
+	SentimentResponse    any
 }
 
 type RuntimeV2LexSession_Messages_ImageResponseCard_Buttons struct {
-	Text any
+	Text  any
 	Value any
 }
 
 type RuntimeV2LexSession_Messages_ImageResponseCard struct {
-	Buttons any
+	Buttons  any
 	ImageUrl any
 	Subtitle any
-	Title any
+	Title    any
 }
 
 type RuntimeV2LexSession_Messages struct {
-	Content any
-	ContentType any
+	Content           any
+	ContentType       any
 	ImageResponseCard any
 }
 
 type RuntimeV2LexSession_SessionState_ActiveContexts_TimeToLive struct {
 	TimeToLiveInSeconds any
-	TurnsToLive any
+	TurnsToLive         any
 }
 
 type RuntimeV2LexSession_SessionState_ActiveContexts struct {
 	ContextAttributes any
-	Name any
-	TimeToLive any
+	Name              any
+	TimeToLive        any
 }
 
 type RuntimeV2LexSession_SessionState_DialogAction_SubSlotToElicit struct {
@@ -86,10 +86,10 @@ type RuntimeV2LexSession_SessionState_DialogAction_SubSlotToElicit struct {
 
 type RuntimeV2LexSession_SessionState_DialogAction struct {
 	SlotElicitationStyle any
-	SlotToElicit any
+	SlotToElicit         any
 	// <p>The specific constituent sub slot of the composite slot to elicit in dialog action.</p>
 	SubSlotToElicit any
-	Type any
+	Type            any
 }
 
 type RuntimeV2LexSession_SessionState_RuntimeHints_SlotHints_RuntimeHintValues struct {
@@ -98,7 +98,7 @@ type RuntimeV2LexSession_SessionState_RuntimeHints_SlotHints_RuntimeHintValues s
 
 type RuntimeV2LexSession_SessionState_RuntimeHints_SlotHints struct {
 	RuntimeHintValues any
-	SubSlotHints any
+	SubSlotHints      any
 }
 
 type RuntimeV2LexSession_SessionState_RuntimeHints struct {
@@ -110,27 +110,27 @@ type RuntimeV2LexSession_SessionState struct {
 	// <p>The next action that Amazon Lex V2 should take.</p>
 	DialogAction any
 	// <p>The current intent that Amazon Lex V2 is attempting to fulfill.</p>
-	Intent any
+	Intent               any
 	OriginatingRequestId any
 	// <p>You can provide Amazon Lex V2 with hints to the phrases that a customer is likely to use for a slot. When a slot with hints is resolved, the phrases in the runtime hints are preferred in the resolution. You can provide hints for a maximum of 100 intents. You can provide a maximum of 100 slots.</p> <p>Before you can use runtime hints with an existing bot, you must first rebuild the bot.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using runtime hints to improve recognition of slot values</a>.</p>
-	RuntimeHints any
+	RuntimeHints      any
 	SessionAttributes any
 }
 
 type RuntimeV2LexSessionConfig struct {
 	BotAliasId any
-	BotId any
-	LocaleId any
-	SessionId any
+	BotId      any
+	LocaleId   any
+	SessionId  any
 }
 
 type RuntimeV2LexSessionAttrs struct {
-	BotAliasId any
-	BotId any
+	BotAliasId      any
+	BotId           any
 	Interpretations any
-	LocaleId any
-	Messages any
-	SessionId any
+	LocaleId        any
+	Messages        any
+	SessionId       any
 	// <p>The state of the user's session with Amazon Lex V2.</p>
 	SessionState any
 }
@@ -139,8 +139,8 @@ var RuntimeV2LexSession = ubx.DataSourceBinding{
 	WireType: "aws_runtime_v2_lex_session",
 	Fields: ubx.FieldMap{
 		"BotAliasId": ubx.FieldSpec{WireName: "bot_alias_id"},
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
+		"LocaleId":   ubx.FieldSpec{WireName: "locale_id"},
+		"SessionId":  ubx.FieldSpec{WireName: "session_id"},
 	},
 }

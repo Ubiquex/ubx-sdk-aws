@@ -4,38 +4,38 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstancePatches_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type InstancePatches_Patches struct {
 	Classification any
-	Cveids any
-	InstalledTime any
-	Kbid any
-	Severity any
-	State any
-	Title any
+	Cveids         any
+	InstalledTime  any
+	Kbid           any
+	Severity       any
+	State          any
+	Title          any
 }
 
 var InstancePatches_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstancePatchesConfig struct {
-	Filters any
+	Filters    any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InstancePatchesAttrs struct {
-	Filters any
+	Filters    any
 	InstanceId any
 	MaxResults any
-	NextToken any
-	Patches any
+	NextToken  any
+	Patches    any
 }
 
 var InstancePatches = ubx.DataSourceBinding{
@@ -43,11 +43,11 @@ var InstancePatches = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstancePatches_FiltersFields,
+			Kind:     "list",
+			Fields:   InstancePatches_FiltersFields,
 		},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

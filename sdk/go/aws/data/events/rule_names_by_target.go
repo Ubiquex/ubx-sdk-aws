@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleNamesByTargetConfig struct {
 	EventBusName any
-	Limit any
-	NextToken any
-	TargetArn any
+	Limit        any
+	NextToken    any
+	TargetArn    any
 }
 
 type RuleNamesByTargetAttrs struct {
 	EventBusName any
-	Limit any
-	NextToken any
-	RuleNames any
-	TargetArn any
+	Limit        any
+	NextToken    any
+	RuleNames    any
+	TargetArn    any
 }
 
 var RuleNamesByTarget = ubx.DataSourceBinding{
 	WireType: "aws_events_rule_names_by_target",
 	Fields: ubx.FieldMap{
 		"EventBusName": ubx.FieldSpec{WireName: "event_bus_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
+		"Limit":        ubx.FieldSpec{WireName: "limit"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"TargetArn":    ubx.FieldSpec{WireName: "target_arn"},
 	},
 }

@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpeakerEnrollmentJob_Job_EnrollmentConfig_FraudDetectionConfig struct {
 	FraudDetectionAction any
-	RiskThreshold any
-	WatchlistIds any
+	RiskThreshold        any
+	WatchlistIds         any
 }
 
 type SpeakerEnrollmentJob_Job_EnrollmentConfig struct {
@@ -16,7 +16,7 @@ type SpeakerEnrollmentJob_Job_EnrollmentConfig struct {
 }
 
 type SpeakerEnrollmentJob_Job_FailureDetails struct {
-	Message any
+	Message    any
 	StatusCode any
 }
 
@@ -30,38 +30,38 @@ type SpeakerEnrollmentJob_Job_JobProgress struct {
 
 type SpeakerEnrollmentJob_Job_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type SpeakerEnrollmentJob_Job struct {
-	CreatedAt any
+	CreatedAt         any
 	DataAccessRoleArn any
-	DomainId any
-	EndedAt any
+	DomainId          any
+	EndedAt           any
 	// <p>Contains configurations defining enrollment behavior for the batch job.</p>
 	EnrollmentConfig any
 	// <p>Contains error details for a failed batch job.</p>
 	FailureDetails any
 	// <p>The configuration containing input file information for a batch job.</p>
 	InputDataConfig any
-	JobId any
-	JobName any
+	JobId           any
+	JobName         any
 	// <p>Indicates the completion progress for a batch job.</p>
 	JobProgress any
-	JobStatus any
+	JobStatus   any
 	// <p>The configuration containing output file information for a batch job.</p>
 	OutputDataConfig any
 }
 
 type SpeakerEnrollmentJobConfig struct {
 	DomainId any
-	JobId any
+	JobId    any
 }
 
 type SpeakerEnrollmentJobAttrs struct {
 	DomainId any
 	// <p>Contains all the information about a speaker enrollment job.</p>
-	Job any
+	Job   any
 	JobId any
 }
 
@@ -69,6 +69,6 @@ var SpeakerEnrollmentJob = ubx.DataSourceBinding{
 	WireType: "aws_voiceid_speaker_enrollment_job",
 	Fields: ubx.FieldMap{
 		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":    ubx.FieldSpec{WireName: "job_id"},
 	},
 }

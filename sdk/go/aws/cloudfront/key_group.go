@@ -13,10 +13,10 @@ type KeyGroup_KeyGroupConfig struct {
 }
 
 var KeyGroup_KeyGroupConfigFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"Items":   ubx.FieldSpec{WireName: "items"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+}
 
 type KeyGroupConfig struct {
 	// A key group configuration. A key group contains a list of public keys that you can use with [CloudFront signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html).
@@ -37,8 +37,8 @@ var KeyGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"KeyGroupConfig": ubx.FieldSpec{
 			WireName: "key_group_config",
-			Kind: "object",
-			Fields: KeyGroup_KeyGroupConfigFields,
+			Kind:     "object",
+			Fields:   KeyGroup_KeyGroupConfigFields,
 		},
 	},
 }

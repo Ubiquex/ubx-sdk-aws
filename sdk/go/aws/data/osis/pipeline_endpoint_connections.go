@@ -4,20 +4,20 @@ package osis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PipelineEndpointConnections_PipelineEndpointConnections struct {
-	EndpointId any
-	PipelineArn any
-	Status any
+	EndpointId       any
+	PipelineArn      any
+	Status           any
 	VpcEndpointOwner any
 }
 
 type PipelineEndpointConnectionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PipelineEndpointConnectionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                  any
+	NextToken                   any
 	PipelineEndpointConnections any
 }
 
@@ -25,6 +25,6 @@ var PipelineEndpointConnections = ubx.DataSourceBinding{
 	WireType: "aws_osis_pipeline_endpoint_connections",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

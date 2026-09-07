@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TextDetection_TextDetections_TextDetection_Geometry_BoundingBox struct {
 	Height any
-	Left any
-	Top any
-	Width any
+	Left   any
+	Top    any
+	Width  any
 }
 
 type TextDetection_TextDetections_TextDetection_Geometry_Polygon struct {
@@ -17,26 +17,26 @@ type TextDetection_TextDetections_TextDetection_Geometry_Polygon struct {
 
 type TextDetection_TextDetections_TextDetection_Geometry struct {
 	BoundingBox any
-	Polygon any
+	Polygon     any
 }
 
 type TextDetection_TextDetections_TextDetection struct {
-	Confidence any
+	Confidence   any
 	DetectedText any
-	Geometry any
-	Id any
-	ParentId any
-	Type any
+	Geometry     any
+	Id           any
+	ParentId     any
+	Type         any
 }
 
 type TextDetection_TextDetections struct {
 	TextDetection any
-	Timestamp any
+	Timestamp     any
 }
 
 type TextDetection_Video_S3Object struct {
-	Bucket any
-	Name any
+	Bucket  any
+	Name    any
 	Version any
 }
 
@@ -46,29 +46,29 @@ type TextDetection_Video struct {
 }
 
 type TextDetection_VideoMetadata struct {
-	Codec any
-	ColorRange any
+	Codec          any
+	ColorRange     any
 	DurationMillis any
-	Format any
-	FrameHeight any
-	FrameRate any
-	FrameWidth any
+	Format         any
+	FrameHeight    any
+	FrameRate      any
+	FrameWidth     any
 }
 
 type TextDetectionConfig struct {
-	JobId any
+	JobId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TextDetectionAttrs struct {
-	JobId any
-	JobStatus any
-	JobTag any
-	MaxResults any
-	NextToken any
-	StatusMessage any
-	TextDetections any
+	JobId            any
+	JobStatus        any
+	JobTag           any
+	MaxResults       any
+	NextToken        any
+	StatusMessage    any
+	TextDetections   any
 	TextModelVersion any
 	// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
 	Video any
@@ -79,8 +79,8 @@ type TextDetectionAttrs struct {
 var TextDetection = ubx.DataSourceBinding{
 	WireType: "aws_rekognition_text_detection",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

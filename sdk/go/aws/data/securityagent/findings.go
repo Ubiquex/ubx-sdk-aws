@@ -4,42 +4,42 @@ package securityagent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Findings_FindingsSummaries struct {
-	AgentSpaceId any
-	CodeReviewId any
-	CodeReviewJobId any
-	Confidence any
-	CreatedAt any
-	FindingId any
-	Name any
-	PentestId any
-	PentestJobId any
-	RiskLevel any
-	RiskType any
-	Status any
-	UpdatedAt any
+	AgentSpaceId     any
+	CodeReviewId     any
+	CodeReviewJobId  any
+	Confidence       any
+	CreatedAt        any
+	FindingId        any
+	Name             any
+	PentestId        any
+	PentestJobId     any
+	RiskLevel        any
+	RiskType         any
+	Status           any
+	UpdatedAt        any
 	ValidationStatus any
 }
 
 type FindingsConfig struct {
-	AgentSpaceId any
+	AgentSpaceId    any
 	CodeReviewJobId any
 	// <p>Finding confidence level.</p>
 	Confidence any
 	// <p>Maximum results for pagination.</p>
 	MaxResults any
-	Name any
+	Name       any
 	// <p>Pagination token.</p>
-	NextToken any
+	NextToken    any
 	PentestJobId any
 	// <p>Risk severity level.</p>
 	RiskLevel any
-	RiskType any
+	RiskType  any
 	// <p>Finding status.</p>
 	Status any
 }
 
 type FindingsAttrs struct {
-	AgentSpaceId any
+	AgentSpaceId    any
 	CodeReviewJobId any
 	// <p>Finding confidence level.</p>
 	Confidence any
@@ -47,13 +47,13 @@ type FindingsAttrs struct {
 	FindingsSummaries any
 	// <p>Maximum results for pagination.</p>
 	MaxResults any
-	Name any
+	Name       any
 	// <p>Pagination token.</p>
-	NextToken any
+	NextToken    any
 	PentestJobId any
 	// <p>Risk severity level.</p>
 	RiskLevel any
-	RiskType any
+	RiskType  any
 	// <p>Finding status.</p>
 	Status any
 }
@@ -61,15 +61,15 @@ type FindingsAttrs struct {
 var Findings = ubx.DataSourceBinding{
 	WireType: "aws_securityagent_findings",
 	Fields: ubx.FieldMap{
-		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
+		"AgentSpaceId":    ubx.FieldSpec{WireName: "agent_space_id"},
 		"CodeReviewJobId": ubx.FieldSpec{WireName: "code_review_job_id"},
-		"Confidence": ubx.FieldSpec{WireName: "confidence"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PentestJobId": ubx.FieldSpec{WireName: "pentest_job_id"},
-		"RiskLevel": ubx.FieldSpec{WireName: "risk_level"},
-		"RiskType": ubx.FieldSpec{WireName: "risk_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Confidence":      ubx.FieldSpec{WireName: "confidence"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"PentestJobId":    ubx.FieldSpec{WireName: "pentest_job_id"},
+		"RiskLevel":       ubx.FieldSpec{WireName: "risk_level"},
+		"RiskType":        ubx.FieldSpec{WireName: "risk_type"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -216,245 +216,245 @@ type Pipeline_Variables struct {
 }
 
 var Pipeline_ArtifactStore_EncryptionKeyFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Pipeline_ArtifactStoreFields = ubx.FieldMap{
-		"EncryptionKey": ubx.FieldSpec{
-			WireName: "encryption_key",
-			Kind: "object",
-			Fields: Pipeline_ArtifactStore_EncryptionKeyFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"EncryptionKey": ubx.FieldSpec{
+		WireName: "encryption_key",
+		Kind:     "object",
+		Fields:   Pipeline_ArtifactStore_EncryptionKeyFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Pipeline_ArtifactStoresFields = ubx.FieldMap{
-		"ArtifactStore": ubx.FieldSpec{
-			WireName: "artifact_store",
-			Kind: "object",
-			Fields: Pipeline_ArtifactStoreFields,
-		},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"ArtifactStore": ubx.FieldSpec{
+		WireName: "artifact_store",
+		Kind:     "object",
+		Fields:   Pipeline_ArtifactStoreFields,
+	},
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var Pipeline_DisableInboundStageTransitionsFields = ubx.FieldMap{
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"StageName": ubx.FieldSpec{WireName: "stage_name"},
-	}
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+	"StageName": ubx.FieldSpec{WireName: "stage_name"},
+}
 
 var Pipeline_Stages_Actions_ActionTypeIdFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Category": ubx.FieldSpec{WireName: "category"},
+	"Owner":    ubx.FieldSpec{WireName: "owner"},
+	"Provider": ubx.FieldSpec{WireName: "provider"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var Pipeline_Stages_Actions_EnvironmentVariablesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pipeline_Stages_Actions_InputArtifactsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Pipeline_Stages_Actions_OutputArtifactsFields = ubx.FieldMap{
-		"Files": ubx.FieldSpec{WireName: "files"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Files": ubx.FieldSpec{WireName: "files"},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+}
 
 var Pipeline_Stages_ActionsFields = ubx.FieldMap{
-		"ActionTypeId": ubx.FieldSpec{
-			WireName: "action_type_id",
-			Kind: "object",
-			Fields: Pipeline_Stages_Actions_ActionTypeIdFields,
-		},
-		"Commands": ubx.FieldSpec{WireName: "commands"},
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
-		"EnvironmentVariables": ubx.FieldSpec{
-			WireName: "environment_variables",
-			Kind: "list",
-			Fields: Pipeline_Stages_Actions_EnvironmentVariablesFields,
-		},
-		"InputArtifacts": ubx.FieldSpec{
-			WireName: "input_artifacts",
-			Kind: "list",
-			Fields: Pipeline_Stages_Actions_InputArtifactsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OutputArtifacts": ubx.FieldSpec{
-			WireName: "output_artifacts",
-			Kind: "list",
-			Fields: Pipeline_Stages_Actions_OutputArtifactsFields,
-		},
-		"OutputVariables": ubx.FieldSpec{WireName: "output_variables"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"RunOrder": ubx.FieldSpec{WireName: "run_order"},
-		"TimeoutInMinutes": ubx.FieldSpec{WireName: "timeout_in_minutes"},
-	}
+	"ActionTypeId": ubx.FieldSpec{
+		WireName: "action_type_id",
+		Kind:     "object",
+		Fields:   Pipeline_Stages_Actions_ActionTypeIdFields,
+	},
+	"Commands":      ubx.FieldSpec{WireName: "commands"},
+	"Configuration": ubx.FieldSpec{WireName: "configuration"},
+	"EnvironmentVariables": ubx.FieldSpec{
+		WireName: "environment_variables",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_Actions_EnvironmentVariablesFields,
+	},
+	"InputArtifacts": ubx.FieldSpec{
+		WireName: "input_artifacts",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_Actions_InputArtifactsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OutputArtifacts": ubx.FieldSpec{
+		WireName: "output_artifacts",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_Actions_OutputArtifactsFields,
+	},
+	"OutputVariables":  ubx.FieldSpec{WireName: "output_variables"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+	"RoleArn":          ubx.FieldSpec{WireName: "role_arn"},
+	"RunOrder":         ubx.FieldSpec{WireName: "run_order"},
+	"TimeoutInMinutes": ubx.FieldSpec{WireName: "timeout_in_minutes"},
+}
 
 var Pipeline_Stages_BeforeEntry_Conditions_RulesFields = ubx.FieldMap{
-		"Commands": ubx.FieldSpec{WireName: "commands"},
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
-		"InputArtifacts": ubx.FieldSpec{
-			WireName: "input_artifacts",
-			Kind: "list",
-			Fields: Pipeline_Stages_Actions_InputArtifactsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"RuleTypeId": ubx.FieldSpec{
-			WireName: "rule_type_id",
-			Kind: "object",
-			Fields: Pipeline_Stages_Actions_ActionTypeIdFields,
-		},
-	}
+	"Commands":      ubx.FieldSpec{WireName: "commands"},
+	"Configuration": ubx.FieldSpec{WireName: "configuration"},
+	"InputArtifacts": ubx.FieldSpec{
+		WireName: "input_artifacts",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_Actions_InputArtifactsFields,
+	},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Region":  ubx.FieldSpec{WireName: "region"},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"RuleTypeId": ubx.FieldSpec{
+		WireName: "rule_type_id",
+		Kind:     "object",
+		Fields:   Pipeline_Stages_Actions_ActionTypeIdFields,
+	},
+}
 
 var Pipeline_Stages_BeforeEntry_ConditionsFields = ubx.FieldMap{
-		"Result": ubx.FieldSpec{WireName: "result"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Pipeline_Stages_BeforeEntry_Conditions_RulesFields,
-		},
-	}
+	"Result": ubx.FieldSpec{WireName: "result"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_BeforeEntry_Conditions_RulesFields,
+	},
+}
 
 var Pipeline_Stages_BeforeEntryFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Pipeline_Stages_BeforeEntry_ConditionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_BeforeEntry_ConditionsFields,
+	},
+}
 
 var Pipeline_Stages_BlockersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Pipeline_Stages_OnFailure_RetryConfigurationFields = ubx.FieldMap{
-		"RetryMode": ubx.FieldSpec{WireName: "retry_mode"},
-	}
+	"RetryMode": ubx.FieldSpec{WireName: "retry_mode"},
+}
 
 var Pipeline_Stages_OnFailureFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Pipeline_Stages_BeforeEntry_ConditionsFields,
-		},
-		"Result": ubx.FieldSpec{WireName: "result"},
-		"RetryConfiguration": ubx.FieldSpec{
-			WireName: "retry_configuration",
-			Kind: "object",
-			Fields: Pipeline_Stages_OnFailure_RetryConfigurationFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_BeforeEntry_ConditionsFields,
+	},
+	"Result": ubx.FieldSpec{WireName: "result"},
+	"RetryConfiguration": ubx.FieldSpec{
+		WireName: "retry_configuration",
+		Kind:     "object",
+		Fields:   Pipeline_Stages_OnFailure_RetryConfigurationFields,
+	},
+}
 
 var Pipeline_StagesFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Pipeline_Stages_ActionsFields,
-		},
-		"BeforeEntry": ubx.FieldSpec{
-			WireName: "before_entry",
-			Kind: "object",
-			Fields: Pipeline_Stages_BeforeEntryFields,
-		},
-		"Blockers": ubx.FieldSpec{
-			WireName: "blockers",
-			Kind: "list",
-			Fields: Pipeline_Stages_BlockersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OnFailure": ubx.FieldSpec{
-			WireName: "on_failure",
-			Kind: "object",
-			Fields: Pipeline_Stages_OnFailureFields,
-		},
-		"OnSuccess": ubx.FieldSpec{
-			WireName: "on_success",
-			Kind: "object",
-			Fields: Pipeline_Stages_BeforeEntryFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_ActionsFields,
+	},
+	"BeforeEntry": ubx.FieldSpec{
+		WireName: "before_entry",
+		Kind:     "object",
+		Fields:   Pipeline_Stages_BeforeEntryFields,
+	},
+	"Blockers": ubx.FieldSpec{
+		WireName: "blockers",
+		Kind:     "list",
+		Fields:   Pipeline_Stages_BlockersFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OnFailure": ubx.FieldSpec{
+		WireName: "on_failure",
+		Kind:     "object",
+		Fields:   Pipeline_Stages_OnFailureFields,
+	},
+	"OnSuccess": ubx.FieldSpec{
+		WireName: "on_success",
+		Kind:     "object",
+		Fields:   Pipeline_Stages_BeforeEntryFields,
+	},
+}
 
 var Pipeline_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields = ubx.FieldMap{
-		"Excludes": ubx.FieldSpec{WireName: "excludes"},
-		"Includes": ubx.FieldSpec{WireName: "includes"},
-	}
+	"Excludes": ubx.FieldSpec{WireName: "excludes"},
+	"Includes": ubx.FieldSpec{WireName: "includes"},
+}
 
 var Pipeline_Triggers_GitConfiguration_PullRequestFields = ubx.FieldMap{
-		"Branches": ubx.FieldSpec{
-			WireName: "branches",
-			Kind: "object",
-			Fields: Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
-		},
-		"Events": ubx.FieldSpec{WireName: "events"},
-		"FilePaths": ubx.FieldSpec{
-			WireName: "file_paths",
-			Kind: "object",
-			Fields: Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
-		},
-	}
+	"Branches": ubx.FieldSpec{
+		WireName: "branches",
+		Kind:     "object",
+		Fields:   Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
+	},
+	"Events": ubx.FieldSpec{WireName: "events"},
+	"FilePaths": ubx.FieldSpec{
+		WireName: "file_paths",
+		Kind:     "object",
+		Fields:   Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
+	},
+}
 
 var Pipeline_Triggers_GitConfiguration_PushFields = ubx.FieldMap{
-		"Branches": ubx.FieldSpec{
-			WireName: "branches",
-			Kind: "object",
-			Fields: Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
-		},
-		"FilePaths": ubx.FieldSpec{
-			WireName: "file_paths",
-			Kind: "object",
-			Fields: Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
-		},
-	}
+	"Branches": ubx.FieldSpec{
+		WireName: "branches",
+		Kind:     "object",
+		Fields:   Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
+	},
+	"FilePaths": ubx.FieldSpec{
+		WireName: "file_paths",
+		Kind:     "object",
+		Fields:   Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
+	},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   Pipeline_Triggers_GitConfiguration_PullRequest_BranchesFields,
+	},
+}
 
 var Pipeline_Triggers_GitConfigurationFields = ubx.FieldMap{
-		"PullRequest": ubx.FieldSpec{
-			WireName: "pull_request",
-			Kind: "list",
-			Fields: Pipeline_Triggers_GitConfiguration_PullRequestFields,
-		},
-		"Push": ubx.FieldSpec{
-			WireName: "push",
-			Kind: "list",
-			Fields: Pipeline_Triggers_GitConfiguration_PushFields,
-		},
-		"SourceActionName": ubx.FieldSpec{WireName: "source_action_name"},
-	}
+	"PullRequest": ubx.FieldSpec{
+		WireName: "pull_request",
+		Kind:     "list",
+		Fields:   Pipeline_Triggers_GitConfiguration_PullRequestFields,
+	},
+	"Push": ubx.FieldSpec{
+		WireName: "push",
+		Kind:     "list",
+		Fields:   Pipeline_Triggers_GitConfiguration_PushFields,
+	},
+	"SourceActionName": ubx.FieldSpec{WireName: "source_action_name"},
+}
 
 var Pipeline_TriggersFields = ubx.FieldMap{
-		"GitConfiguration": ubx.FieldSpec{
-			WireName: "git_configuration",
-			Kind: "object",
-			Fields: Pipeline_Triggers_GitConfigurationFields,
-		},
-		"ProviderType": ubx.FieldSpec{WireName: "provider_type"},
-	}
+	"GitConfiguration": ubx.FieldSpec{
+		WireName: "git_configuration",
+		Kind:     "object",
+		Fields:   Pipeline_Triggers_GitConfigurationFields,
+	},
+	"ProviderType": ubx.FieldSpec{WireName: "provider_type"},
+}
 
 var Pipeline_VariablesFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 type PipelineConfig struct {
 	// The S3 bucket where artifacts for the pipeline are stored.
@@ -519,43 +519,43 @@ var Pipeline = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ArtifactStore": ubx.FieldSpec{
 			WireName: "artifact_store",
-			Kind: "object",
-			Fields: Pipeline_ArtifactStoreFields,
+			Kind:     "object",
+			Fields:   Pipeline_ArtifactStoreFields,
 		},
 		"ArtifactStores": ubx.FieldSpec{
 			WireName: "artifact_stores",
-			Kind: "list",
-			Fields: Pipeline_ArtifactStoresFields,
+			Kind:     "list",
+			Fields:   Pipeline_ArtifactStoresFields,
 		},
 		"DisableInboundStageTransitions": ubx.FieldSpec{
 			WireName: "disable_inbound_stage_transitions",
-			Kind: "list",
-			Fields: Pipeline_DisableInboundStageTransitionsFields,
+			Kind:     "list",
+			Fields:   Pipeline_DisableInboundStageTransitionsFields,
 		},
-		"ExecutionMode": ubx.FieldSpec{WireName: "execution_mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
+		"ExecutionMode":            ubx.FieldSpec{WireName: "execution_mode"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"PipelineType":             ubx.FieldSpec{WireName: "pipeline_type"},
 		"RestartExecutionOnUpdate": ubx.FieldSpec{WireName: "restart_execution_on_update"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":                  ubx.FieldSpec{WireName: "role_arn"},
 		"Stages": ubx.FieldSpec{
 			WireName: "stages",
-			Kind: "list",
-			Fields: Pipeline_StagesFields,
+			Kind:     "list",
+			Fields:   Pipeline_StagesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Pipeline_TagsFields,
+			Kind:     "list",
+			Fields:   Pipeline_TagsFields,
 		},
 		"Triggers": ubx.FieldSpec{
 			WireName: "triggers",
-			Kind: "list",
-			Fields: Pipeline_TriggersFields,
+			Kind:     "list",
+			Fields:   Pipeline_TriggersFields,
 		},
 		"Variables": ubx.FieldSpec{
 			WireName: "variables",
-			Kind: "list",
-			Fields: Pipeline_VariablesFields,
+			Kind:     "list",
+			Fields:   Pipeline_VariablesFields,
 		},
 	},
 }

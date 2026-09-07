@@ -4,40 +4,40 @@ package ds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainControllers_DomainControllers struct {
-	AvailabilityZone any
-	DirectoryId any
-	DnsIpAddr any
-	DnsIpv6Addr any
-	DomainControllerId any
-	LaunchTime any
-	Status any
+	AvailabilityZone          any
+	DirectoryId               any
+	DnsIpAddr                 any
+	DnsIpv6Addr               any
+	DomainControllerId        any
+	LaunchTime                any
+	Status                    any
 	StatusLastUpdatedDateTime any
-	StatusReason any
-	SubnetId any
-	VpcId any
+	StatusReason              any
+	SubnetId                  any
+	VpcId                     any
 }
 
 type DomainControllersConfig struct {
-	DirectoryId any
+	DirectoryId         any
 	DomainControllerIds any
-	Limit any
-	NextToken any
+	Limit               any
+	NextToken           any
 }
 
 type DomainControllersAttrs struct {
-	DirectoryId any
+	DirectoryId         any
 	DomainControllerIds any
-	DomainControllers any
-	Limit any
-	NextToken any
+	DomainControllers   any
+	Limit               any
+	NextToken           any
 }
 
 var DomainControllers = ubx.DataSourceBinding{
 	WireType: "aws_ds_domain_controllers",
 	Fields: ubx.FieldMap{
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
+		"DirectoryId":         ubx.FieldSpec{WireName: "directory_id"},
 		"DomainControllerIds": ubx.FieldSpec{WireName: "domain_controller_ids"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

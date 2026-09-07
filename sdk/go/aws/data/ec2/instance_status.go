@@ -4,32 +4,32 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceStatus_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type InstanceStatus_InstanceStatuses_ApplicationStatus struct {
 	ImpairedSince any
-	Status any
+	Status        any
 }
 
 type InstanceStatus_InstanceStatuses_AttachedEbsStatus_Details struct {
 	ImpairedSince any
-	Name any
-	Status any
+	Name          any
+	Status        any
 }
 
 type InstanceStatus_InstanceStatuses_AttachedEbsStatus struct {
 	Details any
-	Status any
+	Status  any
 }
 
 type InstanceStatus_InstanceStatuses_Events struct {
-	Code any
-	Description any
-	InstanceEventId any
-	NotAfter any
-	NotBefore any
+	Code              any
+	Description       any
+	InstanceEventId   any
+	NotAfter          any
+	NotBefore         any
 	NotBeforeDeadline any
 }
 
@@ -40,48 +40,48 @@ type InstanceStatus_InstanceStatuses_InstanceState struct {
 
 type InstanceStatus_InstanceStatuses_Operator struct {
 	HiddenByDefault any
-	Managed any
-	Principal any
+	Managed         any
+	Principal       any
 }
 
 type InstanceStatus_InstanceStatuses struct {
-	ApplicationStatus any
-	AttachedEbsStatus any
-	AvailabilityZone any
+	ApplicationStatus  any
+	AttachedEbsStatus  any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	Events any
-	InstanceId any
-	InstanceState any
-	InstanceStatus any
-	Operator any
-	OutpostArn any
-	SystemStatus any
+	Events             any
+	InstanceId         any
+	InstanceState      any
+	InstanceStatus     any
+	Operator           any
+	OutpostArn         any
+	SystemStatus       any
 }
 
 var InstanceStatus_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstanceStatusConfig struct {
-	DryRun any
-	Filters any
-	IncludeAllInstances any
+	DryRun                  any
+	Filters                 any
+	IncludeAllInstances     any
 	IncludeManagedResources any
-	InstanceIds any
-	MaxResults any
-	NextToken any
+	InstanceIds             any
+	MaxResults              any
+	NextToken               any
 }
 
 type InstanceStatusAttrs struct {
-	DryRun any
-	Filters any
-	IncludeAllInstances any
+	DryRun                  any
+	Filters                 any
+	IncludeAllInstances     any
 	IncludeManagedResources any
-	InstanceIds any
-	InstanceStatuses any
-	MaxResults any
-	NextToken any
+	InstanceIds             any
+	InstanceStatuses        any
+	MaxResults              any
+	NextToken               any
 }
 
 var InstanceStatus = ubx.DataSourceBinding{
@@ -90,13 +90,13 @@ var InstanceStatus = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstanceStatus_FiltersFields,
+			Kind:     "list",
+			Fields:   InstanceStatus_FiltersFields,
 		},
-		"IncludeAllInstances": ubx.FieldSpec{WireName: "include_all_instances"},
+		"IncludeAllInstances":     ubx.FieldSpec{WireName: "include_all_instances"},
 		"IncludeManagedResources": ubx.FieldSpec{WireName: "include_managed_resources"},
-		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceIds":             ubx.FieldSpec{WireName: "instance_ids"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

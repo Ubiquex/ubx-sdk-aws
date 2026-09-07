@@ -36,9 +36,9 @@ type LimitsProfileAttrs struct {
 var LimitsProfile = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_limits_profile",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"ProfileName":    ubx.FieldSpec{WireName: "profile_name"},
 		"ResourceLimits": ubx.FieldSpec{WireName: "resource_limits"},
 	},
 }

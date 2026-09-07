@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceGroupsGroupQuery_GroupQuery_ResourceQuery struct {
 	Query any
-	Type any
+	Type  any
 }
 
 type ResourceGroupsGroupQuery_GroupQuery struct {
@@ -15,12 +15,12 @@ type ResourceGroupsGroupQuery_GroupQuery struct {
 }
 
 type ResourceGroupsGroupQueryConfig struct {
-	Group any
+	Group     any
 	GroupName any
 }
 
 type ResourceGroupsGroupQueryAttrs struct {
-	Group any
+	Group     any
 	GroupName any
 	// <p>A mapping of a query attached to a resource group that determines the Amazon Web Services resources that are members of the group.</p>
 	GroupQuery any
@@ -29,7 +29,7 @@ type ResourceGroupsGroupQueryAttrs struct {
 var ResourceGroupsGroupQuery = ubx.DataSourceBinding{
 	WireType: "aws_resource_groups_group_query",
 	Fields: ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
+		"Group":     ubx.FieldSpec{WireName: "group"},
 		"GroupName": ubx.FieldSpec{WireName: "group_name"},
 	},
 }

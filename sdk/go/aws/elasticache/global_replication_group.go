@@ -29,25 +29,25 @@ type GlobalReplicationGroup_RegionalConfigurations struct {
 }
 
 var GlobalReplicationGroup_MembersFields = ubx.FieldMap{
-		"ReplicationGroupId": ubx.FieldSpec{WireName: "replication_group_id"},
-		"ReplicationGroupRegion": ubx.FieldSpec{WireName: "replication_group_region"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"ReplicationGroupId":     ubx.FieldSpec{WireName: "replication_group_id"},
+	"ReplicationGroupRegion": ubx.FieldSpec{WireName: "replication_group_region"},
+	"Role":                   ubx.FieldSpec{WireName: "role"},
+}
 
 var GlobalReplicationGroup_RegionalConfigurations_ReshardingConfigurationsFields = ubx.FieldMap{
-		"NodeGroupId": ubx.FieldSpec{WireName: "node_group_id"},
-		"PreferredAvailabilityZones": ubx.FieldSpec{WireName: "preferred_availability_zones"},
-	}
+	"NodeGroupId":                ubx.FieldSpec{WireName: "node_group_id"},
+	"PreferredAvailabilityZones": ubx.FieldSpec{WireName: "preferred_availability_zones"},
+}
 
 var GlobalReplicationGroup_RegionalConfigurationsFields = ubx.FieldMap{
-		"ReplicationGroupId": ubx.FieldSpec{WireName: "replication_group_id"},
-		"ReplicationGroupRegion": ubx.FieldSpec{WireName: "replication_group_region"},
-		"ReshardingConfigurations": ubx.FieldSpec{
-			WireName: "resharding_configurations",
-			Kind: "list",
-			Fields: GlobalReplicationGroup_RegionalConfigurations_ReshardingConfigurationsFields,
-		},
-	}
+	"ReplicationGroupId":     ubx.FieldSpec{WireName: "replication_group_id"},
+	"ReplicationGroupRegion": ubx.FieldSpec{WireName: "replication_group_region"},
+	"ReshardingConfigurations": ubx.FieldSpec{
+		WireName: "resharding_configurations",
+		Kind:     "list",
+		Fields:   GlobalReplicationGroup_RegionalConfigurations_ReshardingConfigurationsFields,
+	},
+}
 
 type GlobalReplicationGroupConfig struct {
 	// AutomaticFailoverEnabled
@@ -102,23 +102,23 @@ type GlobalReplicationGroupAttrs struct {
 var GlobalReplicationGroup = ubx.ResourceBinding{
 	WireType: "aws_elasti_cache_global_replication_group",
 	Fields: ubx.FieldMap{
-		"AutomaticFailoverEnabled": ubx.FieldSpec{WireName: "automatic_failover_enabled"},
-		"CacheNodeType": ubx.FieldSpec{WireName: "cache_node_type"},
-		"CacheParameterGroupName": ubx.FieldSpec{WireName: "cache_parameter_group_name"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"GlobalNodeGroupCount": ubx.FieldSpec{WireName: "global_node_group_count"},
+		"AutomaticFailoverEnabled":          ubx.FieldSpec{WireName: "automatic_failover_enabled"},
+		"CacheNodeType":                     ubx.FieldSpec{WireName: "cache_node_type"},
+		"CacheParameterGroupName":           ubx.FieldSpec{WireName: "cache_parameter_group_name"},
+		"Engine":                            ubx.FieldSpec{WireName: "engine"},
+		"EngineVersion":                     ubx.FieldSpec{WireName: "engine_version"},
+		"GlobalNodeGroupCount":              ubx.FieldSpec{WireName: "global_node_group_count"},
 		"GlobalReplicationGroupDescription": ubx.FieldSpec{WireName: "global_replication_group_description"},
-		"GlobalReplicationGroupIdSuffix": ubx.FieldSpec{WireName: "global_replication_group_id_suffix"},
+		"GlobalReplicationGroupIdSuffix":    ubx.FieldSpec{WireName: "global_replication_group_id_suffix"},
 		"Members": ubx.FieldSpec{
 			WireName: "members",
-			Kind: "list",
-			Fields: GlobalReplicationGroup_MembersFields,
+			Kind:     "list",
+			Fields:   GlobalReplicationGroup_MembersFields,
 		},
 		"RegionalConfigurations": ubx.FieldSpec{
 			WireName: "regional_configurations",
-			Kind: "list",
-			Fields: GlobalReplicationGroup_RegionalConfigurationsFields,
+			Kind:     "list",
+			Fields:   GlobalReplicationGroup_RegionalConfigurationsFields,
 		},
 	},
 }

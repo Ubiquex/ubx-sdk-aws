@@ -8,46 +8,46 @@ type Messages_Messages_ActionExecution_Payload struct {
 }
 
 type Messages_Messages_ActionExecution struct {
-	Payload any
+	Payload                   any
 	PayloadFieldNameSeparator any
-	PluginId any
+	PluginId                  any
 }
 
 type Messages_Messages_ActionReview_Payload_AllowedValues struct {
 	DisplayValue any
-	Value any
+	Value        any
 }
 
 type Messages_Messages_ActionReview_Payload struct {
-	AllowedFormat any
-	AllowedValues any
+	AllowedFormat       any
+	AllowedValues       any
 	ArrayItemJsonSchema any
-	DisplayDescription any
-	DisplayName any
-	DisplayOrder any
-	Required any
-	Type any
-	Value any
+	DisplayDescription  any
+	DisplayName         any
+	DisplayOrder        any
+	Required            any
+	Type                any
+	Value               any
 }
 
 type Messages_Messages_ActionReview struct {
-	Payload any
+	Payload                   any
 	PayloadFieldNameSeparator any
-	PluginId any
-	PluginType any
+	PluginId                  any
+	PluginType                any
 }
 
 type Messages_Messages_Attachments_Error struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type Messages_Messages_Attachments struct {
-	AttachmentId any
+	AttachmentId   any
 	ConversationId any
-	Error any
-	Name any
-	Status any
+	Error          any
+	Name           any
+	Status         any
 }
 
 type Messages_Messages_SourceAttribution_TextMessageSegments_SnippetExcerpt struct {
@@ -55,24 +55,24 @@ type Messages_Messages_SourceAttribution_TextMessageSegments_SnippetExcerpt stru
 }
 
 type Messages_Messages_SourceAttribution_TextMessageSegments_SourceDetails_AudioSourceDetails struct {
-	AudioExtractionType any
-	EndTimeMilliseconds any
-	MediaId any
-	MediaMimeType any
+	AudioExtractionType   any
+	EndTimeMilliseconds   any
+	MediaId               any
+	MediaMimeType         any
 	StartTimeMilliseconds any
 }
 
 type Messages_Messages_SourceAttribution_TextMessageSegments_SourceDetails_ImageSourceDetails struct {
-	MediaId any
+	MediaId       any
 	MediaMimeType any
 }
 
 type Messages_Messages_SourceAttribution_TextMessageSegments_SourceDetails_VideoSourceDetails struct {
-	EndTimeMilliseconds any
-	MediaId any
-	MediaMimeType any
+	EndTimeMilliseconds   any
+	MediaId               any
+	MediaMimeType         any
 	StartTimeMilliseconds any
-	VideoExtractionType any
+	VideoExtractionType   any
 }
 
 type Messages_Messages_SourceAttribution_TextMessageSegments_SourceDetails struct {
@@ -82,61 +82,61 @@ type Messages_Messages_SourceAttribution_TextMessageSegments_SourceDetails struc
 }
 
 type Messages_Messages_SourceAttribution_TextMessageSegments struct {
-	BeginOffset any
-	EndOffset any
-	MediaId any
-	MediaMimeType any
+	BeginOffset    any
+	EndOffset      any
+	MediaId        any
+	MediaMimeType  any
 	SnippetExcerpt any
-	SourceDetails any
+	SourceDetails  any
 }
 
 type Messages_Messages_SourceAttribution struct {
-	CitationNumber any
-	DatasourceId any
-	DocumentId any
-	IndexId any
-	Snippet any
+	CitationNumber      any
+	DatasourceId        any
+	DocumentId          any
+	IndexId             any
+	Snippet             any
 	TextMessageSegments any
-	Title any
-	UpdatedAt any
-	Url any
+	Title               any
+	UpdatedAt           any
+	Url                 any
 }
 
 type Messages_Messages struct {
-	ActionExecution any
-	ActionReview any
-	Attachments any
-	Body any
-	MessageId any
+	ActionExecution   any
+	ActionReview      any
+	Attachments       any
+	Body              any
+	MessageId         any
 	SourceAttribution any
-	Time any
-	Type any
+	Time              any
+	Type              any
 }
 
 type MessagesConfig struct {
-	ApplicationId any
+	ApplicationId  any
 	ConversationId any
-	MaxResults any
-	NextToken any
-	UserId any
+	MaxResults     any
+	NextToken      any
+	UserId         any
 }
 
 type MessagesAttrs struct {
-	ApplicationId any
+	ApplicationId  any
 	ConversationId any
-	MaxResults any
-	Messages any
-	NextToken any
-	UserId any
+	MaxResults     any
+	Messages       any
+	NextToken      any
+	UserId         any
 }
 
 var Messages = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_messages",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":  ubx.FieldSpec{WireName: "application_id"},
 		"ConversationId": ubx.FieldSpec{WireName: "conversation_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"UserId":         ubx.FieldSpec{WireName: "user_id"},
 	},
 }

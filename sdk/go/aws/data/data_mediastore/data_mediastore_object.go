@@ -8,12 +8,12 @@ type DataMediastoreObjectConfig struct {
 }
 
 type DataMediastoreObjectAttrs struct {
-	CacheControl any
+	CacheControl  any
 	ContentLength any
-	ContentType any
-	Etag any
-	LastModified any
-	Path any
+	ContentType   any
+	Etag          any
+	LastModified  any
+	Path          any
 }
 
 var DataMediastoreObject = ubx.DataSourceBinding{

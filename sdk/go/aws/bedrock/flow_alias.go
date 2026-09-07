@@ -16,13 +16,13 @@ type FlowAlias_RoutingConfiguration struct {
 }
 
 var FlowAlias_ConcurrencyConfigurationFields = ubx.FieldMap{
-		"MaxConcurrency": ubx.FieldSpec{WireName: "max_concurrency"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"MaxConcurrency": ubx.FieldSpec{WireName: "max_concurrency"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var FlowAlias_RoutingConfigurationFields = ubx.FieldMap{
-		"FlowVersion": ubx.FieldSpec{WireName: "flow_version"},
-	}
+	"FlowVersion": ubx.FieldSpec{WireName: "flow_version"},
+}
 
 type FlowAliasConfig struct {
 	ConcurrencyConfiguration any
@@ -40,7 +40,7 @@ type FlowAliasConfig struct {
 
 type FlowAliasAttrs struct {
 	// Arn of the Flow Alias
-	Arn any
+	Arn                      any
 	ConcurrencyConfiguration any
 	// Time Stamp.
 	CreatedAt any
@@ -67,16 +67,16 @@ var FlowAlias = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConcurrencyConfiguration": ubx.FieldSpec{
 			WireName: "concurrency_configuration",
-			Kind: "object",
-			Fields: FlowAlias_ConcurrencyConfigurationFields,
+			Kind:     "object",
+			Fields:   FlowAlias_ConcurrencyConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"FlowArn":     ubx.FieldSpec{WireName: "flow_arn"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"RoutingConfiguration": ubx.FieldSpec{
 			WireName: "routing_configuration",
-			Kind: "list",
-			Fields: FlowAlias_RoutingConfigurationFields,
+			Kind:     "list",
+			Fields:   FlowAlias_RoutingConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

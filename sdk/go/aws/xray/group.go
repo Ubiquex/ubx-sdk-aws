@@ -12,19 +12,19 @@ type Group_InsightsConfiguration struct {
 
 type Group_Tags struct {
 	// Specifies the key of a tag assigned to the AWS X-Ray group, enabling you to categorize and manage the group within your AWS environment. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Group_InsightsConfigurationFields = ubx.FieldMap{
-		"InsightsEnabled": ubx.FieldSpec{WireName: "insights_enabled"},
-		"NotificationsEnabled": ubx.FieldSpec{WireName: "notifications_enabled"},
-	}
+	"InsightsEnabled":      ubx.FieldSpec{WireName: "insights_enabled"},
+	"NotificationsEnabled": ubx.FieldSpec{WireName: "notifications_enabled"},
+}
 
 var Group_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GroupConfig struct {
 	// The filter expression defining criteria by which to group traces.
@@ -54,16 +54,16 @@ var Group = ubx.ResourceBinding{
 	WireType: "aws_xray_group",
 	Fields: ubx.FieldMap{
 		"FilterExpression": ubx.FieldSpec{WireName: "filter_expression"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
+		"GroupName":        ubx.FieldSpec{WireName: "group_name"},
 		"InsightsConfiguration": ubx.FieldSpec{
 			WireName: "insights_configuration",
-			Kind: "object",
-			Fields: Group_InsightsConfigurationFields,
+			Kind:     "object",
+			Fields:   Group_InsightsConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Group_TagsFields,
+			Kind:     "list",
+			Fields:   Group_TagsFields,
 		},
 	},
 }

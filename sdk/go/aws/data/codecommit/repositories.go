@@ -4,28 +4,28 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Repositories_Repositories struct {
-	RepositoryId any
+	RepositoryId   any
 	RepositoryName any
 }
 
 type RepositoriesConfig struct {
 	NextToken any
-	Order any
-	SortBy any
+	Order     any
+	SortBy    any
 }
 
 type RepositoriesAttrs struct {
-	NextToken any
-	Order any
+	NextToken    any
+	Order        any
 	Repositories any
-	SortBy any
+	SortBy       any
 }
 
 var Repositories = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_repositories",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 	},
 }

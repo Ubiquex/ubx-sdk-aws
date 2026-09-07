@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssociationVersions_AssociationVersions_OutputLocation_S3Location struct {
 	OutputS3BucketName any
-	OutputS3KeyPrefix any
-	OutputS3Region any
+	OutputS3KeyPrefix  any
+	OutputS3Region     any
 }
 
 type AssociationVersions_AssociationVersions_OutputLocation struct {
@@ -18,71 +18,71 @@ type AssociationVersions_AssociationVersions_TargetLocations_TargetLocationAlarm
 }
 
 type AssociationVersions_AssociationVersions_TargetLocations_TargetLocationAlarmConfiguration struct {
-	Alarms any
+	Alarms                 any
 	IgnorePollAlarmFailure any
 }
 
 type AssociationVersions_AssociationVersions_TargetLocations_Targets struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type AssociationVersions_AssociationVersions_TargetLocations struct {
-	Accounts any
-	ExcludeAccounts any
-	ExecutionRoleName any
-	IncludeChildOrganizationUnits any
-	Regions any
+	Accounts                         any
+	ExcludeAccounts                  any
+	ExecutionRoleName                any
+	IncludeChildOrganizationUnits    any
+	Regions                          any
 	TargetLocationAlarmConfiguration any
-	TargetLocationMaxConcurrency any
-	TargetLocationMaxErrors any
-	Targets any
-	TargetsMaxConcurrency any
-	TargetsMaxErrors any
+	TargetLocationMaxConcurrency     any
+	TargetLocationMaxErrors          any
+	Targets                          any
+	TargetsMaxConcurrency            any
+	TargetsMaxErrors                 any
 }
 
 type AssociationVersions_AssociationVersions struct {
-	ApplyOnlyAtCronInterval any
+	ApplyOnlyAtCronInterval       any
 	AssociationDispatchAssumeRole any
-	AssociationId any
-	AssociationName any
-	AssociationVersion any
-	CalendarNames any
-	ComplianceSeverity any
-	CreatedDate any
-	DocumentVersion any
-	Duration any
-	MaxConcurrency any
-	MaxErrors any
-	Name any
-	OutputLocation any
-	Parameters any
-	ScheduleExpression any
-	ScheduleOffset any
-	SyncCompliance any
-	TargetLocations any
-	TargetMaps any
-	Targets any
+	AssociationId                 any
+	AssociationName               any
+	AssociationVersion            any
+	CalendarNames                 any
+	ComplianceSeverity            any
+	CreatedDate                   any
+	DocumentVersion               any
+	Duration                      any
+	MaxConcurrency                any
+	MaxErrors                     any
+	Name                          any
+	OutputLocation                any
+	Parameters                    any
+	ScheduleExpression            any
+	ScheduleOffset                any
+	SyncCompliance                any
+	TargetLocations               any
+	TargetMaps                    any
+	Targets                       any
 }
 
 type AssociationVersionsConfig struct {
 	AssociationId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type AssociationVersionsAttrs struct {
-	AssociationId any
+	AssociationId       any
 	AssociationVersions any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 var AssociationVersions = ubx.DataSourceBinding{
 	WireType: "aws_ssm_association_versions",
 	Fields: ubx.FieldMap{
 		"AssociationId": ubx.FieldSpec{WireName: "association_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

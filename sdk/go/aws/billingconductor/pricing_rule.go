@@ -4,7 +4,7 @@ package billingconductor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PricingRule_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -19,21 +19,21 @@ type PricingRule_Tiering struct {
 }
 
 var PricingRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var PricingRule_Tiering_FreeTierFields = ubx.FieldMap{
-		"Activated": ubx.FieldSpec{WireName: "activated"},
-	}
+	"Activated": ubx.FieldSpec{WireName: "activated"},
+}
 
 var PricingRule_TieringFields = ubx.FieldMap{
-		"FreeTier": ubx.FieldSpec{
-			WireName: "free_tier",
-			Kind: "object",
-			Fields: PricingRule_Tiering_FreeTierFields,
-		},
-	}
+	"FreeTier": ubx.FieldSpec{
+		WireName: "free_tier",
+		Kind:     "object",
+		Fields:   PricingRule_Tiering_FreeTierFields,
+	},
+}
 
 type PricingRuleConfig struct {
 	// The seller of services provided by AWS, their affiliates, or third-party providers selling services via AWS Marketplaces. Supported billing entities are AWS, AWS Marketplace, and AISPL.
@@ -96,24 +96,24 @@ type PricingRuleAttrs struct {
 var PricingRule = ubx.ResourceBinding{
 	WireType: "aws_billing_conductor_pricing_rule",
 	Fields: ubx.FieldMap{
-		"BillingEntity": ubx.FieldSpec{WireName: "billing_entity"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"BillingEntity":      ubx.FieldSpec{WireName: "billing_entity"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
 		"ModifierPercentage": ubx.FieldSpec{WireName: "modifier_percentage"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Operation":          ubx.FieldSpec{WireName: "operation"},
+		"Scope":              ubx.FieldSpec{WireName: "scope"},
+		"Service":            ubx.FieldSpec{WireName: "service"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PricingRule_TagsFields,
+			Kind:     "list",
+			Fields:   PricingRule_TagsFields,
 		},
 		"Tiering": ubx.FieldSpec{
 			WireName: "tiering",
-			Kind: "object",
-			Fields: PricingRule_TieringFields,
+			Kind:     "object",
+			Fields:   PricingRule_TieringFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 		"UsageType": ubx.FieldSpec{WireName: "usage_type"},
 	},
 }

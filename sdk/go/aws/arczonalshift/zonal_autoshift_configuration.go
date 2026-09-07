@@ -22,24 +22,24 @@ type ZonalAutoshiftConfiguration_PracticeRunConfiguration struct {
 }
 
 var ZonalAutoshiftConfiguration_PracticeRunConfiguration_BlockingAlarmsFields = ubx.FieldMap{
-		"AlarmIdentifier": ubx.FieldSpec{WireName: "alarm_identifier"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AlarmIdentifier": ubx.FieldSpec{WireName: "alarm_identifier"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var ZonalAutoshiftConfiguration_PracticeRunConfigurationFields = ubx.FieldMap{
-		"BlockedDates": ubx.FieldSpec{WireName: "blocked_dates"},
-		"BlockedWindows": ubx.FieldSpec{WireName: "blocked_windows"},
-		"BlockingAlarms": ubx.FieldSpec{
-			WireName: "blocking_alarms",
-			Kind: "list",
-			Fields: ZonalAutoshiftConfiguration_PracticeRunConfiguration_BlockingAlarmsFields,
-		},
-		"OutcomeAlarms": ubx.FieldSpec{
-			WireName: "outcome_alarms",
-			Kind: "list",
-			Fields: ZonalAutoshiftConfiguration_PracticeRunConfiguration_BlockingAlarmsFields,
-		},
-	}
+	"BlockedDates":   ubx.FieldSpec{WireName: "blocked_dates"},
+	"BlockedWindows": ubx.FieldSpec{WireName: "blocked_windows"},
+	"BlockingAlarms": ubx.FieldSpec{
+		WireName: "blocking_alarms",
+		Kind:     "list",
+		Fields:   ZonalAutoshiftConfiguration_PracticeRunConfiguration_BlockingAlarmsFields,
+	},
+	"OutcomeAlarms": ubx.FieldSpec{
+		WireName: "outcome_alarms",
+		Kind:     "list",
+		Fields:   ZonalAutoshiftConfiguration_PracticeRunConfiguration_BlockingAlarmsFields,
+	},
+}
 
 type ZonalAutoshiftConfigurationConfig struct {
 	// Defines the practice run configuration for zonal autoshift, specifying blocking windows/dates and the outcome alarms that must clear for a practice run to be considered successful. (AI-inferred)
@@ -64,10 +64,10 @@ var ZonalAutoshiftConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"PracticeRunConfiguration": ubx.FieldSpec{
 			WireName: "practice_run_configuration",
-			Kind: "object",
-			Fields: ZonalAutoshiftConfiguration_PracticeRunConfigurationFields,
+			Kind:     "object",
+			Fields:   ZonalAutoshiftConfiguration_PracticeRunConfigurationFields,
 		},
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
+		"ResourceIdentifier":   ubx.FieldSpec{WireName: "resource_identifier"},
 		"ZonalAutoshiftStatus": ubx.FieldSpec{WireName: "zonal_autoshift_status"},
 	},
 }

@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceSetResources_Items struct {
 	AccountId any
-	Uri any
+	Uri       any
 }
 
 type ResourceSetResourcesConfig struct {
 	Identifier any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ResourceSetResourcesAttrs struct {
 	Identifier any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ResourceSetResources = ubx.DataSourceBinding{
@@ -26,6 +26,6 @@ var ResourceSetResources = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -20,25 +20,25 @@ type DataIntegration_ScheduleConfig struct {
 }
 
 type DataIntegration_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DataIntegration_FileConfigurationFields = ubx.FieldMap{
-		"Filters": ubx.FieldSpec{WireName: "filters"},
-		"Folders": ubx.FieldSpec{WireName: "folders"},
-	}
+	"Filters": ubx.FieldSpec{WireName: "filters"},
+	"Folders": ubx.FieldSpec{WireName: "folders"},
+}
 
 var DataIntegration_ScheduleConfigFields = ubx.FieldMap{
-		"FirstExecutionFrom": ubx.FieldSpec{WireName: "first_execution_from"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
-	}
+	"FirstExecutionFrom": ubx.FieldSpec{WireName: "first_execution_from"},
+	"Object":             ubx.FieldSpec{WireName: "object"},
+	"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+}
 
 var DataIntegration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataIntegrationConfig struct {
 	// The data integration description.
@@ -88,22 +88,22 @@ var DataIntegration = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"FileConfiguration": ubx.FieldSpec{
 			WireName: "file_configuration",
-			Kind: "object",
-			Fields: DataIntegration_FileConfigurationFields,
+			Kind:     "object",
+			Fields:   DataIntegration_FileConfigurationFields,
 		},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKey":              ubx.FieldSpec{WireName: "kms_key"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"ObjectConfiguration": ubx.FieldSpec{WireName: "object_configuration"},
 		"ScheduleConfig": ubx.FieldSpec{
 			WireName: "schedule_config",
-			Kind: "object",
-			Fields: DataIntegration_ScheduleConfigFields,
+			Kind:     "object",
+			Fields:   DataIntegration_ScheduleConfigFields,
 		},
 		"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataIntegration_TagsFields,
+			Kind:     "list",
+			Fields:   DataIntegration_TagsFields,
 		},
 	},
 }

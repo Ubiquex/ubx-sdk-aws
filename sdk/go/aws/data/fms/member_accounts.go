@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MemberAccountsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type MemberAccountsAttrs struct {
-	MaxResults any
+	MaxResults     any
 	MemberAccounts any
-	NextToken any
+	NextToken      any
 }
 
 var MemberAccounts = ubx.DataSourceBinding{
 	WireType: "aws_fms_member_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

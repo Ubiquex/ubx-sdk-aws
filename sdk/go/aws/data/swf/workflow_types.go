@@ -4,45 +4,45 @@ package swf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowTypes_TypeInfos_WorkflowType struct {
-	Name any
+	Name    any
 	Version any
 }
 
 type WorkflowTypes_TypeInfos struct {
-	CreationDate any
+	CreationDate    any
 	DeprecationDate any
-	Description any
-	Status any
-	WorkflowType any
+	Description     any
+	Status          any
+	WorkflowType    any
 }
 
 type WorkflowTypesConfig struct {
-	Domain any
-	MaximumPageSize any
-	Name any
-	NextPageToken any
+	Domain             any
+	MaximumPageSize    any
+	Name               any
+	NextPageToken      any
 	RegistrationStatus any
-	ReverseOrder any
+	ReverseOrder       any
 }
 
 type WorkflowTypesAttrs struct {
-	Domain any
-	MaximumPageSize any
-	Name any
-	NextPageToken any
+	Domain             any
+	MaximumPageSize    any
+	Name               any
+	NextPageToken      any
 	RegistrationStatus any
-	ReverseOrder any
-	TypeInfos any
+	ReverseOrder       any
+	TypeInfos          any
 }
 
 var WorkflowTypes = ubx.DataSourceBinding{
 	WireType: "aws_swf_workflow_types",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"MaximumPageSize": ubx.FieldSpec{WireName: "maximum_page_size"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextPageToken": ubx.FieldSpec{WireName: "next_page_token"},
+		"Domain":             ubx.FieldSpec{WireName: "domain"},
+		"MaximumPageSize":    ubx.FieldSpec{WireName: "maximum_page_size"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"NextPageToken":      ubx.FieldSpec{WireName: "next_page_token"},
 		"RegistrationStatus": ubx.FieldSpec{WireName: "registration_status"},
-		"ReverseOrder": ubx.FieldSpec{WireName: "reverse_order"},
+		"ReverseOrder":       ubx.FieldSpec{WireName: "reverse_order"},
 	},
 }

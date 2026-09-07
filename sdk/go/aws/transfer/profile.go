@@ -11,9 +11,9 @@ type Profile_Tags struct {
 }
 
 var Profile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProfileConfig struct {
 	// AS2 identifier agreed with a trading partner.
@@ -44,13 +44,13 @@ type ProfileAttrs struct {
 var Profile = ubx.ResourceBinding{
 	WireType: "aws_transfer_profile",
 	Fields: ubx.FieldMap{
-		"As2Id": ubx.FieldSpec{WireName: "as2_id"},
+		"As2Id":          ubx.FieldSpec{WireName: "as2_id"},
 		"CertificateIds": ubx.FieldSpec{WireName: "certificate_ids"},
-		"ProfileType": ubx.FieldSpec{WireName: "profile_type"},
+		"ProfileType":    ubx.FieldSpec{WireName: "profile_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Profile_TagsFields,
+			Kind:     "list",
+			Fields:   Profile_TagsFields,
 		},
 	},
 }

@@ -4,19 +4,19 @@ package securityhub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectorV2_Issues struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type ConnectorV2_Provider_Azure_ScopeConfiguration struct {
 	// Specifies whether the Azure connector scope is a management group or a subscription, defining which Azure resources Security Hub monitors for findings. (AI-inferred)
-	ScopeType any
+	ScopeType   any
 	ScopeValues any
 }
 
 type ConnectorV2_Provider_Azure struct {
 	AwsconfigConnectorArn any
-	AzureRegions any
+	AzureRegions          any
 	// Configures the Azure subscriptions or management groups that the Security Hub connector will monitor, determining which Azure resources' findings are ingested into Security Hub. (AI-inferred)
 	ScopeConfiguration any
 }
@@ -43,46 +43,46 @@ type ConnectorV2_Provider struct {
 }
 
 var ConnectorV2_Provider_Azure_ScopeConfigurationFields = ubx.FieldMap{
-		"ScopeType": ubx.FieldSpec{WireName: "scope_type"},
-		"ScopeValues": ubx.FieldSpec{WireName: "scope_values"},
-	}
+	"ScopeType":   ubx.FieldSpec{WireName: "scope_type"},
+	"ScopeValues": ubx.FieldSpec{WireName: "scope_values"},
+}
 
 var ConnectorV2_Provider_AzureFields = ubx.FieldMap{
-		"AwsconfigConnectorArn": ubx.FieldSpec{WireName: "awsconfig_connector_arn"},
-		"AzureRegions": ubx.FieldSpec{WireName: "azure_regions"},
-		"ScopeConfiguration": ubx.FieldSpec{
-			WireName: "scope_configuration",
-			Kind: "object",
-			Fields: ConnectorV2_Provider_Azure_ScopeConfigurationFields,
-		},
-	}
+	"AwsconfigConnectorArn": ubx.FieldSpec{WireName: "awsconfig_connector_arn"},
+	"AzureRegions":          ubx.FieldSpec{WireName: "azure_regions"},
+	"ScopeConfiguration": ubx.FieldSpec{
+		WireName: "scope_configuration",
+		Kind:     "object",
+		Fields:   ConnectorV2_Provider_Azure_ScopeConfigurationFields,
+	},
+}
 
 var ConnectorV2_Provider_JiraCloudFields = ubx.FieldMap{
-		"ProjectKey": ubx.FieldSpec{WireName: "project_key"},
-	}
+	"ProjectKey": ubx.FieldSpec{WireName: "project_key"},
+}
 
 var ConnectorV2_Provider_ServiceNowFields = ubx.FieldMap{
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
+	"SecretArn":    ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var ConnectorV2_ProviderFields = ubx.FieldMap{
-		"Azure": ubx.FieldSpec{
-			WireName: "azure",
-			Kind: "object",
-			Fields: ConnectorV2_Provider_AzureFields,
-		},
-		"JiraCloud": ubx.FieldSpec{
-			WireName: "jira_cloud",
-			Kind: "object",
-			Fields: ConnectorV2_Provider_JiraCloudFields,
-		},
-		"ServiceNow": ubx.FieldSpec{
-			WireName: "service_now",
-			Kind: "object",
-			Fields: ConnectorV2_Provider_ServiceNowFields,
-		},
-	}
+	"Azure": ubx.FieldSpec{
+		WireName: "azure",
+		Kind:     "object",
+		Fields:   ConnectorV2_Provider_AzureFields,
+	},
+	"JiraCloud": ubx.FieldSpec{
+		WireName: "jira_cloud",
+		Kind:     "object",
+		Fields:   ConnectorV2_Provider_JiraCloudFields,
+	},
+	"ServiceNow": ubx.FieldSpec{
+		WireName: "service_now",
+		Kind:     "object",
+		Fields:   ConnectorV2_Provider_ServiceNowFields,
+	},
+}
 
 type ConnectorV2Config struct {
 	// A description of the connector
@@ -134,12 +134,12 @@ var ConnectorV2 = ubx.ResourceBinding{
 	WireType: "aws_security_hub_connector_v2",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Provider": ubx.FieldSpec{
 			WireName: "provider",
-			Kind: "object",
-			Fields: ConnectorV2_ProviderFields,
+			Kind:     "object",
+			Fields:   ConnectorV2_ProviderFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

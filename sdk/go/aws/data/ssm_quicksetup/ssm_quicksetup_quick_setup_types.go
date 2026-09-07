@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmQuicksetupQuickSetupTypes_QuickSetupTypeList struct {
 	LatestVersion any
-	Type any
+	Type          any
 }
 
 type SsmQuicksetupQuickSetupTypesConfig struct {
@@ -17,6 +17,5 @@ type SsmQuicksetupQuickSetupTypesAttrs struct {
 
 var SsmQuicksetupQuickSetupTypes = ubx.DataSourceBinding{
 	WireType: "aws_ssm_quicksetup_quick_setup_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

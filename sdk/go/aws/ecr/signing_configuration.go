@@ -18,18 +18,18 @@ type SigningConfiguration_Rules struct {
 }
 
 var SigningConfiguration_Rules_RepositoryFiltersFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-	}
+	"Filter":     ubx.FieldSpec{WireName: "filter"},
+	"FilterType": ubx.FieldSpec{WireName: "filter_type"},
+}
 
 var SigningConfiguration_RulesFields = ubx.FieldMap{
-		"RepositoryFilters": ubx.FieldSpec{
-			WireName: "repository_filters",
-			Kind: "list",
-			Fields: SigningConfiguration_Rules_RepositoryFiltersFields,
-		},
-		"SigningProfileArn": ubx.FieldSpec{WireName: "signing_profile_arn"},
-	}
+	"RepositoryFilters": ubx.FieldSpec{
+		WireName: "repository_filters",
+		Kind:     "list",
+		Fields:   SigningConfiguration_Rules_RepositoryFiltersFields,
+	},
+	"SigningProfileArn": ubx.FieldSpec{WireName: "signing_profile_arn"},
+}
 
 type SigningConfigurationConfig struct {
 	// Array of signing rules that define which repositories should be signed and with which signing profiles.
@@ -48,8 +48,8 @@ var SigningConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: SigningConfiguration_RulesFields,
+			Kind:     "list",
+			Fields:   SigningConfiguration_RulesFields,
 		},
 	},
 }

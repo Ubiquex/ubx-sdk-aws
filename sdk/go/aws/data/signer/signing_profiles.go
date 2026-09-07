@@ -4,7 +4,7 @@ package signer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SigningProfiles_Profiles_SignatureValidityPeriod struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -13,43 +13,43 @@ type SigningProfiles_Profiles_SigningMaterial struct {
 }
 
 type SigningProfiles_Profiles struct {
-	Arn any
-	PlatformDisplayName any
-	PlatformId any
-	ProfileName any
-	ProfileVersion any
-	ProfileVersionArn any
+	Arn                     any
+	PlatformDisplayName     any
+	PlatformId              any
+	ProfileName             any
+	ProfileVersion          any
+	ProfileVersionArn       any
 	SignatureValidityPeriod any
-	SigningMaterial any
-	SigningParameters any
-	Status any
-	Tags any
+	SigningMaterial         any
+	SigningParameters       any
+	Status                  any
+	Tags                    any
 }
 
 type SigningProfilesConfig struct {
 	IncludeCanceled any
-	MaxResults any
-	NextToken any
-	PlatformId any
-	Statuses any
+	MaxResults      any
+	NextToken       any
+	PlatformId      any
+	Statuses        any
 }
 
 type SigningProfilesAttrs struct {
 	IncludeCanceled any
-	MaxResults any
-	NextToken any
-	PlatformId any
-	Profiles any
-	Statuses any
+	MaxResults      any
+	NextToken       any
+	PlatformId      any
+	Profiles        any
+	Statuses        any
 }
 
 var SigningProfiles = ubx.DataSourceBinding{
 	WireType: "aws_signer_signing_profiles",
 	Fields: ubx.FieldMap{
 		"IncludeCanceled": ubx.FieldSpec{WireName: "include_canceled"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PlatformId": ubx.FieldSpec{WireName: "platform_id"},
-		"Statuses": ubx.FieldSpec{WireName: "statuses"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
+		"PlatformId":      ubx.FieldSpec{WireName: "platform_id"},
+		"Statuses":        ubx.FieldSpec{WireName: "statuses"},
 	},
 }

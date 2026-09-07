@@ -4,7 +4,7 @@ package osis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipelines_Pipelines_Destinations struct {
-	Endpoint any
+	Endpoint    any
 	ServiceName any
 }
 
@@ -13,38 +13,38 @@ type Pipelines_Pipelines_StatusReason struct {
 }
 
 type Pipelines_Pipelines_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Pipelines_Pipelines struct {
-	CreatedAt any
-	Destinations any
+	CreatedAt     any
+	Destinations  any
 	LastUpdatedAt any
-	MaxUnits any
-	MinUnits any
-	PipelineArn any
-	PipelineName any
-	Status any
-	StatusReason any
-	Tags any
+	MaxUnits      any
+	MinUnits      any
+	PipelineArn   any
+	PipelineName  any
+	Status        any
+	StatusReason  any
+	Tags          any
 }
 
 type PipelinesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PipelinesAttrs struct {
 	MaxResults any
-	NextToken any
-	Pipelines any
+	NextToken  any
+	Pipelines  any
 }
 
 var Pipelines = ubx.DataSourceBinding{
 	WireType: "aws_osis_pipelines",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

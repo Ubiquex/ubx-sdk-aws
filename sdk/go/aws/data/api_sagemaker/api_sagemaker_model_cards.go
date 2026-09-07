@@ -4,46 +4,46 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerModelCards_ModelCardSummaries struct {
-	CreationTime any
+	CreationTime     any
 	LastModifiedTime any
-	ModelCardArn any
-	ModelCardName any
-	ModelCardStatus any
+	ModelCardArn     any
+	ModelCardName    any
+	ModelCardStatus  any
 }
 
 type ApiSagemakerModelCardsConfig struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	MaxResults any
-	ModelCardStatus any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	MaxResults         any
+	ModelCardStatus    any
+	NameContains       any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
 }
 
 type ApiSagemakerModelCardsAttrs struct {
-	CreationTimeAfter any
+	CreationTimeAfter  any
 	CreationTimeBefore any
-	MaxResults any
-	ModelCardStatus any
+	MaxResults         any
+	ModelCardStatus    any
 	ModelCardSummaries any
-	NameContains any
-	NextToken any
-	SortBy any
-	SortOrder any
+	NameContains       any
+	NextToken          any
+	SortBy             any
+	SortOrder          any
 }
 
 var ApiSagemakerModelCards = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_model_cards",
 	Fields: ubx.FieldMap{
-		"CreationTimeAfter": ubx.FieldSpec{WireName: "creation_time_after"},
+		"CreationTimeAfter":  ubx.FieldSpec{WireName: "creation_time_after"},
 		"CreationTimeBefore": ubx.FieldSpec{WireName: "creation_time_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"ModelCardStatus": ubx.FieldSpec{WireName: "model_card_status"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"ModelCardStatus":    ubx.FieldSpec{WireName: "model_card_status"},
+		"NameContains":       ubx.FieldSpec{WireName: "name_contains"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":             ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":          ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

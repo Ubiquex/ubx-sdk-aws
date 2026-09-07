@@ -9,29 +9,29 @@ type SnapshotBlocks_Blocks struct {
 }
 
 type SnapshotBlocksConfig struct {
-	MaxResults any
-	NextToken any
-	SnapshotId any
+	MaxResults         any
+	NextToken          any
+	SnapshotId         any
 	StartingBlockIndex any
 }
 
 type SnapshotBlocksAttrs struct {
-	BlockSize any
-	Blocks any
-	ExpiryTime any
-	MaxResults any
-	NextToken any
-	SnapshotId any
+	BlockSize          any
+	Blocks             any
+	ExpiryTime         any
+	MaxResults         any
+	NextToken          any
+	SnapshotId         any
 	StartingBlockIndex any
-	VolumeSize any
+	VolumeSize         any
 }
 
 var SnapshotBlocks = ubx.DataSourceBinding{
 	WireType: "aws_ebs_snapshot_blocks",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"SnapshotId":         ubx.FieldSpec{WireName: "snapshot_id"},
 		"StartingBlockIndex": ubx.FieldSpec{WireName: "starting_block_index"},
 	},
 }

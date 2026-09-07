@@ -4,31 +4,31 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Children_Children struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type ChildrenConfig struct {
-	ChildType any
+	ChildType  any
 	MaxResults any
-	NextToken any
-	ParentId any
+	NextToken  any
+	ParentId   any
 }
 
 type ChildrenAttrs struct {
-	ChildType any
-	Children any
+	ChildType  any
+	Children   any
 	MaxResults any
-	NextToken any
-	ParentId any
+	NextToken  any
+	ParentId   any
 }
 
 var Children = ubx.DataSourceBinding{
 	WireType: "aws_organizations_children",
 	Fields: ubx.FieldMap{
-		"ChildType": ubx.FieldSpec{WireName: "child_type"},
+		"ChildType":  ubx.FieldSpec{WireName: "child_type"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ParentId":   ubx.FieldSpec{WireName: "parent_id"},
 	},
 }

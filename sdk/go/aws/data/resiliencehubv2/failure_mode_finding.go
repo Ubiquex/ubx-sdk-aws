@@ -10,19 +10,19 @@ type FailureModeFinding_Finding_InfrastructureAndCodeRecommendations struct {
 type FailureModeFinding_Finding struct {
 	Comment any
 	// <p>Resource description.</p>
-	Description any
-	FailureCategory any
-	FindingId any
+	Description                          any
+	FailureCategory                      any
+	FindingId                            any
 	InfrastructureAndCodeRecommendations any
-	Name any
-	ObservabilityRecommendations any
-	PolicyComponent any
-	Reasoning any
-	ServiceFunctions any
-	Severity any
-	Status any
-	TestingRecommendations any
-	UpdatedAt any
+	Name                                 any
+	ObservabilityRecommendations         any
+	PolicyComponent                      any
+	Reasoning                            any
+	ServiceFunctions                     any
+	Severity                             any
+	Status                               any
+	TestingRecommendations               any
+	UpdatedAt                            any
 }
 
 type FailureModeFindingConfig struct {
@@ -33,7 +33,7 @@ type FailureModeFindingConfig struct {
 
 type FailureModeFindingAttrs struct {
 	// <p>Represents a resilience finding from a failure mode assessment.</p>
-	Finding any
+	Finding   any
 	FindingId any
 	// <p>ARN identifier.</p>
 	ServiceArn any
@@ -42,7 +42,7 @@ type FailureModeFindingAttrs struct {
 var FailureModeFinding = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_failure_mode_finding",
 	Fields: ubx.FieldMap{
-		"FindingId": ubx.FieldSpec{WireName: "finding_id"},
+		"FindingId":  ubx.FieldSpec{WireName: "finding_id"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
 	},
 }

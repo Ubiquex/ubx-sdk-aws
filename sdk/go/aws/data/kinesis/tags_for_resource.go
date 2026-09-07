@@ -4,25 +4,25 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResourceConfig struct {
 	ResourceArn any
-	StreamId any
+	StreamId    any
 }
 
 type TagsForResourceAttrs struct {
 	ResourceArn any
-	StreamId any
-	Tags any
+	StreamId    any
+	Tags        any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_tags_for_resource",
 	Fields: ubx.FieldMap{
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamId":    ubx.FieldSpec{WireName: "stream_id"},
 	},
 }

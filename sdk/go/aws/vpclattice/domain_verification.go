@@ -4,7 +4,7 @@ package vpclattice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainVerification_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -16,9 +16,9 @@ type DomainVerification_TxtMethodConfig struct {
 }
 
 var DomainVerification_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainVerificationConfig struct {
 	// The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred)
@@ -48,8 +48,8 @@ var DomainVerification = ubx.ResourceBinding{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DomainVerification_TagsFields,
+			Kind:     "list",
+			Fields:   DomainVerification_TagsFields,
 		},
 	},
 }

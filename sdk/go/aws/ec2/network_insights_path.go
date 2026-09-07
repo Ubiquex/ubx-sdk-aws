@@ -29,29 +29,29 @@ type NetworkInsightsPath_Tags struct {
 }
 
 var NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 var NetworkInsightsPath_FilterAtDestinationFields = ubx.FieldMap{
-		"DestinationAddress": ubx.FieldSpec{WireName: "destination_address"},
-		"DestinationPortRange": ubx.FieldSpec{
-			WireName: "destination_port_range",
-			Kind: "object",
-			Fields: NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields,
-		},
-		"SourceAddress": ubx.FieldSpec{WireName: "source_address"},
-		"SourcePortRange": ubx.FieldSpec{
-			WireName: "source_port_range",
-			Kind: "object",
-			Fields: NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields,
-		},
-	}
+	"DestinationAddress": ubx.FieldSpec{WireName: "destination_address"},
+	"DestinationPortRange": ubx.FieldSpec{
+		WireName: "destination_port_range",
+		Kind:     "object",
+		Fields:   NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields,
+	},
+	"SourceAddress": ubx.FieldSpec{WireName: "source_address"},
+	"SourcePortRange": ubx.FieldSpec{
+		WireName: "source_port_range",
+		Kind:     "object",
+		Fields:   NetworkInsightsPath_FilterAtDestination_DestinationPortRangeFields,
+	},
+}
 
 var NetworkInsightsPath_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkInsightsPathConfig struct {
 	// The ID of the AWS resource that serves as the destination for the network insights path, such as an EC2 instance or network interface, used when specifying the destination by resource ID instead of an IP address. (AI-inferred)
@@ -108,26 +108,26 @@ type NetworkInsightsPathAttrs struct {
 var NetworkInsightsPath = ubx.ResourceBinding{
 	WireType: "aws_ec2_network_insights_path",
 	Fields: ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"DestinationIp": ubx.FieldSpec{WireName: "destination_ip"},
+		"Destination":     ubx.FieldSpec{WireName: "destination"},
+		"DestinationIp":   ubx.FieldSpec{WireName: "destination_ip"},
 		"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
 		"FilterAtDestination": ubx.FieldSpec{
 			WireName: "filter_at_destination",
-			Kind: "object",
-			Fields: NetworkInsightsPath_FilterAtDestinationFields,
+			Kind:     "object",
+			Fields:   NetworkInsightsPath_FilterAtDestinationFields,
 		},
 		"FilterAtSource": ubx.FieldSpec{
 			WireName: "filter_at_source",
-			Kind: "object",
-			Fields: NetworkInsightsPath_FilterAtDestinationFields,
+			Kind:     "object",
+			Fields:   NetworkInsightsPath_FilterAtDestinationFields,
 		},
 		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Source":   ubx.FieldSpec{WireName: "source"},
 		"SourceIp": ubx.FieldSpec{WireName: "source_ip"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkInsightsPath_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkInsightsPath_TagsFields,
 		},
 	},
 }

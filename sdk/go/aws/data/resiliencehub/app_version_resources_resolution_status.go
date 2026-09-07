@@ -4,24 +4,24 @@ package resiliencehub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppVersionResourcesResolutionStatusConfig struct {
-	AppArn any
-	AppVersion any
+	AppArn       any
+	AppVersion   any
 	ResolutionId any
 }
 
 type AppVersionResourcesResolutionStatusAttrs struct {
-	AppArn any
-	AppVersion any
+	AppArn       any
+	AppVersion   any
 	ErrorMessage any
 	ResolutionId any
-	Status any
+	Status       any
 }
 
 var AppVersionResourcesResolutionStatus = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_app_version_resources_resolution_status",
 	Fields: ubx.FieldMap{
-		"AppArn": ubx.FieldSpec{WireName: "app_arn"},
-		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
+		"AppArn":       ubx.FieldSpec{WireName: "app_arn"},
+		"AppVersion":   ubx.FieldSpec{WireName: "app_version"},
 		"ResolutionId": ubx.FieldSpec{WireName: "resolution_id"},
 	},
 }

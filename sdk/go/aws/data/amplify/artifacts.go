@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Artifacts_Artifacts struct {
 	ArtifactFileName any
-	ArtifactId any
+	ArtifactId       any
 }
 
 type ArtifactsConfig struct {
-	AppId any
+	AppId      any
 	BranchName any
-	JobId any
+	JobId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ArtifactsAttrs struct {
-	AppId any
-	Artifacts any
+	AppId      any
+	Artifacts  any
 	BranchName any
-	JobId any
+	JobId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Artifacts = ubx.DataSourceBinding{
 	WireType: "aws_amplify_artifacts",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
 		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

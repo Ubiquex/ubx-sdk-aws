@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexTestSets_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 type ModelsV2LexTestSets_TestSets_StorageLocation struct {
-	KmsKeyArn any
+	KmsKeyArn    any
 	S3BucketName any
-	S3Path any
+	S3Path       any
 }
 
 type ModelsV2LexTestSets_TestSets struct {
-	CreationDateTime any
-	Description any
+	CreationDateTime    any
+	Description         any
 	LastUpdatedDateTime any
-	Modality any
-	NumTurns any
-	RoleArn any
-	Status any
-	StorageLocation any
-	TestSetId any
-	TestSetName any
+	Modality            any
+	NumTurns            any
+	RoleArn             any
+	Status              any
+	StorageLocation     any
+	TestSetId           any
+	TestSetName         any
 }
 
 var ModelsV2LexTestSets_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexTestSetsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Contains information about the methods by which to sort the test set.</p>
 	SortBy any
 }
 
 type ModelsV2LexTestSetsAttrs struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Contains information about the methods by which to sort the test set.</p>
-	SortBy any
+	SortBy   any
 	TestSets any
 }
 
@@ -51,11 +51,11 @@ var ModelsV2LexTestSets = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_test_sets",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexTestSets_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexTestSets_SortByFields,
 		},
 	},
 }

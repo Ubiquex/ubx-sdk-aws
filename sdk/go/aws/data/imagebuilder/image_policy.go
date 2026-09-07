@@ -8,8 +8,8 @@ type ImagePolicyConfig struct {
 }
 
 type ImagePolicyAttrs struct {
-	ImageArn any
-	Policy any
+	ImageArn  any
+	Policy    any
 	RequestId any
 }
 

@@ -4,11 +4,11 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connection_ConnectionDetails struct {
-	AllowedIps any
-	ClientPublicKey any
+	AllowedIps          any
+	ClientPublicKey     any
 	ClientTunnelAddress any
-	ServerEndpoint any
-	ServerPublicKey any
+	ServerEndpoint      any
+	ServerPublicKey     any
 	ServerTunnelAddress any
 }
 
@@ -19,7 +19,7 @@ type ConnectionConfig struct {
 type ConnectionAttrs struct {
 	// <p> Information about a connection. </p>
 	ConnectionDetails any
-	ConnectionId any
+	ConnectionId      any
 }
 
 var Connection = ubx.DataSourceBinding{

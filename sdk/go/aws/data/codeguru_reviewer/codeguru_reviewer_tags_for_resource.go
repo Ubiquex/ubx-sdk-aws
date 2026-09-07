@@ -9,7 +9,7 @@ type CodeguruReviewerTagsForResourceConfig struct {
 
 type CodeguruReviewerTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var CodeguruReviewerTagsForResource = ubx.DataSourceBinding{

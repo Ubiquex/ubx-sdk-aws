@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoreNetworkPolicy_CoreNetworkPolicy_PolicyErrors struct {
 	ErrorCode any
-	Message any
-	Path any
+	Message   any
+	Path      any
 }
 
 type CoreNetworkPolicy_CoreNetworkPolicy struct {
-	Alias any
-	ChangeSetState any
-	CoreNetworkId any
-	CreatedAt any
-	Description any
-	PolicyDocument any
-	PolicyErrors any
+	Alias           any
+	ChangeSetState  any
+	CoreNetworkId   any
+	CreatedAt       any
+	Description     any
+	PolicyDocument  any
+	PolicyErrors    any
 	PolicyVersionId any
 }
 
 type CoreNetworkPolicyConfig struct {
-	Alias any
-	CoreNetworkId any
+	Alias           any
+	CoreNetworkId   any
 	PolicyVersionId any
 }
 
 type CoreNetworkPolicyAttrs struct {
-	Alias any
+	Alias         any
 	CoreNetworkId any
 	// <p>Describes a core network policy. You can have only one LIVE Core Policy.</p>
 	CoreNetworkPolicy any
-	PolicyVersionId any
+	PolicyVersionId   any
 }
 
 var CoreNetworkPolicy = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_core_network_policy",
 	Fields: ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
+		"Alias":           ubx.FieldSpec{WireName: "alias"},
+		"CoreNetworkId":   ubx.FieldSpec{WireName: "core_network_id"},
 		"PolicyVersionId": ubx.FieldSpec{WireName: "policy_version_id"},
 	},
 }

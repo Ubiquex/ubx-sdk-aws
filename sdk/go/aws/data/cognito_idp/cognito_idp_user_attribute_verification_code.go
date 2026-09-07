@@ -4,20 +4,20 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpUserAttributeVerificationCode_CodeDeliveryDetails struct {
-	AttributeName any
+	AttributeName  any
 	DeliveryMedium any
-	Destination any
+	Destination    any
 }
 
 type CognitoIdpUserAttributeVerificationCodeConfig struct {
-	AccessToken any
-	AttributeName any
+	AccessToken    any
+	AttributeName  any
 	ClientMetadata any
 }
 
 type CognitoIdpUserAttributeVerificationCodeAttrs struct {
-	AccessToken any
-	AttributeName any
+	AccessToken    any
+	AttributeName  any
 	ClientMetadata any
 	// <p>The delivery details for an email or SMS message that Amazon Cognito sent for authentication or verification.</p>
 	CodeDeliveryDetails any
@@ -26,8 +26,8 @@ type CognitoIdpUserAttributeVerificationCodeAttrs struct {
 var CognitoIdpUserAttributeVerificationCode = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_user_attribute_verification_code",
 	Fields: ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+		"AccessToken":    ubx.FieldSpec{WireName: "access_token"},
+		"AttributeName":  ubx.FieldSpec{WireName: "attribute_name"},
 		"ClientMetadata": ubx.FieldSpec{WireName: "client_metadata"},
 	},
 }

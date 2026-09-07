@@ -8,9 +8,9 @@ type ApiIotwirelessServiceEndpointConfig struct {
 }
 
 type ApiIotwirelessServiceEndpointAttrs struct {
-	ServerTrust any
+	ServerTrust     any
 	ServiceEndpoint any
-	ServiceType any
+	ServiceType     any
 }
 
 var ApiIotwirelessServiceEndpoint = ubx.DataSourceBinding{

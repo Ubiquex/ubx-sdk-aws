@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightsByAssessment_Insights struct {
 	AssessmentControlsCountByNoncompliantEvidence any
-	CompliantEvidenceCount any
-	InconclusiveEvidenceCount any
-	LastUpdated any
-	NoncompliantEvidenceCount any
-	TotalAssessmentControlsCount any
+	CompliantEvidenceCount                        any
+	InconclusiveEvidenceCount                     any
+	LastUpdated                                   any
+	NoncompliantEvidenceCount                     any
+	TotalAssessmentControlsCount                  any
 }
 
 type InsightsByAssessmentConfig struct {

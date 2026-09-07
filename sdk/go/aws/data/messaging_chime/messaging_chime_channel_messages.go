@@ -8,13 +8,13 @@ type MessagingChimeChannelMessages_ChannelMessages_MessageAttributes struct {
 }
 
 type MessagingChimeChannelMessages_ChannelMessages_Sender struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type MessagingChimeChannelMessages_ChannelMessages_Status struct {
 	Detail any
-	Value any
+	Value  any
 }
 
 type MessagingChimeChannelMessages_ChannelMessages_Target struct {
@@ -22,54 +22,54 @@ type MessagingChimeChannelMessages_ChannelMessages_Target struct {
 }
 
 type MessagingChimeChannelMessages_ChannelMessages struct {
-	Content any
-	ContentType any
-	CreatedTimestamp any
-	LastEditedTimestamp any
+	Content              any
+	ContentType          any
+	CreatedTimestamp     any
+	LastEditedTimestamp  any
 	LastUpdatedTimestamp any
-	MessageAttributes any
-	MessageId any
-	Metadata any
-	Redacted any
-	Sender any
-	Status any
-	Target any
-	Type any
+	MessageAttributes    any
+	MessageId            any
+	Metadata             any
+	Redacted             any
+	Sender               any
+	Status               any
+	Target               any
+	Type                 any
 }
 
 type MessagingChimeChannelMessagesConfig struct {
-	ChannelArn any
-	ChimeBearer any
-	MaxResults any
-	NextToken any
-	NotAfter any
-	NotBefore any
-	SortOrder any
+	ChannelArn   any
+	ChimeBearer  any
+	MaxResults   any
+	NextToken    any
+	NotAfter     any
+	NotBefore    any
+	SortOrder    any
 	SubChannelId any
 }
 
 type MessagingChimeChannelMessagesAttrs struct {
-	ChannelArn any
+	ChannelArn      any
 	ChannelMessages any
-	ChimeBearer any
-	MaxResults any
-	NextToken any
-	NotAfter any
-	NotBefore any
-	SortOrder any
-	SubChannelId any
+	ChimeBearer     any
+	MaxResults      any
+	NextToken       any
+	NotAfter        any
+	NotBefore       any
+	SortOrder       any
+	SubChannelId    any
 }
 
 var MessagingChimeChannelMessages = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channel_messages",
 	Fields: ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"NotAfter": ubx.FieldSpec{WireName: "not_after"},
-		"NotBefore": ubx.FieldSpec{WireName: "not_before"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"ChannelArn":   ubx.FieldSpec{WireName: "channel_arn"},
+		"ChimeBearer":  ubx.FieldSpec{WireName: "chime_bearer"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"NotAfter":     ubx.FieldSpec{WireName: "not_after"},
+		"NotBefore":    ubx.FieldSpec{WireName: "not_before"},
+		"SortOrder":    ubx.FieldSpec{WireName: "sort_order"},
 		"SubChannelId": ubx.FieldSpec{WireName: "sub_channel_id"},
 	},
 }

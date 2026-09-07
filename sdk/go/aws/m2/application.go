@@ -11,9 +11,9 @@ type Application_Definition struct {
 }
 
 var Application_DefinitionFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"S3Location": ubx.FieldSpec{WireName: "s3_location"},
-	}
+	"Content":    ubx.FieldSpec{WireName: "content"},
+	"S3Location": ubx.FieldSpec{WireName: "s3_location"},
+}
 
 type ApplicationConfig struct {
 	// Contains the application definition for the AWS M2 mainframe modernization application, supplying the code or configuration either inline or via an S3 location. (AI-inferred)
@@ -58,14 +58,14 @@ var Application = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: Application_DefinitionFields,
+			Kind:     "object",
+			Fields:   Application_DefinitionFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"EngineType":  ubx.FieldSpec{WireName: "engine_type"},
+		"KmsKeyId":    ubx.FieldSpec{WireName: "kms_key_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

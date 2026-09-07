@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpResourceServers_ResourceServers_Scopes struct {
 	ScopeDescription any
-	ScopeName any
+	ScopeName        any
 }
 
 type CognitoIdpResourceServers_ResourceServers struct {
 	Identifier any
-	Name any
-	Scopes any
+	Name       any
+	Scopes     any
 	UserPoolId any
 }
 
 type CognitoIdpResourceServersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	UserPoolId any
 }
 
 type CognitoIdpResourceServersAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	ResourceServers any
-	UserPoolId any
+	UserPoolId      any
 }
 
 var CognitoIdpResourceServers = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_resource_servers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

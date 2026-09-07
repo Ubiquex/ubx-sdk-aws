@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DimensionKeyDetails_Dimensions struct {
 	Dimension any
-	Status any
-	Value any
+	Status    any
+	Value     any
 }
 
 type DimensionKeyDetailsConfig struct {
-	Group any
-	GroupIdentifier any
-	Identifier any
+	Group               any
+	GroupIdentifier     any
+	Identifier          any
 	RequestedDimensions any
-	ServiceType any
+	ServiceType         any
 }
 
 type DimensionKeyDetailsAttrs struct {
-	Dimensions any
-	Group any
-	GroupIdentifier any
-	Identifier any
+	Dimensions          any
+	Group               any
+	GroupIdentifier     any
+	Identifier          any
 	RequestedDimensions any
-	ServiceType any
+	ServiceType         any
 }
 
 var DimensionKeyDetails = ubx.DataSourceBinding{
 	WireType: "aws_pi_dimension_key_details",
 	Fields: ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Group":               ubx.FieldSpec{WireName: "group"},
+		"GroupIdentifier":     ubx.FieldSpec{WireName: "group_identifier"},
+		"Identifier":          ubx.FieldSpec{WireName: "identifier"},
 		"RequestedDimensions": ubx.FieldSpec{WireName: "requested_dimensions"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
+		"ServiceType":         ubx.FieldSpec{WireName: "service_type"},
 	},
 }

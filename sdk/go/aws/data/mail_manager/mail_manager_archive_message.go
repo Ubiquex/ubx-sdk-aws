@@ -6,23 +6,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type MailManagerArchiveMessage_Envelope struct {
 	From any
 	Helo any
-	To any
+	To   any
 }
 
 type MailManagerArchiveMessage_Metadata struct {
 	ConfigurationSet any
-	IngressPointId any
-	RuleSetId any
-	SenderHostname any
-	SenderIpAddress any
-	SendingMethod any
-	SendingPool any
-	SourceArn any
-	SourceIdentity any
-	Timestamp any
-	TlsCipherSuite any
-	TlsProtocol any
-	TrafficPolicyId any
+	IngressPointId   any
+	RuleSetId        any
+	SenderHostname   any
+	SenderIpAddress  any
+	SendingMethod    any
+	SendingPool      any
+	SourceArn        any
+	SourceIdentity   any
+	Timestamp        any
+	TlsCipherSuite   any
+	TlsProtocol      any
+	TrafficPolicyId  any
 }
 
 type MailManagerArchiveMessageConfig struct {
@@ -32,7 +32,7 @@ type MailManagerArchiveMessageConfig struct {
 type MailManagerArchiveMessageAttrs struct {
 	ArchivedMessageId any
 	// <p>The SMTP envelope information of the email.</p>
-	Envelope any
+	Envelope            any
 	MessageDownloadLink any
 	// <p>The metadata about the email.</p>
 	Metadata any

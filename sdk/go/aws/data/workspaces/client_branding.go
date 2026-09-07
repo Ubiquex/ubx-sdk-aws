@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientBranding_DeviceTypeAndroid struct {
 	ForgotPasswordLink any
-	LoginMessage any
-	LogoUrl any
-	SupportEmail any
-	SupportLink any
+	LoginMessage       any
+	LogoUrl            any
+	SupportEmail       any
+	SupportLink        any
 }
 
 type ClientBranding_DeviceTypeIos struct {
 	ForgotPasswordLink any
-	LoginMessage any
-	Logo2xUrl any
-	Logo3xUrl any
-	LogoUrl any
-	SupportEmail any
-	SupportLink any
+	LoginMessage       any
+	Logo2xUrl          any
+	Logo3xUrl          any
+	LogoUrl            any
+	SupportEmail       any
+	SupportLink        any
 }
 
 type ClientBrandingConfig struct {
@@ -38,7 +38,7 @@ type ClientBrandingAttrs struct {
 	DeviceTypeWeb any
 	// <p>Returns default client branding attributes that were imported. These attributes display on the client login screen.</p> <important> <p>Client branding attributes are public facing. Ensure that you don't include sensitive information.</p> </important>
 	DeviceTypeWindows any
-	ResourceId any
+	ResourceId        any
 }
 
 var ClientBranding = ubx.DataSourceBinding{

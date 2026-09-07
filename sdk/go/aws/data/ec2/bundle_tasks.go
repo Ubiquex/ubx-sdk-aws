@@ -4,15 +4,15 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BundleTasks_BundleTasks_BundleTaskError struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type BundleTasks_BundleTasks_Storage_S3 struct {
-	AwsaccessKeyId any
-	Bucket any
-	Prefix any
-	UploadPolicy any
+	AwsaccessKeyId        any
+	Bucket                any
+	Prefix                any
+	UploadPolicy          any
 	UploadPolicySignature any
 }
 
@@ -21,48 +21,48 @@ type BundleTasks_BundleTasks_Storage struct {
 }
 
 type BundleTasks_BundleTasks struct {
-	BundleId any
+	BundleId        any
 	BundleTaskError any
-	InstanceId any
-	Progress any
-	StartTime any
-	State any
-	Storage any
-	UpdateTime any
+	InstanceId      any
+	Progress        any
+	StartTime       any
+	State           any
+	Storage         any
+	UpdateTime      any
 }
 
 type BundleTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var BundleTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type BundleTasksConfig struct {
 	BundleIds any
-	DryRun any
-	Filters any
+	DryRun    any
+	Filters   any
 }
 
 type BundleTasksAttrs struct {
-	BundleIds any
+	BundleIds   any
 	BundleTasks any
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 }
 
 var BundleTasks = ubx.DataSourceBinding{
 	WireType: "aws_ec2_bundle_tasks",
 	Fields: ubx.FieldMap{
 		"BundleIds": ubx.FieldSpec{WireName: "bundle_ids"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":    ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: BundleTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   BundleTasks_FiltersFields,
 		},
 	},
 }

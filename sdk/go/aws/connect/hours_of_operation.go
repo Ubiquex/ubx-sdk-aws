@@ -4,7 +4,7 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HoursOfOperation_ChildHoursOfOperations struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -56,7 +56,7 @@ type HoursOfOperation_HoursOfOperationOverrides struct {
 	// The display name assigned to a specific date override (e.g., a holiday) within an Amazon Connect hours of operation configuration, used to identify the custom schedule for that date. (AI-inferred)
 	OverrideName any
 	// Indicates the type of override, either HOLIDAY or OVERRIDE, determining how the specific-date hours override the weekly configuration. (AI-inferred)
-	OverrideType any
+	OverrideType     any
 	RecurrenceConfig any
 }
 
@@ -68,68 +68,68 @@ type HoursOfOperation_Tags struct {
 }
 
 var HoursOfOperation_ChildHoursOfOperationsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var HoursOfOperation_Config_EndTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+}
 
 var HoursOfOperation_ConfigFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"EndTime": ubx.FieldSpec{
-			WireName: "end_time",
-			Kind: "object",
-			Fields: HoursOfOperation_Config_EndTimeFields,
-		},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: HoursOfOperation_Config_EndTimeFields,
-		},
-	}
+	"Day": ubx.FieldSpec{WireName: "day"},
+	"EndTime": ubx.FieldSpec{
+		WireName: "end_time",
+		Kind:     "object",
+		Fields:   HoursOfOperation_Config_EndTimeFields,
+	},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   HoursOfOperation_Config_EndTimeFields,
+	},
+}
 
 var HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePatternFields = ubx.FieldMap{
-		"ByMonth": ubx.FieldSpec{WireName: "by_month"},
-		"ByMonthDay": ubx.FieldSpec{WireName: "by_month_day"},
-		"ByWeekdayOccurrence": ubx.FieldSpec{WireName: "by_weekday_occurrence"},
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-	}
+	"ByMonth":             ubx.FieldSpec{WireName: "by_month"},
+	"ByMonthDay":          ubx.FieldSpec{WireName: "by_month_day"},
+	"ByWeekdayOccurrence": ubx.FieldSpec{WireName: "by_weekday_occurrence"},
+	"Frequency":           ubx.FieldSpec{WireName: "frequency"},
+	"Interval":            ubx.FieldSpec{WireName: "interval"},
+}
 
 var HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfigFields = ubx.FieldMap{
-		"RecurrencePattern": ubx.FieldSpec{
-			WireName: "recurrence_pattern",
-			Kind: "object",
-			Fields: HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePatternFields,
-		},
-	}
+	"RecurrencePattern": ubx.FieldSpec{
+		WireName: "recurrence_pattern",
+		Kind:     "object",
+		Fields:   HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePatternFields,
+	},
+}
 
 var HoursOfOperation_HoursOfOperationOverridesFields = ubx.FieldMap{
-		"EffectiveFrom": ubx.FieldSpec{WireName: "effective_from"},
-		"EffectiveTill": ubx.FieldSpec{WireName: "effective_till"},
-		"HoursOfOperationOverrideId": ubx.FieldSpec{WireName: "hours_of_operation_override_id"},
-		"OverrideConfig": ubx.FieldSpec{
-			WireName: "override_config",
-			Kind: "list",
-			Fields: HoursOfOperation_ConfigFields,
-		},
-		"OverrideDescription": ubx.FieldSpec{WireName: "override_description"},
-		"OverrideName": ubx.FieldSpec{WireName: "override_name"},
-		"OverrideType": ubx.FieldSpec{WireName: "override_type"},
-		"RecurrenceConfig": ubx.FieldSpec{
-			WireName: "recurrence_config",
-			Kind: "object",
-			Fields: HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfigFields,
-		},
-	}
+	"EffectiveFrom":              ubx.FieldSpec{WireName: "effective_from"},
+	"EffectiveTill":              ubx.FieldSpec{WireName: "effective_till"},
+	"HoursOfOperationOverrideId": ubx.FieldSpec{WireName: "hours_of_operation_override_id"},
+	"OverrideConfig": ubx.FieldSpec{
+		WireName: "override_config",
+		Kind:     "list",
+		Fields:   HoursOfOperation_ConfigFields,
+	},
+	"OverrideDescription": ubx.FieldSpec{WireName: "override_description"},
+	"OverrideName":        ubx.FieldSpec{WireName: "override_name"},
+	"OverrideType":        ubx.FieldSpec{WireName: "override_type"},
+	"RecurrenceConfig": ubx.FieldSpec{
+		WireName: "recurrence_config",
+		Kind:     "object",
+		Fields:   HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfigFields,
+	},
+}
 
 var HoursOfOperation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type HoursOfOperationConfig struct {
 	// List of child hours of operations.
@@ -180,31 +180,31 @@ var HoursOfOperation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ChildHoursOfOperations": ubx.FieldSpec{
 			WireName: "child_hours_of_operations",
-			Kind: "list",
-			Fields: HoursOfOperation_ChildHoursOfOperationsFields,
+			Kind:     "list",
+			Fields:   HoursOfOperation_ChildHoursOfOperationsFields,
 		},
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "list",
-			Fields: HoursOfOperation_ConfigFields,
+			Kind:     "list",
+			Fields:   HoursOfOperation_ConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"HoursOfOperationOverrides": ubx.FieldSpec{
 			WireName: "hours_of_operation_overrides",
-			Kind: "list",
-			Fields: HoursOfOperation_HoursOfOperationOverridesFields,
+			Kind:     "list",
+			Fields:   HoursOfOperation_HoursOfOperationOverridesFields,
 		},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ParentHoursOfOperations": ubx.FieldSpec{
 			WireName: "parent_hours_of_operations",
-			Kind: "list",
-			Fields: HoursOfOperation_ChildHoursOfOperationsFields,
+			Kind:     "list",
+			Fields:   HoursOfOperation_ChildHoursOfOperationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: HoursOfOperation_TagsFields,
+			Kind:     "list",
+			Fields:   HoursOfOperation_TagsFields,
 		},
 		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},

@@ -4,59 +4,59 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FleetAdvisorSchemas_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type FleetAdvisorSchemas_FleetAdvisorSchemas_DatabaseInstance struct {
-	DatabaseEngine any
-	DatabaseId any
+	DatabaseEngine    any
+	DatabaseId        any
 	DatabaseIpAddress any
-	DatabaseName any
+	DatabaseName      any
 }
 
 type FleetAdvisorSchemas_FleetAdvisorSchemas_OriginalSchema struct {
-	DatabaseId any
+	DatabaseId        any
 	DatabaseIpAddress any
-	DatabaseName any
-	SchemaId any
-	SchemaName any
+	DatabaseName      any
+	SchemaId          any
+	SchemaName        any
 }
 
 type FleetAdvisorSchemas_FleetAdvisorSchemas_Server struct {
-	IpAddress any
-	ServerId any
+	IpAddress  any
+	ServerId   any
 	ServerName any
 }
 
 type FleetAdvisorSchemas_FleetAdvisorSchemas struct {
-	CodeLineCount any
-	CodeSize any
-	Complexity any
+	CodeLineCount    any
+	CodeSize         any
+	Complexity       any
 	DatabaseInstance any
-	OriginalSchema any
-	SchemaId any
-	SchemaName any
-	Server any
-	Similarity any
+	OriginalSchema   any
+	SchemaId         any
+	SchemaName       any
+	Server           any
+	Similarity       any
 }
 
 var FleetAdvisorSchemas_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type FleetAdvisorSchemasConfig struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 type FleetAdvisorSchemasAttrs struct {
-	Filters any
+	Filters             any
 	FleetAdvisorSchemas any
-	MaxRecords any
-	NextToken any
+	MaxRecords          any
+	NextToken           any
 }
 
 var FleetAdvisorSchemas = ubx.DataSourceBinding{
@@ -64,10 +64,10 @@ var FleetAdvisorSchemas = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: FleetAdvisorSchemas_FiltersFields,
+			Kind:     "list",
+			Fields:   FleetAdvisorSchemas_FiltersFields,
 		},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

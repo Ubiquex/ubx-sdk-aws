@@ -11,9 +11,9 @@ type Dashboard_Tags struct {
 }
 
 var Dashboard_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DashboardConfig struct {
 	// The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard
@@ -40,8 +40,8 @@ var Dashboard = ubx.ResourceBinding{
 		"DashboardName": ubx.FieldSpec{WireName: "dashboard_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dashboard_TagsFields,
+			Kind:     "list",
+			Fields:   Dashboard_TagsFields,
 		},
 	},
 }

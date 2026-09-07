@@ -18,14 +18,14 @@ type Workload_Tags struct {
 }
 
 var Workload_DiscoveryConfigFields = ubx.FieldMap{
-		"TrustedAdvisorIntegrationStatus": ubx.FieldSpec{WireName: "trusted_advisor_integration_status"},
-		"WorkloadResourceDefinition": ubx.FieldSpec{WireName: "workload_resource_definition"},
-	}
+	"TrustedAdvisorIntegrationStatus": ubx.FieldSpec{WireName: "trusted_advisor_integration_status"},
+	"WorkloadResourceDefinition":      ubx.FieldSpec{WireName: "workload_resource_definition"},
+}
 
 var Workload_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WorkloadConfig struct {
 	// The list of Amazon Web Services account IDs associated with the workload.
@@ -98,26 +98,26 @@ type WorkloadAttrs struct {
 var Workload = ubx.ResourceBinding{
 	WireType: "aws_well_architected_workload",
 	Fields: ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
+		"AccountIds":          ubx.FieldSpec{WireName: "account_ids"},
 		"ArchitecturalDesign": ubx.FieldSpec{WireName: "architectural_design"},
-		"AwsRegions": ubx.FieldSpec{WireName: "aws_regions"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AwsRegions":          ubx.FieldSpec{WireName: "aws_regions"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"DiscoveryConfig": ubx.FieldSpec{
 			WireName: "discovery_config",
-			Kind: "object",
-			Fields: Workload_DiscoveryConfigFields,
+			Kind:     "object",
+			Fields:   Workload_DiscoveryConfigFields,
 		},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Industry": ubx.FieldSpec{WireName: "industry"},
-		"IndustryType": ubx.FieldSpec{WireName: "industry_type"},
-		"Lenses": ubx.FieldSpec{WireName: "lenses"},
+		"Environment":   ubx.FieldSpec{WireName: "environment"},
+		"Industry":      ubx.FieldSpec{WireName: "industry"},
+		"IndustryType":  ubx.FieldSpec{WireName: "industry_type"},
+		"Lenses":        ubx.FieldSpec{WireName: "lenses"},
 		"NonAwsRegions": ubx.FieldSpec{WireName: "non_aws_regions"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
-		"ReviewOwner": ubx.FieldSpec{WireName: "review_owner"},
+		"Notes":         ubx.FieldSpec{WireName: "notes"},
+		"ReviewOwner":   ubx.FieldSpec{WireName: "review_owner"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workload_TagsFields,
+			Kind:     "list",
+			Fields:   Workload_TagsFields,
 		},
 		"WorkloadName": ubx.FieldSpec{WireName: "workload_name"},
 	},

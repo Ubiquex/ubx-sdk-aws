@@ -32,23 +32,23 @@ type Disk_Tags struct {
 }
 
 var Disk_AddOns_AutoSnapshotAddOnRequestFields = ubx.FieldMap{
-		"SnapshotTimeOfDay": ubx.FieldSpec{WireName: "snapshot_time_of_day"},
-	}
+	"SnapshotTimeOfDay": ubx.FieldSpec{WireName: "snapshot_time_of_day"},
+}
 
 var Disk_AddOnsFields = ubx.FieldMap{
-		"AddOnType": ubx.FieldSpec{WireName: "add_on_type"},
-		"AutoSnapshotAddOnRequest": ubx.FieldSpec{
-			WireName: "auto_snapshot_add_on_request",
-			Kind: "object",
-			Fields: Disk_AddOns_AutoSnapshotAddOnRequestFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AddOnType": ubx.FieldSpec{WireName: "add_on_type"},
+	"AutoSnapshotAddOnRequest": ubx.FieldSpec{
+		WireName: "auto_snapshot_add_on_request",
+		Kind:     "object",
+		Fields:   Disk_AddOns_AutoSnapshotAddOnRequestFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Disk_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DiskConfig struct {
 	// An array of objects representing the add-ons to enable for the new instance.
@@ -101,16 +101,16 @@ var Disk = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AddOns": ubx.FieldSpec{
 			WireName: "add_ons",
-			Kind: "list",
-			Fields: Disk_AddOnsFields,
+			Kind:     "list",
+			Fields:   Disk_AddOnsFields,
 		},
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
-		"SizeInGb": ubx.FieldSpec{WireName: "size_in_gb"},
+		"DiskName":         ubx.FieldSpec{WireName: "disk_name"},
+		"SizeInGb":         ubx.FieldSpec{WireName: "size_in_gb"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Disk_TagsFields,
+			Kind:     "list",
+			Fields:   Disk_TagsFields,
 		},
 	},
 }

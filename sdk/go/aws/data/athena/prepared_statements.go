@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PreparedStatements_PreparedStatements struct {
 	LastModifiedTime any
-	StatementName any
+	StatementName    any
 }
 
 type PreparedStatementsConfig struct {
 	MaxResults any
-	NextToken any
-	WorkGroup any
+	NextToken  any
+	WorkGroup  any
 }
 
 type PreparedStatementsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	PreparedStatements any
-	WorkGroup any
+	WorkGroup          any
 }
 
 var PreparedStatements = ubx.DataSourceBinding{
 	WireType: "aws_athena_prepared_statements",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"WorkGroup":  ubx.FieldSpec{WireName: "work_group"},
 	},
 }

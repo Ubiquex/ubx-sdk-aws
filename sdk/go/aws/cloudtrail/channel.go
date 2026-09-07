@@ -18,14 +18,14 @@ type Channel_Tags struct {
 }
 
 var Channel_DestinationsFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Channel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ChannelConfig struct {
 	// One or more resources to which events arriving through a channel are logged and stored.
@@ -56,15 +56,15 @@ var Channel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Destinations": ubx.FieldSpec{
 			WireName: "destinations",
-			Kind: "list",
-			Fields: Channel_DestinationsFields,
+			Kind:     "list",
+			Fields:   Channel_DestinationsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{WireName: "source"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Channel_TagsFields,
+			Kind:     "list",
+			Fields:   Channel_TagsFields,
 		},
 	},
 }

@@ -147,161 +147,161 @@ type Service_SourceConfiguration struct {
 
 type Service_Tags struct {
 	// The key of a tag attached to an AWS App Runner service, used to organize and manage the service resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Service_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var Service_HealthCheckConfigurationFields = ubx.FieldMap{
-		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
-	}
+	"HealthyThreshold":   ubx.FieldSpec{WireName: "healthy_threshold"},
+	"Interval":           ubx.FieldSpec{WireName: "interval"},
+	"Path":               ubx.FieldSpec{WireName: "path"},
+	"Protocol":           ubx.FieldSpec{WireName: "protocol"},
+	"Timeout":            ubx.FieldSpec{WireName: "timeout"},
+	"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
+}
 
 var Service_InstanceConfigurationFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"InstanceRoleArn": ubx.FieldSpec{WireName: "instance_role_arn"},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-	}
+	"Cpu":             ubx.FieldSpec{WireName: "cpu"},
+	"InstanceRoleArn": ubx.FieldSpec{WireName: "instance_role_arn"},
+	"Memory":          ubx.FieldSpec{WireName: "memory"},
+}
 
 var Service_NetworkConfiguration_EgressConfigurationFields = ubx.FieldMap{
-		"EgressType": ubx.FieldSpec{WireName: "egress_type"},
-		"VpcConnectorArn": ubx.FieldSpec{WireName: "vpc_connector_arn"},
-	}
+	"EgressType":      ubx.FieldSpec{WireName: "egress_type"},
+	"VpcConnectorArn": ubx.FieldSpec{WireName: "vpc_connector_arn"},
+}
 
 var Service_NetworkConfiguration_IngressConfigurationFields = ubx.FieldMap{
-		"IsPubliclyAccessible": ubx.FieldSpec{WireName: "is_publicly_accessible"},
-	}
+	"IsPubliclyAccessible": ubx.FieldSpec{WireName: "is_publicly_accessible"},
+}
 
 var Service_NetworkConfigurationFields = ubx.FieldMap{
-		"EgressConfiguration": ubx.FieldSpec{
-			WireName: "egress_configuration",
-			Kind: "object",
-			Fields: Service_NetworkConfiguration_EgressConfigurationFields,
-		},
-		"IngressConfiguration": ubx.FieldSpec{
-			WireName: "ingress_configuration",
-			Kind: "object",
-			Fields: Service_NetworkConfiguration_IngressConfigurationFields,
-		},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-	}
+	"EgressConfiguration": ubx.FieldSpec{
+		WireName: "egress_configuration",
+		Kind:     "object",
+		Fields:   Service_NetworkConfiguration_EgressConfigurationFields,
+	},
+	"IngressConfiguration": ubx.FieldSpec{
+		WireName: "ingress_configuration",
+		Kind:     "object",
+		Fields:   Service_NetworkConfiguration_IngressConfigurationFields,
+	},
+	"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
+}
 
 var Service_ObservabilityConfigurationFields = ubx.FieldMap{
-		"ObservabilityConfigurationArn": ubx.FieldSpec{WireName: "observability_configuration_arn"},
-		"ObservabilityEnabled": ubx.FieldSpec{WireName: "observability_enabled"},
-	}
+	"ObservabilityConfigurationArn": ubx.FieldSpec{WireName: "observability_configuration_arn"},
+	"ObservabilityEnabled":          ubx.FieldSpec{WireName: "observability_enabled"},
+}
 
 var Service_SourceConfiguration_AuthenticationConfigurationFields = ubx.FieldMap{
-		"AccessRoleArn": ubx.FieldSpec{WireName: "access_role_arn"},
-		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
-	}
+	"AccessRoleArn": ubx.FieldSpec{WireName: "access_role_arn"},
+	"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
+}
 
 var Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValuesFields = ubx.FieldMap{
-		"BuildCommand": ubx.FieldSpec{WireName: "build_command"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"RuntimeEnvironmentSecrets": ubx.FieldSpec{
-			WireName: "runtime_environment_secrets",
-			Kind: "list",
-			Fields: Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields,
-		},
-		"RuntimeEnvironmentVariables": ubx.FieldSpec{
-			WireName: "runtime_environment_variables",
-			Kind: "list",
-			Fields: Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields,
-		},
-		"StartCommand": ubx.FieldSpec{WireName: "start_command"},
-	}
+	"BuildCommand": ubx.FieldSpec{WireName: "build_command"},
+	"Port":         ubx.FieldSpec{WireName: "port"},
+	"Runtime":      ubx.FieldSpec{WireName: "runtime"},
+	"RuntimeEnvironmentSecrets": ubx.FieldSpec{
+		WireName: "runtime_environment_secrets",
+		Kind:     "list",
+		Fields:   Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields,
+	},
+	"RuntimeEnvironmentVariables": ubx.FieldSpec{
+		WireName: "runtime_environment_variables",
+		Kind:     "list",
+		Fields:   Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields,
+	},
+	"StartCommand": ubx.FieldSpec{WireName: "start_command"},
+}
 
 var Service_SourceConfiguration_CodeRepository_CodeConfigurationFields = ubx.FieldMap{
-		"CodeConfigurationValues": ubx.FieldSpec{
-			WireName: "code_configuration_values",
-			Kind: "object",
-			Fields: Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValuesFields,
-		},
-		"ConfigurationSource": ubx.FieldSpec{WireName: "configuration_source"},
-	}
+	"CodeConfigurationValues": ubx.FieldSpec{
+		WireName: "code_configuration_values",
+		Kind:     "object",
+		Fields:   Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValuesFields,
+	},
+	"ConfigurationSource": ubx.FieldSpec{WireName: "configuration_source"},
+}
 
 var Service_SourceConfiguration_CodeRepository_SourceCodeVersionFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Service_SourceConfiguration_CodeRepositoryFields = ubx.FieldMap{
-		"CodeConfiguration": ubx.FieldSpec{
-			WireName: "code_configuration",
-			Kind: "object",
-			Fields: Service_SourceConfiguration_CodeRepository_CodeConfigurationFields,
-		},
-		"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
-		"SourceCodeVersion": ubx.FieldSpec{
-			WireName: "source_code_version",
-			Kind: "object",
-			Fields: Service_SourceConfiguration_CodeRepository_SourceCodeVersionFields,
-		},
-		"SourceDirectory": ubx.FieldSpec{WireName: "source_directory"},
-	}
+	"CodeConfiguration": ubx.FieldSpec{
+		WireName: "code_configuration",
+		Kind:     "object",
+		Fields:   Service_SourceConfiguration_CodeRepository_CodeConfigurationFields,
+	},
+	"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
+	"SourceCodeVersion": ubx.FieldSpec{
+		WireName: "source_code_version",
+		Kind:     "object",
+		Fields:   Service_SourceConfiguration_CodeRepository_SourceCodeVersionFields,
+	},
+	"SourceDirectory": ubx.FieldSpec{WireName: "source_directory"},
+}
 
 var Service_SourceConfiguration_ImageRepository_ImageConfigurationFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"RuntimeEnvironmentSecrets": ubx.FieldSpec{
-			WireName: "runtime_environment_secrets",
-			Kind: "list",
-			Fields: Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields,
-		},
-		"RuntimeEnvironmentVariables": ubx.FieldSpec{
-			WireName: "runtime_environment_variables",
-			Kind: "list",
-			Fields: Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields,
-		},
-		"StartCommand": ubx.FieldSpec{WireName: "start_command"},
-	}
+	"Port": ubx.FieldSpec{WireName: "port"},
+	"RuntimeEnvironmentSecrets": ubx.FieldSpec{
+		WireName: "runtime_environment_secrets",
+		Kind:     "list",
+		Fields:   Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields,
+	},
+	"RuntimeEnvironmentVariables": ubx.FieldSpec{
+		WireName: "runtime_environment_variables",
+		Kind:     "list",
+		Fields:   Service_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecretsFields,
+	},
+	"StartCommand": ubx.FieldSpec{WireName: "start_command"},
+}
 
 var Service_SourceConfiguration_ImageRepositoryFields = ubx.FieldMap{
-		"ImageConfiguration": ubx.FieldSpec{
-			WireName: "image_configuration",
-			Kind: "object",
-			Fields: Service_SourceConfiguration_ImageRepository_ImageConfigurationFields,
-		},
-		"ImageIdentifier": ubx.FieldSpec{WireName: "image_identifier"},
-		"ImageRepositoryType": ubx.FieldSpec{WireName: "image_repository_type"},
-	}
+	"ImageConfiguration": ubx.FieldSpec{
+		WireName: "image_configuration",
+		Kind:     "object",
+		Fields:   Service_SourceConfiguration_ImageRepository_ImageConfigurationFields,
+	},
+	"ImageIdentifier":     ubx.FieldSpec{WireName: "image_identifier"},
+	"ImageRepositoryType": ubx.FieldSpec{WireName: "image_repository_type"},
+}
 
 var Service_SourceConfigurationFields = ubx.FieldMap{
-		"AuthenticationConfiguration": ubx.FieldSpec{
-			WireName: "authentication_configuration",
-			Kind: "object",
-			Fields: Service_SourceConfiguration_AuthenticationConfigurationFields,
-		},
-		"AutoDeploymentsEnabled": ubx.FieldSpec{WireName: "auto_deployments_enabled"},
-		"CodeRepository": ubx.FieldSpec{
-			WireName: "code_repository",
-			Kind: "object",
-			Fields: Service_SourceConfiguration_CodeRepositoryFields,
-		},
-		"ImageRepository": ubx.FieldSpec{
-			WireName: "image_repository",
-			Kind: "object",
-			Fields: Service_SourceConfiguration_ImageRepositoryFields,
-		},
-	}
+	"AuthenticationConfiguration": ubx.FieldSpec{
+		WireName: "authentication_configuration",
+		Kind:     "object",
+		Fields:   Service_SourceConfiguration_AuthenticationConfigurationFields,
+	},
+	"AutoDeploymentsEnabled": ubx.FieldSpec{WireName: "auto_deployments_enabled"},
+	"CodeRepository": ubx.FieldSpec{
+		WireName: "code_repository",
+		Kind:     "object",
+		Fields:   Service_SourceConfiguration_CodeRepositoryFields,
+	},
+	"ImageRepository": ubx.FieldSpec{
+		WireName: "image_repository",
+		Kind:     "object",
+		Fields:   Service_SourceConfiguration_ImageRepositoryFields,
+	},
+}
 
 var Service_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceConfig struct {
 	// Autoscaling configuration ARN
@@ -359,39 +359,39 @@ var Service = ubx.ResourceBinding{
 		"AutoScalingConfigurationArn": ubx.FieldSpec{WireName: "auto_scaling_configuration_arn"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Service_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_EncryptionConfigurationFields,
 		},
 		"HealthCheckConfiguration": ubx.FieldSpec{
 			WireName: "health_check_configuration",
-			Kind: "object",
-			Fields: Service_HealthCheckConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_HealthCheckConfigurationFields,
 		},
 		"InstanceConfiguration": ubx.FieldSpec{
 			WireName: "instance_configuration",
-			Kind: "object",
-			Fields: Service_InstanceConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_InstanceConfigurationFields,
 		},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: Service_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_NetworkConfigurationFields,
 		},
 		"ObservabilityConfiguration": ubx.FieldSpec{
 			WireName: "observability_configuration",
-			Kind: "object",
-			Fields: Service_ObservabilityConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_ObservabilityConfigurationFields,
 		},
 		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
 		"SourceConfiguration": ubx.FieldSpec{
 			WireName: "source_configuration",
-			Kind: "object",
-			Fields: Service_SourceConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_SourceConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Service_TagsFields,
+			Kind:     "list",
+			Fields:   Service_TagsFields,
 		},
 	},
 }

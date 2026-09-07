@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationhubStrategyRecommendationReportDetails_RecommendationReportDetails struct {
 	CompletionTime any
-	S3Bucket any
-	S3Keys any
-	StartTime any
-	Status any
-	StatusMessage any
+	S3Bucket       any
+	S3Keys         any
+	StartTime      any
+	Status         any
+	StatusMessage  any
 }
 
 type MigrationhubStrategyRecommendationReportDetailsConfig struct {

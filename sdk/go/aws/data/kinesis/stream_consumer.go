@@ -4,35 +4,35 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamConsumer_ConsumerDescription struct {
-	ConsumerArn any
+	ConsumerArn               any
 	ConsumerCreationTimestamp any
-	ConsumerName any
-	ConsumerStatus any
-	StreamArn any
+	ConsumerName              any
+	ConsumerStatus            any
+	StreamArn                 any
 }
 
 type StreamConsumerConfig struct {
-	ConsumerArn any
+	ConsumerArn  any
 	ConsumerName any
-	StreamArn any
-	StreamId any
+	StreamArn    any
+	StreamId     any
 }
 
 type StreamConsumerAttrs struct {
 	ConsumerArn any
 	// <p>An object that represents the details of a registered consumer. This type of object is returned by <a>DescribeStreamConsumer</a>.</p>
 	ConsumerDescription any
-	ConsumerName any
-	StreamArn any
-	StreamId any
+	ConsumerName        any
+	StreamArn           any
+	StreamId            any
 }
 
 var StreamConsumer = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_stream_consumer",
 	Fields: ubx.FieldMap{
-		"ConsumerArn": ubx.FieldSpec{WireName: "consumer_arn"},
+		"ConsumerArn":  ubx.FieldSpec{WireName: "consumer_arn"},
 		"ConsumerName": ubx.FieldSpec{WireName: "consumer_name"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamArn":    ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamId":     ubx.FieldSpec{WireName: "stream_id"},
 	},
 }

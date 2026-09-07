@@ -5,50 +5,50 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProblemObservations_RelatedObservations_ObservationList struct {
 	CloudWatchEventDetailType any
-	CloudWatchEventId any
-	CloudWatchEventSource any
-	CodeDeployApplication any
+	CloudWatchEventId         any
+	CloudWatchEventSource     any
+	CodeDeployApplication     any
 	CodeDeployDeploymentGroup any
-	CodeDeployDeploymentId any
+	CodeDeployDeploymentId    any
 	CodeDeployInstanceGroupId any
-	CodeDeployState any
-	EbsCause any
-	EbsEvent any
-	EbsRequestId any
-	EbsResult any
-	Ec2State any
-	EndTime any
-	HealthEventArn any
-	HealthEventDescription any
-	HealthEventTypeCategory any
-	HealthEventTypeCode any
-	HealthService any
-	Id any
-	LineTime any
-	LogFilter any
-	LogGroup any
-	LogText any
-	MetricName any
-	MetricNamespace any
-	RdsEventCategories any
-	RdsEventMessage any
-	S3EventName any
-	SourceArn any
-	SourceType any
-	StartTime any
-	StatesArn any
-	StatesExecutionArn any
-	StatesInput any
-	StatesStatus any
-	Unit any
-	Value any
-	XrayErrorPercent any
-	XrayFaultPercent any
-	XrayNodeName any
-	XrayNodeType any
+	CodeDeployState           any
+	EbsCause                  any
+	EbsEvent                  any
+	EbsRequestId              any
+	EbsResult                 any
+	Ec2State                  any
+	EndTime                   any
+	HealthEventArn            any
+	HealthEventDescription    any
+	HealthEventTypeCategory   any
+	HealthEventTypeCode       any
+	HealthService             any
+	Id                        any
+	LineTime                  any
+	LogFilter                 any
+	LogGroup                  any
+	LogText                   any
+	MetricName                any
+	MetricNamespace           any
+	RdsEventCategories        any
+	RdsEventMessage           any
+	S3EventName               any
+	SourceArn                 any
+	SourceType                any
+	StartTime                 any
+	StatesArn                 any
+	StatesExecutionArn        any
+	StatesInput               any
+	StatesStatus              any
+	Unit                      any
+	Value                     any
+	XrayErrorPercent          any
+	XrayFaultPercent          any
+	XrayNodeName              any
+	XrayNodeType              any
 	XrayRequestAverageLatency any
-	XrayRequestCount any
-	XrayThrottlePercent any
+	XrayRequestCount          any
+	XrayThrottlePercent       any
 }
 
 type ProblemObservations_RelatedObservations struct {

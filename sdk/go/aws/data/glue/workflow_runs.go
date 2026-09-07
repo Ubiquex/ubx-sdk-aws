@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowRuns_Runs_Graph_Edges struct {
 	DestinationId any
-	SourceId any
+	SourceId      any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_CrawlerDetails_Crawls struct {
-	CompletedOn any
+	CompletedOn  any
 	ErrorMessage any
-	LogGroup any
-	LogStream any
-	StartedOn any
-	State any
+	LogGroup     any
+	LogStream    any
+	StartedOn    any
+	State        any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_CrawlerDetails struct {
@@ -27,40 +27,40 @@ type WorkflowRuns_Runs_Graph_Nodes_JobDetails_JobRuns_NotificationProperty struc
 
 type WorkflowRuns_Runs_Graph_Nodes_JobDetails_JobRuns_PredecessorRuns struct {
 	JobName any
-	RunId any
+	RunId   any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_JobDetails_JobRuns struct {
-	AllocatedCapacity any
-	Arguments any
-	Attempt any
-	CompletedOn any
-	Dpuseconds any
-	ErrorMessage any
-	ExecutionClass any
+	AllocatedCapacity          any
+	Arguments                  any
+	Attempt                    any
+	CompletedOn                any
+	Dpuseconds                 any
+	ErrorMessage               any
+	ExecutionClass             any
 	ExecutionRoleSessionPolicy any
-	ExecutionTime any
-	GlueVersion any
-	Id any
-	JobMode any
-	JobName any
-	JobRunQueuingEnabled any
-	JobRunState any
-	LastModifiedOn any
-	LogGroupName any
-	MaintenanceWindow any
-	MaxCapacity any
-	NotificationProperty any
-	NumberOfWorkers any
-	PredecessorRuns any
-	PreviousRunId any
-	ProfileName any
-	SecurityConfiguration any
-	StartedOn any
-	StateDetail any
-	Timeout any
-	TriggerName any
-	WorkerType any
+	ExecutionTime              any
+	GlueVersion                any
+	Id                         any
+	JobMode                    any
+	JobName                    any
+	JobRunQueuingEnabled       any
+	JobRunState                any
+	LastModifiedOn             any
+	LogGroupName               any
+	MaintenanceWindow          any
+	MaxCapacity                any
+	NotificationProperty       any
+	NumberOfWorkers            any
+	PredecessorRuns            any
+	PreviousRunId              any
+	ProfileName                any
+	SecurityConfiguration      any
+	StartedOn                  any
+	StateDetail                any
+	Timeout                    any
+	TriggerName                any
+	WorkerType                 any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_JobDetails struct {
@@ -68,43 +68,43 @@ type WorkflowRuns_Runs_Graph_Nodes_JobDetails struct {
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_TriggerDetails_Trigger_Actions struct {
-	Arguments any
-	CrawlerName any
-	JobName any
-	NotificationProperty any
+	Arguments             any
+	CrawlerName           any
+	JobName               any
+	NotificationProperty  any
 	SecurityConfiguration any
-	Timeout any
+	Timeout               any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_TriggerDetails_Trigger_EventBatchingCondition struct {
-	BatchSize any
+	BatchSize   any
 	BatchWindow any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_TriggerDetails_Trigger_Predicate_Conditions struct {
-	CrawlState any
-	CrawlerName any
-	JobName any
+	CrawlState      any
+	CrawlerName     any
+	JobName         any
 	LogicalOperator any
-	State any
+	State           any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_TriggerDetails_Trigger_Predicate struct {
 	Conditions any
-	Logical any
+	Logical    any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_TriggerDetails_Trigger struct {
-	Actions any
-	Description any
+	Actions                any
+	Description            any
 	EventBatchingCondition any
-	Id any
-	Name any
-	Predicate any
-	Schedule any
-	State any
-	Type any
-	WorkflowName any
+	Id                     any
+	Name                   any
+	Predicate              any
+	Schedule               any
+	State                  any
+	Type                   any
+	WorkflowName           any
 }
 
 type WorkflowRuns_Runs_Graph_Nodes_TriggerDetails struct {
@@ -113,11 +113,11 @@ type WorkflowRuns_Runs_Graph_Nodes_TriggerDetails struct {
 
 type WorkflowRuns_Runs_Graph_Nodes struct {
 	CrawlerDetails any
-	JobDetails any
-	Name any
+	JobDetails     any
+	Name           any
 	TriggerDetails any
-	Type any
-	UniqueId any
+	Type           any
+	UniqueId       any
 }
 
 type WorkflowRuns_Runs_Graph struct {
@@ -126,51 +126,51 @@ type WorkflowRuns_Runs_Graph struct {
 }
 
 type WorkflowRuns_Runs_Statistics struct {
-	ErroredActions any
-	FailedActions any
-	RunningActions any
-	StoppedActions any
+	ErroredActions   any
+	FailedActions    any
+	RunningActions   any
+	StoppedActions   any
 	SucceededActions any
-	TimeoutActions any
-	TotalActions any
-	WaitingActions any
+	TimeoutActions   any
+	TotalActions     any
+	WaitingActions   any
 }
 
 type WorkflowRuns_Runs struct {
-	CompletedOn any
-	ErrorMessage any
-	Graph any
-	Name any
-	PreviousRunId any
-	StartedOn any
+	CompletedOn                 any
+	ErrorMessage                any
+	Graph                       any
+	Name                        any
+	PreviousRunId               any
+	StartedOn                   any
 	StartingEventBatchCondition any
-	Statistics any
-	Status any
-	WorkflowRunId any
-	WorkflowRunProperties any
+	Statistics                  any
+	Status                      any
+	WorkflowRunId               any
+	WorkflowRunProperties       any
 }
 
 type WorkflowRunsConfig struct {
 	IncludeGraph any
-	MaxResults any
-	Name any
-	NextToken any
+	MaxResults   any
+	Name         any
+	NextToken    any
 }
 
 type WorkflowRunsAttrs struct {
 	IncludeGraph any
-	MaxResults any
-	Name any
-	NextToken any
-	Runs any
+	MaxResults   any
+	Name         any
+	NextToken    any
+	Runs         any
 }
 
 var WorkflowRuns = ubx.DataSourceBinding{
 	WireType: "aws_glue_workflow_runs",
 	Fields: ubx.FieldMap{
 		"IncludeGraph": ubx.FieldSpec{WireName: "include_graph"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

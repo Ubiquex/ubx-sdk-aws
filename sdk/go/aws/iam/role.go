@@ -18,14 +18,14 @@ type Role_Tags struct {
 }
 
 var Role_PoliciesFields = ubx.FieldMap{
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-	}
+	"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+	"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
+}
 
 var Role_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RoleConfig struct {
 	// The trust policy that is associated with this role. Trust policies define which entities can assume the role. You can associate only one trust policy with a role. For an example of a policy that can be used to assume a role, see [Template Examples](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#aws-resource-iam-role--examples). For more information about the elements that you can use in an IAM policy, see [Policy Elements Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html) in the *User Guide*.
@@ -77,21 +77,21 @@ var Role = ubx.ResourceBinding{
 	WireType: "aws_iam_role",
 	Fields: ubx.FieldMap{
 		"AssumeRolePolicyDocument": ubx.FieldSpec{WireName: "assume_role_policy_document"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ManagedPolicyArns": ubx.FieldSpec{WireName: "managed_policy_arns"},
-		"MaxSessionDuration": ubx.FieldSpec{WireName: "max_session_duration"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PermissionsBoundary": ubx.FieldSpec{WireName: "permissions_boundary"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"ManagedPolicyArns":        ubx.FieldSpec{WireName: "managed_policy_arns"},
+		"MaxSessionDuration":       ubx.FieldSpec{WireName: "max_session_duration"},
+		"Path":                     ubx.FieldSpec{WireName: "path"},
+		"PermissionsBoundary":      ubx.FieldSpec{WireName: "permissions_boundary"},
 		"Policies": ubx.FieldSpec{
 			WireName: "policies",
-			Kind: "list",
-			Fields: Role_PoliciesFields,
+			Kind:     "list",
+			Fields:   Role_PoliciesFields,
 		},
 		"RoleName": ubx.FieldSpec{WireName: "role_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Role_TagsFields,
+			Kind:     "list",
+			Fields:   Role_TagsFields,
 		},
 	},
 }

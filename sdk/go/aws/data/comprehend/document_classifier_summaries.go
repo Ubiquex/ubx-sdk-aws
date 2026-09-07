@@ -6,26 +6,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DocumentClassifierSummaries_DocumentClassifierSummariesList struct {
 	DocumentClassifierName any
 	LatestVersionCreatedAt any
-	LatestVersionName any
-	LatestVersionStatus any
-	NumberOfVersions any
+	LatestVersionName      any
+	LatestVersionStatus    any
+	NumberOfVersions       any
 }
 
 type DocumentClassifierSummariesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DocumentClassifierSummariesAttrs struct {
 	DocumentClassifierSummariesList any
-	MaxResults any
-	NextToken any
+	MaxResults                      any
+	NextToken                       any
 }
 
 var DocumentClassifierSummaries = ubx.DataSourceBinding{
 	WireType: "aws_comprehend_document_classifier_summaries",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -10,9 +10,9 @@ type EntityType_Tags struct {
 }
 
 var EntityType_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EntityTypeConfig struct {
 	// The entity type description.
@@ -42,11 +42,11 @@ var EntityType = ubx.ResourceBinding{
 	WireType: "aws_fraud_detector_entity_type",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EntityType_TagsFields,
+			Kind:     "list",
+			Fields:   EntityType_TagsFields,
 		},
 	},
 }

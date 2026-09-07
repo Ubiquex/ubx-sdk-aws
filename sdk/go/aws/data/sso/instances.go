@@ -4,39 +4,39 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instances_Instances_Regions struct {
-	AddedDate any
+	AddedDate       any
 	IsPrimaryRegion any
-	RegionName any
-	Status any
+	RegionName      any
+	Status          any
 }
 
 type Instances_Instances struct {
-	CreatedDate any
+	CreatedDate     any
 	IdentityStoreId any
-	InstanceArn any
-	Name any
-	OwnerAccountId any
-	PrimaryRegion any
-	Regions any
-	Status any
-	StatusReason any
+	InstanceArn     any
+	Name            any
+	OwnerAccountId  any
+	PrimaryRegion   any
+	Regions         any
+	Status          any
+	StatusReason    any
 }
 
 type InstancesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InstancesAttrs struct {
-	Instances any
+	Instances  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Instances = ubx.DataSourceBinding{
 	WireType: "aws_sso_instances",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,22 +4,22 @@ package compute_optimizer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_CurrentServiceConfiguration_ContainerConfigurations_MemorySizeConfiguration struct {
-	Memory any
+	Memory            any
 	MemoryReservation any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_CurrentServiceConfiguration_ContainerConfigurations struct {
-	ContainerName any
-	Cpu any
+	ContainerName           any
+	Cpu                     any
 	MemorySizeConfiguration any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_CurrentServiceConfiguration struct {
 	AutoScalingConfiguration any
-	ContainerConfigurations any
-	Cpu any
-	Memory any
-	TaskDefinitionArn any
+	ContainerConfigurations  any
+	Cpu                      any
+	Memory                   any
+	TaskDefinitionArn        any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_EffectiveRecommendationPreferences_SavingsEstimationMode struct {
@@ -27,95 +27,95 @@ type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_Effecti
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_EffectiveRecommendationPreferences struct {
-	LookBackPeriod any
+	LookBackPeriod        any
 	SavingsEstimationMode any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_ServiceRecommendationOptions_ProjectedUtilizationMetrics struct {
 	LowerBoundValue any
-	Name any
-	Statistic any
+	Name            any
+	Statistic       any
 	UpperBoundValue any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_ServiceRecommendationOptions_SavingsOpportunity_EstimatedMonthlySavings struct {
 	Currency any
-	Value any
+	Value    any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_ServiceRecommendationOptions_SavingsOpportunity struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings      any
 	SavingsOpportunityPercentage any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_ServiceRecommendationOptions struct {
-	ContainerRecommendations any
-	Cpu any
-	Memory any
-	ProjectedUtilizationMetrics any
-	SavingsOpportunity any
+	ContainerRecommendations         any
+	Cpu                              any
+	Memory                           any
+	ProjectedUtilizationMetrics      any
+	SavingsOpportunity               any
 	SavingsOpportunityAfterDiscounts any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations_UtilizationMetrics struct {
-	Name any
+	Name      any
 	Statistic any
-	Value any
+	Value     any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_EcsServiceRecommendations struct {
-	AccountId any
-	CurrentPerformanceRisk any
-	CurrentServiceConfiguration any
+	AccountId                          any
+	CurrentPerformanceRisk             any
+	CurrentServiceConfiguration        any
 	EffectiveRecommendationPreferences any
-	Finding any
-	FindingReasonCodes any
-	LastRefreshTimestamp any
-	LaunchType any
-	LookbackPeriodInDays any
-	ServiceArn any
-	ServiceRecommendationOptions any
-	Tags any
-	UtilizationMetrics any
+	Finding                            any
+	FindingReasonCodes                 any
+	LastRefreshTimestamp               any
+	LaunchType                         any
+	LookbackPeriodInDays               any
+	ServiceArn                         any
+	ServiceRecommendationOptions       any
+	Tags                               any
+	UtilizationMetrics                 any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_Errors struct {
-	Code any
+	Code       any
 	Identifier any
-	Message any
+	Message    any
 }
 
 type ComputeOptimizerEcsserviceRecommendations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ComputeOptimizerEcsserviceRecommendations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ComputeOptimizerEcsserviceRecommendationsConfig struct {
-	AccountIds any
-	Filters any
-	MaxResults any
-	NextToken any
+	AccountIds  any
+	Filters     any
+	MaxResults  any
+	NextToken   any
 	ServiceArns any
 }
 
 type ComputeOptimizerEcsserviceRecommendationsAttrs struct {
-	AccountIds any
+	AccountIds                any
 	EcsServiceRecommendations any
-	Errors any
-	Filters any
-	MaxResults any
-	NextToken any
-	ServiceArns any
+	Errors                    any
+	Filters                   any
+	MaxResults                any
+	NextToken                 any
+	ServiceArns               any
 }
 
 var ComputeOptimizerEcsserviceRecommendations = ubx.DataSourceBinding{
@@ -124,11 +124,11 @@ var ComputeOptimizerEcsserviceRecommendations = ubx.DataSourceBinding{
 		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComputeOptimizerEcsserviceRecommendations_FiltersFields,
+			Kind:     "list",
+			Fields:   ComputeOptimizerEcsserviceRecommendations_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ServiceArns": ubx.FieldSpec{WireName: "service_arns"},
 	},
 }

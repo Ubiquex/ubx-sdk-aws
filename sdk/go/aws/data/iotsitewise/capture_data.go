@@ -18,15 +18,15 @@ type CaptureData_FormatSettings struct {
 }
 
 var CaptureData_EndTimeFields = ubx.FieldMap{
-		"OffsetInNanos": ubx.FieldSpec{WireName: "offset_in_nanos"},
-		"TimeInSeconds": ubx.FieldSpec{WireName: "time_in_seconds"},
-	}
+	"OffsetInNanos": ubx.FieldSpec{WireName: "offset_in_nanos"},
+	"TimeInSeconds": ubx.FieldSpec{WireName: "time_in_seconds"},
+}
 
 var CaptureData_FormatSettingsFields = ubx.FieldMap{
-		"FramesPerSecond": ubx.FieldSpec{WireName: "frames_per_second"},
-		"HeightInPixels": ubx.FieldSpec{WireName: "height_in_pixels"},
-		"WidthInPixels": ubx.FieldSpec{WireName: "width_in_pixels"},
-	}
+	"FramesPerSecond": ubx.FieldSpec{WireName: "frames_per_second"},
+	"HeightInPixels":  ubx.FieldSpec{WireName: "height_in_pixels"},
+	"WidthInPixels":   ubx.FieldSpec{WireName: "width_in_pixels"},
+}
 
 type CaptureDataConfig struct {
 	// <p>Contains a timestamp with optional nanosecond granularity.</p>
@@ -34,11 +34,11 @@ type CaptureDataConfig struct {
 	// <p>Contains the output format configuration for video processing.</p>
 	FormatSettings any
 	// <p>Pagination token for retrieving the next chunk of video data.</p>
-	NextToken any
+	NextToken     any
 	PropertyAlias any
 	// <p>Contains a timestamp with optional nanosecond granularity.</p>
-	StartTime any
-	TimeSeriesId any
+	StartTime     any
+	TimeSeriesId  any
 	WorkspaceName any
 }
 
@@ -52,11 +52,11 @@ type CaptureDataAttrs struct {
 	// <p>Contains the output format configuration for video processing.</p>
 	FormatSettings any
 	// <p>Pagination token for retrieving the next chunk of video data.</p>
-	NextToken any
+	NextToken     any
 	PropertyAlias any
 	// <p>Contains a timestamp with optional nanosecond granularity.</p>
-	StartTime any
-	TimeSeriesId any
+	StartTime     any
+	TimeSeriesId  any
 	WorkspaceName any
 }
 
@@ -65,22 +65,22 @@ var CaptureData = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"EndTime": ubx.FieldSpec{
 			WireName: "end_time",
-			Kind: "object",
-			Fields: CaptureData_EndTimeFields,
+			Kind:     "object",
+			Fields:   CaptureData_EndTimeFields,
 		},
 		"FormatSettings": ubx.FieldSpec{
 			WireName: "format_settings",
-			Kind: "object",
-			Fields: CaptureData_FormatSettingsFields,
+			Kind:     "object",
+			Fields:   CaptureData_FormatSettingsFields,
 		},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
 		"StartTime": ubx.FieldSpec{
 			WireName: "start_time",
-			Kind: "object",
-			Fields: CaptureData_EndTimeFields,
+			Kind:     "object",
+			Fields:   CaptureData_EndTimeFields,
 		},
-		"TimeSeriesId": ubx.FieldSpec{WireName: "time_series_id"},
+		"TimeSeriesId":  ubx.FieldSpec{WireName: "time_series_id"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

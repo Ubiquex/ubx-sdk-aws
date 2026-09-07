@@ -4,31 +4,31 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExportConfig struct {
-	Accepts any
+	Accepts    any
 	ExportType any
 	Parameters any
-	RestApiId any
-	StageName any
+	RestApiId  any
+	StageName  any
 }
 
 type ExportAttrs struct {
-	Accepts any
-	Body any
+	Accepts            any
+	Body               any
 	ContentDisposition any
-	ContentType any
-	ExportType any
-	Parameters any
-	RestApiId any
-	StageName any
+	ContentType        any
+	ExportType         any
+	Parameters         any
+	RestApiId          any
+	StageName          any
 }
 
 var Export = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_export",
 	Fields: ubx.FieldMap{
-		"Accepts": ubx.FieldSpec{WireName: "accepts"},
+		"Accepts":    ubx.FieldSpec{WireName: "accepts"},
 		"ExportType": ubx.FieldSpec{WireName: "export_type"},
 		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"StageName": ubx.FieldSpec{WireName: "stage_name"},
+		"RestApiId":  ubx.FieldSpec{WireName: "rest_api_id"},
+		"StageName":  ubx.FieldSpec{WireName: "stage_name"},
 	},
 }

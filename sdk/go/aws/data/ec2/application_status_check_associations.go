@@ -5,55 +5,55 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationStatusCheckAssociations_Associations struct {
 	ApplicationStatusCheckId any
-	AssociationType any
-	Key any
-	Value any
+	AssociationType          any
+	Key                      any
+	Value                    any
 }
 
 type ApplicationStatusCheckAssociations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ApplicationStatusCheckAssociations_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ApplicationStatusCheckAssociations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ApplicationStatusCheckAssociationsConfig struct {
 	ApplicationStatusCheckIds any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                    any
+	Filters                   any
+	MaxResults                any
+	NextToken                 any
 }
 
 type ApplicationStatusCheckAssociationsAttrs struct {
 	ApplicationStatusCheckIds any
-	Associations any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	Tags any
+	Associations              any
+	DryRun                    any
+	Filters                   any
+	MaxResults                any
+	NextToken                 any
+	Tags                      any
 }
 
 var ApplicationStatusCheckAssociations = ubx.DataSourceBinding{
 	WireType: "aws_ec2_application_status_check_associations",
 	Fields: ubx.FieldMap{
 		"ApplicationStatusCheckIds": ubx.FieldSpec{WireName: "application_status_check_ids"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":                    ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ApplicationStatusCheckAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   ApplicationStatusCheckAssociations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

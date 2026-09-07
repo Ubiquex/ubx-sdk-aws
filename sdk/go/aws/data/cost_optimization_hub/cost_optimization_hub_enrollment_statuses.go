@@ -4,34 +4,34 @@ package cost_optimization_hub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CostOptimizationHubEnrollmentStatuses_Items struct {
-	AccountId any
-	CreatedTimestamp any
+	AccountId            any
+	CreatedTimestamp     any
 	LastUpdatedTimestamp any
-	Status any
+	Status               any
 }
 
 type CostOptimizationHubEnrollmentStatusesConfig struct {
-	AccountId any
+	AccountId               any
 	IncludeOrganizationInfo any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 type CostOptimizationHubEnrollmentStatusesAttrs struct {
-	AccountId any
-	IncludeMemberAccounts any
+	AccountId               any
+	IncludeMemberAccounts   any
 	IncludeOrganizationInfo any
-	Items any
-	MaxResults any
-	NextToken any
+	Items                   any
+	MaxResults              any
+	NextToken               any
 }
 
 var CostOptimizationHubEnrollmentStatuses = ubx.DataSourceBinding{
 	WireType: "aws_cost_optimization_hub_enrollment_statuses",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":               ubx.FieldSpec{WireName: "account_id"},
 		"IncludeOrganizationInfo": ubx.FieldSpec{WireName: "include_organization_info"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

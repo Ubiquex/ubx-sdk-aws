@@ -11,7 +11,7 @@ type EmailContact_EmailContact struct {
 	// The creation time of the email contact, stored as an ISO 8601 string, indicating when the contact was added to AWS User Notifications. (AI-inferred)
 	CreationTime any
 	// The friendly name assigned to the email contact, used to identify the contact in the AWS console and notifications. (AI-inferred)
-	Name any
+	Name   any
 	Status any
 	// The timestamp indicating when this email contact was last updated. (AI-inferred)
 	UpdateTime any
@@ -24,9 +24,9 @@ type EmailContact_Tags struct {
 }
 
 var EmailContact_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EmailContactConfig struct {
 	// The email address of the contact that will be used to receive notifications from AWS services. (AI-inferred)
@@ -54,11 +54,11 @@ var EmailContact = ubx.ResourceBinding{
 	WireType: "aws_notifications_contacts_email_contact",
 	Fields: ubx.FieldMap{
 		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EmailContact_TagsFields,
+			Kind:     "list",
+			Fields:   EmailContact_TagsFields,
 		},
 	},
 }

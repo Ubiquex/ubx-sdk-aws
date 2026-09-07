@@ -30,14 +30,14 @@ type TransitGatewayConnectPeer_ConnectPeerConfiguration struct {
 }
 
 type TransitGatewayConnectPeer_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var TransitGatewayConnectPeer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TransitGatewayConnectPeerConfig struct {
 	// The tags for the Connect Peer.
@@ -66,8 +66,8 @@ var TransitGatewayConnectPeer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TransitGatewayConnectPeer_TagsFields,
+			Kind:     "list",
+			Fields:   TransitGatewayConnectPeer_TagsFields,
 		},
 		"TransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transit_gateway_attachment_id"},
 	},

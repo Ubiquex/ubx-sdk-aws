@@ -10,9 +10,9 @@ type Certificate_Tags struct {
 }
 
 var Certificate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CertificateConfig struct {
 	// Specifies the active date for the certificate.
@@ -69,16 +69,16 @@ type CertificateAttrs struct {
 var Certificate = ubx.ResourceBinding{
 	WireType: "aws_transfer_certificate",
 	Fields: ubx.FieldMap{
-		"ActiveDate": ubx.FieldSpec{WireName: "active_date"},
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
+		"ActiveDate":       ubx.FieldSpec{WireName: "active_date"},
+		"Certificate":      ubx.FieldSpec{WireName: "certificate"},
 		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InactiveDate": ubx.FieldSpec{WireName: "inactive_date"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"InactiveDate":     ubx.FieldSpec{WireName: "inactive_date"},
+		"PrivateKey":       ubx.FieldSpec{WireName: "private_key"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Certificate_TagsFields,
+			Kind:     "list",
+			Fields:   Certificate_TagsFields,
 		},
 		"Usage": ubx.FieldSpec{WireName: "usage"},
 	},

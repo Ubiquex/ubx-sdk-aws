@@ -4,29 +4,29 @@ package resource_explorer_2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceExplorer2ServiceIndexes_Indexes struct {
-	Arn any
+	Arn    any
 	Region any
-	Type any
+	Type   any
 }
 
 type ResourceExplorer2ServiceIndexesConfig struct {
 	MaxResults any
-	NextToken any
-	Regions any
+	NextToken  any
+	Regions    any
 }
 
 type ResourceExplorer2ServiceIndexesAttrs struct {
-	Indexes any
+	Indexes    any
 	MaxResults any
-	NextToken any
-	Regions any
+	NextToken  any
+	Regions    any
 }
 
 var ResourceExplorer2ServiceIndexes = ubx.DataSourceBinding{
 	WireType: "aws_resource_explorer_2_service_indexes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Regions":    ubx.FieldSpec{WireName: "regions"},
 	},
 }

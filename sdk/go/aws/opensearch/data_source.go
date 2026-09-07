@@ -14,16 +14,16 @@ type DataSource_DataSourceType struct {
 }
 
 var DataSource_DataSourceType_S3GlueDataCatalogFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var DataSource_DataSourceTypeFields = ubx.FieldMap{
-		"S3GlueDataCatalog": ubx.FieldSpec{
-			WireName: "s3_glue_data_catalog",
-			Kind: "object",
-			Fields: DataSource_DataSourceType_S3GlueDataCatalogFields,
-		},
-	}
+	"S3GlueDataCatalog": ubx.FieldSpec{
+		WireName: "s3_glue_data_catalog",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceType_S3GlueDataCatalogFields,
+	},
+}
 
 type DataSourceConfig struct {
 	// The type of data source.
@@ -56,11 +56,11 @@ var DataSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataSourceType": ubx.FieldSpec{
 			WireName: "data_source_type",
-			Kind: "object",
-			Fields: DataSource_DataSourceTypeFields,
+			Kind:     "object",
+			Fields:   DataSource_DataSourceTypeFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DomainName":  ubx.FieldSpec{WireName: "domain_name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

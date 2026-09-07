@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue struct {
 	// The exact string value that the specified custom claim must match for the request to be authorized. (AI-inferred)
-	MatchValueString any
+	MatchValueString     any
 	MatchValueStringList any
 }
 
@@ -19,7 +19,7 @@ type Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_Authorizin
 type Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
 	// Specifies the value that a custom claim in the JWT token must match for the request to be authorized by the Bedrock Agent Core Gateway's custom JWT authorizer. (AI-inferred)
 	AuthorizingClaimMatchValue any
-	InboundTokenClaimName any
+	InboundTokenClaimName      any
 	// For the custom JWT authorizer on the Bedrock Agent Core Gateway, this field determines whether the value of the inbound token claim is interpreted as a single string or an array of strings when extracting custom claims. (AI-inferred)
 	InboundTokenClaimValueType any
 }
@@ -27,7 +27,7 @@ type Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
 type Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResource struct {
 	// Specifies the IP address type (IPv4 or IPv6) for the managed VPC endpoint used to privately access the custom JWT authorizer. (AI-inferred)
 	EndpointIpAddressType any
-	RoutingDomain any
+	RoutingDomain         any
 	// The security group IDs to attach to the managed VPC resources that back this private endpoint, controlling network traffic for the custom JWT authorizer. (AI-inferred)
 	SecurityGroupIds any
 	// Specifies the list of subnet IDs in the managed VPC used for the private endpoint of the custom JWT authorizer, determining where the endpoint resources are placed for network connectivity. (AI-inferred)
@@ -43,7 +43,7 @@ type Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfMan
 
 type Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint struct {
 	// Defines the managed VPC configuration (VPC ID, subnet IDs, security group IDs) used by the private endpoint of the custom JWT authorizer in the Bedrock Agent Core Gateway resource. (AI-inferred)
-	ManagedVpcResource any
+	ManagedVpcResource         any
 	SelfManagedLatticeResource any
 }
 
@@ -51,12 +51,12 @@ type Gateway_AuthorizerConfiguration_CustomJwtauthorizer struct {
 	AdvertisedScopeMapping any
 	// Specifies the list of allowed audience values (the 'aud' claim) that a JWT must contain to be accepted by the custom JWT authorizer for this Agent Core Gateway. (AI-inferred)
 	AllowedAudience any
-	AllowedClients any
+	AllowedClients  any
 	// Specifies the list of JWT scopes that must be present in the token's claims for the custom JWT authorizer to allow the request through the core gateway. (AI-inferred)
 	AllowedScopes any
-	CustomClaims any
+	CustomClaims  any
 	// This field specifies the OIDC discovery URL (e.g., https://auth.example.com/.well-known/openid-configuration) that the custom JWT authorizer fetches to obtain the JWKS (JSON Web Key Set) used to validate the JWT tokens presented to the agent's core gateway. (AI-inferred)
-	DiscoveryUrl any
+	DiscoveryUrl    any
 	PrivateEndpoint any
 }
 
@@ -98,7 +98,7 @@ type Gateway_InterceptorConfigurations struct {
 }
 
 type Gateway_PolicyEngineConfiguration struct {
-	Arn any
+	Arn  any
 	Mode any
 }
 
@@ -115,7 +115,7 @@ type Gateway_ProtocolConfiguration_Mcp_StreamingConfiguration struct {
 type Gateway_ProtocolConfiguration_Mcp struct {
 	Instructions any
 	// Determines whether the agent discovers tools from the MCP server via exact tool-name matching or semantic search. (AI-inferred)
-	SearchType any
+	SearchType           any
 	SessionConfiguration any
 	// Configures streaming behavior for MCP (Model Context Protocol) communication, including whether MCP messages are streamed between the agent and the core gateway. (AI-inferred)
 	StreamingConfiguration any
@@ -139,170 +139,169 @@ type Gateway_WorkloadIdentityDetails struct {
 }
 
 var Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields = ubx.FieldMap{
-		"MatchValueString": ubx.FieldSpec{WireName: "match_value_string"},
-		"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
-	}
+	"MatchValueString":     ubx.FieldSpec{WireName: "match_value_string"},
+	"MatchValueStringList": ubx.FieldSpec{WireName: "match_value_string_list"},
+}
 
 var Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields = ubx.FieldMap{
-		"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
-		"ClaimMatchValue": ubx.FieldSpec{
-			WireName: "claim_match_value",
-			Kind: "object",
-			Fields: Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
-		},
-	}
+	"ClaimMatchOperator": ubx.FieldSpec{WireName: "claim_match_operator"},
+	"ClaimMatchValue": ubx.FieldSpec{
+		WireName: "claim_match_value",
+		Kind:     "object",
+		Fields:   Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValueFields,
+	},
+}
 
 var Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields = ubx.FieldMap{
-		"AuthorizingClaimMatchValue": ubx.FieldSpec{
-			WireName: "authorizing_claim_match_value",
-			Kind: "object",
-			Fields: Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
-		},
-		"InboundTokenClaimName": ubx.FieldSpec{WireName: "inbound_token_claim_name"},
-		"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
-	}
+	"AuthorizingClaimMatchValue": ubx.FieldSpec{
+		WireName: "authorizing_claim_match_value",
+		Kind:     "object",
+		Fields:   Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValueFields,
+	},
+	"InboundTokenClaimName":      ubx.FieldSpec{WireName: "inbound_token_claim_name"},
+	"InboundTokenClaimValueType": ubx.FieldSpec{WireName: "inbound_token_claim_value_type"},
+}
 
 var Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields = ubx.FieldMap{
-		"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
-		"RoutingDomain": ubx.FieldSpec{WireName: "routing_domain"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcIdentifier": ubx.FieldSpec{WireName: "vpc_identifier"},
-	}
+	"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
+	"RoutingDomain":         ubx.FieldSpec{WireName: "routing_domain"},
+	"SecurityGroupIds":      ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":             ubx.FieldSpec{WireName: "subnet_ids"},
+	"VpcIdentifier":         ubx.FieldSpec{WireName: "vpc_identifier"},
+}
 
 var Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields = ubx.FieldMap{
-		"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
-	}
+	"ResourceConfigurationIdentifier": ubx.FieldSpec{WireName: "resource_configuration_identifier"},
+}
 
 var Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields = ubx.FieldMap{
-		"ManagedVpcResource": ubx.FieldSpec{
-			WireName: "managed_vpc_resource",
-			Kind: "object",
-			Fields: Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields,
-		},
-		"SelfManagedLatticeResource": ubx.FieldSpec{
-			WireName: "self_managed_lattice_resource",
-			Kind: "object",
-			Fields: Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields,
-		},
-	}
+	"ManagedVpcResource": ubx.FieldSpec{
+		WireName: "managed_vpc_resource",
+		Kind:     "object",
+		Fields:   Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResourceFields,
+	},
+	"SelfManagedLatticeResource": ubx.FieldSpec{
+		WireName: "self_managed_lattice_resource",
+		Kind:     "object",
+		Fields:   Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResourceFields,
+	},
+}
 
 var Gateway_AuthorizerConfiguration_CustomJwtauthorizerFields = ubx.FieldMap{
-		"AdvertisedScopeMapping": ubx.FieldSpec{WireName: "advertised_scope_mapping"},
-		"AllowedAudience": ubx.FieldSpec{WireName: "allowed_audience"},
-		"AllowedClients": ubx.FieldSpec{WireName: "allowed_clients"},
-		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
-		"CustomClaims": ubx.FieldSpec{
-			WireName: "custom_claims",
-			Kind: "list",
-			Fields: Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
-		},
-		"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
-		"PrivateEndpoint": ubx.FieldSpec{
-			WireName: "private_endpoint",
-			Kind: "object",
-			Fields: Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
-		},
-	}
+	"AdvertisedScopeMapping": ubx.FieldSpec{WireName: "advertised_scope_mapping"},
+	"AllowedAudience":        ubx.FieldSpec{WireName: "allowed_audience"},
+	"AllowedClients":         ubx.FieldSpec{WireName: "allowed_clients"},
+	"AllowedScopes":          ubx.FieldSpec{WireName: "allowed_scopes"},
+	"CustomClaims": ubx.FieldSpec{
+		WireName: "custom_claims",
+		Kind:     "list",
+		Fields:   Gateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaimsFields,
+	},
+	"DiscoveryUrl": ubx.FieldSpec{WireName: "discovery_url"},
+	"PrivateEndpoint": ubx.FieldSpec{
+		WireName: "private_endpoint",
+		Kind:     "object",
+		Fields:   Gateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointFields,
+	},
+}
 
 var Gateway_AuthorizerConfigurationFields = ubx.FieldMap{
-		"CustomJwtauthorizer": ubx.FieldSpec{
-			WireName: "custom_jwtauthorizer",
-			Kind: "object",
-			Fields: Gateway_AuthorizerConfiguration_CustomJwtauthorizerFields,
-		},
-	}
+	"CustomJwtauthorizer": ubx.FieldSpec{
+		WireName: "custom_jwtauthorizer",
+		Kind:     "object",
+		Fields:   Gateway_AuthorizerConfiguration_CustomJwtauthorizerFields,
+	},
+}
 
 var Gateway_InterceptorConfigurations_InputConfiguration_PayloadFilter_ExcludeFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+}
 
 var Gateway_InterceptorConfigurations_InputConfiguration_PayloadFilterFields = ubx.FieldMap{
-		"Exclude": ubx.FieldSpec{
-			WireName: "exclude",
-			Kind: "list",
-			Fields: Gateway_InterceptorConfigurations_InputConfiguration_PayloadFilter_ExcludeFields,
-		},
-	}
+	"Exclude": ubx.FieldSpec{
+		WireName: "exclude",
+		Kind:     "list",
+		Fields:   Gateway_InterceptorConfigurations_InputConfiguration_PayloadFilter_ExcludeFields,
+	},
+}
 
 var Gateway_InterceptorConfigurations_InputConfigurationFields = ubx.FieldMap{
-		"PassRequestHeaders": ubx.FieldSpec{WireName: "pass_request_headers"},
-		"PayloadFilter": ubx.FieldSpec{
-			WireName: "payload_filter",
-			Kind: "object",
-			Fields: Gateway_InterceptorConfigurations_InputConfiguration_PayloadFilterFields,
-		},
-	}
+	"PassRequestHeaders": ubx.FieldSpec{WireName: "pass_request_headers"},
+	"PayloadFilter": ubx.FieldSpec{
+		WireName: "payload_filter",
+		Kind:     "object",
+		Fields:   Gateway_InterceptorConfigurations_InputConfiguration_PayloadFilterFields,
+	},
+}
 
 var Gateway_InterceptorConfigurations_Interceptor_LambdaFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+}
 
 var Gateway_InterceptorConfigurations_InterceptorFields = ubx.FieldMap{
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "object",
-			Fields: Gateway_InterceptorConfigurations_Interceptor_LambdaFields,
-		},
-	}
+	"Lambda": ubx.FieldSpec{
+		WireName: "lambda",
+		Kind:     "object",
+		Fields:   Gateway_InterceptorConfigurations_Interceptor_LambdaFields,
+	},
+}
 
 var Gateway_InterceptorConfigurationsFields = ubx.FieldMap{
-		"InputConfiguration": ubx.FieldSpec{
-			WireName: "input_configuration",
-			Kind: "object",
-			Fields: Gateway_InterceptorConfigurations_InputConfigurationFields,
-		},
-		"InterceptionPoints": ubx.FieldSpec{WireName: "interception_points"},
-		"Interceptor": ubx.FieldSpec{
-			WireName: "interceptor",
-			Kind: "object",
-			Fields: Gateway_InterceptorConfigurations_InterceptorFields,
-		},
-	}
+	"InputConfiguration": ubx.FieldSpec{
+		WireName: "input_configuration",
+		Kind:     "object",
+		Fields:   Gateway_InterceptorConfigurations_InputConfigurationFields,
+	},
+	"InterceptionPoints": ubx.FieldSpec{WireName: "interception_points"},
+	"Interceptor": ubx.FieldSpec{
+		WireName: "interceptor",
+		Kind:     "object",
+		Fields:   Gateway_InterceptorConfigurations_InterceptorFields,
+	},
+}
 
 var Gateway_PolicyEngineConfigurationFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Arn":  ubx.FieldSpec{WireName: "arn"},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Gateway_ProtocolConfiguration_Mcp_SessionConfigurationFields = ubx.FieldMap{
-		"SessionTimeoutInSeconds": ubx.FieldSpec{WireName: "session_timeout_in_seconds"},
-	}
+	"SessionTimeoutInSeconds": ubx.FieldSpec{WireName: "session_timeout_in_seconds"},
+}
 
 var Gateway_ProtocolConfiguration_Mcp_StreamingConfigurationFields = ubx.FieldMap{
-		"EnableResponseStreaming": ubx.FieldSpec{WireName: "enable_response_streaming"},
-	}
+	"EnableResponseStreaming": ubx.FieldSpec{WireName: "enable_response_streaming"},
+}
 
 var Gateway_ProtocolConfiguration_McpFields = ubx.FieldMap{
-		"Instructions": ubx.FieldSpec{WireName: "instructions"},
-		"SearchType": ubx.FieldSpec{WireName: "search_type"},
-		"SessionConfiguration": ubx.FieldSpec{
-			WireName: "session_configuration",
-			Kind: "object",
-			Fields: Gateway_ProtocolConfiguration_Mcp_SessionConfigurationFields,
-		},
-		"StreamingConfiguration": ubx.FieldSpec{
-			WireName: "streaming_configuration",
-			Kind: "object",
-			Fields: Gateway_ProtocolConfiguration_Mcp_StreamingConfigurationFields,
-		},
-		"SupportedVersions": ubx.FieldSpec{WireName: "supported_versions"},
-	}
+	"Instructions": ubx.FieldSpec{WireName: "instructions"},
+	"SearchType":   ubx.FieldSpec{WireName: "search_type"},
+	"SessionConfiguration": ubx.FieldSpec{
+		WireName: "session_configuration",
+		Kind:     "object",
+		Fields:   Gateway_ProtocolConfiguration_Mcp_SessionConfigurationFields,
+	},
+	"StreamingConfiguration": ubx.FieldSpec{
+		WireName: "streaming_configuration",
+		Kind:     "object",
+		Fields:   Gateway_ProtocolConfiguration_Mcp_StreamingConfigurationFields,
+	},
+	"SupportedVersions": ubx.FieldSpec{WireName: "supported_versions"},
+}
 
 var Gateway_ProtocolConfigurationFields = ubx.FieldMap{
-		"Mcp": ubx.FieldSpec{
-			WireName: "mcp",
-			Kind: "object",
-			Fields: Gateway_ProtocolConfiguration_McpFields,
-		},
-	}
+	"Mcp": ubx.FieldSpec{
+		WireName: "mcp",
+		Kind:     "object",
+		Fields:   Gateway_ProtocolConfiguration_McpFields,
+	},
+}
 
-var Gateway_ProtocolTypeFields = ubx.FieldMap{
-	}
+var Gateway_ProtocolTypeFields = ubx.FieldMap{}
 
 var Gateway_WafConfigurationFields = ubx.FieldMap{
-		"FailureMode": ubx.FieldSpec{WireName: "failure_mode"},
-	}
+	"FailureMode": ubx.FieldSpec{WireName: "failure_mode"},
+}
 
 type GatewayConfig struct {
 	// Represents inbound authorization configuration options used to authenticate incoming requests. (AI-inferred)
@@ -385,40 +384,40 @@ var Gateway = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AuthorizerConfiguration": ubx.FieldSpec{
 			WireName: "authorizer_configuration",
-			Kind: "object",
-			Fields: Gateway_AuthorizerConfigurationFields,
+			Kind:     "object",
+			Fields:   Gateway_AuthorizerConfigurationFields,
 		},
 		"AuthorizerType": ubx.FieldSpec{WireName: "authorizer_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"ExceptionLevel": ubx.FieldSpec{WireName: "exception_level"},
 		"InterceptorConfigurations": ubx.FieldSpec{
 			WireName: "interceptor_configurations",
-			Kind: "list",
-			Fields: Gateway_InterceptorConfigurationsFields,
+			Kind:     "list",
+			Fields:   Gateway_InterceptorConfigurationsFields,
 		},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"PolicyEngineConfiguration": ubx.FieldSpec{
 			WireName: "policy_engine_configuration",
-			Kind: "object",
-			Fields: Gateway_PolicyEngineConfigurationFields,
+			Kind:     "object",
+			Fields:   Gateway_PolicyEngineConfigurationFields,
 		},
 		"ProtocolConfiguration": ubx.FieldSpec{
 			WireName: "protocol_configuration",
-			Kind: "object",
-			Fields: Gateway_ProtocolConfigurationFields,
+			Kind:     "object",
+			Fields:   Gateway_ProtocolConfigurationFields,
 		},
 		"ProtocolType": ubx.FieldSpec{
 			WireName: "protocol_type",
-			Kind: "object",
-			Fields: Gateway_ProtocolTypeFields,
+			Kind:     "object",
+			Fields:   Gateway_ProtocolTypeFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":    ubx.FieldSpec{WireName: "tags"},
 		"WafConfiguration": ubx.FieldSpec{
 			WireName: "waf_configuration",
-			Kind: "object",
-			Fields: Gateway_WafConfigurationFields,
+			Kind:     "object",
+			Fields:   Gateway_WafConfigurationFields,
 		},
 	},
 }

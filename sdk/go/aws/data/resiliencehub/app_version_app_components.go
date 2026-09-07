@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppVersionAppComponents_AppComponents struct {
 	AdditionalInfo any
-	Id any
-	Name any
-	Type any
+	Id             any
+	Name           any
+	Type           any
 }
 
 type AppVersionAppComponentsConfig struct {
-	AppArn any
+	AppArn     any
 	AppVersion any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AppVersionAppComponentsAttrs struct {
-	AppArn any
+	AppArn        any
 	AppComponents any
-	AppVersion any
-	MaxResults any
-	NextToken any
+	AppVersion    any
+	MaxResults    any
+	NextToken     any
 }
 
 var AppVersionAppComponents = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_app_version_app_components",
 	Fields: ubx.FieldMap{
-		"AppArn": ubx.FieldSpec{WireName: "app_arn"},
+		"AppArn":     ubx.FieldSpec{WireName: "app_arn"},
 		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

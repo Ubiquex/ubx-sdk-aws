@@ -4,30 +4,30 @@ package securitylake
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataLakeExceptions_Exceptions struct {
-	Exception any
-	Region any
+	Exception   any
+	Region      any
 	Remediation any
-	Timestamp any
+	Timestamp   any
 }
 
 type DataLakeExceptionsConfig struct {
 	MaxResults any
-	NextToken any
-	Regions any
+	NextToken  any
+	Regions    any
 }
 
 type DataLakeExceptionsAttrs struct {
 	Exceptions any
 	MaxResults any
-	NextToken any
-	Regions any
+	NextToken  any
+	Regions    any
 }
 
 var DataLakeExceptions = ubx.DataSourceBinding{
 	WireType: "aws_securitylake_data_lake_exceptions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Regions":    ubx.FieldSpec{WireName: "regions"},
 	},
 }

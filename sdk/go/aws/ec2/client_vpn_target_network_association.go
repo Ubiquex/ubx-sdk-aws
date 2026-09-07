@@ -30,9 +30,9 @@ type ClientVpnTargetNetworkAssociationAttrs struct {
 var ClientVpnTargetNetworkAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_client_vpn_target_network_association",
 	Fields: ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
+		"AvailabilityZone":    ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZoneId":  ubx.FieldSpec{WireName: "availability_zone_id"},
 		"ClientVpnEndpointId": ubx.FieldSpec{WireName: "client_vpn_endpoint_id"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":            ubx.FieldSpec{WireName: "subnet_id"},
 	},
 }

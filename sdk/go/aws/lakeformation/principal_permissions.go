@@ -111,116 +111,116 @@ type PrincipalPermissions_Resource struct {
 }
 
 var PrincipalPermissions_PrincipalFields = ubx.FieldMap{
-		"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
-	}
+	"DataLakePrincipalIdentifier": ubx.FieldSpec{WireName: "data_lake_principal_identifier"},
+}
 
 var PrincipalPermissions_Resource_CatalogFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var PrincipalPermissions_Resource_DataCellsFilterFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TableCatalogId": ubx.FieldSpec{WireName: "table_catalog_id"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"DatabaseName":   ubx.FieldSpec{WireName: "database_name"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"TableCatalogId": ubx.FieldSpec{WireName: "table_catalog_id"},
+	"TableName":      ubx.FieldSpec{WireName: "table_name"},
+}
 
 var PrincipalPermissions_Resource_DataLocationFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"CatalogId":   ubx.FieldSpec{WireName: "catalog_id"},
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var PrincipalPermissions_Resource_DatabaseFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 var PrincipalPermissions_Resource_LftagFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagValues": ubx.FieldSpec{WireName: "tag_values"},
-	}
+	"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+	"TagKey":    ubx.FieldSpec{WireName: "tag_key"},
+	"TagValues": ubx.FieldSpec{WireName: "tag_values"},
+}
 
 var PrincipalPermissions_Resource_LftagPolicy_ExpressionFields = ubx.FieldMap{
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagValues": ubx.FieldSpec{WireName: "tag_values"},
-	}
+	"TagKey":    ubx.FieldSpec{WireName: "tag_key"},
+	"TagValues": ubx.FieldSpec{WireName: "tag_values"},
+}
 
 var PrincipalPermissions_Resource_LftagPolicyFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"Expression": ubx.FieldSpec{
-			WireName: "expression",
-			Kind: "list",
-			Fields: PrincipalPermissions_Resource_LftagPolicy_ExpressionFields,
-		},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+	"Expression": ubx.FieldSpec{
+		WireName: "expression",
+		Kind:     "list",
+		Fields:   PrincipalPermissions_Resource_LftagPolicy_ExpressionFields,
+	},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 var PrincipalPermissions_Resource_TableFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TableWildcard": ubx.FieldSpec{WireName: "table_wildcard"},
-	}
+	"CatalogId":     ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName":  ubx.FieldSpec{WireName: "database_name"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"TableWildcard": ubx.FieldSpec{WireName: "table_wildcard"},
+}
 
 var PrincipalPermissions_Resource_TableWithColumns_ColumnWildcardFields = ubx.FieldMap{
-		"ExcludedColumnNames": ubx.FieldSpec{WireName: "excluded_column_names"},
-	}
+	"ExcludedColumnNames": ubx.FieldSpec{WireName: "excluded_column_names"},
+}
 
 var PrincipalPermissions_Resource_TableWithColumnsFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
-		"ColumnWildcard": ubx.FieldSpec{
-			WireName: "column_wildcard",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_TableWithColumns_ColumnWildcardFields,
-		},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CatalogId":   ubx.FieldSpec{WireName: "catalog_id"},
+	"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
+	"ColumnWildcard": ubx.FieldSpec{
+		WireName: "column_wildcard",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_TableWithColumns_ColumnWildcardFields,
+	},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 var PrincipalPermissions_ResourceFields = ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{
-			WireName: "catalog",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_CatalogFields,
-		},
-		"DataCellsFilter": ubx.FieldSpec{
-			WireName: "data_cells_filter",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_DataCellsFilterFields,
-		},
-		"DataLocation": ubx.FieldSpec{
-			WireName: "data_location",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_DataLocationFields,
-		},
-		"Database": ubx.FieldSpec{
-			WireName: "database",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_DatabaseFields,
-		},
-		"Lftag": ubx.FieldSpec{
-			WireName: "lftag",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_LftagFields,
-		},
-		"LftagPolicy": ubx.FieldSpec{
-			WireName: "lftag_policy",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_LftagPolicyFields,
-		},
-		"Table": ubx.FieldSpec{
-			WireName: "table",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_TableFields,
-		},
-		"TableWithColumns": ubx.FieldSpec{
-			WireName: "table_with_columns",
-			Kind: "object",
-			Fields: PrincipalPermissions_Resource_TableWithColumnsFields,
-		},
-	}
+	"Catalog": ubx.FieldSpec{
+		WireName: "catalog",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_CatalogFields,
+	},
+	"DataCellsFilter": ubx.FieldSpec{
+		WireName: "data_cells_filter",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_DataCellsFilterFields,
+	},
+	"DataLocation": ubx.FieldSpec{
+		WireName: "data_location",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_DataLocationFields,
+	},
+	"Database": ubx.FieldSpec{
+		WireName: "database",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_DatabaseFields,
+	},
+	"Lftag": ubx.FieldSpec{
+		WireName: "lftag",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_LftagFields,
+	},
+	"LftagPolicy": ubx.FieldSpec{
+		WireName: "lftag_policy",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_LftagPolicyFields,
+	},
+	"Table": ubx.FieldSpec{
+		WireName: "table",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_TableFields,
+	},
+	"TableWithColumns": ubx.FieldSpec{
+		WireName: "table_with_columns",
+		Kind:     "object",
+		Fields:   PrincipalPermissions_Resource_TableWithColumnsFields,
+	},
+}
 
 type PrincipalPermissionsConfig struct {
 	// A reference to the Lake Formation data catalog these principal permissions apply to. (AI-inferred)
@@ -255,18 +255,18 @@ type PrincipalPermissionsAttrs struct {
 var PrincipalPermissions = ubx.ResourceBinding{
 	WireType: "aws_lake_formation_principal_permissions",
 	Fields: ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
+		"Catalog":                    ubx.FieldSpec{WireName: "catalog"},
+		"Permissions":                ubx.FieldSpec{WireName: "permissions"},
 		"PermissionsWithGrantOption": ubx.FieldSpec{WireName: "permissions_with_grant_option"},
 		"Principal": ubx.FieldSpec{
 			WireName: "principal",
-			Kind: "object",
-			Fields: PrincipalPermissions_PrincipalFields,
+			Kind:     "object",
+			Fields:   PrincipalPermissions_PrincipalFields,
 		},
 		"Resource": ubx.FieldSpec{
 			WireName: "resource",
-			Kind: "object",
-			Fields: PrincipalPermissions_ResourceFields,
+			Kind:     "object",
+			Fields:   PrincipalPermissions_ResourceFields,
 		},
 	},
 }

@@ -4,14 +4,14 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InboundConnections_Connections_ConnectionStatus struct {
-	Message any
+	Message    any
 	StatusCode any
 }
 
 type InboundConnections_Connections_LocalDomainInfo_AwsdomainInformation struct {
 	DomainName any
-	OwnerId any
-	Region any
+	OwnerId    any
+	Region     any
 }
 
 type InboundConnections_Connections_LocalDomainInfo struct {
@@ -19,22 +19,22 @@ type InboundConnections_Connections_LocalDomainInfo struct {
 }
 
 type InboundConnections_Connections struct {
-	ConnectionId any
-	ConnectionMode any
+	ConnectionId     any
+	ConnectionMode   any
 	ConnectionStatus any
-	LocalDomainInfo any
+	LocalDomainInfo  any
 	RemoteDomainInfo any
 }
 
 type InboundConnections_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var InboundConnections_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InboundConnectionsConfig struct {
 	Filters any
@@ -46,7 +46,7 @@ type InboundConnectionsConfig struct {
 
 type InboundConnectionsAttrs struct {
 	Connections any
-	Filters any
+	Filters     any
 	// <p>An optional parameter that specifies the maximum number of results to return for a given request.</p>
 	MaxResults any
 	// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
@@ -58,10 +58,10 @@ var InboundConnections = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InboundConnections_FiltersFields,
+			Kind:     "list",
+			Fields:   InboundConnections_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

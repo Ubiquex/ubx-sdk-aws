@@ -49,34 +49,34 @@ type WebApp_WebAppUnits struct {
 }
 
 var WebApp_EndpointDetails_VpcFields = ubx.FieldMap{
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"IpAddressType":    ubx.FieldSpec{WireName: "ip_address_type"},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+	"VpcId":            ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 var WebApp_EndpointDetailsFields = ubx.FieldMap{
-		"Vpc": ubx.FieldSpec{
-			WireName: "vpc",
-			Kind: "object",
-			Fields: WebApp_EndpointDetails_VpcFields,
-		},
-	}
+	"Vpc": ubx.FieldSpec{
+		WireName: "vpc",
+		Kind:     "object",
+		Fields:   WebApp_EndpointDetails_VpcFields,
+	},
+}
 
 var WebApp_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var WebApp_WebAppCustomizationFields = ubx.FieldMap{
-		"FaviconFile": ubx.FieldSpec{WireName: "favicon_file"},
-		"LogoFile": ubx.FieldSpec{WireName: "logo_file"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"FaviconFile": ubx.FieldSpec{WireName: "favicon_file"},
+	"LogoFile":    ubx.FieldSpec{WireName: "logo_file"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var WebApp_WebAppUnitsFields = ubx.FieldMap{
-		"Provisioned": ubx.FieldSpec{WireName: "provisioned"},
-	}
+	"Provisioned": ubx.FieldSpec{WireName: "provisioned"},
+}
 
 type WebAppConfig struct {
 	// The AccessEndpoint is the URL that you provide to your users for them to interact with the Transfer Family web app. You can specify a custom URL or use the default value.
@@ -122,24 +122,24 @@ var WebApp = ubx.ResourceBinding{
 		"AccessEndpoint": ubx.FieldSpec{WireName: "access_endpoint"},
 		"EndpointDetails": ubx.FieldSpec{
 			WireName: "endpoint_details",
-			Kind: "object",
-			Fields: WebApp_EndpointDetailsFields,
+			Kind:     "object",
+			Fields:   WebApp_EndpointDetailsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: WebApp_TagsFields,
+			Kind:     "list",
+			Fields:   WebApp_TagsFields,
 		},
 		"WebAppCustomization": ubx.FieldSpec{
 			WireName: "web_app_customization",
-			Kind: "object",
-			Fields: WebApp_WebAppCustomizationFields,
+			Kind:     "object",
+			Fields:   WebApp_WebAppCustomizationFields,
 		},
 		"WebAppEndpointPolicy": ubx.FieldSpec{WireName: "web_app_endpoint_policy"},
 		"WebAppUnits": ubx.FieldSpec{
 			WireName: "web_app_units",
-			Kind: "object",
-			Fields: WebApp_WebAppUnitsFields,
+			Kind:     "object",
+			Fields:   WebApp_WebAppUnitsFields,
 		},
 	},
 }

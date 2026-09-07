@@ -4,27 +4,27 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domains_Items struct {
-	CreatedAt any
-	DomainName any
+	CreatedAt     any
+	DomainName    any
 	LastUpdatedAt any
-	Tags any
+	Tags          any
 }
 
 type DomainsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DomainsAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Domains = ubx.DataSourceBinding{
 	WireType: "aws_profile_domains",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

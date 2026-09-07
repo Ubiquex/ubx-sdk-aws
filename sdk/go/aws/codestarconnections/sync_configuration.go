@@ -50,13 +50,13 @@ type SyncConfigurationAttrs struct {
 var SyncConfiguration = ubx.ResourceBinding{
 	WireType: "aws_code_star_connections_sync_configuration",
 	Fields: ubx.FieldMap{
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"ConfigFile": ubx.FieldSpec{WireName: "config_file"},
+		"Branch":                  ubx.FieldSpec{WireName: "branch"},
+		"ConfigFile":              ubx.FieldSpec{WireName: "config_file"},
 		"PublishDeploymentStatus": ubx.FieldSpec{WireName: "publish_deployment_status"},
-		"RepositoryLinkId": ubx.FieldSpec{WireName: "repository_link_id"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"RepositoryLinkId":        ubx.FieldSpec{WireName: "repository_link_id"},
+		"ResourceName":            ubx.FieldSpec{WireName: "resource_name"},
+		"RoleArn":                 ubx.FieldSpec{WireName: "role_arn"},
+		"SyncType":                ubx.FieldSpec{WireName: "sync_type"},
 		"TriggerResourceUpdateOn": ubx.FieldSpec{WireName: "trigger_resource_update_on"},
 	},
 }

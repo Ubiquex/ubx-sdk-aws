@@ -14,16 +14,16 @@ type Trigger_Condition struct {
 }
 
 var Trigger_Condition_ScheduleFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var Trigger_ConditionFields = ubx.FieldMap{
-		"Schedule": ubx.FieldSpec{
-			WireName: "schedule",
-			Kind: "object",
-			Fields: Trigger_Condition_ScheduleFields,
-		},
-	}
+	"Schedule": ubx.FieldSpec{
+		WireName: "schedule",
+		Kind:     "object",
+		Fields:   Trigger_Condition_ScheduleFields,
+	},
+}
 
 type TriggerConfig struct {
 	// The action to perform when the trigger fires. A JSON object containing actionType and task.
@@ -62,14 +62,14 @@ type TriggerAttrs struct {
 var Trigger = ubx.ResourceBinding{
 	WireType: "aws_dev_ops_agent_trigger",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":       ubx.FieldSpec{WireName: "action"},
 		"AgentSpaceId": ubx.FieldSpec{WireName: "agent_space_id"},
 		"Condition": ubx.FieldSpec{
 			WireName: "condition",
-			Kind: "object",
-			Fields: Trigger_ConditionFields,
+			Kind:     "object",
+			Fields:   Trigger_ConditionFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

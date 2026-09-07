@@ -11,9 +11,9 @@ type MicrosoftTeamsChannelConfiguration_Tags struct {
 }
 
 var MicrosoftTeamsChannelConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MicrosoftTeamsChannelConfigurationConfig struct {
 	// The name of the configuration
@@ -74,21 +74,21 @@ type MicrosoftTeamsChannelConfigurationAttrs struct {
 var MicrosoftTeamsChannelConfiguration = ubx.ResourceBinding{
 	WireType: "aws_chatbot_microsoft_teams_channel_configuration",
 	Fields: ubx.FieldMap{
-		"ConfigurationName": ubx.FieldSpec{WireName: "configuration_name"},
+		"ConfigurationName":         ubx.FieldSpec{WireName: "configuration_name"},
 		"CustomizationResourceArns": ubx.FieldSpec{WireName: "customization_resource_arns"},
-		"GuardrailPolicies": ubx.FieldSpec{WireName: "guardrail_policies"},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"LoggingLevel": ubx.FieldSpec{WireName: "logging_level"},
-		"SnsTopicArns": ubx.FieldSpec{WireName: "sns_topic_arns"},
+		"GuardrailPolicies":         ubx.FieldSpec{WireName: "guardrail_policies"},
+		"IamRoleArn":                ubx.FieldSpec{WireName: "iam_role_arn"},
+		"LoggingLevel":              ubx.FieldSpec{WireName: "logging_level"},
+		"SnsTopicArns":              ubx.FieldSpec{WireName: "sns_topic_arns"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MicrosoftTeamsChannelConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   MicrosoftTeamsChannelConfiguration_TagsFields,
 		},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
-		"TeamsChannelId": ubx.FieldSpec{WireName: "teams_channel_id"},
+		"TeamId":           ubx.FieldSpec{WireName: "team_id"},
+		"TeamsChannelId":   ubx.FieldSpec{WireName: "teams_channel_id"},
 		"TeamsChannelName": ubx.FieldSpec{WireName: "teams_channel_name"},
-		"TeamsTenantId": ubx.FieldSpec{WireName: "teams_tenant_id"},
+		"TeamsTenantId":    ubx.FieldSpec{WireName: "teams_tenant_id"},
 		"UserRoleRequired": ubx.FieldSpec{WireName: "user_role_required"},
 	},
 }

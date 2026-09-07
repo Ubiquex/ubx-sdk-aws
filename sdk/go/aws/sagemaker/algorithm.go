@@ -136,128 +136,128 @@ type Algorithm_TrainingSpecification struct {
 }
 
 var Algorithm_InferenceSpecification_Containers_ModelInputFields = ubx.FieldMap{
-		"DataInputConfig": ubx.FieldSpec{WireName: "data_input_config"},
-	}
+	"DataInputConfig": ubx.FieldSpec{WireName: "data_input_config"},
+}
 
 var Algorithm_InferenceSpecification_ContainersFields = ubx.FieldMap{
-		"ContainerHostname": ubx.FieldSpec{WireName: "container_hostname"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Framework": ubx.FieldSpec{WireName: "framework"},
-		"FrameworkVersion": ubx.FieldSpec{WireName: "framework_version"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-		"IsCheckpoint": ubx.FieldSpec{WireName: "is_checkpoint"},
-		"ModelInput": ubx.FieldSpec{
-			WireName: "model_input",
-			Kind: "object",
-			Fields: Algorithm_InferenceSpecification_Containers_ModelInputFields,
-		},
-		"NearestModelName": ubx.FieldSpec{WireName: "nearest_model_name"},
-	}
+	"ContainerHostname": ubx.FieldSpec{WireName: "container_hostname"},
+	"Environment":       ubx.FieldSpec{WireName: "environment"},
+	"Framework":         ubx.FieldSpec{WireName: "framework"},
+	"FrameworkVersion":  ubx.FieldSpec{WireName: "framework_version"},
+	"Image":             ubx.FieldSpec{WireName: "image"},
+	"ImageDigest":       ubx.FieldSpec{WireName: "image_digest"},
+	"IsCheckpoint":      ubx.FieldSpec{WireName: "is_checkpoint"},
+	"ModelInput": ubx.FieldSpec{
+		WireName: "model_input",
+		Kind:     "object",
+		Fields:   Algorithm_InferenceSpecification_Containers_ModelInputFields,
+	},
+	"NearestModelName": ubx.FieldSpec{WireName: "nearest_model_name"},
+}
 
 var Algorithm_InferenceSpecificationFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: Algorithm_InferenceSpecification_ContainersFields,
-		},
-		"SupportedContentTypes": ubx.FieldSpec{WireName: "supported_content_types"},
-		"SupportedRealtimeInferenceInstanceTypes": ubx.FieldSpec{WireName: "supported_realtime_inference_instance_types"},
-		"SupportedResponseMimetypes": ubx.FieldSpec{WireName: "supported_response_mimetypes"},
-		"SupportedTransformInstanceTypes": ubx.FieldSpec{WireName: "supported_transform_instance_types"},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   Algorithm_InferenceSpecification_ContainersFields,
+	},
+	"SupportedContentTypes":                   ubx.FieldSpec{WireName: "supported_content_types"},
+	"SupportedRealtimeInferenceInstanceTypes": ubx.FieldSpec{WireName: "supported_realtime_inference_instance_types"},
+	"SupportedResponseMimetypes":              ubx.FieldSpec{WireName: "supported_response_mimetypes"},
+	"SupportedTransformInstanceTypes":         ubx.FieldSpec{WireName: "supported_transform_instance_types"},
+}
 
 var Algorithm_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Algorithm_TrainingSpecification_MetricDefinitionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Regex": ubx.FieldSpec{WireName: "regex"},
+}
 
 var Algorithm_TrainingSpecification_SupportedHyperParameters_Range_CategoricalParameterRangeSpecificationFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Algorithm_TrainingSpecification_SupportedHyperParameters_Range_ContinuousParameterRangeSpecificationFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-	}
+	"MaxValue": ubx.FieldSpec{WireName: "max_value"},
+	"MinValue": ubx.FieldSpec{WireName: "min_value"},
+}
 
 var Algorithm_TrainingSpecification_SupportedHyperParameters_RangeFields = ubx.FieldMap{
-		"CategoricalParameterRangeSpecification": ubx.FieldSpec{
-			WireName: "categorical_parameter_range_specification",
-			Kind: "object",
-			Fields: Algorithm_TrainingSpecification_SupportedHyperParameters_Range_CategoricalParameterRangeSpecificationFields,
-		},
-		"ContinuousParameterRangeSpecification": ubx.FieldSpec{
-			WireName: "continuous_parameter_range_specification",
-			Kind: "object",
-			Fields: Algorithm_TrainingSpecification_SupportedHyperParameters_Range_ContinuousParameterRangeSpecificationFields,
-		},
-		"IntegerParameterRangeSpecification": ubx.FieldSpec{
-			WireName: "integer_parameter_range_specification",
-			Kind: "object",
-			Fields: Algorithm_TrainingSpecification_SupportedHyperParameters_Range_ContinuousParameterRangeSpecificationFields,
-		},
-	}
+	"CategoricalParameterRangeSpecification": ubx.FieldSpec{
+		WireName: "categorical_parameter_range_specification",
+		Kind:     "object",
+		Fields:   Algorithm_TrainingSpecification_SupportedHyperParameters_Range_CategoricalParameterRangeSpecificationFields,
+	},
+	"ContinuousParameterRangeSpecification": ubx.FieldSpec{
+		WireName: "continuous_parameter_range_specification",
+		Kind:     "object",
+		Fields:   Algorithm_TrainingSpecification_SupportedHyperParameters_Range_ContinuousParameterRangeSpecificationFields,
+	},
+	"IntegerParameterRangeSpecification": ubx.FieldSpec{
+		WireName: "integer_parameter_range_specification",
+		Kind:     "object",
+		Fields:   Algorithm_TrainingSpecification_SupportedHyperParameters_Range_ContinuousParameterRangeSpecificationFields,
+	},
+}
 
 var Algorithm_TrainingSpecification_SupportedHyperParametersFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IsRequired": ubx.FieldSpec{WireName: "is_required"},
-		"IsTunable": ubx.FieldSpec{WireName: "is_tunable"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: Algorithm_TrainingSpecification_SupportedHyperParameters_RangeFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"IsRequired":   ubx.FieldSpec{WireName: "is_required"},
+	"IsTunable":    ubx.FieldSpec{WireName: "is_tunable"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   Algorithm_TrainingSpecification_SupportedHyperParameters_RangeFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Algorithm_TrainingSpecification_SupportedTuningJobObjectiveMetricsFields = ubx.FieldMap{
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Algorithm_TrainingSpecification_TrainingChannelsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IsRequired": ubx.FieldSpec{WireName: "is_required"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SupportedCompressionTypes": ubx.FieldSpec{WireName: "supported_compression_types"},
-		"SupportedContentTypes": ubx.FieldSpec{WireName: "supported_content_types"},
-		"SupportedInputModes": ubx.FieldSpec{WireName: "supported_input_modes"},
-	}
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"IsRequired":                ubx.FieldSpec{WireName: "is_required"},
+	"Name":                      ubx.FieldSpec{WireName: "name"},
+	"SupportedCompressionTypes": ubx.FieldSpec{WireName: "supported_compression_types"},
+	"SupportedContentTypes":     ubx.FieldSpec{WireName: "supported_content_types"},
+	"SupportedInputModes":       ubx.FieldSpec{WireName: "supported_input_modes"},
+}
 
 var Algorithm_TrainingSpecificationFields = ubx.FieldMap{
-		"MetricDefinitions": ubx.FieldSpec{
-			WireName: "metric_definitions",
-			Kind: "list",
-			Fields: Algorithm_TrainingSpecification_MetricDefinitionsFields,
-		},
-		"SupportedHyperParameters": ubx.FieldSpec{
-			WireName: "supported_hyper_parameters",
-			Kind: "list",
-			Fields: Algorithm_TrainingSpecification_SupportedHyperParametersFields,
-		},
-		"SupportedTrainingInstanceTypes": ubx.FieldSpec{WireName: "supported_training_instance_types"},
-		"SupportedTuningJobObjectiveMetrics": ubx.FieldSpec{
-			WireName: "supported_tuning_job_objective_metrics",
-			Kind: "list",
-			Fields: Algorithm_TrainingSpecification_SupportedTuningJobObjectiveMetricsFields,
-		},
-		"SupportsDistributedTraining": ubx.FieldSpec{WireName: "supports_distributed_training"},
-		"TrainingChannels": ubx.FieldSpec{
-			WireName: "training_channels",
-			Kind: "list",
-			Fields: Algorithm_TrainingSpecification_TrainingChannelsFields,
-		},
-		"TrainingImage": ubx.FieldSpec{WireName: "training_image"},
-		"TrainingImageDigest": ubx.FieldSpec{WireName: "training_image_digest"},
-	}
+	"MetricDefinitions": ubx.FieldSpec{
+		WireName: "metric_definitions",
+		Kind:     "list",
+		Fields:   Algorithm_TrainingSpecification_MetricDefinitionsFields,
+	},
+	"SupportedHyperParameters": ubx.FieldSpec{
+		WireName: "supported_hyper_parameters",
+		Kind:     "list",
+		Fields:   Algorithm_TrainingSpecification_SupportedHyperParametersFields,
+	},
+	"SupportedTrainingInstanceTypes": ubx.FieldSpec{WireName: "supported_training_instance_types"},
+	"SupportedTuningJobObjectiveMetrics": ubx.FieldSpec{
+		WireName: "supported_tuning_job_objective_metrics",
+		Kind:     "list",
+		Fields:   Algorithm_TrainingSpecification_SupportedTuningJobObjectiveMetricsFields,
+	},
+	"SupportsDistributedTraining": ubx.FieldSpec{WireName: "supports_distributed_training"},
+	"TrainingChannels": ubx.FieldSpec{
+		WireName: "training_channels",
+		Kind:     "list",
+		Fields:   Algorithm_TrainingSpecification_TrainingChannelsFields,
+	},
+	"TrainingImage":       ubx.FieldSpec{WireName: "training_image"},
+	"TrainingImageDigest": ubx.FieldSpec{WireName: "training_image_digest"},
+}
 
 type AlgorithmConfig struct {
 	// A description of the algorithm.
@@ -296,23 +296,23 @@ type AlgorithmAttrs struct {
 var Algorithm = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_algorithm",
 	Fields: ubx.FieldMap{
-		"AlgorithmDescription": ubx.FieldSpec{WireName: "algorithm_description"},
-		"AlgorithmName": ubx.FieldSpec{WireName: "algorithm_name"},
+		"AlgorithmDescription":  ubx.FieldSpec{WireName: "algorithm_description"},
+		"AlgorithmName":         ubx.FieldSpec{WireName: "algorithm_name"},
 		"CertifyForMarketplace": ubx.FieldSpec{WireName: "certify_for_marketplace"},
 		"InferenceSpecification": ubx.FieldSpec{
 			WireName: "inference_specification",
-			Kind: "object",
-			Fields: Algorithm_InferenceSpecificationFields,
+			Kind:     "object",
+			Fields:   Algorithm_InferenceSpecificationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Algorithm_TagsFields,
+			Kind:     "list",
+			Fields:   Algorithm_TagsFields,
 		},
 		"TrainingSpecification": ubx.FieldSpec{
 			WireName: "training_specification",
-			Kind: "object",
-			Fields: Algorithm_TrainingSpecificationFields,
+			Kind:     "object",
+			Fields:   Algorithm_TrainingSpecificationFields,
 		},
 	},
 }

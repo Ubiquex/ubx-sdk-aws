@@ -4,36 +4,36 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpDevices_Devices_DeviceAttributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type CognitoIdpDevices_Devices struct {
-	DeviceAttributes any
-	DeviceCreateDate any
-	DeviceKey any
+	DeviceAttributes            any
+	DeviceCreateDate            any
+	DeviceKey                   any
 	DeviceLastAuthenticatedDate any
-	DeviceLastModifiedDate any
+	DeviceLastModifiedDate      any
 }
 
 type CognitoIdpDevicesConfig struct {
-	AccessToken any
-	Limit any
+	AccessToken     any
+	Limit           any
 	PaginationToken any
 }
 
 type CognitoIdpDevicesAttrs struct {
-	AccessToken any
-	Devices any
-	Limit any
+	AccessToken     any
+	Devices         any
+	Limit           any
 	PaginationToken any
 }
 
 var CognitoIdpDevices = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_devices",
 	Fields: ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"AccessToken":     ubx.FieldSpec{WireName: "access_token"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
 		"PaginationToken": ubx.FieldSpec{WireName: "pagination_token"},
 	},
 }

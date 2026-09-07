@@ -24,19 +24,19 @@ type AppBlockBuilder_VpcConfig struct {
 }
 
 var AppBlockBuilder_AccessEndpointsFields = ubx.FieldMap{
-		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
-		"VpceId": ubx.FieldSpec{WireName: "vpce_id"},
-	}
+	"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
+	"VpceId":       ubx.FieldSpec{WireName: "vpce_id"},
+}
 
 var AppBlockBuilder_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AppBlockBuilder_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type AppBlockBuilderConfig struct {
 	// Specifies a list of VPC interface endpoints (each with an endpoint type and VPC endpoint ID) that enable private connectivity to the AppStream 2.0 App Block Builder without traversing the public internet. (AI-inferred)
@@ -97,26 +97,26 @@ var AppBlockBuilder = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessEndpoints": ubx.FieldSpec{
 			WireName: "access_endpoints",
-			Kind: "list",
-			Fields: AppBlockBuilder_AccessEndpointsFields,
+			Kind:     "list",
+			Fields:   AppBlockBuilder_AccessEndpointsFields,
 		},
-		"AppBlockArns": ubx.FieldSpec{WireName: "app_block_arns"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"AppBlockArns":                ubx.FieldSpec{WireName: "app_block_arns"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"EnableDefaultInternetAccess": ubx.FieldSpec{WireName: "enable_default_internet_access"},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"IamRoleArn":                  ubx.FieldSpec{WireName: "iam_role_arn"},
+		"InstanceType":                ubx.FieldSpec{WireName: "instance_type"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
+		"Platform":                    ubx.FieldSpec{WireName: "platform"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AppBlockBuilder_TagsFields,
+			Kind:     "list",
+			Fields:   AppBlockBuilder_TagsFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: AppBlockBuilder_VpcConfigFields,
+			Kind:     "object",
+			Fields:   AppBlockBuilder_VpcConfigFields,
 		},
 	},
 }

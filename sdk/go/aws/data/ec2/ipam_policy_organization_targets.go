@@ -4,7 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamPolicyOrganizationTargets_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -13,24 +13,24 @@ type IpamPolicyOrganizationTargets_OrganizationTargets struct {
 }
 
 var IpamPolicyOrganizationTargets_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamPolicyOrganizationTargetsConfig struct {
-	DryRun any
-	Filters any
+	DryRun       any
+	Filters      any
 	IpamPolicyId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type IpamPolicyOrganizationTargetsAttrs struct {
-	DryRun any
-	Filters any
-	IpamPolicyId any
-	MaxResults any
-	NextToken any
+	DryRun              any
+	Filters             any
+	IpamPolicyId        any
+	MaxResults          any
+	NextToken           any
 	OrganizationTargets any
 }
 
@@ -40,11 +40,11 @@ var IpamPolicyOrganizationTargets = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamPolicyOrganizationTargets_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamPolicyOrganizationTargets_FiltersFields,
 		},
 		"IpamPolicyId": ubx.FieldSpec{WireName: "ipam_policy_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

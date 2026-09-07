@@ -5,42 +5,42 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Components_Components_LatestVersion_Platforms struct {
 	Attributes any
-	Name any
+	Name       any
 }
 
 type Components_Components_LatestVersion struct {
-	Arn any
-	ComponentVersion any
+	Arn               any
+	ComponentVersion  any
 	CreationTimestamp any
-	Description any
-	Platforms any
-	Publisher any
+	Description       any
+	Platforms         any
+	Publisher         any
 }
 
 type Components_Components struct {
-	Arn any
+	Arn           any
 	ComponentName any
 	LatestVersion any
 }
 
 type ComponentsConfig struct {
 	MaxResults any
-	NextToken any
-	Scope any
+	NextToken  any
+	Scope      any
 }
 
 type ComponentsAttrs struct {
 	Components any
 	MaxResults any
-	NextToken any
-	Scope any
+	NextToken  any
+	Scope      any
 }
 
 var Components = ubx.DataSourceBinding{
 	WireType: "aws_greengrassv2_components",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Scope":      ubx.FieldSpec{WireName: "scope"},
 	},
 }

@@ -4,35 +4,35 @@ package codestar_connections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarConnectionsConnections_Connections struct {
-	ConnectionArn any
-	ConnectionName any
+	ConnectionArn    any
+	ConnectionName   any
 	ConnectionStatus any
-	HostArn any
-	OwnerAccountId any
-	ProviderType any
+	HostArn          any
+	OwnerAccountId   any
+	ProviderType     any
 }
 
 type CodestarConnectionsConnectionsConfig struct {
-	HostArnFilter any
-	MaxResults any
-	NextToken any
+	HostArnFilter      any
+	MaxResults         any
+	NextToken          any
 	ProviderTypeFilter any
 }
 
 type CodestarConnectionsConnectionsAttrs struct {
-	Connections any
-	HostArnFilter any
-	MaxResults any
-	NextToken any
+	Connections        any
+	HostArnFilter      any
+	MaxResults         any
+	NextToken          any
 	ProviderTypeFilter any
 }
 
 var CodestarConnectionsConnections = ubx.DataSourceBinding{
 	WireType: "aws_codestar_connections_connections",
 	Fields: ubx.FieldMap{
-		"HostArnFilter": ubx.FieldSpec{WireName: "host_arn_filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"HostArnFilter":      ubx.FieldSpec{WireName: "host_arn_filter"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"ProviderTypeFilter": ubx.FieldSpec{WireName: "provider_type_filter"},
 	},
 }

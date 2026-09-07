@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PolicyPrincipalsConfig struct {
 	AscendingOrder any
-	Marker any
-	PageSize any
-	PolicyName any
+	Marker         any
+	PageSize       any
+	PolicyName     any
 }
 
 type PolicyPrincipalsAttrs struct {
 	AscendingOrder any
-	Marker any
-	NextMarker any
-	PageSize any
-	PolicyName any
-	Principals any
+	Marker         any
+	NextMarker     any
+	PageSize       any
+	PolicyName     any
+	Principals     any
 }
 
 var PolicyPrincipals = ubx.DataSourceBinding{
 	WireType: "aws_iot_policy_principals",
 	Fields: ubx.FieldMap{
 		"AscendingOrder": ubx.FieldSpec{WireName: "ascending_order"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
 	},
 }

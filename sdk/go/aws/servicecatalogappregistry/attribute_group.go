@@ -32,9 +32,9 @@ type AttributeGroupAttrs struct {
 var AttributeGroup = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_app_registry_attribute_group",
 	Fields: ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"Attributes":  ubx.FieldSpec{WireName: "attributes"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

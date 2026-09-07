@@ -4,30 +4,30 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamByoasn_Byoasns struct {
-	Asn any
-	IpamId any
-	State any
+	Asn           any
+	IpamId        any
+	State         any
 	StatusMessage any
 }
 
 type IpamByoasnConfig struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IpamByoasnAttrs struct {
-	Byoasns any
-	DryRun any
+	Byoasns    any
+	DryRun     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var IpamByoasn = ubx.DataSourceBinding{
 	WireType: "aws_ec2_ipam_byoasn",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

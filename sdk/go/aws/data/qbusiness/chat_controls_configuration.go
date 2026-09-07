@@ -4,7 +4,7 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChatControlsConfiguration_BlockedPhrases struct {
-	BlockedPhrases any
+	BlockedPhrases        any
 	SystemMessageOverride any
 }
 
@@ -22,7 +22,7 @@ type ChatControlsConfiguration_OrchestrationConfiguration struct {
 
 type ChatControlsConfiguration_TopicConfigurations_Rules_ExcludedUsersAndGroups struct {
 	UserGroups any
-	UserIds any
+	UserIds    any
 }
 
 type ChatControlsConfiguration_TopicConfigurations_Rules_RuleConfiguration_ContentBlockerRule struct {
@@ -31,7 +31,7 @@ type ChatControlsConfiguration_TopicConfigurations_Rules_RuleConfiguration_Conte
 
 type ChatControlsConfiguration_TopicConfigurations_Rules_RuleConfiguration_ContentRetrievalRule_EligibleDataSources struct {
 	DataSourceId any
-	IndexId any
+	IndexId      any
 }
 
 type ChatControlsConfiguration_TopicConfigurations_Rules_RuleConfiguration_ContentRetrievalRule struct {
@@ -39,28 +39,28 @@ type ChatControlsConfiguration_TopicConfigurations_Rules_RuleConfiguration_Conte
 }
 
 type ChatControlsConfiguration_TopicConfigurations_Rules_RuleConfiguration struct {
-	ContentBlockerRule any
+	ContentBlockerRule   any
 	ContentRetrievalRule any
 }
 
 type ChatControlsConfiguration_TopicConfigurations_Rules struct {
 	ExcludedUsersAndGroups any
 	IncludedUsersAndGroups any
-	RuleConfiguration any
-	RuleType any
+	RuleConfiguration      any
+	RuleType               any
 }
 
 type ChatControlsConfiguration_TopicConfigurations struct {
-	Description any
+	Description         any
 	ExampleChatMessages any
-	Name any
-	Rules any
+	Name                any
+	Rules               any
 }
 
 type ChatControlsConfigurationConfig struct {
 	ApplicationId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type ChatControlsConfigurationAttrs struct {
@@ -71,19 +71,19 @@ type ChatControlsConfigurationAttrs struct {
 	CreatorModeConfiguration any
 	// <p>Configuration information required to setup hallucination reduction. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/hallucination-reduction.html"> hallucination reduction</a>.</p> <note> <p>The hallucination reduction feature won't work if chat orchestration controls are enabled for your application.</p> </note>
 	HallucinationReductionConfiguration any
-	MaxResults any
-	NextToken any
+	MaxResults                          any
+	NextToken                           any
 	// <p>The chat orchestration specific admin controls configured for an Amazon Q Business application. Determines whether Amazon Q Business automatically routes chat requests across configured plugins and data sources in your Amazon Q Business application.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails-global-controls.html#guardrails-global-orchestration">Chat orchestration settings</a>.</p>
 	OrchestrationConfiguration any
-	ResponseScope any
-	TopicConfigurations any
+	ResponseScope              any
+	TopicConfigurations        any
 }
 
 var ChatControlsConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_chat_controls_configuration",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

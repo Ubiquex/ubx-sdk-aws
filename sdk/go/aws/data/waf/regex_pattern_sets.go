@@ -4,25 +4,25 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegexPatternSets_RegexPatternSets struct {
-	Name any
+	Name              any
 	RegexPatternSetId any
 }
 
 type RegexPatternSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type RegexPatternSetsAttrs struct {
-	Limit any
-	NextMarker any
+	Limit            any
+	NextMarker       any
 	RegexPatternSets any
 }
 
 var RegexPatternSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_regex_pattern_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

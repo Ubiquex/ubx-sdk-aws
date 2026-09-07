@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmIncidentsRelatedItems_RelatedItems_Identifier_Value_PagerDutyIncidentDetail struct {
 	AutoResolve any
-	Id any
-	SecretId any
+	Id          any
+	SecretId    any
 }
 
 type SsmIncidentsRelatedItems_RelatedItems_Identifier_Value struct {
-	Arn any
-	MetricDefinition any
+	Arn                     any
+	MetricDefinition        any
 	PagerDutyIncidentDetail any
-	Url any
+	Url                     any
 }
 
 type SsmIncidentsRelatedItems_RelatedItems_Identifier struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type SsmIncidentsRelatedItems_RelatedItems struct {
 	GeneratedId any
-	Identifier any
-	Title any
+	Identifier  any
+	Title       any
 }
 
 type SsmIncidentsRelatedItemsConfig struct {
 	IncidentRecordArn any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 type SsmIncidentsRelatedItemsAttrs struct {
 	IncidentRecordArn any
-	MaxResults any
-	NextToken any
-	RelatedItems any
+	MaxResults        any
+	NextToken         any
+	RelatedItems      any
 }
 
 var SsmIncidentsRelatedItems = ubx.DataSourceBinding{
 	WireType: "aws_ssm_incidents_related_items",
 	Fields: ubx.FieldMap{
 		"IncidentRecordArn": ubx.FieldSpec{WireName: "incident_record_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

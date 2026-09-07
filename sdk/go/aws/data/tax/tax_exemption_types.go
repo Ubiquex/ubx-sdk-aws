@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaxExemptionTypes_TaxExemptionTypes_ApplicableJurisdictions struct {
 	Country any
-	State any
+	State   any
 }
 
 type TaxExemptionTypes_TaxExemptionTypes struct {
 	ApplicableJurisdictions any
-	Description any
-	DisplayName any
+	Description             any
+	DisplayName             any
 }
 
 type TaxExemptionTypesConfig struct {
@@ -23,6 +23,5 @@ type TaxExemptionTypesAttrs struct {
 
 var TaxExemptionTypes = ubx.DataSourceBinding{
 	WireType: "aws_tax_tax_exemption_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

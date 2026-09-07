@@ -4,35 +4,35 @@ package resiliencehubv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FailureModeAssessments_AssessmentSummaries_Achievability struct {
-	AvailabilitySlo any
+	AvailabilitySlo                any
 	DataRecoveryTimeBetweenBackups any
-	MultiAzRtoRpo any
-	MultiRegionRtoRpo any
+	MultiAzRtoRpo                  any
+	MultiRegionRtoRpo              any
 }
 
 type FailureModeAssessments_AssessmentSummaries_AssessmentCost struct {
-	Amount any
+	Amount   any
 	Currency any
 }
 
 type FailureModeAssessments_AssessmentSummaries struct {
-	Achievability any
-	AssessmentCost any
-	AssessmentId any
-	AssessmentStatus any
-	AssessmentStep any
+	Achievability               any
+	AssessmentCost              any
+	AssessmentId                any
+	AssessmentStatus            any
+	AssessmentStep              any
 	BillableAssessmentUnitCount any
-	EndedAt any
-	ErrorCode any
-	ErrorMessage any
-	ServiceArn any
-	StartedAt any
-	TotalFindings any
+	EndedAt                     any
+	ErrorCode                   any
+	ErrorMessage                any
+	ServiceArn                  any
+	StartedAt                   any
+	TotalFindings               any
 }
 
 type FailureModeAssessmentsConfig struct {
 	AssessmentStatuses any
-	EndedBefore any
+	EndedBefore        any
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
@@ -42,14 +42,14 @@ type FailureModeAssessmentsConfig struct {
 	// <p>The field by which to sort failure mode assessment results.</p>
 	SortBy any
 	// <p>The order in which to sort results.</p>
-	SortOrder any
+	SortOrder    any
 	StartedAfter any
 }
 
 type FailureModeAssessmentsAttrs struct {
-	AssessmentStatuses any
+	AssessmentStatuses  any
 	AssessmentSummaries any
-	EndedBefore any
+	EndedBefore         any
 	// <p>Pagination page size.</p>
 	MaxResults any
 	// <p>Pagination token.</p>
@@ -59,7 +59,7 @@ type FailureModeAssessmentsAttrs struct {
 	// <p>The field by which to sort failure mode assessment results.</p>
 	SortBy any
 	// <p>The order in which to sort results.</p>
-	SortOrder any
+	SortOrder    any
 	StartedAfter any
 }
 
@@ -67,12 +67,12 @@ var FailureModeAssessments = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_failure_mode_assessments",
 	Fields: ubx.FieldMap{
 		"AssessmentStatuses": ubx.FieldSpec{WireName: "assessment_statuses"},
-		"EndedBefore": ubx.FieldSpec{WireName: "ended_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"StartedAfter": ubx.FieldSpec{WireName: "started_after"},
+		"EndedBefore":        ubx.FieldSpec{WireName: "ended_before"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"ServiceArn":         ubx.FieldSpec{WireName: "service_arn"},
+		"SortBy":             ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":          ubx.FieldSpec{WireName: "sort_order"},
+		"StartedAfter":       ubx.FieldSpec{WireName: "started_after"},
 	},
 }

@@ -8,44 +8,44 @@ type S3ControlAccessPoints_AccessPointList_VpcConfiguration struct {
 }
 
 type S3ControlAccessPoints_AccessPointList struct {
-	AccessPointArn any
-	Alias any
-	Bucket any
-	BucketAccountId any
-	DataSourceId any
-	DataSourceType any
-	Name any
-	NetworkOrigin any
+	AccessPointArn   any
+	Alias            any
+	Bucket           any
+	BucketAccountId  any
+	DataSourceId     any
+	DataSourceType   any
+	Name             any
+	NetworkOrigin    any
 	VpcConfiguration any
 }
 
 type S3ControlAccessPointsConfig struct {
-	AccountId any
-	Bucket any
-	DataSourceId any
+	AccountId      any
+	Bucket         any
+	DataSourceId   any
 	DataSourceType any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type S3ControlAccessPointsAttrs struct {
 	AccessPointList any
-	AccountId any
-	Bucket any
-	DataSourceId any
-	DataSourceType any
-	MaxResults any
-	NextToken any
+	AccountId       any
+	Bucket          any
+	DataSourceId    any
+	DataSourceType  any
+	MaxResults      any
+	NextToken       any
 }
 
 var S3ControlAccessPoints = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_access_points",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"DataSourceId": ubx.FieldSpec{WireName: "data_source_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"Bucket":         ubx.FieldSpec{WireName: "bucket"},
+		"DataSourceId":   ubx.FieldSpec{WireName: "data_source_id"},
 		"DataSourceType": ubx.FieldSpec{WireName: "data_source_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

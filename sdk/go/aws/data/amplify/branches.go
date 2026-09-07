@@ -8,56 +8,56 @@ type Branches_Branches_Backend struct {
 }
 
 type Branches_Branches struct {
-	ActiveJobId any
-	AssociatedResources any
-	Backend any
-	BackendEnvironmentArn any
-	BasicAuthCredentials any
-	BranchArn any
-	BranchName any
-	BuildSpec any
-	ComputeRoleArn any
-	CreateTime any
-	CustomDomains any
-	Description any
-	DestinationBranch any
-	DisplayName any
-	EnableAutoBuild any
-	EnableBasicAuth any
-	EnableNotification any
-	EnablePerformanceMode any
-	EnablePullRequestPreview any
-	EnableSkewProtection any
-	EnvironmentVariables any
-	Framework any
+	ActiveJobId                any
+	AssociatedResources        any
+	Backend                    any
+	BackendEnvironmentArn      any
+	BasicAuthCredentials       any
+	BranchArn                  any
+	BranchName                 any
+	BuildSpec                  any
+	ComputeRoleArn             any
+	CreateTime                 any
+	CustomDomains              any
+	Description                any
+	DestinationBranch          any
+	DisplayName                any
+	EnableAutoBuild            any
+	EnableBasicAuth            any
+	EnableNotification         any
+	EnablePerformanceMode      any
+	EnablePullRequestPreview   any
+	EnableSkewProtection       any
+	EnvironmentVariables       any
+	Framework                  any
 	PullRequestEnvironmentName any
-	SourceBranch any
-	Stage any
-	Tags any
-	ThumbnailUrl any
-	TotalNumberOfJobs any
-	Ttl any
-	UpdateTime any
+	SourceBranch               any
+	Stage                      any
+	Tags                       any
+	ThumbnailUrl               any
+	TotalNumberOfJobs          any
+	Ttl                        any
+	UpdateTime                 any
 }
 
 type BranchesConfig struct {
-	AppId any
+	AppId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BranchesAttrs struct {
-	AppId any
-	Branches any
+	AppId      any
+	Branches   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Branches = ubx.DataSourceBinding{
 	WireType: "aws_amplify_branches",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

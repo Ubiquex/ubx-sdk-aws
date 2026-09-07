@@ -9,21 +9,21 @@ type SpaceResources_SpaceResources_ResourceDetails struct {
 
 type SpaceResources_SpaceResources struct {
 	ResourceDetails any
-	ResourceName any
-	ResourceType any
-	UpdatedAt any
+	ResourceName    any
+	ResourceType    any
+	UpdatedAt       any
 }
 
 type SpaceResourcesConfig struct {
 	AwsAccountId any
-	SpaceId any
+	SpaceId      any
 }
 
 type SpaceResourcesAttrs struct {
-	AwsAccountId any
-	RequestId any
-	SpaceArn any
-	SpaceId any
+	AwsAccountId   any
+	RequestId      any
+	SpaceArn       any
+	SpaceId        any
 	SpaceResources any
 }
 
@@ -31,6 +31,6 @@ var SpaceResources = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_space_resources",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"SpaceId": ubx.FieldSpec{WireName: "space_id"},
+		"SpaceId":      ubx.FieldSpec{WireName: "space_id"},
 	},
 }

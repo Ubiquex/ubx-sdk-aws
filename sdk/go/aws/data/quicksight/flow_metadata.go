@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlowMetadataConfig struct {
 	AwsAccountId any
-	FlowId any
+	FlowId       any
 }
 
 type FlowMetadataAttrs struct {
-	Arn any
-	AwsAccountId any
-	CreatedTime any
-	Description any
-	FlowId any
+	Arn             any
+	AwsAccountId    any
+	CreatedTime     any
+	Description     any
+	FlowId          any
 	LastUpdatedTime any
-	Name any
-	PublishState any
-	RequestId any
-	RunCount any
-	Status any
-	UserCount any
+	Name            any
+	PublishState    any
+	RequestId       any
+	RunCount        any
+	Status          any
+	UserCount       any
 }
 
 var FlowMetadata = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_flow_metadata",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"FlowId": ubx.FieldSpec{WireName: "flow_id"},
+		"FlowId":       ubx.FieldSpec{WireName: "flow_id"},
 	},
 }

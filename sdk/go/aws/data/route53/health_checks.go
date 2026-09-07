@@ -4,78 +4,78 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HealthChecks_HealthChecks_CloudWatchAlarmConfiguration_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type HealthChecks_HealthChecks_CloudWatchAlarmConfiguration struct {
 	ComparisonOperator any
-	Dimensions any
-	EvaluationPeriods any
-	MetricName any
-	Namespace any
-	Period any
-	Statistic any
-	Threshold any
+	Dimensions         any
+	EvaluationPeriods  any
+	MetricName         any
+	Namespace          any
+	Period             any
+	Statistic          any
+	Threshold          any
 }
 
 type HealthChecks_HealthChecks_HealthCheckConfig_AlarmIdentifier struct {
-	Name any
+	Name   any
 	Region any
 }
 
 type HealthChecks_HealthChecks_HealthCheckConfig struct {
-	AlarmIdentifier any
-	ChildHealthChecks any
-	Disabled any
-	EnableSni any
-	FailureThreshold any
-	FullyQualifiedDomainName any
-	HealthThreshold any
+	AlarmIdentifier              any
+	ChildHealthChecks            any
+	Disabled                     any
+	EnableSni                    any
+	FailureThreshold             any
+	FullyQualifiedDomainName     any
+	HealthThreshold              any
 	InsufficientDataHealthStatus any
-	Inverted any
-	Ipaddress any
-	MeasureLatency any
-	Port any
-	Regions any
-	RequestInterval any
-	ResourcePath any
-	RoutingControlArn any
-	SearchString any
-	Type any
+	Inverted                     any
+	Ipaddress                    any
+	MeasureLatency               any
+	Port                         any
+	Regions                      any
+	RequestInterval              any
+	ResourcePath                 any
+	RoutingControlArn            any
+	SearchString                 any
+	Type                         any
 }
 
 type HealthChecks_HealthChecks_LinkedService struct {
-	Description any
+	Description      any
 	ServicePrincipal any
 }
 
 type HealthChecks_HealthChecks struct {
-	CallerReference any
+	CallerReference              any
 	CloudWatchAlarmConfiguration any
-	HealthCheckConfig any
-	HealthCheckVersion any
-	Id any
-	LinkedService any
+	HealthCheckConfig            any
+	HealthCheckVersion           any
+	Id                           any
+	LinkedService                any
 }
 
 type HealthChecksConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type HealthChecksAttrs struct {
 	HealthChecks any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	NextMarker any
+	IsTruncated  any
+	Marker       any
+	MaxItems     any
+	NextMarker   any
 }
 
 var HealthChecks = ubx.DataSourceBinding{
 	WireType: "aws_route53_health_checks",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

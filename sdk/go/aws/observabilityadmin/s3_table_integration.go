@@ -12,25 +12,25 @@ type S3TableIntegration_Encryption struct {
 
 type S3TableIntegration_LogSources struct {
 	Identifier any
-	Name any
-	Type any
+	Name       any
+	Type       any
 }
 
 type S3TableIntegration_Tags struct {
 	// The key of a tag that you can assign to the AWS Observability Admin S3 table integration to help identify, categorize, or manage the integration resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var S3TableIntegration_EncryptionFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"SseAlgorithm": ubx.FieldSpec{WireName: "sse_algorithm"},
-	}
+	"KmsKeyArn":    ubx.FieldSpec{WireName: "kms_key_arn"},
+	"SseAlgorithm": ubx.FieldSpec{WireName: "sse_algorithm"},
+}
 
 var S3TableIntegration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type S3TableIntegrationConfig struct {
 	// Encryption configuration for the S3 Table Integration
@@ -59,14 +59,14 @@ var S3TableIntegration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Encryption": ubx.FieldSpec{
 			WireName: "encryption",
-			Kind: "object",
-			Fields: S3TableIntegration_EncryptionFields,
+			Kind:     "object",
+			Fields:   S3TableIntegration_EncryptionFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: S3TableIntegration_TagsFields,
+			Kind:     "list",
+			Fields:   S3TableIntegration_TagsFields,
 		},
 	},
 }

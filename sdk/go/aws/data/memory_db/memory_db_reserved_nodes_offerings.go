@@ -4,46 +4,46 @@ package memory_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MemoryDbReservedNodesOfferings_ReservedNodesOfferings_RecurringCharges struct {
-	RecurringChargeAmount any
+	RecurringChargeAmount    any
 	RecurringChargeFrequency any
 }
 
 type MemoryDbReservedNodesOfferings_ReservedNodesOfferings struct {
-	Duration any
-	FixedPrice any
-	NodeType any
-	OfferingType any
-	RecurringCharges any
+	Duration                any
+	FixedPrice              any
+	NodeType                any
+	OfferingType            any
+	RecurringCharges        any
 	ReservedNodesOfferingId any
 }
 
 type MemoryDbReservedNodesOfferingsConfig struct {
-	Duration any
-	MaxResults any
-	NextToken any
-	NodeType any
-	OfferingType any
+	Duration                any
+	MaxResults              any
+	NextToken               any
+	NodeType                any
+	OfferingType            any
 	ReservedNodesOfferingId any
 }
 
 type MemoryDbReservedNodesOfferingsAttrs struct {
-	Duration any
-	MaxResults any
-	NextToken any
-	NodeType any
-	OfferingType any
+	Duration                any
+	MaxResults              any
+	NextToken               any
+	NodeType                any
+	OfferingType            any
 	ReservedNodesOfferingId any
-	ReservedNodesOfferings any
+	ReservedNodesOfferings  any
 }
 
 var MemoryDbReservedNodesOfferings = ubx.DataSourceBinding{
 	WireType: "aws_memory_db_reserved_nodes_offerings",
 	Fields: ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
-		"OfferingType": ubx.FieldSpec{WireName: "offering_type"},
+		"Duration":                ubx.FieldSpec{WireName: "duration"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"NodeType":                ubx.FieldSpec{WireName: "node_type"},
+		"OfferingType":            ubx.FieldSpec{WireName: "offering_type"},
 		"ReservedNodesOfferingId": ubx.FieldSpec{WireName: "reserved_nodes_offering_id"},
 	},
 }

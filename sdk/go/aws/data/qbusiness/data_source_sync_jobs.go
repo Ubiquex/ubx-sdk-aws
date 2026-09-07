@@ -4,61 +4,61 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSourceSyncJobs_History_Error struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type DataSourceSyncJobs_History_Metrics struct {
-	DocumentsAdded any
-	DocumentsDeleted any
-	DocumentsFailed any
+	DocumentsAdded    any
+	DocumentsDeleted  any
+	DocumentsFailed   any
 	DocumentsModified any
-	DocumentsScanned any
+	DocumentsScanned  any
 }
 
 type DataSourceSyncJobs_History struct {
 	DataSourceErrorCode any
-	EndTime any
-	Error any
-	ExecutionId any
-	Metrics any
-	StartTime any
-	Status any
+	EndTime             any
+	Error               any
+	ExecutionId         any
+	Metrics             any
+	StartTime           any
+	Status              any
 }
 
 type DataSourceSyncJobsConfig struct {
 	ApplicationId any
-	DataSourceId any
-	EndTime any
-	IndexId any
-	MaxResults any
-	NextToken any
-	StartTime any
-	StatusFilter any
+	DataSourceId  any
+	EndTime       any
+	IndexId       any
+	MaxResults    any
+	NextToken     any
+	StartTime     any
+	StatusFilter  any
 }
 
 type DataSourceSyncJobsAttrs struct {
 	ApplicationId any
-	DataSourceId any
-	EndTime any
-	History any
-	IndexId any
-	MaxResults any
-	NextToken any
-	StartTime any
-	StatusFilter any
+	DataSourceId  any
+	EndTime       any
+	History       any
+	IndexId       any
+	MaxResults    any
+	NextToken     any
+	StartTime     any
+	StatusFilter  any
 }
 
 var DataSourceSyncJobs = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_data_source_sync_jobs",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"DataSourceId": ubx.FieldSpec{WireName: "data_source_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"StatusFilter": ubx.FieldSpec{WireName: "status_filter"},
+		"DataSourceId":  ubx.FieldSpec{WireName: "data_source_id"},
+		"EndTime":       ubx.FieldSpec{WireName: "end_time"},
+		"IndexId":       ubx.FieldSpec{WireName: "index_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":     ubx.FieldSpec{WireName: "start_time"},
+		"StatusFilter":  ubx.FieldSpec{WireName: "status_filter"},
 	},
 }

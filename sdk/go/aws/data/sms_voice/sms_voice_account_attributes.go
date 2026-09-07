@@ -4,25 +4,25 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceAccountAttributes_AccountAttributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type SmsVoiceAccountAttributesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SmsVoiceAccountAttributesAttrs struct {
 	AccountAttributes any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var SmsVoiceAccountAttributes = ubx.DataSourceBinding{
 	WireType: "aws_sms_voice_account_attributes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

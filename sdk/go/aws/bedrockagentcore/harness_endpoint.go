@@ -4,14 +4,14 @@ package bedrockagentcore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HarnessEndpoint_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var HarnessEndpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type HarnessEndpointConfig struct {
 	// The description of the endpoint.
@@ -54,13 +54,13 @@ type HarnessEndpointAttrs struct {
 var HarnessEndpoint = ubx.ResourceBinding{
 	WireType: "aws_bedrock_agent_core_harness_endpoint",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"HarnessId": ubx.FieldSpec{WireName: "harness_id"},
+		"HarnessId":    ubx.FieldSpec{WireName: "harness_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: HarnessEndpoint_TagsFields,
+			Kind:     "list",
+			Fields:   HarnessEndpoint_TagsFields,
 		},
 		"TargetVersion": ubx.FieldSpec{WireName: "target_version"},
 	},

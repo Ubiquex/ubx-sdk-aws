@@ -125,146 +125,146 @@ type SecurityConfiguration_Tags struct {
 }
 
 var SecurityConfiguration_ContainerProvider_Info_EksInfoFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var SecurityConfiguration_ContainerProvider_InfoFields = ubx.FieldMap{
-		"EksInfo": ubx.FieldSpec{
-			WireName: "eks_info",
-			Kind: "object",
-			Fields: SecurityConfiguration_ContainerProvider_Info_EksInfoFields,
-		},
-	}
+	"EksInfo": ubx.FieldSpec{
+		WireName: "eks_info",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_ContainerProvider_Info_EksInfoFields,
+	},
+}
 
 var SecurityConfiguration_ContainerProviderFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Info": ubx.FieldSpec{
-			WireName: "info",
-			Kind: "object",
-			Fields: SecurityConfiguration_ContainerProvider_InfoFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Info": ubx.FieldSpec{
+		WireName: "info",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_ContainerProvider_InfoFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_AuthenticationConfiguration_IamconfigurationFields = ubx.FieldMap{
-		"SystemRole": ubx.FieldSpec{WireName: "system_role"},
-	}
+	"SystemRole": ubx.FieldSpec{WireName: "system_role"},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_AuthenticationConfiguration_IdentityCenterConfigurationFields = ubx.FieldMap{
-		"EnableIdentityCenter": ubx.FieldSpec{WireName: "enable_identity_center"},
-		"IdentityCenterApplicationAssignmentRequired": ubx.FieldSpec{WireName: "identity_center_application_assignment_required"},
-		"IdentityCenterInstanceArn": ubx.FieldSpec{WireName: "identity_center_instance_arn"},
-	}
+	"EnableIdentityCenter":                        ubx.FieldSpec{WireName: "enable_identity_center"},
+	"IdentityCenterApplicationAssignmentRequired": ubx.FieldSpec{WireName: "identity_center_application_assignment_required"},
+	"IdentityCenterInstanceArn":                   ubx.FieldSpec{WireName: "identity_center_instance_arn"},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_AuthenticationConfigurationFields = ubx.FieldMap{
-		"Iamconfiguration": ubx.FieldSpec{
-			WireName: "iamconfiguration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_AuthenticationConfiguration_IamconfigurationFields,
-		},
-		"IdentityCenterConfiguration": ubx.FieldSpec{
-			WireName: "identity_center_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_AuthenticationConfiguration_IdentityCenterConfigurationFields,
-		},
-	}
+	"Iamconfiguration": ubx.FieldSpec{
+		WireName: "iamconfiguration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_AuthenticationConfiguration_IamconfigurationFields,
+	},
+	"IdentityCenterConfiguration": ubx.FieldSpec{
+		WireName: "identity_center_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_AuthenticationConfiguration_IdentityCenterConfigurationFields,
+	},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_AuthorizationConfiguration_LakeFormationConfiguration_SecureNamespaceInfoFields = ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_AuthorizationConfiguration_LakeFormationConfigurationFields = ubx.FieldMap{
-		"AuthorizedSessionTagValue": ubx.FieldSpec{WireName: "authorized_session_tag_value"},
-		"QueryAccessControlEnabled": ubx.FieldSpec{WireName: "query_access_control_enabled"},
-		"QueryEngineRoleArn": ubx.FieldSpec{WireName: "query_engine_role_arn"},
-		"SecureNamespaceInfo": ubx.FieldSpec{
-			WireName: "secure_namespace_info",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_AuthorizationConfiguration_LakeFormationConfiguration_SecureNamespaceInfoFields,
-		},
-	}
+	"AuthorizedSessionTagValue": ubx.FieldSpec{WireName: "authorized_session_tag_value"},
+	"QueryAccessControlEnabled": ubx.FieldSpec{WireName: "query_access_control_enabled"},
+	"QueryEngineRoleArn":        ubx.FieldSpec{WireName: "query_engine_role_arn"},
+	"SecureNamespaceInfo": ubx.FieldSpec{
+		WireName: "secure_namespace_info",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_AuthorizationConfiguration_LakeFormationConfiguration_SecureNamespaceInfoFields,
+	},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_AuthorizationConfigurationFields = ubx.FieldMap{
-		"LakeFormationConfiguration": ubx.FieldSpec{
-			WireName: "lake_formation_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_AuthorizationConfiguration_LakeFormationConfigurationFields,
-		},
-	}
+	"LakeFormationConfiguration": ubx.FieldSpec{
+		WireName: "lake_formation_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_AuthorizationConfiguration_LakeFormationConfigurationFields,
+	},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfiguration_LocalDiskEncryptionConfigurationFields = ubx.FieldMap{
-		"AwsKmsKeyId": ubx.FieldSpec{WireName: "aws_kms_key_id"},
-		"EncryptionKeyProviderType": ubx.FieldSpec{WireName: "encryption_key_provider_type"},
-	}
+	"AwsKmsKeyId":               ubx.FieldSpec{WireName: "aws_kms_key_id"},
+	"EncryptionKeyProviderType": ubx.FieldSpec{WireName: "encryption_key_provider_type"},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfiguration_S3EncryptionConfigurationFields = ubx.FieldMap{
-		"EncryptionOption": ubx.FieldSpec{WireName: "encryption_option"},
-		"KmskeyId": ubx.FieldSpec{WireName: "kmskey_id"},
-	}
+	"EncryptionOption": ubx.FieldSpec{WireName: "encryption_option"},
+	"KmskeyId":         ubx.FieldSpec{WireName: "kmskey_id"},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfigurationFields = ubx.FieldMap{
-		"LocalDiskEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "local_disk_encryption_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfiguration_LocalDiskEncryptionConfigurationFields,
-		},
-		"S3EncryptionConfiguration": ubx.FieldSpec{
-			WireName: "s3_encryption_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfiguration_S3EncryptionConfigurationFields,
-		},
-	}
+	"LocalDiskEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "local_disk_encryption_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfiguration_LocalDiskEncryptionConfigurationFields,
+	},
+	"S3EncryptionConfiguration": ubx.FieldSpec{
+		WireName: "s3_encryption_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfiguration_S3EncryptionConfigurationFields,
+	},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_InTransitEncryptionConfiguration_TlscertificateConfigurationFields = ubx.FieldMap{
-		"CertificateProviderType": ubx.FieldSpec{WireName: "certificate_provider_type"},
-		"PrivateKeySecretArn": ubx.FieldSpec{WireName: "private_key_secret_arn"},
-		"PublicKeySecretArn": ubx.FieldSpec{WireName: "public_key_secret_arn"},
-	}
+	"CertificateProviderType": ubx.FieldSpec{WireName: "certificate_provider_type"},
+	"PrivateKeySecretArn":     ubx.FieldSpec{WireName: "private_key_secret_arn"},
+	"PublicKeySecretArn":      ubx.FieldSpec{WireName: "public_key_secret_arn"},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_InTransitEncryptionConfigurationFields = ubx.FieldMap{
-		"TlscertificateConfiguration": ubx.FieldSpec{
-			WireName: "tlscertificate_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_InTransitEncryptionConfiguration_TlscertificateConfigurationFields,
-		},
-	}
+	"TlscertificateConfiguration": ubx.FieldSpec{
+		WireName: "tlscertificate_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_InTransitEncryptionConfiguration_TlscertificateConfigurationFields,
+	},
+}
 
 var SecurityConfiguration_SecurityConfigurationData_EncryptionConfigurationFields = ubx.FieldMap{
-		"AtRestEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "at_rest_encryption_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfigurationFields,
-		},
-		"InTransitEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "in_transit_encryption_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_InTransitEncryptionConfigurationFields,
-		},
-	}
+	"AtRestEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "at_rest_encryption_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_AtRestEncryptionConfigurationFields,
+	},
+	"InTransitEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "in_transit_encryption_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_EncryptionConfiguration_InTransitEncryptionConfigurationFields,
+	},
+}
 
 var SecurityConfiguration_SecurityConfigurationDataFields = ubx.FieldMap{
-		"AuthenticationConfiguration": ubx.FieldSpec{
-			WireName: "authentication_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_AuthenticationConfigurationFields,
-		},
-		"AuthorizationConfiguration": ubx.FieldSpec{
-			WireName: "authorization_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_AuthorizationConfigurationFields,
-		},
-		"EncryptionConfiguration": ubx.FieldSpec{
-			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationData_EncryptionConfigurationFields,
-		},
-	}
+	"AuthenticationConfiguration": ubx.FieldSpec{
+		WireName: "authentication_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_AuthenticationConfigurationFields,
+	},
+	"AuthorizationConfiguration": ubx.FieldSpec{
+		WireName: "authorization_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_AuthorizationConfigurationFields,
+	},
+	"EncryptionConfiguration": ubx.FieldSpec{
+		WireName: "encryption_configuration",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_SecurityConfigurationData_EncryptionConfigurationFields,
+	},
+}
 
 var SecurityConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SecurityConfigurationConfig struct {
 	// Container provider information.
@@ -297,19 +297,19 @@ var SecurityConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContainerProvider": ubx.FieldSpec{
 			WireName: "container_provider",
-			Kind: "object",
-			Fields: SecurityConfiguration_ContainerProviderFields,
+			Kind:     "object",
+			Fields:   SecurityConfiguration_ContainerProviderFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SecurityConfigurationData": ubx.FieldSpec{
 			WireName: "security_configuration_data",
-			Kind: "object",
-			Fields: SecurityConfiguration_SecurityConfigurationDataFields,
+			Kind:     "object",
+			Fields:   SecurityConfiguration_SecurityConfigurationDataFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SecurityConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   SecurityConfiguration_TagsFields,
 		},
 	},
 }

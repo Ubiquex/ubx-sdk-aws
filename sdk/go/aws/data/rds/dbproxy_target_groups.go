@@ -4,49 +4,49 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbproxyTargetGroups_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type DbproxyTargetGroups_TargetGroups_ConnectionPoolConfig struct {
-	ConnectionBorrowTimeout any
-	InitQuery any
-	MaxConnectionsPercent any
+	ConnectionBorrowTimeout   any
+	InitQuery                 any
+	MaxConnectionsPercent     any
 	MaxIdleConnectionsPercent any
-	SessionPinningFilters any
+	SessionPinningFilters     any
 }
 
 type DbproxyTargetGroups_TargetGroups struct {
 	ConnectionPoolConfig any
-	CreatedDate any
-	DbproxyName any
-	IsDefault any
-	Status any
-	TargetGroupArn any
-	TargetGroupName any
-	UpdatedDate any
+	CreatedDate          any
+	DbproxyName          any
+	IsDefault            any
+	Status               any
+	TargetGroupArn       any
+	TargetGroupName      any
+	UpdatedDate          any
 }
 
 var DbproxyTargetGroups_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type DbproxyTargetGroupsConfig struct {
-	DbproxyName any
-	Filters any
-	Marker any
-	MaxRecords any
+	DbproxyName     any
+	Filters         any
+	Marker          any
+	MaxRecords      any
 	TargetGroupName any
 }
 
 type DbproxyTargetGroupsAttrs struct {
-	DbproxyName any
-	Filters any
-	Marker any
-	MaxRecords any
+	DbproxyName     any
+	Filters         any
+	Marker          any
+	MaxRecords      any
 	TargetGroupName any
-	TargetGroups any
+	TargetGroups    any
 }
 
 var DbproxyTargetGroups = ubx.DataSourceBinding{
@@ -55,11 +55,11 @@ var DbproxyTargetGroups = ubx.DataSourceBinding{
 		"DbproxyName": ubx.FieldSpec{WireName: "dbproxy_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: DbproxyTargetGroups_FiltersFields,
+			Kind:     "list",
+			Fields:   DbproxyTargetGroups_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":          ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":      ubx.FieldSpec{WireName: "max_records"},
 		"TargetGroupName": ubx.FieldSpec{WireName: "target_group_name"},
 	},
 }

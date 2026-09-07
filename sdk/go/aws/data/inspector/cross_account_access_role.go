@@ -8,12 +8,11 @@ type CrossAccountAccessRoleConfig struct {
 
 type CrossAccountAccessRoleAttrs struct {
 	RegisteredAt any
-	RoleArn any
-	Valid any
+	RoleArn      any
+	Valid        any
 }
 
 var CrossAccountAccessRole = ubx.DataSourceBinding{
 	WireType: "aws_inspector_cross_account_access_role",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

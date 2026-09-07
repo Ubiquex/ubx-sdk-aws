@@ -4,40 +4,40 @@ package kms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyRotations_Rotations struct {
-	ExpirationModel any
-	ImportState any
-	KeyId any
+	ExpirationModel        any
+	ImportState            any
+	KeyId                  any
 	KeyMaterialDescription any
-	KeyMaterialId any
-	KeyMaterialState any
-	RotationDate any
-	RotationType any
-	ValidTo any
+	KeyMaterialId          any
+	KeyMaterialState       any
+	RotationDate           any
+	RotationType           any
+	ValidTo                any
 }
 
 type KeyRotationsConfig struct {
 	IncludeKeyMaterial any
-	KeyId any
-	Limit any
-	Marker any
+	KeyId              any
+	Limit              any
+	Marker             any
 }
 
 type KeyRotationsAttrs struct {
 	IncludeKeyMaterial any
-	KeyId any
-	Limit any
-	Marker any
-	NextMarker any
-	Rotations any
-	Truncated any
+	KeyId              any
+	Limit              any
+	Marker             any
+	NextMarker         any
+	Rotations          any
+	Truncated          any
 }
 
 var KeyRotations = ubx.DataSourceBinding{
 	WireType: "aws_kms_key_rotations",
 	Fields: ubx.FieldMap{
 		"IncludeKeyMaterial": ubx.FieldSpec{WireName: "include_key_material"},
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"KeyId":              ubx.FieldSpec{WireName: "key_id"},
+		"Limit":              ubx.FieldSpec{WireName: "limit"},
+		"Marker":             ubx.FieldSpec{WireName: "marker"},
 	},
 }

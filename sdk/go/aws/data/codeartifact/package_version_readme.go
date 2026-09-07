@@ -4,37 +4,37 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageVersionReadmeConfig struct {
-	Domain any
-	DomainOwner any
-	Format any
-	Namespace any
-	Package any
+	Domain         any
+	DomainOwner    any
+	Format         any
+	Namespace      any
+	Package        any
 	PackageVersion any
-	Repository any
+	Repository     any
 }
 
 type PackageVersionReadmeAttrs struct {
-	Domain any
-	DomainOwner any
-	Format any
-	Namespace any
-	Package any
-	PackageVersion any
-	Readme any
-	Repository any
-	Version any
+	Domain          any
+	DomainOwner     any
+	Format          any
+	Namespace       any
+	Package         any
+	PackageVersion  any
+	Readme          any
+	Repository      any
+	Version         any
 	VersionRevision any
 }
 
 var PackageVersionReadme = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_package_version_readme",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Package": ubx.FieldSpec{WireName: "package"},
+		"Domain":         ubx.FieldSpec{WireName: "domain"},
+		"DomainOwner":    ubx.FieldSpec{WireName: "domain_owner"},
+		"Format":         ubx.FieldSpec{WireName: "format"},
+		"Namespace":      ubx.FieldSpec{WireName: "namespace"},
+		"Package":        ubx.FieldSpec{WireName: "package"},
 		"PackageVersion": ubx.FieldSpec{WireName: "package_version"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
+		"Repository":     ubx.FieldSpec{WireName: "repository"},
 	},
 }

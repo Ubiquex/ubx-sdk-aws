@@ -9,19 +9,19 @@ type FindingAggregators_FindingAggregators struct {
 
 type FindingAggregatorsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FindingAggregatorsAttrs struct {
 	FindingAggregators any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var FindingAggregators = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_finding_aggregators",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

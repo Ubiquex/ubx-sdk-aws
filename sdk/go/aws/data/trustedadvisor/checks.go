@@ -4,47 +4,47 @@ package trustedadvisor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Checks_CheckSummaries struct {
-	Arn any
-	AwsResourceTypes any
-	AwsServices any
-	CheckGranularity any
-	Description any
-	Id any
-	Metadata any
-	Name any
-	Pillars any
-	RecommendationId any
+	Arn                  any
+	AwsResourceTypes     any
+	AwsServices          any
+	CheckGranularity     any
+	Description          any
+	Id                   any
+	Metadata             any
+	Name                 any
+	Pillars              any
+	RecommendationId     any
 	ResourceArnQueryable any
-	Source any
+	Source               any
 }
 
 type ChecksConfig struct {
 	AwsService any
-	Language any
+	Language   any
 	MaxResults any
-	NextToken any
-	Pillar any
-	Source any
+	NextToken  any
+	Pillar     any
+	Source     any
 }
 
 type ChecksAttrs struct {
-	AwsService any
+	AwsService     any
 	CheckSummaries any
-	Language any
-	MaxResults any
-	NextToken any
-	Pillar any
-	Source any
+	Language       any
+	MaxResults     any
+	NextToken      any
+	Pillar         any
+	Source         any
 }
 
 var Checks = ubx.DataSourceBinding{
 	WireType: "aws_trustedadvisor_checks",
 	Fields: ubx.FieldMap{
 		"AwsService": ubx.FieldSpec{WireName: "aws_service"},
-		"Language": ubx.FieldSpec{WireName: "language"},
+		"Language":   ubx.FieldSpec{WireName: "language"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Pillar": ubx.FieldSpec{WireName: "pillar"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Pillar":     ubx.FieldSpec{WireName: "pillar"},
+		"Source":     ubx.FieldSpec{WireName: "source"},
 	},
 }

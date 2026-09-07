@@ -8,9 +8,9 @@ type QueryStateConfig struct {
 }
 
 type QueryStateAttrs struct {
-	Error any
+	Error   any
 	QueryId any
-	State any
+	State   any
 }
 
 var QueryState = ubx.DataSourceBinding{

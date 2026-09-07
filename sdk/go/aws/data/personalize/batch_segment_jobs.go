@@ -4,33 +4,33 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BatchSegmentJobs_BatchSegmentJobs struct {
-	BatchSegmentJobArn any
-	CreationDateTime any
-	FailureReason any
-	JobName any
+	BatchSegmentJobArn  any
+	CreationDateTime    any
+	FailureReason       any
+	JobName             any
 	LastUpdatedDateTime any
-	SolutionVersionArn any
-	Status any
+	SolutionVersionArn  any
+	Status              any
 }
 
 type BatchSegmentJobsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	SolutionVersionArn any
 }
 
 type BatchSegmentJobsAttrs struct {
-	BatchSegmentJobs any
-	MaxResults any
-	NextToken any
+	BatchSegmentJobs   any
+	MaxResults         any
+	NextToken          any
 	SolutionVersionArn any
 }
 
 var BatchSegmentJobs = ubx.DataSourceBinding{
 	WireType: "aws_personalize_batch_segment_jobs",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"SolutionVersionArn": ubx.FieldSpec{WireName: "solution_version_arn"},
 	},
 }

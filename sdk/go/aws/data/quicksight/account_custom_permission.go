@@ -8,10 +8,10 @@ type AccountCustomPermissionConfig struct {
 }
 
 type AccountCustomPermissionAttrs struct {
-	AwsAccountId any
+	AwsAccountId          any
 	CustomPermissionsName any
-	RequestId any
-	Status any
+	RequestId             any
+	Status                any
 }
 
 var AccountCustomPermission = ubx.DataSourceBinding{

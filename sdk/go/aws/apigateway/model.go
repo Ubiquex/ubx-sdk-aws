@@ -34,8 +34,8 @@ var Model = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContentType": ubx.FieldSpec{WireName: "content_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"RestApiId":   ubx.FieldSpec{WireName: "rest_api_id"},
+		"Schema":      ubx.FieldSpec{WireName: "schema"},
 	},
 }

@@ -346,412 +346,412 @@ type ConnectorProfile_ConnectorProfileConfig struct {
 }
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_AmplitudeFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"SecretKey": ubx.FieldSpec{WireName: "secret_key"},
-	}
+	"ApiKey":    ubx.FieldSpec{WireName: "api_key"},
+	"SecretKey": ubx.FieldSpec{WireName: "secret_key"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_ApiKeyFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"ApiSecretKey": ubx.FieldSpec{WireName: "api_secret_key"},
-	}
+	"ApiKey":       ubx.FieldSpec{WireName: "api_key"},
+	"ApiSecretKey": ubx.FieldSpec{WireName: "api_secret_key"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_CustomFields = ubx.FieldMap{
-		"CredentialsMap": ubx.FieldSpec{WireName: "credentials_map"},
-		"CustomAuthenticationType": ubx.FieldSpec{WireName: "custom_authentication_type"},
-	}
+	"CredentialsMap":           ubx.FieldSpec{WireName: "credentials_map"},
+	"CustomAuthenticationType": ubx.FieldSpec{WireName: "custom_authentication_type"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields = ubx.FieldMap{
-		"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
-		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
-	}
+	"AuthCode":    ubx.FieldSpec{WireName: "auth_code"},
+	"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2Fields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"OauthRequest": ubx.FieldSpec{
-			WireName: "oauth_request",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
-		},
-		"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
-	}
+	"AccessToken":  ubx.FieldSpec{WireName: "access_token"},
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"OauthRequest": ubx.FieldSpec{
+		WireName: "oauth_request",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
+	},
+	"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnectorFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{
-			WireName: "api_key",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_ApiKeyFields,
-		},
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"Basic": ubx.FieldSpec{
-			WireName: "basic",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
-		},
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_CustomFields,
-		},
-		"Oauth2": ubx.FieldSpec{
-			WireName: "oauth2",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2Fields,
-		},
-	}
+	"ApiKey": ubx.FieldSpec{
+		WireName: "api_key",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_ApiKeyFields,
+	},
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+	"Basic": ubx.FieldSpec{
+		WireName: "basic",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
+	},
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_CustomFields,
+	},
+	"Oauth2": ubx.FieldSpec{
+		WireName: "oauth2",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2Fields,
+	},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_DatadogFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"ApplicationKey": ubx.FieldSpec{WireName: "application_key"},
-	}
+	"ApiKey":         ubx.FieldSpec{WireName: "api_key"},
+	"ApplicationKey": ubx.FieldSpec{WireName: "application_key"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_DynatraceFields = ubx.FieldMap{
-		"ApiToken": ubx.FieldSpec{WireName: "api_token"},
-	}
+	"ApiToken": ubx.FieldSpec{WireName: "api_token"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_GoogleAnalyticsFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"ConnectorOauthRequest": ubx.FieldSpec{
-			WireName: "connector_oauth_request",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
-		},
-		"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
-	}
+	"AccessToken":  ubx.FieldSpec{WireName: "access_token"},
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"ConnectorOauthRequest": ubx.FieldSpec{
+		WireName: "connector_oauth_request",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
+	},
+	"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_InforNexusFields = ubx.FieldMap{
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"Datakey": ubx.FieldSpec{WireName: "datakey"},
-		"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"AccessKeyId":     ubx.FieldSpec{WireName: "access_key_id"},
+	"Datakey":         ubx.FieldSpec{WireName: "datakey"},
+	"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
+	"UserId":          ubx.FieldSpec{WireName: "user_id"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_MarketoFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"ConnectorOauthRequest": ubx.FieldSpec{
-			WireName: "connector_oauth_request",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
-		},
-	}
+	"AccessToken":  ubx.FieldSpec{WireName: "access_token"},
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"ConnectorOauthRequest": ubx.FieldSpec{
+		WireName: "connector_oauth_request",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
+	},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_PardotFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ClientCredentialsArn": ubx.FieldSpec{WireName: "client_credentials_arn"},
-		"ConnectorOauthRequest": ubx.FieldSpec{
-			WireName: "connector_oauth_request",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
-		},
-		"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
-	}
+	"AccessToken":          ubx.FieldSpec{WireName: "access_token"},
+	"ClientCredentialsArn": ubx.FieldSpec{WireName: "client_credentials_arn"},
+	"ConnectorOauthRequest": ubx.FieldSpec{
+		WireName: "connector_oauth_request",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
+	},
+	"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SalesforceFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ClientCredentialsArn": ubx.FieldSpec{WireName: "client_credentials_arn"},
-		"ConnectorOauthRequest": ubx.FieldSpec{
-			WireName: "connector_oauth_request",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
-		},
-		"JwtToken": ubx.FieldSpec{WireName: "jwt_token"},
-		"Oauth2GrantType": ubx.FieldSpec{WireName: "oauth2_grant_type"},
-		"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
-	}
+	"AccessToken":          ubx.FieldSpec{WireName: "access_token"},
+	"ClientCredentialsArn": ubx.FieldSpec{WireName: "client_credentials_arn"},
+	"ConnectorOauthRequest": ubx.FieldSpec{
+		WireName: "connector_oauth_request",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2_OauthRequestFields,
+	},
+	"JwtToken":        ubx.FieldSpec{WireName: "jwt_token"},
+	"Oauth2GrantType": ubx.FieldSpec{WireName: "oauth2_grant_type"},
+	"RefreshToken":    ubx.FieldSpec{WireName: "refresh_token"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SapodataFields = ubx.FieldMap{
-		"BasicAuthCredentials": ubx.FieldSpec{
-			WireName: "basic_auth_credentials",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
-		},
-		"OauthCredentials": ubx.FieldSpec{
-			WireName: "oauth_credentials",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_GoogleAnalyticsFields,
-		},
-	}
+	"BasicAuthCredentials": ubx.FieldSpec{
+		WireName: "basic_auth_credentials",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
+	},
+	"OauthCredentials": ubx.FieldSpec{
+		WireName: "oauth_credentials",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_GoogleAnalyticsFields,
+	},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_ServiceNowFields = ubx.FieldMap{
-		"Oauth2Credentials": ubx.FieldSpec{
-			WireName: "oauth2_credentials",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2Fields,
-		},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Oauth2Credentials": ubx.FieldSpec{
+		WireName: "oauth2_credentials",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2Fields,
+	},
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SingularFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-	}
+	"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_TrendmicroFields = ubx.FieldMap{
-		"ApiSecretKey": ubx.FieldSpec{WireName: "api_secret_key"},
-	}
+	"ApiSecretKey": ubx.FieldSpec{WireName: "api_secret_key"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentialsFields = ubx.FieldMap{
-		"Amplitude": ubx.FieldSpec{
-			WireName: "amplitude",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_AmplitudeFields,
-		},
-		"CustomConnector": ubx.FieldSpec{
-			WireName: "custom_connector",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnectorFields,
-		},
-		"Datadog": ubx.FieldSpec{
-			WireName: "datadog",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_DatadogFields,
-		},
-		"Dynatrace": ubx.FieldSpec{
-			WireName: "dynatrace",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_DynatraceFields,
-		},
-		"GoogleAnalytics": ubx.FieldSpec{
-			WireName: "google_analytics",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_GoogleAnalyticsFields,
-		},
-		"InforNexus": ubx.FieldSpec{
-			WireName: "infor_nexus",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_InforNexusFields,
-		},
-		"Marketo": ubx.FieldSpec{
-			WireName: "marketo",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_MarketoFields,
-		},
-		"Pardot": ubx.FieldSpec{
-			WireName: "pardot",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_PardotFields,
-		},
-		"Redshift": ubx.FieldSpec{
-			WireName: "redshift",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
-		},
-		"Salesforce": ubx.FieldSpec{
-			WireName: "salesforce",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SalesforceFields,
-		},
-		"Sapodata": ubx.FieldSpec{
-			WireName: "sapodata",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SapodataFields,
-		},
-		"ServiceNow": ubx.FieldSpec{
-			WireName: "service_now",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_ServiceNowFields,
-		},
-		"Singular": ubx.FieldSpec{
-			WireName: "singular",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SingularFields,
-		},
-		"Slack": ubx.FieldSpec{
-			WireName: "slack",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_MarketoFields,
-		},
-		"Snowflake": ubx.FieldSpec{
-			WireName: "snowflake",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
-		},
-		"Trendmicro": ubx.FieldSpec{
-			WireName: "trendmicro",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_TrendmicroFields,
-		},
-		"Veeva": ubx.FieldSpec{
-			WireName: "veeva",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
-		},
-		"Zendesk": ubx.FieldSpec{
-			WireName: "zendesk",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_MarketoFields,
-		},
-	}
+	"Amplitude": ubx.FieldSpec{
+		WireName: "amplitude",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_AmplitudeFields,
+	},
+	"CustomConnector": ubx.FieldSpec{
+		WireName: "custom_connector",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnectorFields,
+	},
+	"Datadog": ubx.FieldSpec{
+		WireName: "datadog",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_DatadogFields,
+	},
+	"Dynatrace": ubx.FieldSpec{
+		WireName: "dynatrace",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_DynatraceFields,
+	},
+	"GoogleAnalytics": ubx.FieldSpec{
+		WireName: "google_analytics",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_GoogleAnalyticsFields,
+	},
+	"InforNexus": ubx.FieldSpec{
+		WireName: "infor_nexus",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_InforNexusFields,
+	},
+	"Marketo": ubx.FieldSpec{
+		WireName: "marketo",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_MarketoFields,
+	},
+	"Pardot": ubx.FieldSpec{
+		WireName: "pardot",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_PardotFields,
+	},
+	"Redshift": ubx.FieldSpec{
+		WireName: "redshift",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
+	},
+	"Salesforce": ubx.FieldSpec{
+		WireName: "salesforce",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SalesforceFields,
+	},
+	"Sapodata": ubx.FieldSpec{
+		WireName: "sapodata",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SapodataFields,
+	},
+	"ServiceNow": ubx.FieldSpec{
+		WireName: "service_now",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_ServiceNowFields,
+	},
+	"Singular": ubx.FieldSpec{
+		WireName: "singular",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_SingularFields,
+	},
+	"Slack": ubx.FieldSpec{
+		WireName: "slack",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_MarketoFields,
+	},
+	"Snowflake": ubx.FieldSpec{
+		WireName: "snowflake",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
+	},
+	"Trendmicro": ubx.FieldSpec{
+		WireName: "trendmicro",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_TrendmicroFields,
+	},
+	"Veeva": ubx.FieldSpec{
+		WireName: "veeva",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_BasicFields,
+	},
+	"Zendesk": ubx.FieldSpec{
+		WireName: "zendesk",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_MarketoFields,
+	},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_CustomConnector_Oauth2PropertiesFields = ubx.FieldMap{
-		"Oauth2GrantType": ubx.FieldSpec{WireName: "oauth2_grant_type"},
-		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
-		"TokenUrlCustomProperties": ubx.FieldSpec{WireName: "token_url_custom_properties"},
-	}
+	"Oauth2GrantType":          ubx.FieldSpec{WireName: "oauth2_grant_type"},
+	"TokenUrl":                 ubx.FieldSpec{WireName: "token_url"},
+	"TokenUrlCustomProperties": ubx.FieldSpec{WireName: "token_url_custom_properties"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_CustomConnectorFields = ubx.FieldMap{
-		"Oauth2Properties": ubx.FieldSpec{
-			WireName: "oauth2_properties",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_CustomConnector_Oauth2PropertiesFields,
-		},
-		"ProfileProperties": ubx.FieldSpec{WireName: "profile_properties"},
-	}
+	"Oauth2Properties": ubx.FieldSpec{
+		WireName: "oauth2_properties",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_CustomConnector_Oauth2PropertiesFields,
+	},
+	"ProfileProperties": ubx.FieldSpec{WireName: "profile_properties"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields = ubx.FieldMap{
-		"InstanceUrl": ubx.FieldSpec{WireName: "instance_url"},
-	}
+	"InstanceUrl": ubx.FieldSpec{WireName: "instance_url"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_PardotFields = ubx.FieldMap{
-		"BusinessUnitId": ubx.FieldSpec{WireName: "business_unit_id"},
-		"InstanceUrl": ubx.FieldSpec{WireName: "instance_url"},
-		"IsSandboxEnvironment": ubx.FieldSpec{WireName: "is_sandbox_environment"},
-	}
+	"BusinessUnitId":       ubx.FieldSpec{WireName: "business_unit_id"},
+	"InstanceUrl":          ubx.FieldSpec{WireName: "instance_url"},
+	"IsSandboxEnvironment": ubx.FieldSpec{WireName: "is_sandbox_environment"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_RedshiftFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"DataApiRoleArn": ubx.FieldSpec{WireName: "data_api_role_arn"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"DatabaseUrl": ubx.FieldSpec{WireName: "database_url"},
-		"IsRedshiftServerless": ubx.FieldSpec{WireName: "is_redshift_serverless"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
-	}
+	"BucketName":           ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix":         ubx.FieldSpec{WireName: "bucket_prefix"},
+	"ClusterIdentifier":    ubx.FieldSpec{WireName: "cluster_identifier"},
+	"DataApiRoleArn":       ubx.FieldSpec{WireName: "data_api_role_arn"},
+	"DatabaseName":         ubx.FieldSpec{WireName: "database_name"},
+	"DatabaseUrl":          ubx.FieldSpec{WireName: "database_url"},
+	"IsRedshiftServerless": ubx.FieldSpec{WireName: "is_redshift_serverless"},
+	"RoleArn":              ubx.FieldSpec{WireName: "role_arn"},
+	"WorkgroupName":        ubx.FieldSpec{WireName: "workgroup_name"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SalesforceFields = ubx.FieldMap{
-		"InstanceUrl": ubx.FieldSpec{WireName: "instance_url"},
-		"IsSandboxEnvironment": ubx.FieldSpec{WireName: "is_sandbox_environment"},
-		"UsePrivateLinkForMetadataAndAuthorization": ubx.FieldSpec{WireName: "use_private_link_for_metadata_and_authorization"},
-	}
+	"InstanceUrl":          ubx.FieldSpec{WireName: "instance_url"},
+	"IsSandboxEnvironment": ubx.FieldSpec{WireName: "is_sandbox_environment"},
+	"UsePrivateLinkForMetadataAndAuthorization": ubx.FieldSpec{WireName: "use_private_link_for_metadata_and_authorization"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Sapodata_OauthPropertiesFields = ubx.FieldMap{
-		"AuthCodeUrl": ubx.FieldSpec{WireName: "auth_code_url"},
-		"OauthScopes": ubx.FieldSpec{WireName: "oauth_scopes"},
-		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
-	}
+	"AuthCodeUrl": ubx.FieldSpec{WireName: "auth_code_url"},
+	"OauthScopes": ubx.FieldSpec{WireName: "oauth_scopes"},
+	"TokenUrl":    ubx.FieldSpec{WireName: "token_url"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SapodataFields = ubx.FieldMap{
-		"ApplicationHostUrl": ubx.FieldSpec{WireName: "application_host_url"},
-		"ApplicationServicePath": ubx.FieldSpec{WireName: "application_service_path"},
-		"ClientNumber": ubx.FieldSpec{WireName: "client_number"},
-		"DisableSso": ubx.FieldSpec{WireName: "disable_sso"},
-		"LogonLanguage": ubx.FieldSpec{WireName: "logon_language"},
-		"OauthProperties": ubx.FieldSpec{
-			WireName: "oauth_properties",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Sapodata_OauthPropertiesFields,
-		},
-		"PortNumber": ubx.FieldSpec{WireName: "port_number"},
-		"PrivateLinkServiceName": ubx.FieldSpec{WireName: "private_link_service_name"},
-	}
+	"ApplicationHostUrl":     ubx.FieldSpec{WireName: "application_host_url"},
+	"ApplicationServicePath": ubx.FieldSpec{WireName: "application_service_path"},
+	"ClientNumber":           ubx.FieldSpec{WireName: "client_number"},
+	"DisableSso":             ubx.FieldSpec{WireName: "disable_sso"},
+	"LogonLanguage":          ubx.FieldSpec{WireName: "logon_language"},
+	"OauthProperties": ubx.FieldSpec{
+		WireName: "oauth_properties",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Sapodata_OauthPropertiesFields,
+	},
+	"PortNumber":             ubx.FieldSpec{WireName: "port_number"},
+	"PrivateLinkServiceName": ubx.FieldSpec{WireName: "private_link_service_name"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SnowflakeFields = ubx.FieldMap{
-		"AccountName": ubx.FieldSpec{WireName: "account_name"},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"PrivateLinkServiceName": ubx.FieldSpec{WireName: "private_link_service_name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
-		"Warehouse": ubx.FieldSpec{WireName: "warehouse"},
-	}
+	"AccountName":            ubx.FieldSpec{WireName: "account_name"},
+	"BucketName":             ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketPrefix":           ubx.FieldSpec{WireName: "bucket_prefix"},
+	"PrivateLinkServiceName": ubx.FieldSpec{WireName: "private_link_service_name"},
+	"Region":                 ubx.FieldSpec{WireName: "region"},
+	"Stage":                  ubx.FieldSpec{WireName: "stage"},
+	"Warehouse":              ubx.FieldSpec{WireName: "warehouse"},
+}
 
 var ConnectorProfile_ConnectorProfileConfig_ConnectorProfilePropertiesFields = ubx.FieldMap{
-		"CustomConnector": ubx.FieldSpec{
-			WireName: "custom_connector",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_CustomConnectorFields,
-		},
-		"Datadog": ubx.FieldSpec{
-			WireName: "datadog",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
-		},
-		"Dynatrace": ubx.FieldSpec{
-			WireName: "dynatrace",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
-		},
-		"InforNexus": ubx.FieldSpec{
-			WireName: "infor_nexus",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
-		},
-		"Marketo": ubx.FieldSpec{
-			WireName: "marketo",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
-		},
-		"Pardot": ubx.FieldSpec{
-			WireName: "pardot",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_PardotFields,
-		},
-		"Redshift": ubx.FieldSpec{
-			WireName: "redshift",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_RedshiftFields,
-		},
-		"Salesforce": ubx.FieldSpec{
-			WireName: "salesforce",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SalesforceFields,
-		},
-		"Sapodata": ubx.FieldSpec{
-			WireName: "sapodata",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SapodataFields,
-		},
-		"ServiceNow": ubx.FieldSpec{
-			WireName: "service_now",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
-		},
-		"Slack": ubx.FieldSpec{
-			WireName: "slack",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
-		},
-		"Snowflake": ubx.FieldSpec{
-			WireName: "snowflake",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SnowflakeFields,
-		},
-		"Veeva": ubx.FieldSpec{
-			WireName: "veeva",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
-		},
-		"Zendesk": ubx.FieldSpec{
-			WireName: "zendesk",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
-		},
-	}
+	"CustomConnector": ubx.FieldSpec{
+		WireName: "custom_connector",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_CustomConnectorFields,
+	},
+	"Datadog": ubx.FieldSpec{
+		WireName: "datadog",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
+	},
+	"Dynatrace": ubx.FieldSpec{
+		WireName: "dynatrace",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
+	},
+	"InforNexus": ubx.FieldSpec{
+		WireName: "infor_nexus",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
+	},
+	"Marketo": ubx.FieldSpec{
+		WireName: "marketo",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
+	},
+	"Pardot": ubx.FieldSpec{
+		WireName: "pardot",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_PardotFields,
+	},
+	"Redshift": ubx.FieldSpec{
+		WireName: "redshift",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_RedshiftFields,
+	},
+	"Salesforce": ubx.FieldSpec{
+		WireName: "salesforce",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SalesforceFields,
+	},
+	"Sapodata": ubx.FieldSpec{
+		WireName: "sapodata",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SapodataFields,
+	},
+	"ServiceNow": ubx.FieldSpec{
+		WireName: "service_now",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
+	},
+	"Slack": ubx.FieldSpec{
+		WireName: "slack",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
+	},
+	"Snowflake": ubx.FieldSpec{
+		WireName: "snowflake",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_SnowflakeFields,
+	},
+	"Veeva": ubx.FieldSpec{
+		WireName: "veeva",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
+	},
+	"Zendesk": ubx.FieldSpec{
+		WireName: "zendesk",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_DatadogFields,
+	},
+}
 
 var ConnectorProfile_ConnectorProfileConfigFields = ubx.FieldMap{
-		"ConnectorProfileCredentials": ubx.FieldSpec{
-			WireName: "connector_profile_credentials",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentialsFields,
-		},
-		"ConnectorProfileProperties": ubx.FieldSpec{
-			WireName: "connector_profile_properties",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfig_ConnectorProfilePropertiesFields,
-		},
-	}
+	"ConnectorProfileCredentials": ubx.FieldSpec{
+		WireName: "connector_profile_credentials",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentialsFields,
+	},
+	"ConnectorProfileProperties": ubx.FieldSpec{
+		WireName: "connector_profile_properties",
+		Kind:     "object",
+		Fields:   ConnectorProfile_ConnectorProfileConfig_ConnectorProfilePropertiesFields,
+	},
+}
 
 type ConnectorProfileConfig struct {
 	// Mode in which data transfer should be enabled. Private connection mode is currently enabled for Salesforce, Snowflake, Trendmicro and Singular
@@ -794,11 +794,11 @@ var ConnectorProfile = ubx.ResourceBinding{
 		"ConnectorLabel": ubx.FieldSpec{WireName: "connector_label"},
 		"ConnectorProfileConfig": ubx.FieldSpec{
 			WireName: "connector_profile_config",
-			Kind: "object",
-			Fields: ConnectorProfile_ConnectorProfileConfigFields,
+			Kind:     "object",
+			Fields:   ConnectorProfile_ConnectorProfileConfigFields,
 		},
 		"ConnectorProfileName": ubx.FieldSpec{WireName: "connector_profile_name"},
-		"ConnectorType": ubx.FieldSpec{WireName: "connector_type"},
-		"Kmsarn": ubx.FieldSpec{WireName: "kmsarn"},
+		"ConnectorType":        ubx.FieldSpec{WireName: "connector_type"},
+		"Kmsarn":               ubx.FieldSpec{WireName: "kmsarn"},
 	},
 }

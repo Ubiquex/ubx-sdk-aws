@@ -40,42 +40,42 @@ type Contact_Tags struct {
 }
 
 var Contact_Plan_Targets_ChannelTargetInfoFields = ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"RetryIntervalInMinutes": ubx.FieldSpec{WireName: "retry_interval_in_minutes"},
-	}
+	"ChannelId":              ubx.FieldSpec{WireName: "channel_id"},
+	"RetryIntervalInMinutes": ubx.FieldSpec{WireName: "retry_interval_in_minutes"},
+}
 
 var Contact_Plan_Targets_ContactTargetInfoFields = ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
-		"IsEssential": ubx.FieldSpec{WireName: "is_essential"},
-	}
+	"ContactId":   ubx.FieldSpec{WireName: "contact_id"},
+	"IsEssential": ubx.FieldSpec{WireName: "is_essential"},
+}
 
 var Contact_Plan_TargetsFields = ubx.FieldMap{
-		"ChannelTargetInfo": ubx.FieldSpec{
-			WireName: "channel_target_info",
-			Kind: "object",
-			Fields: Contact_Plan_Targets_ChannelTargetInfoFields,
-		},
-		"ContactTargetInfo": ubx.FieldSpec{
-			WireName: "contact_target_info",
-			Kind: "object",
-			Fields: Contact_Plan_Targets_ContactTargetInfoFields,
-		},
-	}
+	"ChannelTargetInfo": ubx.FieldSpec{
+		WireName: "channel_target_info",
+		Kind:     "object",
+		Fields:   Contact_Plan_Targets_ChannelTargetInfoFields,
+	},
+	"ContactTargetInfo": ubx.FieldSpec{
+		WireName: "contact_target_info",
+		Kind:     "object",
+		Fields:   Contact_Plan_Targets_ContactTargetInfoFields,
+	},
+}
 
 var Contact_PlanFields = ubx.FieldMap{
-		"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
-		"RotationIds": ubx.FieldSpec{WireName: "rotation_ids"},
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "list",
-			Fields: Contact_Plan_TargetsFields,
-		},
-	}
+	"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
+	"RotationIds":       ubx.FieldSpec{WireName: "rotation_ids"},
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "list",
+		Fields:   Contact_Plan_TargetsFields,
+	},
+}
 
 var Contact_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ContactConfig struct {
 	// Alias of the contact. String value with 20 to 256 characters. Only alphabetical, numeric characters, dash, or underscore allowed.
@@ -108,17 +108,17 @@ type ContactAttrs struct {
 var Contact = ubx.ResourceBinding{
 	WireType: "aws_ssmcontacts_contact",
 	Fields: ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
+		"Alias":       ubx.FieldSpec{WireName: "alias"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Plan": ubx.FieldSpec{
 			WireName: "plan",
-			Kind: "list",
-			Fields: Contact_PlanFields,
+			Kind:     "list",
+			Fields:   Contact_PlanFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Contact_TagsFields,
+			Kind:     "list",
+			Fields:   Contact_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

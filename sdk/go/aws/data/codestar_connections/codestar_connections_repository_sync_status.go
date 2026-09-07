@@ -4,37 +4,37 @@ package codestar_connections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarConnectionsRepositorySyncStatus_LatestSync_Events struct {
-	Event any
+	Event      any
 	ExternalId any
-	Time any
-	Type any
+	Time       any
+	Type       any
 }
 
 type CodestarConnectionsRepositorySyncStatus_LatestSync struct {
-	Events any
+	Events    any
 	StartedAt any
-	Status any
+	Status    any
 }
 
 type CodestarConnectionsRepositorySyncStatusConfig struct {
-	Branch any
+	Branch           any
 	RepositoryLinkId any
-	SyncType any
+	SyncType         any
 }
 
 type CodestarConnectionsRepositorySyncStatusAttrs struct {
 	Branch any
 	// <p>Information about a repository sync attempt for a repository with a sync configuration.</p>
-	LatestSync any
+	LatestSync       any
 	RepositoryLinkId any
-	SyncType any
+	SyncType         any
 }
 
 var CodestarConnectionsRepositorySyncStatus = ubx.DataSourceBinding{
 	WireType: "aws_codestar_connections_repository_sync_status",
 	Fields: ubx.FieldMap{
-		"Branch": ubx.FieldSpec{WireName: "branch"},
+		"Branch":           ubx.FieldSpec{WireName: "branch"},
 		"RepositoryLinkId": ubx.FieldSpec{WireName: "repository_link_id"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"SyncType":         ubx.FieldSpec{WireName: "sync_type"},
 	},
 }

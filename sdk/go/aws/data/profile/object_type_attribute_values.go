@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ObjectTypeAttributeValues_Items struct {
 	LastUpdatedAt any
-	Value any
+	Value         any
 }
 
 type ObjectTypeAttributeValuesConfig struct {
-	AttributeName any
-	DomainName any
-	MaxResults any
-	NextToken any
+	AttributeName  any
+	DomainName     any
+	MaxResults     any
+	NextToken      any
 	ObjectTypeName any
 }
 
 type ObjectTypeAttributeValuesAttrs struct {
-	AttributeName any
-	DomainName any
-	Items any
-	MaxResults any
-	NextToken any
+	AttributeName  any
+	DomainName     any
+	Items          any
+	MaxResults     any
+	NextToken      any
 	ObjectTypeName any
 }
 
 var ObjectTypeAttributeValues = ubx.DataSourceBinding{
 	WireType: "aws_profile_object_type_attribute_values",
 	Fields: ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AttributeName":  ubx.FieldSpec{WireName: "attribute_name"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
 	},
 }

@@ -4,25 +4,25 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthenticationProfiles_AuthenticationProfileSummaryList struct {
-	Arn any
-	Id any
-	IsDefault any
+	Arn                any
+	Id                 any
+	IsDefault          any
 	LastModifiedRegion any
-	LastModifiedTime any
-	Name any
+	LastModifiedTime   any
+	Name               any
 }
 
 type AuthenticationProfilesConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AuthenticationProfilesAttrs struct {
 	AuthenticationProfileSummaryList any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId                       any
+	MaxResults                       any
+	NextToken                        any
 }
 
 var AuthenticationProfiles = ubx.DataSourceBinding{
@@ -30,6 +30,6 @@ var AuthenticationProfiles = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

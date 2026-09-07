@@ -28,8 +28,8 @@ type ResourceAssociationAttrs struct {
 var ResourceAssociation = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_app_registry_resource_association",
 	Fields: ubx.FieldMap{
-		"Application": ubx.FieldSpec{WireName: "application"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
+		"Application":  ubx.FieldSpec{WireName: "application"},
+		"Resource":     ubx.FieldSpec{WireName: "resource"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

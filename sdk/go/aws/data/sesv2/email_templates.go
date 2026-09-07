@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EmailTemplates_TemplatesMetadata struct {
 	CreatedTimestamp any
-	TemplateName any
+	TemplateName     any
 }
 
 type EmailTemplatesConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type EmailTemplatesAttrs struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 	// <p>A list of the EmailTemplateMetadata object.</p>
 	TemplatesMetadata any
 }
@@ -24,6 +24,6 @@ var EmailTemplates = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_email_templates",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

@@ -81,88 +81,88 @@ type Solution_Tags struct {
 }
 
 var Solution_SolutionConfig_AutoMlconfigFields = ubx.FieldMap{
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"RecipeList": ubx.FieldSpec{WireName: "recipe_list"},
-	}
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"RecipeList": ubx.FieldSpec{WireName: "recipe_list"},
+}
 
 var Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_CategoricalHyperParameterRangesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_ContinuousHyperParameterRangesFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"MaxValue": ubx.FieldSpec{WireName: "max_value"},
+	"MinValue": ubx.FieldSpec{WireName: "min_value"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRangesFields = ubx.FieldMap{
-		"CategoricalHyperParameterRanges": ubx.FieldSpec{
-			WireName: "categorical_hyper_parameter_ranges",
-			Kind: "list",
-			Fields: Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_CategoricalHyperParameterRangesFields,
-		},
-		"ContinuousHyperParameterRanges": ubx.FieldSpec{
-			WireName: "continuous_hyper_parameter_ranges",
-			Kind: "list",
-			Fields: Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_ContinuousHyperParameterRangesFields,
-		},
-		"IntegerHyperParameterRanges": ubx.FieldSpec{
-			WireName: "integer_hyper_parameter_ranges",
-			Kind: "list",
-			Fields: Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_ContinuousHyperParameterRangesFields,
-		},
-	}
+	"CategoricalHyperParameterRanges": ubx.FieldSpec{
+		WireName: "categorical_hyper_parameter_ranges",
+		Kind:     "list",
+		Fields:   Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_CategoricalHyperParameterRangesFields,
+	},
+	"ContinuousHyperParameterRanges": ubx.FieldSpec{
+		WireName: "continuous_hyper_parameter_ranges",
+		Kind:     "list",
+		Fields:   Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_ContinuousHyperParameterRangesFields,
+	},
+	"IntegerHyperParameterRanges": ubx.FieldSpec{
+		WireName: "integer_hyper_parameter_ranges",
+		Kind:     "list",
+		Fields:   Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_ContinuousHyperParameterRangesFields,
+	},
+}
 
 var Solution_SolutionConfig_HpoConfig_HpoObjectiveFields = ubx.FieldMap{
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MetricRegex": ubx.FieldSpec{WireName: "metric_regex"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"MetricName":  ubx.FieldSpec{WireName: "metric_name"},
+	"MetricRegex": ubx.FieldSpec{WireName: "metric_regex"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var Solution_SolutionConfig_HpoConfig_HpoResourceConfigFields = ubx.FieldMap{
-		"MaxNumberOfTrainingJobs": ubx.FieldSpec{WireName: "max_number_of_training_jobs"},
-		"MaxParallelTrainingJobs": ubx.FieldSpec{WireName: "max_parallel_training_jobs"},
-	}
+	"MaxNumberOfTrainingJobs": ubx.FieldSpec{WireName: "max_number_of_training_jobs"},
+	"MaxParallelTrainingJobs": ubx.FieldSpec{WireName: "max_parallel_training_jobs"},
+}
 
 var Solution_SolutionConfig_HpoConfigFields = ubx.FieldMap{
-		"AlgorithmHyperParameterRanges": ubx.FieldSpec{
-			WireName: "algorithm_hyper_parameter_ranges",
-			Kind: "object",
-			Fields: Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRangesFields,
-		},
-		"HpoObjective": ubx.FieldSpec{
-			WireName: "hpo_objective",
-			Kind: "object",
-			Fields: Solution_SolutionConfig_HpoConfig_HpoObjectiveFields,
-		},
-		"HpoResourceConfig": ubx.FieldSpec{
-			WireName: "hpo_resource_config",
-			Kind: "object",
-			Fields: Solution_SolutionConfig_HpoConfig_HpoResourceConfigFields,
-		},
-	}
+	"AlgorithmHyperParameterRanges": ubx.FieldSpec{
+		WireName: "algorithm_hyper_parameter_ranges",
+		Kind:     "object",
+		Fields:   Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRangesFields,
+	},
+	"HpoObjective": ubx.FieldSpec{
+		WireName: "hpo_objective",
+		Kind:     "object",
+		Fields:   Solution_SolutionConfig_HpoConfig_HpoObjectiveFields,
+	},
+	"HpoResourceConfig": ubx.FieldSpec{
+		WireName: "hpo_resource_config",
+		Kind:     "object",
+		Fields:   Solution_SolutionConfig_HpoConfig_HpoResourceConfigFields,
+	},
+}
 
 var Solution_SolutionConfigFields = ubx.FieldMap{
-		"AlgorithmHyperParameters": ubx.FieldSpec{WireName: "algorithm_hyper_parameters"},
-		"AutoMlconfig": ubx.FieldSpec{
-			WireName: "auto_mlconfig",
-			Kind: "object",
-			Fields: Solution_SolutionConfig_AutoMlconfigFields,
-		},
-		"EventValueThreshold": ubx.FieldSpec{WireName: "event_value_threshold"},
-		"FeatureTransformationParameters": ubx.FieldSpec{WireName: "feature_transformation_parameters"},
-		"HpoConfig": ubx.FieldSpec{
-			WireName: "hpo_config",
-			Kind: "object",
-			Fields: Solution_SolutionConfig_HpoConfigFields,
-		},
-	}
+	"AlgorithmHyperParameters": ubx.FieldSpec{WireName: "algorithm_hyper_parameters"},
+	"AutoMlconfig": ubx.FieldSpec{
+		WireName: "auto_mlconfig",
+		Kind:     "object",
+		Fields:   Solution_SolutionConfig_AutoMlconfigFields,
+	},
+	"EventValueThreshold":             ubx.FieldSpec{WireName: "event_value_threshold"},
+	"FeatureTransformationParameters": ubx.FieldSpec{WireName: "feature_transformation_parameters"},
+	"HpoConfig": ubx.FieldSpec{
+		WireName: "hpo_config",
+		Kind:     "object",
+		Fields:   Solution_SolutionConfig_HpoConfigFields,
+	},
+}
 
 var Solution_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SolutionConfig struct {
 	// The ARN of the dataset group that provides the training data.
@@ -208,20 +208,20 @@ var Solution = ubx.ResourceBinding{
 	WireType: "aws_personalize_solution",
 	Fields: ubx.FieldMap{
 		"DatasetGroupArn": ubx.FieldSpec{WireName: "dataset_group_arn"},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PerformAutoMl": ubx.FieldSpec{WireName: "perform_auto_ml"},
-		"PerformHpo": ubx.FieldSpec{WireName: "perform_hpo"},
-		"RecipeArn": ubx.FieldSpec{WireName: "recipe_arn"},
+		"EventType":       ubx.FieldSpec{WireName: "event_type"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"PerformAutoMl":   ubx.FieldSpec{WireName: "perform_auto_ml"},
+		"PerformHpo":      ubx.FieldSpec{WireName: "perform_hpo"},
+		"RecipeArn":       ubx.FieldSpec{WireName: "recipe_arn"},
 		"SolutionConfig": ubx.FieldSpec{
 			WireName: "solution_config",
-			Kind: "object",
-			Fields: Solution_SolutionConfigFields,
+			Kind:     "object",
+			Fields:   Solution_SolutionConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Solution_TagsFields,
+			Kind:     "list",
+			Fields:   Solution_TagsFields,
 		},
 	},
 }

@@ -8,7 +8,7 @@ type VoiceChimeVoiceConnectorTerminationCredentialsConfig struct {
 }
 
 type VoiceChimeVoiceConnectorTerminationCredentialsAttrs struct {
-	Usernames any
+	Usernames        any
 	VoiceConnectorId any
 }
 

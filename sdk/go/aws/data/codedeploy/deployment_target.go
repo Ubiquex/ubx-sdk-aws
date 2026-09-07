@@ -4,27 +4,27 @@ package codedeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentTarget_DeploymentTarget_CloudFormationTarget_LifecycleEvents_Diagnostics struct {
-	ErrorCode any
-	LogTail any
-	Message any
+	ErrorCode  any
+	LogTail    any
+	Message    any
 	ScriptName any
 }
 
 type DeploymentTarget_DeploymentTarget_CloudFormationTarget_LifecycleEvents struct {
-	Diagnostics any
-	EndTime any
+	Diagnostics        any
+	EndTime            any
 	LifecycleEventName any
-	StartTime any
-	Status any
+	StartTime          any
+	Status             any
 }
 
 type DeploymentTarget_DeploymentTarget_CloudFormationTarget struct {
-	DeploymentId any
-	LastUpdatedAt any
-	LifecycleEvents any
-	ResourceType any
-	Status any
-	TargetId any
+	DeploymentId        any
+	LastUpdatedAt       any
+	LifecycleEvents     any
+	ResourceType        any
+	Status              any
+	TargetId            any
 	TargetVersionWeight any
 }
 
@@ -33,41 +33,41 @@ type DeploymentTarget_DeploymentTarget_EcsTarget_TaskSetsInfo_TargetGroup struct
 }
 
 type DeploymentTarget_DeploymentTarget_EcsTarget_TaskSetsInfo struct {
-	DesiredCount any
-	Identifer any
-	PendingCount any
-	RunningCount any
-	Status any
-	TargetGroup any
-	TaskSetLabel any
+	DesiredCount  any
+	Identifer     any
+	PendingCount  any
+	RunningCount  any
+	Status        any
+	TargetGroup   any
+	TaskSetLabel  any
 	TrafficWeight any
 }
 
 type DeploymentTarget_DeploymentTarget_EcsTarget struct {
-	DeploymentId any
-	LastUpdatedAt any
+	DeploymentId    any
+	LastUpdatedAt   any
 	LifecycleEvents any
-	Status any
-	TargetArn any
-	TargetId any
-	TaskSetsInfo any
+	Status          any
+	TargetArn       any
+	TargetId        any
+	TaskSetsInfo    any
 }
 
 type DeploymentTarget_DeploymentTarget_InstanceTarget struct {
-	DeploymentId any
-	InstanceLabel any
-	LastUpdatedAt any
+	DeploymentId    any
+	InstanceLabel   any
+	LastUpdatedAt   any
 	LifecycleEvents any
-	Status any
-	TargetArn any
-	TargetId any
+	Status          any
+	TargetArn       any
+	TargetId        any
 }
 
 type DeploymentTarget_DeploymentTarget_LambdaTarget_LambdaFunctionInfo struct {
-	CurrentVersion any
-	FunctionAlias any
-	FunctionName any
-	TargetVersion any
+	CurrentVersion      any
+	FunctionAlias       any
+	FunctionName        any
+	TargetVersion       any
 	TargetVersionWeight any
 }
 
@@ -75,11 +75,11 @@ type DeploymentTarget_DeploymentTarget_LambdaTarget struct {
 	DeploymentId any
 	// <p> Information about a Lambda function specified in a deployment. </p>
 	LambdaFunctionInfo any
-	LastUpdatedAt any
-	LifecycleEvents any
-	Status any
-	TargetArn any
-	TargetId any
+	LastUpdatedAt      any
+	LifecycleEvents    any
+	Status             any
+	TargetArn          any
+	TargetId           any
 }
 
 type DeploymentTarget_DeploymentTarget struct {
@@ -96,20 +96,20 @@ type DeploymentTarget_DeploymentTarget struct {
 
 type DeploymentTargetConfig struct {
 	DeploymentId any
-	TargetId any
+	TargetId     any
 }
 
 type DeploymentTargetAttrs struct {
 	DeploymentId any
 	// <p> Information about the deployment target. </p>
 	DeploymentTarget any
-	TargetId any
+	TargetId         any
 }
 
 var DeploymentTarget = ubx.DataSourceBinding{
 	WireType: "aws_codedeploy_deployment_target",
 	Fields: ubx.FieldMap{
 		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
+		"TargetId":     ubx.FieldSpec{WireName: "target_id"},
 	},
 }

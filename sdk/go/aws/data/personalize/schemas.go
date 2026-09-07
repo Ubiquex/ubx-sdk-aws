@@ -4,28 +4,28 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schemas_Schemas struct {
-	CreationDateTime any
-	Domain any
+	CreationDateTime    any
+	Domain              any
 	LastUpdatedDateTime any
-	Name any
-	SchemaArn any
+	Name                any
+	SchemaArn           any
 }
 
 type SchemasConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SchemasAttrs struct {
 	MaxResults any
-	NextToken any
-	Schemas any
+	NextToken  any
+	Schemas    any
 }
 
 var Schemas = ubx.DataSourceBinding{
 	WireType: "aws_personalize_schemas",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

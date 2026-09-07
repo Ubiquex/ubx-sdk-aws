@@ -8,9 +8,9 @@ type ResourcePolicyConfig struct {
 }
 
 type ResourcePolicyAttrs struct {
-	Policy any
+	Policy       any
 	RegistryName any
-	RevisionId any
+	RevisionId   any
 }
 
 var ResourcePolicy = ubx.DataSourceBinding{

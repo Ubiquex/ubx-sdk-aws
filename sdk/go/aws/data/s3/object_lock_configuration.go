@@ -4,8 +4,8 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ObjectLockConfiguration_ObjectLockConfiguration_Rule_DefaultRetention struct {
-	Days any
-	Mode any
+	Days  any
+	Mode  any
 	Years any
 }
 
@@ -21,12 +21,12 @@ type ObjectLockConfiguration_ObjectLockConfiguration struct {
 }
 
 type ObjectLockConfigurationConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type ObjectLockConfigurationAttrs struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 	// <p>The container element for Object Lock configuration parameters.</p>
 	ObjectLockConfiguration any
@@ -35,7 +35,7 @@ type ObjectLockConfigurationAttrs struct {
 var ObjectLockConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_s3_object_lock_configuration",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

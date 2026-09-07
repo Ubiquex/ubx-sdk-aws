@@ -5,49 +5,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PartnercentralBenefitsBenefitAllocations_BenefitAllocationSummaries struct {
 	ApplicableBenefitIds any
-	Arn any
+	Arn                  any
 	BenefitApplicationId any
-	BenefitId any
-	Catalog any
-	CreatedAt any
-	ExpiresAt any
-	FulfillmentTypes any
-	Id any
-	Name any
-	Status any
-	StatusReason any
+	BenefitId            any
+	Catalog              any
+	CreatedAt            any
+	ExpiresAt            any
+	FulfillmentTypes     any
+	Id                   any
+	Name                 any
+	Status               any
+	StatusReason         any
 }
 
 type PartnercentralBenefitsBenefitAllocationsConfig struct {
 	BenefitApplicationIdentifiers any
-	BenefitIdentifiers any
-	Catalog any
-	FulfillmentTypes any
-	MaxResults any
-	NextToken any
-	Status any
+	BenefitIdentifiers            any
+	Catalog                       any
+	FulfillmentTypes              any
+	MaxResults                    any
+	NextToken                     any
+	Status                        any
 }
 
 type PartnercentralBenefitsBenefitAllocationsAttrs struct {
-	BenefitAllocationSummaries any
+	BenefitAllocationSummaries    any
 	BenefitApplicationIdentifiers any
-	BenefitIdentifiers any
-	Catalog any
-	FulfillmentTypes any
-	MaxResults any
-	NextToken any
-	Status any
+	BenefitIdentifiers            any
+	Catalog                       any
+	FulfillmentTypes              any
+	MaxResults                    any
+	NextToken                     any
+	Status                        any
 }
 
 var PartnercentralBenefitsBenefitAllocations = ubx.DataSourceBinding{
 	WireType: "aws_partnercentral_benefits_benefit_allocations",
 	Fields: ubx.FieldMap{
 		"BenefitApplicationIdentifiers": ubx.FieldSpec{WireName: "benefit_application_identifiers"},
-		"BenefitIdentifiers": ubx.FieldSpec{WireName: "benefit_identifiers"},
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"FulfillmentTypes": ubx.FieldSpec{WireName: "fulfillment_types"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"BenefitIdentifiers":            ubx.FieldSpec{WireName: "benefit_identifiers"},
+		"Catalog":                       ubx.FieldSpec{WireName: "catalog"},
+		"FulfillmentTypes":              ubx.FieldSpec{WireName: "fulfillment_types"},
+		"MaxResults":                    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                     ubx.FieldSpec{WireName: "next_token"},
+		"Status":                        ubx.FieldSpec{WireName: "status"},
 	},
 }

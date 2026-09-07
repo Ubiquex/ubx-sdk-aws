@@ -4,7 +4,7 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CachePolicyConfig_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin_CookiesConfig_Cookies struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
@@ -28,9 +28,9 @@ type CachePolicyConfig_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigi
 
 type CachePolicyConfig_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigin struct {
 	// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-	CookiesConfig any
+	CookiesConfig              any
 	EnableAcceptEncodingBrotli any
-	EnableAcceptEncodingGzip any
+	EnableAcceptEncodingGzip   any
 	// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and in requests that CloudFront sends to the origin.</p>
 	HeadersConfig any
 	// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and in requests that CloudFront sends to the origin.</p>
@@ -38,11 +38,11 @@ type CachePolicyConfig_CachePolicyConfig_ParametersInCacheKeyAndForwardedToOrigi
 }
 
 type CachePolicyConfig_CachePolicyConfig struct {
-	Comment any
+	Comment    any
 	DefaultTtl any
-	MaxTtl any
-	MinTtl any
-	Name any
+	MaxTtl     any
+	MinTtl     any
+	Name       any
 	// <p>This object determines the values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p> <p>The headers, cookies, and query strings that are included in the cache key are also included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 	ParametersInCacheKeyAndForwardedToOrigin any
 }
@@ -54,8 +54,8 @@ type CachePolicyConfigConfig struct {
 type CachePolicyConfigAttrs struct {
 	// <p>A cache policy configuration.</p> <p>This configuration determines the following:</p> <ul> <li> <p>The values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p> </li> <li> <p>The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache.</p> <important> <p>If your minimum TTL is greater than 0, CloudFront will cache content for at least the duration specified in the cache policy's minimum TTL, even if the <code>Cache-Control: no-cache</code>, <code>no-store</code>, or <code>private</code> directives are present in the origin headers.</p> </important> </li> </ul> <p>The headers, cookies, and query strings that are included in the cache key are also included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find a valid object in its cache that matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 	CachePolicyConfig any
-	Etag any
-	Id any
+	Etag              any
+	Id                any
 }
 
 var CachePolicyConfig = ubx.DataSourceBinding{

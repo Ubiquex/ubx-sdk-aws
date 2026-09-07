@@ -185,230 +185,230 @@ type AlarmModel_AlarmRule struct {
 
 type AlarmModel_Tags struct {
 	// Defines the key portion of a tag attached to the AWS IoT Events alarm model, allowing you to categorize and identify the alarm model with custom metadata. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var AlarmModel_AlarmCapabilities_AcknowledgeFlowFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var AlarmModel_AlarmCapabilities_InitializationConfigurationFields = ubx.FieldMap{
-		"DisabledOnInitialization": ubx.FieldSpec{WireName: "disabled_on_initialization"},
-	}
+	"DisabledOnInitialization": ubx.FieldSpec{WireName: "disabled_on_initialization"},
+}
 
 var AlarmModel_AlarmCapabilitiesFields = ubx.FieldMap{
-		"AcknowledgeFlow": ubx.FieldSpec{
-			WireName: "acknowledge_flow",
-			Kind: "object",
-			Fields: AlarmModel_AlarmCapabilities_AcknowledgeFlowFields,
-		},
-		"InitializationConfiguration": ubx.FieldSpec{
-			WireName: "initialization_configuration",
-			Kind: "object",
-			Fields: AlarmModel_AlarmCapabilities_InitializationConfigurationFields,
-		},
-	}
+	"AcknowledgeFlow": ubx.FieldSpec{
+		WireName: "acknowledge_flow",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmCapabilities_AcknowledgeFlowFields,
+	},
+	"InitializationConfiguration": ubx.FieldSpec{
+		WireName: "initialization_configuration",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmCapabilities_InitializationConfigurationFields,
+	},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields = ubx.FieldMap{
-		"ContentExpression": ubx.FieldSpec{WireName: "content_expression"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ContentExpression": ubx.FieldSpec{WireName: "content_expression"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_DynamoDbFields = ubx.FieldMap{
-		"HashKeyField": ubx.FieldSpec{WireName: "hash_key_field"},
-		"HashKeyType": ubx.FieldSpec{WireName: "hash_key_type"},
-		"HashKeyValue": ubx.FieldSpec{WireName: "hash_key_value"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
-		},
-		"PayloadField": ubx.FieldSpec{WireName: "payload_field"},
-		"RangeKeyField": ubx.FieldSpec{WireName: "range_key_field"},
-		"RangeKeyType": ubx.FieldSpec{WireName: "range_key_type"},
-		"RangeKeyValue": ubx.FieldSpec{WireName: "range_key_value"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"HashKeyField": ubx.FieldSpec{WireName: "hash_key_field"},
+	"HashKeyType":  ubx.FieldSpec{WireName: "hash_key_type"},
+	"HashKeyValue": ubx.FieldSpec{WireName: "hash_key_value"},
+	"Operation":    ubx.FieldSpec{WireName: "operation"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
+	},
+	"PayloadField":  ubx.FieldSpec{WireName: "payload_field"},
+	"RangeKeyField": ubx.FieldSpec{WireName: "range_key_field"},
+	"RangeKeyType":  ubx.FieldSpec{WireName: "range_key_type"},
+	"RangeKeyValue": ubx.FieldSpec{WireName: "range_key_value"},
+	"TableName":     ubx.FieldSpec{WireName: "table_name"},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_DynamoDbv2Fields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
+	},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_FirehoseFields = ubx.FieldMap{
-		"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
-		},
-		"Separator": ubx.FieldSpec{WireName: "separator"},
-	}
+	"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
+	},
+	"Separator": ubx.FieldSpec{WireName: "separator"},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_IotEventsFields = ubx.FieldMap{
-		"InputName": ubx.FieldSpec{WireName: "input_name"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
-		},
-	}
+	"InputName": ubx.FieldSpec{WireName: "input_name"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
+	},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue_TimestampFields = ubx.FieldMap{
-		"OffsetInNanos": ubx.FieldSpec{WireName: "offset_in_nanos"},
-		"TimeInSeconds": ubx.FieldSpec{WireName: "time_in_seconds"},
-	}
+	"OffsetInNanos": ubx.FieldSpec{WireName: "offset_in_nanos"},
+	"TimeInSeconds": ubx.FieldSpec{WireName: "time_in_seconds"},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue_ValueFields = ubx.FieldMap{
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+	"DoubleValue":  ubx.FieldSpec{WireName: "double_value"},
+	"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValueFields = ubx.FieldMap{
-		"Quality": ubx.FieldSpec{WireName: "quality"},
-		"Timestamp": ubx.FieldSpec{
-			WireName: "timestamp",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue_TimestampFields,
-		},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue_ValueFields,
-		},
-	}
+	"Quality": ubx.FieldSpec{WireName: "quality"},
+	"Timestamp": ubx.FieldSpec{
+		WireName: "timestamp",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue_TimestampFields,
+	},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue_ValueFields,
+	},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_IotSiteWiseFields = ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"EntryId": ubx.FieldSpec{WireName: "entry_id"},
-		"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
-		"PropertyId": ubx.FieldSpec{WireName: "property_id"},
-		"PropertyValue": ubx.FieldSpec{
-			WireName: "property_value",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValueFields,
-		},
-	}
+	"AssetId":       ubx.FieldSpec{WireName: "asset_id"},
+	"EntryId":       ubx.FieldSpec{WireName: "entry_id"},
+	"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
+	"PropertyId":    ubx.FieldSpec{WireName: "property_id"},
+	"PropertyValue": ubx.FieldSpec{
+		WireName: "property_value",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValueFields,
+	},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_IotTopicPublishFields = ubx.FieldMap{
-		"MqttTopic": ubx.FieldSpec{WireName: "mqtt_topic"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
-		},
-	}
+	"MqttTopic": ubx.FieldSpec{WireName: "mqtt_topic"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
+	},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_LambdaFields = ubx.FieldMap{
-		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
-		},
-	}
+	"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
+	},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_SnsFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
-		},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-	}
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
+	},
+	"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActions_SqsFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
-		},
-		"QueueUrl": ubx.FieldSpec{WireName: "queue_url"},
-		"UseBase64": ubx.FieldSpec{WireName: "use_base64"},
-	}
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDb_PayloadFields,
+	},
+	"QueueUrl":  ubx.FieldSpec{WireName: "queue_url"},
+	"UseBase64": ubx.FieldSpec{WireName: "use_base64"},
+}
 
 var AlarmModel_AlarmEventActions_AlarmActionsFields = ubx.FieldMap{
-		"DynamoDb": ubx.FieldSpec{
-			WireName: "dynamo_db",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDbFields,
-		},
-		"DynamoDbv2": ubx.FieldSpec{
-			WireName: "dynamo_dbv2",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_DynamoDbv2Fields,
-		},
-		"Firehose": ubx.FieldSpec{
-			WireName: "firehose",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_FirehoseFields,
-		},
-		"IotEvents": ubx.FieldSpec{
-			WireName: "iot_events",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_IotEventsFields,
-		},
-		"IotSiteWise": ubx.FieldSpec{
-			WireName: "iot_site_wise",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_IotSiteWiseFields,
-		},
-		"IotTopicPublish": ubx.FieldSpec{
-			WireName: "iot_topic_publish",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_IotTopicPublishFields,
-		},
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_LambdaFields,
-		},
-		"Sns": ubx.FieldSpec{
-			WireName: "sns",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_SnsFields,
-		},
-		"Sqs": ubx.FieldSpec{
-			WireName: "sqs",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActions_AlarmActions_SqsFields,
-		},
-	}
+	"DynamoDb": ubx.FieldSpec{
+		WireName: "dynamo_db",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDbFields,
+	},
+	"DynamoDbv2": ubx.FieldSpec{
+		WireName: "dynamo_dbv2",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_DynamoDbv2Fields,
+	},
+	"Firehose": ubx.FieldSpec{
+		WireName: "firehose",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_FirehoseFields,
+	},
+	"IotEvents": ubx.FieldSpec{
+		WireName: "iot_events",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_IotEventsFields,
+	},
+	"IotSiteWise": ubx.FieldSpec{
+		WireName: "iot_site_wise",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_IotSiteWiseFields,
+	},
+	"IotTopicPublish": ubx.FieldSpec{
+		WireName: "iot_topic_publish",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_IotTopicPublishFields,
+	},
+	"Lambda": ubx.FieldSpec{
+		WireName: "lambda",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_LambdaFields,
+	},
+	"Sns": ubx.FieldSpec{
+		WireName: "sns",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_SnsFields,
+	},
+	"Sqs": ubx.FieldSpec{
+		WireName: "sqs",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActions_SqsFields,
+	},
+}
 
 var AlarmModel_AlarmEventActionsFields = ubx.FieldMap{
-		"AlarmActions": ubx.FieldSpec{
-			WireName: "alarm_actions",
-			Kind: "list",
-			Fields: AlarmModel_AlarmEventActions_AlarmActionsFields,
-		},
-	}
+	"AlarmActions": ubx.FieldSpec{
+		WireName: "alarm_actions",
+		Kind:     "list",
+		Fields:   AlarmModel_AlarmEventActions_AlarmActionsFields,
+	},
+}
 
 var AlarmModel_AlarmRule_SimpleRuleFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"InputProperty": ubx.FieldSpec{WireName: "input_property"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"InputProperty":      ubx.FieldSpec{WireName: "input_property"},
+	"Threshold":          ubx.FieldSpec{WireName: "threshold"},
+}
 
 var AlarmModel_AlarmRuleFields = ubx.FieldMap{
-		"SimpleRule": ubx.FieldSpec{
-			WireName: "simple_rule",
-			Kind: "object",
-			Fields: AlarmModel_AlarmRule_SimpleRuleFields,
-		},
-	}
+	"SimpleRule": ubx.FieldSpec{
+		WireName: "simple_rule",
+		Kind:     "object",
+		Fields:   AlarmModel_AlarmRule_SimpleRuleFields,
+	},
+}
 
 var AlarmModel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AlarmModelConfig struct {
 	// Contains the configuration information of alarm state changes.
@@ -457,28 +457,28 @@ var AlarmModel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AlarmCapabilities": ubx.FieldSpec{
 			WireName: "alarm_capabilities",
-			Kind: "object",
-			Fields: AlarmModel_AlarmCapabilitiesFields,
+			Kind:     "object",
+			Fields:   AlarmModel_AlarmCapabilitiesFields,
 		},
 		"AlarmEventActions": ubx.FieldSpec{
 			WireName: "alarm_event_actions",
-			Kind: "object",
-			Fields: AlarmModel_AlarmEventActionsFields,
+			Kind:     "object",
+			Fields:   AlarmModel_AlarmEventActionsFields,
 		},
 		"AlarmModelDescription": ubx.FieldSpec{WireName: "alarm_model_description"},
-		"AlarmModelName": ubx.FieldSpec{WireName: "alarm_model_name"},
+		"AlarmModelName":        ubx.FieldSpec{WireName: "alarm_model_name"},
 		"AlarmRule": ubx.FieldSpec{
 			WireName: "alarm_rule",
-			Kind: "object",
-			Fields: AlarmModel_AlarmRuleFields,
+			Kind:     "object",
+			Fields:   AlarmModel_AlarmRuleFields,
 		},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Key":      ubx.FieldSpec{WireName: "key"},
+		"RoleArn":  ubx.FieldSpec{WireName: "role_arn"},
 		"Severity": ubx.FieldSpec{WireName: "severity"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AlarmModel_TagsFields,
+			Kind:     "list",
+			Fields:   AlarmModel_TagsFields,
 		},
 	},
 }

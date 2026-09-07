@@ -4,46 +4,46 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerPipelines_PipelineSummaries struct {
-	CreationTime any
-	LastExecutionTime any
-	LastModifiedTime any
-	PipelineArn any
+	CreationTime        any
+	LastExecutionTime   any
+	LastModifiedTime    any
+	PipelineArn         any
 	PipelineDescription any
 	PipelineDisplayName any
-	PipelineName any
-	RoleArn any
+	PipelineName        any
+	RoleArn             any
 }
 
 type ApiSagemakerPipelinesConfig struct {
-	CreatedAfter any
-	CreatedBefore any
-	MaxResults any
-	NextToken any
+	CreatedAfter       any
+	CreatedBefore      any
+	MaxResults         any
+	NextToken          any
 	PipelineNamePrefix any
-	SortBy any
-	SortOrder any
+	SortBy             any
+	SortOrder          any
 }
 
 type ApiSagemakerPipelinesAttrs struct {
-	CreatedAfter any
-	CreatedBefore any
-	MaxResults any
-	NextToken any
+	CreatedAfter       any
+	CreatedBefore      any
+	MaxResults         any
+	NextToken          any
 	PipelineNamePrefix any
-	PipelineSummaries any
-	SortBy any
-	SortOrder any
+	PipelineSummaries  any
+	SortBy             any
+	SortOrder          any
 }
 
 var ApiSagemakerPipelines = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_pipelines",
 	Fields: ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CreatedAfter":       ubx.FieldSpec{WireName: "created_after"},
+		"CreatedBefore":      ubx.FieldSpec{WireName: "created_before"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"PipelineNamePrefix": ubx.FieldSpec{WireName: "pipeline_name_prefix"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"SortBy":             ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":          ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

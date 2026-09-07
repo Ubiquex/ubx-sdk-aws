@@ -4,29 +4,29 @@ package applicationinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComponentConfigurationRecommendationConfig struct {
-	ComponentName any
+	ComponentName      any
 	RecommendationType any
-	ResourceGroupName any
-	Tier any
-	WorkloadName any
+	ResourceGroupName  any
+	Tier               any
+	WorkloadName       any
 }
 
 type ComponentConfigurationRecommendationAttrs struct {
 	ComponentConfiguration any
-	ComponentName any
-	RecommendationType any
-	ResourceGroupName any
-	Tier any
-	WorkloadName any
+	ComponentName          any
+	RecommendationType     any
+	ResourceGroupName      any
+	Tier                   any
+	WorkloadName           any
 }
 
 var ComponentConfigurationRecommendation = ubx.DataSourceBinding{
 	WireType: "aws_applicationinsights_component_configuration_recommendation",
 	Fields: ubx.FieldMap{
-		"ComponentName": ubx.FieldSpec{WireName: "component_name"},
+		"ComponentName":      ubx.FieldSpec{WireName: "component_name"},
 		"RecommendationType": ubx.FieldSpec{WireName: "recommendation_type"},
-		"ResourceGroupName": ubx.FieldSpec{WireName: "resource_group_name"},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-		"WorkloadName": ubx.FieldSpec{WireName: "workload_name"},
+		"ResourceGroupName":  ubx.FieldSpec{WireName: "resource_group_name"},
+		"Tier":               ubx.FieldSpec{WireName: "tier"},
+		"WorkloadName":       ubx.FieldSpec{WireName: "workload_name"},
 	},
 }

@@ -4,13 +4,13 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainNodes_DomainNodesStatusList struct {
-	AvailabilityZone any
-	InstanceType any
-	NodeId any
-	NodeStatus any
-	NodeType any
-	StorageSize any
-	StorageType any
+	AvailabilityZone  any
+	InstanceType      any
+	NodeId            any
+	NodeStatus        any
+	NodeType          any
+	StorageSize       any
+	StorageType       any
 	StorageVolumeType any
 }
 

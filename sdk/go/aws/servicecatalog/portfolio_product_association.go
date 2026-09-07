@@ -28,9 +28,9 @@ type PortfolioProductAssociationAttrs struct {
 var PortfolioProductAssociation = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_portfolio_product_association",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"AcceptLanguage":    ubx.FieldSpec{WireName: "accept_language"},
+		"PortfolioId":       ubx.FieldSpec{WireName: "portfolio_id"},
+		"ProductId":         ubx.FieldSpec{WireName: "product_id"},
 		"SourcePortfolioId": ubx.FieldSpec{WireName: "source_portfolio_id"},
 	},
 }

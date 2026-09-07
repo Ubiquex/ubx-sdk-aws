@@ -8,24 +8,24 @@ type ObjectPolicies_ObjectReference struct {
 }
 
 var ObjectPolicies_ObjectReferenceFields = ubx.FieldMap{
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 type ObjectPoliciesConfig struct {
 	ConsistencyLevel any
-	DirectoryArn any
-	MaxResults any
-	NextToken any
+	DirectoryArn     any
+	MaxResults       any
+	NextToken        any
 	// <p>The reference that identifies an object.</p>
 	ObjectReference any
 }
 
 type ObjectPoliciesAttrs struct {
 	AttachedPolicyIds any
-	ConsistencyLevel any
-	DirectoryArn any
-	MaxResults any
-	NextToken any
+	ConsistencyLevel  any
+	DirectoryArn      any
+	MaxResults        any
+	NextToken         any
 	// <p>The reference that identifies an object.</p>
 	ObjectReference any
 }
@@ -34,13 +34,13 @@ var ObjectPolicies = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_object_policies",
 	Fields: ubx.FieldMap{
 		"ConsistencyLevel": ubx.FieldSpec{WireName: "consistency_level"},
-		"DirectoryArn": ubx.FieldSpec{WireName: "directory_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DirectoryArn":     ubx.FieldSpec{WireName: "directory_arn"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"ObjectReference": ubx.FieldSpec{
 			WireName: "object_reference",
-			Kind: "object",
-			Fields: ObjectPolicies_ObjectReferenceFields,
+			Kind:     "object",
+			Fields:   ObjectPolicies_ObjectReferenceFields,
 		},
 	},
 }

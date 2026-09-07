@@ -5,53 +5,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Applications_Applications_PortalOptions_SignInOptions struct {
 	ApplicationUrl any
-	Origin any
+	Origin         any
 }
 
 type Applications_Applications_PortalOptions struct {
 	SignInOptions any
-	Visibility any
+	Visibility    any
 }
 
 type Applications_Applications struct {
-	ApplicationAccount any
-	ApplicationArn any
+	ApplicationAccount     any
+	ApplicationArn         any
 	ApplicationProviderArn any
-	CreatedDate any
-	CreatedFrom any
-	Description any
-	IdentityStoreArn any
-	InstanceArn any
-	Name any
-	PortalOptions any
-	Status any
+	CreatedDate            any
+	CreatedFrom            any
+	Description            any
+	IdentityStoreArn       any
+	InstanceArn            any
+	Name                   any
+	PortalOptions          any
+	Status                 any
 }
 
 type Applications_Filter struct {
-	ApplicationAccount any
+	ApplicationAccount  any
 	ApplicationProvider any
 }
 
 var Applications_FilterFields = ubx.FieldMap{
-		"ApplicationAccount": ubx.FieldSpec{WireName: "application_account"},
-		"ApplicationProvider": ubx.FieldSpec{WireName: "application_provider"},
-	}
+	"ApplicationAccount":  ubx.FieldSpec{WireName: "application_account"},
+	"ApplicationProvider": ubx.FieldSpec{WireName: "application_provider"},
+}
 
 type ApplicationsConfig struct {
 	// <p>A structure that describes a filter for applications.</p>
-	Filter any
+	Filter      any
 	InstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type ApplicationsAttrs struct {
 	Applications any
 	// <p>A structure that describes a filter for applications.</p>
-	Filter any
+	Filter      any
 	InstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var Applications = ubx.DataSourceBinding{
@@ -59,11 +59,11 @@ var Applications = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Applications_FilterFields,
+			Kind:     "object",
+			Fields:   Applications_FilterFields,
 		},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

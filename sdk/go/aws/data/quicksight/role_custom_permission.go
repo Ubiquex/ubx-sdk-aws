@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoleCustomPermissionConfig struct {
 	AwsAccountId any
-	Namespace any
-	Role any
+	Namespace    any
+	Role         any
 }
 
 type RoleCustomPermissionAttrs struct {
-	AwsAccountId any
+	AwsAccountId          any
 	CustomPermissionsName any
-	Namespace any
-	RequestId any
-	Role any
-	Status any
+	Namespace             any
+	RequestId             any
+	Role                  any
+	Status                any
 }
 
 var RoleCustomPermission = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_role_custom_permission",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Role": ubx.FieldSpec{WireName: "role"},
+		"Namespace":    ubx.FieldSpec{WireName: "namespace"},
+		"Role":         ubx.FieldSpec{WireName: "role"},
 	},
 }

@@ -4,34 +4,34 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicationTaskAssessmentResults_ReplicationTaskAssessmentResults struct {
-	AssessmentResults any
-	AssessmentResultsFile any
-	AssessmentStatus any
-	ReplicationTaskArn any
-	ReplicationTaskIdentifier any
+	AssessmentResults                 any
+	AssessmentResultsFile             any
+	AssessmentStatus                  any
+	ReplicationTaskArn                any
+	ReplicationTaskIdentifier         any
 	ReplicationTaskLastAssessmentDate any
-	S3ObjectUrl any
+	S3ObjectUrl                       any
 }
 
 type ReplicationTaskAssessmentResultsConfig struct {
-	Marker any
-	MaxRecords any
+	Marker             any
+	MaxRecords         any
 	ReplicationTaskArn any
 }
 
 type ReplicationTaskAssessmentResultsAttrs struct {
-	BucketName any
-	Marker any
-	MaxRecords any
-	ReplicationTaskArn any
+	BucketName                       any
+	Marker                           any
+	MaxRecords                       any
+	ReplicationTaskArn               any
 	ReplicationTaskAssessmentResults any
 }
 
 var ReplicationTaskAssessmentResults = ubx.DataSourceBinding{
 	WireType: "aws_dms_replication_task_assessment_results",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":             ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":         ubx.FieldSpec{WireName: "max_records"},
 		"ReplicationTaskArn": ubx.FieldSpec{WireName: "replication_task_arn"},
 	},
 }

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentTaskResponseUrlConfig struct {
 	AgentId any
-	TaskId any
+	TaskId  any
 }
 
 type AgentTaskResponseUrlAttrs struct {
-	AgentId any
+	AgentId         any
 	PresignedLogUrl any
-	TaskId any
+	TaskId          any
 }
 
 var AgentTaskResponseUrl = ubx.DataSourceBinding{
 	WireType: "aws_groundstation_agent_task_response_url",
 	Fields: ubx.FieldMap{
 		"AgentId": ubx.FieldSpec{WireName: "agent_id"},
-		"TaskId": ubx.FieldSpec{WireName: "task_id"},
+		"TaskId":  ubx.FieldSpec{WireName: "task_id"},
 	},
 }

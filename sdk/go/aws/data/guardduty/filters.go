@@ -6,14 +6,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type FiltersConfig struct {
 	DetectorId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FiltersAttrs struct {
-	DetectorId any
+	DetectorId  any
 	FilterNames any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var Filters = ubx.DataSourceBinding{
@@ -21,6 +21,6 @@ var Filters = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

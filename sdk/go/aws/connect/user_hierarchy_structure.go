@@ -26,38 +26,38 @@ type UserHierarchyStructure_UserHierarchyStructure struct {
 }
 
 var UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields = ubx.FieldMap{
-		"HierarchyLevelArn": ubx.FieldSpec{WireName: "hierarchy_level_arn"},
-		"HierarchyLevelId": ubx.FieldSpec{WireName: "hierarchy_level_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"HierarchyLevelArn": ubx.FieldSpec{WireName: "hierarchy_level_arn"},
+	"HierarchyLevelId":  ubx.FieldSpec{WireName: "hierarchy_level_id"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+}
 
 var UserHierarchyStructure_UserHierarchyStructureFields = ubx.FieldMap{
-		"LevelFive": ubx.FieldSpec{
-			WireName: "level_five",
-			Kind: "object",
-			Fields: UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
-		},
-		"LevelFour": ubx.FieldSpec{
-			WireName: "level_four",
-			Kind: "object",
-			Fields: UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
-		},
-		"LevelOne": ubx.FieldSpec{
-			WireName: "level_one",
-			Kind: "object",
-			Fields: UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
-		},
-		"LevelThree": ubx.FieldSpec{
-			WireName: "level_three",
-			Kind: "object",
-			Fields: UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
-		},
-		"LevelTwo": ubx.FieldSpec{
-			WireName: "level_two",
-			Kind: "object",
-			Fields: UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
-		},
-	}
+	"LevelFive": ubx.FieldSpec{
+		WireName: "level_five",
+		Kind:     "object",
+		Fields:   UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
+	},
+	"LevelFour": ubx.FieldSpec{
+		WireName: "level_four",
+		Kind:     "object",
+		Fields:   UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
+	},
+	"LevelOne": ubx.FieldSpec{
+		WireName: "level_one",
+		Kind:     "object",
+		Fields:   UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
+	},
+	"LevelThree": ubx.FieldSpec{
+		WireName: "level_three",
+		Kind:     "object",
+		Fields:   UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
+	},
+	"LevelTwo": ubx.FieldSpec{
+		WireName: "level_two",
+		Kind:     "object",
+		Fields:   UserHierarchyStructure_UserHierarchyStructure_LevelFiveFields,
+	},
+}
 
 type UserHierarchyStructureConfig struct {
 	// The identifier of the Amazon Connect instance.
@@ -81,8 +81,8 @@ var UserHierarchyStructure = ubx.ResourceBinding{
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
 		"UserHierarchyStructure": ubx.FieldSpec{
 			WireName: "user_hierarchy_structure",
-			Kind: "object",
-			Fields: UserHierarchyStructure_UserHierarchyStructureFields,
+			Kind:     "object",
+			Fields:   UserHierarchyStructure_UserHierarchyStructureFields,
 		},
 	},
 }

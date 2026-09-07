@@ -4,40 +4,40 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Groups_Filters struct {
-	NamePrefix any
+	NamePrefix         any
 	PrimaryEmailPrefix any
-	State any
+	State              any
 }
 
 type Groups_Groups struct {
 	DisabledDate any
-	Email any
-	EnabledDate any
-	Id any
-	Name any
-	State any
+	Email        any
+	EnabledDate  any
+	Id           any
+	Name         any
+	State        any
 }
 
 var Groups_FiltersFields = ubx.FieldMap{
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"PrimaryEmailPrefix": ubx.FieldSpec{WireName: "primary_email_prefix"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"NamePrefix":         ubx.FieldSpec{WireName: "name_prefix"},
+	"PrimaryEmailPrefix": ubx.FieldSpec{WireName: "primary_email_prefix"},
+	"State":              ubx.FieldSpec{WireName: "state"},
+}
 
 type GroupsConfig struct {
 	// <p> Filtering options for <i>ListGroups</i> operation. This is only used as input to Operation.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
 type GroupsAttrs struct {
 	// <p> Filtering options for <i>ListGroups</i> operation. This is only used as input to Operation.</p>
-	Filters any
-	Groups any
-	MaxResults any
-	NextToken any
+	Filters        any
+	Groups         any
+	MaxResults     any
+	NextToken      any
 	OrganizationId any
 }
 
@@ -46,11 +46,11 @@ var Groups = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: Groups_FiltersFields,
+			Kind:     "object",
+			Fields:   Groups_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

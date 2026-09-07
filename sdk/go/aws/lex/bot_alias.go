@@ -89,102 +89,102 @@ type BotAlias_SentimentAnalysisSettings struct {
 }
 
 var BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields = ubx.FieldMap{
-		"CodeHookInterfaceVersion": ubx.FieldSpec{WireName: "code_hook_interface_version"},
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-	}
+	"CodeHookInterfaceVersion": ubx.FieldSpec{WireName: "code_hook_interface_version"},
+	"LambdaArn":                ubx.FieldSpec{WireName: "lambda_arn"},
+}
 
 var BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields = ubx.FieldMap{
-		"LambdaCodeHook": ubx.FieldSpec{
-			WireName: "lambda_code_hook",
-			Kind: "object",
-			Fields: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields,
-		},
-	}
+	"LambdaCodeHook": ubx.FieldSpec{
+		WireName: "lambda_code_hook",
+		Kind:     "object",
+		Fields:   BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHookFields,
+	},
+}
 
 var BotAlias_BotAliasLocaleSettings_BotAliasLocaleSettingFields = ubx.FieldMap{
-		"CodeHookSpecification": ubx.FieldSpec{
-			WireName: "code_hook_specification",
-			Kind: "object",
-			Fields: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"CodeHookSpecification": ubx.FieldSpec{
+		WireName: "code_hook_specification",
+		Kind:     "object",
+		Fields:   BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecificationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var BotAlias_BotAliasLocaleSettingsFields = ubx.FieldMap{
-		"BotAliasLocaleSetting": ubx.FieldSpec{
-			WireName: "bot_alias_locale_setting",
-			Kind: "object",
-			Fields: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSettingFields,
-		},
-		"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
-	}
+	"BotAliasLocaleSetting": ubx.FieldSpec{
+		WireName: "bot_alias_locale_setting",
+		Kind:     "object",
+		Fields:   BotAlias_BotAliasLocaleSettings_BotAliasLocaleSettingFields,
+	},
+	"LocaleId": ubx.FieldSpec{WireName: "locale_id"},
+}
 
 var BotAlias_BotAliasTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"LogPrefix": ubx.FieldSpec{WireName: "log_prefix"},
-		"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
-	}
+	"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
+	"LogPrefix":   ubx.FieldSpec{WireName: "log_prefix"},
+	"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
+}
 
 var BotAlias_ConversationLogSettings_AudioLogSettings_DestinationFields = ubx.FieldMap{
-		"S3Bucket": ubx.FieldSpec{
-			WireName: "s3_bucket",
-			Kind: "object",
-			Fields: BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields,
-		},
-	}
+	"S3Bucket": ubx.FieldSpec{
+		WireName: "s3_bucket",
+		Kind:     "object",
+		Fields:   BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3BucketFields,
+	},
+}
 
 var BotAlias_ConversationLogSettings_AudioLogSettingsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: BotAlias_ConversationLogSettings_AudioLogSettings_DestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   BotAlias_ConversationLogSettings_AudioLogSettings_DestinationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields = ubx.FieldMap{
-		"CloudWatchLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
-		"LogPrefix": ubx.FieldSpec{WireName: "log_prefix"},
-	}
+	"CloudWatchLogGroupArn": ubx.FieldSpec{WireName: "cloud_watch_log_group_arn"},
+	"LogPrefix":             ubx.FieldSpec{WireName: "log_prefix"},
+}
 
 var BotAlias_ConversationLogSettings_TextLogSettings_DestinationFields = ubx.FieldMap{
-		"CloudWatch": ubx.FieldSpec{
-			WireName: "cloud_watch",
-			Kind: "object",
-			Fields: BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields,
-		},
-	}
+	"CloudWatch": ubx.FieldSpec{
+		WireName: "cloud_watch",
+		Kind:     "object",
+		Fields:   BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatchFields,
+	},
+}
 
 var BotAlias_ConversationLogSettings_TextLogSettingsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: BotAlias_ConversationLogSettings_TextLogSettings_DestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   BotAlias_ConversationLogSettings_TextLogSettings_DestinationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var BotAlias_ConversationLogSettingsFields = ubx.FieldMap{
-		"AudioLogSettings": ubx.FieldSpec{
-			WireName: "audio_log_settings",
-			Kind: "list",
-			Fields: BotAlias_ConversationLogSettings_AudioLogSettingsFields,
-		},
-		"TextLogSettings": ubx.FieldSpec{
-			WireName: "text_log_settings",
-			Kind: "list",
-			Fields: BotAlias_ConversationLogSettings_TextLogSettingsFields,
-		},
-	}
+	"AudioLogSettings": ubx.FieldSpec{
+		WireName: "audio_log_settings",
+		Kind:     "list",
+		Fields:   BotAlias_ConversationLogSettings_AudioLogSettingsFields,
+	},
+	"TextLogSettings": ubx.FieldSpec{
+		WireName: "text_log_settings",
+		Kind:     "list",
+		Fields:   BotAlias_ConversationLogSettings_TextLogSettingsFields,
+	},
+}
 
 var BotAlias_SentimentAnalysisSettingsFields = ubx.FieldMap{
-		"DetectSentiment": ubx.FieldSpec{WireName: "detect_sentiment"},
-	}
+	"DetectSentiment": ubx.FieldSpec{WireName: "detect_sentiment"},
+}
 
 type BotAliasConfig struct {
 	// A list of bot alias locale settings to add to the bot alias.
@@ -235,27 +235,27 @@ var BotAlias = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BotAliasLocaleSettings": ubx.FieldSpec{
 			WireName: "bot_alias_locale_settings",
-			Kind: "list",
-			Fields: BotAlias_BotAliasLocaleSettingsFields,
+			Kind:     "list",
+			Fields:   BotAlias_BotAliasLocaleSettingsFields,
 		},
 		"BotAliasName": ubx.FieldSpec{WireName: "bot_alias_name"},
 		"BotAliasTags": ubx.FieldSpec{
 			WireName: "bot_alias_tags",
-			Kind: "list",
-			Fields: BotAlias_BotAliasTagsFields,
+			Kind:     "list",
+			Fields:   BotAlias_BotAliasTagsFields,
 		},
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"BotVersion": ubx.FieldSpec{WireName: "bot_version"},
 		"ConversationLogSettings": ubx.FieldSpec{
 			WireName: "conversation_log_settings",
-			Kind: "object",
-			Fields: BotAlias_ConversationLogSettingsFields,
+			Kind:     "object",
+			Fields:   BotAlias_ConversationLogSettingsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"SentimentAnalysisSettings": ubx.FieldSpec{
 			WireName: "sentiment_analysis_settings",
-			Kind: "object",
-			Fields: BotAlias_SentimentAnalysisSettingsFields,
+			Kind:     "object",
+			Fields:   BotAlias_SentimentAnalysisSettingsFields,
 		},
 	},
 }

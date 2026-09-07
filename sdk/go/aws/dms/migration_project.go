@@ -31,22 +31,22 @@ type MigrationProject_Tags struct {
 }
 
 var MigrationProject_SchemaConversionApplicationAttributesFields = ubx.FieldMap{
-		"S3BucketPath": ubx.FieldSpec{WireName: "s3_bucket_path"},
-		"S3BucketRoleArn": ubx.FieldSpec{WireName: "s3_bucket_role_arn"},
-	}
+	"S3BucketPath":    ubx.FieldSpec{WireName: "s3_bucket_path"},
+	"S3BucketRoleArn": ubx.FieldSpec{WireName: "s3_bucket_role_arn"},
+}
 
 var MigrationProject_SourceDataProviderDescriptorsFields = ubx.FieldMap{
-		"DataProviderArn": ubx.FieldSpec{WireName: "data_provider_arn"},
-		"DataProviderIdentifier": ubx.FieldSpec{WireName: "data_provider_identifier"},
-		"DataProviderName": ubx.FieldSpec{WireName: "data_provider_name"},
-		"SecretsManagerAccessRoleArn": ubx.FieldSpec{WireName: "secrets_manager_access_role_arn"},
-		"SecretsManagerSecretId": ubx.FieldSpec{WireName: "secrets_manager_secret_id"},
-	}
+	"DataProviderArn":             ubx.FieldSpec{WireName: "data_provider_arn"},
+	"DataProviderIdentifier":      ubx.FieldSpec{WireName: "data_provider_identifier"},
+	"DataProviderName":            ubx.FieldSpec{WireName: "data_provider_name"},
+	"SecretsManagerAccessRoleArn": ubx.FieldSpec{WireName: "secrets_manager_access_role_arn"},
+	"SecretsManagerSecretId":      ubx.FieldSpec{WireName: "secrets_manager_secret_id"},
+}
 
 var MigrationProject_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MigrationProjectConfig struct {
 	// The optional description of the migration project.
@@ -107,32 +107,32 @@ type MigrationProjectAttrs struct {
 var MigrationProject = ubx.ResourceBinding{
 	WireType: "aws_dms_migration_project",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InstanceProfileArn": ubx.FieldSpec{WireName: "instance_profile_arn"},
-		"InstanceProfileIdentifier": ubx.FieldSpec{WireName: "instance_profile_identifier"},
-		"InstanceProfileName": ubx.FieldSpec{WireName: "instance_profile_name"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
+		"InstanceProfileArn":           ubx.FieldSpec{WireName: "instance_profile_arn"},
+		"InstanceProfileIdentifier":    ubx.FieldSpec{WireName: "instance_profile_identifier"},
+		"InstanceProfileName":          ubx.FieldSpec{WireName: "instance_profile_name"},
 		"MigrationProjectCreationTime": ubx.FieldSpec{WireName: "migration_project_creation_time"},
-		"MigrationProjectIdentifier": ubx.FieldSpec{WireName: "migration_project_identifier"},
-		"MigrationProjectName": ubx.FieldSpec{WireName: "migration_project_name"},
+		"MigrationProjectIdentifier":   ubx.FieldSpec{WireName: "migration_project_identifier"},
+		"MigrationProjectName":         ubx.FieldSpec{WireName: "migration_project_name"},
 		"SchemaConversionApplicationAttributes": ubx.FieldSpec{
 			WireName: "schema_conversion_application_attributes",
-			Kind: "object",
-			Fields: MigrationProject_SchemaConversionApplicationAttributesFields,
+			Kind:     "object",
+			Fields:   MigrationProject_SchemaConversionApplicationAttributesFields,
 		},
 		"SourceDataProviderDescriptors": ubx.FieldSpec{
 			WireName: "source_data_provider_descriptors",
-			Kind: "list",
-			Fields: MigrationProject_SourceDataProviderDescriptorsFields,
+			Kind:     "list",
+			Fields:   MigrationProject_SourceDataProviderDescriptorsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MigrationProject_TagsFields,
+			Kind:     "list",
+			Fields:   MigrationProject_TagsFields,
 		},
 		"TargetDataProviderDescriptors": ubx.FieldSpec{
 			WireName: "target_data_provider_descriptors",
-			Kind: "list",
-			Fields: MigrationProject_SourceDataProviderDescriptorsFields,
+			Kind:     "list",
+			Fields:   MigrationProject_SourceDataProviderDescriptorsFields,
 		},
 		"TransformationRules": ubx.FieldSpec{WireName: "transformation_rules"},
 	},

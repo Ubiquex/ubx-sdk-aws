@@ -4,46 +4,46 @@ package ram
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Permissions_Permissions_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Permissions_Permissions struct {
-	Arn any
-	CreationTime any
-	DefaultVersion any
-	FeatureSet any
+	Arn                   any
+	CreationTime          any
+	DefaultVersion        any
+	FeatureSet            any
 	IsResourceTypeDefault any
-	LastUpdatedTime any
-	Name any
-	PermissionType any
-	ResourceType any
-	Status any
-	Tags any
-	Version any
+	LastUpdatedTime       any
+	Name                  any
+	PermissionType        any
+	ResourceType          any
+	Status                any
+	Tags                  any
+	Version               any
 }
 
 type PermissionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	PermissionType any
-	ResourceType any
+	ResourceType   any
 }
 
 type PermissionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	PermissionType any
-	Permissions any
-	ResourceType any
+	Permissions    any
+	ResourceType   any
 }
 
 var Permissions = ubx.DataSourceBinding{
 	WireType: "aws_ram_permissions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"PermissionType": ubx.FieldSpec{WireName: "permission_type"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":   ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

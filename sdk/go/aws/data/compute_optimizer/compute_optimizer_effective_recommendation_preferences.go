@@ -9,18 +9,18 @@ type ComputeOptimizerEffectiveRecommendationPreferences_ExternalMetricsPreferenc
 
 type ComputeOptimizerEffectiveRecommendationPreferences_PreferredResources struct {
 	EffectiveIncludeList any
-	ExcludeList any
-	IncludeList any
-	Name any
+	ExcludeList          any
+	IncludeList          any
+	Name                 any
 }
 
 type ComputeOptimizerEffectiveRecommendationPreferences_UtilizationPreferences_MetricParameters struct {
-	Headroom any
+	Headroom  any
 	Threshold any
 }
 
 type ComputeOptimizerEffectiveRecommendationPreferences_UtilizationPreferences struct {
-	MetricName any
+	MetricName       any
 	MetricParameters any
 }
 
@@ -32,10 +32,10 @@ type ComputeOptimizerEffectiveRecommendationPreferencesAttrs struct {
 	EnhancedInfrastructureMetrics any
 	// <p> Describes the external metrics preferences for EC2 rightsizing recommendations. </p>
 	ExternalMetricsPreference any
-	LookBackPeriod any
-	PreferredResources any
-	ResourceArn any
-	UtilizationPreferences any
+	LookBackPeriod            any
+	PreferredResources        any
+	ResourceArn               any
+	UtilizationPreferences    any
 }
 
 var ComputeOptimizerEffectiveRecommendationPreferences = ubx.DataSourceBinding{

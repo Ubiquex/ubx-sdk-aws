@@ -18,22 +18,22 @@ type PublicRepository_RepositoryCatalogData struct {
 
 type PublicRepository_Tags struct {
 	// The key of a tag attached to the ECR public repository, used to identify, categorize, and organize the repository within your AWS environment. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var PublicRepository_RepositoryCatalogDataFields = ubx.FieldMap{
-		"AboutText": ubx.FieldSpec{WireName: "about_text"},
-		"Architectures": ubx.FieldSpec{WireName: "architectures"},
-		"OperatingSystems": ubx.FieldSpec{WireName: "operating_systems"},
-		"RepositoryDescription": ubx.FieldSpec{WireName: "repository_description"},
-		"UsageText": ubx.FieldSpec{WireName: "usage_text"},
-	}
+	"AboutText":             ubx.FieldSpec{WireName: "about_text"},
+	"Architectures":         ubx.FieldSpec{WireName: "architectures"},
+	"OperatingSystems":      ubx.FieldSpec{WireName: "operating_systems"},
+	"RepositoryDescription": ubx.FieldSpec{WireName: "repository_description"},
+	"UsageText":             ubx.FieldSpec{WireName: "usage_text"},
+}
 
 var PublicRepository_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PublicRepositoryConfig struct {
 	// The details about the repository that are publicly visible in the Amazon ECR Public Gallery. For more information, see [Amazon ECR Public repository catalog data](https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-catalog-data.html) in the *Amazon ECR Public User Guide*.
@@ -64,15 +64,15 @@ var PublicRepository = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"RepositoryCatalogData": ubx.FieldSpec{
 			WireName: "repository_catalog_data",
-			Kind: "object",
-			Fields: PublicRepository_RepositoryCatalogDataFields,
+			Kind:     "object",
+			Fields:   PublicRepository_RepositoryCatalogDataFields,
 		},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"RepositoryName":       ubx.FieldSpec{WireName: "repository_name"},
 		"RepositoryPolicyText": ubx.FieldSpec{WireName: "repository_policy_text"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PublicRepository_TagsFields,
+			Kind:     "list",
+			Fields:   PublicRepository_TagsFields,
 		},
 	},
 }

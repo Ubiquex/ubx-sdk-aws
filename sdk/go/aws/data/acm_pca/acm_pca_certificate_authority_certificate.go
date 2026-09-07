@@ -8,9 +8,9 @@ type AcmPcaCertificateAuthorityCertificateConfig struct {
 }
 
 type AcmPcaCertificateAuthorityCertificateAttrs struct {
-	Certificate any
+	Certificate             any
 	CertificateAuthorityArn any
-	CertificateChain any
+	CertificateChain        any
 }
 
 var AcmPcaCertificateAuthorityCertificate = ubx.DataSourceBinding{

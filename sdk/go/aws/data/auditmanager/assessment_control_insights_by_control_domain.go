@@ -4,42 +4,42 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssessmentControlInsightsByControlDomain_ControlInsightsByAssessment_EvidenceInsights struct {
-	CompliantEvidenceCount any
+	CompliantEvidenceCount    any
 	InconclusiveEvidenceCount any
 	NoncompliantEvidenceCount any
 }
 
 type AssessmentControlInsightsByControlDomain_ControlInsightsByAssessment struct {
-	ControlSetName any
+	ControlSetName   any
 	EvidenceInsights any
-	Id any
-	LastUpdated any
-	Name any
+	Id               any
+	LastUpdated      any
+	Name             any
 }
 
 type AssessmentControlInsightsByControlDomainConfig struct {
-	AssessmentId any
+	AssessmentId    any
 	ControlDomainId any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AssessmentControlInsightsByControlDomainAttrs struct {
-	AssessmentId any
-	ControlDomainId any
+	AssessmentId                any
+	ControlDomainId             any
 	ControlInsightsByAssessment any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var AssessmentControlInsightsByControlDomain = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_assessment_control_insights_by_control_domain",
 	Fields: ubx.FieldMap{
-		"AssessmentId": ubx.FieldSpec{WireName: "assessment_id"},
+		"AssessmentId":    ubx.FieldSpec{WireName: "assessment_id"},
 		"ControlDomainId": ubx.FieldSpec{WireName: "control_domain_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

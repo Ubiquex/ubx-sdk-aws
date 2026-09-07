@@ -57,53 +57,53 @@ type CustomLineItem_Tags struct {
 }
 
 var CustomLineItem_BillingPeriodRangeFields = ubx.FieldMap{
-		"ExclusiveEndBillingPeriod": ubx.FieldSpec{WireName: "exclusive_end_billing_period"},
-		"InclusiveStartBillingPeriod": ubx.FieldSpec{WireName: "inclusive_start_billing_period"},
-	}
+	"ExclusiveEndBillingPeriod":   ubx.FieldSpec{WireName: "exclusive_end_billing_period"},
+	"InclusiveStartBillingPeriod": ubx.FieldSpec{WireName: "inclusive_start_billing_period"},
+}
 
 var CustomLineItem_CustomLineItemChargeDetails_FlatFields = ubx.FieldMap{
-		"ChargeValue": ubx.FieldSpec{WireName: "charge_value"},
-	}
+	"ChargeValue": ubx.FieldSpec{WireName: "charge_value"},
+}
 
 var CustomLineItem_CustomLineItemChargeDetails_LineItemFiltersFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"AttributeValues": ubx.FieldSpec{WireName: "attribute_values"},
-		"MatchOption": ubx.FieldSpec{WireName: "match_option"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Attribute":       ubx.FieldSpec{WireName: "attribute"},
+	"AttributeValues": ubx.FieldSpec{WireName: "attribute_values"},
+	"MatchOption":     ubx.FieldSpec{WireName: "match_option"},
+	"Values":          ubx.FieldSpec{WireName: "values"},
+}
 
 var CustomLineItem_CustomLineItemChargeDetails_PercentageFields = ubx.FieldMap{
-		"ChildAssociatedResources": ubx.FieldSpec{WireName: "child_associated_resources"},
-		"PercentageValue": ubx.FieldSpec{WireName: "percentage_value"},
-	}
+	"ChildAssociatedResources": ubx.FieldSpec{WireName: "child_associated_resources"},
+	"PercentageValue":          ubx.FieldSpec{WireName: "percentage_value"},
+}
 
 var CustomLineItem_CustomLineItemChargeDetailsFields = ubx.FieldMap{
-		"Flat": ubx.FieldSpec{
-			WireName: "flat",
-			Kind: "object",
-			Fields: CustomLineItem_CustomLineItemChargeDetails_FlatFields,
-		},
-		"LineItemFilters": ubx.FieldSpec{
-			WireName: "line_item_filters",
-			Kind: "list",
-			Fields: CustomLineItem_CustomLineItemChargeDetails_LineItemFiltersFields,
-		},
-		"Percentage": ubx.FieldSpec{
-			WireName: "percentage",
-			Kind: "object",
-			Fields: CustomLineItem_CustomLineItemChargeDetails_PercentageFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Flat": ubx.FieldSpec{
+		WireName: "flat",
+		Kind:     "object",
+		Fields:   CustomLineItem_CustomLineItemChargeDetails_FlatFields,
+	},
+	"LineItemFilters": ubx.FieldSpec{
+		WireName: "line_item_filters",
+		Kind:     "list",
+		Fields:   CustomLineItem_CustomLineItemChargeDetails_LineItemFiltersFields,
+	},
+	"Percentage": ubx.FieldSpec{
+		WireName: "percentage",
+		Kind:     "object",
+		Fields:   CustomLineItem_CustomLineItemChargeDetails_PercentageFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var CustomLineItem_PresentationDetailsFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var CustomLineItem_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomLineItemConfig struct {
 	// The account which this custom line item will be charged to
@@ -162,30 +162,30 @@ type CustomLineItemAttrs struct {
 var CustomLineItem = ubx.ResourceBinding{
 	WireType: "aws_billing_conductor_custom_line_item",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"BillingGroupArn": ubx.FieldSpec{WireName: "billing_group_arn"},
 		"BillingPeriodRange": ubx.FieldSpec{
 			WireName: "billing_period_range",
-			Kind: "object",
-			Fields: CustomLineItem_BillingPeriodRangeFields,
+			Kind:     "object",
+			Fields:   CustomLineItem_BillingPeriodRangeFields,
 		},
 		"ComputationRule": ubx.FieldSpec{WireName: "computation_rule"},
 		"CustomLineItemChargeDetails": ubx.FieldSpec{
 			WireName: "custom_line_item_charge_details",
-			Kind: "object",
-			Fields: CustomLineItem_CustomLineItemChargeDetailsFields,
+			Kind:     "object",
+			Fields:   CustomLineItem_CustomLineItemChargeDetailsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PresentationDetails": ubx.FieldSpec{
 			WireName: "presentation_details",
-			Kind: "object",
-			Fields: CustomLineItem_PresentationDetailsFields,
+			Kind:     "object",
+			Fields:   CustomLineItem_PresentationDetailsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomLineItem_TagsFields,
+			Kind:     "list",
+			Fields:   CustomLineItem_TagsFields,
 		},
 	},
 }

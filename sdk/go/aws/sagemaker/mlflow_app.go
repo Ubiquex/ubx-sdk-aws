@@ -11,9 +11,9 @@ type MlflowApp_Tags struct {
 }
 
 var MlflowApp_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MlflowAppConfig struct {
 	// The S3 URI for a general purpose bucket to use as the MLflow App artifact store.
@@ -60,14 +60,14 @@ type MlflowAppAttrs struct {
 var MlflowApp = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_mlflow_app",
 	Fields: ubx.FieldMap{
-		"ArtifactStoreUri": ubx.FieldSpec{WireName: "artifact_store_uri"},
+		"ArtifactStoreUri":      ubx.FieldSpec{WireName: "artifact_store_uri"},
 		"ModelRegistrationMode": ubx.FieldSpec{WireName: "model_registration_mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"RoleArn":               ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MlflowApp_TagsFields,
+			Kind:     "list",
+			Fields:   MlflowApp_TagsFields,
 		},
 		"WeeklyMaintenanceWindowStart": ubx.FieldSpec{WireName: "weekly_maintenance_window_start"},
 	},

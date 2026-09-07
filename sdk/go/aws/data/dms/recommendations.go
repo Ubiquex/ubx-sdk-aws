@@ -4,35 +4,35 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Recommendations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type Recommendations_Recommendations_Data_RdsEngine_RequirementsToTarget struct {
 	DeploymentOption any
-	EngineEdition any
-	EngineVersion any
-	InstanceMemory any
-	InstanceVcpu any
-	StorageIops any
-	StorageSize any
+	EngineEdition    any
+	EngineVersion    any
+	InstanceMemory   any
+	InstanceVcpu     any
+	StorageIops      any
+	StorageSize      any
 }
 
 type Recommendations_Recommendations_Data_RdsEngine_TargetConfiguration struct {
 	DeploymentOption any
-	EngineEdition any
-	EngineVersion any
-	InstanceMemory any
-	InstanceType any
-	InstanceVcpu any
-	StorageIops any
-	StorageSize any
-	StorageType any
+	EngineEdition    any
+	EngineVersion    any
+	InstanceMemory   any
+	InstanceType     any
+	InstanceVcpu     any
+	StorageIops      any
+	StorageSize      any
+	StorageType      any
 }
 
 type Recommendations_Recommendations_Data_RdsEngine struct {
 	RequirementsToTarget any
-	TargetConfiguration any
+	TargetConfiguration  any
 }
 
 type Recommendations_Recommendations_Data struct {
@@ -41,34 +41,34 @@ type Recommendations_Recommendations_Data struct {
 
 type Recommendations_Recommendations_Settings struct {
 	InstanceSizingType any
-	WorkloadType any
+	WorkloadType       any
 }
 
 type Recommendations_Recommendations struct {
 	CreatedDate any
-	Data any
-	DatabaseId any
-	EngineName any
-	Preferred any
-	Settings any
-	Status any
+	Data        any
+	DatabaseId  any
+	EngineName  any
+	Preferred   any
+	Settings    any
+	Status      any
 }
 
 var Recommendations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type RecommendationsConfig struct {
-	Filters any
+	Filters    any
 	MaxRecords any
-	NextToken any
+	NextToken  any
 }
 
 type RecommendationsAttrs struct {
-	Filters any
-	MaxRecords any
-	NextToken any
+	Filters         any
+	MaxRecords      any
+	NextToken       any
 	Recommendations any
 }
 
@@ -77,10 +77,10 @@ var Recommendations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Recommendations_FiltersFields,
+			Kind:     "list",
+			Fields:   Recommendations_FiltersFields,
 		},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

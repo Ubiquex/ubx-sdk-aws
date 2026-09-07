@@ -4,11 +4,11 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IndexPolicies_IndexPolicies struct {
-	LastUpdateTime any
+	LastUpdateTime     any
 	LogGroupIdentifier any
-	PolicyDocument any
-	PolicyName any
-	Source any
+	PolicyDocument     any
+	PolicyName         any
+	Source             any
 }
 
 type IndexPoliciesConfig struct {
@@ -18,7 +18,7 @@ type IndexPoliciesConfig struct {
 }
 
 type IndexPoliciesAttrs struct {
-	IndexPolicies any
+	IndexPolicies       any
 	LogGroupIdentifiers any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
@@ -28,6 +28,6 @@ var IndexPolicies = ubx.DataSourceBinding{
 	WireType: "aws_logs_index_policies",
 	Fields: ubx.FieldMap{
 		"LogGroupIdentifiers": ubx.FieldSpec{WireName: "log_group_identifiers"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

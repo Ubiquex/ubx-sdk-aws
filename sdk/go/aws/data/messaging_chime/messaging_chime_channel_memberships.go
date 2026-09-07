@@ -4,7 +4,7 @@ package messaging_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeChannelMemberships_ChannelMemberships_Member struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
@@ -13,32 +13,32 @@ type MessagingChimeChannelMemberships_ChannelMemberships struct {
 }
 
 type MessagingChimeChannelMembershipsConfig struct {
-	ChannelArn any
-	ChimeBearer any
-	MaxResults any
-	NextToken any
+	ChannelArn   any
+	ChimeBearer  any
+	MaxResults   any
+	NextToken    any
 	SubChannelId any
-	Type any
+	Type         any
 }
 
 type MessagingChimeChannelMembershipsAttrs struct {
-	ChannelArn any
+	ChannelArn         any
 	ChannelMemberships any
-	ChimeBearer any
-	MaxResults any
-	NextToken any
-	SubChannelId any
-	Type any
+	ChimeBearer        any
+	MaxResults         any
+	NextToken          any
+	SubChannelId       any
+	Type               any
 }
 
 var MessagingChimeChannelMemberships = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channel_memberships",
 	Fields: ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ChannelArn":   ubx.FieldSpec{WireName: "channel_arn"},
+		"ChimeBearer":  ubx.FieldSpec{WireName: "chime_bearer"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"SubChannelId": ubx.FieldSpec{WireName: "sub_channel_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":         ubx.FieldSpec{WireName: "type"},
 	},
 }

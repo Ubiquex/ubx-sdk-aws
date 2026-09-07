@@ -8,69 +8,69 @@ type ConfigRules_ConfigRules_EvaluationModes struct {
 }
 
 type ConfigRules_ConfigRules_Scope struct {
-	ComplianceResourceId any
+	ComplianceResourceId    any
 	ComplianceResourceTypes any
-	ServicePrincipals any
-	TagKey any
-	TagValue any
+	ServicePrincipals       any
+	TagKey                  any
+	TagValue                any
 }
 
 type ConfigRules_ConfigRules_Source_CustomPolicyDetails struct {
 	EnableDebugLogDelivery any
-	PolicyRuntime any
-	PolicyText any
+	PolicyRuntime          any
+	PolicyText             any
 }
 
 type ConfigRules_ConfigRules_Source_SourceDetails struct {
-	EventSource any
+	EventSource               any
 	MaximumExecutionFrequency any
-	MessageType any
+	MessageType               any
 }
 
 type ConfigRules_ConfigRules_Source struct {
 	CustomPolicyDetails any
-	Owner any
-	SourceDetails any
-	SourceIdentifier any
+	Owner               any
+	SourceDetails       any
+	SourceIdentifier    any
 }
 
 type ConfigRules_ConfigRules struct {
-	ConfigRuleArn any
-	ConfigRuleId any
-	ConfigRuleName any
-	ConfigRuleState any
-	CreatedBy any
-	Description any
-	EvaluationModes any
-	InputParameters any
+	ConfigRuleArn             any
+	ConfigRuleId              any
+	ConfigRuleName            any
+	ConfigRuleState           any
+	CreatedBy                 any
+	Description               any
+	EvaluationModes           any
+	InputParameters           any
 	MaximumExecutionFrequency any
-	RuleEvaluationVisibility any
-	Scope any
-	Source any
+	RuleEvaluationVisibility  any
+	Scope                     any
+	Source                    any
 }
 
 type ConfigRules_Filters struct {
-	EvaluationMode any
+	EvaluationMode           any
 	RuleEvaluationVisibility any
 }
 
 var ConfigRules_FiltersFields = ubx.FieldMap{
-		"EvaluationMode": ubx.FieldSpec{WireName: "evaluation_mode"},
-		"RuleEvaluationVisibility": ubx.FieldSpec{WireName: "rule_evaluation_visibility"},
-	}
+	"EvaluationMode":           ubx.FieldSpec{WireName: "evaluation_mode"},
+	"RuleEvaluationVisibility": ubx.FieldSpec{WireName: "rule_evaluation_visibility"},
+}
 
 type ConfigRulesConfig struct {
 	ConfigRuleNames any
 	// <p>Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-	Filters any
+	Filters   any
 	NextToken any
 }
 
 type ConfigRulesAttrs struct {
 	ConfigRuleNames any
-	ConfigRules any
+	ConfigRules     any
 	// <p>Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-	Filters any
+	Filters   any
 	NextToken any
 }
 
@@ -80,8 +80,8 @@ var ConfigRules = ubx.DataSourceBinding{
 		"ConfigRuleNames": ubx.FieldSpec{WireName: "config_rule_names"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ConfigRules_FiltersFields,
+			Kind:     "object",
+			Fields:   ConfigRules_FiltersFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},

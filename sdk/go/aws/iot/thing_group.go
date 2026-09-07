@@ -23,22 +23,22 @@ type ThingGroup_ThingGroupProperties struct {
 }
 
 var ThingGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ThingGroup_ThingGroupProperties_AttributePayloadFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+}
 
 var ThingGroup_ThingGroupPropertiesFields = ubx.FieldMap{
-		"AttributePayload": ubx.FieldSpec{
-			WireName: "attribute_payload",
-			Kind: "object",
-			Fields: ThingGroup_ThingGroupProperties_AttributePayloadFields,
-		},
-		"ThingGroupDescription": ubx.FieldSpec{WireName: "thing_group_description"},
-	}
+	"AttributePayload": ubx.FieldSpec{
+		WireName: "attribute_payload",
+		Kind:     "object",
+		Fields:   ThingGroup_ThingGroupProperties_AttributePayloadFields,
+	},
+	"ThingGroupDescription": ubx.FieldSpec{WireName: "thing_group_description"},
+}
 
 type ThingGroupConfig struct {
 	// The name of the parent thing group to which this thing group belongs, establishing a hierarchical relationship in AWS IoT. (AI-inferred)
@@ -74,17 +74,17 @@ var ThingGroup = ubx.ResourceBinding{
 	WireType: "aws_io_t_thing_group",
 	Fields: ubx.FieldMap{
 		"ParentGroupName": ubx.FieldSpec{WireName: "parent_group_name"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
+		"QueryString":     ubx.FieldSpec{WireName: "query_string"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ThingGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ThingGroup_TagsFields,
 		},
 		"ThingGroupName": ubx.FieldSpec{WireName: "thing_group_name"},
 		"ThingGroupProperties": ubx.FieldSpec{
 			WireName: "thing_group_properties",
-			Kind: "object",
-			Fields: ThingGroup_ThingGroupPropertiesFields,
+			Kind:     "object",
+			Fields:   ThingGroup_ThingGroupPropertiesFields,
 		},
 	},
 }

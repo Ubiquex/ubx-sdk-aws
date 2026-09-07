@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruFeedback_InsightFeedback struct {
 	Feedback any
-	Id any
+	Id       any
 }
 
 type DevopsGuruFeedbackConfig struct {
@@ -15,7 +15,7 @@ type DevopsGuruFeedbackConfig struct {
 type DevopsGuruFeedbackAttrs struct {
 	// <p> Information about insight feedback received from a customer. </p>
 	InsightFeedback any
-	InsightId any
+	InsightId       any
 }
 
 var DevopsGuruFeedback = ubx.DataSourceBinding{

@@ -11,9 +11,9 @@ type ExtensionAssociation_Tags struct {
 }
 
 var ExtensionAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ExtensionAssociationConfig struct {
 	// The name, ID, or Amazon Resource Name (ARN) of the AWS AppConfig extension to associate with the target resource. (AI-inferred)
@@ -52,14 +52,14 @@ type ExtensionAssociationAttrs struct {
 var ExtensionAssociation = ubx.ResourceBinding{
 	WireType: "aws_app_config_extension_association",
 	Fields: ubx.FieldMap{
-		"ExtensionIdentifier": ubx.FieldSpec{WireName: "extension_identifier"},
+		"ExtensionIdentifier":    ubx.FieldSpec{WireName: "extension_identifier"},
 		"ExtensionVersionNumber": ubx.FieldSpec{WireName: "extension_version_number"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"ResourceIdentifier": ubx.FieldSpec{WireName: "resource_identifier"},
+		"Parameters":             ubx.FieldSpec{WireName: "parameters"},
+		"ResourceIdentifier":     ubx.FieldSpec{WireName: "resource_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ExtensionAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   ExtensionAssociation_TagsFields,
 		},
 	},
 }

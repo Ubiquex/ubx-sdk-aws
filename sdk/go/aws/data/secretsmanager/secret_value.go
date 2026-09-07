@@ -4,28 +4,28 @@ package secretsmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecretValueConfig struct {
-	SecretId any
-	VersionId any
+	SecretId     any
+	VersionId    any
 	VersionStage any
 }
 
 type SecretValueAttrs struct {
-	Arn any
-	CreatedDate any
-	Name any
-	SecretBinary any
-	SecretId any
-	SecretString any
-	VersionId any
-	VersionStage any
+	Arn           any
+	CreatedDate   any
+	Name          any
+	SecretBinary  any
+	SecretId      any
+	SecretString  any
+	VersionId     any
+	VersionStage  any
 	VersionStages any
 }
 
 var SecretValue = ubx.DataSourceBinding{
 	WireType: "aws_secretsmanager_secret_value",
 	Fields: ubx.FieldMap{
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+		"SecretId":     ubx.FieldSpec{WireName: "secret_id"},
+		"VersionId":    ubx.FieldSpec{WireName: "version_id"},
 		"VersionStage": ubx.FieldSpec{WireName: "version_stage"},
 	},
 }

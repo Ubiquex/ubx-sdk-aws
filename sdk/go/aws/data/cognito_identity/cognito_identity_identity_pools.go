@@ -4,25 +4,25 @@ package cognito_identity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdentityIdentityPools_IdentityPools struct {
-	IdentityPoolId any
+	IdentityPoolId   any
 	IdentityPoolName any
 }
 
 type CognitoIdentityIdentityPoolsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CognitoIdentityIdentityPoolsAttrs struct {
 	IdentityPools any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 var CognitoIdentityIdentityPools = ubx.DataSourceBinding{
 	WireType: "aws_cognito_identity_identity_pools",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

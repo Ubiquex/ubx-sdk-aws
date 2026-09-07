@@ -29,21 +29,21 @@ type ExperimentTrialComponent_Tags struct {
 }
 
 var ExperimentTrialComponent_MetadataPropertiesFields = ubx.FieldMap{
-		"CommitId": ubx.FieldSpec{WireName: "commit_id"},
-		"GeneratedBy": ubx.FieldSpec{WireName: "generated_by"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"CommitId":    ubx.FieldSpec{WireName: "commit_id"},
+	"GeneratedBy": ubx.FieldSpec{WireName: "generated_by"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+	"Repository":  ubx.FieldSpec{WireName: "repository"},
+}
 
 var ExperimentTrialComponent_StatusFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"PrimaryStatus": ubx.FieldSpec{WireName: "primary_status"},
-	}
+	"Message":       ubx.FieldSpec{WireName: "message"},
+	"PrimaryStatus": ubx.FieldSpec{WireName: "primary_status"},
+}
 
 var ExperimentTrialComponent_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ExperimentTrialComponentConfig struct {
 	// The human-readable display name of the trial component, which can differ from the automatically generated name and is used for identification in the SageMaker console and API. (AI-inferred)
@@ -93,22 +93,22 @@ var ExperimentTrialComponent = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_experiment_trial_component",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":     ubx.FieldSpec{WireName: "end_time"},
 		"MetadataProperties": ubx.FieldSpec{
 			WireName: "metadata_properties",
-			Kind: "object",
-			Fields: ExperimentTrialComponent_MetadataPropertiesFields,
+			Kind:     "object",
+			Fields:   ExperimentTrialComponent_MetadataPropertiesFields,
 		},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: ExperimentTrialComponent_StatusFields,
+			Kind:     "object",
+			Fields:   ExperimentTrialComponent_StatusFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ExperimentTrialComponent_TagsFields,
+			Kind:     "list",
+			Fields:   ExperimentTrialComponent_TagsFields,
 		},
 		"TrialComponentName": ubx.FieldSpec{WireName: "trial_component_name"},
 	},

@@ -4,22 +4,22 @@ package medialive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Inputs_Inputs_Destinations_NetworkRoutes struct {
-	Cidr any
+	Cidr    any
 	Gateway any
 }
 
 type Inputs_Inputs_Destinations_Vpc struct {
-	AvailabilityZone any
+	AvailabilityZone   any
 	NetworkInterfaceId any
 }
 
 type Inputs_Inputs_Destinations struct {
-	Ip any
-	Network any
+	Ip            any
+	Network       any
 	NetworkRoutes any
-	Port any
-	Url any
-	Vpc any
+	Port          any
+	Url           any
+	Vpc           any
 }
 
 type Inputs_Inputs_InputDevices struct {
@@ -32,7 +32,7 @@ type Inputs_Inputs_MediaConnectFlows struct {
 
 type Inputs_Inputs_MulticastSettings_Sources struct {
 	SourceIp any
-	Url any
+	Url      any
 }
 
 type Inputs_Inputs_MulticastSettings struct {
@@ -41,24 +41,24 @@ type Inputs_Inputs_MulticastSettings struct {
 
 type Inputs_Inputs_RouterSettings_Destinations struct {
 	AvailabilityZoneName any
-	RouterOutputArn any
+	RouterOutputArn      any
 }
 
 type Inputs_Inputs_RouterSettings struct {
-	Destinations any
+	Destinations   any
 	EncryptionType any
-	SecretArn any
+	SecretArn      any
 }
 
 type Inputs_Inputs_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdps struct {
 	MediaIndex any
-	SdpUrl any
+	SdpUrl     any
 }
 
 type Inputs_Inputs_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings struct {
 	AncillarySdps any
-	AudioSdps any
-	VideoSdp any
+	AudioSdps     any
+	VideoSdp      any
 }
 
 type Inputs_Inputs_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups struct {
@@ -71,57 +71,57 @@ type Inputs_Inputs_Smpte2110ReceiverGroupSettings struct {
 
 type Inputs_Inputs_Sources struct {
 	PasswordParam any
-	Url any
-	Username any
+	Url           any
+	Username      any
 }
 
 type Inputs_Inputs_SrtSettings_SrtCallerSources_Decryption struct {
-	Algorithm any
+	Algorithm           any
 	PassphraseSecretArn any
 }
 
 type Inputs_Inputs_SrtSettings_SrtCallerSources struct {
-	Decryption any
-	MinimumLatency any
+	Decryption         any
+	MinimumLatency     any
 	SrtListenerAddress any
-	SrtListenerPort any
-	StreamId any
+	SrtListenerPort    any
+	StreamId           any
 }
 
 type Inputs_Inputs_SrtSettings_SrtListenerSettings struct {
-	Decryption any
+	Decryption     any
 	MinimumLatency any
-	StreamId any
+	StreamId       any
 }
 
 type Inputs_Inputs_SrtSettings struct {
-	SrtCallerSources any
+	SrtCallerSources    any
 	SrtListenerSettings any
 }
 
 type Inputs_Inputs struct {
-	Arn any
-	AttachedChannels any
-	Destinations any
-	Id any
-	InputClass any
-	InputDevices any
-	InputNetworkLocation any
-	InputPartnerIds any
-	InputSourceType any
-	MediaConnectFlows any
-	MulticastSettings any
-	Name any
-	RoleArn any
-	RouterSettings any
-	SdiSources any
-	SecurityGroups any
+	Arn                            any
+	AttachedChannels               any
+	Destinations                   any
+	Id                             any
+	InputClass                     any
+	InputDevices                   any
+	InputNetworkLocation           any
+	InputPartnerIds                any
+	InputSourceType                any
+	MediaConnectFlows              any
+	MulticastSettings              any
+	Name                           any
+	RoleArn                        any
+	RouterSettings                 any
+	SdiSources                     any
+	SecurityGroups                 any
 	Smpte2110ReceiverGroupSettings any
-	Sources any
-	SrtSettings any
-	State any
-	Tags any
-	Type any
+	Sources                        any
+	SrtSettings                    any
+	State                          any
+	Tags                           any
+	Type                           any
 }
 
 type InputsConfig struct {
@@ -144,6 +144,6 @@ var Inputs = ubx.DataSourceBinding{
 	WireType: "aws_medialive_inputs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

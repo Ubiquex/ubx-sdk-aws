@@ -11,9 +11,9 @@ type UploadBufferConfig struct {
 type UploadBufferAttrs struct {
 	DiskIds any
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
+	GatewayArn                   any
 	UploadBufferAllocatedInBytes any
-	UploadBufferUsedInBytes any
+	UploadBufferUsedInBytes      any
 }
 
 var UploadBuffer = ubx.DataSourceBinding{

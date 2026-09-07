@@ -4,35 +4,35 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentStatuses_AgentStatusSummaryList struct {
-	Arn any
-	Id any
+	Arn                any
+	Id                 any
 	LastModifiedRegion any
-	LastModifiedTime any
-	Name any
-	Type any
+	LastModifiedTime   any
+	Name               any
+	Type               any
 }
 
 type AgentStatusesConfig struct {
 	AgentStatusTypes any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	InstanceId       any
+	MaxResults       any
+	NextToken        any
 }
 
 type AgentStatusesAttrs struct {
 	AgentStatusSummaryList any
-	AgentStatusTypes any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	AgentStatusTypes       any
+	InstanceId             any
+	MaxResults             any
+	NextToken              any
 }
 
 var AgentStatuses = ubx.DataSourceBinding{
 	WireType: "aws_connect_agent_statuses",
 	Fields: ubx.FieldMap{
 		"AgentStatusTypes": ubx.FieldSpec{WireName: "agent_status_types"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"InstanceId":       ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

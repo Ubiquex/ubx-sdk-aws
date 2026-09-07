@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Import_ImportSource_S3 struct {
 	S3BucketAccessRoleArn any
-	S3BucketRegion any
-	S3LocationUri any
+	S3BucketRegion        any
+	S3LocationUri         any
 }
 
 type Import_ImportSource struct {
@@ -15,11 +15,11 @@ type Import_ImportSource struct {
 }
 
 type Import_ImportStatistics struct {
-	EventsCompleted any
-	FailedEntries any
-	FilesCompleted any
+	EventsCompleted   any
+	FailedEntries     any
+	FilesCompleted    any
 	PrefixesCompleted any
-	PrefixesFound any
+	PrefixesFound     any
 }
 
 type ImportConfig struct {
@@ -28,15 +28,15 @@ type ImportConfig struct {
 
 type ImportAttrs struct {
 	CreatedTimestamp any
-	Destinations any
-	EndEventTime any
-	ImportId any
+	Destinations     any
+	EndEventTime     any
+	ImportId         any
 	// <p> The import source. </p>
 	ImportSource any
 	// <p> Provides statistics for the specified <code>ImportID</code>. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
 	ImportStatistics any
-	ImportStatus any
-	StartEventTime any
+	ImportStatus     any
+	StartEventTime   any
 	UpdatedTimestamp any
 }
 

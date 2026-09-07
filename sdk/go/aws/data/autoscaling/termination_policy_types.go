@@ -12,6 +12,5 @@ type TerminationPolicyTypesAttrs struct {
 
 var TerminationPolicyTypes = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_termination_policy_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

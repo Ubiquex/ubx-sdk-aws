@@ -4,39 +4,39 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessWirelessGateways_WirelessGatewayList_LoRaWan_Beaconing struct {
-	DataRate any
+	DataRate    any
 	Frequencies any
 }
 
 type ApiIotwirelessWirelessGateways_WirelessGatewayList_LoRaWan struct {
-	Beaconing any
-	GatewayEui any
+	Beaconing      any
+	GatewayEui     any
 	JoinEuiFilters any
-	MaxEirp any
-	NetIdFilters any
-	RfRegion any
-	SubBands any
+	MaxEirp        any
+	NetIdFilters   any
+	RfRegion       any
+	SubBands       any
 }
 
 type ApiIotwirelessWirelessGateways_WirelessGatewayList struct {
-	Arn any
-	Description any
-	Id any
+	Arn                  any
+	Description          any
+	Id                   any
 	LastUplinkReceivedAt any
-	LoRaWan any
-	Name any
+	LoRaWan              any
+	Name                 any
 }
 
 type ApiIotwirelessWirelessGatewaysConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiIotwirelessWirelessGatewaysAttrs struct {
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	WirelessGatewayList any
 }
 
@@ -44,6 +44,6 @@ var ApiIotwirelessWirelessGateways = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_wireless_gateways",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

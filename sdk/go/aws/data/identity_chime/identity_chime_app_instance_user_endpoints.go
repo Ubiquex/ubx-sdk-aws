@@ -4,37 +4,37 @@ package identity_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityChimeAppInstanceUserEndpoints_AppInstanceUserEndpoints_EndpointState struct {
-	Status any
+	Status       any
 	StatusReason any
 }
 
 type IdentityChimeAppInstanceUserEndpoints_AppInstanceUserEndpoints struct {
-	AllowMessages any
+	AllowMessages      any
 	AppInstanceUserArn any
-	EndpointId any
-	EndpointState any
-	Name any
-	Type any
+	EndpointId         any
+	EndpointState      any
+	Name               any
+	Type               any
 }
 
 type IdentityChimeAppInstanceUserEndpointsConfig struct {
 	AppInstanceUserArn any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 type IdentityChimeAppInstanceUserEndpointsAttrs struct {
-	AppInstanceUserArn any
+	AppInstanceUserArn       any
 	AppInstanceUserEndpoints any
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 }
 
 var IdentityChimeAppInstanceUserEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_identity_chime_app_instance_user_endpoints",
 	Fields: ubx.FieldMap{
 		"AppInstanceUserArn": ubx.FieldSpec{WireName: "app_instance_user_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

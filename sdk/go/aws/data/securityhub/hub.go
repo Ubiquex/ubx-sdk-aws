@@ -8,10 +8,10 @@ type HubConfig struct {
 }
 
 type HubAttrs struct {
-	AutoEnableControls any
+	AutoEnableControls      any
 	ControlFindingGenerator any
-	HubArn any
-	SubscribedAt any
+	HubArn                  any
+	SubscribedAt            any
 }
 
 var Hub = ubx.DataSourceBinding{

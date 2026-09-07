@@ -4,14 +4,14 @@ package route53globalresolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessToken_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AccessToken_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessTokenConfig struct {
 	// An optional caller-supplied token that ensures idempotent creation of the Route 53 Global Resolver access token by uniquely identifying the Create request, allowing safe retries without duplicating the token. (AI-inferred)
@@ -57,13 +57,13 @@ var AccessToken = ubx.ResourceBinding{
 	WireType: "aws_route53_global_resolver_access_token",
 	Fields: ubx.FieldMap{
 		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
-		"DnsViewId": ubx.FieldSpec{WireName: "dns_view_id"},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DnsViewId":   ubx.FieldSpec{WireName: "dns_view_id"},
+		"ExpiresAt":   ubx.FieldSpec{WireName: "expires_at"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessToken_TagsFields,
+			Kind:     "list",
+			Fields:   AccessToken_TagsFields,
 		},
 	},
 }

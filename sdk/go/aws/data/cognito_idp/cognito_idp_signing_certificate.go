@@ -9,7 +9,7 @@ type CognitoIdpSigningCertificateConfig struct {
 
 type CognitoIdpSigningCertificateAttrs struct {
 	Certificate any
-	UserPoolId any
+	UserPoolId  any
 }
 
 var CognitoIdpSigningCertificate = ubx.DataSourceBinding{

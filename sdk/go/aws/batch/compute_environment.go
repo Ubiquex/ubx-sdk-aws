@@ -14,13 +14,13 @@ type ComputeEnvironment_ComputeResources_Ec2Configuration struct {
 }
 
 type ComputeEnvironment_ComputeResources_LaunchTemplate_Overrides struct {
-	LaunchTemplateId any
+	LaunchTemplateId   any
 	LaunchTemplateName any
 	// A list of EC2 instance types that override the instance types specified in the launch template used for the AWS Batch compute environment's compute resources. (AI-inferred)
 	TargetInstanceTypes any
 	// Determines whether the override user data is provided as plain text (TEXT) or as a base64-encoded string (BASE64) when overriding the EC2 launch template's user data for AWS Batch compute resources. (AI-inferred)
 	UserdataType any
-	Version any
+	Version      any
 }
 
 type ComputeEnvironment_ComputeResources_LaunchTemplate struct {
@@ -29,7 +29,7 @@ type ComputeEnvironment_ComputeResources_LaunchTemplate struct {
 	// The name of the EC2 launch template that AWS Batch uses to launch instances for the compute environment's compute resources. (AI-inferred)
 	LaunchTemplateName any
 	// The overrides list inside the launch template configuration lets you assign different launch templates to specific EC2 instance types used in the compute environment, so those instance types use their own launch template instead of the base one. (AI-inferred)
-	Overrides any
+	Overrides    any
 	UserdataType any
 	// The version of the AWS EC2 launch template to use for the compute resources of the Batch compute environment, where you can specify a specific version number or use the special values $Latest or $Default to automatically use the latest or default edition of the launch template. (AI-inferred)
 	Version any
@@ -79,10 +79,10 @@ type ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunch
 	// Specifies whether to enable propagation of instance tags to the instance metadata service (IMDS) for instances launched via the launch template in this AWS Batch compute environment. (AI-inferred)
 	InstanceMetadataTagsPropagation any
 	// Defines the instance requirements (such as vCPU count, memory, and CPU architecture) used to select EC2 instance types for the managed instances in the AWS Batch compute environment. (AI-inferred)
-	InstanceRequirements any
+	InstanceRequirements      any
 	LocalStorageConfiguration any
 	// Determines whether detailed CloudWatch monitoring is enabled for the EC2 instances launched from this launch template, controlling the granularity of metrics collected (1-minute vs 5-minute intervals). (AI-inferred)
-	Monitoring any
+	Monitoring           any
 	NetworkConfiguration any
 	StorageConfiguration any
 }
@@ -90,7 +90,7 @@ type ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunch
 type ComputeEnvironment_ComputeResources_ManagedInstancesProvider struct {
 	InfrastructureOptimization any
 	// The ARN of the IAM role that AWS Batch assumes to launch and manage the EC2 instances in a managed compute environment that uses the managed instances provider. (AI-inferred)
-	InfrastructureRoleArn any
+	InfrastructureRoleArn  any
 	InstanceLaunchTemplate any
 	// When set to true, the tags of the AWS Batch compute environment are propagated to the EC2 instances launched for the managed instances provider. (AI-inferred)
 	PropagateTags any
@@ -129,7 +129,7 @@ type ComputeEnvironment_ComputeResources struct {
 	MinvCpus any
 	// The name of an EC2 placement group to associate with the compute resources, which controls the physical placement strategy of the launched instances and may affect job performance. (AI-inferred)
 	PlacementGroup any
-	ScalingPolicy any
+	ScalingPolicy  any
 	// This is a list of VPC security group IDs that AWS Batch assigns to the compute resources' EC2 instances (or Fargate tasks) in the managed compute environment, defining the firewall rules for network access. (AI-inferred)
 	SecurityGroupIds any
 	// The Amazon Resource Name (ARN) of the IAM role that AWS Batch assumes to launch and manage Spot Fleet instances in the compute environment. (AI-inferred)
@@ -163,18 +163,18 @@ type ComputeEnvironment_UpdatePolicy struct {
 }
 
 var ComputeEnvironment_EcsSettingsFields = ubx.FieldMap{
-		"ContainerInsights": ubx.FieldSpec{WireName: "container_insights"},
-	}
+	"ContainerInsights": ubx.FieldSpec{WireName: "container_insights"},
+}
 
 var ComputeEnvironment_EksConfigurationFields = ubx.FieldMap{
-		"EksClusterArn": ubx.FieldSpec{WireName: "eks_cluster_arn"},
-		"KubernetesNamespace": ubx.FieldSpec{WireName: "kubernetes_namespace"},
-	}
+	"EksClusterArn":       ubx.FieldSpec{WireName: "eks_cluster_arn"},
+	"KubernetesNamespace": ubx.FieldSpec{WireName: "kubernetes_namespace"},
+}
 
 var ComputeEnvironment_UpdatePolicyFields = ubx.FieldMap{
-		"JobExecutionTimeoutMinutes": ubx.FieldSpec{WireName: "job_execution_timeout_minutes"},
-		"TerminateJobsOnUpdate": ubx.FieldSpec{WireName: "terminate_jobs_on_update"},
-	}
+	"JobExecutionTimeoutMinutes": ubx.FieldSpec{WireName: "job_execution_timeout_minutes"},
+	"TerminateJobsOnUpdate":      ubx.FieldSpec{WireName: "terminate_jobs_on_update"},
+}
 
 type ComputeEnvironmentConfig struct {
 	// The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
@@ -234,27 +234,27 @@ var ComputeEnvironment = ubx.ResourceBinding{
 	WireType: "aws_batch_compute_environment",
 	Fields: ubx.FieldMap{
 		"ComputeEnvironmentName": ubx.FieldSpec{WireName: "compute_environment_name"},
-		"Context": ubx.FieldSpec{WireName: "context"},
+		"Context":                ubx.FieldSpec{WireName: "context"},
 		"EcsSettings": ubx.FieldSpec{
 			WireName: "ecs_settings",
-			Kind: "object",
-			Fields: ComputeEnvironment_EcsSettingsFields,
+			Kind:     "object",
+			Fields:   ComputeEnvironment_EcsSettingsFields,
 		},
 		"EksConfiguration": ubx.FieldSpec{
 			WireName: "eks_configuration",
-			Kind: "object",
-			Fields: ComputeEnvironment_EksConfigurationFields,
+			Kind:     "object",
+			Fields:   ComputeEnvironment_EksConfigurationFields,
 		},
 		"ReplaceComputeEnvironment": ubx.FieldSpec{WireName: "replace_compute_environment"},
-		"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UnmanagedvCpus": ubx.FieldSpec{WireName: "unmanagedv_cpus"},
+		"ServiceRole":               ubx.FieldSpec{WireName: "service_role"},
+		"State":                     ubx.FieldSpec{WireName: "state"},
+		"Tags":                      ubx.FieldSpec{WireName: "tags"},
+		"Type":                      ubx.FieldSpec{WireName: "type"},
+		"UnmanagedvCpus":            ubx.FieldSpec{WireName: "unmanagedv_cpus"},
 		"UpdatePolicy": ubx.FieldSpec{
 			WireName: "update_policy",
-			Kind: "object",
-			Fields: ComputeEnvironment_UpdatePolicyFields,
+			Kind:     "object",
+			Fields:   ComputeEnvironment_UpdatePolicyFields,
 		},
 	},
 }

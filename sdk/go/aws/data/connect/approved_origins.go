@@ -6,14 +6,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ApprovedOriginsConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApprovedOriginsAttrs struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
-	Origins any
+	NextToken  any
+	Origins    any
 }
 
 var ApprovedOrigins = ubx.DataSourceBinding{
@@ -21,6 +21,6 @@ var ApprovedOrigins = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

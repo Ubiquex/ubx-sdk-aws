@@ -8,48 +8,48 @@ type ObjectParents_ObjectReference struct {
 }
 
 type ObjectParents_ParentLinks struct {
-	LinkName any
+	LinkName         any
 	ObjectIdentifier any
 }
 
 var ObjectParents_ObjectReferenceFields = ubx.FieldMap{
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 type ObjectParentsConfig struct {
-	ConsistencyLevel any
-	DirectoryArn any
+	ConsistencyLevel            any
+	DirectoryArn                any
 	IncludeAllLinksToEachParent any
-	MaxResults any
-	NextToken any
+	MaxResults                  any
+	NextToken                   any
 	// <p>The reference that identifies an object.</p>
 	ObjectReference any
 }
 
 type ObjectParentsAttrs struct {
-	ConsistencyLevel any
-	DirectoryArn any
+	ConsistencyLevel            any
+	DirectoryArn                any
 	IncludeAllLinksToEachParent any
-	MaxResults any
-	NextToken any
+	MaxResults                  any
+	NextToken                   any
 	// <p>The reference that identifies an object.</p>
 	ObjectReference any
-	ParentLinks any
-	Parents any
+	ParentLinks     any
+	Parents         any
 }
 
 var ObjectParents = ubx.DataSourceBinding{
 	WireType: "aws_clouddirectory_object_parents",
 	Fields: ubx.FieldMap{
-		"ConsistencyLevel": ubx.FieldSpec{WireName: "consistency_level"},
-		"DirectoryArn": ubx.FieldSpec{WireName: "directory_arn"},
+		"ConsistencyLevel":            ubx.FieldSpec{WireName: "consistency_level"},
+		"DirectoryArn":                ubx.FieldSpec{WireName: "directory_arn"},
 		"IncludeAllLinksToEachParent": ubx.FieldSpec{WireName: "include_all_links_to_each_parent"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 		"ObjectReference": ubx.FieldSpec{
 			WireName: "object_reference",
-			Kind: "object",
-			Fields: ObjectParents_ObjectReferenceFields,
+			Kind:     "object",
+			Fields:   ObjectParents_ObjectReferenceFields,
 		},
 	},
 }

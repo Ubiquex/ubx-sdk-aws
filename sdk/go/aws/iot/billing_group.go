@@ -15,13 +15,13 @@ type BillingGroup_Tags struct {
 }
 
 var BillingGroup_BillingGroupPropertiesFields = ubx.FieldMap{
-		"BillingGroupDescription": ubx.FieldSpec{WireName: "billing_group_description"},
-	}
+	"BillingGroupDescription": ubx.FieldSpec{WireName: "billing_group_description"},
+}
 
 var BillingGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type BillingGroupConfig struct {
 	// The name that uniquely identifies the IoT billing group, used to group devices for consolidated billing and usage tracking. (AI-inferred)
@@ -51,13 +51,13 @@ var BillingGroup = ubx.ResourceBinding{
 		"BillingGroupName": ubx.FieldSpec{WireName: "billing_group_name"},
 		"BillingGroupProperties": ubx.FieldSpec{
 			WireName: "billing_group_properties",
-			Kind: "object",
-			Fields: BillingGroup_BillingGroupPropertiesFields,
+			Kind:     "object",
+			Fields:   BillingGroup_BillingGroupPropertiesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: BillingGroup_TagsFields,
+			Kind:     "list",
+			Fields:   BillingGroup_TagsFields,
 		},
 	},
 }

@@ -4,29 +4,29 @@ package cloudtrail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicKeys_PublicKeyList struct {
-	Fingerprint any
-	ValidityEndTime any
+	Fingerprint       any
+	ValidityEndTime   any
 	ValidityStartTime any
-	Value any
+	Value             any
 }
 
 type PublicKeysConfig struct {
-	EndTime any
+	EndTime   any
 	NextToken any
 	StartTime any
 }
 
 type PublicKeysAttrs struct {
-	EndTime any
-	NextToken any
+	EndTime       any
+	NextToken     any
 	PublicKeyList any
-	StartTime any
+	StartTime     any
 }
 
 var PublicKeys = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_public_keys",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":   ubx.FieldSpec{WireName: "end_time"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 	},

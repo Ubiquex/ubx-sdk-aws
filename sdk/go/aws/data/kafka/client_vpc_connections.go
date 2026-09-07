@@ -4,24 +4,24 @@ package kafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientVpcConnections_ClientVpcConnections struct {
-	Authentication any
-	CreationTime any
-	Owner any
-	State any
+	Authentication   any
+	CreationTime     any
+	Owner            any
+	State            any
 	VpcConnectionArn any
 }
 
 type ClientVpcConnectionsConfig struct {
 	ClusterArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ClientVpcConnectionsAttrs struct {
 	ClientVpcConnections any
-	ClusterArn any
-	MaxResults any
-	NextToken any
+	ClusterArn           any
+	MaxResults           any
+	NextToken            any
 }
 
 var ClientVpcConnections = ubx.DataSourceBinding{
@@ -29,6 +29,6 @@ var ClientVpcConnections = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -11,9 +11,9 @@ type MlflowTrackingServer_Tags struct {
 }
 
 var MlflowTrackingServer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MlflowTrackingServerConfig struct {
 	// The Amazon S3 URI for MLFlow Tracking Server artifacts.
@@ -58,17 +58,17 @@ type MlflowTrackingServerAttrs struct {
 var MlflowTrackingServer = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_mlflow_tracking_server",
 	Fields: ubx.FieldMap{
-		"ArtifactStoreUri": ubx.FieldSpec{WireName: "artifact_store_uri"},
+		"ArtifactStoreUri":           ubx.FieldSpec{WireName: "artifact_store_uri"},
 		"AutomaticModelRegistration": ubx.FieldSpec{WireName: "automatic_model_registration"},
-		"MlflowVersion": ubx.FieldSpec{WireName: "mlflow_version"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"MlflowVersion":              ubx.FieldSpec{WireName: "mlflow_version"},
+		"RoleArn":                    ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MlflowTrackingServer_TagsFields,
+			Kind:     "list",
+			Fields:   MlflowTrackingServer_TagsFields,
 		},
-		"TrackingServerName": ubx.FieldSpec{WireName: "tracking_server_name"},
-		"TrackingServerSize": ubx.FieldSpec{WireName: "tracking_server_size"},
+		"TrackingServerName":           ubx.FieldSpec{WireName: "tracking_server_name"},
+		"TrackingServerSize":           ubx.FieldSpec{WireName: "tracking_server_size"},
 		"WeeklyMaintenanceWindowStart": ubx.FieldSpec{WireName: "weekly_maintenance_window_start"},
 	},
 }

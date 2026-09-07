@@ -7,14 +7,13 @@ type Ec2DeepInspectionConfigurationConfig struct {
 }
 
 type Ec2DeepInspectionConfigurationAttrs struct {
-	ErrorMessage any
+	ErrorMessage    any
 	OrgPackagePaths any
-	PackagePaths any
-	Status any
+	PackagePaths    any
+	Status          any
 }
 
 var Ec2DeepInspectionConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_ec2_deep_inspection_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,24 +4,24 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContinuousDeploymentPolicyConfig_ContinuousDeploymentPolicyConfig_StagingDistributionDnsNames struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type ContinuousDeploymentPolicyConfig_ContinuousDeploymentPolicyConfig_TrafficConfig_SingleHeaderConfig struct {
 	Header any
-	Value any
+	Value  any
 }
 
 type ContinuousDeploymentPolicyConfig_ContinuousDeploymentPolicyConfig_TrafficConfig_SingleWeightConfig_SessionStickinessConfig struct {
-	IdleTtl any
+	IdleTtl    any
 	MaximumTtl any
 }
 
 type ContinuousDeploymentPolicyConfig_ContinuousDeploymentPolicyConfig_TrafficConfig_SingleWeightConfig struct {
 	// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
 	SessionStickinessConfig any
-	Weight any
+	Weight                  any
 }
 
 type ContinuousDeploymentPolicyConfig_ContinuousDeploymentPolicyConfig_TrafficConfig struct {
@@ -29,7 +29,7 @@ type ContinuousDeploymentPolicyConfig_ContinuousDeploymentPolicyConfig_TrafficCo
 	SingleHeaderConfig any
 	// <p>Contains the percentage of traffic to send to a staging distribution.</p>
 	SingleWeightConfig any
-	Type any
+	Type               any
 }
 
 type ContinuousDeploymentPolicyConfig_ContinuousDeploymentPolicyConfig struct {
@@ -47,8 +47,8 @@ type ContinuousDeploymentPolicyConfigConfig struct {
 type ContinuousDeploymentPolicyConfigAttrs struct {
 	// <p>Contains the configuration for a continuous deployment policy.</p>
 	ContinuousDeploymentPolicyConfig any
-	Etag any
-	Id any
+	Etag                             any
+	Id                               any
 }
 
 var ContinuousDeploymentPolicyConfig = ubx.DataSourceBinding{

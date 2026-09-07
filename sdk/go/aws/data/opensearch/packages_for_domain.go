@@ -4,7 +4,7 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackagesForDomain_DomainPackageDetailsList_AssociationConfiguration_KeyStoreAccessOption struct {
-	KeyAccessRoleArn any
+	KeyAccessRoleArn      any
 	KeyStoreAccessEnabled any
 }
 
@@ -14,21 +14,21 @@ type PackagesForDomain_DomainPackageDetailsList_AssociationConfiguration struct 
 
 type PackagesForDomain_DomainPackageDetailsList_ErrorDetails struct {
 	ErrorMessage any
-	ErrorType any
+	ErrorType    any
 }
 
 type PackagesForDomain_DomainPackageDetailsList struct {
-	AssociationConfiguration any
-	DomainName any
-	DomainPackageStatus any
-	ErrorDetails any
-	LastUpdated any
-	PackageId any
-	PackageName any
-	PackageType any
-	PackageVersion any
+	AssociationConfiguration  any
+	DomainName                any
+	DomainPackageStatus       any
+	ErrorDetails              any
+	LastUpdated               any
+	PackageId                 any
+	PackageName               any
+	PackageType               any
+	PackageVersion            any
 	PrerequisitePackageIdlist any
-	ReferencePath any
+	ReferencePath             any
 }
 
 type PackagesForDomainConfig struct {
@@ -42,7 +42,7 @@ type PackagesForDomainConfig struct {
 
 type PackagesForDomainAttrs struct {
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-	DomainName any
+	DomainName               any
 	DomainPackageDetailsList any
 	// <p>An optional parameter that specifies the maximum number of results to return for a given request.</p>
 	MaxResults any
@@ -55,6 +55,6 @@ var PackagesForDomain = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

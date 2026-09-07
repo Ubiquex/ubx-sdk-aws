@@ -11,9 +11,9 @@ type FlowVpcInterface_Tags struct {
 }
 
 var FlowVpcInterface_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FlowVpcInterfaceConfig struct {
 	// The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
@@ -50,15 +50,15 @@ type FlowVpcInterfaceAttrs struct {
 var FlowVpcInterface = ubx.ResourceBinding{
 	WireType: "aws_media_connect_flow_vpc_interface",
 	Fields: ubx.FieldMap{
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"FlowArn":          ubx.FieldSpec{WireName: "flow_arn"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"RoleArn":          ubx.FieldSpec{WireName: "role_arn"},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
+		"SubnetId":         ubx.FieldSpec{WireName: "subnet_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FlowVpcInterface_TagsFields,
+			Kind:     "list",
+			Fields:   FlowVpcInterface_TagsFields,
 		},
 	},
 }

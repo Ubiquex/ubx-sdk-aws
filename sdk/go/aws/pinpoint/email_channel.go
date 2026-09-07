@@ -42,12 +42,12 @@ type EmailChannelAttrs struct {
 var EmailChannel = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_email_channel",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"ConfigurationSet": ubx.FieldSpec{WireName: "configuration_set"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"FromAddress": ubx.FieldSpec{WireName: "from_address"},
-		"Identity": ubx.FieldSpec{WireName: "identity"},
+		"ApplicationId":               ubx.FieldSpec{WireName: "application_id"},
+		"ConfigurationSet":            ubx.FieldSpec{WireName: "configuration_set"},
+		"Enabled":                     ubx.FieldSpec{WireName: "enabled"},
+		"FromAddress":                 ubx.FieldSpec{WireName: "from_address"},
+		"Identity":                    ubx.FieldSpec{WireName: "identity"},
 		"OrchestrationSendingRoleArn": ubx.FieldSpec{WireName: "orchestration_sending_role_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":                     ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

@@ -8,11 +8,11 @@ type AdminWickrOpentdfConfigConfig struct {
 }
 
 type AdminWickrOpentdfConfigAttrs struct {
-	ClientId any
+	ClientId     any
 	ClientSecret any
-	Domain any
-	NetworkId any
-	Provider any
+	Domain       any
+	NetworkId    any
+	Provider     any
 }
 
 var AdminWickrOpentdfConfig = ubx.DataSourceBinding{

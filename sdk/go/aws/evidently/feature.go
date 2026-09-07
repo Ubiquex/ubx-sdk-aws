@@ -31,22 +31,22 @@ type Feature_Variations struct {
 }
 
 var Feature_EntityOverridesFields = ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"Variation": ubx.FieldSpec{WireName: "variation"},
-	}
+	"EntityId":  ubx.FieldSpec{WireName: "entity_id"},
+	"Variation": ubx.FieldSpec{WireName: "variation"},
+}
 
 var Feature_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Feature_VariationsFields = ubx.FieldMap{
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"LongValue": ubx.FieldSpec{WireName: "long_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"VariationName": ubx.FieldSpec{WireName: "variation_name"},
-	}
+	"BooleanValue":  ubx.FieldSpec{WireName: "boolean_value"},
+	"DoubleValue":   ubx.FieldSpec{WireName: "double_value"},
+	"LongValue":     ubx.FieldSpec{WireName: "long_value"},
+	"StringValue":   ubx.FieldSpec{WireName: "string_value"},
+	"VariationName": ubx.FieldSpec{WireName: "variation_name"},
+}
 
 type FeatureConfig struct {
 	// Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred)
@@ -92,24 +92,24 @@ var Feature = ubx.ResourceBinding{
 	WireType: "aws_evidently_feature",
 	Fields: ubx.FieldMap{
 		"DefaultVariation": ubx.FieldSpec{WireName: "default_variation"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"EntityOverrides": ubx.FieldSpec{
 			WireName: "entity_overrides",
-			Kind: "list",
-			Fields: Feature_EntityOverridesFields,
+			Kind:     "list",
+			Fields:   Feature_EntityOverridesFields,
 		},
 		"EvaluationStrategy": ubx.FieldSpec{WireName: "evaluation_strategy"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Project":            ubx.FieldSpec{WireName: "project"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Feature_TagsFields,
+			Kind:     "list",
+			Fields:   Feature_TagsFields,
 		},
 		"Variations": ubx.FieldSpec{
 			WireName: "variations",
-			Kind: "list",
-			Fields: Feature_VariationsFields,
+			Kind:     "list",
+			Fields:   Feature_VariationsFields,
 		},
 	},
 }

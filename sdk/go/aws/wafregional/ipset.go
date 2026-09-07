@@ -11,9 +11,9 @@ type Ipset_IpsetDescriptors struct {
 }
 
 var Ipset_IpsetDescriptorsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpsetConfig struct {
 	// Lists the IP addresses and CIDR ranges in the IPSet, where each descriptor specifies a Type (IPV4 or IPV6) and a Value in CIDR notation. (AI-inferred)
@@ -36,8 +36,8 @@ var Ipset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"IpsetDescriptors": ubx.FieldSpec{
 			WireName: "ipset_descriptors",
-			Kind: "list",
-			Fields: Ipset_IpsetDescriptorsFields,
+			Kind:     "list",
+			Fields:   Ipset_IpsetDescriptorsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

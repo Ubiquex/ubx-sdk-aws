@@ -32,27 +32,27 @@ type OptionGroup_Tags struct {
 }
 
 var OptionGroup_OptionConfigurations_OptionSettingsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var OptionGroup_OptionConfigurationsFields = ubx.FieldMap{
-		"DbsecurityGroupMemberships": ubx.FieldSpec{WireName: "dbsecurity_group_memberships"},
-		"OptionName": ubx.FieldSpec{WireName: "option_name"},
-		"OptionSettings": ubx.FieldSpec{
-			WireName: "option_settings",
-			Kind: "list",
-			Fields: OptionGroup_OptionConfigurations_OptionSettingsFields,
-		},
-		"OptionVersion": ubx.FieldSpec{WireName: "option_version"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"VpcSecurityGroupMemberships": ubx.FieldSpec{WireName: "vpc_security_group_memberships"},
-	}
+	"DbsecurityGroupMemberships": ubx.FieldSpec{WireName: "dbsecurity_group_memberships"},
+	"OptionName":                 ubx.FieldSpec{WireName: "option_name"},
+	"OptionSettings": ubx.FieldSpec{
+		WireName: "option_settings",
+		Kind:     "list",
+		Fields:   OptionGroup_OptionConfigurations_OptionSettingsFields,
+	},
+	"OptionVersion":               ubx.FieldSpec{WireName: "option_version"},
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"VpcSecurityGroupMemberships": ubx.FieldSpec{WireName: "vpc_security_group_memberships"},
+}
 
 var OptionGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type OptionGroupConfig struct {
 	// Specifies the name of the engine that this option group should be associated with. Valid Values: + ``mariadb`` + ``mysql`` + ``oracle-ee`` + ``oracle-ee-cdb`` + ``oracle-se2`` + ``oracle-se2-cdb`` + ``postgres`` + ``sqlserver-ee`` + ``sqlserver-se`` + ``sqlserver-ex`` + ``sqlserver-web``
@@ -87,19 +87,19 @@ type OptionGroupAttrs struct {
 var OptionGroup = ubx.ResourceBinding{
 	WireType: "aws_rds_option_group",
 	Fields: ubx.FieldMap{
-		"EngineName": ubx.FieldSpec{WireName: "engine_name"},
+		"EngineName":         ubx.FieldSpec{WireName: "engine_name"},
 		"MajorEngineVersion": ubx.FieldSpec{WireName: "major_engine_version"},
 		"OptionConfigurations": ubx.FieldSpec{
 			WireName: "option_configurations",
-			Kind: "list",
-			Fields: OptionGroup_OptionConfigurationsFields,
+			Kind:     "list",
+			Fields:   OptionGroup_OptionConfigurationsFields,
 		},
 		"OptionGroupDescription": ubx.FieldSpec{WireName: "option_group_description"},
-		"OptionGroupName": ubx.FieldSpec{WireName: "option_group_name"},
+		"OptionGroupName":        ubx.FieldSpec{WireName: "option_group_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: OptionGroup_TagsFields,
+			Kind:     "list",
+			Fields:   OptionGroup_TagsFields,
 		},
 	},
 }

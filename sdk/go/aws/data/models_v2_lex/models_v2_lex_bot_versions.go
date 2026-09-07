@@ -4,36 +4,36 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexBotVersions_BotVersionSummaries struct {
-	BotName any
-	BotStatus any
-	BotVersion any
+	BotName          any
+	BotStatus        any
+	BotVersion       any
 	CreationDateTime any
-	Description any
+	Description      any
 }
 
 type ModelsV2LexBotVersions_SortBy struct {
 	Attribute any
-	Order any
+	Order     any
 }
 
 var ModelsV2LexBotVersions_SortByFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type ModelsV2LexBotVersionsConfig struct {
-	BotId any
+	BotId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Specifies attributes for sorting a list of bot versions.</p>
 	SortBy any
 }
 
 type ModelsV2LexBotVersionsAttrs struct {
-	BotId any
+	BotId               any
 	BotVersionSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	// <p>Specifies attributes for sorting a list of bot versions.</p>
 	SortBy any
 }
@@ -41,13 +41,13 @@ type ModelsV2LexBotVersionsAttrs struct {
 var ModelsV2LexBotVersions = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_bot_versions",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":      ubx.FieldSpec{WireName: "bot_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SortBy": ubx.FieldSpec{
 			WireName: "sort_by",
-			Kind: "object",
-			Fields: ModelsV2LexBotVersions_SortByFields,
+			Kind:     "object",
+			Fields:   ModelsV2LexBotVersions_SortByFields,
 		},
 	},
 }

@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalByteMatchSets_ByteMatchSets struct {
 	ByteMatchSetId any
-	Name any
+	Name           any
 }
 
 type WafRegionalByteMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type WafRegionalByteMatchSetsAttrs struct {
 	ByteMatchSets any
-	Limit any
-	NextMarker any
+	Limit         any
+	NextMarker    any
 }
 
 var WafRegionalByteMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_byte_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

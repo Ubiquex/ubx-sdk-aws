@@ -4,47 +4,47 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaterializedViewRefreshTaskRuns_MaterializedViewRefreshTaskRuns struct {
-	CatalogId any
-	CreationTime any
-	CustomerId any
-	DatabaseName any
-	Dpuseconds any
-	EndTime any
-	ErrorMessage any
-	LastUpdated any
+	CatalogId                        any
+	CreationTime                     any
+	CustomerId                       any
+	DatabaseName                     any
+	Dpuseconds                       any
+	EndTime                          any
+	ErrorMessage                     any
+	LastUpdated                      any
 	MaterializedViewRefreshTaskRunId any
-	ProcessedBytes any
-	RefreshType any
-	Role any
-	StartTime any
-	Status any
-	TableName any
+	ProcessedBytes                   any
+	RefreshType                      any
+	Role                             any
+	StartTime                        any
+	Status                           any
+	TableName                        any
 }
 
 type MaterializedViewRefreshTaskRunsConfig struct {
-	CatalogId any
+	CatalogId    any
 	DatabaseName any
-	MaxResults any
-	NextToken any
-	TableName any
+	MaxResults   any
+	NextToken    any
+	TableName    any
 }
 
 type MaterializedViewRefreshTaskRunsAttrs struct {
-	CatalogId any
-	DatabaseName any
+	CatalogId                       any
+	DatabaseName                    any
 	MaterializedViewRefreshTaskRuns any
-	MaxResults any
-	NextToken any
-	TableName any
+	MaxResults                      any
+	NextToken                       any
+	TableName                       any
 }
 
 var MaterializedViewRefreshTaskRuns = ubx.DataSourceBinding{
 	WireType: "aws_glue_materialized_view_refresh_task_runs",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+		"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"TableName":    ubx.FieldSpec{WireName: "table_name"},
 	},
 }

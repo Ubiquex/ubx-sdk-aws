@@ -9,7 +9,7 @@ type LicenseManagerLinuxSubscriptionsTagsForResourceConfig struct {
 
 type LicenseManagerLinuxSubscriptionsTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var LicenseManagerLinuxSubscriptionsTagsForResource = ubx.DataSourceBinding{

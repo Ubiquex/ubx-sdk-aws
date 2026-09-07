@@ -4,17 +4,17 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SiteAddress_Address struct {
-	AddressLine1 any
-	AddressLine2 any
-	AddressLine3 any
-	City any
-	ContactName any
+	AddressLine1       any
+	AddressLine2       any
+	AddressLine3       any
+	City               any
+	ContactName        any
 	ContactPhoneNumber any
-	CountryCode any
-	DistrictOrCounty any
-	Municipality any
-	PostalCode any
-	StateOrRegion any
+	CountryCode        any
+	DistrictOrCounty   any
+	Municipality       any
+	PostalCode         any
+	StateOrRegion      any
 }
 
 type SiteAddressConfig struct {
@@ -25,7 +25,7 @@ type SiteAddressConfig struct {
 
 type SiteAddressAttrs struct {
 	// <p> Information about an address. </p>
-	Address any
+	Address     any
 	AddressType any
 	// <p>The ID of the site.</p>
 	SiteId any
@@ -35,6 +35,6 @@ var SiteAddress = ubx.DataSourceBinding{
 	WireType: "aws_outposts_site_address",
 	Fields: ubx.FieldMap{
 		"AddressType": ubx.FieldSpec{WireName: "address_type"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
+		"SiteId":      ubx.FieldSpec{WireName: "site_id"},
 	},
 }

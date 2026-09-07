@@ -8,20 +8,20 @@ type StorageConfigurations_StorageConfigurations_S3 struct {
 }
 
 type StorageConfigurations_StorageConfigurations struct {
-	Arn any
+	Arn  any
 	Name any
-	S3 any
+	S3   any
 	Tags any
 }
 
 type StorageConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type StorageConfigurationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 	StorageConfigurations any
 }
 
@@ -29,6 +29,6 @@ var StorageConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_ivsrealtime_storage_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,56 +4,56 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstancePatchStatesForPatchGroup_Filters struct {
-	Key any
-	Type any
+	Key    any
+	Type   any
 	Values any
 }
 
 type InstancePatchStatesForPatchGroup_InstancePatchStates struct {
-	AvailableSecurityUpdateCount any
-	BaselineId any
-	CriticalNonCompliantCount any
-	FailedCount any
-	InstallOverrideList any
-	InstalledCount any
-	InstalledOtherCount any
-	InstalledPendingRebootCount any
-	InstalledRejectedCount any
-	InstanceId any
+	AvailableSecurityUpdateCount     any
+	BaselineId                       any
+	CriticalNonCompliantCount        any
+	FailedCount                      any
+	InstallOverrideList              any
+	InstalledCount                   any
+	InstalledOtherCount              any
+	InstalledPendingRebootCount      any
+	InstalledRejectedCount           any
+	InstanceId                       any
 	LastNoRebootInstallOperationTime any
-	MissingCount any
-	NotApplicableCount any
-	Operation any
-	OperationEndTime any
-	OperationStartTime any
-	OtherNonCompliantCount any
-	OwnerInformation any
-	PatchGroup any
-	RebootOption any
-	SecurityNonCompliantCount any
-	SnapshotId any
-	UnreportedNotApplicableCount any
+	MissingCount                     any
+	NotApplicableCount               any
+	Operation                        any
+	OperationEndTime                 any
+	OperationStartTime               any
+	OtherNonCompliantCount           any
+	OwnerInformation                 any
+	PatchGroup                       any
+	RebootOption                     any
+	SecurityNonCompliantCount        any
+	SnapshotId                       any
+	UnreportedNotApplicableCount     any
 }
 
 var InstancePatchStatesForPatchGroup_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstancePatchStatesForPatchGroupConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	PatchGroup any
 }
 
 type InstancePatchStatesForPatchGroupAttrs struct {
-	Filters any
+	Filters             any
 	InstancePatchStates any
-	MaxResults any
-	NextToken any
-	PatchGroup any
+	MaxResults          any
+	NextToken           any
+	PatchGroup          any
 }
 
 var InstancePatchStatesForPatchGroup = ubx.DataSourceBinding{
@@ -61,11 +61,11 @@ var InstancePatchStatesForPatchGroup = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstancePatchStatesForPatchGroup_FiltersFields,
+			Kind:     "list",
+			Fields:   InstancePatchStatesForPatchGroup_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"PatchGroup": ubx.FieldSpec{WireName: "patch_group"},
 	},
 }

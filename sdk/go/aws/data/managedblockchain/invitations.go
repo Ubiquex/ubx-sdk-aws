@@ -4,40 +4,40 @@ package managedblockchain
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Invitations_Invitations_NetworkSummary struct {
-	Arn any
-	CreationDate any
-	Description any
-	Framework any
+	Arn              any
+	CreationDate     any
+	Description      any
+	Framework        any
 	FrameworkVersion any
-	Id any
-	Name any
-	Status any
+	Id               any
+	Name             any
+	Status           any
 }
 
 type Invitations_Invitations struct {
-	Arn any
-	CreationDate any
+	Arn            any
+	CreationDate   any
 	ExpirationDate any
-	InvitationId any
+	InvitationId   any
 	NetworkSummary any
-	Status any
+	Status         any
 }
 
 type InvitationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InvitationsAttrs struct {
 	Invitations any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var Invitations = ubx.DataSourceBinding{
 	WireType: "aws_managedblockchain_invitations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

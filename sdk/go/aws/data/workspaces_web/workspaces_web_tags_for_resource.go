@@ -4,7 +4,7 @@ package workspaces_web
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkspacesWebTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type WorkspacesWebTagsForResourceConfig struct {
 
 type WorkspacesWebTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var WorkspacesWebTagsForResource = ubx.DataSourceBinding{

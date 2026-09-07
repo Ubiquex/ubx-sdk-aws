@@ -4,10 +4,10 @@ package sdb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Exports_ExportSummaries struct {
-	DomainName any
-	ExportArn any
+	DomainName   any
+	ExportArn    any
 	ExportStatus any
-	RequestedAt any
+	RequestedAt  any
 }
 
 type ExportsConfig struct {
@@ -35,6 +35,6 @@ var Exports = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

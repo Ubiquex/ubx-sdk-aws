@@ -8,21 +8,21 @@ type CustomDetectionRule_Rule_Definition struct {
 }
 
 type CustomDetectionRule_Rule struct {
-	Arn any
-	CreatedAt any
+	Arn        any
+	CreatedAt  any
 	DataSource any
 	// <p>Contains the detection logic for a custom detection rule.</p>
-	Definition any
+	Definition  any
 	Description any
-	Language any
-	Name any
-	RuleId any
-	Schema any
-	Service any
-	Severity any
-	Tactic any
-	Technique any
-	UpdatedAt any
+	Language    any
+	Name        any
+	RuleId      any
+	Schema      any
+	Service     any
+	Severity    any
+	Tactic      any
+	Technique   any
+	UpdatedAt   any
 }
 
 type CustomDetectionRuleConfig struct {
@@ -31,7 +31,7 @@ type CustomDetectionRuleConfig struct {
 
 type CustomDetectionRuleAttrs struct {
 	// <p>Contains the full details of a custom detection rule, including its detection logic.</p>
-	Rule any
+	Rule   any
 	RuleId any
 }
 

@@ -8,10 +8,10 @@ type AdminWickrBotsCountConfig struct {
 }
 
 type AdminWickrBotsCountAttrs struct {
-	Active any
+	Active    any
 	NetworkId any
-	Pending any
-	Total any
+	Pending   any
+	Total     any
 }
 
 var AdminWickrBotsCount = ubx.DataSourceBinding{

@@ -5,56 +5,56 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamsDynamodbStream_ShardFilter struct {
 	ShardId any
-	Type any
+	Type    any
 }
 
 type StreamsDynamodbStream_StreamDescription_KeySchema struct {
 	AttributeName any
-	KeyType any
+	KeyType       any
 }
 
 type StreamsDynamodbStream_StreamDescription_Shards_SequenceNumberRange struct {
-	EndingSequenceNumber any
+	EndingSequenceNumber   any
 	StartingSequenceNumber any
 }
 
 type StreamsDynamodbStream_StreamDescription_Shards struct {
-	ParentShardId any
+	ParentShardId       any
 	SequenceNumberRange any
-	ShardId any
+	ShardId             any
 }
 
 type StreamsDynamodbStream_StreamDescription struct {
 	CreationRequestDateTime any
-	KeySchema any
-	LastEvaluatedShardId any
-	Shards any
-	StreamArn any
-	StreamLabel any
-	StreamStatus any
-	StreamViewType any
-	TableName any
+	KeySchema               any
+	LastEvaluatedShardId    any
+	Shards                  any
+	StreamArn               any
+	StreamLabel             any
+	StreamStatus            any
+	StreamViewType          any
+	TableName               any
 }
 
 var StreamsDynamodbStream_ShardFilterFields = ubx.FieldMap{
-		"ShardId": ubx.FieldSpec{WireName: "shard_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ShardId": ubx.FieldSpec{WireName: "shard_id"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type StreamsDynamodbStreamConfig struct {
 	ExclusiveStartShardId any
-	Limit any
+	Limit                 any
 	// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
 	ShardFilter any
-	StreamArn any
+	StreamArn   any
 }
 
 type StreamsDynamodbStreamAttrs struct {
 	ExclusiveStartShardId any
-	Limit any
+	Limit                 any
 	// <p>This optional field contains the filter definition for the <code>DescribeStream</code> API.</p>
 	ShardFilter any
-	StreamArn any
+	StreamArn   any
 	// <p>Represents all of the data describing a particular stream.</p>
 	StreamDescription any
 }
@@ -63,11 +63,11 @@ var StreamsDynamodbStream = ubx.DataSourceBinding{
 	WireType: "aws_streams_dynamodb_stream",
 	Fields: ubx.FieldMap{
 		"ExclusiveStartShardId": ubx.FieldSpec{WireName: "exclusive_start_shard_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":                 ubx.FieldSpec{WireName: "limit"},
 		"ShardFilter": ubx.FieldSpec{
 			WireName: "shard_filter",
-			Kind: "object",
-			Fields: StreamsDynamodbStream_ShardFilterFields,
+			Kind:     "object",
+			Fields:   StreamsDynamodbStream_ShardFilterFields,
 		},
 		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
 	},

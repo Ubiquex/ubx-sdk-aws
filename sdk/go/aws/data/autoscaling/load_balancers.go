@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancers_LoadBalancers struct {
 	LoadBalancerName any
-	State any
+	State            any
 }
 
 type LoadBalancersConfig struct {
 	AutoScalingGroupName any
-	MaxRecords any
-	NextToken any
+	MaxRecords           any
+	NextToken            any
 }
 
 type LoadBalancersAttrs struct {
 	AutoScalingGroupName any
-	LoadBalancers any
-	MaxRecords any
-	NextToken any
+	LoadBalancers        any
+	MaxRecords           any
+	NextToken            any
 }
 
 var LoadBalancers = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_load_balancers",
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxRecords":           ubx.FieldSpec{WireName: "max_records"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

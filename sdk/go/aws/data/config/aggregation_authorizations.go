@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregationAuthorizations_AggregationAuthorizations struct {
 	AggregationAuthorizationArn any
-	AuthorizedAccountId any
-	AuthorizedAwsRegion any
-	CreationTime any
+	AuthorizedAccountId         any
+	AuthorizedAwsRegion         any
+	CreationTime                any
 }
 
 type AggregationAuthorizationsConfig struct {
-	Limit any
+	Limit     any
 	NextToken any
 }
 
 type AggregationAuthorizationsAttrs struct {
 	AggregationAuthorizations any
-	Limit any
-	NextToken any
+	Limit                     any
+	NextToken                 any
 }
 
 var AggregationAuthorizations = ubx.DataSourceBinding{
 	WireType: "aws_config_aggregation_authorizations",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

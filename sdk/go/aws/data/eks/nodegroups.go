@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NodegroupsConfig struct {
 	ClusterName any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type NodegroupsAttrs struct {
 	ClusterName any
-	MaxResults any
-	NextToken any
-	Nodegroups any
+	MaxResults  any
+	NextToken   any
+	Nodegroups  any
 }
 
 var Nodegroups = ubx.DataSourceBinding{
 	WireType: "aws_eks_nodegroups",
 	Fields: ubx.FieldMap{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

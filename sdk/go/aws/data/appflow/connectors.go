@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connectors_ConnectorConfigurations_AuthenticationConfig_CustomAuthConfigs_AuthParameters struct {
 	ConnectorSuppliedValues any
-	Description any
-	IsRequired any
-	IsSensitiveField any
-	Key any
-	Label any
+	Description             any
+	IsRequired              any
+	IsSensitiveField        any
+	Key                     any
+	Label                   any
 }
 
 type Connectors_ConnectorConfigurations_AuthenticationConfig_CustomAuthConfigs struct {
-	AuthParameters any
+	AuthParameters           any
 	CustomAuthenticationType any
 }
 
 type Connectors_ConnectorConfigurations_AuthenticationConfig_OAuth2Defaults_Oauth2CustomProperties struct {
 	ConnectorSuppliedValues any
-	Description any
-	IsRequired any
-	IsSensitiveField any
-	Key any
-	Label any
-	Type any
+	Description             any
+	IsRequired              any
+	IsSensitiveField        any
+	Key                     any
+	Label                   any
+	Type                    any
 }
 
 type Connectors_ConnectorConfigurations_AuthenticationConfig_OAuth2Defaults struct {
-	AuthCodeUrls any
-	Oauth2CustomProperties any
+	AuthCodeUrls              any
+	Oauth2CustomProperties    any
 	Oauth2GrantTypesSupported any
-	OauthScopes any
-	TokenUrls any
+	OauthScopes               any
+	TokenUrls                 any
 }
 
 type Connectors_ConnectorConfigurations_AuthenticationConfig struct {
-	CustomAuthConfigs any
+	CustomAuthConfigs     any
 	IsApiKeyAuthSupported any
-	IsBasicAuthSupported any
+	IsBasicAuthSupported  any
 	IsCustomAuthSupported any
-	IsOauth2Supported any
-	OAuth2Defaults any
+	IsOauth2Supported     any
+	OAuth2Defaults        any
 }
 
 type Connectors_ConnectorConfigurations_ConnectorMetadata_GoogleAnalytics struct {
@@ -49,8 +49,8 @@ type Connectors_ConnectorConfigurations_ConnectorMetadata_GoogleAnalytics struct
 }
 
 type Connectors_ConnectorConfigurations_ConnectorMetadata_Salesforce struct {
-	DataTransferApis any
-	OAuthScopes any
+	DataTransferApis          any
+	OAuthScopes               any
 	Oauth2GrantTypesSupported any
 }
 
@@ -59,28 +59,28 @@ type Connectors_ConnectorConfigurations_ConnectorMetadata_Snowflake struct {
 }
 
 type Connectors_ConnectorConfigurations_ConnectorMetadata struct {
-	Amplitude any
+	Amplitude        any
 	CustomerProfiles any
-	Datadog any
-	Dynatrace any
-	EventBridge any
-	GoogleAnalytics any
-	Honeycode any
-	InforNexus any
-	Marketo any
-	Pardot any
-	Redshift any
-	S3 any
-	Salesforce any
-	Sapodata any
-	ServiceNow any
-	Singular any
-	Slack any
-	Snowflake any
-	Trendmicro any
-	Upsolver any
-	Veeva any
-	Zendesk any
+	Datadog          any
+	Dynatrace        any
+	EventBridge      any
+	GoogleAnalytics  any
+	Honeycode        any
+	InforNexus       any
+	Marketo          any
+	Pardot           any
+	Redshift         any
+	S3               any
+	Salesforce       any
+	Sapodata         any
+	ServiceNow       any
+	Singular         any
+	Slack            any
+	Snowflake        any
+	Trendmicro       any
+	Upsolver         any
+	Veeva            any
+	Zendesk          any
 }
 
 type Connectors_ConnectorConfigurations_ConnectorProvisioningConfig_Lambda struct {
@@ -93,12 +93,12 @@ type Connectors_ConnectorConfigurations_ConnectorProvisioningConfig struct {
 
 type Connectors_ConnectorConfigurations_ConnectorRuntimeSettings struct {
 	ConnectorSuppliedValueOptions any
-	DataType any
-	Description any
-	IsRequired any
-	Key any
-	Label any
-	Scope any
+	DataType                      any
+	Description                   any
+	IsRequired                    any
+	Key                           any
+	Label                         any
+	Scope                         any
 }
 
 type Connectors_ConnectorConfigurations_SupportedDataTransferApis struct {
@@ -107,70 +107,70 @@ type Connectors_ConnectorConfigurations_SupportedDataTransferApis struct {
 }
 
 type Connectors_ConnectorConfigurations struct {
-	AuthenticationConfig any
-	CanUseAsDestination any
-	CanUseAsSource any
-	ConnectorArn any
-	ConnectorDescription any
-	ConnectorLabel any
-	ConnectorMetadata any
-	ConnectorModes any
-	ConnectorName any
-	ConnectorOwner any
-	ConnectorProvisioningConfig any
-	ConnectorProvisioningType any
-	ConnectorRuntimeSettings any
-	ConnectorType any
-	ConnectorVersion any
-	IsPrivateLinkEnabled any
+	AuthenticationConfig             any
+	CanUseAsDestination              any
+	CanUseAsSource                   any
+	ConnectorArn                     any
+	ConnectorDescription             any
+	ConnectorLabel                   any
+	ConnectorMetadata                any
+	ConnectorModes                   any
+	ConnectorName                    any
+	ConnectorOwner                   any
+	ConnectorProvisioningConfig      any
+	ConnectorProvisioningType        any
+	ConnectorRuntimeSettings         any
+	ConnectorType                    any
+	ConnectorVersion                 any
+	IsPrivateLinkEnabled             any
 	IsPrivateLinkEndpointUrlRequired any
-	LogoUrl any
-	RegisteredAt any
-	RegisteredBy any
-	SupportedApiVersions any
-	SupportedDataTransferApis any
-	SupportedDataTransferTypes any
-	SupportedDestinationConnectors any
-	SupportedOperators any
-	SupportedSchedulingFrequencies any
-	SupportedTriggerTypes any
-	SupportedWriteOperations any
+	LogoUrl                          any
+	RegisteredAt                     any
+	RegisteredBy                     any
+	SupportedApiVersions             any
+	SupportedDataTransferApis        any
+	SupportedDataTransferTypes       any
+	SupportedDestinationConnectors   any
+	SupportedOperators               any
+	SupportedSchedulingFrequencies   any
+	SupportedTriggerTypes            any
+	SupportedWriteOperations         any
 }
 
 type Connectors_Connectors struct {
-	ApplicationType any
-	ConnectorDescription any
-	ConnectorLabel any
-	ConnectorModes any
-	ConnectorName any
-	ConnectorOwner any
-	ConnectorProvisioningType any
-	ConnectorType any
-	ConnectorVersion any
-	RegisteredAt any
-	RegisteredBy any
+	ApplicationType            any
+	ConnectorDescription       any
+	ConnectorLabel             any
+	ConnectorModes             any
+	ConnectorName              any
+	ConnectorOwner             any
+	ConnectorProvisioningType  any
+	ConnectorType              any
+	ConnectorVersion           any
+	RegisteredAt               any
+	RegisteredBy               any
 	SupportedDataTransferTypes any
 }
 
 type ConnectorsConfig struct {
 	ConnectorTypes any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type ConnectorsAttrs struct {
 	ConnectorConfigurations any
-	ConnectorTypes any
-	Connectors any
-	MaxResults any
-	NextToken any
+	ConnectorTypes          any
+	Connectors              any
+	MaxResults              any
+	NextToken               any
 }
 
 var Connectors = ubx.DataSourceBinding{
 	WireType: "aws_appflow_connectors",
 	Fields: ubx.FieldMap{
 		"ConnectorTypes": ubx.FieldSpec{WireName: "connector_types"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

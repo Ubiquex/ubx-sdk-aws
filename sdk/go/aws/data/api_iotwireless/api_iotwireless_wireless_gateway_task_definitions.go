@@ -4,42 +4,42 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessWirelessGatewayTaskDefinitions_TaskDefinitions_LoRaWan_CurrentVersion struct {
-	Model any
+	Model          any
 	PackageVersion any
-	Station any
+	Station        any
 }
 
 type ApiIotwirelessWirelessGatewayTaskDefinitions_TaskDefinitions_LoRaWan struct {
 	CurrentVersion any
-	UpdateVersion any
+	UpdateVersion  any
 }
 
 type ApiIotwirelessWirelessGatewayTaskDefinitions_TaskDefinitions struct {
-	Arn any
-	Id any
+	Arn     any
+	Id      any
 	LoRaWan any
 }
 
 type ApiIotwirelessWirelessGatewayTaskDefinitionsConfig struct {
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	TaskDefinitionType any
 }
 
 type ApiIotwirelessWirelessGatewayTaskDefinitionsAttrs struct {
 	// <p>The maximum number of results to return in this operation.</p>
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 	TaskDefinitionType any
-	TaskDefinitions any
+	TaskDefinitions    any
 }
 
 var ApiIotwirelessWirelessGatewayTaskDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_api_iotwireless_wireless_gateway_task_definitions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"TaskDefinitionType": ubx.FieldSpec{WireName: "task_definition_type"},
 	},
 }

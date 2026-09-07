@@ -33,7 +33,7 @@ type Capability_Configuration_ArgoCd_RbacRoleMappings_Identities struct {
 type Capability_Configuration_ArgoCd_RbacRoleMappings struct {
 	// Specifies a list of IAM principal ARNs (users or roles) that are mapped to the corresponding Argo CD RBAC role, granting those identities the permissions defined for that role in the Kubernetes cluster. (AI-inferred)
 	Identities any
-	Role any
+	Role       any
 }
 
 type Capability_Configuration_ArgoCd struct {
@@ -57,14 +57,14 @@ type Capability_Configuration struct {
 }
 
 type Capability_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Capability_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CapabilityConfig struct {
 	// A unique name for the capability. The name must be unique within your cluster and can contain alphanumeric characters, hyphens, and underscores.
@@ -111,14 +111,14 @@ type CapabilityAttrs struct {
 var Capability = ubx.ResourceBinding{
 	WireType: "aws_eks_capability",
 	Fields: ubx.FieldMap{
-		"CapabilityName": ubx.FieldSpec{WireName: "capability_name"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"CapabilityName":          ubx.FieldSpec{WireName: "capability_name"},
+		"ClusterName":             ubx.FieldSpec{WireName: "cluster_name"},
 		"DeletePropagationPolicy": ubx.FieldSpec{WireName: "delete_propagation_policy"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":                 ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Capability_TagsFields,
+			Kind:     "list",
+			Fields:   Capability_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

@@ -22,16 +22,16 @@ type App_Tags struct {
 }
 
 var App_ResourceSpecFields = ubx.FieldMap{
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"LifecycleConfigArn": ubx.FieldSpec{WireName: "lifecycle_config_arn"},
-		"SageMakerImageArn": ubx.FieldSpec{WireName: "sage_maker_image_arn"},
-		"SageMakerImageVersionArn": ubx.FieldSpec{WireName: "sage_maker_image_version_arn"},
-	}
+	"InstanceType":             ubx.FieldSpec{WireName: "instance_type"},
+	"LifecycleConfigArn":       ubx.FieldSpec{WireName: "lifecycle_config_arn"},
+	"SageMakerImageArn":        ubx.FieldSpec{WireName: "sage_maker_image_arn"},
+	"SageMakerImageVersionArn": ubx.FieldSpec{WireName: "sage_maker_image_version_arn"},
+}
 
 var App_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AppConfig struct {
 	// The name of the app.
@@ -74,19 +74,19 @@ type AppAttrs struct {
 var App = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_app",
 	Fields: ubx.FieldMap{
-		"AppName": ubx.FieldSpec{WireName: "app_name"},
-		"AppType": ubx.FieldSpec{WireName: "app_type"},
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
+		"AppName":      ubx.FieldSpec{WireName: "app_name"},
+		"AppType":      ubx.FieldSpec{WireName: "app_type"},
+		"DomainId":     ubx.FieldSpec{WireName: "domain_id"},
 		"RecoveryMode": ubx.FieldSpec{WireName: "recovery_mode"},
 		"ResourceSpec": ubx.FieldSpec{
 			WireName: "resource_spec",
-			Kind: "object",
-			Fields: App_ResourceSpecFields,
+			Kind:     "object",
+			Fields:   App_ResourceSpecFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: App_TagsFields,
+			Kind:     "list",
+			Fields:   App_TagsFields,
 		},
 		"UserProfileName": ubx.FieldSpec{WireName: "user_profile_name"},
 	},

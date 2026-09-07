@@ -4,7 +4,7 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetadataModelExportsAsScript_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -17,50 +17,50 @@ type MetadataModelExportsAsScript_Requests_Error struct {
 }
 
 type MetadataModelExportsAsScript_Requests_ExportSqlDetails struct {
-	ObjectUrl any
+	ObjectUrl   any
 	S3ObjectKey any
 }
 
 type MetadataModelExportsAsScript_Requests_Progress_ProcessedObject struct {
 	EndpointType any
-	Name any
-	Type any
+	Name         any
+	Type         any
 }
 
 type MetadataModelExportsAsScript_Requests_Progress struct {
 	ProcessedObject any
 	ProgressPercent any
-	ProgressStep any
-	TotalObjects any
+	ProgressStep    any
+	TotalObjects    any
 }
 
 type MetadataModelExportsAsScript_Requests struct {
-	Error any
-	ExportSqlDetails any
+	Error               any
+	ExportSqlDetails    any
 	MigrationProjectArn any
-	Progress any
-	RequestIdentifier any
-	Status any
+	Progress            any
+	RequestIdentifier   any
+	Status              any
 }
 
 var MetadataModelExportsAsScript_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MetadataModelExportsAsScriptConfig struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                    any
+	Marker                     any
+	MaxRecords                 any
 	MigrationProjectIdentifier any
 }
 
 type MetadataModelExportsAsScriptAttrs struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                    any
+	Marker                     any
+	MaxRecords                 any
 	MigrationProjectIdentifier any
-	Requests any
+	Requests                   any
 }
 
 var MetadataModelExportsAsScript = ubx.DataSourceBinding{
@@ -68,11 +68,11 @@ var MetadataModelExportsAsScript = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MetadataModelExportsAsScript_FiltersFields,
+			Kind:     "list",
+			Fields:   MetadataModelExportsAsScript_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":                     ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":                 ubx.FieldSpec{WireName: "max_records"},
 		"MigrationProjectIdentifier": ubx.FieldSpec{WireName: "migration_project_identifier"},
 	},
 }

@@ -4,22 +4,22 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamSessions_StreamSessions struct {
-	EndTime any
+	EndTime       any
 	HasErrorEvent any
-	StartTime any
-	StreamId any
+	StartTime     any
+	StreamId      any
 }
 
 type StreamSessionsConfig struct {
 	ChannelArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type StreamSessionsAttrs struct {
-	ChannelArn any
-	MaxResults any
-	NextToken any
+	ChannelArn     any
+	MaxResults     any
+	NextToken      any
 	StreamSessions any
 }
 
@@ -28,6 +28,6 @@ var StreamSessions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

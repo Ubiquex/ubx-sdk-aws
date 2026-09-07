@@ -8,9 +8,9 @@ type DataProtectionPolicyConfig struct {
 }
 
 type DataProtectionPolicyAttrs struct {
-	LastUpdatedTime any
+	LastUpdatedTime    any
 	LogGroupIdentifier any
-	PolicyDocument any
+	PolicyDocument     any
 }
 
 var DataProtectionPolicy = ubx.DataSourceBinding{

@@ -4,31 +4,31 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Artifacts_Artifacts struct {
-	Arn any
+	Arn       any
 	Extension any
-	Name any
-	Type any
-	Url any
+	Name      any
+	Type      any
+	Url       any
 }
 
 type ArtifactsConfig struct {
-	Arn any
+	Arn       any
 	NextToken any
-	Type any
+	Type      any
 }
 
 type ArtifactsAttrs struct {
-	Arn any
+	Arn       any
 	Artifacts any
 	NextToken any
-	Type any
+	Type      any
 }
 
 var Artifacts = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_artifacts",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":       ubx.FieldSpec{WireName: "arn"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 	},
 }

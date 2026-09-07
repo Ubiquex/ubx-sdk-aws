@@ -11,9 +11,9 @@ type Key_Tags struct {
 }
 
 var Key_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type KeyConfig struct {
 	// Skips ("bypasses") the key policy lockout safety check. The default value is false. Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value to true indiscriminately. For more information, see [Default key policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key) in the *Developer Guide*. Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent [PutKeyPolicy](https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html) request on the KMS key.
@@ -77,20 +77,20 @@ var Key = ubx.ResourceBinding{
 	WireType: "aws_kms_key",
 	Fields: ubx.FieldMap{
 		"BypassPolicyLockoutSafetyCheck": ubx.FieldSpec{WireName: "bypass_policy_lockout_safety_check"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableKeyRotation": ubx.FieldSpec{WireName: "enable_key_rotation"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"KeyPolicy": ubx.FieldSpec{WireName: "key_policy"},
-		"KeySpec": ubx.FieldSpec{WireName: "key_spec"},
-		"KeyUsage": ubx.FieldSpec{WireName: "key_usage"},
-		"MultiRegion": ubx.FieldSpec{WireName: "multi_region"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"PendingWindowInDays": ubx.FieldSpec{WireName: "pending_window_in_days"},
-		"RotationPeriodInDays": ubx.FieldSpec{WireName: "rotation_period_in_days"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"EnableKeyRotation":              ubx.FieldSpec{WireName: "enable_key_rotation"},
+		"Enabled":                        ubx.FieldSpec{WireName: "enabled"},
+		"KeyPolicy":                      ubx.FieldSpec{WireName: "key_policy"},
+		"KeySpec":                        ubx.FieldSpec{WireName: "key_spec"},
+		"KeyUsage":                       ubx.FieldSpec{WireName: "key_usage"},
+		"MultiRegion":                    ubx.FieldSpec{WireName: "multi_region"},
+		"Origin":                         ubx.FieldSpec{WireName: "origin"},
+		"PendingWindowInDays":            ubx.FieldSpec{WireName: "pending_window_in_days"},
+		"RotationPeriodInDays":           ubx.FieldSpec{WireName: "rotation_period_in_days"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Key_TagsFields,
+			Kind:     "list",
+			Fields:   Key_TagsFields,
 		},
 	},
 }

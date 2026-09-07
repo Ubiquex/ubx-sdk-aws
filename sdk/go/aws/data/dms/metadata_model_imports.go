@@ -4,7 +4,7 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetadataModelImports_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -17,50 +17,50 @@ type MetadataModelImports_Requests_Error struct {
 }
 
 type MetadataModelImports_Requests_ExportSqlDetails struct {
-	ObjectUrl any
+	ObjectUrl   any
 	S3ObjectKey any
 }
 
 type MetadataModelImports_Requests_Progress_ProcessedObject struct {
 	EndpointType any
-	Name any
-	Type any
+	Name         any
+	Type         any
 }
 
 type MetadataModelImports_Requests_Progress struct {
 	ProcessedObject any
 	ProgressPercent any
-	ProgressStep any
-	TotalObjects any
+	ProgressStep    any
+	TotalObjects    any
 }
 
 type MetadataModelImports_Requests struct {
-	Error any
-	ExportSqlDetails any
+	Error               any
+	ExportSqlDetails    any
 	MigrationProjectArn any
-	Progress any
-	RequestIdentifier any
-	Status any
+	Progress            any
+	RequestIdentifier   any
+	Status              any
 }
 
 var MetadataModelImports_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MetadataModelImportsConfig struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                    any
+	Marker                     any
+	MaxRecords                 any
 	MigrationProjectIdentifier any
 }
 
 type MetadataModelImportsAttrs struct {
-	Filters any
-	Marker any
-	MaxRecords any
+	Filters                    any
+	Marker                     any
+	MaxRecords                 any
 	MigrationProjectIdentifier any
-	Requests any
+	Requests                   any
 }
 
 var MetadataModelImports = ubx.DataSourceBinding{
@@ -68,11 +68,11 @@ var MetadataModelImports = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MetadataModelImports_FiltersFields,
+			Kind:     "list",
+			Fields:   MetadataModelImports_FiltersFields,
 		},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
+		"Marker":                     ubx.FieldSpec{WireName: "marker"},
+		"MaxRecords":                 ubx.FieldSpec{WireName: "max_records"},
 		"MigrationProjectIdentifier": ubx.FieldSpec{WireName: "migration_project_identifier"},
 	},
 }

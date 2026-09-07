@@ -4,21 +4,21 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrustedTokenIssuers_TrustedTokenIssuers struct {
-	Name any
-	TrustedTokenIssuerArn any
+	Name                   any
+	TrustedTokenIssuerArn  any
 	TrustedTokenIssuerType any
 }
 
 type TrustedTokenIssuersConfig struct {
 	InstanceArn any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type TrustedTokenIssuersAttrs struct {
-	InstanceArn any
-	MaxResults any
-	NextToken any
+	InstanceArn         any
+	MaxResults          any
+	NextToken           any
 	TrustedTokenIssuers any
 }
 
@@ -26,7 +26,7 @@ var TrustedTokenIssuers = ubx.DataSourceBinding{
 	WireType: "aws_sso_trusted_token_issuers",
 	Fields: ubx.FieldMap{
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

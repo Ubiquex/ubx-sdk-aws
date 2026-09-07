@@ -9,31 +9,31 @@ type Connectors_Connectors_Capacity_AutoScaling_ScaleInPolicy struct {
 
 type Connectors_Connectors_Capacity_AutoScaling struct {
 	MaxAutoscalingTaskCount any
-	MaxWorkerCount any
-	McuCount any
-	MinWorkerCount any
-	ScaleInPolicy any
-	ScaleOutPolicy any
+	MaxWorkerCount          any
+	McuCount                any
+	MinWorkerCount          any
+	ScaleInPolicy           any
+	ScaleOutPolicy          any
 }
 
 type Connectors_Connectors_Capacity_ProvisionedCapacity struct {
-	McuCount any
+	McuCount    any
 	WorkerCount any
 }
 
 type Connectors_Connectors_Capacity struct {
-	AutoScaling any
+	AutoScaling         any
 	ProvisionedCapacity any
 }
 
 type Connectors_Connectors_KafkaCluster_ApacheKafkaCluster_Vpc struct {
 	SecurityGroups any
-	Subnets any
+	Subnets        any
 }
 
 type Connectors_Connectors_KafkaCluster_ApacheKafkaCluster struct {
 	BootstrapServers any
-	Vpc any
+	Vpc              any
 }
 
 type Connectors_Connectors_KafkaCluster struct {
@@ -49,25 +49,25 @@ type Connectors_Connectors_KafkaClusterEncryptionInTransit struct {
 }
 
 type Connectors_Connectors_LogDelivery_WorkerLogDelivery_CloudWatchLogs struct {
-	Enabled any
+	Enabled  any
 	LogGroup any
 }
 
 type Connectors_Connectors_LogDelivery_WorkerLogDelivery_Firehose struct {
 	DeliveryStream any
-	Enabled any
+	Enabled        any
 }
 
 type Connectors_Connectors_LogDelivery_WorkerLogDelivery_S3 struct {
-	Bucket any
+	Bucket  any
 	Enabled any
-	Prefix any
+	Prefix  any
 }
 
 type Connectors_Connectors_LogDelivery_WorkerLogDelivery struct {
 	CloudWatchLogs any
-	Firehose any
-	S3 any
+	Firehose       any
+	S3             any
 }
 
 type Connectors_Connectors_LogDelivery struct {
@@ -76,7 +76,7 @@ type Connectors_Connectors_LogDelivery struct {
 
 type Connectors_Connectors_Plugins_CustomPlugin struct {
 	CustomPluginArn any
-	Revision any
+	Revision        any
 }
 
 type Connectors_Connectors_Plugins struct {
@@ -84,47 +84,47 @@ type Connectors_Connectors_Plugins struct {
 }
 
 type Connectors_Connectors_WorkerConfiguration struct {
-	Revision any
+	Revision               any
 	WorkerConfigurationArn any
 }
 
 type Connectors_Connectors struct {
-	Capacity any
-	ConnectorArn any
-	ConnectorDescription any
-	ConnectorName any
-	ConnectorState any
-	CreationTime any
-	CurrentVersion any
-	KafkaCluster any
+	Capacity                         any
+	ConnectorArn                     any
+	ConnectorDescription             any
+	ConnectorName                    any
+	ConnectorState                   any
+	CreationTime                     any
+	CurrentVersion                   any
+	KafkaCluster                     any
 	KafkaClusterClientAuthentication any
-	KafkaClusterEncryptionInTransit any
-	KafkaConnectVersion any
-	LogDelivery any
-	NetworkType any
-	Plugins any
-	ServiceExecutionRoleArn any
-	WorkerConfiguration any
+	KafkaClusterEncryptionInTransit  any
+	KafkaConnectVersion              any
+	LogDelivery                      any
+	NetworkType                      any
+	Plugins                          any
+	ServiceExecutionRoleArn          any
+	WorkerConfiguration              any
 }
 
 type ConnectorsConfig struct {
 	ConnectorNamePrefix any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type ConnectorsAttrs struct {
 	ConnectorNamePrefix any
-	Connectors any
-	MaxResults any
-	NextToken any
+	Connectors          any
+	MaxResults          any
+	NextToken           any
 }
 
 var Connectors = ubx.DataSourceBinding{
 	WireType: "aws_kafkaconnect_connectors",
 	Fields: ubx.FieldMap{
 		"ConnectorNamePrefix": ubx.FieldSpec{WireName: "connector_name_prefix"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

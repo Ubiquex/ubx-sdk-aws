@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerArchiveSearches_Searches_Status struct {
 	CompletionTimestamp any
-	ErrorMessage any
-	State any
+	ErrorMessage        any
+	State               any
 	SubmissionTimestamp any
 }
 
 type MailManagerArchiveSearches_Searches struct {
 	SearchId any
-	Status any
+	Status   any
 }
 
 type MailManagerArchiveSearchesConfig struct {
 	ArchiveId any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type MailManagerArchiveSearchesAttrs struct {
 	ArchiveId any
 	NextToken any
-	PageSize any
-	Searches any
+	PageSize  any
+	Searches  any
 }
 
 var MailManagerArchiveSearches = ubx.DataSourceBinding{
@@ -33,6 +33,6 @@ var MailManagerArchiveSearches = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ArchiveId": ubx.FieldSpec{WireName: "archive_id"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

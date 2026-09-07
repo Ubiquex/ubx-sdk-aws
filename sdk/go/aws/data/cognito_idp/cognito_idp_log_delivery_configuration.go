@@ -17,15 +17,15 @@ type CognitoIdpLogDeliveryConfiguration_LogDeliveryConfiguration_LogConfiguratio
 
 type CognitoIdpLogDeliveryConfiguration_LogDeliveryConfiguration_LogConfigurations struct {
 	CloudWatchLogsConfiguration any
-	EventSource any
-	FirehoseConfiguration any
-	LogLevel any
-	S3Configuration any
+	EventSource                 any
+	FirehoseConfiguration       any
+	LogLevel                    any
+	S3Configuration             any
 }
 
 type CognitoIdpLogDeliveryConfiguration_LogDeliveryConfiguration struct {
 	LogConfigurations any
-	UserPoolId any
+	UserPoolId        any
 }
 
 type CognitoIdpLogDeliveryConfigurationConfig struct {
@@ -35,7 +35,7 @@ type CognitoIdpLogDeliveryConfigurationConfig struct {
 type CognitoIdpLogDeliveryConfigurationAttrs struct {
 	// <p>The logging parameters of a user pool, as returned in the response to a <code>GetLogDeliveryConfiguration</code> request.</p>
 	LogDeliveryConfiguration any
-	UserPoolId any
+	UserPoolId               any
 }
 
 var CognitoIdpLogDeliveryConfiguration = ubx.DataSourceBinding{

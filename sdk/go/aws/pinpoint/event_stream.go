@@ -26,8 +26,8 @@ type EventStreamAttrs struct {
 var EventStream = ubx.ResourceBinding{
 	WireType: "aws_pinpoint_event_stream",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":        ubx.FieldSpec{WireName: "application_id"},
 		"DestinationStreamArn": ubx.FieldSpec{WireName: "destination_stream_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":              ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

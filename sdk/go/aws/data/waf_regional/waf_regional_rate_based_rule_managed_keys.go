@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WafRegionalRateBasedRuleManagedKeysConfig struct {
 	NextMarker any
-	RuleId any
+	RuleId     any
 }
 
 type WafRegionalRateBasedRuleManagedKeysAttrs struct {
 	ManagedKeys any
-	NextMarker any
-	RuleId any
+	NextMarker  any
+	RuleId      any
 }
 
 var WafRegionalRateBasedRuleManagedKeys = ubx.DataSourceBinding{
 	WireType: "aws_waf_regional_rate_based_rule_managed_keys",
 	Fields: ubx.FieldMap{
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"RuleId":     ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

@@ -4,31 +4,31 @@ package neptune_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneDbMldataProcessingJob_ProcessingJob struct {
-	Arn any
+	Arn              any
 	CloudwatchLogUrl any
-	FailureReason any
-	Name any
-	OutputLocation any
-	Status any
+	FailureReason    any
+	Name             any
+	OutputLocation   any
+	Status           any
 }
 
 type NeptuneDbMldataProcessingJobConfig struct {
-	Id any
+	Id                any
 	NeptuneIamRoleArn any
 }
 
 type NeptuneDbMldataProcessingJobAttrs struct {
-	Id any
+	Id                any
 	NeptuneIamRoleArn any
 	// <p>Defines a Neptune ML resource.</p>
 	ProcessingJob any
-	Status any
+	Status        any
 }
 
 var NeptuneDbMldataProcessingJob = ubx.DataSourceBinding{
 	WireType: "aws_neptune_db_mldata_processing_job",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":                ubx.FieldSpec{WireName: "id"},
 		"NeptuneIamRoleArn": ubx.FieldSpec{WireName: "neptune_iam_role_arn"},
 	},
 }

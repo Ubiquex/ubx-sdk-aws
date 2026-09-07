@@ -4,41 +4,41 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationAssociations_Associations_StateReason struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type ApplicationAssociations_Associations struct {
-	ApplicationId any
-	AssociatedResourceId any
+	ApplicationId          any
+	AssociatedResourceId   any
 	AssociatedResourceType any
-	Created any
-	LastUpdatedTime any
-	State any
-	StateReason any
+	Created                any
+	LastUpdatedTime        any
+	State                  any
+	StateReason            any
 }
 
 type ApplicationAssociationsConfig struct {
-	ApplicationId any
+	ApplicationId           any
 	AssociatedResourceTypes any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 type ApplicationAssociationsAttrs struct {
-	ApplicationId any
+	ApplicationId           any
 	AssociatedResourceTypes any
-	Associations any
-	MaxResults any
-	NextToken any
+	Associations            any
+	MaxResults              any
+	NextToken               any
 }
 
 var ApplicationAssociations = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_application_associations",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":           ubx.FieldSpec{WireName: "application_id"},
 		"AssociatedResourceTypes": ubx.FieldSpec{WireName: "associated_resource_types"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InvalidationsForDistributionTenant_InvalidationList_Items struct {
 	CreateTime any
-	Id any
-	Status any
+	Id         any
+	Status     any
 }
 
 type InvalidationsForDistributionTenant_InvalidationList struct {
 	IsTruncated any
-	Items any
-	Marker any
-	MaxItems any
-	NextMarker any
-	Quantity any
+	Items       any
+	Marker      any
+	MaxItems    any
+	NextMarker  any
+	Quantity    any
 }
 
 type InvalidationsForDistributionTenantConfig struct {
-	Id any
-	Marker any
+	Id       any
+	Marker   any
 	MaxItems any
 }
 
@@ -28,15 +28,15 @@ type InvalidationsForDistributionTenantAttrs struct {
 	Id any
 	// <p>The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 	InvalidationList any
-	Marker any
-	MaxItems any
+	Marker           any
+	MaxItems         any
 }
 
 var InvalidationsForDistributionTenant = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_invalidations_for_distribution_tenant",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Id":       ubx.FieldSpec{WireName: "id"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

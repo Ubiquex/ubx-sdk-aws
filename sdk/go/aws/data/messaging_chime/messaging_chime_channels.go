@@ -4,38 +4,38 @@ package messaging_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeChannels_Channels struct {
-	ChannelArn any
+	ChannelArn           any
 	LastMessageTimestamp any
-	Metadata any
-	Mode any
-	Name any
-	Privacy any
+	Metadata             any
+	Mode                 any
+	Name                 any
+	Privacy              any
 }
 
 type MessagingChimeChannelsConfig struct {
 	AppInstanceArn any
-	ChimeBearer any
-	MaxResults any
-	NextToken any
-	Privacy any
+	ChimeBearer    any
+	MaxResults     any
+	NextToken      any
+	Privacy        any
 }
 
 type MessagingChimeChannelsAttrs struct {
 	AppInstanceArn any
-	Channels any
-	ChimeBearer any
-	MaxResults any
-	NextToken any
-	Privacy any
+	Channels       any
+	ChimeBearer    any
+	MaxResults     any
+	NextToken      any
+	Privacy        any
 }
 
 var MessagingChimeChannels = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channels",
 	Fields: ubx.FieldMap{
 		"AppInstanceArn": ubx.FieldSpec{WireName: "app_instance_arn"},
-		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Privacy": ubx.FieldSpec{WireName: "privacy"},
+		"ChimeBearer":    ubx.FieldSpec{WireName: "chime_bearer"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"Privacy":        ubx.FieldSpec{WireName: "privacy"},
 	},
 }

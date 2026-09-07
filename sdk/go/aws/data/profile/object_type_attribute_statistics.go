@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ObjectTypeAttributeStatistics_Statistics_Percentiles struct {
 	P25 any
-	P5 any
+	P5  any
 	P50 any
 	P75 any
 	P95 any
@@ -16,20 +16,20 @@ type ObjectTypeAttributeStatistics_Statistics struct {
 	Maximum any
 	Minimum any
 	// <p>Contains percentile statistics for object type attributes.</p>
-	Percentiles any
+	Percentiles       any
 	StandardDeviation any
 }
 
 type ObjectTypeAttributeStatisticsConfig struct {
-	AttributeName any
-	DomainName any
+	AttributeName  any
+	DomainName     any
 	ObjectTypeName any
 }
 
 type ObjectTypeAttributeStatisticsAttrs struct {
-	AttributeName any
-	CalculatedAt any
-	DomainName any
+	AttributeName  any
+	CalculatedAt   any
+	DomainName     any
 	ObjectTypeName any
 	// <p>Statistical measurements for object type attributes including basic statistics and percentiles.</p>
 	Statistics any
@@ -38,8 +38,8 @@ type ObjectTypeAttributeStatisticsAttrs struct {
 var ObjectTypeAttributeStatistics = ubx.DataSourceBinding{
 	WireType: "aws_profile_object_type_attribute_statistics",
 	Fields: ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"AttributeName":  ubx.FieldSpec{WireName: "attribute_name"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
 		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
 	},
 }

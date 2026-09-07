@@ -4,12 +4,12 @@ package cognito_idp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpUser_Mfaoptions struct {
-	AttributeName any
+	AttributeName  any
 	DeliveryMedium any
 }
 
 type CognitoIdpUser_UserAttributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -18,12 +18,12 @@ type CognitoIdpUserConfig struct {
 }
 
 type CognitoIdpUserAttrs struct {
-	AccessToken any
-	Mfaoptions any
+	AccessToken         any
+	Mfaoptions          any
 	PreferredMfaSetting any
-	UserAttributes any
-	UserMfasettingList any
-	Username any
+	UserAttributes      any
+	UserMfasettingList  any
+	Username            any
 }
 
 var CognitoIdpUser = ubx.DataSourceBinding{

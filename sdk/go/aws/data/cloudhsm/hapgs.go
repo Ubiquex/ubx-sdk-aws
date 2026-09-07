@@ -8,7 +8,7 @@ type HapgsConfig struct {
 }
 
 type HapgsAttrs struct {
-	HapgList any
+	HapgList  any
 	NextToken any
 }
 

@@ -22,16 +22,16 @@ type Script_Tags struct {
 }
 
 var Script_StorageLocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"Bucket":        ubx.FieldSpec{WireName: "bucket"},
+	"Key":           ubx.FieldSpec{WireName: "key"},
+	"ObjectVersion": ubx.FieldSpec{WireName: "object_version"},
+	"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Script_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ScriptConfig struct {
 	// A descriptive label that is associated with a script. Script names do not need to be unique.
@@ -70,17 +70,17 @@ type ScriptAttrs struct {
 var Script = ubx.ResourceBinding{
 	WireType: "aws_game_lift_script",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"NodeJsVersion": ubx.FieldSpec{WireName: "node_js_version"},
 		"StorageLocation": ubx.FieldSpec{
 			WireName: "storage_location",
-			Kind: "object",
-			Fields: Script_StorageLocationFields,
+			Kind:     "object",
+			Fields:   Script_StorageLocationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Script_TagsFields,
+			Kind:     "list",
+			Fields:   Script_TagsFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

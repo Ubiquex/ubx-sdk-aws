@@ -5,49 +5,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Suites_Suites_Counters struct {
 	Errored any
-	Failed any
-	Passed any
+	Failed  any
+	Passed  any
 	Skipped any
 	Stopped any
-	Total any
-	Warned any
+	Total   any
+	Warned  any
 }
 
 type Suites_Suites_DeviceMinutes struct {
-	Metered any
-	Total any
+	Metered   any
+	Total     any
 	Unmetered any
 }
 
 type Suites_Suites struct {
-	Arn any
-	Counters any
-	Created any
+	Arn           any
+	Counters      any
+	Created       any
 	DeviceMinutes any
-	Message any
-	Name any
-	Result any
-	Started any
-	Status any
-	Stopped any
-	Type any
+	Message       any
+	Name          any
+	Result        any
+	Started       any
+	Status        any
+	Stopped       any
+	Type          any
 }
 
 type SuitesConfig struct {
-	Arn any
+	Arn       any
 	NextToken any
 }
 
 type SuitesAttrs struct {
-	Arn any
+	Arn       any
 	NextToken any
-	Suites any
+	Suites    any
 }
 
 var Suites = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_suites",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":       ubx.FieldSpec{WireName: "arn"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlBucketPolicyConfig struct {
 	AccountId any
-	Bucket any
+	Bucket    any
 }
 
 type S3ControlBucketPolicyAttrs struct {
 	AccountId any
-	Bucket any
-	Policy any
+	Bucket    any
+	Policy    any
 }
 
 var S3ControlBucketPolicy = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_bucket_policy",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":    ubx.FieldSpec{WireName: "bucket"},
 	},
 }

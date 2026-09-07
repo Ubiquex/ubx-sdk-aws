@@ -10,9 +10,9 @@ type PublicKey_Tags struct {
 }
 
 var PublicKey_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PublicKeyConfig struct {
 	// Name of the public key to be imported. The value does not need to be unique.
@@ -39,12 +39,12 @@ type PublicKeyAttrs struct {
 var PublicKey = ubx.ResourceBinding{
 	WireType: "aws_ivs_public_key",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"PublicKeyMaterial": ubx.FieldSpec{WireName: "public_key_material"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PublicKey_TagsFields,
+			Kind:     "list",
+			Fields:   PublicKey_TagsFields,
 		},
 	},
 }

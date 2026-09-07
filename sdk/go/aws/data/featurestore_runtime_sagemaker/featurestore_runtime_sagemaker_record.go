@@ -4,33 +4,33 @@ package featurestore_runtime_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FeaturestoreRuntimeSagemakerRecord_Record struct {
-	FeatureName any
-	ValueAsString any
+	FeatureName       any
+	ValueAsString     any
 	ValueAsStringList any
 }
 
 type FeaturestoreRuntimeSagemakerRecordConfig struct {
-	ExpirationTimeResponse any
-	FeatureGroupName any
-	FeatureNames any
+	ExpirationTimeResponse        any
+	FeatureGroupName              any
+	FeatureNames                  any
 	RecordIdentifierValueAsString any
 }
 
 type FeaturestoreRuntimeSagemakerRecordAttrs struct {
-	ExpirationTimeResponse any
-	ExpiresAt any
-	FeatureGroupName any
-	FeatureNames any
-	Record any
+	ExpirationTimeResponse        any
+	ExpiresAt                     any
+	FeatureGroupName              any
+	FeatureNames                  any
+	Record                        any
 	RecordIdentifierValueAsString any
 }
 
 var FeaturestoreRuntimeSagemakerRecord = ubx.DataSourceBinding{
 	WireType: "aws_featurestore_runtime_sagemaker_record",
 	Fields: ubx.FieldMap{
-		"ExpirationTimeResponse": ubx.FieldSpec{WireName: "expiration_time_response"},
-		"FeatureGroupName": ubx.FieldSpec{WireName: "feature_group_name"},
-		"FeatureNames": ubx.FieldSpec{WireName: "feature_names"},
+		"ExpirationTimeResponse":        ubx.FieldSpec{WireName: "expiration_time_response"},
+		"FeatureGroupName":              ubx.FieldSpec{WireName: "feature_group_name"},
+		"FeatureNames":                  ubx.FieldSpec{WireName: "feature_names"},
 		"RecordIdentifierValueAsString": ubx.FieldSpec{WireName: "record_identifier_value_as_string"},
 	},
 }

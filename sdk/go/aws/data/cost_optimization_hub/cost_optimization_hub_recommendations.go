@@ -4,98 +4,98 @@ package cost_optimization_hub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CostOptimizationHubRecommendations_Filter_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CostOptimizationHubRecommendations_Filter struct {
-	AccountIds any
-	ActionTypes any
+	AccountIds            any
+	ActionTypes           any
 	ImplementationEfforts any
-	RecommendationIds any
-	Regions any
-	ResourceArns any
-	ResourceIds any
-	ResourceTypes any
-	RestartNeeded any
-	RollbackPossible any
-	Tags any
+	RecommendationIds     any
+	Regions               any
+	ResourceArns          any
+	ResourceIds           any
+	ResourceTypes         any
+	RestartNeeded         any
+	RollbackPossible      any
+	Tags                  any
 }
 
 type CostOptimizationHubRecommendations_Items struct {
-	AccountId any
-	ActionType any
-	CurrencyCode any
-	CurrentResourceSummary any
-	CurrentResourceType any
-	EstimatedMonthlyCost any
-	EstimatedMonthlySavings any
-	EstimatedSavingsPercentage any
-	ImplementationEffort any
-	LastRefreshTimestamp any
-	RecommendationId any
+	AccountId                          any
+	ActionType                         any
+	CurrencyCode                       any
+	CurrentResourceSummary             any
+	CurrentResourceType                any
+	EstimatedMonthlyCost               any
+	EstimatedMonthlySavings            any
+	EstimatedSavingsPercentage         any
+	ImplementationEffort               any
+	LastRefreshTimestamp               any
+	RecommendationId                   any
 	RecommendationLookbackPeriodInDays any
-	RecommendedResourceSummary any
-	RecommendedResourceType any
-	Region any
-	ResourceArn any
-	ResourceId any
-	RestartNeeded any
-	RollbackPossible any
-	Source any
-	Tags any
+	RecommendedResourceSummary         any
+	RecommendedResourceType            any
+	Region                             any
+	ResourceArn                        any
+	ResourceId                         any
+	RestartNeeded                      any
+	RollbackPossible                   any
+	Source                             any
+	Tags                               any
 }
 
 type CostOptimizationHubRecommendations_OrderBy struct {
 	Dimension any
-	Order any
+	Order     any
 }
 
 var CostOptimizationHubRecommendations_Filter_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CostOptimizationHubRecommendations_FilterFields = ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"ActionTypes": ubx.FieldSpec{WireName: "action_types"},
-		"ImplementationEfforts": ubx.FieldSpec{WireName: "implementation_efforts"},
-		"RecommendationIds": ubx.FieldSpec{WireName: "recommendation_ids"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"ResourceArns": ubx.FieldSpec{WireName: "resource_arns"},
-		"ResourceIds": ubx.FieldSpec{WireName: "resource_ids"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-		"RestartNeeded": ubx.FieldSpec{WireName: "restart_needed"},
-		"RollbackPossible": ubx.FieldSpec{WireName: "rollback_possible"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: CostOptimizationHubRecommendations_Filter_TagsFields,
-		},
-	}
+	"AccountIds":            ubx.FieldSpec{WireName: "account_ids"},
+	"ActionTypes":           ubx.FieldSpec{WireName: "action_types"},
+	"ImplementationEfforts": ubx.FieldSpec{WireName: "implementation_efforts"},
+	"RecommendationIds":     ubx.FieldSpec{WireName: "recommendation_ids"},
+	"Regions":               ubx.FieldSpec{WireName: "regions"},
+	"ResourceArns":          ubx.FieldSpec{WireName: "resource_arns"},
+	"ResourceIds":           ubx.FieldSpec{WireName: "resource_ids"},
+	"ResourceTypes":         ubx.FieldSpec{WireName: "resource_types"},
+	"RestartNeeded":         ubx.FieldSpec{WireName: "restart_needed"},
+	"RollbackPossible":      ubx.FieldSpec{WireName: "rollback_possible"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   CostOptimizationHubRecommendations_Filter_TagsFields,
+	},
+}
 
 var CostOptimizationHubRecommendations_OrderByFields = ubx.FieldMap{
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Dimension": ubx.FieldSpec{WireName: "dimension"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+}
 
 type CostOptimizationHubRecommendationsConfig struct {
 	// <p>Describes a filter that returns a more specific list of recommendations. Filters recommendations by different dimensions.</p>
-	Filter any
+	Filter                    any
 	IncludeAllRecommendations any
-	MaxResults any
-	NextToken any
+	MaxResults                any
+	NextToken                 any
 	// <p>Defines how rows will be sorted in the response.</p>
 	OrderBy any
 }
 
 type CostOptimizationHubRecommendationsAttrs struct {
 	// <p>Describes a filter that returns a more specific list of recommendations. Filters recommendations by different dimensions.</p>
-	Filter any
+	Filter                    any
 	IncludeAllRecommendations any
-	Items any
-	MaxResults any
-	NextToken any
+	Items                     any
+	MaxResults                any
+	NextToken                 any
 	// <p>Defines how rows will be sorted in the response.</p>
 	OrderBy any
 }
@@ -105,16 +105,16 @@ var CostOptimizationHubRecommendations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: CostOptimizationHubRecommendations_FilterFields,
+			Kind:     "object",
+			Fields:   CostOptimizationHubRecommendations_FilterFields,
 		},
 		"IncludeAllRecommendations": ubx.FieldSpec{WireName: "include_all_recommendations"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                 ubx.FieldSpec{WireName: "next_token"},
 		"OrderBy": ubx.FieldSpec{
 			WireName: "order_by",
-			Kind: "object",
-			Fields: CostOptimizationHubRecommendations_OrderByFields,
+			Kind:     "object",
+			Fields:   CostOptimizationHubRecommendations_OrderByFields,
 		},
 	},
 }

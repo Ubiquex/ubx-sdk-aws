@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Differences_Differences_AfterBlob struct {
 	BlobId any
-	Mode any
-	Path any
+	Mode   any
+	Path   any
 }
 
 type Differences_Differences struct {
-	AfterBlob any
+	AfterBlob  any
 	BeforeBlob any
 	ChangeType any
 }
 
 type DifferencesConfig struct {
-	AfterCommitSpecifier any
-	AfterPath any
+	AfterCommitSpecifier  any
+	AfterPath             any
 	BeforeCommitSpecifier any
-	BeforePath any
-	MaxResults any
-	NextToken any
-	RepositoryName any
+	BeforePath            any
+	MaxResults            any
+	NextToken             any
+	RepositoryName        any
 }
 
 type DifferencesAttrs struct {
-	AfterCommitSpecifier any
-	AfterPath any
+	AfterCommitSpecifier  any
+	AfterPath             any
 	BeforeCommitSpecifier any
-	BeforePath any
-	Differences any
-	MaxResults any
-	NextToken any
-	RepositoryName any
+	BeforePath            any
+	Differences           any
+	MaxResults            any
+	NextToken             any
+	RepositoryName        any
 }
 
 var Differences = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_differences",
 	Fields: ubx.FieldMap{
-		"AfterCommitSpecifier": ubx.FieldSpec{WireName: "after_commit_specifier"},
-		"AfterPath": ubx.FieldSpec{WireName: "after_path"},
+		"AfterCommitSpecifier":  ubx.FieldSpec{WireName: "after_commit_specifier"},
+		"AfterPath":             ubx.FieldSpec{WireName: "after_path"},
 		"BeforeCommitSpecifier": ubx.FieldSpec{WireName: "before_commit_specifier"},
-		"BeforePath": ubx.FieldSpec{WireName: "before_path"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"BeforePath":            ubx.FieldSpec{WireName: "before_path"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
+		"RepositoryName":        ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

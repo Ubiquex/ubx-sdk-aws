@@ -4,43 +4,43 @@ package ram
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceSharePermissions_Permissions_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ResourceSharePermissions_Permissions struct {
-	Arn any
-	CreationTime any
-	DefaultVersion any
-	FeatureSet any
+	Arn                   any
+	CreationTime          any
+	DefaultVersion        any
+	FeatureSet            any
 	IsResourceTypeDefault any
-	LastUpdatedTime any
-	Name any
-	PermissionType any
-	ResourceType any
-	Status any
-	Tags any
-	Version any
+	LastUpdatedTime       any
+	Name                  any
+	PermissionType        any
+	ResourceType          any
+	Status                any
+	Tags                  any
+	Version               any
 }
 
 type ResourceSharePermissionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ResourceShareArn any
 }
 
 type ResourceSharePermissionsAttrs struct {
-	MaxResults any
-	NextToken any
-	Permissions any
+	MaxResults       any
+	NextToken        any
+	Permissions      any
 	ResourceShareArn any
 }
 
 var ResourceSharePermissions = ubx.DataSourceBinding{
 	WireType: "aws_ram_resource_share_permissions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"ResourceShareArn": ubx.FieldSpec{WireName: "resource_share_arn"},
 	},
 }

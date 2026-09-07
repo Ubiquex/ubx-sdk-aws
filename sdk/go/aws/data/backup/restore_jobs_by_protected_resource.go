@@ -8,58 +8,58 @@ type RestoreJobsByProtectedResource_RestoreJobs_CreatedBy struct {
 }
 
 type RestoreJobsByProtectedResource_RestoreJobs struct {
-	AccountId any
-	BackupSizeInBytes any
-	BackupVaultArn any
-	CompletionDate any
-	CreatedBy any
-	CreatedResourceArn any
-	CreationDate any
-	DeletionStatus any
-	DeletionStatusMessage any
+	AccountId                     any
+	BackupSizeInBytes             any
+	BackupVaultArn                any
+	CompletionDate                any
+	CreatedBy                     any
+	CreatedResourceArn            any
+	CreationDate                  any
+	DeletionStatus                any
+	DeletionStatusMessage         any
 	ExpectedCompletionTimeMinutes any
-	IamRoleArn any
-	IsParent any
-	ParentJobId any
-	PercentDone any
-	RecoveryPointArn any
-	RecoveryPointCreationDate any
-	ResourceType any
-	RestoreJobId any
-	SourceResourceArn any
-	Status any
-	StatusMessage any
-	ValidationStatus any
-	ValidationStatusMessage any
+	IamRoleArn                    any
+	IsParent                      any
+	ParentJobId                   any
+	PercentDone                   any
+	RecoveryPointArn              any
+	RecoveryPointCreationDate     any
+	ResourceType                  any
+	RestoreJobId                  any
+	SourceResourceArn             any
+	Status                        any
+	StatusMessage                 any
+	ValidationStatus              any
+	ValidationStatusMessage       any
 }
 
 type RestoreJobsByProtectedResourceConfig struct {
-	ByRecoveryPointCreationDateAfter any
+	ByRecoveryPointCreationDateAfter  any
 	ByRecoveryPointCreationDateBefore any
-	ByStatus any
-	MaxResults any
-	NextToken any
-	ResourceArn any
+	ByStatus                          any
+	MaxResults                        any
+	NextToken                         any
+	ResourceArn                       any
 }
 
 type RestoreJobsByProtectedResourceAttrs struct {
-	ByRecoveryPointCreationDateAfter any
+	ByRecoveryPointCreationDateAfter  any
 	ByRecoveryPointCreationDateBefore any
-	ByStatus any
-	MaxResults any
-	NextToken any
-	ResourceArn any
-	RestoreJobs any
+	ByStatus                          any
+	MaxResults                        any
+	NextToken                         any
+	ResourceArn                       any
+	RestoreJobs                       any
 }
 
 var RestoreJobsByProtectedResource = ubx.DataSourceBinding{
 	WireType: "aws_backup_restore_jobs_by_protected_resource",
 	Fields: ubx.FieldMap{
-		"ByRecoveryPointCreationDateAfter": ubx.FieldSpec{WireName: "by_recovery_point_creation_date_after"},
+		"ByRecoveryPointCreationDateAfter":  ubx.FieldSpec{WireName: "by_recovery_point_creation_date_after"},
 		"ByRecoveryPointCreationDateBefore": ubx.FieldSpec{WireName: "by_recovery_point_creation_date_before"},
-		"ByStatus": ubx.FieldSpec{WireName: "by_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"ByStatus":                          ubx.FieldSpec{WireName: "by_status"},
+		"MaxResults":                        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                         ubx.FieldSpec{WireName: "next_token"},
+		"ResourceArn":                       ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

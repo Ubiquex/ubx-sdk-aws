@@ -11,9 +11,9 @@ type Gateway_Networks struct {
 }
 
 var Gateway_NetworksFields = ubx.FieldMap{
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 type GatewayConfig struct {
 	// The range of IP addresses that contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -41,11 +41,11 @@ var Gateway = ubx.ResourceBinding{
 	WireType: "aws_media_connect_gateway",
 	Fields: ubx.FieldMap{
 		"EgressCidrBlocks": ubx.FieldSpec{WireName: "egress_cidr_blocks"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Networks": ubx.FieldSpec{
 			WireName: "networks",
-			Kind: "list",
-			Fields: Gateway_NetworksFields,
+			Kind:     "list",
+			Fields:   Gateway_NetworksFields,
 		},
 	},
 }

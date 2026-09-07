@@ -26,8 +26,8 @@ type DeploymentAttrs struct {
 var Deployment = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_deployment",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":       ubx.FieldSpec{WireName: "api_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"StageName": ubx.FieldSpec{WireName: "stage_name"},
+		"StageName":   ubx.FieldSpec{WireName: "stage_name"},
 	},
 }

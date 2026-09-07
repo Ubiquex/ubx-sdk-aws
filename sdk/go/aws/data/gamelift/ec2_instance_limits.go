@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ec2InstanceLimits_Ec2InstanceLimits struct {
 	CurrentInstances any
-	Ec2InstanceType any
-	InstanceLimit any
-	Location any
+	Ec2InstanceType  any
+	InstanceLimit    any
+	Location         any
 }
 
 type Ec2InstanceLimitsConfig struct {
 	Ec2InstanceType any
-	Location any
+	Location        any
 }
 
 type Ec2InstanceLimitsAttrs struct {
 	Ec2InstanceLimits any
-	Ec2InstanceType any
-	Location any
+	Ec2InstanceType   any
+	Location          any
 }
 
 var Ec2InstanceLimits = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_ec2_instance_limits",
 	Fields: ubx.FieldMap{
 		"Ec2InstanceType": ubx.FieldSpec{WireName: "ec2_instance_type"},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"Location":        ubx.FieldSpec{WireName: "location"},
 	},
 }

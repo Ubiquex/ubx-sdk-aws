@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateConfig struct {
 	ChangeSetName any
-	StackName any
+	StackName     any
 	TemplateStage any
 }
 
 type TemplateAttrs struct {
-	ChangeSetName any
-	StackName any
+	ChangeSetName   any
+	StackName       any
 	StagesAvailable any
-	TemplateBody any
-	TemplateStage any
+	TemplateBody    any
+	TemplateStage   any
 }
 
 var Template = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_template",
 	Fields: ubx.FieldMap{
 		"ChangeSetName": ubx.FieldSpec{WireName: "change_set_name"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"StackName":     ubx.FieldSpec{WireName: "stack_name"},
 		"TemplateStage": ubx.FieldSpec{WireName: "template_stage"},
 	},
 }

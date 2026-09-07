@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountAttributes_AccountQuotas struct {
 	AccountQuotaName any
-	Max any
-	Used any
+	Max              any
+	Used             any
 }
 
 type AccountAttributesConfig struct {
@@ -18,6 +18,5 @@ type AccountAttributesAttrs struct {
 
 var AccountAttributes = ubx.DataSourceBinding{
 	WireType: "aws_rds_account_attributes",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,7 +4,7 @@ package ingest_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IngestTimestreamEndpoints_Endpoints struct {
-	Address any
+	Address              any
 	CachePeriodInMinutes any
 }
 
@@ -17,6 +17,5 @@ type IngestTimestreamEndpointsAttrs struct {
 
 var IngestTimestreamEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_ingest_timestream_endpoints",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

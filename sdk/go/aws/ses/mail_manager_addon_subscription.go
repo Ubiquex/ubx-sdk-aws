@@ -10,9 +10,9 @@ type MailManagerAddonSubscription_Tags struct {
 }
 
 var MailManagerAddonSubscription_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MailManagerAddonSubscriptionConfig struct {
 	// The name of the third-party email security or spam filtering add-on that this SES Mail Manager add-on subscription subscribes to, enabling its features for the associated mail managers. (AI-inferred)
@@ -38,8 +38,8 @@ var MailManagerAddonSubscription = ubx.ResourceBinding{
 		"AddonName": ubx.FieldSpec{WireName: "addon_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MailManagerAddonSubscription_TagsFields,
+			Kind:     "list",
+			Fields:   MailManagerAddonSubscription_TagsFields,
 		},
 	},
 }

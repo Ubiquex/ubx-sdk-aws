@@ -8,20 +8,20 @@ type ReceivedDataGrantConfig struct {
 }
 
 type ReceivedDataGrantAttrs struct {
-	AcceptanceState any
-	AcceptedAt any
-	Arn any
-	CreatedAt any
-	DataGrantArn any
-	DataSetId any
-	Description any
-	EndsAt any
+	AcceptanceState        any
+	AcceptedAt             any
+	Arn                    any
+	CreatedAt              any
+	DataGrantArn           any
+	DataSetId              any
+	Description            any
+	EndsAt                 any
 	GrantDistributionScope any
-	Id any
-	Name any
-	ReceiverPrincipal any
-	SenderPrincipal any
-	UpdatedAt any
+	Id                     any
+	Name                   any
+	ReceiverPrincipal      any
+	SenderPrincipal        any
+	UpdatedAt              any
 }
 
 var ReceivedDataGrant = ubx.DataSourceBinding{

@@ -4,8 +4,8 @@ package elasticfilesystem
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LifecycleConfiguration_LifecyclePolicies struct {
-	TransitionToArchive any
-	TransitionToIa any
+	TransitionToArchive             any
+	TransitionToIa                  any
 	TransitionToPrimaryStorageClass any
 }
 
@@ -14,7 +14,7 @@ type LifecycleConfigurationConfig struct {
 }
 
 type LifecycleConfigurationAttrs struct {
-	FileSystemId any
+	FileSystemId      any
 	LifecyclePolicies any
 }
 

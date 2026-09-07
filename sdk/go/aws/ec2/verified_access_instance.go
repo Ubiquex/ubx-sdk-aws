@@ -42,7 +42,7 @@ type VerifiedAccessInstance_LoggingConfigurations struct {
 }
 
 type VerifiedAccessInstance_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -60,54 +60,54 @@ type VerifiedAccessInstance_VerifiedAccessTrustProviders struct {
 }
 
 var VerifiedAccessInstance_LoggingConfigurations_CloudWatchLogsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-	}
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+}
 
 var VerifiedAccessInstance_LoggingConfigurations_KinesisDataFirehoseFields = ubx.FieldMap{
-		"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+}
 
 var VerifiedAccessInstance_LoggingConfigurations_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"BucketName":  ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketOwner": ubx.FieldSpec{WireName: "bucket_owner"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"Prefix":      ubx.FieldSpec{WireName: "prefix"},
+}
 
 var VerifiedAccessInstance_LoggingConfigurationsFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: VerifiedAccessInstance_LoggingConfigurations_CloudWatchLogsFields,
-		},
-		"IncludeTrustContext": ubx.FieldSpec{WireName: "include_trust_context"},
-		"KinesisDataFirehose": ubx.FieldSpec{
-			WireName: "kinesis_data_firehose",
-			Kind: "object",
-			Fields: VerifiedAccessInstance_LoggingConfigurations_KinesisDataFirehoseFields,
-		},
-		"LogVersion": ubx.FieldSpec{WireName: "log_version"},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: VerifiedAccessInstance_LoggingConfigurations_S3Fields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   VerifiedAccessInstance_LoggingConfigurations_CloudWatchLogsFields,
+	},
+	"IncludeTrustContext": ubx.FieldSpec{WireName: "include_trust_context"},
+	"KinesisDataFirehose": ubx.FieldSpec{
+		WireName: "kinesis_data_firehose",
+		Kind:     "object",
+		Fields:   VerifiedAccessInstance_LoggingConfigurations_KinesisDataFirehoseFields,
+	},
+	"LogVersion": ubx.FieldSpec{WireName: "log_version"},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   VerifiedAccessInstance_LoggingConfigurations_S3Fields,
+	},
+}
 
 var VerifiedAccessInstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var VerifiedAccessInstance_VerifiedAccessTrustProvidersFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DeviceTrustProviderType": ubx.FieldSpec{WireName: "device_trust_provider_type"},
-		"TrustProviderType": ubx.FieldSpec{WireName: "trust_provider_type"},
-		"UserTrustProviderType": ubx.FieldSpec{WireName: "user_trust_provider_type"},
-		"VerifiedAccessTrustProviderId": ubx.FieldSpec{WireName: "verified_access_trust_provider_id"},
-	}
+	"Description":                   ubx.FieldSpec{WireName: "description"},
+	"DeviceTrustProviderType":       ubx.FieldSpec{WireName: "device_trust_provider_type"},
+	"TrustProviderType":             ubx.FieldSpec{WireName: "trust_provider_type"},
+	"UserTrustProviderType":         ubx.FieldSpec{WireName: "user_trust_provider_type"},
+	"VerifiedAccessTrustProviderId": ubx.FieldSpec{WireName: "verified_access_trust_provider_id"},
+}
 
 type VerifiedAccessInstanceConfig struct {
 	// Introduce CidrEndpointsCustomSubDomain property to represent the domain (say, ava.my-company.com)
@@ -155,23 +155,23 @@ var VerifiedAccessInstance = ubx.ResourceBinding{
 	WireType: "aws_ec2_verified_access_instance",
 	Fields: ubx.FieldMap{
 		"CidrEndpointsCustomSubDomain": ubx.FieldSpec{WireName: "cidr_endpoints_custom_sub_domain"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FipsEnabled": ubx.FieldSpec{WireName: "fips_enabled"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
+		"FipsEnabled":                  ubx.FieldSpec{WireName: "fips_enabled"},
 		"LoggingConfigurations": ubx.FieldSpec{
 			WireName: "logging_configurations",
-			Kind: "object",
-			Fields: VerifiedAccessInstance_LoggingConfigurationsFields,
+			Kind:     "object",
+			Fields:   VerifiedAccessInstance_LoggingConfigurationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VerifiedAccessInstance_TagsFields,
+			Kind:     "list",
+			Fields:   VerifiedAccessInstance_TagsFields,
 		},
 		"VerifiedAccessTrustProviderIds": ubx.FieldSpec{WireName: "verified_access_trust_provider_ids"},
 		"VerifiedAccessTrustProviders": ubx.FieldSpec{
 			WireName: "verified_access_trust_providers",
-			Kind: "list",
-			Fields: VerifiedAccessInstance_VerifiedAccessTrustProvidersFields,
+			Kind:     "list",
+			Fields:   VerifiedAccessInstance_VerifiedAccessTrustProvidersFields,
 		},
 	},
 }

@@ -182,206 +182,206 @@ type Application_Tags struct {
 }
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetricsFields = ubx.FieldMap{
-		"AlarmMetricName": ubx.FieldSpec{WireName: "alarm_metric_name"},
-	}
+	"AlarmMetricName": ubx.FieldSpec{WireName: "alarm_metric_name"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmsFields = ubx.FieldMap{
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
+	"Severity":  ubx.FieldSpec{WireName: "severity"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HaclusterPrometheusExporterFields = ubx.FieldMap{
-		"PrometheusPort": ubx.FieldSpec{WireName: "prometheus_port"},
-	}
+	"PrometheusPort": ubx.FieldSpec{WireName: "prometheus_port"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HanaprometheusExporterFields = ubx.FieldMap{
-		"AgreeToInstallHanadbclient": ubx.FieldSpec{WireName: "agree_to_install_hanadbclient"},
-		"Hanaport": ubx.FieldSpec{WireName: "hanaport"},
-		"HanasecretName": ubx.FieldSpec{WireName: "hanasecret_name"},
-		"Hanasid": ubx.FieldSpec{WireName: "hanasid"},
-		"PrometheusPort": ubx.FieldSpec{WireName: "prometheus_port"},
-	}
+	"AgreeToInstallHanadbclient": ubx.FieldSpec{WireName: "agree_to_install_hanadbclient"},
+	"Hanaport":                   ubx.FieldSpec{WireName: "hanaport"},
+	"HanasecretName":             ubx.FieldSpec{WireName: "hanasecret_name"},
+	"Hanasid":                    ubx.FieldSpec{WireName: "hanasid"},
+	"PrometheusPort":             ubx.FieldSpec{WireName: "prometheus_port"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_JmxprometheusExporterFields = ubx.FieldMap{
-		"HostPort": ubx.FieldSpec{WireName: "host_port"},
-		"Jmxurl": ubx.FieldSpec{WireName: "jmxurl"},
-		"PrometheusPort": ubx.FieldSpec{WireName: "prometheus_port"},
-	}
+	"HostPort":       ubx.FieldSpec{WireName: "host_port"},
+	"Jmxurl":         ubx.FieldSpec{WireName: "jmxurl"},
+	"PrometheusPort": ubx.FieldSpec{WireName: "prometheus_port"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_LogsFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"LogPath": ubx.FieldSpec{WireName: "log_path"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-		"PatternSet": ubx.FieldSpec{WireName: "pattern_set"},
-	}
+	"Encoding":     ubx.FieldSpec{WireName: "encoding"},
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+	"LogPath":      ubx.FieldSpec{WireName: "log_path"},
+	"LogType":      ubx.FieldSpec{WireName: "log_type"},
+	"PatternSet":   ubx.FieldSpec{WireName: "pattern_set"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_NetWeaverPrometheusExporterFields = ubx.FieldMap{
-		"InstanceNumbers": ubx.FieldSpec{WireName: "instance_numbers"},
-		"PrometheusPort": ubx.FieldSpec{WireName: "prometheus_port"},
-		"Sapsid": ubx.FieldSpec{WireName: "sapsid"},
-	}
+	"InstanceNumbers": ubx.FieldSpec{WireName: "instance_numbers"},
+	"PrometheusPort":  ubx.FieldSpec{WireName: "prometheus_port"},
+	"Sapsid":          ubx.FieldSpec{WireName: "sapsid"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_ProcessesFields = ubx.FieldMap{
-		"AlarmMetrics": ubx.FieldSpec{
-			WireName: "alarm_metrics",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetricsFields,
-		},
-		"ProcessName": ubx.FieldSpec{WireName: "process_name"},
-	}
+	"AlarmMetrics": ubx.FieldSpec{
+		WireName: "alarm_metrics",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetricsFields,
+	},
+	"ProcessName": ubx.FieldSpec{WireName: "process_name"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_SqlserverPrometheusExporterFields = ubx.FieldMap{
-		"PrometheusPort": ubx.FieldSpec{WireName: "prometheus_port"},
-		"SqlsecretName": ubx.FieldSpec{WireName: "sqlsecret_name"},
-	}
+	"PrometheusPort": ubx.FieldSpec{WireName: "prometheus_port"},
+	"SqlsecretName":  ubx.FieldSpec{WireName: "sqlsecret_name"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEventsFields = ubx.FieldMap{
-		"EventLevels": ubx.FieldSpec{WireName: "event_levels"},
-		"EventName": ubx.FieldSpec{WireName: "event_name"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"PatternSet": ubx.FieldSpec{WireName: "pattern_set"},
-	}
+	"EventLevels":  ubx.FieldSpec{WireName: "event_levels"},
+	"EventName":    ubx.FieldSpec{WireName: "event_name"},
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+	"PatternSet":   ubx.FieldSpec{WireName: "pattern_set"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetailsFields = ubx.FieldMap{
-		"AlarmMetrics": ubx.FieldSpec{
-			WireName: "alarm_metrics",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetricsFields,
-		},
-		"Alarms": ubx.FieldSpec{
-			WireName: "alarms",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmsFields,
-		},
-		"HaclusterPrometheusExporter": ubx.FieldSpec{
-			WireName: "hacluster_prometheus_exporter",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HaclusterPrometheusExporterFields,
-		},
-		"HanaprometheusExporter": ubx.FieldSpec{
-			WireName: "hanaprometheus_exporter",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HanaprometheusExporterFields,
-		},
-		"JmxprometheusExporter": ubx.FieldSpec{
-			WireName: "jmxprometheus_exporter",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_JmxprometheusExporterFields,
-		},
-		"Logs": ubx.FieldSpec{
-			WireName: "logs",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_LogsFields,
-		},
-		"NetWeaverPrometheusExporter": ubx.FieldSpec{
-			WireName: "net_weaver_prometheus_exporter",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_NetWeaverPrometheusExporterFields,
-		},
-		"Processes": ubx.FieldSpec{
-			WireName: "processes",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_ProcessesFields,
-		},
-		"SqlserverPrometheusExporter": ubx.FieldSpec{
-			WireName: "sqlserver_prometheus_exporter",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_SqlserverPrometheusExporterFields,
-		},
-		"WindowsEvents": ubx.FieldSpec{
-			WireName: "windows_events",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEventsFields,
-		},
-	}
+	"AlarmMetrics": ubx.FieldSpec{
+		WireName: "alarm_metrics",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetricsFields,
+	},
+	"Alarms": ubx.FieldSpec{
+		WireName: "alarms",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmsFields,
+	},
+	"HaclusterPrometheusExporter": ubx.FieldSpec{
+		WireName: "hacluster_prometheus_exporter",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HaclusterPrometheusExporterFields,
+	},
+	"HanaprometheusExporter": ubx.FieldSpec{
+		WireName: "hanaprometheus_exporter",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HanaprometheusExporterFields,
+	},
+	"JmxprometheusExporter": ubx.FieldSpec{
+		WireName: "jmxprometheus_exporter",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_JmxprometheusExporterFields,
+	},
+	"Logs": ubx.FieldSpec{
+		WireName: "logs",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_LogsFields,
+	},
+	"NetWeaverPrometheusExporter": ubx.FieldSpec{
+		WireName: "net_weaver_prometheus_exporter",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_NetWeaverPrometheusExporterFields,
+	},
+	"Processes": ubx.FieldSpec{
+		WireName: "processes",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_ProcessesFields,
+	},
+	"SqlserverPrometheusExporter": ubx.FieldSpec{
+		WireName: "sqlserver_prometheus_exporter",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_SqlserverPrometheusExporterFields,
+	},
+	"WindowsEvents": ubx.FieldSpec{
+		WireName: "windows_events",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEventsFields,
+	},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations_SubComponentConfigurationDetailsFields = ubx.FieldMap{
-		"AlarmMetrics": ubx.FieldSpec{
-			WireName: "alarm_metrics",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetricsFields,
-		},
-		"Logs": ubx.FieldSpec{
-			WireName: "logs",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_LogsFields,
-		},
-		"Processes": ubx.FieldSpec{
-			WireName: "processes",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_ProcessesFields,
-		},
-		"WindowsEvents": ubx.FieldSpec{
-			WireName: "windows_events",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEventsFields,
-		},
-	}
+	"AlarmMetrics": ubx.FieldSpec{
+		WireName: "alarm_metrics",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetricsFields,
+	},
+	"Logs": ubx.FieldSpec{
+		WireName: "logs",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_LogsFields,
+	},
+	"Processes": ubx.FieldSpec{
+		WireName: "processes",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_ProcessesFields,
+	},
+	"WindowsEvents": ubx.FieldSpec{
+		WireName: "windows_events",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEventsFields,
+	},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurationsFields = ubx.FieldMap{
-		"SubComponentConfigurationDetails": ubx.FieldSpec{
-			WireName: "sub_component_configuration_details",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations_SubComponentConfigurationDetailsFields,
-		},
-		"SubComponentType": ubx.FieldSpec{WireName: "sub_component_type"},
-	}
+	"SubComponentConfigurationDetails": ubx.FieldSpec{
+		WireName: "sub_component_configuration_details",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations_SubComponentConfigurationDetailsFields,
+	},
+	"SubComponentType": ubx.FieldSpec{WireName: "sub_component_type"},
+}
 
 var Application_ComponentMonitoringSettings_CustomComponentConfigurationFields = ubx.FieldMap{
-		"ConfigurationDetails": ubx.FieldSpec{
-			WireName: "configuration_details",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetailsFields,
-		},
-		"SubComponentTypeConfigurations": ubx.FieldSpec{
-			WireName: "sub_component_type_configurations",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurationsFields,
-		},
-	}
+	"ConfigurationDetails": ubx.FieldSpec{
+		WireName: "configuration_details",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetailsFields,
+	},
+	"SubComponentTypeConfigurations": ubx.FieldSpec{
+		WireName: "sub_component_type_configurations",
+		Kind:     "list",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurationsFields,
+	},
+}
 
 var Application_ComponentMonitoringSettingsFields = ubx.FieldMap{
-		"ComponentArn": ubx.FieldSpec{WireName: "component_arn"},
-		"ComponentConfigurationMode": ubx.FieldSpec{WireName: "component_configuration_mode"},
-		"ComponentName": ubx.FieldSpec{WireName: "component_name"},
-		"CustomComponentConfiguration": ubx.FieldSpec{
-			WireName: "custom_component_configuration",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfigurationFields,
-		},
-		"DefaultOverwriteComponentConfiguration": ubx.FieldSpec{
-			WireName: "default_overwrite_component_configuration",
-			Kind: "object",
-			Fields: Application_ComponentMonitoringSettings_CustomComponentConfigurationFields,
-		},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-	}
+	"ComponentArn":               ubx.FieldSpec{WireName: "component_arn"},
+	"ComponentConfigurationMode": ubx.FieldSpec{WireName: "component_configuration_mode"},
+	"ComponentName":              ubx.FieldSpec{WireName: "component_name"},
+	"CustomComponentConfiguration": ubx.FieldSpec{
+		WireName: "custom_component_configuration",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfigurationFields,
+	},
+	"DefaultOverwriteComponentConfiguration": ubx.FieldSpec{
+		WireName: "default_overwrite_component_configuration",
+		Kind:     "object",
+		Fields:   Application_ComponentMonitoringSettings_CustomComponentConfigurationFields,
+	},
+	"Tier": ubx.FieldSpec{WireName: "tier"},
+}
 
 var Application_CustomComponentsFields = ubx.FieldMap{
-		"ComponentName": ubx.FieldSpec{WireName: "component_name"},
-		"ResourceList": ubx.FieldSpec{WireName: "resource_list"},
-	}
+	"ComponentName": ubx.FieldSpec{WireName: "component_name"},
+	"ResourceList":  ubx.FieldSpec{WireName: "resource_list"},
+}
 
 var Application_LogPatternSets_LogPatternsFields = ubx.FieldMap{
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"PatternName": ubx.FieldSpec{WireName: "pattern_name"},
-		"Rank": ubx.FieldSpec{WireName: "rank"},
-	}
+	"Pattern":     ubx.FieldSpec{WireName: "pattern"},
+	"PatternName": ubx.FieldSpec{WireName: "pattern_name"},
+	"Rank":        ubx.FieldSpec{WireName: "rank"},
+}
 
 var Application_LogPatternSetsFields = ubx.FieldMap{
-		"LogPatterns": ubx.FieldSpec{
-			WireName: "log_patterns",
-			Kind: "list",
-			Fields: Application_LogPatternSets_LogPatternsFields,
-		},
-		"PatternSetName": ubx.FieldSpec{WireName: "pattern_set_name"},
-	}
+	"LogPatterns": ubx.FieldSpec{
+		WireName: "log_patterns",
+		Kind:     "list",
+		Fields:   Application_LogPatternSets_LogPatternsFields,
+	},
+	"PatternSetName": ubx.FieldSpec{WireName: "pattern_set_name"},
+}
 
 var Application_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApplicationConfig struct {
 	// If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing
@@ -442,33 +442,33 @@ type ApplicationAttrs struct {
 var Application = ubx.ResourceBinding{
 	WireType: "aws_application_insights_application",
 	Fields: ubx.FieldMap{
-		"AttachMissingPermission": ubx.FieldSpec{WireName: "attach_missing_permission"},
+		"AttachMissingPermission":  ubx.FieldSpec{WireName: "attach_missing_permission"},
 		"AutoConfigurationEnabled": ubx.FieldSpec{WireName: "auto_configuration_enabled"},
-		"CwemonitorEnabled": ubx.FieldSpec{WireName: "cwemonitor_enabled"},
+		"CwemonitorEnabled":        ubx.FieldSpec{WireName: "cwemonitor_enabled"},
 		"ComponentMonitoringSettings": ubx.FieldSpec{
 			WireName: "component_monitoring_settings",
-			Kind: "list",
-			Fields: Application_ComponentMonitoringSettingsFields,
+			Kind:     "list",
+			Fields:   Application_ComponentMonitoringSettingsFields,
 		},
 		"CustomComponents": ubx.FieldSpec{
 			WireName: "custom_components",
-			Kind: "list",
-			Fields: Application_CustomComponentsFields,
+			Kind:     "list",
+			Fields:   Application_CustomComponentsFields,
 		},
 		"GroupingType": ubx.FieldSpec{WireName: "grouping_type"},
 		"LogPatternSets": ubx.FieldSpec{
 			WireName: "log_pattern_sets",
-			Kind: "list",
-			Fields: Application_LogPatternSetsFields,
+			Kind:     "list",
+			Fields:   Application_LogPatternSetsFields,
 		},
-		"OpsCenterEnabled": ubx.FieldSpec{WireName: "ops_center_enabled"},
+		"OpsCenterEnabled":   ubx.FieldSpec{WireName: "ops_center_enabled"},
 		"OpsItemSnstopicArn": ubx.FieldSpec{WireName: "ops_item_snstopic_arn"},
-		"ResourceGroupName": ubx.FieldSpec{WireName: "resource_group_name"},
+		"ResourceGroupName":  ubx.FieldSpec{WireName: "resource_group_name"},
 		"SnsnotificationArn": ubx.FieldSpec{WireName: "snsnotification_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Application_TagsFields,
+			Kind:     "list",
+			Fields:   Application_TagsFields,
 		},
 	},
 }

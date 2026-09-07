@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_EventCondition_Dimensions_Attributes struct {
 	AttributeType any
-	Values any
+	Values        any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_EventCondition_Dimensions_EventType struct {
 	DimensionType any
-	Values any
+	Values        any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_EventCondition_Dimensions_Metrics struct {
 	ComparisonOperator any
-	Value any
+	Value              any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_EventCondition_Dimensions struct {
 	Attributes any
-	EventType any
-	Metrics any
+	EventType  any
+	Metrics    any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_EventCondition struct {
-	Dimensions any
+	Dimensions      any
 	MessageActivity any
 }
 
@@ -34,7 +34,7 @@ type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Condit
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_SegmentDimensions_Behavior_Recency struct {
-	Duration any
+	Duration    any
 	RecencyType any
 }
 
@@ -44,58 +44,58 @@ type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Condit
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_SegmentDimensions_Demographic struct {
 	AppVersion any
-	Channel any
+	Channel    any
 	DeviceType any
-	Make any
-	Model any
-	Platform any
+	Make       any
+	Model      any
+	Platform   any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_SegmentDimensions_Location_Gpspoint_Coordinates struct {
-	Latitude any
+	Latitude  any
 	Longitude any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_SegmentDimensions_Location_Gpspoint struct {
-	Coordinates any
+	Coordinates       any
 	RangeInKilometers any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_SegmentDimensions_Location struct {
-	Country any
+	Country  any
 	Gpspoint any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions_SegmentDimensions struct {
-	Attributes any
-	Behavior any
-	Demographic any
-	Location any
-	Metrics any
+	Attributes     any
+	Behavior       any
+	Demographic    any
+	Location       any
+	Metrics        any
 	UserAttributes any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition_Conditions struct {
-	EventCondition any
-	SegmentCondition any
+	EventCondition    any
+	SegmentCondition  any
 	SegmentDimensions any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_Condition struct {
 	Conditions any
-	Operator any
+	Operator   any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit_EvaluationWaitTime struct {
-	WaitFor any
+	WaitFor   any
 	WaitUntil any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ConditionalSplit struct {
-	Condition any
+	Condition          any
 	EvaluationWaitTime any
-	FalseActivity any
-	TrueActivity any
+	FalseActivity      any
+	TrueActivity       any
 }
 
 type Journeys_JourneysResponse_Item_Activities_ContactCenter struct {
@@ -107,11 +107,11 @@ type Journeys_JourneysResponse_Item_Activities_Custom_MessageConfig struct {
 }
 
 type Journeys_JourneysResponse_Item_Activities_Custom struct {
-	DeliveryUri any
-	EndpointTypes any
-	MessageConfig any
-	NextActivity any
-	TemplateName any
+	DeliveryUri     any
+	EndpointTypes   any
+	MessageConfig   any
+	NextActivity    any
+	TemplateName    any
 	TemplateVersion any
 }
 
@@ -120,25 +120,25 @@ type Journeys_JourneysResponse_Item_Activities_Email_MessageConfig struct {
 }
 
 type Journeys_JourneysResponse_Item_Activities_Email struct {
-	MessageConfig any
-	NextActivity any
-	TemplateName any
+	MessageConfig   any
+	NextActivity    any
+	TemplateName    any
 	TemplateVersion any
 }
 
 type Journeys_JourneysResponse_Item_Activities_Holdout struct {
 	NextActivity any
-	Percentage any
+	Percentage   any
 }
 
 type Journeys_JourneysResponse_Item_Activities_MultiCondition_Branches struct {
-	Condition any
+	Condition    any
 	NextActivity any
 }
 
 type Journeys_JourneysResponse_Item_Activities_MultiCondition struct {
-	Branches any
-	DefaultActivity any
+	Branches           any
+	DefaultActivity    any
 	EvaluationWaitTime any
 }
 
@@ -147,9 +147,9 @@ type Journeys_JourneysResponse_Item_Activities_Push_MessageConfig struct {
 }
 
 type Journeys_JourneysResponse_Item_Activities_Push struct {
-	MessageConfig any
-	NextActivity any
-	TemplateName any
+	MessageConfig   any
+	NextActivity    any
+	TemplateName    any
 	TemplateVersion any
 }
 
@@ -158,94 +158,94 @@ type Journeys_JourneysResponse_Item_Activities_RandomSplit struct {
 }
 
 type Journeys_JourneysResponse_Item_Activities_Sms_MessageConfig struct {
-	EntityId any
-	MessageType any
+	EntityId          any
+	MessageType       any
 	OriginationNumber any
-	SenderId any
-	TemplateId any
+	SenderId          any
+	TemplateId        any
 }
 
 type Journeys_JourneysResponse_Item_Activities_Sms struct {
-	MessageConfig any
-	NextActivity any
-	TemplateName any
+	MessageConfig   any
+	NextActivity    any
+	TemplateName    any
 	TemplateVersion any
 }
 
 type Journeys_JourneysResponse_Item_Activities_Wait struct {
 	NextActivity any
-	WaitTime any
+	WaitTime     any
 }
 
 type Journeys_JourneysResponse_Item_Activities struct {
 	ConditionalSplit any
-	ContactCenter any
-	Custom any
-	Description any
-	Email any
-	Holdout any
-	MultiCondition any
-	Push any
-	RandomSplit any
-	Sms any
-	Wait any
+	ContactCenter    any
+	Custom           any
+	Description      any
+	Email            any
+	Holdout          any
+	MultiCondition   any
+	Push             any
+	RandomSplit      any
+	Sms              any
+	Wait             any
 }
 
 type Journeys_JourneysResponse_Item_ClosedDays_Custom struct {
-	EndDateTime any
-	Name any
+	EndDateTime   any
+	Name          any
 	StartDateTime any
 }
 
 type Journeys_JourneysResponse_Item_ClosedDays struct {
 	Custom any
-	Email any
-	Push any
-	Sms any
-	Voice any
+	Email  any
+	Push   any
+	Sms    any
+	Voice  any
 }
 
 type Journeys_JourneysResponse_Item_JourneyChannelSettings struct {
-	ConnectCampaignArn any
+	ConnectCampaignArn              any
 	ConnectCampaignExecutionRoleArn any
 }
 
 type Journeys_JourneysResponse_Item_Limits_TimeframeCap struct {
-	Cap any
+	Cap  any
 	Days any
 }
 
 type Journeys_JourneysResponse_Item_Limits struct {
-	DailyCap any
-	EndpointReentryCap any
+	DailyCap                any
+	EndpointReentryCap      any
 	EndpointReentryInterval any
-	MessagesPerSecond any
-	TimeframeCap any
-	TotalCap any
+	MessagesPerSecond       any
+	TimeframeCap            any
+	TotalCap                any
 }
 
 type Journeys_JourneysResponse_Item_OpenHours_Custom struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Journeys_JourneysResponse_Item_OpenHours struct {
 	Custom any
-	Email any
-	Push any
-	Sms any
-	Voice any
+	Email  any
+	Push   any
+	Sms    any
+	Voice  any
 }
 
 type Journeys_JourneysResponse_Item_QuietTime struct {
-	End any
+	End   any
 	Start any
 }
 
 type Journeys_JourneysResponse_Item_Schedule struct {
-	EndTime any
+	EndTime   any
 	StartTime any
-	Timezone any
+	Timezone  any
 }
 
 type Journeys_JourneysResponse_Item_StartCondition_EventStartCondition_EventFilter struct {
@@ -255,64 +255,64 @@ type Journeys_JourneysResponse_Item_StartCondition_EventStartCondition_EventFilt
 
 type Journeys_JourneysResponse_Item_StartCondition_EventStartCondition struct {
 	EventFilter any
-	SegmentId any
+	SegmentId   any
 }
 
 type Journeys_JourneysResponse_Item_StartCondition struct {
-	Description any
-	EventStartCondition any
+	Description           any
+	EventStartCondition   any
 	SegmentStartCondition any
 }
 
 type Journeys_JourneysResponse_Item struct {
-	Activities any
-	ApplicationId any
-	ClosedDays any
-	CreationDate any
-	Id any
-	JourneyChannelSettings any
-	LastModifiedDate any
-	Limits any
-	LocalTime any
-	Name any
-	OpenHours any
-	QuietTime any
-	RefreshFrequency any
-	RefreshOnSegmentUpdate any
-	Schedule any
-	SendingSchedule any
-	StartActivity any
-	StartCondition any
-	State any
-	Tags any
+	Activities                any
+	ApplicationId             any
+	ClosedDays                any
+	CreationDate              any
+	Id                        any
+	JourneyChannelSettings    any
+	LastModifiedDate          any
+	Limits                    any
+	LocalTime                 any
+	Name                      any
+	OpenHours                 any
+	QuietTime                 any
+	RefreshFrequency          any
+	RefreshOnSegmentUpdate    any
+	Schedule                  any
+	SendingSchedule           any
+	StartActivity             any
+	StartCondition            any
+	State                     any
+	Tags                      any
 	TimezoneEstimationMethods any
-	WaitForQuietTime any
+	WaitForQuietTime          any
 }
 
 type Journeys_JourneysResponse struct {
-	Item any
+	Item      any
 	NextToken any
 }
 
 type JourneysConfig struct {
 	ApplicationId any
-	PageSize any
-	Token any
+	PageSize      any
+	Token         any
 }
 
 type JourneysAttrs struct {
 	ApplicationId any
 	// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
 	JourneysResponse any
-	PageSize any
-	Token any
+	PageSize         any
+	Token            any
 }
 
 var Journeys = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_journeys",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"Token":         ubx.FieldSpec{WireName: "token"},
 	},
 }

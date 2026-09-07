@@ -4,31 +4,31 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityManagerMonitoredTagKeys_CapacityManagerTagKeys struct {
-	CapacityManagerProvided any
+	CapacityManagerProvided    any
 	EarliestDatapointTimestamp any
-	Status any
-	StatusMessage any
-	TagKey any
+	Status                     any
+	StatusMessage              any
+	TagKey                     any
 }
 
 type CapacityManagerMonitoredTagKeysConfig struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CapacityManagerMonitoredTagKeysAttrs struct {
 	CapacityManagerTagKeys any
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun                 any
+	MaxResults             any
+	NextToken              any
 }
 
 var CapacityManagerMonitoredTagKeys = ubx.DataSourceBinding{
 	WireType: "aws_ec2_capacity_manager_monitored_tag_keys",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

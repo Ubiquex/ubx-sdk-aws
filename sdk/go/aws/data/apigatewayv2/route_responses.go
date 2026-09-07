@@ -9,33 +9,33 @@ type RouteResponses_Items_ResponseParameters struct {
 
 type RouteResponses_Items struct {
 	ModelSelectionExpression any
-	ResponseModels any
-	ResponseParameters any
-	RouteResponseId any
-	RouteResponseKey any
+	ResponseModels           any
+	ResponseParameters       any
+	RouteResponseId          any
+	RouteResponseKey         any
 }
 
 type RouteResponsesConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
-	RouteId any
+	NextToken  any
+	RouteId    any
 }
 
 type RouteResponsesAttrs struct {
-	ApiId any
-	Items any
+	ApiId      any
+	Items      any
 	MaxResults any
-	NextToken any
-	RouteId any
+	NextToken  any
+	RouteId    any
 }
 
 var RouteResponses = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_route_responses",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RouteId": ubx.FieldSpec{WireName: "route_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"RouteId":    ubx.FieldSpec{WireName: "route_id"},
 	},
 }

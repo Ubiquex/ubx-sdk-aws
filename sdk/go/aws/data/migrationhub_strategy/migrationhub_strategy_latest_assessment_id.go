@@ -12,6 +12,5 @@ type MigrationhubStrategyLatestAssessmentIdAttrs struct {
 
 var MigrationhubStrategyLatestAssessmentId = ubx.DataSourceBinding{
 	WireType: "aws_migrationhub_strategy_latest_assessment_id",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,9 +4,9 @@ package eks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Insights_Filter struct {
-	Categories any
+	Categories         any
 	KubernetesVersions any
-	Statuses any
+	Statuses           any
 }
 
 type Insights_Insights_InsightStatus struct {
@@ -15,37 +15,37 @@ type Insights_Insights_InsightStatus struct {
 }
 
 type Insights_Insights struct {
-	Category any
-	Description any
-	Id any
-	InsightStatus any
-	KubernetesVersion any
-	LastRefreshTime any
+	Category           any
+	Description        any
+	Id                 any
+	InsightStatus      any
+	KubernetesVersion  any
+	LastRefreshTime    any
 	LastTransitionTime any
-	Name any
+	Name               any
 }
 
 var Insights_FilterFields = ubx.FieldMap{
-		"Categories": ubx.FieldSpec{WireName: "categories"},
-		"KubernetesVersions": ubx.FieldSpec{WireName: "kubernetes_versions"},
-		"Statuses": ubx.FieldSpec{WireName: "statuses"},
-	}
+	"Categories":         ubx.FieldSpec{WireName: "categories"},
+	"KubernetesVersions": ubx.FieldSpec{WireName: "kubernetes_versions"},
+	"Statuses":           ubx.FieldSpec{WireName: "statuses"},
+}
 
 type InsightsConfig struct {
 	ClusterName any
 	// <p>The criteria to use for the insights.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InsightsAttrs struct {
 	ClusterName any
 	// <p>The criteria to use for the insights.</p>
-	Filter any
-	Insights any
+	Filter     any
+	Insights   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Insights = ubx.DataSourceBinding{
@@ -54,10 +54,10 @@ var Insights = ubx.DataSourceBinding{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Insights_FilterFields,
+			Kind:     "object",
+			Fields:   Insights_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

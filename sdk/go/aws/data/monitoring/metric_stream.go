@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricStream_ExcludeFilters struct {
 	MetricNames any
-	Namespace any
+	Namespace   any
 }
 
 type MetricStream_StatisticsConfigurations_IncludeMetrics struct {
 	MetricName any
-	Namespace any
+	Namespace  any
 }
 
 type MetricStream_StatisticsConfigurations struct {
 	AdditionalStatistics any
-	IncludeMetrics any
+	IncludeMetrics       any
 }
 
 type MetricStreamConfig struct {
@@ -23,18 +23,18 @@ type MetricStreamConfig struct {
 }
 
 type MetricStreamAttrs struct {
-	Arn any
-	CreationDate any
-	ExcludeFilters any
-	FirehoseArn any
-	IncludeFilters any
+	Arn                          any
+	CreationDate                 any
+	ExcludeFilters               any
+	FirehoseArn                  any
+	IncludeFilters               any
 	IncludeLinkedAccountsMetrics any
-	LastUpdateDate any
-	Name any
-	OutputFormat any
-	RoleArn any
-	State any
-	StatisticsConfigurations any
+	LastUpdateDate               any
+	Name                         any
+	OutputFormat                 any
+	RoleArn                      any
+	State                        any
+	StatisticsConfigurations     any
 }
 
 var MetricStream = ubx.DataSourceBinding{

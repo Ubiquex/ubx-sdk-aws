@@ -4,13 +4,13 @@ package elasticbeanstalk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstancesHealth_InstanceHealthList_ApplicationMetrics_Latency struct {
-	P10 any
-	P50 any
-	P75 any
-	P85 any
-	P90 any
-	P95 any
-	P99 any
+	P10  any
+	P50  any
+	P75  any
+	P85  any
+	P90  any
+	P95  any
+	P99  any
 	P999 any
 }
 
@@ -22,70 +22,70 @@ type InstancesHealth_InstanceHealthList_ApplicationMetrics_StatusCodes struct {
 }
 
 type InstancesHealth_InstanceHealthList_ApplicationMetrics struct {
-	Duration any
-	Latency any
+	Duration     any
+	Latency      any
 	RequestCount any
-	StatusCodes any
+	StatusCodes  any
 }
 
 type InstancesHealth_InstanceHealthList_Deployment struct {
-	DeploymentId any
+	DeploymentId   any
 	DeploymentTime any
-	Status any
-	VersionLabel any
+	Status         any
+	VersionLabel   any
 }
 
 type InstancesHealth_InstanceHealthList_System_Cpuutilization struct {
-	Idle any
-	Iowait any
-	Irq any
-	Nice any
+	Idle       any
+	Iowait     any
+	Irq        any
+	Nice       any
 	Privileged any
-	SoftIrq any
-	System any
-	User any
+	SoftIrq    any
+	System     any
+	User       any
 }
 
 type InstancesHealth_InstanceHealthList_System struct {
 	Cpuutilization any
-	LoadAverage any
+	LoadAverage    any
 }
 
 type InstancesHealth_InstanceHealthList struct {
 	ApplicationMetrics any
-	AvailabilityZone any
-	Causes any
-	Color any
-	Deployment any
-	HealthStatus any
-	InstanceId any
-	InstanceType any
-	LaunchedAt any
-	System any
+	AvailabilityZone   any
+	Causes             any
+	Color              any
+	Deployment         any
+	HealthStatus       any
+	InstanceId         any
+	InstanceType       any
+	LaunchedAt         any
+	System             any
 }
 
 type InstancesHealthConfig struct {
-	AttributeNames any
-	EnvironmentId any
+	AttributeNames  any
+	EnvironmentId   any
 	EnvironmentName any
-	NextToken any
+	NextToken       any
 }
 
 type InstancesHealthAttrs struct {
-	AttributeNames any
-	EnvironmentId any
-	EnvironmentName any
+	AttributeNames     any
+	EnvironmentId      any
+	EnvironmentName    any
 	InstanceHealthList any
-	NextToken any
-	RefreshedAt any
+	NextToken          any
+	RefreshedAt        any
 }
 
 var InstancesHealth = ubx.DataSourceBinding{
 	WireType: "aws_elasticbeanstalk_instances_health",
 	Fields: ubx.FieldMap{
-		"AttributeNames": ubx.FieldSpec{WireName: "attribute_names"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"AttributeNames":  ubx.FieldSpec{WireName: "attribute_names"},
+		"EnvironmentId":   ubx.FieldSpec{WireName: "environment_id"},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

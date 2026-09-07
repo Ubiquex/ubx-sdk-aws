@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RulesPackages_FailedItems struct {
 	FailureCode any
-	Retryable any
+	Retryable   any
 }
 
 type RulesPackages_RulesPackages struct {
-	Arn any
+	Arn         any
 	Description any
-	Name any
-	Provider any
-	Version any
+	Name        any
+	Provider    any
+	Version     any
 }
 
 type RulesPackagesConfig struct {
-	Locale any
+	Locale           any
 	RulesPackageArns any
 }
 
 type RulesPackagesAttrs struct {
-	FailedItems any
-	Locale any
+	FailedItems      any
+	Locale           any
 	RulesPackageArns any
-	RulesPackages any
+	RulesPackages    any
 }
 
 var RulesPackages = ubx.DataSourceBinding{
 	WireType: "aws_inspector_rules_packages",
 	Fields: ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Locale":           ubx.FieldSpec{WireName: "locale"},
 		"RulesPackageArns": ubx.FieldSpec{WireName: "rules_package_arns"},
 	},
 }

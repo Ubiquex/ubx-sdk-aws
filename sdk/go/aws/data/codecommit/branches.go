@@ -4,20 +4,20 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BranchesConfig struct {
-	NextToken any
+	NextToken      any
 	RepositoryName any
 }
 
 type BranchesAttrs struct {
-	Branches any
-	NextToken any
+	Branches       any
+	NextToken      any
 	RepositoryName any
 }
 
 var Branches = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_branches",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

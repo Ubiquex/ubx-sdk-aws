@@ -10,9 +10,9 @@ type EnvironmentTemplate_Tags struct {
 }
 
 var EnvironmentTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnvironmentTemplateConfig struct {
 	// <p>A description of the environment template.</p>
@@ -49,15 +49,15 @@ type EnvironmentTemplateAttrs struct {
 var EnvironmentTemplate = ubx.ResourceBinding{
 	WireType: "aws_proton_environment_template",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionKey": ubx.FieldSpec{WireName: "encryption_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Provisioning": ubx.FieldSpec{WireName: "provisioning"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Provisioning":  ubx.FieldSpec{WireName: "provisioning"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EnvironmentTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   EnvironmentTemplate_TagsFields,
 		},
 	},
 }

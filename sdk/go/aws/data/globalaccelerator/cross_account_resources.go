@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CrossAccountResources_CrossAccountResources struct {
 	AttachmentArn any
-	Cidr any
-	EndpointId any
+	Cidr          any
+	EndpointId    any
 }
 
 type CrossAccountResourcesConfig struct {
-	AcceleratorArn any
-	MaxResults any
-	NextToken any
+	AcceleratorArn            any
+	MaxResults                any
+	NextToken                 any
 	ResourceOwnerAwsAccountId any
 }
 
 type CrossAccountResourcesAttrs struct {
-	AcceleratorArn any
-	CrossAccountResources any
-	MaxResults any
-	NextToken any
+	AcceleratorArn            any
+	CrossAccountResources     any
+	MaxResults                any
+	NextToken                 any
 	ResourceOwnerAwsAccountId any
 }
 
 var CrossAccountResources = ubx.DataSourceBinding{
 	WireType: "aws_globalaccelerator_cross_account_resources",
 	Fields: ubx.FieldMap{
-		"AcceleratorArn": ubx.FieldSpec{WireName: "accelerator_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AcceleratorArn":            ubx.FieldSpec{WireName: "accelerator_arn"},
+		"MaxResults":                ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                 ubx.FieldSpec{WireName: "next_token"},
 		"ResourceOwnerAwsAccountId": ubx.FieldSpec{WireName: "resource_owner_aws_account_id"},
 	},
 }

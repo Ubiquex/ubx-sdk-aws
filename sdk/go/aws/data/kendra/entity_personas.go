@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityPersonas_SummaryItems struct {
 	CreatedAt any
-	EntityId any
-	Persona any
+	EntityId  any
+	Persona   any
 	UpdatedAt any
 }
 
 type EntityPersonasConfig struct {
-	Id any
-	IndexId any
+	Id         any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EntityPersonasAttrs struct {
-	Id any
-	IndexId any
-	MaxResults any
-	NextToken any
+	Id           any
+	IndexId      any
+	MaxResults   any
+	NextToken    any
 	SummaryItems any
 }
 
 var EntityPersonas = ubx.DataSourceBinding{
 	WireType: "aws_kendra_entity_personas",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

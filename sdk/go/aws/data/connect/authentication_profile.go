@@ -4,38 +4,38 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthenticationProfile_AuthenticationProfile struct {
-	AllowedIps any
-	Arn any
-	BlockedIps any
-	CreatedTime any
-	Description any
-	Id any
-	IsDefault any
-	LastModifiedRegion any
-	LastModifiedTime any
-	MaxSessionDuration any
-	Name any
-	PeriodicSessionDuration any
-	SessionInactivityDuration any
+	AllowedIps                       any
+	Arn                              any
+	BlockedIps                       any
+	CreatedTime                      any
+	Description                      any
+	Id                               any
+	IsDefault                        any
+	LastModifiedRegion               any
+	LastModifiedTime                 any
+	MaxSessionDuration               any
+	Name                             any
+	PeriodicSessionDuration          any
+	SessionInactivityDuration        any
 	SessionInactivityHandlingEnabled any
 }
 
 type AuthenticationProfileConfig struct {
 	AuthenticationProfileId any
-	InstanceId any
+	InstanceId              any
 }
 
 type AuthenticationProfileAttrs struct {
 	// <p>This API is in preview release for Connect Customer and is subject to change. To request access to this API, contact Amazon Web Services Support.</p> <p>Information about an authentication profile. An authentication profile is a resource that stores the authentication settings for users in your contact center. You use authentication profiles to set up IP address range restrictions and session timeouts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html">Set IP address restrictions or session timeouts</a>. </p>
-	AuthenticationProfile any
+	AuthenticationProfile   any
 	AuthenticationProfileId any
-	InstanceId any
+	InstanceId              any
 }
 
 var AuthenticationProfile = ubx.DataSourceBinding{
 	WireType: "aws_connect_authentication_profile",
 	Fields: ubx.FieldMap{
 		"AuthenticationProfileId": ubx.FieldSpec{WireName: "authentication_profile_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":              ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

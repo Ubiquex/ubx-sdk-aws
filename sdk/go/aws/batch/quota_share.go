@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QuotaShare_CapacityLimits struct {
 	CapacityUnit any
-	MaxCapacity any
+	MaxCapacity  any
 }
 
 type QuotaShare_PreemptionConfiguration struct {
@@ -21,27 +21,27 @@ type QuotaShare_ResourceSharingConfiguration struct {
 }
 
 var QuotaShare_CapacityLimitsFields = ubx.FieldMap{
-		"CapacityUnit": ubx.FieldSpec{WireName: "capacity_unit"},
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-	}
+	"CapacityUnit": ubx.FieldSpec{WireName: "capacity_unit"},
+	"MaxCapacity":  ubx.FieldSpec{WireName: "max_capacity"},
+}
 
 var QuotaShare_PreemptionConfigurationFields = ubx.FieldMap{
-		"InSharePreemption": ubx.FieldSpec{WireName: "in_share_preemption"},
-	}
+	"InSharePreemption": ubx.FieldSpec{WireName: "in_share_preemption"},
+}
 
 var QuotaShare_ResourceSharingConfigurationFields = ubx.FieldMap{
-		"BorrowLimit": ubx.FieldSpec{WireName: "borrow_limit"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"BorrowLimit": ubx.FieldSpec{WireName: "borrow_limit"},
+	"Strategy":    ubx.FieldSpec{WireName: "strategy"},
+}
 
 type QuotaShareConfig struct {
 	// A list that specifies the quantity and type of compute capacity allocated to the quota share.
 	CapacityLimits any
 	// The AWS Batch job queue associated with the quota share. This can be the job queue name or ARN. A job queue must be in the `VALID` state before you can associate it with a quota share.
-	JobQueue any
+	JobQueue                any
 	PreemptionConfiguration any
 	// The name of the quota share. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
-	QuotaShareName any
+	QuotaShareName               any
 	ResourceSharingConfiguration any
 	// The state of the quota share. If the quota share is `ENABLED`, it is able to accept jobs. If the quota share is `DISABLED`, new jobs won't be accepted but jobs already submitted can finish. The default state is `ENABLED`.
 	State any
@@ -53,12 +53,12 @@ type QuotaShareAttrs struct {
 	// A list that specifies the quantity and type of compute capacity allocated to the quota share.
 	CapacityLimits any
 	// The AWS Batch job queue associated with the quota share. This can be the job queue name or ARN. A job queue must be in the `VALID` state before you can associate it with a quota share.
-	JobQueue any
+	JobQueue                any
 	PreemptionConfiguration any
 	// The Amazon Resource Name (ARN) of this quota share. (AI-inferred)
 	QuotaShareArn any
 	// The name of the quota share. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
-	QuotaShareName any
+	QuotaShareName               any
 	ResourceSharingConfiguration any
 	// The state of the quota share. If the quota share is `ENABLED`, it is able to accept jobs. If the quota share is `DISABLED`, new jobs won't be accepted but jobs already submitted can finish. The default state is `ENABLED`.
 	State any
@@ -71,22 +71,22 @@ var QuotaShare = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityLimits": ubx.FieldSpec{
 			WireName: "capacity_limits",
-			Kind: "list",
-			Fields: QuotaShare_CapacityLimitsFields,
+			Kind:     "list",
+			Fields:   QuotaShare_CapacityLimitsFields,
 		},
 		"JobQueue": ubx.FieldSpec{WireName: "job_queue"},
 		"PreemptionConfiguration": ubx.FieldSpec{
 			WireName: "preemption_configuration",
-			Kind: "object",
-			Fields: QuotaShare_PreemptionConfigurationFields,
+			Kind:     "object",
+			Fields:   QuotaShare_PreemptionConfigurationFields,
 		},
 		"QuotaShareName": ubx.FieldSpec{WireName: "quota_share_name"},
 		"ResourceSharingConfiguration": ubx.FieldSpec{
 			WireName: "resource_sharing_configuration",
-			Kind: "object",
-			Fields: QuotaShare_ResourceSharingConfigurationFields,
+			Kind:     "object",
+			Fields:   QuotaShare_ResourceSharingConfigurationFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":  ubx.FieldSpec{WireName: "tags"},
 	},
 }

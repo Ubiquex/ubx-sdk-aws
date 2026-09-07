@@ -42,32 +42,32 @@ type EmailIdentity_Tags struct {
 }
 
 var EmailIdentity_ConfigurationSetAttributesFields = ubx.FieldMap{
-		"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
-	}
+	"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
+}
 
 var EmailIdentity_DkimAttributesFields = ubx.FieldMap{
-		"SigningEnabled": ubx.FieldSpec{WireName: "signing_enabled"},
-	}
+	"SigningEnabled": ubx.FieldSpec{WireName: "signing_enabled"},
+}
 
 var EmailIdentity_DkimSigningAttributesFields = ubx.FieldMap{
-		"DomainSigningPrivateKey": ubx.FieldSpec{WireName: "domain_signing_private_key"},
-		"DomainSigningSelector": ubx.FieldSpec{WireName: "domain_signing_selector"},
-		"NextSigningKeyLength": ubx.FieldSpec{WireName: "next_signing_key_length"},
-	}
+	"DomainSigningPrivateKey": ubx.FieldSpec{WireName: "domain_signing_private_key"},
+	"DomainSigningSelector":   ubx.FieldSpec{WireName: "domain_signing_selector"},
+	"NextSigningKeyLength":    ubx.FieldSpec{WireName: "next_signing_key_length"},
+}
 
 var EmailIdentity_FeedbackAttributesFields = ubx.FieldMap{
-		"EmailForwardingEnabled": ubx.FieldSpec{WireName: "email_forwarding_enabled"},
-	}
+	"EmailForwardingEnabled": ubx.FieldSpec{WireName: "email_forwarding_enabled"},
+}
 
 var EmailIdentity_MailFromAttributesFields = ubx.FieldMap{
-		"BehaviorOnMxFailure": ubx.FieldSpec{WireName: "behavior_on_mx_failure"},
-		"MailFromDomain": ubx.FieldSpec{WireName: "mail_from_domain"},
-	}
+	"BehaviorOnMxFailure": ubx.FieldSpec{WireName: "behavior_on_mx_failure"},
+	"MailFromDomain":      ubx.FieldSpec{WireName: "mail_from_domain"},
+}
 
 var EmailIdentity_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EmailIdentityConfig struct {
 	// Used to associate a configuration set with an email identity.
@@ -120,34 +120,34 @@ var EmailIdentity = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConfigurationSetAttributes": ubx.FieldSpec{
 			WireName: "configuration_set_attributes",
-			Kind: "object",
-			Fields: EmailIdentity_ConfigurationSetAttributesFields,
+			Kind:     "object",
+			Fields:   EmailIdentity_ConfigurationSetAttributesFields,
 		},
 		"DkimAttributes": ubx.FieldSpec{
 			WireName: "dkim_attributes",
-			Kind: "object",
-			Fields: EmailIdentity_DkimAttributesFields,
+			Kind:     "object",
+			Fields:   EmailIdentity_DkimAttributesFields,
 		},
 		"DkimSigningAttributes": ubx.FieldSpec{
 			WireName: "dkim_signing_attributes",
-			Kind: "object",
-			Fields: EmailIdentity_DkimSigningAttributesFields,
+			Kind:     "object",
+			Fields:   EmailIdentity_DkimSigningAttributesFields,
 		},
 		"EmailIdentity": ubx.FieldSpec{WireName: "email_identity"},
 		"FeedbackAttributes": ubx.FieldSpec{
 			WireName: "feedback_attributes",
-			Kind: "object",
-			Fields: EmailIdentity_FeedbackAttributesFields,
+			Kind:     "object",
+			Fields:   EmailIdentity_FeedbackAttributesFields,
 		},
 		"MailFromAttributes": ubx.FieldSpec{
 			WireName: "mail_from_attributes",
-			Kind: "object",
-			Fields: EmailIdentity_MailFromAttributesFields,
+			Kind:     "object",
+			Fields:   EmailIdentity_MailFromAttributesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EmailIdentity_TagsFields,
+			Kind:     "list",
+			Fields:   EmailIdentity_TagsFields,
 		},
 	},
 }

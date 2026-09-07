@@ -4,10 +4,10 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlaybackKeyPair_KeyPair struct {
-	Arn any
+	Arn         any
 	Fingerprint any
-	Name any
-	Tags any
+	Name        any
+	Tags        any
 }
 
 type PlaybackKeyPairConfig struct {

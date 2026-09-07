@@ -4,30 +4,30 @@ package neptune_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NeptuneDbLoaderJobStatusConfig struct {
-	Details any
-	Errors any
+	Details       any
+	Errors        any
 	ErrorsPerPage any
-	LoadId any
-	Page any
+	LoadId        any
+	Page          any
 }
 
 type NeptuneDbLoaderJobStatusAttrs struct {
-	Details any
-	Errors any
+	Details       any
+	Errors        any
 	ErrorsPerPage any
-	LoadId any
-	Page any
-	Payload any
-	Status any
+	LoadId        any
+	Page          any
+	Payload       any
+	Status        any
 }
 
 var NeptuneDbLoaderJobStatus = ubx.DataSourceBinding{
 	WireType: "aws_neptune_db_loader_job_status",
 	Fields: ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Errors": ubx.FieldSpec{WireName: "errors"},
+		"Details":       ubx.FieldSpec{WireName: "details"},
+		"Errors":        ubx.FieldSpec{WireName: "errors"},
 		"ErrorsPerPage": ubx.FieldSpec{WireName: "errors_per_page"},
-		"LoadId": ubx.FieldSpec{WireName: "load_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"LoadId":        ubx.FieldSpec{WireName: "load_id"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
 	},
 }

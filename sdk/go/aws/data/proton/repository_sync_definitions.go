@@ -4,33 +4,33 @@ package proton
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RepositorySyncDefinitions_SyncDefinitions struct {
-	Branch any
+	Branch    any
 	Directory any
-	Parent any
-	Target any
+	Parent    any
+	Target    any
 }
 
 type RepositorySyncDefinitionsConfig struct {
-	NextToken any
-	RepositoryName any
+	NextToken          any
+	RepositoryName     any
 	RepositoryProvider any
-	SyncType any
+	SyncType           any
 }
 
 type RepositorySyncDefinitionsAttrs struct {
-	NextToken any
-	RepositoryName any
+	NextToken          any
+	RepositoryName     any
 	RepositoryProvider any
-	SyncDefinitions any
-	SyncType any
+	SyncDefinitions    any
+	SyncType           any
 }
 
 var RepositorySyncDefinitions = ubx.DataSourceBinding{
 	WireType: "aws_proton_repository_sync_definitions",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"RepositoryName":     ubx.FieldSpec{WireName: "repository_name"},
 		"RepositoryProvider": ubx.FieldSpec{WireName: "repository_provider"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"SyncType":           ubx.FieldSpec{WireName: "sync_type"},
 	},
 }

@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LaunchPaths_LaunchPathSummaries_ConstraintSummaries struct {
 	Description any
-	Type any
+	Type        any
 }
 
 type LaunchPaths_LaunchPathSummaries_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type LaunchPaths_LaunchPathSummaries struct {
 	ConstraintSummaries any
-	Id any
-	Name any
-	Tags any
+	Id                  any
+	Name                any
+	Tags                any
 }
 
 type LaunchPathsConfig struct {
 	AcceptLanguage any
-	PageSize any
-	PageToken any
-	ProductId any
+	PageSize       any
+	PageToken      any
+	ProductId      any
 }
 
 type LaunchPathsAttrs struct {
-	AcceptLanguage any
+	AcceptLanguage      any
 	LaunchPathSummaries any
-	NextPageToken any
-	PageSize any
-	PageToken any
-	ProductId any
+	NextPageToken       any
+	PageSize            any
+	PageToken           any
+	ProductId           any
 }
 
 var LaunchPaths = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_launch_paths",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":      ubx.FieldSpec{WireName: "page_token"},
+		"ProductId":      ubx.FieldSpec{WireName: "product_id"},
 	},
 }

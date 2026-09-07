@@ -4,13 +4,13 @@ package databrew
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobRuns_JobRuns_DataCatalogOutputs_DatabaseOptions_TempDirectory struct {
-	Bucket any
+	Bucket      any
 	BucketOwner any
-	Key any
+	Key         any
 }
 
 type JobRuns_JobRuns_DataCatalogOutputs_DatabaseOptions struct {
-	TableName any
+	TableName     any
 	TempDirectory any
 }
 
@@ -19,16 +19,16 @@ type JobRuns_JobRuns_DataCatalogOutputs_S3Options struct {
 }
 
 type JobRuns_JobRuns_DataCatalogOutputs struct {
-	CatalogId any
-	DatabaseName any
+	CatalogId       any
+	DatabaseName    any
 	DatabaseOptions any
-	Overwrite any
-	S3Options any
-	TableName any
+	Overwrite       any
+	S3Options       any
+	TableName       any
 }
 
 type JobRuns_JobRuns_DatabaseOutputs struct {
-	DatabaseOptions any
+	DatabaseOptions    any
 	DatabaseOutputMode any
 	GlueConnectionName any
 }
@@ -48,63 +48,63 @@ type JobRuns_JobRuns_Outputs_FormatOptions struct {
 
 type JobRuns_JobRuns_Outputs struct {
 	CompressionFormat any
-	Format any
-	FormatOptions any
-	Location any
-	MaxOutputFiles any
-	Overwrite any
-	PartitionColumns any
+	Format            any
+	FormatOptions     any
+	Location          any
+	MaxOutputFiles    any
+	Overwrite         any
+	PartitionColumns  any
 }
 
 type JobRuns_JobRuns_RecipeReference struct {
-	Name any
+	Name          any
 	RecipeVersion any
 }
 
 type JobRuns_JobRuns_ValidationConfigurations struct {
-	RulesetArn any
+	RulesetArn     any
 	ValidationMode any
 }
 
 type JobRuns_JobRuns struct {
-	Attempt any
-	CompletedOn any
-	DataCatalogOutputs any
-	DatabaseOutputs any
-	DatasetName any
-	ErrorMessage any
-	ExecutionTime any
-	JobName any
-	JobSample any
-	LogGroupName any
-	LogSubscription any
-	Outputs any
-	RecipeReference any
-	RunId any
-	StartedBy any
-	StartedOn any
-	State any
+	Attempt                  any
+	CompletedOn              any
+	DataCatalogOutputs       any
+	DatabaseOutputs          any
+	DatasetName              any
+	ErrorMessage             any
+	ExecutionTime            any
+	JobName                  any
+	JobSample                any
+	LogGroupName             any
+	LogSubscription          any
+	Outputs                  any
+	RecipeReference          any
+	RunId                    any
+	StartedBy                any
+	StartedOn                any
+	State                    any
 	ValidationConfigurations any
 }
 
 type JobRunsConfig struct {
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 type JobRunsAttrs struct {
-	JobRuns any
+	JobRuns    any
 	MaxResults any
-	Name any
-	NextToken any
+	Name       any
+	NextToken  any
 }
 
 var JobRuns = ubx.DataSourceBinding{
 	WireType: "aws_databrew_job_runs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

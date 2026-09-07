@@ -16,13 +16,13 @@ type Assistant_Tags struct {
 }
 
 var Assistant_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var Assistant_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssistantConfig struct {
 	// Specifies a human-readable description for the Wisdom Assistant, providing context about its purpose or use case. (AI-inferred)
@@ -58,16 +58,16 @@ var Assistant = ubx.ResourceBinding{
 	WireType: "aws_wisdom_assistant",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "server_side_encryption_configuration",
-			Kind: "object",
-			Fields: Assistant_ServerSideEncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Assistant_ServerSideEncryptionConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Assistant_TagsFields,
+			Kind:     "list",
+			Fields:   Assistant_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

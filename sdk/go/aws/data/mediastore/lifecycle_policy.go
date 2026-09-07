@@ -8,7 +8,7 @@ type LifecyclePolicyConfig struct {
 }
 
 type LifecyclePolicyAttrs struct {
-	ContainerName any
+	ContainerName   any
 	LifecyclePolicy any
 }
 

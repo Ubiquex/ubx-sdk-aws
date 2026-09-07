@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SimpleAd_Tags struct {
 	// The key of a tag assigned to the Simple AD directory resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -17,14 +17,14 @@ type SimpleAd_VpcSettings struct {
 }
 
 var SimpleAd_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var SimpleAd_VpcSettingsFields = ubx.FieldMap{
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+	"VpcId":     ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 type SimpleAdConfig struct {
 	// The name of the configuration set.
@@ -79,20 +79,20 @@ var SimpleAd = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CreateAlias": ubx.FieldSpec{WireName: "create_alias"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableSso": ubx.FieldSpec{WireName: "enable_sso"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"ShortName": ubx.FieldSpec{WireName: "short_name"},
-		"Size": ubx.FieldSpec{WireName: "size"},
+		"EnableSso":   ubx.FieldSpec{WireName: "enable_sso"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Password":    ubx.FieldSpec{WireName: "password"},
+		"ShortName":   ubx.FieldSpec{WireName: "short_name"},
+		"Size":        ubx.FieldSpec{WireName: "size"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SimpleAd_TagsFields,
+			Kind:     "list",
+			Fields:   SimpleAd_TagsFields,
 		},
 		"VpcSettings": ubx.FieldSpec{
 			WireName: "vpc_settings",
-			Kind: "object",
-			Fields: SimpleAd_VpcSettingsFields,
+			Kind:     "object",
+			Fields:   SimpleAd_VpcSettingsFields,
 		},
 	},
 }

@@ -4,37 +4,37 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FleetInstances_ActiveInstances struct {
-	InstanceHealth any
-	InstanceId any
-	InstanceType any
+	InstanceHealth        any
+	InstanceId            any
+	InstanceType          any
 	SpotInstanceRequestId any
 }
 
 type FleetInstances_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var FleetInstances_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type FleetInstancesConfig struct {
-	DryRun any
-	Filters any
-	FleetId any
+	DryRun     any
+	Filters    any
+	FleetId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FleetInstancesAttrs struct {
 	ActiveInstances any
-	DryRun any
-	Filters any
-	FleetId any
-	MaxResults any
-	NextToken any
+	DryRun          any
+	Filters         any
+	FleetId         any
+	MaxResults      any
+	NextToken       any
 }
 
 var FleetInstances = ubx.DataSourceBinding{
@@ -43,11 +43,11 @@ var FleetInstances = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: FleetInstances_FiltersFields,
+			Kind:     "list",
+			Fields:   FleetInstances_FiltersFields,
 		},
-		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
+		"FleetId":    ubx.FieldSpec{WireName: "fleet_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

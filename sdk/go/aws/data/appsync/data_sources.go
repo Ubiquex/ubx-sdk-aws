@@ -4,22 +4,22 @@ package appsync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSources_DataSources_DynamodbConfig_DeltaSyncConfig struct {
-	BaseTableTtl any
+	BaseTableTtl       any
 	DeltaSyncTableName any
-	DeltaSyncTableTtl any
+	DeltaSyncTableTtl  any
 }
 
 type DataSources_DataSources_DynamodbConfig struct {
-	AwsRegion any
-	DeltaSyncConfig any
-	TableName any
+	AwsRegion            any
+	DeltaSyncConfig      any
+	TableName            any
 	UseCallerCredentials any
-	Versioned any
+	Versioned            any
 }
 
 type DataSources_DataSources_ElasticsearchConfig struct {
 	AwsRegion any
-	Endpoint any
+	Endpoint  any
 }
 
 type DataSources_DataSources_EventBridgeConfig struct {
@@ -27,18 +27,18 @@ type DataSources_DataSources_EventBridgeConfig struct {
 }
 
 type DataSources_DataSources_HttpConfig_AuthorizationConfig_AwsIamConfig struct {
-	SigningRegion any
+	SigningRegion      any
 	SigningServiceName any
 }
 
 type DataSources_DataSources_HttpConfig_AuthorizationConfig struct {
 	AuthorizationType any
-	AwsIamConfig any
+	AwsIamConfig      any
 }
 
 type DataSources_DataSources_HttpConfig struct {
 	AuthorizationConfig any
-	Endpoint any
+	Endpoint            any
 }
 
 type DataSources_DataSources_LambdaConfig struct {
@@ -46,52 +46,52 @@ type DataSources_DataSources_LambdaConfig struct {
 }
 
 type DataSources_DataSources_RelationalDatabaseConfig_RdsHttpEndpointConfig struct {
-	AwsRegion any
-	AwsSecretStoreArn any
-	DatabaseName any
+	AwsRegion           any
+	AwsSecretStoreArn   any
+	DatabaseName        any
 	DbClusterIdentifier any
-	Schema any
+	Schema              any
 }
 
 type DataSources_DataSources_RelationalDatabaseConfig struct {
-	RdsHttpEndpointConfig any
+	RdsHttpEndpointConfig        any
 	RelationalDatabaseSourceType any
 }
 
 type DataSources_DataSources struct {
-	DataSourceArn any
-	Description any
-	DynamodbConfig any
-	ElasticsearchConfig any
-	EventBridgeConfig any
-	HttpConfig any
-	LambdaConfig any
-	MetricsConfig any
-	Name any
-	OpenSearchServiceConfig any
+	DataSourceArn            any
+	Description              any
+	DynamodbConfig           any
+	ElasticsearchConfig      any
+	EventBridgeConfig        any
+	HttpConfig               any
+	LambdaConfig             any
+	MetricsConfig            any
+	Name                     any
+	OpenSearchServiceConfig  any
 	RelationalDatabaseConfig any
-	ServiceRoleArn any
-	Type any
+	ServiceRoleArn           any
+	Type                     any
 }
 
 type DataSourcesConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DataSourcesAttrs struct {
-	ApiId any
+	ApiId       any
 	DataSources any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var DataSources = ubx.DataSourceBinding{
 	WireType: "aws_appsync_data_sources",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

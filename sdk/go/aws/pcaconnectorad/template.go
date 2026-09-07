@@ -245,284 +245,284 @@ type Template_Definition struct {
 }
 
 var Template_Definition_TemplateV2_CertificateValidity_RenewalPeriodFields = ubx.FieldMap{
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"PeriodType": ubx.FieldSpec{WireName: "period_type"},
-	}
+	"Period":     ubx.FieldSpec{WireName: "period"},
+	"PeriodType": ubx.FieldSpec{WireName: "period_type"},
+}
 
 var Template_Definition_TemplateV2_CertificateValidityFields = ubx.FieldMap{
-		"RenewalPeriod": ubx.FieldSpec{
-			WireName: "renewal_period",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_CertificateValidity_RenewalPeriodFields,
-		},
-		"ValidityPeriod": ubx.FieldSpec{
-			WireName: "validity_period",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_CertificateValidity_RenewalPeriodFields,
-		},
-	}
+	"RenewalPeriod": ubx.FieldSpec{
+		WireName: "renewal_period",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_CertificateValidity_RenewalPeriodFields,
+	},
+	"ValidityPeriod": ubx.FieldSpec{
+		WireName: "validity_period",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_CertificateValidity_RenewalPeriodFields,
+	},
+}
 
 var Template_Definition_TemplateV2_EnrollmentFlagsFields = ubx.FieldMap{
-		"EnableKeyReuseOnNtTokenKeysetStorageFull": ubx.FieldSpec{WireName: "enable_key_reuse_on_nt_token_keyset_storage_full"},
-		"IncludeSymmetricAlgorithms": ubx.FieldSpec{WireName: "include_symmetric_algorithms"},
-		"NoSecurityExtension": ubx.FieldSpec{WireName: "no_security_extension"},
-		"RemoveInvalidCertificateFromPersonalStore": ubx.FieldSpec{WireName: "remove_invalid_certificate_from_personal_store"},
-		"UserInteractionRequired": ubx.FieldSpec{WireName: "user_interaction_required"},
-	}
+	"EnableKeyReuseOnNtTokenKeysetStorageFull":  ubx.FieldSpec{WireName: "enable_key_reuse_on_nt_token_keyset_storage_full"},
+	"IncludeSymmetricAlgorithms":                ubx.FieldSpec{WireName: "include_symmetric_algorithms"},
+	"NoSecurityExtension":                       ubx.FieldSpec{WireName: "no_security_extension"},
+	"RemoveInvalidCertificateFromPersonalStore": ubx.FieldSpec{WireName: "remove_invalid_certificate_from_personal_store"},
+	"UserInteractionRequired":                   ubx.FieldSpec{WireName: "user_interaction_required"},
+}
 
 var Template_Definition_TemplateV2_Extensions_ApplicationPolicies_PoliciesFields = ubx.FieldMap{
-		"PolicyObjectIdentifier": ubx.FieldSpec{WireName: "policy_object_identifier"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-	}
+	"PolicyObjectIdentifier": ubx.FieldSpec{WireName: "policy_object_identifier"},
+	"PolicyType":             ubx.FieldSpec{WireName: "policy_type"},
+}
 
 var Template_Definition_TemplateV2_Extensions_ApplicationPoliciesFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"Policies": ubx.FieldSpec{
-			WireName: "policies",
-			Kind: "list",
-			Fields: Template_Definition_TemplateV2_Extensions_ApplicationPolicies_PoliciesFields,
-		},
-	}
+	"Critical": ubx.FieldSpec{WireName: "critical"},
+	"Policies": ubx.FieldSpec{
+		WireName: "policies",
+		Kind:     "list",
+		Fields:   Template_Definition_TemplateV2_Extensions_ApplicationPolicies_PoliciesFields,
+	},
+}
 
 var Template_Definition_TemplateV2_Extensions_KeyUsage_UsageFlagsFields = ubx.FieldMap{
-		"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
-		"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
-		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
-		"KeyEncipherment": ubx.FieldSpec{WireName: "key_encipherment"},
-		"NonRepudiation": ubx.FieldSpec{WireName: "non_repudiation"},
-	}
+	"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
+	"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
+	"KeyAgreement":     ubx.FieldSpec{WireName: "key_agreement"},
+	"KeyEncipherment":  ubx.FieldSpec{WireName: "key_encipherment"},
+	"NonRepudiation":   ubx.FieldSpec{WireName: "non_repudiation"},
+}
 
 var Template_Definition_TemplateV2_Extensions_KeyUsageFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"UsageFlags": ubx.FieldSpec{
-			WireName: "usage_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_Extensions_KeyUsage_UsageFlagsFields,
-		},
-	}
+	"Critical": ubx.FieldSpec{WireName: "critical"},
+	"UsageFlags": ubx.FieldSpec{
+		WireName: "usage_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_Extensions_KeyUsage_UsageFlagsFields,
+	},
+}
 
 var Template_Definition_TemplateV2_ExtensionsFields = ubx.FieldMap{
-		"ApplicationPolicies": ubx.FieldSpec{
-			WireName: "application_policies",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_Extensions_ApplicationPoliciesFields,
-		},
-		"KeyUsage": ubx.FieldSpec{
-			WireName: "key_usage",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_Extensions_KeyUsageFields,
-		},
-	}
+	"ApplicationPolicies": ubx.FieldSpec{
+		WireName: "application_policies",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_Extensions_ApplicationPoliciesFields,
+	},
+	"KeyUsage": ubx.FieldSpec{
+		WireName: "key_usage",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_Extensions_KeyUsageFields,
+	},
+}
 
 var Template_Definition_TemplateV2_GeneralFlagsFields = ubx.FieldMap{
-		"AutoEnrollment": ubx.FieldSpec{WireName: "auto_enrollment"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-	}
+	"AutoEnrollment": ubx.FieldSpec{WireName: "auto_enrollment"},
+	"MachineType":    ubx.FieldSpec{WireName: "machine_type"},
+}
 
 var Template_Definition_TemplateV2_PrivateKeyAttributesFields = ubx.FieldMap{
-		"CryptoProviders": ubx.FieldSpec{WireName: "crypto_providers"},
-		"KeySpec": ubx.FieldSpec{WireName: "key_spec"},
-		"MinimalKeyLength": ubx.FieldSpec{WireName: "minimal_key_length"},
-	}
+	"CryptoProviders":  ubx.FieldSpec{WireName: "crypto_providers"},
+	"KeySpec":          ubx.FieldSpec{WireName: "key_spec"},
+	"MinimalKeyLength": ubx.FieldSpec{WireName: "minimal_key_length"},
+}
 
 var Template_Definition_TemplateV2_PrivateKeyFlagsFields = ubx.FieldMap{
-		"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
-		"ExportableKey": ubx.FieldSpec{WireName: "exportable_key"},
-		"StrongKeyProtectionRequired": ubx.FieldSpec{WireName: "strong_key_protection_required"},
-	}
+	"ClientVersion":               ubx.FieldSpec{WireName: "client_version"},
+	"ExportableKey":               ubx.FieldSpec{WireName: "exportable_key"},
+	"StrongKeyProtectionRequired": ubx.FieldSpec{WireName: "strong_key_protection_required"},
+}
 
 var Template_Definition_TemplateV2_SubjectNameFlagsFields = ubx.FieldMap{
-		"RequireCommonName": ubx.FieldSpec{WireName: "require_common_name"},
-		"RequireDirectoryPath": ubx.FieldSpec{WireName: "require_directory_path"},
-		"RequireDnsAsCn": ubx.FieldSpec{WireName: "require_dns_as_cn"},
-		"RequireEmail": ubx.FieldSpec{WireName: "require_email"},
-		"SanRequireDirectoryGuid": ubx.FieldSpec{WireName: "san_require_directory_guid"},
-		"SanRequireDns": ubx.FieldSpec{WireName: "san_require_dns"},
-		"SanRequireDomainDns": ubx.FieldSpec{WireName: "san_require_domain_dns"},
-		"SanRequireEmail": ubx.FieldSpec{WireName: "san_require_email"},
-		"SanRequireSpn": ubx.FieldSpec{WireName: "san_require_spn"},
-		"SanRequireUpn": ubx.FieldSpec{WireName: "san_require_upn"},
-	}
+	"RequireCommonName":       ubx.FieldSpec{WireName: "require_common_name"},
+	"RequireDirectoryPath":    ubx.FieldSpec{WireName: "require_directory_path"},
+	"RequireDnsAsCn":          ubx.FieldSpec{WireName: "require_dns_as_cn"},
+	"RequireEmail":            ubx.FieldSpec{WireName: "require_email"},
+	"SanRequireDirectoryGuid": ubx.FieldSpec{WireName: "san_require_directory_guid"},
+	"SanRequireDns":           ubx.FieldSpec{WireName: "san_require_dns"},
+	"SanRequireDomainDns":     ubx.FieldSpec{WireName: "san_require_domain_dns"},
+	"SanRequireEmail":         ubx.FieldSpec{WireName: "san_require_email"},
+	"SanRequireSpn":           ubx.FieldSpec{WireName: "san_require_spn"},
+	"SanRequireUpn":           ubx.FieldSpec{WireName: "san_require_upn"},
+}
 
 var Template_Definition_TemplateV2Fields = ubx.FieldMap{
-		"CertificateValidity": ubx.FieldSpec{
-			WireName: "certificate_validity",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_CertificateValidityFields,
-		},
-		"EnrollmentFlags": ubx.FieldSpec{
-			WireName: "enrollment_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_EnrollmentFlagsFields,
-		},
-		"Extensions": ubx.FieldSpec{
-			WireName: "extensions",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_ExtensionsFields,
-		},
-		"GeneralFlags": ubx.FieldSpec{
-			WireName: "general_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_GeneralFlagsFields,
-		},
-		"PrivateKeyAttributes": ubx.FieldSpec{
-			WireName: "private_key_attributes",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_PrivateKeyAttributesFields,
-		},
-		"PrivateKeyFlags": ubx.FieldSpec{
-			WireName: "private_key_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_PrivateKeyFlagsFields,
-		},
-		"SubjectNameFlags": ubx.FieldSpec{
-			WireName: "subject_name_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_SubjectNameFlagsFields,
-		},
-		"SupersededTemplates": ubx.FieldSpec{WireName: "superseded_templates"},
-	}
+	"CertificateValidity": ubx.FieldSpec{
+		WireName: "certificate_validity",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_CertificateValidityFields,
+	},
+	"EnrollmentFlags": ubx.FieldSpec{
+		WireName: "enrollment_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_EnrollmentFlagsFields,
+	},
+	"Extensions": ubx.FieldSpec{
+		WireName: "extensions",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_ExtensionsFields,
+	},
+	"GeneralFlags": ubx.FieldSpec{
+		WireName: "general_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_GeneralFlagsFields,
+	},
+	"PrivateKeyAttributes": ubx.FieldSpec{
+		WireName: "private_key_attributes",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_PrivateKeyAttributesFields,
+	},
+	"PrivateKeyFlags": ubx.FieldSpec{
+		WireName: "private_key_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_PrivateKeyFlagsFields,
+	},
+	"SubjectNameFlags": ubx.FieldSpec{
+		WireName: "subject_name_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_SubjectNameFlagsFields,
+	},
+	"SupersededTemplates": ubx.FieldSpec{WireName: "superseded_templates"},
+}
 
 var Template_Definition_TemplateV3_PrivateKeyAttributes_KeyUsageProperty_PropertyFlagsFields = ubx.FieldMap{
-		"Decrypt": ubx.FieldSpec{WireName: "decrypt"},
-		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
-		"Sign": ubx.FieldSpec{WireName: "sign"},
-	}
+	"Decrypt":      ubx.FieldSpec{WireName: "decrypt"},
+	"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
+	"Sign":         ubx.FieldSpec{WireName: "sign"},
+}
 
 var Template_Definition_TemplateV3_PrivateKeyAttributes_KeyUsagePropertyFields = ubx.FieldMap{
-		"PropertyFlags": ubx.FieldSpec{
-			WireName: "property_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV3_PrivateKeyAttributes_KeyUsageProperty_PropertyFlagsFields,
-		},
-		"PropertyType": ubx.FieldSpec{WireName: "property_type"},
-	}
+	"PropertyFlags": ubx.FieldSpec{
+		WireName: "property_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV3_PrivateKeyAttributes_KeyUsageProperty_PropertyFlagsFields,
+	},
+	"PropertyType": ubx.FieldSpec{WireName: "property_type"},
+}
 
 var Template_Definition_TemplateV3_PrivateKeyAttributesFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"CryptoProviders": ubx.FieldSpec{WireName: "crypto_providers"},
-		"KeySpec": ubx.FieldSpec{WireName: "key_spec"},
-		"KeyUsageProperty": ubx.FieldSpec{
-			WireName: "key_usage_property",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV3_PrivateKeyAttributes_KeyUsagePropertyFields,
-		},
-		"MinimalKeyLength": ubx.FieldSpec{WireName: "minimal_key_length"},
-	}
+	"Algorithm":       ubx.FieldSpec{WireName: "algorithm"},
+	"CryptoProviders": ubx.FieldSpec{WireName: "crypto_providers"},
+	"KeySpec":         ubx.FieldSpec{WireName: "key_spec"},
+	"KeyUsageProperty": ubx.FieldSpec{
+		WireName: "key_usage_property",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV3_PrivateKeyAttributes_KeyUsagePropertyFields,
+	},
+	"MinimalKeyLength": ubx.FieldSpec{WireName: "minimal_key_length"},
+}
 
 var Template_Definition_TemplateV3_PrivateKeyFlagsFields = ubx.FieldMap{
-		"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
-		"ExportableKey": ubx.FieldSpec{WireName: "exportable_key"},
-		"RequireAlternateSignatureAlgorithm": ubx.FieldSpec{WireName: "require_alternate_signature_algorithm"},
-		"StrongKeyProtectionRequired": ubx.FieldSpec{WireName: "strong_key_protection_required"},
-	}
+	"ClientVersion":                      ubx.FieldSpec{WireName: "client_version"},
+	"ExportableKey":                      ubx.FieldSpec{WireName: "exportable_key"},
+	"RequireAlternateSignatureAlgorithm": ubx.FieldSpec{WireName: "require_alternate_signature_algorithm"},
+	"StrongKeyProtectionRequired":        ubx.FieldSpec{WireName: "strong_key_protection_required"},
+}
 
 var Template_Definition_TemplateV3Fields = ubx.FieldMap{
-		"CertificateValidity": ubx.FieldSpec{
-			WireName: "certificate_validity",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_CertificateValidityFields,
-		},
-		"EnrollmentFlags": ubx.FieldSpec{
-			WireName: "enrollment_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_EnrollmentFlagsFields,
-		},
-		"Extensions": ubx.FieldSpec{
-			WireName: "extensions",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_ExtensionsFields,
-		},
-		"GeneralFlags": ubx.FieldSpec{
-			WireName: "general_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_GeneralFlagsFields,
-		},
-		"HashAlgorithm": ubx.FieldSpec{WireName: "hash_algorithm"},
-		"PrivateKeyAttributes": ubx.FieldSpec{
-			WireName: "private_key_attributes",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV3_PrivateKeyAttributesFields,
-		},
-		"PrivateKeyFlags": ubx.FieldSpec{
-			WireName: "private_key_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV3_PrivateKeyFlagsFields,
-		},
-		"SubjectNameFlags": ubx.FieldSpec{
-			WireName: "subject_name_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_SubjectNameFlagsFields,
-		},
-		"SupersededTemplates": ubx.FieldSpec{WireName: "superseded_templates"},
-	}
+	"CertificateValidity": ubx.FieldSpec{
+		WireName: "certificate_validity",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_CertificateValidityFields,
+	},
+	"EnrollmentFlags": ubx.FieldSpec{
+		WireName: "enrollment_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_EnrollmentFlagsFields,
+	},
+	"Extensions": ubx.FieldSpec{
+		WireName: "extensions",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_ExtensionsFields,
+	},
+	"GeneralFlags": ubx.FieldSpec{
+		WireName: "general_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_GeneralFlagsFields,
+	},
+	"HashAlgorithm": ubx.FieldSpec{WireName: "hash_algorithm"},
+	"PrivateKeyAttributes": ubx.FieldSpec{
+		WireName: "private_key_attributes",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV3_PrivateKeyAttributesFields,
+	},
+	"PrivateKeyFlags": ubx.FieldSpec{
+		WireName: "private_key_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV3_PrivateKeyFlagsFields,
+	},
+	"SubjectNameFlags": ubx.FieldSpec{
+		WireName: "subject_name_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_SubjectNameFlagsFields,
+	},
+	"SupersededTemplates": ubx.FieldSpec{WireName: "superseded_templates"},
+}
 
 var Template_Definition_TemplateV4_PrivateKeyFlagsFields = ubx.FieldMap{
-		"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
-		"ExportableKey": ubx.FieldSpec{WireName: "exportable_key"},
-		"RequireAlternateSignatureAlgorithm": ubx.FieldSpec{WireName: "require_alternate_signature_algorithm"},
-		"RequireSameKeyRenewal": ubx.FieldSpec{WireName: "require_same_key_renewal"},
-		"StrongKeyProtectionRequired": ubx.FieldSpec{WireName: "strong_key_protection_required"},
-		"UseLegacyProvider": ubx.FieldSpec{WireName: "use_legacy_provider"},
-	}
+	"ClientVersion":                      ubx.FieldSpec{WireName: "client_version"},
+	"ExportableKey":                      ubx.FieldSpec{WireName: "exportable_key"},
+	"RequireAlternateSignatureAlgorithm": ubx.FieldSpec{WireName: "require_alternate_signature_algorithm"},
+	"RequireSameKeyRenewal":              ubx.FieldSpec{WireName: "require_same_key_renewal"},
+	"StrongKeyProtectionRequired":        ubx.FieldSpec{WireName: "strong_key_protection_required"},
+	"UseLegacyProvider":                  ubx.FieldSpec{WireName: "use_legacy_provider"},
+}
 
 var Template_Definition_TemplateV4Fields = ubx.FieldMap{
-		"CertificateValidity": ubx.FieldSpec{
-			WireName: "certificate_validity",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_CertificateValidityFields,
-		},
-		"EnrollmentFlags": ubx.FieldSpec{
-			WireName: "enrollment_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_EnrollmentFlagsFields,
-		},
-		"Extensions": ubx.FieldSpec{
-			WireName: "extensions",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_ExtensionsFields,
-		},
-		"GeneralFlags": ubx.FieldSpec{
-			WireName: "general_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_GeneralFlagsFields,
-		},
-		"HashAlgorithm": ubx.FieldSpec{WireName: "hash_algorithm"},
-		"PrivateKeyAttributes": ubx.FieldSpec{
-			WireName: "private_key_attributes",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV3_PrivateKeyAttributesFields,
-		},
-		"PrivateKeyFlags": ubx.FieldSpec{
-			WireName: "private_key_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV4_PrivateKeyFlagsFields,
-		},
-		"SubjectNameFlags": ubx.FieldSpec{
-			WireName: "subject_name_flags",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2_SubjectNameFlagsFields,
-		},
-		"SupersededTemplates": ubx.FieldSpec{WireName: "superseded_templates"},
-	}
+	"CertificateValidity": ubx.FieldSpec{
+		WireName: "certificate_validity",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_CertificateValidityFields,
+	},
+	"EnrollmentFlags": ubx.FieldSpec{
+		WireName: "enrollment_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_EnrollmentFlagsFields,
+	},
+	"Extensions": ubx.FieldSpec{
+		WireName: "extensions",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_ExtensionsFields,
+	},
+	"GeneralFlags": ubx.FieldSpec{
+		WireName: "general_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_GeneralFlagsFields,
+	},
+	"HashAlgorithm": ubx.FieldSpec{WireName: "hash_algorithm"},
+	"PrivateKeyAttributes": ubx.FieldSpec{
+		WireName: "private_key_attributes",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV3_PrivateKeyAttributesFields,
+	},
+	"PrivateKeyFlags": ubx.FieldSpec{
+		WireName: "private_key_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV4_PrivateKeyFlagsFields,
+	},
+	"SubjectNameFlags": ubx.FieldSpec{
+		WireName: "subject_name_flags",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2_SubjectNameFlagsFields,
+	},
+	"SupersededTemplates": ubx.FieldSpec{WireName: "superseded_templates"},
+}
 
 var Template_DefinitionFields = ubx.FieldMap{
-		"TemplateV2": ubx.FieldSpec{
-			WireName: "template_v2",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV2Fields,
-		},
-		"TemplateV3": ubx.FieldSpec{
-			WireName: "template_v3",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV3Fields,
-		},
-		"TemplateV4": ubx.FieldSpec{
-			WireName: "template_v4",
-			Kind: "object",
-			Fields: Template_Definition_TemplateV4Fields,
-		},
-	}
+	"TemplateV2": ubx.FieldSpec{
+		WireName: "template_v2",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV2Fields,
+	},
+	"TemplateV3": ubx.FieldSpec{
+		WireName: "template_v3",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV3Fields,
+	},
+	"TemplateV4": ubx.FieldSpec{
+		WireName: "template_v4",
+		Kind:     "object",
+		Fields:   Template_Definition_TemplateV4Fields,
+	},
+}
 
 type TemplateConfig struct {
 	// The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory connector to which this template belongs. (AI-inferred)
@@ -558,11 +558,11 @@ var Template = ubx.ResourceBinding{
 		"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: Template_DefinitionFields,
+			Kind:     "object",
+			Fields:   Template_DefinitionFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"ReenrollAllCertificateHolders": ubx.FieldSpec{WireName: "reenroll_all_certificate_holders"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":                          ubx.FieldSpec{WireName: "tags"},
 	},
 }

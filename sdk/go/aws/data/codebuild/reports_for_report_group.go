@@ -8,26 +8,26 @@ type ReportsForReportGroup_Filter struct {
 }
 
 var ReportsForReportGroup_FilterFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 type ReportsForReportGroupConfig struct {
 	// <p> A filter used to return reports with the status specified by the input <code>status</code> parameter. </p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter         any
+	MaxResults     any
+	NextToken      any
 	ReportGroupArn any
-	SortOrder any
+	SortOrder      any
 }
 
 type ReportsForReportGroupAttrs struct {
 	// <p> A filter used to return reports with the status specified by the input <code>status</code> parameter. </p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter         any
+	MaxResults     any
+	NextToken      any
 	ReportGroupArn any
-	Reports any
-	SortOrder any
+	Reports        any
+	SortOrder      any
 }
 
 var ReportsForReportGroup = ubx.DataSourceBinding{
@@ -35,12 +35,12 @@ var ReportsForReportGroup = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: ReportsForReportGroup_FilterFields,
+			Kind:     "object",
+			Fields:   ReportsForReportGroup_FilterFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ReportGroupArn": ubx.FieldSpec{WireName: "report_group_arn"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"SortOrder":      ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

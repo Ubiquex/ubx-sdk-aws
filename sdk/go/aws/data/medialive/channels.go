@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Channels_Channels_AnywhereSettings struct {
 	ChannelPlacementGroupId any
-	ClusterId any
+	ClusterId               any
 }
 
 type Channels_Channels_CdiInputSpecification struct {
@@ -14,19 +14,19 @@ type Channels_Channels_CdiInputSpecification struct {
 
 type Channels_Channels_ChannelEngineVersion struct {
 	ExpirationDate any
-	Version any
+	Version        any
 }
 
 type Channels_Channels_Destinations_MediaConnectRouterSettings struct {
 	EncryptionType any
-	SecretArn any
+	SecretArn      any
 }
 
 type Channels_Channels_Destinations_MediaPackageSettings struct {
-	ChannelEndpointId any
-	ChannelGroup any
-	ChannelId any
-	ChannelName any
+	ChannelEndpointId      any
+	ChannelGroup           any
+	ChannelId              any
+	ChannelName            any
 	MediaPackageRegionName any
 }
 
@@ -36,29 +36,29 @@ type Channels_Channels_Destinations_MultiplexSettings struct {
 }
 
 type Channels_Channels_Destinations_Settings struct {
-	PasswordParam any
-	StreamName any
-	Url any
-	Username any
+	PasswordParam        any
+	StreamName           any
+	Url                  any
+	Username             any
 	VirtualSourceAddress any
 }
 
 type Channels_Channels_Destinations_SrtSettings struct {
-	ConnectionMode any
+	ConnectionMode                any
 	EncryptionPassphraseSecretArn any
-	ListenerPort any
-	StreamId any
-	Url any
+	ListenerPort                  any
+	StreamId                      any
+	Url                           any
 }
 
 type Channels_Channels_Destinations struct {
-	Id any
-	LogicalInterfaceNames any
+	Id                         any
+	LogicalInterfaceNames      any
 	MediaConnectRouterSettings any
-	MediaPackageSettings any
-	MultiplexSettings any
-	Settings any
-	SrtSettings any
+	MediaPackageSettings       any
+	MultiplexSettings          any
+	Settings                   any
+	SrtSettings                any
 }
 
 type Channels_Channels_EgressEndpoints struct {
@@ -67,16 +67,16 @@ type Channels_Channels_EgressEndpoints struct {
 
 type Channels_Channels_InferenceSettings_AudioFeedInputs struct {
 	AudioSelectorName any
-	FeedInput any
+	FeedInput         any
 }
 
 type Channels_Channels_InferenceSettings struct {
 	AudioFeedInputs any
-	FeedArn any
+	FeedArn         any
 }
 
 type Channels_Channels_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_AudioSilenceSettings struct {
-	AudioSelectorName any
+	AudioSelectorName         any
 	AudioSilenceThresholdMsec any
 }
 
@@ -85,14 +85,14 @@ type Channels_Channels_InputAttachments_AutomaticInputFailoverSettings_FailoverC
 }
 
 type Channels_Channels_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_VideoBlackSettings struct {
-	BlackDetectThreshold any
+	BlackDetectThreshold    any
 	VideoBlackThresholdMsec any
 }
 
 type Channels_Channels_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings struct {
 	AudioSilenceSettings any
-	InputLossSettings any
-	VideoBlackSettings any
+	InputLossSettings    any
+	VideoBlackSettings   any
 }
 
 type Channels_Channels_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions struct {
@@ -102,17 +102,17 @@ type Channels_Channels_InputAttachments_AutomaticInputFailoverSettings_FailoverC
 type Channels_Channels_InputAttachments_AutomaticInputFailoverSettings struct {
 	ErrorClearTimeMsec any
 	FailoverConditions any
-	InputPreference any
-	SecondaryInputId any
+	InputPreference    any
+	SecondaryInputId   any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioHlsRenditionSelection struct {
 	GroupId any
-	Name any
+	Name    any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioLanguageSelection struct {
-	LanguageCode any
+	LanguageCode            any
 	LanguageSelectionPolicy any
 }
 
@@ -121,66 +121,66 @@ type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSet
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettings_AudioNormalizationSettings struct {
-	Algorithm any
-	AlgorithmControl any
-	PeakCalculation any
+	Algorithm            any
+	AlgorithmControl     any
+	PeakCalculation      any
 	PeakLimiterThreshold any
-	TargetLkfs any
+	TargetLkfs           any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettings_RemixSettings_ChannelMappings_InputChannelLevels struct {
-	Gain any
+	Gain         any
 	InputChannel any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettings_RemixSettings_ChannelMappings struct {
 	InputChannelLevels any
-	OutputChannel any
+	OutputChannel      any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettings_RemixSettings struct {
 	ChannelMappings any
-	ChannelsIn any
-	ChannelsOut any
+	ChannelsIn      any
+	ChannelsOut     any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettings struct {
 	AudioNormalizationSettings any
-	Channels any
-	GainDb any
-	RemixSettings any
+	Channels                   any
+	GainDb                     any
+	RemixSettings              any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids struct {
-	DolbyEdecode any
-	Pid any
+	DolbyEdecode   any
+	Pid            any
 	PremixSettings any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection struct {
-	Pid any
+	Pid  any
 	Pids any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelection_Tracks struct {
 	PremixSettings any
-	Track any
+	Track          any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelection struct {
 	DolbyEdecode any
-	Tracks any
+	Tracks       any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors_SelectorSettings struct {
 	AudioHlsRenditionSelection any
-	AudioLanguageSelection any
-	AudioPidSelection any
-	AudioTrackSelection any
+	AudioLanguageSelection     any
+	AudioPidSelection          any
+	AudioTrackSelection        any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_AudioSelectors struct {
-	Name any
+	Name             any
 	SelectorSettings any
 }
 
@@ -190,61 +190,61 @@ type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors_SelectorS
 
 type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_DvbSubSourceSettings struct {
 	OcrLanguage any
-	Pid any
+	Pid         any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_EmbeddedSourceSettings struct {
-	Convert608To708 any
-	Scte20Detection any
+	Convert608To708        any
+	Scte20Detection        any
 	Source608ChannelNumber any
-	Source608TrackNumber any
+	Source608TrackNumber   any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_Scte20SourceSettings struct {
-	Convert608To708 any
+	Convert608To708        any
 	Source608ChannelNumber any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_SmartSubtitleSourceSettings struct {
 	CaptionSynchronizationMode any
-	InferenceFeedOutput any
+	InferenceFeedOutput        any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettings_OutputRectangle struct {
-	Height any
+	Height     any
 	LeftOffset any
-	TopOffset any
-	Width any
+	TopOffset  any
+	Width      any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettings struct {
 	OutputRectangle any
-	PageNumber any
+	PageNumber      any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings struct {
-	AncillarySourceSettings any
-	AribSourceSettings any
-	DvbSubSourceSettings any
-	EmbeddedSourceSettings any
-	Scte20SourceSettings any
-	Scte27SourceSettings any
+	AncillarySourceSettings     any
+	AribSourceSettings          any
+	DvbSubSourceSettings        any
+	EmbeddedSourceSettings      any
+	Scte20SourceSettings        any
+	Scte27SourceSettings        any
 	SmartSubtitleSourceSettings any
-	TeletextSourceSettings any
+	TeletextSourceSettings      any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_CaptionSelectors struct {
-	LanguageCode any
-	Name any
+	LanguageCode     any
+	Name             any
 	SelectorSettings any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_NetworkInputSettings_HlsInputSettings struct {
-	Bandwidth any
+	Bandwidth      any
 	BufferSegments any
-	Retries any
-	RetryInterval any
-	Scte35Source any
+	Retries        any
+	RetryInterval  any
+	Scte35Source   any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_NetworkInputSettings_MulticastInputSettings struct {
@@ -252,13 +252,13 @@ type Channels_Channels_InputAttachments_InputSettings_NetworkInputSettings_Multi
 }
 
 type Channels_Channels_InputAttachments_InputSettings_NetworkInputSettings struct {
-	HlsInputSettings any
+	HlsInputSettings       any
 	MulticastInputSettings any
-	ServerValidation any
+	ServerValidation       any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_VideoSelector_ColorSpaceSettings_Hdr10Settings struct {
-	MaxCll any
+	MaxCll  any
 	MaxFall any
 }
 
@@ -275,43 +275,43 @@ type Channels_Channels_InputAttachments_InputSettings_VideoSelector_SelectorSett
 }
 
 type Channels_Channels_InputAttachments_InputSettings_VideoSelector_SelectorSettings struct {
-	VideoSelectorPid any
+	VideoSelectorPid       any
 	VideoSelectorProgramId any
 }
 
 type Channels_Channels_InputAttachments_InputSettings_VideoSelector struct {
-	ColorSpace any
+	ColorSpace         any
 	ColorSpaceSettings any
-	ColorSpaceUsage any
-	SelectorSettings any
+	ColorSpaceUsage    any
+	SelectorSettings   any
 }
 
 type Channels_Channels_InputAttachments_InputSettings struct {
-	AudioSelectors any
-	CaptionSelectors any
-	DeblockFilter any
-	DenoiseFilter any
-	FilterStrength any
-	InputFilter any
-	NetworkInputSettings any
-	Scte35Pid any
+	AudioSelectors          any
+	CaptionSelectors        any
+	DeblockFilter           any
+	DenoiseFilter           any
+	FilterStrength          any
+	InputFilter             any
+	NetworkInputSettings    any
+	Scte35Pid               any
 	Smpte2038DataPreference any
-	SourceEndBehavior any
-	VideoSelector any
+	SourceEndBehavior       any
+	VideoSelector           any
 }
 
 type Channels_Channels_InputAttachments struct {
 	AutomaticInputFailoverSettings any
-	InputAttachmentName any
-	InputId any
-	InputSettings any
-	LogicalInterfaceNames any
+	InputAttachmentName            any
+	InputId                        any
+	InputSettings                  any
+	LogicalInterfaceNames          any
 }
 
 type Channels_Channels_InputSpecification struct {
-	Codec any
+	Codec          any
 	MaximumBitrate any
-	Resolution any
+	Resolution     any
 }
 
 type Channels_Channels_LinkedChannelSettings_FollowerChannelSettings struct {
@@ -321,51 +321,51 @@ type Channels_Channels_LinkedChannelSettings_FollowerChannelSettings struct {
 
 type Channels_Channels_LinkedChannelSettings_PrimaryChannelSettings struct {
 	FollowingChannelArns any
-	LinkedChannelType any
+	LinkedChannelType    any
 }
 
 type Channels_Channels_LinkedChannelSettings struct {
 	FollowerChannelSettings any
-	PrimaryChannelSettings any
+	PrimaryChannelSettings  any
 }
 
 type Channels_Channels_Maintenance struct {
-	MaintenanceDay any
-	MaintenanceDeadline any
+	MaintenanceDay           any
+	MaintenanceDeadline      any
 	MaintenanceScheduledDate any
-	MaintenanceStartTime any
+	MaintenanceStartTime     any
 }
 
 type Channels_Channels_Vpc struct {
-	AvailabilityZones any
+	AvailabilityZones   any
 	NetworkInterfaceIds any
-	SecurityGroupIds any
-	SubnetIds any
+	SecurityGroupIds    any
+	SubnetIds           any
 }
 
 type Channels_Channels struct {
-	AnywhereSettings any
-	Arn any
-	CdiInputSpecification any
-	ChannelClass any
-	ChannelEngineVersion any
-	ChannelSecurityGroups any
-	Destinations any
-	EgressEndpoints any
-	Id any
-	InferenceSettings any
-	InputAttachments any
-	InputSpecification any
-	LinkedChannelSettings any
-	LogLevel any
-	Maintenance any
-	Name any
-	PipelinesRunningCount any
-	RoleArn any
-	State any
-	Tags any
+	AnywhereSettings          any
+	Arn                       any
+	CdiInputSpecification     any
+	ChannelClass              any
+	ChannelEngineVersion      any
+	ChannelSecurityGroups     any
+	Destinations              any
+	EgressEndpoints           any
+	Id                        any
+	InferenceSettings         any
+	InputAttachments          any
+	InputSpecification        any
+	LinkedChannelSettings     any
+	LogLevel                  any
+	Maintenance               any
+	Name                      any
+	PipelinesRunningCount     any
+	RoleArn                   any
+	State                     any
+	Tags                      any
 	UsedChannelEngineVersions any
-	Vpc any
+	Vpc                       any
 }
 
 type ChannelsConfig struct {
@@ -388,6 +388,6 @@ var Channels = ubx.DataSourceBinding{
 	WireType: "aws_medialive_channels",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

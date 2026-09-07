@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MturkRequesterBonusPayments_BonusPayments struct {
 	AssignmentId any
-	BonusAmount any
-	GrantTime any
-	Reason any
-	WorkerId any
+	BonusAmount  any
+	GrantTime    any
+	Reason       any
+	WorkerId     any
 }
 
 type MturkRequesterBonusPaymentsConfig struct {
 	AssignmentId any
-	Hitid any
-	MaxResults any
+	Hitid        any
+	MaxResults   any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
 	NextToken any
 }
 
 type MturkRequesterBonusPaymentsAttrs struct {
-	AssignmentId any
+	AssignmentId  any
 	BonusPayments any
-	Hitid any
-	MaxResults any
+	Hitid         any
+	MaxResults    any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-	NextToken any
+	NextToken  any
 	NumResults any
 }
 
@@ -33,8 +33,8 @@ var MturkRequesterBonusPayments = ubx.DataSourceBinding{
 	WireType: "aws_mturk_requester_bonus_payments",
 	Fields: ubx.FieldMap{
 		"AssignmentId": ubx.FieldSpec{WireName: "assignment_id"},
-		"Hitid": ubx.FieldSpec{WireName: "hitid"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Hitid":        ubx.FieldSpec{WireName: "hitid"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

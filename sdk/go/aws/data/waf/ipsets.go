@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ipsets_Ipsets struct {
 	IpsetId any
-	Name any
+	Name    any
 }
 
 type IpsetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type IpsetsAttrs struct {
-	Ipsets any
-	Limit any
+	Ipsets     any
+	Limit      any
 	NextMarker any
 }
 
 var Ipsets = ubx.DataSourceBinding{
 	WireType: "aws_waf_ipsets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

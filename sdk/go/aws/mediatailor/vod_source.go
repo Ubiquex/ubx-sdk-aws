@@ -20,15 +20,15 @@ type VodSource_Tags struct {
 }
 
 var VodSource_HttpPackageConfigurationsFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"SourceGroup": ubx.FieldSpec{WireName: "source_group"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Path":        ubx.FieldSpec{WireName: "path"},
+	"SourceGroup": ubx.FieldSpec{WireName: "source_group"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var VodSource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VodSourceConfig struct {
 	// <p>A list of HTTP package configuration parameters for this VOD source.</p>
@@ -59,14 +59,14 @@ var VodSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"HttpPackageConfigurations": ubx.FieldSpec{
 			WireName: "http_package_configurations",
-			Kind: "list",
-			Fields: VodSource_HttpPackageConfigurationsFields,
+			Kind:     "list",
+			Fields:   VodSource_HttpPackageConfigurationsFields,
 		},
 		"SourceLocationName": ubx.FieldSpec{WireName: "source_location_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: VodSource_TagsFields,
+			Kind:     "list",
+			Fields:   VodSource_TagsFields,
 		},
 		"VodSourceName": ubx.FieldSpec{WireName: "vod_source_name"},
 	},

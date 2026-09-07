@@ -262,297 +262,297 @@ type Campaign_Limits struct {
 	MaximumDuration any
 	// The maximum number of messages that the campaign can send per second, throttling the send rate to control throughput and avoid exceeding limits. (AI-inferred)
 	MessagesPerSecond any
-	Session any
+	Session           any
 	// The maximum total number of messages that a campaign can send to a single user over the campaign's lifetime. (AI-inferred)
 	Total any
 }
 
 var Campaign_AdditionalTreatments_CustomDeliveryConfigurationFields = ubx.FieldMap{
-		"DeliveryUri": ubx.FieldSpec{WireName: "delivery_uri"},
-		"EndpointTypes": ubx.FieldSpec{WireName: "endpoint_types"},
-	}
+	"DeliveryUri":   ubx.FieldSpec{WireName: "delivery_uri"},
+	"EndpointTypes": ubx.FieldSpec{WireName: "endpoint_types"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"ImageIconUrl": ubx.FieldSpec{WireName: "image_icon_url"},
-		"ImageSmallIconUrl": ubx.FieldSpec{WireName: "image_small_icon_url"},
-		"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
-		"JsonBody": ubx.FieldSpec{WireName: "json_body"},
-		"MediaUrl": ubx.FieldSpec{WireName: "media_url"},
-		"RawContent": ubx.FieldSpec{WireName: "raw_content"},
-		"SilentPush": ubx.FieldSpec{WireName: "silent_push"},
-		"TimeToLive": ubx.FieldSpec{WireName: "time_to_live"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Action":            ubx.FieldSpec{WireName: "action"},
+	"Body":              ubx.FieldSpec{WireName: "body"},
+	"ImageIconUrl":      ubx.FieldSpec{WireName: "image_icon_url"},
+	"ImageSmallIconUrl": ubx.FieldSpec{WireName: "image_small_icon_url"},
+	"ImageUrl":          ubx.FieldSpec{WireName: "image_url"},
+	"JsonBody":          ubx.FieldSpec{WireName: "json_body"},
+	"MediaUrl":          ubx.FieldSpec{WireName: "media_url"},
+	"RawContent":        ubx.FieldSpec{WireName: "raw_content"},
+	"SilentPush":        ubx.FieldSpec{WireName: "silent_push"},
+	"TimeToLive":        ubx.FieldSpec{WireName: "time_to_live"},
+	"Title":             ubx.FieldSpec{WireName: "title"},
+	"Url":               ubx.FieldSpec{WireName: "url"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_CustomMessageFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_EmailMessageFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"FromAddress": ubx.FieldSpec{WireName: "from_address"},
-		"HtmlBody": ubx.FieldSpec{WireName: "html_body"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Body":        ubx.FieldSpec{WireName: "body"},
+	"FromAddress": ubx.FieldSpec{WireName: "from_address"},
+	"HtmlBody":    ubx.FieldSpec{WireName: "html_body"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_BodyConfigFields = ubx.FieldMap{
-		"Alignment": ubx.FieldSpec{WireName: "alignment"},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"TextColor": ubx.FieldSpec{WireName: "text_color"},
-	}
+	"Alignment": ubx.FieldSpec{WireName: "alignment"},
+	"Body":      ubx.FieldSpec{WireName: "body"},
+	"TextColor": ubx.FieldSpec{WireName: "text_color"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_HeaderConfigFields = ubx.FieldMap{
-		"Alignment": ubx.FieldSpec{WireName: "alignment"},
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"TextColor": ubx.FieldSpec{WireName: "text_color"},
-	}
+	"Alignment": ubx.FieldSpec{WireName: "alignment"},
+	"Header":    ubx.FieldSpec{WireName: "header"},
+	"TextColor": ubx.FieldSpec{WireName: "text_color"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_AndroidFields = ubx.FieldMap{
-		"ButtonAction": ubx.FieldSpec{WireName: "button_action"},
-		"Link": ubx.FieldSpec{WireName: "link"},
-	}
+	"ButtonAction": ubx.FieldSpec{WireName: "button_action"},
+	"Link":         ubx.FieldSpec{WireName: "link"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_DefaultConfigFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"BorderRadius": ubx.FieldSpec{WireName: "border_radius"},
-		"ButtonAction": ubx.FieldSpec{WireName: "button_action"},
-		"Link": ubx.FieldSpec{WireName: "link"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"TextColor": ubx.FieldSpec{WireName: "text_color"},
-	}
+	"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
+	"BorderRadius":    ubx.FieldSpec{WireName: "border_radius"},
+	"ButtonAction":    ubx.FieldSpec{WireName: "button_action"},
+	"Link":            ubx.FieldSpec{WireName: "link"},
+	"Text":            ubx.FieldSpec{WireName: "text"},
+	"TextColor":       ubx.FieldSpec{WireName: "text_color"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtnFields = ubx.FieldMap{
-		"Android": ubx.FieldSpec{
-			WireName: "android",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_AndroidFields,
-		},
-		"DefaultConfig": ubx.FieldSpec{
-			WireName: "default_config",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_DefaultConfigFields,
-		},
-		"Ios": ubx.FieldSpec{
-			WireName: "ios",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_AndroidFields,
-		},
-		"Web": ubx.FieldSpec{
-			WireName: "web",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_AndroidFields,
-		},
-	}
+	"Android": ubx.FieldSpec{
+		WireName: "android",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_AndroidFields,
+	},
+	"DefaultConfig": ubx.FieldSpec{
+		WireName: "default_config",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_DefaultConfigFields,
+	},
+	"Ios": ubx.FieldSpec{
+		WireName: "ios",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_AndroidFields,
+	},
+	"Web": ubx.FieldSpec{
+		WireName: "web",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_AndroidFields,
+	},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_ContentFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"BodyConfig": ubx.FieldSpec{
-			WireName: "body_config",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_BodyConfigFields,
-		},
-		"HeaderConfig": ubx.FieldSpec{
-			WireName: "header_config",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_HeaderConfigFields,
-		},
-		"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
-		"PrimaryBtn": ubx.FieldSpec{
-			WireName: "primary_btn",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtnFields,
-		},
-		"SecondaryBtn": ubx.FieldSpec{
-			WireName: "secondary_btn",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtnFields,
-		},
-	}
+	"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
+	"BodyConfig": ubx.FieldSpec{
+		WireName: "body_config",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_BodyConfigFields,
+	},
+	"HeaderConfig": ubx.FieldSpec{
+		WireName: "header_config",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_HeaderConfigFields,
+	},
+	"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
+	"PrimaryBtn": ubx.FieldSpec{
+		WireName: "primary_btn",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtnFields,
+	},
+	"SecondaryBtn": ubx.FieldSpec{
+		WireName: "secondary_btn",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtnFields,
+	},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_InAppMessageFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "list",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_ContentFields,
-		},
-		"CustomConfig": ubx.FieldSpec{WireName: "custom_config"},
-		"Layout": ubx.FieldSpec{WireName: "layout"},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "list",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_ContentFields,
+	},
+	"CustomConfig": ubx.FieldSpec{WireName: "custom_config"},
+	"Layout":       ubx.FieldSpec{WireName: "layout"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfiguration_SmsmessageFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"MessageType": ubx.FieldSpec{WireName: "message_type"},
-		"OriginationNumber": ubx.FieldSpec{WireName: "origination_number"},
-		"SenderId": ubx.FieldSpec{WireName: "sender_id"},
-		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
-	}
+	"Body":              ubx.FieldSpec{WireName: "body"},
+	"EntityId":          ubx.FieldSpec{WireName: "entity_id"},
+	"MessageType":       ubx.FieldSpec{WireName: "message_type"},
+	"OriginationNumber": ubx.FieldSpec{WireName: "origination_number"},
+	"SenderId":          ubx.FieldSpec{WireName: "sender_id"},
+	"TemplateId":        ubx.FieldSpec{WireName: "template_id"},
+}
 
 var Campaign_AdditionalTreatments_MessageConfigurationFields = ubx.FieldMap{
-		"Admmessage": ubx.FieldSpec{
-			WireName: "admmessage",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
-		},
-		"Apnsmessage": ubx.FieldSpec{
-			WireName: "apnsmessage",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
-		},
-		"BaiduMessage": ubx.FieldSpec{
-			WireName: "baidu_message",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
-		},
-		"CustomMessage": ubx.FieldSpec{
-			WireName: "custom_message",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_CustomMessageFields,
-		},
-		"DefaultMessage": ubx.FieldSpec{
-			WireName: "default_message",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
-		},
-		"EmailMessage": ubx.FieldSpec{
-			WireName: "email_message",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_EmailMessageFields,
-		},
-		"Gcmmessage": ubx.FieldSpec{
-			WireName: "gcmmessage",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
-		},
-		"InAppMessage": ubx.FieldSpec{
-			WireName: "in_app_message",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_InAppMessageFields,
-		},
-		"Smsmessage": ubx.FieldSpec{
-			WireName: "smsmessage",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfiguration_SmsmessageFields,
-		},
-	}
+	"Admmessage": ubx.FieldSpec{
+		WireName: "admmessage",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
+	},
+	"Apnsmessage": ubx.FieldSpec{
+		WireName: "apnsmessage",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
+	},
+	"BaiduMessage": ubx.FieldSpec{
+		WireName: "baidu_message",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
+	},
+	"CustomMessage": ubx.FieldSpec{
+		WireName: "custom_message",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_CustomMessageFields,
+	},
+	"DefaultMessage": ubx.FieldSpec{
+		WireName: "default_message",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
+	},
+	"EmailMessage": ubx.FieldSpec{
+		WireName: "email_message",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_EmailMessageFields,
+	},
+	"Gcmmessage": ubx.FieldSpec{
+		WireName: "gcmmessage",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_AdmmessageFields,
+	},
+	"InAppMessage": ubx.FieldSpec{
+		WireName: "in_app_message",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_InAppMessageFields,
+	},
+	"Smsmessage": ubx.FieldSpec{
+		WireName: "smsmessage",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfiguration_SmsmessageFields,
+	},
+}
 
 var Campaign_AdditionalTreatments_Schedule_EventFilter_Dimensions_EventTypeFields = ubx.FieldMap{
-		"DimensionType": ubx.FieldSpec{WireName: "dimension_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"DimensionType": ubx.FieldSpec{WireName: "dimension_type"},
+	"Values":        ubx.FieldSpec{WireName: "values"},
+}
 
 var Campaign_AdditionalTreatments_Schedule_EventFilter_DimensionsFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"EventType": ubx.FieldSpec{
-			WireName: "event_type",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_Schedule_EventFilter_Dimensions_EventTypeFields,
-		},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"EventType": ubx.FieldSpec{
+		WireName: "event_type",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_Schedule_EventFilter_Dimensions_EventTypeFields,
+	},
+	"Metrics": ubx.FieldSpec{WireName: "metrics"},
+}
 
 var Campaign_AdditionalTreatments_Schedule_EventFilterFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_Schedule_EventFilter_DimensionsFields,
-		},
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_Schedule_EventFilter_DimensionsFields,
+	},
+	"FilterType": ubx.FieldSpec{WireName: "filter_type"},
+}
 
 var Campaign_AdditionalTreatments_Schedule_QuietTimeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var Campaign_AdditionalTreatments_ScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"EventFilter": ubx.FieldSpec{
-			WireName: "event_filter",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_Schedule_EventFilterFields,
-		},
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"IsLocalTime": ubx.FieldSpec{WireName: "is_local_time"},
-		"QuietTime": ubx.FieldSpec{
-			WireName: "quiet_time",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_Schedule_QuietTimeFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"EventFilter": ubx.FieldSpec{
+		WireName: "event_filter",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_Schedule_EventFilterFields,
+	},
+	"Frequency":   ubx.FieldSpec{WireName: "frequency"},
+	"IsLocalTime": ubx.FieldSpec{WireName: "is_local_time"},
+	"QuietTime": ubx.FieldSpec{
+		WireName: "quiet_time",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_Schedule_QuietTimeFields,
+	},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	"TimeZone":  ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Campaign_AdditionalTreatments_TemplateConfigurationFields = ubx.FieldMap{
-		"EmailTemplate": ubx.FieldSpec{
-			WireName: "email_template",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields,
-		},
-		"PushTemplate": ubx.FieldSpec{
-			WireName: "push_template",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields,
-		},
-		"Smstemplate": ubx.FieldSpec{
-			WireName: "smstemplate",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields,
-		},
-		"VoiceTemplate": ubx.FieldSpec{
-			WireName: "voice_template",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields,
-		},
-	}
+	"EmailTemplate": ubx.FieldSpec{
+		WireName: "email_template",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields,
+	},
+	"PushTemplate": ubx.FieldSpec{
+		WireName: "push_template",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields,
+	},
+	"Smstemplate": ubx.FieldSpec{
+		WireName: "smstemplate",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields,
+	},
+	"VoiceTemplate": ubx.FieldSpec{
+		WireName: "voice_template",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplateFields,
+	},
+}
 
 var Campaign_AdditionalTreatmentsFields = ubx.FieldMap{
-		"CustomDeliveryConfiguration": ubx.FieldSpec{
-			WireName: "custom_delivery_configuration",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_CustomDeliveryConfigurationFields,
-		},
-		"MessageConfiguration": ubx.FieldSpec{
-			WireName: "message_configuration",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfigurationFields,
-		},
-		"Schedule": ubx.FieldSpec{
-			WireName: "schedule",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_ScheduleFields,
-		},
-		"SizePercent": ubx.FieldSpec{WireName: "size_percent"},
-		"TemplateConfiguration": ubx.FieldSpec{
-			WireName: "template_configuration",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_TemplateConfigurationFields,
-		},
-		"TreatmentDescription": ubx.FieldSpec{WireName: "treatment_description"},
-		"TreatmentName": ubx.FieldSpec{WireName: "treatment_name"},
-	}
+	"CustomDeliveryConfiguration": ubx.FieldSpec{
+		WireName: "custom_delivery_configuration",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_CustomDeliveryConfigurationFields,
+	},
+	"MessageConfiguration": ubx.FieldSpec{
+		WireName: "message_configuration",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_MessageConfigurationFields,
+	},
+	"Schedule": ubx.FieldSpec{
+		WireName: "schedule",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_ScheduleFields,
+	},
+	"SizePercent": ubx.FieldSpec{WireName: "size_percent"},
+	"TemplateConfiguration": ubx.FieldSpec{
+		WireName: "template_configuration",
+		Kind:     "object",
+		Fields:   Campaign_AdditionalTreatments_TemplateConfigurationFields,
+	},
+	"TreatmentDescription": ubx.FieldSpec{WireName: "treatment_description"},
+	"TreatmentName":        ubx.FieldSpec{WireName: "treatment_name"},
+}
 
 var Campaign_CampaignHookFields = ubx.FieldMap{
-		"LambdaFunctionName": ubx.FieldSpec{WireName: "lambda_function_name"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"WebUrl": ubx.FieldSpec{WireName: "web_url"},
-	}
+	"LambdaFunctionName": ubx.FieldSpec{WireName: "lambda_function_name"},
+	"Mode":               ubx.FieldSpec{WireName: "mode"},
+	"WebUrl":             ubx.FieldSpec{WireName: "web_url"},
+}
 
 var Campaign_LimitsFields = ubx.FieldMap{
-		"Daily": ubx.FieldSpec{WireName: "daily"},
-		"MaximumDuration": ubx.FieldSpec{WireName: "maximum_duration"},
-		"MessagesPerSecond": ubx.FieldSpec{WireName: "messages_per_second"},
-		"Session": ubx.FieldSpec{WireName: "session"},
-		"Total": ubx.FieldSpec{WireName: "total"},
-	}
+	"Daily":             ubx.FieldSpec{WireName: "daily"},
+	"MaximumDuration":   ubx.FieldSpec{WireName: "maximum_duration"},
+	"MessagesPerSecond": ubx.FieldSpec{WireName: "messages_per_second"},
+	"Session":           ubx.FieldSpec{WireName: "session"},
+	"Total":             ubx.FieldSpec{WireName: "total"},
+}
 
 type CampaignConfig struct {
 	// Specifies additional A/B test treatment variations for the campaign, each with its own message configuration, schedule, and treatment-specific settings. (AI-inferred)
@@ -641,49 +641,49 @@ var Campaign = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalTreatments": ubx.FieldSpec{
 			WireName: "additional_treatments",
-			Kind: "list",
-			Fields: Campaign_AdditionalTreatmentsFields,
+			Kind:     "list",
+			Fields:   Campaign_AdditionalTreatmentsFields,
 		},
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"CampaignHook": ubx.FieldSpec{
 			WireName: "campaign_hook",
-			Kind: "object",
-			Fields: Campaign_CampaignHookFields,
+			Kind:     "object",
+			Fields:   Campaign_CampaignHookFields,
 		},
 		"CustomDeliveryConfiguration": ubx.FieldSpec{
 			WireName: "custom_delivery_configuration",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_CustomDeliveryConfigurationFields,
+			Kind:     "object",
+			Fields:   Campaign_AdditionalTreatments_CustomDeliveryConfigurationFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"HoldoutPercent": ubx.FieldSpec{WireName: "holdout_percent"},
-		"IsPaused": ubx.FieldSpec{WireName: "is_paused"},
+		"IsPaused":       ubx.FieldSpec{WireName: "is_paused"},
 		"Limits": ubx.FieldSpec{
 			WireName: "limits",
-			Kind: "object",
-			Fields: Campaign_LimitsFields,
+			Kind:     "object",
+			Fields:   Campaign_LimitsFields,
 		},
 		"MessageConfiguration": ubx.FieldSpec{
 			WireName: "message_configuration",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_MessageConfigurationFields,
+			Kind:     "object",
+			Fields:   Campaign_AdditionalTreatments_MessageConfigurationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_ScheduleFields,
+			Kind:     "object",
+			Fields:   Campaign_AdditionalTreatments_ScheduleFields,
 		},
-		"SegmentId": ubx.FieldSpec{WireName: "segment_id"},
+		"SegmentId":      ubx.FieldSpec{WireName: "segment_id"},
 		"SegmentVersion": ubx.FieldSpec{WireName: "segment_version"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":           ubx.FieldSpec{WireName: "tags"},
 		"TemplateConfiguration": ubx.FieldSpec{
 			WireName: "template_configuration",
-			Kind: "object",
-			Fields: Campaign_AdditionalTreatments_TemplateConfigurationFields,
+			Kind:     "object",
+			Fields:   Campaign_AdditionalTreatments_TemplateConfigurationFields,
 		},
 		"TreatmentDescription": ubx.FieldSpec{WireName: "treatment_description"},
-		"TreatmentName": ubx.FieldSpec{WireName: "treatment_name"},
+		"TreatmentName":        ubx.FieldSpec{WireName: "treatment_name"},
 	},
 }

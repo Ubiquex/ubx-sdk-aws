@@ -4,24 +4,24 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackRefactors_StackRefactorSummaries struct {
-	Description any
-	ExecutionStatus any
+	Description           any
+	ExecutionStatus       any
 	ExecutionStatusReason any
-	StackRefactorId any
-	Status any
-	StatusReason any
+	StackRefactorId       any
+	Status                any
+	StatusReason          any
 }
 
 type StackRefactorsConfig struct {
 	ExecutionStatusFilter any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type StackRefactorsAttrs struct {
-	ExecutionStatusFilter any
-	MaxResults any
-	NextToken any
+	ExecutionStatusFilter  any
+	MaxResults             any
+	NextToken              any
 	StackRefactorSummaries any
 }
 
@@ -29,7 +29,7 @@ var StackRefactors = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stack_refactors",
 	Fields: ubx.FieldMap{
 		"ExecutionStatusFilter": ubx.FieldSpec{WireName: "execution_status_filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

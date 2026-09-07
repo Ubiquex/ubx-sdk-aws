@@ -4,30 +4,30 @@ package iotthingsgraph
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlowTemplateRevisions_Summaries struct {
-	Arn any
-	CreatedAt any
-	Id any
+	Arn            any
+	CreatedAt      any
+	Id             any
 	RevisionNumber any
 }
 
 type FlowTemplateRevisionsConfig struct {
-	Id any
+	Id         any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FlowTemplateRevisionsAttrs struct {
-	Id any
+	Id         any
 	MaxResults any
-	NextToken any
-	Summaries any
+	NextToken  any
+	Summaries  any
 }
 
 var FlowTemplateRevisions = ubx.DataSourceBinding{
 	WireType: "aws_iotthingsgraph_flow_template_revisions",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

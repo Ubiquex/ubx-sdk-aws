@@ -40,13 +40,13 @@ type ConnectPeer_Tags struct {
 }
 
 var ConnectPeer_BgpOptionsFields = ubx.FieldMap{
-		"PeerAsn": ubx.FieldSpec{WireName: "peer_asn"},
-	}
+	"PeerAsn": ubx.FieldSpec{WireName: "peer_asn"},
+}
 
 var ConnectPeer_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectPeerConfig struct {
 	// Bgp options
@@ -101,18 +101,18 @@ var ConnectPeer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BgpOptions": ubx.FieldSpec{
 			WireName: "bgp_options",
-			Kind: "object",
-			Fields: ConnectPeer_BgpOptionsFields,
+			Kind:     "object",
+			Fields:   ConnectPeer_BgpOptionsFields,
 		},
 		"ConnectAttachmentId": ubx.FieldSpec{WireName: "connect_attachment_id"},
-		"CoreNetworkAddress": ubx.FieldSpec{WireName: "core_network_address"},
-		"InsideCidrBlocks": ubx.FieldSpec{WireName: "inside_cidr_blocks"},
-		"PeerAddress": ubx.FieldSpec{WireName: "peer_address"},
-		"SubnetArn": ubx.FieldSpec{WireName: "subnet_arn"},
+		"CoreNetworkAddress":  ubx.FieldSpec{WireName: "core_network_address"},
+		"InsideCidrBlocks":    ubx.FieldSpec{WireName: "inside_cidr_blocks"},
+		"PeerAddress":         ubx.FieldSpec{WireName: "peer_address"},
+		"SubnetArn":           ubx.FieldSpec{WireName: "subnet_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConnectPeer_TagsFields,
+			Kind:     "list",
+			Fields:   ConnectPeer_TagsFields,
 		},
 	},
 }

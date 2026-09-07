@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ForecastExportJobs_Filters struct {
 	Condition any
-	Key any
-	Value any
+	Key       any
+	Value     any
 }
 
 type ForecastExportJobs_ForecastExportJobs_Destination_S3Config struct {
 	KmskeyArn any
-	Path any
-	RoleArn any
+	Path      any
+	RoleArn   any
 }
 
 type ForecastExportJobs_ForecastExportJobs_Destination struct {
@@ -20,32 +20,32 @@ type ForecastExportJobs_ForecastExportJobs_Destination struct {
 }
 
 type ForecastExportJobs_ForecastExportJobs struct {
-	CreationTime any
-	Destination any
-	ForecastExportJobArn any
+	CreationTime          any
+	Destination           any
+	ForecastExportJobArn  any
 	ForecastExportJobName any
-	LastModificationTime any
-	Message any
-	Status any
+	LastModificationTime  any
+	Message               any
+	Status                any
 }
 
 var ForecastExportJobs_FiltersFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type ForecastExportJobsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ForecastExportJobsAttrs struct {
-	Filters any
+	Filters            any
 	ForecastExportJobs any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var ForecastExportJobs = ubx.DataSourceBinding{
@@ -53,10 +53,10 @@ var ForecastExportJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ForecastExportJobs_FiltersFields,
+			Kind:     "list",
+			Fields:   ForecastExportJobs_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

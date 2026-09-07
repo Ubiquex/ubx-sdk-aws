@@ -4,40 +4,40 @@ package amplify
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Jobs_JobSummaries struct {
-	CommitId any
+	CommitId      any
 	CommitMessage any
-	CommitTime any
-	EndTime any
-	JobArn any
-	JobId any
-	JobType any
-	SourceUrl any
+	CommitTime    any
+	EndTime       any
+	JobArn        any
+	JobId         any
+	JobType       any
+	SourceUrl     any
 	SourceUrlType any
-	StartTime any
-	Status any
+	StartTime     any
+	Status        any
 }
 
 type JobsConfig struct {
-	AppId any
+	AppId      any
 	BranchName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type JobsAttrs struct {
-	AppId any
-	BranchName any
+	AppId        any
+	BranchName   any
 	JobSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 var Jobs = ubx.DataSourceBinding{
 	WireType: "aws_amplify_jobs",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
 		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

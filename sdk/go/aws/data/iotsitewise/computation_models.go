@@ -4,12 +4,12 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputationModels_ComputationModelSummaries_Status_Error_Details struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type ComputationModels_ComputationModelSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -20,35 +20,35 @@ type ComputationModels_ComputationModelSummaries_Status struct {
 }
 
 type ComputationModels_ComputationModelSummaries struct {
-	Arn any
-	CreationDate any
-	Description any
-	Id any
+	Arn            any
+	CreationDate   any
+	Description    any
+	Id             any
 	LastUpdateDate any
-	Name any
-	Status any
-	Type any
-	Version any
+	Name           any
+	Status         any
+	Type           any
+	Version        any
 }
 
 type ComputationModelsConfig struct {
 	ComputationModelType any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 type ComputationModelsAttrs struct {
 	ComputationModelSummaries any
-	ComputationModelType any
-	MaxResults any
-	NextToken any
+	ComputationModelType      any
+	MaxResults                any
+	NextToken                 any
 }
 
 var ComputationModels = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_computation_models",
 	Fields: ubx.FieldMap{
 		"ComputationModelType": ubx.FieldSpec{WireName: "computation_model_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

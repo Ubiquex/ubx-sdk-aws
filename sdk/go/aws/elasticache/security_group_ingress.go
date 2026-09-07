@@ -26,8 +26,8 @@ type SecurityGroupIngressAttrs struct {
 var SecurityGroupIngress = ubx.ResourceBinding{
 	WireType: "aws_elasti_cache_security_group_ingress",
 	Fields: ubx.FieldMap{
-		"CacheSecurityGroupName": ubx.FieldSpec{WireName: "cache_security_group_name"},
-		"Ec2SecurityGroupName": ubx.FieldSpec{WireName: "ec2_security_group_name"},
+		"CacheSecurityGroupName":  ubx.FieldSpec{WireName: "cache_security_group_name"},
+		"Ec2SecurityGroupName":    ubx.FieldSpec{WireName: "ec2_security_group_name"},
 		"Ec2SecurityGroupOwnerId": ubx.FieldSpec{WireName: "ec2_security_group_owner_id"},
 	},
 }

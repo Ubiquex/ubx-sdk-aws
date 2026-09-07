@@ -4,11 +4,11 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorTermination_Termination struct {
-	CallingRegions any
-	CidrAllowedList any
-	CpsLimit any
+	CallingRegions     any
+	CidrAllowedList    any
+	CpsLimit           any
 	DefaultPhoneNumber any
-	Disabled any
+	Disabled           any
 }
 
 type VoiceChimeVoiceConnectorTerminationConfig struct {
@@ -17,7 +17,7 @@ type VoiceChimeVoiceConnectorTerminationConfig struct {
 
 type VoiceChimeVoiceConnectorTerminationAttrs struct {
 	// <p>Termination settings enable SIP hosts to make outbound calls using an Amazon Chime SDK Voice Connector.</p>
-	Termination any
+	Termination      any
 	VoiceConnectorId any
 }
 

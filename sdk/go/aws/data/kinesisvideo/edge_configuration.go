@@ -4,17 +4,17 @@ package kinesisvideo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EdgeConfiguration_EdgeAgentStatus_LastRecorderStatus struct {
-	JobStatusDetails any
+	JobStatusDetails  any
 	LastCollectedTime any
-	LastUpdatedTime any
-	RecorderStatus any
+	LastUpdatedTime   any
+	RecorderStatus    any
 }
 
 type EdgeConfiguration_EdgeAgentStatus_LastUploaderStatus struct {
-	JobStatusDetails any
+	JobStatusDetails  any
 	LastCollectedTime any
-	LastUpdatedTime any
-	UploaderStatus any
+	LastUpdatedTime   any
+	UploaderStatus    any
 }
 
 type EdgeConfiguration_EdgeAgentStatus struct {
@@ -26,11 +26,11 @@ type EdgeConfiguration_EdgeAgentStatus struct {
 
 type EdgeConfiguration_EdgeConfig_DeletionConfig_LocalSizeConfig struct {
 	MaxLocalMediaSizeInMb any
-	StrategyOnFullSize any
+	StrategyOnFullSize    any
 }
 
 type EdgeConfiguration_EdgeConfig_DeletionConfig struct {
-	DeleteAfterUpload any
+	DeleteAfterUpload    any
 	EdgeRetentionInHours any
 	// <p>The configuration details that include the maximum size of the media (<code>MaxLocalMediaSizeInMB</code>) that you want to store for a stream on the Edge Agent, as well as the strategy that should be used (<code>StrategyOnFullSize</code>) when a stream's maximum size has been reached.</p>
 	LocalSizeConfig any
@@ -38,11 +38,11 @@ type EdgeConfiguration_EdgeConfig_DeletionConfig struct {
 
 type EdgeConfiguration_EdgeConfig_RecorderConfig_MediaSourceConfig struct {
 	MediaUriSecretArn any
-	MediaUriType any
+	MediaUriType      any
 }
 
 type EdgeConfiguration_EdgeConfig_RecorderConfig_ScheduleConfig struct {
-	DurationInSeconds any
+	DurationInSeconds  any
 	ScheduleExpression any
 }
 
@@ -61,7 +61,7 @@ type EdgeConfiguration_EdgeConfig_UploaderConfig struct {
 type EdgeConfiguration_EdgeConfig struct {
 	// <p>The configuration details required to delete the connection of the stream from the Edge Agent.</p>
 	DeletionConfig any
-	HubDeviceArn any
+	HubDeviceArn   any
 	// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details that are used as credentials to access the local media files streamed on the camera. </p>
 	RecorderConfig any
 	// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>, then the Edge Agent will upload at regular intervals (every 1 hour). </p>
@@ -69,7 +69,7 @@ type EdgeConfiguration_EdgeConfig struct {
 }
 
 type EdgeConfigurationConfig struct {
-	StreamArn any
+	StreamArn  any
 	StreamName any
 }
 
@@ -78,18 +78,18 @@ type EdgeConfigurationAttrs struct {
 	// <p>An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent.</p>
 	EdgeAgentStatus any
 	// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-	EdgeConfig any
+	EdgeConfig          any
 	FailedStatusDetails any
-	LastUpdatedTime any
-	StreamArn any
-	StreamName any
-	SyncStatus any
+	LastUpdatedTime     any
+	StreamArn           any
+	StreamName          any
+	SyncStatus          any
 }
 
 var EdgeConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_kinesisvideo_edge_configuration",
 	Fields: ubx.FieldMap{
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamArn":  ubx.FieldSpec{WireName: "stream_arn"},
 		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
 	},
 }

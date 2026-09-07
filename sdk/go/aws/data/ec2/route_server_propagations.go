@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteServerPropagations_RouteServerPropagations struct {
 	RouteServerId any
-	RouteTableId any
-	State any
+	RouteTableId  any
+	State         any
 }
 
 type RouteServerPropagationsConfig struct {
-	DryRun any
+	DryRun        any
 	RouteServerId any
-	RouteTableId any
+	RouteTableId  any
 }
 
 type RouteServerPropagationsAttrs struct {
-	DryRun any
-	RouteServerId any
+	DryRun                  any
+	RouteServerId           any
 	RouteServerPropagations any
-	RouteTableId any
+	RouteTableId            any
 }
 
 var RouteServerPropagations = ubx.DataSourceBinding{
 	WireType: "aws_ec2_route_server_propagations",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
 		"RouteServerId": ubx.FieldSpec{WireName: "route_server_id"},
-		"RouteTableId": ubx.FieldSpec{WireName: "route_table_id"},
+		"RouteTableId":  ubx.FieldSpec{WireName: "route_table_id"},
 	},
 }

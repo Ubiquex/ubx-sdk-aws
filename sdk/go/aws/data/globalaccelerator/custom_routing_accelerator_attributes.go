@@ -4,7 +4,7 @@ package globalaccelerator
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomRoutingAcceleratorAttributes_AcceleratorAttributes struct {
-	FlowLogsEnabled any
+	FlowLogsEnabled  any
 	FlowLogsS3Bucket any
 	FlowLogsS3Prefix any
 }

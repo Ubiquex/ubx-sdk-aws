@@ -34,33 +34,33 @@ type Recipe_Tags struct {
 }
 
 var Recipe_Steps_ActionFields = ubx.FieldMap{
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"Operation":  ubx.FieldSpec{WireName: "operation"},
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+}
 
 var Recipe_Steps_ConditionExpressionsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"TargetColumn": ubx.FieldSpec{WireName: "target_column"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition":    ubx.FieldSpec{WireName: "condition"},
+	"TargetColumn": ubx.FieldSpec{WireName: "target_column"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+}
 
 var Recipe_StepsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: Recipe_Steps_ActionFields,
-		},
-		"ConditionExpressions": ubx.FieldSpec{
-			WireName: "condition_expressions",
-			Kind: "list",
-			Fields: Recipe_Steps_ConditionExpressionsFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   Recipe_Steps_ActionFields,
+	},
+	"ConditionExpressions": ubx.FieldSpec{
+		WireName: "condition_expressions",
+		Kind:     "list",
+		Fields:   Recipe_Steps_ConditionExpressionsFields,
+	},
+}
 
 var Recipe_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RecipeConfig struct {
 	// Description of the recipe
@@ -88,16 +88,16 @@ var Recipe = ubx.ResourceBinding{
 	WireType: "aws_data_brew_recipe",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Steps": ubx.FieldSpec{
 			WireName: "steps",
-			Kind: "list",
-			Fields: Recipe_StepsFields,
+			Kind:     "list",
+			Fields:   Recipe_StepsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Recipe_TagsFields,
+			Kind:     "list",
+			Fields:   Recipe_TagsFields,
 		},
 	},
 }

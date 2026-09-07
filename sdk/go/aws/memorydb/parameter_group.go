@@ -11,9 +11,9 @@ type ParameterGroup_Tags struct {
 }
 
 var ParameterGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ParameterGroupConfig struct {
 	// A description of the parameter group.
@@ -46,14 +46,14 @@ type ParameterGroupAttrs struct {
 var ParameterGroup = ubx.ResourceBinding{
 	WireType: "aws_memory_db_parameter_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Family": ubx.FieldSpec{WireName: "family"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"Family":             ubx.FieldSpec{WireName: "family"},
 		"ParameterGroupName": ubx.FieldSpec{WireName: "parameter_group_name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Parameters":         ubx.FieldSpec{WireName: "parameters"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ParameterGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ParameterGroup_TagsFields,
 		},
 	},
 }

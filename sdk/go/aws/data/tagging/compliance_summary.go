@@ -4,44 +4,44 @@ package tagging
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComplianceSummary_SummaryList struct {
-	LastUpdated any
+	LastUpdated           any
 	NonCompliantResources any
-	Region any
-	ResourceType any
-	TargetId any
-	TargetIdType any
+	Region                any
+	ResourceType          any
+	TargetId              any
+	TargetIdType          any
 }
 
 type ComplianceSummaryConfig struct {
-	GroupBy any
-	MaxResults any
-	PaginationToken any
-	RegionFilters any
+	GroupBy             any
+	MaxResults          any
+	PaginationToken     any
+	RegionFilters       any
 	ResourceTypeFilters any
-	TagKeyFilters any
-	TargetIdFilters any
+	TagKeyFilters       any
+	TargetIdFilters     any
 }
 
 type ComplianceSummaryAttrs struct {
-	GroupBy any
-	MaxResults any
-	PaginationToken any
-	RegionFilters any
+	GroupBy             any
+	MaxResults          any
+	PaginationToken     any
+	RegionFilters       any
 	ResourceTypeFilters any
-	SummaryList any
-	TagKeyFilters any
-	TargetIdFilters any
+	SummaryList         any
+	TagKeyFilters       any
+	TargetIdFilters     any
 }
 
 var ComplianceSummary = ubx.DataSourceBinding{
 	WireType: "aws_tagging_compliance_summary",
 	Fields: ubx.FieldMap{
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"PaginationToken": ubx.FieldSpec{WireName: "pagination_token"},
-		"RegionFilters": ubx.FieldSpec{WireName: "region_filters"},
+		"GroupBy":             ubx.FieldSpec{WireName: "group_by"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"PaginationToken":     ubx.FieldSpec{WireName: "pagination_token"},
+		"RegionFilters":       ubx.FieldSpec{WireName: "region_filters"},
 		"ResourceTypeFilters": ubx.FieldSpec{WireName: "resource_type_filters"},
-		"TagKeyFilters": ubx.FieldSpec{WireName: "tag_key_filters"},
-		"TargetIdFilters": ubx.FieldSpec{WireName: "target_id_filters"},
+		"TagKeyFilters":       ubx.FieldSpec{WireName: "tag_key_filters"},
+		"TargetIdFilters":     ubx.FieldSpec{WireName: "target_id_filters"},
 	},
 }

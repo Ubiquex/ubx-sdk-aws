@@ -20,15 +20,15 @@ type LiveSource_Tags struct {
 }
 
 var LiveSource_HttpPackageConfigurationsFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"SourceGroup": ubx.FieldSpec{WireName: "source_group"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Path":        ubx.FieldSpec{WireName: "path"},
+	"SourceGroup": ubx.FieldSpec{WireName: "source_group"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var LiveSource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LiveSourceConfig struct {
 	// <p>A list of HTTP package configuration parameters for this live source.</p>
@@ -59,15 +59,15 @@ var LiveSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"HttpPackageConfigurations": ubx.FieldSpec{
 			WireName: "http_package_configurations",
-			Kind: "list",
-			Fields: LiveSource_HttpPackageConfigurationsFields,
+			Kind:     "list",
+			Fields:   LiveSource_HttpPackageConfigurationsFields,
 		},
-		"LiveSourceName": ubx.FieldSpec{WireName: "live_source_name"},
+		"LiveSourceName":     ubx.FieldSpec{WireName: "live_source_name"},
 		"SourceLocationName": ubx.FieldSpec{WireName: "source_location_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LiveSource_TagsFields,
+			Kind:     "list",
+			Fields:   LiveSource_TagsFields,
 		},
 	},
 }

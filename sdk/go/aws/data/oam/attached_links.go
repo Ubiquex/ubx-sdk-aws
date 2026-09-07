@@ -4,29 +4,29 @@ package oam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachedLinks_Items struct {
-	Label any
-	LinkArn any
+	Label         any
+	LinkArn       any
 	ResourceTypes any
 }
 
 type AttachedLinksConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 	SinkIdentifier any
 }
 
 type AttachedLinksAttrs struct {
-	Items any
-	MaxResults any
-	NextToken any
+	Items          any
+	MaxResults     any
+	NextToken      any
 	SinkIdentifier any
 }
 
 var AttachedLinks = ubx.DataSourceBinding{
 	WireType: "aws_oam_attached_links",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"SinkIdentifier": ubx.FieldSpec{WireName: "sink_identifier"},
 	},
 }

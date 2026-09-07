@@ -9,8 +9,8 @@ type Cluster_Ssespecification struct {
 }
 
 var Cluster_SsespecificationFields = ubx.FieldMap{
-		"Sseenabled": ubx.FieldSpec{WireName: "sseenabled"},
-	}
+	"Sseenabled": ubx.FieldSpec{WireName: "sseenabled"},
+}
 
 type ClusterConfig struct {
 	// Specifies the Availability Zones in which the DAX cluster's nodes are placed, allowing you to distribute nodes across multiple AZs for high availability. (AI-inferred)
@@ -89,24 +89,24 @@ type ClusterAttrs struct {
 var Cluster = ubx.ResourceBinding{
 	WireType: "aws_dax_cluster",
 	Fields: ubx.FieldMap{
-		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
+		"AvailabilityZones":             ubx.FieldSpec{WireName: "availability_zones"},
 		"ClusterEndpointEncryptionType": ubx.FieldSpec{WireName: "cluster_endpoint_encryption_type"},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IamroleArn": ubx.FieldSpec{WireName: "iamrole_arn"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
-		"NotificationTopicArn": ubx.FieldSpec{WireName: "notification_topic_arn"},
-		"ParameterGroupName": ubx.FieldSpec{WireName: "parameter_group_name"},
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"ReplicationFactor": ubx.FieldSpec{WireName: "replication_factor"},
+		"ClusterName":                   ubx.FieldSpec{WireName: "cluster_name"},
+		"Description":                   ubx.FieldSpec{WireName: "description"},
+		"IamroleArn":                    ubx.FieldSpec{WireName: "iamrole_arn"},
+		"NetworkType":                   ubx.FieldSpec{WireName: "network_type"},
+		"NodeType":                      ubx.FieldSpec{WireName: "node_type"},
+		"NotificationTopicArn":          ubx.FieldSpec{WireName: "notification_topic_arn"},
+		"ParameterGroupName":            ubx.FieldSpec{WireName: "parameter_group_name"},
+		"PreferredMaintenanceWindow":    ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+		"ReplicationFactor":             ubx.FieldSpec{WireName: "replication_factor"},
 		"Ssespecification": ubx.FieldSpec{
 			WireName: "ssespecification",
-			Kind: "object",
-			Fields: Cluster_SsespecificationFields,
+			Kind:     "object",
+			Fields:   Cluster_SsespecificationFields,
 		},
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetGroupName": ubx.FieldSpec{WireName: "subnet_group_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"SubnetGroupName":  ubx.FieldSpec{WireName: "subnet_group_name"},
+		"Tags":             ubx.FieldSpec{WireName: "tags"},
 	},
 }

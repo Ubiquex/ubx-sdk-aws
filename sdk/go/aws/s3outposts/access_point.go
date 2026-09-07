@@ -9,8 +9,8 @@ type AccessPoint_VpcConfiguration struct {
 }
 
 var AccessPoint_VpcConfigurationFields = ubx.FieldMap{
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 type AccessPointConfig struct {
 	// The Amazon Resource Name (ARN) of the bucket you want to associate this AccessPoint with.
@@ -40,12 +40,12 @@ var AccessPoint = ubx.ResourceBinding{
 	WireType: "aws_s3_outposts_access_point",
 	Fields: ubx.FieldMap{
 		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Policy": ubx.FieldSpec{WireName: "policy"},
 		"VpcConfiguration": ubx.FieldSpec{
 			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: AccessPoint_VpcConfigurationFields,
+			Kind:     "object",
+			Fields:   AccessPoint_VpcConfigurationFields,
 		},
 	},
 }

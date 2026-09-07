@@ -8,7 +8,7 @@ type PermissionPolicyConfig struct {
 }
 
 type PermissionPolicyAttrs struct {
-	Policy any
+	Policy      any
 	ResourceArn any
 }
 

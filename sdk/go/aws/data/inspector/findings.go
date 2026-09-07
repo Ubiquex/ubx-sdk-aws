@@ -5,91 +5,91 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Findings_FailedItems struct {
 	FailureCode any
-	Retryable any
+	Retryable   any
 }
 
 type Findings_Findings_AssetAttributes_NetworkInterfaces_PrivateIpAddresses struct {
-	PrivateDnsName any
+	PrivateDnsName   any
 	PrivateIpAddress any
 }
 
 type Findings_Findings_AssetAttributes_NetworkInterfaces_SecurityGroups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 type Findings_Findings_AssetAttributes_NetworkInterfaces struct {
-	Ipv6Addresses any
+	Ipv6Addresses      any
 	NetworkInterfaceId any
-	PrivateDnsName any
-	PrivateIpAddress any
+	PrivateDnsName     any
+	PrivateIpAddress   any
 	PrivateIpAddresses any
-	PublicDnsName any
-	PublicIp any
-	SecurityGroups any
-	SubnetId any
-	VpcId any
+	PublicDnsName      any
+	PublicIp           any
+	SecurityGroups     any
+	SubnetId           any
+	VpcId              any
 }
 
 type Findings_Findings_AssetAttributes_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Findings_Findings_AssetAttributes struct {
-	AgentId any
-	AmiId any
-	AutoScalingGroup any
-	Hostname any
-	Ipv4Addresses any
+	AgentId           any
+	AmiId             any
+	AutoScalingGroup  any
+	Hostname          any
+	Ipv4Addresses     any
 	NetworkInterfaces any
-	SchemaVersion any
-	Tags any
+	SchemaVersion     any
+	Tags              any
 }
 
 type Findings_Findings_ServiceAttributes struct {
 	AssessmentRunArn any
-	RulesPackageArn any
-	SchemaVersion any
+	RulesPackageArn  any
+	SchemaVersion    any
 }
 
 type Findings_Findings struct {
-	Arn any
-	AssetAttributes any
-	AssetType any
-	Attributes any
-	Confidence any
-	CreatedAt any
-	Description any
-	Id any
+	Arn                   any
+	AssetAttributes       any
+	AssetType             any
+	Attributes            any
+	Confidence            any
+	CreatedAt             any
+	Description           any
+	Id                    any
 	IndicatorOfCompromise any
-	NumericSeverity any
-	Recommendation any
-	SchemaVersion any
-	Service any
-	ServiceAttributes any
-	Severity any
-	Title any
-	UpdatedAt any
-	UserAttributes any
+	NumericSeverity       any
+	Recommendation        any
+	SchemaVersion         any
+	Service               any
+	ServiceAttributes     any
+	Severity              any
+	Title                 any
+	UpdatedAt             any
+	UserAttributes        any
 }
 
 type FindingsConfig struct {
 	FindingArns any
-	Locale any
+	Locale      any
 }
 
 type FindingsAttrs struct {
 	FailedItems any
 	FindingArns any
-	Findings any
-	Locale any
+	Findings    any
+	Locale      any
 }
 
 var Findings = ubx.DataSourceBinding{
 	WireType: "aws_inspector_findings",
 	Fields: ubx.FieldMap{
 		"FindingArns": ubx.FieldSpec{WireName: "finding_arns"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Locale":      ubx.FieldSpec{WireName: "locale"},
 	},
 }

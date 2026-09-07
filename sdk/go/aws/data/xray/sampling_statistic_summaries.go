@@ -4,11 +4,11 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SamplingStatisticSummaries_SamplingStatisticSummaries struct {
-	BorrowCount any
+	BorrowCount  any
 	RequestCount any
-	RuleName any
+	RuleName     any
 	SampledCount any
-	Timestamp any
+	Timestamp    any
 }
 
 type SamplingStatisticSummariesConfig struct {
@@ -16,7 +16,7 @@ type SamplingStatisticSummariesConfig struct {
 }
 
 type SamplingStatisticSummariesAttrs struct {
-	NextToken any
+	NextToken                  any
 	SamplingStatisticSummaries any
 }
 

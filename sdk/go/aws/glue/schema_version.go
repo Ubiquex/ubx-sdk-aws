@@ -13,10 +13,10 @@ type SchemaVersion_Schema struct {
 }
 
 var SchemaVersion_SchemaFields = ubx.FieldMap{
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+	"SchemaArn":    ubx.FieldSpec{WireName: "schema_arn"},
+	"SchemaName":   ubx.FieldSpec{WireName: "schema_name"},
+}
 
 type SchemaVersionConfig struct {
 	// Identifier for the schema where the schema version will be created.
@@ -39,8 +39,8 @@ var SchemaVersion = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: SchemaVersion_SchemaFields,
+			Kind:     "object",
+			Fields:   SchemaVersion_SchemaFields,
 		},
 		"SchemaDefinition": ubx.FieldSpec{WireName: "schema_definition"},
 	},

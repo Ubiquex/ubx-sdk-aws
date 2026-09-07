@@ -4,25 +4,25 @@ package kafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TopicPartitions_Partitions struct {
-	Isr any
-	Leader any
+	Isr       any
+	Leader    any
 	Partition any
-	Replicas any
+	Replicas  any
 }
 
 type TopicPartitionsConfig struct {
 	ClusterArn any
 	MaxResults any
-	NextToken any
-	TopicName any
+	NextToken  any
+	TopicName  any
 }
 
 type TopicPartitionsAttrs struct {
 	ClusterArn any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	Partitions any
-	TopicName any
+	TopicName  any
 }
 
 var TopicPartitions = ubx.DataSourceBinding{
@@ -30,7 +30,7 @@ var TopicPartitions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"TopicName":  ubx.FieldSpec{WireName: "topic_name"},
 	},
 }

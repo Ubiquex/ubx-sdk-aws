@@ -4,26 +4,26 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SegmentDefinitions_Items struct {
-	CreatedAt any
-	Description any
-	DisplayName any
-	SegmentDefinitionArn any
+	CreatedAt             any
+	Description           any
+	DisplayName           any
+	SegmentDefinitionArn  any
 	SegmentDefinitionName any
-	SegmentType any
-	Tags any
+	SegmentType           any
+	Tags                  any
 }
 
 type SegmentDefinitionsConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SegmentDefinitionsAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var SegmentDefinitions = ubx.DataSourceBinding{
@@ -31,6 +31,6 @@ var SegmentDefinitions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

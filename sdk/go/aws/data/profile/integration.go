@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationConfig struct {
 	DomainName any
-	Uri any
+	Uri        any
 }
 
 type IntegrationAttrs struct {
-	CreatedAt any
-	DomainName any
+	CreatedAt         any
+	DomainName        any
 	EventTriggerNames any
-	IsUnstructured any
-	LastUpdatedAt any
-	ObjectTypeName any
-	ObjectTypeNames any
-	RoleArn any
-	Scope any
-	Tags any
-	Uri any
-	WorkflowId any
+	IsUnstructured    any
+	LastUpdatedAt     any
+	ObjectTypeName    any
+	ObjectTypeNames   any
+	RoleArn           any
+	Scope             any
+	Tags              any
+	Uri               any
+	WorkflowId        any
 }
 
 var Integration = ubx.DataSourceBinding{
 	WireType: "aws_profile_integration",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"Uri":        ubx.FieldSpec{WireName: "uri"},
 	},
 }

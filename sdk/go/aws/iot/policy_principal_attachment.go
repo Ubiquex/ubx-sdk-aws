@@ -23,6 +23,6 @@ var PolicyPrincipalAttachment = ubx.ResourceBinding{
 	WireType: "aws_io_t_policy_principal_attachment",
 	Fields: ubx.FieldMap{
 		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"Principal":  ubx.FieldSpec{WireName: "principal"},
 	},
 }

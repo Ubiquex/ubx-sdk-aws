@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type LicenseManagerUserSubscriptionsInstances_Filters struct {
 	Attribute any
 	Operation any
-	Value any
+	Value     any
 }
 
 type LicenseManagerUserSubscriptionsInstances_InstanceSummaries_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings_DomainCredentialsProvider_SecretsManagerCredentialsProvider struct {
@@ -23,16 +23,16 @@ type LicenseManagerUserSubscriptionsInstances_InstanceSummaries_IdentityProvider
 
 type LicenseManagerUserSubscriptionsInstances_InstanceSummaries_IdentityProvider_ActiveDirectoryIdentityProvider_ActiveDirectorySettings struct {
 	DomainCredentialsProvider any
-	DomainIpv4List any
-	DomainIpv6List any
-	DomainName any
-	DomainNetworkSettings any
+	DomainIpv4List            any
+	DomainIpv6List            any
+	DomainName                any
+	DomainNetworkSettings     any
 }
 
 type LicenseManagerUserSubscriptionsInstances_InstanceSummaries_IdentityProvider_ActiveDirectoryIdentityProvider struct {
 	ActiveDirectorySettings any
-	ActiveDirectoryType any
-	DirectoryId any
+	ActiveDirectoryType     any
+	DirectoryId             any
 	IsSharedActiveDirectory any
 }
 
@@ -41,32 +41,32 @@ type LicenseManagerUserSubscriptionsInstances_InstanceSummaries_IdentityProvider
 }
 
 type LicenseManagerUserSubscriptionsInstances_InstanceSummaries struct {
-	IdentityProvider any
-	InstanceId any
+	IdentityProvider    any
+	InstanceId          any
 	LastStatusCheckDate any
-	OwnerAccountId any
-	Products any
-	Status any
-	StatusMessage any
+	OwnerAccountId      any
+	Products            any
+	Status              any
+	StatusMessage       any
 }
 
 var LicenseManagerUserSubscriptionsInstances_FiltersFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Operation": ubx.FieldSpec{WireName: "operation"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type LicenseManagerUserSubscriptionsInstancesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LicenseManagerUserSubscriptionsInstancesAttrs struct {
-	Filters any
+	Filters           any
 	InstanceSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var LicenseManagerUserSubscriptionsInstances = ubx.DataSourceBinding{
@@ -74,10 +74,10 @@ var LicenseManagerUserSubscriptionsInstances = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerUserSubscriptionsInstances_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerUserSubscriptionsInstances_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,25 +4,25 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClassificationScopes_ClassificationScopes struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type ClassificationScopesConfig struct {
-	Name any
+	Name      any
 	NextToken any
 }
 
 type ClassificationScopesAttrs struct {
 	ClassificationScopes any
-	Name any
-	NextToken any
+	Name                 any
+	NextToken            any
 }
 
 var ClassificationScopes = ubx.DataSourceBinding{
 	WireType: "aws_macie2_classification_scopes",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

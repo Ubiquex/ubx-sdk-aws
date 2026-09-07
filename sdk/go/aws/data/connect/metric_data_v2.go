@@ -8,121 +8,121 @@ type MetricDataV2_Filters_StringCondition struct {
 }
 
 type MetricDataV2_Filters struct {
-	FilterKey any
-	FilterValues any
+	FilterKey       any
+	FilterValues    any
 	StringCondition any
 }
 
 type MetricDataV2_Interval struct {
 	IntervalPeriod any
-	TimeZone any
+	TimeZone       any
 }
 
 type MetricDataV2_MetricResults_Collections_Metric_MetricFilters struct {
-	MetricFilterKey any
+	MetricFilterKey    any
 	MetricFilterValues any
-	Negate any
+	Negate             any
 }
 
 type MetricDataV2_MetricResults_Collections_Metric_Threshold struct {
-	Comparison any
+	Comparison     any
 	ThresholdValue any
 }
 
 type MetricDataV2_MetricResults_Collections_Metric struct {
 	MetricFilters any
-	MetricId any
-	Name any
-	Threshold any
+	MetricId      any
+	Name          any
+	Threshold     any
 }
 
 type MetricDataV2_MetricResults_Collections struct {
 	Metric any
-	Value any
+	Value  any
 }
 
 type MetricDataV2_MetricResults_MetricInterval struct {
-	EndTime any
-	Interval any
+	EndTime   any
+	Interval  any
 	StartTime any
 }
 
 type MetricDataV2_MetricResults struct {
-	Collections any
-	Dimensions any
+	Collections    any
+	Dimensions     any
 	MetricInterval any
 }
 
 var MetricDataV2_Filters_StringConditionFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+}
 
 var MetricDataV2_FiltersFields = ubx.FieldMap{
-		"FilterKey": ubx.FieldSpec{WireName: "filter_key"},
-		"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
-		"StringCondition": ubx.FieldSpec{
-			WireName: "string_condition",
-			Kind: "object",
-			Fields: MetricDataV2_Filters_StringConditionFields,
-		},
-	}
+	"FilterKey":    ubx.FieldSpec{WireName: "filter_key"},
+	"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
+	"StringCondition": ubx.FieldSpec{
+		WireName: "string_condition",
+		Kind:     "object",
+		Fields:   MetricDataV2_Filters_StringConditionFields,
+	},
+}
 
 var MetricDataV2_IntervalFields = ubx.FieldMap{
-		"IntervalPeriod": ubx.FieldSpec{WireName: "interval_period"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"IntervalPeriod": ubx.FieldSpec{WireName: "interval_period"},
+	"TimeZone":       ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var MetricDataV2_MetricResults_Collections_Metric_MetricFiltersFields = ubx.FieldMap{
-		"MetricFilterKey": ubx.FieldSpec{WireName: "metric_filter_key"},
-		"MetricFilterValues": ubx.FieldSpec{WireName: "metric_filter_values"},
-		"Negate": ubx.FieldSpec{WireName: "negate"},
-	}
+	"MetricFilterKey":    ubx.FieldSpec{WireName: "metric_filter_key"},
+	"MetricFilterValues": ubx.FieldSpec{WireName: "metric_filter_values"},
+	"Negate":             ubx.FieldSpec{WireName: "negate"},
+}
 
 var MetricDataV2_MetricResults_Collections_Metric_ThresholdFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"ThresholdValue": ubx.FieldSpec{WireName: "threshold_value"},
-	}
+	"Comparison":     ubx.FieldSpec{WireName: "comparison"},
+	"ThresholdValue": ubx.FieldSpec{WireName: "threshold_value"},
+}
 
 var MetricDataV2_MetricResults_Collections_MetricFields = ubx.FieldMap{
-		"MetricFilters": ubx.FieldSpec{
-			WireName: "metric_filters",
-			Kind: "list",
-			Fields: MetricDataV2_MetricResults_Collections_Metric_MetricFiltersFields,
-		},
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Threshold": ubx.FieldSpec{
-			WireName: "threshold",
-			Kind: "list",
-			Fields: MetricDataV2_MetricResults_Collections_Metric_ThresholdFields,
-		},
-	}
+	"MetricFilters": ubx.FieldSpec{
+		WireName: "metric_filters",
+		Kind:     "list",
+		Fields:   MetricDataV2_MetricResults_Collections_Metric_MetricFiltersFields,
+	},
+	"MetricId": ubx.FieldSpec{WireName: "metric_id"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Threshold": ubx.FieldSpec{
+		WireName: "threshold",
+		Kind:     "list",
+		Fields:   MetricDataV2_MetricResults_Collections_Metric_ThresholdFields,
+	},
+}
 
 type MetricDataV2Config struct {
-	EndTime any
-	Filters any
+	EndTime   any
+	Filters   any
 	Groupings any
 	// <p>Information about the interval period to use for returning results.</p>
-	Interval any
-	MaxResults any
-	Metrics any
-	NextToken any
+	Interval    any
+	MaxResults  any
+	Metrics     any
+	NextToken   any
 	ResourceArn any
-	StartTime any
+	StartTime   any
 }
 
 type MetricDataV2Attrs struct {
-	EndTime any
-	Filters any
+	EndTime   any
+	Filters   any
 	Groupings any
 	// <p>Information about the interval period to use for returning results.</p>
-	Interval any
-	MaxResults any
+	Interval      any
+	MaxResults    any
 	MetricResults any
-	Metrics any
-	NextToken any
-	ResourceArn any
-	StartTime any
+	Metrics       any
+	NextToken     any
+	ResourceArn   any
+	StartTime     any
 }
 
 var MetricDataV2 = ubx.DataSourceBinding{
@@ -131,23 +131,23 @@ var MetricDataV2 = ubx.DataSourceBinding{
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MetricDataV2_FiltersFields,
+			Kind:     "list",
+			Fields:   MetricDataV2_FiltersFields,
 		},
 		"Groupings": ubx.FieldSpec{WireName: "groupings"},
 		"Interval": ubx.FieldSpec{
 			WireName: "interval",
-			Kind: "object",
-			Fields: MetricDataV2_IntervalFields,
+			Kind:     "object",
+			Fields:   MetricDataV2_IntervalFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: MetricDataV2_MetricResults_Collections_MetricFields,
+			Kind:     "list",
+			Fields:   MetricDataV2_MetricResults_Collections_MetricFields,
 		},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"StartTime":   ubx.FieldSpec{WireName: "start_time"},
 	},
 }

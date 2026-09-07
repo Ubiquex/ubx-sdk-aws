@@ -5,53 +5,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Webhooks_Webhooks_Definition_AuthenticationConfiguration struct {
 	AllowedIprange any
-	SecretToken any
+	SecretToken    any
 }
 
 type Webhooks_Webhooks_Definition_Filters struct {
-	JsonPath any
+	JsonPath    any
 	MatchEquals any
 }
 
 type Webhooks_Webhooks_Definition struct {
-	Authentication any
+	Authentication              any
 	AuthenticationConfiguration any
-	Filters any
-	Name any
-	TargetAction any
-	TargetPipeline any
+	Filters                     any
+	Name                        any
+	TargetAction                any
+	TargetPipeline              any
 }
 
 type Webhooks_Webhooks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Webhooks_Webhooks struct {
-	Arn any
-	Definition any
-	ErrorCode any
-	ErrorMessage any
+	Arn           any
+	Definition    any
+	ErrorCode     any
+	ErrorMessage  any
 	LastTriggered any
-	Tags any
-	Url any
+	Tags          any
+	Url           any
 }
 
 type WebhooksConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type WebhooksAttrs struct {
 	MaxResults any
-	NextToken any
-	Webhooks any
+	NextToken  any
+	Webhooks   any
 }
 
 var Webhooks = ubx.DataSourceBinding{
 	WireType: "aws_codepipeline_webhooks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

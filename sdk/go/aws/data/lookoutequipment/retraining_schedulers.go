@@ -4,35 +4,35 @@ package lookoutequipment
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RetrainingSchedulers_RetrainingSchedulerSummaries struct {
-	LookbackWindow any
-	ModelArn any
-	ModelName any
+	LookbackWindow      any
+	ModelArn            any
+	ModelName           any
 	RetrainingFrequency any
 	RetrainingStartDate any
-	Status any
+	Status              any
 }
 
 type RetrainingSchedulersConfig struct {
-	MaxResults any
+	MaxResults          any
 	ModelNameBeginsWith any
-	NextToken any
-	Status any
+	NextToken           any
+	Status              any
 }
 
 type RetrainingSchedulersAttrs struct {
-	MaxResults any
-	ModelNameBeginsWith any
-	NextToken any
+	MaxResults                   any
+	ModelNameBeginsWith          any
+	NextToken                    any
 	RetrainingSchedulerSummaries any
-	Status any
+	Status                       any
 }
 
 var RetrainingSchedulers = ubx.DataSourceBinding{
 	WireType: "aws_lookoutequipment_retraining_schedulers",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
 		"ModelNameBeginsWith": ubx.FieldSpec{WireName: "model_name_begins_with"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"Status":              ubx.FieldSpec{WireName: "status"},
 	},
 }

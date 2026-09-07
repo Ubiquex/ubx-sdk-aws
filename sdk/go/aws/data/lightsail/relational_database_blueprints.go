@@ -4,12 +4,12 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationalDatabaseBlueprints_Blueprints struct {
-	BlueprintId any
-	Engine any
-	EngineDescription any
-	EngineVersion any
+	BlueprintId              any
+	Engine                   any
+	EngineDescription        any
+	EngineVersion            any
 	EngineVersionDescription any
-	IsEngineDefault any
+	IsEngineDefault          any
 }
 
 type RelationalDatabaseBlueprintsConfig struct {
@@ -17,9 +17,9 @@ type RelationalDatabaseBlueprintsConfig struct {
 }
 
 type RelationalDatabaseBlueprintsAttrs struct {
-	Blueprints any
+	Blueprints    any
 	NextPageToken any
-	PageToken any
+	PageToken     any
 }
 
 var RelationalDatabaseBlueprints = ubx.DataSourceBinding{

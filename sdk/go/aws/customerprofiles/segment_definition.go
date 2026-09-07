@@ -124,208 +124,208 @@ type SegmentDefinition_Tags struct {
 }
 
 var SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields = ubx.FieldMap{
-		"DimensionType": ubx.FieldSpec{WireName: "dimension_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"DimensionType": ubx.FieldSpec{WireName: "dimension_type"},
+	"Values":        ubx.FieldSpec{WireName: "values"},
+}
 
 var SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields = ubx.FieldMap{
-		"City": ubx.FieldSpec{
-			WireName: "city",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"Country": ubx.FieldSpec{
-			WireName: "country",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"County": ubx.FieldSpec{
-			WireName: "county",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"PostalCode": ubx.FieldSpec{
-			WireName: "postal_code",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"Province": ubx.FieldSpec{
-			WireName: "province",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"State": ubx.FieldSpec{
-			WireName: "state",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-	}
+	"City": ubx.FieldSpec{
+		WireName: "city",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"Country": ubx.FieldSpec{
+		WireName: "country",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"County": ubx.FieldSpec{
+		WireName: "county",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"PostalCode": ubx.FieldSpec{
+		WireName: "postal_code",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"Province": ubx.FieldSpec{
+		WireName: "province",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"State": ubx.FieldSpec{
+		WireName: "state",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+}
 
 var SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributesFields = ubx.FieldMap{
-		"AccountNumber": ubx.FieldSpec{
-			WireName: "account_number",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"AdditionalInformation": ubx.FieldSpec{
-			WireName: "additional_information",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"Address": ubx.FieldSpec{
-			WireName: "address",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields,
-		},
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"BillingAddress": ubx.FieldSpec{
-			WireName: "billing_address",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields,
-		},
-		"BirthDate": ubx.FieldSpec{
-			WireName: "birth_date",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"BusinessEmailAddress": ubx.FieldSpec{
-			WireName: "business_email_address",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"BusinessName": ubx.FieldSpec{
-			WireName: "business_name",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"BusinessPhoneNumber": ubx.FieldSpec{
-			WireName: "business_phone_number",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"EmailAddress": ubx.FieldSpec{
-			WireName: "email_address",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"FirstName": ubx.FieldSpec{
-			WireName: "first_name",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"GenderString": ubx.FieldSpec{
-			WireName: "gender_string",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"HomePhoneNumber": ubx.FieldSpec{
-			WireName: "home_phone_number",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"LastName": ubx.FieldSpec{
-			WireName: "last_name",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"MailingAddress": ubx.FieldSpec{
-			WireName: "mailing_address",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields,
-		},
-		"MiddleName": ubx.FieldSpec{
-			WireName: "middle_name",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"MobilePhoneNumber": ubx.FieldSpec{
-			WireName: "mobile_phone_number",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"PartyTypeString": ubx.FieldSpec{
-			WireName: "party_type_string",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"PersonalEmailAddress": ubx.FieldSpec{
-			WireName: "personal_email_address",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"PhoneNumber": ubx.FieldSpec{
-			WireName: "phone_number",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"ProfileType": ubx.FieldSpec{
-			WireName: "profile_type",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
-		},
-		"ShippingAddress": ubx.FieldSpec{
-			WireName: "shipping_address",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields,
-		},
-	}
+	"AccountNumber": ubx.FieldSpec{
+		WireName: "account_number",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"AdditionalInformation": ubx.FieldSpec{
+		WireName: "additional_information",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"Address": ubx.FieldSpec{
+		WireName: "address",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields,
+	},
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"BillingAddress": ubx.FieldSpec{
+		WireName: "billing_address",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields,
+	},
+	"BirthDate": ubx.FieldSpec{
+		WireName: "birth_date",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"BusinessEmailAddress": ubx.FieldSpec{
+		WireName: "business_email_address",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"BusinessName": ubx.FieldSpec{
+		WireName: "business_name",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"BusinessPhoneNumber": ubx.FieldSpec{
+		WireName: "business_phone_number",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"EmailAddress": ubx.FieldSpec{
+		WireName: "email_address",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"FirstName": ubx.FieldSpec{
+		WireName: "first_name",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"GenderString": ubx.FieldSpec{
+		WireName: "gender_string",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"HomePhoneNumber": ubx.FieldSpec{
+		WireName: "home_phone_number",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"LastName": ubx.FieldSpec{
+		WireName: "last_name",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"MailingAddress": ubx.FieldSpec{
+		WireName: "mailing_address",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields,
+	},
+	"MiddleName": ubx.FieldSpec{
+		WireName: "middle_name",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"MobilePhoneNumber": ubx.FieldSpec{
+		WireName: "mobile_phone_number",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"PartyTypeString": ubx.FieldSpec{
+		WireName: "party_type_string",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"PersonalEmailAddress": ubx.FieldSpec{
+		WireName: "personal_email_address",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"PhoneNumber": ubx.FieldSpec{
+		WireName: "phone_number",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"ProfileType": ubx.FieldSpec{
+		WireName: "profile_type",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumberFields,
+	},
+	"ShippingAddress": ubx.FieldSpec{
+		WireName: "shipping_address",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AddressFields,
+	},
+}
 
 var SegmentDefinition_SegmentGroups_Groups_DimensionsFields = ubx.FieldMap{
-		"CalculatedAttributes": ubx.FieldSpec{WireName: "calculated_attributes"},
-		"ProfileAttributes": ubx.FieldSpec{
-			WireName: "profile_attributes",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributesFields,
-		},
-	}
+	"CalculatedAttributes": ubx.FieldSpec{WireName: "calculated_attributes"},
+	"ProfileAttributes": ubx.FieldSpec{
+		WireName: "profile_attributes",
+		Kind:     "object",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributesFields,
+	},
+}
 
 var SegmentDefinition_SegmentGroups_Groups_SourceSegmentsFields = ubx.FieldMap{
-		"SegmentDefinitionName": ubx.FieldSpec{WireName: "segment_definition_name"},
-	}
+	"SegmentDefinitionName": ubx.FieldSpec{WireName: "segment_definition_name"},
+}
 
 var SegmentDefinition_SegmentGroups_GroupsFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: SegmentDefinition_SegmentGroups_Groups_DimensionsFields,
-		},
-		"SourceSegments": ubx.FieldSpec{
-			WireName: "source_segments",
-			Kind: "list",
-			Fields: SegmentDefinition_SegmentGroups_Groups_SourceSegmentsFields,
-		},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_DimensionsFields,
+	},
+	"SourceSegments": ubx.FieldSpec{
+		WireName: "source_segments",
+		Kind:     "list",
+		Fields:   SegmentDefinition_SegmentGroups_Groups_SourceSegmentsFields,
+	},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var SegmentDefinition_SegmentGroupsFields = ubx.FieldMap{
-		"Groups": ubx.FieldSpec{
-			WireName: "groups",
-			Kind: "list",
-			Fields: SegmentDefinition_SegmentGroups_GroupsFields,
-		},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Groups": ubx.FieldSpec{
+		WireName: "groups",
+		Kind:     "list",
+		Fields:   SegmentDefinition_SegmentGroups_GroupsFields,
+	},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var SegmentDefinition_SegmentSort_AttributesFields = ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DataType": ubx.FieldSpec{WireName: "data_type"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Order":    ubx.FieldSpec{WireName: "order"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var SegmentDefinition_SegmentSortFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: SegmentDefinition_SegmentSort_AttributesFields,
-		},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   SegmentDefinition_SegmentSort_AttributesFields,
+	},
+}
 
 var SegmentDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SegmentDefinitionConfig struct {
 	// The description of the segment definition.
@@ -374,25 +374,25 @@ type SegmentDefinitionAttrs struct {
 var SegmentDefinition = ubx.ResourceBinding{
 	WireType: "aws_customer_profiles_segment_definition",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+		"DomainName":            ubx.FieldSpec{WireName: "domain_name"},
 		"SegmentDefinitionName": ubx.FieldSpec{WireName: "segment_definition_name"},
 		"SegmentGroups": ubx.FieldSpec{
 			WireName: "segment_groups",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentGroupsFields,
+			Kind:     "object",
+			Fields:   SegmentDefinition_SegmentGroupsFields,
 		},
 		"SegmentSort": ubx.FieldSpec{
 			WireName: "segment_sort",
-			Kind: "object",
-			Fields: SegmentDefinition_SegmentSortFields,
+			Kind:     "object",
+			Fields:   SegmentDefinition_SegmentSortFields,
 		},
 		"SegmentSqlQuery": ubx.FieldSpec{WireName: "segment_sql_query"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SegmentDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   SegmentDefinition_TagsFields,
 		},
 	},
 }

@@ -23,6 +23,6 @@ var DirectoryRegistration = ubx.ResourceBinding{
 	WireType: "aws_pcaconnector_ad_directory_registration",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

@@ -11,9 +11,9 @@ type Dbinstance_Tags struct {
 }
 
 var Dbinstance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbinstanceConfig struct {
 	// Indicates whether minor engine version upgrades are applied automatically to the DB instance during its maintenance window. (AI-inferred)
@@ -70,19 +70,19 @@ type DbinstanceAttrs struct {
 var Dbinstance = ubx.ResourceBinding{
 	WireType: "aws_doc_db_dbinstance",
 	Fields: ubx.FieldMap{
-		"AutoMinorVersionUpgrade": ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"CacertificateIdentifier": ubx.FieldSpec{WireName: "cacertificate_identifier"},
+		"AutoMinorVersionUpgrade":    ubx.FieldSpec{WireName: "auto_minor_version_upgrade"},
+		"AvailabilityZone":           ubx.FieldSpec{WireName: "availability_zone"},
+		"CacertificateIdentifier":    ubx.FieldSpec{WireName: "cacertificate_identifier"},
 		"CertificateRotationRestart": ubx.FieldSpec{WireName: "certificate_rotation_restart"},
-		"DbclusterIdentifier": ubx.FieldSpec{WireName: "dbcluster_identifier"},
-		"DbinstanceClass": ubx.FieldSpec{WireName: "dbinstance_class"},
-		"DbinstanceIdentifier": ubx.FieldSpec{WireName: "dbinstance_identifier"},
-		"EnablePerformanceInsights": ubx.FieldSpec{WireName: "enable_performance_insights"},
+		"DbclusterIdentifier":        ubx.FieldSpec{WireName: "dbcluster_identifier"},
+		"DbinstanceClass":            ubx.FieldSpec{WireName: "dbinstance_class"},
+		"DbinstanceIdentifier":       ubx.FieldSpec{WireName: "dbinstance_identifier"},
+		"EnablePerformanceInsights":  ubx.FieldSpec{WireName: "enable_performance_insights"},
 		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dbinstance_TagsFields,
+			Kind:     "list",
+			Fields:   Dbinstance_TagsFields,
 		},
 	},
 }

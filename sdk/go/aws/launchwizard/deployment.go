@@ -11,9 +11,9 @@ type Deployment_Tags struct {
 }
 
 var Deployment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeploymentConfig struct {
 	// Workload deployment pattern name
@@ -57,12 +57,12 @@ var Deployment = ubx.ResourceBinding{
 	WireType: "aws_launch_wizard_deployment",
 	Fields: ubx.FieldMap{
 		"DeploymentPatternName": ubx.FieldSpec{WireName: "deployment_pattern_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Specifications": ubx.FieldSpec{WireName: "specifications"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Specifications":        ubx.FieldSpec{WireName: "specifications"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Deployment_TagsFields,
+			Kind:     "list",
+			Fields:   Deployment_TagsFields,
 		},
 		"WorkloadName": ubx.FieldSpec{WireName: "workload_name"},
 	},

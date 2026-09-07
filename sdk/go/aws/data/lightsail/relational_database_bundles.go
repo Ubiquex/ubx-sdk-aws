@@ -4,33 +4,33 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationalDatabaseBundles_Bundles struct {
-	BundleId any
-	CpuCount any
-	DiskSizeInGb any
-	IsActive any
-	IsEncrypted any
-	Name any
-	Price any
-	RamSizeInGb any
+	BundleId             any
+	CpuCount             any
+	DiskSizeInGb         any
+	IsActive             any
+	IsEncrypted          any
+	Name                 any
+	Price                any
+	RamSizeInGb          any
 	TransferPerMonthInGb any
 }
 
 type RelationalDatabaseBundlesConfig struct {
 	IncludeInactive any
-	PageToken any
+	PageToken       any
 }
 
 type RelationalDatabaseBundlesAttrs struct {
-	Bundles any
+	Bundles         any
 	IncludeInactive any
-	NextPageToken any
-	PageToken any
+	NextPageToken   any
+	PageToken       any
 }
 
 var RelationalDatabaseBundles = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_relational_database_bundles",
 	Fields: ubx.FieldMap{
 		"IncludeInactive": ubx.FieldSpec{WireName: "include_inactive"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageToken":       ubx.FieldSpec{WireName: "page_token"},
 	},
 }

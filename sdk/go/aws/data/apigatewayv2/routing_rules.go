@@ -4,8 +4,8 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoutingRules_RoutingRules_Actions_InvokeApi struct {
-	ApiId any
-	Stage any
+	ApiId         any
+	Stage         any
 	StripBasePath any
 }
 
@@ -18,7 +18,7 @@ type RoutingRules_RoutingRules_Conditions_MatchBasePaths struct {
 }
 
 type RoutingRules_RoutingRules_Conditions_MatchHeaders_AnyOf struct {
-	Header any
+	Header    any
 	ValueGlob any
 }
 
@@ -28,38 +28,38 @@ type RoutingRules_RoutingRules_Conditions_MatchHeaders struct {
 
 type RoutingRules_RoutingRules_Conditions struct {
 	MatchBasePaths any
-	MatchHeaders any
+	MatchHeaders   any
 }
 
 type RoutingRules_RoutingRules struct {
-	Actions any
-	Conditions any
-	Priority any
+	Actions        any
+	Conditions     any
+	Priority       any
 	RoutingRuleArn any
-	RoutingRuleId any
+	RoutingRuleId  any
 }
 
 type RoutingRulesConfig struct {
-	DomainName any
+	DomainName   any
 	DomainNameId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type RoutingRulesAttrs struct {
-	DomainName any
+	DomainName   any
 	DomainNameId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	RoutingRules any
 }
 
 var RoutingRules = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_routing_rules",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":   ubx.FieldSpec{WireName: "domain_name"},
 		"DomainNameId": ubx.FieldSpec{WireName: "domain_name_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

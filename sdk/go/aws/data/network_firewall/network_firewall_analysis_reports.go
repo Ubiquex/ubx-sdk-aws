@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkFirewallAnalysisReports_AnalysisReports struct {
 	AnalysisReportId any
-	AnalysisType any
-	ReportTime any
-	Status any
+	AnalysisType     any
+	ReportTime       any
+	Status           any
 }
 
 type NetworkFirewallAnalysisReportsConfig struct {
-	FirewallArn any
+	FirewallArn  any
 	FirewallName any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type NetworkFirewallAnalysisReportsAttrs struct {
 	AnalysisReports any
-	FirewallArn any
-	FirewallName any
-	MaxResults any
-	NextToken any
+	FirewallArn     any
+	FirewallName    any
+	MaxResults      any
+	NextToken       any
 }
 
 var NetworkFirewallAnalysisReports = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_analysis_reports",
 	Fields: ubx.FieldMap{
-		"FirewallArn": ubx.FieldSpec{WireName: "firewall_arn"},
+		"FirewallArn":  ubx.FieldSpec{WireName: "firewall_arn"},
 		"FirewallName": ubx.FieldSpec{WireName: "firewall_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

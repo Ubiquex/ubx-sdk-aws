@@ -18,18 +18,18 @@ type WebAcl_Rules struct {
 }
 
 var WebAcl_DefaultActionFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var WebAcl_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: WebAcl_DefaultActionFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   WebAcl_DefaultActionFields,
+	},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"RuleId":   ubx.FieldSpec{WireName: "rule_id"},
+}
 
 type WebAclConfig struct {
 	// The action AWS WAF takes when a web request doesn't match any rule in the web ACL, specified as an object with a Type property that can be ALLOW, BLOCK, or COUNT. (AI-inferred)
@@ -60,15 +60,15 @@ var WebAcl = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultAction": ubx.FieldSpec{
 			WireName: "default_action",
-			Kind: "object",
-			Fields: WebAcl_DefaultActionFields,
+			Kind:     "object",
+			Fields:   WebAcl_DefaultActionFields,
 		},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: WebAcl_RulesFields,
+			Kind:     "list",
+			Fields:   WebAcl_RulesFields,
 		},
 	},
 }

@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationFleetAssociations_ApplicationFleetAssociations struct {
 	ApplicationArn any
-	FleetName any
+	FleetName      any
 }
 
 type ApplicationFleetAssociationsConfig struct {
 	ApplicationArn any
-	FleetName any
-	MaxResults any
-	NextToken any
+	FleetName      any
+	MaxResults     any
+	NextToken      any
 }
 
 type ApplicationFleetAssociationsAttrs struct {
-	ApplicationArn any
+	ApplicationArn               any
 	ApplicationFleetAssociations any
-	FleetName any
-	MaxResults any
-	NextToken any
+	FleetName                    any
+	MaxResults                   any
+	NextToken                    any
 }
 
 var ApplicationFleetAssociations = ubx.DataSourceBinding{
 	WireType: "aws_appstream2_application_fleet_associations",
 	Fields: ubx.FieldMap{
 		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
-		"FleetName": ubx.FieldSpec{WireName: "fleet_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"FleetName":      ubx.FieldSpec{WireName: "fleet_name"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

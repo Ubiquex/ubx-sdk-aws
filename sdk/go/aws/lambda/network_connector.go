@@ -20,29 +20,29 @@ type NetworkConnector_Configuration struct {
 }
 
 type NetworkConnector_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var NetworkConnector_Configuration_VpcEgressConfigurationFields = ubx.FieldMap{
-		"AssociatedComputeResourceTypes": ubx.FieldSpec{WireName: "associated_compute_resource_types"},
-		"NetworkProtocol": ubx.FieldSpec{WireName: "network_protocol"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"AssociatedComputeResourceTypes": ubx.FieldSpec{WireName: "associated_compute_resource_types"},
+	"NetworkProtocol":                ubx.FieldSpec{WireName: "network_protocol"},
+	"SecurityGroupIds":               ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":                      ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var NetworkConnector_ConfigurationFields = ubx.FieldMap{
-		"VpcEgressConfiguration": ubx.FieldSpec{
-			WireName: "vpc_egress_configuration",
-			Kind: "object",
-			Fields: NetworkConnector_Configuration_VpcEgressConfigurationFields,
-		},
-	}
+	"VpcEgressConfiguration": ubx.FieldSpec{
+		WireName: "vpc_egress_configuration",
+		Kind:     "object",
+		Fields:   NetworkConnector_Configuration_VpcEgressConfigurationFields,
+	},
+}
 
 var NetworkConnector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkConnectorConfig struct {
 	// The network configuration for the connector. Specify a VpcEgressConfiguration to enable outbound traffic routing through your VPC.
@@ -75,15 +75,15 @@ var NetworkConnector = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: NetworkConnector_ConfigurationFields,
+			Kind:     "object",
+			Fields:   NetworkConnector_ConfigurationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"OperatorRole": ubx.FieldSpec{WireName: "operator_role"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkConnector_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkConnector_TagsFields,
 		},
 	},
 }

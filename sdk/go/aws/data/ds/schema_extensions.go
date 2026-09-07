@@ -4,25 +4,25 @@ package ds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemaExtensions_SchemaExtensionsInfo struct {
-	Description any
-	DirectoryId any
-	EndDateTime any
-	SchemaExtensionId any
-	SchemaExtensionStatus any
+	Description                 any
+	DirectoryId                 any
+	EndDateTime                 any
+	SchemaExtensionId           any
+	SchemaExtensionStatus       any
 	SchemaExtensionStatusReason any
-	StartDateTime any
+	StartDateTime               any
 }
 
 type SchemaExtensionsConfig struct {
 	DirectoryId any
-	Limit any
-	NextToken any
+	Limit       any
+	NextToken   any
 }
 
 type SchemaExtensionsAttrs struct {
-	DirectoryId any
-	Limit any
-	NextToken any
+	DirectoryId          any
+	Limit                any
+	NextToken            any
 	SchemaExtensionsInfo any
 }
 
@@ -30,7 +30,7 @@ var SchemaExtensions = ubx.DataSourceBinding{
 	WireType: "aws_ds_schema_extensions",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

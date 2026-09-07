@@ -16,13 +16,13 @@ type PredefinedAttribute_Values struct {
 }
 
 var PredefinedAttribute_AttributeConfigurationFields = ubx.FieldMap{
-		"EnableValueValidationOnAssociation": ubx.FieldSpec{WireName: "enable_value_validation_on_association"},
-		"IsReadOnly": ubx.FieldSpec{WireName: "is_read_only"},
-	}
+	"EnableValueValidationOnAssociation": ubx.FieldSpec{WireName: "enable_value_validation_on_association"},
+	"IsReadOnly":                         ubx.FieldSpec{WireName: "is_read_only"},
+}
 
 var PredefinedAttribute_ValuesFields = ubx.FieldMap{
-		"StringList": ubx.FieldSpec{WireName: "string_list"},
-	}
+	"StringList": ubx.FieldSpec{WireName: "string_list"},
+}
 
 type PredefinedAttributeConfig struct {
 	// Custom metadata associated to a Predefined attribute that controls how the attribute behaves when used by upstream services.
@@ -59,16 +59,16 @@ var PredefinedAttribute = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AttributeConfiguration": ubx.FieldSpec{
 			WireName: "attribute_configuration",
-			Kind: "object",
-			Fields: PredefinedAttribute_AttributeConfigurationFields,
+			Kind:     "object",
+			Fields:   PredefinedAttribute_AttributeConfigurationFields,
 		},
 		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Purposes": ubx.FieldSpec{WireName: "purposes"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Purposes":    ubx.FieldSpec{WireName: "purposes"},
 		"Values": ubx.FieldSpec{
 			WireName: "values",
-			Kind: "object",
-			Fields: PredefinedAttribute_ValuesFields,
+			Kind:     "object",
+			Fields:   PredefinedAttribute_ValuesFields,
 		},
 	},
 }

@@ -4,10 +4,10 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexMigration_Alerts struct {
-	Details any
-	Message any
+	Details       any
+	Message       any
 	ReferenceUrls any
-	Type any
+	Type          any
 }
 
 type ModelsLexMigrationConfig struct {
@@ -15,16 +15,16 @@ type ModelsLexMigrationConfig struct {
 }
 
 type ModelsLexMigrationAttrs struct {
-	Alerts any
-	MigrationId any
-	MigrationStatus any
-	MigrationStrategy any
+	Alerts             any
+	MigrationId        any
+	MigrationStatus    any
+	MigrationStrategy  any
 	MigrationTimestamp any
-	V1BotLocale any
-	V1BotName any
-	V1BotVersion any
-	V2BotId any
-	V2BotRole any
+	V1BotLocale        any
+	V1BotName          any
+	V1BotVersion       any
+	V2BotId            any
+	V2BotRole          any
 }
 
 var ModelsLexMigration = ubx.DataSourceBinding{

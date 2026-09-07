@@ -11,9 +11,9 @@ type DirectConnectGateway_Tags struct {
 }
 
 var DirectConnectGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DirectConnectGatewayConfig struct {
 	// The autonomous system number (ASN) for the Amazon side of the connection.
@@ -40,12 +40,12 @@ type DirectConnectGatewayAttrs struct {
 var DirectConnectGateway = ubx.ResourceBinding{
 	WireType: "aws_direct_connect_direct_connect_gateway",
 	Fields: ubx.FieldMap{
-		"AmazonSideAsn": ubx.FieldSpec{WireName: "amazon_side_asn"},
+		"AmazonSideAsn":            ubx.FieldSpec{WireName: "amazon_side_asn"},
 		"DirectConnectGatewayName": ubx.FieldSpec{WireName: "direct_connect_gateway_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DirectConnectGateway_TagsFields,
+			Kind:     "list",
+			Fields:   DirectConnectGateway_TagsFields,
 		},
 	},
 }

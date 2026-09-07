@@ -12,6 +12,5 @@ type InvitationsCountAttrs struct {
 
 var InvitationsCount = ubx.DataSourceBinding{
 	WireType: "aws_guardduty_invitations_count",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

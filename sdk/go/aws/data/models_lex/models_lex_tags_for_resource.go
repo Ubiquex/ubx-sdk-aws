@@ -4,7 +4,7 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type ModelsLexTagsForResourceConfig struct {
 
 type ModelsLexTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ModelsLexTagsForResource = ubx.DataSourceBinding{

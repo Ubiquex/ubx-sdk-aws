@@ -13,10 +13,10 @@ type GroupingConfiguration_GroupingAttributeDefinitions struct {
 }
 
 var GroupingConfiguration_GroupingAttributeDefinitionsFields = ubx.FieldMap{
-		"DefaultGroupingValue": ubx.FieldSpec{WireName: "default_grouping_value"},
-		"GroupingName": ubx.FieldSpec{WireName: "grouping_name"},
-		"GroupingSourceKeys": ubx.FieldSpec{WireName: "grouping_source_keys"},
-	}
+	"DefaultGroupingValue": ubx.FieldSpec{WireName: "default_grouping_value"},
+	"GroupingName":         ubx.FieldSpec{WireName: "grouping_name"},
+	"GroupingSourceKeys":   ubx.FieldSpec{WireName: "grouping_source_keys"},
+}
 
 type GroupingConfigurationConfig struct {
 	GroupingAttributeDefinitions any
@@ -24,7 +24,7 @@ type GroupingConfigurationConfig struct {
 
 type GroupingConfigurationAttrs struct {
 	// The identifier for the specified AWS account.
-	AccountId any
+	AccountId                    any
 	GroupingAttributeDefinitions any
 	// The timestamp of when the grouping configuration was last updated, as set by the AWS service. (AI-inferred)
 	UpdatedAt any
@@ -35,8 +35,8 @@ var GroupingConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"GroupingAttributeDefinitions": ubx.FieldSpec{
 			WireName: "grouping_attribute_definitions",
-			Kind: "list",
-			Fields: GroupingConfiguration_GroupingAttributeDefinitionsFields,
+			Kind:     "list",
+			Fields:   GroupingConfiguration_GroupingAttributeDefinitionsFields,
 		},
 	},
 }

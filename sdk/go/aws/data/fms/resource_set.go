@@ -4,13 +4,13 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceSet_ResourceSet struct {
-	Description any
-	Id any
-	LastUpdateTime any
-	Name any
+	Description       any
+	Id                any
+	LastUpdateTime    any
+	Name              any
 	ResourceSetStatus any
-	ResourceTypeList any
-	UpdateToken any
+	ResourceTypeList  any
+	UpdateToken       any
 }
 
 type ResourceSetConfig struct {
@@ -20,7 +20,7 @@ type ResourceSetConfig struct {
 type ResourceSetAttrs struct {
 	Identifier any
 	// <p>A set of resources to include in a policy.</p>
-	ResourceSet any
+	ResourceSet    any
 	ResourceSetArn any
 }
 

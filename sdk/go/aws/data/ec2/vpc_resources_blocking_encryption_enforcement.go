@@ -4,33 +4,33 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcResourcesBlockingEncryptionEnforcement_NonCompliantResources struct {
-	Description any
-	Id any
+	Description  any
+	Id           any
 	IsExcludable any
-	Type any
+	Type         any
 }
 
 type VpcResourcesBlockingEncryptionEnforcementConfig struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
-	VpcId any
+	NextToken  any
+	VpcId      any
 }
 
 type VpcResourcesBlockingEncryptionEnforcementAttrs struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun                any
+	MaxResults            any
+	NextToken             any
 	NonCompliantResources any
-	VpcId any
+	VpcId                 any
 }
 
 var VpcResourcesBlockingEncryptionEnforcement = ubx.DataSourceBinding{
 	WireType: "aws_ec2_vpc_resources_blocking_encryption_enforcement",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"VpcId":      ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

@@ -5,38 +5,38 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssociatedPackages_Packages struct {
 	AssociationType any
-	Format any
-	Namespace any
-	Package any
+	Format          any
+	Namespace       any
+	Package         any
 }
 
 type AssociatedPackagesConfig struct {
-	Domain any
-	DomainOwner any
-	MaxResults any
-	NextToken any
+	Domain       any
+	DomainOwner  any
+	MaxResults   any
+	NextToken    any
 	PackageGroup any
-	Preview any
+	Preview      any
 }
 
 type AssociatedPackagesAttrs struct {
-	Domain any
-	DomainOwner any
-	MaxResults any
-	NextToken any
+	Domain       any
+	DomainOwner  any
+	MaxResults   any
+	NextToken    any
 	PackageGroup any
-	Packages any
-	Preview any
+	Packages     any
+	Preview      any
 }
 
 var AssociatedPackages = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_associated_packages",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Domain":       ubx.FieldSpec{WireName: "domain"},
+		"DomainOwner":  ubx.FieldSpec{WireName: "domain_owner"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"PackageGroup": ubx.FieldSpec{WireName: "package_group"},
-		"Preview": ubx.FieldSpec{WireName: "preview"},
+		"Preview":      ubx.FieldSpec{WireName: "preview"},
 	},
 }

@@ -4,14 +4,14 @@ package macie
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDataIdentifier_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CustomDataIdentifier_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomDataIdentifierConfig struct {
 	// Description of custom data identifier.
@@ -54,16 +54,16 @@ type CustomDataIdentifierAttrs struct {
 var CustomDataIdentifier = ubx.ResourceBinding{
 	WireType: "aws_macie_custom_data_identifier",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IgnoreWords": ubx.FieldSpec{WireName: "ignore_words"},
-		"Keywords": ubx.FieldSpec{WireName: "keywords"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"IgnoreWords":          ubx.FieldSpec{WireName: "ignore_words"},
+		"Keywords":             ubx.FieldSpec{WireName: "keywords"},
 		"MaximumMatchDistance": ubx.FieldSpec{WireName: "maximum_match_distance"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Regex": ubx.FieldSpec{WireName: "regex"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Regex":                ubx.FieldSpec{WireName: "regex"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomDataIdentifier_TagsFields,
+			Kind:     "list",
+			Fields:   CustomDataIdentifier_TagsFields,
 		},
 	},
 }

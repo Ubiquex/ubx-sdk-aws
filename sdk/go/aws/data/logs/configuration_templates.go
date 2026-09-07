@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationTemplates_ConfigurationTemplates_AllowedFields struct {
 	Mandatory any
-	Name any
+	Name      any
 }
 
 type ConfigurationTemplates_ConfigurationTemplates_DefaultDeliveryConfigValues_S3DeliveryConfiguration struct {
 	EnableHiveCompatiblePath any
-	SuffixPath any
+	SuffixPath               any
 }
 
 type ConfigurationTemplates_ConfigurationTemplates_DefaultDeliveryConfigValues struct {
-	FieldDelimiter any
-	RecordFields any
+	FieldDelimiter          any
+	RecordFields            any
 	S3DeliveryConfiguration any
 }
 
 type ConfigurationTemplates_ConfigurationTemplates_DeliverySourceConfiguration struct {
-	DefaultValue any
-	KeyName any
-	MaxValue any
-	MinValue any
+	DefaultValue    any
+	KeyName         any
+	MaxValue        any
+	MinValue        any
 	SupportedValues any
-	ValueType any
+	ValueType       any
 }
 
 type ConfigurationTemplates_ConfigurationTemplates_S3TablesIntegration struct {
@@ -35,48 +35,48 @@ type ConfigurationTemplates_ConfigurationTemplates_S3TablesIntegration struct {
 
 type ConfigurationTemplates_ConfigurationTemplates struct {
 	AllowedActionForAllowVendedLogsDeliveryForResource any
-	AllowedFieldDelimiters any
-	AllowedFields any
-	AllowedOutputFormats any
-	AllowedSuffixPathFields any
-	DefaultDeliveryConfigValues any
-	DeliveryDestinationType any
-	DeliverySourceConfiguration any
-	LogType any
-	ResourceType any
-	S3TablesIntegration any
-	Service any
+	AllowedFieldDelimiters                             any
+	AllowedFields                                      any
+	AllowedOutputFormats                               any
+	AllowedSuffixPathFields                            any
+	DefaultDeliveryConfigValues                        any
+	DeliveryDestinationType                            any
+	DeliverySourceConfiguration                        any
+	LogType                                            any
+	ResourceType                                       any
+	S3TablesIntegration                                any
+	Service                                            any
 }
 
 type ConfigurationTemplatesConfig struct {
 	DeliveryDestinationTypes any
-	Limit any
-	LogTypes any
+	Limit                    any
+	LogTypes                 any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken     any
 	ResourceTypes any
-	Service any
+	Service       any
 }
 
 type ConfigurationTemplatesAttrs struct {
-	ConfigurationTemplates any
+	ConfigurationTemplates   any
 	DeliveryDestinationTypes any
-	Limit any
-	LogTypes any
+	Limit                    any
+	LogTypes                 any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken     any
 	ResourceTypes any
-	Service any
+	Service       any
 }
 
 var ConfigurationTemplates = ubx.DataSourceBinding{
 	WireType: "aws_logs_configuration_templates",
 	Fields: ubx.FieldMap{
 		"DeliveryDestinationTypes": ubx.FieldSpec{WireName: "delivery_destination_types"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LogTypes": ubx.FieldSpec{WireName: "log_types"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"Limit":                    ubx.FieldSpec{WireName: "limit"},
+		"LogTypes":                 ubx.FieldSpec{WireName: "log_types"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
+		"ResourceTypes":            ubx.FieldSpec{WireName: "resource_types"},
+		"Service":                  ubx.FieldSpec{WireName: "service"},
 	},
 }

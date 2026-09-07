@@ -11,19 +11,19 @@ type Cluster_BackupRetentionPolicy struct {
 }
 
 type Cluster_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Cluster_BackupRetentionPolicyFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Cluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterConfig struct {
 	// A policy that defines how the service retains backups.
@@ -74,17 +74,17 @@ var Cluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BackupRetentionPolicy": ubx.FieldSpec{
 			WireName: "backup_retention_policy",
-			Kind: "object",
-			Fields: Cluster_BackupRetentionPolicyFields,
+			Kind:     "object",
+			Fields:   Cluster_BackupRetentionPolicyFields,
 		},
-		"HsmType": ubx.FieldSpec{WireName: "hsm_type"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"HsmType":     ubx.FieldSpec{WireName: "hsm_type"},
+		"Mode":        ubx.FieldSpec{WireName: "mode"},
 		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":   ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Cluster_TagsFields,
+			Kind:     "list",
+			Fields:   Cluster_TagsFields,
 		},
 	},
 }

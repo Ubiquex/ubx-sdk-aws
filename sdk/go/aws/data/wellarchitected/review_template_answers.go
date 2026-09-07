@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReviewTemplateAnswers_AnswerSummaries_ChoiceAnswerSummaries struct {
 	ChoiceId any
-	Reason any
-	Status any
+	Reason   any
+	Status   any
 }
 
 type ReviewTemplateAnswers_AnswerSummaries_Choices_AdditionalResources_Content struct {
 	DisplayText any
-	Url any
+	Url         any
 }
 
 type ReviewTemplateAnswers_AnswerSummaries_Choices_AdditionalResources struct {
 	Content any
-	Type any
+	Type    any
 }
 
 type ReviewTemplateAnswers_AnswerSummaries_Choices struct {
 	AdditionalResources any
-	ChoiceId any
-	Description any
-	HelpfulResource any
-	ImprovementPlan any
-	Title any
+	ChoiceId            any
+	Description         any
+	HelpfulResource     any
+	ImprovementPlan     any
+	Title               any
 }
 
 type ReviewTemplateAnswers_AnswerSummaries struct {
-	AnswerStatus any
+	AnswerStatus          any
 	ChoiceAnswerSummaries any
-	Choices any
-	IsApplicable any
-	PillarId any
-	QuestionId any
-	QuestionTitle any
-	QuestionType any
-	Reason any
-	SelectedChoices any
+	Choices               any
+	IsApplicable          any
+	PillarId              any
+	QuestionId            any
+	QuestionTitle         any
+	QuestionType          any
+	Reason                any
+	SelectedChoices       any
 }
 
 type ReviewTemplateAnswersConfig struct {
@@ -49,7 +49,7 @@ type ReviewTemplateAnswersConfig struct {
 	// <p>The token to use to retrieve the next set of results.</p>
 	NextToken any
 	// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-	PillarId any
+	PillarId    any
 	TemplateArn any
 }
 
@@ -62,17 +62,17 @@ type ReviewTemplateAnswersAttrs struct {
 	// <p>The token to use to retrieve the next set of results.</p>
 	NextToken any
 	// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-	PillarId any
+	PillarId    any
 	TemplateArn any
 }
 
 var ReviewTemplateAnswers = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_review_template_answers",
 	Fields: ubx.FieldMap{
-		"LensAlias": ubx.FieldSpec{WireName: "lens_alias"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PillarId": ubx.FieldSpec{WireName: "pillar_id"},
+		"LensAlias":   ubx.FieldSpec{WireName: "lens_alias"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"PillarId":    ubx.FieldSpec{WireName: "pillar_id"},
 		"TemplateArn": ubx.FieldSpec{WireName: "template_arn"},
 	},
 }

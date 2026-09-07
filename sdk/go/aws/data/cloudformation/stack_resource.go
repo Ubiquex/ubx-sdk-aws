@@ -4,40 +4,40 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackResource_StackResourceDetail_DriftInformation struct {
-	LastCheckTimestamp any
+	LastCheckTimestamp       any
 	StackResourceDriftStatus any
 }
 
 type StackResource_StackResourceDetail_ModuleInfo struct {
 	LogicalIdHierarchy any
-	TypeHierarchy any
+	TypeHierarchy      any
 }
 
 type StackResource_StackResourceDetail struct {
 	Description any
 	// <p>Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
-	DriftInformation any
+	DriftInformation     any
 	LastUpdatedTimestamp any
-	LogicalResourceId any
-	Metadata any
+	LogicalResourceId    any
+	Metadata             any
 	// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p> <p>For more information about modules, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html">Create reusable resource configurations that can be included across templates with CloudFormation modules</a> in the <i>CloudFormation User Guide</i>.</p>
-	ModuleInfo any
-	PhysicalResourceId any
-	ResourceStatus any
+	ModuleInfo           any
+	PhysicalResourceId   any
+	ResourceStatus       any
 	ResourceStatusReason any
-	ResourceType any
-	StackId any
-	StackName any
+	ResourceType         any
+	StackId              any
+	StackName            any
 }
 
 type StackResourceConfig struct {
 	LogicalResourceId any
-	StackName any
+	StackName         any
 }
 
 type StackResourceAttrs struct {
 	LogicalResourceId any
-	StackName any
+	StackName         any
 	// <p>Contains detailed information about the specified stack resource.</p>
 	StackResourceDetail any
 }
@@ -46,6 +46,6 @@ var StackResource = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stack_resource",
 	Fields: ubx.FieldMap{
 		"LogicalResourceId": ubx.FieldSpec{WireName: "logical_resource_id"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"StackName":         ubx.FieldSpec{WireName: "stack_name"},
 	},
 }

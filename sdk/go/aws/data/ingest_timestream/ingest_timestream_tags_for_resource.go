@@ -4,7 +4,7 @@ package ingest_timestream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IngestTimestreamTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type IngestTimestreamTagsForResourceConfig struct {
 
 type IngestTimestreamTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var IngestTimestreamTagsForResource = ubx.DataSourceBinding{

@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomMetric_Tags struct {
 	// Represents the key of a tag attached to an AWS IoT Custom Metric, enabling metadata-based identification and management of the metric. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var CustomMetric_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomMetricConfig struct {
 	// Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.
@@ -42,12 +42,12 @@ var CustomMetric = ubx.ResourceBinding{
 	WireType: "aws_io_t_custom_metric",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MetricType": ubx.FieldSpec{WireName: "metric_type"},
+		"MetricName":  ubx.FieldSpec{WireName: "metric_name"},
+		"MetricType":  ubx.FieldSpec{WireName: "metric_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomMetric_TagsFields,
+			Kind:     "list",
+			Fields:   CustomMetric_TagsFields,
 		},
 	},
 }

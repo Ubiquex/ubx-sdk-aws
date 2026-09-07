@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogMarketplaceAssessment_AssessmentTargetSummary struct {
 	ChangeSetId any
-	EntityId any
+	EntityId    any
 }
 
 type CatalogMarketplaceAssessment_ControlAssessments_Errors_Scope struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type CatalogMarketplaceAssessment_ControlAssessments_Errors struct {
-	Code any
+	Code    any
 	Message any
-	Scope any
+	Scope   any
 }
 
 type CatalogMarketplaceAssessment_ControlAssessments struct {
 	ControlAssessmentResult any
-	ControlId any
-	Errors any
+	ControlId               any
+	Errors                  any
 }
 
 type CatalogMarketplaceAssessment_FrameworkSummary_AmisecuritySummary struct {
@@ -30,41 +30,41 @@ type CatalogMarketplaceAssessment_FrameworkSummary_AmisecuritySummary struct {
 }
 
 type CatalogMarketplaceAssessment_FrameworkSummary struct {
-	AmisecuritySummary any
+	AmisecuritySummary       any
 	ContainerSecuritySummary any
 }
 
 type CatalogMarketplaceAssessmentConfig struct {
 	AssessmentIdentifier any
-	Catalog any
-	MaxResults any
-	NextToken any
+	Catalog              any
+	MaxResults           any
+	NextToken            any
 }
 
 type CatalogMarketplaceAssessmentAttrs struct {
-	AssessmentArn any
-	AssessmentId any
+	AssessmentArn        any
+	AssessmentId         any
 	AssessmentIdentifier any
-	AssessmentResult any
+	AssessmentResult     any
 	// <p>Identifies the entity or change set that was assessed.</p>
 	AssessmentTargetSummary any
-	Catalog any
-	ControlAssessments any
-	CreatedAt any
-	ExpiresAt any
-	FrameworkId any
+	Catalog                 any
+	ControlAssessments      any
+	CreatedAt               any
+	ExpiresAt               any
+	FrameworkId             any
 	// <p>The framework-specific details of the assessed resource. Exactly one member is set, corresponding to the framework that was assessed.</p>
 	FrameworkSummary any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var CatalogMarketplaceAssessment = ubx.DataSourceBinding{
 	WireType: "aws_catalog_marketplace_assessment",
 	Fields: ubx.FieldMap{
 		"AssessmentIdentifier": ubx.FieldSpec{WireName: "assessment_identifier"},
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Catalog":              ubx.FieldSpec{WireName: "catalog"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

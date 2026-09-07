@@ -4,70 +4,70 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OriginRequestPolicies_OriginRequestPolicyList_Items_OriginRequestPolicy_OriginRequestPolicyConfig_CookiesConfig_Cookies struct {
-	Items any
+	Items    any
 	Quantity any
 }
 
 type OriginRequestPolicies_OriginRequestPolicyList_Items_OriginRequestPolicy_OriginRequestPolicyConfig_CookiesConfig struct {
 	CookieBehavior any
-	Cookies any
+	Cookies        any
 }
 
 type OriginRequestPolicies_OriginRequestPolicyList_Items_OriginRequestPolicy_OriginRequestPolicyConfig_HeadersConfig struct {
 	HeaderBehavior any
-	Headers any
+	Headers        any
 }
 
 type OriginRequestPolicies_OriginRequestPolicyList_Items_OriginRequestPolicy_OriginRequestPolicyConfig_QueryStringsConfig struct {
 	QueryStringBehavior any
-	QueryStrings any
+	QueryStrings        any
 }
 
 type OriginRequestPolicies_OriginRequestPolicyList_Items_OriginRequestPolicy_OriginRequestPolicyConfig struct {
-	Comment any
-	CookiesConfig any
-	HeadersConfig any
-	Name any
+	Comment            any
+	CookiesConfig      any
+	HeadersConfig      any
+	Name               any
 	QueryStringsConfig any
 }
 
 type OriginRequestPolicies_OriginRequestPolicyList_Items_OriginRequestPolicy struct {
-	Id any
-	LastModifiedTime any
+	Id                        any
+	LastModifiedTime          any
 	OriginRequestPolicyConfig any
 }
 
 type OriginRequestPolicies_OriginRequestPolicyList_Items struct {
 	OriginRequestPolicy any
-	Type any
+	Type                any
 }
 
 type OriginRequestPolicies_OriginRequestPolicyList struct {
-	Items any
-	MaxItems any
+	Items      any
+	MaxItems   any
 	NextMarker any
-	Quantity any
+	Quantity   any
 }
 
 type OriginRequestPoliciesConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
-	Type any
+	Type     any
 }
 
 type OriginRequestPoliciesAttrs struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	// <p>A list of origin request policies.</p>
 	OriginRequestPolicyList any
-	Type any
+	Type                    any
 }
 
 var OriginRequestPolicies = ubx.DataSourceBinding{
 	WireType: "aws_cloudfront_origin_request_policies",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":     ubx.FieldSpec{WireName: "type"},
 	},
 }

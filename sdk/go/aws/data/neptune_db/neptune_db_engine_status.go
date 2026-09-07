@@ -12,25 +12,24 @@ type NeptuneDbEngineStatusConfig struct {
 
 type NeptuneDbEngineStatusAttrs struct {
 	DbEngineVersion any
-	DfeQueryEngine any
-	Features any
+	DfeQueryEngine  any
+	Features        any
 	// <p>Structure for expressing the query language version.</p>
 	Gremlin any
 	LabMode any
 	// <p>Structure for expressing the query language version.</p>
-	Opencypher any
-	Role any
-	RollingBackTrxCount any
+	Opencypher                      any
+	Role                            any
+	RollingBackTrxCount             any
 	RollingBackTrxEarliestStartTime any
-	Settings any
+	Settings                        any
 	// <p>Structure for expressing the query language version.</p>
-	Sparql any
+	Sparql    any
 	StartTime any
-	Status any
+	Status    any
 }
 
 var NeptuneDbEngineStatus = ubx.DataSourceBinding{
 	WireType: "aws_neptune_db_engine_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

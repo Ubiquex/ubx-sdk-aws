@@ -13,22 +13,22 @@ type ClusterSessionCredentials_Credentials struct {
 }
 
 type ClusterSessionCredentialsConfig struct {
-	ClusterId any
+	ClusterId        any
 	ExecutionRoleArn any
 }
 
 type ClusterSessionCredentialsAttrs struct {
 	ClusterId any
 	// <p>The credentials that you can use to connect to cluster endpoints. Credentials consist of a username and a password.</p>
-	Credentials any
+	Credentials      any
 	ExecutionRoleArn any
-	ExpiresAt any
+	ExpiresAt        any
 }
 
 var ClusterSessionCredentials = ubx.DataSourceBinding{
 	WireType: "aws_elasticmapreduce_cluster_session_credentials",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+		"ClusterId":        ubx.FieldSpec{WireName: "cluster_id"},
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
 	},
 }

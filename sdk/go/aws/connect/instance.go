@@ -34,30 +34,30 @@ type Instance_Attributes struct {
 
 type Instance_Tags struct {
 	// The key of a user-defined tag applied to the Amazon Connect instance, used to categorize and manage the resource in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Instance_AttributesFields = ubx.FieldMap{
-		"AutoResolveBestVoices": ubx.FieldSpec{WireName: "auto_resolve_best_voices"},
-		"ContactLens": ubx.FieldSpec{WireName: "contact_lens"},
-		"ContactflowLogs": ubx.FieldSpec{WireName: "contactflow_logs"},
-		"EarlyMedia": ubx.FieldSpec{WireName: "early_media"},
-		"EnhancedChatMonitoring": ubx.FieldSpec{WireName: "enhanced_chat_monitoring"},
-		"EnhancedContactMonitoring": ubx.FieldSpec{WireName: "enhanced_contact_monitoring"},
-		"HighVolumeOutBound": ubx.FieldSpec{WireName: "high_volume_out_bound"},
-		"InboundCalls": ubx.FieldSpec{WireName: "inbound_calls"},
-		"MessageStreaming": ubx.FieldSpec{WireName: "message_streaming"},
-		"MultiPartyChatConference": ubx.FieldSpec{WireName: "multi_party_chat_conference"},
-		"MultiPartyConference": ubx.FieldSpec{WireName: "multi_party_conference"},
-		"OutboundCalls": ubx.FieldSpec{WireName: "outbound_calls"},
-		"UseCustomTtsvoices": ubx.FieldSpec{WireName: "use_custom_ttsvoices"},
-	}
+	"AutoResolveBestVoices":     ubx.FieldSpec{WireName: "auto_resolve_best_voices"},
+	"ContactLens":               ubx.FieldSpec{WireName: "contact_lens"},
+	"ContactflowLogs":           ubx.FieldSpec{WireName: "contactflow_logs"},
+	"EarlyMedia":                ubx.FieldSpec{WireName: "early_media"},
+	"EnhancedChatMonitoring":    ubx.FieldSpec{WireName: "enhanced_chat_monitoring"},
+	"EnhancedContactMonitoring": ubx.FieldSpec{WireName: "enhanced_contact_monitoring"},
+	"HighVolumeOutBound":        ubx.FieldSpec{WireName: "high_volume_out_bound"},
+	"InboundCalls":              ubx.FieldSpec{WireName: "inbound_calls"},
+	"MessageStreaming":          ubx.FieldSpec{WireName: "message_streaming"},
+	"MultiPartyChatConference":  ubx.FieldSpec{WireName: "multi_party_chat_conference"},
+	"MultiPartyConference":      ubx.FieldSpec{WireName: "multi_party_conference"},
+	"OutboundCalls":             ubx.FieldSpec{WireName: "outbound_calls"},
+	"UseCustomTtsvoices":        ubx.FieldSpec{WireName: "use_custom_ttsvoices"},
+}
 
 var Instance_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InstanceConfig struct {
 	// Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
@@ -100,16 +100,16 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "object",
-			Fields: Instance_AttributesFields,
+			Kind:     "object",
+			Fields:   Instance_AttributesFields,
 		},
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
+		"DirectoryId":            ubx.FieldSpec{WireName: "directory_id"},
 		"IdentityManagementType": ubx.FieldSpec{WireName: "identity_management_type"},
-		"InstanceAlias": ubx.FieldSpec{WireName: "instance_alias"},
+		"InstanceAlias":          ubx.FieldSpec{WireName: "instance_alias"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Instance_TagsFields,
+			Kind:     "list",
+			Fields:   Instance_TagsFields,
 		},
 	},
 }

@@ -152,149 +152,149 @@ type DataQualityJobDefinition_Tags struct {
 }
 
 var DataQualityJobDefinition_DataQualityAppSpecificationFields = ubx.FieldMap{
-		"ContainerArguments": ubx.FieldSpec{WireName: "container_arguments"},
-		"ContainerEntrypoint": ubx.FieldSpec{WireName: "container_entrypoint"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"PostAnalyticsProcessorSourceUri": ubx.FieldSpec{WireName: "post_analytics_processor_source_uri"},
-		"RecordPreprocessorSourceUri": ubx.FieldSpec{WireName: "record_preprocessor_source_uri"},
-	}
+	"ContainerArguments":              ubx.FieldSpec{WireName: "container_arguments"},
+	"ContainerEntrypoint":             ubx.FieldSpec{WireName: "container_entrypoint"},
+	"Environment":                     ubx.FieldSpec{WireName: "environment"},
+	"ImageUri":                        ubx.FieldSpec{WireName: "image_uri"},
+	"PostAnalyticsProcessorSourceUri": ubx.FieldSpec{WireName: "post_analytics_processor_source_uri"},
+	"RecordPreprocessorSourceUri":     ubx.FieldSpec{WireName: "record_preprocessor_source_uri"},
+}
 
 var DataQualityJobDefinition_DataQualityBaselineConfig_ConstraintsResourceFields = ubx.FieldMap{
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var DataQualityJobDefinition_DataQualityBaselineConfigFields = ubx.FieldMap{
-		"BaseliningJobName": ubx.FieldSpec{WireName: "baselining_job_name"},
-		"ConstraintsResource": ubx.FieldSpec{
-			WireName: "constraints_resource",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityBaselineConfig_ConstraintsResourceFields,
-		},
-		"StatisticsResource": ubx.FieldSpec{
-			WireName: "statistics_resource",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityBaselineConfig_ConstraintsResourceFields,
-		},
-	}
+	"BaseliningJobName": ubx.FieldSpec{WireName: "baselining_job_name"},
+	"ConstraintsResource": ubx.FieldSpec{
+		WireName: "constraints_resource",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_DataQualityBaselineConfig_ConstraintsResourceFields,
+	},
+	"StatisticsResource": ubx.FieldSpec{
+		WireName: "statistics_resource",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_DataQualityBaselineConfig_ConstraintsResourceFields,
+	},
+}
 
 var DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormat_CsvFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{WireName: "header"},
-	}
+	"Header": ubx.FieldSpec{WireName: "header"},
+}
 
 var DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormat_JsonFields = ubx.FieldMap{
-		"Line": ubx.FieldSpec{WireName: "line"},
-	}
+	"Line": ubx.FieldSpec{WireName: "line"},
+}
 
 var DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormatFields = ubx.FieldMap{
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormat_CsvFields,
-		},
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormat_JsonFields,
-		},
-		"Parquet": ubx.FieldSpec{WireName: "parquet"},
-	}
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormat_CsvFields,
+	},
+	"Json": ubx.FieldSpec{
+		WireName: "json",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormat_JsonFields,
+	},
+	"Parquet": ubx.FieldSpec{WireName: "parquet"},
+}
 
 var DataQualityJobDefinition_DataQualityJobInput_BatchTransformInputFields = ubx.FieldMap{
-		"DataCapturedDestinationS3Uri": ubx.FieldSpec{WireName: "data_captured_destination_s3_uri"},
-		"DatasetFormat": ubx.FieldSpec{
-			WireName: "dataset_format",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormatFields,
-		},
-		"ExcludeFeaturesAttribute": ubx.FieldSpec{WireName: "exclude_features_attribute"},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"S3DataDistributionType": ubx.FieldSpec{WireName: "s3_data_distribution_type"},
-		"S3InputMode": ubx.FieldSpec{WireName: "s3_input_mode"},
-	}
+	"DataCapturedDestinationS3Uri": ubx.FieldSpec{WireName: "data_captured_destination_s3_uri"},
+	"DatasetFormat": ubx.FieldSpec{
+		WireName: "dataset_format",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_DataQualityJobInput_BatchTransformInput_DatasetFormatFields,
+	},
+	"ExcludeFeaturesAttribute": ubx.FieldSpec{WireName: "exclude_features_attribute"},
+	"LocalPath":                ubx.FieldSpec{WireName: "local_path"},
+	"S3DataDistributionType":   ubx.FieldSpec{WireName: "s3_data_distribution_type"},
+	"S3InputMode":              ubx.FieldSpec{WireName: "s3_input_mode"},
+}
 
 var DataQualityJobDefinition_DataQualityJobInput_EndpointInputFields = ubx.FieldMap{
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"ExcludeFeaturesAttribute": ubx.FieldSpec{WireName: "exclude_features_attribute"},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"S3DataDistributionType": ubx.FieldSpec{WireName: "s3_data_distribution_type"},
-		"S3InputMode": ubx.FieldSpec{WireName: "s3_input_mode"},
-	}
+	"EndpointName":             ubx.FieldSpec{WireName: "endpoint_name"},
+	"ExcludeFeaturesAttribute": ubx.FieldSpec{WireName: "exclude_features_attribute"},
+	"LocalPath":                ubx.FieldSpec{WireName: "local_path"},
+	"S3DataDistributionType":   ubx.FieldSpec{WireName: "s3_data_distribution_type"},
+	"S3InputMode":              ubx.FieldSpec{WireName: "s3_input_mode"},
+}
 
 var DataQualityJobDefinition_DataQualityJobInputFields = ubx.FieldMap{
-		"BatchTransformInput": ubx.FieldSpec{
-			WireName: "batch_transform_input",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityJobInput_BatchTransformInputFields,
-		},
-		"EndpointInput": ubx.FieldSpec{
-			WireName: "endpoint_input",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityJobInput_EndpointInputFields,
-		},
-	}
+	"BatchTransformInput": ubx.FieldSpec{
+		WireName: "batch_transform_input",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_DataQualityJobInput_BatchTransformInputFields,
+	},
+	"EndpointInput": ubx.FieldSpec{
+		WireName: "endpoint_input",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_DataQualityJobInput_EndpointInputFields,
+	},
+}
 
 var DataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs_S3OutputFields = ubx.FieldMap{
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"S3UploadMode": ubx.FieldSpec{WireName: "s3_upload_mode"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"LocalPath":    ubx.FieldSpec{WireName: "local_path"},
+	"S3UploadMode": ubx.FieldSpec{WireName: "s3_upload_mode"},
+	"S3Uri":        ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var DataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputsFields = ubx.FieldMap{
-		"S3Output": ubx.FieldSpec{
-			WireName: "s3_output",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs_S3OutputFields,
-		},
-	}
+	"S3Output": ubx.FieldSpec{
+		WireName: "s3_output",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs_S3OutputFields,
+	},
+}
 
 var DataQualityJobDefinition_DataQualityJobOutputConfigFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"MonitoringOutputs": ubx.FieldSpec{
-			WireName: "monitoring_outputs",
-			Kind: "list",
-			Fields: DataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputsFields,
-		},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"MonitoringOutputs": ubx.FieldSpec{
+		WireName: "monitoring_outputs",
+		Kind:     "list",
+		Fields:   DataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputsFields,
+	},
+}
 
 var DataQualityJobDefinition_JobResources_ClusterConfigFields = ubx.FieldMap{
-		"InstanceCount": ubx.FieldSpec{WireName: "instance_count"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
-		"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
-	}
+	"InstanceCount":  ubx.FieldSpec{WireName: "instance_count"},
+	"InstanceType":   ubx.FieldSpec{WireName: "instance_type"},
+	"VolumeKmsKeyId": ubx.FieldSpec{WireName: "volume_kms_key_id"},
+	"VolumeSizeInGb": ubx.FieldSpec{WireName: "volume_size_in_gb"},
+}
 
 var DataQualityJobDefinition_JobResourcesFields = ubx.FieldMap{
-		"ClusterConfig": ubx.FieldSpec{
-			WireName: "cluster_config",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_JobResources_ClusterConfigFields,
-		},
-	}
+	"ClusterConfig": ubx.FieldSpec{
+		WireName: "cluster_config",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_JobResources_ClusterConfigFields,
+	},
+}
 
 var DataQualityJobDefinition_NetworkConfig_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+}
 
 var DataQualityJobDefinition_NetworkConfigFields = ubx.FieldMap{
-		"EnableInterContainerTrafficEncryption": ubx.FieldSpec{WireName: "enable_inter_container_traffic_encryption"},
-		"EnableNetworkIsolation": ubx.FieldSpec{WireName: "enable_network_isolation"},
-		"VpcConfig": ubx.FieldSpec{
-			WireName: "vpc_config",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_NetworkConfig_VpcConfigFields,
-		},
-	}
+	"EnableInterContainerTrafficEncryption": ubx.FieldSpec{WireName: "enable_inter_container_traffic_encryption"},
+	"EnableNetworkIsolation":                ubx.FieldSpec{WireName: "enable_network_isolation"},
+	"VpcConfig": ubx.FieldSpec{
+		WireName: "vpc_config",
+		Kind:     "object",
+		Fields:   DataQualityJobDefinition_NetworkConfig_VpcConfigFields,
+	},
+}
 
 var DataQualityJobDefinition_StoppingConditionFields = ubx.FieldMap{
-		"MaxRuntimeInSeconds": ubx.FieldSpec{WireName: "max_runtime_in_seconds"},
-	}
+	"MaxRuntimeInSeconds": ubx.FieldSpec{WireName: "max_runtime_in_seconds"},
+}
 
 var DataQualityJobDefinition_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataQualityJobDefinitionConfig struct {
 	// Container image configuration object for the monitoring job.
@@ -355,46 +355,46 @@ var DataQualityJobDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataQualityAppSpecification": ubx.FieldSpec{
 			WireName: "data_quality_app_specification",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityAppSpecificationFields,
+			Kind:     "object",
+			Fields:   DataQualityJobDefinition_DataQualityAppSpecificationFields,
 		},
 		"DataQualityBaselineConfig": ubx.FieldSpec{
 			WireName: "data_quality_baseline_config",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityBaselineConfigFields,
+			Kind:     "object",
+			Fields:   DataQualityJobDefinition_DataQualityBaselineConfigFields,
 		},
 		"DataQualityJobInput": ubx.FieldSpec{
 			WireName: "data_quality_job_input",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityJobInputFields,
+			Kind:     "object",
+			Fields:   DataQualityJobDefinition_DataQualityJobInputFields,
 		},
 		"DataQualityJobOutputConfig": ubx.FieldSpec{
 			WireName: "data_quality_job_output_config",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_DataQualityJobOutputConfigFields,
+			Kind:     "object",
+			Fields:   DataQualityJobDefinition_DataQualityJobOutputConfigFields,
 		},
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
+		"EndpointName":      ubx.FieldSpec{WireName: "endpoint_name"},
 		"JobDefinitionName": ubx.FieldSpec{WireName: "job_definition_name"},
 		"JobResources": ubx.FieldSpec{
 			WireName: "job_resources",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_JobResourcesFields,
+			Kind:     "object",
+			Fields:   DataQualityJobDefinition_JobResourcesFields,
 		},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   DataQualityJobDefinition_NetworkConfigFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"StoppingCondition": ubx.FieldSpec{
 			WireName: "stopping_condition",
-			Kind: "object",
-			Fields: DataQualityJobDefinition_StoppingConditionFields,
+			Kind:     "object",
+			Fields:   DataQualityJobDefinition_StoppingConditionFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataQualityJobDefinition_TagsFields,
+			Kind:     "list",
+			Fields:   DataQualityJobDefinition_TagsFields,
 		},
 	},
 }

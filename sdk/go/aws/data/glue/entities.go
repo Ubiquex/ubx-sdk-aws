@@ -4,38 +4,38 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Entities_Entities struct {
-	Category any
+	Category         any
 	CustomProperties any
-	Description any
-	EntityName any
-	IsParentEntity any
-	Label any
+	Description      any
+	EntityName       any
+	IsParentEntity   any
+	Label            any
 }
 
 type EntitiesConfig struct {
-	CatalogId any
-	ConnectionName any
+	CatalogId           any
+	ConnectionName      any
 	DataStoreApiVersion any
-	NextToken any
-	ParentEntityName any
+	NextToken           any
+	ParentEntityName    any
 }
 
 type EntitiesAttrs struct {
-	CatalogId any
-	ConnectionName any
+	CatalogId           any
+	ConnectionName      any
 	DataStoreApiVersion any
-	Entities any
-	NextToken any
-	ParentEntityName any
+	Entities            any
+	NextToken           any
+	ParentEntityName    any
 }
 
 var Entities = ubx.DataSourceBinding{
 	WireType: "aws_glue_entities",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
+		"CatalogId":           ubx.FieldSpec{WireName: "catalog_id"},
+		"ConnectionName":      ubx.FieldSpec{WireName: "connection_name"},
 		"DataStoreApiVersion": ubx.FieldSpec{WireName: "data_store_api_version"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ParentEntityName": ubx.FieldSpec{WireName: "parent_entity_name"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"ParentEntityName":    ubx.FieldSpec{WireName: "parent_entity_name"},
 	},
 }

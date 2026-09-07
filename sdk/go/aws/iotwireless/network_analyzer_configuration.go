@@ -17,14 +17,14 @@ type NetworkAnalyzerConfiguration_TraceContent struct {
 }
 
 var NetworkAnalyzerConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var NetworkAnalyzerConfiguration_TraceContentFields = ubx.FieldMap{
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-		"WirelessDeviceFrameInfo": ubx.FieldSpec{WireName: "wireless_device_frame_info"},
-	}
+	"LogLevel":                ubx.FieldSpec{WireName: "log_level"},
+	"WirelessDeviceFrameInfo": ubx.FieldSpec{WireName: "wireless_device_frame_info"},
+}
 
 type NetworkAnalyzerConfigurationConfig struct {
 	// The description of the new resource
@@ -62,18 +62,18 @@ var NetworkAnalyzerConfiguration = ubx.ResourceBinding{
 	WireType: "aws_io_twireless_network_analyzer_configuration",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkAnalyzerConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkAnalyzerConfiguration_TagsFields,
 		},
 		"TraceContent": ubx.FieldSpec{
 			WireName: "trace_content",
-			Kind: "object",
-			Fields: NetworkAnalyzerConfiguration_TraceContentFields,
+			Kind:     "object",
+			Fields:   NetworkAnalyzerConfiguration_TraceContentFields,
 		},
-		"WirelessDevices": ubx.FieldSpec{WireName: "wireless_devices"},
+		"WirelessDevices":  ubx.FieldSpec{WireName: "wireless_devices"},
 		"WirelessGateways": ubx.FieldSpec{WireName: "wireless_gateways"},
 	},
 }

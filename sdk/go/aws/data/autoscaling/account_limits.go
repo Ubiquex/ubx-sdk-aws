@@ -7,14 +7,13 @@ type AccountLimitsConfig struct {
 }
 
 type AccountLimitsAttrs struct {
-	MaxNumberOfAutoScalingGroups any
+	MaxNumberOfAutoScalingGroups    any
 	MaxNumberOfLaunchConfigurations any
-	NumberOfAutoScalingGroups any
-	NumberOfLaunchConfigurations any
+	NumberOfAutoScalingGroups       any
+	NumberOfLaunchConfigurations    any
 }
 
 var AccountLimits = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_account_limits",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

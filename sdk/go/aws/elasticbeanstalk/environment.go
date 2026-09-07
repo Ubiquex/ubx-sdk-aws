@@ -31,22 +31,22 @@ type Environment_Tier struct {
 }
 
 var Environment_OptionSettingsFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OptionName": ubx.FieldSpec{WireName: "option_name"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Namespace":    ubx.FieldSpec{WireName: "namespace"},
+	"OptionName":   ubx.FieldSpec{WireName: "option_name"},
+	"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+}
 
 var Environment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Environment_TierFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 type EnvironmentConfig struct {
 	// The name of the application that is associated with this environment.
@@ -108,27 +108,27 @@ var Environment = ubx.ResourceBinding{
 	WireType: "aws_elastic_beanstalk_environment",
 	Fields: ubx.FieldMap{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
-		"Cnameprefix": ubx.FieldSpec{WireName: "cnameprefix"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Cnameprefix":     ubx.FieldSpec{WireName: "cnameprefix"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"OperationsRole": ubx.FieldSpec{WireName: "operations_role"},
+		"OperationsRole":  ubx.FieldSpec{WireName: "operations_role"},
 		"OptionSettings": ubx.FieldSpec{
 			WireName: "option_settings",
-			Kind: "list",
-			Fields: Environment_OptionSettingsFields,
+			Kind:     "list",
+			Fields:   Environment_OptionSettingsFields,
 		},
-		"PlatformArn": ubx.FieldSpec{WireName: "platform_arn"},
+		"PlatformArn":       ubx.FieldSpec{WireName: "platform_arn"},
 		"SolutionStackName": ubx.FieldSpec{WireName: "solution_stack_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Environment_TagsFields,
+			Kind:     "list",
+			Fields:   Environment_TagsFields,
 		},
 		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
 		"Tier": ubx.FieldSpec{
 			WireName: "tier",
-			Kind: "object",
-			Fields: Environment_TierFields,
+			Kind:     "object",
+			Fields:   Environment_TierFields,
 		},
 		"VersionLabel": ubx.FieldSpec{WireName: "version_label"},
 	},

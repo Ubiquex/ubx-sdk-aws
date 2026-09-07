@@ -9,11 +9,11 @@ type DeliveryChannels_DeliveryChannels_ConfigSnapshotDeliveryProperties struct {
 
 type DeliveryChannels_DeliveryChannels struct {
 	ConfigSnapshotDeliveryProperties any
-	Name any
-	S3BucketName any
-	S3KeyPrefix any
-	S3KmsKeyArn any
-	SnsTopicArn any
+	Name                             any
+	S3BucketName                     any
+	S3KeyPrefix                      any
+	S3KmsKeyArn                      any
+	SnsTopicArn                      any
 }
 
 type DeliveryChannelsConfig struct {
@@ -22,7 +22,7 @@ type DeliveryChannelsConfig struct {
 
 type DeliveryChannelsAttrs struct {
 	DeliveryChannelNames any
-	DeliveryChannels any
+	DeliveryChannels     any
 }
 
 var DeliveryChannels = ubx.DataSourceBinding{

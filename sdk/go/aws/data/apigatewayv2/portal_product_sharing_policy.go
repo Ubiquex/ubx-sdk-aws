@@ -8,7 +8,7 @@ type PortalProductSharingPolicyConfig struct {
 }
 
 type PortalProductSharingPolicyAttrs struct {
-	PolicyDocument any
+	PolicyDocument  any
 	PortalProductId any
 }
 

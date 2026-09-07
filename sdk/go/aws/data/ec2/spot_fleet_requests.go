@@ -4,30 +4,30 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_BlockDeviceMappings_Ebs struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	DeleteOnTermination any
-	EbsCardIndex any
-	Encrypted any
-	Iops any
-	KmsKeyId any
-	OutpostArn any
-	SnapshotId any
-	Throughput any
+	AvailabilityZone         any
+	AvailabilityZoneId       any
+	DeleteOnTermination      any
+	EbsCardIndex             any
+	Encrypted                any
+	Iops                     any
+	KmsKeyId                 any
+	OutpostArn               any
+	SnapshotId               any
+	Throughput               any
 	VolumeInitializationRate any
-	VolumeSize any
-	VolumeType any
+	VolumeSize               any
+	VolumeType               any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_BlockDeviceMappings struct {
-	DeviceName any
-	Ebs any
-	NoDevice any
+	DeviceName  any
+	Ebs         any
+	NoDevice    any
 	VirtualName any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_IamInstanceProfile struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
@@ -49,32 +49,32 @@ type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpec
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_InstanceRequirements struct {
-	AcceleratorCount any
-	AcceleratorManufacturers any
-	AcceleratorNames any
-	AcceleratorTotalMemoryMiB any
-	AcceleratorTypes any
-	AllowedInstanceTypes any
-	BareMetal any
-	BaselineEbsBandwidthMbps any
-	BaselinePerformanceFactors any
-	BurstablePerformance any
-	CpuManufacturers any
-	ExcludedInstanceTypes any
-	InstanceGenerations any
-	LocalStorage any
-	LocalStorageTypes any
+	AcceleratorCount                               any
+	AcceleratorManufacturers                       any
+	AcceleratorNames                               any
+	AcceleratorTotalMemoryMiB                      any
+	AcceleratorTypes                               any
+	AllowedInstanceTypes                           any
+	BareMetal                                      any
+	BaselineEbsBandwidthMbps                       any
+	BaselinePerformanceFactors                     any
+	BurstablePerformance                           any
+	CpuManufacturers                               any
+	ExcludedInstanceTypes                          any
+	InstanceGenerations                            any
+	LocalStorage                                   any
+	LocalStorageTypes                              any
 	MaxSpotPriceAsPercentageOfOptimalOnDemandPrice any
-	MemoryGiBperVcpu any
-	MemoryMiB any
-	NetworkBandwidthGbps any
-	NetworkInterfaceCount any
-	OnDemandMaxPricePercentageOverLowestPrice any
-	RequireEncryptionInTransit any
-	RequireHibernateSupport any
-	SpotMaxPricePercentageOverLowestPrice any
-	TotalLocalStorageGb any
-	VcpuCount any
+	MemoryGiBperVcpu                               any
+	MemoryMiB                                      any
+	NetworkBandwidthGbps                           any
+	NetworkInterfaceCount                          any
+	OnDemandMaxPricePercentageOverLowestPrice      any
+	RequireEncryptionInTransit                     any
+	RequireHibernateSupport                        any
+	SpotMaxPricePercentageOverLowestPrice          any
+	TotalLocalStorageGb                            any
+	VcpuCount                                      any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_Monitoring struct {
@@ -83,8 +83,8 @@ type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpec
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_NetworkInterfaces_ConnectionTrackingSpecification struct {
 	TcpEstablishedTimeout any
-	UdpStreamTimeout any
-	UdpTimeout any
+	UdpStreamTimeout      any
+	UdpTimeout            any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification struct {
@@ -92,7 +92,7 @@ type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpec
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_NetworkInterfaces_EnaSrdSpecification struct {
-	EnaSrdEnabled any
+	EnaSrdEnabled          any
 	EnaSrdUdpSpecification any
 }
 
@@ -101,7 +101,7 @@ type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpec
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_NetworkInterfaces_Ipv6Addresses struct {
-	Ipv6Address any
+	Ipv6Address   any
 	IsPrimaryIpv6 any
 }
 
@@ -110,100 +110,100 @@ type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpec
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_NetworkInterfaces_PrivateIpAddresses struct {
-	Primary any
+	Primary          any
 	PrivateIpAddress any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_NetworkInterfaces struct {
-	AssociateCarrierIpAddress any
-	AssociatePublicIpAddress any
+	AssociateCarrierIpAddress       any
+	AssociatePublicIpAddress        any
 	ConnectionTrackingSpecification any
-	DeleteOnTermination any
-	Description any
-	DeviceIndex any
-	EnaQueueCount any
-	EnaSrdSpecification any
-	Groups any
-	InterfaceType any
-	Ipv4PrefixCount any
-	Ipv4Prefixes any
-	Ipv6AddressCount any
-	Ipv6Addresses any
-	Ipv6PrefixCount any
-	Ipv6Prefixes any
-	NetworkCardIndex any
-	NetworkInterfaceId any
-	PrimaryIpv6 any
-	PrivateIpAddress any
-	PrivateIpAddresses any
-	SecondaryPrivateIpAddressCount any
-	SubnetId any
+	DeleteOnTermination             any
+	Description                     any
+	DeviceIndex                     any
+	EnaQueueCount                   any
+	EnaSrdSpecification             any
+	Groups                          any
+	InterfaceType                   any
+	Ipv4PrefixCount                 any
+	Ipv4Prefixes                    any
+	Ipv6AddressCount                any
+	Ipv6Addresses                   any
+	Ipv6PrefixCount                 any
+	Ipv6Prefixes                    any
+	NetworkCardIndex                any
+	NetworkInterfaceId              any
+	PrimaryIpv6                     any
+	PrivateIpAddress                any
+	PrivateIpAddresses              any
+	SecondaryPrivateIpAddressCount  any
+	SubnetId                        any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_Placement struct {
-	AvailabilityZone any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	GroupName any
-	Tenancy any
+	GroupName          any
+	Tenancy            any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_SecurityGroups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_TagSpecifications_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications_TagSpecifications struct {
 	ResourceType any
-	Tags any
+	Tags         any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchSpecifications struct {
-	AddressingType any
-	BlockDeviceMappings any
-	EbsOptimized any
-	IamInstanceProfile any
-	ImageId any
+	AddressingType       any
+	BlockDeviceMappings  any
+	EbsOptimized         any
+	IamInstanceProfile   any
+	ImageId              any
 	InstanceRequirements any
-	InstanceType any
-	KernelId any
-	KeyName any
-	Monitoring any
-	NetworkInterfaces any
-	Placement any
-	RamdiskId any
-	SecurityGroups any
-	SpotPrice any
-	SubnetId any
-	TagSpecifications any
-	UserData any
-	WeightedCapacity any
+	InstanceType         any
+	KernelId             any
+	KeyName              any
+	Monitoring           any
+	NetworkInterfaces    any
+	Placement            any
+	RamdiskId            any
+	SecurityGroups       any
+	SpotPrice            any
+	SubnetId             any
+	TagSpecifications    any
+	UserData             any
+	WeightedCapacity     any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchTemplateConfigs_LaunchTemplateSpecification struct {
-	LaunchTemplateId any
+	LaunchTemplateId   any
 	LaunchTemplateName any
-	Version any
+	Version            any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchTemplateConfigs_Overrides struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
+	AvailabilityZone     any
+	AvailabilityZoneId   any
 	InstanceRequirements any
-	InstanceType any
-	Priority any
-	SpotPrice any
-	SubnetId any
-	WeightedCapacity any
+	InstanceType         any
+	Priority             any
+	SpotPrice            any
+	SubnetId             any
+	WeightedCapacity     any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LaunchTemplateConfigs struct {
 	LaunchTemplateSpecification any
-	Overrides any
+	Overrides                   any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LoadBalancersConfig_ClassicLoadBalancersConfig_ClassicLoadBalancers struct {
@@ -224,12 +224,12 @@ type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LoadBalanc
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_LoadBalancersConfig struct {
 	ClassicLoadBalancersConfig any
-	TargetGroupsConfig any
+	TargetGroupsConfig         any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_SpotMaintenanceStrategies_CapacityRebalance struct {
 	ReplacementStrategy any
-	TerminationDelay any
+	TerminationDelay    any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_SpotMaintenanceStrategies struct {
@@ -237,64 +237,64 @@ type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig_SpotMainte
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs_SpotFleetRequestConfig struct {
-	AllocationStrategy any
-	ClientToken any
-	Context any
-	ExcessCapacityTerminationPolicy any
-	FulfilledCapacity any
-	IamFleetRole any
-	InstanceInterruptionBehavior any
-	InstancePoolsToUseCount any
-	LaunchSpecifications any
-	LaunchTemplateConfigs any
-	LoadBalancersConfig any
-	OnDemandAllocationStrategy any
-	OnDemandFulfilledCapacity any
-	OnDemandMaxTotalPrice any
-	OnDemandTargetCapacity any
-	ReplaceUnhealthyInstances any
-	SpotMaintenanceStrategies any
-	SpotMaxTotalPrice any
-	SpotPrice any
-	TagSpecifications any
-	TargetCapacity any
-	TargetCapacityUnitType any
+	AllocationStrategy               any
+	ClientToken                      any
+	Context                          any
+	ExcessCapacityTerminationPolicy  any
+	FulfilledCapacity                any
+	IamFleetRole                     any
+	InstanceInterruptionBehavior     any
+	InstancePoolsToUseCount          any
+	LaunchSpecifications             any
+	LaunchTemplateConfigs            any
+	LoadBalancersConfig              any
+	OnDemandAllocationStrategy       any
+	OnDemandFulfilledCapacity        any
+	OnDemandMaxTotalPrice            any
+	OnDemandTargetCapacity           any
+	ReplaceUnhealthyInstances        any
+	SpotMaintenanceStrategies        any
+	SpotMaxTotalPrice                any
+	SpotPrice                        any
+	TagSpecifications                any
+	TargetCapacity                   any
+	TargetCapacityUnitType           any
 	TerminateInstancesWithExpiration any
-	Type any
-	ValidFrom any
-	ValidUntil any
+	Type                             any
+	ValidFrom                        any
+	ValidUntil                       any
 }
 
 type SpotFleetRequests_SpotFleetRequestConfigs struct {
-	ActivityStatus any
-	CreateTime any
+	ActivityStatus         any
+	CreateTime             any
 	SpotFleetRequestConfig any
-	SpotFleetRequestId any
-	SpotFleetRequestState any
-	Tags any
+	SpotFleetRequestId     any
+	SpotFleetRequestState  any
+	Tags                   any
 }
 
 type SpotFleetRequestsConfig struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun              any
+	MaxResults          any
+	NextToken           any
 	SpotFleetRequestIds any
 }
 
 type SpotFleetRequestsAttrs struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun                  any
+	MaxResults              any
+	NextToken               any
 	SpotFleetRequestConfigs any
-	SpotFleetRequestIds any
+	SpotFleetRequestIds     any
 }
 
 var SpotFleetRequests = ubx.DataSourceBinding{
 	WireType: "aws_ec2_spot_fleet_requests",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DryRun":              ubx.FieldSpec{WireName: "dry_run"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"SpotFleetRequestIds": ubx.FieldSpec{WireName: "spot_fleet_request_ids"},
 	},
 }

@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExportJobs_ExportJobs struct {
 	CompletedTimestamp any
-	CreatedTimestamp any
-	ExportSourceType any
-	JobId any
-	JobStatus any
+	CreatedTimestamp   any
+	ExportSourceType   any
+	JobId              any
+	JobStatus          any
 }
 
 type ExportJobsConfig struct {
@@ -17,7 +17,7 @@ type ExportJobsConfig struct {
 	// <p>The status of a job.</p> <ul> <li> <p> <code>CREATED</code> – Job has just been created.</p> </li> <li> <p> <code>PROCESSING</code> – Job is processing.</p> </li> <li> <p> <code>ERROR</code> – An error occurred during processing.</p> </li> <li> <p> <code>COMPLETED</code> – Job has completed processing successfully.</p> </li> </ul>
 	JobStatus any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type ExportJobsAttrs struct {
@@ -28,15 +28,15 @@ type ExportJobsAttrs struct {
 	// <p>The status of a job.</p> <ul> <li> <p> <code>CREATED</code> – Job has just been created.</p> </li> <li> <p> <code>PROCESSING</code> – Job is processing.</p> </li> <li> <p> <code>ERROR</code> – An error occurred during processing.</p> </li> <li> <p> <code>COMPLETED</code> – Job has completed processing successfully.</p> </li> </ul>
 	JobStatus any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 var ExportJobs = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_export_jobs",
 	Fields: ubx.FieldMap{
 		"ExportSourceType": ubx.FieldSpec{WireName: "export_source_type"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"PageSize":         ubx.FieldSpec{WireName: "page_size"},
 	},
 }

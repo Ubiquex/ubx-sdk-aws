@@ -20,19 +20,19 @@ type SubscriptionDefinition_InitialVersion struct {
 }
 
 var SubscriptionDefinition_InitialVersion_SubscriptionsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Source":  ubx.FieldSpec{WireName: "source"},
+	"Subject": ubx.FieldSpec{WireName: "subject"},
+	"Target":  ubx.FieldSpec{WireName: "target"},
+}
 
 var SubscriptionDefinition_InitialVersionFields = ubx.FieldMap{
-		"Subscriptions": ubx.FieldSpec{
-			WireName: "subscriptions",
-			Kind: "list",
-			Fields: SubscriptionDefinition_InitialVersion_SubscriptionsFields,
-		},
-	}
+	"Subscriptions": ubx.FieldSpec{
+		WireName: "subscriptions",
+		Kind:     "list",
+		Fields:   SubscriptionDefinition_InitialVersion_SubscriptionsFields,
+	},
+}
 
 type SubscriptionDefinitionConfig struct {
 	// The initial subscription definition version, which contains a list of subscription objects (each specifying a source, target, and subject) that define how MQTT messages are routed between devices, functions, and connectors in the Greengrass group. (AI-inferred)
@@ -63,8 +63,8 @@ var SubscriptionDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InitialVersion": ubx.FieldSpec{
 			WireName: "initial_version",
-			Kind: "object",
-			Fields: SubscriptionDefinition_InitialVersionFields,
+			Kind:     "object",
+			Fields:   SubscriptionDefinition_InitialVersionFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

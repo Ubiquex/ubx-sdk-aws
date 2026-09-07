@@ -11,9 +11,9 @@ type ControlPanel_Tags struct {
 }
 
 var ControlPanel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ControlPanelConfig struct {
 	// Cluster to associate with the Control Panel
@@ -45,11 +45,11 @@ var ControlPanel = ubx.ResourceBinding{
 	WireType: "aws_route53_recovery_control_control_panel",
 	Fields: ubx.FieldMap{
 		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ControlPanel_TagsFields,
+			Kind:     "list",
+			Fields:   ControlPanel_TagsFields,
 		},
 	},
 }

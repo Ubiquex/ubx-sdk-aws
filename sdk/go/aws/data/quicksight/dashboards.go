@@ -4,35 +4,35 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dashboards_DashboardSummaryList struct {
-	Arn any
-	CreatedTime any
-	DashboardId any
-	LastPublishedTime any
-	LastUpdatedTime any
-	Name any
+	Arn                    any
+	CreatedTime            any
+	DashboardId            any
+	LastPublishedTime      any
+	LastUpdatedTime        any
+	Name                   any
 	PublishedVersionNumber any
 }
 
 type DashboardsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type DashboardsAttrs struct {
-	AwsAccountId any
+	AwsAccountId         any
 	DashboardSummaryList any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
+	MaxResults           any
+	NextToken            any
+	RequestId            any
+	Status               any
 }
 
 var Dashboards = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_dashboards",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

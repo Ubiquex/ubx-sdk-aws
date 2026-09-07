@@ -4,30 +4,30 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoggerDefinitionVersions_Versions struct {
-	Arn any
+	Arn               any
 	CreationTimestamp any
-	Id any
-	Version any
+	Id                any
+	Version           any
 }
 
 type LoggerDefinitionVersionsConfig struct {
 	LoggerDefinitionId any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 type LoggerDefinitionVersionsAttrs struct {
 	LoggerDefinitionId any
-	MaxResults any
-	NextToken any
-	Versions any
+	MaxResults         any
+	NextToken          any
+	Versions           any
 }
 
 var LoggerDefinitionVersions = ubx.DataSourceBinding{
 	WireType: "aws_greengrass_logger_definition_versions",
 	Fields: ubx.FieldMap{
 		"LoggerDefinitionId": ubx.FieldSpec{WireName: "logger_definition_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

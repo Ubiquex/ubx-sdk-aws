@@ -70,85 +70,85 @@ type UserPoolRiskConfigurationAttachment_RiskExceptionConfiguration struct {
 }
 
 var UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighActionFields = ubx.FieldMap{
-		"EventAction": ubx.FieldSpec{WireName: "event_action"},
-		"Notify": ubx.FieldSpec{WireName: "notify"},
-	}
+	"EventAction": ubx.FieldSpec{WireName: "event_action"},
+	"Notify":      ubx.FieldSpec{WireName: "notify"},
+}
 
 var UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_ActionsFields = ubx.FieldMap{
-		"HighAction": ubx.FieldSpec{
-			WireName: "high_action",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighActionFields,
-		},
-		"LowAction": ubx.FieldSpec{
-			WireName: "low_action",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighActionFields,
-		},
-		"MediumAction": ubx.FieldSpec{
-			WireName: "medium_action",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighActionFields,
-		},
-	}
+	"HighAction": ubx.FieldSpec{
+		WireName: "high_action",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighActionFields,
+	},
+	"LowAction": ubx.FieldSpec{
+		WireName: "low_action",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighActionFields,
+	},
+	"MediumAction": ubx.FieldSpec{
+		WireName: "medium_action",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighActionFields,
+	},
+}
 
 var UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmailFields = ubx.FieldMap{
-		"HtmlBody": ubx.FieldSpec{WireName: "html_body"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-		"TextBody": ubx.FieldSpec{WireName: "text_body"},
-	}
+	"HtmlBody": ubx.FieldSpec{WireName: "html_body"},
+	"Subject":  ubx.FieldSpec{WireName: "subject"},
+	"TextBody": ubx.FieldSpec{WireName: "text_body"},
+}
 
 var UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfigurationFields = ubx.FieldMap{
-		"BlockEmail": ubx.FieldSpec{
-			WireName: "block_email",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmailFields,
-		},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"MfaEmail": ubx.FieldSpec{
-			WireName: "mfa_email",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmailFields,
-		},
-		"NoActionEmail": ubx.FieldSpec{
-			WireName: "no_action_email",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmailFields,
-		},
-		"ReplyTo": ubx.FieldSpec{WireName: "reply_to"},
-		"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
-	}
+	"BlockEmail": ubx.FieldSpec{
+		WireName: "block_email",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmailFields,
+	},
+	"From": ubx.FieldSpec{WireName: "from"},
+	"MfaEmail": ubx.FieldSpec{
+		WireName: "mfa_email",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmailFields,
+	},
+	"NoActionEmail": ubx.FieldSpec{
+		WireName: "no_action_email",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmailFields,
+	},
+	"ReplyTo":   ubx.FieldSpec{WireName: "reply_to"},
+	"SourceArn": ubx.FieldSpec{WireName: "source_arn"},
+}
 
 var UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_ActionsFields,
-		},
-		"NotifyConfiguration": ubx.FieldSpec{
-			WireName: "notify_configuration",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfigurationFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_ActionsFields,
+	},
+	"NotifyConfiguration": ubx.FieldSpec{
+		WireName: "notify_configuration",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfigurationFields,
+	},
+}
 
 var UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration_ActionsFields = ubx.FieldMap{
-		"EventAction": ubx.FieldSpec{WireName: "event_action"},
-	}
+	"EventAction": ubx.FieldSpec{WireName: "event_action"},
+}
 
 var UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfigurationFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration_ActionsFields,
-		},
-		"EventFilter": ubx.FieldSpec{WireName: "event_filter"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "object",
+		Fields:   UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration_ActionsFields,
+	},
+	"EventFilter": ubx.FieldSpec{WireName: "event_filter"},
+}
 
 var UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationFields = ubx.FieldMap{
-		"BlockedIprangeList": ubx.FieldSpec{WireName: "blocked_iprange_list"},
-		"SkippedIprangeList": ubx.FieldSpec{WireName: "skipped_iprange_list"},
-	}
+	"BlockedIprangeList": ubx.FieldSpec{WireName: "blocked_iprange_list"},
+	"SkippedIprangeList": ubx.FieldSpec{WireName: "skipped_iprange_list"},
+}
 
 type UserPoolRiskConfigurationAttachmentConfig struct {
 	// Configures the account takeover risk configuration for a user pool, including the actions (e.g., block, MFA) to take for low, medium, and high risk events and the notification settings. (AI-inferred)
@@ -181,19 +181,19 @@ var UserPoolRiskConfigurationAttachment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountTakeoverRiskConfiguration": ubx.FieldSpec{
 			WireName: "account_takeover_risk_configuration",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfigurationFields,
 		},
 		"ClientId": ubx.FieldSpec{WireName: "client_id"},
 		"CompromisedCredentialsRiskConfiguration": ubx.FieldSpec{
 			WireName: "compromised_credentials_risk_configuration",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfigurationFields,
 		},
 		"RiskExceptionConfiguration": ubx.FieldSpec{
 			WireName: "risk_exception_configuration",
-			Kind: "object",
-			Fields: UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationFields,
 		},
 		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
 	},

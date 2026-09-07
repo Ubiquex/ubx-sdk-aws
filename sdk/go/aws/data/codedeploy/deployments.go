@@ -4,34 +4,34 @@ package codedeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployments_CreateTimeRange struct {
-	End any
+	End   any
 	Start any
 }
 
 var Deployments_CreateTimeRangeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type DeploymentsConfig struct {
 	ApplicationName any
 	// <p>Information about a time range.</p>
-	CreateTimeRange any
+	CreateTimeRange     any
 	DeploymentGroupName any
-	ExternalId any
+	ExternalId          any
 	IncludeOnlyStatuses any
-	NextToken any
+	NextToken           any
 }
 
 type DeploymentsAttrs struct {
 	ApplicationName any
 	// <p>Information about a time range.</p>
-	CreateTimeRange any
+	CreateTimeRange     any
 	DeploymentGroupName any
-	Deployments any
-	ExternalId any
+	Deployments         any
+	ExternalId          any
 	IncludeOnlyStatuses any
-	NextToken any
+	NextToken           any
 }
 
 var Deployments = ubx.DataSourceBinding{
@@ -40,12 +40,12 @@ var Deployments = ubx.DataSourceBinding{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"CreateTimeRange": ubx.FieldSpec{
 			WireName: "create_time_range",
-			Kind: "object",
-			Fields: Deployments_CreateTimeRangeFields,
+			Kind:     "object",
+			Fields:   Deployments_CreateTimeRangeFields,
 		},
 		"DeploymentGroupName": ubx.FieldSpec{WireName: "deployment_group_name"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
+		"ExternalId":          ubx.FieldSpec{WireName: "external_id"},
 		"IncludeOnlyStatuses": ubx.FieldSpec{WireName: "include_only_statuses"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

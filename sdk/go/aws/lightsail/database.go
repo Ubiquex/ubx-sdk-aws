@@ -30,20 +30,20 @@ type Database_Tags struct {
 }
 
 var Database_RelationalDatabaseParametersFields = ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-		"ApplyMethod": ubx.FieldSpec{WireName: "apply_method"},
-		"ApplyType": ubx.FieldSpec{WireName: "apply_type"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IsModifiable": ubx.FieldSpec{WireName: "is_modifiable"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"AllowedValues":  ubx.FieldSpec{WireName: "allowed_values"},
+	"ApplyMethod":    ubx.FieldSpec{WireName: "apply_method"},
+	"ApplyType":      ubx.FieldSpec{WireName: "apply_type"},
+	"DataType":       ubx.FieldSpec{WireName: "data_type"},
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"IsModifiable":   ubx.FieldSpec{WireName: "is_modifiable"},
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var Database_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatabaseConfig struct {
 	// The Availability Zone in which to create your new database. Use the us-east-2a case-sensitive format.
@@ -116,28 +116,28 @@ type DatabaseAttrs struct {
 var Database = ubx.ResourceBinding{
 	WireType: "aws_lightsail_database",
 	Fields: ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"BackupRetention": ubx.FieldSpec{WireName: "backup_retention"},
-		"CaCertificateIdentifier": ubx.FieldSpec{WireName: "ca_certificate_identifier"},
-		"MasterDatabaseName": ubx.FieldSpec{WireName: "master_database_name"},
-		"MasterUserPassword": ubx.FieldSpec{WireName: "master_user_password"},
-		"MasterUsername": ubx.FieldSpec{WireName: "master_username"},
-		"PreferredBackupWindow": ubx.FieldSpec{WireName: "preferred_backup_window"},
-		"PreferredMaintenanceWindow": ubx.FieldSpec{WireName: "preferred_maintenance_window"},
-		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
+		"AvailabilityZone":              ubx.FieldSpec{WireName: "availability_zone"},
+		"BackupRetention":               ubx.FieldSpec{WireName: "backup_retention"},
+		"CaCertificateIdentifier":       ubx.FieldSpec{WireName: "ca_certificate_identifier"},
+		"MasterDatabaseName":            ubx.FieldSpec{WireName: "master_database_name"},
+		"MasterUserPassword":            ubx.FieldSpec{WireName: "master_user_password"},
+		"MasterUsername":                ubx.FieldSpec{WireName: "master_username"},
+		"PreferredBackupWindow":         ubx.FieldSpec{WireName: "preferred_backup_window"},
+		"PreferredMaintenanceWindow":    ubx.FieldSpec{WireName: "preferred_maintenance_window"},
+		"PubliclyAccessible":            ubx.FieldSpec{WireName: "publicly_accessible"},
 		"RelationalDatabaseBlueprintId": ubx.FieldSpec{WireName: "relational_database_blueprint_id"},
-		"RelationalDatabaseBundleId": ubx.FieldSpec{WireName: "relational_database_bundle_id"},
-		"RelationalDatabaseName": ubx.FieldSpec{WireName: "relational_database_name"},
+		"RelationalDatabaseBundleId":    ubx.FieldSpec{WireName: "relational_database_bundle_id"},
+		"RelationalDatabaseName":        ubx.FieldSpec{WireName: "relational_database_name"},
 		"RelationalDatabaseParameters": ubx.FieldSpec{
 			WireName: "relational_database_parameters",
-			Kind: "list",
-			Fields: Database_RelationalDatabaseParametersFields,
+			Kind:     "list",
+			Fields:   Database_RelationalDatabaseParametersFields,
 		},
 		"RotateMasterUserPassword": ubx.FieldSpec{WireName: "rotate_master_user_password"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Database_TagsFields,
+			Kind:     "list",
+			Fields:   Database_TagsFields,
 		},
 	},
 }

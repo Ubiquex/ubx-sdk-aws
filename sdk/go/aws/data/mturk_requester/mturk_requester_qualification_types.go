@@ -4,48 +4,48 @@ package mturk_requester
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MturkRequesterQualificationTypes_QualificationTypes struct {
-	AnswerKey any
-	AutoGranted any
-	AutoGrantedValue any
-	CreationTime any
-	Description any
-	IsRequestable any
-	Keywords any
-	Name any
-	QualificationTypeId any
+	AnswerKey               any
+	AutoGranted             any
+	AutoGrantedValue        any
+	CreationTime            any
+	Description             any
+	IsRequestable           any
+	Keywords                any
+	Name                    any
+	QualificationTypeId     any
 	QualificationTypeStatus any
-	RetryDelayInSeconds any
-	Test any
-	TestDurationInSeconds any
+	RetryDelayInSeconds     any
+	Test                    any
+	TestDurationInSeconds   any
 }
 
 type MturkRequesterQualificationTypesConfig struct {
-	MaxResults any
+	MaxResults          any
 	MustBeOwnedByCaller any
-	MustBeRequestable any
+	MustBeRequestable   any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
 	NextToken any
-	Query any
+	Query     any
 }
 
 type MturkRequesterQualificationTypesAttrs struct {
-	MaxResults any
+	MaxResults          any
 	MustBeOwnedByCaller any
-	MustBeRequestable any
+	MustBeRequestable   any
 	// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-	NextToken any
-	NumResults any
+	NextToken          any
+	NumResults         any
 	QualificationTypes any
-	Query any
+	Query              any
 }
 
 var MturkRequesterQualificationTypes = ubx.DataSourceBinding{
 	WireType: "aws_mturk_requester_qualification_types",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
 		"MustBeOwnedByCaller": ubx.FieldSpec{WireName: "must_be_owned_by_caller"},
-		"MustBeRequestable": ubx.FieldSpec{WireName: "must_be_requestable"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"MustBeRequestable":   ubx.FieldSpec{WireName: "must_be_requestable"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"Query":               ubx.FieldSpec{WireName: "query"},
 	},
 }

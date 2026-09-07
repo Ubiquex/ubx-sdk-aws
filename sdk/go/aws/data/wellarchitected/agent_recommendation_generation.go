@@ -4,58 +4,58 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentRecommendationGeneration_ErrorDetails struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type AgentRecommendationGeneration_Progress struct {
 	CompletionPercentage any
-	StepsCompleted any
-	TotalSteps any
+	StepsCompleted       any
+	TotalSteps           any
 }
 
 type AgentRecommendationGeneration_Scope_Items struct {
-	Ids any
+	Ids    any
 	Pillar any
 }
 
 type AgentRecommendationGeneration_Scope struct {
 	GoalIds any
-	Items any
+	Items   any
 	Pillars any
 }
 
 type AgentRecommendationGenerationConfig struct {
 	GenerationId any
-	ProfileArn any
+	ProfileArn   any
 }
 
 type AgentRecommendationGenerationAttrs struct {
 	AdditionalContext any
-	CreatedAt any
-	CreatedBy any
-	EndedAt any
+	CreatedAt         any
+	CreatedBy         any
+	EndedAt           any
 	// <p>Details about an error that occurred during recommendation generation.</p>
-	ErrorDetails any
+	ErrorDetails            any
 	EstimatedCompletionTime any
-	GenerationId any
-	Id any
-	LastModifiedAt any
-	LastModifiedBy any
-	Name any
-	ProfileArn any
+	GenerationId            any
+	Id                      any
+	LastModifiedAt          any
+	LastModifiedBy          any
+	Name                    any
+	ProfileArn              any
 	// <p>Progress information for a recommendation generation process.</p>
 	Progress any
 	// <p>Defines the scope for recommendation generation, specifying which pillars and goals to focus on.</p>
-	Scope any
+	Scope     any
 	StartedAt any
-	Status any
+	Status    any
 }
 
 var AgentRecommendationGeneration = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_agent_recommendation_generation",
 	Fields: ubx.FieldMap{
 		"GenerationId": ubx.FieldSpec{WireName: "generation_id"},
-		"ProfileArn": ubx.FieldSpec{WireName: "profile_arn"},
+		"ProfileArn":   ubx.FieldSpec{WireName: "profile_arn"},
 	},
 }

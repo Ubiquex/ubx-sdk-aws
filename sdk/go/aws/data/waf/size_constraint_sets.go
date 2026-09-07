@@ -4,25 +4,25 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SizeConstraintSets_SizeConstraintSets struct {
-	Name any
+	Name                any
 	SizeConstraintSetId any
 }
 
 type SizeConstraintSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type SizeConstraintSetsAttrs struct {
-	Limit any
-	NextMarker any
+	Limit              any
+	NextMarker         any
 	SizeConstraintSets any
 }
 
 var SizeConstraintSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_size_constraint_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

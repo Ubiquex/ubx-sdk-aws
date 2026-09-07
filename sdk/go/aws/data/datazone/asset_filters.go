@@ -4,42 +4,42 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetFilters_Items struct {
-	AssetId any
-	CreatedAt any
-	Description any
-	DomainId any
+	AssetId              any
+	CreatedAt            any
+	Description          any
+	DomainId             any
 	EffectiveColumnNames any
-	EffectiveRowFilter any
-	ErrorMessage any
-	Id any
-	Name any
-	Status any
+	EffectiveRowFilter   any
+	ErrorMessage         any
+	Id                   any
+	Name                 any
+	Status               any
 }
 
 type AssetFiltersConfig struct {
-	AssetIdentifier any
+	AssetIdentifier  any
 	DomainIdentifier any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults       any
+	NextToken        any
+	Status           any
 }
 
 type AssetFiltersAttrs struct {
-	AssetIdentifier any
+	AssetIdentifier  any
 	DomainIdentifier any
-	Items any
-	MaxResults any
-	NextToken any
-	Status any
+	Items            any
+	MaxResults       any
+	NextToken        any
+	Status           any
 }
 
 var AssetFilters = ubx.DataSourceBinding{
 	WireType: "aws_datazone_asset_filters",
 	Fields: ubx.FieldMap{
-		"AssetIdentifier": ubx.FieldSpec{WireName: "asset_identifier"},
+		"AssetIdentifier":  ubx.FieldSpec{WireName: "asset_identifier"},
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
 	},
 }

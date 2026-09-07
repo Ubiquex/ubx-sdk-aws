@@ -4,41 +4,41 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageVersionAssetConfig struct {
-	Asset any
-	Domain any
-	DomainOwner any
-	Format any
-	Namespace any
-	Package any
-	PackageVersion any
+	Asset                  any
+	Domain                 any
+	DomainOwner            any
+	Format                 any
+	Namespace              any
+	Package                any
+	PackageVersion         any
 	PackageVersionRevision any
-	Repository any
+	Repository             any
 }
 
 type PackageVersionAssetAttrs struct {
-	Asset any
-	AssetName any
-	Domain any
-	DomainOwner any
-	Format any
-	Namespace any
-	Package any
-	PackageVersion any
+	Asset                  any
+	AssetName              any
+	Domain                 any
+	DomainOwner            any
+	Format                 any
+	Namespace              any
+	Package                any
+	PackageVersion         any
 	PackageVersionRevision any
-	Repository any
+	Repository             any
 }
 
 var PackageVersionAsset = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_package_version_asset",
 	Fields: ubx.FieldMap{
-		"Asset": ubx.FieldSpec{WireName: "asset"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Package": ubx.FieldSpec{WireName: "package"},
-		"PackageVersion": ubx.FieldSpec{WireName: "package_version"},
+		"Asset":                  ubx.FieldSpec{WireName: "asset"},
+		"Domain":                 ubx.FieldSpec{WireName: "domain"},
+		"DomainOwner":            ubx.FieldSpec{WireName: "domain_owner"},
+		"Format":                 ubx.FieldSpec{WireName: "format"},
+		"Namespace":              ubx.FieldSpec{WireName: "namespace"},
+		"Package":                ubx.FieldSpec{WireName: "package"},
+		"PackageVersion":         ubx.FieldSpec{WireName: "package_version"},
 		"PackageVersionRevision": ubx.FieldSpec{WireName: "package_version_revision"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
+		"Repository":             ubx.FieldSpec{WireName: "repository"},
 	},
 }

@@ -30,31 +30,31 @@ type Index_Settings struct {
 }
 
 var Index_MappingsFields = ubx.FieldMap{
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"Properties": ubx.FieldSpec{WireName: "properties"},
+}
 
 var Index_Settings_AnalysisFields = ubx.FieldMap{
-		"Analyzer": ubx.FieldSpec{WireName: "analyzer"},
-	}
+	"Analyzer": ubx.FieldSpec{WireName: "analyzer"},
+}
 
 var Index_Settings_IndexFields = ubx.FieldMap{
-		"Knn": ubx.FieldSpec{WireName: "knn"},
-		"KnnAlgoParamEfSearch": ubx.FieldSpec{WireName: "knn_algo_param_ef_search"},
-		"RefreshInterval": ubx.FieldSpec{WireName: "refresh_interval"},
-	}
+	"Knn":                  ubx.FieldSpec{WireName: "knn"},
+	"KnnAlgoParamEfSearch": ubx.FieldSpec{WireName: "knn_algo_param_ef_search"},
+	"RefreshInterval":      ubx.FieldSpec{WireName: "refresh_interval"},
+}
 
 var Index_SettingsFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: Index_Settings_AnalysisFields,
-		},
-		"Index": ubx.FieldSpec{
-			WireName: "index",
-			Kind: "object",
-			Fields: Index_Settings_IndexFields,
-		},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   Index_Settings_AnalysisFields,
+	},
+	"Index": ubx.FieldSpec{
+		WireName: "index",
+		Kind:     "object",
+		Fields:   Index_Settings_IndexFields,
+	},
+}
 
 type IndexConfig struct {
 	// The endpoint for the collection.
@@ -84,16 +84,16 @@ var Index = ubx.ResourceBinding{
 	WireType: "aws_open_search_serverless_index",
 	Fields: ubx.FieldMap{
 		"CollectionEndpoint": ubx.FieldSpec{WireName: "collection_endpoint"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
+		"IndexName":          ubx.FieldSpec{WireName: "index_name"},
 		"Mappings": ubx.FieldSpec{
 			WireName: "mappings",
-			Kind: "object",
-			Fields: Index_MappingsFields,
+			Kind:     "object",
+			Fields:   Index_MappingsFields,
 		},
 		"Settings": ubx.FieldSpec{
 			WireName: "settings",
-			Kind: "object",
-			Fields: Index_SettingsFields,
+			Kind:     "object",
+			Fields:   Index_SettingsFields,
 		},
 	},
 }

@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NamedQueriesConfig struct {
 	MaxResults any
-	NextToken any
-	WorkGroup any
+	NextToken  any
+	WorkGroup  any
 }
 
 type NamedQueriesAttrs struct {
-	MaxResults any
+	MaxResults    any
 	NamedQueryIds any
-	NextToken any
-	WorkGroup any
+	NextToken     any
+	WorkGroup     any
 }
 
 var NamedQueries = ubx.DataSourceBinding{
 	WireType: "aws_athena_named_queries",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WorkGroup": ubx.FieldSpec{WireName: "work_group"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"WorkGroup":  ubx.FieldSpec{WireName: "work_group"},
 	},
 }

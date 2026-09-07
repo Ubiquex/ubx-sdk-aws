@@ -4,39 +4,39 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DryRunProgress_DryRunConfig_AdvancedSecurityOptions_IamfederationOptions struct {
-	Enabled any
-	RolesKey any
+	Enabled    any
+	RolesKey   any
 	SubjectKey any
 }
 
 type DryRunProgress_DryRunConfig_AdvancedSecurityOptions_Jwtoptions struct {
-	Enabled any
-	JwksUrl any
-	PublicKey any
-	RolesKey any
+	Enabled    any
+	JwksUrl    any
+	PublicKey  any
+	RolesKey   any
 	SubjectKey any
 }
 
 type DryRunProgress_DryRunConfig_AdvancedSecurityOptions_Samloptions_Idp struct {
-	EntityId any
+	EntityId        any
 	MetadataContent any
 }
 
 type DryRunProgress_DryRunConfig_AdvancedSecurityOptions_Samloptions struct {
 	Enabled any
 	// <p>The SAML identity povider information.</p>
-	Idp any
-	RolesKey any
+	Idp                   any
+	RolesKey              any
 	SessionTimeoutMinutes any
-	SubjectKey any
+	SubjectKey            any
 }
 
 type DryRunProgress_DryRunConfig_AdvancedSecurityOptions struct {
 	AnonymousAuthDisableDate any
-	AnonymousAuthEnabled any
-	Enabled any
+	AnonymousAuthEnabled     any
+	Enabled                  any
 	// <p>Output parameters showing the current IAM identity federation configuration.</p>
-	IamfederationOptions any
+	IamfederationOptions        any
 	InternalUserDatabaseEnabled any
 	// <p>Describes the JWT options configured for the domain.</p>
 	Jwtoptions any
@@ -65,36 +65,36 @@ type DryRunProgress_DryRunConfig_Aimloptions struct {
 type DryRunProgress_DryRunConfig_AutoTuneOptions struct {
 	ErrorMessage any
 	// <p>The Auto-Tune state for the domain. For valid states see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>. </p>
-	State any
+	State            any
 	UseOffPeakWindow any
 }
 
 type DryRunProgress_DryRunConfig_AutomatedSnapshotPauseOptions struct {
-	Enabled any
-	EndTime any
+	Enabled   any
+	EndTime   any
 	StartTime any
 	// <p>The state of the automated snapshot pause. Valid values are <code>Active</code>, <code>Completed</code>, <code>Scheduled</code>, and <code>Disabled</code>.</p>
 	State any
 }
 
 type DryRunProgress_DryRunConfig_ChangeProgressDetails struct {
-	ChangeId any
+	ChangeId           any
 	ConfigChangeStatus any
-	InitiatedBy any
-	LastUpdatedTime any
-	Message any
-	StartTime any
+	InitiatedBy        any
+	LastUpdatedTime    any
+	Message            any
+	StartTime          any
 }
 
 type DryRunProgress_DryRunConfig_ClusterConfig_NodeOptions_NodeConfig struct {
-	Count any
+	Count   any
 	Enabled any
-	Type any
+	Type    any
 }
 
 type DryRunProgress_DryRunConfig_ClusterConfig_NodeOptions struct {
 	NodeConfig any
-	NodeType any
+	NodeType   any
 }
 
 type DryRunProgress_DryRunConfig_ClusterConfig_ZoneAwarenessConfig struct {
@@ -103,27 +103,27 @@ type DryRunProgress_DryRunConfig_ClusterConfig_ZoneAwarenessConfig struct {
 
 type DryRunProgress_DryRunConfig_ClusterConfig struct {
 	// <p>Container for the parameters required to enable cold storage for an OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html">Cold storage for Amazon OpenSearch Service</a>.</p>
-	ColdStorageOptions any
-	DedicatedMasterCount any
-	DedicatedMasterEnabled any
-	DedicatedMasterType any
-	InstanceCount any
-	InstanceType any
+	ColdStorageOptions        any
+	DedicatedMasterCount      any
+	DedicatedMasterEnabled    any
+	DedicatedMasterType       any
+	InstanceCount             any
+	InstanceType              any
 	MultiAzwithStandbyEnabled any
-	NodeOptions any
-	WarmCount any
-	WarmEnabled any
-	WarmType any
+	NodeOptions               any
+	WarmCount                 any
+	WarmEnabled               any
+	WarmType                  any
 	// <p>The zone awareness configuration for an Amazon OpenSearch Service domain.</p>
-	ZoneAwarenessConfig any
+	ZoneAwarenessConfig  any
 	ZoneAwarenessEnabled any
 }
 
 type DryRunProgress_DryRunConfig_CognitoOptions struct {
-	Enabled any
+	Enabled        any
 	IdentityPoolId any
-	RoleArn any
-	UserPoolId any
+	RoleArn        any
+	UserPoolId     any
 }
 
 type DryRunProgress_DryRunConfig_DeploymentStrategyOptions struct {
@@ -135,14 +135,14 @@ type DryRunProgress_DryRunConfig_DomainEndpointOptions struct {
 	CustomEndpoint any
 	// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information. </p>
 	CustomEndpointCertificateArn any
-	CustomEndpointEnabled any
-	EnforceHttps any
-	TlssecurityPolicy any
+	CustomEndpointEnabled        any
+	EnforceHttps                 any
+	TlssecurityPolicy            any
 }
 
 type DryRunProgress_DryRunConfig_Ebsoptions struct {
 	Ebsenabled any
-	Iops any
+	Iops       any
 	Throughput any
 	VolumeSize any
 	// <p>The type of EBS volume that a domain uses. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs">Configuring EBS-based storage</a>.</p>
@@ -150,35 +150,35 @@ type DryRunProgress_DryRunConfig_Ebsoptions struct {
 }
 
 type DryRunProgress_DryRunConfig_EncryptionAtRestOptions struct {
-	Enabled any
+	Enabled  any
 	KmsKeyId any
 }
 
 type DryRunProgress_DryRunConfig_IdentityCenterOptions struct {
-	EnabledApiaccess any
+	EnabledApiaccess             any
 	IdentityCenterApplicationArn any
-	IdentityCenterInstanceArn any
+	IdentityCenterInstanceArn    any
 	// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p>
 	IdentityCenterInstanceRegion any
-	IdentityStoreId any
-	RolesKey any
-	SubjectKey any
+	IdentityStoreId              any
+	RolesKey                     any
+	SubjectKey                   any
 }
 
 type DryRunProgress_DryRunConfig_LogPublishingOptions struct {
 	CloudWatchLogsLogGroupArn any
-	Enabled any
+	Enabled                   any
 }
 
 type DryRunProgress_DryRunConfig_ModifyingProperties struct {
-	ActiveValue any
-	Name any
+	ActiveValue  any
+	Name         any
 	PendingValue any
-	ValueType any
+	ValueType    any
 }
 
 type DryRunProgress_DryRunConfig_OffPeakWindowOptions_OffPeakWindow_WindowStartTime struct {
-	Hours any
+	Hours   any
 	Minutes any
 }
 
@@ -195,13 +195,13 @@ type DryRunProgress_DryRunConfig_OffPeakWindowOptions struct {
 
 type DryRunProgress_DryRunConfig_ServiceSoftwareOptions struct {
 	AutomatedUpdateDate any
-	Cancellable any
-	CurrentVersion any
-	Description any
-	NewVersion any
-	OptionalDeployment any
-	UpdateAvailable any
-	UpdateStatus any
+	Cancellable         any
+	CurrentVersion      any
+	Description         any
+	NewVersion          any
+	OptionalDeployment  any
+	UpdateAvailable     any
+	UpdateStatus        any
 }
 
 type DryRunProgress_DryRunConfig_SnapshotOptions struct {
@@ -209,16 +209,16 @@ type DryRunProgress_DryRunConfig_SnapshotOptions struct {
 }
 
 type DryRunProgress_DryRunConfig_SoftwareUpdateOptions struct {
-	AutoSoftwareUpdateEnabled any
+	AutoSoftwareUpdateEnabled            any
 	UseLatestServiceSoftwareForBlueGreen any
 }
 
 type DryRunProgress_DryRunConfig_Vpcoptions struct {
 	AvailabilityZones any
-	EgressEnabled any
-	SecurityGroupIds any
-	SubnetIds any
-	Vpcid any
+	EgressEnabled     any
+	SecurityGroupIds  any
+	SubnetIds         any
+	Vpcid             any
 }
 
 type DryRunProgress_DryRunConfig struct {
@@ -242,17 +242,17 @@ type DryRunProgress_DryRunConfig struct {
 	ClusterConfig any
 	// <p>Container for the parameters required to enable Cognito authentication for an OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
 	CognitoOptions any
-	Created any
-	Deleted any
+	Created        any
+	Deleted        any
 	// <p>Specifies the deployment strategy options for the domain.</p>
 	DeploymentStrategyOptions any
 	// <p>Options to configure a custom endpoint for an OpenSearch Service domain.</p>
-	DomainEndpointOptions any
+	DomainEndpointOptions        any
 	DomainEndpointV2HostedZoneId any
 	// <p>Unique identifier for an OpenSearch Service domain.</p>
 	DomainId any
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-	DomainName any
+	DomainName             any
 	DomainProcessingStatus any
 	// <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
 	Ebsoptions any
@@ -262,27 +262,27 @@ type DryRunProgress_DryRunConfig struct {
 	Endpoint any
 	// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
 	EndpointV2 any
-	Endpoints any
+	Endpoints  any
 	// <p>The engine mode for the domain. Valid values are <code>GENERAL</code> (the standard OpenSearch engine) and <code>OPTIMIZED</code>. If you don't specify an engine mode, <code>GENERAL</code> is used. <code>OPTIMIZED</code> requires OpenSearch 3.5 or later, OpenSearch Optimized instance types (OR1, OR2, OM2, or OI2) for the data tier, and is available only for the <code>OBSERVABILITY</code> use cases. The engine mode can't be changed after the domain is created.</p>
-	EngineMode any
+	EngineMode    any
 	EngineVersion any
 	// <p>Settings container for integrating IAM Identity Center with OpenSearch UI applications, which enables enabling secure user authentication and access control across multiple data sources. This setup supports single sign-on (SSO) through IAM Identity Center, allowing centralized user management.</p>
 	IdentityCenterOptions any
-	IpaddressType any
-	LogPublishingOptions any
-	ModifyingProperties any
+	IpaddressType         any
+	LogPublishingOptions  any
+	ModifyingProperties   any
 	// <p>Enables or disables node-to-node encryption. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ntn.html">Node-to-node encryption for Amazon OpenSearch Service</a>.</p>
 	NodeToNodeEncryptionOptions any
 	// <p>Options for a domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a>, during which OpenSearch Service can perform mandatory configuration changes on the domain.</p>
 	OffPeakWindowOptions any
-	Processing any
+	Processing           any
 	// <p>The current status of the service software for an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service software updates in Amazon OpenSearch Service</a>.</p>
 	ServiceSoftwareOptions any
 	// <p>The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.</p>
 	SnapshotOptions any
 	// <p>Options for configuring service software updates for a domain.</p>
 	SoftwareUpdateOptions any
-	UpgradeProcessing any
+	UpgradeProcessing     any
 	// <p>The primary use case for the domain, which determines the default configuration and the engine modes that are available. Valid values are <code>SEARCH</code> (full-text search, e-commerce, content discovery, and hybrid and semantic search), <code>VECTOR</code> (k-NN and semantic search, and retrieval-augmented generation), <code>OBSERVABILITY</code> (logs, metrics, traces, and dashboards), and <code>MIXED</code> (a combination of search and analytics). If you don't specify a use case, <code>MIXED</code> is used.</p>
 	UseCase any
 	// <p>Information about the subnets and security groups for an Amazon OpenSearch Service domain provisioned within a virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>. This information only exists if the domain was created with <code>VPCOptions</code>.</p>
@@ -290,27 +290,27 @@ type DryRunProgress_DryRunConfig struct {
 }
 
 type DryRunProgress_DryRunProgressStatus_ValidationFailures struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type DryRunProgress_DryRunProgressStatus struct {
-	CreationDate any
-	DryRunId any
-	DryRunStatus any
-	UpdateDate any
+	CreationDate       any
+	DryRunId           any
+	DryRunStatus       any
+	UpdateDate         any
 	ValidationFailures any
 }
 
 type DryRunProgress_DryRunResults struct {
 	DeploymentType any
-	Message any
+	Message        any
 }
 
 type DryRunProgressConfig struct {
 	// <p>The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-	DomainName any
-	DryRunId any
+	DomainName       any
+	DryRunId         any
 	LoadDryRunConfig any
 }
 
@@ -319,19 +319,19 @@ type DryRunProgressAttrs struct {
 	DomainName any
 	// <p>The current status of an OpenSearch Service domain.</p>
 	DryRunConfig any
-	DryRunId any
+	DryRunId     any
 	// <p>Information about the progress of a pre-upgrade dry run analysis.</p>
 	DryRunProgressStatus any
 	// <p>Results of a dry run performed in an update domain request.</p>
-	DryRunResults any
+	DryRunResults    any
 	LoadDryRunConfig any
 }
 
 var DryRunProgress = ubx.DataSourceBinding{
 	WireType: "aws_opensearch_dry_run_progress",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"DryRunId": ubx.FieldSpec{WireName: "dry_run_id"},
+		"DomainName":       ubx.FieldSpec{WireName: "domain_name"},
+		"DryRunId":         ubx.FieldSpec{WireName: "dry_run_id"},
 		"LoadDryRunConfig": ubx.FieldSpec{WireName: "load_dry_run_config"},
 	},
 }

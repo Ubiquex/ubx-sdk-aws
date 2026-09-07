@@ -21,6 +21,6 @@ var ResourcePolicy = ubx.ResourceBinding{
 	WireType: "aws_aps_resource_policy",
 	Fields: ubx.FieldMap{
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"WorkspaceArn": ubx.FieldSpec{WireName: "workspace_arn"},
+		"WorkspaceArn":   ubx.FieldSpec{WireName: "workspace_arn"},
 	},
 }

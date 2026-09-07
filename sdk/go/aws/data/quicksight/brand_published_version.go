@@ -63,7 +63,7 @@ type BrandPublishedVersion_BrandDefinition_ApplicationTheme struct {
 
 type BrandPublishedVersion_BrandDefinition_LogoConfiguration_LogoSet_Favicon_Original_Source struct {
 	PublicUrl any
-	S3Uri any
+	S3Uri     any
 }
 
 type BrandPublishedVersion_BrandDefinition_LogoConfiguration_LogoSet_Favicon_Original struct {
@@ -92,8 +92,8 @@ type BrandPublishedVersion_BrandDefinition_LogoConfiguration struct {
 type BrandPublishedVersion_BrandDefinition struct {
 	// <p>The application theme.</p>
 	ApplicationTheme any
-	BrandName any
-	Description any
+	BrandName        any
+	Description      any
 	// <p>The logo configuration.</p>
 	LogoConfiguration any
 }
@@ -127,21 +127,21 @@ type BrandPublishedVersion_BrandDetail_Logo struct {
 }
 
 type BrandPublishedVersion_BrandDetail struct {
-	Arn any
-	BrandId any
-	BrandStatus any
-	CreatedTime any
-	Errors any
+	Arn             any
+	BrandId         any
+	BrandStatus     any
+	CreatedTime     any
+	Errors          any
 	LastUpdatedTime any
 	// <p>The logo configuration.</p>
-	Logo any
-	VersionId any
+	Logo          any
+	VersionId     any
 	VersionStatus any
 }
 
 type BrandPublishedVersionConfig struct {
 	AwsAccountId any
-	BrandId any
+	BrandId      any
 }
 
 type BrandPublishedVersionAttrs struct {
@@ -150,14 +150,14 @@ type BrandPublishedVersionAttrs struct {
 	BrandDefinition any
 	// <p>The details of the brand.</p>
 	BrandDetail any
-	BrandId any
-	RequestId any
+	BrandId     any
+	RequestId   any
 }
 
 var BrandPublishedVersion = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_brand_published_version",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"BrandId": ubx.FieldSpec{WireName: "brand_id"},
+		"BrandId":      ubx.FieldSpec{WireName: "brand_id"},
 	},
 }

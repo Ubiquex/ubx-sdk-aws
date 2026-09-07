@@ -4,13 +4,13 @@ package iottwinmaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Components_ComponentSummaries_PropertyGroups struct {
-	GroupType any
-	IsInherited any
+	GroupType     any
+	IsInherited   any
 	PropertyNames any
 }
 
 type Components_ComponentSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -20,40 +20,40 @@ type Components_ComponentSummaries_Status struct {
 }
 
 type Components_ComponentSummaries struct {
-	ComponentName any
-	ComponentPath any
+	ComponentName   any
+	ComponentPath   any
 	ComponentTypeId any
-	DefinedIn any
-	Description any
-	PropertyGroups any
-	Status any
-	SyncSource any
+	DefinedIn       any
+	Description     any
+	PropertyGroups  any
+	Status          any
+	SyncSource      any
 }
 
 type ComponentsConfig struct {
 	ComponentPath any
-	EntityId any
-	MaxResults any
-	NextToken any
-	WorkspaceId any
+	EntityId      any
+	MaxResults    any
+	NextToken     any
+	WorkspaceId   any
 }
 
 type ComponentsAttrs struct {
-	ComponentPath any
+	ComponentPath      any
 	ComponentSummaries any
-	EntityId any
-	MaxResults any
-	NextToken any
-	WorkspaceId any
+	EntityId           any
+	MaxResults         any
+	NextToken          any
+	WorkspaceId        any
 }
 
 var Components = ubx.DataSourceBinding{
 	WireType: "aws_iottwinmaker_components",
 	Fields: ubx.FieldMap{
 		"ComponentPath": ubx.FieldSpec{WireName: "component_path"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
+		"EntityId":      ubx.FieldSpec{WireName: "entity_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"WorkspaceId":   ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

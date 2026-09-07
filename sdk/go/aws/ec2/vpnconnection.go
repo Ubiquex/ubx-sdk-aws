@@ -84,89 +84,89 @@ type Vpnconnection_VpnTunnelOptionsSpecifications struct {
 }
 
 var Vpnconnection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Vpnconnection_VpnTunnelOptionsSpecifications_LogOptions_CloudwatchLogOptionsFields = ubx.FieldMap{
-		"BgpLogEnabled": ubx.FieldSpec{WireName: "bgp_log_enabled"},
-		"BgpLogGroupArn": ubx.FieldSpec{WireName: "bgp_log_group_arn"},
-		"BgpLogOutputFormat": ubx.FieldSpec{WireName: "bgp_log_output_format"},
-		"LogEnabled": ubx.FieldSpec{WireName: "log_enabled"},
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-		"LogOutputFormat": ubx.FieldSpec{WireName: "log_output_format"},
-	}
+	"BgpLogEnabled":      ubx.FieldSpec{WireName: "bgp_log_enabled"},
+	"BgpLogGroupArn":     ubx.FieldSpec{WireName: "bgp_log_group_arn"},
+	"BgpLogOutputFormat": ubx.FieldSpec{WireName: "bgp_log_output_format"},
+	"LogEnabled":         ubx.FieldSpec{WireName: "log_enabled"},
+	"LogGroupArn":        ubx.FieldSpec{WireName: "log_group_arn"},
+	"LogOutputFormat":    ubx.FieldSpec{WireName: "log_output_format"},
+}
 
 var Vpnconnection_VpnTunnelOptionsSpecifications_LogOptionsFields = ubx.FieldMap{
-		"CloudwatchLogOptions": ubx.FieldSpec{
-			WireName: "cloudwatch_log_options",
-			Kind: "object",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_LogOptions_CloudwatchLogOptionsFields,
-		},
-	}
+	"CloudwatchLogOptions": ubx.FieldSpec{
+		WireName: "cloudwatch_log_options",
+		Kind:     "object",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_LogOptions_CloudwatchLogOptionsFields,
+	},
+}
 
 var Vpnconnection_VpnTunnelOptionsSpecifications_Phase1DhgroupNumbersFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Vpnconnection_VpnTunnelOptionsSpecificationsFields = ubx.FieldMap{
-		"DpdtimeoutAction": ubx.FieldSpec{WireName: "dpdtimeout_action"},
-		"DpdtimeoutSeconds": ubx.FieldSpec{WireName: "dpdtimeout_seconds"},
-		"EnableTunnelLifecycleControl": ubx.FieldSpec{WireName: "enable_tunnel_lifecycle_control"},
-		"Ikeversions": ubx.FieldSpec{
-			WireName: "ikeversions",
-			Kind: "list",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
-		},
-		"LogOptions": ubx.FieldSpec{
-			WireName: "log_options",
-			Kind: "object",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_LogOptionsFields,
-		},
-		"Phase1DhgroupNumbers": ubx.FieldSpec{
-			WireName: "phase1_dhgroup_numbers",
-			Kind: "list",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_Phase1DhgroupNumbersFields,
-		},
-		"Phase1EncryptionAlgorithms": ubx.FieldSpec{
-			WireName: "phase1_encryption_algorithms",
-			Kind: "list",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
-		},
-		"Phase1IntegrityAlgorithms": ubx.FieldSpec{
-			WireName: "phase1_integrity_algorithms",
-			Kind: "list",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
-		},
-		"Phase1LifetimeSeconds": ubx.FieldSpec{WireName: "phase1_lifetime_seconds"},
-		"Phase2DhgroupNumbers": ubx.FieldSpec{
-			WireName: "phase2_dhgroup_numbers",
-			Kind: "list",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_Phase1DhgroupNumbersFields,
-		},
-		"Phase2EncryptionAlgorithms": ubx.FieldSpec{
-			WireName: "phase2_encryption_algorithms",
-			Kind: "list",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
-		},
-		"Phase2IntegrityAlgorithms": ubx.FieldSpec{
-			WireName: "phase2_integrity_algorithms",
-			Kind: "list",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
-		},
-		"Phase2LifetimeSeconds": ubx.FieldSpec{WireName: "phase2_lifetime_seconds"},
-		"PreSharedKey": ubx.FieldSpec{WireName: "pre_shared_key"},
-		"RekeyFuzzPercentage": ubx.FieldSpec{WireName: "rekey_fuzz_percentage"},
-		"RekeyMarginTimeSeconds": ubx.FieldSpec{WireName: "rekey_margin_time_seconds"},
-		"ReplayWindowSize": ubx.FieldSpec{WireName: "replay_window_size"},
-		"StartupAction": ubx.FieldSpec{WireName: "startup_action"},
-		"TunnelInsideCidr": ubx.FieldSpec{WireName: "tunnel_inside_cidr"},
-		"TunnelInsideIpv6Cidr": ubx.FieldSpec{WireName: "tunnel_inside_ipv6_cidr"},
-	}
+	"DpdtimeoutAction":             ubx.FieldSpec{WireName: "dpdtimeout_action"},
+	"DpdtimeoutSeconds":            ubx.FieldSpec{WireName: "dpdtimeout_seconds"},
+	"EnableTunnelLifecycleControl": ubx.FieldSpec{WireName: "enable_tunnel_lifecycle_control"},
+	"Ikeversions": ubx.FieldSpec{
+		WireName: "ikeversions",
+		Kind:     "list",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
+	},
+	"LogOptions": ubx.FieldSpec{
+		WireName: "log_options",
+		Kind:     "object",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_LogOptionsFields,
+	},
+	"Phase1DhgroupNumbers": ubx.FieldSpec{
+		WireName: "phase1_dhgroup_numbers",
+		Kind:     "list",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_Phase1DhgroupNumbersFields,
+	},
+	"Phase1EncryptionAlgorithms": ubx.FieldSpec{
+		WireName: "phase1_encryption_algorithms",
+		Kind:     "list",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
+	},
+	"Phase1IntegrityAlgorithms": ubx.FieldSpec{
+		WireName: "phase1_integrity_algorithms",
+		Kind:     "list",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
+	},
+	"Phase1LifetimeSeconds": ubx.FieldSpec{WireName: "phase1_lifetime_seconds"},
+	"Phase2DhgroupNumbers": ubx.FieldSpec{
+		WireName: "phase2_dhgroup_numbers",
+		Kind:     "list",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_Phase1DhgroupNumbersFields,
+	},
+	"Phase2EncryptionAlgorithms": ubx.FieldSpec{
+		WireName: "phase2_encryption_algorithms",
+		Kind:     "list",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
+	},
+	"Phase2IntegrityAlgorithms": ubx.FieldSpec{
+		WireName: "phase2_integrity_algorithms",
+		Kind:     "list",
+		Fields:   Vpnconnection_VpnTunnelOptionsSpecifications_IkeversionsFields,
+	},
+	"Phase2LifetimeSeconds":  ubx.FieldSpec{WireName: "phase2_lifetime_seconds"},
+	"PreSharedKey":           ubx.FieldSpec{WireName: "pre_shared_key"},
+	"RekeyFuzzPercentage":    ubx.FieldSpec{WireName: "rekey_fuzz_percentage"},
+	"RekeyMarginTimeSeconds": ubx.FieldSpec{WireName: "rekey_margin_time_seconds"},
+	"ReplayWindowSize":       ubx.FieldSpec{WireName: "replay_window_size"},
+	"StartupAction":          ubx.FieldSpec{WireName: "startup_action"},
+	"TunnelInsideCidr":       ubx.FieldSpec{WireName: "tunnel_inside_cidr"},
+	"TunnelInsideIpv6Cidr":   ubx.FieldSpec{WireName: "tunnel_inside_ipv6_cidr"},
+}
 
 type VpnconnectionConfig struct {
 	// The ID of the customer gateway at your end of the VPN connection.
@@ -251,31 +251,31 @@ type VpnconnectionAttrs struct {
 var Vpnconnection = ubx.ResourceBinding{
 	WireType: "aws_ec2_vpnconnection",
 	Fields: ubx.FieldMap{
-		"CustomerGatewayId": ubx.FieldSpec{WireName: "customer_gateway_id"},
-		"EnableAcceleration": ubx.FieldSpec{WireName: "enable_acceleration"},
-		"LocalIpv4NetworkCidr": ubx.FieldSpec{WireName: "local_ipv4_network_cidr"},
-		"LocalIpv6NetworkCidr": ubx.FieldSpec{WireName: "local_ipv6_network_cidr"},
-		"OutsideIpAddressType": ubx.FieldSpec{WireName: "outside_ip_address_type"},
-		"PreSharedKeyStorage": ubx.FieldSpec{WireName: "pre_shared_key_storage"},
+		"CustomerGatewayId":     ubx.FieldSpec{WireName: "customer_gateway_id"},
+		"EnableAcceleration":    ubx.FieldSpec{WireName: "enable_acceleration"},
+		"LocalIpv4NetworkCidr":  ubx.FieldSpec{WireName: "local_ipv4_network_cidr"},
+		"LocalIpv6NetworkCidr":  ubx.FieldSpec{WireName: "local_ipv6_network_cidr"},
+		"OutsideIpAddressType":  ubx.FieldSpec{WireName: "outside_ip_address_type"},
+		"PreSharedKeyStorage":   ubx.FieldSpec{WireName: "pre_shared_key_storage"},
 		"RemoteIpv4NetworkCidr": ubx.FieldSpec{WireName: "remote_ipv4_network_cidr"},
 		"RemoteIpv6NetworkCidr": ubx.FieldSpec{WireName: "remote_ipv6_network_cidr"},
-		"StaticRoutesOnly": ubx.FieldSpec{WireName: "static_routes_only"},
+		"StaticRoutesOnly":      ubx.FieldSpec{WireName: "static_routes_only"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Vpnconnection_TagsFields,
+			Kind:     "list",
+			Fields:   Vpnconnection_TagsFields,
 		},
-		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
+		"TransitGatewayId":                    ubx.FieldSpec{WireName: "transit_gateway_id"},
 		"TransportTransitGatewayAttachmentId": ubx.FieldSpec{WireName: "transport_transit_gateway_attachment_id"},
-		"TunnelBandwidth": ubx.FieldSpec{WireName: "tunnel_bandwidth"},
-		"TunnelInsideIpVersion": ubx.FieldSpec{WireName: "tunnel_inside_ip_version"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VpnConcentratorId": ubx.FieldSpec{WireName: "vpn_concentrator_id"},
-		"VpnGatewayId": ubx.FieldSpec{WireName: "vpn_gateway_id"},
+		"TunnelBandwidth":                     ubx.FieldSpec{WireName: "tunnel_bandwidth"},
+		"TunnelInsideIpVersion":               ubx.FieldSpec{WireName: "tunnel_inside_ip_version"},
+		"Type":                                ubx.FieldSpec{WireName: "type"},
+		"VpnConcentratorId":                   ubx.FieldSpec{WireName: "vpn_concentrator_id"},
+		"VpnGatewayId":                        ubx.FieldSpec{WireName: "vpn_gateway_id"},
 		"VpnTunnelOptionsSpecifications": ubx.FieldSpec{
 			WireName: "vpn_tunnel_options_specifications",
-			Kind: "list",
-			Fields: Vpnconnection_VpnTunnelOptionsSpecificationsFields,
+			Kind:     "list",
+			Fields:   Vpnconnection_VpnTunnelOptionsSpecificationsFields,
 		},
 	},
 }

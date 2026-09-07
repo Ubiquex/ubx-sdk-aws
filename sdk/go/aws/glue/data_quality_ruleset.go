@@ -11,9 +11,9 @@ type DataQualityRuleset_TargetTable struct {
 }
 
 var DataQualityRuleset_TargetTableFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+}
 
 type DataQualityRulesetConfig struct {
 	// A unique token for idempotency.
@@ -50,13 +50,13 @@ var DataQualityRuleset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ruleset": ubx.FieldSpec{WireName: "ruleset"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Ruleset":     ubx.FieldSpec{WireName: "ruleset"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"TargetTable": ubx.FieldSpec{
 			WireName: "target_table",
-			Kind: "object",
-			Fields: DataQualityRuleset_TargetTableFields,
+			Kind:     "object",
+			Fields:   DataQualityRuleset_TargetTableFields,
 		},
 	},
 }

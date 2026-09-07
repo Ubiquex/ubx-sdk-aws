@@ -4,14 +4,14 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregationAuthorization_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AggregationAuthorization_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AggregationAuthorizationConfig struct {
 	// The 12-digit account ID of the account authorized to aggregate data.
@@ -40,8 +40,8 @@ var AggregationAuthorization = ubx.ResourceBinding{
 		"AuthorizedAwsRegion": ubx.FieldSpec{WireName: "authorized_aws_region"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AggregationAuthorization_TagsFields,
+			Kind:     "list",
+			Fields:   AggregationAuthorization_TagsFields,
 		},
 	},
 }

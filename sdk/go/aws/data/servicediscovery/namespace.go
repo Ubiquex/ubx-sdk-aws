@@ -25,17 +25,17 @@ type Namespace_Namespace_Properties struct {
 }
 
 type Namespace_Namespace struct {
-	Arn any
-	CreateDate any
+	Arn              any
+	CreateDate       any
 	CreatorRequestId any
-	Description any
-	Id any
-	Name any
+	Description      any
+	Id               any
+	Name             any
 	// <p>A complex type that contains information that's specific to the namespace type.</p>
-	Properties any
+	Properties    any
 	ResourceOwner any
-	ServiceCount any
-	Type any
+	ServiceCount  any
+	Type          any
 }
 
 type NamespaceConfig struct {

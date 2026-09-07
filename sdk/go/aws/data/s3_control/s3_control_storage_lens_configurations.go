@@ -4,9 +4,9 @@ package s3_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlStorageLensConfigurations_StorageLensConfigurationList struct {
-	HomeRegion any
-	Id any
-	IsEnabled any
+	HomeRegion     any
+	Id             any
+	IsEnabled      any
 	StorageLensArn any
 }
 
@@ -16,8 +16,8 @@ type S3ControlStorageLensConfigurationsConfig struct {
 }
 
 type S3ControlStorageLensConfigurationsAttrs struct {
-	AccountId any
-	NextToken any
+	AccountId                    any
+	NextToken                    any
 	StorageLensConfigurationList any
 }
 

@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerArchiveExports_Exports_Status struct {
 	CompletionTimestamp any
-	ErrorMessage any
-	State any
+	ErrorMessage        any
+	State               any
 	SubmissionTimestamp any
 }
 
 type MailManagerArchiveExports_Exports struct {
 	ExportId any
-	Status any
+	Status   any
 }
 
 type MailManagerArchiveExportsConfig struct {
 	ArchiveId any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type MailManagerArchiveExportsAttrs struct {
 	ArchiveId any
-	Exports any
+	Exports   any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 var MailManagerArchiveExports = ubx.DataSourceBinding{
@@ -33,6 +33,6 @@ var MailManagerArchiveExports = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ArchiveId": ubx.FieldSpec{WireName: "archive_id"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

@@ -37,8 +37,8 @@ var ConsumableResource = ubx.ResourceBinding{
 	WireType: "aws_batch_consumable_resource",
 	Fields: ubx.FieldMap{
 		"ConsumableResourceName": ubx.FieldSpec{WireName: "consumable_resource_name"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TotalQuantity": ubx.FieldSpec{WireName: "total_quantity"},
+		"ResourceType":           ubx.FieldSpec{WireName: "resource_type"},
+		"Tags":                   ubx.FieldSpec{WireName: "tags"},
+		"TotalQuantity":          ubx.FieldSpec{WireName: "total_quantity"},
 	},
 }

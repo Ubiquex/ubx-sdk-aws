@@ -22,20 +22,20 @@ type Integration_ResourceConfig struct {
 }
 
 var Integration_ResourceConfig_OpenSearchResourceConfigFields = ubx.FieldMap{
-		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
-		"DashboardViewerPrincipals": ubx.FieldSpec{WireName: "dashboard_viewer_principals"},
-		"DataSourceRoleArn": ubx.FieldSpec{WireName: "data_source_role_arn"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"RetentionDays": ubx.FieldSpec{WireName: "retention_days"},
-	}
+	"ApplicationArn":            ubx.FieldSpec{WireName: "application_arn"},
+	"DashboardViewerPrincipals": ubx.FieldSpec{WireName: "dashboard_viewer_principals"},
+	"DataSourceRoleArn":         ubx.FieldSpec{WireName: "data_source_role_arn"},
+	"KmsKeyArn":                 ubx.FieldSpec{WireName: "kms_key_arn"},
+	"RetentionDays":             ubx.FieldSpec{WireName: "retention_days"},
+}
 
 var Integration_ResourceConfigFields = ubx.FieldMap{
-		"OpenSearchResourceConfig": ubx.FieldSpec{
-			WireName: "open_search_resource_config",
-			Kind: "object",
-			Fields: Integration_ResourceConfig_OpenSearchResourceConfigFields,
-		},
-	}
+	"OpenSearchResourceConfig": ubx.FieldSpec{
+		WireName: "open_search_resource_config",
+		Kind:     "object",
+		Fields:   Integration_ResourceConfig_OpenSearchResourceConfigFields,
+	},
+}
 
 type IntegrationConfig struct {
 	// User provided identifier for integration, unique to the user account.
@@ -64,8 +64,8 @@ var Integration = ubx.ResourceBinding{
 		"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
 		"ResourceConfig": ubx.FieldSpec{
 			WireName: "resource_config",
-			Kind: "object",
-			Fields: Integration_ResourceConfigFields,
+			Kind:     "object",
+			Fields:   Integration_ResourceConfigFields,
 		},
 	},
 }

@@ -4,7 +4,7 @@ package datazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataExportConfiguration_EncryptionConfiguration struct {
-	KmsKeyArn any
+	KmsKeyArn    any
 	SseAlgorithm any
 }
 
@@ -13,14 +13,14 @@ type DataExportConfigurationConfig struct {
 }
 
 type DataExportConfigurationAttrs struct {
-	CreatedAt any
+	CreatedAt        any
 	DomainIdentifier any
 	// <p>The encryption configuration details.</p>
 	EncryptionConfiguration any
-	IsExportEnabled any
-	S3TableBucketArn any
-	Status any
-	UpdatedAt any
+	IsExportEnabled         any
+	S3TableBucketArn        any
+	Status                  any
+	UpdatedAt               any
 }
 
 var DataExportConfiguration = ubx.DataSourceBinding{

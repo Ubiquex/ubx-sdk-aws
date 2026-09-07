@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BcmDataExportsTable_Schema struct {
 	Description any
-	Name any
-	Type any
+	Name        any
+	Type        any
 }
 
 type BcmDataExportsTableConfig struct {
-	TableName any
+	TableName       any
 	TableProperties any
 }
 
 type BcmDataExportsTableAttrs struct {
-	Description any
-	Schema any
-	TableName any
+	Description     any
+	Schema          any
+	TableName       any
 	TableProperties any
 }
 
 var BcmDataExportsTable = ubx.DataSourceBinding{
 	WireType: "aws_bcm_data_exports_table",
 	Fields: ubx.FieldMap{
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":       ubx.FieldSpec{WireName: "table_name"},
 		"TableProperties": ubx.FieldSpec{WireName: "table_properties"},
 	},
 }

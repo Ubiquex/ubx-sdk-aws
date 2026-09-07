@@ -6,40 +6,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Aliases_Aliases_RoutingStrategy struct {
 	FleetId any
 	Message any
-	Type any
+	Type    any
 }
 
 type Aliases_Aliases struct {
-	AliasArn any
-	AliasId any
-	CreationTime any
-	Description any
+	AliasArn        any
+	AliasId         any
+	CreationTime    any
+	Description     any
 	LastUpdatedTime any
-	Name any
+	Name            any
 	RoutingStrategy any
 }
 
 type AliasesConfig struct {
-	Limit any
-	Name any
-	NextToken any
+	Limit               any
+	Name                any
+	NextToken           any
 	RoutingStrategyType any
 }
 
 type AliasesAttrs struct {
-	Aliases any
-	Limit any
-	Name any
-	NextToken any
+	Aliases             any
+	Limit               any
+	Name                any
+	NextToken           any
 	RoutingStrategyType any
 }
 
 var Aliases = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_aliases",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":               ubx.FieldSpec{WireName: "limit"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"RoutingStrategyType": ubx.FieldSpec{WireName: "routing_strategy_type"},
 	},
 }

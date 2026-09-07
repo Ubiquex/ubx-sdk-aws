@@ -10,9 +10,9 @@ type DatasetGroup_Tags struct {
 }
 
 var DatasetGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetGroupConfig struct {
 	// The domain of a Domain dataset group.
@@ -45,14 +45,14 @@ type DatasetGroupAttrs struct {
 var DatasetGroup = ubx.ResourceBinding{
 	WireType: "aws_personalize_dataset_group",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":    ubx.FieldSpec{WireName: "domain"},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DatasetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DatasetGroup_TagsFields,
 		},
 	},
 }

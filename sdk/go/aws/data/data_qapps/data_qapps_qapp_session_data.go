@@ -8,30 +8,30 @@ type DataQappsQappSessionData_SessionData_User struct {
 }
 
 type DataQappsQappSessionData_SessionData struct {
-	CardId any
+	CardId       any
 	SubmissionId any
-	Timestamp any
-	User any
-	Value any
+	Timestamp    any
+	User         any
+	Value        any
 }
 
 type DataQappsQappSessionDataConfig struct {
 	InstanceId any
-	SessionId any
+	SessionId  any
 }
 
 type DataQappsQappSessionDataAttrs struct {
-	InstanceId any
-	NextToken any
-	SessionArn any
+	InstanceId  any
+	NextToken   any
+	SessionArn  any
 	SessionData any
-	SessionId any
+	SessionId   any
 }
 
 var DataQappsQappSessionData = ubx.DataSourceBinding{
 	WireType: "aws_data_qapps_qapp_session_data",
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"SessionId":  ubx.FieldSpec{WireName: "session_id"},
 	},
 }

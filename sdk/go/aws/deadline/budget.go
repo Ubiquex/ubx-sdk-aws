@@ -36,32 +36,32 @@ type Budget_UsageTrackingResource struct {
 }
 
 var Budget_ActionsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ThresholdPercentage": ubx.FieldSpec{WireName: "threshold_percentage"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"ThresholdPercentage": ubx.FieldSpec{WireName: "threshold_percentage"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var Budget_Schedule_FixedFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Budget_ScheduleFields = ubx.FieldMap{
-		"Fixed": ubx.FieldSpec{
-			WireName: "fixed",
-			Kind: "object",
-			Fields: Budget_Schedule_FixedFields,
-		},
-	}
+	"Fixed": ubx.FieldSpec{
+		WireName: "fixed",
+		Kind:     "object",
+		Fields:   Budget_Schedule_FixedFields,
+	},
+}
 
 var Budget_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Budget_UsageTrackingResourceFields = ubx.FieldMap{
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
-	}
+	"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+}
 
 type BudgetConfig struct {
 	// The budget actions to specify what happens when the budget runs out.
@@ -112,27 +112,27 @@ var Budget = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: Budget_ActionsFields,
+			Kind:     "list",
+			Fields:   Budget_ActionsFields,
 		},
 		"ApproximateDollarLimit": ubx.FieldSpec{WireName: "approximate_dollar_limit"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
+		"FarmId":                 ubx.FieldSpec{WireName: "farm_id"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: Budget_ScheduleFields,
+			Kind:     "object",
+			Fields:   Budget_ScheduleFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Budget_TagsFields,
+			Kind:     "list",
+			Fields:   Budget_TagsFields,
 		},
 		"UsageTrackingResource": ubx.FieldSpec{
 			WireName: "usage_tracking_resource",
-			Kind: "object",
-			Fields: Budget_UsageTrackingResourceFields,
+			Kind:     "object",
+			Fields:   Budget_UsageTrackingResourceFields,
 		},
 	},
 }

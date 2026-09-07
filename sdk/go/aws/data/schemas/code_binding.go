@@ -4,28 +4,28 @@ package schemas
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeBindingConfig struct {
-	Language any
-	RegistryName any
-	SchemaName any
+	Language      any
+	RegistryName  any
+	SchemaName    any
 	SchemaVersion any
 }
 
 type CodeBindingAttrs struct {
-	CreationDate any
-	Language any
-	LastModified any
-	RegistryName any
-	SchemaName any
+	CreationDate  any
+	Language      any
+	LastModified  any
+	RegistryName  any
+	SchemaName    any
 	SchemaVersion any
-	Status any
+	Status        any
 }
 
 var CodeBinding = ubx.DataSourceBinding{
 	WireType: "aws_schemas_code_binding",
 	Fields: ubx.FieldMap{
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
+		"Language":      ubx.FieldSpec{WireName: "language"},
+		"RegistryName":  ubx.FieldSpec{WireName: "registry_name"},
+		"SchemaName":    ubx.FieldSpec{WireName: "schema_name"},
 		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
 	},
 }

@@ -35,27 +35,27 @@ type GameSessionQueue_Tags struct {
 }
 
 var GameSessionQueue_DestinationsFields = ubx.FieldMap{
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-	}
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+}
 
 var GameSessionQueue_FilterConfigurationFields = ubx.FieldMap{
-		"AllowedLocations": ubx.FieldSpec{WireName: "allowed_locations"},
-	}
+	"AllowedLocations": ubx.FieldSpec{WireName: "allowed_locations"},
+}
 
 var GameSessionQueue_PlayerLatencyPoliciesFields = ubx.FieldMap{
-		"MaximumIndividualPlayerLatencyMilliseconds": ubx.FieldSpec{WireName: "maximum_individual_player_latency_milliseconds"},
-		"PolicyDurationSeconds": ubx.FieldSpec{WireName: "policy_duration_seconds"},
-	}
+	"MaximumIndividualPlayerLatencyMilliseconds": ubx.FieldSpec{WireName: "maximum_individual_player_latency_milliseconds"},
+	"PolicyDurationSeconds":                      ubx.FieldSpec{WireName: "policy_duration_seconds"},
+}
 
 var GameSessionQueue_PriorityConfigurationFields = ubx.FieldMap{
-		"LocationOrder": ubx.FieldSpec{WireName: "location_order"},
-		"PriorityOrder": ubx.FieldSpec{WireName: "priority_order"},
-	}
+	"LocationOrder": ubx.FieldSpec{WireName: "location_order"},
+	"PriorityOrder": ubx.FieldSpec{WireName: "priority_order"},
+}
 
 var GameSessionQueue_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GameSessionQueueConfig struct {
 	// Information that is added to all events that are related to this game session queue.
@@ -107,30 +107,30 @@ var GameSessionQueue = ubx.ResourceBinding{
 		"CustomEventData": ubx.FieldSpec{WireName: "custom_event_data"},
 		"Destinations": ubx.FieldSpec{
 			WireName: "destinations",
-			Kind: "list",
-			Fields: GameSessionQueue_DestinationsFields,
+			Kind:     "list",
+			Fields:   GameSessionQueue_DestinationsFields,
 		},
 		"FilterConfiguration": ubx.FieldSpec{
 			WireName: "filter_configuration",
-			Kind: "object",
-			Fields: GameSessionQueue_FilterConfigurationFields,
+			Kind:     "object",
+			Fields:   GameSessionQueue_FilterConfigurationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"NotificationTarget": ubx.FieldSpec{WireName: "notification_target"},
 		"PlayerLatencyPolicies": ubx.FieldSpec{
 			WireName: "player_latency_policies",
-			Kind: "list",
-			Fields: GameSessionQueue_PlayerLatencyPoliciesFields,
+			Kind:     "list",
+			Fields:   GameSessionQueue_PlayerLatencyPoliciesFields,
 		},
 		"PriorityConfiguration": ubx.FieldSpec{
 			WireName: "priority_configuration",
-			Kind: "object",
-			Fields: GameSessionQueue_PriorityConfigurationFields,
+			Kind:     "object",
+			Fields:   GameSessionQueue_PriorityConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GameSessionQueue_TagsFields,
+			Kind:     "list",
+			Fields:   GameSessionQueue_TagsFields,
 		},
 		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
 	},

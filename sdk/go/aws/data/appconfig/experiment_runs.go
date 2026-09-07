@@ -4,39 +4,39 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentRuns_Items struct {
-	Description any
-	EndedAt any
+	Description            any
+	EndedAt                any
 	ExperimentDefinitionId any
-	Run any
-	StartedAt any
-	Status any
-	UpdatedAt any
+	Run                    any
+	StartedAt              any
+	Status                 any
+	UpdatedAt              any
 }
 
 type ExperimentRunsConfig struct {
-	ApplicationIdentifier any
+	ApplicationIdentifier          any
 	ExperimentDefinitionIdentifier any
-	MaxResults any
-	NextToken any
-	Status any
+	MaxResults                     any
+	NextToken                      any
+	Status                         any
 }
 
 type ExperimentRunsAttrs struct {
-	ApplicationIdentifier any
+	ApplicationIdentifier          any
 	ExperimentDefinitionIdentifier any
-	Items any
-	MaxResults any
-	NextToken any
-	Status any
+	Items                          any
+	MaxResults                     any
+	NextToken                      any
+	Status                         any
 }
 
 var ExperimentRuns = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_experiment_runs",
 	Fields: ubx.FieldMap{
-		"ApplicationIdentifier": ubx.FieldSpec{WireName: "application_identifier"},
+		"ApplicationIdentifier":          ubx.FieldSpec{WireName: "application_identifier"},
 		"ExperimentDefinitionIdentifier": ubx.FieldSpec{WireName: "experiment_definition_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"MaxResults":                     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                      ubx.FieldSpec{WireName: "next_token"},
+		"Status":                         ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -90,81 +90,81 @@ type Cluster_SlurmConfiguration struct {
 }
 
 var Cluster_NetworkingFields = ubx.FieldMap{
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"NetworkType":      ubx.FieldSpec{WireName: "network_type"},
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var Cluster_SchedulerFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Cluster_SlurmConfiguration_AccountingFields = ubx.FieldMap{
-		"DefaultPurgeTimeInDays": ubx.FieldSpec{WireName: "default_purge_time_in_days"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"DefaultPurgeTimeInDays": ubx.FieldSpec{WireName: "default_purge_time_in_days"},
+	"Mode":                   ubx.FieldSpec{WireName: "mode"},
+}
 
 var Cluster_SlurmConfiguration_AuthKeyFields = ubx.FieldMap{
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-	}
+	"SecretArn":     ubx.FieldSpec{WireName: "secret_arn"},
+	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+}
 
 var Cluster_SlurmConfiguration_CgroupCustomSettingsFields = ubx.FieldMap{
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var Cluster_SlurmConfiguration_JwtAuthFields = ubx.FieldMap{
-		"JwtKey": ubx.FieldSpec{
-			WireName: "jwt_key",
-			Kind: "object",
-			Fields: Cluster_SlurmConfiguration_AuthKeyFields,
-		},
-	}
+	"JwtKey": ubx.FieldSpec{
+		WireName: "jwt_key",
+		Kind:     "object",
+		Fields:   Cluster_SlurmConfiguration_AuthKeyFields,
+	},
+}
 
 var Cluster_SlurmConfiguration_SlurmRestFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Cluster_SlurmConfigurationFields = ubx.FieldMap{
-		"Accounting": ubx.FieldSpec{
-			WireName: "accounting",
-			Kind: "object",
-			Fields: Cluster_SlurmConfiguration_AccountingFields,
-		},
-		"AuthKey": ubx.FieldSpec{
-			WireName: "auth_key",
-			Kind: "object",
-			Fields: Cluster_SlurmConfiguration_AuthKeyFields,
-		},
-		"CgroupCustomSettings": ubx.FieldSpec{
-			WireName: "cgroup_custom_settings",
-			Kind: "list",
-			Fields: Cluster_SlurmConfiguration_CgroupCustomSettingsFields,
-		},
-		"JwtAuth": ubx.FieldSpec{
-			WireName: "jwt_auth",
-			Kind: "object",
-			Fields: Cluster_SlurmConfiguration_JwtAuthFields,
-		},
-		"ScaleDownIdleTimeInSeconds": ubx.FieldSpec{WireName: "scale_down_idle_time_in_seconds"},
-		"SlurmCustomSettings": ubx.FieldSpec{
-			WireName: "slurm_custom_settings",
-			Kind: "list",
-			Fields: Cluster_SlurmConfiguration_CgroupCustomSettingsFields,
-		},
-		"SlurmRest": ubx.FieldSpec{
-			WireName: "slurm_rest",
-			Kind: "object",
-			Fields: Cluster_SlurmConfiguration_SlurmRestFields,
-		},
-		"SlurmdbdCustomSettings": ubx.FieldSpec{
-			WireName: "slurmdbd_custom_settings",
-			Kind: "list",
-			Fields: Cluster_SlurmConfiguration_CgroupCustomSettingsFields,
-		},
-	}
+	"Accounting": ubx.FieldSpec{
+		WireName: "accounting",
+		Kind:     "object",
+		Fields:   Cluster_SlurmConfiguration_AccountingFields,
+	},
+	"AuthKey": ubx.FieldSpec{
+		WireName: "auth_key",
+		Kind:     "object",
+		Fields:   Cluster_SlurmConfiguration_AuthKeyFields,
+	},
+	"CgroupCustomSettings": ubx.FieldSpec{
+		WireName: "cgroup_custom_settings",
+		Kind:     "list",
+		Fields:   Cluster_SlurmConfiguration_CgroupCustomSettingsFields,
+	},
+	"JwtAuth": ubx.FieldSpec{
+		WireName: "jwt_auth",
+		Kind:     "object",
+		Fields:   Cluster_SlurmConfiguration_JwtAuthFields,
+	},
+	"ScaleDownIdleTimeInSeconds": ubx.FieldSpec{WireName: "scale_down_idle_time_in_seconds"},
+	"SlurmCustomSettings": ubx.FieldSpec{
+		WireName: "slurm_custom_settings",
+		Kind:     "list",
+		Fields:   Cluster_SlurmConfiguration_CgroupCustomSettingsFields,
+	},
+	"SlurmRest": ubx.FieldSpec{
+		WireName: "slurm_rest",
+		Kind:     "object",
+		Fields:   Cluster_SlurmConfiguration_SlurmRestFields,
+	},
+	"SlurmdbdCustomSettings": ubx.FieldSpec{
+		WireName: "slurmdbd_custom_settings",
+		Kind:     "list",
+		Fields:   Cluster_SlurmConfiguration_CgroupCustomSettingsFields,
+	},
+}
 
 type ClusterConfig struct {
 	// The name that identifies the cluster.
@@ -212,19 +212,19 @@ var Cluster = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Networking": ubx.FieldSpec{
 			WireName: "networking",
-			Kind: "object",
-			Fields: Cluster_NetworkingFields,
+			Kind:     "object",
+			Fields:   Cluster_NetworkingFields,
 		},
 		"Scheduler": ubx.FieldSpec{
 			WireName: "scheduler",
-			Kind: "object",
-			Fields: Cluster_SchedulerFields,
+			Kind:     "object",
+			Fields:   Cluster_SchedulerFields,
 		},
 		"Size": ubx.FieldSpec{WireName: "size"},
 		"SlurmConfiguration": ubx.FieldSpec{
 			WireName: "slurm_configuration",
-			Kind: "object",
-			Fields: Cluster_SlurmConfigurationFields,
+			Kind:     "object",
+			Fields:   Cluster_SlurmConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

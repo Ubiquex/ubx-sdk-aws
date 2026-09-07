@@ -13,9 +13,9 @@ type DataSources_DataSources_DataSourceType struct {
 
 type DataSources_DataSources struct {
 	DataSourceType any
-	Description any
-	Name any
-	Status any
+	Description    any
+	Name           any
+	Status         any
 }
 
 type DataSourcesConfig struct {

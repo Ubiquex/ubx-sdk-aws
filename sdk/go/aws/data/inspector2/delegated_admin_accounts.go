@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DelegatedAdminAccounts_DelegatedAdminAccounts struct {
 	AccountId any
-	Status any
+	Status    any
 }
 
 type DelegatedAdminAccountsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DelegatedAdminAccountsAttrs struct {
 	DelegatedAdminAccounts any
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 }
 
 var DelegatedAdminAccounts = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_delegated_admin_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

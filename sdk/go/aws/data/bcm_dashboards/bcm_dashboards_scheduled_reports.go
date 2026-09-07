@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BcmDashboardsScheduledReports_ScheduledReports_HealthStatus struct {
 	LastRefreshedAt any
-	StatusCode any
-	StatusReasons any
+	StatusCode      any
+	StatusReasons   any
 }
 
 type BcmDashboardsScheduledReports_ScheduledReports struct {
-	Arn any
-	DashboardArn any
-	HealthStatus any
-	Name any
-	ScheduleExpression any
+	Arn                        any
+	DashboardArn               any
+	HealthStatus               any
+	Name                       any
+	ScheduleExpression         any
 	ScheduleExpressionTimeZone any
-	State any
-	WidgetIds any
+	State                      any
+	WidgetIds                  any
 }
 
 type BcmDashboardsScheduledReportsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BcmDashboardsScheduledReportsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	ScheduledReports any
 }
 
@@ -35,6 +35,6 @@ var BcmDashboardsScheduledReports = ubx.DataSourceBinding{
 	WireType: "aws_bcm_dashboards_scheduled_reports",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

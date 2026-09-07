@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Insight_Insight_ClientRequestImpactStatistics struct {
 	FaultCount any
-	OkCount any
+	OkCount    any
 	TotalCount any
 }
 
 type Insight_Insight_RootCauseServiceId struct {
 	AccountId any
-	Name any
-	Names any
-	Type any
+	Name      any
+	Names     any
+	Type      any
 }
 
 type Insight_Insight_TopAnomalousServices struct {
@@ -24,18 +24,18 @@ type Insight_Insight struct {
 	Categories any
 	// <p>Statistics that describe how the incident has impacted a service.</p>
 	ClientRequestImpactStatistics any
-	EndTime any
-	GroupArn any
-	GroupName any
-	InsightId any
+	EndTime                       any
+	GroupArn                      any
+	GroupName                     any
+	InsightId                     any
 	// <p></p>
 	RootCauseServiceId any
 	// <p>Statistics that describe how the incident has impacted a service.</p>
 	RootCauseServiceRequestImpactStatistics any
-	StartTime any
-	State any
-	Summary any
-	TopAnomalousServices any
+	StartTime                               any
+	State                                   any
+	Summary                                 any
+	TopAnomalousServices                    any
 }
 
 type InsightConfig struct {
@@ -44,7 +44,7 @@ type InsightConfig struct {
 
 type InsightAttrs struct {
 	// <p>When fault rates go outside of the expected range, X-Ray creates an insight. Insights tracks emergent issues within your applications.</p>
-	Insight any
+	Insight   any
 	InsightId any
 }
 

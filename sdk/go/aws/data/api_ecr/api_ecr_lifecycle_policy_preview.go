@@ -9,63 +9,63 @@ type ApiEcrLifecyclePolicyPreview_Filter struct {
 
 type ApiEcrLifecyclePolicyPreview_ImageIds struct {
 	ImageDigest any
-	ImageTag any
+	ImageTag    any
 }
 
 type ApiEcrLifecyclePolicyPreview_PreviewResults_Action struct {
 	TargetStorageClass any
-	Type any
+	Type               any
 }
 
 type ApiEcrLifecyclePolicyPreview_PreviewResults struct {
-	Action any
+	Action              any
 	AppliedRulePriority any
-	ImageDigest any
-	ImagePushedAt any
-	ImageTags any
-	StorageClass any
+	ImageDigest         any
+	ImagePushedAt       any
+	ImageTags           any
+	StorageClass        any
 }
 
 type ApiEcrLifecyclePolicyPreview_Summary_TransitioningImageTotalCounts struct {
-	ImageTotalCount any
+	ImageTotalCount    any
 	TargetStorageClass any
 }
 
 type ApiEcrLifecyclePolicyPreview_Summary struct {
-	ExpiringImageTotalCount any
+	ExpiringImageTotalCount       any
 	TransitioningImageTotalCounts any
 }
 
 var ApiEcrLifecyclePolicyPreview_FilterFields = ubx.FieldMap{
-		"TagStatus": ubx.FieldSpec{WireName: "tag_status"},
-	}
+	"TagStatus": ubx.FieldSpec{WireName: "tag_status"},
+}
 
 var ApiEcrLifecyclePolicyPreview_ImageIdsFields = ubx.FieldMap{
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-		"ImageTag": ubx.FieldSpec{WireName: "image_tag"},
-	}
+	"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
+	"ImageTag":    ubx.FieldSpec{WireName: "image_tag"},
+}
 
 type ApiEcrLifecyclePolicyPreviewConfig struct {
 	// <p>The filter for the lifecycle policy preview.</p>
-	Filter any
-	ImageIds any
-	MaxResults any
-	NextToken any
-	RegistryId any
+	Filter         any
+	ImageIds       any
+	MaxResults     any
+	NextToken      any
+	RegistryId     any
 	RepositoryName any
 }
 
 type ApiEcrLifecyclePolicyPreviewAttrs struct {
 	// <p>The filter for the lifecycle policy preview.</p>
-	Filter any
-	ImageIds any
+	Filter              any
+	ImageIds            any
 	LifecyclePolicyText any
-	MaxResults any
-	NextToken any
-	PreviewResults any
-	RegistryId any
-	RepositoryName any
-	Status any
+	MaxResults          any
+	NextToken           any
+	PreviewResults      any
+	RegistryId          any
+	RepositoryName      any
+	Status              any
 	// <p>The summary of the lifecycle policy preview request.</p>
 	Summary any
 }
@@ -75,17 +75,17 @@ var ApiEcrLifecyclePolicyPreview = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: ApiEcrLifecyclePolicyPreview_FilterFields,
+			Kind:     "object",
+			Fields:   ApiEcrLifecyclePolicyPreview_FilterFields,
 		},
 		"ImageIds": ubx.FieldSpec{
 			WireName: "image_ids",
-			Kind: "list",
-			Fields: ApiEcrLifecyclePolicyPreview_ImageIdsFields,
+			Kind:     "list",
+			Fields:   ApiEcrLifecyclePolicyPreview_ImageIdsFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

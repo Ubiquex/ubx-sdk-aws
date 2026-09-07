@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Graph_Tags struct {
 	// The key of a tag attached to the Neptune Analytics graph, used to identify the tag within the resource's tag set. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -15,13 +15,13 @@ type Graph_VectorSearchConfiguration struct {
 }
 
 var Graph_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Graph_VectorSearchConfigurationFields = ubx.FieldMap{
-		"VectorSearchDimension": ubx.FieldSpec{WireName: "vector_search_dimension"},
-	}
+	"VectorSearchDimension": ubx.FieldSpec{WireName: "vector_search_dimension"},
+}
 
 type GraphConfig struct {
 	// Value that indicates whether the Graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled. _Default_: If not specified, the default value is true.
@@ -71,20 +71,20 @@ var Graph = ubx.ResourceBinding{
 	WireType: "aws_neptune_graph_graph",
 	Fields: ubx.FieldMap{
 		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"GraphName": ubx.FieldSpec{WireName: "graph_name"},
-		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
-		"ProvisionedMemory": ubx.FieldSpec{WireName: "provisioned_memory"},
+		"GraphName":          ubx.FieldSpec{WireName: "graph_name"},
+		"KmsKeyIdentifier":   ubx.FieldSpec{WireName: "kms_key_identifier"},
+		"ProvisionedMemory":  ubx.FieldSpec{WireName: "provisioned_memory"},
 		"PublicConnectivity": ubx.FieldSpec{WireName: "public_connectivity"},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
+		"ReplicaCount":       ubx.FieldSpec{WireName: "replica_count"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Graph_TagsFields,
+			Kind:     "list",
+			Fields:   Graph_TagsFields,
 		},
 		"VectorSearchConfiguration": ubx.FieldSpec{
 			WireName: "vector_search_configuration",
-			Kind: "object",
-			Fields: Graph_VectorSearchConfigurationFields,
+			Kind:     "object",
+			Fields:   Graph_VectorSearchConfigurationFields,
 		},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexSlotType_EnumerationValues struct {
 	Synonyms any
-	Value any
+	Value    any
 }
 
 type ModelsLexSlotType_SlotTypeConfigurations_RegexConfiguration struct {
@@ -17,27 +17,27 @@ type ModelsLexSlotType_SlotTypeConfigurations struct {
 }
 
 type ModelsLexSlotTypeConfig struct {
-	Name any
+	Name    any
 	Version any
 }
 
 type ModelsLexSlotTypeAttrs struct {
-	Checksum any
-	CreatedDate any
-	Description any
-	EnumerationValues any
-	LastUpdatedDate any
-	Name any
+	Checksum                any
+	CreatedDate             any
+	Description             any
+	EnumerationValues       any
+	LastUpdatedDate         any
+	Name                    any
 	ParentSlotTypeSignature any
-	SlotTypeConfigurations any
-	ValueSelectionStrategy any
-	Version any
+	SlotTypeConfigurations  any
+	ValueSelectionStrategy  any
+	Version                 any
 }
 
 var ModelsLexSlotType = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_slot_type",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

@@ -4,27 +4,27 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EmailIdentities_EmailIdentities struct {
-	IdentityName any
-	IdentityType any
-	SendingEnabled any
+	IdentityName       any
+	IdentityType       any
+	SendingEnabled     any
 	VerificationStatus any
 }
 
 type EmailIdentitiesConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type EmailIdentitiesAttrs struct {
 	EmailIdentities any
-	NextToken any
-	PageSize any
+	NextToken       any
+	PageSize        any
 }
 
 var EmailIdentities = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_email_identities",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

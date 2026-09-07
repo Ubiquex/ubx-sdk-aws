@@ -4,13 +4,13 @@ package databrew
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobRun_DataCatalogOutputs_DatabaseOptions_TempDirectory struct {
-	Bucket any
+	Bucket      any
 	BucketOwner any
-	Key any
+	Key         any
 }
 
 type JobRun_DataCatalogOutputs_DatabaseOptions struct {
-	TableName any
+	TableName     any
 	TempDirectory any
 }
 
@@ -19,16 +19,16 @@ type JobRun_DataCatalogOutputs_S3Options struct {
 }
 
 type JobRun_DataCatalogOutputs struct {
-	CatalogId any
-	DatabaseName any
+	CatalogId       any
+	DatabaseName    any
 	DatabaseOptions any
-	Overwrite any
-	S3Options any
-	TableName any
+	Overwrite       any
+	S3Options       any
+	TableName       any
 }
 
 type JobRun_DatabaseOutputs struct {
-	DatabaseOptions any
+	DatabaseOptions    any
 	DatabaseOutputMode any
 	GlueConnectionName any
 }
@@ -48,31 +48,31 @@ type JobRun_Outputs_FormatOptions struct {
 
 type JobRun_Outputs struct {
 	CompressionFormat any
-	Format any
-	FormatOptions any
-	Location any
-	MaxOutputFiles any
-	Overwrite any
-	PartitionColumns any
+	Format            any
+	FormatOptions     any
+	Location          any
+	MaxOutputFiles    any
+	Overwrite         any
+	PartitionColumns  any
 }
 
 type JobRun_ProfileConfiguration_ColumnStatisticsConfigurations_Selectors struct {
-	Name any
+	Name  any
 	Regex any
 }
 
 type JobRun_ProfileConfiguration_ColumnStatisticsConfigurations_Statistics_Overrides struct {
 	Parameters any
-	Statistic any
+	Statistic  any
 }
 
 type JobRun_ProfileConfiguration_ColumnStatisticsConfigurations_Statistics struct {
 	IncludedStatistics any
-	Overrides any
+	Overrides          any
 }
 
 type JobRun_ProfileConfiguration_ColumnStatisticsConfigurations struct {
-	Selectors any
+	Selectors  any
 	Statistics any
 }
 
@@ -82,7 +82,7 @@ type JobRun_ProfileConfiguration_EntityDetectorConfiguration_AllowedStatistics s
 
 type JobRun_ProfileConfiguration_EntityDetectorConfiguration struct {
 	AllowedStatistics any
-	EntityTypes any
+	EntityTypes       any
 }
 
 type JobRun_ProfileConfiguration struct {
@@ -91,54 +91,54 @@ type JobRun_ProfileConfiguration struct {
 	DatasetStatisticsConfiguration any
 	// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
 	EntityDetectorConfiguration any
-	ProfileColumns any
+	ProfileColumns              any
 }
 
 type JobRun_RecipeReference struct {
-	Name any
+	Name          any
 	RecipeVersion any
 }
 
 type JobRun_ValidationConfigurations struct {
-	RulesetArn any
+	RulesetArn     any
 	ValidationMode any
 }
 
 type JobRunConfig struct {
-	Name any
+	Name  any
 	RunId any
 }
 
 type JobRunAttrs struct {
-	Attempt any
-	CompletedOn any
+	Attempt            any
+	CompletedOn        any
 	DataCatalogOutputs any
-	DatabaseOutputs any
-	DatasetName any
-	ErrorMessage any
-	ExecutionTime any
-	JobName any
+	DatabaseOutputs    any
+	DatasetName        any
+	ErrorMessage       any
+	ExecutionTime      any
+	JobName            any
 	// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-	JobSample any
-	LogGroupName any
+	JobSample       any
+	LogGroupName    any
 	LogSubscription any
-	Name any
-	Outputs any
+	Name            any
+	Outputs         any
 	// <p>Configuration for profile jobs. Configuration can be used to select columns, do evaluations, and override default parameters of evaluations. When configuration is undefined, the profile job will apply default settings to all supported columns. </p>
 	ProfileConfiguration any
 	// <p>Represents the name and version of a DataBrew recipe.</p>
-	RecipeReference any
-	RunId any
-	StartedBy any
-	StartedOn any
-	State any
+	RecipeReference          any
+	RunId                    any
+	StartedBy                any
+	StartedOn                any
+	State                    any
 	ValidationConfigurations any
 }
 
 var JobRun = ubx.DataSourceBinding{
 	WireType: "aws_databrew_job_run",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"RunId": ubx.FieldSpec{WireName: "run_id"},
 	},
 }

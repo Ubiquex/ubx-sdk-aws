@@ -4,44 +4,44 @@ package api_detective
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiDetectiveInvitations_Invitations_VolumeUsageByDatasourcePackage struct {
-	VolumeUsageInBytes any
+	VolumeUsageInBytes    any
 	VolumeUsageUpdateTime any
 }
 
 type ApiDetectiveInvitations_Invitations struct {
-	AccountId any
-	AdministratorId any
-	DatasourcePackageIngestStates any
-	DisabledReason any
-	EmailAddress any
-	GraphArn any
-	InvitationType any
-	InvitedTime any
-	MasterId any
-	PercentOfGraphUtilization any
+	AccountId                            any
+	AdministratorId                      any
+	DatasourcePackageIngestStates        any
+	DisabledReason                       any
+	EmailAddress                         any
+	GraphArn                             any
+	InvitationType                       any
+	InvitedTime                          any
+	MasterId                             any
+	PercentOfGraphUtilization            any
 	PercentOfGraphUtilizationUpdatedTime any
-	Status any
-	UpdatedTime any
-	VolumeUsageByDatasourcePackage any
-	VolumeUsageInBytes any
-	VolumeUsageUpdatedTime any
+	Status                               any
+	UpdatedTime                          any
+	VolumeUsageByDatasourcePackage       any
+	VolumeUsageInBytes                   any
+	VolumeUsageUpdatedTime               any
 }
 
 type ApiDetectiveInvitationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiDetectiveInvitationsAttrs struct {
 	Invitations any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var ApiDetectiveInvitations = ubx.DataSourceBinding{
 	WireType: "aws_api_detective_invitations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

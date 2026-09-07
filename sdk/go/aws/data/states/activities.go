@@ -4,26 +4,26 @@ package states
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Activities_Activities struct {
-	ActivityArn any
+	ActivityArn  any
 	CreationDate any
-	Name any
+	Name         any
 }
 
 type ActivitiesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ActivitiesAttrs struct {
 	Activities any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Activities = ubx.DataSourceBinding{
 	WireType: "aws_states_activities",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

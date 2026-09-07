@@ -4,14 +4,14 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UsageProfile_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var UsageProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type UsageProfileConfig struct {
 	// The configuration for the Glue usage profile, defining the profile's data access permissions, usage limits, and other settings as a JSON object. (AI-inferred)
@@ -41,12 +41,12 @@ var UsageProfile = ubx.ResourceBinding{
 	WireType: "aws_glue_usage_profile",
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{WireName: "configuration"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: UsageProfile_TagsFields,
+			Kind:     "list",
+			Fields:   UsageProfile_TagsFields,
 		},
 	},
 }

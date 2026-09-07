@@ -4,7 +4,7 @@ package voiceid
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FraudsterRegistrationJob_Job_FailureDetails struct {
-	Message any
+	Message    any
 	StatusCode any
 }
 
@@ -18,29 +18,29 @@ type FraudsterRegistrationJob_Job_JobProgress struct {
 
 type FraudsterRegistrationJob_Job_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type FraudsterRegistrationJob_Job_RegistrationConfig struct {
-	DuplicateRegistrationAction any
+	DuplicateRegistrationAction  any
 	FraudsterSimilarityThreshold any
-	WatchlistIds any
+	WatchlistIds                 any
 }
 
 type FraudsterRegistrationJob_Job struct {
-	CreatedAt any
+	CreatedAt         any
 	DataAccessRoleArn any
-	DomainId any
-	EndedAt any
+	DomainId          any
+	EndedAt           any
 	// <p>Contains error details for a failed batch job.</p>
 	FailureDetails any
 	// <p>The configuration containing input file information for a batch job.</p>
 	InputDataConfig any
-	JobId any
-	JobName any
+	JobId           any
+	JobName         any
 	// <p>Indicates the completion progress for a batch job.</p>
 	JobProgress any
-	JobStatus any
+	JobStatus   any
 	// <p>The configuration containing output file information for a batch job.</p>
 	OutputDataConfig any
 	// <p>The registration configuration to be used during the batch fraudster registration job.</p>
@@ -49,13 +49,13 @@ type FraudsterRegistrationJob_Job struct {
 
 type FraudsterRegistrationJobConfig struct {
 	DomainId any
-	JobId any
+	JobId    any
 }
 
 type FraudsterRegistrationJobAttrs struct {
 	DomainId any
 	// <p>Contains all the information about a fraudster registration job.</p>
-	Job any
+	Job   any
 	JobId any
 }
 
@@ -63,6 +63,6 @@ var FraudsterRegistrationJob = ubx.DataSourceBinding{
 	WireType: "aws_voiceid_fraudster_registration_job",
 	Fields: ubx.FieldMap{
 		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":    ubx.FieldSpec{WireName: "job_id"},
 	},
 }

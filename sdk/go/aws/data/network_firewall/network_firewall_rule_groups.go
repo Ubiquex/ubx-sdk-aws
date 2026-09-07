@@ -4,38 +4,38 @@ package network_firewall
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkFirewallRuleGroups_RuleGroups struct {
-	Arn any
-	Name any
+	Arn        any
+	Name       any
 	VendorName any
 }
 
 type NetworkFirewallRuleGroupsConfig struct {
-	ManagedType any
-	MaxResults any
-	NextToken any
-	Scope any
+	ManagedType        any
+	MaxResults         any
+	NextToken          any
+	Scope              any
 	SubscriptionStatus any
-	Type any
+	Type               any
 }
 
 type NetworkFirewallRuleGroupsAttrs struct {
-	ManagedType any
-	MaxResults any
-	NextToken any
-	RuleGroups any
-	Scope any
+	ManagedType        any
+	MaxResults         any
+	NextToken          any
+	RuleGroups         any
+	Scope              any
 	SubscriptionStatus any
-	Type any
+	Type               any
 }
 
 var NetworkFirewallRuleGroups = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_rule_groups",
 	Fields: ubx.FieldMap{
-		"ManagedType": ubx.FieldSpec{WireName: "managed_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"ManagedType":        ubx.FieldSpec{WireName: "managed_type"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"Scope":              ubx.FieldSpec{WireName: "scope"},
 		"SubscriptionStatus": ubx.FieldSpec{WireName: "subscription_status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":               ubx.FieldSpec{WireName: "type"},
 	},
 }

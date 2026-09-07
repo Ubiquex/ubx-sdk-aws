@@ -4,25 +4,25 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImageAttribute_BlockDeviceMappings_Ebs struct {
-	AvailabilityZone any
-	AvailabilityZoneId any
-	DeleteOnTermination any
-	EbsCardIndex any
-	Encrypted any
-	Iops any
-	KmsKeyId any
-	OutpostArn any
-	SnapshotId any
-	Throughput any
+	AvailabilityZone         any
+	AvailabilityZoneId       any
+	DeleteOnTermination      any
+	EbsCardIndex             any
+	Encrypted                any
+	Iops                     any
+	KmsKeyId                 any
+	OutpostArn               any
+	SnapshotId               any
+	Throughput               any
 	VolumeInitializationRate any
-	VolumeSize any
-	VolumeType any
+	VolumeSize               any
+	VolumeType               any
 }
 
 type ImageAttribute_BlockDeviceMappings struct {
-	DeviceName any
-	Ebs any
-	NoDevice any
+	DeviceName  any
+	Ebs         any
+	NoDevice    any
 	VirtualName any
 }
 
@@ -31,25 +31,25 @@ type ImageAttribute_BootMode struct {
 }
 
 type ImageAttribute_LaunchPermissions struct {
-	Group any
-	OrganizationArn any
+	Group                 any
+	OrganizationArn       any
 	OrganizationalUnitArn any
-	UserId any
+	UserId                any
 }
 
 type ImageAttribute_ProductCodes struct {
-	ProductCodeId any
+	ProductCodeId   any
 	ProductCodeType any
 }
 
 type ImageAttributeConfig struct {
 	Attribute any
-	DryRun any
-	ImageId any
+	DryRun    any
+	ImageId   any
 }
 
 type ImageAttributeAttrs struct {
-	Attribute any
+	Attribute           any
 	BlockDeviceMappings any
 	// <p>Describes a value for a resource attribute that is a String.</p>
 	BootMode any
@@ -57,16 +57,16 @@ type ImageAttributeAttrs struct {
 	DeregistrationProtection any
 	// <p>Describes a value for a resource attribute that is a String.</p>
 	Description any
-	DryRun any
-	ImageId any
+	DryRun      any
+	ImageId     any
 	// <p>Describes a value for a resource attribute that is a String.</p>
 	ImdsSupport any
 	// <p>Describes a value for a resource attribute that is a String.</p>
 	KernelId any
 	// <p>Describes a value for a resource attribute that is a String.</p>
-	LastLaunchedTime any
+	LastLaunchedTime  any
 	LaunchPermissions any
-	ProductCodes any
+	ProductCodes      any
 	// <p>Describes a value for a resource attribute that is a String.</p>
 	RamdiskId any
 	// <p>Describes a value for a resource attribute that is a String.</p>
@@ -81,7 +81,7 @@ var ImageAttribute = ubx.DataSourceBinding{
 	WireType: "aws_ec2_image_attribute",
 	Fields: ubx.FieldMap{
 		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
+		"DryRun":    ubx.FieldSpec{WireName: "dry_run"},
+		"ImageId":   ubx.FieldSpec{WireName: "image_id"},
 	},
 }

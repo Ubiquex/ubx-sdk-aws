@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackendEnvironments_BackendEnvironments struct {
 	BackendEnvironmentArn any
-	CreateTime any
-	DeploymentArtifacts any
-	EnvironmentName any
-	StackName any
-	UpdateTime any
+	CreateTime            any
+	DeploymentArtifacts   any
+	EnvironmentName       any
+	StackName             any
+	UpdateTime            any
 }
 
 type BackendEnvironmentsConfig struct {
-	AppId any
+	AppId           any
 	EnvironmentName any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type BackendEnvironmentsAttrs struct {
-	AppId any
+	AppId               any
 	BackendEnvironments any
-	EnvironmentName any
-	MaxResults any
-	NextToken any
+	EnvironmentName     any
+	MaxResults          any
+	NextToken           any
 }
 
 var BackendEnvironments = ubx.DataSourceBinding{
 	WireType: "aws_amplify_backend_environments",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":           ubx.FieldSpec{WireName: "app_id"},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

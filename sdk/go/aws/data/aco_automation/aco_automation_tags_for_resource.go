@@ -4,7 +4,7 @@ package aco_automation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcoAutomationTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type AcoAutomationTagsForResourceConfig struct {
 
 type AcoAutomationTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var AcoAutomationTagsForResource = ubx.DataSourceBinding{

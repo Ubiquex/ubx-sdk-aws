@@ -20,7 +20,7 @@ type RouterNetworkInterface_Configuration_Vpc struct {
 
 type RouterNetworkInterface_Configuration struct {
 	Public any
-	Vpc any
+	Vpc    any
 }
 
 type RouterNetworkInterface_Tags struct {
@@ -31,39 +31,39 @@ type RouterNetworkInterface_Tags struct {
 }
 
 var RouterNetworkInterface_Configuration_Public_AllowRulesFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+}
 
 var RouterNetworkInterface_Configuration_PublicFields = ubx.FieldMap{
-		"AllowRules": ubx.FieldSpec{
-			WireName: "allow_rules",
-			Kind: "list",
-			Fields: RouterNetworkInterface_Configuration_Public_AllowRulesFields,
-		},
-	}
+	"AllowRules": ubx.FieldSpec{
+		WireName: "allow_rules",
+		Kind:     "list",
+		Fields:   RouterNetworkInterface_Configuration_Public_AllowRulesFields,
+	},
+}
 
 var RouterNetworkInterface_Configuration_VpcFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetId":         ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var RouterNetworkInterface_ConfigurationFields = ubx.FieldMap{
-		"Public": ubx.FieldSpec{
-			WireName: "public",
-			Kind: "object",
-			Fields: RouterNetworkInterface_Configuration_PublicFields,
-		},
-		"Vpc": ubx.FieldSpec{
-			WireName: "vpc",
-			Kind: "object",
-			Fields: RouterNetworkInterface_Configuration_VpcFields,
-		},
-	}
+	"Public": ubx.FieldSpec{
+		WireName: "public",
+		Kind:     "object",
+		Fields:   RouterNetworkInterface_Configuration_PublicFields,
+	},
+	"Vpc": ubx.FieldSpec{
+		WireName: "vpc",
+		Kind:     "object",
+		Fields:   RouterNetworkInterface_Configuration_VpcFields,
+	},
+}
 
 var RouterNetworkInterface_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RouterNetworkInterfaceConfig struct {
 	// The configuration settings for a router network interface.
@@ -108,15 +108,15 @@ var RouterNetworkInterface = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: RouterNetworkInterface_ConfigurationFields,
+			Kind:     "object",
+			Fields:   RouterNetworkInterface_ConfigurationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"RegionName": ubx.FieldSpec{WireName: "region_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RouterNetworkInterface_TagsFields,
+			Kind:     "list",
+			Fields:   RouterNetworkInterface_TagsFields,
 		},
 	},
 }

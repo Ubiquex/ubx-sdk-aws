@@ -9,8 +9,8 @@ type ListenerCertificate_Certificates struct {
 }
 
 var ListenerCertificate_CertificatesFields = ubx.FieldMap{
-		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-	}
+	"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
+}
 
 type ListenerCertificateConfig struct {
 	// Specifies the list of ACM certificate ARNs to attach to the listener, allowing the load balancer to present these certificates during TLS handshakes. (AI-inferred)
@@ -33,8 +33,8 @@ var ListenerCertificate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Certificates": ubx.FieldSpec{
 			WireName: "certificates",
-			Kind: "list",
-			Fields: ListenerCertificate_CertificatesFields,
+			Kind:     "list",
+			Fields:   ListenerCertificate_CertificatesFields,
 		},
 		"ListenerArn": ubx.FieldSpec{WireName: "listener_arn"},
 	},

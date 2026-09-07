@@ -4,21 +4,21 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VerifiedAccessEndpointPolicyConfig struct {
-	DryRun any
+	DryRun                   any
 	VerifiedAccessEndpointId any
 }
 
 type VerifiedAccessEndpointPolicyAttrs struct {
-	DryRun any
-	PolicyDocument any
-	PolicyEnabled any
+	DryRun                   any
+	PolicyDocument           any
+	PolicyEnabled            any
 	VerifiedAccessEndpointId any
 }
 
 var VerifiedAccessEndpointPolicy = ubx.DataSourceBinding{
 	WireType: "aws_ec2_verified_access_endpoint_policy",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":                   ubx.FieldSpec{WireName: "dry_run"},
 		"VerifiedAccessEndpointId": ubx.FieldSpec{WireName: "verified_access_endpoint_id"},
 	},
 }

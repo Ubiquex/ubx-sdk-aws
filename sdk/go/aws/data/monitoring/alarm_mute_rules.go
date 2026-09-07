@@ -4,34 +4,34 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlarmMuteRules_AlarmMuteRuleSummaries struct {
-	AlarmMuteRuleArn any
-	ExpireDate any
+	AlarmMuteRuleArn     any
+	ExpireDate           any
 	LastUpdatedTimestamp any
-	MuteType any
-	Status any
+	MuteType             any
+	Status               any
 }
 
 type AlarmMuteRulesConfig struct {
-	AlarmName any
+	AlarmName  any
 	MaxRecords any
-	NextToken any
-	Statuses any
+	NextToken  any
+	Statuses   any
 }
 
 type AlarmMuteRulesAttrs struct {
 	AlarmMuteRuleSummaries any
-	AlarmName any
-	MaxRecords any
-	NextToken any
-	Statuses any
+	AlarmName              any
+	MaxRecords             any
+	NextToken              any
+	Statuses               any
 }
 
 var AlarmMuteRules = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_alarm_mute_rules",
 	Fields: ubx.FieldMap{
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
+		"AlarmName":  ubx.FieldSpec{WireName: "alarm_name"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Statuses": ubx.FieldSpec{WireName: "statuses"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Statuses":   ubx.FieldSpec{WireName: "statuses"},
 	},
 }

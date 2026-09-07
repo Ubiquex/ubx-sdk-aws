@@ -8,11 +8,11 @@ type KeyRotationStatusConfig struct {
 }
 
 type KeyRotationStatusAttrs struct {
-	KeyId any
-	KeyRotationEnabled any
-	NextRotationDate any
+	KeyId                     any
+	KeyRotationEnabled        any
+	NextRotationDate          any
 	OnDemandRotationStartDate any
-	RotationPeriodInDays any
+	RotationPeriodInDays      any
 }
 
 var KeyRotationStatus = ubx.DataSourceBinding{

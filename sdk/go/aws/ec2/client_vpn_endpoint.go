@@ -82,76 +82,76 @@ type ClientVpnEndpoint_TransitGatewayConfiguration struct {
 }
 
 var ClientVpnEndpoint_AuthenticationOptions_ActiveDirectoryFields = ubx.FieldMap{
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-	}
+	"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
+}
 
 var ClientVpnEndpoint_AuthenticationOptions_FederatedAuthenticationFields = ubx.FieldMap{
-		"SamlproviderArn": ubx.FieldSpec{WireName: "samlprovider_arn"},
-		"SelfServiceSamlproviderArn": ubx.FieldSpec{WireName: "self_service_samlprovider_arn"},
-	}
+	"SamlproviderArn":            ubx.FieldSpec{WireName: "samlprovider_arn"},
+	"SelfServiceSamlproviderArn": ubx.FieldSpec{WireName: "self_service_samlprovider_arn"},
+}
 
 var ClientVpnEndpoint_AuthenticationOptions_MutualAuthenticationFields = ubx.FieldMap{
-		"ClientRootCertificateChainArn": ubx.FieldSpec{WireName: "client_root_certificate_chain_arn"},
-	}
+	"ClientRootCertificateChainArn": ubx.FieldSpec{WireName: "client_root_certificate_chain_arn"},
+}
 
 var ClientVpnEndpoint_AuthenticationOptionsFields = ubx.FieldMap{
-		"ActiveDirectory": ubx.FieldSpec{
-			WireName: "active_directory",
-			Kind: "object",
-			Fields: ClientVpnEndpoint_AuthenticationOptions_ActiveDirectoryFields,
-		},
-		"FederatedAuthentication": ubx.FieldSpec{
-			WireName: "federated_authentication",
-			Kind: "object",
-			Fields: ClientVpnEndpoint_AuthenticationOptions_FederatedAuthenticationFields,
-		},
-		"MutualAuthentication": ubx.FieldSpec{
-			WireName: "mutual_authentication",
-			Kind: "object",
-			Fields: ClientVpnEndpoint_AuthenticationOptions_MutualAuthenticationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ActiveDirectory": ubx.FieldSpec{
+		WireName: "active_directory",
+		Kind:     "object",
+		Fields:   ClientVpnEndpoint_AuthenticationOptions_ActiveDirectoryFields,
+	},
+	"FederatedAuthentication": ubx.FieldSpec{
+		WireName: "federated_authentication",
+		Kind:     "object",
+		Fields:   ClientVpnEndpoint_AuthenticationOptions_FederatedAuthenticationFields,
+	},
+	"MutualAuthentication": ubx.FieldSpec{
+		WireName: "mutual_authentication",
+		Kind:     "object",
+		Fields:   ClientVpnEndpoint_AuthenticationOptions_MutualAuthenticationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ClientVpnEndpoint_ClientConnectOptionsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LambdaFunctionArn": ubx.FieldSpec{WireName: "lambda_function_arn"},
-	}
+	"Enabled":           ubx.FieldSpec{WireName: "enabled"},
+	"LambdaFunctionArn": ubx.FieldSpec{WireName: "lambda_function_arn"},
+}
 
 var ClientVpnEndpoint_ClientLoginBannerOptionsFields = ubx.FieldMap{
-		"BannerText": ubx.FieldSpec{WireName: "banner_text"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"BannerText": ubx.FieldSpec{WireName: "banner_text"},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+}
 
 var ClientVpnEndpoint_ClientRouteEnforcementOptionsFields = ubx.FieldMap{
-		"Enforced": ubx.FieldSpec{WireName: "enforced"},
-	}
+	"Enforced": ubx.FieldSpec{WireName: "enforced"},
+}
 
 var ClientVpnEndpoint_ConnectionLogOptionsFields = ubx.FieldMap{
-		"CloudwatchLogGroup": ubx.FieldSpec{WireName: "cloudwatch_log_group"},
-		"CloudwatchLogStream": ubx.FieldSpec{WireName: "cloudwatch_log_stream"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"CloudwatchLogGroup":  ubx.FieldSpec{WireName: "cloudwatch_log_group"},
+	"CloudwatchLogStream": ubx.FieldSpec{WireName: "cloudwatch_log_stream"},
+	"Enabled":             ubx.FieldSpec{WireName: "enabled"},
+}
 
 var ClientVpnEndpoint_TagSpecifications_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ClientVpnEndpoint_TagSpecificationsFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: ClientVpnEndpoint_TagSpecifications_TagsFields,
-		},
-	}
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   ClientVpnEndpoint_TagSpecifications_TagsFields,
+	},
+}
 
 var ClientVpnEndpoint_TransitGatewayConfigurationFields = ubx.FieldMap{
-		"AvailabilityZoneIds": ubx.FieldSpec{WireName: "availability_zone_ids"},
-		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
-		"TransitGatewayId": ubx.FieldSpec{WireName: "transit_gateway_id"},
-	}
+	"AvailabilityZoneIds": ubx.FieldSpec{WireName: "availability_zone_ids"},
+	"AvailabilityZones":   ubx.FieldSpec{WireName: "availability_zones"},
+	"TransitGatewayId":    ubx.FieldSpec{WireName: "transit_gateway_id"},
+}
 
 type ClientVpnEndpointConfig struct {
 	// Specifies the authentication methods (certificate-based, directory service, or federated/SAML) that clients must use to authenticate to the Client VPN endpoint. (AI-inferred)
@@ -187,7 +187,7 @@ type ClientVpnEndpointConfig struct {
 	// Specifies the tags to apply to the Client VPN endpoint at creation, by providing a list of tag specifications that each include a resource type (client-vpn-endpoint) and tag key-value pairs. (AI-inferred)
 	TagSpecifications any
 	// Specifies whether the Client VPN endpoint routes IPv4 or IPv6 traffic, with valid values 'ipv4' or 'ipv6'. (AI-inferred)
-	TrafficIpAddressType any
+	TrafficIpAddressType        any
 	TransitGatewayConfiguration any
 	// Specifies the transport protocol (TCP or UDP) used by the Client VPN endpoint for the VPN session. (AI-inferred)
 	TransportProtocol any
@@ -233,7 +233,7 @@ type ClientVpnEndpointAttrs struct {
 	// Specifies the tags to apply to the Client VPN endpoint at creation, by providing a list of tag specifications that each include a resource type (client-vpn-endpoint) and tag key-value pairs. (AI-inferred)
 	TagSpecifications any
 	// Specifies whether the Client VPN endpoint routes IPv4 or IPv6 traffic, with valid values 'ipv4' or 'ipv6'. (AI-inferred)
-	TrafficIpAddressType any
+	TrafficIpAddressType        any
 	TransitGatewayConfiguration any
 	// Specifies the transport protocol (TCP or UDP) used by the Client VPN endpoint for the VPN session. (AI-inferred)
 	TransportProtocol any
@@ -248,52 +248,52 @@ var ClientVpnEndpoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AuthenticationOptions": ubx.FieldSpec{
 			WireName: "authentication_options",
-			Kind: "list",
-			Fields: ClientVpnEndpoint_AuthenticationOptionsFields,
+			Kind:     "list",
+			Fields:   ClientVpnEndpoint_AuthenticationOptionsFields,
 		},
 		"ClientCidrBlock": ubx.FieldSpec{WireName: "client_cidr_block"},
 		"ClientConnectOptions": ubx.FieldSpec{
 			WireName: "client_connect_options",
-			Kind: "object",
-			Fields: ClientVpnEndpoint_ClientConnectOptionsFields,
+			Kind:     "object",
+			Fields:   ClientVpnEndpoint_ClientConnectOptionsFields,
 		},
 		"ClientLoginBannerOptions": ubx.FieldSpec{
 			WireName: "client_login_banner_options",
-			Kind: "object",
-			Fields: ClientVpnEndpoint_ClientLoginBannerOptionsFields,
+			Kind:     "object",
+			Fields:   ClientVpnEndpoint_ClientLoginBannerOptionsFields,
 		},
 		"ClientRouteEnforcementOptions": ubx.FieldSpec{
 			WireName: "client_route_enforcement_options",
-			Kind: "object",
-			Fields: ClientVpnEndpoint_ClientRouteEnforcementOptionsFields,
+			Kind:     "object",
+			Fields:   ClientVpnEndpoint_ClientRouteEnforcementOptionsFields,
 		},
 		"ConnectionLogOptions": ubx.FieldSpec{
 			WireName: "connection_log_options",
-			Kind: "object",
-			Fields: ClientVpnEndpoint_ConnectionLogOptionsFields,
+			Kind:     "object",
+			Fields:   ClientVpnEndpoint_ConnectionLogOptionsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
 		"DisconnectOnSessionTimeout": ubx.FieldSpec{WireName: "disconnect_on_session_timeout"},
-		"DnsServers": ubx.FieldSpec{WireName: "dns_servers"},
-		"EndpointIpAddressType": ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SelfServicePortal": ubx.FieldSpec{WireName: "self_service_portal"},
-		"ServerCertificateArn": ubx.FieldSpec{WireName: "server_certificate_arn"},
-		"SessionTimeoutHours": ubx.FieldSpec{WireName: "session_timeout_hours"},
-		"SplitTunnel": ubx.FieldSpec{WireName: "split_tunnel"},
+		"DnsServers":                 ubx.FieldSpec{WireName: "dns_servers"},
+		"EndpointIpAddressType":      ubx.FieldSpec{WireName: "endpoint_ip_address_type"},
+		"SecurityGroupIds":           ubx.FieldSpec{WireName: "security_group_ids"},
+		"SelfServicePortal":          ubx.FieldSpec{WireName: "self_service_portal"},
+		"ServerCertificateArn":       ubx.FieldSpec{WireName: "server_certificate_arn"},
+		"SessionTimeoutHours":        ubx.FieldSpec{WireName: "session_timeout_hours"},
+		"SplitTunnel":                ubx.FieldSpec{WireName: "split_tunnel"},
 		"TagSpecifications": ubx.FieldSpec{
 			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: ClientVpnEndpoint_TagSpecificationsFields,
+			Kind:     "list",
+			Fields:   ClientVpnEndpoint_TagSpecificationsFields,
 		},
 		"TrafficIpAddressType": ubx.FieldSpec{WireName: "traffic_ip_address_type"},
 		"TransitGatewayConfiguration": ubx.FieldSpec{
 			WireName: "transit_gateway_configuration",
-			Kind: "object",
-			Fields: ClientVpnEndpoint_TransitGatewayConfigurationFields,
+			Kind:     "object",
+			Fields:   ClientVpnEndpoint_TransitGatewayConfigurationFields,
 		},
 		"TransportProtocol": ubx.FieldSpec{WireName: "transport_protocol"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-		"VpnPort": ubx.FieldSpec{WireName: "vpn_port"},
+		"VpcId":             ubx.FieldSpec{WireName: "vpc_id"},
+		"VpnPort":           ubx.FieldSpec{WireName: "vpn_port"},
 	},
 }

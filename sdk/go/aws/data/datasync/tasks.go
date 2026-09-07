@@ -4,35 +4,35 @@ package datasync
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tasks_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type Tasks_Tasks struct {
-	Name any
-	Status any
-	TaskArn any
+	Name     any
+	Status   any
+	TaskArn  any
 	TaskMode any
 }
 
 var Tasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 type TasksConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TasksAttrs struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	Tasks any
+	NextToken  any
+	Tasks      any
 }
 
 var Tasks = ubx.DataSourceBinding{
@@ -40,10 +40,10 @@ var Tasks = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Tasks_FiltersFields,
+			Kind:     "list",
+			Fields:   Tasks_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

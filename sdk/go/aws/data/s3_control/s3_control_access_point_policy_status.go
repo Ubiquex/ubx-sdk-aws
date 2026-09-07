@@ -9,12 +9,12 @@ type S3ControlAccessPointPolicyStatus_PolicyStatus struct {
 
 type S3ControlAccessPointPolicyStatusConfig struct {
 	AccountId any
-	Name any
+	Name      any
 }
 
 type S3ControlAccessPointPolicyStatusAttrs struct {
 	AccountId any
-	Name any
+	Name      any
 	// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
 	PolicyStatus any
 }
@@ -23,6 +23,6 @@ var S3ControlAccessPointPolicyStatus = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_access_point_policy_status",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcClassicLinkDnsSupport_Vpcs struct {
 	ClassicLinkDnsSupported any
-	VpcId any
+	VpcId                   any
 }
 
 type VpcClassicLinkDnsSupportConfig struct {
 	MaxResults any
-	NextToken any
-	VpcIds any
+	NextToken  any
+	VpcIds     any
 }
 
 type VpcClassicLinkDnsSupportAttrs struct {
 	MaxResults any
-	NextToken any
-	VpcIds any
-	Vpcs any
+	NextToken  any
+	VpcIds     any
+	Vpcs       any
 }
 
 var VpcClassicLinkDnsSupport = ubx.DataSourceBinding{
 	WireType: "aws_ec2_vpc_classic_link_dns_support",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VpcIds": ubx.FieldSpec{WireName: "vpc_ids"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"VpcIds":     ubx.FieldSpec{WireName: "vpc_ids"},
 	},
 }

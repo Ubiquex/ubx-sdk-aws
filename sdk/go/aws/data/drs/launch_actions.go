@@ -8,43 +8,43 @@ type LaunchActions_Filters struct {
 }
 
 type LaunchActions_Items_Parameters struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type LaunchActions_Items struct {
-	ActionCode any
-	ActionId any
+	ActionCode    any
+	ActionId      any
 	ActionVersion any
-	Active any
-	Category any
-	Description any
-	Name any
-	Optional any
-	Order any
-	Parameters any
-	Type any
+	Active        any
+	Category      any
+	Description   any
+	Name          any
+	Optional      any
+	Order         any
+	Parameters    any
+	Type          any
 }
 
 var LaunchActions_FiltersFields = ubx.FieldMap{
-		"ActionIds": ubx.FieldSpec{WireName: "action_ids"},
-	}
+	"ActionIds": ubx.FieldSpec{WireName: "action_ids"},
+}
 
 type LaunchActionsConfig struct {
 	// <p>Resource launch actions filter.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Launch configuration template Id or Source Server Id</p>
 	ResourceId any
 }
 
 type LaunchActionsAttrs struct {
 	// <p>Resource launch actions filter.</p>
-	Filters any
-	Items any
+	Filters    any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>Launch configuration template Id or Source Server Id</p>
 	ResourceId any
 }
@@ -54,11 +54,11 @@ var LaunchActions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: LaunchActions_FiltersFields,
+			Kind:     "object",
+			Fields:   LaunchActions_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

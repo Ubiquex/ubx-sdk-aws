@@ -33,23 +33,23 @@ type UserPoolClient_TokenValidityUnits struct {
 }
 
 var UserPoolClient_AnalyticsConfigurationFields = ubx.FieldMap{
-		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"UserDataShared": ubx.FieldSpec{WireName: "user_data_shared"},
-	}
+	"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
+	"ApplicationId":  ubx.FieldSpec{WireName: "application_id"},
+	"ExternalId":     ubx.FieldSpec{WireName: "external_id"},
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"UserDataShared": ubx.FieldSpec{WireName: "user_data_shared"},
+}
 
 var UserPoolClient_RefreshTokenRotationFields = ubx.FieldMap{
-		"Feature": ubx.FieldSpec{WireName: "feature"},
-		"RetryGracePeriodSeconds": ubx.FieldSpec{WireName: "retry_grace_period_seconds"},
-	}
+	"Feature":                 ubx.FieldSpec{WireName: "feature"},
+	"RetryGracePeriodSeconds": ubx.FieldSpec{WireName: "retry_grace_period_seconds"},
+}
 
 var UserPoolClient_TokenValidityUnitsFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"IdToken": ubx.FieldSpec{WireName: "id_token"},
-		"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
-	}
+	"AccessToken":  ubx.FieldSpec{WireName: "access_token"},
+	"IdToken":      ubx.FieldSpec{WireName: "id_token"},
+	"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
+}
 
 type UserPoolClientConfig struct {
 	// The validity duration, in minutes, for access tokens issued by this Cognito user pool client, after which they expire. (AI-inferred)
@@ -85,7 +85,7 @@ type UserPoolClientConfig struct {
 	// Indicates whether the user pool client prevents user enumeration by returning a generic error when a user does not exist, with allowed values 'ENABLED' or 'LEGACY'. (AI-inferred)
 	PreventUserExistenceErrors any
 	// Specifies the user pool attributes that the app client can read from the user's profile. (AI-inferred)
-	ReadAttributes any
+	ReadAttributes       any
 	RefreshTokenRotation any
 	// The number of days that a refresh token remains valid before the user must re-authenticate. (AI-inferred)
 	RefreshTokenValidity any
@@ -139,7 +139,7 @@ type UserPoolClientAttrs struct {
 	// Indicates whether the user pool client prevents user enumeration by returning a generic error when a user does not exist, with allowed values 'ENABLED' or 'LEGACY'. (AI-inferred)
 	PreventUserExistenceErrors any
 	// Specifies the user pool attributes that the app client can read from the user's profile. (AI-inferred)
-	ReadAttributes any
+	ReadAttributes       any
 	RefreshTokenRotation any
 	// The number of days that a refresh token remains valid before the user must re-authenticate. (AI-inferred)
 	RefreshTokenValidity any
@@ -156,40 +156,40 @@ type UserPoolClientAttrs struct {
 var UserPoolClient = ubx.ResourceBinding{
 	WireType: "aws_cognito_user_pool_client",
 	Fields: ubx.FieldMap{
-		"AccessTokenValidity": ubx.FieldSpec{WireName: "access_token_validity"},
-		"AllowedOauthFlows": ubx.FieldSpec{WireName: "allowed_oauth_flows"},
+		"AccessTokenValidity":             ubx.FieldSpec{WireName: "access_token_validity"},
+		"AllowedOauthFlows":               ubx.FieldSpec{WireName: "allowed_oauth_flows"},
 		"AllowedOauthFlowsUserPoolClient": ubx.FieldSpec{WireName: "allowed_oauth_flows_user_pool_client"},
-		"AllowedOauthScopes": ubx.FieldSpec{WireName: "allowed_oauth_scopes"},
+		"AllowedOauthScopes":              ubx.FieldSpec{WireName: "allowed_oauth_scopes"},
 		"AnalyticsConfiguration": ubx.FieldSpec{
 			WireName: "analytics_configuration",
-			Kind: "object",
-			Fields: UserPoolClient_AnalyticsConfigurationFields,
+			Kind:     "object",
+			Fields:   UserPoolClient_AnalyticsConfigurationFields,
 		},
 		"AuthSessionValidity": ubx.FieldSpec{WireName: "auth_session_validity"},
-		"CallbackUrls": ubx.FieldSpec{WireName: "callback_urls"},
-		"ClientName": ubx.FieldSpec{WireName: "client_name"},
-		"DefaultRedirectUri": ubx.FieldSpec{WireName: "default_redirect_uri"},
+		"CallbackUrls":        ubx.FieldSpec{WireName: "callback_urls"},
+		"ClientName":          ubx.FieldSpec{WireName: "client_name"},
+		"DefaultRedirectUri":  ubx.FieldSpec{WireName: "default_redirect_uri"},
 		"EnablePropagateAdditionalUserContextData": ubx.FieldSpec{WireName: "enable_propagate_additional_user_context_data"},
-		"EnableTokenRevocation": ubx.FieldSpec{WireName: "enable_token_revocation"},
-		"ExplicitAuthFlows": ubx.FieldSpec{WireName: "explicit_auth_flows"},
-		"GenerateSecret": ubx.FieldSpec{WireName: "generate_secret"},
-		"IdTokenValidity": ubx.FieldSpec{WireName: "id_token_validity"},
-		"LogoutUrls": ubx.FieldSpec{WireName: "logout_urls"},
-		"PreventUserExistenceErrors": ubx.FieldSpec{WireName: "prevent_user_existence_errors"},
-		"ReadAttributes": ubx.FieldSpec{WireName: "read_attributes"},
+		"EnableTokenRevocation":                    ubx.FieldSpec{WireName: "enable_token_revocation"},
+		"ExplicitAuthFlows":                        ubx.FieldSpec{WireName: "explicit_auth_flows"},
+		"GenerateSecret":                           ubx.FieldSpec{WireName: "generate_secret"},
+		"IdTokenValidity":                          ubx.FieldSpec{WireName: "id_token_validity"},
+		"LogoutUrls":                               ubx.FieldSpec{WireName: "logout_urls"},
+		"PreventUserExistenceErrors":               ubx.FieldSpec{WireName: "prevent_user_existence_errors"},
+		"ReadAttributes":                           ubx.FieldSpec{WireName: "read_attributes"},
 		"RefreshTokenRotation": ubx.FieldSpec{
 			WireName: "refresh_token_rotation",
-			Kind: "object",
-			Fields: UserPoolClient_RefreshTokenRotationFields,
+			Kind:     "object",
+			Fields:   UserPoolClient_RefreshTokenRotationFields,
 		},
-		"RefreshTokenValidity": ubx.FieldSpec{WireName: "refresh_token_validity"},
+		"RefreshTokenValidity":       ubx.FieldSpec{WireName: "refresh_token_validity"},
 		"SupportedIdentityProviders": ubx.FieldSpec{WireName: "supported_identity_providers"},
 		"TokenValidityUnits": ubx.FieldSpec{
 			WireName: "token_validity_units",
-			Kind: "object",
-			Fields: UserPoolClient_TokenValidityUnitsFields,
+			Kind:     "object",
+			Fields:   UserPoolClient_TokenValidityUnitsFields,
 		},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"UserPoolId":      ubx.FieldSpec{WireName: "user_pool_id"},
 		"WriteAttributes": ubx.FieldSpec{WireName: "write_attributes"},
 	},
 }

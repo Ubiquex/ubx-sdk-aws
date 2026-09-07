@@ -28,8 +28,8 @@ type TypeAttrs struct {
 var Type = ubx.ResourceBinding{
 	WireType: "aws_app_sync_type",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":     ubx.FieldSpec{WireName: "format"},
 	},
 }

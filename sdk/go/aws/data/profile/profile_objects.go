@@ -4,40 +4,40 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileObjects_Items struct {
-	Object any
-	ObjectTypeName any
+	Object                 any
+	ObjectTypeName         any
 	ProfileObjectUniqueKey any
 }
 
 type ProfileObjects_ObjectFilter struct {
 	KeyName any
-	Values any
+	Values  any
 }
 
 var ProfileObjects_ObjectFilterFields = ubx.FieldMap{
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"KeyName": ubx.FieldSpec{WireName: "key_name"},
+	"Values":  ubx.FieldSpec{WireName: "values"},
+}
 
 type ProfileObjectsConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The filter applied to <code>ListProfileObjects</code> response to include profile objects with the specified index values.</p>
-	ObjectFilter any
+	ObjectFilter   any
 	ObjectTypeName any
-	ProfileId any
+	ProfileId      any
 }
 
 type ProfileObjectsAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The filter applied to <code>ListProfileObjects</code> response to include profile objects with the specified index values.</p>
-	ObjectFilter any
+	ObjectFilter   any
 	ObjectTypeName any
-	ProfileId any
+	ProfileId      any
 }
 
 var ProfileObjects = ubx.DataSourceBinding{
@@ -45,13 +45,13 @@ var ProfileObjects = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ObjectFilter": ubx.FieldSpec{
 			WireName: "object_filter",
-			Kind: "object",
-			Fields: ProfileObjects_ObjectFilterFields,
+			Kind:     "object",
+			Fields:   ProfileObjects_ObjectFilterFields,
 		},
 		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"ProfileId":      ubx.FieldSpec{WireName: "profile_id"},
 	},
 }

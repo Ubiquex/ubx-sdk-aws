@@ -4,50 +4,50 @@ package directconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VirtualInterfaceRoutes_Filters struct {
-	AddressFamily any
-	AsPath any
-	Cidrs any
-	Communities any
+	AddressFamily  any
+	AsPath         any
+	Cidrs          any
+	Communities    any
 	RouteDirection any
 }
 
 type VirtualInterfaceRoutes_Routes_AsPath struct {
-	Path any
+	Path     any
 	PathType any
 }
 
 type VirtualInterfaceRoutes_Routes struct {
-	AddressFamily any
-	AsPath any
+	AddressFamily      any
+	AsPath             any
 	AwsLogicalDeviceId any
-	Cidr any
-	Communities any
-	RouteDirection any
-	RouteInstalledAt any
+	Cidr               any
+	Communities        any
+	RouteDirection     any
+	RouteInstalledAt   any
 }
 
 var VirtualInterfaceRoutes_FiltersFields = ubx.FieldMap{
-		"AddressFamily": ubx.FieldSpec{WireName: "address_family"},
-		"AsPath": ubx.FieldSpec{WireName: "as_path"},
-		"Cidrs": ubx.FieldSpec{WireName: "cidrs"},
-		"Communities": ubx.FieldSpec{WireName: "communities"},
-		"RouteDirection": ubx.FieldSpec{WireName: "route_direction"},
-	}
+	"AddressFamily":  ubx.FieldSpec{WireName: "address_family"},
+	"AsPath":         ubx.FieldSpec{WireName: "as_path"},
+	"Cidrs":          ubx.FieldSpec{WireName: "cidrs"},
+	"Communities":    ubx.FieldSpec{WireName: "communities"},
+	"RouteDirection": ubx.FieldSpec{WireName: "route_direction"},
+}
 
 type VirtualInterfaceRoutesConfig struct {
 	// <p>The filters used to limit the routes returned by <a>ListVirtualInterfaceRoutes</a>.</p>
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters            any
+	MaxResults         any
+	NextToken          any
 	VirtualInterfaceId any
 }
 
 type VirtualInterfaceRoutesAttrs struct {
 	// <p>The filters used to limit the routes returned by <a>ListVirtualInterfaceRoutes</a>.</p>
-	Filters any
-	MaxResults any
-	NextToken any
-	Routes any
+	Filters            any
+	MaxResults         any
+	NextToken          any
+	Routes             any
 	VirtualInterfaceId any
 }
 
@@ -56,11 +56,11 @@ var VirtualInterfaceRoutes = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: VirtualInterfaceRoutes_FiltersFields,
+			Kind:     "object",
+			Fields:   VirtualInterfaceRoutes_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"VirtualInterfaceId": ubx.FieldSpec{WireName: "virtual_interface_id"},
 	},
 }

@@ -9,7 +9,7 @@ type SsmContactsContactPolicyConfig struct {
 
 type SsmContactsContactPolicyAttrs struct {
 	ContactArn any
-	Policy any
+	Policy     any
 }
 
 var SsmContactsContactPolicy = ubx.DataSourceBinding{

@@ -8,13 +8,13 @@ type StackDriftDetectionStatusConfig struct {
 }
 
 type StackDriftDetectionStatusAttrs struct {
-	DetectionStatus any
-	DetectionStatusReason any
+	DetectionStatus           any
+	DetectionStatusReason     any
 	DriftedStackResourceCount any
-	StackDriftDetectionId any
-	StackDriftStatus any
-	StackId any
-	Timestamp any
+	StackDriftDetectionId     any
+	StackDriftStatus          any
+	StackId                   any
+	Timestamp                 any
 }
 
 var StackDriftDetectionStatus = ubx.DataSourceBinding{

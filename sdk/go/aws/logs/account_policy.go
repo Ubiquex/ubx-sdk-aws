@@ -34,10 +34,10 @@ type AccountPolicyAttrs struct {
 var AccountPolicy = ubx.ResourceBinding{
 	WireType: "aws_logs_account_policy",
 	Fields: ubx.FieldMap{
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"PolicyDocument":    ubx.FieldSpec{WireName: "policy_document"},
+		"PolicyName":        ubx.FieldSpec{WireName: "policy_name"},
+		"PolicyType":        ubx.FieldSpec{WireName: "policy_type"},
+		"Scope":             ubx.FieldSpec{WireName: "scope"},
 		"SelectionCriteria": ubx.FieldSpec{WireName: "selection_criteria"},
 	},
 }

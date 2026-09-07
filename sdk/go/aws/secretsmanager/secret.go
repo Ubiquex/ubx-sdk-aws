@@ -35,32 +35,32 @@ type Secret_ReplicaRegions struct {
 
 type Secret_Tags struct {
 	// The key of a tag attached to the AWS Secrets Manager secret, used to identify the tag within the secret's tag set. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Secret_GenerateSecretStringFields = ubx.FieldMap{
-		"ExcludeCharacters": ubx.FieldSpec{WireName: "exclude_characters"},
-		"ExcludeLowercase": ubx.FieldSpec{WireName: "exclude_lowercase"},
-		"ExcludeNumbers": ubx.FieldSpec{WireName: "exclude_numbers"},
-		"ExcludePunctuation": ubx.FieldSpec{WireName: "exclude_punctuation"},
-		"ExcludeUppercase": ubx.FieldSpec{WireName: "exclude_uppercase"},
-		"GenerateStringKey": ubx.FieldSpec{WireName: "generate_string_key"},
-		"IncludeSpace": ubx.FieldSpec{WireName: "include_space"},
-		"PasswordLength": ubx.FieldSpec{WireName: "password_length"},
-		"RequireEachIncludedType": ubx.FieldSpec{WireName: "require_each_included_type"},
-		"SecretStringTemplate": ubx.FieldSpec{WireName: "secret_string_template"},
-	}
+	"ExcludeCharacters":       ubx.FieldSpec{WireName: "exclude_characters"},
+	"ExcludeLowercase":        ubx.FieldSpec{WireName: "exclude_lowercase"},
+	"ExcludeNumbers":          ubx.FieldSpec{WireName: "exclude_numbers"},
+	"ExcludePunctuation":      ubx.FieldSpec{WireName: "exclude_punctuation"},
+	"ExcludeUppercase":        ubx.FieldSpec{WireName: "exclude_uppercase"},
+	"GenerateStringKey":       ubx.FieldSpec{WireName: "generate_string_key"},
+	"IncludeSpace":            ubx.FieldSpec{WireName: "include_space"},
+	"PasswordLength":          ubx.FieldSpec{WireName: "password_length"},
+	"RequireEachIncludedType": ubx.FieldSpec{WireName: "require_each_included_type"},
+	"SecretStringTemplate":    ubx.FieldSpec{WireName: "secret_string_template"},
+}
 
 var Secret_ReplicaRegionsFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+	"Region":   ubx.FieldSpec{WireName: "region"},
+}
 
 var Secret_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SecretConfig struct {
 	// The description of the secret.
@@ -108,21 +108,21 @@ var Secret = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GenerateSecretString": ubx.FieldSpec{
 			WireName: "generate_secret_string",
-			Kind: "object",
-			Fields: Secret_GenerateSecretStringFields,
+			Kind:     "object",
+			Fields:   Secret_GenerateSecretStringFields,
 		},
 		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"ReplicaRegions": ubx.FieldSpec{
 			WireName: "replica_regions",
-			Kind: "list",
-			Fields: Secret_ReplicaRegionsFields,
+			Kind:     "list",
+			Fields:   Secret_ReplicaRegionsFields,
 		},
 		"SecretString": ubx.FieldSpec{WireName: "secret_string"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Secret_TagsFields,
+			Kind:     "list",
+			Fields:   Secret_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

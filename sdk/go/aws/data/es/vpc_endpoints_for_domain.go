@@ -4,9 +4,9 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpointsForDomain_VpcEndpointSummaryList struct {
-	DomainArn any
-	Status any
-	VpcEndpointId any
+	DomainArn        any
+	Status           any
+	VpcEndpointId    any
 	VpcEndpointOwner any
 }
 
@@ -21,7 +21,7 @@ type VpcEndpointsForDomainAttrs struct {
 	// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
 	DomainName any
 	// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-	NextToken any
+	NextToken              any
 	VpcEndpointSummaryList any
 }
 
@@ -29,6 +29,6 @@ var VpcEndpointsForDomain = ubx.DataSourceBinding{
 	WireType: "aws_es_vpc_endpoints_for_domain",
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

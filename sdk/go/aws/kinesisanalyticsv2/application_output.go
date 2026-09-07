@@ -27,36 +27,36 @@ type ApplicationOutput_Output struct {
 }
 
 var ApplicationOutput_Output_DestinationSchemaFields = ubx.FieldMap{
-		"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
-	}
+	"RecordFormatType": ubx.FieldSpec{WireName: "record_format_type"},
+}
 
 var ApplicationOutput_Output_KinesisFirehoseOutputFields = ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
-	}
+	"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+}
 
 var ApplicationOutput_OutputFields = ubx.FieldMap{
-		"DestinationSchema": ubx.FieldSpec{
-			WireName: "destination_schema",
-			Kind: "object",
-			Fields: ApplicationOutput_Output_DestinationSchemaFields,
-		},
-		"KinesisFirehoseOutput": ubx.FieldSpec{
-			WireName: "kinesis_firehose_output",
-			Kind: "object",
-			Fields: ApplicationOutput_Output_KinesisFirehoseOutputFields,
-		},
-		"KinesisStreamsOutput": ubx.FieldSpec{
-			WireName: "kinesis_streams_output",
-			Kind: "object",
-			Fields: ApplicationOutput_Output_KinesisFirehoseOutputFields,
-		},
-		"LambdaOutput": ubx.FieldSpec{
-			WireName: "lambda_output",
-			Kind: "object",
-			Fields: ApplicationOutput_Output_KinesisFirehoseOutputFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DestinationSchema": ubx.FieldSpec{
+		WireName: "destination_schema",
+		Kind:     "object",
+		Fields:   ApplicationOutput_Output_DestinationSchemaFields,
+	},
+	"KinesisFirehoseOutput": ubx.FieldSpec{
+		WireName: "kinesis_firehose_output",
+		Kind:     "object",
+		Fields:   ApplicationOutput_Output_KinesisFirehoseOutputFields,
+	},
+	"KinesisStreamsOutput": ubx.FieldSpec{
+		WireName: "kinesis_streams_output",
+		Kind:     "object",
+		Fields:   ApplicationOutput_Output_KinesisFirehoseOutputFields,
+	},
+	"LambdaOutput": ubx.FieldSpec{
+		WireName: "lambda_output",
+		Kind:     "object",
+		Fields:   ApplicationOutput_Output_KinesisFirehoseOutputFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type ApplicationOutputConfig struct {
 	// The name of the Kinesis Data Analytics application to which this output is attached. (AI-inferred)
@@ -80,8 +80,8 @@ var ApplicationOutput = ubx.ResourceBinding{
 		"ApplicationName": ubx.FieldSpec{WireName: "application_name"},
 		"Output": ubx.FieldSpec{
 			WireName: "output",
-			Kind: "object",
-			Fields: ApplicationOutput_OutputFields,
+			Kind:     "object",
+			Fields:   ApplicationOutput_OutputFields,
 		},
 	},
 }

@@ -14,13 +14,13 @@ type SmbsettingsConfig struct {
 
 type SmbsettingsAttrs struct {
 	ActiveDirectoryStatus any
-	DomainName any
-	FileSharesVisible any
+	DomainName            any
+	FileSharesVisible     any
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
+	GatewayArn          any
 	SmbguestPasswordSet any
 	// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
-	SmblocalGroups any
+	SmblocalGroups      any
 	SmbsecurityStrategy any
 }
 

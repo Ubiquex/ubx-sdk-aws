@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityRecognizerSummaries_EntityRecognizerSummariesList struct {
 	LatestVersionCreatedAt any
-	LatestVersionName any
-	LatestVersionStatus any
-	NumberOfVersions any
-	RecognizerName any
+	LatestVersionName      any
+	LatestVersionStatus    any
+	NumberOfVersions       any
+	RecognizerName         any
 }
 
 type EntityRecognizerSummariesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EntityRecognizerSummariesAttrs struct {
 	EntityRecognizerSummariesList any
-	MaxResults any
-	NextToken any
+	MaxResults                    any
+	NextToken                     any
 }
 
 var EntityRecognizerSummaries = ubx.DataSourceBinding{
 	WireType: "aws_comprehend_entity_recognizer_summaries",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

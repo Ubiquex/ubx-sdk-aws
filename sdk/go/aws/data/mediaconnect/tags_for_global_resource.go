@@ -9,7 +9,7 @@ type TagsForGlobalResourceConfig struct {
 
 type TagsForGlobalResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var TagsForGlobalResource = ubx.DataSourceBinding{

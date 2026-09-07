@@ -9,7 +9,7 @@ type SecurityIrTagsForResourceConfig struct {
 
 type SecurityIrTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var SecurityIrTagsForResource = ubx.DataSourceBinding{

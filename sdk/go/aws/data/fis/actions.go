@@ -8,28 +8,28 @@ type Actions_Actions_Targets struct {
 }
 
 type Actions_Actions struct {
-	Arn any
+	Arn         any
 	Description any
-	Id any
-	Tags any
-	Targets any
+	Id          any
+	Tags        any
+	Targets     any
 }
 
 type ActionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ActionsAttrs struct {
-	Actions any
+	Actions    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Actions = ubx.DataSourceBinding{
 	WireType: "aws_fis_actions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

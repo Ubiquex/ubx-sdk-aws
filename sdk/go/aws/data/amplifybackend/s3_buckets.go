@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3Buckets_Buckets struct {
 	CreationDate any
-	Name any
+	Name         any
 }
 
 type S3BucketsConfig struct {
@@ -13,7 +13,7 @@ type S3BucketsConfig struct {
 }
 
 type S3BucketsAttrs struct {
-	Buckets any
+	Buckets   any
 	NextToken any
 }
 

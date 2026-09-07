@@ -4,49 +4,49 @@ package sms_voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmsVoiceRegistrationTypeDefinitions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SmsVoiceRegistrationTypeDefinitions_RegistrationTypeDefinitions_DisplayHints struct {
-	DocumentationLink any
+	DocumentationLink  any
 	DocumentationTitle any
-	LongDescription any
-	ShortDescription any
-	Title any
+	LongDescription    any
+	ShortDescription   any
+	Title              any
 }
 
 type SmsVoiceRegistrationTypeDefinitions_RegistrationTypeDefinitions_SupportedAssociations struct {
-	AssociationBehavior any
+	AssociationBehavior    any
 	DisassociationBehavior any
-	IsoCountryCode any
-	ResourceType any
+	IsoCountryCode         any
+	ResourceType           any
 }
 
 type SmsVoiceRegistrationTypeDefinitions_RegistrationTypeDefinitions struct {
-	DisplayHints any
-	RegistrationType any
+	DisplayHints          any
+	RegistrationType      any
 	SupportedAssociations any
 }
 
 var SmsVoiceRegistrationTypeDefinitions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SmsVoiceRegistrationTypeDefinitionsConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters           any
+	MaxResults        any
+	NextToken         any
 	RegistrationTypes any
 }
 
 type SmsVoiceRegistrationTypeDefinitionsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                     any
+	MaxResults                  any
+	NextToken                   any
 	RegistrationTypeDefinitions any
-	RegistrationTypes any
+	RegistrationTypes           any
 }
 
 var SmsVoiceRegistrationTypeDefinitions = ubx.DataSourceBinding{
@@ -54,11 +54,11 @@ var SmsVoiceRegistrationTypeDefinitions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SmsVoiceRegistrationTypeDefinitions_FiltersFields,
+			Kind:     "list",
+			Fields:   SmsVoiceRegistrationTypeDefinitions_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"RegistrationTypes": ubx.FieldSpec{WireName: "registration_types"},
 	},
 }

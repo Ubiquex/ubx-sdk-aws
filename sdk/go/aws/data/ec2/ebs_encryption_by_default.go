@@ -8,9 +8,9 @@ type EbsEncryptionByDefaultConfig struct {
 }
 
 type EbsEncryptionByDefaultAttrs struct {
-	DryRun any
+	DryRun                 any
 	EbsEncryptionByDefault any
-	SseType any
+	SseType                any
 }
 
 var EbsEncryptionByDefault = ubx.DataSourceBinding{

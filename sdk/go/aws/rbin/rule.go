@@ -25,29 +25,29 @@ type Rule_RetentionPeriod struct {
 }
 
 type Rule_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Rule_ExcludeResourceTagsFields = ubx.FieldMap{
-		"ResourceTagKey": ubx.FieldSpec{WireName: "resource_tag_key"},
-		"ResourceTagValue": ubx.FieldSpec{WireName: "resource_tag_value"},
-	}
+	"ResourceTagKey":   ubx.FieldSpec{WireName: "resource_tag_key"},
+	"ResourceTagValue": ubx.FieldSpec{WireName: "resource_tag_value"},
+}
 
 var Rule_LockConfigurationFields = ubx.FieldMap{
-		"UnlockDelayUnit": ubx.FieldSpec{WireName: "unlock_delay_unit"},
-		"UnlockDelayValue": ubx.FieldSpec{WireName: "unlock_delay_value"},
-	}
+	"UnlockDelayUnit":  ubx.FieldSpec{WireName: "unlock_delay_unit"},
+	"UnlockDelayValue": ubx.FieldSpec{WireName: "unlock_delay_value"},
+}
 
 var Rule_RetentionPeriodFields = ubx.FieldMap{
-		"RetentionPeriodUnit": ubx.FieldSpec{WireName: "retention_period_unit"},
-		"RetentionPeriodValue": ubx.FieldSpec{WireName: "retention_period_value"},
-	}
+	"RetentionPeriodUnit":  ubx.FieldSpec{WireName: "retention_period_unit"},
+	"RetentionPeriodValue": ubx.FieldSpec{WireName: "retention_period_value"},
+}
 
 var Rule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RuleConfig struct {
 	// The description of the retention rule.
@@ -99,30 +99,30 @@ var Rule = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExcludeResourceTags": ubx.FieldSpec{
 			WireName: "exclude_resource_tags",
-			Kind: "list",
-			Fields: Rule_ExcludeResourceTagsFields,
+			Kind:     "list",
+			Fields:   Rule_ExcludeResourceTagsFields,
 		},
 		"LockConfiguration": ubx.FieldSpec{
 			WireName: "lock_configuration",
-			Kind: "object",
-			Fields: Rule_LockConfigurationFields,
+			Kind:     "object",
+			Fields:   Rule_LockConfigurationFields,
 		},
 		"ResourceTags": ubx.FieldSpec{
 			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Rule_ExcludeResourceTagsFields,
+			Kind:     "list",
+			Fields:   Rule_ExcludeResourceTagsFields,
 		},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 		"RetentionPeriod": ubx.FieldSpec{
 			WireName: "retention_period",
-			Kind: "object",
-			Fields: Rule_RetentionPeriodFields,
+			Kind:     "object",
+			Fields:   Rule_RetentionPeriodFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Rule_TagsFields,
+			Kind:     "list",
+			Fields:   Rule_TagsFields,
 		},
 	},
 }

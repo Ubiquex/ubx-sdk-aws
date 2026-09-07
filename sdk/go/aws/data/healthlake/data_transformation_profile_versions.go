@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataTransformationProfileVersions_Items struct {
 	ChangeDescription any
-	LastUpdatedAt any
-	ProfileId any
-	ProfileName any
-	SourceFormat any
-	TargetFormat any
-	Version any
+	LastUpdatedAt     any
+	ProfileId         any
+	ProfileName       any
+	SourceFormat      any
+	TargetFormat      any
+	Version           any
 }
 
 type DataTransformationProfileVersionsConfig struct {
 	MaxResults any
-	NextToken any
-	ProfileId any
+	NextToken  any
+	ProfileId  any
 }
 
 type DataTransformationProfileVersionsAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
-	ProfileId any
+	NextToken  any
+	ProfileId  any
 }
 
 var DataTransformationProfileVersions = ubx.DataSourceBinding{
 	WireType: "aws_healthlake_data_transformation_profile_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ProfileId":  ubx.FieldSpec{WireName: "profile_id"},
 	},
 }

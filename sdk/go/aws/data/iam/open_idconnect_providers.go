@@ -17,6 +17,5 @@ type OpenIdconnectProvidersAttrs struct {
 
 var OpenIdconnectProviders = ubx.DataSourceBinding{
 	WireType: "aws_iam_open_idconnect_providers",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

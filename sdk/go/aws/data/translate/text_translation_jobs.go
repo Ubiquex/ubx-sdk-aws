@@ -4,76 +4,76 @@ package translate
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TextTranslationJobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmittedAfterTime any
+	JobName             any
+	JobStatus           any
+	SubmittedAfterTime  any
 	SubmittedBeforeTime any
 }
 
 type TextTranslationJobs_TextTranslationJobPropertiesList_InputDataConfig struct {
 	ContentType any
-	S3Uri any
+	S3Uri       any
 }
 
 type TextTranslationJobs_TextTranslationJobPropertiesList_JobDetails struct {
 	DocumentsWithErrorsCount any
-	InputDocumentsCount any
+	InputDocumentsCount      any
 	TranslatedDocumentsCount any
 }
 
 type TextTranslationJobs_TextTranslationJobPropertiesList_OutputDataConfig_EncryptionKey struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type TextTranslationJobs_TextTranslationJobPropertiesList_OutputDataConfig struct {
 	EncryptionKey any
-	S3Uri any
+	S3Uri         any
 }
 
 type TextTranslationJobs_TextTranslationJobPropertiesList_Settings struct {
-	Brevity any
+	Brevity   any
 	Formality any
 	Profanity any
 }
 
 type TextTranslationJobs_TextTranslationJobPropertiesList struct {
-	DataAccessRoleArn any
-	EndTime any
-	InputDataConfig any
-	JobDetails any
-	JobId any
-	JobName any
-	JobStatus any
-	Message any
-	OutputDataConfig any
-	ParallelDataNames any
-	Settings any
-	SourceLanguageCode any
-	SubmittedTime any
+	DataAccessRoleArn   any
+	EndTime             any
+	InputDataConfig     any
+	JobDetails          any
+	JobId               any
+	JobName             any
+	JobStatus           any
+	Message             any
+	OutputDataConfig    any
+	ParallelDataNames   any
+	Settings            any
+	SourceLanguageCode  any
+	SubmittedTime       any
 	TargetLanguageCodes any
-	TerminologyNames any
+	TerminologyNames    any
 }
 
 var TextTranslationJobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmittedAfterTime": ubx.FieldSpec{WireName: "submitted_after_time"},
-		"SubmittedBeforeTime": ubx.FieldSpec{WireName: "submitted_before_time"},
-	}
+	"JobName":             ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":           ubx.FieldSpec{WireName: "job_status"},
+	"SubmittedAfterTime":  ubx.FieldSpec{WireName: "submitted_after_time"},
+	"SubmittedBeforeTime": ubx.FieldSpec{WireName: "submitted_before_time"},
+}
 
 type TextTranslationJobsConfig struct {
 	// <p>Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TextTranslationJobsAttrs struct {
 	// <p>Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>.</p>
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter                           any
+	MaxResults                       any
+	NextToken                        any
 	TextTranslationJobPropertiesList any
 }
 
@@ -82,10 +82,10 @@ var TextTranslationJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: TextTranslationJobs_FilterFields,
+			Kind:     "object",
+			Fields:   TextTranslationJobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

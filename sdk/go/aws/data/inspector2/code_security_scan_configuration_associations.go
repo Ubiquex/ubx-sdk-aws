@@ -13,15 +13,15 @@ type CodeSecurityScanConfigurationAssociations_Associations struct {
 
 type CodeSecurityScanConfigurationAssociationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// arn:aws:inspector2:<region>:<account-id>:owner/<owner-id>/codesecurity-configuration/<uuid>
 	ScanConfigurationArn any
 }
 
 type CodeSecurityScanConfigurationAssociationsAttrs struct {
 	Associations any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 	// arn:aws:inspector2:<region>:<account-id>:owner/<owner-id>/codesecurity-configuration/<uuid>
 	ScanConfigurationArn any
 }
@@ -29,8 +29,8 @@ type CodeSecurityScanConfigurationAssociationsAttrs struct {
 var CodeSecurityScanConfigurationAssociations = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_code_security_scan_configuration_associations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ScanConfigurationArn": ubx.FieldSpec{WireName: "scan_configuration_arn"},
 	},
 }

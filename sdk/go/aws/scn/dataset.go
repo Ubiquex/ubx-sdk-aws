@@ -10,7 +10,7 @@ type Dataset_PartitionSpec_Fields_Transform struct {
 
 type Dataset_PartitionSpec_Fields struct {
 	// The name of a partition field (column) used in the dataset's partition specification to define how the dataset data is partitioned. (AI-inferred)
-	Name any
+	Name      any
 	Transform any
 }
 
@@ -49,54 +49,54 @@ type Dataset_Tags struct {
 }
 
 var Dataset_PartitionSpec_Fields_TransformFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Dataset_PartitionSpec_FieldsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Transform": ubx.FieldSpec{
-			WireName: "transform",
-			Kind: "object",
-			Fields: Dataset_PartitionSpec_Fields_TransformFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Transform": ubx.FieldSpec{
+		WireName: "transform",
+		Kind:     "object",
+		Fields:   Dataset_PartitionSpec_Fields_TransformFields,
+	},
+}
 
 var Dataset_PartitionSpecFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Dataset_PartitionSpec_FieldsFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Dataset_PartitionSpec_FieldsFields,
+	},
+}
 
 var Dataset_Schema_FieldsFields = ubx.FieldMap{
-		"IsRequired": ubx.FieldSpec{WireName: "is_required"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"IsRequired": ubx.FieldSpec{WireName: "is_required"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Dataset_Schema_PrimaryKeysFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Dataset_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Dataset_Schema_FieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrimaryKeys": ubx.FieldSpec{
-			WireName: "primary_keys",
-			Kind: "list",
-			Fields: Dataset_Schema_PrimaryKeysFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Dataset_Schema_FieldsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PrimaryKeys": ubx.FieldSpec{
+		WireName: "primary_keys",
+		Kind:     "list",
+		Fields:   Dataset_Schema_PrimaryKeysFields,
+	},
+}
 
 var Dataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetConfig struct {
 	// The description of the dataset.
@@ -142,23 +142,23 @@ var Dataset = ubx.ResourceBinding{
 	WireType: "aws_scn_dataset",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"InstanceId":  ubx.FieldSpec{WireName: "instance_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Namespace":   ubx.FieldSpec{WireName: "namespace"},
 		"PartitionSpec": ubx.FieldSpec{
 			WireName: "partition_spec",
-			Kind: "object",
-			Fields: Dataset_PartitionSpecFields,
+			Kind:     "object",
+			Fields:   Dataset_PartitionSpecFields,
 		},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Dataset_SchemaFields,
+			Kind:     "object",
+			Fields:   Dataset_SchemaFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dataset_TagsFields,
+			Kind:     "list",
+			Fields:   Dataset_TagsFields,
 		},
 	},
 }

@@ -11,9 +11,9 @@ type Standard_DisabledStandardsControls struct {
 }
 
 var Standard_DisabledStandardsControlsFields = ubx.FieldMap{
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"StandardsControlArn": ubx.FieldSpec{WireName: "standards_control_arn"},
-	}
+	"Reason":              ubx.FieldSpec{WireName: "reason"},
+	"StandardsControlArn": ubx.FieldSpec{WireName: "standards_control_arn"},
+}
 
 type StandardConfig struct {
 	// Specifies which controls are to be disabled in a standard. *Maximum*: ``100``
@@ -36,8 +36,8 @@ var Standard = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DisabledStandardsControls": ubx.FieldSpec{
 			WireName: "disabled_standards_controls",
-			Kind: "list",
-			Fields: Standard_DisabledStandardsControlsFields,
+			Kind:     "list",
+			Fields:   Standard_DisabledStandardsControlsFields,
 		},
 		"StandardsArn": ubx.FieldSpec{WireName: "standards_arn"},
 	},

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruAnomaly_ProactiveAnomaly_AnomalyReportedTimeRange struct {
 	CloseTime any
-	OpenTime any
+	OpenTime  any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_AnomalyResources struct {
@@ -14,7 +14,7 @@ type DevopsGuruAnomaly_ProactiveAnomaly_AnomalyResources struct {
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_AnomalyTimeRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
@@ -24,50 +24,50 @@ type DevopsGuruAnomaly_ProactiveAnomaly_ResourceCollection_CloudFormation struct
 
 type DevopsGuruAnomaly_ProactiveAnomaly_ResourceCollection_Tags struct {
 	AppBoundaryKey any
-	TagValues any
+	TagValues      any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_ResourceCollection struct {
 	// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
 	CloudFormation any
-	Tags any
+	Tags           any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_CloudWatchMetrics_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_CloudWatchMetrics_MetricDataSummary_TimestampMetricValuePairList struct {
 	MetricValue any
-	Timestamp any
+	Timestamp   any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_CloudWatchMetrics_MetricDataSummary struct {
-	StatusCode any
+	StatusCode                   any
 	TimestampMetricValuePairList any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_CloudWatchMetrics struct {
-	Dimensions any
+	Dimensions        any
 	MetricDataSummary any
-	MetricName any
-	Namespace any
-	Period any
-	Stat any
-	Unit any
+	MetricName        any
+	Namespace         any
+	Period            any
+	Stat              any
+	Unit              any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_PerformanceInsightsMetrics_MetricQuery_GroupBy struct {
 	Dimensions any
-	Group any
-	Limit any
+	Group      any
+	Limit      any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_PerformanceInsightsMetrics_MetricQuery struct {
-	Filter any
+	Filter  any
 	GroupBy any
-	Metric any
+	Metric  any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_PerformanceInsightsMetrics_ReferenceData_ComparisonValues_ReferenceMetric struct {
@@ -85,30 +85,30 @@ type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_PerformanceInsightsMetrics
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_PerformanceInsightsMetrics_ReferenceData struct {
 	ComparisonValues any
-	Name any
+	Name             any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_PerformanceInsightsMetrics_StatsAtAnomaly struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails_PerformanceInsightsMetrics struct {
 	MetricDisplayName any
-	MetricQuery any
-	ReferenceData any
-	StatsAtAnomaly any
-	StatsAtBaseline any
-	Unit any
+	MetricQuery       any
+	ReferenceData     any
+	StatsAtAnomaly    any
+	StatsAtBaseline   any
+	Unit              any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceDetails struct {
-	CloudWatchMetrics any
+	CloudWatchMetrics          any
 	PerformanceInsightsMetrics any
 }
 
 type DevopsGuruAnomaly_ProactiveAnomaly_SourceMetadata struct {
-	Source any
+	Source             any
 	SourceResourceName any
 	SourceResourceType any
 }
@@ -116,54 +116,54 @@ type DevopsGuruAnomaly_ProactiveAnomaly_SourceMetadata struct {
 type DevopsGuruAnomaly_ProactiveAnomaly struct {
 	// <p> A time range that specifies when DevOps Guru opens and then closes an anomaly. This is different from <code>AnomalyTimeRange</code>, which specifies the time range when DevOps Guru actually observes the anomalous behavior. </p>
 	AnomalyReportedTimeRange any
-	AnomalyResources any
+	AnomalyResources         any
 	// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
-	AnomalyTimeRange any
+	AnomalyTimeRange    any
 	AssociatedInsightId any
-	Description any
-	Id any
-	Limit any
+	Description         any
+	Id                  any
+	Limit               any
 	// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
 	PredictionTimeRange any
 	// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
 	ResourceCollection any
-	Severity any
+	Severity           any
 	// <p> Details about the source of the anomalous operational data that triggered the anomaly.</p>
 	SourceDetails any
 	// <p>Metadata about the detection source that generates proactive anomalies. The anomaly is detected using analysis of the metric data over a period of time</p>
 	SourceMetadata any
-	Status any
-	UpdateTime any
+	Status         any
+	UpdateTime     any
 }
 
 type DevopsGuruAnomaly_ReactiveAnomaly struct {
 	// <p> A time range that specifies when DevOps Guru opens and then closes an anomaly. This is different from <code>AnomalyTimeRange</code>, which specifies the time range when DevOps Guru actually observes the anomalous behavior. </p>
 	AnomalyReportedTimeRange any
-	AnomalyResources any
+	AnomalyResources         any
 	// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
-	AnomalyTimeRange any
+	AnomalyTimeRange    any
 	AssociatedInsightId any
-	CausalAnomalyId any
-	Description any
-	Id any
-	Name any
+	CausalAnomalyId     any
+	Description         any
+	Id                  any
+	Name                any
 	// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
 	ResourceCollection any
-	Severity any
+	Severity           any
 	// <p> Details about the source of the anomalous operational data that triggered the anomaly.</p>
 	SourceDetails any
-	Status any
-	Type any
+	Status        any
+	Type          any
 }
 
 type DevopsGuruAnomalyConfig struct {
 	AccountId any
-	Id any
+	Id        any
 }
 
 type DevopsGuruAnomalyAttrs struct {
 	AccountId any
-	Id any
+	Id        any
 	// <p>Information about an anomaly. This object is returned by <code>ListAnomalies</code>.</p>
 	ProactiveAnomaly any
 	// <p>Details about a reactive anomaly. This object is returned by <code>ListAnomalies</code>.</p>
@@ -174,6 +174,6 @@ var DevopsGuruAnomaly = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_anomaly",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppInputSources_AppInputSources_EksSourceClusterNamespace struct {
 	EksClusterArn any
-	Namespace any
+	Namespace     any
 }
 
 type AppInputSources_AppInputSources_TerraformSource struct {
@@ -14,34 +14,34 @@ type AppInputSources_AppInputSources_TerraformSource struct {
 
 type AppInputSources_AppInputSources struct {
 	EksSourceClusterNamespace any
-	ImportType any
-	ResourceCount any
-	SourceArn any
-	SourceName any
-	TerraformSource any
+	ImportType                any
+	ResourceCount             any
+	SourceArn                 any
+	SourceName                any
+	TerraformSource           any
 }
 
 type AppInputSourcesConfig struct {
-	AppArn any
+	AppArn     any
 	AppVersion any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AppInputSourcesAttrs struct {
-	AppArn any
+	AppArn          any
 	AppInputSources any
-	AppVersion any
-	MaxResults any
-	NextToken any
+	AppVersion      any
+	MaxResults      any
+	NextToken       any
 }
 
 var AppInputSources = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_app_input_sources",
 	Fields: ubx.FieldMap{
-		"AppArn": ubx.FieldSpec{WireName: "app_arn"},
+		"AppArn":     ubx.FieldSpec{WireName: "app_arn"},
 		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

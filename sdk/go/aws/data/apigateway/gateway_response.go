@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayResponseConfig struct {
 	ResponseType any
-	RestApiId any
+	RestApiId    any
 }
 
 type GatewayResponseAttrs struct {
-	DefaultResponse any
+	DefaultResponse    any
 	ResponseParameters any
-	ResponseTemplates any
-	ResponseType any
-	RestApiId any
+	ResponseTemplates  any
+	ResponseType       any
+	RestApiId          any
 	// <p>The status code.</p>
 	StatusCode any
 }
@@ -22,6 +22,6 @@ var GatewayResponse = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_gateway_response",
 	Fields: ubx.FieldMap{
 		"ResponseType": ubx.FieldSpec{WireName: "response_type"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"RestApiId":    ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountPermissions_Permissions struct {
 	Operation any
-	Service any
+	Service   any
 }
 
 type AccountPermissionsConfig struct {
 	MaxResults any
-	NextToken any
-	Service any
+	NextToken  any
+	Service    any
 }
 
 type AccountPermissionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	Permissions any
-	Service any
+	Service     any
 }
 
 var AccountPermissions = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_account_permissions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Service":    ubx.FieldSpec{WireName: "service"},
 	},
 }

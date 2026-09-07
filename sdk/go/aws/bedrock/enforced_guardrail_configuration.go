@@ -18,14 +18,14 @@ type EnforcedGuardrailConfiguration_SelectiveContentGuarding struct {
 }
 
 var EnforcedGuardrailConfiguration_ModelEnforcementFields = ubx.FieldMap{
-		"ExcludedModels": ubx.FieldSpec{WireName: "excluded_models"},
-		"IncludedModels": ubx.FieldSpec{WireName: "included_models"},
-	}
+	"ExcludedModels": ubx.FieldSpec{WireName: "excluded_models"},
+	"IncludedModels": ubx.FieldSpec{WireName: "included_models"},
+}
 
 var EnforcedGuardrailConfiguration_SelectiveContentGuardingFields = ubx.FieldMap{
-		"Messages": ubx.FieldSpec{WireName: "messages"},
-		"System": ubx.FieldSpec{WireName: "system"},
-	}
+	"Messages": ubx.FieldSpec{WireName: "messages"},
+	"System":   ubx.FieldSpec{WireName: "system"},
+}
 
 type EnforcedGuardrailConfigurationConfig struct {
 	// Identifier for the guardrail, could be the ID or the ARN
@@ -69,16 +69,16 @@ var EnforcedGuardrailConfiguration = ubx.ResourceBinding{
 	WireType: "aws_bedrock_enforced_guardrail_configuration",
 	Fields: ubx.FieldMap{
 		"GuardrailIdentifier": ubx.FieldSpec{WireName: "guardrail_identifier"},
-		"GuardrailVersion": ubx.FieldSpec{WireName: "guardrail_version"},
+		"GuardrailVersion":    ubx.FieldSpec{WireName: "guardrail_version"},
 		"ModelEnforcement": ubx.FieldSpec{
 			WireName: "model_enforcement",
-			Kind: "object",
-			Fields: EnforcedGuardrailConfiguration_ModelEnforcementFields,
+			Kind:     "object",
+			Fields:   EnforcedGuardrailConfiguration_ModelEnforcementFields,
 		},
 		"SelectiveContentGuarding": ubx.FieldSpec{
 			WireName: "selective_content_guarding",
-			Kind: "object",
-			Fields: EnforcedGuardrailConfiguration_SelectiveContentGuardingFields,
+			Kind:     "object",
+			Fields:   EnforcedGuardrailConfiguration_SelectiveContentGuardingFields,
 		},
 	},
 }

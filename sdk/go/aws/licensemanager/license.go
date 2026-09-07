@@ -54,7 +54,7 @@ type License_LicenseMetadata struct {
 }
 
 type License_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -66,56 +66,56 @@ type License_Validity struct {
 }
 
 var License_ConsumptionConfiguration_BorrowConfigurationFields = ubx.FieldMap{
-		"AllowEarlyCheckIn": ubx.FieldSpec{WireName: "allow_early_check_in"},
-		"MaxTimeToLiveInMinutes": ubx.FieldSpec{WireName: "max_time_to_live_in_minutes"},
-	}
+	"AllowEarlyCheckIn":      ubx.FieldSpec{WireName: "allow_early_check_in"},
+	"MaxTimeToLiveInMinutes": ubx.FieldSpec{WireName: "max_time_to_live_in_minutes"},
+}
 
 var License_ConsumptionConfiguration_ProvisionalConfigurationFields = ubx.FieldMap{
-		"MaxTimeToLiveInMinutes": ubx.FieldSpec{WireName: "max_time_to_live_in_minutes"},
-	}
+	"MaxTimeToLiveInMinutes": ubx.FieldSpec{WireName: "max_time_to_live_in_minutes"},
+}
 
 var License_ConsumptionConfigurationFields = ubx.FieldMap{
-		"BorrowConfiguration": ubx.FieldSpec{
-			WireName: "borrow_configuration",
-			Kind: "object",
-			Fields: License_ConsumptionConfiguration_BorrowConfigurationFields,
-		},
-		"ProvisionalConfiguration": ubx.FieldSpec{
-			WireName: "provisional_configuration",
-			Kind: "object",
-			Fields: License_ConsumptionConfiguration_ProvisionalConfigurationFields,
-		},
-		"RenewType": ubx.FieldSpec{WireName: "renew_type"},
-	}
+	"BorrowConfiguration": ubx.FieldSpec{
+		WireName: "borrow_configuration",
+		Kind:     "object",
+		Fields:   License_ConsumptionConfiguration_BorrowConfigurationFields,
+	},
+	"ProvisionalConfiguration": ubx.FieldSpec{
+		WireName: "provisional_configuration",
+		Kind:     "object",
+		Fields:   License_ConsumptionConfiguration_ProvisionalConfigurationFields,
+	},
+	"RenewType": ubx.FieldSpec{WireName: "renew_type"},
+}
 
 var License_EntitlementsFields = ubx.FieldMap{
-		"AllowCheckIn": ubx.FieldSpec{WireName: "allow_check_in"},
-		"MaxCount": ubx.FieldSpec{WireName: "max_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Overage": ubx.FieldSpec{WireName: "overage"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"AllowCheckIn": ubx.FieldSpec{WireName: "allow_check_in"},
+	"MaxCount":     ubx.FieldSpec{WireName: "max_count"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Overage":      ubx.FieldSpec{WireName: "overage"},
+	"Unit":         ubx.FieldSpec{WireName: "unit"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+}
 
 var License_IssuerFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SignKey": ubx.FieldSpec{WireName: "sign_key"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"SignKey": ubx.FieldSpec{WireName: "sign_key"},
+}
 
 var License_LicenseMetadataFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var License_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var License_ValidityFields = ubx.FieldMap{
-		"Begin": ubx.FieldSpec{WireName: "begin"},
-		"End": ubx.FieldSpec{WireName: "end"},
-	}
+	"Begin": ubx.FieldSpec{WireName: "begin"},
+	"End":   ubx.FieldSpec{WireName: "end"},
+}
 
 type LicenseConfig struct {
 	// Beneficiary of the license.
@@ -181,38 +181,38 @@ var License = ubx.ResourceBinding{
 		"Beneficiary": ubx.FieldSpec{WireName: "beneficiary"},
 		"ConsumptionConfiguration": ubx.FieldSpec{
 			WireName: "consumption_configuration",
-			Kind: "object",
-			Fields: License_ConsumptionConfigurationFields,
+			Kind:     "object",
+			Fields:   License_ConsumptionConfigurationFields,
 		},
 		"Entitlements": ubx.FieldSpec{
 			WireName: "entitlements",
-			Kind: "list",
-			Fields: License_EntitlementsFields,
+			Kind:     "list",
+			Fields:   License_EntitlementsFields,
 		},
 		"HomeRegion": ubx.FieldSpec{WireName: "home_region"},
 		"Issuer": ubx.FieldSpec{
 			WireName: "issuer",
-			Kind: "object",
-			Fields: License_IssuerFields,
+			Kind:     "object",
+			Fields:   License_IssuerFields,
 		},
 		"LicenseMetadata": ubx.FieldSpec{
 			WireName: "license_metadata",
-			Kind: "list",
-			Fields: License_LicenseMetadataFields,
+			Kind:     "list",
+			Fields:   License_LicenseMetadataFields,
 		},
 		"LicenseName": ubx.FieldSpec{WireName: "license_name"},
 		"ProductName": ubx.FieldSpec{WireName: "product_name"},
-		"ProductSku": ubx.FieldSpec{WireName: "product_sku"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"ProductSku":  ubx.FieldSpec{WireName: "product_sku"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: License_TagsFields,
+			Kind:     "list",
+			Fields:   License_TagsFields,
 		},
 		"Validity": ubx.FieldSpec{
 			WireName: "validity",
-			Kind: "object",
-			Fields: License_ValidityFields,
+			Kind:     "object",
+			Fields:   License_ValidityFields,
 		},
 	},
 }

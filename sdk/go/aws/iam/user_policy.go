@@ -25,7 +25,7 @@ var UserPolicy = ubx.ResourceBinding{
 	WireType: "aws_iam_user_policy",
 	Fields: ubx.FieldMap{
 		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"PolicyName":     ubx.FieldSpec{WireName: "policy_name"},
+		"UserName":       ubx.FieldSpec{WireName: "user_name"},
 	},
 }

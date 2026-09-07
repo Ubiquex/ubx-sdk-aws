@@ -11,9 +11,9 @@ type ConfigurationAssociation_Configuration struct {
 }
 
 var ConfigurationAssociation_ConfigurationFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Revision": ubx.FieldSpec{WireName: "revision"},
+}
 
 type ConfigurationAssociationConfig struct {
 	// ID of the Broker that the configuration should be applied to
@@ -37,8 +37,8 @@ var ConfigurationAssociation = ubx.ResourceBinding{
 		"Broker": ubx.FieldSpec{WireName: "broker"},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: ConfigurationAssociation_ConfigurationFields,
+			Kind:     "object",
+			Fields:   ConfigurationAssociation_ConfigurationFields,
 		},
 	},
 }

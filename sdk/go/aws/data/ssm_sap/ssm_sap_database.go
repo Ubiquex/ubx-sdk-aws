@@ -5,48 +5,48 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmSapDatabase_Database_Credentials struct {
 	CredentialType any
-	DatabaseName any
-	SecretId any
+	DatabaseName   any
+	SecretId       any
 }
 
 type SsmSapDatabase_Database struct {
-	ApplicationId any
-	Arn any
-	ComponentId any
+	ApplicationId          any
+	Arn                    any
+	ComponentId            any
 	ConnectedComponentArns any
-	Credentials any
-	DatabaseId any
-	DatabaseName any
-	DatabaseType any
-	LastUpdated any
-	PrimaryHost any
-	Sqlport any
-	Status any
+	Credentials            any
+	DatabaseId             any
+	DatabaseName           any
+	DatabaseType           any
+	LastUpdated            any
+	PrimaryHost            any
+	Sqlport                any
+	Status                 any
 }
 
 type SsmSapDatabaseConfig struct {
 	ApplicationId any
-	ComponentId any
-	DatabaseArn any
-	DatabaseId any
+	ComponentId   any
+	DatabaseArn   any
+	DatabaseId    any
 }
 
 type SsmSapDatabaseAttrs struct {
 	ApplicationId any
-	ComponentId any
+	ComponentId   any
 	// <p>The SAP HANA database of the application registered with AWS Systems Manager for SAP.</p>
-	Database any
+	Database    any
 	DatabaseArn any
-	DatabaseId any
-	Tags any
+	DatabaseId  any
+	Tags        any
 }
 
 var SsmSapDatabase = ubx.DataSourceBinding{
 	WireType: "aws_ssm_sap_database",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"ComponentId": ubx.FieldSpec{WireName: "component_id"},
-		"DatabaseArn": ubx.FieldSpec{WireName: "database_arn"},
-		"DatabaseId": ubx.FieldSpec{WireName: "database_id"},
+		"ComponentId":   ubx.FieldSpec{WireName: "component_id"},
+		"DatabaseArn":   ubx.FieldSpec{WireName: "database_arn"},
+		"DatabaseId":    ubx.FieldSpec{WireName: "database_id"},
 	},
 }

@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmContactsPageReceipts_Receipts struct {
 	ContactChannelArn any
-	ReceiptInfo any
-	ReceiptTime any
-	ReceiptType any
+	ReceiptInfo       any
+	ReceiptTime       any
+	ReceiptType       any
 }
 
 type SsmContactsPageReceiptsConfig struct {
 	MaxResults any
-	NextToken any
-	PageId any
+	NextToken  any
+	PageId     any
 }
 
 type SsmContactsPageReceiptsAttrs struct {
 	MaxResults any
-	NextToken any
-	PageId any
-	Receipts any
+	NextToken  any
+	PageId     any
+	Receipts   any
 }
 
 var SsmContactsPageReceipts = ubx.DataSourceBinding{
 	WireType: "aws_ssm_contacts_page_receipts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PageId":     ubx.FieldSpec{WireName: "page_id"},
 	},
 }

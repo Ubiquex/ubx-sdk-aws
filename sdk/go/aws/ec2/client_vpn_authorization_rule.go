@@ -34,10 +34,10 @@ type ClientVpnAuthorizationRuleAttrs struct {
 var ClientVpnAuthorizationRule = ubx.ResourceBinding{
 	WireType: "aws_ec2_client_vpn_authorization_rule",
 	Fields: ubx.FieldMap{
-		"AccessGroupId": ubx.FieldSpec{WireName: "access_group_id"},
-		"AuthorizeAllGroups": ubx.FieldSpec{WireName: "authorize_all_groups"},
+		"AccessGroupId":       ubx.FieldSpec{WireName: "access_group_id"},
+		"AuthorizeAllGroups":  ubx.FieldSpec{WireName: "authorize_all_groups"},
 		"ClientVpnEndpointId": ubx.FieldSpec{WireName: "client_vpn_endpoint_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"TargetNetworkCidr": ubx.FieldSpec{WireName: "target_network_cidr"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"TargetNetworkCidr":   ubx.FieldSpec{WireName: "target_network_cidr"},
 	},
 }

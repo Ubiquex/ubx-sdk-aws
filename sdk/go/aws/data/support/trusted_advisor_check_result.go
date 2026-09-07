@@ -4,7 +4,7 @@ package support
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrustedAdvisorCheckResult_Result_CategorySpecificSummary_CostOptimizing struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings        any
 	EstimatedPercentMonthlySavings any
 }
 
@@ -15,37 +15,37 @@ type TrustedAdvisorCheckResult_Result_CategorySpecificSummary struct {
 
 type TrustedAdvisorCheckResult_Result_FlaggedResources struct {
 	IsSuppressed any
-	Metadata any
-	Region any
-	ResourceId any
-	Status any
+	Metadata     any
+	Region       any
+	ResourceId   any
+	Status       any
 }
 
 type TrustedAdvisorCheckResult_Result_ResourcesSummary struct {
-	ResourcesFlagged any
-	ResourcesIgnored any
-	ResourcesProcessed any
+	ResourcesFlagged    any
+	ResourcesIgnored    any
+	ResourcesProcessed  any
 	ResourcesSuppressed any
 }
 
 type TrustedAdvisorCheckResult_Result struct {
 	// <p>The container for summary information that relates to the category of the Trusted Advisor check.</p>
 	CategorySpecificSummary any
-	CheckId any
-	FlaggedResources any
+	CheckId                 any
+	FlaggedResources        any
 	// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
 	ResourcesSummary any
-	Status any
-	Timestamp any
+	Status           any
+	Timestamp        any
 }
 
 type TrustedAdvisorCheckResultConfig struct {
-	CheckId any
+	CheckId  any
 	Language any
 }
 
 type TrustedAdvisorCheckResultAttrs struct {
-	CheckId any
+	CheckId  any
 	Language any
 	// <p>The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>.</p>
 	Result any
@@ -54,7 +54,7 @@ type TrustedAdvisorCheckResultAttrs struct {
 var TrustedAdvisorCheckResult = ubx.DataSourceBinding{
 	WireType: "aws_support_trusted_advisor_check_result",
 	Fields: ubx.FieldMap{
-		"CheckId": ubx.FieldSpec{WireName: "check_id"},
+		"CheckId":  ubx.FieldSpec{WireName: "check_id"},
 		"Language": ubx.FieldSpec{WireName: "language"},
 	},
 }

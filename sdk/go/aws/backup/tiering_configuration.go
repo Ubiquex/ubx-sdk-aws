@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TieringConfiguration_ResourceSelection struct {
 	ResourceType any
-	Resources any
+	Resources    any
 	// The number of days after a backup is created that it should be moved to the cold storage tier, controlling the lifecycle transition for the selected resources. (AI-inferred)
 	TieringDownSettingsInDays any
 }
 
 var TieringConfiguration_ResourceSelectionFields = ubx.FieldMap{
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"TieringDownSettingsInDays": ubx.FieldSpec{WireName: "tiering_down_settings_in_days"},
-	}
+	"ResourceType":              ubx.FieldSpec{WireName: "resource_type"},
+	"Resources":                 ubx.FieldSpec{WireName: "resources"},
+	"TieringDownSettingsInDays": ubx.FieldSpec{WireName: "tiering_down_settings_in_days"},
+}
 
 type TieringConfigurationConfig struct {
 	// The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred)
@@ -50,8 +50,8 @@ var TieringConfiguration = ubx.ResourceBinding{
 		"BackupVaultName": ubx.FieldSpec{WireName: "backup_vault_name"},
 		"ResourceSelection": ubx.FieldSpec{
 			WireName: "resource_selection",
-			Kind: "list",
-			Fields: TieringConfiguration_ResourceSelectionFields,
+			Kind:     "list",
+			Fields:   TieringConfiguration_ResourceSelectionFields,
 		},
 		"TieringConfigurationName": ubx.FieldSpec{WireName: "tiering_configuration_name"},
 		"TieringConfigurationTags": ubx.FieldSpec{WireName: "tiering_configuration_tags"},

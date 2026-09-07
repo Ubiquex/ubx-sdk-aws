@@ -16,17 +16,17 @@ type NetworkInterfaceAttachment_EnaSrdSpecification struct {
 }
 
 var NetworkInterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecificationFields = ubx.FieldMap{
-		"EnaSrdUdpEnabled": ubx.FieldSpec{WireName: "ena_srd_udp_enabled"},
-	}
+	"EnaSrdUdpEnabled": ubx.FieldSpec{WireName: "ena_srd_udp_enabled"},
+}
 
 var NetworkInterfaceAttachment_EnaSrdSpecificationFields = ubx.FieldMap{
-		"EnaSrdEnabled": ubx.FieldSpec{WireName: "ena_srd_enabled"},
-		"EnaSrdUdpSpecification": ubx.FieldSpec{
-			WireName: "ena_srd_udp_specification",
-			Kind: "object",
-			Fields: NetworkInterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
-		},
-	}
+	"EnaSrdEnabled": ubx.FieldSpec{WireName: "ena_srd_enabled"},
+	"EnaSrdUdpSpecification": ubx.FieldSpec{
+		WireName: "ena_srd_udp_specification",
+		Kind:     "object",
+		Fields:   NetworkInterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecificationFields,
+	},
+}
 
 type NetworkInterfaceAttachmentConfig struct {
 	// Whether to delete the network interface when the instance terminates. By default, this value is set to ``true``.
@@ -64,14 +64,14 @@ var NetworkInterfaceAttachment = ubx.ResourceBinding{
 	WireType: "aws_network_interface_attachment",
 	Fields: ubx.FieldMap{
 		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"DeviceIndex": ubx.FieldSpec{WireName: "device_index"},
-		"EnaQueueCount": ubx.FieldSpec{WireName: "ena_queue_count"},
+		"DeviceIndex":         ubx.FieldSpec{WireName: "device_index"},
+		"EnaQueueCount":       ubx.FieldSpec{WireName: "ena_queue_count"},
 		"EnaSrdSpecification": ubx.FieldSpec{
 			WireName: "ena_srd_specification",
-			Kind: "object",
-			Fields: NetworkInterfaceAttachment_EnaSrdSpecificationFields,
+			Kind:     "object",
+			Fields:   NetworkInterfaceAttachment_EnaSrdSpecificationFields,
 		},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceId":         ubx.FieldSpec{WireName: "instance_id"},
 		"NetworkInterfaceId": ubx.FieldSpec{WireName: "network_interface_id"},
 	},
 }

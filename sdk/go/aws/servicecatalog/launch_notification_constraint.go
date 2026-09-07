@@ -34,10 +34,10 @@ type LaunchNotificationConstraintAttrs struct {
 var LaunchNotificationConstraint = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_launch_notification_constraint",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AcceptLanguage":   ubx.FieldSpec{WireName: "accept_language"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"NotificationArns": ubx.FieldSpec{WireName: "notification_arns"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"PortfolioId":      ubx.FieldSpec{WireName: "portfolio_id"},
+		"ProductId":        ubx.FieldSpec{WireName: "product_id"},
 	},
 }

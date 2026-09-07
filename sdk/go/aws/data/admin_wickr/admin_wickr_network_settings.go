@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdminWickrNetworkSettings_Settings struct {
 	OptionName any
-	Type any
-	Value any
+	Type       any
+	Value      any
 }
 
 type AdminWickrNetworkSettingsConfig struct {
@@ -15,7 +15,7 @@ type AdminWickrNetworkSettingsConfig struct {
 
 type AdminWickrNetworkSettingsAttrs struct {
 	NetworkId any
-	Settings any
+	Settings  any
 }
 
 var AdminWickrNetworkSettings = ubx.DataSourceBinding{

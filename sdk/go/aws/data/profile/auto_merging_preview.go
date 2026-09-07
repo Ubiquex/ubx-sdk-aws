@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutoMergingPreview_ConflictResolution struct {
 	ConflictResolvingModel any
-	SourceName any
+	SourceName             any
 }
 
 type AutoMergingPreview_Consolidation struct {
@@ -13,20 +13,20 @@ type AutoMergingPreview_Consolidation struct {
 }
 
 var AutoMergingPreview_ConflictResolutionFields = ubx.FieldMap{
-		"ConflictResolvingModel": ubx.FieldSpec{WireName: "conflict_resolving_model"},
-		"SourceName": ubx.FieldSpec{WireName: "source_name"},
-	}
+	"ConflictResolvingModel": ubx.FieldSpec{WireName: "conflict_resolving_model"},
+	"SourceName":             ubx.FieldSpec{WireName: "source_name"},
+}
 
 var AutoMergingPreview_ConsolidationFields = ubx.FieldMap{
-		"MatchingAttributesList": ubx.FieldSpec{WireName: "matching_attributes_list"},
-	}
+	"MatchingAttributesList": ubx.FieldSpec{WireName: "matching_attributes_list"},
+}
 
 type AutoMergingPreviewConfig struct {
 	// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
 	ConflictResolution any
 	// <p>The matching criteria to be used during the auto-merging process. </p>
-	Consolidation any
-	DomainName any
+	Consolidation                       any
+	DomainName                          any
 	MinAllowedConfidenceScoreForMerging any
 }
 
@@ -34,12 +34,12 @@ type AutoMergingPreviewAttrs struct {
 	// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
 	ConflictResolution any
 	// <p>The matching criteria to be used during the auto-merging process. </p>
-	Consolidation any
-	DomainName any
+	Consolidation                       any
+	DomainName                          any
 	MinAllowedConfidenceScoreForMerging any
-	NumberOfMatchesInSample any
-	NumberOfProfilesInSample any
-	NumberOfProfilesWillBeMerged any
+	NumberOfMatchesInSample             any
+	NumberOfProfilesInSample            any
+	NumberOfProfilesWillBeMerged        any
 }
 
 var AutoMergingPreview = ubx.DataSourceBinding{
@@ -47,15 +47,15 @@ var AutoMergingPreview = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ConflictResolution": ubx.FieldSpec{
 			WireName: "conflict_resolution",
-			Kind: "object",
-			Fields: AutoMergingPreview_ConflictResolutionFields,
+			Kind:     "object",
+			Fields:   AutoMergingPreview_ConflictResolutionFields,
 		},
 		"Consolidation": ubx.FieldSpec{
 			WireName: "consolidation",
-			Kind: "object",
-			Fields: AutoMergingPreview_ConsolidationFields,
+			Kind:     "object",
+			Fields:   AutoMergingPreview_ConsolidationFields,
 		},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":                          ubx.FieldSpec{WireName: "domain_name"},
 		"MinAllowedConfidenceScoreForMerging": ubx.FieldSpec{WireName: "min_allowed_confidence_score_for_merging"},
 	},
 }

@@ -4,36 +4,36 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityGroupVpcAssociations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SecurityGroupVpcAssociations_SecurityGroupVpcAssociations struct {
-	GroupId any
+	GroupId      any
 	GroupOwnerId any
-	State any
-	StateReason any
-	VpcId any
-	VpcOwnerId any
+	State        any
+	StateReason  any
+	VpcId        any
+	VpcOwnerId   any
 }
 
 var SecurityGroupVpcAssociations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SecurityGroupVpcAssociationsConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SecurityGroupVpcAssociationsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                       any
+	Filters                      any
+	MaxResults                   any
+	NextToken                    any
 	SecurityGroupVpcAssociations any
 }
 
@@ -43,10 +43,10 @@ var SecurityGroupVpcAssociations = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SecurityGroupVpcAssociations_FiltersFields,
+			Kind:     "list",
+			Fields:   SecurityGroupVpcAssociations_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

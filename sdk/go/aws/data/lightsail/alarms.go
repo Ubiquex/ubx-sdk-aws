@@ -5,63 +5,63 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Alarms_Alarms_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type Alarms_Alarms_MonitoredResourceInfo struct {
-	Arn any
-	Name any
+	Arn          any
+	Name         any
 	ResourceType any
 }
 
 type Alarms_Alarms_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Alarms_Alarms struct {
-	Arn any
-	ComparisonOperator any
-	ContactProtocols any
-	CreatedAt any
-	DatapointsToAlarm any
-	EvaluationPeriods any
-	Location any
-	MetricName any
+	Arn                   any
+	ComparisonOperator    any
+	ContactProtocols      any
+	CreatedAt             any
+	DatapointsToAlarm     any
+	EvaluationPeriods     any
+	Location              any
+	MetricName            any
 	MonitoredResourceInfo any
-	Name any
-	NotificationEnabled any
-	NotificationTriggers any
-	Period any
-	ResourceType any
-	State any
-	Statistic any
-	SupportCode any
-	Tags any
-	Threshold any
-	TreatMissingData any
-	Unit any
+	Name                  any
+	NotificationEnabled   any
+	NotificationTriggers  any
+	Period                any
+	ResourceType          any
+	State                 any
+	Statistic             any
+	SupportCode           any
+	Tags                  any
+	Threshold             any
+	TreatMissingData      any
+	Unit                  any
 }
 
 type AlarmsConfig struct {
-	AlarmName any
+	AlarmName             any
 	MonitoredResourceName any
-	PageToken any
+	PageToken             any
 }
 
 type AlarmsAttrs struct {
-	AlarmName any
-	Alarms any
+	AlarmName             any
+	Alarms                any
 	MonitoredResourceName any
-	NextPageToken any
-	PageToken any
+	NextPageToken         any
+	PageToken             any
 }
 
 var Alarms = ubx.DataSourceBinding{
 	WireType: "aws_lightsail_alarms",
 	Fields: ubx.FieldMap{
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
+		"AlarmName":             ubx.FieldSpec{WireName: "alarm_name"},
 		"MonitoredResourceName": ubx.FieldSpec{WireName: "monitored_resource_name"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"PageToken":             ubx.FieldSpec{WireName: "page_token"},
 	},
 }

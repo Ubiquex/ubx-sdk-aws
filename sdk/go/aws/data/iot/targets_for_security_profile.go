@@ -8,23 +8,23 @@ type TargetsForSecurityProfile_SecurityProfileTargets struct {
 }
 
 type TargetsForSecurityProfileConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 	SecurityProfileName any
 }
 
 type TargetsForSecurityProfileAttrs struct {
-	MaxResults any
-	NextToken any
-	SecurityProfileName any
+	MaxResults             any
+	NextToken              any
+	SecurityProfileName    any
 	SecurityProfileTargets any
 }
 
 var TargetsForSecurityProfile = ubx.DataSourceBinding{
 	WireType: "aws_iot_targets_for_security_profile",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"SecurityProfileName": ubx.FieldSpec{WireName: "security_profile_name"},
 	},
 }

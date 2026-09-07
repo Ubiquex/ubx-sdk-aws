@@ -21,6 +21,6 @@ var AcceptedPortfolioShare = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_accepted_portfolio_share",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
+		"PortfolioId":    ubx.FieldSpec{WireName: "portfolio_id"},
 	},
 }

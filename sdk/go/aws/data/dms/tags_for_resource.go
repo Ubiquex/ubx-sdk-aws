@@ -4,26 +4,26 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_TagList struct {
-	Key any
+	Key         any
 	ResourceArn any
-	Value any
+	Value       any
 }
 
 type TagsForResourceConfig struct {
-	ResourceArn any
+	ResourceArn     any
 	ResourceArnList any
 }
 
 type TagsForResourceAttrs struct {
-	ResourceArn any
+	ResourceArn     any
 	ResourceArnList any
-	TagList any
+	TagList         any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_dms_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
+		"ResourceArn":     ubx.FieldSpec{WireName: "resource_arn"},
 		"ResourceArnList": ubx.FieldSpec{WireName: "resource_arn_list"},
 	},
 }

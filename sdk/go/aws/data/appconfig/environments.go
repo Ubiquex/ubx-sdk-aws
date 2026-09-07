@@ -4,37 +4,37 @@ package appconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Environments_Items_Monitors struct {
-	AlarmArn any
+	AlarmArn     any
 	AlarmRoleArn any
 }
 
 type Environments_Items struct {
 	ApplicationId any
-	Description any
-	Id any
-	Monitors any
-	Name any
-	State any
+	Description   any
+	Id            any
+	Monitors      any
+	Name          any
+	State         any
 }
 
 type EnvironmentsConfig struct {
 	ApplicationId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type EnvironmentsAttrs struct {
 	ApplicationId any
-	Items any
-	MaxResults any
-	NextToken any
+	Items         any
+	MaxResults    any
+	NextToken     any
 }
 
 var Environments = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_environments",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

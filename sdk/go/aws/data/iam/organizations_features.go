@@ -8,11 +8,10 @@ type OrganizationsFeaturesConfig struct {
 
 type OrganizationsFeaturesAttrs struct {
 	EnabledFeatures any
-	OrganizationId any
+	OrganizationId  any
 }
 
 var OrganizationsFeatures = ubx.DataSourceBinding{
 	WireType: "aws_iam_organizations_features",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

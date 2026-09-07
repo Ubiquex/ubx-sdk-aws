@@ -4,32 +4,32 @@ package data_ats_iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAtsIotConnectionConfig struct {
-	ClientId any
+	ClientId                 any
 	IncludeSocketInformation any
 }
 
 type DataAtsIotConnectionAttrs struct {
-	CleanSession any
-	ClientId any
-	Connected any
-	ConnectedSince any
-	DisconnectReason any
-	DisconnectedSince any
+	CleanSession             any
+	ClientId                 any
+	Connected                any
+	ConnectedSince           any
+	DisconnectReason         any
+	DisconnectedSince        any
 	IncludeSocketInformation any
-	KeepAliveDuration any
-	SessionExpiry any
-	SourceIp any
-	SourcePort any
-	TargetIp any
-	TargetPort any
-	ThingName any
-	VpcEndpointId any
+	KeepAliveDuration        any
+	SessionExpiry            any
+	SourceIp                 any
+	SourcePort               any
+	TargetIp                 any
+	TargetPort               any
+	ThingName                any
+	VpcEndpointId            any
 }
 
 var DataAtsIotConnection = ubx.DataSourceBinding{
 	WireType: "aws_data_ats_iot_connection",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":                 ubx.FieldSpec{WireName: "client_id"},
 		"IncludeSocketInformation": ubx.FieldSpec{WireName: "include_socket_information"},
 	},
 }

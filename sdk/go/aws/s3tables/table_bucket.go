@@ -54,49 +54,49 @@ type TableBucket_UnreferencedFileRemoval struct {
 }
 
 var TableBucket_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmskeyArn": ubx.FieldSpec{WireName: "kmskey_arn"},
-		"Ssealgorithm": ubx.FieldSpec{WireName: "ssealgorithm"},
-	}
+	"KmskeyArn":    ubx.FieldSpec{WireName: "kmskey_arn"},
+	"Ssealgorithm": ubx.FieldSpec{WireName: "ssealgorithm"},
+}
 
 var TableBucket_MetricsConfigurationFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var TableBucket_ReplicationConfiguration_Rules_DestinationsFields = ubx.FieldMap{
-		"DestinationTableBucketArn": ubx.FieldSpec{WireName: "destination_table_bucket_arn"},
-	}
+	"DestinationTableBucketArn": ubx.FieldSpec{WireName: "destination_table_bucket_arn"},
+}
 
 var TableBucket_ReplicationConfiguration_RulesFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: TableBucket_ReplicationConfiguration_Rules_DestinationsFields,
-		},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   TableBucket_ReplicationConfiguration_Rules_DestinationsFields,
+	},
+}
 
 var TableBucket_ReplicationConfigurationFields = ubx.FieldMap{
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: TableBucket_ReplicationConfiguration_RulesFields,
-		},
-	}
+	"Role": ubx.FieldSpec{WireName: "role"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   TableBucket_ReplicationConfiguration_RulesFields,
+	},
+}
 
 var TableBucket_StorageClassConfigurationFields = ubx.FieldMap{
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
+	"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+}
 
 var TableBucket_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TableBucket_UnreferencedFileRemovalFields = ubx.FieldMap{
-		"NoncurrentDays": ubx.FieldSpec{WireName: "noncurrent_days"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UnreferencedDays": ubx.FieldSpec{WireName: "unreferenced_days"},
-	}
+	"NoncurrentDays":   ubx.FieldSpec{WireName: "noncurrent_days"},
+	"Status":           ubx.FieldSpec{WireName: "status"},
+	"UnreferencedDays": ubx.FieldSpec{WireName: "unreferenced_days"},
+}
 
 type TableBucketConfig struct {
 	// Specifies encryption settings for the table bucket
@@ -139,34 +139,34 @@ var TableBucket = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: TableBucket_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   TableBucket_EncryptionConfigurationFields,
 		},
 		"MetricsConfiguration": ubx.FieldSpec{
 			WireName: "metrics_configuration",
-			Kind: "object",
-			Fields: TableBucket_MetricsConfigurationFields,
+			Kind:     "object",
+			Fields:   TableBucket_MetricsConfigurationFields,
 		},
 		"ReplicationConfiguration": ubx.FieldSpec{
 			WireName: "replication_configuration",
-			Kind: "object",
-			Fields: TableBucket_ReplicationConfigurationFields,
+			Kind:     "object",
+			Fields:   TableBucket_ReplicationConfigurationFields,
 		},
 		"StorageClassConfiguration": ubx.FieldSpec{
 			WireName: "storage_class_configuration",
-			Kind: "object",
-			Fields: TableBucket_StorageClassConfigurationFields,
+			Kind:     "object",
+			Fields:   TableBucket_StorageClassConfigurationFields,
 		},
 		"TableBucketName": ubx.FieldSpec{WireName: "table_bucket_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TableBucket_TagsFields,
+			Kind:     "list",
+			Fields:   TableBucket_TagsFields,
 		},
 		"UnreferencedFileRemoval": ubx.FieldSpec{
 			WireName: "unreferenced_file_removal",
-			Kind: "object",
-			Fields: TableBucket_UnreferencedFileRemovalFields,
+			Kind:     "object",
+			Fields:   TableBucket_UnreferencedFileRemovalFields,
 		},
 	},
 }

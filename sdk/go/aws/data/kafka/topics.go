@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Topics_Topics struct {
 	OutOfSyncReplicaCount any
-	PartitionCount any
-	ReplicationFactor any
-	TopicArn any
-	TopicName any
+	PartitionCount        any
+	ReplicationFactor     any
+	TopicArn              any
+	TopicName             any
 }
 
 type TopicsConfig struct {
-	ClusterArn any
-	MaxResults any
-	NextToken any
+	ClusterArn      any
+	MaxResults      any
+	NextToken       any
 	TopicNameFilter any
 }
 
 type TopicsAttrs struct {
-	ClusterArn any
-	MaxResults any
-	NextToken any
+	ClusterArn      any
+	MaxResults      any
+	NextToken       any
 	TopicNameFilter any
-	Topics any
+	Topics          any
 }
 
 var Topics = ubx.DataSourceBinding{
 	WireType: "aws_kafka_topics",
 	Fields: ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ClusterArn":      ubx.FieldSpec{WireName: "cluster_arn"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 		"TopicNameFilter": ubx.FieldSpec{WireName: "topic_name_filter"},
 	},
 }

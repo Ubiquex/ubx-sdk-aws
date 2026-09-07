@@ -8,7 +8,7 @@ type ContactMetrics_MetricResults_Value struct {
 }
 
 type ContactMetrics_MetricResults struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -17,33 +17,33 @@ type ContactMetrics_Metrics struct {
 }
 
 var ContactMetrics_MetricsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type ContactMetricsConfig struct {
-	ContactId any
+	ContactId  any
 	InstanceId any
-	Metrics any
+	Metrics    any
 }
 
 type ContactMetricsAttrs struct {
-	Arn any
-	ContactId any
-	Id any
-	InstanceId any
+	Arn           any
+	ContactId     any
+	Id            any
+	InstanceId    any
 	MetricResults any
-	Metrics any
+	Metrics       any
 }
 
 var ContactMetrics = ubx.DataSourceBinding{
 	WireType: "aws_connect_contact_metrics",
 	Fields: ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
+		"ContactId":  ubx.FieldSpec{WireName: "contact_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: ContactMetrics_MetricsFields,
+			Kind:     "list",
+			Fields:   ContactMetrics_MetricsFields,
 		},
 	},
 }

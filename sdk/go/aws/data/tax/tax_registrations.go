@@ -4,58 +4,58 @@ package tax
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaxRegistrations_AccountDetails_AccountMetaData_Address struct {
-	AddressLine1 any
-	AddressLine2 any
-	AddressLine3 any
-	City any
-	CountryCode any
+	AddressLine1     any
+	AddressLine2     any
+	AddressLine3     any
+	City             any
+	CountryCode      any
 	DistrictOrCounty any
-	PostalCode any
-	StateOrRegion any
+	PostalCode       any
+	StateOrRegion    any
 }
 
 type TaxRegistrations_AccountDetails_AccountMetaData_AddressRoleMap struct {
-	CountryCode any
+	CountryCode   any
 	StateOrRegion any
 }
 
 type TaxRegistrations_AccountDetails_AccountMetaData struct {
-	AccountName any
-	Address any
+	AccountName    any
+	Address        any
 	AddressRoleMap any
-	AddressType any
-	Seller any
+	AddressType    any
+	Seller         any
 }
 
 type TaxRegistrations_AccountDetails_TaxInheritanceDetails struct {
 	InheritanceObtainedReason any
-	ParentEntityId any
+	ParentEntityId            any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_BelgiumAdditionalInfo struct {
 	IsMercuriusBoxEnabled any
-	PeppolId any
+	PeppolId              any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_BrazilAdditionalInfo struct {
-	CcmCode any
+	CcmCode         any
 	LegalNatureCode any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_CanadaAdditionalInfo struct {
 	CanadaQuebecSalesTaxNumber any
 	CanadaRetailSalesTaxNumber any
-	IsResellerAccount any
-	ProvincialSalesTaxId any
+	IsResellerAccount          any
+	ProvincialSalesTaxId       any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_ChileAdditionalInfo struct {
 	BusinessActivity any
-	DocumentType any
+	DocumentType     any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_EgyptAdditionalInfo struct {
-	UniqueIdentificationNumber any
+	UniqueIdentificationNumber               any
 	UniqueIdentificationNumberExpirationDate any
 }
 
@@ -65,7 +65,7 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_Es
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_FranceAdditionalInfo struct {
 	EInvoiceRoutingCode any
-	SirenNumber any
+	SirenNumber         any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_GeorgiaAdditionalInfo struct {
@@ -81,28 +81,28 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_In
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_IndonesiaAdditionalInfo struct {
-	DecisionNumber any
+	DecisionNumber              any
 	PpnExceptionDesignationCode any
-	TaxRegistrationNumberType any
+	TaxRegistrationNumberType   any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_IsraelAdditionalInfo struct {
 	CustomerType any
-	DealerType any
+	DealerType   any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_ItalyAdditionalInfo struct {
-	CigNumber any
-	CupNumber any
+	CigNumber    any
+	CupNumber    any
 	CustomerType any
 	SdiAccountId any
-	TaxCode any
+	TaxCode      any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_MalaysiaAdditionalInfo struct {
 	BusinessRegistrationNumber any
-	ServiceTaxCodes any
-	TaxInformationNumber any
+	ServiceTaxCodes            any
+	TaxInformationNumber       any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_MonacoAdditionalInfo struct {
@@ -115,8 +115,8 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_Ph
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_PolandAdditionalInfo struct {
 	IndividualRegistrationNumber any
-	IsGroupVatEnabled any
-	TaxRegistrationNumberType any
+	IsGroupVatEnabled            any
+	TaxRegistrationNumberType    any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_RomaniaAdditionalInfo struct {
@@ -125,8 +125,8 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_Ro
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_SouthKoreaAdditionalInfo struct {
 	BusinessRepresentativeName any
-	ItemOfBusiness any
-	LineOfBusiness any
+	ItemOfBusiness             any
+	LineOfBusiness             any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_SpainAdditionalInfo struct {
@@ -134,10 +134,10 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_Sp
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_TurkeyAdditionalInfo struct {
-	Industries any
-	KepEmailId any
+	Industries     any
+	KepEmailId     any
 	SecondaryTaxId any
-	TaxOffice any
+	TaxOffice      any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_UkraineAdditionalInfo struct {
@@ -146,84 +146,84 @@ type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_Uk
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_UzbekistanAdditionalInfo struct {
 	TaxRegistrationNumberType any
-	VatRegistrationNumber any
+	VatRegistrationNumber     any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation_VietnamAdditionalInfo struct {
 	ElectronicTransactionCodeNumber any
-	EnterpriseIdentificationNumber any
-	PaymentVoucherNumber any
-	PaymentVoucherNumberDate any
+	EnterpriseIdentificationNumber  any
+	PaymentVoucherNumber            any
+	PaymentVoucherNumberDate        any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_AdditionalTaxInformation struct {
-	BelgiumAdditionalInfo any
-	BrazilAdditionalInfo any
-	CanadaAdditionalInfo any
-	ChileAdditionalInfo any
-	EgyptAdditionalInfo any
-	EstoniaAdditionalInfo any
-	FranceAdditionalInfo any
-	GeorgiaAdditionalInfo any
-	GreeceAdditionalInfo any
-	IndiaAdditionalInfo any
-	IndonesiaAdditionalInfo any
-	IsraelAdditionalInfo any
-	ItalyAdditionalInfo any
-	KenyaAdditionalInfo any
-	MalaysiaAdditionalInfo any
-	MonacoAdditionalInfo any
+	BelgiumAdditionalInfo     any
+	BrazilAdditionalInfo      any
+	CanadaAdditionalInfo      any
+	ChileAdditionalInfo       any
+	EgyptAdditionalInfo       any
+	EstoniaAdditionalInfo     any
+	FranceAdditionalInfo      any
+	GeorgiaAdditionalInfo     any
+	GreeceAdditionalInfo      any
+	IndiaAdditionalInfo       any
+	IndonesiaAdditionalInfo   any
+	IsraelAdditionalInfo      any
+	ItalyAdditionalInfo       any
+	KenyaAdditionalInfo       any
+	MalaysiaAdditionalInfo    any
+	MonacoAdditionalInfo      any
 	PhilippinesAdditionalInfo any
-	PolandAdditionalInfo any
-	RomaniaAdditionalInfo any
+	PolandAdditionalInfo      any
+	RomaniaAdditionalInfo     any
 	SaudiArabiaAdditionalInfo any
-	SouthKoreaAdditionalInfo any
-	SpainAdditionalInfo any
-	TurkeyAdditionalInfo any
-	UkraineAdditionalInfo any
-	UzbekistanAdditionalInfo any
-	VietnamAdditionalInfo any
+	SouthKoreaAdditionalInfo  any
+	SpainAdditionalInfo       any
+	TurkeyAdditionalInfo      any
+	UkraineAdditionalInfo     any
+	UzbekistanAdditionalInfo  any
+	VietnamAdditionalInfo     any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration_TaxDocumentMetadatas struct {
 	TaxDocumentAccessToken any
-	TaxDocumentName any
+	TaxDocumentName        any
 }
 
 type TaxRegistrations_AccountDetails_TaxRegistration struct {
 	AdditionalTaxInformation any
-	CertifiedEmailId any
-	Jurisdiction any
-	LegalName any
-	RegistrationId any
-	RegistrationType any
-	Sector any
-	Status any
-	TaxDocumentMetadatas any
+	CertifiedEmailId         any
+	Jurisdiction             any
+	LegalName                any
+	RegistrationId           any
+	RegistrationType         any
+	Sector                   any
+	Status                   any
+	TaxDocumentMetadatas     any
 }
 
 type TaxRegistrations_AccountDetails struct {
-	AccountId any
-	AccountMetaData any
+	AccountId             any
+	AccountMetaData       any
 	TaxInheritanceDetails any
-	TaxRegistration any
+	TaxRegistration       any
 }
 
 type TaxRegistrationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TaxRegistrationsAttrs struct {
 	AccountDetails any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var TaxRegistrations = ubx.DataSourceBinding{
 	WireType: "aws_tax_tax_registrations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

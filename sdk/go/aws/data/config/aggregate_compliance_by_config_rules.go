@@ -10,44 +10,44 @@ type AggregateComplianceByConfigRules_AggregateComplianceByConfigRules_Complianc
 
 type AggregateComplianceByConfigRules_AggregateComplianceByConfigRules_Compliance struct {
 	ComplianceContributorCount any
-	ComplianceType any
+	ComplianceType             any
 }
 
 type AggregateComplianceByConfigRules_AggregateComplianceByConfigRules struct {
-	AccountId any
-	AwsRegion any
-	Compliance any
+	AccountId      any
+	AwsRegion      any
+	Compliance     any
 	ConfigRuleName any
 }
 
 type AggregateComplianceByConfigRules_Filters struct {
-	AccountId any
-	AwsRegion any
+	AccountId      any
+	AwsRegion      any
 	ComplianceType any
 	ConfigRuleName any
 }
 
 var AggregateComplianceByConfigRules_FiltersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"ComplianceType": ubx.FieldSpec{WireName: "compliance_type"},
-		"ConfigRuleName": ubx.FieldSpec{WireName: "config_rule_name"},
-	}
+	"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+	"AwsRegion":      ubx.FieldSpec{WireName: "aws_region"},
+	"ComplianceType": ubx.FieldSpec{WireName: "compliance_type"},
+	"ConfigRuleName": ubx.FieldSpec{WireName: "config_rule_name"},
+}
 
 type AggregateComplianceByConfigRulesConfig struct {
 	ConfigurationAggregatorName any
 	// <p>Filters the compliance results based on account ID, region, compliance type, and rule name.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
 type AggregateComplianceByConfigRulesAttrs struct {
 	AggregateComplianceByConfigRules any
-	ConfigurationAggregatorName any
+	ConfigurationAggregatorName      any
 	// <p>Filters the compliance results based on account ID, region, compliance type, and rule name.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
@@ -57,10 +57,10 @@ var AggregateComplianceByConfigRules = ubx.DataSourceBinding{
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: AggregateComplianceByConfigRules_FiltersFields,
+			Kind:     "object",
+			Fields:   AggregateComplianceByConfigRules_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

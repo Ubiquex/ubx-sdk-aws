@@ -4,45 +4,45 @@ package route53resolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverQueryLogConfigs_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ResolverQueryLogConfigs_ResolverQueryLogConfigs struct {
-	Arn any
+	Arn              any
 	AssociationCount any
-	CreationTime any
+	CreationTime     any
 	CreatorRequestId any
-	DestinationArn any
-	Id any
-	Name any
-	OwnerId any
-	ShareStatus any
-	Status any
+	DestinationArn   any
+	Id               any
+	Name             any
+	OwnerId          any
+	ShareStatus      any
+	Status           any
 }
 
 var ResolverQueryLogConfigs_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ResolverQueryLogConfigsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
+	NextToken  any
+	SortBy     any
+	SortOrder  any
 }
 
 type ResolverQueryLogConfigsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                 any
+	MaxResults              any
+	NextToken               any
 	ResolverQueryLogConfigs any
-	SortBy any
-	SortOrder any
-	TotalCount any
-	TotalFilteredCount any
+	SortBy                  any
+	SortOrder               any
+	TotalCount              any
+	TotalFilteredCount      any
 }
 
 var ResolverQueryLogConfigs = ubx.DataSourceBinding{
@@ -50,12 +50,12 @@ var ResolverQueryLogConfigs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ResolverQueryLogConfigs_FiltersFields,
+			Kind:     "list",
+			Fields:   ResolverQueryLogConfigs_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":     ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

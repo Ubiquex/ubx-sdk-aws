@@ -4,53 +4,53 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Record_RecordDetail_RecordErrors struct {
-	Code any
+	Code        any
 	Description any
 }
 
 type Record_RecordDetail_RecordTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Record_RecordDetail struct {
-	CreatedTime any
-	LaunchRoleArn any
-	PathId any
-	ProductId any
-	ProvisionedProductId any
+	CreatedTime            any
+	LaunchRoleArn          any
+	PathId                 any
+	ProductId              any
+	ProvisionedProductId   any
 	ProvisionedProductName any
 	ProvisionedProductType any
 	ProvisioningArtifactId any
-	RecordErrors any
-	RecordId any
-	RecordTags any
-	RecordType any
-	Status any
-	UpdatedTime any
+	RecordErrors           any
+	RecordId               any
+	RecordTags             any
+	RecordType             any
+	Status                 any
+	UpdatedTime            any
 }
 
 type Record_RecordOutputs struct {
 	Description any
-	OutputKey any
+	OutputKey   any
 	OutputValue any
 }
 
 type RecordConfig struct {
 	AcceptLanguage any
-	Id any
-	PageSize any
-	PageToken any
+	Id             any
+	PageSize       any
+	PageToken      any
 }
 
 type RecordAttrs struct {
 	AcceptLanguage any
-	Id any
-	NextPageToken any
-	PageSize any
-	PageToken any
+	Id             any
+	NextPageToken  any
+	PageSize       any
+	PageToken      any
 	// <p>Information about a request operation.</p>
-	RecordDetail any
+	RecordDetail  any
 	RecordOutputs any
 }
 
@@ -58,8 +58,8 @@ var Record = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_record",
 	Fields: ubx.FieldMap{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":      ubx.FieldSpec{WireName: "page_token"},
 	},
 }

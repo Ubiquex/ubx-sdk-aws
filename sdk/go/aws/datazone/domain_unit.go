@@ -40,9 +40,9 @@ type DomainUnitAttrs struct {
 var DomainUnit = ubx.ResourceBinding{
 	WireType: "aws_data_zone_domain_unit",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
+		"DomainIdentifier":           ubx.FieldSpec{WireName: "domain_identifier"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
 		"ParentDomainUnitIdentifier": ubx.FieldSpec{WireName: "parent_domain_unit_identifier"},
 	},
 }

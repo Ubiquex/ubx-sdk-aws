@@ -11,9 +11,9 @@ type Authorizer_JwtConfiguration struct {
 }
 
 var Authorizer_JwtConfigurationFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-	}
+	"Audience": ubx.FieldSpec{WireName: "audience"},
+	"Issuer":   ubx.FieldSpec{WireName: "issuer"},
+}
 
 type AuthorizerConfig struct {
 	// The API identifier.
@@ -70,19 +70,19 @@ type AuthorizerAttrs struct {
 var Authorizer = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_authorizer",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"AuthorizerCredentialsArn": ubx.FieldSpec{WireName: "authorizer_credentials_arn"},
+		"ApiId":                          ubx.FieldSpec{WireName: "api_id"},
+		"AuthorizerCredentialsArn":       ubx.FieldSpec{WireName: "authorizer_credentials_arn"},
 		"AuthorizerPayloadFormatVersion": ubx.FieldSpec{WireName: "authorizer_payload_format_version"},
-		"AuthorizerResultTtlInSeconds": ubx.FieldSpec{WireName: "authorizer_result_ttl_in_seconds"},
-		"AuthorizerType": ubx.FieldSpec{WireName: "authorizer_type"},
-		"AuthorizerUri": ubx.FieldSpec{WireName: "authorizer_uri"},
-		"EnableSimpleResponses": ubx.FieldSpec{WireName: "enable_simple_responses"},
-		"IdentitySource": ubx.FieldSpec{WireName: "identity_source"},
-		"IdentityValidationExpression": ubx.FieldSpec{WireName: "identity_validation_expression"},
+		"AuthorizerResultTtlInSeconds":   ubx.FieldSpec{WireName: "authorizer_result_ttl_in_seconds"},
+		"AuthorizerType":                 ubx.FieldSpec{WireName: "authorizer_type"},
+		"AuthorizerUri":                  ubx.FieldSpec{WireName: "authorizer_uri"},
+		"EnableSimpleResponses":          ubx.FieldSpec{WireName: "enable_simple_responses"},
+		"IdentitySource":                 ubx.FieldSpec{WireName: "identity_source"},
+		"IdentityValidationExpression":   ubx.FieldSpec{WireName: "identity_validation_expression"},
 		"JwtConfiguration": ubx.FieldSpec{
 			WireName: "jwt_configuration",
-			Kind: "object",
-			Fields: Authorizer_JwtConfigurationFields,
+			Kind:     "object",
+			Fields:   Authorizer_JwtConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

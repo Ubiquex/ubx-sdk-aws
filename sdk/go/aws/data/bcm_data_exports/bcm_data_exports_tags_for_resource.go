@@ -4,28 +4,28 @@ package bcm_data_exports
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BcmDataExportsTagsForResource_ResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BcmDataExportsTagsForResourceConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type BcmDataExportsTagsForResourceAttrs struct {
-	MaxResults any
-	NextToken any
-	ResourceArn any
+	MaxResults   any
+	NextToken    any
+	ResourceArn  any
 	ResourceTags any
 }
 
 var BcmDataExportsTagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_bcm_data_exports_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

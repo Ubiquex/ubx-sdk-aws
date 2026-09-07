@@ -9,27 +9,27 @@ type EmrContainersJobRun_JobRun_ConfigurationOverrides_ApplicationConfiguration_
 type EmrContainersJobRun_JobRun_ConfigurationOverrides_ApplicationConfiguration struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type EmrContainersJobRun_JobRun_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration struct {
-	LogGroupName any
+	LogGroupName        any
 	LogStreamNamePrefix any
 }
 
 type EmrContainersJobRun_JobRun_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfiguration struct {
 	MaxFilesToKeep any
-	RotationSize any
+	RotationSize   any
 }
 
 type EmrContainersJobRun_JobRun_ConfigurationOverrides_MonitoringConfiguration_ManagedLogs struct {
 	AllowAwstoRetainLogs any
-	EncryptionKeyArn any
+	EncryptionKeyArn     any
 }
 
 type EmrContainersJobRun_JobRun_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfiguration struct {
 	EncryptionKeyArn any
-	LogUri any
+	LogUri           any
 }
 
 type EmrContainersJobRun_JobRun_ConfigurationOverrides_MonitoringConfiguration struct {
@@ -38,7 +38,7 @@ type EmrContainersJobRun_JobRun_ConfigurationOverrides_MonitoringConfiguration s
 	// <p>The settings for container log rotation.</p>
 	ContainerLogRotationConfiguration any
 	// <p>The entity that provides configuration control over managed logs.</p>
-	ManagedLogs any
+	ManagedLogs     any
 	PersistentAppUi any
 	// <p> Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>
 	S3MonitoringConfiguration any
@@ -51,13 +51,13 @@ type EmrContainersJobRun_JobRun_ConfigurationOverrides struct {
 }
 
 type EmrContainersJobRun_JobRun_JobDriver_SparkSqlJobDriver struct {
-	EntryPoint any
+	EntryPoint         any
 	SparkSqlParameters any
 }
 
 type EmrContainersJobRun_JobRun_JobDriver_SparkSubmitJobDriver struct {
-	EntryPoint any
-	EntryPointArguments any
+	EntryPoint            any
+	EntryPointArguments   any
 	SparkSubmitParameters any
 }
 
@@ -77,46 +77,46 @@ type EmrContainersJobRun_JobRun_RetryPolicyExecution struct {
 }
 
 type EmrContainersJobRun_JobRun struct {
-	Arn any
+	Arn         any
 	ClientToken any
 	// <p>A configuration specification to be used to override existing configurations.</p>
 	ConfigurationOverrides any
-	CreatedAt any
-	CreatedBy any
-	ExecutionRoleArn any
-	FailureReason any
-	FinishedAt any
-	Id any
+	CreatedAt              any
+	CreatedBy              any
+	ExecutionRoleArn       any
+	FailureReason          any
+	FinishedAt             any
+	Id                     any
 	// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
-	JobDriver any
-	Name any
+	JobDriver    any
+	Name         any
 	ReleaseLabel any
 	// <p>The configuration of the retry policy that the job runs on.</p>
 	RetryPolicyConfiguration any
 	// <p>The current status of the retry policy executed on the job.</p>
 	RetryPolicyExecution any
-	State any
-	StateDetails any
-	Tags any
-	VirtualClusterId any
+	State                any
+	StateDetails         any
+	Tags                 any
+	VirtualClusterId     any
 }
 
 type EmrContainersJobRunConfig struct {
-	Id any
+	Id               any
 	VirtualClusterId any
 }
 
 type EmrContainersJobRunAttrs struct {
 	Id any
 	// <p>This entity describes a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS. </p>
-	JobRun any
+	JobRun           any
 	VirtualClusterId any
 }
 
 var EmrContainersJobRun = ubx.DataSourceBinding{
 	WireType: "aws_emr_containers_job_run",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":               ubx.FieldSpec{WireName: "id"},
 		"VirtualClusterId": ubx.FieldSpec{WireName: "virtual_cluster_id"},
 	},
 }

@@ -11,9 +11,9 @@ type Certificate_Tags struct {
 }
 
 var Certificate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CertificateConfig struct {
 	// The name for the certificate.
@@ -44,13 +44,13 @@ type CertificateAttrs struct {
 var Certificate = ubx.ResourceBinding{
 	WireType: "aws_lightsail_certificate",
 	Fields: ubx.FieldMap{
-		"CertificateName": ubx.FieldSpec{WireName: "certificate_name"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"CertificateName":         ubx.FieldSpec{WireName: "certificate_name"},
+		"DomainName":              ubx.FieldSpec{WireName: "domain_name"},
 		"SubjectAlternativeNames": ubx.FieldSpec{WireName: "subject_alternative_names"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Certificate_TagsFields,
+			Kind:     "list",
+			Fields:   Certificate_TagsFields,
 		},
 	},
 }

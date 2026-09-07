@@ -8,9 +8,9 @@ type SavingsPlansPurchaseRecommendation_Filter_And struct {
 
 type SavingsPlansPurchaseRecommendation_Filter_CostCategories struct {
 	// <p>The unique name of the cost category.</p>
-	Key any
+	Key          any
 	MatchOptions any
-	Values any
+	Values       any
 }
 
 type SavingsPlansPurchaseRecommendation_Filter struct {
@@ -21,132 +21,131 @@ type SavingsPlansPurchaseRecommendation_Filter struct {
 	Dimensions any
 	// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p>There are two patterns:</p> <ul> <li> <p>Simple dimension values.</p> <ul> <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> <ul> <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> </ul> </li> <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> <ul> <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li> <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> <ul> <li> <p>For example, you can filter for linked account names that start with "a".</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound <code>Expression</code> types with logical operations.</p> <ul> <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> </ul> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> </note> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note>
 	Not any
-	Or any
+	Or  any
 	// <p>The values that are available for a tag.</p> <p>If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags.</p> <p>If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.</p>
 	Tags any
 }
 
 type SavingsPlansPurchaseRecommendation_Metadata struct {
-	AdditionalMetadata any
+	AdditionalMetadata  any
 	GenerationTimestamp any
-	RecommendationId any
+	RecommendationId    any
 }
 
 type SavingsPlansPurchaseRecommendation_SavingsPlansPurchaseRecommendation_SavingsPlansPurchaseRecommendationDetails_SavingsPlansDetails struct {
 	InstanceFamily any
-	OfferingId any
-	Region any
+	OfferingId     any
+	Region         any
 }
 
 type SavingsPlansPurchaseRecommendation_SavingsPlansPurchaseRecommendation_SavingsPlansPurchaseRecommendationDetails struct {
-	AccountId any
-	CurrencyCode any
-	CurrentAverageHourlyOnDemandSpend any
-	CurrentMaximumHourlyOnDemandSpend any
-	CurrentMinimumHourlyOnDemandSpend any
-	EstimatedAverageUtilization any
-	EstimatedMonthlySavingsAmount any
-	EstimatedOnDemandCost any
+	AccountId                                  any
+	CurrencyCode                               any
+	CurrentAverageHourlyOnDemandSpend          any
+	CurrentMaximumHourlyOnDemandSpend          any
+	CurrentMinimumHourlyOnDemandSpend          any
+	EstimatedAverageUtilization                any
+	EstimatedMonthlySavingsAmount              any
+	EstimatedOnDemandCost                      any
 	EstimatedOnDemandCostWithCurrentCommitment any
-	EstimatedRoi any
-	EstimatedSavingsAmount any
-	EstimatedSavingsPercentage any
-	EstimatedSpcost any
-	HourlyCommitmentToPurchase any
-	RecommendationDetailId any
-	SavingsPlansDetails any
-	UpfrontCost any
+	EstimatedRoi                               any
+	EstimatedSavingsAmount                     any
+	EstimatedSavingsPercentage                 any
+	EstimatedSpcost                            any
+	HourlyCommitmentToPurchase                 any
+	RecommendationDetailId                     any
+	SavingsPlansDetails                        any
+	UpfrontCost                                any
 }
 
 type SavingsPlansPurchaseRecommendation_SavingsPlansPurchaseRecommendation_SavingsPlansPurchaseRecommendationSummary struct {
-	CurrencyCode any
-	CurrentOnDemandSpend any
-	DailyCommitmentToPurchase any
-	EstimatedMonthlySavingsAmount any
+	CurrencyCode                               any
+	CurrentOnDemandSpend                       any
+	DailyCommitmentToPurchase                  any
+	EstimatedMonthlySavingsAmount              any
 	EstimatedOnDemandCostWithCurrentCommitment any
-	EstimatedRoi any
-	EstimatedSavingsAmount any
-	EstimatedSavingsPercentage any
-	EstimatedTotalCost any
-	HourlyCommitmentToPurchase any
-	TotalRecommendationCount any
+	EstimatedRoi                               any
+	EstimatedSavingsAmount                     any
+	EstimatedSavingsPercentage                 any
+	EstimatedTotalCost                         any
+	HourlyCommitmentToPurchase                 any
+	TotalRecommendationCount                   any
 }
 
 type SavingsPlansPurchaseRecommendation_SavingsPlansPurchaseRecommendation struct {
-	AccountScope any
-	LookbackPeriodInDays any
-	PaymentOption any
+	AccountScope                              any
+	LookbackPeriodInDays                      any
+	PaymentOption                             any
 	SavingsPlansPurchaseRecommendationDetails any
 	// <p>Summary metrics for your Savings Plans Purchase Recommendations.</p>
 	SavingsPlansPurchaseRecommendationSummary any
-	SavingsPlansType any
-	TermInYears any
+	SavingsPlansType                          any
+	TermInYears                               any
 }
 
-var SavingsPlansPurchaseRecommendation_Filter_AndFields = ubx.FieldMap{
-	}
+var SavingsPlansPurchaseRecommendation_Filter_AndFields = ubx.FieldMap{}
 
 var SavingsPlansPurchaseRecommendation_Filter_CostCategoriesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":          ubx.FieldSpec{WireName: "key"},
+	"MatchOptions": ubx.FieldSpec{WireName: "match_options"},
+	"Values":       ubx.FieldSpec{WireName: "values"},
+}
 
 var SavingsPlansPurchaseRecommendation_FilterFields = ubx.FieldMap{
-		"And": ubx.FieldSpec{
-			WireName: "and",
-			Kind: "list",
-			Fields: SavingsPlansPurchaseRecommendation_Filter_AndFields,
-		},
-		"CostCategories": ubx.FieldSpec{
-			WireName: "cost_categories",
-			Kind: "object",
-			Fields: SavingsPlansPurchaseRecommendation_Filter_CostCategoriesFields,
-		},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "object",
-			Fields: SavingsPlansPurchaseRecommendation_Filter_CostCategoriesFields,
-		},
-		"Not": ubx.FieldSpec{WireName: "not"},
-		"Or": ubx.FieldSpec{
-			WireName: "or",
-			Kind: "list",
-			Fields: SavingsPlansPurchaseRecommendation_Filter_AndFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: SavingsPlansPurchaseRecommendation_Filter_CostCategoriesFields,
-		},
-	}
+	"And": ubx.FieldSpec{
+		WireName: "and",
+		Kind:     "list",
+		Fields:   SavingsPlansPurchaseRecommendation_Filter_AndFields,
+	},
+	"CostCategories": ubx.FieldSpec{
+		WireName: "cost_categories",
+		Kind:     "object",
+		Fields:   SavingsPlansPurchaseRecommendation_Filter_CostCategoriesFields,
+	},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "object",
+		Fields:   SavingsPlansPurchaseRecommendation_Filter_CostCategoriesFields,
+	},
+	"Not": ubx.FieldSpec{WireName: "not"},
+	"Or": ubx.FieldSpec{
+		WireName: "or",
+		Kind:     "list",
+		Fields:   SavingsPlansPurchaseRecommendation_Filter_AndFields,
+	},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   SavingsPlansPurchaseRecommendation_Filter_CostCategoriesFields,
+	},
+}
 
 type SavingsPlansPurchaseRecommendationConfig struct {
 	AccountScope any
 	// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p>There are two patterns:</p> <ul> <li> <p>Simple dimension values.</p> <ul> <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> <ul> <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> </ul> </li> <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> <ul> <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li> <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> <ul> <li> <p>For example, you can filter for linked account names that start with "a".</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound <code>Expression</code> types with logical operations.</p> <ul> <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> </ul> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> </note> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note>
-	Filter any
+	Filter               any
 	LookbackPeriodInDays any
-	NextPageToken any
-	PageSize any
-	PaymentOption any
-	SavingsPlansType any
-	TermInYears any
+	NextPageToken        any
+	PageSize             any
+	PaymentOption        any
+	SavingsPlansType     any
+	TermInYears          any
 }
 
 type SavingsPlansPurchaseRecommendationAttrs struct {
 	AccountScope any
 	// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p>There are two patterns:</p> <ul> <li> <p>Simple dimension values.</p> <ul> <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> <ul> <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li> </ul> </li> <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> <ul> <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li> <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> <ul> <li> <p>For example, you can filter for linked account names that start with "a".</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound <code>Expression</code> types with logical operations.</p> <ul> <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li> </ul> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p> </note> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note>
-	Filter any
+	Filter               any
 	LookbackPeriodInDays any
 	// <p>Metadata about your Savings Plans Purchase Recommendations.</p>
-	Metadata any
+	Metadata      any
 	NextPageToken any
-	PageSize any
+	PageSize      any
 	PaymentOption any
 	// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
 	SavingsPlansPurchaseRecommendation any
-	SavingsPlansType any
-	TermInYears any
+	SavingsPlansType                   any
+	TermInYears                        any
 }
 
 var SavingsPlansPurchaseRecommendation = ubx.DataSourceBinding{
@@ -155,14 +154,14 @@ var SavingsPlansPurchaseRecommendation = ubx.DataSourceBinding{
 		"AccountScope": ubx.FieldSpec{WireName: "account_scope"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: SavingsPlansPurchaseRecommendation_FilterFields,
+			Kind:     "object",
+			Fields:   SavingsPlansPurchaseRecommendation_FilterFields,
 		},
 		"LookbackPeriodInDays": ubx.FieldSpec{WireName: "lookback_period_in_days"},
-		"NextPageToken": ubx.FieldSpec{WireName: "next_page_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PaymentOption": ubx.FieldSpec{WireName: "payment_option"},
-		"SavingsPlansType": ubx.FieldSpec{WireName: "savings_plans_type"},
-		"TermInYears": ubx.FieldSpec{WireName: "term_in_years"},
+		"NextPageToken":        ubx.FieldSpec{WireName: "next_page_token"},
+		"PageSize":             ubx.FieldSpec{WireName: "page_size"},
+		"PaymentOption":        ubx.FieldSpec{WireName: "payment_option"},
+		"SavingsPlansType":     ubx.FieldSpec{WireName: "savings_plans_type"},
+		"TermInYears":          ubx.FieldSpec{WireName: "term_in_years"},
 	},
 }

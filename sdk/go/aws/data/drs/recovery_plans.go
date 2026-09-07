@@ -4,21 +4,21 @@ package drs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryPlans_RecoveryPlans struct {
-	CreatedAt any
-	Name any
+	CreatedAt       any
+	Name            any
 	RecoveryPlanArn any
-	Status any
-	UpdatedAt any
+	Status          any
+	UpdatedAt       any
 }
 
 type RecoveryPlansConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RecoveryPlansAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 	RecoveryPlans any
 }
 
@@ -26,6 +26,6 @@ var RecoveryPlans = ubx.DataSourceBinding{
 	WireType: "aws_drs_recovery_plans",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

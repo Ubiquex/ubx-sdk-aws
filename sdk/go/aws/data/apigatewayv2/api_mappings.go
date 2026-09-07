@@ -4,23 +4,23 @@ package apigatewayv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiMappings_Items struct {
-	ApiId any
-	ApiMappingId any
+	ApiId         any
+	ApiMappingId  any
 	ApiMappingKey any
-	Stage any
+	Stage         any
 }
 
 type ApiMappingsConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApiMappingsAttrs struct {
 	DomainName any
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ApiMappings = ubx.DataSourceBinding{
@@ -28,6 +28,6 @@ var ApiMappings = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

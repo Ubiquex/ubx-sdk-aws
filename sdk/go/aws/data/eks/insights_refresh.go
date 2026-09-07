@@ -9,10 +9,10 @@ type InsightsRefreshConfig struct {
 
 type InsightsRefreshAttrs struct {
 	ClusterName any
-	EndedAt any
-	Message any
-	StartedAt any
-	Status any
+	EndedAt     any
+	Message     any
+	StartedAt   any
+	Status      any
 }
 
 var InsightsRefresh = ubx.DataSourceBinding{

@@ -4,11 +4,11 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainConfig_DomainConfig_AccessPolicies_Status struct {
-	CreationDate any
+	CreationDate    any
 	PendingDeletion any
 	// <p>The state of a requested domain configuration change. Can be one of the following:</p> <ul> <li> <p> <b>Processing</b> - The requested change is still in progress.</p> </li> <li> <p> <b>Active</b> - The requested change is processed and deployed to the domain.</p> </li> </ul>
-	State any
-	UpdateDate any
+	State         any
+	UpdateDate    any
 	UpdateVersion any
 }
 
@@ -27,39 +27,39 @@ type DomainConfig_DomainConfig_AdvancedOptions struct {
 }
 
 type DomainConfig_DomainConfig_AdvancedSecurityOptions_Options_IamfederationOptions struct {
-	Enabled any
-	RolesKey any
+	Enabled    any
+	RolesKey   any
 	SubjectKey any
 }
 
 type DomainConfig_DomainConfig_AdvancedSecurityOptions_Options_Jwtoptions struct {
-	Enabled any
-	JwksUrl any
-	PublicKey any
-	RolesKey any
+	Enabled    any
+	JwksUrl    any
+	PublicKey  any
+	RolesKey   any
 	SubjectKey any
 }
 
 type DomainConfig_DomainConfig_AdvancedSecurityOptions_Options_Samloptions_Idp struct {
-	EntityId any
+	EntityId        any
 	MetadataContent any
 }
 
 type DomainConfig_DomainConfig_AdvancedSecurityOptions_Options_Samloptions struct {
 	Enabled any
 	// <p>The SAML identity povider information.</p>
-	Idp any
-	RolesKey any
+	Idp                   any
+	RolesKey              any
 	SessionTimeoutMinutes any
-	SubjectKey any
+	SubjectKey            any
 }
 
 type DomainConfig_DomainConfig_AdvancedSecurityOptions_Options struct {
 	AnonymousAuthDisableDate any
-	AnonymousAuthEnabled any
-	Enabled any
+	AnonymousAuthEnabled     any
+	Enabled                  any
 	// <p>Output parameters showing the current IAM identity federation configuration.</p>
-	IamfederationOptions any
+	IamfederationOptions        any
 	InternalUserDatabaseEnabled any
 	// <p>Describes the JWT options configured for the domain.</p>
 	Jwtoptions any
@@ -100,32 +100,32 @@ type DomainConfig_DomainConfig_Aimloptions struct {
 }
 
 type DomainConfig_DomainConfig_AutoTuneOptions_Options_MaintenanceSchedules_Duration struct {
-	Unit any
+	Unit  any
 	Value any
 }
 
 type DomainConfig_DomainConfig_AutoTuneOptions_Options_MaintenanceSchedules struct {
 	CronExpressionForRecurrence any
-	Duration any
-	StartAt any
+	Duration                    any
+	StartAt                     any
 }
 
 type DomainConfig_DomainConfig_AutoTuneOptions_Options struct {
 	// <p>The Auto-Tune desired state. Valid values are ENABLED and DISABLED.</p>
-	DesiredState any
+	DesiredState         any
 	MaintenanceSchedules any
 	// <p>The rollback state while disabling Auto-Tune for the domain.</p>
 	RollbackOnDisable any
-	UseOffPeakWindow any
+	UseOffPeakWindow  any
 }
 
 type DomainConfig_DomainConfig_AutoTuneOptions_Status struct {
-	CreationDate any
-	ErrorMessage any
+	CreationDate    any
+	ErrorMessage    any
 	PendingDeletion any
 	// <p>The Auto-Tune state for the domain. For valid states see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>. </p>
-	State any
-	UpdateDate any
+	State         any
+	UpdateDate    any
 	UpdateVersion any
 }
 
@@ -137,8 +137,8 @@ type DomainConfig_DomainConfig_AutoTuneOptions struct {
 }
 
 type DomainConfig_DomainConfig_AutomatedSnapshotPauseOptions_Options struct {
-	Enabled any
-	EndTime any
+	Enabled   any
+	EndTime   any
 	StartTime any
 	// <p>The state of the automated snapshot pause. Valid values are <code>Active</code>, <code>Completed</code>, <code>Scheduled</code>, and <code>Disabled</code>.</p>
 	State any
@@ -152,23 +152,23 @@ type DomainConfig_DomainConfig_AutomatedSnapshotPauseOptions struct {
 }
 
 type DomainConfig_DomainConfig_ChangeProgressDetails struct {
-	ChangeId any
+	ChangeId           any
 	ConfigChangeStatus any
-	InitiatedBy any
-	LastUpdatedTime any
-	Message any
-	StartTime any
+	InitiatedBy        any
+	LastUpdatedTime    any
+	Message            any
+	StartTime          any
 }
 
 type DomainConfig_DomainConfig_ClusterConfig_Options_NodeOptions_NodeConfig struct {
-	Count any
+	Count   any
 	Enabled any
-	Type any
+	Type    any
 }
 
 type DomainConfig_DomainConfig_ClusterConfig_Options_NodeOptions struct {
 	NodeConfig any
-	NodeType any
+	NodeType   any
 }
 
 type DomainConfig_DomainConfig_ClusterConfig_Options_ZoneAwarenessConfig struct {
@@ -177,19 +177,19 @@ type DomainConfig_DomainConfig_ClusterConfig_Options_ZoneAwarenessConfig struct 
 
 type DomainConfig_DomainConfig_ClusterConfig_Options struct {
 	// <p>Container for the parameters required to enable cold storage for an OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html">Cold storage for Amazon OpenSearch Service</a>.</p>
-	ColdStorageOptions any
-	DedicatedMasterCount any
-	DedicatedMasterEnabled any
-	DedicatedMasterType any
-	InstanceCount any
-	InstanceType any
+	ColdStorageOptions        any
+	DedicatedMasterCount      any
+	DedicatedMasterEnabled    any
+	DedicatedMasterType       any
+	InstanceCount             any
+	InstanceType              any
 	MultiAzwithStandbyEnabled any
-	NodeOptions any
-	WarmCount any
-	WarmEnabled any
-	WarmType any
+	NodeOptions               any
+	WarmCount                 any
+	WarmEnabled               any
+	WarmType                  any
 	// <p>The zone awareness configuration for an Amazon OpenSearch Service domain.</p>
-	ZoneAwarenessConfig any
+	ZoneAwarenessConfig  any
 	ZoneAwarenessEnabled any
 }
 
@@ -201,10 +201,10 @@ type DomainConfig_DomainConfig_ClusterConfig struct {
 }
 
 type DomainConfig_DomainConfig_CognitoOptions_Options struct {
-	Enabled any
+	Enabled        any
 	IdentityPoolId any
-	RoleArn any
-	UserPoolId any
+	RoleArn        any
+	UserPoolId     any
 }
 
 type DomainConfig_DomainConfig_CognitoOptions struct {
@@ -230,9 +230,9 @@ type DomainConfig_DomainConfig_DomainEndpointOptions_Options struct {
 	CustomEndpoint any
 	// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information. </p>
 	CustomEndpointCertificateArn any
-	CustomEndpointEnabled any
-	EnforceHttps any
-	TlssecurityPolicy any
+	CustomEndpointEnabled        any
+	EnforceHttps                 any
+	TlssecurityPolicy            any
 }
 
 type DomainConfig_DomainConfig_DomainEndpointOptions struct {
@@ -244,7 +244,7 @@ type DomainConfig_DomainConfig_DomainEndpointOptions struct {
 
 type DomainConfig_DomainConfig_Ebsoptions_Options struct {
 	Ebsenabled any
-	Iops any
+	Iops       any
 	Throughput any
 	VolumeSize any
 	// <p>The type of EBS volume that a domain uses. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs">Configuring EBS-based storage</a>.</p>
@@ -259,7 +259,7 @@ type DomainConfig_DomainConfig_Ebsoptions struct {
 }
 
 type DomainConfig_DomainConfig_EncryptionAtRestOptions_Options struct {
-	Enabled any
+	Enabled  any
 	KmsKeyId any
 }
 
@@ -271,14 +271,14 @@ type DomainConfig_DomainConfig_EncryptionAtRestOptions struct {
 }
 
 type DomainConfig_DomainConfig_IdentityCenterOptions_Options struct {
-	EnabledApiaccess any
+	EnabledApiaccess             any
 	IdentityCenterApplicationArn any
-	IdentityCenterInstanceArn any
+	IdentityCenterInstanceArn    any
 	// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p>
 	IdentityCenterInstanceRegion any
-	IdentityStoreId any
-	RolesKey any
-	SubjectKey any
+	IdentityStoreId              any
+	RolesKey                     any
+	SubjectKey                   any
 }
 
 type DomainConfig_DomainConfig_IdentityCenterOptions struct {
@@ -290,7 +290,7 @@ type DomainConfig_DomainConfig_IdentityCenterOptions struct {
 
 type DomainConfig_DomainConfig_LogPublishingOptions_Options struct {
 	CloudWatchLogsLogGroupArn any
-	Enabled any
+	Enabled                   any
 }
 
 type DomainConfig_DomainConfig_LogPublishingOptions struct {
@@ -300,10 +300,10 @@ type DomainConfig_DomainConfig_LogPublishingOptions struct {
 }
 
 type DomainConfig_DomainConfig_ModifyingProperties struct {
-	ActiveValue any
-	Name any
+	ActiveValue  any
+	Name         any
 	PendingValue any
-	ValueType any
+	ValueType    any
 }
 
 type DomainConfig_DomainConfig_NodeToNodeEncryptionOptions struct {
@@ -314,7 +314,7 @@ type DomainConfig_DomainConfig_NodeToNodeEncryptionOptions struct {
 }
 
 type DomainConfig_DomainConfig_OffPeakWindowOptions_Options_OffPeakWindow_WindowStartTime struct {
-	Hours any
+	Hours   any
 	Minutes any
 }
 
@@ -348,7 +348,7 @@ type DomainConfig_DomainConfig_SnapshotOptions struct {
 }
 
 type DomainConfig_DomainConfig_SoftwareUpdateOptions_Options struct {
-	AutoSoftwareUpdateEnabled any
+	AutoSoftwareUpdateEnabled            any
 	UseLatestServiceSoftwareForBlueGreen any
 }
 
@@ -361,10 +361,10 @@ type DomainConfig_DomainConfig_SoftwareUpdateOptions struct {
 
 type DomainConfig_DomainConfig_Vpcoptions_Options struct {
 	AvailabilityZones any
-	EgressEnabled any
-	SecurityGroupIds any
-	SubnetIds any
-	Vpcid any
+	EgressEnabled     any
+	SecurityGroupIds  any
+	SubnetIds         any
+	Vpcid             any
 }
 
 type DomainConfig_DomainConfig_Vpcoptions struct {
@@ -411,7 +411,7 @@ type DomainConfig_DomainConfig struct {
 	IpaddressType any
 	// <p>The configured log publishing options for the domain and their current status.</p>
 	LogPublishingOptions any
-	ModifyingProperties any
+	ModifyingProperties  any
 	// <p>Status of the node-to-node encryption options for the specified domain.</p>
 	NodeToNodeEncryptionOptions any
 	// <p>The status of <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a> options for a domain.</p>

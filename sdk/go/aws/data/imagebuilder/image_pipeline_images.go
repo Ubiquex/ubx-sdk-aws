@@ -4,7 +4,7 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImagePipelineImages_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -18,62 +18,62 @@ type ImagePipelineImages_ImageSummaryList_OutputResources_Amis_State struct {
 }
 
 type ImagePipelineImages_ImageSummaryList_OutputResources_Amis struct {
-	AccountId any
+	AccountId   any
 	Description any
-	Image any
-	Name any
-	Region any
-	State any
+	Image       any
+	Name        any
+	Region      any
+	State       any
 }
 
 type ImagePipelineImages_ImageSummaryList_OutputResources_Containers struct {
 	ImageUris any
-	Region any
+	Region    any
 }
 
 type ImagePipelineImages_ImageSummaryList_OutputResources struct {
-	Amis any
+	Amis       any
 	Containers any
 }
 
 type ImagePipelineImages_ImageSummaryList struct {
-	Arn any
-	BuildType any
-	DateCreated any
-	DeprecationTime any
-	ImageSource any
+	Arn                  any
+	BuildType            any
+	DateCreated          any
+	DeprecationTime      any
+	ImageSource          any
 	LifecycleExecutionId any
 	LoggingConfiguration any
-	Name any
-	OsVersion any
-	OutputResources any
-	Owner any
-	Platform any
-	State any
-	Tags any
-	Type any
-	Version any
+	Name                 any
+	OsVersion            any
+	OutputResources      any
+	Owner                any
+	Platform             any
+	State                any
+	Tags                 any
+	Type                 any
+	Version              any
 }
 
 var ImagePipelineImages_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImagePipelineImagesConfig struct {
-	Filters any
+	Filters          any
 	ImagePipelineArn any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type ImagePipelineImagesAttrs struct {
-	Filters any
+	Filters          any
 	ImagePipelineArn any
 	ImageSummaryList any
-	MaxResults any
-	NextToken any
-	RequestId any
+	MaxResults       any
+	NextToken        any
+	RequestId        any
 }
 
 var ImagePipelineImages = ubx.DataSourceBinding{
@@ -81,11 +81,11 @@ var ImagePipelineImages = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ImagePipelineImages_FiltersFields,
+			Kind:     "list",
+			Fields:   ImagePipelineImages_FiltersFields,
 		},
 		"ImagePipelineArn": ubx.FieldSpec{WireName: "image_pipeline_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

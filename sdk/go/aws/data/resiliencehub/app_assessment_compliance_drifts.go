@@ -6,47 +6,47 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type AppAssessmentComplianceDrifts_ComplianceDrifts_ActualValue struct {
 	AchievableRpoInSecs any
 	AchievableRtoInSecs any
-	ComplianceStatus any
-	CurrentRpoInSecs any
-	CurrentRtoInSecs any
-	Message any
-	RpoDescription any
-	RpoReferenceId any
-	RtoDescription any
-	RtoReferenceId any
+	ComplianceStatus    any
+	CurrentRpoInSecs    any
+	CurrentRtoInSecs    any
+	Message             any
+	RpoDescription      any
+	RpoReferenceId      any
+	RtoDescription      any
+	RtoReferenceId      any
 }
 
 type AppAssessmentComplianceDrifts_ComplianceDrifts struct {
-	ActualReferenceId any
-	ActualValue any
-	AppId any
-	AppVersion any
-	DiffType any
-	DriftType any
-	EntityId any
-	EntityType any
+	ActualReferenceId   any
+	ActualValue         any
+	AppId               any
+	AppVersion          any
+	DiffType            any
+	DriftType           any
+	EntityId            any
+	EntityType          any
 	ExpectedReferenceId any
-	ExpectedValue any
+	ExpectedValue       any
 }
 
 type AppAssessmentComplianceDriftsConfig struct {
 	AssessmentArn any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type AppAssessmentComplianceDriftsAttrs struct {
-	AssessmentArn any
+	AssessmentArn    any
 	ComplianceDrifts any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var AppAssessmentComplianceDrifts = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_app_assessment_compliance_drifts",
 	Fields: ubx.FieldMap{
 		"AssessmentArn": ubx.FieldSpec{WireName: "assessment_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

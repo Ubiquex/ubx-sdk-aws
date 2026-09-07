@@ -4,9 +4,9 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Transformer_TransformerConfig_AddKeys_Entries struct {
-	Key any
+	Key               any
 	OverwriteIfExists any
-	Value any
+	Value             any
 }
 
 type Transformer_TransformerConfig_AddKeys struct {
@@ -15,8 +15,8 @@ type Transformer_TransformerConfig_AddKeys struct {
 
 type Transformer_TransformerConfig_CopyValue_Entries struct {
 	OverwriteIfExists any
-	Source any
-	Target any
+	Source            any
+	Target            any
 }
 
 type Transformer_TransformerConfig_CopyValue struct {
@@ -24,20 +24,20 @@ type Transformer_TransformerConfig_CopyValue struct {
 }
 
 type Transformer_TransformerConfig_Csv struct {
-	Columns any
-	Delimiter any
-	Destination any
+	Columns        any
+	Delimiter      any
+	Destination    any
 	QuoteCharacter any
-	Source any
+	Source         any
 }
 
 type Transformer_TransformerConfig_DateTimeConverter struct {
-	Locale any
-	MatchPatterns any
-	Source any
+	Locale         any
+	MatchPatterns  any
+	Source         any
 	SourceTimezone any
-	Target any
-	TargetFormat any
+	Target         any
+	TargetFormat   any
 	TargetTimezone any
 }
 
@@ -46,17 +46,17 @@ type Transformer_TransformerConfig_DeleteKeys struct {
 }
 
 type Transformer_TransformerConfig_Grok struct {
-	Match any
+	Match  any
 	Source any
 }
 
 type Transformer_TransformerConfig_ListToMap struct {
-	Flatten any
+	Flatten          any
 	FlattenedElement any
-	Key any
-	Source any
-	Target any
-	ValueKey any
+	Key              any
+	Source           any
+	Target           any
+	ValueKey         any
 }
 
 type Transformer_TransformerConfig_ParseCloudfront struct {
@@ -65,30 +65,30 @@ type Transformer_TransformerConfig_ParseCloudfront struct {
 
 type Transformer_TransformerConfig_ParseJson struct {
 	Destination any
-	Source any
+	Source      any
 }
 
 type Transformer_TransformerConfig_ParseKeyValue struct {
-	Destination any
-	FieldDelimiter any
-	KeyPrefix any
+	Destination       any
+	FieldDelimiter    any
+	KeyPrefix         any
 	KeyValueDelimiter any
-	NonMatchValue any
+	NonMatchValue     any
 	OverwriteIfExists any
-	Source any
+	Source            any
 }
 
 type Transformer_TransformerConfig_ParseToOcsf struct {
-	EventSource any
+	EventSource    any
 	MappingVersion any
-	OcsfVersion any
-	Source any
+	OcsfVersion    any
+	Source         any
 }
 
 type Transformer_TransformerConfig_RenameKeys_Entries struct {
-	Key any
+	Key               any
 	OverwriteIfExists any
-	RenameTo any
+	RenameTo          any
 }
 
 type Transformer_TransformerConfig_RenameKeys struct {
@@ -97,7 +97,7 @@ type Transformer_TransformerConfig_RenameKeys struct {
 
 type Transformer_TransformerConfig_SplitString_Entries struct {
 	Delimiter any
-	Source any
+	Source    any
 }
 
 type Transformer_TransformerConfig_SplitString struct {
@@ -105,9 +105,9 @@ type Transformer_TransformerConfig_SplitString struct {
 }
 
 type Transformer_TransformerConfig_SubstituteString_Entries struct {
-	From any
+	From   any
 	Source any
-	To any
+	To     any
 }
 
 type Transformer_TransformerConfig_SubstituteString struct {
@@ -115,7 +115,7 @@ type Transformer_TransformerConfig_SubstituteString struct {
 }
 
 type Transformer_TransformerConfig_TypeConverter_Entries struct {
-	Key any
+	Key  any
 	Type any
 }
 
@@ -124,29 +124,29 @@ type Transformer_TransformerConfig_TypeConverter struct {
 }
 
 type Transformer_TransformerConfig struct {
-	AddKeys any
-	CopyValue any
-	Csv any
+	AddKeys           any
+	CopyValue         any
+	Csv               any
 	DateTimeConverter any
-	DeleteKeys any
-	Grok any
-	ListToMap any
-	LowerCaseString any
-	MoveKeys any
-	ParseCloudfront any
-	ParseJson any
-	ParseKeyValue any
-	ParsePostgres any
-	ParseRoute53 any
-	ParseToOcsf any
-	ParseVpc any
-	ParseWaf any
-	RenameKeys any
-	SplitString any
-	SubstituteString any
-	TrimString any
-	TypeConverter any
-	UpperCaseString any
+	DeleteKeys        any
+	Grok              any
+	ListToMap         any
+	LowerCaseString   any
+	MoveKeys          any
+	ParseCloudfront   any
+	ParseJson         any
+	ParseKeyValue     any
+	ParsePostgres     any
+	ParseRoute53      any
+	ParseToOcsf       any
+	ParseVpc          any
+	ParseWaf          any
+	RenameKeys        any
+	SplitString       any
+	SubstituteString  any
+	TrimString        any
+	TypeConverter     any
+	UpperCaseString   any
 }
 
 type TransformerConfig struct {
@@ -154,10 +154,10 @@ type TransformerConfig struct {
 }
 
 type TransformerAttrs struct {
-	CreationTime any
-	LastModifiedTime any
+	CreationTime       any
+	LastModifiedTime   any
 	LogGroupIdentifier any
-	TransformerConfig any
+	TransformerConfig  any
 }
 
 var Transformer = ubx.DataSourceBinding{

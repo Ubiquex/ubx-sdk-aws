@@ -36,41 +36,41 @@ type Endpoint_RoutingConfig struct {
 }
 
 var Endpoint_EventBusesFields = ubx.FieldMap{
-		"EventBusArn": ubx.FieldSpec{WireName: "event_bus_arn"},
-	}
+	"EventBusArn": ubx.FieldSpec{WireName: "event_bus_arn"},
+}
 
 var Endpoint_ReplicationConfigFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Endpoint_RoutingConfig_FailoverConfig_PrimaryFields = ubx.FieldMap{
-		"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
-	}
+	"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
+}
 
 var Endpoint_RoutingConfig_FailoverConfig_SecondaryFields = ubx.FieldMap{
-		"Route": ubx.FieldSpec{WireName: "route"},
-	}
+	"Route": ubx.FieldSpec{WireName: "route"},
+}
 
 var Endpoint_RoutingConfig_FailoverConfigFields = ubx.FieldMap{
-		"Primary": ubx.FieldSpec{
-			WireName: "primary",
-			Kind: "object",
-			Fields: Endpoint_RoutingConfig_FailoverConfig_PrimaryFields,
-		},
-		"Secondary": ubx.FieldSpec{
-			WireName: "secondary",
-			Kind: "object",
-			Fields: Endpoint_RoutingConfig_FailoverConfig_SecondaryFields,
-		},
-	}
+	"Primary": ubx.FieldSpec{
+		WireName: "primary",
+		Kind:     "object",
+		Fields:   Endpoint_RoutingConfig_FailoverConfig_PrimaryFields,
+	},
+	"Secondary": ubx.FieldSpec{
+		WireName: "secondary",
+		Kind:     "object",
+		Fields:   Endpoint_RoutingConfig_FailoverConfig_SecondaryFields,
+	},
+}
 
 var Endpoint_RoutingConfigFields = ubx.FieldMap{
-		"FailoverConfig": ubx.FieldSpec{
-			WireName: "failover_config",
-			Kind: "object",
-			Fields: Endpoint_RoutingConfig_FailoverConfigFields,
-		},
-	}
+	"FailoverConfig": ubx.FieldSpec{
+		WireName: "failover_config",
+		Kind:     "object",
+		Fields:   Endpoint_RoutingConfig_FailoverConfigFields,
+	},
+}
 
 type EndpointConfig struct {
 	// A user-provided description that identifies the purpose of the EventBridge global endpoint, which routes events between event buses across multiple AWS regions for disaster recovery. (AI-inferred)
@@ -118,20 +118,20 @@ var Endpoint = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EventBuses": ubx.FieldSpec{
 			WireName: "event_buses",
-			Kind: "list",
-			Fields: Endpoint_EventBusesFields,
+			Kind:     "list",
+			Fields:   Endpoint_EventBusesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReplicationConfig": ubx.FieldSpec{
 			WireName: "replication_config",
-			Kind: "object",
-			Fields: Endpoint_ReplicationConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_ReplicationConfigFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"RoutingConfig": ubx.FieldSpec{
 			WireName: "routing_config",
-			Kind: "object",
-			Fields: Endpoint_RoutingConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_RoutingConfigFields,
 		},
 	},
 }

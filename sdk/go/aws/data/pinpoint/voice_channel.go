@@ -4,16 +4,16 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChannel_VoiceChannelResponse struct {
-	ApplicationId any
-	CreationDate any
-	Enabled any
-	HasCredential any
-	Id any
-	IsArchived any
-	LastModifiedBy any
+	ApplicationId    any
+	CreationDate     any
+	Enabled          any
+	HasCredential    any
+	Id               any
+	IsArchived       any
+	LastModifiedBy   any
 	LastModifiedDate any
-	Platform any
-	Version any
+	Platform         any
+	Version          any
 }
 
 type VoiceChannelConfig struct {

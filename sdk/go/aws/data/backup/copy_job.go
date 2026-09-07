@@ -4,53 +4,53 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CopyJob_CopyJob_CreatedBy struct {
-	BackupPlanArn any
-	BackupPlanId any
-	BackupPlanName any
-	BackupPlanVersion any
-	BackupRuleCron any
-	BackupRuleId any
-	BackupRuleName any
+	BackupPlanArn      any
+	BackupPlanId       any
+	BackupPlanName     any
+	BackupPlanVersion  any
+	BackupRuleCron     any
+	BackupRuleId       any
+	BackupRuleName     any
 	BackupRuleTimezone any
 }
 
 type CopyJob_CopyJob_DestinationRecoveryPointLifecycle struct {
-	DeleteAfterDays any
-	DeleteAfterEvent any
-	MoveToColdStorageAfterDays any
+	DeleteAfterDays                     any
+	DeleteAfterEvent                    any
+	MoveToColdStorageAfterDays          any
 	OptInToArchiveForSupportedResources any
 }
 
 type CopyJob_CopyJob struct {
-	AccountId any
-	BackupSizeInBytes any
-	ChildJobsInState any
-	CompletionDate any
+	AccountId                 any
+	BackupSizeInBytes         any
+	ChildJobsInState          any
+	CompletionDate            any
 	CompositeMemberIdentifier any
-	CopyJobId any
+	CopyJobId                 any
 	// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
-	CreatedBy any
-	CreatedByBackupJobId any
-	CreationDate any
-	DestinationBackupVaultArn any
+	CreatedBy                   any
+	CreatedByBackupJobId        any
+	CreationDate                any
+	DestinationBackupVaultArn   any
 	DestinationEncryptionKeyArn any
 	DestinationRecoveryPointArn any
 	// <p>Specifies the time period, in days, before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the retention setting must be 90 days greater than the transition to cold after days setting. The transition to cold after days setting can't be changed after a backup has been transitioned to cold.</p> <p>Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p> <p>To remove the existing lifecycle and retention periods and keep your recovery points indefinitely, specify -1 for <code>MoveToColdStorageAfterDays</code> and <code>DeleteAfterDays</code>.</p>
 	DestinationRecoveryPointLifecycle any
-	DestinationVaultLockState any
-	DestinationVaultType any
-	IamRoleArn any
-	IsParent any
-	MessageCategory any
-	NumberOfChildJobs any
-	ParentJobId any
-	ResourceArn any
-	ResourceName any
-	ResourceType any
-	SourceBackupVaultArn any
-	SourceRecoveryPointArn any
-	State any
-	StatusMessage any
+	DestinationVaultLockState         any
+	DestinationVaultType              any
+	IamRoleArn                        any
+	IsParent                          any
+	MessageCategory                   any
+	NumberOfChildJobs                 any
+	ParentJobId                       any
+	ResourceArn                       any
+	ResourceName                      any
+	ResourceType                      any
+	SourceBackupVaultArn              any
+	SourceRecoveryPointArn            any
+	State                             any
+	StatusMessage                     any
 }
 
 type CopyJobConfig struct {
@@ -59,7 +59,7 @@ type CopyJobConfig struct {
 
 type CopyJobAttrs struct {
 	// <p>Contains detailed information about a copy job.</p>
-	CopyJob any
+	CopyJob   any
 	CopyJobId any
 }
 

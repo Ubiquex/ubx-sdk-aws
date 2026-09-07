@@ -20,7 +20,7 @@ type AliasAttrs struct {
 var Alias = ubx.ResourceBinding{
 	WireType: "aws_kms_alias",
 	Fields: ubx.FieldMap{
-		"AliasName": ubx.FieldSpec{WireName: "alias_name"},
+		"AliasName":   ubx.FieldSpec{WireName: "alias_name"},
 		"TargetKeyId": ubx.FieldSpec{WireName: "target_key_id"},
 	},
 }

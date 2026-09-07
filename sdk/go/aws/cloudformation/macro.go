@@ -34,10 +34,10 @@ type MacroAttrs struct {
 var Macro = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_macro",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
 		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"LogRoleArn": ubx.FieldSpec{WireName: "log_role_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"LogRoleArn":   ubx.FieldSpec{WireName: "log_role_arn"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

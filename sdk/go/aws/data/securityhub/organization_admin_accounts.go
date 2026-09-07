@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationAdminAccounts_AdminAccounts struct {
 	AccountId any
-	Status any
+	Status    any
 }
 
 type OrganizationAdminAccountsConfig struct {
-	Feature any
+	Feature    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type OrganizationAdminAccountsAttrs struct {
 	AdminAccounts any
-	Feature any
-	MaxResults any
-	NextToken any
+	Feature       any
+	MaxResults    any
+	NextToken     any
 }
 
 var OrganizationAdminAccounts = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_organization_admin_accounts",
 	Fields: ubx.FieldMap{
-		"Feature": ubx.FieldSpec{WireName: "feature"},
+		"Feature":    ubx.FieldSpec{WireName: "feature"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

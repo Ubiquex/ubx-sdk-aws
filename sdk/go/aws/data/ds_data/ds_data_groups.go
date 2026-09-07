@@ -4,33 +4,33 @@ package ds_data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DsDataGroups_Groups struct {
-	GroupScope any
-	GroupType any
+	GroupScope     any
+	GroupType      any
 	SamaccountName any
-	Sid any
+	Sid            any
 }
 
 type DsDataGroupsConfig struct {
 	DirectoryId any
-	MaxResults any
-	NextToken any
-	Realm any
+	MaxResults  any
+	NextToken   any
+	Realm       any
 }
 
 type DsDataGroupsAttrs struct {
 	DirectoryId any
-	Groups any
-	MaxResults any
-	NextToken any
-	Realm any
+	Groups      any
+	MaxResults  any
+	NextToken   any
+	Realm       any
 }
 
 var DsDataGroups = ubx.DataSourceBinding{
 	WireType: "aws_ds_data_groups",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Realm": ubx.FieldSpec{WireName: "realm"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Realm":       ubx.FieldSpec{WireName: "realm"},
 	},
 }

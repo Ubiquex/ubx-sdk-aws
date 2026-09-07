@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudConnectors_CloudConnectors struct {
 	CloudConnectorId any
-	CreatedAt any
-	Description any
-	DisplayName any
-	RoleArn any
-	UpdatedAt any
+	CreatedAt        any
+	Description      any
+	DisplayName      any
+	RoleArn          any
+	UpdatedAt        any
 }
 
 type CloudConnectors_Filters struct {
-	FilterKey any
+	FilterKey    any
 	FilterValues any
 }
 
 var CloudConnectors_FiltersFields = ubx.FieldMap{
-		"FilterKey": ubx.FieldSpec{WireName: "filter_key"},
-		"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
-	}
+	"FilterKey":    ubx.FieldSpec{WireName: "filter_key"},
+	"FilterValues": ubx.FieldSpec{WireName: "filter_values"},
+}
 
 type CloudConnectorsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CloudConnectorsAttrs struct {
 	CloudConnectors any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters         any
+	MaxResults      any
+	NextToken       any
 }
 
 var CloudConnectors = ubx.DataSourceBinding{
@@ -40,10 +40,10 @@ var CloudConnectors = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: CloudConnectors_FiltersFields,
+			Kind:     "list",
+			Fields:   CloudConnectors_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -73,57 +73,57 @@ type App_Tags struct {
 }
 
 var App_AutoBranchCreationConfig_BasicAuthConfigFields = ubx.FieldMap{
-		"EnableBasicAuth": ubx.FieldSpec{WireName: "enable_basic_auth"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"EnableBasicAuth": ubx.FieldSpec{WireName: "enable_basic_auth"},
+	"Password":        ubx.FieldSpec{WireName: "password"},
+	"Username":        ubx.FieldSpec{WireName: "username"},
+}
 
 var App_AutoBranchCreationConfig_EnvironmentVariablesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var App_AutoBranchCreationConfigFields = ubx.FieldMap{
-		"AutoBranchCreationPatterns": ubx.FieldSpec{WireName: "auto_branch_creation_patterns"},
-		"BasicAuthConfig": ubx.FieldSpec{
-			WireName: "basic_auth_config",
-			Kind: "object",
-			Fields: App_AutoBranchCreationConfig_BasicAuthConfigFields,
-		},
-		"BuildSpec": ubx.FieldSpec{WireName: "build_spec"},
-		"EnableAutoBranchCreation": ubx.FieldSpec{WireName: "enable_auto_branch_creation"},
-		"EnableAutoBuild": ubx.FieldSpec{WireName: "enable_auto_build"},
-		"EnablePerformanceMode": ubx.FieldSpec{WireName: "enable_performance_mode"},
-		"EnablePullRequestPreview": ubx.FieldSpec{WireName: "enable_pull_request_preview"},
-		"EnvironmentVariables": ubx.FieldSpec{
-			WireName: "environment_variables",
-			Kind: "list",
-			Fields: App_AutoBranchCreationConfig_EnvironmentVariablesFields,
-		},
-		"Framework": ubx.FieldSpec{WireName: "framework"},
-		"PullRequestEnvironmentName": ubx.FieldSpec{WireName: "pull_request_environment_name"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
-	}
+	"AutoBranchCreationPatterns": ubx.FieldSpec{WireName: "auto_branch_creation_patterns"},
+	"BasicAuthConfig": ubx.FieldSpec{
+		WireName: "basic_auth_config",
+		Kind:     "object",
+		Fields:   App_AutoBranchCreationConfig_BasicAuthConfigFields,
+	},
+	"BuildSpec":                ubx.FieldSpec{WireName: "build_spec"},
+	"EnableAutoBranchCreation": ubx.FieldSpec{WireName: "enable_auto_branch_creation"},
+	"EnableAutoBuild":          ubx.FieldSpec{WireName: "enable_auto_build"},
+	"EnablePerformanceMode":    ubx.FieldSpec{WireName: "enable_performance_mode"},
+	"EnablePullRequestPreview": ubx.FieldSpec{WireName: "enable_pull_request_preview"},
+	"EnvironmentVariables": ubx.FieldSpec{
+		WireName: "environment_variables",
+		Kind:     "list",
+		Fields:   App_AutoBranchCreationConfig_EnvironmentVariablesFields,
+	},
+	"Framework":                  ubx.FieldSpec{WireName: "framework"},
+	"PullRequestEnvironmentName": ubx.FieldSpec{WireName: "pull_request_environment_name"},
+	"Stage":                      ubx.FieldSpec{WireName: "stage"},
+}
 
 var App_CacheConfigFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var App_CustomRulesFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Source":    ubx.FieldSpec{WireName: "source"},
+	"Status":    ubx.FieldSpec{WireName: "status"},
+	"Target":    ubx.FieldSpec{WireName: "target"},
+}
 
 var App_JobConfigFields = ubx.FieldMap{
-		"BuildComputeType": ubx.FieldSpec{WireName: "build_compute_type"},
-	}
+	"BuildComputeType": ubx.FieldSpec{WireName: "build_compute_type"},
+}
 
 var App_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AppConfig struct {
 	// GitHub personal access token Amplify uses to authenticate and pull the source repository linked to this app. (AI-inferred)
@@ -217,48 +217,48 @@ var App = ubx.ResourceBinding{
 		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
 		"AutoBranchCreationConfig": ubx.FieldSpec{
 			WireName: "auto_branch_creation_config",
-			Kind: "object",
-			Fields: App_AutoBranchCreationConfigFields,
+			Kind:     "object",
+			Fields:   App_AutoBranchCreationConfigFields,
 		},
 		"BasicAuthConfig": ubx.FieldSpec{
 			WireName: "basic_auth_config",
-			Kind: "object",
-			Fields: App_AutoBranchCreationConfig_BasicAuthConfigFields,
+			Kind:     "object",
+			Fields:   App_AutoBranchCreationConfig_BasicAuthConfigFields,
 		},
 		"BuildSpec": ubx.FieldSpec{WireName: "build_spec"},
 		"CacheConfig": ubx.FieldSpec{
 			WireName: "cache_config",
-			Kind: "object",
-			Fields: App_CacheConfigFields,
+			Kind:     "object",
+			Fields:   App_CacheConfigFields,
 		},
 		"ComputeRoleArn": ubx.FieldSpec{WireName: "compute_role_arn"},
-		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
+		"CustomHeaders":  ubx.FieldSpec{WireName: "custom_headers"},
 		"CustomRules": ubx.FieldSpec{
 			WireName: "custom_rules",
-			Kind: "list",
-			Fields: App_CustomRulesFields,
+			Kind:     "list",
+			Fields:   App_CustomRulesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
 		"EnableBranchAutoDeletion": ubx.FieldSpec{WireName: "enable_branch_auto_deletion"},
 		"EnvironmentVariables": ubx.FieldSpec{
 			WireName: "environment_variables",
-			Kind: "list",
-			Fields: App_AutoBranchCreationConfig_EnvironmentVariablesFields,
+			Kind:     "list",
+			Fields:   App_AutoBranchCreationConfig_EnvironmentVariablesFields,
 		},
 		"IamserviceRole": ubx.FieldSpec{WireName: "iamservice_role"},
 		"JobConfig": ubx.FieldSpec{
 			WireName: "job_config",
-			Kind: "object",
-			Fields: App_JobConfigFields,
+			Kind:     "object",
+			Fields:   App_JobConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"OauthToken": ubx.FieldSpec{WireName: "oauth_token"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"Platform":   ubx.FieldSpec{WireName: "platform"},
 		"Repository": ubx.FieldSpec{WireName: "repository"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: App_TagsFields,
+			Kind:     "list",
+			Fields:   App_TagsFields,
 		},
 	},
 }

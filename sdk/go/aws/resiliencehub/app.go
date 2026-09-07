@@ -48,36 +48,36 @@ type App_ResourceMappings struct {
 }
 
 var App_EventSubscriptionsFields = ubx.FieldMap{
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
-	}
+	"EventType":   ubx.FieldSpec{WireName: "event_type"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
+}
 
 var App_PermissionModelFields = ubx.FieldMap{
-		"CrossAccountRoleArns": ubx.FieldSpec{WireName: "cross_account_role_arns"},
-		"InvokerRoleName": ubx.FieldSpec{WireName: "invoker_role_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CrossAccountRoleArns": ubx.FieldSpec{WireName: "cross_account_role_arns"},
+	"InvokerRoleName":      ubx.FieldSpec{WireName: "invoker_role_name"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+}
 
 var App_ResourceMappings_PhysicalResourceIdFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+	"AwsRegion":    ubx.FieldSpec{WireName: "aws_region"},
+	"Identifier":   ubx.FieldSpec{WireName: "identifier"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var App_ResourceMappingsFields = ubx.FieldMap{
-		"EksSourceName": ubx.FieldSpec{WireName: "eks_source_name"},
-		"LogicalStackName": ubx.FieldSpec{WireName: "logical_stack_name"},
-		"MappingType": ubx.FieldSpec{WireName: "mapping_type"},
-		"PhysicalResourceId": ubx.FieldSpec{
-			WireName: "physical_resource_id",
-			Kind: "object",
-			Fields: App_ResourceMappings_PhysicalResourceIdFields,
-		},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"TerraformSourceName": ubx.FieldSpec{WireName: "terraform_source_name"},
-	}
+	"EksSourceName":    ubx.FieldSpec{WireName: "eks_source_name"},
+	"LogicalStackName": ubx.FieldSpec{WireName: "logical_stack_name"},
+	"MappingType":      ubx.FieldSpec{WireName: "mapping_type"},
+	"PhysicalResourceId": ubx.FieldSpec{
+		WireName: "physical_resource_id",
+		Kind:     "object",
+		Fields:   App_ResourceMappings_PhysicalResourceIdFields,
+	},
+	"ResourceName":        ubx.FieldSpec{WireName: "resource_name"},
+	"TerraformSourceName": ubx.FieldSpec{WireName: "terraform_source_name"},
+}
 
 type AppConfig struct {
 	// Assessment execution schedule.
@@ -129,24 +129,24 @@ var App = ubx.ResourceBinding{
 	WireType: "aws_resilience_hub_app",
 	Fields: ubx.FieldMap{
 		"AppAssessmentSchedule": ubx.FieldSpec{WireName: "app_assessment_schedule"},
-		"AppTemplateBody": ubx.FieldSpec{WireName: "app_template_body"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AppTemplateBody":       ubx.FieldSpec{WireName: "app_template_body"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
 		"EventSubscriptions": ubx.FieldSpec{
 			WireName: "event_subscriptions",
-			Kind: "list",
-			Fields: App_EventSubscriptionsFields,
+			Kind:     "list",
+			Fields:   App_EventSubscriptionsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PermissionModel": ubx.FieldSpec{
 			WireName: "permission_model",
-			Kind: "object",
-			Fields: App_PermissionModelFields,
+			Kind:     "object",
+			Fields:   App_PermissionModelFields,
 		},
 		"ResiliencyPolicyArn": ubx.FieldSpec{WireName: "resiliency_policy_arn"},
 		"ResourceMappings": ubx.FieldSpec{
 			WireName: "resource_mappings",
-			Kind: "list",
-			Fields: App_ResourceMappingsFields,
+			Kind:     "list",
+			Fields:   App_ResourceMappingsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

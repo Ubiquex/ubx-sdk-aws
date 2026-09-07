@@ -4,30 +4,30 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpnConnectionDeviceTypes_VpnConnectionDeviceTypes struct {
-	Platform any
-	Software any
-	Vendor any
+	Platform                  any
+	Software                  any
+	Vendor                    any
 	VpnConnectionDeviceTypeId any
 }
 
 type VpnConnectionDeviceTypesConfig struct {
-	DryRun any
+	DryRun     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VpnConnectionDeviceTypesAttrs struct {
-	DryRun any
-	MaxResults any
-	NextToken any
+	DryRun                   any
+	MaxResults               any
+	NextToken                any
 	VpnConnectionDeviceTypes any
 }
 
 var VpnConnectionDeviceTypes = ubx.DataSourceBinding{
 	WireType: "aws_ec2_vpn_connection_device_types",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

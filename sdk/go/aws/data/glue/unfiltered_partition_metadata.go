@@ -5,130 +5,130 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UnfilteredPartitionMetadata_AuditContext struct {
 	AdditionalAuditContext any
-	AllColumnsRequested any
-	RequestedColumns any
+	AllColumnsRequested    any
+	RequestedColumns       any
 }
 
 type UnfilteredPartitionMetadata_Partition_StorageDescriptor_Columns struct {
-	Comment any
-	Name any
+	Comment    any
+	Name       any
 	Parameters any
-	Type any
+	Type       any
 }
 
 type UnfilteredPartitionMetadata_Partition_StorageDescriptor_SchemaReference_SchemaId struct {
 	RegistryName any
-	SchemaArn any
-	SchemaName any
+	SchemaArn    any
+	SchemaName   any
 }
 
 type UnfilteredPartitionMetadata_Partition_StorageDescriptor_SchemaReference struct {
 	// <p>The unique ID of the schema in the Glue schema registry.</p>
-	SchemaId any
-	SchemaVersionId any
+	SchemaId            any
+	SchemaVersionId     any
 	SchemaVersionNumber any
 }
 
 type UnfilteredPartitionMetadata_Partition_StorageDescriptor_SerdeInfo struct {
-	Name any
-	Parameters any
+	Name                 any
+	Parameters           any
 	SerializationLibrary any
 }
 
 type UnfilteredPartitionMetadata_Partition_StorageDescriptor_SkewedInfo struct {
-	SkewedColumnNames any
+	SkewedColumnNames             any
 	SkewedColumnValueLocationMaps any
-	SkewedColumnValues any
+	SkewedColumnValues            any
 }
 
 type UnfilteredPartitionMetadata_Partition_StorageDescriptor_SortColumns struct {
-	Column any
+	Column    any
 	SortOrder any
 }
 
 type UnfilteredPartitionMetadata_Partition_StorageDescriptor struct {
 	AdditionalLocations any
-	BucketColumns any
-	Columns any
-	Compressed any
-	InputFormat any
-	Location any
-	NumberOfBuckets any
-	OutputFormat any
-	Parameters any
+	BucketColumns       any
+	Columns             any
+	Compressed          any
+	InputFormat         any
+	Location            any
+	NumberOfBuckets     any
+	OutputFormat        any
+	Parameters          any
 	// <p>An object that references a schema stored in the Glue Schema Registry.</p>
 	SchemaReference any
 	// <p>Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.</p>
 	SerdeInfo any
 	// <p>Specifies skewed values in a table. Skewed values are those that occur with very high frequency.</p>
-	SkewedInfo any
-	SortColumns any
+	SkewedInfo             any
+	SortColumns            any
 	StoredAsSubDirectories any
 }
 
 type UnfilteredPartitionMetadata_Partition struct {
-	CatalogId any
-	CreationTime any
-	DatabaseName any
-	LastAccessTime any
+	CatalogId        any
+	CreationTime     any
+	DatabaseName     any
+	LastAccessTime   any
 	LastAnalyzedTime any
-	Parameters any
+	Parameters       any
 	// <p>Describes the physical storage of table data.</p>
 	StorageDescriptor any
-	TableName any
-	Values any
+	TableName         any
+	Values            any
 }
 
 type UnfilteredPartitionMetadata_QuerySessionContext struct {
-	AdditionalContext any
-	ClusterId any
+	AdditionalContext    any
+	ClusterId            any
 	QueryAuthorizationId any
-	QueryId any
-	QueryStartTime any
+	QueryId              any
+	QueryStartTime       any
 }
 
 var UnfilteredPartitionMetadata_AuditContextFields = ubx.FieldMap{
-		"AdditionalAuditContext": ubx.FieldSpec{WireName: "additional_audit_context"},
-		"AllColumnsRequested": ubx.FieldSpec{WireName: "all_columns_requested"},
-		"RequestedColumns": ubx.FieldSpec{WireName: "requested_columns"},
-	}
+	"AdditionalAuditContext": ubx.FieldSpec{WireName: "additional_audit_context"},
+	"AllColumnsRequested":    ubx.FieldSpec{WireName: "all_columns_requested"},
+	"RequestedColumns":       ubx.FieldSpec{WireName: "requested_columns"},
+}
 
 var UnfilteredPartitionMetadata_QuerySessionContextFields = ubx.FieldMap{
-		"AdditionalContext": ubx.FieldSpec{WireName: "additional_context"},
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"QueryAuthorizationId": ubx.FieldSpec{WireName: "query_authorization_id"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
-		"QueryStartTime": ubx.FieldSpec{WireName: "query_start_time"},
-	}
+	"AdditionalContext":    ubx.FieldSpec{WireName: "additional_context"},
+	"ClusterId":            ubx.FieldSpec{WireName: "cluster_id"},
+	"QueryAuthorizationId": ubx.FieldSpec{WireName: "query_authorization_id"},
+	"QueryId":              ubx.FieldSpec{WireName: "query_id"},
+	"QueryStartTime":       ubx.FieldSpec{WireName: "query_start_time"},
+}
 
 type UnfilteredPartitionMetadataConfig struct {
 	// <p>A structure containing the Lake Formation audit context.</p>
-	AuditContext any
-	CatalogId any
-	DatabaseName any
+	AuditContext    any
+	CatalogId       any
+	DatabaseName    any
 	PartitionValues any
 	// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
-	QuerySessionContext any
-	Region any
+	QuerySessionContext      any
+	Region                   any
 	SupportedPermissionTypes any
-	TableName any
+	TableName                any
 }
 
 type UnfilteredPartitionMetadataAttrs struct {
 	// <p>A structure containing the Lake Formation audit context.</p>
-	AuditContext any
-	AuthorizedColumns any
-	CatalogId any
-	DatabaseName any
+	AuditContext                  any
+	AuthorizedColumns             any
+	CatalogId                     any
+	DatabaseName                  any
 	IsRegisteredWithLakeFormation any
 	// <p>Represents a slice of table data.</p>
-	Partition any
+	Partition       any
 	PartitionValues any
 	// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
-	QuerySessionContext any
-	Region any
+	QuerySessionContext      any
+	Region                   any
 	SupportedPermissionTypes any
-	TableName any
+	TableName                any
 }
 
 var UnfilteredPartitionMetadata = ubx.DataSourceBinding{
@@ -136,19 +136,19 @@ var UnfilteredPartitionMetadata = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AuditContext": ubx.FieldSpec{
 			WireName: "audit_context",
-			Kind: "object",
-			Fields: UnfilteredPartitionMetadata_AuditContextFields,
+			Kind:     "object",
+			Fields:   UnfilteredPartitionMetadata_AuditContextFields,
 		},
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+		"CatalogId":       ubx.FieldSpec{WireName: "catalog_id"},
+		"DatabaseName":    ubx.FieldSpec{WireName: "database_name"},
 		"PartitionValues": ubx.FieldSpec{WireName: "partition_values"},
 		"QuerySessionContext": ubx.FieldSpec{
 			WireName: "query_session_context",
-			Kind: "object",
-			Fields: UnfilteredPartitionMetadata_QuerySessionContextFields,
+			Kind:     "object",
+			Fields:   UnfilteredPartitionMetadata_QuerySessionContextFields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Region":                   ubx.FieldSpec{WireName: "region"},
 		"SupportedPermissionTypes": ubx.FieldSpec{WireName: "supported_permission_types"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":                ubx.FieldSpec{WireName: "table_name"},
 	},
 }

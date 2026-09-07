@@ -7,12 +7,11 @@ type StorageConfig struct {
 }
 
 type StorageAttrs struct {
-	TotalBackupSizeInMegaBytes any
+	TotalBackupSizeInMegaBytes         any
 	TotalProvisionedStorageInMegaBytes any
 }
 
 var Storage = ubx.DataSourceBinding{
 	WireType: "aws_redshift_storage",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

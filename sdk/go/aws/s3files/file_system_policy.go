@@ -21,6 +21,6 @@ var FileSystemPolicy = ubx.ResourceBinding{
 	WireType: "aws_s3_files_file_system_policy",
 	Fields: ubx.FieldMap{
 		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
+		"Policy":       ubx.FieldSpec{WireName: "policy"},
 	},
 }

@@ -19,23 +19,23 @@ type SchemaMapping_MappedInputFields struct {
 }
 
 type SchemaMapping_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var SchemaMapping_MappedInputFieldsFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"Hashed": ubx.FieldSpec{WireName: "hashed"},
-		"MatchKey": ubx.FieldSpec{WireName: "match_key"},
-		"SubType": ubx.FieldSpec{WireName: "sub_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"GroupName": ubx.FieldSpec{WireName: "group_name"},
+	"Hashed":    ubx.FieldSpec{WireName: "hashed"},
+	"MatchKey":  ubx.FieldSpec{WireName: "match_key"},
+	"SubType":   ubx.FieldSpec{WireName: "sub_type"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var SchemaMapping_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SchemaMappingConfig struct {
 	// An optional description of the schema mapping that provides human-readable context about its purpose or contents. (AI-inferred)
@@ -73,14 +73,14 @@ var SchemaMapping = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"MappedInputFields": ubx.FieldSpec{
 			WireName: "mapped_input_fields",
-			Kind: "list",
-			Fields: SchemaMapping_MappedInputFieldsFields,
+			Kind:     "list",
+			Fields:   SchemaMapping_MappedInputFieldsFields,
 		},
 		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SchemaMapping_TagsFields,
+			Kind:     "list",
+			Fields:   SchemaMapping_TagsFields,
 		},
 	},
 }

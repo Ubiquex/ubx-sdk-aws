@@ -4,32 +4,32 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachedRolePolicies_AttachedPolicies struct {
-	PolicyArn any
+	PolicyArn  any
 	PolicyName any
 }
 
 type AttachedRolePoliciesConfig struct {
-	Marker any
-	MaxItems any
+	Marker     any
+	MaxItems   any
 	PathPrefix any
-	RoleName any
+	RoleName   any
 }
 
 type AttachedRolePoliciesAttrs struct {
 	AttachedPolicies any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	PathPrefix any
-	RoleName any
+	IsTruncated      any
+	Marker           any
+	MaxItems         any
+	PathPrefix       any
+	RoleName         any
 }
 
 var AttachedRolePolicies = ubx.DataSourceBinding{
 	WireType: "aws_iam_attached_role_policies",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":   ubx.FieldSpec{WireName: "max_items"},
 		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
-		"RoleName": ubx.FieldSpec{WireName: "role_name"},
+		"RoleName":   ubx.FieldSpec{WireName: "role_name"},
 	},
 }

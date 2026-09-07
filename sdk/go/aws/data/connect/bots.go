@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Bots_LexBots_LexBot struct {
 	LexRegion any
-	Name any
+	Name      any
 }
 
 type Bots_LexBots_LexV2Bot struct {
@@ -13,7 +13,7 @@ type Bots_LexBots_LexV2Bot struct {
 }
 
 type Bots_LexBots struct {
-	LexBot any
+	LexBot   any
 	LexV2Bot any
 }
 
@@ -21,15 +21,15 @@ type BotsConfig struct {
 	InstanceId any
 	LexVersion any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type BotsAttrs struct {
 	InstanceId any
-	LexBots any
+	LexBots    any
 	LexVersion any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Bots = ubx.DataSourceBinding{
@@ -38,6 +38,6 @@ var Bots = ubx.DataSourceBinding{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"LexVersion": ubx.FieldSpec{WireName: "lex_version"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

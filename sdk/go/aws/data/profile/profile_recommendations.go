@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileRecommendations_DiversityConfig struct {
 	Enabled any
-	Values any
+	Values  any
 }
 
 type ProfileRecommendations_MetadataConfig struct {
@@ -14,86 +14,86 @@ type ProfileRecommendations_MetadataConfig struct {
 
 type ProfileRecommendations_Recommendations_CatalogItem struct {
 	AdditionalInformation any
-	Attributes any
-	Category any
-	Code any
-	CreatedAt any
-	Description any
-	Id any
-	ImageLink any
-	Link any
-	Name any
-	Price any
-	Type any
-	UpdatedAt any
+	Attributes            any
+	Category              any
+	Code                  any
+	CreatedAt             any
+	Description           any
+	Id                    any
+	ImageLink             any
+	Link                  any
+	Name                  any
+	Price                 any
+	Type                  any
+	UpdatedAt             any
 }
 
 type ProfileRecommendations_Recommendations struct {
 	CatalogItem any
-	Score any
+	Score       any
 }
 
 type ProfileRecommendations_RecommenderFilters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ProfileRecommendations_RecommenderPromotionalFilters struct {
-	Name any
+	Name                 any
 	PercentPromotedItems any
-	PromotionName any
-	Values any
+	PromotionName        any
+	Values               any
 }
 
 var ProfileRecommendations_DiversityConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Values":  ubx.FieldSpec{WireName: "values"},
+}
 
 var ProfileRecommendations_MetadataConfigFields = ubx.FieldMap{
-		"MetadataColumns": ubx.FieldSpec{WireName: "metadata_columns"},
-	}
+	"MetadataColumns": ubx.FieldSpec{WireName: "metadata_columns"},
+}
 
 var ProfileRecommendations_RecommenderFiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ProfileRecommendations_RecommenderPromotionalFiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PercentPromotedItems": ubx.FieldSpec{WireName: "percent_promoted_items"},
-		"PromotionName": ubx.FieldSpec{WireName: "promotion_name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"PercentPromotedItems": ubx.FieldSpec{WireName: "percent_promoted_items"},
+	"PromotionName":        ubx.FieldSpec{WireName: "promotion_name"},
+	"Values":               ubx.FieldSpec{WireName: "values"},
+}
 
 type ProfileRecommendationsConfig struct {
 	CandidateIds any
-	Context any
+	Context      any
 	// <p>Runtime diversity configuration for a <code>GetProfileRecommendations</code> request.</p>
 	DiversityConfig any
-	DomainName any
-	MaxResults any
+	DomainName      any
+	MaxResults      any
 	// <p>Configuration for metadata to include in recommendation responses.</p>
-	MetadataConfig any
-	ProfileId any
-	RecommenderFilters any
-	RecommenderName any
+	MetadataConfig                any
+	ProfileId                     any
+	RecommenderFilters            any
+	RecommenderName               any
 	RecommenderPromotionalFilters any
 }
 
 type ProfileRecommendationsAttrs struct {
 	CandidateIds any
-	Context any
+	Context      any
 	// <p>Runtime diversity configuration for a <code>GetProfileRecommendations</code> request.</p>
 	DiversityConfig any
-	DomainName any
-	MaxResults any
+	DomainName      any
+	MaxResults      any
 	// <p>Configuration for metadata to include in recommendation responses.</p>
-	MetadataConfig any
-	ProfileId any
-	Recommendations any
-	RecommenderFilters any
-	RecommenderName any
+	MetadataConfig                any
+	ProfileId                     any
+	Recommendations               any
+	RecommenderFilters            any
+	RecommenderName               any
 	RecommenderPromotionalFilters any
 }
 
@@ -101,30 +101,30 @@ var ProfileRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_profile_profile_recommendations",
 	Fields: ubx.FieldMap{
 		"CandidateIds": ubx.FieldSpec{WireName: "candidate_ids"},
-		"Context": ubx.FieldSpec{WireName: "context"},
+		"Context":      ubx.FieldSpec{WireName: "context"},
 		"DiversityConfig": ubx.FieldSpec{
 			WireName: "diversity_config",
-			Kind: "object",
-			Fields: ProfileRecommendations_DiversityConfigFields,
+			Kind:     "object",
+			Fields:   ProfileRecommendations_DiversityConfigFields,
 		},
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"MetadataConfig": ubx.FieldSpec{
 			WireName: "metadata_config",
-			Kind: "object",
-			Fields: ProfileRecommendations_MetadataConfigFields,
+			Kind:     "object",
+			Fields:   ProfileRecommendations_MetadataConfigFields,
 		},
 		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
 		"RecommenderFilters": ubx.FieldSpec{
 			WireName: "recommender_filters",
-			Kind: "list",
-			Fields: ProfileRecommendations_RecommenderFiltersFields,
+			Kind:     "list",
+			Fields:   ProfileRecommendations_RecommenderFiltersFields,
 		},
 		"RecommenderName": ubx.FieldSpec{WireName: "recommender_name"},
 		"RecommenderPromotionalFilters": ubx.FieldSpec{
 			WireName: "recommender_promotional_filters",
-			Kind: "list",
-			Fields: ProfileRecommendations_RecommenderPromotionalFiltersFields,
+			Kind:     "list",
+			Fields:   ProfileRecommendations_RecommenderPromotionalFiltersFields,
 		},
 	},
 }

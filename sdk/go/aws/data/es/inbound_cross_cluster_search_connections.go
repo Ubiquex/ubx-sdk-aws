@@ -4,32 +4,32 @@ package es
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InboundCrossClusterSearchConnections_CrossClusterSearchConnections_ConnectionStatus struct {
-	Message any
+	Message    any
 	StatusCode any
 }
 
 type InboundCrossClusterSearchConnections_CrossClusterSearchConnections_DestinationDomainInfo struct {
 	DomainName any
-	OwnerId any
-	Region any
+	OwnerId    any
+	Region     any
 }
 
 type InboundCrossClusterSearchConnections_CrossClusterSearchConnections struct {
-	ConnectionStatus any
+	ConnectionStatus               any
 	CrossClusterSearchConnectionId any
-	DestinationDomainInfo any
-	SourceDomainInfo any
+	DestinationDomainInfo          any
+	SourceDomainInfo               any
 }
 
 type InboundCrossClusterSearchConnections_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var InboundCrossClusterSearchConnections_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InboundCrossClusterSearchConnectionsConfig struct {
 	Filters any
@@ -41,7 +41,7 @@ type InboundCrossClusterSearchConnectionsConfig struct {
 
 type InboundCrossClusterSearchConnectionsAttrs struct {
 	CrossClusterSearchConnections any
-	Filters any
+	Filters                       any
 	// <p> Set this value to limit the number of results returned. </p>
 	MaxResults any
 	// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
@@ -53,10 +53,10 @@ var InboundCrossClusterSearchConnections = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InboundCrossClusterSearchConnections_FiltersFields,
+			Kind:     "list",
+			Fields:   InboundCrossClusterSearchConnections_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

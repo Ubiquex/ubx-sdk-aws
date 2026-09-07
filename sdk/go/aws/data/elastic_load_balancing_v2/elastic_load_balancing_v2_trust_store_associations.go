@@ -8,24 +8,24 @@ type ElasticLoadBalancingV2TrustStoreAssociations_TrustStoreAssociations struct 
 }
 
 type ElasticLoadBalancingV2TrustStoreAssociationsConfig struct {
-	Marker any
-	PageSize any
+	Marker        any
+	PageSize      any
 	TrustStoreArn any
 }
 
 type ElasticLoadBalancingV2TrustStoreAssociationsAttrs struct {
-	Marker any
-	NextMarker any
-	PageSize any
-	TrustStoreArn any
+	Marker                 any
+	NextMarker             any
+	PageSize               any
+	TrustStoreArn          any
 	TrustStoreAssociations any
 }
 
 var ElasticLoadBalancingV2TrustStoreAssociations = ubx.DataSourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_trust_store_associations",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":        ubx.FieldSpec{WireName: "marker"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
 		"TrustStoreArn": ubx.FieldSpec{WireName: "trust_store_arn"},
 	},
 }

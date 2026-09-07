@@ -4,33 +4,33 @@ package codeguru_reviewer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodeguruReviewerRecommendationFeedback_RecommendationFeedback struct {
-	CodeReviewArn any
-	CreatedTimeStamp any
+	CodeReviewArn        any
+	CreatedTimeStamp     any
 	LastUpdatedTimeStamp any
-	Reactions any
-	RecommendationId any
-	UserId any
+	Reactions            any
+	RecommendationId     any
+	UserId               any
 }
 
 type CodeguruReviewerRecommendationFeedbackConfig struct {
-	CodeReviewArn any
+	CodeReviewArn    any
 	RecommendationId any
-	UserId any
+	UserId           any
 }
 
 type CodeguruReviewerRecommendationFeedbackAttrs struct {
 	CodeReviewArn any
 	// <p>Information about the recommendation feedback.</p>
 	RecommendationFeedback any
-	RecommendationId any
-	UserId any
+	RecommendationId       any
+	UserId                 any
 }
 
 var CodeguruReviewerRecommendationFeedback = ubx.DataSourceBinding{
 	WireType: "aws_codeguru_reviewer_recommendation_feedback",
 	Fields: ubx.FieldMap{
-		"CodeReviewArn": ubx.FieldSpec{WireName: "code_review_arn"},
+		"CodeReviewArn":    ubx.FieldSpec{WireName: "code_review_arn"},
 		"RecommendationId": ubx.FieldSpec{WireName: "recommendation_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":           ubx.FieldSpec{WireName: "user_id"},
 	},
 }

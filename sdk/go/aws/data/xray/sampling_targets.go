@@ -4,73 +4,73 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SamplingTargets_SamplingBoostStatisticsDocuments struct {
-	AnomalyCount any
-	RuleName any
+	AnomalyCount        any
+	RuleName            any
 	SampledAnomalyCount any
-	ServiceName any
-	Timestamp any
-	TotalCount any
+	ServiceName         any
+	Timestamp           any
+	TotalCount          any
 }
 
 type SamplingTargets_SamplingStatisticsDocuments struct {
-	BorrowCount any
-	ClientId any
+	BorrowCount  any
+	ClientId     any
 	RequestCount any
-	RuleName any
+	RuleName     any
 	SampledCount any
-	Timestamp any
+	Timestamp    any
 }
 
 type SamplingTargets_SamplingTargetDocuments_SamplingBoost struct {
-	BoostRate any
+	BoostRate    any
 	BoostRateTtl any
 }
 
 type SamplingTargets_SamplingTargetDocuments struct {
-	FixedRate any
-	Interval any
-	ReservoirQuota any
+	FixedRate         any
+	Interval          any
+	ReservoirQuota    any
 	ReservoirQuotaTtl any
-	RuleName any
-	SamplingBoost any
+	RuleName          any
+	SamplingBoost     any
 }
 
 type SamplingTargets_UnprocessedBoostStatistics struct {
 	ErrorCode any
-	Message any
-	RuleName any
+	Message   any
+	RuleName  any
 }
 
 var SamplingTargets_SamplingBoostStatisticsDocumentsFields = ubx.FieldMap{
-		"AnomalyCount": ubx.FieldSpec{WireName: "anomaly_count"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"SampledAnomalyCount": ubx.FieldSpec{WireName: "sampled_anomaly_count"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-		"TotalCount": ubx.FieldSpec{WireName: "total_count"},
-	}
+	"AnomalyCount":        ubx.FieldSpec{WireName: "anomaly_count"},
+	"RuleName":            ubx.FieldSpec{WireName: "rule_name"},
+	"SampledAnomalyCount": ubx.FieldSpec{WireName: "sampled_anomaly_count"},
+	"ServiceName":         ubx.FieldSpec{WireName: "service_name"},
+	"Timestamp":           ubx.FieldSpec{WireName: "timestamp"},
+	"TotalCount":          ubx.FieldSpec{WireName: "total_count"},
+}
 
 var SamplingTargets_SamplingStatisticsDocumentsFields = ubx.FieldMap{
-		"BorrowCount": ubx.FieldSpec{WireName: "borrow_count"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"RequestCount": ubx.FieldSpec{WireName: "request_count"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"SampledCount": ubx.FieldSpec{WireName: "sampled_count"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-	}
+	"BorrowCount":  ubx.FieldSpec{WireName: "borrow_count"},
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"RequestCount": ubx.FieldSpec{WireName: "request_count"},
+	"RuleName":     ubx.FieldSpec{WireName: "rule_name"},
+	"SampledCount": ubx.FieldSpec{WireName: "sampled_count"},
+	"Timestamp":    ubx.FieldSpec{WireName: "timestamp"},
+}
 
 type SamplingTargetsConfig struct {
 	SamplingBoostStatisticsDocuments any
-	SamplingStatisticsDocuments any
+	SamplingStatisticsDocuments      any
 }
 
 type SamplingTargetsAttrs struct {
-	LastRuleModification any
+	LastRuleModification             any
 	SamplingBoostStatisticsDocuments any
-	SamplingStatisticsDocuments any
-	SamplingTargetDocuments any
-	UnprocessedBoostStatistics any
-	UnprocessedStatistics any
+	SamplingStatisticsDocuments      any
+	SamplingTargetDocuments          any
+	UnprocessedBoostStatistics       any
+	UnprocessedStatistics            any
 }
 
 var SamplingTargets = ubx.DataSourceBinding{
@@ -78,13 +78,13 @@ var SamplingTargets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"SamplingBoostStatisticsDocuments": ubx.FieldSpec{
 			WireName: "sampling_boost_statistics_documents",
-			Kind: "list",
-			Fields: SamplingTargets_SamplingBoostStatisticsDocumentsFields,
+			Kind:     "list",
+			Fields:   SamplingTargets_SamplingBoostStatisticsDocumentsFields,
 		},
 		"SamplingStatisticsDocuments": ubx.FieldSpec{
 			WireName: "sampling_statistics_documents",
-			Kind: "list",
-			Fields: SamplingTargets_SamplingStatisticsDocumentsFields,
+			Kind:     "list",
+			Fields:   SamplingTargets_SamplingStatisticsDocumentsFields,
 		},
 	},
 }

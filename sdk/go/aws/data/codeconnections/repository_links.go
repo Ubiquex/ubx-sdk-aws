@@ -4,23 +4,23 @@ package codeconnections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RepositoryLinks_RepositoryLinks struct {
-	ConnectionArn any
-	EncryptionKeyArn any
-	OwnerId any
-	ProviderType any
+	ConnectionArn     any
+	EncryptionKeyArn  any
+	OwnerId           any
+	ProviderType      any
 	RepositoryLinkArn any
-	RepositoryLinkId any
-	RepositoryName any
+	RepositoryLinkId  any
+	RepositoryName    any
 }
 
 type RepositoryLinksConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RepositoryLinksAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	RepositoryLinks any
 }
 
@@ -28,6 +28,6 @@ var RepositoryLinks = ubx.DataSourceBinding{
 	WireType: "aws_codeconnections_repository_links",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

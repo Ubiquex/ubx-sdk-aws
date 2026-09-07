@@ -4,33 +4,33 @@ package elasticbeanstalk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationOptions_Options struct {
-	Namespace any
-	OptionName any
+	Namespace    any
+	OptionName   any
 	ResourceName any
 }
 
 var ConfigurationOptions_OptionsFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OptionName": ubx.FieldSpec{WireName: "option_name"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-	}
+	"Namespace":    ubx.FieldSpec{WireName: "namespace"},
+	"OptionName":   ubx.FieldSpec{WireName: "option_name"},
+	"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
+}
 
 type ConfigurationOptionsConfig struct {
-	ApplicationName any
-	EnvironmentName any
-	Options any
-	PlatformArn any
+	ApplicationName   any
+	EnvironmentName   any
+	Options           any
+	PlatformArn       any
 	SolutionStackName any
-	TemplateName any
+	TemplateName      any
 }
 
 type ConfigurationOptionsAttrs struct {
-	ApplicationName any
-	EnvironmentName any
-	Options any
-	PlatformArn any
+	ApplicationName   any
+	EnvironmentName   any
+	Options           any
+	PlatformArn       any
 	SolutionStackName any
-	TemplateName any
+	TemplateName      any
 }
 
 var ConfigurationOptions = ubx.DataSourceBinding{
@@ -40,11 +40,11 @@ var ConfigurationOptions = ubx.DataSourceBinding{
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "list",
-			Fields: ConfigurationOptions_OptionsFields,
+			Kind:     "list",
+			Fields:   ConfigurationOptions_OptionsFields,
 		},
-		"PlatformArn": ubx.FieldSpec{WireName: "platform_arn"},
+		"PlatformArn":       ubx.FieldSpec{WireName: "platform_arn"},
 		"SolutionStackName": ubx.FieldSpec{WireName: "solution_stack_name"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"TemplateName":      ubx.FieldSpec{WireName: "template_name"},
 	},
 }

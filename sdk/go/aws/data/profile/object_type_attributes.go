@@ -9,26 +9,26 @@ type ObjectTypeAttributes_Items struct {
 }
 
 type ObjectTypeAttributesConfig struct {
-	DomainName any
-	MaxResults any
-	NextToken any
+	DomainName     any
+	MaxResults     any
+	NextToken      any
 	ObjectTypeName any
 }
 
 type ObjectTypeAttributesAttrs struct {
-	DomainName any
-	Items any
-	MaxResults any
-	NextToken any
+	DomainName     any
+	Items          any
+	MaxResults     any
+	NextToken      any
 	ObjectTypeName any
 }
 
 var ObjectTypeAttributes = ubx.DataSourceBinding{
 	WireType: "aws_profile_object_type_attributes",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
 	},
 }

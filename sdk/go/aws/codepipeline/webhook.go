@@ -25,19 +25,19 @@ type Webhook_Tags struct {
 }
 
 var Webhook_AuthenticationConfigurationFields = ubx.FieldMap{
-		"AllowedIprange": ubx.FieldSpec{WireName: "allowed_iprange"},
-		"SecretToken": ubx.FieldSpec{WireName: "secret_token"},
-	}
+	"AllowedIprange": ubx.FieldSpec{WireName: "allowed_iprange"},
+	"SecretToken":    ubx.FieldSpec{WireName: "secret_token"},
+}
 
 var Webhook_FiltersFields = ubx.FieldMap{
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"MatchEquals": ubx.FieldSpec{WireName: "match_equals"},
-	}
+	"JsonPath":    ubx.FieldSpec{WireName: "json_path"},
+	"MatchEquals": ubx.FieldSpec{WireName: "match_equals"},
+}
 
 var Webhook_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type WebhookConfig struct {
 	// Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
@@ -91,23 +91,23 @@ var Webhook = ubx.ResourceBinding{
 		"Authentication": ubx.FieldSpec{WireName: "authentication"},
 		"AuthenticationConfiguration": ubx.FieldSpec{
 			WireName: "authentication_configuration",
-			Kind: "object",
-			Fields: Webhook_AuthenticationConfigurationFields,
+			Kind:     "object",
+			Fields:   Webhook_AuthenticationConfigurationFields,
 		},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Webhook_FiltersFields,
+			Kind:     "list",
+			Fields:   Webhook_FiltersFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"RegisterWithThirdParty": ubx.FieldSpec{WireName: "register_with_third_party"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Webhook_TagsFields,
+			Kind:     "list",
+			Fields:   Webhook_TagsFields,
 		},
-		"TargetAction": ubx.FieldSpec{WireName: "target_action"},
-		"TargetPipeline": ubx.FieldSpec{WireName: "target_pipeline"},
+		"TargetAction":          ubx.FieldSpec{WireName: "target_action"},
+		"TargetPipeline":        ubx.FieldSpec{WireName: "target_pipeline"},
 		"TargetPipelineVersion": ubx.FieldSpec{WireName: "target_pipeline_version"},
 	},
 }

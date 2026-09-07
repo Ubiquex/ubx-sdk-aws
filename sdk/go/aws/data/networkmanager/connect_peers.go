@@ -4,42 +4,42 @@ package networkmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectPeers_ConnectPeers_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ConnectPeers_ConnectPeers struct {
 	ConnectAttachmentId any
-	ConnectPeerId any
-	ConnectPeerState any
-	CoreNetworkId any
-	CreatedAt any
-	EdgeLocation any
-	SubnetArn any
-	Tags any
+	ConnectPeerId       any
+	ConnectPeerState    any
+	CoreNetworkId       any
+	CreatedAt           any
+	EdgeLocation        any
+	SubnetArn           any
+	Tags                any
 }
 
 type ConnectPeersConfig struct {
 	ConnectAttachmentId any
-	CoreNetworkId any
-	MaxResults any
-	NextToken any
+	CoreNetworkId       any
+	MaxResults          any
+	NextToken           any
 }
 
 type ConnectPeersAttrs struct {
 	ConnectAttachmentId any
-	ConnectPeers any
-	CoreNetworkId any
-	MaxResults any
-	NextToken any
+	ConnectPeers        any
+	CoreNetworkId       any
+	MaxResults          any
+	NextToken           any
 }
 
 var ConnectPeers = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_connect_peers",
 	Fields: ubx.FieldMap{
 		"ConnectAttachmentId": ubx.FieldSpec{WireName: "connect_attachment_id"},
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CoreNetworkId":       ubx.FieldSpec{WireName: "core_network_id"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

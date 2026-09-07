@@ -18,9 +18,9 @@ type EventStream_Tags struct {
 }
 
 var EventStream_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventStreamConfig struct {
 	// The unique name of the domain.
@@ -55,12 +55,12 @@ type EventStreamAttrs struct {
 var EventStream = ubx.ResourceBinding{
 	WireType: "aws_customer_profiles_event_stream",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":      ubx.FieldSpec{WireName: "domain_name"},
 		"EventStreamName": ubx.FieldSpec{WireName: "event_stream_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventStream_TagsFields,
+			Kind:     "list",
+			Fields:   EventStream_TagsFields,
 		},
 		"Uri": ubx.FieldSpec{WireName: "uri"},
 	},

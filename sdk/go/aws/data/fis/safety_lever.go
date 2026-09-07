@@ -10,7 +10,7 @@ type SafetyLever_SafetyLever_State struct {
 
 type SafetyLever_SafetyLever struct {
 	Arn any
-	Id any
+	Id  any
 	// <p> Describes the state of the safety lever. </p>
 	State any
 }

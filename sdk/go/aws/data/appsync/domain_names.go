@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainNames_DomainNameConfigs struct {
 	AppsyncDomainName any
-	CertificateArn any
-	Description any
-	DomainName any
-	DomainNameArn any
-	HostedZoneId any
-	Tags any
+	CertificateArn    any
+	Description       any
+	DomainName        any
+	DomainNameArn     any
+	HostedZoneId      any
+	Tags              any
 }
 
 type DomainNamesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DomainNamesAttrs struct {
 	DomainNameConfigs any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var DomainNames = ubx.DataSourceBinding{
 	WireType: "aws_appsync_domain_names",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

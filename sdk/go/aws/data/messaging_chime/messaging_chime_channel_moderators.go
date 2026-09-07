@@ -4,7 +4,7 @@ package messaging_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeChannelModerators_ChannelModerators_Moderator struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
@@ -13,26 +13,26 @@ type MessagingChimeChannelModerators_ChannelModerators struct {
 }
 
 type MessagingChimeChannelModeratorsConfig struct {
-	ChannelArn any
+	ChannelArn  any
 	ChimeBearer any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type MessagingChimeChannelModeratorsAttrs struct {
-	ChannelArn any
+	ChannelArn        any
 	ChannelModerators any
-	ChimeBearer any
-	MaxResults any
-	NextToken any
+	ChimeBearer       any
+	MaxResults        any
+	NextToken         any
 }
 
 var MessagingChimeChannelModerators = ubx.DataSourceBinding{
 	WireType: "aws_messaging_chime_channel_moderators",
 	Fields: ubx.FieldMap{
-		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
+		"ChannelArn":  ubx.FieldSpec{WireName: "channel_arn"},
 		"ChimeBearer": ubx.FieldSpec{WireName: "chime_bearer"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

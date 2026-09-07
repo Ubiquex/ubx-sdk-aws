@@ -5,23 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLinuxSubscriptionsServiceSettings_LinuxSubscriptionsDiscoverySettings struct {
 	OrganizationIntegration any
-	SourceRegions any
+	SourceRegions           any
 }
 
 type LicenseManagerLinuxSubscriptionsServiceSettingsConfig struct {
 }
 
 type LicenseManagerLinuxSubscriptionsServiceSettingsAttrs struct {
-	HomeRegions any
+	HomeRegions                 any
 	LinuxSubscriptionsDiscovery any
 	// <p>Lists the settings defined for discovering Linux subscriptions.</p>
 	LinuxSubscriptionsDiscoverySettings any
-	Status any
-	StatusMessage any
+	Status                              any
+	StatusMessage                       any
 }
 
 var LicenseManagerLinuxSubscriptionsServiceSettings = ubx.DataSourceBinding{
 	WireType: "aws_license_manager_linux_subscriptions_service_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

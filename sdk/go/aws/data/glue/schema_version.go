@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemaVersion_SchemaId struct {
 	RegistryName any
-	SchemaArn any
-	SchemaName any
+	SchemaArn    any
+	SchemaName   any
 }
 
 type SchemaVersion_SchemaVersionNumber struct {
@@ -15,36 +15,36 @@ type SchemaVersion_SchemaVersionNumber struct {
 }
 
 var SchemaVersion_SchemaIdFields = ubx.FieldMap{
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
-		"SchemaArn": ubx.FieldSpec{WireName: "schema_arn"},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+	"SchemaArn":    ubx.FieldSpec{WireName: "schema_arn"},
+	"SchemaName":   ubx.FieldSpec{WireName: "schema_name"},
+}
 
 var SchemaVersion_SchemaVersionNumberFields = ubx.FieldMap{
-		"LatestVersion": ubx.FieldSpec{WireName: "latest_version"},
-		"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
-	}
+	"LatestVersion": ubx.FieldSpec{WireName: "latest_version"},
+	"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
+}
 
 type SchemaVersionConfig struct {
 	// <p>The unique ID of the schema in the Glue schema registry.</p>
-	SchemaId any
+	SchemaId        any
 	SchemaVersionId any
 	// <p>A structure containing the schema version information.</p>
 	SchemaVersionNumber any
 }
 
 type SchemaVersionAttrs struct {
-	CreatedTime any
-	DataFormat any
-	SchemaArn any
+	CreatedTime      any
+	DataFormat       any
+	SchemaArn        any
 	SchemaDefinition any
 	// <p>The unique ID of the schema in the Glue schema registry.</p>
-	SchemaId any
+	SchemaId        any
 	SchemaVersionId any
 	// <p>A structure containing the schema version information.</p>
 	SchemaVersionNumber any
-	Status any
-	VersionNumber any
+	Status              any
+	VersionNumber       any
 }
 
 var SchemaVersion = ubx.DataSourceBinding{
@@ -52,14 +52,14 @@ var SchemaVersion = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"SchemaId": ubx.FieldSpec{
 			WireName: "schema_id",
-			Kind: "object",
-			Fields: SchemaVersion_SchemaIdFields,
+			Kind:     "object",
+			Fields:   SchemaVersion_SchemaIdFields,
 		},
 		"SchemaVersionId": ubx.FieldSpec{WireName: "schema_version_id"},
 		"SchemaVersionNumber": ubx.FieldSpec{
 			WireName: "schema_version_number",
-			Kind: "object",
-			Fields: SchemaVersion_SchemaVersionNumberFields,
+			Kind:     "object",
+			Fields:   SchemaVersion_SchemaVersionNumberFields,
 		},
 	},
 }

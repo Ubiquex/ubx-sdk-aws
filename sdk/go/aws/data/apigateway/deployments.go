@@ -4,35 +4,35 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployments_Items_ApiSummary struct {
-	ApiKeyRequired any
+	ApiKeyRequired    any
 	AuthorizationType any
 }
 
 type Deployments_Items struct {
-	ApiSummary any
+	ApiSummary  any
 	CreatedDate any
 	Description any
-	Id any
+	Id          any
 }
 
 type DeploymentsConfig struct {
-	Limit any
-	Position any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 type DeploymentsAttrs struct {
-	Items any
-	Limit any
-	Position any
+	Items     any
+	Limit     any
+	Position  any
 	RestApiId any
 }
 
 var Deployments = ubx.DataSourceBinding{
 	WireType: "aws_apigateway_deployments",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Position": ubx.FieldSpec{WireName: "position"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Position":  ubx.FieldSpec{WireName: "position"},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

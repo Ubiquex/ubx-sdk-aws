@@ -8,12 +8,12 @@ type LatestConfigurationConfig struct {
 }
 
 type LatestConfigurationAttrs struct {
-	Configuration any
-	ConfigurationToken any
-	ContentType any
+	Configuration              any
+	ConfigurationToken         any
+	ContentType                any
 	NextPollConfigurationToken any
-	NextPollIntervalInSeconds any
-	VersionLabel any
+	NextPollIntervalInSeconds  any
+	VersionLabel               any
 }
 
 var LatestConfiguration = ubx.DataSourceBinding{

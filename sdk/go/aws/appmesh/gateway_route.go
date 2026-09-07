@@ -171,219 +171,219 @@ type GatewayRoute_Tags struct {
 }
 
 var GatewayRoute_Spec_GrpcRoute_Action_Rewrite_HostnameFields = ubx.FieldMap{
-		"DefaultTargetHostname": ubx.FieldSpec{WireName: "default_target_hostname"},
-	}
+	"DefaultTargetHostname": ubx.FieldSpec{WireName: "default_target_hostname"},
+}
 
 var GatewayRoute_Spec_GrpcRoute_Action_RewriteFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{
-			WireName: "hostname",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Action_Rewrite_HostnameFields,
-		},
-	}
+	"Hostname": ubx.FieldSpec{
+		WireName: "hostname",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Action_Rewrite_HostnameFields,
+	},
+}
 
 var GatewayRoute_Spec_GrpcRoute_Action_Target_VirtualServiceFields = ubx.FieldMap{
-		"VirtualServiceName": ubx.FieldSpec{WireName: "virtual_service_name"},
-	}
+	"VirtualServiceName": ubx.FieldSpec{WireName: "virtual_service_name"},
+}
 
 var GatewayRoute_Spec_GrpcRoute_Action_TargetFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"VirtualService": ubx.FieldSpec{
-			WireName: "virtual_service",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Action_Target_VirtualServiceFields,
-		},
-	}
+	"Port": ubx.FieldSpec{WireName: "port"},
+	"VirtualService": ubx.FieldSpec{
+		WireName: "virtual_service",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Action_Target_VirtualServiceFields,
+	},
+}
 
 var GatewayRoute_Spec_GrpcRoute_ActionFields = ubx.FieldMap{
-		"Rewrite": ubx.FieldSpec{
-			WireName: "rewrite",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Action_RewriteFields,
-		},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Action_TargetFields,
-		},
-	}
+	"Rewrite": ubx.FieldSpec{
+		WireName: "rewrite",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Action_RewriteFields,
+	},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Action_TargetFields,
+	},
+}
 
 var GatewayRoute_Spec_GrpcRoute_Match_HostnameFields = ubx.FieldMap{
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"Exact":  ubx.FieldSpec{WireName: "exact"},
+	"Suffix": ubx.FieldSpec{WireName: "suffix"},
+}
 
 var GatewayRoute_Spec_GrpcRoute_Match_Metadata_Match_RangeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var GatewayRoute_Spec_GrpcRoute_Match_Metadata_MatchFields = ubx.FieldMap{
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Match_Metadata_Match_RangeFields,
-		},
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"Exact":  ubx.FieldSpec{WireName: "exact"},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Match_Metadata_Match_RangeFields,
+	},
+	"Regex":  ubx.FieldSpec{WireName: "regex"},
+	"Suffix": ubx.FieldSpec{WireName: "suffix"},
+}
 
 var GatewayRoute_Spec_GrpcRoute_Match_MetadataFields = ubx.FieldMap{
-		"Invert": ubx.FieldSpec{WireName: "invert"},
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Match_Metadata_MatchFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Invert": ubx.FieldSpec{WireName: "invert"},
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Match_Metadata_MatchFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var GatewayRoute_Spec_GrpcRoute_MatchFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{
-			WireName: "hostname",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Match_HostnameFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "list",
-			Fields: GatewayRoute_Spec_GrpcRoute_Match_MetadataFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	}
+	"Hostname": ubx.FieldSpec{
+		WireName: "hostname",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Match_HostnameFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "list",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Match_MetadataFields,
+	},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+}
 
 var GatewayRoute_Spec_GrpcRouteFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_ActionFields,
-		},
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_MatchFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_ActionFields,
+	},
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_MatchFields,
+	},
+}
 
 var GatewayRoute_Spec_Http2Route_Action_Rewrite_PathFields = ubx.FieldMap{
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-	}
+	"Exact": ubx.FieldSpec{WireName: "exact"},
+}
 
 var GatewayRoute_Spec_Http2Route_Action_Rewrite_PrefixFields = ubx.FieldMap{
-		"DefaultPrefix": ubx.FieldSpec{WireName: "default_prefix"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"DefaultPrefix": ubx.FieldSpec{WireName: "default_prefix"},
+	"Value":         ubx.FieldSpec{WireName: "value"},
+}
 
 var GatewayRoute_Spec_Http2Route_Action_RewriteFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{
-			WireName: "hostname",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Action_Rewrite_HostnameFields,
-		},
-		"Path": ubx.FieldSpec{
-			WireName: "path",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2Route_Action_Rewrite_PathFields,
-		},
-		"Prefix": ubx.FieldSpec{
-			WireName: "prefix",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2Route_Action_Rewrite_PrefixFields,
-		},
-	}
+	"Hostname": ubx.FieldSpec{
+		WireName: "hostname",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Action_Rewrite_HostnameFields,
+	},
+	"Path": ubx.FieldSpec{
+		WireName: "path",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2Route_Action_Rewrite_PathFields,
+	},
+	"Prefix": ubx.FieldSpec{
+		WireName: "prefix",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2Route_Action_Rewrite_PrefixFields,
+	},
+}
 
 var GatewayRoute_Spec_Http2Route_ActionFields = ubx.FieldMap{
-		"Rewrite": ubx.FieldSpec{
-			WireName: "rewrite",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2Route_Action_RewriteFields,
-		},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Action_TargetFields,
-		},
-	}
+	"Rewrite": ubx.FieldSpec{
+		WireName: "rewrite",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2Route_Action_RewriteFields,
+	},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Action_TargetFields,
+	},
+}
 
 var GatewayRoute_Spec_Http2Route_Match_PathFields = ubx.FieldMap{
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-	}
+	"Exact": ubx.FieldSpec{WireName: "exact"},
+	"Regex": ubx.FieldSpec{WireName: "regex"},
+}
 
 var GatewayRoute_Spec_Http2Route_Match_QueryParametersFields = ubx.FieldMap{
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2Route_Action_Rewrite_PathFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2Route_Action_Rewrite_PathFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var GatewayRoute_Spec_Http2Route_MatchFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: GatewayRoute_Spec_GrpcRoute_Match_MetadataFields,
-		},
-		"Hostname": ubx.FieldSpec{
-			WireName: "hostname",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRoute_Match_HostnameFields,
-		},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Path": ubx.FieldSpec{
-			WireName: "path",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2Route_Match_PathFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"QueryParameters": ubx.FieldSpec{
-			WireName: "query_parameters",
-			Kind: "list",
-			Fields: GatewayRoute_Spec_Http2Route_Match_QueryParametersFields,
-		},
-	}
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Match_MetadataFields,
+	},
+	"Hostname": ubx.FieldSpec{
+		WireName: "hostname",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRoute_Match_HostnameFields,
+	},
+	"Method": ubx.FieldSpec{WireName: "method"},
+	"Path": ubx.FieldSpec{
+		WireName: "path",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2Route_Match_PathFields,
+	},
+	"Port":   ubx.FieldSpec{WireName: "port"},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	"QueryParameters": ubx.FieldSpec{
+		WireName: "query_parameters",
+		Kind:     "list",
+		Fields:   GatewayRoute_Spec_Http2Route_Match_QueryParametersFields,
+	},
+}
 
 var GatewayRoute_Spec_Http2RouteFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2Route_ActionFields,
-		},
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2Route_MatchFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2Route_ActionFields,
+	},
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2Route_MatchFields,
+	},
+}
 
 var GatewayRoute_SpecFields = ubx.FieldMap{
-		"GrpcRoute": ubx.FieldSpec{
-			WireName: "grpc_route",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_GrpcRouteFields,
-		},
-		"Http2Route": ubx.FieldSpec{
-			WireName: "http2_route",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2RouteFields,
-		},
-		"HttpRoute": ubx.FieldSpec{
-			WireName: "http_route",
-			Kind: "object",
-			Fields: GatewayRoute_Spec_Http2RouteFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-	}
+	"GrpcRoute": ubx.FieldSpec{
+		WireName: "grpc_route",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_GrpcRouteFields,
+	},
+	"Http2Route": ubx.FieldSpec{
+		WireName: "http2_route",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2RouteFields,
+	},
+	"HttpRoute": ubx.FieldSpec{
+		WireName: "http_route",
+		Kind:     "object",
+		Fields:   GatewayRoute_Spec_Http2RouteFields,
+	},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+}
 
 var GatewayRoute_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GatewayRouteConfig struct {
 	// The name of the gateway route, which must be unique within the virtual router and is used as an identifier for the route in AWS App Mesh. (AI-inferred)
@@ -427,17 +427,17 @@ var GatewayRoute = ubx.ResourceBinding{
 	WireType: "aws_app_mesh_gateway_route",
 	Fields: ubx.FieldMap{
 		"GatewayRouteName": ubx.FieldSpec{WireName: "gateway_route_name"},
-		"MeshName": ubx.FieldSpec{WireName: "mesh_name"},
-		"MeshOwner": ubx.FieldSpec{WireName: "mesh_owner"},
+		"MeshName":         ubx.FieldSpec{WireName: "mesh_name"},
+		"MeshOwner":        ubx.FieldSpec{WireName: "mesh_owner"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: GatewayRoute_SpecFields,
+			Kind:     "object",
+			Fields:   GatewayRoute_SpecFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GatewayRoute_TagsFields,
+			Kind:     "list",
+			Fields:   GatewayRoute_TagsFields,
 		},
 		"VirtualGatewayName": ubx.FieldSpec{WireName: "virtual_gateway_name"},
 	},

@@ -10,9 +10,9 @@ type DbsubnetGroup_Tags struct {
 }
 
 var DbsubnetGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DbsubnetGroupConfig struct {
 	// The description for the DB subnet group.
@@ -42,12 +42,12 @@ var DbsubnetGroup = ubx.ResourceBinding{
 	WireType: "aws_rds_dbsubnet_group",
 	Fields: ubx.FieldMap{
 		"DbsubnetGroupDescription": ubx.FieldSpec{WireName: "dbsubnet_group_description"},
-		"DbsubnetGroupName": ubx.FieldSpec{WireName: "dbsubnet_group_name"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"DbsubnetGroupName":        ubx.FieldSpec{WireName: "dbsubnet_group_name"},
+		"SubnetIds":                ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DbsubnetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   DbsubnetGroup_TagsFields,
 		},
 	},
 }

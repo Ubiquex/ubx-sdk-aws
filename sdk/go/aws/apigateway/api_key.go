@@ -17,14 +17,14 @@ type ApiKey_Tags struct {
 }
 
 var ApiKey_StageKeysFields = ubx.FieldMap{
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"StageName": ubx.FieldSpec{WireName: "stage_name"},
-	}
+	"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+	"StageName": ubx.FieldSpec{WireName: "stage_name"},
+}
 
 var ApiKey_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApiKeyConfig struct {
 	// Specifies an optional customer identifier that can be associated with the API key for tracking or organizational purposes. (AI-inferred)
@@ -69,20 +69,20 @@ type ApiKeyAttrs struct {
 var ApiKey = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_api_key",
 	Fields: ubx.FieldMap{
-		"CustomerId": ubx.FieldSpec{WireName: "customer_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"CustomerId":         ubx.FieldSpec{WireName: "customer_id"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"Enabled":            ubx.FieldSpec{WireName: "enabled"},
 		"GenerateDistinctId": ubx.FieldSpec{WireName: "generate_distinct_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"StageKeys": ubx.FieldSpec{
 			WireName: "stage_keys",
-			Kind: "list",
-			Fields: ApiKey_StageKeysFields,
+			Kind:     "list",
+			Fields:   ApiKey_StageKeysFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ApiKey_TagsFields,
+			Kind:     "list",
+			Fields:   ApiKey_TagsFields,
 		},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	},

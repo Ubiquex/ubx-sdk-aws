@@ -6,49 +6,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ExportTasks_ExportTasks_ExportToS3Task struct {
 	ContainerFormat any
 	DiskImageFormat any
-	S3Bucket any
-	S3Key any
+	S3Bucket        any
+	S3Key           any
 }
 
 type ExportTasks_ExportTasks_InstanceExportDetails struct {
-	InstanceId any
+	InstanceId        any
 	TargetEnvironment any
 }
 
 type ExportTasks_ExportTasks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type ExportTasks_ExportTasks struct {
-	Description any
-	ExportTaskId any
-	ExportToS3Task any
+	Description           any
+	ExportTaskId          any
+	ExportToS3Task        any
 	InstanceExportDetails any
-	State any
-	StatusMessage any
-	Tags any
+	State                 any
+	StatusMessage         any
+	Tags                  any
 }
 
 type ExportTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ExportTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ExportTasksConfig struct {
 	ExportTaskIds any
-	Filters any
+	Filters       any
 }
 
 type ExportTasksAttrs struct {
 	ExportTaskIds any
-	ExportTasks any
-	Filters any
+	ExportTasks   any
+	Filters       any
 }
 
 var ExportTasks = ubx.DataSourceBinding{
@@ -57,8 +57,8 @@ var ExportTasks = ubx.DataSourceBinding{
 		"ExportTaskIds": ubx.FieldSpec{WireName: "export_task_ids"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ExportTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   ExportTasks_FiltersFields,
 		},
 	},
 }

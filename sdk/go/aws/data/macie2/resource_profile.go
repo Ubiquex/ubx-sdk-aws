@@ -4,15 +4,15 @@ package macie2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceProfile_Statistics struct {
-	TotalBytesClassified any
-	TotalDetections any
-	TotalDetectionsSuppressed any
-	TotalItemsClassified any
-	TotalItemsSensitive any
-	TotalItemsSkipped any
+	TotalBytesClassified               any
+	TotalDetections                    any
+	TotalDetectionsSuppressed          any
+	TotalItemsClassified               any
+	TotalItemsSensitive                any
+	TotalItemsSkipped                  any
 	TotalItemsSkippedInvalidEncryption any
-	TotalItemsSkippedInvalidKms any
-	TotalItemsSkippedPermissionDenied any
+	TotalItemsSkippedInvalidKms        any
+	TotalItemsSkippedPermissionDenied  any
 }
 
 type ResourceProfileConfig struct {
@@ -20,9 +20,9 @@ type ResourceProfileConfig struct {
 }
 
 type ResourceProfileAttrs struct {
-	ProfileUpdatedAt any
-	ResourceArn any
-	SensitivityScore any
+	ProfileUpdatedAt           any
+	ResourceArn                any
+	SensitivityScore           any
 	SensitivityScoreOverridden any
 	// <p>Provides statistical data for sensitive data discovery metrics that apply to an S3 bucket that Amazon Macie monitors and analyzes for an account, if automated sensitive data discovery has been enabled for the account. The data captures the results of automated sensitive data discovery activities that Macie has performed for the bucket.</p>
 	Statistics any

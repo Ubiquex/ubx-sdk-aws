@@ -4,40 +4,40 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ControlDomainInsightsByAssessment_ControlDomainInsights_EvidenceInsights struct {
-	CompliantEvidenceCount any
+	CompliantEvidenceCount    any
 	InconclusiveEvidenceCount any
 	NoncompliantEvidenceCount any
 }
 
 type ControlDomainInsightsByAssessment_ControlDomainInsights struct {
 	ControlsCountByNoncompliantEvidence any
-	EvidenceInsights any
-	Id any
-	LastUpdated any
-	Name any
-	TotalControlsCount any
+	EvidenceInsights                    any
+	Id                                  any
+	LastUpdated                         any
+	Name                                any
+	TotalControlsCount                  any
 }
 
 type ControlDomainInsightsByAssessmentConfig struct {
 	AssessmentId any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ControlDomainInsightsByAssessmentAttrs struct {
-	AssessmentId any
+	AssessmentId          any
 	ControlDomainInsights any
 	// Max results in the page.
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ControlDomainInsightsByAssessment = ubx.DataSourceBinding{
 	WireType: "aws_auditmanager_control_domain_insights_by_assessment",
 	Fields: ubx.FieldMap{
 		"AssessmentId": ubx.FieldSpec{WireName: "assessment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

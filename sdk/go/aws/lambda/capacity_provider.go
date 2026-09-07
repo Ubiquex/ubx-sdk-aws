@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityProvider_CapacityProviderScalingConfig_ScalingPolicies struct {
 	PredefinedMetricType any
-	TargetValue any
+	TargetValue          any
 }
 
 type CapacityProvider_CapacityProviderScalingConfig struct {
@@ -32,7 +32,7 @@ type CapacityProvider_PermissionsConfig struct {
 }
 
 type CapacityProvider_PropagateTags_ExplicitTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -63,61 +63,61 @@ type CapacityProvider_VpcConfig struct {
 }
 
 var CapacityProvider_CapacityProviderScalingConfig_ScalingPoliciesFields = ubx.FieldMap{
-		"PredefinedMetricType": ubx.FieldSpec{WireName: "predefined_metric_type"},
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"PredefinedMetricType": ubx.FieldSpec{WireName: "predefined_metric_type"},
+	"TargetValue":          ubx.FieldSpec{WireName: "target_value"},
+}
 
 var CapacityProvider_CapacityProviderScalingConfigFields = ubx.FieldMap{
-		"MaxVcpuCount": ubx.FieldSpec{WireName: "max_vcpu_count"},
-		"ScalingMode": ubx.FieldSpec{WireName: "scaling_mode"},
-		"ScalingPolicies": ubx.FieldSpec{
-			WireName: "scaling_policies",
-			Kind: "list",
-			Fields: CapacityProvider_CapacityProviderScalingConfig_ScalingPoliciesFields,
-		},
-	}
+	"MaxVcpuCount": ubx.FieldSpec{WireName: "max_vcpu_count"},
+	"ScalingMode":  ubx.FieldSpec{WireName: "scaling_mode"},
+	"ScalingPolicies": ubx.FieldSpec{
+		WireName: "scaling_policies",
+		Kind:     "list",
+		Fields:   CapacityProvider_CapacityProviderScalingConfig_ScalingPoliciesFields,
+	},
+}
 
 var CapacityProvider_InstanceRequirementsFields = ubx.FieldMap{
-		"AllowedInstanceTypes": ubx.FieldSpec{WireName: "allowed_instance_types"},
-		"Architectures": ubx.FieldSpec{WireName: "architectures"},
-		"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
-	}
+	"AllowedInstanceTypes":  ubx.FieldSpec{WireName: "allowed_instance_types"},
+	"Architectures":         ubx.FieldSpec{WireName: "architectures"},
+	"ExcludedInstanceTypes": ubx.FieldSpec{WireName: "excluded_instance_types"},
+}
 
 var CapacityProvider_PermissionsConfigFields = ubx.FieldMap{
-		"CapacityProviderOperatorRoleArn": ubx.FieldSpec{WireName: "capacity_provider_operator_role_arn"},
-	}
+	"CapacityProviderOperatorRoleArn": ubx.FieldSpec{WireName: "capacity_provider_operator_role_arn"},
+}
 
 var CapacityProvider_PropagateTags_ExplicitTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CapacityProvider_PropagateTagsFields = ubx.FieldMap{
-		"ExplicitTags": ubx.FieldSpec{
-			WireName: "explicit_tags",
-			Kind: "list",
-			Fields: CapacityProvider_PropagateTags_ExplicitTagsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"ExplicitTags": ubx.FieldSpec{
+		WireName: "explicit_tags",
+		Kind:     "list",
+		Fields:   CapacityProvider_PropagateTags_ExplicitTagsFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var CapacityProvider_TelemetryConfig_LoggingConfigFields = ubx.FieldMap{
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-		"SystemLogLevel": ubx.FieldSpec{WireName: "system_log_level"},
-	}
+	"LogGroup":       ubx.FieldSpec{WireName: "log_group"},
+	"SystemLogLevel": ubx.FieldSpec{WireName: "system_log_level"},
+}
 
 var CapacityProvider_TelemetryConfigFields = ubx.FieldMap{
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: CapacityProvider_TelemetryConfig_LoggingConfigFields,
-		},
-	}
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   CapacityProvider_TelemetryConfig_LoggingConfigFields,
+	},
+}
 
 var CapacityProvider_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type CapacityProviderConfig struct {
 	// The name of this Lambda capacity provider. (AI-inferred)
@@ -171,39 +171,39 @@ var CapacityProvider = ubx.ResourceBinding{
 		"CapacityProviderName": ubx.FieldSpec{WireName: "capacity_provider_name"},
 		"CapacityProviderScalingConfig": ubx.FieldSpec{
 			WireName: "capacity_provider_scaling_config",
-			Kind: "object",
-			Fields: CapacityProvider_CapacityProviderScalingConfigFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_CapacityProviderScalingConfigFields,
 		},
 		"InstanceRequirements": ubx.FieldSpec{
 			WireName: "instance_requirements",
-			Kind: "object",
-			Fields: CapacityProvider_InstanceRequirementsFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_InstanceRequirementsFields,
 		},
 		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
 		"PermissionsConfig": ubx.FieldSpec{
 			WireName: "permissions_config",
-			Kind: "object",
-			Fields: CapacityProvider_PermissionsConfigFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_PermissionsConfigFields,
 		},
 		"PropagateTags": ubx.FieldSpec{
 			WireName: "propagate_tags",
-			Kind: "object",
-			Fields: CapacityProvider_PropagateTagsFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_PropagateTagsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CapacityProvider_PropagateTags_ExplicitTagsFields,
+			Kind:     "list",
+			Fields:   CapacityProvider_PropagateTags_ExplicitTagsFields,
 		},
 		"TelemetryConfig": ubx.FieldSpec{
 			WireName: "telemetry_config",
-			Kind: "object",
-			Fields: CapacityProvider_TelemetryConfigFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_TelemetryConfigFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: CapacityProvider_VpcConfigFields,
+			Kind:     "object",
+			Fields:   CapacityProvider_VpcConfigFields,
 		},
 	},
 }

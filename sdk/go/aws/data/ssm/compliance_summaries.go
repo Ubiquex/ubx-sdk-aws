@@ -4,53 +4,53 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComplianceSummaries_ComplianceSummaryItems_CompliantSummary_SeveritySummary struct {
-	CriticalCount any
-	HighCount any
+	CriticalCount      any
+	HighCount          any
 	InformationalCount any
-	LowCount any
-	MediumCount any
-	UnspecifiedCount any
+	LowCount           any
+	MediumCount        any
+	UnspecifiedCount   any
 }
 
 type ComplianceSummaries_ComplianceSummaryItems_CompliantSummary struct {
-	CompliantCount any
+	CompliantCount  any
 	SeveritySummary any
 }
 
 type ComplianceSummaries_ComplianceSummaryItems_NonCompliantSummary struct {
 	NonCompliantCount any
-	SeveritySummary any
+	SeveritySummary   any
 }
 
 type ComplianceSummaries_ComplianceSummaryItems struct {
-	ComplianceType any
-	CompliantSummary any
+	ComplianceType      any
+	CompliantSummary    any
 	NonCompliantSummary any
 }
 
 type ComplianceSummaries_Filters struct {
-	Key any
-	Type any
+	Key    any
+	Type   any
 	Values any
 }
 
 var ComplianceSummaries_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ComplianceSummariesConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ComplianceSummariesAttrs struct {
 	ComplianceSummaryItems any
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters                any
+	MaxResults             any
+	NextToken              any
 }
 
 var ComplianceSummaries = ubx.DataSourceBinding{
@@ -58,10 +58,10 @@ var ComplianceSummaries = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComplianceSummaries_FiltersFields,
+			Kind:     "list",
+			Fields:   ComplianceSummaries_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

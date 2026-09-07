@@ -4,7 +4,7 @@ package memory_db
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MemoryDbTags_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type MemoryDbTagsConfig struct {
 
 type MemoryDbTagsAttrs struct {
 	ResourceArn any
-	TagList any
+	TagList     any
 }
 
 var MemoryDbTags = ubx.DataSourceBinding{

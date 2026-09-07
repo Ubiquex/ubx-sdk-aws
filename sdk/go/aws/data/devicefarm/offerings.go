@@ -4,21 +4,21 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Offerings_Offerings_RecurringCharges_Cost struct {
-	Amount any
+	Amount       any
 	CurrencyCode any
 }
 
 type Offerings_Offerings_RecurringCharges struct {
-	Cost any
+	Cost      any
 	Frequency any
 }
 
 type Offerings_Offerings struct {
-	Description any
-	Id any
-	Platform any
+	Description      any
+	Id               any
+	Platform         any
 	RecurringCharges any
-	Type any
+	Type             any
 }
 
 type OfferingsConfig struct {

@@ -12,19 +12,19 @@ type ClusterParameterGroup_Parameters struct {
 
 type ClusterParameterGroup_Tags struct {
 	// Specifies the key of a tag to attach to the Redshift cluster parameter group, enabling metadata-based identification and management of the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ClusterParameterGroup_ParametersFields = ubx.FieldMap{
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
-	}
+	"ParameterName":  ubx.FieldSpec{WireName: "parameter_name"},
+	"ParameterValue": ubx.FieldSpec{WireName: "parameter_value"},
+}
 
 var ClusterParameterGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterParameterGroupConfig struct {
 	// A description of the parameter group.
@@ -55,18 +55,18 @@ type ClusterParameterGroupAttrs struct {
 var ClusterParameterGroup = ubx.ResourceBinding{
 	WireType: "aws_redshift_cluster_parameter_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"ParameterGroupFamily": ubx.FieldSpec{WireName: "parameter_group_family"},
-		"ParameterGroupName": ubx.FieldSpec{WireName: "parameter_group_name"},
+		"ParameterGroupName":   ubx.FieldSpec{WireName: "parameter_group_name"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: ClusterParameterGroup_ParametersFields,
+			Kind:     "list",
+			Fields:   ClusterParameterGroup_ParametersFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ClusterParameterGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ClusterParameterGroup_TagsFields,
 		},
 	},
 }

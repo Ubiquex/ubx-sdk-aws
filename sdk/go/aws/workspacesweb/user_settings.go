@@ -67,35 +67,35 @@ type UserSettings_ToolbarConfiguration struct {
 }
 
 var UserSettings_CookieSynchronizationConfiguration_AllowlistFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Path":   ubx.FieldSpec{WireName: "path"},
+}
 
 var UserSettings_CookieSynchronizationConfigurationFields = ubx.FieldMap{
-		"Allowlist": ubx.FieldSpec{
-			WireName: "allowlist",
-			Kind: "list",
-			Fields: UserSettings_CookieSynchronizationConfiguration_AllowlistFields,
-		},
-		"Blocklist": ubx.FieldSpec{
-			WireName: "blocklist",
-			Kind: "list",
-			Fields: UserSettings_CookieSynchronizationConfiguration_AllowlistFields,
-		},
-	}
+	"Allowlist": ubx.FieldSpec{
+		WireName: "allowlist",
+		Kind:     "list",
+		Fields:   UserSettings_CookieSynchronizationConfiguration_AllowlistFields,
+	},
+	"Blocklist": ubx.FieldSpec{
+		WireName: "blocklist",
+		Kind:     "list",
+		Fields:   UserSettings_CookieSynchronizationConfiguration_AllowlistFields,
+	},
+}
 
 var UserSettings_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var UserSettings_ToolbarConfigurationFields = ubx.FieldMap{
-		"HiddenToolbarItems": ubx.FieldSpec{WireName: "hidden_toolbar_items"},
-		"MaxDisplayResolution": ubx.FieldSpec{WireName: "max_display_resolution"},
-		"ToolbarType": ubx.FieldSpec{WireName: "toolbar_type"},
-		"VisualMode": ubx.FieldSpec{WireName: "visual_mode"},
-	}
+	"HiddenToolbarItems":   ubx.FieldSpec{WireName: "hidden_toolbar_items"},
+	"MaxDisplayResolution": ubx.FieldSpec{WireName: "max_display_resolution"},
+	"ToolbarType":          ubx.FieldSpec{WireName: "toolbar_type"},
+	"VisualMode":           ubx.FieldSpec{WireName: "visual_mode"},
+}
 
 type UserSettingsConfig struct {
 	// Specifies a map of up to five key-value pairs that are passed as additional encryption context to AWS KMS when the WorkSpaces Web user settings are encrypted using a customer managed key. (AI-inferred)
@@ -171,28 +171,28 @@ var UserSettings = ubx.ResourceBinding{
 		"AdditionalEncryptionContext": ubx.FieldSpec{WireName: "additional_encryption_context"},
 		"CookieSynchronizationConfiguration": ubx.FieldSpec{
 			WireName: "cookie_synchronization_configuration",
-			Kind: "object",
-			Fields: UserSettings_CookieSynchronizationConfigurationFields,
+			Kind:     "object",
+			Fields:   UserSettings_CookieSynchronizationConfigurationFields,
 		},
-		"CopyAllowed": ubx.FieldSpec{WireName: "copy_allowed"},
-		"CustomerManagedKey": ubx.FieldSpec{WireName: "customer_managed_key"},
-		"DeepLinkAllowed": ubx.FieldSpec{WireName: "deep_link_allowed"},
-		"DisconnectTimeoutInMinutes": ubx.FieldSpec{WireName: "disconnect_timeout_in_minutes"},
-		"DownloadAllowed": ubx.FieldSpec{WireName: "download_allowed"},
+		"CopyAllowed":                    ubx.FieldSpec{WireName: "copy_allowed"},
+		"CustomerManagedKey":             ubx.FieldSpec{WireName: "customer_managed_key"},
+		"DeepLinkAllowed":                ubx.FieldSpec{WireName: "deep_link_allowed"},
+		"DisconnectTimeoutInMinutes":     ubx.FieldSpec{WireName: "disconnect_timeout_in_minutes"},
+		"DownloadAllowed":                ubx.FieldSpec{WireName: "download_allowed"},
 		"IdleDisconnectTimeoutInMinutes": ubx.FieldSpec{WireName: "idle_disconnect_timeout_in_minutes"},
-		"PasteAllowed": ubx.FieldSpec{WireName: "paste_allowed"},
-		"PrintAllowed": ubx.FieldSpec{WireName: "print_allowed"},
+		"PasteAllowed":                   ubx.FieldSpec{WireName: "paste_allowed"},
+		"PrintAllowed":                   ubx.FieldSpec{WireName: "print_allowed"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: UserSettings_TagsFields,
+			Kind:     "list",
+			Fields:   UserSettings_TagsFields,
 		},
 		"ToolbarConfiguration": ubx.FieldSpec{
 			WireName: "toolbar_configuration",
-			Kind: "object",
-			Fields: UserSettings_ToolbarConfigurationFields,
+			Kind:     "object",
+			Fields:   UserSettings_ToolbarConfigurationFields,
 		},
-		"UploadAllowed": ubx.FieldSpec{WireName: "upload_allowed"},
+		"UploadAllowed":   ubx.FieldSpec{WireName: "upload_allowed"},
 		"WebAuthnAllowed": ubx.FieldSpec{WireName: "web_authn_allowed"},
 	},
 }

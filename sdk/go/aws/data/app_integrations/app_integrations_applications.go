@@ -4,36 +4,36 @@ package app_integrations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppIntegrationsApplications_Applications struct {
-	ApplicationType any
-	Arn any
-	CreatedTime any
-	Id any
-	IsService any
+	ApplicationType  any
+	Arn              any
+	CreatedTime      any
+	Id               any
+	IsService        any
 	LastModifiedTime any
-	Name any
-	Namespace any
+	Name             any
+	Namespace        any
 }
 
 type AppIntegrationsApplicationsConfig struct {
 	// <value>The type of application</value>
 	ApplicationType any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type AppIntegrationsApplicationsAttrs struct {
 	// <value>The type of application</value>
 	ApplicationType any
-	Applications any
-	MaxResults any
-	NextToken any
+	Applications    any
+	MaxResults      any
+	NextToken       any
 }
 
 var AppIntegrationsApplications = ubx.DataSourceBinding{
 	WireType: "aws_app_integrations_applications",
 	Fields: ubx.FieldMap{
 		"ApplicationType": ubx.FieldSpec{WireName: "application_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

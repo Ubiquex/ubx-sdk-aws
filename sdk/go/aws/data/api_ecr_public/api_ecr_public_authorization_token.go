@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrPublicAuthorizationToken_AuthorizationData struct {
 	AuthorizationToken any
-	ExpiresAt any
+	ExpiresAt          any
 }
 
 type ApiEcrPublicAuthorizationTokenConfig struct {
@@ -18,6 +18,5 @@ type ApiEcrPublicAuthorizationTokenAttrs struct {
 
 var ApiEcrPublicAuthorizationToken = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_public_authorization_token",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

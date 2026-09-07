@@ -9,8 +9,8 @@ type InputSecurityGroup_WhitelistRules struct {
 }
 
 var InputSecurityGroup_WhitelistRulesFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+}
 
 type InputSecurityGroupConfig struct {
 	// The tags assigned to this MediaLive input security group. (AI-inferred)
@@ -36,8 +36,8 @@ var InputSecurityGroup = ubx.ResourceBinding{
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"WhitelistRules": ubx.FieldSpec{
 			WireName: "whitelist_rules",
-			Kind: "list",
-			Fields: InputSecurityGroup_WhitelistRulesFields,
+			Kind:     "list",
+			Fields:   InputSecurityGroup_WhitelistRulesFields,
 		},
 	},
 }

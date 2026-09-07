@@ -4,56 +4,56 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MacModificationTasks_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type MacModificationTasks_MacModificationTasks_MacSystemIntegrityProtectionConfig struct {
-	AppleInternal any
-	BaseSystem any
+	AppleInternal         any
+	BaseSystem            any
 	DebuggingRestrictions any
-	DtraceRestrictions any
+	DtraceRestrictions    any
 	FilesystemProtections any
-	KextSigning any
-	NvramProtections any
-	Status any
+	KextSigning           any
+	NvramProtections      any
+	Status                any
 }
 
 type MacModificationTasks_MacModificationTasks_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type MacModificationTasks_MacModificationTasks struct {
-	InstanceId any
-	MacModificationTaskId any
+	InstanceId                         any
+	MacModificationTaskId              any
 	MacSystemIntegrityProtectionConfig any
-	StartTime any
-	Tags any
-	TaskState any
-	TaskType any
+	StartTime                          any
+	Tags                               any
+	TaskState                          any
+	TaskType                           any
 }
 
 var MacModificationTasks_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type MacModificationTasksConfig struct {
-	DryRun any
-	Filters any
+	DryRun                 any
+	Filters                any
 	MacModificationTaskIds any
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 }
 
 type MacModificationTasksAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                 any
+	Filters                any
 	MacModificationTaskIds any
-	MacModificationTasks any
-	MaxResults any
-	NextToken any
+	MacModificationTasks   any
+	MaxResults             any
+	NextToken              any
 }
 
 var MacModificationTasks = ubx.DataSourceBinding{
@@ -62,11 +62,11 @@ var MacModificationTasks = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: MacModificationTasks_FiltersFields,
+			Kind:     "list",
+			Fields:   MacModificationTasks_FiltersFields,
 		},
 		"MacModificationTaskIds": ubx.FieldSpec{WireName: "mac_modification_task_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
 	},
 }

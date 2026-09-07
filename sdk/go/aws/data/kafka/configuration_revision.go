@@ -4,22 +4,22 @@ package kafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationRevisionConfig struct {
-	Arn any
+	Arn      any
 	Revision any
 }
 
 type ConfigurationRevisionAttrs struct {
-	Arn any
-	CreationTime any
-	Description any
-	Revision any
+	Arn              any
+	CreationTime     any
+	Description      any
+	Revision         any
 	ServerProperties any
 }
 
 var ConfigurationRevision = ubx.DataSourceBinding{
 	WireType: "aws_kafka_configuration_revision",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":      ubx.FieldSpec{WireName: "arn"},
 		"Revision": ubx.FieldSpec{WireName: "revision"},
 	},
 }

@@ -4,22 +4,22 @@ package applicationinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Problem_Problem struct {
-	AccountId any
-	AffectedResource any
-	EndTime any
-	Feedback any
-	Id any
-	Insights any
+	AccountId          any
+	AffectedResource   any
+	EndTime            any
+	Feedback           any
+	Id                 any
+	Insights           any
 	LastRecurrenceTime any
-	RecurringCount any
-	ResolutionMethod any
-	ResourceGroupName any
-	SeverityLevel any
-	ShortName any
-	StartTime any
-	Status any
-	Title any
-	Visibility any
+	RecurringCount     any
+	ResolutionMethod   any
+	ResourceGroupName  any
+	SeverityLevel      any
+	ShortName          any
+	StartTime          any
+	Status             any
+	Title              any
+	Visibility         any
 }
 
 type ProblemConfig struct {
@@ -30,8 +30,8 @@ type ProblemConfig struct {
 type ProblemAttrs struct {
 	AccountId any
 	// <p>Describes a problem that is detected by correlating observations.</p>
-	Problem any
-	ProblemId any
+	Problem            any
+	ProblemId          any
 	SnsnotificationArn any
 }
 

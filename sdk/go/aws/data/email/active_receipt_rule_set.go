@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ActiveReceiptRuleSet_Metadata struct {
 	CreatedTimestamp any
-	Name any
+	Name             any
 }
 
 type ActiveReceiptRuleSet_Rules_Actions_AddHeaderAction struct {
-	HeaderName any
+	HeaderName  any
 	HeaderValue any
 }
 
 type ActiveReceiptRuleSet_Rules_Actions_BounceAction struct {
-	Message any
-	Sender any
+	Message       any
+	Sender        any
 	SmtpReplyCode any
-	StatusCode any
-	TopicArn any
+	StatusCode    any
+	TopicArn      any
 }
 
 type ActiveReceiptRuleSet_Rules_Actions_ConnectAction struct {
-	IamroleArn any
+	IamroleArn  any
 	InstanceArn any
 }
 
 type ActiveReceiptRuleSet_Rules_Actions_LambdaAction struct {
-	FunctionArn any
+	FunctionArn    any
 	InvocationType any
-	TopicArn any
+	TopicArn       any
 }
 
 type ActiveReceiptRuleSet_Rules_Actions_S3Action struct {
-	BucketName any
-	IamRoleArn any
-	KmsKeyArn any
+	BucketName      any
+	IamRoleArn      any
+	KmsKeyArn       any
 	ObjectKeyPrefix any
-	TopicArn any
+	TopicArn        any
 }
 
 type ActiveReceiptRuleSet_Rules_Actions_Snsaction struct {
@@ -46,33 +46,33 @@ type ActiveReceiptRuleSet_Rules_Actions_Snsaction struct {
 }
 
 type ActiveReceiptRuleSet_Rules_Actions_StopAction struct {
-	Scope any
+	Scope    any
 	TopicArn any
 }
 
 type ActiveReceiptRuleSet_Rules_Actions_WorkmailAction struct {
 	OrganizationArn any
-	TopicArn any
+	TopicArn        any
 }
 
 type ActiveReceiptRuleSet_Rules_Actions struct {
 	AddHeaderAction any
-	BounceAction any
-	ConnectAction any
-	LambdaAction any
-	S3Action any
-	Snsaction any
-	StopAction any
-	WorkmailAction any
+	BounceAction    any
+	ConnectAction   any
+	LambdaAction    any
+	S3Action        any
+	Snsaction       any
+	StopAction      any
+	WorkmailAction  any
 }
 
 type ActiveReceiptRuleSet_Rules struct {
-	Actions any
-	Enabled any
-	Name any
-	Recipients any
+	Actions     any
+	Enabled     any
+	Name        any
+	Recipients  any
 	ScanEnabled any
-	TlsPolicy any
+	TlsPolicy   any
 }
 
 type ActiveReceiptRuleSetConfig struct {
@@ -81,11 +81,10 @@ type ActiveReceiptRuleSetConfig struct {
 type ActiveReceiptRuleSetAttrs struct {
 	// <p>Information about a receipt rule set.</p> <p>A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.</p> <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html#receiving-email-concepts-rules">Amazon SES Developer Guide</a>.</p>
 	Metadata any
-	Rules any
+	Rules    any
 }
 
 var ActiveReceiptRuleSet = ubx.DataSourceBinding{
 	WireType: "aws_email_active_receipt_rule_set",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

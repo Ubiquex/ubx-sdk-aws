@@ -34,30 +34,30 @@ type Dashboard_Widgets struct {
 }
 
 var Dashboard_RefreshSchedule_FrequencyFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Dashboard_RefreshScheduleFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{
-			WireName: "frequency",
-			Kind: "object",
-			Fields: Dashboard_RefreshSchedule_FrequencyFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TimeOfDay": ubx.FieldSpec{WireName: "time_of_day"},
-	}
+	"Frequency": ubx.FieldSpec{
+		WireName: "frequency",
+		Kind:     "object",
+		Fields:   Dashboard_RefreshSchedule_FrequencyFields,
+	},
+	"Status":    ubx.FieldSpec{WireName: "status"},
+	"TimeOfDay": ubx.FieldSpec{WireName: "time_of_day"},
+}
 
 var Dashboard_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Dashboard_WidgetsFields = ubx.FieldMap{
-		"QueryParameters": ubx.FieldSpec{WireName: "query_parameters"},
-		"QueryStatement": ubx.FieldSpec{WireName: "query_statement"},
-		"ViewProperties": ubx.FieldSpec{WireName: "view_properties"},
-	}
+	"QueryParameters": ubx.FieldSpec{WireName: "query_parameters"},
+	"QueryStatement":  ubx.FieldSpec{WireName: "query_statement"},
+	"ViewProperties":  ubx.FieldSpec{WireName: "view_properties"},
+}
 
 type DashboardConfig struct {
 	// The name of the dashboard.
@@ -101,19 +101,19 @@ var Dashboard = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RefreshSchedule": ubx.FieldSpec{
 			WireName: "refresh_schedule",
-			Kind: "object",
-			Fields: Dashboard_RefreshScheduleFields,
+			Kind:     "object",
+			Fields:   Dashboard_RefreshScheduleFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dashboard_TagsFields,
+			Kind:     "list",
+			Fields:   Dashboard_TagsFields,
 		},
 		"TerminationProtectionEnabled": ubx.FieldSpec{WireName: "termination_protection_enabled"},
 		"Widgets": ubx.FieldSpec{
 			WireName: "widgets",
-			Kind: "list",
-			Fields: Dashboard_WidgetsFields,
+			Kind:     "list",
+			Fields:   Dashboard_WidgetsFields,
 		},
 	},
 }

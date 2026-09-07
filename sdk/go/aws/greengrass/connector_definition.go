@@ -18,18 +18,18 @@ type ConnectorDefinition_InitialVersion struct {
 }
 
 var ConnectorDefinition_InitialVersion_ConnectorsFields = ubx.FieldMap{
-		"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
+	"Id":           ubx.FieldSpec{WireName: "id"},
+	"Parameters":   ubx.FieldSpec{WireName: "parameters"},
+}
 
 var ConnectorDefinition_InitialVersionFields = ubx.FieldMap{
-		"Connectors": ubx.FieldSpec{
-			WireName: "connectors",
-			Kind: "list",
-			Fields: ConnectorDefinition_InitialVersion_ConnectorsFields,
-		},
-	}
+	"Connectors": ubx.FieldSpec{
+		WireName: "connectors",
+		Kind:     "list",
+		Fields:   ConnectorDefinition_InitialVersion_ConnectorsFields,
+	},
+}
 
 type ConnectorDefinitionConfig struct {
 	// Specifies the initial connector definition version that contains the list of connectors and their parameter configurations to be deployed with this Greengrass connector definition. (AI-inferred)
@@ -60,8 +60,8 @@ var ConnectorDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InitialVersion": ubx.FieldSpec{
 			WireName: "initial_version",
-			Kind: "object",
-			Fields: ConnectorDefinition_InitialVersionFields,
+			Kind:     "object",
+			Fields:   ConnectorDefinition_InitialVersionFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

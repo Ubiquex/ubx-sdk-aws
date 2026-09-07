@@ -4,29 +4,29 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domains_Domains struct {
-	Arn any
-	CreatedTime any
+	Arn           any
+	CreatedTime   any
 	EncryptionKey any
-	Name any
-	Owner any
-	Status any
+	Name          any
+	Owner         any
+	Status        any
 }
 
 type DomainsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DomainsAttrs struct {
-	Domains any
+	Domains    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Domains = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_domains",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

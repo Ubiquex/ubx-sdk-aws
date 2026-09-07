@@ -4,33 +4,33 @@ package textract
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Adapters_Adapters struct {
-	AdapterId any
-	AdapterName any
+	AdapterId    any
+	AdapterName  any
 	CreationTime any
 	FeatureTypes any
 }
 
 type AdaptersConfig struct {
-	AfterCreationTime any
+	AfterCreationTime  any
 	BeforeCreationTime any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 type AdaptersAttrs struct {
-	Adapters any
-	AfterCreationTime any
+	Adapters           any
+	AfterCreationTime  any
 	BeforeCreationTime any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var Adapters = ubx.DataSourceBinding{
 	WireType: "aws_textract_adapters",
 	Fields: ubx.FieldMap{
-		"AfterCreationTime": ubx.FieldSpec{WireName: "after_creation_time"},
+		"AfterCreationTime":  ubx.FieldSpec{WireName: "after_creation_time"},
 		"BeforeCreationTime": ubx.FieldSpec{WireName: "before_creation_time"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -8,13 +8,13 @@ type DistributionTenantByDomain_DistributionTenant_Customizations_Certificate st
 }
 
 type DistributionTenantByDomain_DistributionTenant_Customizations_GeoRestrictions struct {
-	Locations any
+	Locations       any
 	RestrictionType any
 }
 
 type DistributionTenantByDomain_DistributionTenant_Customizations_WebAcl struct {
 	Action any
-	Arn any
+	Arn    any
 }
 
 type DistributionTenantByDomain_DistributionTenant_Customizations struct {
@@ -32,12 +32,12 @@ type DistributionTenantByDomain_DistributionTenant_Domains struct {
 }
 
 type DistributionTenantByDomain_DistributionTenant_Parameters struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type DistributionTenantByDomain_DistributionTenant_Tags_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -46,19 +46,19 @@ type DistributionTenantByDomain_DistributionTenant_Tags struct {
 }
 
 type DistributionTenantByDomain_DistributionTenant struct {
-	Arn any
+	Arn               any
 	ConnectionGroupId any
-	CreatedTime any
+	CreatedTime       any
 	// <p>Customizations for the distribution tenant. For each distribution tenant, you can specify the geographic restrictions, and the Amazon Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are specific values that you can override or disable from the multi-tenant distribution that was used to create the distribution tenant.</p>
-	Customizations any
-	DistributionId any
-	Domains any
-	Enabled any
-	Id any
+	Customizations   any
+	DistributionId   any
+	Domains          any
+	Enabled          any
+	Id               any
 	LastModifiedTime any
-	Name any
-	Parameters any
-	Status any
+	Name             any
+	Parameters       any
+	Status           any
 	// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
 	Tags any
 }
@@ -70,8 +70,8 @@ type DistributionTenantByDomainConfig struct {
 type DistributionTenantByDomainAttrs struct {
 	// <p>The distribution tenant.</p>
 	DistributionTenant any
-	Domain any
-	Etag any
+	Domain             any
+	Etag               any
 }
 
 var DistributionTenantByDomain = ubx.DataSourceBinding{

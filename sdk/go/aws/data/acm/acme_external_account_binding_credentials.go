@@ -9,8 +9,8 @@ type AcmeExternalAccountBindingCredentialsConfig struct {
 
 type AcmeExternalAccountBindingCredentialsAttrs struct {
 	AcmeExternalAccountBindingArn any
-	KeyId any
-	MacKey any
+	KeyId                         any
+	MacKey                        any
 }
 
 var AcmeExternalAccountBindingCredentials = ubx.DataSourceBinding{

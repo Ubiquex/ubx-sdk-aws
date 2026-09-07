@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComputeAuthTokenConfig struct {
 	ComputeName any
-	FleetId any
+	FleetId     any
 }
 
 type ComputeAuthTokenAttrs struct {
-	AuthToken any
-	ComputeArn any
-	ComputeName any
+	AuthToken           any
+	ComputeArn          any
+	ComputeName         any
 	ExpirationTimestamp any
-	FleetArn any
-	FleetId any
+	FleetArn            any
+	FleetId             any
 }
 
 var ComputeAuthToken = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_compute_auth_token",
 	Fields: ubx.FieldMap{
 		"ComputeName": ubx.FieldSpec{WireName: "compute_name"},
-		"FleetId": ubx.FieldSpec{WireName: "fleet_id"},
+		"FleetId":     ubx.FieldSpec{WireName: "fleet_id"},
 	},
 }

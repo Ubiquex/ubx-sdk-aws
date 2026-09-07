@@ -271,571 +271,571 @@ type Insight_Filters struct {
 }
 
 var Insight_Filters_AwsAccountIdFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Insight_Filters_ConfidenceFields = ubx.FieldMap{
-		"Eq": ubx.FieldSpec{WireName: "eq"},
-		"Gte": ubx.FieldSpec{WireName: "gte"},
-		"Lte": ubx.FieldSpec{WireName: "lte"},
-	}
+	"Eq":  ubx.FieldSpec{WireName: "eq"},
+	"Gte": ubx.FieldSpec{WireName: "gte"},
+	"Lte": ubx.FieldSpec{WireName: "lte"},
+}
 
 var Insight_Filters_CreatedAt_DateRangeFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Insight_Filters_CreatedAtFields = ubx.FieldMap{
-		"DateRange": ubx.FieldSpec{
-			WireName: "date_range",
-			Kind: "object",
-			Fields: Insight_Filters_CreatedAt_DateRangeFields,
-		},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"DateRange": ubx.FieldSpec{
+		WireName: "date_range",
+		Kind:     "object",
+		Fields:   Insight_Filters_CreatedAt_DateRangeFields,
+	},
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var Insight_Filters_KeywordFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Insight_Filters_NetworkDestinationIpV4Fields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+}
 
 var Insight_Filters_ProductFieldsFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Insight_Filters_SampleFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Insight_FiltersFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{
-			WireName: "aws_account_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"AwsAccountName": ubx.FieldSpec{
-			WireName: "aws_account_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"CompanyName": ubx.FieldSpec{
-			WireName: "company_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ComplianceAssociatedStandardsId": ubx.FieldSpec{
-			WireName: "compliance_associated_standards_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ComplianceSecurityControlId": ubx.FieldSpec{
-			WireName: "compliance_security_control_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ComplianceSecurityControlParametersName": ubx.FieldSpec{
-			WireName: "compliance_security_control_parameters_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ComplianceSecurityControlParametersValue": ubx.FieldSpec{
-			WireName: "compliance_security_control_parameters_value",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ComplianceStatus": ubx.FieldSpec{
-			WireName: "compliance_status",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"Confidence": ubx.FieldSpec{
-			WireName: "confidence",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"CreatedAt": ubx.FieldSpec{
-			WireName: "created_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"Criticality": ubx.FieldSpec{
-			WireName: "criticality",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"Description": ubx.FieldSpec{
-			WireName: "description",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsConfidence": ubx.FieldSpec{
-			WireName: "finding_provider_fields_confidence",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"FindingProviderFieldsCriticality": ubx.FieldSpec{
-			WireName: "finding_provider_fields_criticality",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"FindingProviderFieldsRelatedFindingsId": ubx.FieldSpec{
-			WireName: "finding_provider_fields_related_findings_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsRelatedFindingsProductArn": ubx.FieldSpec{
-			WireName: "finding_provider_fields_related_findings_product_arn",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsSeverityLabel": ubx.FieldSpec{
-			WireName: "finding_provider_fields_severity_label",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsSeverityOriginal": ubx.FieldSpec{
-			WireName: "finding_provider_fields_severity_original",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"FindingProviderFieldsTypes": ubx.FieldSpec{
-			WireName: "finding_provider_fields_types",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"FirstObservedAt": ubx.FieldSpec{
-			WireName: "first_observed_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"GeneratorId": ubx.FieldSpec{
-			WireName: "generator_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"Id": ubx.FieldSpec{
-			WireName: "id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"Keyword": ubx.FieldSpec{
-			WireName: "keyword",
-			Kind: "list",
-			Fields: Insight_Filters_KeywordFields,
-		},
-		"LastObservedAt": ubx.FieldSpec{
-			WireName: "last_observed_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"MalwareName": ubx.FieldSpec{
-			WireName: "malware_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"MalwarePath": ubx.FieldSpec{
-			WireName: "malware_path",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"MalwareState": ubx.FieldSpec{
-			WireName: "malware_state",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"MalwareType": ubx.FieldSpec{
-			WireName: "malware_type",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"NetworkDestinationDomain": ubx.FieldSpec{
-			WireName: "network_destination_domain",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"NetworkDestinationIpV4": ubx.FieldSpec{
-			WireName: "network_destination_ip_v4",
-			Kind: "list",
-			Fields: Insight_Filters_NetworkDestinationIpV4Fields,
-		},
-		"NetworkDestinationIpV6": ubx.FieldSpec{
-			WireName: "network_destination_ip_v6",
-			Kind: "list",
-			Fields: Insight_Filters_NetworkDestinationIpV4Fields,
-		},
-		"NetworkDestinationPort": ubx.FieldSpec{
-			WireName: "network_destination_port",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"NetworkDirection": ubx.FieldSpec{
-			WireName: "network_direction",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"NetworkProtocol": ubx.FieldSpec{
-			WireName: "network_protocol",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"NetworkSourceDomain": ubx.FieldSpec{
-			WireName: "network_source_domain",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"NetworkSourceIpV4": ubx.FieldSpec{
-			WireName: "network_source_ip_v4",
-			Kind: "list",
-			Fields: Insight_Filters_NetworkDestinationIpV4Fields,
-		},
-		"NetworkSourceIpV6": ubx.FieldSpec{
-			WireName: "network_source_ip_v6",
-			Kind: "list",
-			Fields: Insight_Filters_NetworkDestinationIpV4Fields,
-		},
-		"NetworkSourceMac": ubx.FieldSpec{
-			WireName: "network_source_mac",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"NetworkSourcePort": ubx.FieldSpec{
-			WireName: "network_source_port",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"NoteText": ubx.FieldSpec{
-			WireName: "note_text",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"NoteUpdatedAt": ubx.FieldSpec{
-			WireName: "note_updated_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"NoteUpdatedBy": ubx.FieldSpec{
-			WireName: "note_updated_by",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ProcessLaunchedAt": ubx.FieldSpec{
-			WireName: "process_launched_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"ProcessName": ubx.FieldSpec{
-			WireName: "process_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ProcessParentPid": ubx.FieldSpec{
-			WireName: "process_parent_pid",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"ProcessPath": ubx.FieldSpec{
-			WireName: "process_path",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ProcessPid": ubx.FieldSpec{
-			WireName: "process_pid",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"ProcessTerminatedAt": ubx.FieldSpec{
-			WireName: "process_terminated_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"ProductArn": ubx.FieldSpec{
-			WireName: "product_arn",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ProductFields": ubx.FieldSpec{
-			WireName: "product_fields",
-			Kind: "list",
-			Fields: Insight_Filters_ProductFieldsFields,
-		},
-		"ProductName": ubx.FieldSpec{
-			WireName: "product_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"RecommendationText": ubx.FieldSpec{
-			WireName: "recommendation_text",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"RecordState": ubx.FieldSpec{
-			WireName: "record_state",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"Region": ubx.FieldSpec{
-			WireName: "region",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"RelatedFindingsId": ubx.FieldSpec{
-			WireName: "related_findings_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"RelatedFindingsProductArn": ubx.FieldSpec{
-			WireName: "related_findings_product_arn",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceApplicationArn": ubx.FieldSpec{
-			WireName: "resource_application_arn",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceApplicationName": ubx.FieldSpec{
-			WireName: "resource_application_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceIamInstanceProfileArn": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_iam_instance_profile_arn",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceImageId": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_image_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceIpV4Addresses": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_ip_v4_addresses",
-			Kind: "list",
-			Fields: Insight_Filters_NetworkDestinationIpV4Fields,
-		},
-		"ResourceAwsEc2InstanceIpV6Addresses": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_ip_v6_addresses",
-			Kind: "list",
-			Fields: Insight_Filters_NetworkDestinationIpV4Fields,
-		},
-		"ResourceAwsEc2InstanceKeyName": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_key_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceLaunchedAt": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_launched_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"ResourceAwsEc2InstanceSubnetId": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_subnet_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceType": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_type",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsEc2InstanceVpcId": ubx.FieldSpec{
-			WireName: "resource_aws_ec2_instance_vpc_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsIamAccessKeyCreatedAt": ubx.FieldSpec{
-			WireName: "resource_aws_iam_access_key_created_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"ResourceAwsIamAccessKeyPrincipalName": ubx.FieldSpec{
-			WireName: "resource_aws_iam_access_key_principal_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsIamAccessKeyStatus": ubx.FieldSpec{
-			WireName: "resource_aws_iam_access_key_status",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsIamAccessKeyUserName": ubx.FieldSpec{
-			WireName: "resource_aws_iam_access_key_user_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsIamUserUserName": ubx.FieldSpec{
-			WireName: "resource_aws_iam_user_user_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsS3BucketOwnerId": ubx.FieldSpec{
-			WireName: "resource_aws_s3_bucket_owner_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceAwsS3BucketOwnerName": ubx.FieldSpec{
-			WireName: "resource_aws_s3_bucket_owner_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceContainerImageId": ubx.FieldSpec{
-			WireName: "resource_container_image_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceContainerImageName": ubx.FieldSpec{
-			WireName: "resource_container_image_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceContainerLaunchedAt": ubx.FieldSpec{
-			WireName: "resource_container_launched_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"ResourceContainerName": ubx.FieldSpec{
-			WireName: "resource_container_name",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceDetailsOther": ubx.FieldSpec{
-			WireName: "resource_details_other",
-			Kind: "list",
-			Fields: Insight_Filters_ProductFieldsFields,
-		},
-		"ResourceId": ubx.FieldSpec{
-			WireName: "resource_id",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourcePartition": ubx.FieldSpec{
-			WireName: "resource_partition",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceRegion": ubx.FieldSpec{
-			WireName: "resource_region",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ResourceTags": ubx.FieldSpec{
-			WireName: "resource_tags",
-			Kind: "list",
-			Fields: Insight_Filters_ProductFieldsFields,
-		},
-		"ResourceType": ubx.FieldSpec{
-			WireName: "resource_type",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"Sample": ubx.FieldSpec{
-			WireName: "sample",
-			Kind: "list",
-			Fields: Insight_Filters_SampleFields,
-		},
-		"SeverityLabel": ubx.FieldSpec{
-			WireName: "severity_label",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"SeverityNormalized": ubx.FieldSpec{
-			WireName: "severity_normalized",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"SeverityProduct": ubx.FieldSpec{
-			WireName: "severity_product",
-			Kind: "list",
-			Fields: Insight_Filters_ConfidenceFields,
-		},
-		"SourceUrl": ubx.FieldSpec{
-			WireName: "source_url",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorCategory": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_category",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorLastObservedAt": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_last_observed_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"ThreatIntelIndicatorSource": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_source",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorSourceUrl": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_source_url",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorType": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_type",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"ThreatIntelIndicatorValue": ubx.FieldSpec{
-			WireName: "threat_intel_indicator_value",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"UpdatedAt": ubx.FieldSpec{
-			WireName: "updated_at",
-			Kind: "list",
-			Fields: Insight_Filters_CreatedAtFields,
-		},
-		"UserDefinedFields": ubx.FieldSpec{
-			WireName: "user_defined_fields",
-			Kind: "list",
-			Fields: Insight_Filters_ProductFieldsFields,
-		},
-		"VerificationState": ubx.FieldSpec{
-			WireName: "verification_state",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"VulnerabilitiesExploitAvailable": ubx.FieldSpec{
-			WireName: "vulnerabilities_exploit_available",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"VulnerabilitiesFixAvailable": ubx.FieldSpec{
-			WireName: "vulnerabilities_fix_available",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"WorkflowState": ubx.FieldSpec{
-			WireName: "workflow_state",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-		"WorkflowStatus": ubx.FieldSpec{
-			WireName: "workflow_status",
-			Kind: "list",
-			Fields: Insight_Filters_AwsAccountIdFields,
-		},
-	}
+	"AwsAccountId": ubx.FieldSpec{
+		WireName: "aws_account_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"AwsAccountName": ubx.FieldSpec{
+		WireName: "aws_account_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"CompanyName": ubx.FieldSpec{
+		WireName: "company_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ComplianceAssociatedStandardsId": ubx.FieldSpec{
+		WireName: "compliance_associated_standards_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ComplianceSecurityControlId": ubx.FieldSpec{
+		WireName: "compliance_security_control_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ComplianceSecurityControlParametersName": ubx.FieldSpec{
+		WireName: "compliance_security_control_parameters_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ComplianceSecurityControlParametersValue": ubx.FieldSpec{
+		WireName: "compliance_security_control_parameters_value",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ComplianceStatus": ubx.FieldSpec{
+		WireName: "compliance_status",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"Confidence": ubx.FieldSpec{
+		WireName: "confidence",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"CreatedAt": ubx.FieldSpec{
+		WireName: "created_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"Criticality": ubx.FieldSpec{
+		WireName: "criticality",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"Description": ubx.FieldSpec{
+		WireName: "description",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsConfidence": ubx.FieldSpec{
+		WireName: "finding_provider_fields_confidence",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"FindingProviderFieldsCriticality": ubx.FieldSpec{
+		WireName: "finding_provider_fields_criticality",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"FindingProviderFieldsRelatedFindingsId": ubx.FieldSpec{
+		WireName: "finding_provider_fields_related_findings_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsRelatedFindingsProductArn": ubx.FieldSpec{
+		WireName: "finding_provider_fields_related_findings_product_arn",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsSeverityLabel": ubx.FieldSpec{
+		WireName: "finding_provider_fields_severity_label",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsSeverityOriginal": ubx.FieldSpec{
+		WireName: "finding_provider_fields_severity_original",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"FindingProviderFieldsTypes": ubx.FieldSpec{
+		WireName: "finding_provider_fields_types",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"FirstObservedAt": ubx.FieldSpec{
+		WireName: "first_observed_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"GeneratorId": ubx.FieldSpec{
+		WireName: "generator_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"Id": ubx.FieldSpec{
+		WireName: "id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"Keyword": ubx.FieldSpec{
+		WireName: "keyword",
+		Kind:     "list",
+		Fields:   Insight_Filters_KeywordFields,
+	},
+	"LastObservedAt": ubx.FieldSpec{
+		WireName: "last_observed_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"MalwareName": ubx.FieldSpec{
+		WireName: "malware_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"MalwarePath": ubx.FieldSpec{
+		WireName: "malware_path",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"MalwareState": ubx.FieldSpec{
+		WireName: "malware_state",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"MalwareType": ubx.FieldSpec{
+		WireName: "malware_type",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"NetworkDestinationDomain": ubx.FieldSpec{
+		WireName: "network_destination_domain",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"NetworkDestinationIpV4": ubx.FieldSpec{
+		WireName: "network_destination_ip_v4",
+		Kind:     "list",
+		Fields:   Insight_Filters_NetworkDestinationIpV4Fields,
+	},
+	"NetworkDestinationIpV6": ubx.FieldSpec{
+		WireName: "network_destination_ip_v6",
+		Kind:     "list",
+		Fields:   Insight_Filters_NetworkDestinationIpV4Fields,
+	},
+	"NetworkDestinationPort": ubx.FieldSpec{
+		WireName: "network_destination_port",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"NetworkDirection": ubx.FieldSpec{
+		WireName: "network_direction",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"NetworkProtocol": ubx.FieldSpec{
+		WireName: "network_protocol",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"NetworkSourceDomain": ubx.FieldSpec{
+		WireName: "network_source_domain",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"NetworkSourceIpV4": ubx.FieldSpec{
+		WireName: "network_source_ip_v4",
+		Kind:     "list",
+		Fields:   Insight_Filters_NetworkDestinationIpV4Fields,
+	},
+	"NetworkSourceIpV6": ubx.FieldSpec{
+		WireName: "network_source_ip_v6",
+		Kind:     "list",
+		Fields:   Insight_Filters_NetworkDestinationIpV4Fields,
+	},
+	"NetworkSourceMac": ubx.FieldSpec{
+		WireName: "network_source_mac",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"NetworkSourcePort": ubx.FieldSpec{
+		WireName: "network_source_port",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"NoteText": ubx.FieldSpec{
+		WireName: "note_text",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"NoteUpdatedAt": ubx.FieldSpec{
+		WireName: "note_updated_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"NoteUpdatedBy": ubx.FieldSpec{
+		WireName: "note_updated_by",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ProcessLaunchedAt": ubx.FieldSpec{
+		WireName: "process_launched_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"ProcessName": ubx.FieldSpec{
+		WireName: "process_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ProcessParentPid": ubx.FieldSpec{
+		WireName: "process_parent_pid",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"ProcessPath": ubx.FieldSpec{
+		WireName: "process_path",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ProcessPid": ubx.FieldSpec{
+		WireName: "process_pid",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"ProcessTerminatedAt": ubx.FieldSpec{
+		WireName: "process_terminated_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"ProductArn": ubx.FieldSpec{
+		WireName: "product_arn",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ProductFields": ubx.FieldSpec{
+		WireName: "product_fields",
+		Kind:     "list",
+		Fields:   Insight_Filters_ProductFieldsFields,
+	},
+	"ProductName": ubx.FieldSpec{
+		WireName: "product_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"RecommendationText": ubx.FieldSpec{
+		WireName: "recommendation_text",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"RecordState": ubx.FieldSpec{
+		WireName: "record_state",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"Region": ubx.FieldSpec{
+		WireName: "region",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"RelatedFindingsId": ubx.FieldSpec{
+		WireName: "related_findings_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"RelatedFindingsProductArn": ubx.FieldSpec{
+		WireName: "related_findings_product_arn",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceApplicationArn": ubx.FieldSpec{
+		WireName: "resource_application_arn",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceApplicationName": ubx.FieldSpec{
+		WireName: "resource_application_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceIamInstanceProfileArn": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_iam_instance_profile_arn",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceImageId": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_image_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceIpV4Addresses": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_ip_v4_addresses",
+		Kind:     "list",
+		Fields:   Insight_Filters_NetworkDestinationIpV4Fields,
+	},
+	"ResourceAwsEc2InstanceIpV6Addresses": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_ip_v6_addresses",
+		Kind:     "list",
+		Fields:   Insight_Filters_NetworkDestinationIpV4Fields,
+	},
+	"ResourceAwsEc2InstanceKeyName": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_key_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceLaunchedAt": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_launched_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"ResourceAwsEc2InstanceSubnetId": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_subnet_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceType": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_type",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsEc2InstanceVpcId": ubx.FieldSpec{
+		WireName: "resource_aws_ec2_instance_vpc_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsIamAccessKeyCreatedAt": ubx.FieldSpec{
+		WireName: "resource_aws_iam_access_key_created_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"ResourceAwsIamAccessKeyPrincipalName": ubx.FieldSpec{
+		WireName: "resource_aws_iam_access_key_principal_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsIamAccessKeyStatus": ubx.FieldSpec{
+		WireName: "resource_aws_iam_access_key_status",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsIamAccessKeyUserName": ubx.FieldSpec{
+		WireName: "resource_aws_iam_access_key_user_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsIamUserUserName": ubx.FieldSpec{
+		WireName: "resource_aws_iam_user_user_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsS3BucketOwnerId": ubx.FieldSpec{
+		WireName: "resource_aws_s3_bucket_owner_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceAwsS3BucketOwnerName": ubx.FieldSpec{
+		WireName: "resource_aws_s3_bucket_owner_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceContainerImageId": ubx.FieldSpec{
+		WireName: "resource_container_image_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceContainerImageName": ubx.FieldSpec{
+		WireName: "resource_container_image_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceContainerLaunchedAt": ubx.FieldSpec{
+		WireName: "resource_container_launched_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"ResourceContainerName": ubx.FieldSpec{
+		WireName: "resource_container_name",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceDetailsOther": ubx.FieldSpec{
+		WireName: "resource_details_other",
+		Kind:     "list",
+		Fields:   Insight_Filters_ProductFieldsFields,
+	},
+	"ResourceId": ubx.FieldSpec{
+		WireName: "resource_id",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourcePartition": ubx.FieldSpec{
+		WireName: "resource_partition",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceRegion": ubx.FieldSpec{
+		WireName: "resource_region",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ResourceTags": ubx.FieldSpec{
+		WireName: "resource_tags",
+		Kind:     "list",
+		Fields:   Insight_Filters_ProductFieldsFields,
+	},
+	"ResourceType": ubx.FieldSpec{
+		WireName: "resource_type",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"Sample": ubx.FieldSpec{
+		WireName: "sample",
+		Kind:     "list",
+		Fields:   Insight_Filters_SampleFields,
+	},
+	"SeverityLabel": ubx.FieldSpec{
+		WireName: "severity_label",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"SeverityNormalized": ubx.FieldSpec{
+		WireName: "severity_normalized",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"SeverityProduct": ubx.FieldSpec{
+		WireName: "severity_product",
+		Kind:     "list",
+		Fields:   Insight_Filters_ConfidenceFields,
+	},
+	"SourceUrl": ubx.FieldSpec{
+		WireName: "source_url",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorCategory": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_category",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorLastObservedAt": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_last_observed_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"ThreatIntelIndicatorSource": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_source",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorSourceUrl": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_source_url",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorType": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_type",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"ThreatIntelIndicatorValue": ubx.FieldSpec{
+		WireName: "threat_intel_indicator_value",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"UpdatedAt": ubx.FieldSpec{
+		WireName: "updated_at",
+		Kind:     "list",
+		Fields:   Insight_Filters_CreatedAtFields,
+	},
+	"UserDefinedFields": ubx.FieldSpec{
+		WireName: "user_defined_fields",
+		Kind:     "list",
+		Fields:   Insight_Filters_ProductFieldsFields,
+	},
+	"VerificationState": ubx.FieldSpec{
+		WireName: "verification_state",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"VulnerabilitiesExploitAvailable": ubx.FieldSpec{
+		WireName: "vulnerabilities_exploit_available",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"VulnerabilitiesFixAvailable": ubx.FieldSpec{
+		WireName: "vulnerabilities_fix_available",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"WorkflowState": ubx.FieldSpec{
+		WireName: "workflow_state",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+	"WorkflowStatus": ubx.FieldSpec{
+		WireName: "workflow_status",
+		Kind:     "list",
+		Fields:   Insight_Filters_AwsAccountIdFields,
+	},
+}
 
 type InsightConfig struct {
 	// A collection of filters that are applied to all active findings aggregated by AWS Security Hub.
@@ -862,10 +862,10 @@ var Insight = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: Insight_FiltersFields,
+			Kind:     "object",
+			Fields:   Insight_FiltersFields,
 		},
 		"GroupByAttribute": ubx.FieldSpec{WireName: "group_by_attribute"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 	},
 }

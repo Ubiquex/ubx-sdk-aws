@@ -4,11 +4,11 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexUtterancesView_Utterances_Utterances struct {
-	Count any
-	DistinctUsers any
+	Count            any
+	DistinctUsers    any
 	FirstUtteredDate any
-	LastUtteredDate any
-	UtteranceString any
+	LastUtteredDate  any
+	UtteranceString  any
 }
 
 type ModelsLexUtterancesView_Utterances struct {
@@ -17,23 +17,23 @@ type ModelsLexUtterancesView_Utterances struct {
 }
 
 type ModelsLexUtterancesViewConfig struct {
-	BotName any
+	BotName     any
 	BotVersions any
-	StatusType any
+	StatusType  any
 }
 
 type ModelsLexUtterancesViewAttrs struct {
-	BotName any
+	BotName     any
 	BotVersions any
-	StatusType any
-	Utterances any
+	StatusType  any
+	Utterances  any
 }
 
 var ModelsLexUtterancesView = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_utterances_view",
 	Fields: ubx.FieldMap{
-		"BotName": ubx.FieldSpec{WireName: "bot_name"},
+		"BotName":     ubx.FieldSpec{WireName: "bot_name"},
 		"BotVersions": ubx.FieldSpec{WireName: "bot_versions"},
-		"StatusType": ubx.FieldSpec{WireName: "status_type"},
+		"StatusType":  ubx.FieldSpec{WireName: "status_type"},
 	},
 }

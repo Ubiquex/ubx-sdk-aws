@@ -18,14 +18,14 @@ type LocationEfs_Tags struct {
 }
 
 var LocationEfs_Ec2ConfigFields = ubx.FieldMap{
-		"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
-		"SubnetArn": ubx.FieldSpec{WireName: "subnet_arn"},
-	}
+	"SecurityGroupArns": ubx.FieldSpec{WireName: "security_group_arns"},
+	"SubnetArn":         ubx.FieldSpec{WireName: "subnet_arn"},
+}
 
 var LocationEfs_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationEfsConfig struct {
 	// The Amazon Resource Name (ARN) for the Amazon EFS Access point that DataSync uses when accessing the EFS file system.
@@ -71,17 +71,17 @@ var LocationEfs = ubx.ResourceBinding{
 		"AccessPointArn": ubx.FieldSpec{WireName: "access_point_arn"},
 		"Ec2Config": ubx.FieldSpec{
 			WireName: "ec2_config",
-			Kind: "object",
-			Fields: LocationEfs_Ec2ConfigFields,
+			Kind:     "object",
+			Fields:   LocationEfs_Ec2ConfigFields,
 		},
-		"EfsFilesystemArn": ubx.FieldSpec{WireName: "efs_filesystem_arn"},
+		"EfsFilesystemArn":        ubx.FieldSpec{WireName: "efs_filesystem_arn"},
 		"FileSystemAccessRoleArn": ubx.FieldSpec{WireName: "file_system_access_role_arn"},
-		"InTransitEncryption": ubx.FieldSpec{WireName: "in_transit_encryption"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"InTransitEncryption":     ubx.FieldSpec{WireName: "in_transit_encryption"},
+		"Subdirectory":            ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationEfs_TagsFields,
+			Kind:     "list",
+			Fields:   LocationEfs_TagsFields,
 		},
 	},
 }

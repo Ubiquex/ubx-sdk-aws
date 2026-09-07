@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ActionConnectorPermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type ActionConnectorPermissionsConfig struct {
 	ActionConnectorId any
-	AwsAccountId any
+	AwsAccountId      any
 }
 
 type ActionConnectorPermissionsAttrs struct {
 	ActionConnectorId any
-	Arn any
-	AwsAccountId any
-	Permissions any
-	RequestId any
-	Status any
+	Arn               any
+	AwsAccountId      any
+	Permissions       any
+	RequestId         any
+	Status            any
 }
 
 var ActionConnectorPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_action_connector_permissions",
 	Fields: ubx.FieldMap{
 		"ActionConnectorId": ubx.FieldSpec{WireName: "action_connector_id"},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+		"AwsAccountId":      ubx.FieldSpec{WireName: "aws_account_id"},
 	},
 }

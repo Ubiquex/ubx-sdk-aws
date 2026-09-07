@@ -50,14 +50,14 @@ type StackSetConstraintAttrs struct {
 var StackSetConstraint = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_stack_set_constraint",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"AccountList": ubx.FieldSpec{WireName: "account_list"},
-		"AdminRole": ubx.FieldSpec{WireName: "admin_role"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"PortfolioId": ubx.FieldSpec{WireName: "portfolio_id"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
-		"RegionList": ubx.FieldSpec{WireName: "region_list"},
+		"AcceptLanguage":       ubx.FieldSpec{WireName: "accept_language"},
+		"AccountList":          ubx.FieldSpec{WireName: "account_list"},
+		"AdminRole":            ubx.FieldSpec{WireName: "admin_role"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"ExecutionRole":        ubx.FieldSpec{WireName: "execution_role"},
+		"PortfolioId":          ubx.FieldSpec{WireName: "portfolio_id"},
+		"ProductId":            ubx.FieldSpec{WireName: "product_id"},
+		"RegionList":           ubx.FieldSpec{WireName: "region_list"},
 		"StackInstanceControl": ubx.FieldSpec{WireName: "stack_instance_control"},
 	},
 }

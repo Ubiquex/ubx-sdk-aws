@@ -12,24 +12,24 @@ type DataAutomationLibrary_EncryptionConfiguration struct {
 
 type DataAutomationLibrary_EntityTypes struct {
 	EntityMetadata any
-	EntityType any
+	EntityType     any
 }
 
 type DataAutomationLibrary_Tags struct {
 	// The key of a tag to attach to the Bedrock Data Automation Library, used for identifying and categorizing the library. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var DataAutomationLibrary_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsEncryptionContext": ubx.FieldSpec{WireName: "kms_encryption_context"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsEncryptionContext": ubx.FieldSpec{WireName: "kms_encryption_context"},
+	"KmsKeyId":             ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var DataAutomationLibrary_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataAutomationLibraryConfig struct {
 	// KMS Encryption Configuration
@@ -66,15 +66,15 @@ var DataAutomationLibrary = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: DataAutomationLibrary_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   DataAutomationLibrary_EncryptionConfigurationFields,
 		},
 		"LibraryDescription": ubx.FieldSpec{WireName: "library_description"},
-		"LibraryName": ubx.FieldSpec{WireName: "library_name"},
+		"LibraryName":        ubx.FieldSpec{WireName: "library_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataAutomationLibrary_TagsFields,
+			Kind:     "list",
+			Fields:   DataAutomationLibrary_TagsFields,
 		},
 	},
 }

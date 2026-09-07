@@ -122,7 +122,7 @@ type LifecyclePolicy_PolicyDetails_Schedules_CreateRule struct {
 	IntervalUnit any
 	// Specifies whether the lifecycle policy creates snapshots of resources in the AWS Cloud (CLOUD) or on AWS Outposts (OUTPOST). (AI-inferred)
 	Location any
-	Scripts any
+	Scripts  any
 	// Specifies the times in UTC (formatted as HH:00) at which the lifecycle policy creates snapshots according to this schedule. (AI-inferred)
 	Times any
 }
@@ -203,7 +203,7 @@ type LifecyclePolicy_PolicyDetails struct {
 	// Defines the event source that triggers an event-based lifecycle policy, such as a CloudWatch Events rule, including its type (e.g., MANAGED_CWS_EVENT) and parameters like event type and snapshot owner. (AI-inferred)
 	EventSource any
 	// Defines the exclusions for the lifecycle policy, which identify specific resources or resource types (such as volumes with certain tags or specific volume types) that should not be affected by the policy. (AI-inferred)
-	Exclusions any
+	Exclusions     any
 	ExtendDeletion any
 	// Specifies optional parameters, such as ExcludeBootVolume or NoReboot, that modify the behavior of the lifecycle policy's snapshot creation operations. (AI-inferred)
 	Parameters any
@@ -216,7 +216,7 @@ type LifecyclePolicy_PolicyDetails struct {
 	// Specifies the type of AWS resource (either 'VOLUME' or 'INSTANCE') that a DLM lifecycle policy targets, determining whether the policy creates EBS snapshots or AMIs. (AI-inferred)
 	ResourceType any
 	// The types of resources (such as VOLUME or INSTANCE) that this lifecycle policy will manage and snapshot. (AI-inferred)
-	ResourceTypes any
+	ResourceTypes  any
 	RetainInterval any
 	// Defines the schedule(s) that specify when to create Amazon EBS snapshots (or AMIs) and how long to retain them under this lifecycle policy. (AI-inferred)
 	Schedules any
@@ -225,254 +225,254 @@ type LifecyclePolicy_PolicyDetails struct {
 }
 
 var LifecyclePolicy_CrossRegionCopyTargetsFields = ubx.FieldMap{
-		"TargetRegion": ubx.FieldSpec{WireName: "target_region"},
-	}
+	"TargetRegion": ubx.FieldSpec{WireName: "target_region"},
+}
 
 var LifecyclePolicy_Exclusions_ExcludeTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var LifecyclePolicy_ExclusionsFields = ubx.FieldMap{
-		"ExcludeBootVolumes": ubx.FieldSpec{WireName: "exclude_boot_volumes"},
-		"ExcludeTags": ubx.FieldSpec{
-			WireName: "exclude_tags",
-			Kind: "list",
-			Fields: LifecyclePolicy_Exclusions_ExcludeTagsFields,
-		},
-		"ExcludeVolumeTypes": ubx.FieldSpec{WireName: "exclude_volume_types"},
-	}
+	"ExcludeBootVolumes": ubx.FieldSpec{WireName: "exclude_boot_volumes"},
+	"ExcludeTags": ubx.FieldSpec{
+		WireName: "exclude_tags",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_Exclusions_ExcludeTagsFields,
+	},
+	"ExcludeVolumeTypes": ubx.FieldSpec{WireName: "exclude_volume_types"},
+}
 
 var LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfigurationFields = ubx.FieldMap{
-		"CmkArn": ubx.FieldSpec{WireName: "cmk_arn"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-	}
+	"CmkArn":    ubx.FieldSpec{WireName: "cmk_arn"},
+	"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
+}
 
 var LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields = ubx.FieldMap{
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"IntervalUnit": ubx.FieldSpec{WireName: "interval_unit"},
-	}
+	"Interval":     ubx.FieldSpec{WireName: "interval"},
+	"IntervalUnit": ubx.FieldSpec{WireName: "interval_unit"},
+}
 
 var LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopyFields = ubx.FieldMap{
-		"EncryptionConfiguration": ubx.FieldSpec{
-			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfigurationFields,
-		},
-		"RetainRule": ubx.FieldSpec{
-			WireName: "retain_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
-		},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"EncryptionConfiguration": ubx.FieldSpec{
+		WireName: "encryption_configuration",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfigurationFields,
+	},
+	"RetainRule": ubx.FieldSpec{
+		WireName: "retain_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
+	},
+	"Target": ubx.FieldSpec{WireName: "target"},
+}
 
 var LifecyclePolicy_PolicyDetails_ActionsFields = ubx.FieldMap{
-		"CrossRegionCopy": ubx.FieldSpec{
-			WireName: "cross_region_copy",
-			Kind: "list",
-			Fields: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopyFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CrossRegionCopy": ubx.FieldSpec{
+		WireName: "cross_region_copy",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopyFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var LifecyclePolicy_PolicyDetails_EventSource_ParametersFields = ubx.FieldMap{
-		"DescriptionRegex": ubx.FieldSpec{WireName: "description_regex"},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"SnapshotOwner": ubx.FieldSpec{WireName: "snapshot_owner"},
-	}
+	"DescriptionRegex": ubx.FieldSpec{WireName: "description_regex"},
+	"EventType":        ubx.FieldSpec{WireName: "event_type"},
+	"SnapshotOwner":    ubx.FieldSpec{WireName: "snapshot_owner"},
+}
 
 var LifecyclePolicy_PolicyDetails_EventSourceFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_EventSource_ParametersFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_EventSource_ParametersFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var LifecyclePolicy_PolicyDetails_ParametersFields = ubx.FieldMap{
-		"ExcludeBootVolume": ubx.FieldSpec{WireName: "exclude_boot_volume"},
-		"ExcludeDataVolumeTags": ubx.FieldSpec{
-			WireName: "exclude_data_volume_tags",
-			Kind: "list",
-			Fields: LifecyclePolicy_Exclusions_ExcludeTagsFields,
-		},
-		"NoReboot": ubx.FieldSpec{WireName: "no_reboot"},
-	}
+	"ExcludeBootVolume": ubx.FieldSpec{WireName: "exclude_boot_volume"},
+	"ExcludeDataVolumeTags": ubx.FieldSpec{
+		WireName: "exclude_data_volume_tags",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_Exclusions_ExcludeTagsFields,
+	},
+	"NoReboot": ubx.FieldSpec{WireName: "no_reboot"},
+}
 
 var LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"IntervalUnit": ubx.FieldSpec{WireName: "interval_unit"},
-	}
+	"Count":        ubx.FieldSpec{WireName: "count"},
+	"Interval":     ubx.FieldSpec{WireName: "interval"},
+	"IntervalUnit": ubx.FieldSpec{WireName: "interval_unit"},
+}
 
 var LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRuleFields = ubx.FieldMap{
-		"RetentionArchiveTier": ubx.FieldSpec{
-			WireName: "retention_archive_tier",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
-		},
-	}
+	"RetentionArchiveTier": ubx.FieldSpec{
+		WireName: "retention_archive_tier",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
+	},
+}
 
 var LifecyclePolicy_PolicyDetails_Schedules_ArchiveRuleFields = ubx.FieldMap{
-		"RetainRule": ubx.FieldSpec{
-			WireName: "retain_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRuleFields,
-		},
-	}
+	"RetainRule": ubx.FieldSpec{
+		WireName: "retain_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRuleFields,
+	},
+}
 
 var LifecyclePolicy_PolicyDetails_Schedules_CreateRule_ScriptsFields = ubx.FieldMap{
-		"ExecuteOperationOnScriptFailure": ubx.FieldSpec{WireName: "execute_operation_on_script_failure"},
-		"ExecutionHandler": ubx.FieldSpec{WireName: "execution_handler"},
-		"ExecutionHandlerService": ubx.FieldSpec{WireName: "execution_handler_service"},
-		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-		"MaximumRetryCount": ubx.FieldSpec{WireName: "maximum_retry_count"},
-		"Stages": ubx.FieldSpec{WireName: "stages"},
-	}
+	"ExecuteOperationOnScriptFailure": ubx.FieldSpec{WireName: "execute_operation_on_script_failure"},
+	"ExecutionHandler":                ubx.FieldSpec{WireName: "execution_handler"},
+	"ExecutionHandlerService":         ubx.FieldSpec{WireName: "execution_handler_service"},
+	"ExecutionTimeout":                ubx.FieldSpec{WireName: "execution_timeout"},
+	"MaximumRetryCount":               ubx.FieldSpec{WireName: "maximum_retry_count"},
+	"Stages":                          ubx.FieldSpec{WireName: "stages"},
+}
 
 var LifecyclePolicy_PolicyDetails_Schedules_CreateRuleFields = ubx.FieldMap{
-		"CronExpression": ubx.FieldSpec{WireName: "cron_expression"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"IntervalUnit": ubx.FieldSpec{WireName: "interval_unit"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Scripts": ubx.FieldSpec{
-			WireName: "scripts",
-			Kind: "list",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_CreateRule_ScriptsFields,
-		},
-		"Times": ubx.FieldSpec{WireName: "times"},
-	}
+	"CronExpression": ubx.FieldSpec{WireName: "cron_expression"},
+	"Interval":       ubx.FieldSpec{WireName: "interval"},
+	"IntervalUnit":   ubx.FieldSpec{WireName: "interval_unit"},
+	"Location":       ubx.FieldSpec{WireName: "location"},
+	"Scripts": ubx.FieldSpec{
+		WireName: "scripts",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_CreateRule_ScriptsFields,
+	},
+	"Times": ubx.FieldSpec{WireName: "times"},
+}
 
 var LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRulesFields = ubx.FieldMap{
-		"CmkArn": ubx.FieldSpec{WireName: "cmk_arn"},
-		"CopyTags": ubx.FieldSpec{WireName: "copy_tags"},
-		"DeprecateRule": ubx.FieldSpec{
-			WireName: "deprecate_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
-		},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"RetainRule": ubx.FieldSpec{
-			WireName: "retain_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
-		},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"TargetRegion": ubx.FieldSpec{WireName: "target_region"},
-	}
+	"CmkArn":   ubx.FieldSpec{WireName: "cmk_arn"},
+	"CopyTags": ubx.FieldSpec{WireName: "copy_tags"},
+	"DeprecateRule": ubx.FieldSpec{
+		WireName: "deprecate_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
+	},
+	"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
+	"RetainRule": ubx.FieldSpec{
+		WireName: "retain_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRuleFields,
+	},
+	"Target":       ubx.FieldSpec{WireName: "target"},
+	"TargetRegion": ubx.FieldSpec{WireName: "target_region"},
+}
 
 var LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRuleFields = ubx.FieldMap{
-		"AvailabilityZoneIds": ubx.FieldSpec{WireName: "availability_zone_ids"},
-		"AvailabilityZones": ubx.FieldSpec{WireName: "availability_zones"},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"IntervalUnit": ubx.FieldSpec{WireName: "interval_unit"},
-	}
+	"AvailabilityZoneIds": ubx.FieldSpec{WireName: "availability_zone_ids"},
+	"AvailabilityZones":   ubx.FieldSpec{WireName: "availability_zones"},
+	"Count":               ubx.FieldSpec{WireName: "count"},
+	"Interval":            ubx.FieldSpec{WireName: "interval"},
+	"IntervalUnit":        ubx.FieldSpec{WireName: "interval_unit"},
+}
 
 var LifecyclePolicy_PolicyDetails_Schedules_ShareRulesFields = ubx.FieldMap{
-		"TargetAccounts": ubx.FieldSpec{WireName: "target_accounts"},
-		"UnshareInterval": ubx.FieldSpec{WireName: "unshare_interval"},
-		"UnshareIntervalUnit": ubx.FieldSpec{WireName: "unshare_interval_unit"},
-	}
+	"TargetAccounts":      ubx.FieldSpec{WireName: "target_accounts"},
+	"UnshareInterval":     ubx.FieldSpec{WireName: "unshare_interval"},
+	"UnshareIntervalUnit": ubx.FieldSpec{WireName: "unshare_interval_unit"},
+}
 
 var LifecyclePolicy_PolicyDetails_SchedulesFields = ubx.FieldMap{
-		"ArchiveRule": ubx.FieldSpec{
-			WireName: "archive_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRuleFields,
-		},
-		"CopyTags": ubx.FieldSpec{WireName: "copy_tags"},
-		"CreateRule": ubx.FieldSpec{
-			WireName: "create_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_CreateRuleFields,
-		},
-		"CrossRegionCopyRules": ubx.FieldSpec{
-			WireName: "cross_region_copy_rules",
-			Kind: "list",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRulesFields,
-		},
-		"DeprecateRule": ubx.FieldSpec{
-			WireName: "deprecate_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
-		},
-		"FastRestoreRule": ubx.FieldSpec{
-			WireName: "fast_restore_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRuleFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RetainRule": ubx.FieldSpec{
-			WireName: "retain_rule",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
-		},
-		"ShareRules": ubx.FieldSpec{
-			WireName: "share_rules",
-			Kind: "list",
-			Fields: LifecyclePolicy_PolicyDetails_Schedules_ShareRulesFields,
-		},
-		"TagsToAdd": ubx.FieldSpec{
-			WireName: "tags_to_add",
-			Kind: "list",
-			Fields: LifecyclePolicy_Exclusions_ExcludeTagsFields,
-		},
-		"VariableTags": ubx.FieldSpec{
-			WireName: "variable_tags",
-			Kind: "list",
-			Fields: LifecyclePolicy_Exclusions_ExcludeTagsFields,
-		},
-	}
+	"ArchiveRule": ubx.FieldSpec{
+		WireName: "archive_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_ArchiveRuleFields,
+	},
+	"CopyTags": ubx.FieldSpec{WireName: "copy_tags"},
+	"CreateRule": ubx.FieldSpec{
+		WireName: "create_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_CreateRuleFields,
+	},
+	"CrossRegionCopyRules": ubx.FieldSpec{
+		WireName: "cross_region_copy_rules",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRulesFields,
+	},
+	"DeprecateRule": ubx.FieldSpec{
+		WireName: "deprecate_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
+	},
+	"FastRestoreRule": ubx.FieldSpec{
+		WireName: "fast_restore_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRuleFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"RetainRule": ubx.FieldSpec{
+		WireName: "retain_rule",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTierFields,
+	},
+	"ShareRules": ubx.FieldSpec{
+		WireName: "share_rules",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_PolicyDetails_Schedules_ShareRulesFields,
+	},
+	"TagsToAdd": ubx.FieldSpec{
+		WireName: "tags_to_add",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_Exclusions_ExcludeTagsFields,
+	},
+	"VariableTags": ubx.FieldSpec{
+		WireName: "variable_tags",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_Exclusions_ExcludeTagsFields,
+	},
+}
 
 var LifecyclePolicy_PolicyDetailsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: LifecyclePolicy_PolicyDetails_ActionsFields,
-		},
-		"CopyTags": ubx.FieldSpec{WireName: "copy_tags"},
-		"CreateInterval": ubx.FieldSpec{WireName: "create_interval"},
-		"CrossRegionCopyTargets": ubx.FieldSpec{
-			WireName: "cross_region_copy_targets",
-			Kind: "list",
-			Fields: LifecyclePolicy_CrossRegionCopyTargetsFields,
-		},
-		"EventSource": ubx.FieldSpec{
-			WireName: "event_source",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_EventSourceFields,
-		},
-		"Exclusions": ubx.FieldSpec{
-			WireName: "exclusions",
-			Kind: "object",
-			Fields: LifecyclePolicy_ExclusionsFields,
-		},
-		"ExtendDeletion": ubx.FieldSpec{WireName: "extend_deletion"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetails_ParametersFields,
-		},
-		"PolicyLanguage": ubx.FieldSpec{WireName: "policy_language"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-		"ResourceLocations": ubx.FieldSpec{WireName: "resource_locations"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-		"RetainInterval": ubx.FieldSpec{WireName: "retain_interval"},
-		"Schedules": ubx.FieldSpec{
-			WireName: "schedules",
-			Kind: "list",
-			Fields: LifecyclePolicy_PolicyDetails_SchedulesFields,
-		},
-		"TargetTags": ubx.FieldSpec{
-			WireName: "target_tags",
-			Kind: "list",
-			Fields: LifecyclePolicy_Exclusions_ExcludeTagsFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_PolicyDetails_ActionsFields,
+	},
+	"CopyTags":       ubx.FieldSpec{WireName: "copy_tags"},
+	"CreateInterval": ubx.FieldSpec{WireName: "create_interval"},
+	"CrossRegionCopyTargets": ubx.FieldSpec{
+		WireName: "cross_region_copy_targets",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_CrossRegionCopyTargetsFields,
+	},
+	"EventSource": ubx.FieldSpec{
+		WireName: "event_source",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_EventSourceFields,
+	},
+	"Exclusions": ubx.FieldSpec{
+		WireName: "exclusions",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_ExclusionsFields,
+	},
+	"ExtendDeletion": ubx.FieldSpec{WireName: "extend_deletion"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   LifecyclePolicy_PolicyDetails_ParametersFields,
+	},
+	"PolicyLanguage":    ubx.FieldSpec{WireName: "policy_language"},
+	"PolicyType":        ubx.FieldSpec{WireName: "policy_type"},
+	"ResourceLocations": ubx.FieldSpec{WireName: "resource_locations"},
+	"ResourceType":      ubx.FieldSpec{WireName: "resource_type"},
+	"ResourceTypes":     ubx.FieldSpec{WireName: "resource_types"},
+	"RetainInterval":    ubx.FieldSpec{WireName: "retain_interval"},
+	"Schedules": ubx.FieldSpec{
+		WireName: "schedules",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_PolicyDetails_SchedulesFields,
+	},
+	"TargetTags": ubx.FieldSpec{
+		WireName: "target_tags",
+		Kind:     "list",
+		Fields:   LifecyclePolicy_Exclusions_ExcludeTagsFields,
+	},
+}
 
 type LifecyclePolicyConfig struct {
 	// Indicates whether to copy tags from the source EBS volume to the snapshots created by this lifecycle policy. (AI-inferred)
@@ -535,33 +535,33 @@ type LifecyclePolicyAttrs struct {
 var LifecyclePolicy = ubx.ResourceBinding{
 	WireType: "aws_dlm_lifecycle_policy",
 	Fields: ubx.FieldMap{
-		"CopyTags": ubx.FieldSpec{WireName: "copy_tags"},
+		"CopyTags":       ubx.FieldSpec{WireName: "copy_tags"},
 		"CreateInterval": ubx.FieldSpec{WireName: "create_interval"},
 		"CrossRegionCopyTargets": ubx.FieldSpec{
 			WireName: "cross_region_copy_targets",
-			Kind: "list",
-			Fields: LifecyclePolicy_CrossRegionCopyTargetsFields,
+			Kind:     "list",
+			Fields:   LifecyclePolicy_CrossRegionCopyTargetsFields,
 		},
 		"DefaultPolicy": ubx.FieldSpec{WireName: "default_policy"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"Exclusions": ubx.FieldSpec{
 			WireName: "exclusions",
-			Kind: "object",
-			Fields: LifecyclePolicy_ExclusionsFields,
+			Kind:     "object",
+			Fields:   LifecyclePolicy_ExclusionsFields,
 		},
 		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"ExtendDeletion": ubx.FieldSpec{WireName: "extend_deletion"},
+		"ExtendDeletion":   ubx.FieldSpec{WireName: "extend_deletion"},
 		"PolicyDetails": ubx.FieldSpec{
 			WireName: "policy_details",
-			Kind: "object",
-			Fields: LifecyclePolicy_PolicyDetailsFields,
+			Kind:     "object",
+			Fields:   LifecyclePolicy_PolicyDetailsFields,
 		},
 		"RetainInterval": ubx.FieldSpec{WireName: "retain_interval"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":          ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LifecyclePolicy_Exclusions_ExcludeTagsFields,
+			Kind:     "list",
+			Fields:   LifecyclePolicy_Exclusions_ExcludeTagsFields,
 		},
 	},
 }

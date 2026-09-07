@@ -47,7 +47,7 @@ type Server_S3StorageOptions struct {
 
 type Server_Tags struct {
 	// The key of a user-defined tag attached to the AWS Transfer Family server, used for resource organization and cost tracking. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -66,54 +66,54 @@ type Server_WorkflowDetails struct {
 }
 
 var Server_EndpointDetailsFields = ubx.FieldMap{
-		"AddressAllocationIds": ubx.FieldSpec{WireName: "address_allocation_ids"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcEndpointId": ubx.FieldSpec{WireName: "vpc_endpoint_id"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"AddressAllocationIds": ubx.FieldSpec{WireName: "address_allocation_ids"},
+	"SecurityGroupIds":     ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":            ubx.FieldSpec{WireName: "subnet_ids"},
+	"VpcEndpointId":        ubx.FieldSpec{WireName: "vpc_endpoint_id"},
+	"VpcId":                ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 var Server_IdentityProviderDetailsFields = ubx.FieldMap{
-		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"Function": ubx.FieldSpec{WireName: "function"},
-		"InvocationRole": ubx.FieldSpec{WireName: "invocation_role"},
-		"SftpAuthenticationMethods": ubx.FieldSpec{WireName: "sftp_authentication_methods"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"DirectoryId":               ubx.FieldSpec{WireName: "directory_id"},
+	"Function":                  ubx.FieldSpec{WireName: "function"},
+	"InvocationRole":            ubx.FieldSpec{WireName: "invocation_role"},
+	"SftpAuthenticationMethods": ubx.FieldSpec{WireName: "sftp_authentication_methods"},
+	"Url":                       ubx.FieldSpec{WireName: "url"},
+}
 
 var Server_ProtocolDetailsFields = ubx.FieldMap{
-		"As2Transports": ubx.FieldSpec{WireName: "as2_transports"},
-		"PassiveIp": ubx.FieldSpec{WireName: "passive_ip"},
-		"SetStatOption": ubx.FieldSpec{WireName: "set_stat_option"},
-		"TlsSessionResumptionMode": ubx.FieldSpec{WireName: "tls_session_resumption_mode"},
-	}
+	"As2Transports":            ubx.FieldSpec{WireName: "as2_transports"},
+	"PassiveIp":                ubx.FieldSpec{WireName: "passive_ip"},
+	"SetStatOption":            ubx.FieldSpec{WireName: "set_stat_option"},
+	"TlsSessionResumptionMode": ubx.FieldSpec{WireName: "tls_session_resumption_mode"},
+}
 
 var Server_S3StorageOptionsFields = ubx.FieldMap{
-		"DirectoryListingOptimization": ubx.FieldSpec{WireName: "directory_listing_optimization"},
-	}
+	"DirectoryListingOptimization": ubx.FieldSpec{WireName: "directory_listing_optimization"},
+}
 
 var Server_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Server_WorkflowDetails_OnPartialUploadFields = ubx.FieldMap{
-		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"WorkflowId": ubx.FieldSpec{WireName: "workflow_id"},
-	}
+	"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
+	"WorkflowId":    ubx.FieldSpec{WireName: "workflow_id"},
+}
 
 var Server_WorkflowDetailsFields = ubx.FieldMap{
-		"OnPartialUpload": ubx.FieldSpec{
-			WireName: "on_partial_upload",
-			Kind: "list",
-			Fields: Server_WorkflowDetails_OnPartialUploadFields,
-		},
-		"OnUpload": ubx.FieldSpec{
-			WireName: "on_upload",
-			Kind: "list",
-			Fields: Server_WorkflowDetails_OnPartialUploadFields,
-		},
-	}
+	"OnPartialUpload": ubx.FieldSpec{
+		WireName: "on_partial_upload",
+		Kind:     "list",
+		Fields:   Server_WorkflowDetails_OnPartialUploadFields,
+	},
+	"OnUpload": ubx.FieldSpec{
+		WireName: "on_upload",
+		Kind:     "list",
+		Fields:   Server_WorkflowDetails_OnPartialUploadFields,
+	},
+}
 
 type ServerConfig struct {
 	// The ARN of an AWS Certificate Manager (ACM) certificate used to secure FTPS connections for the AWS Transfer Family server. (AI-inferred)
@@ -201,45 +201,45 @@ var Server = ubx.ResourceBinding{
 	WireType: "aws_transfer_server",
 	Fields: ubx.FieldMap{
 		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":      ubx.FieldSpec{WireName: "domain"},
 		"EndpointDetails": ubx.FieldSpec{
 			WireName: "endpoint_details",
-			Kind: "object",
-			Fields: Server_EndpointDetailsFields,
+			Kind:     "object",
+			Fields:   Server_EndpointDetailsFields,
 		},
 		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
 		"IdentityProviderDetails": ubx.FieldSpec{
 			WireName: "identity_provider_details",
-			Kind: "object",
-			Fields: Server_IdentityProviderDetailsFields,
+			Kind:     "object",
+			Fields:   Server_IdentityProviderDetailsFields,
 		},
-		"IdentityProviderType": ubx.FieldSpec{WireName: "identity_provider_type"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"LoggingRole": ubx.FieldSpec{WireName: "logging_role"},
+		"IdentityProviderType":          ubx.FieldSpec{WireName: "identity_provider_type"},
+		"IpAddressType":                 ubx.FieldSpec{WireName: "ip_address_type"},
+		"LoggingRole":                   ubx.FieldSpec{WireName: "logging_role"},
 		"PostAuthenticationLoginBanner": ubx.FieldSpec{WireName: "post_authentication_login_banner"},
-		"PreAuthenticationLoginBanner": ubx.FieldSpec{WireName: "pre_authentication_login_banner"},
+		"PreAuthenticationLoginBanner":  ubx.FieldSpec{WireName: "pre_authentication_login_banner"},
 		"ProtocolDetails": ubx.FieldSpec{
 			WireName: "protocol_details",
-			Kind: "object",
-			Fields: Server_ProtocolDetailsFields,
+			Kind:     "object",
+			Fields:   Server_ProtocolDetailsFields,
 		},
 		"Protocols": ubx.FieldSpec{WireName: "protocols"},
 		"S3StorageOptions": ubx.FieldSpec{
 			WireName: "s3_storage_options",
-			Kind: "object",
-			Fields: Server_S3StorageOptionsFields,
+			Kind:     "object",
+			Fields:   Server_S3StorageOptionsFields,
 		},
-		"SecurityPolicyName": ubx.FieldSpec{WireName: "security_policy_name"},
+		"SecurityPolicyName":        ubx.FieldSpec{WireName: "security_policy_name"},
 		"StructuredLogDestinations": ubx.FieldSpec{WireName: "structured_log_destinations"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Server_TagsFields,
+			Kind:     "list",
+			Fields:   Server_TagsFields,
 		},
 		"WorkflowDetails": ubx.FieldSpec{
 			WireName: "workflow_details",
-			Kind: "object",
-			Fields: Server_WorkflowDetailsFields,
+			Kind:     "object",
+			Fields:   Server_WorkflowDetailsFields,
 		},
 	},
 }

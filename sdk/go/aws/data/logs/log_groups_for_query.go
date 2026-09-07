@@ -7,22 +7,22 @@ type LogGroupsForQueryConfig struct {
 	MaxResults any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
-	QueryId any
+	QueryId   any
 }
 
 type LogGroupsForQueryAttrs struct {
 	LogGroupIdentifiers any
-	MaxResults any
+	MaxResults          any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
-	QueryId any
+	QueryId   any
 }
 
 var LogGroupsForQuery = ubx.DataSourceBinding{
 	WireType: "aws_logs_log_groups_for_query",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"QueryId":    ubx.FieldSpec{WireName: "query_id"},
 	},
 }

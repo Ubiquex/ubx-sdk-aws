@@ -8,7 +8,7 @@ type JobUnlockCodeConfig struct {
 }
 
 type JobUnlockCodeAttrs struct {
-	JobId any
+	JobId      any
 	UnlockCode any
 }
 

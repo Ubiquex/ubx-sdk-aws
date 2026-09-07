@@ -29,21 +29,21 @@ type RecordSet_GeoLocation struct {
 }
 
 var RecordSet_AliasTargetFields = ubx.FieldMap{
-		"Dnsname": ubx.FieldSpec{WireName: "dnsname"},
-		"EvaluateTargetHealth": ubx.FieldSpec{WireName: "evaluate_target_health"},
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-	}
+	"Dnsname":              ubx.FieldSpec{WireName: "dnsname"},
+	"EvaluateTargetHealth": ubx.FieldSpec{WireName: "evaluate_target_health"},
+	"HostedZoneId":         ubx.FieldSpec{WireName: "hosted_zone_id"},
+}
 
 var RecordSet_CidrRoutingConfigFields = ubx.FieldMap{
-		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
-		"LocationName": ubx.FieldSpec{WireName: "location_name"},
-	}
+	"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
+	"LocationName": ubx.FieldSpec{WireName: "location_name"},
+}
 
 var RecordSet_GeoLocationFields = ubx.FieldMap{
-		"ContinentCode": ubx.FieldSpec{WireName: "continent_code"},
-		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
-		"SubdivisionCode": ubx.FieldSpec{WireName: "subdivision_code"},
-	}
+	"ContinentCode":   ubx.FieldSpec{WireName: "continent_code"},
+	"CountryCode":     ubx.FieldSpec{WireName: "country_code"},
+	"SubdivisionCode": ubx.FieldSpec{WireName: "subdivision_code"},
+}
 
 type RecordSetConfig struct {
 	// Specifies alias record properties, enabling the record set to route traffic to an AWS resource (e.g., Elastic Load Balancer, CloudFront distribution, or S3 bucket) by providing the target's hosted zone ID and DNS name, with an optional evaluate-target-health flag. (AI-inferred)
@@ -120,31 +120,31 @@ var RecordSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AliasTarget": ubx.FieldSpec{
 			WireName: "alias_target",
-			Kind: "object",
-			Fields: RecordSet_AliasTargetFields,
+			Kind:     "object",
+			Fields:   RecordSet_AliasTargetFields,
 		},
 		"CidrRoutingConfig": ubx.FieldSpec{
 			WireName: "cidr_routing_config",
-			Kind: "object",
-			Fields: RecordSet_CidrRoutingConfigFields,
+			Kind:     "object",
+			Fields:   RecordSet_CidrRoutingConfigFields,
 		},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
+		"Comment":  ubx.FieldSpec{WireName: "comment"},
 		"Failover": ubx.FieldSpec{WireName: "failover"},
 		"GeoLocation": ubx.FieldSpec{
 			WireName: "geo_location",
-			Kind: "object",
-			Fields: RecordSet_GeoLocationFields,
+			Kind:     "object",
+			Fields:   RecordSet_GeoLocationFields,
 		},
-		"HealthCheckId": ubx.FieldSpec{WireName: "health_check_id"},
-		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},
-		"HostedZoneName": ubx.FieldSpec{WireName: "hosted_zone_name"},
+		"HealthCheckId":    ubx.FieldSpec{WireName: "health_check_id"},
+		"HostedZoneId":     ubx.FieldSpec{WireName: "hosted_zone_id"},
+		"HostedZoneName":   ubx.FieldSpec{WireName: "hosted_zone_name"},
 		"MultiValueAnswer": ubx.FieldSpec{WireName: "multi_value_answer"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceRecords": ubx.FieldSpec{WireName: "resource_records"},
-		"SetIdentifier": ubx.FieldSpec{WireName: "set_identifier"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Region":           ubx.FieldSpec{WireName: "region"},
+		"ResourceRecords":  ubx.FieldSpec{WireName: "resource_records"},
+		"SetIdentifier":    ubx.FieldSpec{WireName: "set_identifier"},
+		"Ttl":              ubx.FieldSpec{WireName: "ttl"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
+		"Weight":           ubx.FieldSpec{WireName: "weight"},
 	},
 }

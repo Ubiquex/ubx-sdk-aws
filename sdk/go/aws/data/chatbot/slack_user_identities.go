@@ -4,31 +4,31 @@ package chatbot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SlackUserIdentities_SlackUserIdentities struct {
-	AwsUserIdentity any
+	AwsUserIdentity      any
 	ChatConfigurationArn any
-	IamRoleArn any
-	SlackTeamId any
-	SlackUserId any
+	IamRoleArn           any
+	SlackTeamId          any
+	SlackUserId          any
 }
 
 type SlackUserIdentitiesConfig struct {
 	ChatConfigurationArn any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 type SlackUserIdentitiesAttrs struct {
 	ChatConfigurationArn any
-	MaxResults any
-	NextToken any
-	SlackUserIdentities any
+	MaxResults           any
+	NextToken            any
+	SlackUserIdentities  any
 }
 
 var SlackUserIdentities = ubx.DataSourceBinding{
 	WireType: "aws_chatbot_slack_user_identities",
 	Fields: ubx.FieldMap{
 		"ChatConfigurationArn": ubx.FieldSpec{WireName: "chat_configuration_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

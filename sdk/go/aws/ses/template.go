@@ -22,16 +22,16 @@ type Template_Template struct {
 }
 
 var Template_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Template_TemplateFields = ubx.FieldMap{
-		"HtmlPart": ubx.FieldSpec{WireName: "html_part"},
-		"SubjectPart": ubx.FieldSpec{WireName: "subject_part"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
-		"TextPart": ubx.FieldSpec{WireName: "text_part"},
-	}
+	"HtmlPart":     ubx.FieldSpec{WireName: "html_part"},
+	"SubjectPart":  ubx.FieldSpec{WireName: "subject_part"},
+	"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+	"TextPart":     ubx.FieldSpec{WireName: "text_part"},
+}
 
 type TemplateConfig struct {
 	// The tags (keys and values) associated with the email template.
@@ -54,13 +54,13 @@ var Template = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Template_TagsFields,
+			Kind:     "list",
+			Fields:   Template_TagsFields,
 		},
 		"Template": ubx.FieldSpec{
 			WireName: "template",
-			Kind: "object",
-			Fields: Template_TemplateFields,
+			Kind:     "object",
+			Fields:   Template_TemplateFields,
 		},
 	},
 }

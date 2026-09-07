@@ -33,27 +33,27 @@ type TopicRuleDestination_VpcProperties struct {
 }
 
 var TopicRuleDestination_HttpUrlPropertiesFields = ubx.FieldMap{
-		"ConfirmationUrl": ubx.FieldSpec{WireName: "confirmation_url"},
-	}
+	"ConfirmationUrl": ubx.FieldSpec{WireName: "confirmation_url"},
+}
 
 var TopicRuleDestination_InfluxDbpropertiesFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"InfluxDbversion": ubx.FieldSpec{WireName: "influx_dbversion"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-		"SecretKey": ubx.FieldSpec{WireName: "secret_key"},
-		"SecretType": ubx.FieldSpec{WireName: "secret_type"},
-	}
+	"Endpoint":        ubx.FieldSpec{WireName: "endpoint"},
+	"InfluxDbversion": ubx.FieldSpec{WireName: "influx_dbversion"},
+	"SecretId":        ubx.FieldSpec{WireName: "secret_id"},
+	"SecretKey":       ubx.FieldSpec{WireName: "secret_key"},
+	"SecretType":      ubx.FieldSpec{WireName: "secret_type"},
+}
 
 var TopicRuleDestination_VpcPropertiesFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"SubnetIds":      ubx.FieldSpec{WireName: "subnet_ids"},
+	"VpcId":          ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 type TopicRuleDestinationConfig struct {
 	// Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
-	HttpUrlProperties any
+	HttpUrlProperties  any
 	InfluxDbproperties any
 	// Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
 	Status any
@@ -65,7 +65,7 @@ type TopicRuleDestinationAttrs struct {
 	// Amazon Resource Name (ARN).
 	Arn any
 	// Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
-	HttpUrlProperties any
+	HttpUrlProperties  any
 	InfluxDbproperties any
 	// Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
 	Status any
@@ -80,19 +80,19 @@ var TopicRuleDestination = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"HttpUrlProperties": ubx.FieldSpec{
 			WireName: "http_url_properties",
-			Kind: "object",
-			Fields: TopicRuleDestination_HttpUrlPropertiesFields,
+			Kind:     "object",
+			Fields:   TopicRuleDestination_HttpUrlPropertiesFields,
 		},
 		"InfluxDbproperties": ubx.FieldSpec{
 			WireName: "influx_dbproperties",
-			Kind: "object",
-			Fields: TopicRuleDestination_InfluxDbpropertiesFields,
+			Kind:     "object",
+			Fields:   TopicRuleDestination_InfluxDbpropertiesFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"VpcProperties": ubx.FieldSpec{
 			WireName: "vpc_properties",
-			Kind: "object",
-			Fields: TopicRuleDestination_VpcPropertiesFields,
+			Kind:     "object",
+			Fields:   TopicRuleDestination_VpcPropertiesFields,
 		},
 	},
 }

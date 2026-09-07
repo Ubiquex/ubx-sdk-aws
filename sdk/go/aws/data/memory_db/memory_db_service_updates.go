@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MemoryDbServiceUpdates_ServiceUpdates struct {
 	AutoUpdateStartDate any
-	ClusterName any
-	Description any
-	Engine any
-	NodesUpdated any
-	ReleaseDate any
-	ServiceUpdateName any
-	Status any
-	Type any
+	ClusterName         any
+	Description         any
+	Engine              any
+	NodesUpdated        any
+	ReleaseDate         any
+	ServiceUpdateName   any
+	Status              any
+	Type                any
 }
 
 type MemoryDbServiceUpdatesConfig struct {
-	ClusterNames any
-	MaxResults any
-	NextToken any
+	ClusterNames      any
+	MaxResults        any
+	NextToken         any
 	ServiceUpdateName any
-	Status any
+	Status            any
 }
 
 type MemoryDbServiceUpdatesAttrs struct {
-	ClusterNames any
-	MaxResults any
-	NextToken any
+	ClusterNames      any
+	MaxResults        any
+	NextToken         any
 	ServiceUpdateName any
-	ServiceUpdates any
-	Status any
+	ServiceUpdates    any
+	Status            any
 }
 
 var MemoryDbServiceUpdates = ubx.DataSourceBinding{
 	WireType: "aws_memory_db_service_updates",
 	Fields: ubx.FieldMap{
-		"ClusterNames": ubx.FieldSpec{WireName: "cluster_names"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ClusterNames":      ubx.FieldSpec{WireName: "cluster_names"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"ServiceUpdateName": ubx.FieldSpec{WireName: "service_update_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":            ubx.FieldSpec{WireName: "status"},
 	},
 }

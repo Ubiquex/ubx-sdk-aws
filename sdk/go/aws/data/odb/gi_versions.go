@@ -9,22 +9,22 @@ type GiVersions_GiVersions struct {
 
 type GiVersionsConfig struct {
 	MaxResults any
-	NextToken any
-	Shape any
+	NextToken  any
+	Shape      any
 }
 
 type GiVersionsAttrs struct {
 	GiVersions any
 	MaxResults any
-	NextToken any
-	Shape any
+	NextToken  any
+	Shape      any
 }
 
 var GiVersions = ubx.DataSourceBinding{
 	WireType: "aws_odb_gi_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Shape": ubx.FieldSpec{WireName: "shape"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Shape":      ubx.FieldSpec{WireName: "shape"},
 	},
 }

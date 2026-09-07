@@ -4,9 +4,9 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FederationToken_Credentials struct {
-	AccessToken any
-	AccessTokenExpiration any
-	RefreshToken any
+	AccessToken            any
+	AccessTokenExpiration  any
+	RefreshToken           any
 	RefreshTokenExpiration any
 }
 
@@ -17,10 +17,10 @@ type FederationTokenConfig struct {
 type FederationTokenAttrs struct {
 	// <p>Contains credentials to use for federation.</p>
 	Credentials any
-	InstanceId any
-	SignInUrl any
-	UserArn any
-	UserId any
+	InstanceId  any
+	SignInUrl   any
+	UserArn     any
+	UserId      any
 }
 
 var FederationToken = ubx.DataSourceBinding{

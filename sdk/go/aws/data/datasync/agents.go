@@ -9,26 +9,26 @@ type Agents_Agents_Platform struct {
 
 type Agents_Agents struct {
 	AgentArn any
-	Name any
+	Name     any
 	Platform any
-	Status any
+	Status   any
 }
 
 type AgentsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AgentsAttrs struct {
-	Agents any
+	Agents     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Agents = ubx.DataSourceBinding{
 	WireType: "aws_datasync_agents",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

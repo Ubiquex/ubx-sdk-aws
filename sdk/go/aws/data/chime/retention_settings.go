@@ -19,7 +19,7 @@ type RetentionSettingsConfig struct {
 }
 
 type RetentionSettingsAttrs struct {
-	AccountId any
+	AccountId                 any
 	InitiateDeletionTimestamp any
 	// <p>The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat-room messages and chat-conversation messages.</p>
 	RetentionSettings any

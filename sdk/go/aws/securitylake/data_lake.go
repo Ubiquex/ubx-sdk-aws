@@ -42,40 +42,40 @@ type DataLake_Tags struct {
 }
 
 var DataLake_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-	}
+	"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+}
 
 var DataLake_LifecycleConfiguration_ExpirationFields = ubx.FieldMap{
-		"Days": ubx.FieldSpec{WireName: "days"},
-	}
+	"Days": ubx.FieldSpec{WireName: "days"},
+}
 
 var DataLake_LifecycleConfiguration_TransitionsFields = ubx.FieldMap{
-		"Days": ubx.FieldSpec{WireName: "days"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
+	"Days":         ubx.FieldSpec{WireName: "days"},
+	"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+}
 
 var DataLake_LifecycleConfigurationFields = ubx.FieldMap{
-		"Expiration": ubx.FieldSpec{
-			WireName: "expiration",
-			Kind: "object",
-			Fields: DataLake_LifecycleConfiguration_ExpirationFields,
-		},
-		"Transitions": ubx.FieldSpec{
-			WireName: "transitions",
-			Kind: "list",
-			Fields: DataLake_LifecycleConfiguration_TransitionsFields,
-		},
-	}
+	"Expiration": ubx.FieldSpec{
+		WireName: "expiration",
+		Kind:     "object",
+		Fields:   DataLake_LifecycleConfiguration_ExpirationFields,
+	},
+	"Transitions": ubx.FieldSpec{
+		WireName: "transitions",
+		Kind:     "list",
+		Fields:   DataLake_LifecycleConfiguration_TransitionsFields,
+	},
+}
 
 var DataLake_ReplicationConfigurationFields = ubx.FieldMap{
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"Regions": ubx.FieldSpec{WireName: "regions"},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var DataLake_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataLakeConfig struct {
 	// Provides encryption details of Amazon Security Lake object.
@@ -112,24 +112,24 @@ var DataLake = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: DataLake_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   DataLake_EncryptionConfigurationFields,
 		},
 		"LifecycleConfiguration": ubx.FieldSpec{
 			WireName: "lifecycle_configuration",
-			Kind: "object",
-			Fields: DataLake_LifecycleConfigurationFields,
+			Kind:     "object",
+			Fields:   DataLake_LifecycleConfigurationFields,
 		},
 		"MetaStoreManagerRoleArn": ubx.FieldSpec{WireName: "meta_store_manager_role_arn"},
 		"ReplicationConfiguration": ubx.FieldSpec{
 			WireName: "replication_configuration",
-			Kind: "object",
-			Fields: DataLake_ReplicationConfigurationFields,
+			Kind:     "object",
+			Fields:   DataLake_ReplicationConfigurationFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataLake_TagsFields,
+			Kind:     "list",
+			Fields:   DataLake_TagsFields,
 		},
 	},
 }

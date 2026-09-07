@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomVerificationEmailTemplates_CustomVerificationEmailTemplates struct {
 	FailureRedirectionUrl any
-	FromEmailAddress any
+	FromEmailAddress      any
 	SuccessRedirectionUrl any
-	TemplateName any
-	TemplateSubject any
+	TemplateName          any
+	TemplateSubject       any
 }
 
 type CustomVerificationEmailTemplatesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CustomVerificationEmailTemplatesAttrs struct {
 	CustomVerificationEmailTemplates any
-	MaxResults any
-	NextToken any
+	MaxResults                       any
+	NextToken                        any
 }
 
 var CustomVerificationEmailTemplates = ubx.DataSourceBinding{
 	WireType: "aws_email_custom_verification_email_templates",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,33 +4,33 @@ package vpc_lattice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcLatticeServiceNetworkVpcEndpointAssociations_Items struct {
-	CreatedAt any
-	Id any
-	ServiceNetworkArn any
-	State any
-	VpcEndpointId any
+	CreatedAt          any
+	Id                 any
+	ServiceNetworkArn  any
+	State              any
+	VpcEndpointId      any
 	VpcEndpointOwnerId any
-	VpcId any
+	VpcId              any
 }
 
 type VpcLatticeServiceNetworkVpcEndpointAssociationsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 	ServiceNetworkIdentifier any
 }
 
 type VpcLatticeServiceNetworkVpcEndpointAssociationsAttrs struct {
-	Items any
-	MaxResults any
-	NextToken any
+	Items                    any
+	MaxResults               any
+	NextToken                any
 	ServiceNetworkIdentifier any
 }
 
 var VpcLatticeServiceNetworkVpcEndpointAssociations = ubx.DataSourceBinding{
 	WireType: "aws_vpc_lattice_service_network_vpc_endpoint_associations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 		"ServiceNetworkIdentifier": ubx.FieldSpec{WireName: "service_network_identifier"},
 	},
 }

@@ -5,53 +5,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainAssociations_DomainAssociations_Certificate struct {
 	CertificateVerificationDnsrecord any
-	CustomCertificateArn any
-	Type any
+	CustomCertificateArn             any
+	Type                             any
 }
 
 type DomainAssociations_DomainAssociations_SubDomains_SubDomainSetting struct {
 	BranchName any
-	Prefix any
+	Prefix     any
 }
 
 type DomainAssociations_DomainAssociations_SubDomains struct {
-	DnsRecord any
+	DnsRecord        any
 	SubDomainSetting any
-	Verified any
+	Verified         any
 }
 
 type DomainAssociations_DomainAssociations struct {
-	AutoSubDomainCreationPatterns any
-	AutoSubDomainIamrole any
-	Certificate any
+	AutoSubDomainCreationPatterns    any
+	AutoSubDomainIamrole             any
+	Certificate                      any
 	CertificateVerificationDnsrecord any
-	DomainAssociationArn any
-	DomainName any
-	DomainStatus any
-	EnableAutoSubDomain any
-	StatusReason any
-	SubDomains any
-	UpdateStatus any
+	DomainAssociationArn             any
+	DomainName                       any
+	DomainStatus                     any
+	EnableAutoSubDomain              any
+	StatusReason                     any
+	SubDomains                       any
+	UpdateStatus                     any
 }
 
 type DomainAssociationsConfig struct {
-	AppId any
+	AppId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DomainAssociationsAttrs struct {
-	AppId any
+	AppId              any
 	DomainAssociations any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var DomainAssociations = ubx.DataSourceBinding{
 	WireType: "aws_amplify_domain_associations",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

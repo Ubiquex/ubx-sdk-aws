@@ -25,7 +25,7 @@ var ApplicationEntitlementAssociation = ubx.ResourceBinding{
 	WireType: "aws_app_stream_application_entitlement_association",
 	Fields: ubx.FieldMap{
 		"ApplicationIdentifier": ubx.FieldSpec{WireName: "application_identifier"},
-		"EntitlementName": ubx.FieldSpec{WireName: "entitlement_name"},
-		"StackName": ubx.FieldSpec{WireName: "stack_name"},
+		"EntitlementName":       ubx.FieldSpec{WireName: "entitlement_name"},
+		"StackName":             ubx.FieldSpec{WireName: "stack_name"},
 	},
 }

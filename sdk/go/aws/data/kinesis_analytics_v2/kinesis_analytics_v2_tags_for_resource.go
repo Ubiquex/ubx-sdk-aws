@@ -4,7 +4,7 @@ package kinesis_analytics_v2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KinesisAnalyticsV2TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type KinesisAnalyticsV2TagsForResourceConfig struct {
 
 type KinesisAnalyticsV2TagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var KinesisAnalyticsV2TagsForResource = ubx.DataSourceBinding{

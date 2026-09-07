@@ -4,21 +4,21 @@ package api_ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiEcrLifecyclePolicyConfig struct {
-	RegistryId any
+	RegistryId     any
 	RepositoryName any
 }
 
 type ApiEcrLifecyclePolicyAttrs struct {
-	LastEvaluatedAt any
+	LastEvaluatedAt     any
 	LifecyclePolicyText any
-	RegistryId any
-	RepositoryName any
+	RegistryId          any
+	RepositoryName      any
 }
 
 var ApiEcrLifecyclePolicy = ubx.DataSourceBinding{
 	WireType: "aws_api_ecr_lifecycle_policy",
 	Fields: ubx.FieldMap{
-		"RegistryId": ubx.FieldSpec{WireName: "registry_id"},
+		"RegistryId":     ubx.FieldSpec{WireName: "registry_id"},
 		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
 	},
 }

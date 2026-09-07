@@ -4,23 +4,23 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityRecognizers_EntityRecognizerPropertiesList_InputDataConfig_Annotations struct {
-	S3Uri any
+	S3Uri     any
 	TestS3Uri any
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_InputDataConfig_AugmentedManifests struct {
-	AnnotationDataS3Uri any
-	AttributeNames any
-	DocumentType any
-	S3Uri any
+	AnnotationDataS3Uri  any
+	AttributeNames       any
+	DocumentType         any
+	S3Uri                any
 	SourceDocumentsS3Uri any
-	Split any
+	Split                any
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_InputDataConfig_Documents struct {
 	InputFormat any
-	S3Uri any
-	TestS3Uri any
+	S3Uri       any
+	TestS3Uri   any
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_InputDataConfig_EntityList struct {
@@ -32,12 +32,12 @@ type EntityRecognizers_EntityRecognizerPropertiesList_InputDataConfig_EntityType
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_InputDataConfig struct {
-	Annotations any
+	Annotations        any
 	AugmentedManifests any
-	DataFormat any
-	Documents any
-	EntityList any
-	EntityTypes any
+	DataFormat         any
+	Documents          any
+	EntityList         any
+	EntityTypes        any
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_OutputDataConfig struct {
@@ -45,77 +45,77 @@ type EntityRecognizers_EntityRecognizerPropertiesList_OutputDataConfig struct {
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_RecognizerMetadata_EntityTypes_EvaluationMetrics struct {
-	F1Score any
+	F1Score   any
 	Precision any
-	Recall any
+	Recall    any
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_RecognizerMetadata_EntityTypes struct {
-	EvaluationMetrics any
+	EvaluationMetrics     any
 	NumberOfTrainMentions any
-	Type any
+	Type                  any
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_RecognizerMetadata struct {
-	EntityTypes any
-	EvaluationMetrics any
-	NumberOfTestDocuments any
+	EntityTypes              any
+	EvaluationMetrics        any
+	NumberOfTestDocuments    any
 	NumberOfTrainedDocuments any
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList_VpcConfig struct {
 	SecurityGroupIds any
-	Subnets any
+	Subnets          any
 }
 
 type EntityRecognizers_EntityRecognizerPropertiesList struct {
-	DataAccessRoleArn any
-	EndTime any
+	DataAccessRoleArn   any
+	EndTime             any
 	EntityRecognizerArn any
-	FlywheelArn any
-	InputDataConfig any
-	LanguageCode any
-	Message any
-	ModelKmsKeyId any
-	OutputDataConfig any
-	RecognizerMetadata any
-	SourceModelArn any
-	Status any
-	SubmitTime any
-	TrainingEndTime any
-	TrainingStartTime any
-	VersionName any
-	VolumeKmsKeyId any
-	VpcConfig any
+	FlywheelArn         any
+	InputDataConfig     any
+	LanguageCode        any
+	Message             any
+	ModelKmsKeyId       any
+	OutputDataConfig    any
+	RecognizerMetadata  any
+	SourceModelArn      any
+	Status              any
+	SubmitTime          any
+	TrainingEndTime     any
+	TrainingStartTime   any
+	VersionName         any
+	VolumeKmsKeyId      any
+	VpcConfig           any
 }
 
 type EntityRecognizers_Filter struct {
-	RecognizerName any
-	Status any
-	SubmitTimeAfter any
+	RecognizerName   any
+	Status           any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 var EntityRecognizers_FilterFields = ubx.FieldMap{
-		"RecognizerName": ubx.FieldSpec{WireName: "recognizer_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"RecognizerName":   ubx.FieldSpec{WireName: "recognizer_name"},
+	"Status":           ubx.FieldSpec{WireName: "status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type EntityRecognizersConfig struct {
 	// <p>Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the <code>ListEntityRecognizers</code> operation./></p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EntityRecognizersAttrs struct {
 	EntityRecognizerPropertiesList any
 	// <p>Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the <code>ListEntityRecognizers</code> operation./></p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var EntityRecognizers = ubx.DataSourceBinding{
@@ -123,10 +123,10 @@ var EntityRecognizers = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: EntityRecognizers_FilterFields,
+			Kind:     "object",
+			Fields:   EntityRecognizers_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

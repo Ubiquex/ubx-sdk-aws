@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterSubnetGroup_Tags struct {
 	// The key of a tag applied to the Redshift cluster subnet group, used for identifying and organizing the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var ClusterSubnetGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ClusterSubnetGroupConfig struct {
 	// The description of the parameter group.
@@ -38,11 +38,11 @@ var ClusterSubnetGroup = ubx.ResourceBinding{
 	WireType: "aws_redshift_cluster_subnet_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":   ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ClusterSubnetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ClusterSubnetGroup_TagsFields,
 		},
 	},
 }

@@ -9,7 +9,7 @@ type BedrockAgentcoreWorkloadAccessTokenConfig struct {
 
 type BedrockAgentcoreWorkloadAccessTokenAttrs struct {
 	WorkloadAccessToken any
-	WorkloadName any
+	WorkloadName        any
 }
 
 var BedrockAgentcoreWorkloadAccessToken = ubx.DataSourceBinding{

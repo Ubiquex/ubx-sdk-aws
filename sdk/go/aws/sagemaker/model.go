@@ -90,92 +90,92 @@ type Model_VpcConfig struct {
 }
 
 var Model_Containers_ImageConfig_RepositoryAuthConfigFields = ubx.FieldMap{
-		"RepositoryCredentialsProviderArn": ubx.FieldSpec{WireName: "repository_credentials_provider_arn"},
-	}
+	"RepositoryCredentialsProviderArn": ubx.FieldSpec{WireName: "repository_credentials_provider_arn"},
+}
 
 var Model_Containers_ImageConfigFields = ubx.FieldMap{
-		"RepositoryAccessMode": ubx.FieldSpec{WireName: "repository_access_mode"},
-		"RepositoryAuthConfig": ubx.FieldSpec{
-			WireName: "repository_auth_config",
-			Kind: "object",
-			Fields: Model_Containers_ImageConfig_RepositoryAuthConfigFields,
-		},
-	}
+	"RepositoryAccessMode": ubx.FieldSpec{WireName: "repository_access_mode"},
+	"RepositoryAuthConfig": ubx.FieldSpec{
+		WireName: "repository_auth_config",
+		Kind:     "object",
+		Fields:   Model_Containers_ImageConfig_RepositoryAuthConfigFields,
+	},
+}
 
 var Model_Containers_ModelDataSource_S3DataSource_HubAccessConfigFields = ubx.FieldMap{
-		"HubContentArn": ubx.FieldSpec{WireName: "hub_content_arn"},
-	}
+	"HubContentArn": ubx.FieldSpec{WireName: "hub_content_arn"},
+}
 
 var Model_Containers_ModelDataSource_S3DataSource_ModelAccessConfigFields = ubx.FieldMap{
-		"AcceptEula": ubx.FieldSpec{WireName: "accept_eula"},
-	}
+	"AcceptEula": ubx.FieldSpec{WireName: "accept_eula"},
+}
 
 var Model_Containers_ModelDataSource_S3DataSourceFields = ubx.FieldMap{
-		"CompressionType": ubx.FieldSpec{WireName: "compression_type"},
-		"HubAccessConfig": ubx.FieldSpec{
-			WireName: "hub_access_config",
-			Kind: "object",
-			Fields: Model_Containers_ModelDataSource_S3DataSource_HubAccessConfigFields,
-		},
-		"ModelAccessConfig": ubx.FieldSpec{
-			WireName: "model_access_config",
-			Kind: "object",
-			Fields: Model_Containers_ModelDataSource_S3DataSource_ModelAccessConfigFields,
-		},
-		"S3DataType": ubx.FieldSpec{WireName: "s3_data_type"},
-		"S3Uri": ubx.FieldSpec{WireName: "s3_uri"},
-	}
+	"CompressionType": ubx.FieldSpec{WireName: "compression_type"},
+	"HubAccessConfig": ubx.FieldSpec{
+		WireName: "hub_access_config",
+		Kind:     "object",
+		Fields:   Model_Containers_ModelDataSource_S3DataSource_HubAccessConfigFields,
+	},
+	"ModelAccessConfig": ubx.FieldSpec{
+		WireName: "model_access_config",
+		Kind:     "object",
+		Fields:   Model_Containers_ModelDataSource_S3DataSource_ModelAccessConfigFields,
+	},
+	"S3DataType": ubx.FieldSpec{WireName: "s3_data_type"},
+	"S3Uri":      ubx.FieldSpec{WireName: "s3_uri"},
+}
 
 var Model_Containers_ModelDataSourceFields = ubx.FieldMap{
-		"S3DataSource": ubx.FieldSpec{
-			WireName: "s3_data_source",
-			Kind: "object",
-			Fields: Model_Containers_ModelDataSource_S3DataSourceFields,
-		},
-	}
+	"S3DataSource": ubx.FieldSpec{
+		WireName: "s3_data_source",
+		Kind:     "object",
+		Fields:   Model_Containers_ModelDataSource_S3DataSourceFields,
+	},
+}
 
 var Model_Containers_MultiModelConfigFields = ubx.FieldMap{
-		"ModelCacheSetting": ubx.FieldSpec{WireName: "model_cache_setting"},
-	}
+	"ModelCacheSetting": ubx.FieldSpec{WireName: "model_cache_setting"},
+}
 
 var Model_ContainersFields = ubx.FieldMap{
-		"ContainerHostname": ubx.FieldSpec{WireName: "container_hostname"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ImageConfig": ubx.FieldSpec{
-			WireName: "image_config",
-			Kind: "object",
-			Fields: Model_Containers_ImageConfigFields,
-		},
-		"InferenceSpecificationName": ubx.FieldSpec{WireName: "inference_specification_name"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"ModelDataSource": ubx.FieldSpec{
-			WireName: "model_data_source",
-			Kind: "object",
-			Fields: Model_Containers_ModelDataSourceFields,
-		},
-		"ModelDataUrl": ubx.FieldSpec{WireName: "model_data_url"},
-		"ModelPackageName": ubx.FieldSpec{WireName: "model_package_name"},
-		"MultiModelConfig": ubx.FieldSpec{
-			WireName: "multi_model_config",
-			Kind: "object",
-			Fields: Model_Containers_MultiModelConfigFields,
-		},
-	}
+	"ContainerHostname": ubx.FieldSpec{WireName: "container_hostname"},
+	"Environment":       ubx.FieldSpec{WireName: "environment"},
+	"Image":             ubx.FieldSpec{WireName: "image"},
+	"ImageConfig": ubx.FieldSpec{
+		WireName: "image_config",
+		Kind:     "object",
+		Fields:   Model_Containers_ImageConfigFields,
+	},
+	"InferenceSpecificationName": ubx.FieldSpec{WireName: "inference_specification_name"},
+	"Mode":                       ubx.FieldSpec{WireName: "mode"},
+	"ModelDataSource": ubx.FieldSpec{
+		WireName: "model_data_source",
+		Kind:     "object",
+		Fields:   Model_Containers_ModelDataSourceFields,
+	},
+	"ModelDataUrl":     ubx.FieldSpec{WireName: "model_data_url"},
+	"ModelPackageName": ubx.FieldSpec{WireName: "model_package_name"},
+	"MultiModelConfig": ubx.FieldSpec{
+		WireName: "multi_model_config",
+		Kind:     "object",
+		Fields:   Model_Containers_MultiModelConfigFields,
+	},
+}
 
 var Model_InferenceExecutionConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Model_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Model_VpcConfigFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"Subnets":          ubx.FieldSpec{WireName: "subnets"},
+}
 
 type ModelConfig struct {
 	// Specifies the containers in the inference pipeline.
@@ -222,31 +222,31 @@ var Model = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Containers": ubx.FieldSpec{
 			WireName: "containers",
-			Kind: "list",
-			Fields: Model_ContainersFields,
+			Kind:     "list",
+			Fields:   Model_ContainersFields,
 		},
 		"EnableNetworkIsolation": ubx.FieldSpec{WireName: "enable_network_isolation"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
+		"ExecutionRoleArn":       ubx.FieldSpec{WireName: "execution_role_arn"},
 		"InferenceExecutionConfig": ubx.FieldSpec{
 			WireName: "inference_execution_config",
-			Kind: "object",
-			Fields: Model_InferenceExecutionConfigFields,
+			Kind:     "object",
+			Fields:   Model_InferenceExecutionConfigFields,
 		},
 		"ModelName": ubx.FieldSpec{WireName: "model_name"},
 		"PrimaryContainer": ubx.FieldSpec{
 			WireName: "primary_container",
-			Kind: "object",
-			Fields: Model_ContainersFields,
+			Kind:     "object",
+			Fields:   Model_ContainersFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Model_TagsFields,
+			Kind:     "list",
+			Fields:   Model_TagsFields,
 		},
 		"VpcConfig": ubx.FieldSpec{
 			WireName: "vpc_config",
-			Kind: "object",
-			Fields: Model_VpcConfigFields,
+			Kind:     "object",
+			Fields:   Model_VpcConfigFields,
 		},
 	},
 }

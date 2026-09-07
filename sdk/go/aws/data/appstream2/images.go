@@ -5,93 +5,93 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Images_Images_Applications_IconS3Location struct {
 	S3Bucket any
-	S3Key any
+	S3Key    any
 }
 
 type Images_Images_Applications struct {
-	AppBlockArn any
-	Arn any
-	CreatedTime any
-	Description any
-	DisplayName any
-	Enabled any
-	IconS3Location any
-	IconUrl any
+	AppBlockArn      any
+	Arn              any
+	CreatedTime      any
+	Description      any
+	DisplayName      any
+	Enabled          any
+	IconS3Location   any
+	IconUrl          any
 	InstanceFamilies any
 	LaunchParameters any
-	LaunchPath any
-	Metadata any
-	Name any
-	Platforms any
+	LaunchPath       any
+	Metadata         any
+	Name             any
+	Platforms        any
 	WorkingDirectory any
 }
 
 type Images_Images_ImageErrors struct {
-	ErrorCode any
-	ErrorMessage any
+	ErrorCode      any
+	ErrorMessage   any
 	ErrorTimestamp any
 }
 
 type Images_Images_ImagePermissions struct {
-	AllowFleet any
+	AllowFleet        any
 	AllowImageBuilder any
 }
 
 type Images_Images_StateChangeReason struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Images_Images struct {
-	Applications any
-	AppstreamAgentVersion any
-	Arn any
-	BaseImageArn any
-	CreatedTime any
-	Description any
-	DisplayName any
-	DynamicAppProvidersEnabled any
-	ImageBuilderName any
-	ImageBuilderSupported any
-	ImageErrors any
-	ImagePermissions any
-	ImageSharedWithOthers any
-	ImageType any
+	Applications                any
+	AppstreamAgentVersion       any
+	Arn                         any
+	BaseImageArn                any
+	CreatedTime                 any
+	Description                 any
+	DisplayName                 any
+	DynamicAppProvidersEnabled  any
+	ImageBuilderName            any
+	ImageBuilderSupported       any
+	ImageErrors                 any
+	ImagePermissions            any
+	ImageSharedWithOthers       any
+	ImageType                   any
 	LatestAppstreamAgentVersion any
-	ManagedSoftwareIncluded any
-	Name any
-	Platform any
+	ManagedSoftwareIncluded     any
+	Name                        any
+	Platform                    any
 	PublicBaseImageReleasedDate any
-	State any
-	StateChangeReason any
-	SupportedInstanceFamilies any
-	Visibility any
+	State                       any
+	StateChangeReason           any
+	SupportedInstanceFamilies   any
+	Visibility                  any
 }
 
 type ImagesConfig struct {
-	Arns any
+	Arns       any
 	MaxResults any
-	Names any
-	NextToken any
-	Type any
+	Names      any
+	NextToken  any
+	Type       any
 }
 
 type ImagesAttrs struct {
-	Arns any
-	Images any
+	Arns       any
+	Images     any
 	MaxResults any
-	Names any
-	NextToken any
-	Type any
+	Names      any
+	NextToken  any
+	Type       any
 }
 
 var Images = ubx.DataSourceBinding{
 	WireType: "aws_appstream2_images",
 	Fields: ubx.FieldMap{
-		"Arns": ubx.FieldSpec{WireName: "arns"},
+		"Arns":       ubx.FieldSpec{WireName: "arns"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Names":      ubx.FieldSpec{WireName: "names"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

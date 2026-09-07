@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3OutpostsSharedEndpoints_Endpoints_FailedReason struct {
 	ErrorCode any
-	Message any
+	Message   any
 }
 
 type S3OutpostsSharedEndpoints_Endpoints_NetworkInterfaces struct {
@@ -13,38 +13,38 @@ type S3OutpostsSharedEndpoints_Endpoints_NetworkInterfaces struct {
 }
 
 type S3OutpostsSharedEndpoints_Endpoints struct {
-	AccessType any
-	CidrBlock any
-	CreationTime any
+	AccessType            any
+	CidrBlock             any
+	CreationTime          any
 	CustomerOwnedIpv4Pool any
-	EndpointArn any
-	FailedReason any
-	NetworkInterfaces any
-	OutpostsId any
-	SecurityGroupId any
-	Status any
-	SubnetId any
-	VpcId any
+	EndpointArn           any
+	FailedReason          any
+	NetworkInterfaces     any
+	OutpostsId            any
+	SecurityGroupId       any
+	Status                any
+	SubnetId              any
+	VpcId                 any
 }
 
 type S3OutpostsSharedEndpointsConfig struct {
 	MaxResults any
-	NextToken any
-	OutpostId any
+	NextToken  any
+	OutpostId  any
 }
 
 type S3OutpostsSharedEndpointsAttrs struct {
-	Endpoints any
+	Endpoints  any
 	MaxResults any
-	NextToken any
-	OutpostId any
+	NextToken  any
+	OutpostId  any
 }
 
 var S3OutpostsSharedEndpoints = ubx.DataSourceBinding{
 	WireType: "aws_s3_outposts_shared_endpoints",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OutpostId": ubx.FieldSpec{WireName: "outpost_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"OutpostId":  ubx.FieldSpec{WireName: "outpost_id"},
 	},
 }

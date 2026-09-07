@@ -4,38 +4,38 @@ package secretsmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RandomPasswordConfig struct {
-	ExcludeCharacters any
-	ExcludeLowercase any
-	ExcludeNumbers any
-	ExcludePunctuation any
-	ExcludeUppercase any
-	IncludeSpace any
-	PasswordLength any
+	ExcludeCharacters       any
+	ExcludeLowercase        any
+	ExcludeNumbers          any
+	ExcludePunctuation      any
+	ExcludeUppercase        any
+	IncludeSpace            any
+	PasswordLength          any
 	RequireEachIncludedType any
 }
 
 type RandomPasswordAttrs struct {
-	ExcludeCharacters any
-	ExcludeLowercase any
-	ExcludeNumbers any
-	ExcludePunctuation any
-	ExcludeUppercase any
-	IncludeSpace any
-	PasswordLength any
-	RandomPassword any
+	ExcludeCharacters       any
+	ExcludeLowercase        any
+	ExcludeNumbers          any
+	ExcludePunctuation      any
+	ExcludeUppercase        any
+	IncludeSpace            any
+	PasswordLength          any
+	RandomPassword          any
 	RequireEachIncludedType any
 }
 
 var RandomPassword = ubx.DataSourceBinding{
 	WireType: "aws_secretsmanager_random_password",
 	Fields: ubx.FieldMap{
-		"ExcludeCharacters": ubx.FieldSpec{WireName: "exclude_characters"},
-		"ExcludeLowercase": ubx.FieldSpec{WireName: "exclude_lowercase"},
-		"ExcludeNumbers": ubx.FieldSpec{WireName: "exclude_numbers"},
-		"ExcludePunctuation": ubx.FieldSpec{WireName: "exclude_punctuation"},
-		"ExcludeUppercase": ubx.FieldSpec{WireName: "exclude_uppercase"},
-		"IncludeSpace": ubx.FieldSpec{WireName: "include_space"},
-		"PasswordLength": ubx.FieldSpec{WireName: "password_length"},
+		"ExcludeCharacters":       ubx.FieldSpec{WireName: "exclude_characters"},
+		"ExcludeLowercase":        ubx.FieldSpec{WireName: "exclude_lowercase"},
+		"ExcludeNumbers":          ubx.FieldSpec{WireName: "exclude_numbers"},
+		"ExcludePunctuation":      ubx.FieldSpec{WireName: "exclude_punctuation"},
+		"ExcludeUppercase":        ubx.FieldSpec{WireName: "exclude_uppercase"},
+		"IncludeSpace":            ubx.FieldSpec{WireName: "include_space"},
+		"PasswordLength":          ubx.FieldSpec{WireName: "password_length"},
 		"RequireEachIncludedType": ubx.FieldSpec{WireName: "require_each_included_type"},
 	},
 }

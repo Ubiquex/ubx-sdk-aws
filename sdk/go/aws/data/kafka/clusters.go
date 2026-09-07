@@ -12,13 +12,13 @@ type Clusters_ClusterInfoList_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivi
 }
 
 type Clusters_ClusterInfoList_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl struct {
-	Iam any
+	Iam   any
 	Scram any
 }
 
 type Clusters_ClusterInfoList_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication struct {
 	Sasl any
-	Tls any
+	Tls  any
 }
 
 type Clusters_ClusterInfoList_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity struct {
@@ -26,19 +26,19 @@ type Clusters_ClusterInfoList_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivi
 }
 
 type Clusters_ClusterInfoList_BrokerNodeGroupInfo_ConnectivityInfo struct {
-	NetworkType any
-	PublicAccess any
+	NetworkType     any
+	PublicAccess    any
 	VpcConnectivity any
 }
 
 type Clusters_ClusterInfoList_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfo_ProvisionedThroughput struct {
-	Enabled any
+	Enabled          any
 	VolumeThroughput any
 }
 
 type Clusters_ClusterInfoList_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfo struct {
 	ProvisionedThroughput any
-	VolumeSize any
+	VolumeSize            any
 }
 
 type Clusters_ClusterInfoList_BrokerNodeGroupInfo_StorageInfo struct {
@@ -47,29 +47,29 @@ type Clusters_ClusterInfoList_BrokerNodeGroupInfo_StorageInfo struct {
 
 type Clusters_ClusterInfoList_BrokerNodeGroupInfo struct {
 	BrokerAzdistribution any
-	ClientSubnets any
-	ConnectivityInfo any
-	InstanceType any
-	SecurityGroups any
-	StorageInfo any
-	ZoneIds any
+	ClientSubnets        any
+	ConnectivityInfo     any
+	InstanceType         any
+	SecurityGroups       any
+	StorageInfo          any
+	ZoneIds              any
 }
 
 type Clusters_ClusterInfoList_ClientAuthentication_Tls struct {
 	CertificateAuthorityArnList any
-	Enabled any
+	Enabled                     any
 }
 
 type Clusters_ClusterInfoList_ClientAuthentication struct {
-	Sasl any
-	Tls any
+	Sasl            any
+	Tls             any
 	Unauthenticated any
 }
 
 type Clusters_ClusterInfoList_CurrentBrokerSoftwareInfo struct {
-	ConfigurationArn any
+	ConfigurationArn      any
 	ConfigurationRevision any
-	KafkaVersion any
+	KafkaVersion          any
 }
 
 type Clusters_ClusterInfoList_EncryptionInfo_EncryptionAtRest struct {
@@ -78,39 +78,39 @@ type Clusters_ClusterInfoList_EncryptionInfo_EncryptionAtRest struct {
 
 type Clusters_ClusterInfoList_EncryptionInfo_EncryptionInTransit struct {
 	ClientBroker any
-	InCluster any
+	InCluster    any
 }
 
 type Clusters_ClusterInfoList_EncryptionInfo struct {
-	EncryptionAtRest any
+	EncryptionAtRest    any
 	EncryptionInTransit any
 }
 
 type Clusters_ClusterInfoList_LoggingInfo_AuthorizerLogs_CloudWatchLogs struct {
-	Enabled any
+	Enabled  any
 	LogGroup any
 }
 
 type Clusters_ClusterInfoList_LoggingInfo_AuthorizerLogs_Firehose struct {
 	DeliveryStream any
-	Enabled any
+	Enabled        any
 }
 
 type Clusters_ClusterInfoList_LoggingInfo_AuthorizerLogs_S3 struct {
-	Bucket any
+	Bucket  any
 	Enabled any
-	Prefix any
+	Prefix  any
 }
 
 type Clusters_ClusterInfoList_LoggingInfo_AuthorizerLogs struct {
 	CloudWatchLogs any
-	Firehose any
-	S3 any
+	Firehose       any
+	S3             any
 }
 
 type Clusters_ClusterInfoList_LoggingInfo struct {
 	AuthorizerLogs any
-	BrokerLogs any
+	BrokerLogs     any
 }
 
 type Clusters_ClusterInfoList_OpenMonitoring_Prometheus_JmxExporter struct {
@@ -118,7 +118,7 @@ type Clusters_ClusterInfoList_OpenMonitoring_Prometheus_JmxExporter struct {
 }
 
 type Clusters_ClusterInfoList_OpenMonitoring_Prometheus struct {
-	JmxExporter any
+	JmxExporter  any
 	NodeExporter any
 }
 
@@ -131,52 +131,52 @@ type Clusters_ClusterInfoList_Rebalancing struct {
 }
 
 type Clusters_ClusterInfoList_StateInfo struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Clusters_ClusterInfoList struct {
-	ActiveOperationArn any
-	BrokerNodeGroupInfo any
-	ClientAuthentication any
-	ClusterArn any
-	ClusterName any
-	CreationTime any
+	ActiveOperationArn        any
+	BrokerNodeGroupInfo       any
+	ClientAuthentication      any
+	ClusterArn                any
+	ClusterName               any
+	CreationTime              any
 	CurrentBrokerSoftwareInfo any
-	CurrentVersion any
-	CustomerActionStatus any
-	EncryptionInfo any
-	EnhancedMonitoring any
-	LoggingInfo any
-	NumberOfBrokerNodes any
-	OpenMonitoring any
-	Rebalancing any
-	State any
-	StateInfo any
-	StorageMode any
-	Tags any
-	ZookeeperConnectString any
+	CurrentVersion            any
+	CustomerActionStatus      any
+	EncryptionInfo            any
+	EnhancedMonitoring        any
+	LoggingInfo               any
+	NumberOfBrokerNodes       any
+	OpenMonitoring            any
+	Rebalancing               any
+	State                     any
+	StateInfo                 any
+	StorageMode               any
+	Tags                      any
+	ZookeeperConnectString    any
 	ZookeeperConnectStringTls any
 }
 
 type ClustersConfig struct {
 	ClusterNameFilter any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 type ClustersAttrs struct {
-	ClusterInfoList any
+	ClusterInfoList   any
 	ClusterNameFilter any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var Clusters = ubx.DataSourceBinding{
 	WireType: "aws_kafka_clusters",
 	Fields: ubx.FieldMap{
 		"ClusterNameFilter": ubx.FieldSpec{WireName: "cluster_name_filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

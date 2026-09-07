@@ -5,56 +5,56 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlarmRecommendations_AlarmRecommendations_Items_DiscoveredAlarm struct {
 	AlarmArn any
-	Source any
+	Source   any
 }
 
 type AlarmRecommendations_AlarmRecommendations_Items_LatestDiscoveredExperiment struct {
-	ExperimentArn any
+	ExperimentArn        any
 	ExperimentTemplateId any
 }
 
 type AlarmRecommendations_AlarmRecommendations_Items struct {
-	AlreadyImplemented any
-	DiscoveredAlarm any
-	ExcludeReason any
-	Excluded any
+	AlreadyImplemented         any
+	DiscoveredAlarm            any
+	ExcludeReason              any
+	Excluded                   any
 	LatestDiscoveredExperiment any
-	ResourceId any
-	TargetAccountId any
-	TargetRegion any
+	ResourceId                 any
+	TargetAccountId            any
+	TargetRegion               any
 }
 
 type AlarmRecommendations_AlarmRecommendations struct {
-	AppComponentName any
-	AppComponentNames any
-	Description any
-	Items any
-	Name any
-	Prerequisite any
-	RecommendationId any
+	AppComponentName     any
+	AppComponentNames    any
+	Description          any
+	Items                any
+	Name                 any
+	Prerequisite         any
+	RecommendationId     any
 	RecommendationStatus any
-	ReferenceId any
-	Type any
+	ReferenceId          any
+	Type                 any
 }
 
 type AlarmRecommendationsConfig struct {
 	AssessmentArn any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type AlarmRecommendationsAttrs struct {
 	AlarmRecommendations any
-	AssessmentArn any
-	MaxResults any
-	NextToken any
+	AssessmentArn        any
+	MaxResults           any
+	NextToken            any
 }
 
 var AlarmRecommendations = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_alarm_recommendations",
 	Fields: ubx.FieldMap{
 		"AssessmentArn": ubx.FieldSpec{WireName: "assessment_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

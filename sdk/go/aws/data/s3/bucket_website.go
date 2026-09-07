@@ -18,43 +18,43 @@ type BucketWebsite_RedirectAllRequestsTo struct {
 
 type BucketWebsite_RoutingRules_Condition struct {
 	HttpErrorCodeReturnedEquals any
-	KeyPrefixEquals any
+	KeyPrefixEquals             any
 }
 
 type BucketWebsite_RoutingRules_Redirect struct {
-	HostName any
-	HttpRedirectCode any
-	Protocol any
+	HostName             any
+	HttpRedirectCode     any
+	Protocol             any
 	ReplaceKeyPrefixWith any
-	ReplaceKeyWith any
+	ReplaceKeyWith       any
 }
 
 type BucketWebsite_RoutingRules struct {
 	Condition any
-	Redirect any
+	Redirect  any
 }
 
 type BucketWebsiteConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketWebsiteAttrs struct {
 	Bucket any
 	// <p>The error information.</p>
-	ErrorDocument any
+	ErrorDocument       any
 	ExpectedBucketOwner any
 	// <p>Container for the <code>Suffix</code> element.</p>
 	IndexDocument any
 	// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
 	RedirectAllRequestsTo any
-	RoutingRules any
+	RoutingRules          any
 }
 
 var BucketWebsite = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_website",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

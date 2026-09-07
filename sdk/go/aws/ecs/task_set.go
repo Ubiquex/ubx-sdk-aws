@@ -61,47 +61,47 @@ type TaskSet_Tags struct {
 }
 
 var TaskSet_CapacityProviderStrategyFields = ubx.FieldMap{
-		"Base": ubx.FieldSpec{WireName: "base"},
-		"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Base":             ubx.FieldSpec{WireName: "base"},
+	"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 var TaskSet_LoadBalancersFields = ubx.FieldMap{
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
-	}
+	"ContainerName":  ubx.FieldSpec{WireName: "container_name"},
+	"ContainerPort":  ubx.FieldSpec{WireName: "container_port"},
+	"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
+}
 
 var TaskSet_NetworkConfiguration_AwsVpcConfigurationFields = ubx.FieldMap{
-		"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var TaskSet_NetworkConfigurationFields = ubx.FieldMap{
-		"AwsVpcConfiguration": ubx.FieldSpec{
-			WireName: "aws_vpc_configuration",
-			Kind: "object",
-			Fields: TaskSet_NetworkConfiguration_AwsVpcConfigurationFields,
-		},
-	}
+	"AwsVpcConfiguration": ubx.FieldSpec{
+		WireName: "aws_vpc_configuration",
+		Kind:     "object",
+		Fields:   TaskSet_NetworkConfiguration_AwsVpcConfigurationFields,
+	},
+}
 
 var TaskSet_ScaleFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TaskSet_ServiceRegistriesFields = ubx.FieldMap{
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"RegistryArn": ubx.FieldSpec{WireName: "registry_arn"},
-	}
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+	"Port":          ubx.FieldSpec{WireName: "port"},
+	"RegistryArn":   ubx.FieldSpec{WireName: "registry_arn"},
+}
 
 var TaskSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TaskSetConfig struct {
 	// Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred)
@@ -124,7 +124,7 @@ type TaskSetConfig struct {
 	Service any
 	// The details of the service discovery registries to assign to this task set. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html.
 	ServiceRegistries any
-	Tags any
+	Tags              any
 	// The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use.
 	TaskDefinition any
 }
@@ -152,7 +152,7 @@ type TaskSetAttrs struct {
 	Service any
 	// The details of the service discovery registries to assign to this task set. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html.
 	ServiceRegistries any
-	Tags any
+	Tags              any
 	// The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use.
 	TaskDefinition any
 }
@@ -162,38 +162,38 @@ var TaskSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityProviderStrategy": ubx.FieldSpec{
 			WireName: "capacity_provider_strategy",
-			Kind: "list",
-			Fields: TaskSet_CapacityProviderStrategyFields,
+			Kind:     "list",
+			Fields:   TaskSet_CapacityProviderStrategyFields,
 		},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
+		"Cluster":    ubx.FieldSpec{WireName: "cluster"},
 		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
 		"LaunchType": ubx.FieldSpec{WireName: "launch_type"},
 		"LoadBalancers": ubx.FieldSpec{
 			WireName: "load_balancers",
-			Kind: "list",
-			Fields: TaskSet_LoadBalancersFields,
+			Kind:     "list",
+			Fields:   TaskSet_LoadBalancersFields,
 		},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: TaskSet_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   TaskSet_NetworkConfigurationFields,
 		},
 		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
 		"Scale": ubx.FieldSpec{
 			WireName: "scale",
-			Kind: "object",
-			Fields: TaskSet_ScaleFields,
+			Kind:     "object",
+			Fields:   TaskSet_ScaleFields,
 		},
 		"Service": ubx.FieldSpec{WireName: "service"},
 		"ServiceRegistries": ubx.FieldSpec{
 			WireName: "service_registries",
-			Kind: "list",
-			Fields: TaskSet_ServiceRegistriesFields,
+			Kind:     "list",
+			Fields:   TaskSet_ServiceRegistriesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TaskSet_TagsFields,
+			Kind:     "list",
+			Fields:   TaskSet_TagsFields,
 		},
 		"TaskDefinition": ubx.FieldSpec{WireName: "task_definition"},
 	},

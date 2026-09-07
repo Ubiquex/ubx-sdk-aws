@@ -27,28 +27,28 @@ type DataCatalogEncryptionSettings_DataCatalogEncryptionSettings struct {
 }
 
 var DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryptionFields = ubx.FieldMap{
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"ReturnConnectionPasswordEncrypted": ubx.FieldSpec{WireName: "return_connection_password_encrypted"},
-	}
+	"KmsKeyId":                          ubx.FieldSpec{WireName: "kms_key_id"},
+	"ReturnConnectionPasswordEncrypted": ubx.FieldSpec{WireName: "return_connection_password_encrypted"},
+}
 
 var DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRestFields = ubx.FieldMap{
-		"CatalogEncryptionMode": ubx.FieldSpec{WireName: "catalog_encryption_mode"},
-		"CatalogEncryptionServiceRole": ubx.FieldSpec{WireName: "catalog_encryption_service_role"},
-		"SseAwsKmsKeyId": ubx.FieldSpec{WireName: "sse_aws_kms_key_id"},
-	}
+	"CatalogEncryptionMode":        ubx.FieldSpec{WireName: "catalog_encryption_mode"},
+	"CatalogEncryptionServiceRole": ubx.FieldSpec{WireName: "catalog_encryption_service_role"},
+	"SseAwsKmsKeyId":               ubx.FieldSpec{WireName: "sse_aws_kms_key_id"},
+}
 
 var DataCatalogEncryptionSettings_DataCatalogEncryptionSettingsFields = ubx.FieldMap{
-		"ConnectionPasswordEncryption": ubx.FieldSpec{
-			WireName: "connection_password_encryption",
-			Kind: "object",
-			Fields: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryptionFields,
-		},
-		"EncryptionAtRest": ubx.FieldSpec{
-			WireName: "encryption_at_rest",
-			Kind: "object",
-			Fields: DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRestFields,
-		},
-	}
+	"ConnectionPasswordEncryption": ubx.FieldSpec{
+		WireName: "connection_password_encryption",
+		Kind:     "object",
+		Fields:   DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_ConnectionPasswordEncryptionFields,
+	},
+	"EncryptionAtRest": ubx.FieldSpec{
+		WireName: "encryption_at_rest",
+		Kind:     "object",
+		Fields:   DataCatalogEncryptionSettings_DataCatalogEncryptionSettings_EncryptionAtRestFields,
+	},
+}
 
 type DataCatalogEncryptionSettingsConfig struct {
 	// The ID of the Data Catalog in which the settings are created.
@@ -70,8 +70,8 @@ var DataCatalogEncryptionSettings = ubx.ResourceBinding{
 		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
 		"DataCatalogEncryptionSettings": ubx.FieldSpec{
 			WireName: "data_catalog_encryption_settings",
-			Kind: "object",
-			Fields: DataCatalogEncryptionSettings_DataCatalogEncryptionSettingsFields,
+			Kind:     "object",
+			Fields:   DataCatalogEncryptionSettings_DataCatalogEncryptionSettingsFields,
 		},
 	},
 }

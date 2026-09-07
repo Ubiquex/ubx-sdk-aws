@@ -4,32 +4,32 @@ package codecommit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MergeCommitConfig struct {
-	ConflictDetailLevel any
+	ConflictDetailLevel        any
 	ConflictResolutionStrategy any
 	DestinationCommitSpecifier any
-	RepositoryName any
-	SourceCommitSpecifier any
+	RepositoryName             any
+	SourceCommitSpecifier      any
 }
 
 type MergeCommitAttrs struct {
-	BaseCommitId any
-	ConflictDetailLevel any
+	BaseCommitId               any
+	ConflictDetailLevel        any
 	ConflictResolutionStrategy any
-	DestinationCommitId any
+	DestinationCommitId        any
 	DestinationCommitSpecifier any
-	MergedCommitId any
-	RepositoryName any
-	SourceCommitId any
-	SourceCommitSpecifier any
+	MergedCommitId             any
+	RepositoryName             any
+	SourceCommitId             any
+	SourceCommitSpecifier      any
 }
 
 var MergeCommit = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_merge_commit",
 	Fields: ubx.FieldMap{
-		"ConflictDetailLevel": ubx.FieldSpec{WireName: "conflict_detail_level"},
+		"ConflictDetailLevel":        ubx.FieldSpec{WireName: "conflict_detail_level"},
 		"ConflictResolutionStrategy": ubx.FieldSpec{WireName: "conflict_resolution_strategy"},
 		"DestinationCommitSpecifier": ubx.FieldSpec{WireName: "destination_commit_specifier"},
-		"RepositoryName": ubx.FieldSpec{WireName: "repository_name"},
-		"SourceCommitSpecifier": ubx.FieldSpec{WireName: "source_commit_specifier"},
+		"RepositoryName":             ubx.FieldSpec{WireName: "repository_name"},
+		"SourceCommitSpecifier":      ubx.FieldSpec{WireName: "source_commit_specifier"},
 	},
 }

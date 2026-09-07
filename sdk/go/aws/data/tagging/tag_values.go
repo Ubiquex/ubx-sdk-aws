@@ -4,20 +4,20 @@ package tagging
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagValuesConfig struct {
-	Key any
+	Key             any
 	PaginationToken any
 }
 
 type TagValuesAttrs struct {
-	Key any
+	Key             any
 	PaginationToken any
-	TagValues any
+	TagValues       any
 }
 
 var TagValues = ubx.DataSourceBinding{
 	WireType: "aws_tagging_tag_values",
 	Fields: ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Key":             ubx.FieldSpec{WireName: "key"},
 		"PaginationToken": ubx.FieldSpec{WireName: "pagination_token"},
 	},
 }

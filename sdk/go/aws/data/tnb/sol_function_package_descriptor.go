@@ -4,21 +4,21 @@ package tnb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SolFunctionPackageDescriptorConfig struct {
-	Accept any
+	Accept   any
 	VnfPkgId any
 }
 
 type SolFunctionPackageDescriptorAttrs struct {
-	Accept any
+	Accept      any
 	ContentType any
-	VnfPkgId any
-	Vnfd any
+	VnfPkgId    any
+	Vnfd        any
 }
 
 var SolFunctionPackageDescriptor = ubx.DataSourceBinding{
 	WireType: "aws_tnb_sol_function_package_descriptor",
 	Fields: ubx.FieldMap{
-		"Accept": ubx.FieldSpec{WireName: "accept"},
+		"Accept":   ubx.FieldSpec{WireName: "accept"},
 		"VnfPkgId": ubx.FieldSpec{WireName: "vnf_pkg_id"},
 	},
 }

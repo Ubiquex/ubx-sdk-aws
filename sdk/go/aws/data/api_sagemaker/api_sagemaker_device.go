@@ -4,29 +4,29 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerDevice_Models struct {
-	LatestInference any
+	LatestInference  any
 	LatestSampleTime any
-	ModelName any
-	ModelVersion any
+	ModelName        any
+	ModelVersion     any
 }
 
 type ApiSagemakerDeviceConfig struct {
 	DeviceFleetName any
-	DeviceName any
-	NextToken any
+	DeviceName      any
+	NextToken       any
 }
 
 type ApiSagemakerDeviceAttrs struct {
-	AgentVersion any
-	Description any
-	DeviceArn any
-	DeviceFleetName any
-	DeviceName any
-	IotThingName any
-	LatestHeartbeat any
-	MaxModels any
-	Models any
-	NextToken any
+	AgentVersion     any
+	Description      any
+	DeviceArn        any
+	DeviceFleetName  any
+	DeviceName       any
+	IotThingName     any
+	LatestHeartbeat  any
+	MaxModels        any
+	Models           any
+	NextToken        any
 	RegistrationTime any
 }
 
@@ -34,7 +34,7 @@ var ApiSagemakerDevice = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_device",
 	Fields: ubx.FieldMap{
 		"DeviceFleetName": ubx.FieldSpec{WireName: "device_fleet_name"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DeviceName":      ubx.FieldSpec{WireName: "device_name"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

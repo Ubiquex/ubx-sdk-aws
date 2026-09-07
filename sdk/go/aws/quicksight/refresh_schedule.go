@@ -33,31 +33,31 @@ type RefreshSchedule_Schedule struct {
 }
 
 var RefreshSchedule_Schedule_ScheduleFrequency_RefreshOnDayFields = ubx.FieldMap{
-		"DayOfMonth": ubx.FieldSpec{WireName: "day_of_month"},
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-	}
+	"DayOfMonth": ubx.FieldSpec{WireName: "day_of_month"},
+	"DayOfWeek":  ubx.FieldSpec{WireName: "day_of_week"},
+}
 
 var RefreshSchedule_Schedule_ScheduleFrequencyFields = ubx.FieldMap{
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"RefreshOnDay": ubx.FieldSpec{
-			WireName: "refresh_on_day",
-			Kind: "object",
-			Fields: RefreshSchedule_Schedule_ScheduleFrequency_RefreshOnDayFields,
-		},
-		"TimeOfTheDay": ubx.FieldSpec{WireName: "time_of_the_day"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+	"RefreshOnDay": ubx.FieldSpec{
+		WireName: "refresh_on_day",
+		Kind:     "object",
+		Fields:   RefreshSchedule_Schedule_ScheduleFrequency_RefreshOnDayFields,
+	},
+	"TimeOfTheDay": ubx.FieldSpec{WireName: "time_of_the_day"},
+	"TimeZone":     ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var RefreshSchedule_ScheduleFields = ubx.FieldMap{
-		"RefreshType": ubx.FieldSpec{WireName: "refresh_type"},
-		"ScheduleFrequency": ubx.FieldSpec{
-			WireName: "schedule_frequency",
-			Kind: "object",
-			Fields: RefreshSchedule_Schedule_ScheduleFrequencyFields,
-		},
-		"ScheduleId": ubx.FieldSpec{WireName: "schedule_id"},
-		"StartAfterDateTime": ubx.FieldSpec{WireName: "start_after_date_time"},
-	}
+	"RefreshType": ubx.FieldSpec{WireName: "refresh_type"},
+	"ScheduleFrequency": ubx.FieldSpec{
+		WireName: "schedule_frequency",
+		Kind:     "object",
+		Fields:   RefreshSchedule_Schedule_ScheduleFrequencyFields,
+	},
+	"ScheduleId":         ubx.FieldSpec{WireName: "schedule_id"},
+	"StartAfterDateTime": ubx.FieldSpec{WireName: "start_after_date_time"},
+}
 
 type RefreshScheduleConfig struct {
 	// The AWS account ID that contains the dataset(s) associated with this refresh schedule; if not specified, the provider's default account is used. (AI-inferred)
@@ -83,11 +83,11 @@ var RefreshSchedule = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_refresh_schedule",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"DataSetId":    ubx.FieldSpec{WireName: "data_set_id"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: RefreshSchedule_ScheduleFields,
+			Kind:     "object",
+			Fields:   RefreshSchedule_ScheduleFields,
 		},
 	},
 }

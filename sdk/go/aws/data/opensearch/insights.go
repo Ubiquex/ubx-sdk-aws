@@ -11,37 +11,37 @@ type Insights_Entity struct {
 }
 
 type Insights_Insights struct {
-	CreationTime any
-	DisplayName any
-	InsightId any
+	CreationTime   any
+	DisplayName    any
+	InsightId      any
 	IsExperimental any
-	Priority any
-	Status any
-	Type any
-	UpdateTime any
+	Priority       any
+	Status         any
+	Type           any
+	UpdateTime     any
 }
 
 type Insights_TimeRange struct {
 	From any
-	To any
+	To   any
 }
 
 var Insights_EntityFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Insights_TimeRangeFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"From": ubx.FieldSpec{WireName: "from"},
+	"To":   ubx.FieldSpec{WireName: "to"},
+}
 
 type InsightsConfig struct {
 	// <p>Specifies the entity for which to retrieve insights. An entity can be an Amazon OpenSearch Service domain or an Amazon Web Services account.</p>
 	Entity any
 	// <p>The maximum number of insights to return per page. Valid values are 1 to 500.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The sort order for listing insights. Possible values are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p>
 	SortOrder any
 	// <p>Specifies the time range for filtering insights.</p>
@@ -55,7 +55,7 @@ type InsightsAttrs struct {
 	Insights any
 	// <p>The maximum number of insights to return per page. Valid values are 1 to 500.</p>
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p>The sort order for listing insights. Possible values are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p>
 	SortOrder any
 	// <p>Specifies the time range for filtering insights.</p>
@@ -67,16 +67,16 @@ var Insights = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Entity": ubx.FieldSpec{
 			WireName: "entity",
-			Kind: "object",
-			Fields: Insights_EntityFields,
+			Kind:     "object",
+			Fields:   Insights_EntityFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
 		"TimeRange": ubx.FieldSpec{
 			WireName: "time_range",
-			Kind: "object",
-			Fields: Insights_TimeRangeFields,
+			Kind:     "object",
+			Fields:   Insights_TimeRangeFields,
 		},
 	},
 }

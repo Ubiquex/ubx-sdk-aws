@@ -15,26 +15,26 @@ type Field_Attributes struct {
 
 type Field_Tags struct {
 	// The key of a user-defined tag attached to the AWS Cases field, used for metadata and resource management. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Field_Attributes_TextFields = ubx.FieldMap{
-		"IsMultiline": ubx.FieldSpec{WireName: "is_multiline"},
-	}
+	"IsMultiline": ubx.FieldSpec{WireName: "is_multiline"},
+}
 
 var Field_AttributesFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: Field_Attributes_TextFields,
-		},
-	}
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   Field_Attributes_TextFields,
+	},
+}
 
 var Field_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FieldConfig struct {
 	// Union of field attributes
@@ -81,16 +81,16 @@ var Field = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "object",
-			Fields: Field_AttributesFields,
+			Kind:     "object",
+			Fields:   Field_AttributesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DomainId":    ubx.FieldSpec{WireName: "domain_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Field_TagsFields,
+			Kind:     "list",
+			Fields:   Field_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

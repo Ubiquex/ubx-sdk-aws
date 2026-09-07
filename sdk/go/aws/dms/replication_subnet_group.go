@@ -10,9 +10,9 @@ type ReplicationSubnetGroup_Tags struct {
 }
 
 var ReplicationSubnetGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReplicationSubnetGroupConfig struct {
 	// The description for the subnet group.
@@ -40,12 +40,12 @@ var ReplicationSubnetGroup = ubx.ResourceBinding{
 	WireType: "aws_dms_replication_subnet_group",
 	Fields: ubx.FieldMap{
 		"ReplicationSubnetGroupDescription": ubx.FieldSpec{WireName: "replication_subnet_group_description"},
-		"ReplicationSubnetGroupIdentifier": ubx.FieldSpec{WireName: "replication_subnet_group_identifier"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"ReplicationSubnetGroupIdentifier":  ubx.FieldSpec{WireName: "replication_subnet_group_identifier"},
+		"SubnetIds":                         ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReplicationSubnetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   ReplicationSubnetGroup_TagsFields,
 		},
 	},
 }

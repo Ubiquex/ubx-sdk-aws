@@ -4,33 +4,33 @@ package chatbot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MicrosoftTeamsUserIdentities_TeamsUserIdentities struct {
-	AwsUserIdentity any
+	AwsUserIdentity      any
 	ChatConfigurationArn any
-	IamRoleArn any
-	TeamId any
-	TeamsChannelId any
-	TeamsTenantId any
-	UserId any
+	IamRoleArn           any
+	TeamId               any
+	TeamsChannelId       any
+	TeamsTenantId        any
+	UserId               any
 }
 
 type MicrosoftTeamsUserIdentitiesConfig struct {
 	ChatConfigurationArn any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 type MicrosoftTeamsUserIdentitiesAttrs struct {
 	ChatConfigurationArn any
-	MaxResults any
-	NextToken any
-	TeamsUserIdentities any
+	MaxResults           any
+	NextToken            any
+	TeamsUserIdentities  any
 }
 
 var MicrosoftTeamsUserIdentities = ubx.DataSourceBinding{
 	WireType: "aws_chatbot_microsoft_teams_user_identities",
 	Fields: ubx.FieldMap{
 		"ChatConfigurationArn": ubx.FieldSpec{WireName: "chat_configuration_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

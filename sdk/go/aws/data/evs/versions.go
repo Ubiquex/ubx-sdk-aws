@@ -4,15 +4,15 @@ package evs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Versions_InstanceTypeEsxVersions struct {
-	EsxVersions any
+	EsxVersions  any
 	InstanceType any
 }
 
 type Versions_VcfVersions struct {
 	DefaultEsxVersion any
-	InstanceTypes any
-	Status any
-	VcfVersion any
+	InstanceTypes     any
+	Status            any
+	VcfVersion        any
 }
 
 type VersionsConfig struct {
@@ -20,11 +20,10 @@ type VersionsConfig struct {
 
 type VersionsAttrs struct {
 	InstanceTypeEsxVersions any
-	VcfVersions any
+	VcfVersions             any
 }
 
 var Versions = ubx.DataSourceBinding{
 	WireType: "aws_evs_versions",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,7 +4,7 @@ package messaging_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessagingChimeTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type MessagingChimeTagsForResourceConfig struct {
 
 type MessagingChimeTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var MessagingChimeTagsForResource = ubx.DataSourceBinding{

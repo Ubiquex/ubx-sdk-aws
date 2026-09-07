@@ -21,17 +21,17 @@ type CodeSigningConfig_Tags struct {
 }
 
 var CodeSigningConfig_AllowedPublishersFields = ubx.FieldMap{
-		"SigningProfileVersionArns": ubx.FieldSpec{WireName: "signing_profile_version_arns"},
-	}
+	"SigningProfileVersionArns": ubx.FieldSpec{WireName: "signing_profile_version_arns"},
+}
 
 var CodeSigningConfig_CodeSigningPoliciesFields = ubx.FieldMap{
-		"UntrustedArtifactOnDeployment": ubx.FieldSpec{WireName: "untrusted_artifact_on_deployment"},
-	}
+	"UntrustedArtifactOnDeployment": ubx.FieldSpec{WireName: "untrusted_artifact_on_deployment"},
+}
 
 var CodeSigningConfig_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CodeSigningConfigConfig struct {
 	// When the CodeSigningConfig is later on attached to a function, the function code will be expected to be signed by profiles from this list
@@ -64,19 +64,19 @@ var CodeSigningConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllowedPublishers": ubx.FieldSpec{
 			WireName: "allowed_publishers",
-			Kind: "object",
-			Fields: CodeSigningConfig_AllowedPublishersFields,
+			Kind:     "object",
+			Fields:   CodeSigningConfig_AllowedPublishersFields,
 		},
 		"CodeSigningPolicies": ubx.FieldSpec{
 			WireName: "code_signing_policies",
-			Kind: "object",
-			Fields: CodeSigningConfig_CodeSigningPoliciesFields,
+			Kind:     "object",
+			Fields:   CodeSigningConfig_CodeSigningPoliciesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CodeSigningConfig_TagsFields,
+			Kind:     "list",
+			Fields:   CodeSigningConfig_TagsFields,
 		},
 	},
 }

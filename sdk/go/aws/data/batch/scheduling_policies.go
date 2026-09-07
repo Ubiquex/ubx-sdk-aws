@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchedulingPolicies_SchedulingPolicies_FairsharePolicy_ShareDistribution struct {
 	ShareIdentifier any
-	WeightFactor any
+	WeightFactor    any
 }
 
 type SchedulingPolicies_SchedulingPolicies_FairsharePolicy struct {
 	ComputeReservation any
-	ShareDecaySeconds any
-	ShareDistribution any
+	ShareDecaySeconds  any
+	ShareDistribution  any
 }
 
 type SchedulingPolicies_SchedulingPolicies_QuotaSharePolicy struct {
@@ -19,11 +19,11 @@ type SchedulingPolicies_SchedulingPolicies_QuotaSharePolicy struct {
 }
 
 type SchedulingPolicies_SchedulingPolicies struct {
-	Arn any
-	FairsharePolicy any
-	Name any
+	Arn              any
+	FairsharePolicy  any
+	Name             any
 	QuotaSharePolicy any
-	Tags any
+	Tags             any
 }
 
 type SchedulingPoliciesConfig struct {
@@ -31,7 +31,7 @@ type SchedulingPoliciesConfig struct {
 }
 
 type SchedulingPoliciesAttrs struct {
-	Arns any
+	Arns               any
 	SchedulingPolicies any
 }
 

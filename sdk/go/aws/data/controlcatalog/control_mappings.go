@@ -13,47 +13,47 @@ type ControlMappings_ControlMappings_Mapping_Framework struct {
 }
 
 type ControlMappings_ControlMappings_Mapping_RelatedControl struct {
-	ControlArn any
+	ControlArn   any
 	RelationType any
 }
 
 type ControlMappings_ControlMappings_Mapping struct {
-	CommonControl any
-	Framework any
+	CommonControl  any
+	Framework      any
 	RelatedControl any
 }
 
 type ControlMappings_ControlMappings struct {
-	ControlArn any
-	Mapping any
+	ControlArn  any
+	Mapping     any
 	MappingType any
 }
 
 type ControlMappings_Filter struct {
 	CommonControlArns any
-	ControlArns any
-	MappingTypes any
+	ControlArns       any
+	MappingTypes      any
 }
 
 var ControlMappings_FilterFields = ubx.FieldMap{
-		"CommonControlArns": ubx.FieldSpec{WireName: "common_control_arns"},
-		"ControlArns": ubx.FieldSpec{WireName: "control_arns"},
-		"MappingTypes": ubx.FieldSpec{WireName: "mapping_types"},
-	}
+	"CommonControlArns": ubx.FieldSpec{WireName: "common_control_arns"},
+	"ControlArns":       ubx.FieldSpec{WireName: "control_arns"},
+	"MappingTypes":      ubx.FieldSpec{WireName: "mapping_types"},
+}
 
 type ControlMappingsConfig struct {
 	// <p>A structure that defines filtering criteria for the ListControlMappings operation. You can use this filter to narrow down the list of control mappings based on control ARNs, common control ARNs, or mapping types.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ControlMappingsAttrs struct {
 	ControlMappings any
 	// <p>A structure that defines filtering criteria for the ListControlMappings operation. You can use this filter to narrow down the list of control mappings based on control ARNs, common control ARNs, or mapping types.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ControlMappings = ubx.DataSourceBinding{
@@ -61,10 +61,10 @@ var ControlMappings = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: ControlMappings_FilterFields,
+			Kind:     "object",
+			Fields:   ControlMappings_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

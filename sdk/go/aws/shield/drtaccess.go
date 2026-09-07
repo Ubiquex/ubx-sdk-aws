@@ -23,6 +23,6 @@ var Drtaccess = ubx.ResourceBinding{
 	WireType: "aws_shield_drtaccess",
 	Fields: ubx.FieldMap{
 		"LogBucketList": ubx.FieldSpec{WireName: "log_bucket_list"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

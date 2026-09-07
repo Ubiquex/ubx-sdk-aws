@@ -142,14 +142,14 @@ type TopicRule_TopicRulePayload_Actions_Http struct {
 }
 
 type TopicRule_TopicRulePayload_Actions_InfluxDb struct {
-	BatchConfig any
-	DatabaseName any
+	BatchConfig    any
+	DatabaseName   any
 	DestinationArn any
-	Organization any
-	RoleArn any
-	TableName any
-	Tags any
-	TimestampUnit any
+	Organization   any
+	RoleArn        any
+	TableName      any
+	Tags           any
+	TimestampUnit  any
 }
 
 type TopicRule_TopicRulePayload_Actions_IotAnalytics struct {
@@ -370,7 +370,7 @@ type TopicRule_TopicRulePayload_Actions struct {
 	// Configuration for a Kinesis Data Firehose action within an AWS IoT rule, specifying the delivery stream, IAM role, and optional separator or batch mode used when writing message payloads to the stream. (AI-inferred)
 	Firehose any
 	// The HTTP action configuration that forwards the IoT message to an HTTPS endpoint, defining the URL, optional headers, and authentication details. (AI-inferred)
-	Http any
+	Http     any
 	InfluxDb any
 	// Defines an AWS IoT Analytics action that routes IoT rule messages to a specified IoT Analytics channel, requiring a channelName and roleArn to authorize the write. (AI-inferred)
 	IotAnalytics any
@@ -418,439 +418,439 @@ type TopicRule_TopicRulePayload struct {
 }
 
 var TopicRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TopicRule_TopicRulePayload_Actions_CloudwatchAlarmFields = ubx.FieldMap{
-		"AlarmName": ubx.FieldSpec{WireName: "alarm_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StateReason": ubx.FieldSpec{WireName: "state_reason"},
-		"StateValue": ubx.FieldSpec{WireName: "state_value"},
-	}
+	"AlarmName":   ubx.FieldSpec{WireName: "alarm_name"},
+	"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
+	"StateReason": ubx.FieldSpec{WireName: "state_reason"},
+	"StateValue":  ubx.FieldSpec{WireName: "state_value"},
+}
 
 var TopicRule_TopicRulePayload_Actions_CloudwatchLogsFields = ubx.FieldMap{
-		"BatchMode": ubx.FieldSpec{WireName: "batch_mode"},
-		"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"BatchMode":    ubx.FieldSpec{WireName: "batch_mode"},
+	"LogGroupName": ubx.FieldSpec{WireName: "log_group_name"},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_CloudwatchMetricFields = ubx.FieldMap{
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MetricNamespace": ubx.FieldSpec{WireName: "metric_namespace"},
-		"MetricTimestamp": ubx.FieldSpec{WireName: "metric_timestamp"},
-		"MetricUnit": ubx.FieldSpec{WireName: "metric_unit"},
-		"MetricValue": ubx.FieldSpec{WireName: "metric_value"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"MetricName":      ubx.FieldSpec{WireName: "metric_name"},
+	"MetricNamespace": ubx.FieldSpec{WireName: "metric_namespace"},
+	"MetricTimestamp": ubx.FieldSpec{WireName: "metric_timestamp"},
+	"MetricUnit":      ubx.FieldSpec{WireName: "metric_unit"},
+	"MetricValue":     ubx.FieldSpec{WireName: "metric_value"},
+	"RoleArn":         ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_DynamoDbFields = ubx.FieldMap{
-		"HashKeyField": ubx.FieldSpec{WireName: "hash_key_field"},
-		"HashKeyType": ubx.FieldSpec{WireName: "hash_key_type"},
-		"HashKeyValue": ubx.FieldSpec{WireName: "hash_key_value"},
-		"PayloadField": ubx.FieldSpec{WireName: "payload_field"},
-		"RangeKeyField": ubx.FieldSpec{WireName: "range_key_field"},
-		"RangeKeyType": ubx.FieldSpec{WireName: "range_key_type"},
-		"RangeKeyValue": ubx.FieldSpec{WireName: "range_key_value"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"HashKeyField":  ubx.FieldSpec{WireName: "hash_key_field"},
+	"HashKeyType":   ubx.FieldSpec{WireName: "hash_key_type"},
+	"HashKeyValue":  ubx.FieldSpec{WireName: "hash_key_value"},
+	"PayloadField":  ubx.FieldSpec{WireName: "payload_field"},
+	"RangeKeyField": ubx.FieldSpec{WireName: "range_key_field"},
+	"RangeKeyType":  ubx.FieldSpec{WireName: "range_key_type"},
+	"RangeKeyValue": ubx.FieldSpec{WireName: "range_key_value"},
+	"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
+	"TableName":     ubx.FieldSpec{WireName: "table_name"},
+}
 
 var TopicRule_TopicRulePayload_Actions_DynamoDbv2_PutItemFields = ubx.FieldMap{
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 var TopicRule_TopicRulePayload_Actions_DynamoDbv2Fields = ubx.FieldMap{
-		"PutItem": ubx.FieldSpec{
-			WireName: "put_item",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_DynamoDbv2_PutItemFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"PutItem": ubx.FieldSpec{
+		WireName: "put_item",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_DynamoDbv2_PutItemFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_ElasticsearchFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Index":    ubx.FieldSpec{WireName: "index"},
+	"RoleArn":  ubx.FieldSpec{WireName: "role_arn"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var TopicRule_TopicRulePayload_Actions_FirehoseFields = ubx.FieldMap{
-		"BatchMode": ubx.FieldSpec{WireName: "batch_mode"},
-		"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Separator": ubx.FieldSpec{WireName: "separator"},
-	}
+	"BatchMode":          ubx.FieldSpec{WireName: "batch_mode"},
+	"DeliveryStreamName": ubx.FieldSpec{WireName: "delivery_stream_name"},
+	"RoleArn":            ubx.FieldSpec{WireName: "role_arn"},
+	"Separator":          ubx.FieldSpec{WireName: "separator"},
+}
 
 var TopicRule_TopicRulePayload_Actions_Http_Auth_Sigv4Fields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"SigningRegion": ubx.FieldSpec{WireName: "signing_region"},
-	}
+	"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
+	"ServiceName":   ubx.FieldSpec{WireName: "service_name"},
+	"SigningRegion": ubx.FieldSpec{WireName: "signing_region"},
+}
 
 var TopicRule_TopicRulePayload_Actions_Http_AuthFields = ubx.FieldMap{
-		"Sigv4": ubx.FieldSpec{
-			WireName: "sigv4",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_Http_Auth_Sigv4Fields,
-		},
-	}
+	"Sigv4": ubx.FieldSpec{
+		WireName: "sigv4",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_Http_Auth_Sigv4Fields,
+	},
+}
 
 var TopicRule_TopicRulePayload_Actions_Http_BatchConfigFields = ubx.FieldMap{
-		"BatchAcrossTopics": ubx.FieldSpec{WireName: "batch_across_topics"},
-		"MaxBatchOpenMs": ubx.FieldSpec{WireName: "max_batch_open_ms"},
-		"MaxBatchSize": ubx.FieldSpec{WireName: "max_batch_size"},
-		"MaxBatchSizeBytes": ubx.FieldSpec{WireName: "max_batch_size_bytes"},
-	}
+	"BatchAcrossTopics": ubx.FieldSpec{WireName: "batch_across_topics"},
+	"MaxBatchOpenMs":    ubx.FieldSpec{WireName: "max_batch_open_ms"},
+	"MaxBatchSize":      ubx.FieldSpec{WireName: "max_batch_size"},
+	"MaxBatchSizeBytes": ubx.FieldSpec{WireName: "max_batch_size_bytes"},
+}
 
 var TopicRule_TopicRulePayload_Actions_HttpFields = ubx.FieldMap{
-		"Auth": ubx.FieldSpec{
-			WireName: "auth",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_Http_AuthFields,
-		},
-		"BatchConfig": ubx.FieldSpec{
-			WireName: "batch_config",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_Http_BatchConfigFields,
-		},
-		"ConfirmationUrl": ubx.FieldSpec{WireName: "confirmation_url"},
-		"EnableBatching": ubx.FieldSpec{WireName: "enable_batching"},
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: TopicRule_TagsFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Auth": ubx.FieldSpec{
+		WireName: "auth",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_Http_AuthFields,
+	},
+	"BatchConfig": ubx.FieldSpec{
+		WireName: "batch_config",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_Http_BatchConfigFields,
+	},
+	"ConfirmationUrl": ubx.FieldSpec{WireName: "confirmation_url"},
+	"EnableBatching":  ubx.FieldSpec{WireName: "enable_batching"},
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   TopicRule_TagsFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var TopicRule_TopicRulePayload_Actions_InfluxDbFields = ubx.FieldMap{
-		"BatchConfig": ubx.FieldSpec{
-			WireName: "batch_config",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_Http_BatchConfigFields,
-		},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TimestampUnit": ubx.FieldSpec{WireName: "timestamp_unit"},
-	}
+	"BatchConfig": ubx.FieldSpec{
+		WireName: "batch_config",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_Http_BatchConfigFields,
+	},
+	"DatabaseName":   ubx.FieldSpec{WireName: "database_name"},
+	"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
+	"Organization":   ubx.FieldSpec{WireName: "organization"},
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"TableName":      ubx.FieldSpec{WireName: "table_name"},
+	"Tags":           ubx.FieldSpec{WireName: "tags"},
+	"TimestampUnit":  ubx.FieldSpec{WireName: "timestamp_unit"},
+}
 
 var TopicRule_TopicRulePayload_Actions_IotAnalyticsFields = ubx.FieldMap{
-		"BatchMode": ubx.FieldSpec{WireName: "batch_mode"},
-		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"BatchMode":   ubx.FieldSpec{WireName: "batch_mode"},
+	"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
+	"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_IotEventsFields = ubx.FieldMap{
-		"BatchMode": ubx.FieldSpec{WireName: "batch_mode"},
-		"InputName": ubx.FieldSpec{WireName: "input_name"},
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"BatchMode": ubx.FieldSpec{WireName: "batch_mode"},
+	"InputName": ubx.FieldSpec{WireName: "input_name"},
+	"MessageId": ubx.FieldSpec{WireName: "message_id"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValues_TimestampFields = ubx.FieldMap{
-		"OffsetInNanos": ubx.FieldSpec{WireName: "offset_in_nanos"},
-		"TimeInSeconds": ubx.FieldSpec{WireName: "time_in_seconds"},
-	}
+	"OffsetInNanos": ubx.FieldSpec{WireName: "offset_in_nanos"},
+	"TimeInSeconds": ubx.FieldSpec{WireName: "time_in_seconds"},
+}
 
 var TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValues_ValueFields = ubx.FieldMap{
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+	"DoubleValue":  ubx.FieldSpec{WireName: "double_value"},
+	"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+}
 
 var TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValuesFields = ubx.FieldMap{
-		"Quality": ubx.FieldSpec{WireName: "quality"},
-		"Timestamp": ubx.FieldSpec{
-			WireName: "timestamp",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValues_TimestampFields,
-		},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValues_ValueFields,
-		},
-	}
+	"Quality": ubx.FieldSpec{WireName: "quality"},
+	"Timestamp": ubx.FieldSpec{
+		WireName: "timestamp",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValues_TimestampFields,
+	},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValues_ValueFields,
+	},
+}
 
 var TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntriesFields = ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"EntryId": ubx.FieldSpec{WireName: "entry_id"},
-		"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
-		"PropertyId": ubx.FieldSpec{WireName: "property_id"},
-		"PropertyValues": ubx.FieldSpec{
-			WireName: "property_values",
-			Kind: "list",
-			Fields: TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValuesFields,
-		},
-	}
+	"AssetId":       ubx.FieldSpec{WireName: "asset_id"},
+	"EntryId":       ubx.FieldSpec{WireName: "entry_id"},
+	"PropertyAlias": ubx.FieldSpec{WireName: "property_alias"},
+	"PropertyId":    ubx.FieldSpec{WireName: "property_id"},
+	"PropertyValues": ubx.FieldSpec{
+		WireName: "property_values",
+		Kind:     "list",
+		Fields:   TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntries_PropertyValuesFields,
+	},
+}
 
 var TopicRule_TopicRulePayload_Actions_IotSiteWiseFields = ubx.FieldMap{
-		"PutAssetPropertyValueEntries": ubx.FieldSpec{
-			WireName: "put_asset_property_value_entries",
-			Kind: "list",
-			Fields: TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntriesFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"PutAssetPropertyValueEntries": ubx.FieldSpec{
+		WireName: "put_asset_property_value_entries",
+		Kind:     "list",
+		Fields:   TopicRule_TopicRulePayload_Actions_IotSiteWise_PutAssetPropertyValueEntriesFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_KafkaFields = ubx.FieldMap{
-		"ClientProperties": ubx.FieldSpec{WireName: "client_properties"},
-		"DestinationArn": ubx.FieldSpec{WireName: "destination_arn"},
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: TopicRule_TagsFields,
-		},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Partition": ubx.FieldSpec{WireName: "partition"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"ClientProperties": ubx.FieldSpec{WireName: "client_properties"},
+	"DestinationArn":   ubx.FieldSpec{WireName: "destination_arn"},
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   TopicRule_TagsFields,
+	},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"Partition": ubx.FieldSpec{WireName: "partition"},
+	"Topic":     ubx.FieldSpec{WireName: "topic"},
+}
 
 var TopicRule_TopicRulePayload_Actions_KinesisFields = ubx.FieldMap{
-		"PartitionKey": ubx.FieldSpec{WireName: "partition_key"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-	}
+	"PartitionKey": ubx.FieldSpec{WireName: "partition_key"},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"StreamName":   ubx.FieldSpec{WireName: "stream_name"},
+}
 
 var TopicRule_TopicRulePayload_Actions_LambdaFields = ubx.FieldMap{
-		"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
-	}
+	"FunctionArn": ubx.FieldSpec{WireName: "function_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_Location_TimestampFields = ubx.FieldMap{
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TopicRule_TopicRulePayload_Actions_LocationFields = ubx.FieldMap{
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Timestamp": ubx.FieldSpec{
-			WireName: "timestamp",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_Location_TimestampFields,
-		},
-		"TrackerName": ubx.FieldSpec{WireName: "tracker_name"},
-	}
+	"DeviceId":  ubx.FieldSpec{WireName: "device_id"},
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"Timestamp": ubx.FieldSpec{
+		WireName: "timestamp",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_Location_TimestampFields,
+	},
+	"TrackerName": ubx.FieldSpec{WireName: "tracker_name"},
+}
 
 var TopicRule_TopicRulePayload_Actions_Republish_HeadersFields = ubx.FieldMap{
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"CorrelationData": ubx.FieldSpec{WireName: "correlation_data"},
-		"MessageExpiry": ubx.FieldSpec{WireName: "message_expiry"},
-		"PayloadFormatIndicator": ubx.FieldSpec{WireName: "payload_format_indicator"},
-		"ResponseTopic": ubx.FieldSpec{WireName: "response_topic"},
-		"UserProperties": ubx.FieldSpec{
-			WireName: "user_properties",
-			Kind: "list",
-			Fields: TopicRule_TagsFields,
-		},
-	}
+	"ContentType":            ubx.FieldSpec{WireName: "content_type"},
+	"CorrelationData":        ubx.FieldSpec{WireName: "correlation_data"},
+	"MessageExpiry":          ubx.FieldSpec{WireName: "message_expiry"},
+	"PayloadFormatIndicator": ubx.FieldSpec{WireName: "payload_format_indicator"},
+	"ResponseTopic":          ubx.FieldSpec{WireName: "response_topic"},
+	"UserProperties": ubx.FieldSpec{
+		WireName: "user_properties",
+		Kind:     "list",
+		Fields:   TopicRule_TagsFields,
+	},
+}
 
 var TopicRule_TopicRulePayload_Actions_RepublishFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_Republish_HeadersFields,
-		},
-		"Qos": ubx.FieldSpec{WireName: "qos"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_Republish_HeadersFields,
+	},
+	"Qos":     ubx.FieldSpec{WireName: "qos"},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+	"Topic":   ubx.FieldSpec{WireName: "topic"},
+}
 
 var TopicRule_TopicRulePayload_Actions_S3Fields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"CannedAcl": ubx.FieldSpec{WireName: "canned_acl"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"CannedAcl":  ubx.FieldSpec{WireName: "canned_acl"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"RoleArn":    ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_SnsFields = ubx.FieldMap{
-		"MessageFormat": ubx.FieldSpec{WireName: "message_format"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-	}
+	"MessageFormat": ubx.FieldSpec{WireName: "message_format"},
+	"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
+	"TargetArn":     ubx.FieldSpec{WireName: "target_arn"},
+}
 
 var TopicRule_TopicRulePayload_Actions_SqsFields = ubx.FieldMap{
-		"QueueUrl": ubx.FieldSpec{WireName: "queue_url"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"UseBase64": ubx.FieldSpec{WireName: "use_base64"},
-	}
+	"QueueUrl":  ubx.FieldSpec{WireName: "queue_url"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"UseBase64": ubx.FieldSpec{WireName: "use_base64"},
+}
 
 var TopicRule_TopicRulePayload_Actions_StepFunctionsFields = ubx.FieldMap{
-		"ExecutionNamePrefix": ubx.FieldSpec{WireName: "execution_name_prefix"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"StateMachineName": ubx.FieldSpec{WireName: "state_machine_name"},
-	}
+	"ExecutionNamePrefix": ubx.FieldSpec{WireName: "execution_name_prefix"},
+	"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
+	"StateMachineName":    ubx.FieldSpec{WireName: "state_machine_name"},
+}
 
 var TopicRule_TopicRulePayload_Actions_Timestream_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TopicRule_TopicRulePayload_Actions_TimestreamFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: TopicRule_TopicRulePayload_Actions_Timestream_DimensionsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"Timestamp": ubx.FieldSpec{
-			WireName: "timestamp",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_Location_TimestampFields,
-		},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   TopicRule_TopicRulePayload_Actions_Timestream_DimensionsFields,
+	},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+	"Timestamp": ubx.FieldSpec{
+		WireName: "timestamp",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_Location_TimestampFields,
+	},
+}
 
 var TopicRule_TopicRulePayload_ActionsFields = ubx.FieldMap{
-		"CloudwatchAlarm": ubx.FieldSpec{
-			WireName: "cloudwatch_alarm",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_CloudwatchAlarmFields,
-		},
-		"CloudwatchLogs": ubx.FieldSpec{
-			WireName: "cloudwatch_logs",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_CloudwatchLogsFields,
-		},
-		"CloudwatchMetric": ubx.FieldSpec{
-			WireName: "cloudwatch_metric",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_CloudwatchMetricFields,
-		},
-		"DynamoDb": ubx.FieldSpec{
-			WireName: "dynamo_db",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_DynamoDbFields,
-		},
-		"DynamoDbv2": ubx.FieldSpec{
-			WireName: "dynamo_dbv2",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_DynamoDbv2Fields,
-		},
-		"Elasticsearch": ubx.FieldSpec{
-			WireName: "elasticsearch",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_ElasticsearchFields,
-		},
-		"Firehose": ubx.FieldSpec{
-			WireName: "firehose",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_FirehoseFields,
-		},
-		"Http": ubx.FieldSpec{
-			WireName: "http",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_HttpFields,
-		},
-		"InfluxDb": ubx.FieldSpec{
-			WireName: "influx_db",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_InfluxDbFields,
-		},
-		"IotAnalytics": ubx.FieldSpec{
-			WireName: "iot_analytics",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_IotAnalyticsFields,
-		},
-		"IotEvents": ubx.FieldSpec{
-			WireName: "iot_events",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_IotEventsFields,
-		},
-		"IotSiteWise": ubx.FieldSpec{
-			WireName: "iot_site_wise",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_IotSiteWiseFields,
-		},
-		"Kafka": ubx.FieldSpec{
-			WireName: "kafka",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_KafkaFields,
-		},
-		"Kinesis": ubx.FieldSpec{
-			WireName: "kinesis",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_KinesisFields,
-		},
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_LambdaFields,
-		},
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_LocationFields,
-		},
-		"OpenSearch": ubx.FieldSpec{
-			WireName: "open_search",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_ElasticsearchFields,
-		},
-		"Republish": ubx.FieldSpec{
-			WireName: "republish",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_RepublishFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_S3Fields,
-		},
-		"Sns": ubx.FieldSpec{
-			WireName: "sns",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_SnsFields,
-		},
-		"Sqs": ubx.FieldSpec{
-			WireName: "sqs",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_SqsFields,
-		},
-		"StepFunctions": ubx.FieldSpec{
-			WireName: "step_functions",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_StepFunctionsFields,
-		},
-		"Timestream": ubx.FieldSpec{
-			WireName: "timestream",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_Actions_TimestreamFields,
-		},
-	}
+	"CloudwatchAlarm": ubx.FieldSpec{
+		WireName: "cloudwatch_alarm",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_CloudwatchAlarmFields,
+	},
+	"CloudwatchLogs": ubx.FieldSpec{
+		WireName: "cloudwatch_logs",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_CloudwatchLogsFields,
+	},
+	"CloudwatchMetric": ubx.FieldSpec{
+		WireName: "cloudwatch_metric",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_CloudwatchMetricFields,
+	},
+	"DynamoDb": ubx.FieldSpec{
+		WireName: "dynamo_db",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_DynamoDbFields,
+	},
+	"DynamoDbv2": ubx.FieldSpec{
+		WireName: "dynamo_dbv2",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_DynamoDbv2Fields,
+	},
+	"Elasticsearch": ubx.FieldSpec{
+		WireName: "elasticsearch",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_ElasticsearchFields,
+	},
+	"Firehose": ubx.FieldSpec{
+		WireName: "firehose",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_FirehoseFields,
+	},
+	"Http": ubx.FieldSpec{
+		WireName: "http",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_HttpFields,
+	},
+	"InfluxDb": ubx.FieldSpec{
+		WireName: "influx_db",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_InfluxDbFields,
+	},
+	"IotAnalytics": ubx.FieldSpec{
+		WireName: "iot_analytics",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_IotAnalyticsFields,
+	},
+	"IotEvents": ubx.FieldSpec{
+		WireName: "iot_events",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_IotEventsFields,
+	},
+	"IotSiteWise": ubx.FieldSpec{
+		WireName: "iot_site_wise",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_IotSiteWiseFields,
+	},
+	"Kafka": ubx.FieldSpec{
+		WireName: "kafka",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_KafkaFields,
+	},
+	"Kinesis": ubx.FieldSpec{
+		WireName: "kinesis",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_KinesisFields,
+	},
+	"Lambda": ubx.FieldSpec{
+		WireName: "lambda",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_LambdaFields,
+	},
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_LocationFields,
+	},
+	"OpenSearch": ubx.FieldSpec{
+		WireName: "open_search",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_ElasticsearchFields,
+	},
+	"Republish": ubx.FieldSpec{
+		WireName: "republish",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_RepublishFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_S3Fields,
+	},
+	"Sns": ubx.FieldSpec{
+		WireName: "sns",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_SnsFields,
+	},
+	"Sqs": ubx.FieldSpec{
+		WireName: "sqs",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_SqsFields,
+	},
+	"StepFunctions": ubx.FieldSpec{
+		WireName: "step_functions",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_StepFunctionsFields,
+	},
+	"Timestream": ubx.FieldSpec{
+		WireName: "timestream",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_Actions_TimestreamFields,
+	},
+}
 
 var TopicRule_TopicRulePayloadFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: TopicRule_TopicRulePayload_ActionsFields,
-		},
-		"AwsIotSqlVersion": ubx.FieldSpec{WireName: "aws_iot_sql_version"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ErrorAction": ubx.FieldSpec{
-			WireName: "error_action",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayload_ActionsFields,
-		},
-		"RuleDisabled": ubx.FieldSpec{WireName: "rule_disabled"},
-		"Sql": ubx.FieldSpec{WireName: "sql"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   TopicRule_TopicRulePayload_ActionsFields,
+	},
+	"AwsIotSqlVersion": ubx.FieldSpec{WireName: "aws_iot_sql_version"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"ErrorAction": ubx.FieldSpec{
+		WireName: "error_action",
+		Kind:     "object",
+		Fields:   TopicRule_TopicRulePayload_ActionsFields,
+	},
+	"RuleDisabled": ubx.FieldSpec{WireName: "rule_disabled"},
+	"Sql":          ubx.FieldSpec{WireName: "sql"},
+}
 
 type TopicRuleConfig struct {
 	// The name to assign to the AWS IoT topic rule, which must be unique within an AWS account and Region. (AI-inferred)
 	RuleName any
-	Tags any
+	Tags     any
 	// Defines the body of the AWS IoT rule, including the SQL query (sql), actions to invoke when the query matches, and optional settings such as rule disabled flag, error action, and AWS IoT SQL version. (AI-inferred)
 	TopicRulePayload any
 }
@@ -860,7 +860,7 @@ type TopicRuleAttrs struct {
 	Arn any
 	// The name to assign to the AWS IoT topic rule, which must be unique within an AWS account and Region. (AI-inferred)
 	RuleName any
-	Tags any
+	Tags     any
 	// Defines the body of the AWS IoT rule, including the SQL query (sql), actions to invoke when the query matches, and optional settings such as rule disabled flag, error action, and AWS IoT SQL version. (AI-inferred)
 	TopicRulePayload any
 }
@@ -871,13 +871,13 @@ var TopicRule = ubx.ResourceBinding{
 		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TopicRule_TagsFields,
+			Kind:     "list",
+			Fields:   TopicRule_TagsFields,
 		},
 		"TopicRulePayload": ubx.FieldSpec{
 			WireName: "topic_rule_payload",
-			Kind: "object",
-			Fields: TopicRule_TopicRulePayloadFields,
+			Kind:     "object",
+			Fields:   TopicRule_TopicRulePayloadFields,
 		},
 	},
 }

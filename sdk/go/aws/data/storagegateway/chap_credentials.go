@@ -4,10 +4,10 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChapCredentials_ChapCredentials struct {
-	InitiatorName any
+	InitiatorName                 any
 	SecretToAuthenticateInitiator any
-	SecretToAuthenticateTarget any
-	TargetArn any
+	SecretToAuthenticateTarget    any
+	TargetArn                     any
 }
 
 type ChapCredentialsConfig struct {
@@ -16,7 +16,7 @@ type ChapCredentialsConfig struct {
 
 type ChapCredentialsAttrs struct {
 	ChapCredentials any
-	TargetArn any
+	TargetArn       any
 }
 
 var ChapCredentials = ubx.DataSourceBinding{

@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileTemplate_ProfileTemplate_TemplateQuestions_QuestionChoices struct {
 	ChoiceDescription any
-	ChoiceId any
-	ChoiceTitle any
+	ChoiceId          any
+	ChoiceTitle       any
 }
 
 type ProfileTemplate_ProfileTemplate_TemplateQuestions struct {
-	MaxSelectedChoices any
-	MinSelectedChoices any
-	QuestionChoices any
+	MaxSelectedChoices  any
+	MinSelectedChoices  any
+	QuestionChoices     any
 	QuestionDescription any
-	QuestionId any
-	QuestionTitle any
+	QuestionId          any
+	QuestionTitle       any
 }
 
 type ProfileTemplate_ProfileTemplate struct {
-	CreatedAt any
-	TemplateName any
+	CreatedAt         any
+	TemplateName      any
 	TemplateQuestions any
-	UpdatedAt any
+	UpdatedAt         any
 }
 
 type ProfileTemplateConfig struct {
@@ -35,6 +35,5 @@ type ProfileTemplateAttrs struct {
 
 var ProfileTemplate = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_profile_template",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

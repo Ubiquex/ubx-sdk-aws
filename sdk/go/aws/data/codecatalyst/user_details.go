@@ -4,29 +4,29 @@ package codecatalyst
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserDetails_PrimaryEmail struct {
-	Email any
+	Email    any
 	Verified any
 }
 
 type UserDetailsConfig struct {
-	Id any
+	Id       any
 	UserName any
 }
 
 type UserDetailsAttrs struct {
 	DisplayName any
-	Id any
+	Id          any
 	// <p>Information about an email address.</p>
 	PrimaryEmail any
-	UserId any
-	UserName any
-	Version any
+	UserId       any
+	UserName     any
+	Version      any
 }
 
 var UserDetails = ubx.DataSourceBinding{
 	WireType: "aws_codecatalyst_user_details",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":       ubx.FieldSpec{WireName: "id"},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},
 }

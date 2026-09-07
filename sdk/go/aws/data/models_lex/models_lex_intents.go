@@ -4,31 +4,31 @@ package models_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsLexIntents_Intents struct {
-	CreatedDate any
-	Description any
+	CreatedDate     any
+	Description     any
 	LastUpdatedDate any
-	Name any
-	Version any
+	Name            any
+	Version         any
 }
 
 type ModelsLexIntentsConfig struct {
-	MaxResults any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 type ModelsLexIntentsAttrs struct {
-	Intents any
-	MaxResults any
+	Intents      any
+	MaxResults   any
 	NameContains any
-	NextToken any
+	NextToken    any
 }
 
 var ModelsLexIntents = ubx.DataSourceBinding{
 	WireType: "aws_models_lex_intents",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

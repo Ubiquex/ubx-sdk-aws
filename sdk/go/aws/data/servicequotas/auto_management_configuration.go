@@ -12,15 +12,14 @@ type AutoManagementConfigurationConfig struct {
 }
 
 type AutoManagementConfigurationAttrs struct {
-	ExclusionList any
+	ExclusionList   any
 	NotificationArn any
-	OptInLevel any
-	OptInStatus any
-	OptInType any
+	OptInLevel      any
+	OptInStatus     any
+	OptInType       any
 }
 
 var AutoManagementConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_servicequotas_auto_management_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

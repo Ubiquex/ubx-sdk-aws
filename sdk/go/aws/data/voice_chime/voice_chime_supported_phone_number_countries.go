@@ -4,7 +4,7 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeSupportedPhoneNumberCountries_PhoneNumberCountries struct {
-	CountryCode any
+	CountryCode               any
 	SupportedPhoneNumberTypes any
 }
 
@@ -14,7 +14,7 @@ type VoiceChimeSupportedPhoneNumberCountriesConfig struct {
 
 type VoiceChimeSupportedPhoneNumberCountriesAttrs struct {
 	PhoneNumberCountries any
-	ProductType any
+	ProductType          any
 }
 
 var VoiceChimeSupportedPhoneNumberCountries = ubx.DataSourceBinding{

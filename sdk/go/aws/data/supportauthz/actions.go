@@ -4,29 +4,29 @@ package supportauthz
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Actions_ActionSummaries struct {
-	Action any
+	Action      any
 	Description any
-	Service any
+	Service     any
 }
 
 type ActionsConfig struct {
 	MaxResults any
-	NextToken any
-	Service any
+	NextToken  any
+	Service    any
 }
 
 type ActionsAttrs struct {
 	ActionSummaries any
-	MaxResults any
-	NextToken any
-	Service any
+	MaxResults      any
+	NextToken       any
+	Service         any
 }
 
 var Actions = ubx.DataSourceBinding{
 	WireType: "aws_supportauthz_actions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Service":    ubx.FieldSpec{WireName: "service"},
 	},
 }

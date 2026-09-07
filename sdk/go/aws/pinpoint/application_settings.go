@@ -7,7 +7,7 @@ type ApplicationSettings_CampaignHook struct {
 	// The name or ARN of the Lambda function that Amazon Pinpoint invokes as the campaign hook for this application's campaigns and journeys. (AI-inferred)
 	LambdaFunctionName any
 	// Specifies whether the associated Lambda function is invoked during campaign filtering (FILTER) or during campaign delivery (DELIVERY). (AI-inferred)
-	Mode any
+	Mode   any
 	WebUrl any
 }
 
@@ -30,22 +30,22 @@ type ApplicationSettings_QuietTime struct {
 }
 
 var ApplicationSettings_CampaignHookFields = ubx.FieldMap{
-		"LambdaFunctionName": ubx.FieldSpec{WireName: "lambda_function_name"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"WebUrl": ubx.FieldSpec{WireName: "web_url"},
-	}
+	"LambdaFunctionName": ubx.FieldSpec{WireName: "lambda_function_name"},
+	"Mode":               ubx.FieldSpec{WireName: "mode"},
+	"WebUrl":             ubx.FieldSpec{WireName: "web_url"},
+}
 
 var ApplicationSettings_LimitsFields = ubx.FieldMap{
-		"Daily": ubx.FieldSpec{WireName: "daily"},
-		"MaximumDuration": ubx.FieldSpec{WireName: "maximum_duration"},
-		"MessagesPerSecond": ubx.FieldSpec{WireName: "messages_per_second"},
-		"Total": ubx.FieldSpec{WireName: "total"},
-	}
+	"Daily":             ubx.FieldSpec{WireName: "daily"},
+	"MaximumDuration":   ubx.FieldSpec{WireName: "maximum_duration"},
+	"MessagesPerSecond": ubx.FieldSpec{WireName: "messages_per_second"},
+	"Total":             ubx.FieldSpec{WireName: "total"},
+}
 
 var ApplicationSettings_QuietTimeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type ApplicationSettingsConfig struct {
 	// Specifies the unique identifier (ID) of the Amazon Pinpoint application to which these settings apply. (AI-inferred)
@@ -81,19 +81,19 @@ var ApplicationSettings = ubx.ResourceBinding{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"CampaignHook": ubx.FieldSpec{
 			WireName: "campaign_hook",
-			Kind: "object",
-			Fields: ApplicationSettings_CampaignHookFields,
+			Kind:     "object",
+			Fields:   ApplicationSettings_CampaignHookFields,
 		},
 		"CloudWatchMetricsEnabled": ubx.FieldSpec{WireName: "cloud_watch_metrics_enabled"},
 		"Limits": ubx.FieldSpec{
 			WireName: "limits",
-			Kind: "object",
-			Fields: ApplicationSettings_LimitsFields,
+			Kind:     "object",
+			Fields:   ApplicationSettings_LimitsFields,
 		},
 		"QuietTime": ubx.FieldSpec{
 			WireName: "quiet_time",
-			Kind: "object",
-			Fields: ApplicationSettings_QuietTimeFields,
+			Kind:     "object",
+			Fields:   ApplicationSettings_QuietTimeFields,
 		},
 	},
 }

@@ -497,582 +497,582 @@ type DataSource_DataSourceConfiguration struct {
 
 type DataSource_Tags struct {
 	// The key of a key-value tag attached to the Kendra data source. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValueFields = ubx.FieldMap{
-		"DateValue": ubx.FieldSpec{WireName: "date_value"},
-		"LongValue": ubx.FieldSpec{WireName: "long_value"},
-		"StringListValue": ubx.FieldSpec{WireName: "string_list_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"DateValue":       ubx.FieldSpec{WireName: "date_value"},
+	"LongValue":       ubx.FieldSpec{WireName: "long_value"},
+	"StringListValue": ubx.FieldSpec{WireName: "string_list_value"},
+	"StringValue":     ubx.FieldSpec{WireName: "string_value"},
+}
 
 var DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields = ubx.FieldMap{
-		"ConditionDocumentAttributeKey": ubx.FieldSpec{WireName: "condition_document_attribute_key"},
-		"ConditionOnValue": ubx.FieldSpec{
-			WireName: "condition_on_value",
-			Kind: "object",
-			Fields: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValueFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-	}
+	"ConditionDocumentAttributeKey": ubx.FieldSpec{WireName: "condition_document_attribute_key"},
+	"ConditionOnValue": ubx.FieldSpec{
+		WireName: "condition_on_value",
+		Kind:     "object",
+		Fields:   DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValueFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+}
 
 var DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_TargetFields = ubx.FieldMap{
-		"TargetDocumentAttributeKey": ubx.FieldSpec{WireName: "target_document_attribute_key"},
-		"TargetDocumentAttributeValue": ubx.FieldSpec{
-			WireName: "target_document_attribute_value",
-			Kind: "object",
-			Fields: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValueFields,
-		},
-		"TargetDocumentAttributeValueDeletion": ubx.FieldSpec{WireName: "target_document_attribute_value_deletion"},
-	}
+	"TargetDocumentAttributeKey": ubx.FieldSpec{WireName: "target_document_attribute_key"},
+	"TargetDocumentAttributeValue": ubx.FieldSpec{
+		WireName: "target_document_attribute_value",
+		Kind:     "object",
+		Fields:   DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValueFields,
+	},
+	"TargetDocumentAttributeValueDeletion": ubx.FieldSpec{WireName: "target_document_attribute_value_deletion"},
+}
 
 var DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurationsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
-		},
-		"DocumentContentDeletion": ubx.FieldSpec{WireName: "document_content_deletion"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_TargetFields,
-		},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
+	},
+	"DocumentContentDeletion": ubx.FieldSpec{WireName: "document_content_deletion"},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_TargetFields,
+	},
+}
 
 var DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields = ubx.FieldMap{
-		"InvocationCondition": ubx.FieldSpec{
-			WireName: "invocation_condition",
-			Kind: "object",
-			Fields: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
-		},
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-		"S3Bucket": ubx.FieldSpec{WireName: "s3_bucket"},
-	}
+	"InvocationCondition": ubx.FieldSpec{
+		WireName: "invocation_condition",
+		Kind:     "object",
+		Fields:   DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_ConditionFields,
+	},
+	"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
+	"S3Bucket":  ubx.FieldSpec{WireName: "s3_bucket"},
+}
 
 var DataSource_CustomDocumentEnrichmentConfigurationFields = ubx.FieldMap{
-		"InlineConfigurations": ubx.FieldSpec{
-			WireName: "inline_configurations",
-			Kind: "list",
-			Fields: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurationsFields,
-		},
-		"PostExtractionHookConfiguration": ubx.FieldSpec{
-			WireName: "post_extraction_hook_configuration",
-			Kind: "object",
-			Fields: DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
-		},
-		"PreExtractionHookConfiguration": ubx.FieldSpec{
-			WireName: "pre_extraction_hook_configuration",
-			Kind: "object",
-			Fields: DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"InlineConfigurations": ubx.FieldSpec{
+		WireName: "inline_configurations",
+		Kind:     "list",
+		Fields:   DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurationsFields,
+	},
+	"PostExtractionHookConfiguration": ubx.FieldSpec{
+		WireName: "post_extraction_hook_configuration",
+		Kind:     "object",
+		Fields:   DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
+	},
+	"PreExtractionHookConfiguration": ubx.FieldSpec{
+		WireName: "pre_extraction_hook_configuration",
+		Kind:     "object",
+		Fields:   DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfigurationFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields = ubx.FieldMap{
-		"DataSourceFieldName": ubx.FieldSpec{WireName: "data_source_field_name"},
-		"DateFieldFormat": ubx.FieldSpec{WireName: "date_field_format"},
-		"IndexFieldName": ubx.FieldSpec{WireName: "index_field_name"},
-	}
+	"DataSourceFieldName": ubx.FieldSpec{WireName: "data_source_field_name"},
+	"DateFieldFormat":     ubx.FieldSpec{WireName: "date_field_format"},
+	"IndexFieldName":      ubx.FieldSpec{WireName: "index_field_name"},
+}
 
 var DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfigurationFields = ubx.FieldMap{
-		"AttachmentFieldMappings": ubx.FieldSpec{
-			WireName: "attachment_field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"CrawlAttachments": ubx.FieldSpec{WireName: "crawl_attachments"},
-	}
+	"AttachmentFieldMappings": ubx.FieldSpec{
+		WireName: "attachment_field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"CrawlAttachments": ubx.FieldSpec{WireName: "crawl_attachments"},
+}
 
 var DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfigurationFields = ubx.FieldMap{
-		"BlogFieldMappings": ubx.FieldSpec{
-			WireName: "blog_field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-	}
+	"BlogFieldMappings": ubx.FieldSpec{
+		WireName: "blog_field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfigurationFields = ubx.FieldMap{
-		"PageFieldMappings": ubx.FieldSpec{
-			WireName: "page_field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-	}
+	"PageFieldMappings": ubx.FieldSpec{
+		WireName: "page_field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfigurationFields = ubx.FieldMap{
-		"CrawlArchivedSpaces": ubx.FieldSpec{WireName: "crawl_archived_spaces"},
-		"CrawlPersonalSpaces": ubx.FieldSpec{WireName: "crawl_personal_spaces"},
-		"ExcludeSpaces": ubx.FieldSpec{WireName: "exclude_spaces"},
-		"IncludeSpaces": ubx.FieldSpec{WireName: "include_spaces"},
-		"SpaceFieldMappings": ubx.FieldSpec{
-			WireName: "space_field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-	}
+	"CrawlArchivedSpaces": ubx.FieldSpec{WireName: "crawl_archived_spaces"},
+	"CrawlPersonalSpaces": ubx.FieldSpec{WireName: "crawl_personal_spaces"},
+	"ExcludeSpaces":       ubx.FieldSpec{WireName: "exclude_spaces"},
+	"IncludeSpaces":       ubx.FieldSpec{WireName: "include_spaces"},
+	"SpaceFieldMappings": ubx.FieldSpec{
+		WireName: "space_field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 var DataSource_DataSourceConfiguration_ConfluenceConfigurationFields = ubx.FieldMap{
-		"AttachmentConfiguration": ubx.FieldSpec{
-			WireName: "attachment_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfigurationFields,
-		},
-		"BlogConfiguration": ubx.FieldSpec{
-			WireName: "blog_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfigurationFields,
-		},
-		"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
-		"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
-		"PageConfiguration": ubx.FieldSpec{
-			WireName: "page_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfigurationFields,
-		},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"ServerUrl": ubx.FieldSpec{WireName: "server_url"},
-		"SpaceConfiguration": ubx.FieldSpec{
-			WireName: "space_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfigurationFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
-		},
-	}
+	"AttachmentConfiguration": ubx.FieldSpec{
+		WireName: "attachment_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfigurationFields,
+	},
+	"BlogConfiguration": ubx.FieldSpec{
+		WireName: "blog_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfigurationFields,
+	},
+	"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
+	"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
+	"PageConfiguration": ubx.FieldSpec{
+		WireName: "page_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfigurationFields,
+	},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+	"ServerUrl": ubx.FieldSpec{WireName: "server_url"},
+	"SpaceConfiguration": ubx.FieldSpec{
+		WireName: "space_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfigurationFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfigurationFields = ubx.FieldMap{
-		"AllowedGroupsColumnName": ubx.FieldSpec{WireName: "allowed_groups_column_name"},
-	}
+	"AllowedGroupsColumnName": ubx.FieldSpec{WireName: "allowed_groups_column_name"},
+}
 
 var DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfigurationFields = ubx.FieldMap{
-		"ChangeDetectingColumns": ubx.FieldSpec{WireName: "change_detecting_columns"},
-		"DocumentDataColumnName": ubx.FieldSpec{WireName: "document_data_column_name"},
-		"DocumentIdColumnName": ubx.FieldSpec{WireName: "document_id_column_name"},
-		"DocumentTitleColumnName": ubx.FieldSpec{WireName: "document_title_column_name"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-	}
+	"ChangeDetectingColumns":  ubx.FieldSpec{WireName: "change_detecting_columns"},
+	"DocumentDataColumnName":  ubx.FieldSpec{WireName: "document_data_column_name"},
+	"DocumentIdColumnName":    ubx.FieldSpec{WireName: "document_id_column_name"},
+	"DocumentTitleColumnName": ubx.FieldSpec{WireName: "document_title_column_name"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfigurationFields = ubx.FieldMap{
-		"DatabaseHost": ubx.FieldSpec{WireName: "database_host"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"DatabasePort": ubx.FieldSpec{WireName: "database_port"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"DatabaseHost": ubx.FieldSpec{WireName: "database_host"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"DatabasePort": ubx.FieldSpec{WireName: "database_port"},
+	"SecretArn":    ubx.FieldSpec{WireName: "secret_arn"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+}
 
 var DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfigurationFields = ubx.FieldMap{
-		"QueryIdentifiersEnclosingOption": ubx.FieldSpec{WireName: "query_identifiers_enclosing_option"},
-	}
+	"QueryIdentifiersEnclosingOption": ubx.FieldSpec{WireName: "query_identifiers_enclosing_option"},
+}
 
 var DataSource_DataSourceConfiguration_DatabaseConfigurationFields = ubx.FieldMap{
-		"AclConfiguration": ubx.FieldSpec{
-			WireName: "acl_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfigurationFields,
-		},
-		"ColumnConfiguration": ubx.FieldSpec{
-			WireName: "column_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfigurationFields,
-		},
-		"ConnectionConfiguration": ubx.FieldSpec{
-			WireName: "connection_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfigurationFields,
-		},
-		"DatabaseEngineType": ubx.FieldSpec{WireName: "database_engine_type"},
-		"SqlConfiguration": ubx.FieldSpec{
-			WireName: "sql_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfigurationFields,
-		},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
-		},
-	}
+	"AclConfiguration": ubx.FieldSpec{
+		WireName: "acl_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfigurationFields,
+	},
+	"ColumnConfiguration": ubx.FieldSpec{
+		WireName: "column_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfigurationFields,
+	},
+	"ConnectionConfiguration": ubx.FieldSpec{
+		WireName: "connection_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfigurationFields,
+	},
+	"DatabaseEngineType": ubx.FieldSpec{WireName: "database_engine_type"},
+	"SqlConfiguration": ubx.FieldSpec{
+		WireName: "sql_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfigurationFields,
+	},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_GoogleDriveConfigurationFields = ubx.FieldMap{
-		"ExcludeMimeTypes": ubx.FieldSpec{WireName: "exclude_mime_types"},
-		"ExcludeSharedDrives": ubx.FieldSpec{WireName: "exclude_shared_drives"},
-		"ExcludeUserAccounts": ubx.FieldSpec{WireName: "exclude_user_accounts"},
-		"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"ExcludeMimeTypes":    ubx.FieldSpec{WireName: "exclude_mime_types"},
+	"ExcludeSharedDrives": ubx.FieldSpec{WireName: "exclude_shared_drives"},
+	"ExcludeUserAccounts": ubx.FieldSpec{WireName: "exclude_user_accounts"},
+	"ExclusionPatterns":   ubx.FieldSpec{WireName: "exclusion_patterns"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
+	"SecretArn":         ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3PathFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsersFields = ubx.FieldMap{
-		"OneDriveUserList": ubx.FieldSpec{WireName: "one_drive_user_list"},
-		"OneDriveUserS3Path": ubx.FieldSpec{
-			WireName: "one_drive_user_s3_path",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3PathFields,
-		},
-	}
+	"OneDriveUserList": ubx.FieldSpec{WireName: "one_drive_user_list"},
+	"OneDriveUserS3Path": ubx.FieldSpec{
+		WireName: "one_drive_user_s3_path",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3PathFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_OneDriveConfigurationFields = ubx.FieldMap{
-		"DisableLocalGroups": ubx.FieldSpec{WireName: "disable_local_groups"},
-		"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
-		"OneDriveUsers": ubx.FieldSpec{
-			WireName: "one_drive_users",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsersFields,
-		},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"TenantDomain": ubx.FieldSpec{WireName: "tenant_domain"},
-	}
+	"DisableLocalGroups": ubx.FieldSpec{WireName: "disable_local_groups"},
+	"ExclusionPatterns":  ubx.FieldSpec{WireName: "exclusion_patterns"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
+	"OneDriveUsers": ubx.FieldSpec{
+		WireName: "one_drive_users",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsersFields,
+	},
+	"SecretArn":    ubx.FieldSpec{WireName: "secret_arn"},
+	"TenantDomain": ubx.FieldSpec{WireName: "tenant_domain"},
+}
 
 var DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfigurationFields = ubx.FieldMap{
-		"KeyPath": ubx.FieldSpec{WireName: "key_path"},
-	}
+	"KeyPath": ubx.FieldSpec{WireName: "key_path"},
+}
 
 var DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfigurationFields = ubx.FieldMap{
-		"S3Prefix": ubx.FieldSpec{WireName: "s3_prefix"},
-	}
+	"S3Prefix": ubx.FieldSpec{WireName: "s3_prefix"},
+}
 
 var DataSource_DataSourceConfiguration_S3ConfigurationFields = ubx.FieldMap{
-		"AccessControlListConfiguration": ubx.FieldSpec{
-			WireName: "access_control_list_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfigurationFields,
-		},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"DocumentsMetadataConfiguration": ubx.FieldSpec{
-			WireName: "documents_metadata_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfigurationFields,
-		},
-		"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
-		"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
-		"InclusionPrefixes": ubx.FieldSpec{WireName: "inclusion_prefixes"},
-	}
+	"AccessControlListConfiguration": ubx.FieldSpec{
+		WireName: "access_control_list_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfigurationFields,
+	},
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"DocumentsMetadataConfiguration": ubx.FieldSpec{
+		WireName: "documents_metadata_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfigurationFields,
+	},
+	"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
+	"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
+	"InclusionPrefixes": ubx.FieldSpec{WireName: "inclusion_prefixes"},
+}
 
 var DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfigurationFields = ubx.FieldMap{
-		"DocumentDataFieldName": ubx.FieldSpec{WireName: "document_data_field_name"},
-		"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"IncludeFilterTypes": ubx.FieldSpec{WireName: "include_filter_types"},
-	}
+	"DocumentDataFieldName":  ubx.FieldSpec{WireName: "document_data_field_name"},
+	"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"IncludeFilterTypes": ubx.FieldSpec{WireName: "include_filter_types"},
+}
 
 var DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurationsFields = ubx.FieldMap{
-		"DocumentDataFieldName": ubx.FieldSpec{WireName: "document_data_field_name"},
-		"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DocumentDataFieldName":  ubx.FieldSpec{WireName: "document_data_field_name"},
+	"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfigurationFields = ubx.FieldMap{
-		"DocumentDataFieldName": ubx.FieldSpec{WireName: "document_data_field_name"},
-		"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-	}
+	"DocumentDataFieldName":  ubx.FieldSpec{WireName: "document_data_field_name"},
+	"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfigurationFields = ubx.FieldMap{
-		"CustomKnowledgeArticleTypeConfigurations": ubx.FieldSpec{
-			WireName: "custom_knowledge_article_type_configurations",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurationsFields,
-		},
-		"IncludedStates": ubx.FieldSpec{WireName: "included_states"},
-		"StandardKnowledgeArticleTypeConfiguration": ubx.FieldSpec{
-			WireName: "standard_knowledge_article_type_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfigurationFields,
-		},
-	}
+	"CustomKnowledgeArticleTypeConfigurations": ubx.FieldSpec{
+		WireName: "custom_knowledge_article_type_configurations",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurationsFields,
+	},
+	"IncludedStates": ubx.FieldSpec{WireName: "included_states"},
+	"StandardKnowledgeArticleTypeConfiguration": ubx.FieldSpec{
+		WireName: "standard_knowledge_article_type_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfigurationFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfigurationFields = ubx.FieldMap{
-		"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-	}
+	"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_SalesforceConfigurationFields = ubx.FieldMap{
-		"ChatterFeedConfiguration": ubx.FieldSpec{
-			WireName: "chatter_feed_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfigurationFields,
-		},
-		"CrawlAttachments": ubx.FieldSpec{WireName: "crawl_attachments"},
-		"ExcludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "exclude_attachment_file_patterns"},
-		"IncludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "include_attachment_file_patterns"},
-		"KnowledgeArticleConfiguration": ubx.FieldSpec{
-			WireName: "knowledge_article_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfigurationFields,
-		},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"ServerUrl": ubx.FieldSpec{WireName: "server_url"},
-		"StandardObjectAttachmentConfiguration": ubx.FieldSpec{
-			WireName: "standard_object_attachment_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfigurationFields,
-		},
-		"StandardObjectConfigurations": ubx.FieldSpec{
-			WireName: "standard_object_configurations",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurationsFields,
-		},
-	}
+	"ChatterFeedConfiguration": ubx.FieldSpec{
+		WireName: "chatter_feed_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfigurationFields,
+	},
+	"CrawlAttachments":              ubx.FieldSpec{WireName: "crawl_attachments"},
+	"ExcludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "exclude_attachment_file_patterns"},
+	"IncludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "include_attachment_file_patterns"},
+	"KnowledgeArticleConfiguration": ubx.FieldSpec{
+		WireName: "knowledge_article_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfigurationFields,
+	},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+	"ServerUrl": ubx.FieldSpec{WireName: "server_url"},
+	"StandardObjectAttachmentConfiguration": ubx.FieldSpec{
+		WireName: "standard_object_attachment_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfigurationFields,
+	},
+	"StandardObjectConfigurations": ubx.FieldSpec{
+		WireName: "standard_object_configurations",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurationsFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfigurationFields = ubx.FieldMap{
-		"CrawlAttachments": ubx.FieldSpec{WireName: "crawl_attachments"},
-		"DocumentDataFieldName": ubx.FieldSpec{WireName: "document_data_field_name"},
-		"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
-		"ExcludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "exclude_attachment_file_patterns"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"FilterQuery": ubx.FieldSpec{WireName: "filter_query"},
-		"IncludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "include_attachment_file_patterns"},
-	}
+	"CrawlAttachments":              ubx.FieldSpec{WireName: "crawl_attachments"},
+	"DocumentDataFieldName":         ubx.FieldSpec{WireName: "document_data_field_name"},
+	"DocumentTitleFieldName":        ubx.FieldSpec{WireName: "document_title_field_name"},
+	"ExcludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "exclude_attachment_file_patterns"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"FilterQuery":                   ubx.FieldSpec{WireName: "filter_query"},
+	"IncludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "include_attachment_file_patterns"},
+}
 
 var DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfigurationFields = ubx.FieldMap{
-		"CrawlAttachments": ubx.FieldSpec{WireName: "crawl_attachments"},
-		"DocumentDataFieldName": ubx.FieldSpec{WireName: "document_data_field_name"},
-		"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
-		"ExcludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "exclude_attachment_file_patterns"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"IncludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "include_attachment_file_patterns"},
-	}
+	"CrawlAttachments":              ubx.FieldSpec{WireName: "crawl_attachments"},
+	"DocumentDataFieldName":         ubx.FieldSpec{WireName: "document_data_field_name"},
+	"DocumentTitleFieldName":        ubx.FieldSpec{WireName: "document_title_field_name"},
+	"ExcludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "exclude_attachment_file_patterns"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"IncludeAttachmentFilePatterns": ubx.FieldSpec{WireName: "include_attachment_file_patterns"},
+}
 
 var DataSource_DataSourceConfiguration_ServiceNowConfigurationFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"HostUrl": ubx.FieldSpec{WireName: "host_url"},
-		"KnowledgeArticleConfiguration": ubx.FieldSpec{
-			WireName: "knowledge_article_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfigurationFields,
-		},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"ServiceCatalogConfiguration": ubx.FieldSpec{
-			WireName: "service_catalog_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfigurationFields,
-		},
-		"ServiceNowBuildVersion": ubx.FieldSpec{WireName: "service_now_build_version"},
-	}
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+	"HostUrl":            ubx.FieldSpec{WireName: "host_url"},
+	"KnowledgeArticleConfiguration": ubx.FieldSpec{
+		WireName: "knowledge_article_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfigurationFields,
+	},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+	"ServiceCatalogConfiguration": ubx.FieldSpec{
+		WireName: "service_catalog_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfigurationFields,
+	},
+	"ServiceNowBuildVersion": ubx.FieldSpec{WireName: "service_now_build_version"},
+}
 
 var DataSource_DataSourceConfiguration_SharePointConfigurationFields = ubx.FieldMap{
-		"CrawlAttachments": ubx.FieldSpec{WireName: "crawl_attachments"},
-		"DisableLocalGroups": ubx.FieldSpec{WireName: "disable_local_groups"},
-		"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
-		"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"SharePointVersion": ubx.FieldSpec{WireName: "share_point_version"},
-		"SslCertificateS3Path": ubx.FieldSpec{
-			WireName: "ssl_certificate_s3_path",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3PathFields,
-		},
-		"Urls": ubx.FieldSpec{WireName: "urls"},
-		"UseChangeLog": ubx.FieldSpec{WireName: "use_change_log"},
-		"VpcConfiguration": ubx.FieldSpec{
-			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
-		},
-	}
+	"CrawlAttachments":       ubx.FieldSpec{WireName: "crawl_attachments"},
+	"DisableLocalGroups":     ubx.FieldSpec{WireName: "disable_local_groups"},
+	"DocumentTitleFieldName": ubx.FieldSpec{WireName: "document_title_field_name"},
+	"ExclusionPatterns":      ubx.FieldSpec{WireName: "exclusion_patterns"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
+	"SecretArn":         ubx.FieldSpec{WireName: "secret_arn"},
+	"SharePointVersion": ubx.FieldSpec{WireName: "share_point_version"},
+	"SslCertificateS3Path": ubx.FieldSpec{
+		WireName: "ssl_certificate_s3_path",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3PathFields,
+	},
+	"Urls":         ubx.FieldSpec{WireName: "urls"},
+	"UseChangeLog": ubx.FieldSpec{WireName: "use_change_log"},
+	"VpcConfiguration": ubx.FieldSpec{
+		WireName: "vpc_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfigurationFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_TemplateConfigurationFields = ubx.FieldMap{
-		"Template": ubx.FieldSpec{WireName: "template"},
-	}
+	"Template": ubx.FieldSpec{WireName: "template"},
+}
 
 var DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields = ubx.FieldMap{
-		"Credentials": ubx.FieldSpec{WireName: "credentials"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Credentials": ubx.FieldSpec{WireName: "credentials"},
+	"Host":        ubx.FieldSpec{WireName: "host"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+}
 
 var DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfigurationFields = ubx.FieldMap{
-		"BasicAuthentication": ubx.FieldSpec{
-			WireName: "basic_authentication",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields,
-		},
-	}
+	"BasicAuthentication": ubx.FieldSpec{
+		WireName: "basic_authentication",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfigurationFields = ubx.FieldMap{
-		"SeedUrls": ubx.FieldSpec{WireName: "seed_urls"},
-		"WebCrawlerMode": ubx.FieldSpec{WireName: "web_crawler_mode"},
-	}
+	"SeedUrls":       ubx.FieldSpec{WireName: "seed_urls"},
+	"WebCrawlerMode": ubx.FieldSpec{WireName: "web_crawler_mode"},
+}
 
 var DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfigurationFields = ubx.FieldMap{
-		"SiteMaps": ubx.FieldSpec{WireName: "site_maps"},
-	}
+	"SiteMaps": ubx.FieldSpec{WireName: "site_maps"},
+}
 
 var DataSource_DataSourceConfiguration_WebCrawlerConfiguration_UrlsFields = ubx.FieldMap{
-		"SeedUrlConfiguration": ubx.FieldSpec{
-			WireName: "seed_url_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfigurationFields,
-		},
-		"SiteMapsConfiguration": ubx.FieldSpec{
-			WireName: "site_maps_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfigurationFields,
-		},
-	}
+	"SeedUrlConfiguration": ubx.FieldSpec{
+		WireName: "seed_url_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfigurationFields,
+	},
+	"SiteMapsConfiguration": ubx.FieldSpec{
+		WireName: "site_maps_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfigurationFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_WebCrawlerConfigurationFields = ubx.FieldMap{
-		"AuthenticationConfiguration": ubx.FieldSpec{
-			WireName: "authentication_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfigurationFields,
-		},
-		"CrawlDepth": ubx.FieldSpec{WireName: "crawl_depth"},
-		"MaxContentSizePerPageInMegaBytes": ubx.FieldSpec{WireName: "max_content_size_per_page_in_mega_bytes"},
-		"MaxLinksPerPage": ubx.FieldSpec{WireName: "max_links_per_page"},
-		"MaxUrlsPerMinuteCrawlRate": ubx.FieldSpec{WireName: "max_urls_per_minute_crawl_rate"},
-		"ProxyConfiguration": ubx.FieldSpec{
-			WireName: "proxy_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields,
-		},
-		"UrlExclusionPatterns": ubx.FieldSpec{WireName: "url_exclusion_patterns"},
-		"UrlInclusionPatterns": ubx.FieldSpec{WireName: "url_inclusion_patterns"},
-		"Urls": ubx.FieldSpec{
-			WireName: "urls",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_UrlsFields,
-		},
-	}
+	"AuthenticationConfiguration": ubx.FieldSpec{
+		WireName: "authentication_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfigurationFields,
+	},
+	"CrawlDepth":                       ubx.FieldSpec{WireName: "crawl_depth"},
+	"MaxContentSizePerPageInMegaBytes": ubx.FieldSpec{WireName: "max_content_size_per_page_in_mega_bytes"},
+	"MaxLinksPerPage":                  ubx.FieldSpec{WireName: "max_links_per_page"},
+	"MaxUrlsPerMinuteCrawlRate":        ubx.FieldSpec{WireName: "max_urls_per_minute_crawl_rate"},
+	"ProxyConfiguration": ubx.FieldSpec{
+		WireName: "proxy_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthenticationFields,
+	},
+	"UrlExclusionPatterns": ubx.FieldSpec{WireName: "url_exclusion_patterns"},
+	"UrlInclusionPatterns": ubx.FieldSpec{WireName: "url_inclusion_patterns"},
+	"Urls": ubx.FieldSpec{
+		WireName: "urls",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_WebCrawlerConfiguration_UrlsFields,
+	},
+}
 
 var DataSource_DataSourceConfiguration_WorkDocsConfigurationFields = ubx.FieldMap{
-		"CrawlComments": ubx.FieldSpec{WireName: "crawl_comments"},
-		"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
-		},
-		"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"UseChangeLog": ubx.FieldSpec{WireName: "use_change_log"},
-	}
+	"CrawlComments":     ubx.FieldSpec{WireName: "crawl_comments"},
+	"ExclusionPatterns": ubx.FieldSpec{WireName: "exclusion_patterns"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappingsFields,
+	},
+	"InclusionPatterns": ubx.FieldSpec{WireName: "inclusion_patterns"},
+	"OrganizationId":    ubx.FieldSpec{WireName: "organization_id"},
+	"UseChangeLog":      ubx.FieldSpec{WireName: "use_change_log"},
+}
 
 var DataSource_DataSourceConfigurationFields = ubx.FieldMap{
-		"ConfluenceConfiguration": ubx.FieldSpec{
-			WireName: "confluence_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ConfluenceConfigurationFields,
-		},
-		"DatabaseConfiguration": ubx.FieldSpec{
-			WireName: "database_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_DatabaseConfigurationFields,
-		},
-		"GoogleDriveConfiguration": ubx.FieldSpec{
-			WireName: "google_drive_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_GoogleDriveConfigurationFields,
-		},
-		"OneDriveConfiguration": ubx.FieldSpec{
-			WireName: "one_drive_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_OneDriveConfigurationFields,
-		},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_S3ConfigurationFields,
-		},
-		"SalesforceConfiguration": ubx.FieldSpec{
-			WireName: "salesforce_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_SalesforceConfigurationFields,
-		},
-		"ServiceNowConfiguration": ubx.FieldSpec{
-			WireName: "service_now_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_ServiceNowConfigurationFields,
-		},
-		"SharePointConfiguration": ubx.FieldSpec{
-			WireName: "share_point_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_SharePointConfigurationFields,
-		},
-		"TemplateConfiguration": ubx.FieldSpec{
-			WireName: "template_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_TemplateConfigurationFields,
-		},
-		"WebCrawlerConfiguration": ubx.FieldSpec{
-			WireName: "web_crawler_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_WebCrawlerConfigurationFields,
-		},
-		"WorkDocsConfiguration": ubx.FieldSpec{
-			WireName: "work_docs_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfiguration_WorkDocsConfigurationFields,
-		},
-	}
+	"ConfluenceConfiguration": ubx.FieldSpec{
+		WireName: "confluence_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ConfluenceConfigurationFields,
+	},
+	"DatabaseConfiguration": ubx.FieldSpec{
+		WireName: "database_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_DatabaseConfigurationFields,
+	},
+	"GoogleDriveConfiguration": ubx.FieldSpec{
+		WireName: "google_drive_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_GoogleDriveConfigurationFields,
+	},
+	"OneDriveConfiguration": ubx.FieldSpec{
+		WireName: "one_drive_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_OneDriveConfigurationFields,
+	},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_S3ConfigurationFields,
+	},
+	"SalesforceConfiguration": ubx.FieldSpec{
+		WireName: "salesforce_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_SalesforceConfigurationFields,
+	},
+	"ServiceNowConfiguration": ubx.FieldSpec{
+		WireName: "service_now_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_ServiceNowConfigurationFields,
+	},
+	"SharePointConfiguration": ubx.FieldSpec{
+		WireName: "share_point_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_SharePointConfigurationFields,
+	},
+	"TemplateConfiguration": ubx.FieldSpec{
+		WireName: "template_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_TemplateConfigurationFields,
+	},
+	"WebCrawlerConfiguration": ubx.FieldSpec{
+		WireName: "web_crawler_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_WebCrawlerConfigurationFields,
+	},
+	"WorkDocsConfiguration": ubx.FieldSpec{
+		WireName: "work_docs_configuration",
+		Kind:     "object",
+		Fields:   DataSource_DataSourceConfiguration_WorkDocsConfigurationFields,
+	},
+}
 
 var DataSource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataSourceConfig struct {
 	// Configures custom document enrichment for the data source, allowing you to apply inline transformations or invoke Lambda-based pre- and post-extraction hooks to modify document metadata and content before indexing. (AI-inferred)
@@ -1129,24 +1129,24 @@ var DataSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomDocumentEnrichmentConfiguration": ubx.FieldSpec{
 			WireName: "custom_document_enrichment_configuration",
-			Kind: "object",
-			Fields: DataSource_CustomDocumentEnrichmentConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSource_CustomDocumentEnrichmentConfigurationFields,
 		},
 		"DataSourceConfiguration": ubx.FieldSpec{
 			WireName: "data_source_configuration",
-			Kind: "object",
-			Fields: DataSource_DataSourceConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSource_DataSourceConfigurationFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"IndexId":      ubx.FieldSpec{WireName: "index_id"},
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+		"Schedule":     ubx.FieldSpec{WireName: "schedule"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataSource_TagsFields,
+			Kind:     "list",
+			Fields:   DataSource_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

@@ -9,9 +9,9 @@ type SensitiveDataOccurrencesAvailabilityConfig struct {
 
 type SensitiveDataOccurrencesAvailabilityAttrs struct {
 	// <p>Specifies whether occurrences of sensitive data can be retrieved for a finding. Possible values are:</p>
-	Code any
+	Code      any
 	FindingId any
-	Reasons any
+	Reasons   any
 }
 
 var SensitiveDataOccurrencesAvailability = ubx.DataSourceBinding{

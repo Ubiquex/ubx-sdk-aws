@@ -27,6 +27,6 @@ var EnclaveCertificateIamRoleAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_enclave_certificate_iam_role_association",
 	Fields: ubx.FieldMap{
 		"CertificateArn": ubx.FieldSpec{WireName: "certificate_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
 	},
 }

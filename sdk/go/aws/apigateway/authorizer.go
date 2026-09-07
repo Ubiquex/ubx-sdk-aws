@@ -54,15 +54,15 @@ type AuthorizerAttrs struct {
 var Authorizer = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_authorizer",
 	Fields: ubx.FieldMap{
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"AuthorizerCredentials": ubx.FieldSpec{WireName: "authorizer_credentials"},
+		"AuthType":                     ubx.FieldSpec{WireName: "auth_type"},
+		"AuthorizerCredentials":        ubx.FieldSpec{WireName: "authorizer_credentials"},
 		"AuthorizerResultTtlInSeconds": ubx.FieldSpec{WireName: "authorizer_result_ttl_in_seconds"},
-		"AuthorizerUri": ubx.FieldSpec{WireName: "authorizer_uri"},
-		"IdentitySource": ubx.FieldSpec{WireName: "identity_source"},
+		"AuthorizerUri":                ubx.FieldSpec{WireName: "authorizer_uri"},
+		"IdentitySource":               ubx.FieldSpec{WireName: "identity_source"},
 		"IdentityValidationExpression": ubx.FieldSpec{WireName: "identity_validation_expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProviderArns": ubx.FieldSpec{WireName: "provider_arns"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":                         ubx.FieldSpec{WireName: "name"},
+		"ProviderArns":                 ubx.FieldSpec{WireName: "provider_arns"},
+		"RestApiId":                    ubx.FieldSpec{WireName: "rest_api_id"},
+		"Type":                         ubx.FieldSpec{WireName: "type"},
 	},
 }

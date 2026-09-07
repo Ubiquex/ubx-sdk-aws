@@ -4,37 +4,37 @@ package billingconductor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountAssociations_Filters struct {
-	AccountId any
-	AccountIds any
+	AccountId   any
+	AccountIds  any
 	Association any
 }
 
 type AccountAssociations_LinkedAccounts struct {
-	AccountEmail any
-	AccountId any
-	AccountName any
+	AccountEmail    any
+	AccountId       any
+	AccountName     any
 	BillingGroupArn any
 }
 
 var AccountAssociations_FiltersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"Association": ubx.FieldSpec{WireName: "association"},
-	}
+	"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+	"AccountIds":  ubx.FieldSpec{WireName: "account_ids"},
+	"Association": ubx.FieldSpec{WireName: "association"},
+}
 
 type AccountAssociationsConfig struct {
 	BillingPeriod any
 	// <p>The filter on the account ID of the linked account, or any of the following:</p> <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
-	Filters any
+	Filters   any
 	NextToken any
 }
 
 type AccountAssociationsAttrs struct {
 	BillingPeriod any
 	// <p>The filter on the account ID of the linked account, or any of the following:</p> <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
-	Filters any
+	Filters        any
 	LinkedAccounts any
-	NextToken any
+	NextToken      any
 }
 
 var AccountAssociations = ubx.DataSourceBinding{
@@ -43,8 +43,8 @@ var AccountAssociations = ubx.DataSourceBinding{
 		"BillingPeriod": ubx.FieldSpec{WireName: "billing_period"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: AccountAssociations_FiltersFields,
+			Kind:     "object",
+			Fields:   AccountAssociations_FiltersFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},

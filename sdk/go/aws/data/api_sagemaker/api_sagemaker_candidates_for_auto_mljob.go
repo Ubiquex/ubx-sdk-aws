@@ -5,86 +5,86 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerCandidatesForAutoMljob_Candidates_CandidateProperties_CandidateArtifactLocations struct {
 	BacktestResults any
-	Explainability any
-	ModelInsights any
+	Explainability  any
+	ModelInsights   any
 }
 
 type ApiSagemakerCandidatesForAutoMljob_Candidates_CandidateProperties_CandidateMetrics struct {
-	MetricName any
-	Set any
+	MetricName         any
+	Set                any
 	StandardMetricName any
-	Value any
+	Value              any
 }
 
 type ApiSagemakerCandidatesForAutoMljob_Candidates_CandidateProperties struct {
 	CandidateArtifactLocations any
-	CandidateMetrics any
+	CandidateMetrics           any
 }
 
 type ApiSagemakerCandidatesForAutoMljob_Candidates_CandidateSteps struct {
-	CandidateStepArn any
+	CandidateStepArn  any
 	CandidateStepName any
 	CandidateStepType any
 }
 
 type ApiSagemakerCandidatesForAutoMljob_Candidates_FinalAutoMljobObjectiveMetric struct {
-	MetricName any
+	MetricName         any
 	StandardMetricName any
-	Type any
-	Value any
+	Type               any
+	Value              any
 }
 
 type ApiSagemakerCandidatesForAutoMljob_Candidates_InferenceContainerDefinitions struct {
-	Environment any
-	Image any
+	Environment  any
+	Image        any
 	ModelDataUrl any
 }
 
 type ApiSagemakerCandidatesForAutoMljob_Candidates struct {
-	CandidateName any
-	CandidateProperties any
-	CandidateStatus any
-	CandidateSteps any
-	CreationTime any
-	EndTime any
-	FailureReason any
+	CandidateName                 any
+	CandidateProperties           any
+	CandidateStatus               any
+	CandidateSteps                any
+	CreationTime                  any
+	EndTime                       any
+	FailureReason                 any
 	FinalAutoMljobObjectiveMetric any
 	InferenceContainerDefinitions any
-	InferenceContainers any
-	LastModifiedTime any
-	ObjectiveStatus any
+	InferenceContainers           any
+	LastModifiedTime              any
+	ObjectiveStatus               any
 }
 
 type ApiSagemakerCandidatesForAutoMljobConfig struct {
-	AutoMljobName any
+	AutoMljobName       any
 	CandidateNameEquals any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StatusEquals any
+	MaxResults          any
+	NextToken           any
+	SortBy              any
+	SortOrder           any
+	StatusEquals        any
 }
 
 type ApiSagemakerCandidatesForAutoMljobAttrs struct {
-	AutoMljobName any
+	AutoMljobName       any
 	CandidateNameEquals any
-	Candidates any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	StatusEquals any
+	Candidates          any
+	MaxResults          any
+	NextToken           any
+	SortBy              any
+	SortOrder           any
+	StatusEquals        any
 }
 
 var ApiSagemakerCandidatesForAutoMljob = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_candidates_for_auto_mljob",
 	Fields: ubx.FieldMap{
-		"AutoMljobName": ubx.FieldSpec{WireName: "auto_mljob_name"},
+		"AutoMljobName":       ubx.FieldSpec{WireName: "auto_mljob_name"},
 		"CandidateNameEquals": ubx.FieldSpec{WireName: "candidate_name_equals"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"StatusEquals": ubx.FieldSpec{WireName: "status_equals"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":              ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":           ubx.FieldSpec{WireName: "sort_order"},
+		"StatusEquals":        ubx.FieldSpec{WireName: "status_equals"},
 	},
 }

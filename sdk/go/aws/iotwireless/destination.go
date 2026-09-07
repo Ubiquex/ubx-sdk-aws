@@ -11,9 +11,9 @@ type Destination_Tags struct {
 }
 
 var Destination_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DestinationConfig struct {
 	// Destination description
@@ -50,15 +50,15 @@ type DestinationAttrs struct {
 var Destination = ubx.ResourceBinding{
 	WireType: "aws_io_twireless_destination",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"Expression":     ubx.FieldSpec{WireName: "expression"},
 		"ExpressionType": ubx.FieldSpec{WireName: "expression_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Destination_TagsFields,
+			Kind:     "list",
+			Fields:   Destination_TagsFields,
 		},
 	},
 }

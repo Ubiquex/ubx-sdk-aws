@@ -4,27 +4,27 @@ package finspace_api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FinspaceApiProgrammaticAccessCredentials_Credentials struct {
-	AccessKeyId any
+	AccessKeyId     any
 	SecretAccessKey any
-	SessionToken any
+	SessionToken    any
 }
 
 type FinspaceApiProgrammaticAccessCredentialsConfig struct {
 	DurationInMinutes any
-	EnvironmentId any
+	EnvironmentId     any
 }
 
 type FinspaceApiProgrammaticAccessCredentialsAttrs struct {
 	// <p>Short term API credentials.</p>
-	Credentials any
+	Credentials       any
 	DurationInMinutes any
-	EnvironmentId any
+	EnvironmentId     any
 }
 
 var FinspaceApiProgrammaticAccessCredentials = ubx.DataSourceBinding{
 	WireType: "aws_finspace_api_programmatic_access_credentials",
 	Fields: ubx.FieldMap{
 		"DurationInMinutes": ubx.FieldSpec{WireName: "duration_in_minutes"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"EnvironmentId":     ubx.FieldSpec{WireName: "environment_id"},
 	},
 }

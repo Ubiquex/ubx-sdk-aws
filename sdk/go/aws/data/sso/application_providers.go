@@ -6,11 +6,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ApplicationProviders_ApplicationProviders_DisplayData struct {
 	Description any
 	DisplayName any
-	IconUrl any
+	IconUrl     any
 }
 
 type ApplicationProviders_ApplicationProviders_ResourceServerConfig_Scopes struct {
-	DetailedTitle any
+	DetailedTitle   any
 	LongDescription any
 }
 
@@ -20,26 +20,26 @@ type ApplicationProviders_ApplicationProviders_ResourceServerConfig struct {
 
 type ApplicationProviders_ApplicationProviders struct {
 	ApplicationProviderArn any
-	DisplayData any
-	FederationProtocol any
-	ResourceServerConfig any
+	DisplayData            any
+	FederationProtocol     any
+	ResourceServerConfig   any
 }
 
 type ApplicationProvidersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ApplicationProvidersAttrs struct {
 	ApplicationProviders any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var ApplicationProviders = ubx.DataSourceBinding{
 	WireType: "aws_sso_application_providers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

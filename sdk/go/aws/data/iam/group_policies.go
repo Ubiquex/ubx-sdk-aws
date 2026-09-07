@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupPoliciesConfig struct {
 	GroupName any
-	Marker any
-	MaxItems any
+	Marker    any
+	MaxItems  any
 }
 
 type GroupPoliciesAttrs struct {
-	GroupName any
+	GroupName   any
 	IsTruncated any
-	Marker any
-	MaxItems any
+	Marker      any
+	MaxItems    any
 	// <p>Contains a list of policy names.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html">ListPolicies</a> operation.</p>
 	PolicyNames any
 }
@@ -22,7 +22,7 @@ var GroupPolicies = ubx.DataSourceBinding{
 	WireType: "aws_iam_group_policies",
 	Fields: ubx.FieldMap{
 		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":    ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":  ubx.FieldSpec{WireName: "max_items"},
 	},
 }

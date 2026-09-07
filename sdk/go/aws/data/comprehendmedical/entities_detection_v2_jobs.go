@@ -5,53 +5,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntitiesDetectionV2Jobs_ComprehendMedicalAsyncJobPropertiesList_InputDataConfig struct {
 	S3Bucket any
-	S3Key any
+	S3Key    any
 }
 
 type EntitiesDetectionV2Jobs_ComprehendMedicalAsyncJobPropertiesList struct {
 	DataAccessRoleArn any
-	EndTime any
-	ExpirationTime any
-	InputDataConfig any
-	JobId any
-	JobName any
-	JobStatus any
-	Kmskey any
-	LanguageCode any
-	ManifestFilePath any
-	Message any
-	ModelVersion any
-	OutputDataConfig any
-	SubmitTime any
+	EndTime           any
+	ExpirationTime    any
+	InputDataConfig   any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	Kmskey            any
+	LanguageCode      any
+	ManifestFilePath  any
+	Message           any
+	ModelVersion      any
+	OutputDataConfig  any
+	SubmitTime        any
 }
 
 type EntitiesDetectionV2Jobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmitTimeAfter any
+	JobName          any
+	JobStatus        any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 var EntitiesDetectionV2Jobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"JobName":          ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type EntitiesDetectionV2JobsConfig struct {
 	// <p>Provides information for filtering a list of detection jobs.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EntitiesDetectionV2JobsAttrs struct {
 	ComprehendMedicalAsyncJobPropertiesList any
 	// <p>Provides information for filtering a list of detection jobs.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var EntitiesDetectionV2Jobs = ubx.DataSourceBinding{
@@ -59,10 +59,10 @@ var EntitiesDetectionV2Jobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: EntitiesDetectionV2Jobs_FilterFields,
+			Kind:     "object",
+			Fields:   EntitiesDetectionV2Jobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

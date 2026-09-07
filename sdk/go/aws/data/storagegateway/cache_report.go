@@ -4,31 +4,31 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheReport_CacheReportInfo_ExclusionFilters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type CacheReport_CacheReportInfo_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CacheReport_CacheReportInfo struct {
-	CacheReportArn any
+	CacheReportArn    any
 	CacheReportStatus any
-	EndTime any
-	ExclusionFilters any
+	EndTime           any
+	ExclusionFilters  any
 	// <p>The Amazon Resource Name (ARN) of the file share.</p>
-	FileShareArn any
+	FileShareArn     any
 	InclusionFilters any
 	// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</code> </p> <p>Access point ARN:</p> <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Access point alias:</p> <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> </note>
-	LocationArn any
+	LocationArn             any
 	ReportCompletionPercent any
-	ReportName any
+	ReportName              any
 	// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
-	Role any
+	Role      any
 	StartTime any
-	Tags any
+	Tags      any
 }
 
 type CacheReportConfig struct {

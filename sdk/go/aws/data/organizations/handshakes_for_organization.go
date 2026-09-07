@@ -4,12 +4,12 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HandshakesForOrganization_Filter struct {
-	ActionType any
+	ActionType        any
 	ParentHandshakeId any
 }
 
 type HandshakesForOrganization_Handshakes_Parties struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -18,39 +18,39 @@ type HandshakesForOrganization_Handshakes_Resources_Resources struct {
 
 type HandshakesForOrganization_Handshakes_Resources struct {
 	Resources any
-	Type any
-	Value any
+	Type      any
+	Value     any
 }
 
 type HandshakesForOrganization_Handshakes struct {
-	Action any
-	Arn any
+	Action              any
+	Arn                 any
 	ExpirationTimestamp any
-	Id any
-	Parties any
-	RequestedTimestamp any
-	Resources any
-	State any
+	Id                  any
+	Parties             any
+	RequestedTimestamp  any
+	Resources           any
+	State               any
 }
 
 var HandshakesForOrganization_FilterFields = ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"ParentHandshakeId": ubx.FieldSpec{WireName: "parent_handshake_id"},
-	}
+	"ActionType":        ubx.FieldSpec{WireName: "action_type"},
+	"ParentHandshakeId": ubx.FieldSpec{WireName: "parent_handshake_id"},
+}
 
 type HandshakesForOrganizationConfig struct {
 	// <p>Contains the filter used to select the handshakes for an operation.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type HandshakesForOrganizationAttrs struct {
 	// <p>Contains the filter used to select the handshakes for an operation.</p>
-	Filter any
+	Filter     any
 	Handshakes any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var HandshakesForOrganization = ubx.DataSourceBinding{
@@ -58,10 +58,10 @@ var HandshakesForOrganization = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: HandshakesForOrganization_FilterFields,
+			Kind:     "object",
+			Fields:   HandshakesForOrganization_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

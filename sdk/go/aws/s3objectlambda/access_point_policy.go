@@ -21,6 +21,6 @@ var AccessPointPolicy = ubx.ResourceBinding{
 	WireType: "aws_s3_object_lambda_access_point_policy",
 	Fields: ubx.FieldMap{
 		"ObjectLambdaAccessPoint": ubx.FieldSpec{WireName: "object_lambda_access_point"},
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
+		"PolicyDocument":          ubx.FieldSpec{WireName: "policy_document"},
 	},
 }

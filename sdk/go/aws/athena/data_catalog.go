@@ -10,9 +10,9 @@ type DataCatalog_Tags struct {
 }
 
 var DataCatalog_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataCatalogConfig struct {
 	// The type of connection for a FEDERATED data catalog
@@ -56,15 +56,15 @@ var DataCatalog = ubx.ResourceBinding{
 	WireType: "aws_athena_data_catalog",
 	Fields: ubx.FieldMap{
 		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Error": ubx.FieldSpec{WireName: "error"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"Error":          ubx.FieldSpec{WireName: "error"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Parameters":     ubx.FieldSpec{WireName: "parameters"},
+		"Status":         ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataCatalog_TagsFields,
+			Kind:     "list",
+			Fields:   DataCatalog_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

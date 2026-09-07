@@ -4,47 +4,47 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSets_DataSetSummaries_RowLevelPermissionDataSet struct {
-	Arn any
-	FormatVersion any
-	Namespace any
+	Arn              any
+	FormatVersion    any
+	Namespace        any
 	PermissionPolicy any
-	Status any
+	Status           any
 }
 
 type DataSets_DataSetSummaries struct {
-	Arn any
-	ColumnLevelPermissionRulesApplied any
-	CreatedTime any
-	DataSetId any
-	ImportMode any
-	LastUpdatedTime any
-	Name any
-	RowLevelPermissionDataSet any
-	RowLevelPermissionDataSetMap any
+	Arn                                       any
+	ColumnLevelPermissionRulesApplied         any
+	CreatedTime                               any
+	DataSetId                                 any
+	ImportMode                                any
+	LastUpdatedTime                           any
+	Name                                      any
+	RowLevelPermissionDataSet                 any
+	RowLevelPermissionDataSetMap              any
 	RowLevelPermissionTagConfigurationApplied any
-	UseAs any
+	UseAs                                     any
 }
 
 type DataSetsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type DataSetsAttrs struct {
-	AwsAccountId any
+	AwsAccountId     any
 	DataSetSummaries any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
+	MaxResults       any
+	NextToken        any
+	RequestId        any
+	Status           any
 }
 
 var DataSets = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_data_sets",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

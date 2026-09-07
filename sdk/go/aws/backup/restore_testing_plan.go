@@ -18,22 +18,22 @@ type RestoreTestingPlan_RecoveryPointSelection struct {
 
 type RestoreTestingPlan_Tags struct {
 	// The key of a tag attached to the AWS Backup restore testing plan, used for organizing, identifying, and managing the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var RestoreTestingPlan_RecoveryPointSelectionFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"ExcludeVaults": ubx.FieldSpec{WireName: "exclude_vaults"},
-		"IncludeVaults": ubx.FieldSpec{WireName: "include_vaults"},
-		"RecoveryPointTypes": ubx.FieldSpec{WireName: "recovery_point_types"},
-		"SelectionWindowDays": ubx.FieldSpec{WireName: "selection_window_days"},
-	}
+	"Algorithm":           ubx.FieldSpec{WireName: "algorithm"},
+	"ExcludeVaults":       ubx.FieldSpec{WireName: "exclude_vaults"},
+	"IncludeVaults":       ubx.FieldSpec{WireName: "include_vaults"},
+	"RecoveryPointTypes":  ubx.FieldSpec{WireName: "recovery_point_types"},
+	"SelectionWindowDays": ubx.FieldSpec{WireName: "selection_window_days"},
+}
 
 var RestoreTestingPlan_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RestoreTestingPlanConfig struct {
 	// Defines the recovery point selection criteria for the restore testing plan, including the selection algorithm (e.g., latest or random within a window) and optional filters on resource types and backup vault names to narrow which recovery points are tested. (AI-inferred)
@@ -72,17 +72,17 @@ var RestoreTestingPlan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"RecoveryPointSelection": ubx.FieldSpec{
 			WireName: "recovery_point_selection",
-			Kind: "object",
-			Fields: RestoreTestingPlan_RecoveryPointSelectionFields,
+			Kind:     "object",
+			Fields:   RestoreTestingPlan_RecoveryPointSelectionFields,
 		},
-		"RestoreTestingPlanName": ubx.FieldSpec{WireName: "restore_testing_plan_name"},
-		"ScheduleExpression": ubx.FieldSpec{WireName: "schedule_expression"},
+		"RestoreTestingPlanName":     ubx.FieldSpec{WireName: "restore_testing_plan_name"},
+		"ScheduleExpression":         ubx.FieldSpec{WireName: "schedule_expression"},
 		"ScheduleExpressionTimezone": ubx.FieldSpec{WireName: "schedule_expression_timezone"},
-		"StartWindowHours": ubx.FieldSpec{WireName: "start_window_hours"},
+		"StartWindowHours":           ubx.FieldSpec{WireName: "start_window_hours"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RestoreTestingPlan_TagsFields,
+			Kind:     "list",
+			Fields:   RestoreTestingPlan_TagsFields,
 		},
 	},
 }

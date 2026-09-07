@@ -36,30 +36,30 @@ type Artifact_Tags struct {
 }
 
 var Artifact_MetadataPropertiesFields = ubx.FieldMap{
-		"CommitId": ubx.FieldSpec{WireName: "commit_id"},
-		"GeneratedBy": ubx.FieldSpec{WireName: "generated_by"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"CommitId":    ubx.FieldSpec{WireName: "commit_id"},
+	"GeneratedBy": ubx.FieldSpec{WireName: "generated_by"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+	"Repository":  ubx.FieldSpec{WireName: "repository"},
+}
 
 var Artifact_Source_SourceTypesFields = ubx.FieldMap{
-		"SourceIdType": ubx.FieldSpec{WireName: "source_id_type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"SourceIdType": ubx.FieldSpec{WireName: "source_id_type"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+}
 
 var Artifact_SourceFields = ubx.FieldMap{
-		"SourceTypes": ubx.FieldSpec{
-			WireName: "source_types",
-			Kind: "list",
-			Fields: Artifact_Source_SourceTypesFields,
-		},
-		"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
-	}
+	"SourceTypes": ubx.FieldSpec{
+		WireName: "source_types",
+		Kind:     "list",
+		Fields:   Artifact_Source_SourceTypesFields,
+	},
+	"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
+}
 
 var Artifact_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ArtifactConfig struct {
 	// The name of the artifact. Must be unique to your account in an AWS Region.
@@ -104,19 +104,19 @@ var Artifact = ubx.ResourceBinding{
 		"ArtifactType": ubx.FieldSpec{WireName: "artifact_type"},
 		"MetadataProperties": ubx.FieldSpec{
 			WireName: "metadata_properties",
-			Kind: "object",
-			Fields: Artifact_MetadataPropertiesFields,
+			Kind:     "object",
+			Fields:   Artifact_MetadataPropertiesFields,
 		},
 		"Properties": ubx.FieldSpec{WireName: "properties"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Artifact_SourceFields,
+			Kind:     "object",
+			Fields:   Artifact_SourceFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Artifact_TagsFields,
+			Kind:     "list",
+			Fields:   Artifact_TagsFields,
 		},
 	},
 }

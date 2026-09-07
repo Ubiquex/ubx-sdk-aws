@@ -4,27 +4,27 @@ package snowball
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Clusters_ClusterListEntries struct {
-	ClusterId any
+	ClusterId    any
 	ClusterState any
 	CreationDate any
-	Description any
+	Description  any
 }
 
 type ClustersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ClustersAttrs struct {
 	ClusterListEntries any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 var Clusters = ubx.DataSourceBinding{
 	WireType: "aws_snowball_clusters",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

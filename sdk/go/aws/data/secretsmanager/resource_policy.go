@@ -8,10 +8,10 @@ type ResourcePolicyConfig struct {
 }
 
 type ResourcePolicyAttrs struct {
-	Arn any
-	Name any
+	Arn            any
+	Name           any
 	ResourcePolicy any
-	SecretId any
+	SecretId       any
 }
 
 var ResourcePolicy = ubx.DataSourceBinding{

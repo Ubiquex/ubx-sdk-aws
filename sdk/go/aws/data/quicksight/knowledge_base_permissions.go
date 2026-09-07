@@ -4,28 +4,28 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KnowledgeBasePermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type KnowledgeBasePermissionsConfig struct {
-	AwsAccountId any
+	AwsAccountId    any
 	KnowledgeBaseId any
 }
 
 type KnowledgeBasePermissionsAttrs struct {
-	AwsAccountId any
+	AwsAccountId     any
 	KnowledgeBaseArn any
-	KnowledgeBaseId any
-	Permissions any
-	RequestId any
-	Status any
+	KnowledgeBaseId  any
+	Permissions      any
+	RequestId        any
+	Status           any
 }
 
 var KnowledgeBasePermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_knowledge_base_permissions",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+		"AwsAccountId":    ubx.FieldSpec{WireName: "aws_account_id"},
 		"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
 	},
 }

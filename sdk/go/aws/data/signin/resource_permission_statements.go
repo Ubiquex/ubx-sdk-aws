@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePermissionStatements_PermissionStatements struct {
 	Condition any
-	Sid any
+	Sid       any
 }
 
 type ResourcePermissionStatementsConfig struct {
@@ -19,7 +19,7 @@ type ResourcePermissionStatementsAttrs struct {
 	// Maximum number of results for list operations
 	MaxResults any
 	// Pagination token
-	NextToken any
+	NextToken            any
 	PermissionStatements any
 }
 
@@ -27,6 +27,6 @@ var ResourcePermissionStatements = ubx.DataSourceBinding{
 	WireType: "aws_signin_resource_permission_statements",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

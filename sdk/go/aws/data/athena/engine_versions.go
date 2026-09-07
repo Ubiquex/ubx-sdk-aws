@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EngineVersions_EngineVersions struct {
 	EffectiveEngineVersion any
-	SelectedEngineVersion any
+	SelectedEngineVersion  any
 }
 
 type EngineVersionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EngineVersionsAttrs struct {
 	EngineVersions any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var EngineVersions = ubx.DataSourceBinding{
 	WireType: "aws_athena_engine_versions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

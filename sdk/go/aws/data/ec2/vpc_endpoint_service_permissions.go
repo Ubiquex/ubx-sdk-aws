@@ -4,43 +4,43 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpointServicePermissions_AllowedPrincipals_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type VpcEndpointServicePermissions_AllowedPrincipals struct {
-	Principal any
-	PrincipalType any
-	ServiceId any
+	Principal           any
+	PrincipalType       any
+	ServiceId           any
 	ServicePermissionId any
-	Tags any
+	Tags                any
 }
 
 type VpcEndpointServicePermissions_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var VpcEndpointServicePermissions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type VpcEndpointServicePermissionsConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
-	ServiceId any
+	NextToken  any
+	ServiceId  any
 }
 
 type VpcEndpointServicePermissionsAttrs struct {
 	AllowedPrincipals any
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	ServiceId any
+	DryRun            any
+	Filters           any
+	MaxResults        any
+	NextToken         any
+	ServiceId         any
 }
 
 var VpcEndpointServicePermissions = ubx.DataSourceBinding{
@@ -49,11 +49,11 @@ var VpcEndpointServicePermissions = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: VpcEndpointServicePermissions_FiltersFields,
+			Kind:     "list",
+			Fields:   VpcEndpointServicePermissions_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"ServiceId":  ubx.FieldSpec{WireName: "service_id"},
 	},
 }

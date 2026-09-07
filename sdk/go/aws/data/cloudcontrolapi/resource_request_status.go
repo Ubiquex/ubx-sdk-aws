@@ -4,29 +4,29 @@ package cloudcontrolapi
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceRequestStatus_HooksProgressEvent struct {
-	FailureMode any
-	HookEventTime any
-	HookStatus any
+	FailureMode       any
+	HookEventTime     any
+	HookStatus        any
 	HookStatusMessage any
-	HookTypeArn any
-	HookTypeName any
+	HookTypeArn       any
+	HookTypeName      any
 	HookTypeVersionId any
-	InvocationPoint any
+	InvocationPoint   any
 }
 
 type ResourceRequestStatus_ProgressEvent struct {
-	ErrorCode any
-	EventTime any
+	ErrorCode         any
+	EventTime         any
 	HooksRequestToken any
-	Identifier any
-	Operation any
-	OperationStatus any
-	RequestToken any
+	Identifier        any
+	Operation         any
+	OperationStatus   any
+	RequestToken      any
 	// Allow up to 256K length of Resource properties
 	ResourceModel any
-	RetryAfter any
+	RetryAfter    any
 	StatusMessage any
-	TypeName any
+	TypeName      any
 }
 
 type ResourceRequestStatusConfig struct {
@@ -37,7 +37,7 @@ type ResourceRequestStatusAttrs struct {
 	HooksProgressEvent any
 	// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
 	ProgressEvent any
-	RequestToken any
+	RequestToken  any
 }
 
 var ResourceRequestStatus = ubx.DataSourceBinding{

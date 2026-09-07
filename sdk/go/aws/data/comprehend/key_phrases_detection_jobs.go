@@ -4,70 +4,70 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyPhrasesDetectionJobs_Filter struct {
-	JobName any
-	JobStatus any
-	SubmitTimeAfter any
+	JobName          any
+	JobStatus        any
+	SubmitTimeAfter  any
 	SubmitTimeBefore any
 }
 
 type KeyPhrasesDetectionJobs_KeyPhrasesDetectionJobPropertiesList_InputDataConfig_DocumentReaderConfig struct {
 	DocumentReadAction any
-	DocumentReadMode any
-	FeatureTypes any
+	DocumentReadMode   any
+	FeatureTypes       any
 }
 
 type KeyPhrasesDetectionJobs_KeyPhrasesDetectionJobPropertiesList_InputDataConfig struct {
 	DocumentReaderConfig any
-	InputFormat any
-	S3Uri any
+	InputFormat          any
+	S3Uri                any
 }
 
 type KeyPhrasesDetectionJobs_KeyPhrasesDetectionJobPropertiesList_OutputDataConfig struct {
 	KmsKeyId any
-	S3Uri any
+	S3Uri    any
 }
 
 type KeyPhrasesDetectionJobs_KeyPhrasesDetectionJobPropertiesList_VpcConfig struct {
 	SecurityGroupIds any
-	Subnets any
+	Subnets          any
 }
 
 type KeyPhrasesDetectionJobs_KeyPhrasesDetectionJobPropertiesList struct {
 	DataAccessRoleArn any
-	EndTime any
-	InputDataConfig any
-	JobArn any
-	JobId any
-	JobName any
-	JobStatus any
-	LanguageCode any
-	Message any
-	OutputDataConfig any
-	SubmitTime any
-	VolumeKmsKeyId any
-	VpcConfig any
+	EndTime           any
+	InputDataConfig   any
+	JobArn            any
+	JobId             any
+	JobName           any
+	JobStatus         any
+	LanguageCode      any
+	Message           any
+	OutputDataConfig  any
+	SubmitTime        any
+	VolumeKmsKeyId    any
+	VpcConfig         any
 }
 
 var KeyPhrasesDetectionJobs_FilterFields = ubx.FieldMap{
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"JobStatus": ubx.FieldSpec{WireName: "job_status"},
-		"SubmitTimeAfter": ubx.FieldSpec{WireName: "submit_time_after"},
-		"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
-	}
+	"JobName":          ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":        ubx.FieldSpec{WireName: "job_status"},
+	"SubmitTimeAfter":  ubx.FieldSpec{WireName: "submit_time_after"},
+	"SubmitTimeBefore": ubx.FieldSpec{WireName: "submit_time_before"},
+}
 
 type KeyPhrasesDetectionJobsConfig struct {
 	// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type KeyPhrasesDetectionJobsAttrs struct {
 	// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
-	Filter any
+	Filter                               any
 	KeyPhrasesDetectionJobPropertiesList any
-	MaxResults any
-	NextToken any
+	MaxResults                           any
+	NextToken                            any
 }
 
 var KeyPhrasesDetectionJobs = ubx.DataSourceBinding{
@@ -75,10 +75,10 @@ var KeyPhrasesDetectionJobs = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: KeyPhrasesDetectionJobs_FilterFields,
+			Kind:     "object",
+			Fields:   KeyPhrasesDetectionJobs_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

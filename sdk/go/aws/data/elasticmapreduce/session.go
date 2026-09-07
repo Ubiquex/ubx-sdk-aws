@@ -9,27 +9,27 @@ type Session_Session_EngineConfigurations_Configurations struct {
 type Session_Session_EngineConfigurations struct {
 	Classification any
 	Configurations any
-	Properties any
+	Properties     any
 }
 
 type Session_Session_MonitoringConfiguration_CloudWatchLoggingConfiguration struct {
-	Enabled any
-	EncryptionKeyArn any
-	LogGroup any
+	Enabled             any
+	EncryptionKeyArn    any
+	LogGroup            any
 	LogStreamNamePrefix any
-	LogTypes any
+	LogTypes            any
 }
 
 type Session_Session_MonitoringConfiguration_ManagedLoggingConfiguration struct {
-	Enabled any
+	Enabled          any
 	EncryptionKeyArn any
 }
 
 type Session_Session_MonitoringConfiguration_S3LoggingConfiguration struct {
-	Enabled any
+	Enabled          any
 	EncryptionKeyArn any
-	LogTypes any
-	LogUri any
+	LogTypes         any
+	LogUri           any
 }
 
 type Session_Session_MonitoringConfiguration struct {
@@ -42,31 +42,31 @@ type Session_Session_MonitoringConfiguration struct {
 }
 
 type Session_Session_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Session_Session struct {
-	AccountId any
-	Arn any
-	ClusterId any
-	CreatedAt any
-	EndedAt any
+	AccountId            any
+	Arn                  any
+	ClusterId            any
+	CreatedAt            any
+	EndedAt              any
 	EngineConfigurations any
-	ExecutionRoleArn any
-	Id any
-	IdleSince any
+	ExecutionRoleArn     any
+	Id                   any
+	IdleSince            any
 	// <p>The monitoring configuration for a session. Controls where session logs are published.</p>
-	MonitoringConfiguration any
-	Name any
-	ReleaseLabel any
-	ServerUrl any
+	MonitoringConfiguration     any
+	Name                        any
+	ReleaseLabel                any
+	ServerUrl                   any
 	SessionIdleTimeoutInMinutes any
-	StartedAt any
-	State any
-	StateChangeReason any
-	Tags any
-	UpdatedAt any
+	StartedAt                   any
+	State                       any
+	StateChangeReason           any
+	Tags                        any
+	UpdatedAt                   any
 }
 
 type SessionConfig struct {
@@ -77,7 +77,7 @@ type SessionConfig struct {
 type SessionAttrs struct {
 	ClusterId any
 	// <p>Detailed information about a Spark Connect session.</p>
-	Session any
+	Session   any
 	SessionId any
 }
 

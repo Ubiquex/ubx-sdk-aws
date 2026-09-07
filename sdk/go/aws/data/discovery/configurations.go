@@ -9,7 +9,7 @@ type ConfigurationsConfig struct {
 
 type ConfigurationsAttrs struct {
 	ConfigurationIds any
-	Configurations any
+	Configurations   any
 }
 
 var Configurations = ubx.DataSourceBinding{

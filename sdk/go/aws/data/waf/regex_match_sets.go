@@ -4,25 +4,25 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegexMatchSets_RegexMatchSets struct {
-	Name any
+	Name            any
 	RegexMatchSetId any
 }
 
 type RegexMatchSetsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
 }
 
 type RegexMatchSetsAttrs struct {
-	Limit any
-	NextMarker any
+	Limit          any
+	NextMarker     any
 	RegexMatchSets any
 }
 
 var RegexMatchSets = ubx.DataSourceBinding{
 	WireType: "aws_waf_regex_match_sets",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
 	},
 }

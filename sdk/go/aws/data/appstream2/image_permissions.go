@@ -4,36 +4,36 @@ package appstream2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImagePermissions_SharedImagePermissionsList_ImagePermissions struct {
-	AllowFleet any
+	AllowFleet        any
 	AllowImageBuilder any
 }
 
 type ImagePermissions_SharedImagePermissionsList struct {
 	ImagePermissions any
-	SharedAccountId any
+	SharedAccountId  any
 }
 
 type ImagePermissionsConfig struct {
-	MaxResults any
-	Name any
-	NextToken any
+	MaxResults          any
+	Name                any
+	NextToken           any
 	SharedAwsAccountIds any
 }
 
 type ImagePermissionsAttrs struct {
-	MaxResults any
-	Name any
-	NextToken any
-	SharedAwsAccountIds any
+	MaxResults                 any
+	Name                       any
+	NextToken                  any
+	SharedAwsAccountIds        any
 	SharedImagePermissionsList any
 }
 
 var ImagePermissions = ubx.DataSourceBinding{
 	WireType: "aws_appstream2_image_permissions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 		"SharedAwsAccountIds": ubx.FieldSpec{WireName: "shared_aws_account_ids"},
 	},
 }

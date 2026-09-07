@@ -11,19 +11,19 @@ type FpgaImage_InputStorageLocation struct {
 }
 
 type FpgaImage_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var FpgaImage_InputStorageLocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var FpgaImage_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FpgaImageConfig struct {
 	// A description for the AFI.
@@ -75,19 +75,19 @@ var FpgaImage = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"InputStorageLocation": ubx.FieldSpec{
 			WireName: "input_storage_location",
-			Kind: "object",
-			Fields: FpgaImage_InputStorageLocationFields,
+			Kind:     "object",
+			Fields:   FpgaImage_InputStorageLocationFields,
 		},
 		"LogsStorageLocation": ubx.FieldSpec{
 			WireName: "logs_storage_location",
-			Kind: "object",
-			Fields: FpgaImage_InputStorageLocationFields,
+			Kind:     "object",
+			Fields:   FpgaImage_InputStorageLocationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FpgaImage_TagsFields,
+			Kind:     "list",
+			Fields:   FpgaImage_TagsFields,
 		},
 	},
 }

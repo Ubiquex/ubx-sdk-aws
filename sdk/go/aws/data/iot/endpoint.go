@@ -9,7 +9,7 @@ type EndpointConfig struct {
 
 type EndpointAttrs struct {
 	EndpointAddress any
-	EndpointType any
+	EndpointType    any
 }
 
 var Endpoint = ubx.DataSourceBinding{

@@ -37,32 +37,32 @@ type Resolver_SyncConfig struct {
 }
 
 var Resolver_CachingConfigFields = ubx.FieldMap{
-		"CachingKeys": ubx.FieldSpec{WireName: "caching_keys"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"CachingKeys": ubx.FieldSpec{WireName: "caching_keys"},
+	"Ttl":         ubx.FieldSpec{WireName: "ttl"},
+}
 
 var Resolver_PipelineConfigFields = ubx.FieldMap{
-		"Functions": ubx.FieldSpec{WireName: "functions"},
-	}
+	"Functions": ubx.FieldSpec{WireName: "functions"},
+}
 
 var Resolver_RuntimeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-	}
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
+}
 
 var Resolver_SyncConfig_LambdaConflictHandlerConfigFields = ubx.FieldMap{
-		"LambdaConflictHandlerArn": ubx.FieldSpec{WireName: "lambda_conflict_handler_arn"},
-	}
+	"LambdaConflictHandlerArn": ubx.FieldSpec{WireName: "lambda_conflict_handler_arn"},
+}
 
 var Resolver_SyncConfigFields = ubx.FieldMap{
-		"ConflictDetection": ubx.FieldSpec{WireName: "conflict_detection"},
-		"ConflictHandler": ubx.FieldSpec{WireName: "conflict_handler"},
-		"LambdaConflictHandlerConfig": ubx.FieldSpec{
-			WireName: "lambda_conflict_handler_config",
-			Kind: "object",
-			Fields: Resolver_SyncConfig_LambdaConflictHandlerConfigFields,
-		},
-	}
+	"ConflictDetection": ubx.FieldSpec{WireName: "conflict_detection"},
+	"ConflictHandler":   ubx.FieldSpec{WireName: "conflict_handler"},
+	"LambdaConflictHandlerConfig": ubx.FieldSpec{
+		WireName: "lambda_conflict_handler_config",
+		Kind:     "object",
+		Fields:   Resolver_SyncConfig_LambdaConflictHandlerConfigFields,
+	},
+}
 
 type ResolverConfig struct {
 	// The APSYlong GraphQL API to which you want to attach this resolver.
@@ -146,34 +146,34 @@ var Resolver = ubx.ResourceBinding{
 		"ApiId": ubx.FieldSpec{WireName: "api_id"},
 		"CachingConfig": ubx.FieldSpec{
 			WireName: "caching_config",
-			Kind: "object",
-			Fields: Resolver_CachingConfigFields,
+			Kind:     "object",
+			Fields:   Resolver_CachingConfigFields,
 		},
-		"Code": ubx.FieldSpec{WireName: "code"},
+		"Code":           ubx.FieldSpec{WireName: "code"},
 		"CodeS3Location": ubx.FieldSpec{WireName: "code_s3_location"},
 		"DataSourceName": ubx.FieldSpec{WireName: "data_source_name"},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"MaxBatchSize": ubx.FieldSpec{WireName: "max_batch_size"},
-		"MetricsConfig": ubx.FieldSpec{WireName: "metrics_config"},
+		"FieldName":      ubx.FieldSpec{WireName: "field_name"},
+		"Kind":           ubx.FieldSpec{WireName: "kind"},
+		"MaxBatchSize":   ubx.FieldSpec{WireName: "max_batch_size"},
+		"MetricsConfig":  ubx.FieldSpec{WireName: "metrics_config"},
 		"PipelineConfig": ubx.FieldSpec{
 			WireName: "pipeline_config",
-			Kind: "object",
-			Fields: Resolver_PipelineConfigFields,
+			Kind:     "object",
+			Fields:   Resolver_PipelineConfigFields,
 		},
-		"RequestMappingTemplate": ubx.FieldSpec{WireName: "request_mapping_template"},
-		"RequestMappingTemplateS3Location": ubx.FieldSpec{WireName: "request_mapping_template_s3_location"},
-		"ResponseMappingTemplate": ubx.FieldSpec{WireName: "response_mapping_template"},
+		"RequestMappingTemplate":            ubx.FieldSpec{WireName: "request_mapping_template"},
+		"RequestMappingTemplateS3Location":  ubx.FieldSpec{WireName: "request_mapping_template_s3_location"},
+		"ResponseMappingTemplate":           ubx.FieldSpec{WireName: "response_mapping_template"},
 		"ResponseMappingTemplateS3Location": ubx.FieldSpec{WireName: "response_mapping_template_s3_location"},
 		"Runtime": ubx.FieldSpec{
 			WireName: "runtime",
-			Kind: "object",
-			Fields: Resolver_RuntimeFields,
+			Kind:     "object",
+			Fields:   Resolver_RuntimeFields,
 		},
 		"SyncConfig": ubx.FieldSpec{
 			WireName: "sync_config",
-			Kind: "object",
-			Fields: Resolver_SyncConfigFields,
+			Kind:     "object",
+			Fields:   Resolver_SyncConfigFields,
 		},
 		"TypeName": ubx.FieldSpec{WireName: "type_name"},
 	},

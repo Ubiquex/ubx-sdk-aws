@@ -4,34 +4,34 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnalyticsDataAssociations_Results struct {
-	DataSetId any
-	ResourceShareArn any
-	ResourceShareId any
+	DataSetId           any
+	ResourceShareArn    any
+	ResourceShareId     any
 	ResourceShareStatus any
-	TargetAccountId any
+	TargetAccountId     any
 }
 
 type AnalyticsDataAssociationsConfig struct {
-	DataSetId any
+	DataSetId  any
 	InstanceId any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AnalyticsDataAssociationsAttrs struct {
-	DataSetId any
+	DataSetId  any
 	InstanceId any
 	MaxResults any
-	NextToken any
-	Results any
+	NextToken  any
+	Results    any
 }
 
 var AnalyticsDataAssociations = ubx.DataSourceBinding{
 	WireType: "aws_connect_analytics_data_associations",
 	Fields: ubx.FieldMap{
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+		"DataSetId":  ubx.FieldSpec{WireName: "data_set_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogMarketplaceChangeSet_ChangeSet_Entity struct {
 	Identifier any
-	Type any
+	Type       any
 }
 
 type CatalogMarketplaceChangeSet_ChangeSet_ErrorDetailList struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type CatalogMarketplaceChangeSet_ChangeSet struct {
-	ChangeName any
-	ChangeType any
-	Details any
+	ChangeName      any
+	ChangeType      any
+	Details         any
 	DetailsDocument any
-	Entity any
+	Entity          any
 	ErrorDetailList any
 }
 
 type CatalogMarketplaceChangeSetConfig struct {
-	Catalog any
+	Catalog     any
 	ChangeSetId any
 }
 
 type CatalogMarketplaceChangeSetAttrs struct {
-	Catalog any
-	ChangeSet any
-	ChangeSetArn any
-	ChangeSetId any
-	ChangeSetName any
-	EndTime any
-	FailureCode any
+	Catalog            any
+	ChangeSet          any
+	ChangeSetArn       any
+	ChangeSetId        any
+	ChangeSetName      any
+	EndTime            any
+	FailureCode        any
 	FailureDescription any
-	Intent any
-	StartTime any
-	Status any
+	Intent             any
+	StartTime          any
+	Status             any
 }
 
 var CatalogMarketplaceChangeSet = ubx.DataSourceBinding{
 	WireType: "aws_catalog_marketplace_change_set",
 	Fields: ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{WireName: "catalog"},
+		"Catalog":     ubx.FieldSpec{WireName: "catalog"},
 		"ChangeSetId": ubx.FieldSpec{WireName: "change_set_id"},
 	},
 }

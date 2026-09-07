@@ -4,58 +4,58 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VolumesModifications_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type VolumesModifications_VolumesModifications_Operator struct {
 	HiddenByDefault any
-	Managed any
-	Principal any
+	Managed         any
+	Principal       any
 }
 
 type VolumesModifications_VolumesModifications struct {
-	EndTime any
-	ModificationState any
-	Operator any
-	OriginalIops any
+	EndTime                    any
+	ModificationState          any
+	Operator                   any
+	OriginalIops               any
 	OriginalMultiAttachEnabled any
-	OriginalSize any
-	OriginalThroughput any
-	OriginalVolumeType any
-	Progress any
-	StartTime any
-	StatusMessage any
-	TargetIops any
-	TargetMultiAttachEnabled any
-	TargetSize any
-	TargetThroughput any
-	TargetVolumeType any
-	VolumeId any
+	OriginalSize               any
+	OriginalThroughput         any
+	OriginalVolumeType         any
+	Progress                   any
+	StartTime                  any
+	StatusMessage              any
+	TargetIops                 any
+	TargetMultiAttachEnabled   any
+	TargetSize                 any
+	TargetThroughput           any
+	TargetVolumeType           any
+	VolumeId                   any
 }
 
 var VolumesModifications_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type VolumesModificationsConfig struct {
-	DryRun any
-	Filters any
+	DryRun                  any
+	Filters                 any
 	IncludeManagedResources any
-	MaxResults any
-	NextToken any
-	VolumeIds any
+	MaxResults              any
+	NextToken               any
+	VolumeIds               any
 }
 
 type VolumesModificationsAttrs struct {
-	DryRun any
-	Filters any
+	DryRun                  any
+	Filters                 any
 	IncludeManagedResources any
-	MaxResults any
-	NextToken any
-	VolumeIds any
-	VolumesModifications any
+	MaxResults              any
+	NextToken               any
+	VolumeIds               any
+	VolumesModifications    any
 }
 
 var VolumesModifications = ubx.DataSourceBinding{
@@ -64,12 +64,12 @@ var VolumesModifications = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: VolumesModifications_FiltersFields,
+			Kind:     "list",
+			Fields:   VolumesModifications_FiltersFields,
 		},
 		"IncludeManagedResources": ubx.FieldSpec{WireName: "include_managed_resources"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"VolumeIds": ubx.FieldSpec{WireName: "volume_ids"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
+		"VolumeIds":               ubx.FieldSpec{WireName: "volume_ids"},
 	},
 }

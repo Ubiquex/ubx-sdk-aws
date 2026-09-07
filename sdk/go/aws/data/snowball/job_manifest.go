@@ -8,7 +8,7 @@ type JobManifestConfig struct {
 }
 
 type JobManifestAttrs struct {
-	JobId any
+	JobId       any
 	ManifestUri any
 }
 

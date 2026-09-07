@@ -12,6 +12,5 @@ type HealthCheckCountAttrs struct {
 
 var HealthCheckCount = ubx.DataSourceBinding{
 	WireType: "aws_route53_health_check_count",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

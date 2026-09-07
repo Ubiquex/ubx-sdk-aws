@@ -12,19 +12,19 @@ type Room_MessageReviewHandler struct {
 
 type Room_Tags struct {
 	// The key of a tag assigned to the IVS Chat Room, used to organize and identify the resource (e.g., 'Environment' or 'Owner'). (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Room_MessageReviewHandlerFields = ubx.FieldMap{
-		"FallbackResult": ubx.FieldSpec{WireName: "fallback_result"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"FallbackResult": ubx.FieldSpec{WireName: "fallback_result"},
+	"Uri":            ubx.FieldSpec{WireName: "uri"},
+}
 
 var Room_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RoomConfig struct {
 	// Array of logging configuration identifiers attached to the room.
@@ -64,18 +64,18 @@ var Room = ubx.ResourceBinding{
 	WireType: "aws_ivschat_room",
 	Fields: ubx.FieldMap{
 		"LoggingConfigurationIdentifiers": ubx.FieldSpec{WireName: "logging_configuration_identifiers"},
-		"MaximumMessageLength": ubx.FieldSpec{WireName: "maximum_message_length"},
-		"MaximumMessageRatePerSecond": ubx.FieldSpec{WireName: "maximum_message_rate_per_second"},
+		"MaximumMessageLength":            ubx.FieldSpec{WireName: "maximum_message_length"},
+		"MaximumMessageRatePerSecond":     ubx.FieldSpec{WireName: "maximum_message_rate_per_second"},
 		"MessageReviewHandler": ubx.FieldSpec{
 			WireName: "message_review_handler",
-			Kind: "object",
-			Fields: Room_MessageReviewHandlerFields,
+			Kind:     "object",
+			Fields:   Room_MessageReviewHandlerFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Room_TagsFields,
+			Kind:     "list",
+			Fields:   Room_TagsFields,
 		},
 	},
 }

@@ -4,29 +4,29 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cacertificate_CertificateDescription_Validity struct {
-	NotAfter any
+	NotAfter  any
 	NotBefore any
 }
 
 type Cacertificate_CertificateDescription struct {
 	AutoRegistrationStatus any
-	CertificateArn any
-	CertificateId any
-	CertificateMode any
+	CertificateArn         any
+	CertificateId          any
+	CertificateMode        any
 	// <p>The PEM of a certificate.</p>
-	CertificatePem any
-	CreationDate any
-	CustomerVersion any
-	GenerationId any
+	CertificatePem   any
+	CreationDate     any
+	CustomerVersion  any
+	GenerationId     any
 	LastModifiedDate any
-	OwnedBy any
-	Status any
+	OwnedBy          any
+	Status           any
 	// <p>When the certificate is valid.</p>
 	Validity any
 }
 
 type Cacertificate_RegistrationConfig struct {
-	RoleArn any
+	RoleArn      any
 	TemplateBody any
 	TemplateName any
 }
@@ -38,7 +38,7 @@ type CacertificateConfig struct {
 type CacertificateAttrs struct {
 	// <p>Describes a CA certificate.</p>
 	CertificateDescription any
-	CertificateId any
+	CertificateId          any
 	// <p>The registration configuration.</p>
 	RegistrationConfig any
 }

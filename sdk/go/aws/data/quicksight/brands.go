@@ -4,33 +4,33 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Brands_Brands struct {
-	Arn any
-	BrandId any
-	BrandName any
-	BrandStatus any
-	CreatedTime any
-	Description any
+	Arn             any
+	BrandId         any
+	BrandName       any
+	BrandStatus     any
+	CreatedTime     any
+	Description     any
 	LastUpdatedTime any
 }
 
 type BrandsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type BrandsAttrs struct {
 	AwsAccountId any
-	Brands any
-	MaxResults any
-	NextToken any
+	Brands       any
+	MaxResults   any
+	NextToken    any
 }
 
 var Brands = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_brands",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,28 +4,28 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheReports_CacheReportList_ExclusionFilters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type CacheReports_CacheReportList_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CacheReports_CacheReportList struct {
-	CacheReportArn any
-	CacheReportStatus any
-	EndTime any
-	ExclusionFilters any
-	FileShareArn any
-	InclusionFilters any
-	LocationArn any
+	CacheReportArn          any
+	CacheReportStatus       any
+	EndTime                 any
+	ExclusionFilters        any
+	FileShareArn            any
+	InclusionFilters        any
+	LocationArn             any
 	ReportCompletionPercent any
-	ReportName any
-	Role any
-	StartTime any
-	Tags any
+	ReportName              any
+	Role                    any
+	StartTime               any
+	Tags                    any
 }
 
 type CacheReportsConfig struct {
@@ -34,7 +34,7 @@ type CacheReportsConfig struct {
 
 type CacheReportsAttrs struct {
 	CacheReportList any
-	Marker any
+	Marker          any
 }
 
 var CacheReports = ubx.DataSourceBinding{

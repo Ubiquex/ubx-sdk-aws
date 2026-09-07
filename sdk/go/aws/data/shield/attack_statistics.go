@@ -8,19 +8,19 @@ type AttackStatistics_DataItems_AttackVolume_BitsPerSecond struct {
 }
 
 type AttackStatistics_DataItems_AttackVolume struct {
-	BitsPerSecond any
-	PacketsPerSecond any
+	BitsPerSecond     any
+	PacketsPerSecond  any
 	RequestsPerSecond any
 }
 
 type AttackStatistics_DataItems struct {
-	AttackCount any
+	AttackCount  any
 	AttackVolume any
 }
 
 type AttackStatistics_TimeRange struct {
 	FromInclusive any
-	ToExclusive any
+	ToExclusive   any
 }
 
 type AttackStatisticsConfig struct {
@@ -34,6 +34,5 @@ type AttackStatisticsAttrs struct {
 
 var AttackStatistics = ubx.DataSourceBinding{
 	WireType: "aws_shield_attack_statistics",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

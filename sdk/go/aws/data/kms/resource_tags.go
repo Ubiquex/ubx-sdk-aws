@@ -4,30 +4,30 @@ package kms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceTags_Tags struct {
-	TagKey any
+	TagKey   any
 	TagValue any
 }
 
 type ResourceTagsConfig struct {
-	KeyId any
-	Limit any
+	KeyId  any
+	Limit  any
 	Marker any
 }
 
 type ResourceTagsAttrs struct {
-	KeyId any
-	Limit any
-	Marker any
+	KeyId      any
+	Limit      any
+	Marker     any
 	NextMarker any
-	Tags any
-	Truncated any
+	Tags       any
+	Truncated  any
 }
 
 var ResourceTags = ubx.DataSourceBinding{
 	WireType: "aws_kms_resource_tags",
 	Fields: ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"KeyId":  ubx.FieldSpec{WireName: "key_id"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
 		"Marker": ubx.FieldSpec{WireName: "marker"},
 	},
 }

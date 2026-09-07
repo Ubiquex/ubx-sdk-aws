@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TypesConfig struct {
 	KeyspaceName any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type TypesAttrs struct {
 	KeyspaceName any
-	MaxResults any
-	NextToken any
-	Types any
+	MaxResults   any
+	NextToken    any
+	Types        any
 }
 
 var Types = ubx.DataSourceBinding{
 	WireType: "aws_cassandra_types",
 	Fields: ubx.FieldMap{
 		"KeyspaceName": ubx.FieldSpec{WireName: "keyspace_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

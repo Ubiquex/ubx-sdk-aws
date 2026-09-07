@@ -5,35 +5,35 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccuracyMetrics_PredictorEvaluationResults_TestWindows_Metrics_ErrorMetrics struct {
 	ForecastType any
-	Mape any
-	Mase any
-	Rmse any
-	Wape any
+	Mape         any
+	Mase         any
+	Rmse         any
+	Wape         any
 }
 
 type AccuracyMetrics_PredictorEvaluationResults_TestWindows_Metrics_WeightedQuantileLosses struct {
 	LossValue any
-	Quantile any
+	Quantile  any
 }
 
 type AccuracyMetrics_PredictorEvaluationResults_TestWindows_Metrics struct {
 	AverageWeightedQuantileLoss any
-	ErrorMetrics any
-	Rmse any
-	WeightedQuantileLosses any
+	ErrorMetrics                any
+	Rmse                        any
+	WeightedQuantileLosses      any
 }
 
 type AccuracyMetrics_PredictorEvaluationResults_TestWindows struct {
-	EvaluationType any
-	ItemCount any
-	Metrics any
-	TestWindowEnd any
+	EvaluationType  any
+	ItemCount       any
+	Metrics         any
+	TestWindowEnd   any
 	TestWindowStart any
 }
 
 type AccuracyMetrics_PredictorEvaluationResults struct {
 	AlgorithmArn any
-	TestWindows any
+	TestWindows  any
 }
 
 type AccuracyMetricsConfig struct {
@@ -41,10 +41,10 @@ type AccuracyMetricsConfig struct {
 }
 
 type AccuracyMetricsAttrs struct {
-	AutoMloverrideStrategy any
-	IsAutoPredictor any
-	OptimizationMetric any
-	PredictorArn any
+	AutoMloverrideStrategy     any
+	IsAutoPredictor            any
+	OptimizationMetric         any
+	PredictorArn               any
 	PredictorEvaluationResults any
 }
 

@@ -39,33 +39,33 @@ type SourceLocation_Tags struct {
 }
 
 var SourceLocation_AccessConfiguration_SecretsManagerAccessTokenConfigurationFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"SecretStringKey": ubx.FieldSpec{WireName: "secret_string_key"},
-	}
+	"HeaderName":      ubx.FieldSpec{WireName: "header_name"},
+	"SecretArn":       ubx.FieldSpec{WireName: "secret_arn"},
+	"SecretStringKey": ubx.FieldSpec{WireName: "secret_string_key"},
+}
 
 var SourceLocation_AccessConfigurationFields = ubx.FieldMap{
-		"AccessType": ubx.FieldSpec{WireName: "access_type"},
-		"SecretsManagerAccessTokenConfiguration": ubx.FieldSpec{
-			WireName: "secrets_manager_access_token_configuration",
-			Kind: "object",
-			Fields: SourceLocation_AccessConfiguration_SecretsManagerAccessTokenConfigurationFields,
-		},
-	}
+	"AccessType": ubx.FieldSpec{WireName: "access_type"},
+	"SecretsManagerAccessTokenConfiguration": ubx.FieldSpec{
+		WireName: "secrets_manager_access_token_configuration",
+		Kind:     "object",
+		Fields:   SourceLocation_AccessConfiguration_SecretsManagerAccessTokenConfigurationFields,
+	},
+}
 
 var SourceLocation_DefaultSegmentDeliveryConfigurationFields = ubx.FieldMap{
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-	}
+	"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
+}
 
 var SourceLocation_SegmentDeliveryConfigurationsFields = ubx.FieldMap{
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+}
 
 var SourceLocation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SourceLocationConfig struct {
 	// <p>Access configuration parameters.</p>
@@ -104,29 +104,29 @@ var SourceLocation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessConfiguration": ubx.FieldSpec{
 			WireName: "access_configuration",
-			Kind: "object",
-			Fields: SourceLocation_AccessConfigurationFields,
+			Kind:     "object",
+			Fields:   SourceLocation_AccessConfigurationFields,
 		},
 		"DefaultSegmentDeliveryConfiguration": ubx.FieldSpec{
 			WireName: "default_segment_delivery_configuration",
-			Kind: "object",
-			Fields: SourceLocation_DefaultSegmentDeliveryConfigurationFields,
+			Kind:     "object",
+			Fields:   SourceLocation_DefaultSegmentDeliveryConfigurationFields,
 		},
 		"HttpConfiguration": ubx.FieldSpec{
 			WireName: "http_configuration",
-			Kind: "object",
-			Fields: SourceLocation_DefaultSegmentDeliveryConfigurationFields,
+			Kind:     "object",
+			Fields:   SourceLocation_DefaultSegmentDeliveryConfigurationFields,
 		},
 		"SegmentDeliveryConfigurations": ubx.FieldSpec{
 			WireName: "segment_delivery_configurations",
-			Kind: "list",
-			Fields: SourceLocation_SegmentDeliveryConfigurationsFields,
+			Kind:     "list",
+			Fields:   SourceLocation_SegmentDeliveryConfigurationsFields,
 		},
 		"SourceLocationName": ubx.FieldSpec{WireName: "source_location_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SourceLocation_TagsFields,
+			Kind:     "list",
+			Fields:   SourceLocation_TagsFields,
 		},
 	},
 }

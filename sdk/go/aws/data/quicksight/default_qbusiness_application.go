@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DefaultQbusinessApplicationConfig struct {
 	AwsAccountId any
-	Namespace any
+	Namespace    any
 }
 
 type DefaultQbusinessApplicationAttrs struct {
 	ApplicationId any
-	AwsAccountId any
-	Namespace any
-	RequestId any
-	Status any
+	AwsAccountId  any
+	Namespace     any
+	RequestId     any
+	Status        any
 }
 
 var DefaultQbusinessApplication = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_default_qbusiness_application",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"Namespace":    ubx.FieldSpec{WireName: "namespace"},
 	},
 }

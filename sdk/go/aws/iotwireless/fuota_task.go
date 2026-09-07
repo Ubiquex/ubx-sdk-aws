@@ -11,14 +11,14 @@ type FuotaTask_LoRaWan struct {
 }
 
 type FuotaTask_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var FuotaTask_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FuotaTaskConfig struct {
 	// Multicast group to associate. Only for update request.
@@ -73,18 +73,18 @@ type FuotaTaskAttrs struct {
 var FuotaTask = ubx.ResourceBinding{
 	WireType: "aws_io_twireless_fuota_task",
 	Fields: ubx.FieldMap{
-		"AssociateMulticastGroup": ubx.FieldSpec{WireName: "associate_multicast_group"},
-		"AssociateWirelessDevice": ubx.FieldSpec{WireName: "associate_wireless_device"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AssociateMulticastGroup":    ubx.FieldSpec{WireName: "associate_multicast_group"},
+		"AssociateWirelessDevice":    ubx.FieldSpec{WireName: "associate_wireless_device"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
 		"DisassociateMulticastGroup": ubx.FieldSpec{WireName: "disassociate_multicast_group"},
 		"DisassociateWirelessDevice": ubx.FieldSpec{WireName: "disassociate_wireless_device"},
-		"FirmwareUpdateImage": ubx.FieldSpec{WireName: "firmware_update_image"},
-		"FirmwareUpdateRole": ubx.FieldSpec{WireName: "firmware_update_role"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"FirmwareUpdateImage":        ubx.FieldSpec{WireName: "firmware_update_image"},
+		"FirmwareUpdateRole":         ubx.FieldSpec{WireName: "firmware_update_role"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FuotaTask_TagsFields,
+			Kind:     "list",
+			Fields:   FuotaTask_TagsFields,
 		},
 	},
 }

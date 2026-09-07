@@ -4,24 +4,24 @@ package pricingplanmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Subscriptions_SubscriptionSummaries_ScheduledChange struct {
-	ChangeType any
+	ChangeType    any
 	EffectiveDate any
-	PlanTier any
-	UsageLevel any
+	PlanTier      any
+	UsageLevel    any
 }
 
 type Subscriptions_SubscriptionSummaries struct {
-	Arn any
-	CreatedAt any
-	ETag any
-	PlanFamily any
-	PlanTier any
-	ResourceArns any
+	Arn             any
+	CreatedAt       any
+	ETag            any
+	PlanFamily      any
+	PlanTier        any
+	ResourceArns    any
 	ScheduledChange any
-	Status any
-	StatusReason any
-	UpdatedAt any
-	UsageLevel any
+	Status          any
+	StatusReason    any
+	UpdatedAt       any
+	UsageLevel      any
 }
 
 type SubscriptionsConfig struct {
@@ -29,7 +29,7 @@ type SubscriptionsConfig struct {
 }
 
 type SubscriptionsAttrs struct {
-	NextToken any
+	NextToken             any
 	SubscriptionSummaries any
 }
 

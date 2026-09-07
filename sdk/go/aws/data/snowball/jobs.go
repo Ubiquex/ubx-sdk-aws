@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Jobs_JobListEntries struct {
 	CreationDate any
-	Description any
-	IsMaster any
-	JobId any
-	JobState any
-	JobType any
+	Description  any
+	IsMaster     any
+	JobId        any
+	JobState     any
+	JobType      any
 	SnowballType any
 }
 
 type JobsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type JobsAttrs struct {
 	JobListEntries any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var Jobs = ubx.DataSourceBinding{
 	WireType: "aws_snowball_jobs",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

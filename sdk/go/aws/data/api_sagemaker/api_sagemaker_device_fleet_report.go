@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerDeviceFleetReport_AgentVersions struct {
 	AgentCount any
-	Version any
+	Version    any
 }
 
 type ApiSagemakerDeviceFleetReport_DeviceStats struct {
-	ConnectedDeviceCount any
+	ConnectedDeviceCount  any
 	RegisteredDeviceCount any
 }
 
 type ApiSagemakerDeviceFleetReport_ModelStats struct {
-	ActiveDeviceCount any
+	ActiveDeviceCount    any
 	ConnectedDeviceCount any
-	ModelName any
-	ModelVersion any
-	OfflineDeviceCount any
-	SamplingDeviceCount any
+	ModelName            any
+	ModelVersion         any
+	OfflineDeviceCount   any
+	SamplingDeviceCount  any
 }
 
 type ApiSagemakerDeviceFleetReport_OutputConfig struct {
-	KmsKeyId any
+	KmsKeyId               any
 	PresetDeploymentConfig any
-	PresetDeploymentType any
-	S3OutputLocation any
+	PresetDeploymentType   any
+	S3OutputLocation       any
 }
 
 type ApiSagemakerDeviceFleetReportConfig struct {
@@ -34,15 +34,15 @@ type ApiSagemakerDeviceFleetReportConfig struct {
 }
 
 type ApiSagemakerDeviceFleetReportAttrs struct {
-	AgentVersions any
-	Description any
-	DeviceFleetArn any
+	AgentVersions   any
+	Description     any
+	DeviceFleetArn  any
 	DeviceFleetName any
 	// <p>Status of devices.</p>
 	DeviceStats any
-	ModelStats any
+	ModelStats  any
 	// <p>The output configuration.</p>
-	OutputConfig any
+	OutputConfig    any
 	ReportGenerated any
 }
 

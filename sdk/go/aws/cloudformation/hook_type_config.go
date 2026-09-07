@@ -30,9 +30,9 @@ type HookTypeConfigAttrs struct {
 var HookTypeConfig = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_hook_type_config",
 	Fields: ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{WireName: "configuration"},
+		"Configuration":      ubx.FieldSpec{WireName: "configuration"},
 		"ConfigurationAlias": ubx.FieldSpec{WireName: "configuration_alias"},
-		"TypeArn": ubx.FieldSpec{WireName: "type_arn"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"TypeArn":            ubx.FieldSpec{WireName: "type_arn"},
+		"TypeName":           ubx.FieldSpec{WireName: "type_name"},
 	},
 }

@@ -19,7 +19,7 @@ type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_Interacti
 type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptions_ScreenCanvasSizeOptions struct {
 	// String based length that is composed of value and unit in px
 	OptimizedViewPortWidth any
-	ResizeOption any
+	ResizeOption           any
 }
 
 type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptions struct {
@@ -32,7 +32,7 @@ type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_Interacti
 
 type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration struct {
 	FreeForm any
-	Grid any
+	Grid     any
 }
 
 type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptions_PaperMargin struct {
@@ -47,9 +47,9 @@ type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_Paginated
 }
 
 type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptions struct {
-	PaperMargin any
+	PaperMargin      any
 	PaperOrientation any
-	PaperSize any
+	PaperSize        any
 }
 
 type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions struct {
@@ -66,8 +66,8 @@ type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_Paginated
 
 type Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration struct {
 	InteractiveLayoutConfiguration any
-	PaginatedLayoutConfiguration any
-	SheetContentType any
+	PaginatedLayoutConfiguration   any
+	SheetContentType               any
 }
 
 type Analysis_Definition_AnalysisDefaults struct {
@@ -76,13 +76,13 @@ type Analysis_Definition_AnalysisDefaults struct {
 
 type Analysis_Definition_CalculatedFields struct {
 	DataSetIdentifier any
-	Expression any
-	Name any
+	Expression        any
+	Name              any
 }
 
 type Analysis_Definition_ColumnConfigurations_ColorsConfiguration_CustomColors struct {
-	Color any
-	FieldValue any
+	Color        any
+	FieldValue   any
 	SpecialValue any
 }
 
@@ -91,7 +91,7 @@ type Analysis_Definition_ColumnConfigurations_ColorsConfiguration struct {
 }
 
 type Analysis_Definition_ColumnConfigurations_Column struct {
-	ColumnName any
+	ColumnName        any
 	DataSetIdentifier any
 }
 
@@ -109,55 +109,55 @@ type Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormat
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfiguration_ThousandsSeparator struct {
 	GroupingStyle any
-	Symbol any
-	Visibility any
+	Symbol        any
+	Visibility    any
 }
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfiguration struct {
-	DecimalSeparator any
+	DecimalSeparator   any
 	ThousandsSeparator any
 }
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration struct {
-	DecimalPlacesConfiguration any
-	NegativeValueConfiguration any
+	DecimalPlacesConfiguration   any
+	NegativeValueConfiguration   any
 	NullValueFormatConfiguration any
-	NumberScale any
-	Prefix any
-	SeparatorConfiguration any
-	Suffix any
-	Symbol any
+	NumberScale                  any
+	Prefix                       any
+	SeparatorConfiguration       any
+	Suffix                       any
+	Symbol                       any
 }
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_NumberDisplayFormatConfiguration struct {
-	DecimalPlacesConfiguration any
-	NegativeValueConfiguration any
+	DecimalPlacesConfiguration   any
+	NegativeValueConfiguration   any
 	NullValueFormatConfiguration any
-	NumberScale any
-	Prefix any
-	SeparatorConfiguration any
-	Suffix any
+	NumberScale                  any
+	Prefix                       any
+	SeparatorConfiguration       any
+	Suffix                       any
 }
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_PercentageDisplayFormatConfiguration struct {
-	DecimalPlacesConfiguration any
-	NegativeValueConfiguration any
+	DecimalPlacesConfiguration   any
+	NegativeValueConfiguration   any
 	NullValueFormatConfiguration any
-	Prefix any
-	SeparatorConfiguration any
-	Suffix any
+	Prefix                       any
+	SeparatorConfiguration       any
+	Suffix                       any
 }
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration struct {
-	CurrencyDisplayFormatConfiguration any
-	NumberDisplayFormatConfiguration any
+	CurrencyDisplayFormatConfiguration   any
+	NumberDisplayFormatConfiguration     any
 	PercentageDisplayFormatConfiguration any
 }
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration struct {
-	DateTimeFormat any
+	DateTimeFormat               any
 	NullValueFormatConfiguration any
-	NumericFormatConfiguration any
+	NumericFormatConfiguration   any
 }
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfiguration struct {
@@ -166,20 +166,20 @@ type Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatCo
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfiguration struct {
 	NullValueFormatConfiguration any
-	NumericFormatConfiguration any
+	NumericFormatConfiguration   any
 }
 
 type Analysis_Definition_ColumnConfigurations_FormatConfiguration struct {
 	DateTimeFormatConfiguration any
-	NumberFormatConfiguration any
-	StringFormatConfiguration any
+	NumberFormatConfiguration   any
+	StringFormatConfiguration   any
 }
 
 type Analysis_Definition_ColumnConfigurations struct {
 	ColorsConfiguration any
-	Column any
+	Column              any
 	FormatConfiguration any
-	Role any
+	Role                any
 }
 
 type Analysis_Definition_DataSetIdentifierDeclarations struct {
@@ -188,29 +188,29 @@ type Analysis_Definition_DataSetIdentifierDeclarations struct {
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterConfiguration struct {
-	CategoryValue any
-	MatchOperator any
-	NullOption any
-	ParameterName any
+	CategoryValue    any
+	MatchOperator    any
+	NullOption       any
+	ParameterName    any
 	SelectAllOptions any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterListConfiguration struct {
-	CategoryValues any
-	MatchOperator any
-	NullOption any
+	CategoryValues   any
+	MatchOperator    any
+	NullOption       any
 	SelectAllOptions any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration struct {
-	CustomFilterConfiguration any
+	CustomFilterConfiguration     any
 	CustomFilterListConfiguration any
-	FilterListConfiguration any
+	FilterListConfiguration       any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptions struct {
 	InfoIconText any
-	Visibility any
+	Visibility   any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration_FontSize struct {
@@ -223,32 +223,32 @@ type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterContro
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration struct {
-	FontColor any
+	FontColor      any
 	FontDecoration any
-	FontFamily any
-	FontSize any
-	FontStyle any
-	FontWeight any
+	FontFamily     any
+	FontSize       any
+	FontStyle      any
+	FontWeight     any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions struct {
-	CustomLabel any
+	CustomLabel       any
 	FontConfiguration any
-	Visibility any
+	Visibility        any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions struct {
-	DateIconVisibility any
-	DateTimeFormat any
+	DateIconVisibility   any
+	DateTimeFormat       any
 	HelperTextVisibility any
 	InfoIconLabelOptions any
-	TitleOptions any
+	TitleOptions         any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions struct {
-	CommitMode any
+	CommitMode     any
 	DisplayOptions any
-	Type any
+	Type           any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptions struct {
@@ -257,8 +257,8 @@ type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterContro
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions struct {
 	InfoIconLabelOptions any
-	SelectAllOptions any
-	TitleOptions any
+	SelectAllOptions     any
+	TitleOptions         any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValues struct {
@@ -266,57 +266,57 @@ type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterContro
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions struct {
-	CommitMode any
-	DisplayOptions any
+	CommitMode       any
+	DisplayOptions   any
 	SelectableValues any
-	Type any
+	Type             any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptions struct {
 	InfoIconLabelOptions any
-	SearchOptions any
-	SelectAllOptions any
-	TitleOptions any
+	SearchOptions        any
+	SelectAllOptions     any
+	TitleOptions         any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions struct {
-	DisplayOptions any
+	DisplayOptions   any
 	SelectableValues any
-	Type any
+	Type             any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions_DisplayOptions struct {
-	DateTimeFormat any
+	DateTimeFormat       any
 	InfoIconLabelOptions any
-	TitleOptions any
+	TitleOptions         any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions struct {
-	CommitMode any
+	CommitMode     any
 	DisplayOptions any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptions struct {
 	InfoIconLabelOptions any
-	TitleOptions any
+	TitleOptions         any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions struct {
 	DisplayOptions any
-	MaximumValue any
-	MinimumValue any
-	StepSize any
-	Type any
+	MaximumValue   any
+	MinimumValue   any
+	StepSize       any
+	Type           any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptions struct {
 	InfoIconLabelOptions any
-	PlaceholderOptions any
-	TitleOptions any
+	PlaceholderOptions   any
+	TitleOptions         any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions struct {
-	Delimiter any
+	Delimiter      any
 	DisplayOptions any
 }
 
@@ -325,30 +325,30 @@ type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterContro
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions struct {
-	DefaultDateTimePickerOptions any
-	DefaultDropdownOptions any
-	DefaultListOptions any
+	DefaultDateTimePickerOptions   any
+	DefaultDropdownOptions         any
+	DefaultListOptions             any
 	DefaultRelativeDateTimeOptions any
-	DefaultSliderOptions any
-	DefaultTextAreaOptions any
-	DefaultTextFieldOptions any
+	DefaultSliderOptions           any
+	DefaultTextAreaOptions         any
+	DefaultTextFieldOptions        any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration struct {
 	ControlOptions any
-	Title any
+	Title          any
 }
 
 type Analysis_Definition_FilterGroups_Filters_CategoryFilter struct {
-	Column any
-	Configuration any
+	Column                            any
+	Configuration                     any
 	DefaultFilterControlConfiguration any
-	FilterId any
+	FilterId                          any
 }
 
 type Analysis_Definition_FilterGroups_Filters_NestedFilter_InnerFilter_CategoryInnerFilter struct {
-	Column any
-	Configuration any
+	Column                            any
+	Configuration                     any
 	DefaultFilterControlConfiguration any
 }
 
@@ -357,15 +357,15 @@ type Analysis_Definition_FilterGroups_Filters_NestedFilter_InnerFilter struct {
 }
 
 type Analysis_Definition_FilterGroups_Filters_NestedFilter struct {
-	Column any
-	FilterId any
+	Column          any
+	FilterId        any
 	IncludeInnerSet any
-	InnerFilter any
+	InnerFilter     any
 }
 
 type Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_AttributeAggregationFunction struct {
 	SimpleAttributeAggregation any
-	ValueForMultipleValues any
+	ValueForMultipleValues     any
 }
 
 type Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunction_PercentileAggregation struct {
@@ -373,136 +373,136 @@ type Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationF
 }
 
 type Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunction struct {
-	PercentileAggregation any
+	PercentileAggregation      any
 	SimpleNumericalAggregation any
 }
 
 type Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction struct {
-	AttributeAggregationFunction any
+	AttributeAggregationFunction   any
 	CategoricalAggregationFunction any
-	DateAggregationFunction any
-	NumericalAggregationFunction any
+	DateAggregationFunction        any
+	NumericalAggregationFunction   any
 }
 
 type Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter struct {
-	AggregationFunction any
-	Column any
+	AggregationFunction               any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	FilterId any
-	MatchOperator any
-	NullOption any
-	ParameterName any
-	SelectAllOptions any
-	Value any
+	FilterId                          any
+	MatchOperator                     any
+	NullOption                        any
+	ParameterName                     any
+	SelectAllOptions                  any
+	Value                             any
 }
 
 type Analysis_Definition_FilterGroups_Filters_NumericRangeFilter_RangeMaximum struct {
-	Parameter any
+	Parameter   any
 	StaticValue any
 }
 
 type Analysis_Definition_FilterGroups_Filters_NumericRangeFilter struct {
-	AggregationFunction any
-	Column any
+	AggregationFunction               any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	FilterId any
-	IncludeMaximum any
-	IncludeMinimum any
-	NullOption any
-	RangeMaximum any
-	RangeMinimum any
-	SelectAllOptions any
+	FilterId                          any
+	IncludeMaximum                    any
+	IncludeMinimum                    any
+	NullOption                        any
+	RangeMaximum                      any
+	RangeMinimum                      any
+	SelectAllOptions                  any
 }
 
 type Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_AnchorDateConfiguration struct {
-	AnchorOption any
+	AnchorOption  any
 	ParameterName any
 }
 
 type Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_ExcludePeriodConfiguration struct {
-	Amount any
+	Amount      any
 	Granularity any
-	Status any
+	Status      any
 }
 
 type Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter struct {
-	AnchorDateConfiguration any
-	Column any
+	AnchorDateConfiguration           any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	ExcludePeriodConfiguration any
-	FilterId any
-	MinimumGranularity any
-	NullOption any
-	ParameterName any
-	RelativeDateType any
-	RelativeDateValue any
-	TimeGranularity any
+	ExcludePeriodConfiguration        any
+	FilterId                          any
+	MinimumGranularity                any
+	NullOption                        any
+	ParameterName                     any
+	RelativeDateType                  any
+	RelativeDateValue                 any
+	TimeGranularity                   any
 }
 
 type Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDate struct {
 	DataSetIdentifier any
-	Expression any
+	Expression        any
 }
 
 type Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter struct {
-	Column any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	FilterId any
-	ParameterName any
-	RollingDate any
-	TimeGranularity any
-	Value any
+	FilterId                          any
+	ParameterName                     any
+	RollingDate                       any
+	TimeGranularity                   any
+	Value                             any
 }
 
 type Analysis_Definition_FilterGroups_Filters_TimeRangeFilter_RangeMaximumValue struct {
-	Parameter any
+	Parameter   any
 	RollingDate any
 	StaticValue any
 }
 
 type Analysis_Definition_FilterGroups_Filters_TimeRangeFilter struct {
-	Column any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	ExcludePeriodConfiguration any
-	FilterId any
-	IncludeMaximum any
-	IncludeMinimum any
-	NullOption any
-	RangeMaximumValue any
-	RangeMinimumValue any
-	TimeGranularity any
+	ExcludePeriodConfiguration        any
+	FilterId                          any
+	IncludeMaximum                    any
+	IncludeMinimum                    any
+	NullOption                        any
+	RangeMaximumValue                 any
+	RangeMinimumValue                 any
+	TimeGranularity                   any
 }
 
 type Analysis_Definition_FilterGroups_Filters_TopBottomFilter_AggregationSortConfigurations struct {
 	AggregationFunction any
-	Column any
-	SortDirection any
+	Column              any
+	SortDirection       any
 }
 
 type Analysis_Definition_FilterGroups_Filters_TopBottomFilter struct {
-	AggregationSortConfigurations any
-	Column any
+	AggregationSortConfigurations     any
+	Column                            any
 	DefaultFilterControlConfiguration any
-	FilterId any
-	Limit any
-	ParameterName any
-	TimeGranularity any
+	FilterId                          any
+	Limit                             any
+	ParameterName                     any
+	TimeGranularity                   any
 }
 
 type Analysis_Definition_FilterGroups_Filters struct {
-	CategoryFilter any
-	NestedFilter any
+	CategoryFilter        any
+	NestedFilter          any
 	NumericEqualityFilter any
-	NumericRangeFilter any
-	RelativeDatesFilter any
-	TimeEqualityFilter any
-	TimeRangeFilter any
-	TopBottomFilter any
+	NumericRangeFilter    any
+	RelativeDatesFilter   any
+	TimeEqualityFilter    any
+	TimeRangeFilter       any
+	TopBottomFilter       any
 }
 
 type Analysis_Definition_FilterGroups_ScopeConfiguration_SelectedSheets_SheetVisualScopingConfigurations struct {
-	Scope any
-	SheetId any
+	Scope     any
+	SheetId   any
 	VisualIds any
 }
 
@@ -511,51 +511,51 @@ type Analysis_Definition_FilterGroups_ScopeConfiguration_SelectedSheets struct {
 }
 
 type Analysis_Definition_FilterGroups_ScopeConfiguration struct {
-	AllSheets any
+	AllSheets      any
 	SelectedSheets any
 }
 
 type Analysis_Definition_FilterGroups struct {
-	CrossDataset any
-	FilterGroupId any
-	Filters any
+	CrossDataset       any
+	FilterGroupId      any
+	Filters            any
 	ScopeConfiguration any
-	Status any
+	Status             any
 }
 
 type Analysis_Definition_Options struct {
-	Timezone any
+	Timezone  any
 	WeekStart any
 }
 
 type Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValue struct {
 	DefaultValueColumn any
-	GroupNameColumn any
-	UserNameColumn any
+	GroupNameColumn    any
+	UserNameColumn     any
 }
 
 type Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues struct {
 	DynamicValue any
-	RollingDate any
+	RollingDate  any
 	StaticValues any
 }
 
 type Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParameters struct {
-	DataSetIdentifier any
+	DataSetIdentifier    any
 	DataSetParameterName any
 }
 
 type Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_ValueWhenUnset struct {
-	CustomValue any
+	CustomValue          any
 	ValueWhenUnsetOption any
 }
 
 type Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration struct {
-	DefaultValues any
+	DefaultValues           any
 	MappedDataSetParameters any
-	Name any
-	TimeGranularity any
-	ValueWhenUnset any
+	Name                    any
+	TimeGranularity         any
+	ValueWhenUnset          any
 }
 
 type Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_DefaultValues struct {
@@ -564,16 +564,16 @@ type Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_Defau
 }
 
 type Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_ValueWhenUnset struct {
-	CustomValue any
+	CustomValue          any
 	ValueWhenUnsetOption any
 }
 
 type Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration struct {
-	DefaultValues any
+	DefaultValues           any
 	MappedDataSetParameters any
-	Name any
-	ParameterValueType any
-	ValueWhenUnset any
+	Name                    any
+	ParameterValueType      any
+	ValueWhenUnset          any
 }
 
 type Analysis_Definition_ParameterDeclarations_StringParameterDeclaration_DefaultValues struct {
@@ -582,18 +582,18 @@ type Analysis_Definition_ParameterDeclarations_StringParameterDeclaration_Defaul
 }
 
 type Analysis_Definition_ParameterDeclarations_StringParameterDeclaration struct {
-	DefaultValues any
+	DefaultValues           any
 	MappedDataSetParameters any
-	Name any
-	ParameterValueType any
-	ValueWhenUnset any
+	Name                    any
+	ParameterValueType      any
+	ValueWhenUnset          any
 }
 
 type Analysis_Definition_ParameterDeclarations struct {
 	DateTimeParameterDeclaration any
-	DecimalParameterDeclaration any
-	IntegerParameterDeclaration any
-	StringParameterDeclaration any
+	DecimalParameterDeclaration  any
+	IntegerParameterDeclaration  any
+	StringParameterDeclaration   any
 }
 
 type Analysis_Definition_QueryExecutionOptions struct {
@@ -601,7 +601,7 @@ type Analysis_Definition_QueryExecutionOptions struct {
 }
 
 type Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfiguration_SourceControls struct {
-	ColumnToMatch any
+	ColumnToMatch        any
 	SourceSheetControlId any
 }
 
@@ -611,83 +611,83 @@ type Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfig
 
 type Analysis_Definition_Sheets_FilterControls_CrossSheet struct {
 	CascadingControlConfiguration any
-	FilterControlId any
-	SourceFilterId any
+	FilterControlId               any
+	SourceFilterId                any
 }
 
 type Analysis_Definition_Sheets_FilterControls_DateTimePicker struct {
-	CommitMode any
-	DisplayOptions any
+	CommitMode      any
+	DisplayOptions  any
 	FilterControlId any
-	SourceFilterId any
-	Title any
-	Type any
+	SourceFilterId  any
+	Title           any
+	Type            any
 }
 
 type Analysis_Definition_Sheets_FilterControls_Dropdown struct {
 	CascadingControlConfiguration any
-	CommitMode any
-	DisplayOptions any
-	FilterControlId any
-	SelectableValues any
-	SourceFilterId any
-	Title any
-	Type any
+	CommitMode                    any
+	DisplayOptions                any
+	FilterControlId               any
+	SelectableValues              any
+	SourceFilterId                any
+	Title                         any
+	Type                          any
 }
 
 type Analysis_Definition_Sheets_FilterControls_List struct {
 	CascadingControlConfiguration any
-	DisplayOptions any
-	FilterControlId any
-	SelectableValues any
-	SourceFilterId any
-	Title any
-	Type any
+	DisplayOptions                any
+	FilterControlId               any
+	SelectableValues              any
+	SourceFilterId                any
+	Title                         any
+	Type                          any
 }
 
 type Analysis_Definition_Sheets_FilterControls_RelativeDateTime struct {
-	CommitMode any
-	DisplayOptions any
+	CommitMode      any
+	DisplayOptions  any
 	FilterControlId any
-	SourceFilterId any
-	Title any
+	SourceFilterId  any
+	Title           any
 }
 
 type Analysis_Definition_Sheets_FilterControls_Slider struct {
-	DisplayOptions any
+	DisplayOptions  any
 	FilterControlId any
-	MaximumValue any
-	MinimumValue any
-	SourceFilterId any
-	StepSize any
-	Title any
-	Type any
+	MaximumValue    any
+	MinimumValue    any
+	SourceFilterId  any
+	StepSize        any
+	Title           any
+	Type            any
 }
 
 type Analysis_Definition_Sheets_FilterControls_TextArea struct {
-	Delimiter any
-	DisplayOptions any
+	Delimiter       any
+	DisplayOptions  any
 	FilterControlId any
-	SourceFilterId any
-	Title any
+	SourceFilterId  any
+	Title           any
 }
 
 type Analysis_Definition_Sheets_FilterControls_TextField struct {
-	DisplayOptions any
+	DisplayOptions  any
 	FilterControlId any
-	SourceFilterId any
-	Title any
+	SourceFilterId  any
+	Title           any
 }
 
 type Analysis_Definition_Sheets_FilterControls struct {
-	CrossSheet any
-	DateTimePicker any
-	Dropdown any
-	List any
+	CrossSheet       any
+	DateTimePicker   any
+	Dropdown         any
+	List             any
 	RelativeDateTime any
-	Slider any
-	TextArea any
-	TextField any
+	Slider           any
+	TextArea         any
+	TextField        any
 }
 
 type Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperation_LocalNavigationConfiguration struct {
@@ -700,27 +700,27 @@ type Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperat
 
 type Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfiguration_CustomValues struct {
 	DateTimeValues any
-	DecimalValues any
-	IntegerValues any
-	StringValues any
+	DecimalValues  any
+	IntegerValues  any
+	StringValues   any
 }
 
 type Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfiguration struct {
-	CustomValues any
+	CustomValues     any
 	IncludeNullValue any
 }
 
 type Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value struct {
 	CustomValuesConfiguration any
-	SelectAllValueOptions any
-	SourceColumn any
-	SourceField any
-	SourceParameterName any
+	SelectAllValueOptions     any
+	SourceColumn              any
+	SourceField               any
+	SourceParameterName       any
 }
 
 type Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations struct {
 	DestinationParameterName any
-	Value any
+	Value                    any
 }
 
 type Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation struct {
@@ -728,22 +728,22 @@ type Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOpe
 }
 
 type Analysis_Definition_Sheets_Images_Actions_ActionOperations_Urloperation struct {
-	Urltarget any
+	Urltarget   any
 	Urltemplate any
 }
 
 type Analysis_Definition_Sheets_Images_Actions_ActionOperations struct {
-	NavigationOperation any
+	NavigationOperation    any
 	SetParametersOperation any
-	Urloperation any
+	Urloperation           any
 }
 
 type Analysis_Definition_Sheets_Images_Actions struct {
 	ActionOperations any
-	CustomActionId any
-	Name any
-	Status any
-	Trigger any
+	CustomActionId   any
+	Name             any
+	Status           any
+	Trigger          any
 }
 
 type Analysis_Definition_Sheets_Images_Interactions_ImageMenuOption struct {
@@ -772,61 +772,61 @@ type Analysis_Definition_Sheets_Images_Tooltip_TooltipText struct {
 
 type Analysis_Definition_Sheets_Images_Tooltip struct {
 	TooltipText any
-	Visibility any
+	Visibility  any
 }
 
 type Analysis_Definition_Sheets_Images struct {
-	Actions any
+	Actions             any
 	ImageContentAltText any
-	Interactions any
-	Scaling any
-	SheetImageId any
-	Source any
-	Tooltip any
+	Interactions        any
+	Scaling             any
+	SheetImageId        any
+	Source              any
+	Tooltip             any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyle struct {
-	Color any
+	Color      any
 	Visibility any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_RenderingRules struct {
 	ConfigurationOverrides any
-	Expression any
+	Expression             any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements struct {
-	BackgroundStyle any
-	BorderStyle any
-	ElementId any
-	ElementType any
-	Height any
-	LoadingAnimation any
-	RenderingRules any
+	BackgroundStyle     any
+	BorderStyle         any
+	ElementId           any
+	ElementType         any
+	Height              any
+	LoadingAnimation    any
+	RenderingRules      any
 	SelectedBorderStyle any
-	Visibility any
-	Width any
-	XaxisLocation any
-	YaxisLocation any
+	Visibility          any
+	Width               any
+	XaxisLocation       any
+	YaxisLocation       any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout struct {
 	CanvasSizeOptions any
-	Elements any
+	Elements          any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_GridLayout_Elements struct {
 	ColumnIndex any
-	ColumnSpan any
-	ElementId any
+	ColumnSpan  any
+	ElementId   any
 	ElementType any
-	RowIndex any
-	RowSpan any
+	RowIndex    any
+	RowSpan     any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_GridLayout struct {
 	CanvasSizeOptions any
-	Elements any
+	Elements          any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_Layout_FreeFormLayout struct {
@@ -851,56 +851,56 @@ type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySec
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetrics struct {
 	AggregationFunction any
-	Direction any
-	SortBy any
+	Direction           any
+	SortBy              any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration struct {
-	Column any
-	Limit any
+	Column        any
+	Limit         any
 	SortByMetrics any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations struct {
 	DynamicCategoryDimensionConfiguration any
-	DynamicNumericDimensionConfiguration any
+	DynamicNumericDimensionConfiguration  any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration struct {
 	DimensionConfigurations any
-	NonRepeatingVisuals any
-	PageBreakConfiguration any
+	NonRepeatingVisuals     any
+	PageBreakConfiguration  any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Style struct {
-	Height any
+	Height  any
 	Padding any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections struct {
-	Content any
+	Content                any
 	PageBreakConfiguration any
-	RepeatConfiguration any
-	SectionId any
-	Style any
+	RepeatConfiguration    any
+	SectionId              any
+	Style                  any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_FooterSections struct {
-	Layout any
+	Layout    any
 	SectionId any
-	Style any
+	Style     any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout struct {
-	BodySections any
+	BodySections      any
 	CanvasSizeOptions any
-	FooterSections any
-	HeaderSections any
+	FooterSections    any
+	HeaderSections    any
 }
 
 type Analysis_Definition_Sheets_Layouts_Configuration struct {
-	FreeFormLayout any
-	GridLayout any
+	FreeFormLayout     any
+	GridLayout         any
 	SectionBasedLayout any
 }
 
@@ -909,70 +909,70 @@ type Analysis_Definition_Sheets_Layouts struct {
 }
 
 type Analysis_Definition_Sheets_ParameterControls_DateTimePicker struct {
-	DisplayOptions any
-	ParameterControlId any
+	DisplayOptions      any
+	ParameterControlId  any
 	SourceParameterName any
-	Title any
+	Title               any
 }
 
 type Analysis_Definition_Sheets_ParameterControls_Dropdown_SelectableValues struct {
 	LinkToDataSetColumn any
-	Values any
+	Values              any
 }
 
 type Analysis_Definition_Sheets_ParameterControls_Dropdown struct {
 	CascadingControlConfiguration any
-	CommitMode any
-	DisplayOptions any
-	ParameterControlId any
-	SelectableValues any
-	SourceParameterName any
-	Title any
-	Type any
+	CommitMode                    any
+	DisplayOptions                any
+	ParameterControlId            any
+	SelectableValues              any
+	SourceParameterName           any
+	Title                         any
+	Type                          any
 }
 
 type Analysis_Definition_Sheets_ParameterControls_List struct {
 	CascadingControlConfiguration any
-	DisplayOptions any
-	ParameterControlId any
-	SelectableValues any
-	SourceParameterName any
-	Title any
-	Type any
+	DisplayOptions                any
+	ParameterControlId            any
+	SelectableValues              any
+	SourceParameterName           any
+	Title                         any
+	Type                          any
 }
 
 type Analysis_Definition_Sheets_ParameterControls_Slider struct {
-	DisplayOptions any
-	MaximumValue any
-	MinimumValue any
-	ParameterControlId any
+	DisplayOptions      any
+	MaximumValue        any
+	MinimumValue        any
+	ParameterControlId  any
 	SourceParameterName any
-	StepSize any
-	Title any
+	StepSize            any
+	Title               any
 }
 
 type Analysis_Definition_Sheets_ParameterControls_TextArea struct {
-	Delimiter any
-	DisplayOptions any
-	ParameterControlId any
+	Delimiter           any
+	DisplayOptions      any
+	ParameterControlId  any
 	SourceParameterName any
-	Title any
+	Title               any
 }
 
 type Analysis_Definition_Sheets_ParameterControls_TextField struct {
-	DisplayOptions any
-	ParameterControlId any
+	DisplayOptions      any
+	ParameterControlId  any
 	SourceParameterName any
-	Title any
+	Title               any
 }
 
 type Analysis_Definition_Sheets_ParameterControls struct {
 	DateTimePicker any
-	Dropdown any
-	List any
-	Slider any
-	TextArea any
-	TextField any
+	Dropdown       any
+	List           any
+	Slider         any
+	TextArea       any
+	TextField      any
 }
 
 type Analysis_Definition_Sheets_SheetControlLayouts_Configuration struct {
@@ -984,19 +984,19 @@ type Analysis_Definition_Sheets_SheetControlLayouts struct {
 }
 
 type Analysis_Definition_Sheets_TextBoxes struct {
-	Content any
+	Content        any
 	SheetTextBoxId any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_SelectedFieldsConfiguration struct {
-	SelectedColumns any
+	SelectedColumns      any
 	SelectedFieldOptions any
-	SelectedFields any
+	SelectedFields       any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfiguration_SameSheetTargetVisualConfiguration struct {
 	TargetVisualOptions any
-	TargetVisuals any
+	TargetVisuals       any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfiguration struct {
@@ -1005,22 +1005,22 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation struct {
 	SelectedFieldsConfiguration any
-	TargetVisualsConfiguration any
+	TargetVisualsConfiguration  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations struct {
-	FilterOperation any
-	NavigationOperation any
+	FilterOperation        any
+	NavigationOperation    any
 	SetParametersOperation any
-	Urloperation any
+	Urloperation           any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions struct {
 	ActionOperations any
-	CustomActionId any
-	Name any
-	Status any
-	Trigger any
+	CustomActionId   any
+	Name             any
+	Status           any
+	Trigger          any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_DateAxisOptions struct {
@@ -1034,12 +1034,12 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Catego
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Range struct {
 	DataDriven any
-	MinMax any
+	MinMax     any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_Linear struct {
 	StepCount any
-	StepSize any
+	StepSize  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_Logarithmic struct {
@@ -1047,7 +1047,7 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Catego
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale struct {
-	Linear any
+	Linear      any
 	Logarithmic any
 }
 
@@ -1057,13 +1057,13 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Catego
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions struct {
-	DateAxisOptions any
+	DateAxisOptions    any
 	NumericAxisOptions any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRange_PercentRange struct {
 	From any
-	To any
+	To   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRange struct {
@@ -1071,144 +1071,144 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Catego
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions struct {
-	Visibility any
+	Visibility   any
 	VisibleRange any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_TickLabelOptions struct {
-	LabelOptions any
+	LabelOptions  any
 	RotationAngle any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis struct {
 	AxisLineVisibility any
-	AxisOffset any
-	DataOptions any
+	AxisOffset         any
+	DataOptions        any
 	GridLineVisibility any
-	ScrollbarOptions any
-	TickLabelOptions any
+	ScrollbarOptions   any
+	TickLabelOptions   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptions_ApplyTo struct {
-	Column any
+	Column  any
 	FieldId any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptions struct {
-	ApplyTo any
-	CustomLabel any
+	ApplyTo           any
+	CustomLabel       any
 	FontConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions struct {
-	AxisLabelOptions any
+	AxisLabelOptions   any
 	SortIconVisibility any
-	Visibility any
+	Visibility         any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaults struct {
 	ContributorDimensions any
-	MeasureFieldId any
+	MeasureFieldId        any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_DataPathLabelType struct {
-	FieldId any
+	FieldId    any
 	FieldValue any
 	Visibility any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_FieldLabelType struct {
-	FieldId any
+	FieldId    any
 	Visibility any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes struct {
-	DataPathLabelType any
-	FieldLabelType any
-	MaximumLabelType any
-	MinimumLabelType any
+	DataPathLabelType  any
+	FieldLabelType     any
+	MaximumLabelType   any
+	MinimumLabelType   any
 	RangeEndsLabelType any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels struct {
 	CategoryLabelVisibility any
-	DataLabelTypes any
-	LabelColor any
-	LabelContent any
-	LabelFontConfiguration any
-	MeasureLabelVisibility any
-	Overlap any
-	Position any
-	TotalsVisibility any
-	Visibility any
+	DataLabelTypes          any
+	LabelColor              any
+	LabelContent            any
+	LabelFontConfiguration  any
+	MeasureLabelVisibility  any
+	Overlap                 any
+	Position                any
+	TotalsVisibility        any
+	Visibility              any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_CategoricalDimensionField struct {
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
-	HierarchyId any
+	HierarchyId         any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_DateDimensionField struct {
-	Column any
-	DateGranularity any
-	FieldId any
+	Column              any
+	DateGranularity     any
+	FieldId             any
 	FormatConfiguration any
-	HierarchyId any
+	HierarchyId         any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_NumericalDimensionField struct {
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
-	HierarchyId any
+	HierarchyId         any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category struct {
 	CategoricalDimensionField any
-	DateDimensionField any
-	NumericalDimensionField any
+	DateDimensionField        any
+	NumericalDimensionField   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CalculatedMeasureField struct {
 	Expression any
-	FieldId any
+	FieldId    any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CategoricalMeasureField struct {
 	AggregationFunction any
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_DateMeasureField struct {
 	AggregationFunction any
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_NumericalMeasureField struct {
 	AggregationFunction any
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values struct {
-	CalculatedMeasureField any
+	CalculatedMeasureField  any
 	CategoricalMeasureField any
-	DateMeasureField any
-	NumericalMeasureField any
+	DateMeasureField        any
+	NumericalMeasureField   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells struct {
-	Category any
-	Colors any
+	Category       any
+	Colors         any
 	SmallMultiples any
-	Values any
+	Values         any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells struct {
@@ -1217,21 +1217,21 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldW
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Interactions struct {
 	ContextMenuOption any
-	VisualMenuOption any
+	VisualMenuOption  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Legend struct {
-	Height any
-	Position any
-	Title any
+	Height                 any
+	Position               any
+	Title                  any
 	ValueFontConfiguration any
-	Visibility any
-	Width any
+	Visibility             any
+	Width                  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_DynamicConfiguration struct {
-	Calculation any
-	Column any
+	Calculation                any
+	Column                     any
 	MeasureAggregationFunction any
 }
 
@@ -1240,10 +1240,10 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Refere
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration struct {
-	AxisBinding any
+	AxisBinding          any
 	DynamicConfiguration any
-	SeriesType any
-	StaticConfiguration any
+	SeriesType           any
+	StaticConfiguration  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_CustomLabelConfiguration struct {
@@ -1252,115 +1252,115 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Refere
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_ValueLabelConfiguration struct {
 	FormatConfiguration any
-	RelativePosition any
+	RelativePosition    any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration struct {
 	CustomLabelConfiguration any
-	FontColor any
-	FontConfiguration any
-	HorizontalPosition any
-	ValueLabelConfiguration any
-	VerticalPosition any
+	FontColor                any
+	FontConfiguration        any
+	HorizontalPosition       any
+	ValueLabelConfiguration  any
+	VerticalPosition         any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_StyleConfiguration struct {
-	Color any
+	Color   any
 	Pattern any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines struct {
-	DataConfiguration any
+	DataConfiguration  any
 	LabelConfiguration any
-	Status any
+	Status             any
 	StyleConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfiguration_Title struct {
-	FontConfiguration any
+	FontConfiguration       any
 	HorizontalTextAlignment any
-	Visibility any
+	Visibility              any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfiguration struct {
-	BackgroundColor any
+	BackgroundColor      any
 	BackgroundVisibility any
-	BorderColor any
-	BorderStyle any
-	BorderThickness any
-	BorderVisibility any
-	GutterSpacing any
-	GutterVisibility any
-	Title any
+	BorderColor          any
+	BorderStyle          any
+	BorderThickness      any
+	BorderVisibility     any
+	GutterSpacing        any
+	GutterVisibility     any
+	Title                any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_Xaxis struct {
 	Placement any
-	Scale any
+	Scale     any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions struct {
-	MaxVisibleColumns any
-	MaxVisibleRows any
+	MaxVisibleColumns  any
+	MaxVisibleRows     any
 	PanelConfiguration any
-	Xaxis any
-	Yaxis any
+	Xaxis              any
+	Yaxis              any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimit struct {
-	ItemsLimit any
+	ItemsLimit      any
 	OtherCategories any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort_FieldSort struct {
 	Direction any
-	FieldId any
+	FieldId   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort struct {
 	ColumnSort any
-	FieldSort any
+	FieldSort  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration struct {
-	CategoryItemsLimit any
-	CategorySort any
-	ColorItemsLimit any
-	ColorSort any
+	CategoryItemsLimit               any
+	CategorySort                     any
+	ColorItemsLimit                  any
+	ColorSort                        any
 	SmallMultiplesLimitConfiguration any
-	SmallMultiplesSort any
+	SmallMultiplesSort               any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_ColumnTooltipItem struct {
-	Aggregation any
-	Column any
-	Label any
+	Aggregation   any
+	Column        any
+	Label         any
 	TooltipTarget any
-	Visibility any
+	Visibility    any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_FieldTooltipItem struct {
-	FieldId any
-	Label any
+	FieldId       any
+	Label         any
 	TooltipTarget any
-	Visibility any
+	Visibility    any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields struct {
 	ColumnTooltipItem any
-	FieldTooltipItem any
+	FieldTooltipItem  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip struct {
 	AggregationVisibility any
-	TooltipFields any
-	TooltipTitleType any
+	TooltipFields         any
+	TooltipTitleType      any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip struct {
-	FieldBasedTooltip any
+	FieldBasedTooltip   any
 	SelectedTooltipType any
-	TooltipVisibility any
+	TooltipVisibility   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_Element_DataPathType struct {
@@ -1369,84 +1369,84 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Visual
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_Element struct {
 	DataPathType any
-	FieldId any
-	FieldValue any
+	FieldId      any
+	FieldValue   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap struct {
-	Color any
-	Element any
+	Color           any
+	Element         any
 	TimeGranularity any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette struct {
 	ChartColor any
-	ColorMap any
+	ColorMap   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration struct {
-	BarsArrangement any
-	CategoryAxis any
-	CategoryLabelOptions any
-	ColorLabelOptions any
+	BarsArrangement              any
+	CategoryAxis                 any
+	CategoryLabelOptions         any
+	ColorLabelOptions            any
 	ContributionAnalysisDefaults any
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Legend any
-	Orientation any
-	ReferenceLines any
-	SmallMultiplesOptions any
-	SortConfiguration any
-	Tooltip any
-	ValueAxis any
-	ValueLabelOptions any
-	VisualPalette any
+	DataLabels                   any
+	FieldWells                   any
+	Interactions                 any
+	Legend                       any
+	Orientation                  any
+	ReferenceLines               any
+	SmallMultiplesOptions        any
+	SortConfiguration            any
+	Tooltip                      any
+	ValueAxis                    any
+	ValueLabelOptions            any
+	VisualPalette                any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_CategoryFilter struct {
 	CategoryValues any
-	Column any
+	Column         any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_NumericEqualityFilter struct {
 	Column any
-	Value any
+	Value  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_TimeRangeFilter struct {
-	Column any
-	RangeMaximum any
-	RangeMinimum any
+	Column          any
+	RangeMaximum    any
+	RangeMinimum    any
 	TimeGranularity any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters struct {
-	CategoryFilter any
+	CategoryFilter        any
 	NumericEqualityFilter any
-	TimeRangeFilter any
+	TimeRangeFilter       any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy struct {
 	DrillDownFilters any
-	HierarchyId any
+	HierarchyId      any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_ExplicitHierarchy struct {
-	Columns any
+	Columns          any
 	DrillDownFilters any
-	HierarchyId any
+	HierarchyId      any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies struct {
-	DateTimeHierarchy any
-	ExplicitHierarchy any
+	DateTimeHierarchy   any
+	ExplicitHierarchy   any
 	PredefinedHierarchy any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_Subtitle_FormatText struct {
 	PlainText any
-	RichText any
+	RichText  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual_Subtitle struct {
@@ -1455,13 +1455,13 @@ type Analysis_Definition_Sheets_Visuals_BarChartVisual_Subtitle struct {
 }
 
 type Analysis_Definition_Sheets_Visuals_BarChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptions_StyleOptions struct {
@@ -1470,13 +1470,13 @@ type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlot
 
 type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptions struct {
 	AllDataPointsVisibility any
-	OutlierVisibility any
-	StyleOptions any
+	OutlierVisibility       any
+	StyleOptions            any
 }
 
 type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells_BoxPlotAggregatedFieldWells struct {
 	GroupBy any
-	Values any
+	Values  any
 }
 
 type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells struct {
@@ -1485,43 +1485,43 @@ type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWe
 
 type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration_PaginationConfiguration struct {
 	PageNumber any
-	PageSize any
+	PageSize   any
 }
 
 type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration struct {
-	CategorySort any
+	CategorySort            any
 	PaginationConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration struct {
-	BoxPlotOptions any
-	CategoryAxis any
-	CategoryLabelOptions any
-	FieldWells any
-	Interactions any
-	Legend any
+	BoxPlotOptions             any
+	CategoryAxis               any
+	CategoryLabelOptions       any
+	FieldWells                 any
+	Interactions               any
+	Legend                     any
 	PrimaryYaxisDisplayOptions any
-	PrimaryYaxisLabelOptions any
-	ReferenceLines any
-	SortConfiguration any
-	Tooltip any
-	VisualPalette any
+	PrimaryYaxisLabelOptions   any
+	ReferenceLines             any
+	SortConfiguration          any
+	Tooltip                    any
+	VisualPalette              any
 }
 
 type Analysis_Definition_Sheets_Visuals_BoxPlotVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_FieldWells_ComboChartAggregatedFieldWells struct {
-	BarValues any
-	Category any
-	Colors any
+	BarValues  any
+	Category   any
+	Colors     any
 	LineValues any
 }
 
@@ -1539,68 +1539,68 @@ type Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_Sing
 
 type Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SortConfiguration struct {
 	CategoryItemsLimit any
-	CategorySort any
-	ColorItemsLimit any
-	ColorSort any
+	CategorySort       any
+	ColorItemsLimit    any
+	ColorSort          any
 }
 
 type Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration struct {
-	BarDataLabels any
-	BarsArrangement any
-	CategoryAxis any
-	CategoryLabelOptions any
-	ColorLabelOptions any
-	FieldWells any
-	Interactions any
-	Legend any
-	LineDataLabels any
-	PrimaryYaxisDisplayOptions any
-	PrimaryYaxisLabelOptions any
-	ReferenceLines any
+	BarDataLabels                any
+	BarsArrangement              any
+	CategoryAxis                 any
+	CategoryLabelOptions         any
+	ColorLabelOptions            any
+	FieldWells                   any
+	Interactions                 any
+	Legend                       any
+	LineDataLabels               any
+	PrimaryYaxisDisplayOptions   any
+	PrimaryYaxisLabelOptions     any
+	ReferenceLines               any
 	SecondaryYaxisDisplayOptions any
-	SecondaryYaxisLabelOptions any
-	SingleAxisOptions any
-	SortConfiguration any
-	Tooltip any
-	VisualPalette any
+	SecondaryYaxisLabelOptions   any
+	SingleAxisOptions            any
+	SortConfiguration            any
+	Tooltip                      any
+	VisualPalette                any
 }
 
 type Analysis_Definition_Sheets_Visuals_ComboChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_CustomContentVisual_ChartConfiguration struct {
-	ContentType any
-	ContentUrl any
+	ContentType  any
+	ContentUrl   any
 	ImageScaling any
 	Interactions any
 }
 
 type Analysis_Definition_Sheets_Visuals_CustomContentVisual struct {
-	Actions any
-	ChartConfiguration any
-	DataSetIdentifier any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	DataSetIdentifier    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_EmptyVisual struct {
-	Actions any
+	Actions           any
 	DataSetIdentifier any
-	VisualId any
+	VisualId          any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWells_FilledMapAggregatedFieldWells struct {
 	Geospatial any
-	Values any
+	Values     any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWells struct {
@@ -1616,30 +1616,30 @@ type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_SortC
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions_Bounds struct {
-	East any
+	East  any
 	North any
 	South any
-	West any
+	West  any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions struct {
-	Bounds any
+	Bounds      any
 	MapZoomMode any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration struct {
-	FieldWells any
-	Interactions any
-	Legend any
-	MapStyleOptions any
+	FieldWells        any
+	Interactions      any
+	Legend            any
+	MapStyleOptions   any
 	SortConfiguration any
-	Tooltip any
-	WindowOptions any
+	Tooltip           any
+	WindowOptions     any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient_Color_Stops struct {
-	Color any
-	DataValue any
+	Color          any
+	DataValue      any
 	GradientOffset any
 }
 
@@ -1648,18 +1648,18 @@ type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_Co
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient struct {
-	Color any
+	Color      any
 	Expression any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Solid struct {
-	Color any
+	Color      any
 	Expression any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor struct {
 	Gradient any
-	Solid any
+	Solid    any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format struct {
@@ -1668,7 +1668,7 @@ type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_Co
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape struct {
 	FieldId any
-	Format any
+	Format  any
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions struct {
@@ -1680,29 +1680,29 @@ type Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting st
 }
 
 type Analysis_Definition_Sheets_Visuals_FilledMapVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
+	Actions               any
+	ChartConfiguration    any
+	ColumnHierarchies     any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_DataLabelOptions struct {
 	CategoryLabelVisibility any
-	LabelColor any
-	LabelFontConfiguration any
-	MeasureDataLabelStyle any
-	MeasureLabelVisibility any
-	Position any
-	Visibility any
+	LabelColor              any
+	LabelFontConfiguration  any
+	MeasureDataLabelStyle   any
+	MeasureLabelVisibility  any
+	Position                any
+	Visibility              any
 }
 
 type Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWells_FunnelChartAggregatedFieldWells struct {
 	Category any
-	Values any
+	Values   any
 }
 
 type Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWells struct {
@@ -1711,28 +1711,28 @@ type Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_Fie
 
 type Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_SortConfiguration struct {
 	CategoryItemsLimit any
-	CategorySort any
+	CategorySort       any
 }
 
 type Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration struct {
 	CategoryLabelOptions any
-	DataLabelOptions any
-	FieldWells any
-	Interactions any
-	SortConfiguration any
-	Tooltip any
-	ValueLabelOptions any
-	VisualPalette any
+	DataLabelOptions     any
+	FieldWells           any
+	Interactions         any
+	SortConfiguration    any
+	Tooltip              any
+	ValueLabelOptions    any
+	VisualPalette        any
 }
 
 type Analysis_Definition_Sheets_Visuals_FunnelChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_ColorConfiguration struct {
@@ -1742,11 +1742,11 @@ type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_Colo
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_FieldWells struct {
 	TargetValues any
-	Values any
+	Values       any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_Arc struct {
-	ArcAngle any
+	ArcAngle     any
 	ArcThickness any
 }
 
@@ -1756,12 +1756,12 @@ type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_Gaug
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcAxis struct {
-	Range any
+	Range        any
 	ReserveRange any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_Comparison_ComparisonFormat struct {
-	NumberDisplayFormatConfiguration any
+	NumberDisplayFormatConfiguration     any
 	PercentageDisplayFormatConfiguration any
 }
 
@@ -1771,21 +1771,21 @@ type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_Gaug
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions struct {
-	Arc any
-	ArcAxis any
-	Comparison any
-	PrimaryValueDisplayType any
+	Arc                           any
+	ArcAxis                       any
+	Comparison                    any
+	PrimaryValueDisplayType       any
 	PrimaryValueFontConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration struct {
 	ColorConfiguration any
-	DataLabels any
-	FieldWells any
-	GaugeChartOptions any
-	Interactions any
-	TooltipOptions any
-	VisualPalette any
+	DataLabels         any
+	FieldWells         any
+	GaugeChartOptions  any
+	Interactions       any
+	TooltipOptions     any
+	VisualPalette      any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_Arc struct {
@@ -1797,34 +1797,34 @@ type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_C
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition_IconOptions struct {
-	Icon any
+	Icon        any
 	UnicodeIcon any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition struct {
-	Color any
+	Color                any
 	DisplayConfiguration any
-	Expression any
-	IconOptions any
+	Expression           any
+	IconOptions          any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_IconSet struct {
-	Expression any
+	Expression  any
 	IconSetType any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon struct {
 	CustomCondition any
-	IconSet any
+	IconSet         any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue struct {
-	Icon any
+	Icon      any
 	TextColor any
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions struct {
-	Arc any
+	Arc          any
 	PrimaryValue any
 }
 
@@ -1833,19 +1833,19 @@ type Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting s
 }
 
 type Analysis_Definition_Sheets_Visuals_GaugeChartVisual struct {
-	Actions any
-	ChartConfiguration any
+	Actions               any
+	ChartConfiguration    any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWells_GeospatialMapAggregatedFieldWells struct {
-	Colors any
+	Colors     any
 	Geospatial any
-	Values any
+	Values     any
 }
 
 type Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWells struct {
@@ -1874,46 +1874,46 @@ type Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_P
 
 type Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions struct {
 	ClusterMarkerConfiguration any
-	HeatmapConfiguration any
-	SelectedPointStyle any
+	HeatmapConfiguration       any
+	SelectedPointStyle         any
 }
 
 type Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration struct {
-	FieldWells any
-	Interactions any
-	Legend any
-	MapStyleOptions any
+	FieldWells        any
+	Interactions      any
+	Legend            any
+	MapStyleOptions   any
 	PointStyleOptions any
-	Tooltip any
-	VisualPalette any
-	WindowOptions any
+	Tooltip           any
+	VisualPalette     any
+	WindowOptions     any
 }
 
 type Analysis_Definition_Sheets_Visuals_GeospatialMapVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_Colors struct {
-	Color any
+	Color     any
 	DataValue any
 }
 
 type Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale struct {
-	ColorFillType any
-	Colors any
+	ColorFillType  any
+	Colors         any
 	NullValueColor any
 }
 
 type Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells_HeatMapAggregatedFieldWells struct {
 	Columns any
-	Rows any
-	Values any
+	Rows    any
+	Values  any
 }
 
 type Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells struct {
@@ -1922,43 +1922,43 @@ type Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWe
 
 type Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_SortConfiguration struct {
 	HeatMapColumnItemsLimitConfiguration any
-	HeatMapColumnSort any
-	HeatMapRowItemsLimitConfiguration any
-	HeatMapRowSort any
+	HeatMapColumnSort                    any
+	HeatMapRowItemsLimitConfiguration    any
+	HeatMapRowSort                       any
 }
 
 type Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration struct {
-	ColorScale any
+	ColorScale         any
 	ColumnLabelOptions any
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Legend any
-	RowLabelOptions any
-	SortConfiguration any
-	Tooltip any
+	DataLabels         any
+	FieldWells         any
+	Interactions       any
+	Legend             any
+	RowLabelOptions    any
+	SortConfiguration  any
+	Tooltip            any
 }
 
 type Analysis_Definition_Sheets_Visuals_HeatMapVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptions_BinWidth struct {
 	BinCountLimit any
-	Value any
+	Value         any
 }
 
 type Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptions struct {
-	BinCount any
-	BinWidth any
+	BinCount        any
+	BinWidth        any
 	SelectedBinType any
-	StartValue any
+	StartValue      any
 }
 
 type Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_FieldWells_HistogramAggregatedFieldWells struct {
@@ -1970,122 +1970,122 @@ type Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_Field
 }
 
 type Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration struct {
-	BinOptions any
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Tooltip any
-	VisualPalette any
+	BinOptions          any
+	DataLabels          any
+	FieldWells          any
+	Interactions        any
+	Tooltip             any
+	VisualPalette       any
 	XaxisDisplayOptions any
-	XaxisLabelOptions any
+	XaxisLabelOptions   any
 	YaxisDisplayOptions any
 }
 
 type Analysis_Definition_Sheets_Visuals_HistogramVisual struct {
-	Actions any
-	ChartConfiguration any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_Forecast struct {
-	ComputationId any
+	ComputationId          any
 	CustomSeasonalityValue any
-	LowerBoundary any
-	Name any
-	PeriodsBackward any
-	PeriodsForward any
-	PredictionInterval any
-	Seasonality any
-	Time any
-	UpperBoundary any
-	Value any
+	LowerBoundary          any
+	Name                   any
+	PeriodsBackward        any
+	PeriodsForward         any
+	PredictionInterval     any
+	Seasonality            any
+	Time                   any
+	UpperBoundary          any
+	Value                  any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_GrowthRate struct {
 	ComputationId any
-	Name any
-	PeriodSize any
-	Time any
-	Value any
+	Name          any
+	PeriodSize    any
+	Time          any
+	Value         any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MaximumMinimum struct {
 	ComputationId any
-	Name any
-	Time any
-	Type any
-	Value any
+	Name          any
+	Time          any
+	Type          any
+	Value         any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MetricComparison struct {
 	ComputationId any
-	FromValue any
-	Name any
-	TargetValue any
-	Time any
+	FromValue     any
+	Name          any
+	TargetValue   any
+	Time          any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodOverPeriod struct {
 	ComputationId any
-	Name any
-	Time any
-	Value any
+	Name          any
+	Time          any
+	Value         any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodToDate struct {
-	ComputationId any
-	Name any
+	ComputationId         any
+	Name                  any
 	PeriodTimeGranularity any
-	Time any
-	Value any
+	Time                  any
+	Value                 any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomMovers struct {
-	Category any
+	Category      any
 	ComputationId any
-	MoverSize any
-	Name any
-	SortOrder any
-	Time any
-	Type any
-	Value any
+	MoverSize     any
+	Name          any
+	SortOrder     any
+	Time          any
+	Type          any
+	Value         any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomRanked struct {
-	Category any
+	Category      any
 	ComputationId any
-	Name any
-	ResultSize any
-	Type any
-	Value any
+	Name          any
+	ResultSize    any
+	Type          any
+	Value         any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TotalAggregation struct {
 	ComputationId any
-	Name any
-	Value any
+	Name          any
+	Value         any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_UniqueValues struct {
-	Category any
+	Category      any
 	ComputationId any
-	Name any
+	Name          any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations struct {
-	Forecast any
-	GrowthRate any
-	MaximumMinimum any
+	Forecast         any
+	GrowthRate       any
+	MaximumMinimum   any
 	MetricComparison any
 	PeriodOverPeriod any
-	PeriodToDate any
-	TopBottomMovers any
-	TopBottomRanked any
+	PeriodToDate     any
+	TopBottomMovers  any
+	TopBottomRanked  any
 	TotalAggregation any
-	UniqueValues any
+	UniqueValues     any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_CustomNarrative struct {
@@ -2093,32 +2093,32 @@ type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Custo
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration struct {
-	Computations any
+	Computations    any
 	CustomNarrative any
-	Interactions any
+	Interactions    any
 }
 
 type Analysis_Definition_Sheets_Visuals_InsightVisual struct {
-	Actions any
-	DataSetIdentifier any
+	Actions              any
+	DataSetIdentifier    any
 	InsightConfiguration any
-	Subtitle any
-	Title any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_FieldWells struct {
 	TargetValues any
-	TrendGroups any
-	Values any
+	TrendGroups  any
+	Values       any
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_Sparkline struct {
-	Color any
+	Color             any
 	TooltipVisibility any
-	Type any
-	Visibility any
+	Type              any
+	Visibility        any
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_VisualLayoutOptions_StandardLayout struct {
@@ -2130,15 +2130,15 @@ type Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions struct {
-	Comparison any
-	PrimaryValueDisplayType any
-	PrimaryValueFontConfiguration any
-	ProgressBar any
-	SecondaryValue any
+	Comparison                      any
+	PrimaryValueDisplayType         any
+	PrimaryValueFontConfiguration   any
+	ProgressBar                     any
+	SecondaryValue                  any
 	SecondaryValueFontConfiguration any
-	Sparkline any
-	TrendArrows any
-	VisualLayoutOptions any
+	Sparkline                       any
+	TrendArrows                     any
+	VisualLayoutOptions             any
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_SortConfiguration struct {
@@ -2146,17 +2146,17 @@ type Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_SortConfigu
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration struct {
-	FieldWells any
-	Interactions any
-	Kpioptions any
+	FieldWells        any
+	Interactions      any
+	Kpioptions        any
 	SortConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatting_ConditionalFormattingOptions struct {
-	ActualValue any
+	ActualValue     any
 	ComparisonValue any
-	PrimaryValue any
-	ProgressBar any
+	PrimaryValue    any
+	ProgressBar     any
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatting struct {
@@ -2164,14 +2164,14 @@ type Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatting struct {
 }
 
 type Analysis_Definition_Sheets_Visuals_Kpivisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
+	Actions               any
+	ChartConfiguration    any
+	ColumnHierarchies     any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_DataSource struct {
@@ -2180,28 +2180,28 @@ type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLay
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_ColorField struct {
 	ColorDimensionsFields any
-	ColorValuesFields any
+	ColorValuesFields     any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyField struct {
-	Column any
-	FieldId any
+	Column              any
+	FieldId             any
 	FormatConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition struct {
-	ColorField any
+	ColorField      any
 	DatasetKeyField any
-	ShapeKeyField any
+	ShapeKeyField   any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_CategoryDataColors struct {
-	Color any
+	Color     any
 	DataValue any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettings_SymbolStyle struct {
-	FillColor any
+	FillColor   any
 	StrokeColor any
 	StrokeWidth any
 }
@@ -2212,16 +2212,16 @@ type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLay
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical struct {
 	CategoryDataColors any
-	DefaultOpacity any
-	NullDataSettings any
+	DefaultOpacity     any
+	NullDataSettings   any
 	NullDataVisibility any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Gradient struct {
-	DefaultOpacity any
-	NullDataSettings any
+	DefaultOpacity     any
+	NullDataSettings   any
 	NullDataVisibility any
-	StepColors any
+	StepColors         any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Solid struct {
@@ -2231,8 +2231,8 @@ type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLay
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor struct {
 	Categorical any
-	Gradient any
-	Solid any
+	Gradient    any
+	Solid       any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidth struct {
@@ -2258,9 +2258,9 @@ type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLay
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style_CircleSymbolStyle struct {
 	CircleRadius any
-	FillColor any
-	StrokeColor any
-	StrokeWidth any
+	FillColor    any
+	StrokeColor  any
+	StrokeWidth  any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style struct {
@@ -2272,7 +2272,7 @@ type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLay
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayer_Style_PolygonSymbolStyle struct {
-	FillColor any
+	FillColor   any
 	StrokeColor any
 	StrokeWidth any
 }
@@ -2286,68 +2286,68 @@ type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLay
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition struct {
-	LineLayer any
-	PointLayer any
+	LineLayer    any
+	PointLayer   any
 	PolygonLayer any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers struct {
-	Actions any
-	DataSource any
-	JoinDefinition any
-	Label any
+	Actions         any
+	DataSource      any
+	JoinDefinition  any
+	Label           any
 	LayerDefinition any
-	LayerId any
-	LayerType any
-	Tooltip any
-	Visibility any
+	LayerId         any
+	LayerType       any
+	Tooltip         any
+	Visibility      any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapState struct {
-	Bounds any
+	Bounds        any
 	MapNavigation any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapStyle struct {
-	BackgroundColor any
-	BaseMapStyle any
+	BackgroundColor   any
+	BaseMapStyle      any
 	BaseMapVisibility any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration struct {
 	Interactions any
-	Legend any
-	MapLayers any
-	MapState any
-	MapStyle any
+	Legend       any
+	MapLayers    any
+	MapState     any
+	MapStyle     any
 }
 
 type Analysis_Definition_Sheets_Visuals_LayerMapVisual struct {
-	ChartConfiguration any
-	DataSetIdentifier any
-	Subtitle any
-	Title any
+	ChartConfiguration   any
+	DataSetIdentifier    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_LineStyleSettings struct {
 	LineInterpolation any
-	LineStyle any
-	LineVisibility any
-	LineWidth any
+	LineStyle         any
+	LineVisibility    any
+	LineWidth         any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_MarkerStyleSettings struct {
-	MarkerColor any
-	MarkerShape any
-	MarkerSize any
+	MarkerColor      any
+	MarkerShape      any
+	MarkerSize       any
 	MarkerVisibility any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings struct {
-	AxisBinding any
-	LineStyleSettings any
+	AxisBinding         any
+	LineStyleSettings   any
 	MarkerStyleSettings any
 }
 
@@ -2356,23 +2356,23 @@ type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Field
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_ForecastProperties struct {
-	LowerBoundary any
-	PeriodsBackward any
-	PeriodsForward any
+	LowerBoundary      any
+	PeriodsBackward    any
+	PeriodsForward     any
 	PredictionInterval any
-	Seasonality any
-	UpperBoundary any
+	Seasonality        any
+	UpperBoundary      any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfPointScenario struct {
-	Date any
+	Date  any
 	Value any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfRangeScenario struct {
-	EndDate any
+	EndDate   any
 	StartDate any
-	Value any
+	Value     any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario struct {
@@ -2382,7 +2382,7 @@ type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Forec
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations struct {
 	ForecastProperties any
-	Scenario any
+	Scenario           any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptions_MissingDataConfigurations struct {
@@ -2390,73 +2390,73 @@ type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Prima
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptions struct {
-	AxisOptions any
+	AxisOptions               any
 	MissingDataConfigurations any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem_Settings struct {
-	LineStyleSettings any
+	LineStyleSettings   any
 	MarkerStyleSettings any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem struct {
 	AxisBinding any
-	FieldId any
-	FieldValue any
-	Settings any
+	FieldId     any
+	FieldValue  any
+	Settings    any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_FieldSeriesItem struct {
 	AxisBinding any
-	FieldId any
-	Settings any
+	FieldId     any
+	Settings    any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series struct {
 	DataFieldSeriesItem any
-	FieldSeriesItem any
+	FieldSeriesItem     any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_SortConfiguration struct {
-	CategoryItemsLimitConfiguration any
-	CategorySort any
-	ColorItemsLimitConfiguration any
+	CategoryItemsLimitConfiguration  any
+	CategorySort                     any
+	ColorItemsLimitConfiguration     any
 	SmallMultiplesLimitConfiguration any
-	SmallMultiplesSort any
+	SmallMultiplesSort               any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration struct {
 	ContributionAnalysisDefaults any
-	DataLabels any
-	DefaultSeriesSettings any
-	FieldWells any
-	ForecastConfigurations any
-	Interactions any
-	Legend any
-	PrimaryYaxisDisplayOptions any
-	PrimaryYaxisLabelOptions any
-	ReferenceLines any
+	DataLabels                   any
+	DefaultSeriesSettings        any
+	FieldWells                   any
+	ForecastConfigurations       any
+	Interactions                 any
+	Legend                       any
+	PrimaryYaxisDisplayOptions   any
+	PrimaryYaxisLabelOptions     any
+	ReferenceLines               any
 	SecondaryYaxisDisplayOptions any
-	SecondaryYaxisLabelOptions any
-	Series any
-	SingleAxisOptions any
-	SmallMultiplesOptions any
-	SortConfiguration any
-	Tooltip any
-	Type any
-	VisualPalette any
-	XaxisDisplayOptions any
-	XaxisLabelOptions any
+	SecondaryYaxisLabelOptions   any
+	Series                       any
+	SingleAxisOptions            any
+	SmallMultiplesOptions        any
+	SortConfiguration            any
+	Tooltip                      any
+	Type                         any
+	VisualPalette                any
+	XaxisDisplayOptions          any
+	XaxisLabelOptions            any
 }
 
 type Analysis_Definition_Sheets_Visuals_LineChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions_ArcOptions struct {
@@ -2468,14 +2468,14 @@ type Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutO
 }
 
 type Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions struct {
-	ArcOptions any
+	ArcOptions         any
 	DonutCenterOptions any
 }
 
 type Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWells_PieChartAggregatedFieldWells struct {
-	Category any
+	Category       any
 	SmallMultiples any
-	Values any
+	Values         any
 }
 
 type Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWells struct {
@@ -2483,61 +2483,61 @@ type Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldW
 }
 
 type Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_SortConfiguration struct {
-	CategoryItemsLimit any
-	CategorySort any
+	CategoryItemsLimit               any
+	CategorySort                     any
 	SmallMultiplesLimitConfiguration any
-	SmallMultiplesSort any
+	SmallMultiplesSort               any
 }
 
 type Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration struct {
-	CategoryLabelOptions any
+	CategoryLabelOptions         any
 	ContributionAnalysisDefaults any
-	DataLabels any
-	DonutOptions any
-	FieldWells any
-	Interactions any
-	Legend any
-	SmallMultiplesOptions any
-	SortConfiguration any
-	Tooltip any
-	ValueLabelOptions any
-	VisualPalette any
+	DataLabels                   any
+	DonutOptions                 any
+	FieldWells                   any
+	Interactions                 any
+	Legend                       any
+	SmallMultiplesOptions        any
+	SortConfiguration            any
+	Tooltip                      any
+	ValueLabelOptions            any
+	VisualPalette                any
 }
 
 type Analysis_Definition_Sheets_Visuals_PieChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptions_Target struct {
 	FieldDataPathValues any
-	FieldId any
+	FieldId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptions struct {
-	State any
+	State  any
 	Target any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_DataPathOptions struct {
 	DataPathList any
-	Width any
+	Width        any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions struct {
 	CustomLabel any
-	FieldId any
-	Visibility any
+	FieldId     any
+	Visibility  any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions struct {
 	CollapseStateOptions any
-	DataPathOptions any
+	DataPathOptions      any
 	SelectedFieldOptions any
 }
 
@@ -2547,7 +2547,7 @@ type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_Fiel
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_PaginatedReportOptions struct {
 	OverflowColumnHeaderVisibility any
-	VerticalOverflowVisibility any
+	VerticalOverflowVisibility     any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortBy_DataPath struct {
@@ -2556,14 +2556,14 @@ type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_Sort
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortBy struct {
-	Column any
+	Column   any
 	DataPath any
-	Field any
+	Field    any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions struct {
 	FieldId any
-	SortBy any
+	SortBy  any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration struct {
@@ -2571,61 +2571,61 @@ type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_Sort
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_Bottom struct {
-	Color any
-	Style any
+	Color     any
+	Style     any
 	Thickness any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder struct {
-	Bottom any
+	Bottom          any
 	InnerHorizontal any
-	InnerVertical any
-	Left any
-	Right any
-	Top any
+	InnerVertical   any
+	Left            any
+	Right           any
+	Top             any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border struct {
 	SideSpecificBorder any
-	UniformBorder any
+	UniformBorder      any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle struct {
-	BackgroundColor any
-	Border any
-	FontConfiguration any
-	Height any
+	BackgroundColor         any
+	Border                  any
+	FontConfiguration       any
+	Height                  any
 	HorizontalTextAlignment any
-	TextWrap any
-	VerticalTextAlignment any
-	Visibility any
+	TextWrap                any
+	VerticalTextAlignment   any
+	Visibility              any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowAlternateColorOptions struct {
-	RowAlternateColors any
-	Status any
+	RowAlternateColors        any
+	Status                    any
 	UsePrimaryBackgroundColor any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowsLabelOptions struct {
 	CustomLabel any
-	Visibility any
+	Visibility  any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions struct {
-	CellStyle any
+	CellStyle                        any
 	CollapsedRowDimensionsVisibility any
-	ColumnHeaderStyle any
-	ColumnNamesVisibility any
-	DefaultCellWidth any
-	MetricPlacement any
-	RowAlternateColorOptions any
-	RowFieldNamesStyle any
-	RowHeaderStyle any
-	RowsLabelOptions any
-	RowsLayout any
-	SingleMetricVisibility any
-	ToggleButtonsVisibility any
+	ColumnHeaderStyle                any
+	ColumnNamesVisibility            any
+	DefaultCellWidth                 any
+	MetricPlacement                  any
+	RowAlternateColorOptions         any
+	RowFieldNamesStyle               any
+	RowHeaderStyle                   any
+	RowsLabelOptions                 any
+	RowsLayout                       any
+	SingleMetricVisibility           any
+	ToggleButtonsVisibility          any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions_FieldLevelOptions struct {
@@ -2637,14 +2637,14 @@ type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_Tota
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions struct {
-	CustomLabel any
-	FieldLevel any
-	FieldLevelOptions any
+	CustomLabel           any
+	FieldLevel            any
+	FieldLevelOptions     any
 	MetricHeaderCellStyle any
-	StyleTargets any
-	TotalCellStyle any
-	TotalsVisibility any
-	ValueCellStyle any
+	StyleTargets          any
+	TotalCellStyle        any
+	TotalsVisibility      any
+	ValueCellStyle        any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptions_TotalAggregationFunction struct {
@@ -2652,36 +2652,36 @@ type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_Tota
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptions struct {
-	FieldId any
+	FieldId                  any
 	TotalAggregationFunction any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions struct {
-	CustomLabel any
-	MetricHeaderCellStyle any
-	Placement any
-	ScrollStatus any
+	CustomLabel             any
+	MetricHeaderCellStyle   any
+	Placement               any
+	ScrollStatus            any
 	TotalAggregationOptions any
-	TotalCellStyle any
-	TotalsVisibility any
-	ValueCellStyle any
+	TotalCellStyle          any
+	TotalsVisibility        any
+	ValueCellStyle          any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions struct {
 	ColumnSubtotalOptions any
-	ColumnTotalOptions any
-	RowSubtotalOptions any
-	RowTotalOptions any
+	ColumnTotalOptions    any
+	RowSubtotalOptions    any
+	RowTotalOptions       any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration struct {
-	FieldOptions any
-	FieldWells any
-	Interactions any
+	FieldOptions           any
+	FieldWells             any
+	Interactions           any
 	PaginatedReportOptions any
-	SortConfiguration any
-	TableOptions any
-	TotalOptions any
+	SortConfiguration      any
+	TableOptions           any
+	TotalOptions           any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_Scope struct {
@@ -2690,14 +2690,14 @@ type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_C
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_TextFormat struct {
 	BackgroundColor any
-	Icon any
-	TextColor any
+	Icon            any
+	TextColor       any
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell struct {
-	FieldId any
-	Scope any
-	Scopes any
+	FieldId    any
+	Scope      any
+	Scopes     any
 	TextFormat any
 }
 
@@ -2710,19 +2710,19 @@ type Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting s
 }
 
 type Analysis_Definition_Sheets_Visuals_PivotTableVisual struct {
-	Actions any
-	ChartConfiguration any
+	Actions               any
+	ChartConfiguration    any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_FieldWells struct {
-	AxisName any
-	Dimensions any
-	Measures any
+	AxisName     any
+	Dimensions   any
+	Measures     any
 	Unaggregated any
 }
 
@@ -2732,7 +2732,7 @@ type Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConf
 
 type Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration_PluginVisualTableQuerySort struct {
 	ItemsLimitConfiguration any
-	RowSort any
+	RowSort                 any
 }
 
 type Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration struct {
@@ -2740,7 +2740,7 @@ type Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConf
 }
 
 type Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOptions_VisualProperties struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -2749,18 +2749,18 @@ type Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOp
 }
 
 type Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration struct {
-	FieldWells any
+	FieldWells        any
 	SortConfiguration any
-	VisualOptions any
+	VisualOptions     any
 }
 
 type Analysis_Definition_Sheets_Visuals_PluginVisual struct {
-	ChartConfiguration any
-	PluginArn any
-	Subtitle any
-	Title any
+	ChartConfiguration   any
+	PluginArn            any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_BaseSeriesSettings struct {
@@ -2769,8 +2769,8 @@ type Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_Base
 
 type Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWells_RadarChartAggregatedFieldWells struct {
 	Category any
-	Color any
-	Values any
+	Color    any
+	Values   any
 }
 
 type Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWells struct {
@@ -2779,37 +2779,37 @@ type Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_Fiel
 
 type Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration struct {
 	AlternateBandColorsVisibility any
-	AlternateBandEvenColor any
-	AlternateBandOddColor any
-	AxesRangeScale any
-	BaseSeriesSettings any
-	CategoryAxis any
-	CategoryLabelOptions any
-	ColorAxis any
-	ColorLabelOptions any
-	FieldWells any
-	Interactions any
-	Legend any
-	Shape any
-	SortConfiguration any
-	StartAngle any
-	VisualPalette any
+	AlternateBandEvenColor        any
+	AlternateBandOddColor         any
+	AxesRangeScale                any
+	BaseSeriesSettings            any
+	CategoryAxis                  any
+	CategoryLabelOptions          any
+	ColorAxis                     any
+	ColorLabelOptions             any
+	FieldWells                    any
+	Interactions                  any
+	Legend                        any
+	Shape                         any
+	SortConfiguration             any
+	StartAngle                    any
+	VisualPalette                 any
 }
 
 type Analysis_Definition_Sheets_Visuals_RadarChartVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWells_SankeyDiagramAggregatedFieldWells struct {
 	Destination any
-	Source any
-	Weight any
+	Source      any
+	Weight      any
 }
 
 type Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWells struct {
@@ -2818,45 +2818,45 @@ type Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_F
 
 type Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_SortConfiguration struct {
 	DestinationItemsLimit any
-	SourceItemsLimit any
-	WeightSort any
+	SourceItemsLimit      any
+	WeightSort            any
 }
 
 type Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration struct {
-	DataLabels any
-	FieldWells any
-	Interactions any
+	DataLabels        any
+	FieldWells        any
+	Interactions      any
 	SortConfiguration any
 }
 
 type Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual struct {
-	Actions any
-	ChartConfiguration any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotCategoricallyAggregatedFieldWells struct {
 	Category any
-	Label any
-	Size any
-	Xaxis any
-	Yaxis any
+	Label    any
+	Size     any
+	Xaxis    any
+	Yaxis    any
 }
 
 type Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotUnaggregatedFieldWells struct {
 	Category any
-	Label any
-	Size any
-	Xaxis any
-	Yaxis any
+	Label    any
+	Size     any
+	Xaxis    any
+	Yaxis    any
 }
 
 type Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells struct {
 	ScatterPlotCategoricallyAggregatedFieldWells any
-	ScatterPlotUnaggregatedFieldWells any
+	ScatterPlotUnaggregatedFieldWells            any
 }
 
 type Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_SortConfiguration struct {
@@ -2864,27 +2864,27 @@ type Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_Sor
 }
 
 type Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration struct {
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Legend any
-	SortConfiguration any
-	Tooltip any
-	VisualPalette any
+	DataLabels          any
+	FieldWells          any
+	Interactions        any
+	Legend              any
+	SortConfiguration   any
+	Tooltip             any
+	VisualPalette       any
 	XaxisDisplayOptions any
-	XaxisLabelOptions any
+	XaxisLabelOptions   any
 	YaxisDisplayOptions any
-	YaxisLabelOptions any
+	YaxisLabelOptions   any
 }
 
 type Analysis_Definition_Sheets_Visuals_ScatterPlotVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_PinnedFieldOptions struct {
@@ -2905,7 +2905,7 @@ type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOpti
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content_CustomTextContent struct {
 	FontConfiguration any
-	Value any
+	Value             any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content struct {
@@ -2915,32 +2915,32 @@ type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOpti
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration struct {
 	Content any
-	Target any
+	Target  any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling struct {
 	ImageConfiguration any
-	LinkConfiguration any
+	LinkConfiguration  any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions struct {
 	CustomLabel any
-	FieldId any
-	Urlstyling any
-	Visibility any
-	Width any
+	FieldId     any
+	Urlstyling  any
+	Visibility  any
+	Width       any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_TransposedTableOptions struct {
 	ColumnIndex any
-	ColumnType any
+	ColumnType  any
 	ColumnWidth any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions struct {
-	Order any
-	PinnedFieldOptions any
-	SelectedFieldOptions any
+	Order                  any
+	PinnedFieldOptions     any
+	SelectedFieldOptions   any
 	TransposedTableOptions any
 }
 
@@ -2949,17 +2949,17 @@ type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWell
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWells struct {
-	TableAggregatedFieldWells any
+	TableAggregatedFieldWells   any
 	TableUnaggregatedFieldWells any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_SortConfiguration struct {
 	PaginationConfiguration any
-	RowSort any
+	RowSort                 any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizations_DataBars struct {
-	FieldId any
+	FieldId       any
 	NegativeColor any
 	PositiveColor any
 }
@@ -2969,45 +2969,45 @@ type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInli
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableOptions struct {
-	CellStyle any
-	HeaderStyle any
-	Orientation any
+	CellStyle                any
+	HeaderStyle              any
+	Orientation              any
 	RowAlternateColorOptions any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TotalOptions struct {
-	CustomLabel any
-	Placement any
-	ScrollStatus any
+	CustomLabel             any
+	Placement               any
+	ScrollStatus            any
 	TotalAggregationOptions any
-	TotalCellStyle any
-	TotalsVisibility any
+	TotalCellStyle          any
+	TotalsVisibility        any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration struct {
-	FieldOptions any
-	FieldWells any
-	Interactions any
-	PaginatedReportOptions any
-	SortConfiguration any
+	FieldOptions              any
+	FieldWells                any
+	Interactions              any
+	PaginatedReportOptions    any
+	SortConfiguration         any
 	TableInlineVisualizations any
-	TableOptions any
-	TotalOptions any
+	TableOptions              any
+	TotalOptions              any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell struct {
-	FieldId any
+	FieldId    any
 	TextFormat any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_Row struct {
 	BackgroundColor any
-	TextColor any
+	TextColor       any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions struct {
 	Cell any
-	Row any
+	Row  any
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting struct {
@@ -3015,19 +3015,19 @@ type Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting struct
 }
 
 type Analysis_Definition_Sheets_Visuals_TableVisual struct {
-	Actions any
-	ChartConfiguration any
+	Actions               any
+	ChartConfiguration    any
 	ConditionalFormatting any
-	Subtitle any
-	Title any
-	VisualContentAltText any
-	VisualId any
+	Subtitle              any
+	Title                 any
+	VisualContentAltText  any
+	VisualId              any
 }
 
 type Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWells_TreeMapAggregatedFieldWells struct {
 	Colors any
 	Groups any
-	Sizes any
+	Sizes  any
 }
 
 type Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWells struct {
@@ -3036,36 +3036,36 @@ type Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWe
 
 type Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_SortConfiguration struct {
 	TreeMapGroupItemsLimitConfiguration any
-	TreeMapSort any
+	TreeMapSort                         any
 }
 
 type Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration struct {
 	ColorLabelOptions any
-	ColorScale any
-	DataLabels any
-	FieldWells any
+	ColorScale        any
+	DataLabels        any
+	FieldWells        any
 	GroupLabelOptions any
-	Interactions any
-	Legend any
-	SizeLabelOptions any
+	Interactions      any
+	Legend            any
+	SizeLabelOptions  any
 	SortConfiguration any
-	Tooltip any
+	Tooltip           any
 }
 
 type Analysis_Definition_Sheets_Visuals_TreeMapVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfiguration_GroupColorConfiguration struct {
 	NegativeBarColor any
 	PositiveBarColor any
-	TotalBarColor any
+	TotalBarColor    any
 }
 
 type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfiguration struct {
@@ -3075,7 +3075,7 @@ type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_Color
 type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWells_WaterfallChartAggregatedFieldWells struct {
 	Breakdowns any
 	Categories any
-	Values any
+	Values     any
 }
 
 type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWells struct {
@@ -3084,7 +3084,7 @@ type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_Field
 
 type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_SortConfiguration struct {
 	BreakdownItemsLimit any
-	CategorySort any
+	CategorySort        any
 }
 
 type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_WaterfallChartOptions struct {
@@ -3093,32 +3093,32 @@ type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_Water
 
 type Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration struct {
 	CategoryAxisDisplayOptions any
-	CategoryAxisLabelOptions any
-	ColorConfiguration any
-	DataLabels any
-	FieldWells any
-	Interactions any
-	Legend any
+	CategoryAxisLabelOptions   any
+	ColorConfiguration         any
+	DataLabels                 any
+	FieldWells                 any
+	Interactions               any
+	Legend                     any
 	PrimaryYaxisDisplayOptions any
-	PrimaryYaxisLabelOptions any
-	SortConfiguration any
-	VisualPalette any
-	WaterfallChartOptions any
+	PrimaryYaxisLabelOptions   any
+	SortConfiguration          any
+	VisualPalette              any
+	WaterfallChartOptions      any
 }
 
 type Analysis_Definition_Sheets_Visuals_WaterfallVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWells_WordCloudAggregatedFieldWells struct {
 	GroupBy any
-	Size any
+	Size    any
 }
 
 type Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWells struct {
@@ -3126,79 +3126,79 @@ type Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_Field
 }
 
 type Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_WordCloudOptions struct {
-	CloudLayout any
+	CloudLayout         any
 	MaximumStringLength any
-	WordCasing any
-	WordOrientation any
-	WordPadding any
-	WordScaling any
+	WordCasing          any
+	WordOrientation     any
+	WordPadding         any
+	WordScaling         any
 }
 
 type Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration struct {
 	CategoryLabelOptions any
-	FieldWells any
-	Interactions any
-	SortConfiguration any
-	WordCloudOptions any
+	FieldWells           any
+	Interactions         any
+	SortConfiguration    any
+	WordCloudOptions     any
 }
 
 type Analysis_Definition_Sheets_Visuals_WordCloudVisual struct {
-	Actions any
-	ChartConfiguration any
-	ColumnHierarchies any
-	Subtitle any
-	Title any
+	Actions              any
+	ChartConfiguration   any
+	ColumnHierarchies    any
+	Subtitle             any
+	Title                any
 	VisualContentAltText any
-	VisualId any
+	VisualId             any
 }
 
 type Analysis_Definition_Sheets_Visuals struct {
-	BarChartVisual any
-	BoxPlotVisual any
-	ComboChartVisual any
+	BarChartVisual      any
+	BoxPlotVisual       any
+	ComboChartVisual    any
 	CustomContentVisual any
-	EmptyVisual any
-	FilledMapVisual any
-	FunnelChartVisual any
-	GaugeChartVisual any
+	EmptyVisual         any
+	FilledMapVisual     any
+	FunnelChartVisual   any
+	GaugeChartVisual    any
 	GeospatialMapVisual any
-	HeatMapVisual any
-	HistogramVisual any
-	InsightVisual any
-	Kpivisual any
-	LayerMapVisual any
-	LineChartVisual any
-	PieChartVisual any
-	PivotTableVisual any
-	PluginVisual any
-	RadarChartVisual any
+	HeatMapVisual       any
+	HistogramVisual     any
+	InsightVisual       any
+	Kpivisual           any
+	LayerMapVisual      any
+	LineChartVisual     any
+	PieChartVisual      any
+	PivotTableVisual    any
+	PluginVisual        any
+	RadarChartVisual    any
 	SankeyDiagramVisual any
-	ScatterPlotVisual any
-	TableVisual any
-	TreeMapVisual any
-	WaterfallVisual any
-	WordCloudVisual any
+	ScatterPlotVisual   any
+	TableVisual         any
+	TreeMapVisual       any
+	WaterfallVisual     any
+	WordCloudVisual     any
 }
 
 type Analysis_Definition_Sheets struct {
-	ContentType any
-	Description any
-	FilterControls any
-	Images any
-	Layouts any
-	Name any
-	ParameterControls any
+	ContentType         any
+	Description         any
+	FilterControls      any
+	Images              any
+	Layouts             any
+	Name                any
+	ParameterControls   any
 	SheetControlLayouts any
-	SheetId any
-	TextBoxes any
-	Title any
-	Visuals any
+	SheetId             any
+	TextBoxes           any
+	Title               any
+	Visuals             any
 }
 
 type Analysis_Definition_StaticFiles_ImageStaticFile_Source_S3Options struct {
 	BucketName any
-	ObjectKey any
-	Region any
+	ObjectKey  any
+	Region     any
 }
 
 type Analysis_Definition_StaticFiles_ImageStaticFile_Source_UrlOptions struct {
@@ -3206,31 +3206,31 @@ type Analysis_Definition_StaticFiles_ImageStaticFile_Source_UrlOptions struct {
 }
 
 type Analysis_Definition_StaticFiles_ImageStaticFile_Source struct {
-	S3Options any
+	S3Options  any
 	UrlOptions any
 }
 
 type Analysis_Definition_StaticFiles_ImageStaticFile struct {
-	Source any
+	Source       any
 	StaticFileId any
 }
 
 type Analysis_Definition_StaticFiles struct {
-	ImageStaticFile any
+	ImageStaticFile   any
 	SpatialStaticFile any
 }
 
 type Analysis_Definition struct {
-	AnalysisDefaults any
-	CalculatedFields any
-	ColumnConfigurations any
+	AnalysisDefaults              any
+	CalculatedFields              any
+	ColumnConfigurations          any
 	DataSetIdentifierDeclarations any
-	FilterGroups any
-	Options any
-	ParameterDeclarations any
-	QueryExecutionOptions any
-	Sheets any
-	StaticFiles any
+	FilterGroups                  any
+	Options                       any
+	ParameterDeclarations         any
+	QueryExecutionOptions         any
+	Sheets                        any
+	StaticFiles                   any
 }
 
 type Analysis_Errors_ViolatedEntities struct {
@@ -3238,18 +3238,18 @@ type Analysis_Errors_ViolatedEntities struct {
 }
 
 type Analysis_Errors struct {
-	Message any
-	Type any
+	Message          any
+	Type             any
 	ViolatedEntities any
 }
 
 type Analysis_Parameters_DateTimeParameters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type Analysis_Parameters_DecimalParameters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -3265,17 +3265,17 @@ type Analysis_Parameters struct {
 }
 
 type Analysis_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type Analysis_Sheets struct {
-	Name any
+	Name    any
 	SheetId any
 }
 
 type Analysis_SourceEntity_SourceTemplate_DataSetReferences struct {
-	DataSetArn any
+	DataSetArn         any
 	DataSetPlaceholder any
 }
 
@@ -3292,7 +3292,7 @@ type Analysis_SourceEntity struct {
 }
 
 type Analysis_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -3301,7527 +3301,7527 @@ type Analysis_ValidationStrategy struct {
 }
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeForm_CanvasSizeOptions_ScreenCanvasSizeOptionsFields = ubx.FieldMap{
-		"OptimizedViewPortWidth": ubx.FieldSpec{WireName: "optimized_view_port_width"},
-	}
+	"OptimizedViewPortWidth": ubx.FieldSpec{WireName: "optimized_view_port_width"},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeForm_CanvasSizeOptionsFields = ubx.FieldMap{
-		"ScreenCanvasSizeOptions": ubx.FieldSpec{
-			WireName: "screen_canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeForm_CanvasSizeOptions_ScreenCanvasSizeOptionsFields,
-		},
-	}
+	"ScreenCanvasSizeOptions": ubx.FieldSpec{
+		WireName: "screen_canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeForm_CanvasSizeOptions_ScreenCanvasSizeOptionsFields,
+	},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeFormFields = ubx.FieldMap{
-		"CanvasSizeOptions": ubx.FieldSpec{
-			WireName: "canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeForm_CanvasSizeOptionsFields,
-		},
-	}
+	"CanvasSizeOptions": ubx.FieldSpec{
+		WireName: "canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeForm_CanvasSizeOptionsFields,
+	},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptions_ScreenCanvasSizeOptionsFields = ubx.FieldMap{
-		"OptimizedViewPortWidth": ubx.FieldSpec{WireName: "optimized_view_port_width"},
-		"ResizeOption": ubx.FieldSpec{WireName: "resize_option"},
-	}
+	"OptimizedViewPortWidth": ubx.FieldSpec{WireName: "optimized_view_port_width"},
+	"ResizeOption":           ubx.FieldSpec{WireName: "resize_option"},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptionsFields = ubx.FieldMap{
-		"ScreenCanvasSizeOptions": ubx.FieldSpec{
-			WireName: "screen_canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptions_ScreenCanvasSizeOptionsFields,
-		},
-	}
+	"ScreenCanvasSizeOptions": ubx.FieldSpec{
+		WireName: "screen_canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptions_ScreenCanvasSizeOptionsFields,
+	},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_GridFields = ubx.FieldMap{
-		"CanvasSizeOptions": ubx.FieldSpec{
-			WireName: "canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptionsFields,
-		},
-	}
+	"CanvasSizeOptions": ubx.FieldSpec{
+		WireName: "canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptionsFields,
+	},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfigurationFields = ubx.FieldMap{
-		"FreeForm": ubx.FieldSpec{
-			WireName: "free_form",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeFormFields,
-		},
-		"Grid": ubx.FieldSpec{
-			WireName: "grid",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_GridFields,
-		},
-	}
+	"FreeForm": ubx.FieldSpec{
+		WireName: "free_form",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeFormFields,
+	},
+	"Grid": ubx.FieldSpec{
+		WireName: "grid",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_GridFields,
+	},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptions_PaperMarginFields = ubx.FieldMap{
-		"Bottom": ubx.FieldSpec{WireName: "bottom"},
-		"Left": ubx.FieldSpec{WireName: "left"},
-		"Right": ubx.FieldSpec{WireName: "right"},
-		"Top": ubx.FieldSpec{WireName: "top"},
-	}
+	"Bottom": ubx.FieldSpec{WireName: "bottom"},
+	"Left":   ubx.FieldSpec{WireName: "left"},
+	"Right":  ubx.FieldSpec{WireName: "right"},
+	"Top":    ubx.FieldSpec{WireName: "top"},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptionsFields = ubx.FieldMap{
-		"PaperMargin": ubx.FieldSpec{
-			WireName: "paper_margin",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptions_PaperMarginFields,
-		},
-		"PaperOrientation": ubx.FieldSpec{WireName: "paper_orientation"},
-		"PaperSize": ubx.FieldSpec{WireName: "paper_size"},
-	}
+	"PaperMargin": ubx.FieldSpec{
+		WireName: "paper_margin",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptions_PaperMarginFields,
+	},
+	"PaperOrientation": ubx.FieldSpec{WireName: "paper_orientation"},
+	"PaperSize":        ubx.FieldSpec{WireName: "paper_size"},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptionsFields = ubx.FieldMap{
-		"PaperCanvasSizeOptions": ubx.FieldSpec{
-			WireName: "paper_canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptionsFields,
-		},
-	}
+	"PaperCanvasSizeOptions": ubx.FieldSpec{
+		WireName: "paper_canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptionsFields,
+	},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBasedFields = ubx.FieldMap{
-		"CanvasSizeOptions": ubx.FieldSpec{
-			WireName: "canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptionsFields,
-		},
-	}
+	"CanvasSizeOptions": ubx.FieldSpec{
+		WireName: "canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptionsFields,
+	},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfigurationFields = ubx.FieldMap{
-		"SectionBased": ubx.FieldSpec{
-			WireName: "section_based",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBasedFields,
-		},
-	}
+	"SectionBased": ubx.FieldSpec{
+		WireName: "section_based",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBasedFields,
+	},
+}
 
 var Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfigurationFields = ubx.FieldMap{
-		"InteractiveLayoutConfiguration": ubx.FieldSpec{
-			WireName: "interactive_layout_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfigurationFields,
-		},
-		"PaginatedLayoutConfiguration": ubx.FieldSpec{
-			WireName: "paginated_layout_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfigurationFields,
-		},
-		"SheetContentType": ubx.FieldSpec{WireName: "sheet_content_type"},
-	}
+	"InteractiveLayoutConfiguration": ubx.FieldSpec{
+		WireName: "interactive_layout_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfigurationFields,
+	},
+	"PaginatedLayoutConfiguration": ubx.FieldSpec{
+		WireName: "paginated_layout_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfigurationFields,
+	},
+	"SheetContentType": ubx.FieldSpec{WireName: "sheet_content_type"},
+}
 
 var Analysis_Definition_AnalysisDefaultsFields = ubx.FieldMap{
-		"DefaultNewSheetConfiguration": ubx.FieldSpec{
-			WireName: "default_new_sheet_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfigurationFields,
-		},
-	}
+	"DefaultNewSheetConfiguration": ubx.FieldSpec{
+		WireName: "default_new_sheet_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfigurationFields,
+	},
+}
 
 var Analysis_Definition_CalculatedFieldsFields = ubx.FieldMap{
-		"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
+	"Expression":        ubx.FieldSpec{WireName: "expression"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+}
 
 var Analysis_Definition_ColumnConfigurations_ColorsConfiguration_CustomColorsFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"FieldValue": ubx.FieldSpec{WireName: "field_value"},
-		"SpecialValue": ubx.FieldSpec{WireName: "special_value"},
-	}
+	"Color":        ubx.FieldSpec{WireName: "color"},
+	"FieldValue":   ubx.FieldSpec{WireName: "field_value"},
+	"SpecialValue": ubx.FieldSpec{WireName: "special_value"},
+}
 
 var Analysis_Definition_ColumnConfigurations_ColorsConfigurationFields = ubx.FieldMap{
-		"CustomColors": ubx.FieldSpec{
-			WireName: "custom_colors",
-			Kind: "list",
-			Fields: Analysis_Definition_ColumnConfigurations_ColorsConfiguration_CustomColorsFields,
-		},
-	}
+	"CustomColors": ubx.FieldSpec{
+		WireName: "custom_colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColorsConfiguration_CustomColorsFields,
+	},
+}
 
 var Analysis_Definition_ColumnConfigurations_ColumnFields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
-	}
+	"ColumnName":        ubx.FieldSpec{WireName: "column_name"},
+	"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields = ubx.FieldMap{
-		"NullString": ubx.FieldSpec{WireName: "null_string"},
-	}
+	"NullString": ubx.FieldSpec{WireName: "null_string"},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_DecimalPlacesConfigurationFields = ubx.FieldMap{
-		"DecimalPlaces": ubx.FieldSpec{WireName: "decimal_places"},
-	}
+	"DecimalPlaces": ubx.FieldSpec{WireName: "decimal_places"},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_NegativeValueConfigurationFields = ubx.FieldMap{
-		"DisplayMode": ubx.FieldSpec{WireName: "display_mode"},
-	}
+	"DisplayMode": ubx.FieldSpec{WireName: "display_mode"},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfiguration_ThousandsSeparatorFields = ubx.FieldMap{
-		"GroupingStyle": ubx.FieldSpec{WireName: "grouping_style"},
-		"Symbol": ubx.FieldSpec{WireName: "symbol"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"GroupingStyle": ubx.FieldSpec{WireName: "grouping_style"},
+	"Symbol":        ubx.FieldSpec{WireName: "symbol"},
+	"Visibility":    ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfigurationFields = ubx.FieldMap{
-		"DecimalSeparator": ubx.FieldSpec{WireName: "decimal_separator"},
-		"ThousandsSeparator": ubx.FieldSpec{
-			WireName: "thousands_separator",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfiguration_ThousandsSeparatorFields,
-		},
-	}
+	"DecimalSeparator": ubx.FieldSpec{WireName: "decimal_separator"},
+	"ThousandsSeparator": ubx.FieldSpec{
+		WireName: "thousands_separator",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfiguration_ThousandsSeparatorFields,
+	},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfigurationFields = ubx.FieldMap{
-		"DecimalPlacesConfiguration": ubx.FieldSpec{
-			WireName: "decimal_places_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_DecimalPlacesConfigurationFields,
-		},
-		"NegativeValueConfiguration": ubx.FieldSpec{
-			WireName: "negative_value_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_NegativeValueConfigurationFields,
-		},
-		"NullValueFormatConfiguration": ubx.FieldSpec{
-			WireName: "null_value_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
-		},
-		"NumberScale": ubx.FieldSpec{WireName: "number_scale"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"SeparatorConfiguration": ubx.FieldSpec{
-			WireName: "separator_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfigurationFields,
-		},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-		"Symbol": ubx.FieldSpec{WireName: "symbol"},
-	}
+	"DecimalPlacesConfiguration": ubx.FieldSpec{
+		WireName: "decimal_places_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_DecimalPlacesConfigurationFields,
+	},
+	"NegativeValueConfiguration": ubx.FieldSpec{
+		WireName: "negative_value_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_NegativeValueConfigurationFields,
+	},
+	"NullValueFormatConfiguration": ubx.FieldSpec{
+		WireName: "null_value_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
+	},
+	"NumberScale": ubx.FieldSpec{WireName: "number_scale"},
+	"Prefix":      ubx.FieldSpec{WireName: "prefix"},
+	"SeparatorConfiguration": ubx.FieldSpec{
+		WireName: "separator_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfigurationFields,
+	},
+	"Suffix": ubx.FieldSpec{WireName: "suffix"},
+	"Symbol": ubx.FieldSpec{WireName: "symbol"},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_NumberDisplayFormatConfigurationFields = ubx.FieldMap{
-		"DecimalPlacesConfiguration": ubx.FieldSpec{
-			WireName: "decimal_places_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_DecimalPlacesConfigurationFields,
-		},
-		"NegativeValueConfiguration": ubx.FieldSpec{
-			WireName: "negative_value_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_NegativeValueConfigurationFields,
-		},
-		"NullValueFormatConfiguration": ubx.FieldSpec{
-			WireName: "null_value_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
-		},
-		"NumberScale": ubx.FieldSpec{WireName: "number_scale"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"SeparatorConfiguration": ubx.FieldSpec{
-			WireName: "separator_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfigurationFields,
-		},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"DecimalPlacesConfiguration": ubx.FieldSpec{
+		WireName: "decimal_places_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_DecimalPlacesConfigurationFields,
+	},
+	"NegativeValueConfiguration": ubx.FieldSpec{
+		WireName: "negative_value_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_NegativeValueConfigurationFields,
+	},
+	"NullValueFormatConfiguration": ubx.FieldSpec{
+		WireName: "null_value_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
+	},
+	"NumberScale": ubx.FieldSpec{WireName: "number_scale"},
+	"Prefix":      ubx.FieldSpec{WireName: "prefix"},
+	"SeparatorConfiguration": ubx.FieldSpec{
+		WireName: "separator_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfigurationFields,
+	},
+	"Suffix": ubx.FieldSpec{WireName: "suffix"},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_PercentageDisplayFormatConfigurationFields = ubx.FieldMap{
-		"DecimalPlacesConfiguration": ubx.FieldSpec{
-			WireName: "decimal_places_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_DecimalPlacesConfigurationFields,
-		},
-		"NegativeValueConfiguration": ubx.FieldSpec{
-			WireName: "negative_value_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_NegativeValueConfigurationFields,
-		},
-		"NullValueFormatConfiguration": ubx.FieldSpec{
-			WireName: "null_value_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
-		},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"SeparatorConfiguration": ubx.FieldSpec{
-			WireName: "separator_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfigurationFields,
-		},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"DecimalPlacesConfiguration": ubx.FieldSpec{
+		WireName: "decimal_places_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_DecimalPlacesConfigurationFields,
+	},
+	"NegativeValueConfiguration": ubx.FieldSpec{
+		WireName: "negative_value_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_NegativeValueConfigurationFields,
+	},
+	"NullValueFormatConfiguration": ubx.FieldSpec{
+		WireName: "null_value_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
+	},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	"SeparatorConfiguration": ubx.FieldSpec{
+		WireName: "separator_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfiguration_SeparatorConfigurationFields,
+	},
+	"Suffix": ubx.FieldSpec{WireName: "suffix"},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields = ubx.FieldMap{
-		"CurrencyDisplayFormatConfiguration": ubx.FieldSpec{
-			WireName: "currency_display_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfigurationFields,
-		},
-		"NumberDisplayFormatConfiguration": ubx.FieldSpec{
-			WireName: "number_display_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_NumberDisplayFormatConfigurationFields,
-		},
-		"PercentageDisplayFormatConfiguration": ubx.FieldSpec{
-			WireName: "percentage_display_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_PercentageDisplayFormatConfigurationFields,
-		},
-	}
+	"CurrencyDisplayFormatConfiguration": ubx.FieldSpec{
+		WireName: "currency_display_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_CurrencyDisplayFormatConfigurationFields,
+	},
+	"NumberDisplayFormatConfiguration": ubx.FieldSpec{
+		WireName: "number_display_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_NumberDisplayFormatConfigurationFields,
+	},
+	"PercentageDisplayFormatConfiguration": ubx.FieldSpec{
+		WireName: "percentage_display_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_PercentageDisplayFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfigurationFields = ubx.FieldMap{
-		"DateTimeFormat": ubx.FieldSpec{WireName: "date_time_format"},
-		"NullValueFormatConfiguration": ubx.FieldSpec{
-			WireName: "null_value_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
-		},
-		"NumericFormatConfiguration": ubx.FieldSpec{
-			WireName: "numeric_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields,
-		},
-	}
+	"DateTimeFormat": ubx.FieldSpec{WireName: "date_time_format"},
+	"NullValueFormatConfiguration": ubx.FieldSpec{
+		WireName: "null_value_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
+	},
+	"NumericFormatConfiguration": ubx.FieldSpec{
+		WireName: "numeric_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfigurationFields = ubx.FieldMap{
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields,
-		},
-	}
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfigurationFields = ubx.FieldMap{
-		"NullValueFormatConfiguration": ubx.FieldSpec{
-			WireName: "null_value_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
-		},
-		"NumericFormatConfiguration": ubx.FieldSpec{
-			WireName: "numeric_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields,
-		},
-	}
+	"NullValueFormatConfiguration": ubx.FieldSpec{
+		WireName: "null_value_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NullValueFormatConfigurationFields,
+	},
+	"NumericFormatConfiguration": ubx.FieldSpec{
+		WireName: "numeric_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_ColumnConfigurations_FormatConfigurationFields = ubx.FieldMap{
-		"DateTimeFormatConfiguration": ubx.FieldSpec{
-			WireName: "date_time_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfigurationFields,
-		},
-		"NumberFormatConfiguration": ubx.FieldSpec{
-			WireName: "number_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfigurationFields,
-		},
-		"StringFormatConfiguration": ubx.FieldSpec{
-			WireName: "string_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfigurationFields,
-		},
-	}
+	"DateTimeFormatConfiguration": ubx.FieldSpec{
+		WireName: "date_time_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfigurationFields,
+	},
+	"NumberFormatConfiguration": ubx.FieldSpec{
+		WireName: "number_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfigurationFields,
+	},
+	"StringFormatConfiguration": ubx.FieldSpec{
+		WireName: "string_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_ColumnConfigurationsFields = ubx.FieldMap{
-		"ColorsConfiguration": ubx.FieldSpec{
-			WireName: "colors_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColorsConfigurationFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfigurationFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"ColorsConfiguration": ubx.FieldSpec{
+		WireName: "colors_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColorsConfigurationFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfigurationFields,
+	},
+	"Role": ubx.FieldSpec{WireName: "role"},
+}
 
 var Analysis_Definition_DataSetIdentifierDeclarationsFields = ubx.FieldMap{
-		"DataSetArn": ubx.FieldSpec{WireName: "data_set_arn"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-	}
+	"DataSetArn": ubx.FieldSpec{WireName: "data_set_arn"},
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterConfigurationFields = ubx.FieldMap{
-		"CategoryValue": ubx.FieldSpec{WireName: "category_value"},
-		"MatchOperator": ubx.FieldSpec{WireName: "match_operator"},
-		"NullOption": ubx.FieldSpec{WireName: "null_option"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"SelectAllOptions": ubx.FieldSpec{WireName: "select_all_options"},
-	}
+	"CategoryValue":    ubx.FieldSpec{WireName: "category_value"},
+	"MatchOperator":    ubx.FieldSpec{WireName: "match_operator"},
+	"NullOption":       ubx.FieldSpec{WireName: "null_option"},
+	"ParameterName":    ubx.FieldSpec{WireName: "parameter_name"},
+	"SelectAllOptions": ubx.FieldSpec{WireName: "select_all_options"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterListConfigurationFields = ubx.FieldMap{
-		"CategoryValues": ubx.FieldSpec{WireName: "category_values"},
-		"MatchOperator": ubx.FieldSpec{WireName: "match_operator"},
-		"NullOption": ubx.FieldSpec{WireName: "null_option"},
-		"SelectAllOptions": ubx.FieldSpec{WireName: "select_all_options"},
-	}
+	"CategoryValues":   ubx.FieldSpec{WireName: "category_values"},
+	"MatchOperator":    ubx.FieldSpec{WireName: "match_operator"},
+	"NullOption":       ubx.FieldSpec{WireName: "null_option"},
+	"SelectAllOptions": ubx.FieldSpec{WireName: "select_all_options"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_ConfigurationFields = ubx.FieldMap{
-		"CustomFilterConfiguration": ubx.FieldSpec{
-			WireName: "custom_filter_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterConfigurationFields,
-		},
-		"CustomFilterListConfiguration": ubx.FieldSpec{
-			WireName: "custom_filter_list_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterListConfigurationFields,
-		},
-		"FilterListConfiguration": ubx.FieldSpec{
-			WireName: "filter_list_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterListConfigurationFields,
-		},
-	}
+	"CustomFilterConfiguration": ubx.FieldSpec{
+		WireName: "custom_filter_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterConfigurationFields,
+	},
+	"CustomFilterListConfiguration": ubx.FieldSpec{
+		WireName: "custom_filter_list_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterListConfigurationFields,
+	},
+	"FilterListConfiguration": ubx.FieldSpec{
+		WireName: "filter_list_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_Configuration_CustomFilterListConfigurationFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields = ubx.FieldMap{
-		"InfoIconText": ubx.FieldSpec{WireName: "info_icon_text"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"InfoIconText": ubx.FieldSpec{WireName: "info_icon_text"},
+	"Visibility":   ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration_FontSizeFields = ubx.FieldMap{
-		"Absolute": ubx.FieldSpec{WireName: "absolute"},
-		"Relative": ubx.FieldSpec{WireName: "relative"},
-	}
+	"Absolute": ubx.FieldSpec{WireName: "absolute"},
+	"Relative": ubx.FieldSpec{WireName: "relative"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration_FontWeightFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields = ubx.FieldMap{
-		"FontColor": ubx.FieldSpec{WireName: "font_color"},
-		"FontDecoration": ubx.FieldSpec{WireName: "font_decoration"},
-		"FontFamily": ubx.FieldSpec{WireName: "font_family"},
-		"FontSize": ubx.FieldSpec{
-			WireName: "font_size",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration_FontSizeFields,
-		},
-		"FontStyle": ubx.FieldSpec{WireName: "font_style"},
-		"FontWeight": ubx.FieldSpec{
-			WireName: "font_weight",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration_FontWeightFields,
-		},
-	}
+	"FontColor":      ubx.FieldSpec{WireName: "font_color"},
+	"FontDecoration": ubx.FieldSpec{WireName: "font_decoration"},
+	"FontFamily":     ubx.FieldSpec{WireName: "font_family"},
+	"FontSize": ubx.FieldSpec{
+		WireName: "font_size",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration_FontSizeFields,
+	},
+	"FontStyle": ubx.FieldSpec{WireName: "font_style"},
+	"FontWeight": ubx.FieldSpec{
+		WireName: "font_weight",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfiguration_FontWeightFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields = ubx.FieldMap{
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-		"FontConfiguration": ubx.FieldSpec{
-			WireName: "font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
+	"FontConfiguration": ubx.FieldSpec{
+		WireName: "font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptionsFields = ubx.FieldMap{
-		"DateIconVisibility": ubx.FieldSpec{WireName: "date_icon_visibility"},
-		"DateTimeFormat": ubx.FieldSpec{WireName: "date_time_format"},
-		"HelperTextVisibility": ubx.FieldSpec{WireName: "helper_text_visibility"},
-		"InfoIconLabelOptions": ubx.FieldSpec{
-			WireName: "info_icon_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
-		},
-		"TitleOptions": ubx.FieldSpec{
-			WireName: "title_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
-		},
-	}
+	"DateIconVisibility":   ubx.FieldSpec{WireName: "date_icon_visibility"},
+	"DateTimeFormat":       ubx.FieldSpec{WireName: "date_time_format"},
+	"HelperTextVisibility": ubx.FieldSpec{WireName: "helper_text_visibility"},
+	"InfoIconLabelOptions": ubx.FieldSpec{
+		WireName: "info_icon_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
+	},
+	"TitleOptions": ubx.FieldSpec{
+		WireName: "title_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptionsFields = ubx.FieldMap{
-		"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptionsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptionsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields = ubx.FieldMap{
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptionsFields = ubx.FieldMap{
-		"InfoIconLabelOptions": ubx.FieldSpec{
-			WireName: "info_icon_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
-		},
-		"SelectAllOptions": ubx.FieldSpec{
-			WireName: "select_all_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"TitleOptions": ubx.FieldSpec{
-			WireName: "title_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
-		},
-	}
+	"InfoIconLabelOptions": ubx.FieldSpec{
+		WireName: "info_icon_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
+	},
+	"SelectAllOptions": ubx.FieldSpec{
+		WireName: "select_all_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"TitleOptions": ubx.FieldSpec{
+		WireName: "title_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptionsFields = ubx.FieldMap{
-		"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptionsFields,
-		},
-		"SelectableValues": ubx.FieldSpec{
-			WireName: "selectable_values",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptionsFields,
+	},
+	"SelectableValues": ubx.FieldSpec{
+		WireName: "selectable_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptionsFields = ubx.FieldMap{
-		"InfoIconLabelOptions": ubx.FieldSpec{
-			WireName: "info_icon_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
-		},
-		"SearchOptions": ubx.FieldSpec{
-			WireName: "search_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"SelectAllOptions": ubx.FieldSpec{
-			WireName: "select_all_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"TitleOptions": ubx.FieldSpec{
-			WireName: "title_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
-		},
-	}
+	"InfoIconLabelOptions": ubx.FieldSpec{
+		WireName: "info_icon_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
+	},
+	"SearchOptions": ubx.FieldSpec{
+		WireName: "search_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"SelectAllOptions": ubx.FieldSpec{
+		WireName: "select_all_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"TitleOptions": ubx.FieldSpec{
+		WireName: "title_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptionsFields = ubx.FieldMap{
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptionsFields,
-		},
-		"SelectableValues": ubx.FieldSpec{
-			WireName: "selectable_values",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptionsFields,
+	},
+	"SelectableValues": ubx.FieldSpec{
+		WireName: "selectable_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions_DisplayOptionsFields = ubx.FieldMap{
-		"DateTimeFormat": ubx.FieldSpec{WireName: "date_time_format"},
-		"InfoIconLabelOptions": ubx.FieldSpec{
-			WireName: "info_icon_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
-		},
-		"TitleOptions": ubx.FieldSpec{
-			WireName: "title_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
-		},
-	}
+	"DateTimeFormat": ubx.FieldSpec{WireName: "date_time_format"},
+	"InfoIconLabelOptions": ubx.FieldSpec{
+		WireName: "info_icon_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
+	},
+	"TitleOptions": ubx.FieldSpec{
+		WireName: "title_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptionsFields = ubx.FieldMap{
-		"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions_DisplayOptionsFields,
-		},
-	}
+	"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions_DisplayOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptionsFields = ubx.FieldMap{
-		"InfoIconLabelOptions": ubx.FieldSpec{
-			WireName: "info_icon_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
-		},
-		"TitleOptions": ubx.FieldSpec{
-			WireName: "title_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
-		},
-	}
+	"InfoIconLabelOptions": ubx.FieldSpec{
+		WireName: "info_icon_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
+	},
+	"TitleOptions": ubx.FieldSpec{
+		WireName: "title_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptionsFields = ubx.FieldMap{
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptionsFields,
-		},
-		"MaximumValue": ubx.FieldSpec{WireName: "maximum_value"},
-		"MinimumValue": ubx.FieldSpec{WireName: "minimum_value"},
-		"StepSize": ubx.FieldSpec{WireName: "step_size"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptionsFields,
+	},
+	"MaximumValue": ubx.FieldSpec{WireName: "maximum_value"},
+	"MinimumValue": ubx.FieldSpec{WireName: "minimum_value"},
+	"StepSize":     ubx.FieldSpec{WireName: "step_size"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields = ubx.FieldMap{
-		"InfoIconLabelOptions": ubx.FieldSpec{
-			WireName: "info_icon_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
-		},
-		"PlaceholderOptions": ubx.FieldSpec{
-			WireName: "placeholder_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"TitleOptions": ubx.FieldSpec{
-			WireName: "title_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
-		},
-	}
+	"InfoIconLabelOptions": ubx.FieldSpec{
+		WireName: "info_icon_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_InfoIconLabelOptionsFields,
+	},
+	"PlaceholderOptions": ubx.FieldSpec{
+		WireName: "placeholder_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"TitleOptions": ubx.FieldSpec{
+		WireName: "title_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptionsFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
-		},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextFieldOptionsFields = ubx.FieldMap{
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
-		},
-	}
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptionsFields = ubx.FieldMap{
-		"DefaultDateTimePickerOptions": ubx.FieldSpec{
-			WireName: "default_date_time_picker_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptionsFields,
-		},
-		"DefaultDropdownOptions": ubx.FieldSpec{
-			WireName: "default_dropdown_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptionsFields,
-		},
-		"DefaultListOptions": ubx.FieldSpec{
-			WireName: "default_list_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptionsFields,
-		},
-		"DefaultRelativeDateTimeOptions": ubx.FieldSpec{
-			WireName: "default_relative_date_time_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptionsFields,
-		},
-		"DefaultSliderOptions": ubx.FieldSpec{
-			WireName: "default_slider_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptionsFields,
-		},
-		"DefaultTextAreaOptions": ubx.FieldSpec{
-			WireName: "default_text_area_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptionsFields,
-		},
-		"DefaultTextFieldOptions": ubx.FieldSpec{
-			WireName: "default_text_field_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextFieldOptionsFields,
-		},
-	}
+	"DefaultDateTimePickerOptions": ubx.FieldSpec{
+		WireName: "default_date_time_picker_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptionsFields,
+	},
+	"DefaultDropdownOptions": ubx.FieldSpec{
+		WireName: "default_dropdown_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptionsFields,
+	},
+	"DefaultListOptions": ubx.FieldSpec{
+		WireName: "default_list_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptionsFields,
+	},
+	"DefaultRelativeDateTimeOptions": ubx.FieldSpec{
+		WireName: "default_relative_date_time_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptionsFields,
+	},
+	"DefaultSliderOptions": ubx.FieldSpec{
+		WireName: "default_slider_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptionsFields,
+	},
+	"DefaultTextAreaOptions": ubx.FieldSpec{
+		WireName: "default_text_area_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptionsFields,
+	},
+	"DefaultTextFieldOptions": ubx.FieldSpec{
+		WireName: "default_text_field_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextFieldOptionsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields = ubx.FieldMap{
-		"ControlOptions": ubx.FieldSpec{
-			WireName: "control_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptionsFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"ControlOptions": ubx.FieldSpec{
+		WireName: "control_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptionsFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_CategoryFilterFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_ConfigurationFields,
-		},
-		"DefaultFilterControlConfiguration": ubx.FieldSpec{
-			WireName: "default_filter_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
-		},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_ConfigurationFields,
+	},
+	"DefaultFilterControlConfiguration": ubx.FieldSpec{
+		WireName: "default_filter_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
+	},
+	"FilterId": ubx.FieldSpec{WireName: "filter_id"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NestedFilter_InnerFilter_CategoryInnerFilterFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_ConfigurationFields,
-		},
-		"DefaultFilterControlConfiguration": ubx.FieldSpec{
-			WireName: "default_filter_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
-		},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_ConfigurationFields,
+	},
+	"DefaultFilterControlConfiguration": ubx.FieldSpec{
+		WireName: "default_filter_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NestedFilter_InnerFilterFields = ubx.FieldMap{
-		"CategoryInnerFilter": ubx.FieldSpec{
-			WireName: "category_inner_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NestedFilter_InnerFilter_CategoryInnerFilterFields,
-		},
-	}
+	"CategoryInnerFilter": ubx.FieldSpec{
+		WireName: "category_inner_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NestedFilter_InnerFilter_CategoryInnerFilterFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NestedFilterFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
-		"IncludeInnerSet": ubx.FieldSpec{WireName: "include_inner_set"},
-		"InnerFilter": ubx.FieldSpec{
-			WireName: "inner_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NestedFilter_InnerFilterFields,
-		},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FilterId":        ubx.FieldSpec{WireName: "filter_id"},
+	"IncludeInnerSet": ubx.FieldSpec{WireName: "include_inner_set"},
+	"InnerFilter": ubx.FieldSpec{
+		WireName: "inner_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NestedFilter_InnerFilterFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_AttributeAggregationFunctionFields = ubx.FieldMap{
-		"SimpleAttributeAggregation": ubx.FieldSpec{WireName: "simple_attribute_aggregation"},
-		"ValueForMultipleValues": ubx.FieldSpec{WireName: "value_for_multiple_values"},
-	}
+	"SimpleAttributeAggregation": ubx.FieldSpec{WireName: "simple_attribute_aggregation"},
+	"ValueForMultipleValues":     ubx.FieldSpec{WireName: "value_for_multiple_values"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunction_PercentileAggregationFields = ubx.FieldMap{
-		"PercentileValue": ubx.FieldSpec{WireName: "percentile_value"},
-	}
+	"PercentileValue": ubx.FieldSpec{WireName: "percentile_value"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunctionFields = ubx.FieldMap{
-		"PercentileAggregation": ubx.FieldSpec{
-			WireName: "percentile_aggregation",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunction_PercentileAggregationFields,
-		},
-		"SimpleNumericalAggregation": ubx.FieldSpec{WireName: "simple_numerical_aggregation"},
-	}
+	"PercentileAggregation": ubx.FieldSpec{
+		WireName: "percentile_aggregation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunction_PercentileAggregationFields,
+	},
+	"SimpleNumericalAggregation": ubx.FieldSpec{WireName: "simple_numerical_aggregation"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields = ubx.FieldMap{
-		"AttributeAggregationFunction": ubx.FieldSpec{
-			WireName: "attribute_aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_AttributeAggregationFunctionFields,
-		},
-		"CategoricalAggregationFunction": ubx.FieldSpec{WireName: "categorical_aggregation_function"},
-		"DateAggregationFunction": ubx.FieldSpec{WireName: "date_aggregation_function"},
-		"NumericalAggregationFunction": ubx.FieldSpec{
-			WireName: "numerical_aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunctionFields,
-		},
-	}
+	"AttributeAggregationFunction": ubx.FieldSpec{
+		WireName: "attribute_aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_AttributeAggregationFunctionFields,
+	},
+	"CategoricalAggregationFunction": ubx.FieldSpec{WireName: "categorical_aggregation_function"},
+	"DateAggregationFunction":        ubx.FieldSpec{WireName: "date_aggregation_function"},
+	"NumericalAggregationFunction": ubx.FieldSpec{
+		WireName: "numerical_aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunctionFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NumericEqualityFilterFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{
-			WireName: "aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"DefaultFilterControlConfiguration": ubx.FieldSpec{
-			WireName: "default_filter_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
-		},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
-		"MatchOperator": ubx.FieldSpec{WireName: "match_operator"},
-		"NullOption": ubx.FieldSpec{WireName: "null_option"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"SelectAllOptions": ubx.FieldSpec{WireName: "select_all_options"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"AggregationFunction": ubx.FieldSpec{
+		WireName: "aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"DefaultFilterControlConfiguration": ubx.FieldSpec{
+		WireName: "default_filter_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
+	},
+	"FilterId":         ubx.FieldSpec{WireName: "filter_id"},
+	"MatchOperator":    ubx.FieldSpec{WireName: "match_operator"},
+	"NullOption":       ubx.FieldSpec{WireName: "null_option"},
+	"ParameterName":    ubx.FieldSpec{WireName: "parameter_name"},
+	"SelectAllOptions": ubx.FieldSpec{WireName: "select_all_options"},
+	"Value":            ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NumericRangeFilter_RangeMaximumFields = ubx.FieldMap{
-		"Parameter": ubx.FieldSpec{WireName: "parameter"},
-		"StaticValue": ubx.FieldSpec{WireName: "static_value"},
-	}
+	"Parameter":   ubx.FieldSpec{WireName: "parameter"},
+	"StaticValue": ubx.FieldSpec{WireName: "static_value"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_NumericRangeFilterFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{
-			WireName: "aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"DefaultFilterControlConfiguration": ubx.FieldSpec{
-			WireName: "default_filter_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
-		},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
-		"IncludeMaximum": ubx.FieldSpec{WireName: "include_maximum"},
-		"IncludeMinimum": ubx.FieldSpec{WireName: "include_minimum"},
-		"NullOption": ubx.FieldSpec{WireName: "null_option"},
-		"RangeMaximum": ubx.FieldSpec{
-			WireName: "range_maximum",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericRangeFilter_RangeMaximumFields,
-		},
-		"RangeMinimum": ubx.FieldSpec{
-			WireName: "range_minimum",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericRangeFilter_RangeMaximumFields,
-		},
-		"SelectAllOptions": ubx.FieldSpec{WireName: "select_all_options"},
-	}
+	"AggregationFunction": ubx.FieldSpec{
+		WireName: "aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"DefaultFilterControlConfiguration": ubx.FieldSpec{
+		WireName: "default_filter_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
+	},
+	"FilterId":       ubx.FieldSpec{WireName: "filter_id"},
+	"IncludeMaximum": ubx.FieldSpec{WireName: "include_maximum"},
+	"IncludeMinimum": ubx.FieldSpec{WireName: "include_minimum"},
+	"NullOption":     ubx.FieldSpec{WireName: "null_option"},
+	"RangeMaximum": ubx.FieldSpec{
+		WireName: "range_maximum",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericRangeFilter_RangeMaximumFields,
+	},
+	"RangeMinimum": ubx.FieldSpec{
+		WireName: "range_minimum",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericRangeFilter_RangeMaximumFields,
+	},
+	"SelectAllOptions": ubx.FieldSpec{WireName: "select_all_options"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_AnchorDateConfigurationFields = ubx.FieldMap{
-		"AnchorOption": ubx.FieldSpec{WireName: "anchor_option"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-	}
+	"AnchorOption":  ubx.FieldSpec{WireName: "anchor_option"},
+	"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_ExcludePeriodConfigurationFields = ubx.FieldMap{
-		"Amount": ubx.FieldSpec{WireName: "amount"},
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Amount":      ubx.FieldSpec{WireName: "amount"},
+	"Granularity": ubx.FieldSpec{WireName: "granularity"},
+	"Status":      ubx.FieldSpec{WireName: "status"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_RelativeDatesFilterFields = ubx.FieldMap{
-		"AnchorDateConfiguration": ubx.FieldSpec{
-			WireName: "anchor_date_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_AnchorDateConfigurationFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"DefaultFilterControlConfiguration": ubx.FieldSpec{
-			WireName: "default_filter_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
-		},
-		"ExcludePeriodConfiguration": ubx.FieldSpec{
-			WireName: "exclude_period_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_ExcludePeriodConfigurationFields,
-		},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
-		"MinimumGranularity": ubx.FieldSpec{WireName: "minimum_granularity"},
-		"NullOption": ubx.FieldSpec{WireName: "null_option"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"RelativeDateType": ubx.FieldSpec{WireName: "relative_date_type"},
-		"RelativeDateValue": ubx.FieldSpec{WireName: "relative_date_value"},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-	}
+	"AnchorDateConfiguration": ubx.FieldSpec{
+		WireName: "anchor_date_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_AnchorDateConfigurationFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"DefaultFilterControlConfiguration": ubx.FieldSpec{
+		WireName: "default_filter_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
+	},
+	"ExcludePeriodConfiguration": ubx.FieldSpec{
+		WireName: "exclude_period_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_ExcludePeriodConfigurationFields,
+	},
+	"FilterId":           ubx.FieldSpec{WireName: "filter_id"},
+	"MinimumGranularity": ubx.FieldSpec{WireName: "minimum_granularity"},
+	"NullOption":         ubx.FieldSpec{WireName: "null_option"},
+	"ParameterName":      ubx.FieldSpec{WireName: "parameter_name"},
+	"RelativeDateType":   ubx.FieldSpec{WireName: "relative_date_type"},
+	"RelativeDateValue":  ubx.FieldSpec{WireName: "relative_date_value"},
+	"TimeGranularity":    ubx.FieldSpec{WireName: "time_granularity"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDateFields = ubx.FieldMap{
-		"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
+	"Expression":        ubx.FieldSpec{WireName: "expression"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_TimeEqualityFilterFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"DefaultFilterControlConfiguration": ubx.FieldSpec{
-			WireName: "default_filter_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
-		},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"RollingDate": ubx.FieldSpec{
-			WireName: "rolling_date",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDateFields,
-		},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"DefaultFilterControlConfiguration": ubx.FieldSpec{
+		WireName: "default_filter_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
+	},
+	"FilterId":      ubx.FieldSpec{WireName: "filter_id"},
+	"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
+	"RollingDate": ubx.FieldSpec{
+		WireName: "rolling_date",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDateFields,
+	},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_TimeRangeFilter_RangeMaximumValueFields = ubx.FieldMap{
-		"Parameter": ubx.FieldSpec{WireName: "parameter"},
-		"RollingDate": ubx.FieldSpec{
-			WireName: "rolling_date",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDateFields,
-		},
-		"StaticValue": ubx.FieldSpec{WireName: "static_value"},
-	}
+	"Parameter": ubx.FieldSpec{WireName: "parameter"},
+	"RollingDate": ubx.FieldSpec{
+		WireName: "rolling_date",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDateFields,
+	},
+	"StaticValue": ubx.FieldSpec{WireName: "static_value"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_TimeRangeFilterFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"DefaultFilterControlConfiguration": ubx.FieldSpec{
-			WireName: "default_filter_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
-		},
-		"ExcludePeriodConfiguration": ubx.FieldSpec{
-			WireName: "exclude_period_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_ExcludePeriodConfigurationFields,
-		},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
-		"IncludeMaximum": ubx.FieldSpec{WireName: "include_maximum"},
-		"IncludeMinimum": ubx.FieldSpec{WireName: "include_minimum"},
-		"NullOption": ubx.FieldSpec{WireName: "null_option"},
-		"RangeMaximumValue": ubx.FieldSpec{
-			WireName: "range_maximum_value",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_TimeRangeFilter_RangeMaximumValueFields,
-		},
-		"RangeMinimumValue": ubx.FieldSpec{
-			WireName: "range_minimum_value",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_TimeRangeFilter_RangeMaximumValueFields,
-		},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"DefaultFilterControlConfiguration": ubx.FieldSpec{
+		WireName: "default_filter_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
+	},
+	"ExcludePeriodConfiguration": ubx.FieldSpec{
+		WireName: "exclude_period_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_RelativeDatesFilter_ExcludePeriodConfigurationFields,
+	},
+	"FilterId":       ubx.FieldSpec{WireName: "filter_id"},
+	"IncludeMaximum": ubx.FieldSpec{WireName: "include_maximum"},
+	"IncludeMinimum": ubx.FieldSpec{WireName: "include_minimum"},
+	"NullOption":     ubx.FieldSpec{WireName: "null_option"},
+	"RangeMaximumValue": ubx.FieldSpec{
+		WireName: "range_maximum_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TimeRangeFilter_RangeMaximumValueFields,
+	},
+	"RangeMinimumValue": ubx.FieldSpec{
+		WireName: "range_minimum_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TimeRangeFilter_RangeMaximumValueFields,
+	},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_TopBottomFilter_AggregationSortConfigurationsFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{
-			WireName: "aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
-	}
+	"AggregationFunction": ubx.FieldSpec{
+		WireName: "aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"SortDirection": ubx.FieldSpec{WireName: "sort_direction"},
+}
 
 var Analysis_Definition_FilterGroups_Filters_TopBottomFilterFields = ubx.FieldMap{
-		"AggregationSortConfigurations": ubx.FieldSpec{
-			WireName: "aggregation_sort_configurations",
-			Kind: "list",
-			Fields: Analysis_Definition_FilterGroups_Filters_TopBottomFilter_AggregationSortConfigurationsFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"DefaultFilterControlConfiguration": ubx.FieldSpec{
-			WireName: "default_filter_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
-		},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-	}
+	"AggregationSortConfigurations": ubx.FieldSpec{
+		WireName: "aggregation_sort_configurations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TopBottomFilter_AggregationSortConfigurationsFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"DefaultFilterControlConfiguration": ubx.FieldSpec{
+		WireName: "default_filter_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfigurationFields,
+	},
+	"FilterId":        ubx.FieldSpec{WireName: "filter_id"},
+	"Limit":           ubx.FieldSpec{WireName: "limit"},
+	"ParameterName":   ubx.FieldSpec{WireName: "parameter_name"},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+}
 
 var Analysis_Definition_FilterGroups_FiltersFields = ubx.FieldMap{
-		"CategoryFilter": ubx.FieldSpec{
-			WireName: "category_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilterFields,
-		},
-		"NestedFilter": ubx.FieldSpec{
-			WireName: "nested_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NestedFilterFields,
-		},
-		"NumericEqualityFilter": ubx.FieldSpec{
-			WireName: "numeric_equality_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilterFields,
-		},
-		"NumericRangeFilter": ubx.FieldSpec{
-			WireName: "numeric_range_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericRangeFilterFields,
-		},
-		"RelativeDatesFilter": ubx.FieldSpec{
-			WireName: "relative_dates_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_RelativeDatesFilterFields,
-		},
-		"TimeEqualityFilter": ubx.FieldSpec{
-			WireName: "time_equality_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_TimeEqualityFilterFields,
-		},
-		"TimeRangeFilter": ubx.FieldSpec{
-			WireName: "time_range_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_TimeRangeFilterFields,
-		},
-		"TopBottomFilter": ubx.FieldSpec{
-			WireName: "top_bottom_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_TopBottomFilterFields,
-		},
-	}
+	"CategoryFilter": ubx.FieldSpec{
+		WireName: "category_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilterFields,
+	},
+	"NestedFilter": ubx.FieldSpec{
+		WireName: "nested_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NestedFilterFields,
+	},
+	"NumericEqualityFilter": ubx.FieldSpec{
+		WireName: "numeric_equality_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilterFields,
+	},
+	"NumericRangeFilter": ubx.FieldSpec{
+		WireName: "numeric_range_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericRangeFilterFields,
+	},
+	"RelativeDatesFilter": ubx.FieldSpec{
+		WireName: "relative_dates_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_RelativeDatesFilterFields,
+	},
+	"TimeEqualityFilter": ubx.FieldSpec{
+		WireName: "time_equality_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TimeEqualityFilterFields,
+	},
+	"TimeRangeFilter": ubx.FieldSpec{
+		WireName: "time_range_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TimeRangeFilterFields,
+	},
+	"TopBottomFilter": ubx.FieldSpec{
+		WireName: "top_bottom_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TopBottomFilterFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_ScopeConfiguration_SelectedSheets_SheetVisualScopingConfigurationsFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SheetId": ubx.FieldSpec{WireName: "sheet_id"},
-		"VisualIds": ubx.FieldSpec{WireName: "visual_ids"},
-	}
+	"Scope":     ubx.FieldSpec{WireName: "scope"},
+	"SheetId":   ubx.FieldSpec{WireName: "sheet_id"},
+	"VisualIds": ubx.FieldSpec{WireName: "visual_ids"},
+}
 
 var Analysis_Definition_FilterGroups_ScopeConfiguration_SelectedSheetsFields = ubx.FieldMap{
-		"SheetVisualScopingConfigurations": ubx.FieldSpec{
-			WireName: "sheet_visual_scoping_configurations",
-			Kind: "list",
-			Fields: Analysis_Definition_FilterGroups_ScopeConfiguration_SelectedSheets_SheetVisualScopingConfigurationsFields,
-		},
-	}
+	"SheetVisualScopingConfigurations": ubx.FieldSpec{
+		WireName: "sheet_visual_scoping_configurations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_FilterGroups_ScopeConfiguration_SelectedSheets_SheetVisualScopingConfigurationsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroups_ScopeConfigurationFields = ubx.FieldMap{
-		"AllSheets": ubx.FieldSpec{WireName: "all_sheets"},
-		"SelectedSheets": ubx.FieldSpec{
-			WireName: "selected_sheets",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_ScopeConfiguration_SelectedSheetsFields,
-		},
-	}
+	"AllSheets": ubx.FieldSpec{WireName: "all_sheets"},
+	"SelectedSheets": ubx.FieldSpec{
+		WireName: "selected_sheets",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_ScopeConfiguration_SelectedSheetsFields,
+	},
+}
 
 var Analysis_Definition_FilterGroupsFields = ubx.FieldMap{
-		"CrossDataset": ubx.FieldSpec{WireName: "cross_dataset"},
-		"FilterGroupId": ubx.FieldSpec{WireName: "filter_group_id"},
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: Analysis_Definition_FilterGroups_FiltersFields,
-		},
-		"ScopeConfiguration": ubx.FieldSpec{
-			WireName: "scope_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_ScopeConfigurationFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"CrossDataset":  ubx.FieldSpec{WireName: "cross_dataset"},
+	"FilterGroupId": ubx.FieldSpec{WireName: "filter_group_id"},
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   Analysis_Definition_FilterGroups_FiltersFields,
+	},
+	"ScopeConfiguration": ubx.FieldSpec{
+		WireName: "scope_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_ScopeConfigurationFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Analysis_Definition_OptionsFields = ubx.FieldMap{
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-		"WeekStart": ubx.FieldSpec{WireName: "week_start"},
-	}
+	"Timezone":  ubx.FieldSpec{WireName: "timezone"},
+	"WeekStart": ubx.FieldSpec{WireName: "week_start"},
+}
 
 var Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValueFields = ubx.FieldMap{
-		"DefaultValueColumn": ubx.FieldSpec{
-			WireName: "default_value_column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"GroupNameColumn": ubx.FieldSpec{
-			WireName: "group_name_column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"UserNameColumn": ubx.FieldSpec{
-			WireName: "user_name_column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-	}
+	"DefaultValueColumn": ubx.FieldSpec{
+		WireName: "default_value_column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"GroupNameColumn": ubx.FieldSpec{
+		WireName: "group_name_column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"UserNameColumn": ubx.FieldSpec{
+		WireName: "user_name_column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+}
 
 var Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValuesFields = ubx.FieldMap{
-		"DynamicValue": ubx.FieldSpec{
-			WireName: "dynamic_value",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValueFields,
-		},
-		"RollingDate": ubx.FieldSpec{
-			WireName: "rolling_date",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDateFields,
-		},
-		"StaticValues": ubx.FieldSpec{WireName: "static_values"},
-	}
+	"DynamicValue": ubx.FieldSpec{
+		WireName: "dynamic_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValueFields,
+	},
+	"RollingDate": ubx.FieldSpec{
+		WireName: "rolling_date",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_TimeEqualityFilter_RollingDateFields,
+	},
+	"StaticValues": ubx.FieldSpec{WireName: "static_values"},
+}
 
 var Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParametersFields = ubx.FieldMap{
-		"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
-		"DataSetParameterName": ubx.FieldSpec{WireName: "data_set_parameter_name"},
-	}
+	"DataSetIdentifier":    ubx.FieldSpec{WireName: "data_set_identifier"},
+	"DataSetParameterName": ubx.FieldSpec{WireName: "data_set_parameter_name"},
+}
 
 var Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_ValueWhenUnsetFields = ubx.FieldMap{
-		"CustomValue": ubx.FieldSpec{WireName: "custom_value"},
-		"ValueWhenUnsetOption": ubx.FieldSpec{WireName: "value_when_unset_option"},
-	}
+	"CustomValue":          ubx.FieldSpec{WireName: "custom_value"},
+	"ValueWhenUnsetOption": ubx.FieldSpec{WireName: "value_when_unset_option"},
+}
 
 var Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclarationFields = ubx.FieldMap{
-		"DefaultValues": ubx.FieldSpec{
-			WireName: "default_values",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValuesFields,
-		},
-		"MappedDataSetParameters": ubx.FieldSpec{
-			WireName: "mapped_data_set_parameters",
-			Kind: "list",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParametersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-		"ValueWhenUnset": ubx.FieldSpec{
-			WireName: "value_when_unset",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_ValueWhenUnsetFields,
-		},
-	}
+	"DefaultValues": ubx.FieldSpec{
+		WireName: "default_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValuesFields,
+	},
+	"MappedDataSetParameters": ubx.FieldSpec{
+		WireName: "mapped_data_set_parameters",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParametersFields,
+	},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+	"ValueWhenUnset": ubx.FieldSpec{
+		WireName: "value_when_unset",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_ValueWhenUnsetFields,
+	},
+}
 
 var Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_DefaultValuesFields = ubx.FieldMap{
-		"DynamicValue": ubx.FieldSpec{
-			WireName: "dynamic_value",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValueFields,
-		},
-		"StaticValues": ubx.FieldSpec{WireName: "static_values"},
-	}
+	"DynamicValue": ubx.FieldSpec{
+		WireName: "dynamic_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValueFields,
+	},
+	"StaticValues": ubx.FieldSpec{WireName: "static_values"},
+}
 
 var Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_ValueWhenUnsetFields = ubx.FieldMap{
-		"CustomValue": ubx.FieldSpec{WireName: "custom_value"},
-		"ValueWhenUnsetOption": ubx.FieldSpec{WireName: "value_when_unset_option"},
-	}
+	"CustomValue":          ubx.FieldSpec{WireName: "custom_value"},
+	"ValueWhenUnsetOption": ubx.FieldSpec{WireName: "value_when_unset_option"},
+}
 
 var Analysis_Definition_ParameterDeclarations_DecimalParameterDeclarationFields = ubx.FieldMap{
-		"DefaultValues": ubx.FieldSpec{
-			WireName: "default_values",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_DefaultValuesFields,
-		},
-		"MappedDataSetParameters": ubx.FieldSpec{
-			WireName: "mapped_data_set_parameters",
-			Kind: "list",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParametersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParameterValueType": ubx.FieldSpec{WireName: "parameter_value_type"},
-		"ValueWhenUnset": ubx.FieldSpec{
-			WireName: "value_when_unset",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_ValueWhenUnsetFields,
-		},
-	}
+	"DefaultValues": ubx.FieldSpec{
+		WireName: "default_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_DefaultValuesFields,
+	},
+	"MappedDataSetParameters": ubx.FieldSpec{
+		WireName: "mapped_data_set_parameters",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParametersFields,
+	},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"ParameterValueType": ubx.FieldSpec{WireName: "parameter_value_type"},
+	"ValueWhenUnset": ubx.FieldSpec{
+		WireName: "value_when_unset",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DecimalParameterDeclaration_ValueWhenUnsetFields,
+	},
+}
 
 var Analysis_Definition_ParameterDeclarations_StringParameterDeclaration_DefaultValuesFields = ubx.FieldMap{
-		"DynamicValue": ubx.FieldSpec{
-			WireName: "dynamic_value",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValueFields,
-		},
-		"StaticValues": ubx.FieldSpec{WireName: "static_values"},
-	}
+	"DynamicValue": ubx.FieldSpec{
+		WireName: "dynamic_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_DefaultValues_DynamicValueFields,
+	},
+	"StaticValues": ubx.FieldSpec{WireName: "static_values"},
+}
 
 var Analysis_Definition_ParameterDeclarations_StringParameterDeclarationFields = ubx.FieldMap{
-		"DefaultValues": ubx.FieldSpec{
-			WireName: "default_values",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_StringParameterDeclaration_DefaultValuesFields,
-		},
-		"MappedDataSetParameters": ubx.FieldSpec{
-			WireName: "mapped_data_set_parameters",
-			Kind: "list",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParametersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParameterValueType": ubx.FieldSpec{WireName: "parameter_value_type"},
-		"ValueWhenUnset": ubx.FieldSpec{
-			WireName: "value_when_unset",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_ValueWhenUnsetFields,
-		},
-	}
+	"DefaultValues": ubx.FieldSpec{
+		WireName: "default_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_StringParameterDeclaration_DefaultValuesFields,
+	},
+	"MappedDataSetParameters": ubx.FieldSpec{
+		WireName: "mapped_data_set_parameters",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_MappedDataSetParametersFields,
+	},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"ParameterValueType": ubx.FieldSpec{WireName: "parameter_value_type"},
+	"ValueWhenUnset": ubx.FieldSpec{
+		WireName: "value_when_unset",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclaration_ValueWhenUnsetFields,
+	},
+}
 
 var Analysis_Definition_ParameterDeclarationsFields = ubx.FieldMap{
-		"DateTimeParameterDeclaration": ubx.FieldSpec{
-			WireName: "date_time_parameter_declaration",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclarationFields,
-		},
-		"DecimalParameterDeclaration": ubx.FieldSpec{
-			WireName: "decimal_parameter_declaration",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DecimalParameterDeclarationFields,
-		},
-		"IntegerParameterDeclaration": ubx.FieldSpec{
-			WireName: "integer_parameter_declaration",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_DecimalParameterDeclarationFields,
-		},
-		"StringParameterDeclaration": ubx.FieldSpec{
-			WireName: "string_parameter_declaration",
-			Kind: "object",
-			Fields: Analysis_Definition_ParameterDeclarations_StringParameterDeclarationFields,
-		},
-	}
+	"DateTimeParameterDeclaration": ubx.FieldSpec{
+		WireName: "date_time_parameter_declaration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DateTimeParameterDeclarationFields,
+	},
+	"DecimalParameterDeclaration": ubx.FieldSpec{
+		WireName: "decimal_parameter_declaration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DecimalParameterDeclarationFields,
+	},
+	"IntegerParameterDeclaration": ubx.FieldSpec{
+		WireName: "integer_parameter_declaration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_DecimalParameterDeclarationFields,
+	},
+	"StringParameterDeclaration": ubx.FieldSpec{
+		WireName: "string_parameter_declaration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ParameterDeclarations_StringParameterDeclarationFields,
+	},
+}
 
 var Analysis_Definition_QueryExecutionOptionsFields = ubx.FieldMap{
-		"QueryExecutionMode": ubx.FieldSpec{WireName: "query_execution_mode"},
-	}
+	"QueryExecutionMode": ubx.FieldSpec{WireName: "query_execution_mode"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfiguration_SourceControlsFields = ubx.FieldMap{
-		"ColumnToMatch": ubx.FieldSpec{
-			WireName: "column_to_match",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"SourceSheetControlId": ubx.FieldSpec{WireName: "source_sheet_control_id"},
-	}
+	"ColumnToMatch": ubx.FieldSpec{
+		WireName: "column_to_match",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"SourceSheetControlId": ubx.FieldSpec{WireName: "source_sheet_control_id"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields = ubx.FieldMap{
-		"SourceControls": ubx.FieldSpec{
-			WireName: "source_controls",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfiguration_SourceControlsFields,
-		},
-	}
+	"SourceControls": ubx.FieldSpec{
+		WireName: "source_controls",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfiguration_SourceControlsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_FilterControls_CrossSheetFields = ubx.FieldMap{
-		"CascadingControlConfiguration": ubx.FieldSpec{
-			WireName: "cascading_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
-		},
-		"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
-		"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
-	}
+	"CascadingControlConfiguration": ubx.FieldSpec{
+		WireName: "cascading_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
+	},
+	"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
+	"SourceFilterId":  ubx.FieldSpec{WireName: "source_filter_id"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_DateTimePickerFields = ubx.FieldMap{
-		"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptionsFields,
-		},
-		"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
-		"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptionsFields,
+	},
+	"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
+	"SourceFilterId":  ubx.FieldSpec{WireName: "source_filter_id"},
+	"Title":           ubx.FieldSpec{WireName: "title"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_DropdownFields = ubx.FieldMap{
-		"CascadingControlConfiguration": ubx.FieldSpec{
-			WireName: "cascading_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
-		},
-		"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptionsFields,
-		},
-		"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
-		"SelectableValues": ubx.FieldSpec{
-			WireName: "selectable_values",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields,
-		},
-		"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CascadingControlConfiguration": ubx.FieldSpec{
+		WireName: "cascading_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
+	},
+	"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptionsFields,
+	},
+	"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
+	"SelectableValues": ubx.FieldSpec{
+		WireName: "selectable_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields,
+	},
+	"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
+	"Title":          ubx.FieldSpec{WireName: "title"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_ListFields = ubx.FieldMap{
-		"CascadingControlConfiguration": ubx.FieldSpec{
-			WireName: "cascading_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
-		},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptionsFields,
-		},
-		"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
-		"SelectableValues": ubx.FieldSpec{
-			WireName: "selectable_values",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields,
-		},
-		"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CascadingControlConfiguration": ubx.FieldSpec{
+		WireName: "cascading_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
+	},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptionsFields,
+	},
+	"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
+	"SelectableValues": ubx.FieldSpec{
+		WireName: "selectable_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_SelectableValuesFields,
+	},
+	"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
+	"Title":          ubx.FieldSpec{WireName: "title"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_RelativeDateTimeFields = ubx.FieldMap{
-		"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions_DisplayOptionsFields,
-		},
-		"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
-		"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultRelativeDateTimeOptions_DisplayOptionsFields,
+	},
+	"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
+	"SourceFilterId":  ubx.FieldSpec{WireName: "source_filter_id"},
+	"Title":           ubx.FieldSpec{WireName: "title"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_SliderFields = ubx.FieldMap{
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptionsFields,
-		},
-		"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
-		"MaximumValue": ubx.FieldSpec{WireName: "maximum_value"},
-		"MinimumValue": ubx.FieldSpec{WireName: "minimum_value"},
-		"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
-		"StepSize": ubx.FieldSpec{WireName: "step_size"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptionsFields,
+	},
+	"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
+	"MaximumValue":    ubx.FieldSpec{WireName: "maximum_value"},
+	"MinimumValue":    ubx.FieldSpec{WireName: "minimum_value"},
+	"SourceFilterId":  ubx.FieldSpec{WireName: "source_filter_id"},
+	"StepSize":        ubx.FieldSpec{WireName: "step_size"},
+	"Title":           ubx.FieldSpec{WireName: "title"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_TextAreaFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
-		},
-		"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
-		"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
+	},
+	"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
+	"SourceFilterId":  ubx.FieldSpec{WireName: "source_filter_id"},
+	"Title":           ubx.FieldSpec{WireName: "title"},
+}
 
 var Analysis_Definition_Sheets_FilterControls_TextFieldFields = ubx.FieldMap{
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
-		},
-		"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
-		"SourceFilterId": ubx.FieldSpec{WireName: "source_filter_id"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
+	},
+	"FilterControlId": ubx.FieldSpec{WireName: "filter_control_id"},
+	"SourceFilterId":  ubx.FieldSpec{WireName: "source_filter_id"},
+	"Title":           ubx.FieldSpec{WireName: "title"},
+}
 
 var Analysis_Definition_Sheets_FilterControlsFields = ubx.FieldMap{
-		"CrossSheet": ubx.FieldSpec{
-			WireName: "cross_sheet",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_CrossSheetFields,
-		},
-		"DateTimePicker": ubx.FieldSpec{
-			WireName: "date_time_picker",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_DateTimePickerFields,
-		},
-		"Dropdown": ubx.FieldSpec{
-			WireName: "dropdown",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_DropdownFields,
-		},
-		"List": ubx.FieldSpec{
-			WireName: "list",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_ListFields,
-		},
-		"RelativeDateTime": ubx.FieldSpec{
-			WireName: "relative_date_time",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_RelativeDateTimeFields,
-		},
-		"Slider": ubx.FieldSpec{
-			WireName: "slider",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_SliderFields,
-		},
-		"TextArea": ubx.FieldSpec{
-			WireName: "text_area",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_TextAreaFields,
-		},
-		"TextField": ubx.FieldSpec{
-			WireName: "text_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_TextFieldFields,
-		},
-	}
+	"CrossSheet": ubx.FieldSpec{
+		WireName: "cross_sheet",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_CrossSheetFields,
+	},
+	"DateTimePicker": ubx.FieldSpec{
+		WireName: "date_time_picker",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_DateTimePickerFields,
+	},
+	"Dropdown": ubx.FieldSpec{
+		WireName: "dropdown",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_DropdownFields,
+	},
+	"List": ubx.FieldSpec{
+		WireName: "list",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_ListFields,
+	},
+	"RelativeDateTime": ubx.FieldSpec{
+		WireName: "relative_date_time",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_RelativeDateTimeFields,
+	},
+	"Slider": ubx.FieldSpec{
+		WireName: "slider",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_SliderFields,
+	},
+	"TextArea": ubx.FieldSpec{
+		WireName: "text_area",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_TextAreaFields,
+	},
+	"TextField": ubx.FieldSpec{
+		WireName: "text_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_TextFieldFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperation_LocalNavigationConfigurationFields = ubx.FieldMap{
-		"TargetSheetId": ubx.FieldSpec{WireName: "target_sheet_id"},
-	}
+	"TargetSheetId": ubx.FieldSpec{WireName: "target_sheet_id"},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperationFields = ubx.FieldMap{
-		"LocalNavigationConfiguration": ubx.FieldSpec{
-			WireName: "local_navigation_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperation_LocalNavigationConfigurationFields,
-		},
-	}
+	"LocalNavigationConfiguration": ubx.FieldSpec{
+		WireName: "local_navigation_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperation_LocalNavigationConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfiguration_CustomValuesFields = ubx.FieldMap{
-		"DateTimeValues": ubx.FieldSpec{WireName: "date_time_values"},
-		"DecimalValues": ubx.FieldSpec{WireName: "decimal_values"},
-		"IntegerValues": ubx.FieldSpec{WireName: "integer_values"},
-		"StringValues": ubx.FieldSpec{WireName: "string_values"},
-	}
+	"DateTimeValues": ubx.FieldSpec{WireName: "date_time_values"},
+	"DecimalValues":  ubx.FieldSpec{WireName: "decimal_values"},
+	"IntegerValues":  ubx.FieldSpec{WireName: "integer_values"},
+	"StringValues":   ubx.FieldSpec{WireName: "string_values"},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfigurationFields = ubx.FieldMap{
-		"CustomValues": ubx.FieldSpec{
-			WireName: "custom_values",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfiguration_CustomValuesFields,
-		},
-		"IncludeNullValue": ubx.FieldSpec{WireName: "include_null_value"},
-	}
+	"CustomValues": ubx.FieldSpec{
+		WireName: "custom_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfiguration_CustomValuesFields,
+	},
+	"IncludeNullValue": ubx.FieldSpec{WireName: "include_null_value"},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_ValueFields = ubx.FieldMap{
-		"CustomValuesConfiguration": ubx.FieldSpec{
-			WireName: "custom_values_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfigurationFields,
-		},
-		"SelectAllValueOptions": ubx.FieldSpec{WireName: "select_all_value_options"},
-		"SourceColumn": ubx.FieldSpec{
-			WireName: "source_column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"SourceField": ubx.FieldSpec{WireName: "source_field"},
-		"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
-	}
+	"CustomValuesConfiguration": ubx.FieldSpec{
+		WireName: "custom_values_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_Value_CustomValuesConfigurationFields,
+	},
+	"SelectAllValueOptions": ubx.FieldSpec{WireName: "select_all_value_options"},
+	"SourceColumn": ubx.FieldSpec{
+		WireName: "source_column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"SourceField":         ubx.FieldSpec{WireName: "source_field"},
+	"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurationsFields = ubx.FieldMap{
-		"DestinationParameterName": ubx.FieldSpec{WireName: "destination_parameter_name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_ValueFields,
-		},
-	}
+	"DestinationParameterName": ubx.FieldSpec{WireName: "destination_parameter_name"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurations_ValueFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperationFields = ubx.FieldMap{
-		"ParameterValueConfigurations": ubx.FieldSpec{
-			WireName: "parameter_value_configurations",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurationsFields,
-		},
-	}
+	"ParameterValueConfigurations": ubx.FieldSpec{
+		WireName: "parameter_value_configurations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperation_ParameterValueConfigurationsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperations_UrloperationFields = ubx.FieldMap{
-		"Urltarget": ubx.FieldSpec{WireName: "urltarget"},
-		"Urltemplate": ubx.FieldSpec{WireName: "urltemplate"},
-	}
+	"Urltarget":   ubx.FieldSpec{WireName: "urltarget"},
+	"Urltemplate": ubx.FieldSpec{WireName: "urltemplate"},
+}
 
 var Analysis_Definition_Sheets_Images_Actions_ActionOperationsFields = ubx.FieldMap{
-		"NavigationOperation": ubx.FieldSpec{
-			WireName: "navigation_operation",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperationFields,
-		},
-		"SetParametersOperation": ubx.FieldSpec{
-			WireName: "set_parameters_operation",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperationFields,
-		},
-		"Urloperation": ubx.FieldSpec{
-			WireName: "urloperation",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_UrloperationFields,
-		},
-	}
+	"NavigationOperation": ubx.FieldSpec{
+		WireName: "navigation_operation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperationFields,
+	},
+	"SetParametersOperation": ubx.FieldSpec{
+		WireName: "set_parameters_operation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperationFields,
+	},
+	"Urloperation": ubx.FieldSpec{
+		WireName: "urloperation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_UrloperationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Images_ActionsFields = ubx.FieldMap{
-		"ActionOperations": ubx.FieldSpec{
-			WireName: "action_operations",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperationsFields,
-		},
-		"CustomActionId": ubx.FieldSpec{WireName: "custom_action_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Trigger": ubx.FieldSpec{WireName: "trigger"},
-	}
+	"ActionOperations": ubx.FieldSpec{
+		WireName: "action_operations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperationsFields,
+	},
+	"CustomActionId": ubx.FieldSpec{WireName: "custom_action_id"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"Status":         ubx.FieldSpec{WireName: "status"},
+	"Trigger":        ubx.FieldSpec{WireName: "trigger"},
+}
 
 var Analysis_Definition_Sheets_Images_Interactions_ImageMenuOptionFields = ubx.FieldMap{
-		"AvailabilityStatus": ubx.FieldSpec{WireName: "availability_status"},
-	}
+	"AvailabilityStatus": ubx.FieldSpec{WireName: "availability_status"},
+}
 
 var Analysis_Definition_Sheets_Images_InteractionsFields = ubx.FieldMap{
-		"ImageMenuOption": ubx.FieldSpec{
-			WireName: "image_menu_option",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Interactions_ImageMenuOptionFields,
-		},
-	}
+	"ImageMenuOption": ubx.FieldSpec{
+		WireName: "image_menu_option",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Interactions_ImageMenuOptionFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Images_ScalingFields = ubx.FieldMap{
-		"ScalingType": ubx.FieldSpec{WireName: "scaling_type"},
-	}
+	"ScalingType": ubx.FieldSpec{WireName: "scaling_type"},
+}
 
 var Analysis_Definition_Sheets_Images_Source_SheetImageStaticFileSourceFields = ubx.FieldMap{
-		"StaticFileId": ubx.FieldSpec{WireName: "static_file_id"},
-	}
+	"StaticFileId": ubx.FieldSpec{WireName: "static_file_id"},
+}
 
 var Analysis_Definition_Sheets_Images_SourceFields = ubx.FieldMap{
-		"SheetImageStaticFileSource": ubx.FieldSpec{
-			WireName: "sheet_image_static_file_source",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Source_SheetImageStaticFileSourceFields,
-		},
-	}
+	"SheetImageStaticFileSource": ubx.FieldSpec{
+		WireName: "sheet_image_static_file_source",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Source_SheetImageStaticFileSourceFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Images_Tooltip_TooltipTextFields = ubx.FieldMap{
-		"PlainText": ubx.FieldSpec{WireName: "plain_text"},
-	}
+	"PlainText": ubx.FieldSpec{WireName: "plain_text"},
+}
 
 var Analysis_Definition_Sheets_Images_TooltipFields = ubx.FieldMap{
-		"TooltipText": ubx.FieldSpec{
-			WireName: "tooltip_text",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Tooltip_TooltipTextFields,
-		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"TooltipText": ubx.FieldSpec{
+		WireName: "tooltip_text",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Tooltip_TooltipTextFields,
+	},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_ImagesFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Images_ActionsFields,
-		},
-		"ImageContentAltText": ubx.FieldSpec{WireName: "image_content_alt_text"},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_InteractionsFields,
-		},
-		"Scaling": ubx.FieldSpec{
-			WireName: "scaling",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_ScalingFields,
-		},
-		"SheetImageId": ubx.FieldSpec{WireName: "sheet_image_id"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_SourceFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_TooltipFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Images_ActionsFields,
+	},
+	"ImageContentAltText": ubx.FieldSpec{WireName: "image_content_alt_text"},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_InteractionsFields,
+	},
+	"Scaling": ubx.FieldSpec{
+		WireName: "scaling",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_ScalingFields,
+	},
+	"SheetImageId": ubx.FieldSpec{WireName: "sheet_image_id"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_SourceFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_TooltipFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyleFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"Color":      ubx.FieldSpec{WireName: "color"},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_RenderingRulesFields = ubx.FieldMap{
-		"ConfigurationOverrides": ubx.FieldSpec{
-			WireName: "configuration_overrides",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"ConfigurationOverrides": ubx.FieldSpec{
+		WireName: "configuration_overrides",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_ElementsFields = ubx.FieldMap{
-		"BackgroundStyle": ubx.FieldSpec{
-			WireName: "background_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyleFields,
-		},
-		"BorderStyle": ubx.FieldSpec{
-			WireName: "border_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyleFields,
-		},
-		"ElementId": ubx.FieldSpec{WireName: "element_id"},
-		"ElementType": ubx.FieldSpec{WireName: "element_type"},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"LoadingAnimation": ubx.FieldSpec{
-			WireName: "loading_animation",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"RenderingRules": ubx.FieldSpec{
-			WireName: "rendering_rules",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_RenderingRulesFields,
-		},
-		"SelectedBorderStyle": ubx.FieldSpec{
-			WireName: "selected_border_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyleFields,
-		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-		"XaxisLocation": ubx.FieldSpec{WireName: "xaxis_location"},
-		"YaxisLocation": ubx.FieldSpec{WireName: "yaxis_location"},
-	}
+	"BackgroundStyle": ubx.FieldSpec{
+		WireName: "background_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyleFields,
+	},
+	"BorderStyle": ubx.FieldSpec{
+		WireName: "border_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyleFields,
+	},
+	"ElementId":   ubx.FieldSpec{WireName: "element_id"},
+	"ElementType": ubx.FieldSpec{WireName: "element_type"},
+	"Height":      ubx.FieldSpec{WireName: "height"},
+	"LoadingAnimation": ubx.FieldSpec{
+		WireName: "loading_animation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"RenderingRules": ubx.FieldSpec{
+		WireName: "rendering_rules",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_RenderingRulesFields,
+	},
+	"SelectedBorderStyle": ubx.FieldSpec{
+		WireName: "selected_border_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_Elements_BackgroundStyleFields,
+	},
+	"Visibility":    ubx.FieldSpec{WireName: "visibility"},
+	"Width":         ubx.FieldSpec{WireName: "width"},
+	"XaxisLocation": ubx.FieldSpec{WireName: "xaxis_location"},
+	"YaxisLocation": ubx.FieldSpec{WireName: "yaxis_location"},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayoutFields = ubx.FieldMap{
-		"CanvasSizeOptions": ubx.FieldSpec{
-			WireName: "canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeForm_CanvasSizeOptionsFields,
-		},
-		"Elements": ubx.FieldSpec{
-			WireName: "elements",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_ElementsFields,
-		},
-	}
+	"CanvasSizeOptions": ubx.FieldSpec{
+		WireName: "canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_FreeForm_CanvasSizeOptionsFields,
+	},
+	"Elements": ubx.FieldSpec{
+		WireName: "elements",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_ElementsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_GridLayout_ElementsFields = ubx.FieldMap{
-		"ColumnIndex": ubx.FieldSpec{WireName: "column_index"},
-		"ColumnSpan": ubx.FieldSpec{WireName: "column_span"},
-		"ElementId": ubx.FieldSpec{WireName: "element_id"},
-		"ElementType": ubx.FieldSpec{WireName: "element_type"},
-		"RowIndex": ubx.FieldSpec{WireName: "row_index"},
-		"RowSpan": ubx.FieldSpec{WireName: "row_span"},
-	}
+	"ColumnIndex": ubx.FieldSpec{WireName: "column_index"},
+	"ColumnSpan":  ubx.FieldSpec{WireName: "column_span"},
+	"ElementId":   ubx.FieldSpec{WireName: "element_id"},
+	"ElementType": ubx.FieldSpec{WireName: "element_type"},
+	"RowIndex":    ubx.FieldSpec{WireName: "row_index"},
+	"RowSpan":     ubx.FieldSpec{WireName: "row_span"},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_GridLayoutFields = ubx.FieldMap{
-		"CanvasSizeOptions": ubx.FieldSpec{
-			WireName: "canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptionsFields,
-		},
-		"Elements": ubx.FieldSpec{
-			WireName: "elements",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_GridLayout_ElementsFields,
-		},
-	}
+	"CanvasSizeOptions": ubx.FieldSpec{
+		WireName: "canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_InteractiveLayoutConfiguration_Grid_CanvasSizeOptionsFields,
+	},
+	"Elements": ubx.FieldSpec{
+		WireName: "elements",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_GridLayout_ElementsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_Layout_FreeFormLayoutFields = ubx.FieldMap{
-		"Elements": ubx.FieldSpec{
-			WireName: "elements",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_ElementsFields,
-		},
-	}
+	"Elements": ubx.FieldSpec{
+		WireName: "elements",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayout_ElementsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_LayoutFields = ubx.FieldMap{
-		"FreeFormLayout": ubx.FieldSpec{
-			WireName: "free_form_layout",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_Layout_FreeFormLayoutFields,
-		},
-	}
+	"FreeFormLayout": ubx.FieldSpec{
+		WireName: "free_form_layout",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_Layout_FreeFormLayoutFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_ContentFields = ubx.FieldMap{
-		"Layout": ubx.FieldSpec{
-			WireName: "layout",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_LayoutFields,
-		},
-	}
+	"Layout": ubx.FieldSpec{
+		WireName: "layout",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_LayoutFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_PageBreakConfiguration_AfterFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_PageBreakConfigurationFields = ubx.FieldMap{
-		"After": ubx.FieldSpec{
-			WireName: "after",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_PageBreakConfiguration_AfterFields,
-		},
-	}
+	"After": ubx.FieldSpec{
+		WireName: "after",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_PageBreakConfiguration_AfterFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetricsFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{
-			WireName: "aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
-		},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"SortBy": ubx.FieldSpec{
-			WireName: "sort_by",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-	}
+	"AggregationFunction": ubx.FieldSpec{
+		WireName: "aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
+	},
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"SortBy": ubx.FieldSpec{
+		WireName: "sort_by",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfigurationFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"SortByMetrics": ubx.FieldSpec{
-			WireName: "sort_by_metrics",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetricsFields,
-		},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"Limit": ubx.FieldSpec{WireName: "limit"},
+	"SortByMetrics": ubx.FieldSpec{
+		WireName: "sort_by_metrics",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetricsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurationsFields = ubx.FieldMap{
-		"DynamicCategoryDimensionConfiguration": ubx.FieldSpec{
-			WireName: "dynamic_category_dimension_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfigurationFields,
-		},
-		"DynamicNumericDimensionConfiguration": ubx.FieldSpec{
-			WireName: "dynamic_numeric_dimension_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfigurationFields,
-		},
-	}
+	"DynamicCategoryDimensionConfiguration": ubx.FieldSpec{
+		WireName: "dynamic_category_dimension_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfigurationFields,
+	},
+	"DynamicNumericDimensionConfiguration": ubx.FieldSpec{
+		WireName: "dynamic_numeric_dimension_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfigurationFields = ubx.FieldMap{
-		"DimensionConfigurations": ubx.FieldSpec{
-			WireName: "dimension_configurations",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurationsFields,
-		},
-		"NonRepeatingVisuals": ubx.FieldSpec{WireName: "non_repeating_visuals"},
-		"PageBreakConfiguration": ubx.FieldSpec{
-			WireName: "page_break_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_PageBreakConfigurationFields,
-		},
-	}
+	"DimensionConfigurations": ubx.FieldSpec{
+		WireName: "dimension_configurations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurationsFields,
+	},
+	"NonRepeatingVisuals": ubx.FieldSpec{WireName: "non_repeating_visuals"},
+	"PageBreakConfiguration": ubx.FieldSpec{
+		WireName: "page_break_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_PageBreakConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_StyleFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Padding": ubx.FieldSpec{
-			WireName: "padding",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptions_PaperMarginFields,
-		},
-	}
+	"Height": ubx.FieldSpec{WireName: "height"},
+	"Padding": ubx.FieldSpec{
+		WireName: "padding",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptions_PaperCanvasSizeOptions_PaperMarginFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySectionsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_ContentFields,
-		},
-		"PageBreakConfiguration": ubx.FieldSpec{
-			WireName: "page_break_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_PageBreakConfigurationFields,
-		},
-		"RepeatConfiguration": ubx.FieldSpec{
-			WireName: "repeat_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfigurationFields,
-		},
-		"SectionId": ubx.FieldSpec{WireName: "section_id"},
-		"Style": ubx.FieldSpec{
-			WireName: "style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_StyleFields,
-		},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_ContentFields,
+	},
+	"PageBreakConfiguration": ubx.FieldSpec{
+		WireName: "page_break_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_PageBreakConfigurationFields,
+	},
+	"RepeatConfiguration": ubx.FieldSpec{
+		WireName: "repeat_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfigurationFields,
+	},
+	"SectionId": ubx.FieldSpec{WireName: "section_id"},
+	"Style": ubx.FieldSpec{
+		WireName: "style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_StyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_FooterSectionsFields = ubx.FieldMap{
-		"Layout": ubx.FieldSpec{
-			WireName: "layout",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_LayoutFields,
-		},
-		"SectionId": ubx.FieldSpec{WireName: "section_id"},
-		"Style": ubx.FieldSpec{
-			WireName: "style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_StyleFields,
-		},
-	}
+	"Layout": ubx.FieldSpec{
+		WireName: "layout",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_Content_LayoutFields,
+	},
+	"SectionId": ubx.FieldSpec{WireName: "section_id"},
+	"Style": ubx.FieldSpec{
+		WireName: "style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_StyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayoutFields = ubx.FieldMap{
-		"BodySections": ubx.FieldSpec{
-			WireName: "body_sections",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySectionsFields,
-		},
-		"CanvasSizeOptions": ubx.FieldSpec{
-			WireName: "canvas_size_options",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptionsFields,
-		},
-		"FooterSections": ubx.FieldSpec{
-			WireName: "footer_sections",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_FooterSectionsFields,
-		},
-		"HeaderSections": ubx.FieldSpec{
-			WireName: "header_sections",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_FooterSectionsFields,
-		},
-	}
+	"BodySections": ubx.FieldSpec{
+		WireName: "body_sections",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySectionsFields,
+	},
+	"CanvasSizeOptions": ubx.FieldSpec{
+		WireName: "canvas_size_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaults_DefaultNewSheetConfiguration_PaginatedLayoutConfiguration_SectionBased_CanvasSizeOptionsFields,
+	},
+	"FooterSections": ubx.FieldSpec{
+		WireName: "footer_sections",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_FooterSectionsFields,
+	},
+	"HeaderSections": ubx.FieldSpec{
+		WireName: "header_sections",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_FooterSectionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Layouts_ConfigurationFields = ubx.FieldMap{
-		"FreeFormLayout": ubx.FieldSpec{
-			WireName: "free_form_layout",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayoutFields,
-		},
-		"GridLayout": ubx.FieldSpec{
-			WireName: "grid_layout",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_GridLayoutFields,
-		},
-		"SectionBasedLayout": ubx.FieldSpec{
-			WireName: "section_based_layout",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayoutFields,
-		},
-	}
+	"FreeFormLayout": ubx.FieldSpec{
+		WireName: "free_form_layout",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_FreeFormLayoutFields,
+	},
+	"GridLayout": ubx.FieldSpec{
+		WireName: "grid_layout",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_GridLayoutFields,
+	},
+	"SectionBasedLayout": ubx.FieldSpec{
+		WireName: "section_based_layout",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayoutFields,
+	},
+}
 
 var Analysis_Definition_Sheets_LayoutsFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_ConfigurationFields,
-		},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_ConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_ParameterControls_DateTimePickerFields = ubx.FieldMap{
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptionsFields,
-		},
-		"ParameterControlId": ubx.FieldSpec{WireName: "parameter_control_id"},
-		"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptionsFields,
+	},
+	"ParameterControlId":  ubx.FieldSpec{WireName: "parameter_control_id"},
+	"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
+	"Title":               ubx.FieldSpec{WireName: "title"},
+}
 
 var Analysis_Definition_Sheets_ParameterControls_Dropdown_SelectableValuesFields = ubx.FieldMap{
-		"LinkToDataSetColumn": ubx.FieldSpec{
-			WireName: "link_to_data_set_column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"LinkToDataSetColumn": ubx.FieldSpec{
+		WireName: "link_to_data_set_column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Analysis_Definition_Sheets_ParameterControls_DropdownFields = ubx.FieldMap{
-		"CascadingControlConfiguration": ubx.FieldSpec{
-			WireName: "cascading_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
-		},
-		"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptionsFields,
-		},
-		"ParameterControlId": ubx.FieldSpec{WireName: "parameter_control_id"},
-		"SelectableValues": ubx.FieldSpec{
-			WireName: "selectable_values",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_ParameterControls_Dropdown_SelectableValuesFields,
-		},
-		"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CascadingControlConfiguration": ubx.FieldSpec{
+		WireName: "cascading_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
+	},
+	"CommitMode": ubx.FieldSpec{WireName: "commit_mode"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptionsFields,
+	},
+	"ParameterControlId": ubx.FieldSpec{WireName: "parameter_control_id"},
+	"SelectableValues": ubx.FieldSpec{
+		WireName: "selectable_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_ParameterControls_Dropdown_SelectableValuesFields,
+	},
+	"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
+	"Title":               ubx.FieldSpec{WireName: "title"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_Sheets_ParameterControls_ListFields = ubx.FieldMap{
-		"CascadingControlConfiguration": ubx.FieldSpec{
-			WireName: "cascading_control_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
-		},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptionsFields,
-		},
-		"ParameterControlId": ubx.FieldSpec{WireName: "parameter_control_id"},
-		"SelectableValues": ubx.FieldSpec{
-			WireName: "selectable_values",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_ParameterControls_Dropdown_SelectableValuesFields,
-		},
-		"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CascadingControlConfiguration": ubx.FieldSpec{
+		WireName: "cascading_control_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_FilterControls_CrossSheet_CascadingControlConfigurationFields,
+	},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultListOptions_DisplayOptionsFields,
+	},
+	"ParameterControlId": ubx.FieldSpec{WireName: "parameter_control_id"},
+	"SelectableValues": ubx.FieldSpec{
+		WireName: "selectable_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_ParameterControls_Dropdown_SelectableValuesFields,
+	},
+	"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
+	"Title":               ubx.FieldSpec{WireName: "title"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_Sheets_ParameterControls_SliderFields = ubx.FieldMap{
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptionsFields,
-		},
-		"MaximumValue": ubx.FieldSpec{WireName: "maximum_value"},
-		"MinimumValue": ubx.FieldSpec{WireName: "minimum_value"},
-		"ParameterControlId": ubx.FieldSpec{WireName: "parameter_control_id"},
-		"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
-		"StepSize": ubx.FieldSpec{WireName: "step_size"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultSliderOptions_DisplayOptionsFields,
+	},
+	"MaximumValue":        ubx.FieldSpec{WireName: "maximum_value"},
+	"MinimumValue":        ubx.FieldSpec{WireName: "minimum_value"},
+	"ParameterControlId":  ubx.FieldSpec{WireName: "parameter_control_id"},
+	"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
+	"StepSize":            ubx.FieldSpec{WireName: "step_size"},
+	"Title":               ubx.FieldSpec{WireName: "title"},
+}
 
 var Analysis_Definition_Sheets_ParameterControls_TextAreaFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
-		},
-		"ParameterControlId": ubx.FieldSpec{WireName: "parameter_control_id"},
-		"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
+	},
+	"ParameterControlId":  ubx.FieldSpec{WireName: "parameter_control_id"},
+	"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
+	"Title":               ubx.FieldSpec{WireName: "title"},
+}
 
 var Analysis_Definition_Sheets_ParameterControls_TextFieldFields = ubx.FieldMap{
-		"DisplayOptions": ubx.FieldSpec{
-			WireName: "display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
-		},
-		"ParameterControlId": ubx.FieldSpec{WireName: "parameter_control_id"},
-		"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"DisplayOptions": ubx.FieldSpec{
+		WireName: "display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultTextAreaOptions_DisplayOptionsFields,
+	},
+	"ParameterControlId":  ubx.FieldSpec{WireName: "parameter_control_id"},
+	"SourceParameterName": ubx.FieldSpec{WireName: "source_parameter_name"},
+	"Title":               ubx.FieldSpec{WireName: "title"},
+}
 
 var Analysis_Definition_Sheets_ParameterControlsFields = ubx.FieldMap{
-		"DateTimePicker": ubx.FieldSpec{
-			WireName: "date_time_picker",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_ParameterControls_DateTimePickerFields,
-		},
-		"Dropdown": ubx.FieldSpec{
-			WireName: "dropdown",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_ParameterControls_DropdownFields,
-		},
-		"List": ubx.FieldSpec{
-			WireName: "list",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_ParameterControls_ListFields,
-		},
-		"Slider": ubx.FieldSpec{
-			WireName: "slider",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_ParameterControls_SliderFields,
-		},
-		"TextArea": ubx.FieldSpec{
-			WireName: "text_area",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_ParameterControls_TextAreaFields,
-		},
-		"TextField": ubx.FieldSpec{
-			WireName: "text_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_ParameterControls_TextFieldFields,
-		},
-	}
+	"DateTimePicker": ubx.FieldSpec{
+		WireName: "date_time_picker",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_ParameterControls_DateTimePickerFields,
+	},
+	"Dropdown": ubx.FieldSpec{
+		WireName: "dropdown",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_ParameterControls_DropdownFields,
+	},
+	"List": ubx.FieldSpec{
+		WireName: "list",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_ParameterControls_ListFields,
+	},
+	"Slider": ubx.FieldSpec{
+		WireName: "slider",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_ParameterControls_SliderFields,
+	},
+	"TextArea": ubx.FieldSpec{
+		WireName: "text_area",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_ParameterControls_TextAreaFields,
+	},
+	"TextField": ubx.FieldSpec{
+		WireName: "text_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_ParameterControls_TextFieldFields,
+	},
+}
 
 var Analysis_Definition_Sheets_SheetControlLayouts_ConfigurationFields = ubx.FieldMap{
-		"GridLayout": ubx.FieldSpec{
-			WireName: "grid_layout",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_GridLayoutFields,
-		},
-	}
+	"GridLayout": ubx.FieldSpec{
+		WireName: "grid_layout",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_GridLayoutFields,
+	},
+}
 
 var Analysis_Definition_Sheets_SheetControlLayoutsFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_SheetControlLayouts_ConfigurationFields,
-		},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_SheetControlLayouts_ConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_TextBoxesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"SheetTextBoxId": ubx.FieldSpec{WireName: "sheet_text_box_id"},
-	}
+	"Content":        ubx.FieldSpec{WireName: "content"},
+	"SheetTextBoxId": ubx.FieldSpec{WireName: "sheet_text_box_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_SelectedFieldsConfigurationFields = ubx.FieldMap{
-		"SelectedColumns": ubx.FieldSpec{
-			WireName: "selected_columns",
-			Kind: "list",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"SelectedFieldOptions": ubx.FieldSpec{WireName: "selected_field_options"},
-		"SelectedFields": ubx.FieldSpec{WireName: "selected_fields"},
-	}
+	"SelectedColumns": ubx.FieldSpec{
+		WireName: "selected_columns",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"SelectedFieldOptions": ubx.FieldSpec{WireName: "selected_field_options"},
+	"SelectedFields":       ubx.FieldSpec{WireName: "selected_fields"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfiguration_SameSheetTargetVisualConfigurationFields = ubx.FieldMap{
-		"TargetVisualOptions": ubx.FieldSpec{WireName: "target_visual_options"},
-		"TargetVisuals": ubx.FieldSpec{WireName: "target_visuals"},
-	}
+	"TargetVisualOptions": ubx.FieldSpec{WireName: "target_visual_options"},
+	"TargetVisuals":       ubx.FieldSpec{WireName: "target_visuals"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfigurationFields = ubx.FieldMap{
-		"SameSheetTargetVisualConfiguration": ubx.FieldSpec{
-			WireName: "same_sheet_target_visual_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfiguration_SameSheetTargetVisualConfigurationFields,
-		},
-	}
+	"SameSheetTargetVisualConfiguration": ubx.FieldSpec{
+		WireName: "same_sheet_target_visual_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfiguration_SameSheetTargetVisualConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperationFields = ubx.FieldMap{
-		"SelectedFieldsConfiguration": ubx.FieldSpec{
-			WireName: "selected_fields_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_SelectedFieldsConfigurationFields,
-		},
-		"TargetVisualsConfiguration": ubx.FieldSpec{
-			WireName: "target_visuals_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfigurationFields,
-		},
-	}
+	"SelectedFieldsConfiguration": ubx.FieldSpec{
+		WireName: "selected_fields_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_SelectedFieldsConfigurationFields,
+	},
+	"TargetVisualsConfiguration": ubx.FieldSpec{
+		WireName: "target_visuals_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperation_TargetVisualsConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperationsFields = ubx.FieldMap{
-		"FilterOperation": ubx.FieldSpec{
-			WireName: "filter_operation",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperationFields,
-		},
-		"NavigationOperation": ubx.FieldSpec{
-			WireName: "navigation_operation",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperationFields,
-		},
-		"SetParametersOperation": ubx.FieldSpec{
-			WireName: "set_parameters_operation",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperationFields,
-		},
-		"Urloperation": ubx.FieldSpec{
-			WireName: "urloperation",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Actions_ActionOperations_UrloperationFields,
-		},
-	}
+	"FilterOperation": ubx.FieldSpec{
+		WireName: "filter_operation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperations_FilterOperationFields,
+	},
+	"NavigationOperation": ubx.FieldSpec{
+		WireName: "navigation_operation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_NavigationOperationFields,
+	},
+	"SetParametersOperation": ubx.FieldSpec{
+		WireName: "set_parameters_operation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_SetParametersOperationFields,
+	},
+	"Urloperation": ubx.FieldSpec{
+		WireName: "urloperation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Actions_ActionOperations_UrloperationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields = ubx.FieldMap{
-		"ActionOperations": ubx.FieldSpec{
-			WireName: "action_operations",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperationsFields,
-		},
-		"CustomActionId": ubx.FieldSpec{WireName: "custom_action_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Trigger": ubx.FieldSpec{WireName: "trigger"},
-	}
+	"ActionOperations": ubx.FieldSpec{
+		WireName: "action_operations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_Actions_ActionOperationsFields,
+	},
+	"CustomActionId": ubx.FieldSpec{WireName: "custom_action_id"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"Status":         ubx.FieldSpec{WireName: "status"},
+	"Trigger":        ubx.FieldSpec{WireName: "trigger"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_DateAxisOptionsFields = ubx.FieldMap{
-		"MissingDateVisibility": ubx.FieldSpec{WireName: "missing_date_visibility"},
-	}
+	"MissingDateVisibility": ubx.FieldSpec{WireName: "missing_date_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Range_MinMaxFields = ubx.FieldMap{
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-	}
+	"Maximum": ubx.FieldSpec{WireName: "maximum"},
+	"Minimum": ubx.FieldSpec{WireName: "minimum"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_RangeFields = ubx.FieldMap{
-		"DataDriven": ubx.FieldSpec{WireName: "data_driven"},
-		"MinMax": ubx.FieldSpec{
-			WireName: "min_max",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Range_MinMaxFields,
-		},
-	}
+	"DataDriven": ubx.FieldSpec{WireName: "data_driven"},
+	"MinMax": ubx.FieldSpec{
+		WireName: "min_max",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Range_MinMaxFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_LinearFields = ubx.FieldMap{
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-		"StepSize": ubx.FieldSpec{WireName: "step_size"},
-	}
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+	"StepSize":  ubx.FieldSpec{WireName: "step_size"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_LogarithmicFields = ubx.FieldMap{
-		"Base": ubx.FieldSpec{WireName: "base"},
-	}
+	"Base": ubx.FieldSpec{WireName: "base"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_ScaleFields = ubx.FieldMap{
-		"Linear": ubx.FieldSpec{
-			WireName: "linear",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_LinearFields,
-		},
-		"Logarithmic": ubx.FieldSpec{
-			WireName: "logarithmic",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_LogarithmicFields,
-		},
-	}
+	"Linear": ubx.FieldSpec{
+		WireName: "linear",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_LinearFields,
+	},
+	"Logarithmic": ubx.FieldSpec{
+		WireName: "logarithmic",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_Scale_LogarithmicFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptionsFields = ubx.FieldMap{
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_RangeFields,
-		},
-		"Scale": ubx.FieldSpec{
-			WireName: "scale",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_ScaleFields,
-		},
-	}
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_RangeFields,
+	},
+	"Scale": ubx.FieldSpec{
+		WireName: "scale",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptions_ScaleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptionsFields = ubx.FieldMap{
-		"DateAxisOptions": ubx.FieldSpec{
-			WireName: "date_axis_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_DateAxisOptionsFields,
-		},
-		"NumericAxisOptions": ubx.FieldSpec{
-			WireName: "numeric_axis_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptionsFields,
-		},
-	}
+	"DateAxisOptions": ubx.FieldSpec{
+		WireName: "date_axis_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_DateAxisOptionsFields,
+	},
+	"NumericAxisOptions": ubx.FieldSpec{
+		WireName: "numeric_axis_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptions_NumericAxisOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRange_PercentRangeFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"From": ubx.FieldSpec{WireName: "from"},
+	"To":   ubx.FieldSpec{WireName: "to"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRangeFields = ubx.FieldMap{
-		"PercentRange": ubx.FieldSpec{
-			WireName: "percent_range",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRange_PercentRangeFields,
-		},
-	}
+	"PercentRange": ubx.FieldSpec{
+		WireName: "percent_range",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRange_PercentRangeFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptionsFields = ubx.FieldMap{
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-		"VisibleRange": ubx.FieldSpec{
-			WireName: "visible_range",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRangeFields,
-		},
-	}
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+	"VisibleRange": ubx.FieldSpec{
+		WireName: "visible_range",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptions_VisibleRangeFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_TickLabelOptionsFields = ubx.FieldMap{
-		"LabelOptions": ubx.FieldSpec{
-			WireName: "label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
-		},
-		"RotationAngle": ubx.FieldSpec{WireName: "rotation_angle"},
-	}
+	"LabelOptions": ubx.FieldSpec{
+		WireName: "label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
+	},
+	"RotationAngle": ubx.FieldSpec{WireName: "rotation_angle"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields = ubx.FieldMap{
-		"AxisLineVisibility": ubx.FieldSpec{WireName: "axis_line_visibility"},
-		"AxisOffset": ubx.FieldSpec{WireName: "axis_offset"},
-		"DataOptions": ubx.FieldSpec{
-			WireName: "data_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptionsFields,
-		},
-		"GridLineVisibility": ubx.FieldSpec{WireName: "grid_line_visibility"},
-		"ScrollbarOptions": ubx.FieldSpec{
-			WireName: "scrollbar_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptionsFields,
-		},
-		"TickLabelOptions": ubx.FieldSpec{
-			WireName: "tick_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_TickLabelOptionsFields,
-		},
-	}
+	"AxisLineVisibility": ubx.FieldSpec{WireName: "axis_line_visibility"},
+	"AxisOffset":         ubx.FieldSpec{WireName: "axis_offset"},
+	"DataOptions": ubx.FieldSpec{
+		WireName: "data_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_DataOptionsFields,
+	},
+	"GridLineVisibility": ubx.FieldSpec{WireName: "grid_line_visibility"},
+	"ScrollbarOptions": ubx.FieldSpec{
+		WireName: "scrollbar_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_ScrollbarOptionsFields,
+	},
+	"TickLabelOptions": ubx.FieldSpec{
+		WireName: "tick_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxis_TickLabelOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptions_ApplyToFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptionsFields = ubx.FieldMap{
-		"ApplyTo": ubx.FieldSpec{
-			WireName: "apply_to",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptions_ApplyToFields,
-		},
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-		"FontConfiguration": ubx.FieldSpec{
-			WireName: "font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-	}
+	"ApplyTo": ubx.FieldSpec{
+		WireName: "apply_to",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptions_ApplyToFields,
+	},
+	"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
+	"FontConfiguration": ubx.FieldSpec{
+		WireName: "font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields = ubx.FieldMap{
-		"AxisLabelOptions": ubx.FieldSpec{
-			WireName: "axis_label_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptionsFields,
-		},
-		"SortIconVisibility": ubx.FieldSpec{WireName: "sort_icon_visibility"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"AxisLabelOptions": ubx.FieldSpec{
+		WireName: "axis_label_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptions_AxisLabelOptionsFields,
+	},
+	"SortIconVisibility": ubx.FieldSpec{WireName: "sort_icon_visibility"},
+	"Visibility":         ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaultsFields = ubx.FieldMap{
-		"ContributorDimensions": ubx.FieldSpec{
-			WireName: "contributor_dimensions",
-			Kind: "list",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"MeasureFieldId": ubx.FieldSpec{WireName: "measure_field_id"},
-	}
+	"ContributorDimensions": ubx.FieldSpec{
+		WireName: "contributor_dimensions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"MeasureFieldId": ubx.FieldSpec{WireName: "measure_field_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_DataPathLabelTypeFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FieldValue": ubx.FieldSpec{WireName: "field_value"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"FieldId":    ubx.FieldSpec{WireName: "field_id"},
+	"FieldValue": ubx.FieldSpec{WireName: "field_value"},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_FieldLabelTypeFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"FieldId":    ubx.FieldSpec{WireName: "field_id"},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypesFields = ubx.FieldMap{
-		"DataPathLabelType": ubx.FieldSpec{
-			WireName: "data_path_label_type",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_DataPathLabelTypeFields,
-		},
-		"FieldLabelType": ubx.FieldSpec{
-			WireName: "field_label_type",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_FieldLabelTypeFields,
-		},
-		"MaximumLabelType": ubx.FieldSpec{
-			WireName: "maximum_label_type",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"MinimumLabelType": ubx.FieldSpec{
-			WireName: "minimum_label_type",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"RangeEndsLabelType": ubx.FieldSpec{
-			WireName: "range_ends_label_type",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-	}
+	"DataPathLabelType": ubx.FieldSpec{
+		WireName: "data_path_label_type",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_DataPathLabelTypeFields,
+	},
+	"FieldLabelType": ubx.FieldSpec{
+		WireName: "field_label_type",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypes_FieldLabelTypeFields,
+	},
+	"MaximumLabelType": ubx.FieldSpec{
+		WireName: "maximum_label_type",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"MinimumLabelType": ubx.FieldSpec{
+		WireName: "minimum_label_type",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"RangeEndsLabelType": ubx.FieldSpec{
+		WireName: "range_ends_label_type",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields = ubx.FieldMap{
-		"CategoryLabelVisibility": ubx.FieldSpec{WireName: "category_label_visibility"},
-		"DataLabelTypes": ubx.FieldSpec{
-			WireName: "data_label_types",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypesFields,
-		},
-		"LabelColor": ubx.FieldSpec{WireName: "label_color"},
-		"LabelContent": ubx.FieldSpec{WireName: "label_content"},
-		"LabelFontConfiguration": ubx.FieldSpec{
-			WireName: "label_font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"MeasureLabelVisibility": ubx.FieldSpec{WireName: "measure_label_visibility"},
-		"Overlap": ubx.FieldSpec{WireName: "overlap"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"TotalsVisibility": ubx.FieldSpec{WireName: "totals_visibility"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"CategoryLabelVisibility": ubx.FieldSpec{WireName: "category_label_visibility"},
+	"DataLabelTypes": ubx.FieldSpec{
+		WireName: "data_label_types",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabels_DataLabelTypesFields,
+	},
+	"LabelColor":   ubx.FieldSpec{WireName: "label_color"},
+	"LabelContent": ubx.FieldSpec{WireName: "label_content"},
+	"LabelFontConfiguration": ubx.FieldSpec{
+		WireName: "label_font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"MeasureLabelVisibility": ubx.FieldSpec{WireName: "measure_label_visibility"},
+	"Overlap":                ubx.FieldSpec{WireName: "overlap"},
+	"Position":               ubx.FieldSpec{WireName: "position"},
+	"TotalsVisibility":       ubx.FieldSpec{WireName: "totals_visibility"},
+	"Visibility":             ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_CategoricalDimensionFieldFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfigurationFields,
-		},
-		"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfigurationFields,
+	},
+	"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_DateDimensionFieldFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"DateGranularity": ubx.FieldSpec{WireName: "date_granularity"},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfigurationFields,
-		},
-		"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"DateGranularity": ubx.FieldSpec{WireName: "date_granularity"},
+	"FieldId":         ubx.FieldSpec{WireName: "field_id"},
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfigurationFields,
+	},
+	"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_NumericalDimensionFieldFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfigurationFields,
-		},
-		"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfigurationFields,
+	},
+	"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields = ubx.FieldMap{
-		"CategoricalDimensionField": ubx.FieldSpec{
-			WireName: "categorical_dimension_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_CategoricalDimensionFieldFields,
-		},
-		"DateDimensionField": ubx.FieldSpec{
-			WireName: "date_dimension_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_DateDimensionFieldFields,
-		},
-		"NumericalDimensionField": ubx.FieldSpec{
-			WireName: "numerical_dimension_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_NumericalDimensionFieldFields,
-		},
-	}
+	"CategoricalDimensionField": ubx.FieldSpec{
+		WireName: "categorical_dimension_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_CategoricalDimensionFieldFields,
+	},
+	"DateDimensionField": ubx.FieldSpec{
+		WireName: "date_dimension_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_DateDimensionFieldFields,
+	},
+	"NumericalDimensionField": ubx.FieldSpec{
+		WireName: "numerical_dimension_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Category_NumericalDimensionFieldFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CalculatedMeasureFieldFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"FieldId":    ubx.FieldSpec{WireName: "field_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CategoricalMeasureFieldFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfigurationFields,
-		},
-	}
+	"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_StringFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_DateMeasureFieldFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfigurationFields,
-		},
-	}
+	"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_NumericalMeasureFieldFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{
-			WireName: "aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunctionFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfigurationFields,
-		},
-	}
+	"AggregationFunction": ubx.FieldSpec{
+		WireName: "aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunctionFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_NumberFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields = ubx.FieldMap{
-		"CalculatedMeasureField": ubx.FieldSpec{
-			WireName: "calculated_measure_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CalculatedMeasureFieldFields,
-		},
-		"CategoricalMeasureField": ubx.FieldSpec{
-			WireName: "categorical_measure_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CategoricalMeasureFieldFields,
-		},
-		"DateMeasureField": ubx.FieldSpec{
-			WireName: "date_measure_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_DateMeasureFieldFields,
-		},
-		"NumericalMeasureField": ubx.FieldSpec{
-			WireName: "numerical_measure_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_NumericalMeasureFieldFields,
-		},
-	}
+	"CalculatedMeasureField": ubx.FieldSpec{
+		WireName: "calculated_measure_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CalculatedMeasureFieldFields,
+	},
+	"CategoricalMeasureField": ubx.FieldSpec{
+		WireName: "categorical_measure_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_CategoricalMeasureFieldFields,
+	},
+	"DateMeasureField": ubx.FieldSpec{
+		WireName: "date_measure_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_DateMeasureFieldFields,
+	},
+	"NumericalMeasureField": ubx.FieldSpec{
+		WireName: "numerical_measure_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_Values_NumericalMeasureFieldFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWellsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Colors": ubx.FieldSpec{
-			WireName: "colors",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"SmallMultiples": ubx.FieldSpec{
-			WireName: "small_multiples",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Colors": ubx.FieldSpec{
+		WireName: "colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"SmallMultiples": ubx.FieldSpec{
+		WireName: "small_multiples",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"BarChartAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "bar_chart_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWellsFields,
-		},
-	}
+	"BarChartAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "bar_chart_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields = ubx.FieldMap{
-		"ContextMenuOption": ubx.FieldSpec{
-			WireName: "context_menu_option",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Interactions_ImageMenuOptionFields,
-		},
-		"VisualMenuOption": ubx.FieldSpec{
-			WireName: "visual_menu_option",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Interactions_ImageMenuOptionFields,
-		},
-	}
+	"ContextMenuOption": ubx.FieldSpec{
+		WireName: "context_menu_option",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Interactions_ImageMenuOptionFields,
+	},
+	"VisualMenuOption": ubx.FieldSpec{
+		WireName: "visual_menu_option",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Interactions_ImageMenuOptionFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
-		},
-		"ValueFontConfiguration": ubx.FieldSpec{
-			WireName: "value_font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Height":   ubx.FieldSpec{WireName: "height"},
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptionsFields,
+	},
+	"ValueFontConfiguration": ubx.FieldSpec{
+		WireName: "value_font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+	"Width":      ubx.FieldSpec{WireName: "width"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_DynamicConfigurationFields = ubx.FieldMap{
-		"Calculation": ubx.FieldSpec{
-			WireName: "calculation",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunctionFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"MeasureAggregationFunction": ubx.FieldSpec{
-			WireName: "measure_aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
-		},
-	}
+	"Calculation": ubx.FieldSpec{
+		WireName: "calculation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunction_NumericalAggregationFunctionFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"MeasureAggregationFunction": ubx.FieldSpec{
+		WireName: "measure_aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_StaticConfigurationFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfigurationFields = ubx.FieldMap{
-		"AxisBinding": ubx.FieldSpec{WireName: "axis_binding"},
-		"DynamicConfiguration": ubx.FieldSpec{
-			WireName: "dynamic_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_DynamicConfigurationFields,
-		},
-		"SeriesType": ubx.FieldSpec{WireName: "series_type"},
-		"StaticConfiguration": ubx.FieldSpec{
-			WireName: "static_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_StaticConfigurationFields,
-		},
-	}
+	"AxisBinding": ubx.FieldSpec{WireName: "axis_binding"},
+	"DynamicConfiguration": ubx.FieldSpec{
+		WireName: "dynamic_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_DynamicConfigurationFields,
+	},
+	"SeriesType": ubx.FieldSpec{WireName: "series_type"},
+	"StaticConfiguration": ubx.FieldSpec{
+		WireName: "static_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_StaticConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_CustomLabelConfigurationFields = ubx.FieldMap{
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-	}
+	"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_ValueLabelConfigurationFields = ubx.FieldMap{
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields,
-		},
-		"RelativePosition": ubx.FieldSpec{WireName: "relative_position"},
-	}
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfigurationFields,
+	},
+	"RelativePosition": ubx.FieldSpec{WireName: "relative_position"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfigurationFields = ubx.FieldMap{
-		"CustomLabelConfiguration": ubx.FieldSpec{
-			WireName: "custom_label_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_CustomLabelConfigurationFields,
-		},
-		"FontColor": ubx.FieldSpec{WireName: "font_color"},
-		"FontConfiguration": ubx.FieldSpec{
-			WireName: "font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"HorizontalPosition": ubx.FieldSpec{WireName: "horizontal_position"},
-		"ValueLabelConfiguration": ubx.FieldSpec{
-			WireName: "value_label_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_ValueLabelConfigurationFields,
-		},
-		"VerticalPosition": ubx.FieldSpec{WireName: "vertical_position"},
-	}
+	"CustomLabelConfiguration": ubx.FieldSpec{
+		WireName: "custom_label_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_CustomLabelConfigurationFields,
+	},
+	"FontColor": ubx.FieldSpec{WireName: "font_color"},
+	"FontConfiguration": ubx.FieldSpec{
+		WireName: "font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"HorizontalPosition": ubx.FieldSpec{WireName: "horizontal_position"},
+	"ValueLabelConfiguration": ubx.FieldSpec{
+		WireName: "value_label_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfiguration_ValueLabelConfigurationFields,
+	},
+	"VerticalPosition": ubx.FieldSpec{WireName: "vertical_position"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_StyleConfigurationFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"Color":   ubx.FieldSpec{WireName: "color"},
+	"Pattern": ubx.FieldSpec{WireName: "pattern"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields = ubx.FieldMap{
-		"DataConfiguration": ubx.FieldSpec{
-			WireName: "data_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfigurationFields,
-		},
-		"LabelConfiguration": ubx.FieldSpec{
-			WireName: "label_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfigurationFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StyleConfiguration": ubx.FieldSpec{
-			WireName: "style_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_StyleConfigurationFields,
-		},
-	}
+	"DataConfiguration": ubx.FieldSpec{
+		WireName: "data_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfigurationFields,
+	},
+	"LabelConfiguration": ubx.FieldSpec{
+		WireName: "label_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_LabelConfigurationFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+	"StyleConfiguration": ubx.FieldSpec{
+		WireName: "style_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_StyleConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfiguration_TitleFields = ubx.FieldMap{
-		"FontConfiguration": ubx.FieldSpec{
-			WireName: "font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"HorizontalTextAlignment": ubx.FieldSpec{WireName: "horizontal_text_alignment"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"FontConfiguration": ubx.FieldSpec{
+		WireName: "font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"HorizontalTextAlignment": ubx.FieldSpec{WireName: "horizontal_text_alignment"},
+	"Visibility":              ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfigurationFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"BackgroundVisibility": ubx.FieldSpec{WireName: "background_visibility"},
-		"BorderColor": ubx.FieldSpec{WireName: "border_color"},
-		"BorderStyle": ubx.FieldSpec{WireName: "border_style"},
-		"BorderThickness": ubx.FieldSpec{WireName: "border_thickness"},
-		"BorderVisibility": ubx.FieldSpec{WireName: "border_visibility"},
-		"GutterSpacing": ubx.FieldSpec{WireName: "gutter_spacing"},
-		"GutterVisibility": ubx.FieldSpec{WireName: "gutter_visibility"},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfiguration_TitleFields,
-		},
-	}
+	"BackgroundColor":      ubx.FieldSpec{WireName: "background_color"},
+	"BackgroundVisibility": ubx.FieldSpec{WireName: "background_visibility"},
+	"BorderColor":          ubx.FieldSpec{WireName: "border_color"},
+	"BorderStyle":          ubx.FieldSpec{WireName: "border_style"},
+	"BorderThickness":      ubx.FieldSpec{WireName: "border_thickness"},
+	"BorderVisibility":     ubx.FieldSpec{WireName: "border_visibility"},
+	"GutterSpacing":        ubx.FieldSpec{WireName: "gutter_spacing"},
+	"GutterVisibility":     ubx.FieldSpec{WireName: "gutter_visibility"},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfiguration_TitleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_XaxisFields = ubx.FieldMap{
-		"Placement": ubx.FieldSpec{WireName: "placement"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-	}
+	"Placement": ubx.FieldSpec{WireName: "placement"},
+	"Scale":     ubx.FieldSpec{WireName: "scale"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptionsFields = ubx.FieldMap{
-		"MaxVisibleColumns": ubx.FieldSpec{WireName: "max_visible_columns"},
-		"MaxVisibleRows": ubx.FieldSpec{WireName: "max_visible_rows"},
-		"PanelConfiguration": ubx.FieldSpec{
-			WireName: "panel_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfigurationFields,
-		},
-		"Xaxis": ubx.FieldSpec{
-			WireName: "xaxis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_XaxisFields,
-		},
-		"Yaxis": ubx.FieldSpec{
-			WireName: "yaxis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_XaxisFields,
-		},
-	}
+	"MaxVisibleColumns": ubx.FieldSpec{WireName: "max_visible_columns"},
+	"MaxVisibleRows":    ubx.FieldSpec{WireName: "max_visible_rows"},
+	"PanelConfiguration": ubx.FieldSpec{
+		WireName: "panel_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_PanelConfigurationFields,
+	},
+	"Xaxis": ubx.FieldSpec{
+		WireName: "xaxis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_XaxisFields,
+	},
+	"Yaxis": ubx.FieldSpec{
+		WireName: "yaxis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptions_XaxisFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields = ubx.FieldMap{
-		"ItemsLimit": ubx.FieldSpec{WireName: "items_limit"},
-		"OtherCategories": ubx.FieldSpec{WireName: "other_categories"},
-	}
+	"ItemsLimit":      ubx.FieldSpec{WireName: "items_limit"},
+	"OtherCategories": ubx.FieldSpec{WireName: "other_categories"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort_FieldSortFields = ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-	}
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"FieldId":   ubx.FieldSpec{WireName: "field_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields = ubx.FieldMap{
-		"ColumnSort": ubx.FieldSpec{
-			WireName: "column_sort",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetricsFields,
-		},
-		"FieldSort": ubx.FieldSpec{
-			WireName: "field_sort",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort_FieldSortFields,
-		},
-	}
+	"ColumnSort": ubx.FieldSpec{
+		WireName: "column_sort",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetricsFields,
+	},
+	"FieldSort": ubx.FieldSpec{
+		WireName: "field_sort",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort_FieldSortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"CategoryItemsLimit": ubx.FieldSpec{
-			WireName: "category_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"CategorySort": ubx.FieldSpec{
-			WireName: "category_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-		"ColorItemsLimit": ubx.FieldSpec{
-			WireName: "color_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"ColorSort": ubx.FieldSpec{
-			WireName: "color_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-		"SmallMultiplesLimitConfiguration": ubx.FieldSpec{
-			WireName: "small_multiples_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"SmallMultiplesSort": ubx.FieldSpec{
-			WireName: "small_multiples_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"CategoryItemsLimit": ubx.FieldSpec{
+		WireName: "category_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"CategorySort": ubx.FieldSpec{
+		WireName: "category_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+	"ColorItemsLimit": ubx.FieldSpec{
+		WireName: "color_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"ColorSort": ubx.FieldSpec{
+		WireName: "color_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+	"SmallMultiplesLimitConfiguration": ubx.FieldSpec{
+		WireName: "small_multiples_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"SmallMultiplesSort": ubx.FieldSpec{
+		WireName: "small_multiples_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_ColumnTooltipItemFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{
-			WireName: "aggregation",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
-		},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"TooltipTarget": ubx.FieldSpec{WireName: "tooltip_target"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"Aggregation": ubx.FieldSpec{
+		WireName: "aggregation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_NumericEqualityFilter_AggregationFunctionFields,
+	},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"Label":         ubx.FieldSpec{WireName: "label"},
+	"TooltipTarget": ubx.FieldSpec{WireName: "tooltip_target"},
+	"Visibility":    ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_FieldTooltipItemFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"TooltipTarget": ubx.FieldSpec{WireName: "tooltip_target"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"FieldId":       ubx.FieldSpec{WireName: "field_id"},
+	"Label":         ubx.FieldSpec{WireName: "label"},
+	"TooltipTarget": ubx.FieldSpec{WireName: "tooltip_target"},
+	"Visibility":    ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFieldsFields = ubx.FieldMap{
-		"ColumnTooltipItem": ubx.FieldSpec{
-			WireName: "column_tooltip_item",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_ColumnTooltipItemFields,
-		},
-		"FieldTooltipItem": ubx.FieldSpec{
-			WireName: "field_tooltip_item",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_FieldTooltipItemFields,
-		},
-	}
+	"ColumnTooltipItem": ubx.FieldSpec{
+		WireName: "column_tooltip_item",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_ColumnTooltipItemFields,
+	},
+	"FieldTooltipItem": ubx.FieldSpec{
+		WireName: "field_tooltip_item",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFields_FieldTooltipItemFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltipFields = ubx.FieldMap{
-		"AggregationVisibility": ubx.FieldSpec{WireName: "aggregation_visibility"},
-		"TooltipFields": ubx.FieldSpec{
-			WireName: "tooltip_fields",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFieldsFields,
-		},
-		"TooltipTitleType": ubx.FieldSpec{WireName: "tooltip_title_type"},
-	}
+	"AggregationVisibility": ubx.FieldSpec{WireName: "aggregation_visibility"},
+	"TooltipFields": ubx.FieldSpec{
+		WireName: "tooltip_fields",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltip_TooltipFieldsFields,
+	},
+	"TooltipTitleType": ubx.FieldSpec{WireName: "tooltip_title_type"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields = ubx.FieldMap{
-		"FieldBasedTooltip": ubx.FieldSpec{
-			WireName: "field_based_tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltipFields,
-		},
-		"SelectedTooltipType": ubx.FieldSpec{WireName: "selected_tooltip_type"},
-		"TooltipVisibility": ubx.FieldSpec{WireName: "tooltip_visibility"},
-	}
+	"FieldBasedTooltip": ubx.FieldSpec{
+		WireName: "field_based_tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_Tooltip_FieldBasedTooltipFields,
+	},
+	"SelectedTooltipType": ubx.FieldSpec{WireName: "selected_tooltip_type"},
+	"TooltipVisibility":   ubx.FieldSpec{WireName: "tooltip_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_Element_DataPathTypeFields = ubx.FieldMap{
-		"PivotTableDataPathType": ubx.FieldSpec{WireName: "pivot_table_data_path_type"},
-	}
+	"PivotTableDataPathType": ubx.FieldSpec{WireName: "pivot_table_data_path_type"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields = ubx.FieldMap{
-		"DataPathType": ubx.FieldSpec{
-			WireName: "data_path_type",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_Element_DataPathTypeFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FieldValue": ubx.FieldSpec{WireName: "field_value"},
-	}
+	"DataPathType": ubx.FieldSpec{
+		WireName: "data_path_type",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_Element_DataPathTypeFields,
+	},
+	"FieldId":    ubx.FieldSpec{WireName: "field_id"},
+	"FieldValue": ubx.FieldSpec{WireName: "field_value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMapFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"Element": ubx.FieldSpec{
-			WireName: "element",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields,
-		},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-	}
+	"Color": ubx.FieldSpec{WireName: "color"},
+	"Element": ubx.FieldSpec{
+		WireName: "element",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields,
+	},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields = ubx.FieldMap{
-		"ChartColor": ubx.FieldSpec{WireName: "chart_color"},
-		"ColorMap": ubx.FieldSpec{
-			WireName: "color_map",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMapFields,
-		},
-	}
+	"ChartColor": ubx.FieldSpec{WireName: "chart_color"},
+	"ColorMap": ubx.FieldSpec{
+		WireName: "color_map",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMapFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfigurationFields = ubx.FieldMap{
-		"BarsArrangement": ubx.FieldSpec{WireName: "bars_arrangement"},
-		"CategoryAxis": ubx.FieldSpec{
-			WireName: "category_axis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"CategoryLabelOptions": ubx.FieldSpec{
-			WireName: "category_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ColorLabelOptions": ubx.FieldSpec{
-			WireName: "color_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ContributionAnalysisDefaults": ubx.FieldSpec{
-			WireName: "contribution_analysis_defaults",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaultsFields,
-		},
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"Orientation": ubx.FieldSpec{WireName: "orientation"},
-		"ReferenceLines": ubx.FieldSpec{
-			WireName: "reference_lines",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields,
-		},
-		"SmallMultiplesOptions": ubx.FieldSpec{
-			WireName: "small_multiples_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"ValueAxis": ubx.FieldSpec{
-			WireName: "value_axis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"ValueLabelOptions": ubx.FieldSpec{
-			WireName: "value_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-	}
+	"BarsArrangement": ubx.FieldSpec{WireName: "bars_arrangement"},
+	"CategoryAxis": ubx.FieldSpec{
+		WireName: "category_axis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"CategoryLabelOptions": ubx.FieldSpec{
+		WireName: "category_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ColorLabelOptions": ubx.FieldSpec{
+		WireName: "color_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ContributionAnalysisDefaults": ubx.FieldSpec{
+		WireName: "contribution_analysis_defaults",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaultsFields,
+	},
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"Orientation": ubx.FieldSpec{WireName: "orientation"},
+	"ReferenceLines": ubx.FieldSpec{
+		WireName: "reference_lines",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields,
+	},
+	"SmallMultiplesOptions": ubx.FieldSpec{
+		WireName: "small_multiples_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"ValueAxis": ubx.FieldSpec{
+		WireName: "value_axis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"ValueLabelOptions": ubx.FieldSpec{
+		WireName: "value_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_CategoryFilterFields = ubx.FieldMap{
-		"CategoryValues": ubx.FieldSpec{WireName: "category_values"},
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-	}
+	"CategoryValues": ubx.FieldSpec{WireName: "category_values"},
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_NumericEqualityFilterFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_TimeRangeFilterFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"RangeMaximum": ubx.FieldSpec{WireName: "range_maximum"},
-		"RangeMinimum": ubx.FieldSpec{WireName: "range_minimum"},
-		"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"RangeMaximum":    ubx.FieldSpec{WireName: "range_maximum"},
+	"RangeMinimum":    ubx.FieldSpec{WireName: "range_minimum"},
+	"TimeGranularity": ubx.FieldSpec{WireName: "time_granularity"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFiltersFields = ubx.FieldMap{
-		"CategoryFilter": ubx.FieldSpec{
-			WireName: "category_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_CategoryFilterFields,
-		},
-		"NumericEqualityFilter": ubx.FieldSpec{
-			WireName: "numeric_equality_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_NumericEqualityFilterFields,
-		},
-		"TimeRangeFilter": ubx.FieldSpec{
-			WireName: "time_range_filter",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_TimeRangeFilterFields,
-		},
-	}
+	"CategoryFilter": ubx.FieldSpec{
+		WireName: "category_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_CategoryFilterFields,
+	},
+	"NumericEqualityFilter": ubx.FieldSpec{
+		WireName: "numeric_equality_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_NumericEqualityFilterFields,
+	},
+	"TimeRangeFilter": ubx.FieldSpec{
+		WireName: "time_range_filter",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFilters_TimeRangeFilterFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchyFields = ubx.FieldMap{
-		"DrillDownFilters": ubx.FieldSpec{
-			WireName: "drill_down_filters",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFiltersFields,
-		},
-		"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
-	}
+	"DrillDownFilters": ubx.FieldSpec{
+		WireName: "drill_down_filters",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFiltersFields,
+	},
+	"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_ExplicitHierarchyFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"DrillDownFilters": ubx.FieldSpec{
-			WireName: "drill_down_filters",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFiltersFields,
-		},
-		"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"DrillDownFilters": ubx.FieldSpec{
+		WireName: "drill_down_filters",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchy_DrillDownFiltersFields,
+	},
+	"HierarchyId": ubx.FieldSpec{WireName: "hierarchy_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields = ubx.FieldMap{
-		"DateTimeHierarchy": ubx.FieldSpec{
-			WireName: "date_time_hierarchy",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchyFields,
-		},
-		"ExplicitHierarchy": ubx.FieldSpec{
-			WireName: "explicit_hierarchy",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_ExplicitHierarchyFields,
-		},
-		"PredefinedHierarchy": ubx.FieldSpec{
-			WireName: "predefined_hierarchy",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_ExplicitHierarchyFields,
-		},
-	}
+	"DateTimeHierarchy": ubx.FieldSpec{
+		WireName: "date_time_hierarchy",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_DateTimeHierarchyFields,
+	},
+	"ExplicitHierarchy": ubx.FieldSpec{
+		WireName: "explicit_hierarchy",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_ExplicitHierarchyFields,
+	},
+	"PredefinedHierarchy": ubx.FieldSpec{
+		WireName: "predefined_hierarchy",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchies_ExplicitHierarchyFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_Subtitle_FormatTextFields = ubx.FieldMap{
-		"PlainText": ubx.FieldSpec{WireName: "plain_text"},
-		"RichText": ubx.FieldSpec{WireName: "rich_text"},
-	}
+	"PlainText": ubx.FieldSpec{WireName: "plain_text"},
+	"RichText":  ubx.FieldSpec{WireName: "rich_text"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields = ubx.FieldMap{
-		"FormatText": ubx.FieldSpec{
-			WireName: "format_text",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_Subtitle_FormatTextFields,
-		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"FormatText": ubx.FieldSpec{
+		WireName: "format_text",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_Subtitle_FormatTextFields,
+	},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BarChartVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptions_StyleOptionsFields = ubx.FieldMap{
-		"FillStyle": ubx.FieldSpec{WireName: "fill_style"},
-	}
+	"FillStyle": ubx.FieldSpec{WireName: "fill_style"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptionsFields = ubx.FieldMap{
-		"AllDataPointsVisibility": ubx.FieldSpec{WireName: "all_data_points_visibility"},
-		"OutlierVisibility": ubx.FieldSpec{WireName: "outlier_visibility"},
-		"StyleOptions": ubx.FieldSpec{
-			WireName: "style_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptions_StyleOptionsFields,
-		},
-	}
+	"AllDataPointsVisibility": ubx.FieldSpec{WireName: "all_data_points_visibility"},
+	"OutlierVisibility":       ubx.FieldSpec{WireName: "outlier_visibility"},
+	"StyleOptions": ubx.FieldSpec{
+		WireName: "style_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptions_StyleOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells_BoxPlotAggregatedFieldWellsFields = ubx.FieldMap{
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"BoxPlotAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "box_plot_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells_BoxPlotAggregatedFieldWellsFields,
-		},
-	}
+	"BoxPlotAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "box_plot_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells_BoxPlotAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration_PaginationConfigurationFields = ubx.FieldMap{
-		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-	}
+	"PageNumber": ubx.FieldSpec{WireName: "page_number"},
+	"PageSize":   ubx.FieldSpec{WireName: "page_size"},
+}
 
 var Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"CategorySort": ubx.FieldSpec{
-			WireName: "category_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-		"PaginationConfiguration": ubx.FieldSpec{
-			WireName: "pagination_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration_PaginationConfigurationFields,
-		},
-	}
+	"CategorySort": ubx.FieldSpec{
+		WireName: "category_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+	"PaginationConfiguration": ubx.FieldSpec{
+		WireName: "pagination_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration_PaginationConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfigurationFields = ubx.FieldMap{
-		"BoxPlotOptions": ubx.FieldSpec{
-			WireName: "box_plot_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptionsFields,
-		},
-		"CategoryAxis": ubx.FieldSpec{
-			WireName: "category_axis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"CategoryLabelOptions": ubx.FieldSpec{
-			WireName: "category_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"PrimaryYaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "primary_yaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"PrimaryYaxisLabelOptions": ubx.FieldSpec{
-			WireName: "primary_yaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ReferenceLines": ubx.FieldSpec{
-			WireName: "reference_lines",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-	}
+	"BoxPlotOptions": ubx.FieldSpec{
+		WireName: "box_plot_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_BoxPlotOptionsFields,
+	},
+	"CategoryAxis": ubx.FieldSpec{
+		WireName: "category_axis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"CategoryLabelOptions": ubx.FieldSpec{
+		WireName: "category_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"PrimaryYaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "primary_yaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"PrimaryYaxisLabelOptions": ubx.FieldSpec{
+		WireName: "primary_yaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ReferenceLines": ubx.FieldSpec{
+		WireName: "reference_lines",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_BoxPlotVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_FieldWells_ComboChartAggregatedFieldWellsFields = ubx.FieldMap{
-		"BarValues": ubx.FieldSpec{
-			WireName: "bar_values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Colors": ubx.FieldSpec{
-			WireName: "colors",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"LineValues": ubx.FieldSpec{
-			WireName: "line_values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"BarValues": ubx.FieldSpec{
+		WireName: "bar_values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Colors": ubx.FieldSpec{
+		WireName: "colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"LineValues": ubx.FieldSpec{
+		WireName: "line_values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"ComboChartAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "combo_chart_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_FieldWells_ComboChartAggregatedFieldWellsFields,
-		},
-	}
+	"ComboChartAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "combo_chart_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_FieldWells_ComboChartAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptions_YaxisOptionsFields = ubx.FieldMap{
-		"Yaxis": ubx.FieldSpec{WireName: "yaxis"},
-	}
+	"Yaxis": ubx.FieldSpec{WireName: "yaxis"},
+}
 
 var Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptionsFields = ubx.FieldMap{
-		"YaxisOptions": ubx.FieldSpec{
-			WireName: "yaxis_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptions_YaxisOptionsFields,
-		},
-	}
+	"YaxisOptions": ubx.FieldSpec{
+		WireName: "yaxis_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptions_YaxisOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"CategoryItemsLimit": ubx.FieldSpec{
-			WireName: "category_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"CategorySort": ubx.FieldSpec{
-			WireName: "category_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-		"ColorItemsLimit": ubx.FieldSpec{
-			WireName: "color_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"ColorSort": ubx.FieldSpec{
-			WireName: "color_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"CategoryItemsLimit": ubx.FieldSpec{
+		WireName: "category_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"CategorySort": ubx.FieldSpec{
+		WireName: "category_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+	"ColorItemsLimit": ubx.FieldSpec{
+		WireName: "color_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"ColorSort": ubx.FieldSpec{
+		WireName: "color_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfigurationFields = ubx.FieldMap{
-		"BarDataLabels": ubx.FieldSpec{
-			WireName: "bar_data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"BarsArrangement": ubx.FieldSpec{WireName: "bars_arrangement"},
-		"CategoryAxis": ubx.FieldSpec{
-			WireName: "category_axis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"CategoryLabelOptions": ubx.FieldSpec{
-			WireName: "category_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ColorLabelOptions": ubx.FieldSpec{
-			WireName: "color_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"LineDataLabels": ubx.FieldSpec{
-			WireName: "line_data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"PrimaryYaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "primary_yaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"PrimaryYaxisLabelOptions": ubx.FieldSpec{
-			WireName: "primary_yaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ReferenceLines": ubx.FieldSpec{
-			WireName: "reference_lines",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields,
-		},
-		"SecondaryYaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "secondary_yaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"SecondaryYaxisLabelOptions": ubx.FieldSpec{
-			WireName: "secondary_yaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"SingleAxisOptions": ubx.FieldSpec{
-			WireName: "single_axis_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-	}
+	"BarDataLabels": ubx.FieldSpec{
+		WireName: "bar_data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"BarsArrangement": ubx.FieldSpec{WireName: "bars_arrangement"},
+	"CategoryAxis": ubx.FieldSpec{
+		WireName: "category_axis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"CategoryLabelOptions": ubx.FieldSpec{
+		WireName: "category_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ColorLabelOptions": ubx.FieldSpec{
+		WireName: "color_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"LineDataLabels": ubx.FieldSpec{
+		WireName: "line_data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"PrimaryYaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "primary_yaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"PrimaryYaxisLabelOptions": ubx.FieldSpec{
+		WireName: "primary_yaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ReferenceLines": ubx.FieldSpec{
+		WireName: "reference_lines",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields,
+	},
+	"SecondaryYaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "secondary_yaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"SecondaryYaxisLabelOptions": ubx.FieldSpec{
+		WireName: "secondary_yaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"SingleAxisOptions": ubx.FieldSpec{
+		WireName: "single_axis_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ComboChartVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_CustomContentVisual_ChartConfigurationFields = ubx.FieldMap{
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"ContentUrl": ubx.FieldSpec{WireName: "content_url"},
-		"ImageScaling": ubx.FieldSpec{WireName: "image_scaling"},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-	}
+	"ContentType":  ubx.FieldSpec{WireName: "content_type"},
+	"ContentUrl":   ubx.FieldSpec{WireName: "content_url"},
+	"ImageScaling": ubx.FieldSpec{WireName: "image_scaling"},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_CustomContentVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_CustomContentVisual_ChartConfigurationFields,
-		},
-		"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_CustomContentVisual_ChartConfigurationFields,
+	},
+	"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_EmptyVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
+	"VisualId":          ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWells_FilledMapAggregatedFieldWellsFields = ubx.FieldMap{
-		"Geospatial": ubx.FieldSpec{
-			WireName: "geospatial",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Geospatial": ubx.FieldSpec{
+		WireName: "geospatial",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"FilledMapAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "filled_map_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWells_FilledMapAggregatedFieldWellsFields,
-		},
-	}
+	"FilledMapAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "filled_map_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWells_FilledMapAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_MapStyleOptionsFields = ubx.FieldMap{
-		"BaseMapStyle": ubx.FieldSpec{WireName: "base_map_style"},
-	}
+	"BaseMapStyle": ubx.FieldSpec{WireName: "base_map_style"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"CategorySort": ubx.FieldSpec{
-			WireName: "category_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"CategorySort": ubx.FieldSpec{
+		WireName: "category_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions_BoundsFields = ubx.FieldMap{
-		"East": ubx.FieldSpec{WireName: "east"},
-		"North": ubx.FieldSpec{WireName: "north"},
-		"South": ubx.FieldSpec{WireName: "south"},
-		"West": ubx.FieldSpec{WireName: "west"},
-	}
+	"East":  ubx.FieldSpec{WireName: "east"},
+	"North": ubx.FieldSpec{WireName: "north"},
+	"South": ubx.FieldSpec{WireName: "south"},
+	"West":  ubx.FieldSpec{WireName: "west"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptionsFields = ubx.FieldMap{
-		"Bounds": ubx.FieldSpec{
-			WireName: "bounds",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions_BoundsFields,
-		},
-		"MapZoomMode": ubx.FieldSpec{WireName: "map_zoom_mode"},
-	}
+	"Bounds": ubx.FieldSpec{
+		WireName: "bounds",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions_BoundsFields,
+	},
+	"MapZoomMode": ubx.FieldSpec{WireName: "map_zoom_mode"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfigurationFields = ubx.FieldMap{
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"MapStyleOptions": ubx.FieldSpec{
-			WireName: "map_style_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_MapStyleOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"WindowOptions": ubx.FieldSpec{
-			WireName: "window_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptionsFields,
-		},
-	}
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"MapStyleOptions": ubx.FieldSpec{
+		WireName: "map_style_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_MapStyleOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"WindowOptions": ubx.FieldSpec{
+		WireName: "window_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient_Color_StopsFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"DataValue": ubx.FieldSpec{WireName: "data_value"},
-		"GradientOffset": ubx.FieldSpec{WireName: "gradient_offset"},
-	}
+	"Color":          ubx.FieldSpec{WireName: "color"},
+	"DataValue":      ubx.FieldSpec{WireName: "data_value"},
+	"GradientOffset": ubx.FieldSpec{WireName: "gradient_offset"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient_ColorFields = ubx.FieldMap{
-		"Stops": ubx.FieldSpec{
-			WireName: "stops",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient_Color_StopsFields,
-		},
-	}
+	"Stops": ubx.FieldSpec{
+		WireName: "stops",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient_Color_StopsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_GradientFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{
-			WireName: "color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient_ColorFields,
-		},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Color": ubx.FieldSpec{
+		WireName: "color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_Gradient_ColorFields,
+	},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_SolidFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Color":      ubx.FieldSpec{WireName: "color"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields = ubx.FieldMap{
-		"Gradient": ubx.FieldSpec{
-			WireName: "gradient",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_GradientFields,
-		},
-		"Solid": ubx.FieldSpec{
-			WireName: "solid",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_SolidFields,
-		},
-	}
+	"Gradient": ubx.FieldSpec{
+		WireName: "gradient",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_GradientFields,
+	},
+	"Solid": ubx.FieldSpec{
+		WireName: "solid",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColor_SolidFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_FormatFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{
-			WireName: "background_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
-		},
-	}
+	"BackgroundColor": ubx.FieldSpec{
+		WireName: "background_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_ShapeFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Format": ubx.FieldSpec{
-			WireName: "format",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_FormatFields,
-		},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"Format": ubx.FieldSpec{
+		WireName: "format",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_FormatFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptionsFields = ubx.FieldMap{
-		"Shape": ubx.FieldSpec{
-			WireName: "shape",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_ShapeFields,
-		},
-	}
+	"Shape": ubx.FieldSpec{
+		WireName: "shape",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_ShapeFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormattingFields = ubx.FieldMap{
-		"ConditionalFormattingOptions": ubx.FieldSpec{
-			WireName: "conditional_formatting_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
-		},
-	}
+	"ConditionalFormattingOptions": ubx.FieldSpec{
+		WireName: "conditional_formatting_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FilledMapVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"ConditionalFormatting": ubx.FieldSpec{
-			WireName: "conditional_formatting",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormattingFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"ConditionalFormatting": ubx.FieldSpec{
+		WireName: "conditional_formatting",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormattingFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_DataLabelOptionsFields = ubx.FieldMap{
-		"CategoryLabelVisibility": ubx.FieldSpec{WireName: "category_label_visibility"},
-		"LabelColor": ubx.FieldSpec{WireName: "label_color"},
-		"LabelFontConfiguration": ubx.FieldSpec{
-			WireName: "label_font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"MeasureDataLabelStyle": ubx.FieldSpec{WireName: "measure_data_label_style"},
-		"MeasureLabelVisibility": ubx.FieldSpec{WireName: "measure_label_visibility"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"CategoryLabelVisibility": ubx.FieldSpec{WireName: "category_label_visibility"},
+	"LabelColor":              ubx.FieldSpec{WireName: "label_color"},
+	"LabelFontConfiguration": ubx.FieldSpec{
+		WireName: "label_font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"MeasureDataLabelStyle":  ubx.FieldSpec{WireName: "measure_data_label_style"},
+	"MeasureLabelVisibility": ubx.FieldSpec{WireName: "measure_label_visibility"},
+	"Position":               ubx.FieldSpec{WireName: "position"},
+	"Visibility":             ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWells_FunnelChartAggregatedFieldWellsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"FunnelChartAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "funnel_chart_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWells_FunnelChartAggregatedFieldWellsFields,
-		},
-	}
+	"FunnelChartAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "funnel_chart_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWells_FunnelChartAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"CategoryItemsLimit": ubx.FieldSpec{
-			WireName: "category_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"CategorySort": ubx.FieldSpec{
-			WireName: "category_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"CategoryItemsLimit": ubx.FieldSpec{
+		WireName: "category_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"CategorySort": ubx.FieldSpec{
+		WireName: "category_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfigurationFields = ubx.FieldMap{
-		"CategoryLabelOptions": ubx.FieldSpec{
-			WireName: "category_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"DataLabelOptions": ubx.FieldSpec{
-			WireName: "data_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_DataLabelOptionsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"ValueLabelOptions": ubx.FieldSpec{
-			WireName: "value_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-	}
+	"CategoryLabelOptions": ubx.FieldSpec{
+		WireName: "category_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"DataLabelOptions": ubx.FieldSpec{
+		WireName: "data_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_DataLabelOptionsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"ValueLabelOptions": ubx.FieldSpec{
+		WireName: "value_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_FunnelChartVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_ColorConfigurationFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"ForegroundColor": ubx.FieldSpec{WireName: "foreground_color"},
-	}
+	"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
+	"ForegroundColor": ubx.FieldSpec{WireName: "foreground_color"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"TargetValues": ubx.FieldSpec{
-			WireName: "target_values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"TargetValues": ubx.FieldSpec{
+		WireName: "target_values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcFields = ubx.FieldMap{
-		"ArcAngle": ubx.FieldSpec{WireName: "arc_angle"},
-		"ArcThickness": ubx.FieldSpec{WireName: "arc_thickness"},
-	}
+	"ArcAngle":     ubx.FieldSpec{WireName: "arc_angle"},
+	"ArcThickness": ubx.FieldSpec{WireName: "arc_thickness"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcAxis_RangeFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcAxisFields = ubx.FieldMap{
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcAxis_RangeFields,
-		},
-		"ReserveRange": ubx.FieldSpec{WireName: "reserve_range"},
-	}
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcAxis_RangeFields,
+	},
+	"ReserveRange": ubx.FieldSpec{WireName: "reserve_range"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_Comparison_ComparisonFormatFields = ubx.FieldMap{
-		"NumberDisplayFormatConfiguration": ubx.FieldSpec{
-			WireName: "number_display_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_NumberDisplayFormatConfigurationFields,
-		},
-		"PercentageDisplayFormatConfiguration": ubx.FieldSpec{
-			WireName: "percentage_display_format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_PercentageDisplayFormatConfigurationFields,
-		},
-	}
+	"NumberDisplayFormatConfiguration": ubx.FieldSpec{
+		WireName: "number_display_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_NumberDisplayFormatConfigurationFields,
+	},
+	"PercentageDisplayFormatConfiguration": ubx.FieldSpec{
+		WireName: "percentage_display_format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfiguration_DateTimeFormatConfiguration_NumericFormatConfiguration_PercentageDisplayFormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ComparisonFields = ubx.FieldMap{
-		"ComparisonFormat": ubx.FieldSpec{
-			WireName: "comparison_format",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_Comparison_ComparisonFormatFields,
-		},
-		"ComparisonMethod": ubx.FieldSpec{WireName: "comparison_method"},
-	}
+	"ComparisonFormat": ubx.FieldSpec{
+		WireName: "comparison_format",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_Comparison_ComparisonFormatFields,
+	},
+	"ComparisonMethod": ubx.FieldSpec{WireName: "comparison_method"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptionsFields = ubx.FieldMap{
-		"Arc": ubx.FieldSpec{
-			WireName: "arc",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcFields,
-		},
-		"ArcAxis": ubx.FieldSpec{
-			WireName: "arc_axis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcAxisFields,
-		},
-		"Comparison": ubx.FieldSpec{
-			WireName: "comparison",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ComparisonFields,
-		},
-		"PrimaryValueDisplayType": ubx.FieldSpec{WireName: "primary_value_display_type"},
-		"PrimaryValueFontConfiguration": ubx.FieldSpec{
-			WireName: "primary_value_font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-	}
+	"Arc": ubx.FieldSpec{
+		WireName: "arc",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcFields,
+	},
+	"ArcAxis": ubx.FieldSpec{
+		WireName: "arc_axis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ArcAxisFields,
+	},
+	"Comparison": ubx.FieldSpec{
+		WireName: "comparison",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ComparisonFields,
+	},
+	"PrimaryValueDisplayType": ubx.FieldSpec{WireName: "primary_value_display_type"},
+	"PrimaryValueFontConfiguration": ubx.FieldSpec{
+		WireName: "primary_value_font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfigurationFields = ubx.FieldMap{
-		"ColorConfiguration": ubx.FieldSpec{
-			WireName: "color_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_ColorConfigurationFields,
-		},
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"GaugeChartOptions": ubx.FieldSpec{
-			WireName: "gauge_chart_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptionsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"TooltipOptions": ubx.FieldSpec{
-			WireName: "tooltip_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-	}
+	"ColorConfiguration": ubx.FieldSpec{
+		WireName: "color_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_ColorConfigurationFields,
+	},
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"GaugeChartOptions": ubx.FieldSpec{
+		WireName: "gauge_chart_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptionsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"TooltipOptions": ubx.FieldSpec{
+		WireName: "tooltip_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_ArcFields = ubx.FieldMap{
-		"ForegroundColor": ubx.FieldSpec{
-			WireName: "foreground_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
-		},
-	}
+	"ForegroundColor": ubx.FieldSpec{
+		WireName: "foreground_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition_DisplayConfigurationFields = ubx.FieldMap{
-		"IconDisplayOption": ubx.FieldSpec{WireName: "icon_display_option"},
-	}
+	"IconDisplayOption": ubx.FieldSpec{WireName: "icon_display_option"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition_IconOptionsFields = ubx.FieldMap{
-		"Icon": ubx.FieldSpec{WireName: "icon"},
-		"UnicodeIcon": ubx.FieldSpec{WireName: "unicode_icon"},
-	}
+	"Icon":        ubx.FieldSpec{WireName: "icon"},
+	"UnicodeIcon": ubx.FieldSpec{WireName: "unicode_icon"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomConditionFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"DisplayConfiguration": ubx.FieldSpec{
-			WireName: "display_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition_DisplayConfigurationFields,
-		},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"IconOptions": ubx.FieldSpec{
-			WireName: "icon_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition_IconOptionsFields,
-		},
-	}
+	"Color": ubx.FieldSpec{WireName: "color"},
+	"DisplayConfiguration": ubx.FieldSpec{
+		WireName: "display_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition_DisplayConfigurationFields,
+	},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"IconOptions": ubx.FieldSpec{
+		WireName: "icon_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomCondition_IconOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_IconSetFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"IconSetType": ubx.FieldSpec{WireName: "icon_set_type"},
-	}
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"IconSetType": ubx.FieldSpec{WireName: "icon_set_type"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_IconFields = ubx.FieldMap{
-		"CustomCondition": ubx.FieldSpec{
-			WireName: "custom_condition",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomConditionFields,
-		},
-		"IconSet": ubx.FieldSpec{
-			WireName: "icon_set",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_IconSetFields,
-		},
-	}
+	"CustomCondition": ubx.FieldSpec{
+		WireName: "custom_condition",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_CustomConditionFields,
+	},
+	"IconSet": ubx.FieldSpec{
+		WireName: "icon_set",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_Icon_IconSetFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields = ubx.FieldMap{
-		"Icon": ubx.FieldSpec{
-			WireName: "icon",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_IconFields,
-		},
-		"TextColor": ubx.FieldSpec{
-			WireName: "text_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
-		},
-	}
+	"Icon": ubx.FieldSpec{
+		WireName: "icon",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_IconFields,
+	},
+	"TextColor": ubx.FieldSpec{
+		WireName: "text_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptionsFields = ubx.FieldMap{
-		"Arc": ubx.FieldSpec{
-			WireName: "arc",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_ArcFields,
-		},
-		"PrimaryValue": ubx.FieldSpec{
-			WireName: "primary_value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields,
-		},
-	}
+	"Arc": ubx.FieldSpec{
+		WireName: "arc",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_ArcFields,
+	},
+	"PrimaryValue": ubx.FieldSpec{
+		WireName: "primary_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormattingFields = ubx.FieldMap{
-		"ConditionalFormattingOptions": ubx.FieldSpec{
-			WireName: "conditional_formatting_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
-		},
-	}
+	"ConditionalFormattingOptions": ubx.FieldSpec{
+		WireName: "conditional_formatting_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GaugeChartVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfigurationFields,
-		},
-		"ConditionalFormatting": ubx.FieldSpec{
-			WireName: "conditional_formatting",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormattingFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfigurationFields,
+	},
+	"ConditionalFormatting": ubx.FieldSpec{
+		WireName: "conditional_formatting",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormattingFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWells_GeospatialMapAggregatedFieldWellsFields = ubx.FieldMap{
-		"Colors": ubx.FieldSpec{
-			WireName: "colors",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Geospatial": ubx.FieldSpec{
-			WireName: "geospatial",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Colors": ubx.FieldSpec{
+		WireName: "colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Geospatial": ubx.FieldSpec{
+		WireName: "geospatial",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"GeospatialMapAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "geospatial_map_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWells_GeospatialMapAggregatedFieldWellsFields,
-		},
-	}
+	"GeospatialMapAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "geospatial_map_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWells_GeospatialMapAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfiguration_ClusterMarker_SimpleClusterMarkerFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-	}
+	"Color": ubx.FieldSpec{WireName: "color"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfiguration_ClusterMarkerFields = ubx.FieldMap{
-		"SimpleClusterMarker": ubx.FieldSpec{
-			WireName: "simple_cluster_marker",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfiguration_ClusterMarker_SimpleClusterMarkerFields,
-		},
-	}
+	"SimpleClusterMarker": ubx.FieldSpec{
+		WireName: "simple_cluster_marker",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfiguration_ClusterMarker_SimpleClusterMarkerFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfigurationFields = ubx.FieldMap{
-		"ClusterMarker": ubx.FieldSpec{
-			WireName: "cluster_marker",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfiguration_ClusterMarkerFields,
-		},
-	}
+	"ClusterMarker": ubx.FieldSpec{
+		WireName: "cluster_marker",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfiguration_ClusterMarkerFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_HeatmapConfiguration_HeatmapColorFields = ubx.FieldMap{
-		"Colors": ubx.FieldSpec{
-			WireName: "colors",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfiguration_ClusterMarker_SimpleClusterMarkerFields,
-		},
-	}
+	"Colors": ubx.FieldSpec{
+		WireName: "colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfiguration_ClusterMarker_SimpleClusterMarkerFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_HeatmapConfigurationFields = ubx.FieldMap{
-		"HeatmapColor": ubx.FieldSpec{
-			WireName: "heatmap_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_HeatmapConfiguration_HeatmapColorFields,
-		},
-	}
+	"HeatmapColor": ubx.FieldSpec{
+		WireName: "heatmap_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_HeatmapConfiguration_HeatmapColorFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptionsFields = ubx.FieldMap{
-		"ClusterMarkerConfiguration": ubx.FieldSpec{
-			WireName: "cluster_marker_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfigurationFields,
-		},
-		"HeatmapConfiguration": ubx.FieldSpec{
-			WireName: "heatmap_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_HeatmapConfigurationFields,
-		},
-		"SelectedPointStyle": ubx.FieldSpec{WireName: "selected_point_style"},
-	}
+	"ClusterMarkerConfiguration": ubx.FieldSpec{
+		WireName: "cluster_marker_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_ClusterMarkerConfigurationFields,
+	},
+	"HeatmapConfiguration": ubx.FieldSpec{
+		WireName: "heatmap_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptions_HeatmapConfigurationFields,
+	},
+	"SelectedPointStyle": ubx.FieldSpec{WireName: "selected_point_style"},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfigurationFields = ubx.FieldMap{
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"MapStyleOptions": ubx.FieldSpec{
-			WireName: "map_style_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_MapStyleOptionsFields,
-		},
-		"PointStyleOptions": ubx.FieldSpec{
-			WireName: "point_style_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptionsFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-		"WindowOptions": ubx.FieldSpec{
-			WireName: "window_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptionsFields,
-		},
-	}
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"MapStyleOptions": ubx.FieldSpec{
+		WireName: "map_style_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_MapStyleOptionsFields,
+	},
+	"PointStyleOptions": ubx.FieldSpec{
+		WireName: "point_style_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfiguration_PointStyleOptionsFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+	"WindowOptions": ubx.FieldSpec{
+		WireName: "window_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_GeospatialMapVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_ColorsFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"DataValue": ubx.FieldSpec{WireName: "data_value"},
-	}
+	"Color":     ubx.FieldSpec{WireName: "color"},
+	"DataValue": ubx.FieldSpec{WireName: "data_value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScaleFields = ubx.FieldMap{
-		"ColorFillType": ubx.FieldSpec{WireName: "color_fill_type"},
-		"Colors": ubx.FieldSpec{
-			WireName: "colors",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_ColorsFields,
-		},
-		"NullValueColor": ubx.FieldSpec{
-			WireName: "null_value_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_ColorsFields,
-		},
-	}
+	"ColorFillType": ubx.FieldSpec{WireName: "color_fill_type"},
+	"Colors": ubx.FieldSpec{
+		WireName: "colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_ColorsFields,
+	},
+	"NullValueColor": ubx.FieldSpec{
+		WireName: "null_value_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_ColorsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells_HeatMapAggregatedFieldWellsFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Rows": ubx.FieldSpec{
-			WireName: "rows",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Rows": ubx.FieldSpec{
+		WireName: "rows",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"HeatMapAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "heat_map_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells_HeatMapAggregatedFieldWellsFields,
-		},
-	}
+	"HeatMapAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "heat_map_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells_HeatMapAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"HeatMapColumnItemsLimitConfiguration": ubx.FieldSpec{
-			WireName: "heat_map_column_items_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"HeatMapColumnSort": ubx.FieldSpec{
-			WireName: "heat_map_column_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-		"HeatMapRowItemsLimitConfiguration": ubx.FieldSpec{
-			WireName: "heat_map_row_items_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"HeatMapRowSort": ubx.FieldSpec{
-			WireName: "heat_map_row_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"HeatMapColumnItemsLimitConfiguration": ubx.FieldSpec{
+		WireName: "heat_map_column_items_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"HeatMapColumnSort": ubx.FieldSpec{
+		WireName: "heat_map_column_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+	"HeatMapRowItemsLimitConfiguration": ubx.FieldSpec{
+		WireName: "heat_map_row_items_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"HeatMapRowSort": ubx.FieldSpec{
+		WireName: "heat_map_row_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfigurationFields = ubx.FieldMap{
-		"ColorScale": ubx.FieldSpec{
-			WireName: "color_scale",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScaleFields,
-		},
-		"ColumnLabelOptions": ubx.FieldSpec{
-			WireName: "column_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"RowLabelOptions": ubx.FieldSpec{
-			WireName: "row_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-	}
+	"ColorScale": ubx.FieldSpec{
+		WireName: "color_scale",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScaleFields,
+	},
+	"ColumnLabelOptions": ubx.FieldSpec{
+		WireName: "column_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"RowLabelOptions": ubx.FieldSpec{
+		WireName: "row_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_HeatMapVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptions_BinWidthFields = ubx.FieldMap{
-		"BinCountLimit": ubx.FieldSpec{WireName: "bin_count_limit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"BinCountLimit": ubx.FieldSpec{WireName: "bin_count_limit"},
+	"Value":         ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptionsFields = ubx.FieldMap{
-		"BinCount": ubx.FieldSpec{
-			WireName: "bin_count",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_StaticConfigurationFields,
-		},
-		"BinWidth": ubx.FieldSpec{
-			WireName: "bin_width",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptions_BinWidthFields,
-		},
-		"SelectedBinType": ubx.FieldSpec{WireName: "selected_bin_type"},
-		"StartValue": ubx.FieldSpec{WireName: "start_value"},
-	}
+	"BinCount": ubx.FieldSpec{
+		WireName: "bin_count",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLines_DataConfiguration_StaticConfigurationFields,
+	},
+	"BinWidth": ubx.FieldSpec{
+		WireName: "bin_width",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptions_BinWidthFields,
+	},
+	"SelectedBinType": ubx.FieldSpec{WireName: "selected_bin_type"},
+	"StartValue":      ubx.FieldSpec{WireName: "start_value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_FieldWells_HistogramAggregatedFieldWellsFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"HistogramAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "histogram_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_FieldWells_HistogramAggregatedFieldWellsFields,
-		},
-	}
+	"HistogramAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "histogram_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_FieldWells_HistogramAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfigurationFields = ubx.FieldMap{
-		"BinOptions": ubx.FieldSpec{
-			WireName: "bin_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptionsFields,
-		},
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-		"XaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "xaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"XaxisLabelOptions": ubx.FieldSpec{
-			WireName: "xaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"YaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "yaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-	}
+	"BinOptions": ubx.FieldSpec{
+		WireName: "bin_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_BinOptionsFields,
+	},
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+	"XaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "xaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"XaxisLabelOptions": ubx.FieldSpec{
+		WireName: "xaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"YaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "yaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_HistogramVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfigurationFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HistogramVisual_ChartConfigurationFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_ForecastFields = ubx.FieldMap{
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"CustomSeasonalityValue": ubx.FieldSpec{WireName: "custom_seasonality_value"},
-		"LowerBoundary": ubx.FieldSpec{WireName: "lower_boundary"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PeriodsBackward": ubx.FieldSpec{WireName: "periods_backward"},
-		"PeriodsForward": ubx.FieldSpec{WireName: "periods_forward"},
-		"PredictionInterval": ubx.FieldSpec{WireName: "prediction_interval"},
-		"Seasonality": ubx.FieldSpec{WireName: "seasonality"},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"UpperBoundary": ubx.FieldSpec{WireName: "upper_boundary"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"ComputationId":          ubx.FieldSpec{WireName: "computation_id"},
+	"CustomSeasonalityValue": ubx.FieldSpec{WireName: "custom_seasonality_value"},
+	"LowerBoundary":          ubx.FieldSpec{WireName: "lower_boundary"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"PeriodsBackward":        ubx.FieldSpec{WireName: "periods_backward"},
+	"PeriodsForward":         ubx.FieldSpec{WireName: "periods_forward"},
+	"PredictionInterval":     ubx.FieldSpec{WireName: "prediction_interval"},
+	"Seasonality":            ubx.FieldSpec{WireName: "seasonality"},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"UpperBoundary": ubx.FieldSpec{WireName: "upper_boundary"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_GrowthRateFields = ubx.FieldMap{
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PeriodSize": ubx.FieldSpec{WireName: "period_size"},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"PeriodSize":    ubx.FieldSpec{WireName: "period_size"},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MaximumMinimumFields = ubx.FieldMap{
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MetricComparisonFields = ubx.FieldMap{
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"FromValue": ubx.FieldSpec{
-			WireName: "from_value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetValue": ubx.FieldSpec{
-			WireName: "target_value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-	}
+	"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
+	"FromValue": ubx.FieldSpec{
+		WireName: "from_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"TargetValue": ubx.FieldSpec{
+		WireName: "target_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodOverPeriodFields = ubx.FieldMap{
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodToDateFields = ubx.FieldMap{
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PeriodTimeGranularity": ubx.FieldSpec{WireName: "period_time_granularity"},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"ComputationId":         ubx.FieldSpec{WireName: "computation_id"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"PeriodTimeGranularity": ubx.FieldSpec{WireName: "period_time_granularity"},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomMoversFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"MoverSize": ubx.FieldSpec{WireName: "mover_size"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
+	"MoverSize":     ubx.FieldSpec{WireName: "mover_size"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"SortOrder":     ubx.FieldSpec{WireName: "sort_order"},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomRankedFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResultSize": ubx.FieldSpec{WireName: "result_size"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"ResultSize":    ubx.FieldSpec{WireName: "result_size"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TotalAggregationFields = ubx.FieldMap{
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_UniqueValuesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"ComputationId": ubx.FieldSpec{WireName: "computation_id"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_ComputationsFields = ubx.FieldMap{
-		"Forecast": ubx.FieldSpec{
-			WireName: "forecast",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_ForecastFields,
-		},
-		"GrowthRate": ubx.FieldSpec{
-			WireName: "growth_rate",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_GrowthRateFields,
-		},
-		"MaximumMinimum": ubx.FieldSpec{
-			WireName: "maximum_minimum",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MaximumMinimumFields,
-		},
-		"MetricComparison": ubx.FieldSpec{
-			WireName: "metric_comparison",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MetricComparisonFields,
-		},
-		"PeriodOverPeriod": ubx.FieldSpec{
-			WireName: "period_over_period",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodOverPeriodFields,
-		},
-		"PeriodToDate": ubx.FieldSpec{
-			WireName: "period_to_date",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodToDateFields,
-		},
-		"TopBottomMovers": ubx.FieldSpec{
-			WireName: "top_bottom_movers",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomMoversFields,
-		},
-		"TopBottomRanked": ubx.FieldSpec{
-			WireName: "top_bottom_ranked",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomRankedFields,
-		},
-		"TotalAggregation": ubx.FieldSpec{
-			WireName: "total_aggregation",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TotalAggregationFields,
-		},
-		"UniqueValues": ubx.FieldSpec{
-			WireName: "unique_values",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_UniqueValuesFields,
-		},
-	}
+	"Forecast": ubx.FieldSpec{
+		WireName: "forecast",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_ForecastFields,
+	},
+	"GrowthRate": ubx.FieldSpec{
+		WireName: "growth_rate",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_GrowthRateFields,
+	},
+	"MaximumMinimum": ubx.FieldSpec{
+		WireName: "maximum_minimum",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MaximumMinimumFields,
+	},
+	"MetricComparison": ubx.FieldSpec{
+		WireName: "metric_comparison",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_MetricComparisonFields,
+	},
+	"PeriodOverPeriod": ubx.FieldSpec{
+		WireName: "period_over_period",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodOverPeriodFields,
+	},
+	"PeriodToDate": ubx.FieldSpec{
+		WireName: "period_to_date",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_PeriodToDateFields,
+	},
+	"TopBottomMovers": ubx.FieldSpec{
+		WireName: "top_bottom_movers",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomMoversFields,
+	},
+	"TopBottomRanked": ubx.FieldSpec{
+		WireName: "top_bottom_ranked",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TopBottomRankedFields,
+	},
+	"TotalAggregation": ubx.FieldSpec{
+		WireName: "total_aggregation",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_TotalAggregationFields,
+	},
+	"UniqueValues": ubx.FieldSpec{
+		WireName: "unique_values",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_Computations_UniqueValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_CustomNarrativeFields = ubx.FieldMap{
-		"Narrative": ubx.FieldSpec{WireName: "narrative"},
-	}
+	"Narrative": ubx.FieldSpec{WireName: "narrative"},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfigurationFields = ubx.FieldMap{
-		"Computations": ubx.FieldSpec{
-			WireName: "computations",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_ComputationsFields,
-		},
-		"CustomNarrative": ubx.FieldSpec{
-			WireName: "custom_narrative",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_CustomNarrativeFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-	}
+	"Computations": ubx.FieldSpec{
+		WireName: "computations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_ComputationsFields,
+	},
+	"CustomNarrative": ubx.FieldSpec{
+		WireName: "custom_narrative",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfiguration_CustomNarrativeFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_InsightVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
-		"InsightConfiguration": ubx.FieldSpec{
-			WireName: "insight_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfigurationFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
+	"InsightConfiguration": ubx.FieldSpec{
+		WireName: "insight_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisual_InsightConfigurationFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"TargetValues": ubx.FieldSpec{
-			WireName: "target_values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"TrendGroups": ubx.FieldSpec{
-			WireName: "trend_groups",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"TargetValues": ubx.FieldSpec{
+		WireName: "target_values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"TrendGroups": ubx.FieldSpec{
+		WireName: "trend_groups",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_SparklineFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"TooltipVisibility": ubx.FieldSpec{WireName: "tooltip_visibility"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"Color":             ubx.FieldSpec{WireName: "color"},
+	"TooltipVisibility": ubx.FieldSpec{WireName: "tooltip_visibility"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+	"Visibility":        ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_VisualLayoutOptions_StandardLayoutFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_VisualLayoutOptionsFields = ubx.FieldMap{
-		"StandardLayout": ubx.FieldSpec{
-			WireName: "standard_layout",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_VisualLayoutOptions_StandardLayoutFields,
-		},
-	}
+	"StandardLayout": ubx.FieldSpec{
+		WireName: "standard_layout",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_VisualLayoutOptions_StandardLayoutFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_KpioptionsFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{
-			WireName: "comparison",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ComparisonFields,
-		},
-		"PrimaryValueDisplayType": ubx.FieldSpec{WireName: "primary_value_display_type"},
-		"PrimaryValueFontConfiguration": ubx.FieldSpec{
-			WireName: "primary_value_font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"ProgressBar": ubx.FieldSpec{
-			WireName: "progress_bar",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"SecondaryValue": ubx.FieldSpec{
-			WireName: "secondary_value",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"SecondaryValueFontConfiguration": ubx.FieldSpec{
-			WireName: "secondary_value_font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"Sparkline": ubx.FieldSpec{
-			WireName: "sparkline",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_SparklineFields,
-		},
-		"TrendArrows": ubx.FieldSpec{
-			WireName: "trend_arrows",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-		"VisualLayoutOptions": ubx.FieldSpec{
-			WireName: "visual_layout_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_VisualLayoutOptionsFields,
-		},
-	}
+	"Comparison": ubx.FieldSpec{
+		WireName: "comparison",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ChartConfiguration_GaugeChartOptions_ComparisonFields,
+	},
+	"PrimaryValueDisplayType": ubx.FieldSpec{WireName: "primary_value_display_type"},
+	"PrimaryValueFontConfiguration": ubx.FieldSpec{
+		WireName: "primary_value_font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"ProgressBar": ubx.FieldSpec{
+		WireName: "progress_bar",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"SecondaryValue": ubx.FieldSpec{
+		WireName: "secondary_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"SecondaryValueFontConfiguration": ubx.FieldSpec{
+		WireName: "secondary_value_font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"Sparkline": ubx.FieldSpec{
+		WireName: "sparkline",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_SparklineFields,
+	},
+	"TrendArrows": ubx.FieldSpec{
+		WireName: "trend_arrows",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+	"VisualLayoutOptions": ubx.FieldSpec{
+		WireName: "visual_layout_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_Kpioptions_VisualLayoutOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"TrendGroupSort": ubx.FieldSpec{
-			WireName: "trend_group_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"TrendGroupSort": ubx.FieldSpec{
+		WireName: "trend_group_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfigurationFields = ubx.FieldMap{
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Kpioptions": ubx.FieldSpec{
-			WireName: "kpioptions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_KpioptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_SortConfigurationFields,
-		},
-	}
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Kpioptions": ubx.FieldSpec{
+		WireName: "kpioptions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_KpioptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfiguration_SortConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatting_ConditionalFormattingOptionsFields = ubx.FieldMap{
-		"ActualValue": ubx.FieldSpec{
-			WireName: "actual_value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields,
-		},
-		"ComparisonValue": ubx.FieldSpec{
-			WireName: "comparison_value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields,
-		},
-		"PrimaryValue": ubx.FieldSpec{
-			WireName: "primary_value",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields,
-		},
-		"ProgressBar": ubx.FieldSpec{
-			WireName: "progress_bar",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_ArcFields,
-		},
-	}
+	"ActualValue": ubx.FieldSpec{
+		WireName: "actual_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields,
+	},
+	"ComparisonValue": ubx.FieldSpec{
+		WireName: "comparison_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields,
+	},
+	"PrimaryValue": ubx.FieldSpec{
+		WireName: "primary_value",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValueFields,
+	},
+	"ProgressBar": ubx.FieldSpec{
+		WireName: "progress_bar",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_ArcFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormattingFields = ubx.FieldMap{
-		"ConditionalFormattingOptions": ubx.FieldSpec{
-			WireName: "conditional_formatting_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
-		},
-	}
+	"ConditionalFormattingOptions": ubx.FieldSpec{
+		WireName: "conditional_formatting_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_KpivisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"ConditionalFormatting": ubx.FieldSpec{
-			WireName: "conditional_formatting",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormattingFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"ConditionalFormatting": ubx.FieldSpec{
+		WireName: "conditional_formatting",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_Kpivisual_ConditionalFormattingFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_DataSourceFields = ubx.FieldMap{
-		"StaticFileDataSource": ubx.FieldSpec{
-			WireName: "static_file_data_source",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Images_Source_SheetImageStaticFileSourceFields,
-		},
-	}
+	"StaticFileDataSource": ubx.FieldSpec{
+		WireName: "static_file_data_source",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Images_Source_SheetImageStaticFileSourceFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_ColorFieldFields = ubx.FieldMap{
-		"ColorDimensionsFields": ubx.FieldSpec{
-			WireName: "color_dimensions_fields",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"ColorValuesFields": ubx.FieldSpec{
-			WireName: "color_values_fields",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"ColorDimensionsFields": ubx.FieldSpec{
+		WireName: "color_dimensions_fields",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"ColorValuesFields": ubx.FieldSpec{
+		WireName: "color_values_fields",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyFieldFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_ColumnFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FormatConfiguration": ubx.FieldSpec{
-			WireName: "format_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_ColumnConfigurations_FormatConfigurationFields,
-		},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_ColumnFields,
+	},
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"FormatConfiguration": ubx.FieldSpec{
+		WireName: "format_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_ColumnConfigurations_FormatConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinitionFields = ubx.FieldMap{
-		"ColorField": ubx.FieldSpec{
-			WireName: "color_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_ColorFieldFields,
-		},
-		"DatasetKeyField": ubx.FieldSpec{
-			WireName: "dataset_key_field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyFieldFields,
-		},
-		"ShapeKeyField": ubx.FieldSpec{WireName: "shape_key_field"},
-	}
+	"ColorField": ubx.FieldSpec{
+		WireName: "color_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_ColorFieldFields,
+	},
+	"DatasetKeyField": ubx.FieldSpec{
+		WireName: "dataset_key_field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyFieldFields,
+	},
+	"ShapeKeyField": ubx.FieldSpec{WireName: "shape_key_field"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_CategoryDataColorsFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"DataValue": ubx.FieldSpec{WireName: "data_value"},
-	}
+	"Color":     ubx.FieldSpec{WireName: "color"},
+	"DataValue": ubx.FieldSpec{WireName: "data_value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettings_SymbolStyleFields = ubx.FieldMap{
-		"FillColor": ubx.FieldSpec{WireName: "fill_color"},
-		"StrokeColor": ubx.FieldSpec{WireName: "stroke_color"},
-		"StrokeWidth": ubx.FieldSpec{WireName: "stroke_width"},
-	}
+	"FillColor":   ubx.FieldSpec{WireName: "fill_color"},
+	"StrokeColor": ubx.FieldSpec{WireName: "stroke_color"},
+	"StrokeWidth": ubx.FieldSpec{WireName: "stroke_width"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettingsFields = ubx.FieldMap{
-		"SymbolStyle": ubx.FieldSpec{
-			WireName: "symbol_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettings_SymbolStyleFields,
-		},
-	}
+	"SymbolStyle": ubx.FieldSpec{
+		WireName: "symbol_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettings_SymbolStyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_CategoricalFields = ubx.FieldMap{
-		"CategoryDataColors": ubx.FieldSpec{
-			WireName: "category_data_colors",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_CategoryDataColorsFields,
-		},
-		"DefaultOpacity": ubx.FieldSpec{WireName: "default_opacity"},
-		"NullDataSettings": ubx.FieldSpec{
-			WireName: "null_data_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettingsFields,
-		},
-		"NullDataVisibility": ubx.FieldSpec{WireName: "null_data_visibility"},
-	}
+	"CategoryDataColors": ubx.FieldSpec{
+		WireName: "category_data_colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_CategoryDataColorsFields,
+	},
+	"DefaultOpacity": ubx.FieldSpec{WireName: "default_opacity"},
+	"NullDataSettings": ubx.FieldSpec{
+		WireName: "null_data_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettingsFields,
+	},
+	"NullDataVisibility": ubx.FieldSpec{WireName: "null_data_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_GradientFields = ubx.FieldMap{
-		"DefaultOpacity": ubx.FieldSpec{WireName: "default_opacity"},
-		"NullDataSettings": ubx.FieldSpec{
-			WireName: "null_data_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettingsFields,
-		},
-		"NullDataVisibility": ubx.FieldSpec{WireName: "null_data_visibility"},
-		"StepColors": ubx.FieldSpec{
-			WireName: "step_colors",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_ColorsFields,
-		},
-	}
+	"DefaultOpacity": ubx.FieldSpec{WireName: "default_opacity"},
+	"NullDataSettings": ubx.FieldSpec{
+		WireName: "null_data_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_Categorical_NullDataSettingsFields,
+	},
+	"NullDataVisibility": ubx.FieldSpec{WireName: "null_data_visibility"},
+	"StepColors": ubx.FieldSpec{
+		WireName: "step_colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScale_ColorsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_SolidFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Color": ubx.FieldSpec{WireName: "color"},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields = ubx.FieldMap{
-		"Categorical": ubx.FieldSpec{
-			WireName: "categorical",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_CategoricalFields,
-		},
-		"Gradient": ubx.FieldSpec{
-			WireName: "gradient",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_GradientFields,
-		},
-		"Solid": ubx.FieldSpec{
-			WireName: "solid",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_SolidFields,
-		},
-	}
+	"Categorical": ubx.FieldSpec{
+		WireName: "categorical",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_CategoricalFields,
+	},
+	"Gradient": ubx.FieldSpec{
+		WireName: "gradient",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_GradientFields,
+	},
+	"Solid": ubx.FieldSpec{
+		WireName: "solid",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColor_SolidFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidthFields = ubx.FieldMap{
-		"LineWidth": ubx.FieldSpec{WireName: "line_width"},
-	}
+	"LineWidth": ubx.FieldSpec{WireName: "line_width"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyleFields = ubx.FieldMap{
-		"FillColor": ubx.FieldSpec{
-			WireName: "fill_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
-		},
-		"LineWidth": ubx.FieldSpec{
-			WireName: "line_width",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidthFields,
-		},
-	}
+	"FillColor": ubx.FieldSpec{
+		WireName: "fill_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
+	},
+	"LineWidth": ubx.FieldSpec{
+		WireName: "line_width",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidthFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_StyleFields = ubx.FieldMap{
-		"LineSymbolStyle": ubx.FieldSpec{
-			WireName: "line_symbol_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyleFields,
-		},
-	}
+	"LineSymbolStyle": ubx.FieldSpec{
+		WireName: "line_symbol_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayerFields = ubx.FieldMap{
-		"Style": ubx.FieldSpec{
-			WireName: "style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_StyleFields,
-		},
-	}
+	"Style": ubx.FieldSpec{
+		WireName: "style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_StyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style_CircleSymbolStyle_CircleRadiusFields = ubx.FieldMap{
-		"Radius": ubx.FieldSpec{WireName: "radius"},
-	}
+	"Radius": ubx.FieldSpec{WireName: "radius"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style_CircleSymbolStyleFields = ubx.FieldMap{
-		"CircleRadius": ubx.FieldSpec{
-			WireName: "circle_radius",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style_CircleSymbolStyle_CircleRadiusFields,
-		},
-		"FillColor": ubx.FieldSpec{
-			WireName: "fill_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
-		},
-		"StrokeColor": ubx.FieldSpec{
-			WireName: "stroke_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
-		},
-		"StrokeWidth": ubx.FieldSpec{
-			WireName: "stroke_width",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidthFields,
-		},
-	}
+	"CircleRadius": ubx.FieldSpec{
+		WireName: "circle_radius",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style_CircleSymbolStyle_CircleRadiusFields,
+	},
+	"FillColor": ubx.FieldSpec{
+		WireName: "fill_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
+	},
+	"StrokeColor": ubx.FieldSpec{
+		WireName: "stroke_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
+	},
+	"StrokeWidth": ubx.FieldSpec{
+		WireName: "stroke_width",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidthFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_StyleFields = ubx.FieldMap{
-		"CircleSymbolStyle": ubx.FieldSpec{
-			WireName: "circle_symbol_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style_CircleSymbolStyleFields,
-		},
-	}
+	"CircleSymbolStyle": ubx.FieldSpec{
+		WireName: "circle_symbol_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_Style_CircleSymbolStyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayerFields = ubx.FieldMap{
-		"Style": ubx.FieldSpec{
-			WireName: "style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_StyleFields,
-		},
-	}
+	"Style": ubx.FieldSpec{
+		WireName: "style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayer_StyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayer_Style_PolygonSymbolStyleFields = ubx.FieldMap{
-		"FillColor": ubx.FieldSpec{
-			WireName: "fill_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
-		},
-		"StrokeColor": ubx.FieldSpec{
-			WireName: "stroke_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
-		},
-		"StrokeWidth": ubx.FieldSpec{
-			WireName: "stroke_width",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidthFields,
-		},
-	}
+	"FillColor": ubx.FieldSpec{
+		WireName: "fill_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
+	},
+	"StrokeColor": ubx.FieldSpec{
+		WireName: "stroke_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_FillColorFields,
+	},
+	"StrokeWidth": ubx.FieldSpec{
+		WireName: "stroke_width",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayer_Style_LineSymbolStyle_LineWidthFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayer_StyleFields = ubx.FieldMap{
-		"PolygonSymbolStyle": ubx.FieldSpec{
-			WireName: "polygon_symbol_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayer_Style_PolygonSymbolStyleFields,
-		},
-	}
+	"PolygonSymbolStyle": ubx.FieldSpec{
+		WireName: "polygon_symbol_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayer_Style_PolygonSymbolStyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayerFields = ubx.FieldMap{
-		"Style": ubx.FieldSpec{
-			WireName: "style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayer_StyleFields,
-		},
-	}
+	"Style": ubx.FieldSpec{
+		WireName: "style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayer_StyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinitionFields = ubx.FieldMap{
-		"LineLayer": ubx.FieldSpec{
-			WireName: "line_layer",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayerFields,
-		},
-		"PointLayer": ubx.FieldSpec{
-			WireName: "point_layer",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayerFields,
-		},
-		"PolygonLayer": ubx.FieldSpec{
-			WireName: "polygon_layer",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayerFields,
-		},
-	}
+	"LineLayer": ubx.FieldSpec{
+		WireName: "line_layer",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_LineLayerFields,
+	},
+	"PointLayer": ubx.FieldSpec{
+		WireName: "point_layer",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PointLayerFields,
+	},
+	"PolygonLayer": ubx.FieldSpec{
+		WireName: "polygon_layer",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinition_PolygonLayerFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayersFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"DataSource": ubx.FieldSpec{
-			WireName: "data_source",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_DataSourceFields,
-		},
-		"JoinDefinition": ubx.FieldSpec{
-			WireName: "join_definition",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinitionFields,
-		},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"LayerDefinition": ubx.FieldSpec{
-			WireName: "layer_definition",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinitionFields,
-		},
-		"LayerId": ubx.FieldSpec{WireName: "layer_id"},
-		"LayerType": ubx.FieldSpec{WireName: "layer_type"},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"DataSource": ubx.FieldSpec{
+		WireName: "data_source",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_DataSourceFields,
+	},
+	"JoinDefinition": ubx.FieldSpec{
+		WireName: "join_definition",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinitionFields,
+	},
+	"Label": ubx.FieldSpec{WireName: "label"},
+	"LayerDefinition": ubx.FieldSpec{
+		WireName: "layer_definition",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_LayerDefinitionFields,
+	},
+	"LayerId":   ubx.FieldSpec{WireName: "layer_id"},
+	"LayerType": ubx.FieldSpec{WireName: "layer_type"},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapStateFields = ubx.FieldMap{
-		"Bounds": ubx.FieldSpec{
-			WireName: "bounds",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions_BoundsFields,
-		},
-		"MapNavigation": ubx.FieldSpec{WireName: "map_navigation"},
-	}
+	"Bounds": ubx.FieldSpec{
+		WireName: "bounds",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ChartConfiguration_WindowOptions_BoundsFields,
+	},
+	"MapNavigation": ubx.FieldSpec{WireName: "map_navigation"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapStyleFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"BaseMapStyle": ubx.FieldSpec{WireName: "base_map_style"},
-		"BaseMapVisibility": ubx.FieldSpec{WireName: "base_map_visibility"},
-	}
+	"BackgroundColor":   ubx.FieldSpec{WireName: "background_color"},
+	"BaseMapStyle":      ubx.FieldSpec{WireName: "base_map_style"},
+	"BaseMapVisibility": ubx.FieldSpec{WireName: "base_map_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigurationFields = ubx.FieldMap{
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"MapLayers": ubx.FieldSpec{
-			WireName: "map_layers",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayersFields,
-		},
-		"MapState": ubx.FieldSpec{
-			WireName: "map_state",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapStateFields,
-		},
-		"MapStyle": ubx.FieldSpec{
-			WireName: "map_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapStyleFields,
-		},
-	}
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"MapLayers": ubx.FieldSpec{
+		WireName: "map_layers",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayersFields,
+	},
+	"MapState": ubx.FieldSpec{
+		WireName: "map_state",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapStateFields,
+	},
+	"MapStyle": ubx.FieldSpec{
+		WireName: "map_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapStyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LayerMapVisualFields = ubx.FieldMap{
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigurationFields,
-		},
-		"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfigurationFields,
+	},
+	"DataSetIdentifier": ubx.FieldSpec{WireName: "data_set_identifier"},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_LineStyleSettingsFields = ubx.FieldMap{
-		"LineInterpolation": ubx.FieldSpec{WireName: "line_interpolation"},
-		"LineStyle": ubx.FieldSpec{WireName: "line_style"},
-		"LineVisibility": ubx.FieldSpec{WireName: "line_visibility"},
-		"LineWidth": ubx.FieldSpec{WireName: "line_width"},
-	}
+	"LineInterpolation": ubx.FieldSpec{WireName: "line_interpolation"},
+	"LineStyle":         ubx.FieldSpec{WireName: "line_style"},
+	"LineVisibility":    ubx.FieldSpec{WireName: "line_visibility"},
+	"LineWidth":         ubx.FieldSpec{WireName: "line_width"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_MarkerStyleSettingsFields = ubx.FieldMap{
-		"MarkerColor": ubx.FieldSpec{WireName: "marker_color"},
-		"MarkerShape": ubx.FieldSpec{WireName: "marker_shape"},
-		"MarkerSize": ubx.FieldSpec{WireName: "marker_size"},
-		"MarkerVisibility": ubx.FieldSpec{WireName: "marker_visibility"},
-	}
+	"MarkerColor":      ubx.FieldSpec{WireName: "marker_color"},
+	"MarkerShape":      ubx.FieldSpec{WireName: "marker_shape"},
+	"MarkerSize":       ubx.FieldSpec{WireName: "marker_size"},
+	"MarkerVisibility": ubx.FieldSpec{WireName: "marker_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettingsFields = ubx.FieldMap{
-		"AxisBinding": ubx.FieldSpec{WireName: "axis_binding"},
-		"LineStyleSettings": ubx.FieldSpec{
-			WireName: "line_style_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_LineStyleSettingsFields,
-		},
-		"MarkerStyleSettings": ubx.FieldSpec{
-			WireName: "marker_style_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_MarkerStyleSettingsFields,
-		},
-	}
+	"AxisBinding": ubx.FieldSpec{WireName: "axis_binding"},
+	"LineStyleSettings": ubx.FieldSpec{
+		WireName: "line_style_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_LineStyleSettingsFields,
+	},
+	"MarkerStyleSettings": ubx.FieldSpec{
+		WireName: "marker_style_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_MarkerStyleSettingsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"LineChartAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "line_chart_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWellsFields,
-		},
-	}
+	"LineChartAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "line_chart_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_ForecastPropertiesFields = ubx.FieldMap{
-		"LowerBoundary": ubx.FieldSpec{WireName: "lower_boundary"},
-		"PeriodsBackward": ubx.FieldSpec{WireName: "periods_backward"},
-		"PeriodsForward": ubx.FieldSpec{WireName: "periods_forward"},
-		"PredictionInterval": ubx.FieldSpec{WireName: "prediction_interval"},
-		"Seasonality": ubx.FieldSpec{WireName: "seasonality"},
-		"UpperBoundary": ubx.FieldSpec{WireName: "upper_boundary"},
-	}
+	"LowerBoundary":      ubx.FieldSpec{WireName: "lower_boundary"},
+	"PeriodsBackward":    ubx.FieldSpec{WireName: "periods_backward"},
+	"PeriodsForward":     ubx.FieldSpec{WireName: "periods_forward"},
+	"PredictionInterval": ubx.FieldSpec{WireName: "prediction_interval"},
+	"Seasonality":        ubx.FieldSpec{WireName: "seasonality"},
+	"UpperBoundary":      ubx.FieldSpec{WireName: "upper_boundary"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfPointScenarioFields = ubx.FieldMap{
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Date":  ubx.FieldSpec{WireName: "date"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfRangeScenarioFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"EndDate":   ubx.FieldSpec{WireName: "end_date"},
+	"StartDate": ubx.FieldSpec{WireName: "start_date"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_ScenarioFields = ubx.FieldMap{
-		"WhatIfPointScenario": ubx.FieldSpec{
-			WireName: "what_if_point_scenario",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfPointScenarioFields,
-		},
-		"WhatIfRangeScenario": ubx.FieldSpec{
-			WireName: "what_if_range_scenario",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfRangeScenarioFields,
-		},
-	}
+	"WhatIfPointScenario": ubx.FieldSpec{
+		WireName: "what_if_point_scenario",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfPointScenarioFields,
+	},
+	"WhatIfRangeScenario": ubx.FieldSpec{
+		WireName: "what_if_range_scenario",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_Scenario_WhatIfRangeScenarioFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurationsFields = ubx.FieldMap{
-		"ForecastProperties": ubx.FieldSpec{
-			WireName: "forecast_properties",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_ForecastPropertiesFields,
-		},
-		"Scenario": ubx.FieldSpec{
-			WireName: "scenario",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_ScenarioFields,
-		},
-	}
+	"ForecastProperties": ubx.FieldSpec{
+		WireName: "forecast_properties",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_ForecastPropertiesFields,
+	},
+	"Scenario": ubx.FieldSpec{
+		WireName: "scenario",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurations_ScenarioFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptions_MissingDataConfigurationsFields = ubx.FieldMap{
-		"TreatmentOption": ubx.FieldSpec{WireName: "treatment_option"},
-	}
+	"TreatmentOption": ubx.FieldSpec{WireName: "treatment_option"},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptionsFields = ubx.FieldMap{
-		"AxisOptions": ubx.FieldSpec{
-			WireName: "axis_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"MissingDataConfigurations": ubx.FieldSpec{
-			WireName: "missing_data_configurations",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptions_MissingDataConfigurationsFields,
-		},
-	}
+	"AxisOptions": ubx.FieldSpec{
+		WireName: "axis_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"MissingDataConfigurations": ubx.FieldSpec{
+		WireName: "missing_data_configurations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptions_MissingDataConfigurationsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem_SettingsFields = ubx.FieldMap{
-		"LineStyleSettings": ubx.FieldSpec{
-			WireName: "line_style_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_LineStyleSettingsFields,
-		},
-		"MarkerStyleSettings": ubx.FieldSpec{
-			WireName: "marker_style_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_MarkerStyleSettingsFields,
-		},
-	}
+	"LineStyleSettings": ubx.FieldSpec{
+		WireName: "line_style_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_LineStyleSettingsFields,
+	},
+	"MarkerStyleSettings": ubx.FieldSpec{
+		WireName: "marker_style_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettings_MarkerStyleSettingsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItemFields = ubx.FieldMap{
-		"AxisBinding": ubx.FieldSpec{WireName: "axis_binding"},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"FieldValue": ubx.FieldSpec{WireName: "field_value"},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem_SettingsFields,
-		},
-	}
+	"AxisBinding": ubx.FieldSpec{WireName: "axis_binding"},
+	"FieldId":     ubx.FieldSpec{WireName: "field_id"},
+	"FieldValue":  ubx.FieldSpec{WireName: "field_value"},
+	"Settings": ubx.FieldSpec{
+		WireName: "settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem_SettingsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_FieldSeriesItemFields = ubx.FieldMap{
-		"AxisBinding": ubx.FieldSpec{WireName: "axis_binding"},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem_SettingsFields,
-		},
-	}
+	"AxisBinding": ubx.FieldSpec{WireName: "axis_binding"},
+	"FieldId":     ubx.FieldSpec{WireName: "field_id"},
+	"Settings": ubx.FieldSpec{
+		WireName: "settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItem_SettingsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_SeriesFields = ubx.FieldMap{
-		"DataFieldSeriesItem": ubx.FieldSpec{
-			WireName: "data_field_series_item",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItemFields,
-		},
-		"FieldSeriesItem": ubx.FieldSpec{
-			WireName: "field_series_item",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_FieldSeriesItemFields,
-		},
-	}
+	"DataFieldSeriesItem": ubx.FieldSpec{
+		WireName: "data_field_series_item",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_DataFieldSeriesItemFields,
+	},
+	"FieldSeriesItem": ubx.FieldSpec{
+		WireName: "field_series_item",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_Series_FieldSeriesItemFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"CategoryItemsLimitConfiguration": ubx.FieldSpec{
-			WireName: "category_items_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"CategorySort": ubx.FieldSpec{
-			WireName: "category_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-		"ColorItemsLimitConfiguration": ubx.FieldSpec{
-			WireName: "color_items_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"SmallMultiplesLimitConfiguration": ubx.FieldSpec{
-			WireName: "small_multiples_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"SmallMultiplesSort": ubx.FieldSpec{
-			WireName: "small_multiples_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"CategoryItemsLimitConfiguration": ubx.FieldSpec{
+		WireName: "category_items_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"CategorySort": ubx.FieldSpec{
+		WireName: "category_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+	"ColorItemsLimitConfiguration": ubx.FieldSpec{
+		WireName: "color_items_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"SmallMultiplesLimitConfiguration": ubx.FieldSpec{
+		WireName: "small_multiples_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"SmallMultiplesSort": ubx.FieldSpec{
+		WireName: "small_multiples_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfigurationFields = ubx.FieldMap{
-		"ContributionAnalysisDefaults": ubx.FieldSpec{
-			WireName: "contribution_analysis_defaults",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaultsFields,
-		},
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"DefaultSeriesSettings": ubx.FieldSpec{
-			WireName: "default_series_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettingsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"ForecastConfigurations": ubx.FieldSpec{
-			WireName: "forecast_configurations",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurationsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"PrimaryYaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "primary_yaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptionsFields,
-		},
-		"PrimaryYaxisLabelOptions": ubx.FieldSpec{
-			WireName: "primary_yaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ReferenceLines": ubx.FieldSpec{
-			WireName: "reference_lines",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields,
-		},
-		"SecondaryYaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "secondary_yaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptionsFields,
-		},
-		"SecondaryYaxisLabelOptions": ubx.FieldSpec{
-			WireName: "secondary_yaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"Series": ubx.FieldSpec{
-			WireName: "series",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_SeriesFields,
-		},
-		"SingleAxisOptions": ubx.FieldSpec{
-			WireName: "single_axis_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptionsFields,
-		},
-		"SmallMultiplesOptions": ubx.FieldSpec{
-			WireName: "small_multiples_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-		"XaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "xaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"XaxisLabelOptions": ubx.FieldSpec{
-			WireName: "xaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-	}
+	"ContributionAnalysisDefaults": ubx.FieldSpec{
+		WireName: "contribution_analysis_defaults",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaultsFields,
+	},
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"DefaultSeriesSettings": ubx.FieldSpec{
+		WireName: "default_series_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_DefaultSeriesSettingsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"ForecastConfigurations": ubx.FieldSpec{
+		WireName: "forecast_configurations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_ForecastConfigurationsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"PrimaryYaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "primary_yaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptionsFields,
+	},
+	"PrimaryYaxisLabelOptions": ubx.FieldSpec{
+		WireName: "primary_yaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ReferenceLines": ubx.FieldSpec{
+		WireName: "reference_lines",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ReferenceLinesFields,
+	},
+	"SecondaryYaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "secondary_yaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_PrimaryYaxisDisplayOptionsFields,
+	},
+	"SecondaryYaxisLabelOptions": ubx.FieldSpec{
+		WireName: "secondary_yaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"Series": ubx.FieldSpec{
+		WireName: "series",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_SeriesFields,
+	},
+	"SingleAxisOptions": ubx.FieldSpec{
+		WireName: "single_axis_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SingleAxisOptionsFields,
+	},
+	"SmallMultiplesOptions": ubx.FieldSpec{
+		WireName: "small_multiples_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+	"XaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "xaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"XaxisLabelOptions": ubx.FieldSpec{
+		WireName: "xaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_LineChartVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions_ArcOptionsFields = ubx.FieldMap{
-		"ArcThickness": ubx.FieldSpec{WireName: "arc_thickness"},
-	}
+	"ArcThickness": ubx.FieldSpec{WireName: "arc_thickness"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions_DonutCenterOptionsFields = ubx.FieldMap{
-		"LabelVisibility": ubx.FieldSpec{WireName: "label_visibility"},
-	}
+	"LabelVisibility": ubx.FieldSpec{WireName: "label_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptionsFields = ubx.FieldMap{
-		"ArcOptions": ubx.FieldSpec{
-			WireName: "arc_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions_ArcOptionsFields,
-		},
-		"DonutCenterOptions": ubx.FieldSpec{
-			WireName: "donut_center_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions_DonutCenterOptionsFields,
-		},
-	}
+	"ArcOptions": ubx.FieldSpec{
+		WireName: "arc_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions_ArcOptionsFields,
+	},
+	"DonutCenterOptions": ubx.FieldSpec{
+		WireName: "donut_center_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptions_DonutCenterOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWells_PieChartAggregatedFieldWellsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"SmallMultiples": ubx.FieldSpec{
-			WireName: "small_multiples",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"SmallMultiples": ubx.FieldSpec{
+		WireName: "small_multiples",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"PieChartAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "pie_chart_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWells_PieChartAggregatedFieldWellsFields,
-		},
-	}
+	"PieChartAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "pie_chart_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWells_PieChartAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"CategoryItemsLimit": ubx.FieldSpec{
-			WireName: "category_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"CategorySort": ubx.FieldSpec{
-			WireName: "category_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-		"SmallMultiplesLimitConfiguration": ubx.FieldSpec{
-			WireName: "small_multiples_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"SmallMultiplesSort": ubx.FieldSpec{
-			WireName: "small_multiples_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"CategoryItemsLimit": ubx.FieldSpec{
+		WireName: "category_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"CategorySort": ubx.FieldSpec{
+		WireName: "category_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+	"SmallMultiplesLimitConfiguration": ubx.FieldSpec{
+		WireName: "small_multiples_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"SmallMultiplesSort": ubx.FieldSpec{
+		WireName: "small_multiples_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfigurationFields = ubx.FieldMap{
-		"CategoryLabelOptions": ubx.FieldSpec{
-			WireName: "category_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ContributionAnalysisDefaults": ubx.FieldSpec{
-			WireName: "contribution_analysis_defaults",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaultsFields,
-		},
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"DonutOptions": ubx.FieldSpec{
-			WireName: "donut_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptionsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"SmallMultiplesOptions": ubx.FieldSpec{
-			WireName: "small_multiples_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"ValueLabelOptions": ubx.FieldSpec{
-			WireName: "value_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-	}
+	"CategoryLabelOptions": ubx.FieldSpec{
+		WireName: "category_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ContributionAnalysisDefaults": ubx.FieldSpec{
+		WireName: "contribution_analysis_defaults",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_ContributionAnalysisDefaultsFields,
+	},
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"DonutOptions": ubx.FieldSpec{
+		WireName: "donut_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_DonutOptionsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"SmallMultiplesOptions": ubx.FieldSpec{
+		WireName: "small_multiples_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SmallMultiplesOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"ValueLabelOptions": ubx.FieldSpec{
+		WireName: "value_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PieChartVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PieChartVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptions_TargetFields = ubx.FieldMap{
-		"FieldDataPathValues": ubx.FieldSpec{
-			WireName: "field_data_path_values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields,
-		},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-	}
+	"FieldDataPathValues": ubx.FieldSpec{
+		WireName: "field_data_path_values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields,
+	},
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptionsFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptions_TargetFields,
-		},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptions_TargetFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_DataPathOptionsFields = ubx.FieldMap{
-		"DataPathList": ubx.FieldSpec{
-			WireName: "data_path_list",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields,
-		},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"DataPathList": ubx.FieldSpec{
+		WireName: "data_path_list",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields,
+	},
+	"Width": ubx.FieldSpec{WireName: "width"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptionsFields = ubx.FieldMap{
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
+	"FieldId":     ubx.FieldSpec{WireName: "field_id"},
+	"Visibility":  ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptionsFields = ubx.FieldMap{
-		"CollapseStateOptions": ubx.FieldSpec{
-			WireName: "collapse_state_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptionsFields,
-		},
-		"DataPathOptions": ubx.FieldSpec{
-			WireName: "data_path_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_DataPathOptionsFields,
-		},
-		"SelectedFieldOptions": ubx.FieldSpec{
-			WireName: "selected_field_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptionsFields,
-		},
-	}
+	"CollapseStateOptions": ubx.FieldSpec{
+		WireName: "collapse_state_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_CollapseStateOptionsFields,
+	},
+	"DataPathOptions": ubx.FieldSpec{
+		WireName: "data_path_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_DataPathOptionsFields,
+	},
+	"SelectedFieldOptions": ubx.FieldSpec{
+		WireName: "selected_field_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"PivotTableAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "pivot_table_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells_HeatMapAggregatedFieldWellsFields,
-		},
-	}
+	"PivotTableAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "pivot_table_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_FieldWells_HeatMapAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_PaginatedReportOptionsFields = ubx.FieldMap{
-		"OverflowColumnHeaderVisibility": ubx.FieldSpec{WireName: "overflow_column_header_visibility"},
-		"VerticalOverflowVisibility": ubx.FieldSpec{WireName: "vertical_overflow_visibility"},
-	}
+	"OverflowColumnHeaderVisibility": ubx.FieldSpec{WireName: "overflow_column_header_visibility"},
+	"VerticalOverflowVisibility":     ubx.FieldSpec{WireName: "vertical_overflow_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortBy_DataPathFields = ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"SortPaths": ubx.FieldSpec{
-			WireName: "sort_paths",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields,
-		},
-	}
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"SortPaths": ubx.FieldSpec{
+		WireName: "sort_paths",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPalette_ColorMap_ElementFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortByFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{
-			WireName: "column",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetricsFields,
-		},
-		"DataPath": ubx.FieldSpec{
-			WireName: "data_path",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortBy_DataPathFields,
-		},
-		"Field": ubx.FieldSpec{
-			WireName: "field",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort_FieldSortFields,
-		},
-	}
+	"Column": ubx.FieldSpec{
+		WireName: "column",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Layouts_Configuration_SectionBasedLayout_BodySections_RepeatConfiguration_DimensionConfigurations_DynamicCategoryDimensionConfiguration_SortByMetricsFields,
+	},
+	"DataPath": ubx.FieldSpec{
+		WireName: "data_path",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortBy_DataPathFields,
+	},
+	"Field": ubx.FieldSpec{
+		WireName: "field",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySort_FieldSortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptionsFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"SortBy": ubx.FieldSpec{
-			WireName: "sort_by",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortByFields,
-		},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"SortBy": ubx.FieldSpec{
+		WireName: "sort_by",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptions_SortByFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"FieldSortOptions": ubx.FieldSpec{
-			WireName: "field_sort_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptionsFields,
-		},
-	}
+	"FieldSortOptions": ubx.FieldSpec{
+		WireName: "field_sort_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfiguration_FieldSortOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields = ubx.FieldMap{
-		"Color": ubx.FieldSpec{WireName: "color"},
-		"Style": ubx.FieldSpec{WireName: "style"},
-		"Thickness": ubx.FieldSpec{WireName: "thickness"},
-	}
+	"Color":     ubx.FieldSpec{WireName: "color"},
+	"Style":     ubx.FieldSpec{WireName: "style"},
+	"Thickness": ubx.FieldSpec{WireName: "thickness"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorderFields = ubx.FieldMap{
-		"Bottom": ubx.FieldSpec{
-			WireName: "bottom",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
-		},
-		"InnerHorizontal": ubx.FieldSpec{
-			WireName: "inner_horizontal",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
-		},
-		"InnerVertical": ubx.FieldSpec{
-			WireName: "inner_vertical",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
-		},
-		"Left": ubx.FieldSpec{
-			WireName: "left",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
-		},
-		"Right": ubx.FieldSpec{
-			WireName: "right",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
-		},
-		"Top": ubx.FieldSpec{
-			WireName: "top",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
-		},
-	}
+	"Bottom": ubx.FieldSpec{
+		WireName: "bottom",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
+	},
+	"InnerHorizontal": ubx.FieldSpec{
+		WireName: "inner_horizontal",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
+	},
+	"InnerVertical": ubx.FieldSpec{
+		WireName: "inner_vertical",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
+	},
+	"Left": ubx.FieldSpec{
+		WireName: "left",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
+	},
+	"Right": ubx.FieldSpec{
+		WireName: "right",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
+	},
+	"Top": ubx.FieldSpec{
+		WireName: "top",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_BorderFields = ubx.FieldMap{
-		"SideSpecificBorder": ubx.FieldSpec{
-			WireName: "side_specific_border",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorderFields,
-		},
-		"UniformBorder": ubx.FieldSpec{
-			WireName: "uniform_border",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
-		},
-	}
+	"SideSpecificBorder": ubx.FieldSpec{
+		WireName: "side_specific_border",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorderFields,
+	},
+	"UniformBorder": ubx.FieldSpec{
+		WireName: "uniform_border",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_Border_SideSpecificBorder_BottomFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"Border": ubx.FieldSpec{
-			WireName: "border",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_BorderFields,
-		},
-		"FontConfiguration": ubx.FieldSpec{
-			WireName: "font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"HorizontalTextAlignment": ubx.FieldSpec{WireName: "horizontal_text_alignment"},
-		"TextWrap": ubx.FieldSpec{WireName: "text_wrap"},
-		"VerticalTextAlignment": ubx.FieldSpec{WireName: "vertical_text_alignment"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
+	"Border": ubx.FieldSpec{
+		WireName: "border",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyle_BorderFields,
+	},
+	"FontConfiguration": ubx.FieldSpec{
+		WireName: "font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"Height":                  ubx.FieldSpec{WireName: "height"},
+	"HorizontalTextAlignment": ubx.FieldSpec{WireName: "horizontal_text_alignment"},
+	"TextWrap":                ubx.FieldSpec{WireName: "text_wrap"},
+	"VerticalTextAlignment":   ubx.FieldSpec{WireName: "vertical_text_alignment"},
+	"Visibility":              ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowAlternateColorOptionsFields = ubx.FieldMap{
-		"RowAlternateColors": ubx.FieldSpec{WireName: "row_alternate_colors"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UsePrimaryBackgroundColor": ubx.FieldSpec{WireName: "use_primary_background_color"},
-	}
+	"RowAlternateColors":        ubx.FieldSpec{WireName: "row_alternate_colors"},
+	"Status":                    ubx.FieldSpec{WireName: "status"},
+	"UsePrimaryBackgroundColor": ubx.FieldSpec{WireName: "use_primary_background_color"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowsLabelOptionsFields = ubx.FieldMap{
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-	}
+	"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
+	"Visibility":  ubx.FieldSpec{WireName: "visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptionsFields = ubx.FieldMap{
-		"CellStyle": ubx.FieldSpec{
-			WireName: "cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"CollapsedRowDimensionsVisibility": ubx.FieldSpec{WireName: "collapsed_row_dimensions_visibility"},
-		"ColumnHeaderStyle": ubx.FieldSpec{
-			WireName: "column_header_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"ColumnNamesVisibility": ubx.FieldSpec{WireName: "column_names_visibility"},
-		"DefaultCellWidth": ubx.FieldSpec{WireName: "default_cell_width"},
-		"MetricPlacement": ubx.FieldSpec{WireName: "metric_placement"},
-		"RowAlternateColorOptions": ubx.FieldSpec{
-			WireName: "row_alternate_color_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowAlternateColorOptionsFields,
-		},
-		"RowFieldNamesStyle": ubx.FieldSpec{
-			WireName: "row_field_names_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"RowHeaderStyle": ubx.FieldSpec{
-			WireName: "row_header_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"RowsLabelOptions": ubx.FieldSpec{
-			WireName: "rows_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowsLabelOptionsFields,
-		},
-		"RowsLayout": ubx.FieldSpec{WireName: "rows_layout"},
-		"SingleMetricVisibility": ubx.FieldSpec{WireName: "single_metric_visibility"},
-		"ToggleButtonsVisibility": ubx.FieldSpec{WireName: "toggle_buttons_visibility"},
-	}
+	"CellStyle": ubx.FieldSpec{
+		WireName: "cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"CollapsedRowDimensionsVisibility": ubx.FieldSpec{WireName: "collapsed_row_dimensions_visibility"},
+	"ColumnHeaderStyle": ubx.FieldSpec{
+		WireName: "column_header_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"ColumnNamesVisibility": ubx.FieldSpec{WireName: "column_names_visibility"},
+	"DefaultCellWidth":      ubx.FieldSpec{WireName: "default_cell_width"},
+	"MetricPlacement":       ubx.FieldSpec{WireName: "metric_placement"},
+	"RowAlternateColorOptions": ubx.FieldSpec{
+		WireName: "row_alternate_color_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowAlternateColorOptionsFields,
+	},
+	"RowFieldNamesStyle": ubx.FieldSpec{
+		WireName: "row_field_names_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"RowHeaderStyle": ubx.FieldSpec{
+		WireName: "row_header_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"RowsLabelOptions": ubx.FieldSpec{
+		WireName: "rows_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowsLabelOptionsFields,
+	},
+	"RowsLayout":              ubx.FieldSpec{WireName: "rows_layout"},
+	"SingleMetricVisibility":  ubx.FieldSpec{WireName: "single_metric_visibility"},
+	"ToggleButtonsVisibility": ubx.FieldSpec{WireName: "toggle_buttons_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions_FieldLevelOptionsFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions_StyleTargetsFields = ubx.FieldMap{
-		"CellType": ubx.FieldSpec{WireName: "cell_type"},
-	}
+	"CellType": ubx.FieldSpec{WireName: "cell_type"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptionsFields = ubx.FieldMap{
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-		"FieldLevel": ubx.FieldSpec{WireName: "field_level"},
-		"FieldLevelOptions": ubx.FieldSpec{
-			WireName: "field_level_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions_FieldLevelOptionsFields,
-		},
-		"MetricHeaderCellStyle": ubx.FieldSpec{
-			WireName: "metric_header_cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"StyleTargets": ubx.FieldSpec{
-			WireName: "style_targets",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions_StyleTargetsFields,
-		},
-		"TotalCellStyle": ubx.FieldSpec{
-			WireName: "total_cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"TotalsVisibility": ubx.FieldSpec{WireName: "totals_visibility"},
-		"ValueCellStyle": ubx.FieldSpec{
-			WireName: "value_cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-	}
+	"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
+	"FieldLevel":  ubx.FieldSpec{WireName: "field_level"},
+	"FieldLevelOptions": ubx.FieldSpec{
+		WireName: "field_level_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions_FieldLevelOptionsFields,
+	},
+	"MetricHeaderCellStyle": ubx.FieldSpec{
+		WireName: "metric_header_cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"StyleTargets": ubx.FieldSpec{
+		WireName: "style_targets",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptions_StyleTargetsFields,
+	},
+	"TotalCellStyle": ubx.FieldSpec{
+		WireName: "total_cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"TotalsVisibility": ubx.FieldSpec{WireName: "totals_visibility"},
+	"ValueCellStyle": ubx.FieldSpec{
+		WireName: "value_cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptions_TotalAggregationFunctionFields = ubx.FieldMap{
-		"SimpleTotalAggregationFunction": ubx.FieldSpec{WireName: "simple_total_aggregation_function"},
-	}
+	"SimpleTotalAggregationFunction": ubx.FieldSpec{WireName: "simple_total_aggregation_function"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptionsFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"TotalAggregationFunction": ubx.FieldSpec{
-			WireName: "total_aggregation_function",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptions_TotalAggregationFunctionFields,
-		},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"TotalAggregationFunction": ubx.FieldSpec{
+		WireName: "total_aggregation_function",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptions_TotalAggregationFunctionFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptionsFields = ubx.FieldMap{
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-		"MetricHeaderCellStyle": ubx.FieldSpec{
-			WireName: "metric_header_cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"Placement": ubx.FieldSpec{WireName: "placement"},
-		"ScrollStatus": ubx.FieldSpec{WireName: "scroll_status"},
-		"TotalAggregationOptions": ubx.FieldSpec{
-			WireName: "total_aggregation_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptionsFields,
-		},
-		"TotalCellStyle": ubx.FieldSpec{
-			WireName: "total_cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"TotalsVisibility": ubx.FieldSpec{WireName: "totals_visibility"},
-		"ValueCellStyle": ubx.FieldSpec{
-			WireName: "value_cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-	}
+	"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
+	"MetricHeaderCellStyle": ubx.FieldSpec{
+		WireName: "metric_header_cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"Placement":    ubx.FieldSpec{WireName: "placement"},
+	"ScrollStatus": ubx.FieldSpec{WireName: "scroll_status"},
+	"TotalAggregationOptions": ubx.FieldSpec{
+		WireName: "total_aggregation_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptionsFields,
+	},
+	"TotalCellStyle": ubx.FieldSpec{
+		WireName: "total_cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"TotalsVisibility": ubx.FieldSpec{WireName: "totals_visibility"},
+	"ValueCellStyle": ubx.FieldSpec{
+		WireName: "value_cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptionsFields = ubx.FieldMap{
-		"ColumnSubtotalOptions": ubx.FieldSpec{
-			WireName: "column_subtotal_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptionsFields,
-		},
-		"ColumnTotalOptions": ubx.FieldSpec{
-			WireName: "column_total_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptionsFields,
-		},
-		"RowSubtotalOptions": ubx.FieldSpec{
-			WireName: "row_subtotal_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptionsFields,
-		},
-		"RowTotalOptions": ubx.FieldSpec{
-			WireName: "row_total_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptionsFields,
-		},
-	}
+	"ColumnSubtotalOptions": ubx.FieldSpec{
+		WireName: "column_subtotal_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptionsFields,
+	},
+	"ColumnTotalOptions": ubx.FieldSpec{
+		WireName: "column_total_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptionsFields,
+	},
+	"RowSubtotalOptions": ubx.FieldSpec{
+		WireName: "row_subtotal_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnSubtotalOptionsFields,
+	},
+	"RowTotalOptions": ubx.FieldSpec{
+		WireName: "row_total_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigurationFields = ubx.FieldMap{
-		"FieldOptions": ubx.FieldSpec{
-			WireName: "field_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptionsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"PaginatedReportOptions": ubx.FieldSpec{
-			WireName: "paginated_report_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_PaginatedReportOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"TableOptions": ubx.FieldSpec{
-			WireName: "table_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptionsFields,
-		},
-		"TotalOptions": ubx.FieldSpec{
-			WireName: "total_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptionsFields,
-		},
-	}
+	"FieldOptions": ubx.FieldSpec{
+		WireName: "field_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldOptionsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"PaginatedReportOptions": ubx.FieldSpec{
+		WireName: "paginated_report_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_PaginatedReportOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"TableOptions": ubx.FieldSpec{
+		WireName: "table_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptionsFields,
+	},
+	"TotalOptions": ubx.FieldSpec{
+		WireName: "total_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_ScopeFields = ubx.FieldMap{
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Role": ubx.FieldSpec{WireName: "role"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_TextFormatFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{
-			WireName: "background_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
-		},
-		"Icon": ubx.FieldSpec{
-			WireName: "icon",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_IconFields,
-		},
-		"TextColor": ubx.FieldSpec{
-			WireName: "text_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
-		},
-	}
+	"BackgroundColor": ubx.FieldSpec{
+		WireName: "background_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
+	},
+	"Icon": ubx.FieldSpec{
+		WireName: "icon",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisual_ConditionalFormatting_ConditionalFormattingOptions_PrimaryValue_IconFields,
+	},
+	"TextColor": ubx.FieldSpec{
+		WireName: "text_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_CellFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_ScopeFields,
-		},
-		"Scopes": ubx.FieldSpec{
-			WireName: "scopes",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_ScopeFields,
-		},
-		"TextFormat": ubx.FieldSpec{
-			WireName: "text_format",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_TextFormatFields,
-		},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_ScopeFields,
+	},
+	"Scopes": ubx.FieldSpec{
+		WireName: "scopes",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_ScopeFields,
+	},
+	"TextFormat": ubx.FieldSpec{
+		WireName: "text_format",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_TextFormatFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptionsFields = ubx.FieldMap{
-		"Cell": ubx.FieldSpec{
-			WireName: "cell",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_CellFields,
-		},
-	}
+	"Cell": ubx.FieldSpec{
+		WireName: "cell",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_CellFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormattingFields = ubx.FieldMap{
-		"ConditionalFormattingOptions": ubx.FieldSpec{
-			WireName: "conditional_formatting_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
-		},
-	}
+	"ConditionalFormattingOptions": ubx.FieldSpec{
+		WireName: "conditional_formatting_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PivotTableVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigurationFields,
-		},
-		"ConditionalFormatting": ubx.FieldSpec{
-			WireName: "conditional_formatting",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormattingFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfigurationFields,
+	},
+	"ConditionalFormatting": ubx.FieldSpec{
+		WireName: "conditional_formatting",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormattingFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"AxisName": ubx.FieldSpec{WireName: "axis_name"},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Measures": ubx.FieldSpec{
-			WireName: "measures",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Unaggregated": ubx.FieldSpec{
-			WireName: "unaggregated",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyFieldFields,
-		},
-	}
+	"AxisName": ubx.FieldSpec{WireName: "axis_name"},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Measures": ubx.FieldSpec{
+		WireName: "measures",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Unaggregated": ubx.FieldSpec{
+		WireName: "unaggregated",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyFieldFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration_PluginVisualTableQuerySort_ItemsLimitConfigurationFields = ubx.FieldMap{
-		"ItemsLimit": ubx.FieldSpec{WireName: "items_limit"},
-	}
+	"ItemsLimit": ubx.FieldSpec{WireName: "items_limit"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration_PluginVisualTableQuerySortFields = ubx.FieldMap{
-		"ItemsLimitConfiguration": ubx.FieldSpec{
-			WireName: "items_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration_PluginVisualTableQuerySort_ItemsLimitConfigurationFields,
-		},
-		"RowSort": ubx.FieldSpec{
-			WireName: "row_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"ItemsLimitConfiguration": ubx.FieldSpec{
+		WireName: "items_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration_PluginVisualTableQuerySort_ItemsLimitConfigurationFields,
+	},
+	"RowSort": ubx.FieldSpec{
+		WireName: "row_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"PluginVisualTableQuerySort": ubx.FieldSpec{
-			WireName: "plugin_visual_table_query_sort",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration_PluginVisualTableQuerySortFields,
-		},
-	}
+	"PluginVisualTableQuerySort": ubx.FieldSpec{
+		WireName: "plugin_visual_table_query_sort",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfiguration_PluginVisualTableQuerySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOptions_VisualPropertiesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOptionsFields = ubx.FieldMap{
-		"VisualProperties": ubx.FieldSpec{
-			WireName: "visual_properties",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOptions_VisualPropertiesFields,
-		},
-	}
+	"VisualProperties": ubx.FieldSpec{
+		WireName: "visual_properties",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOptions_VisualPropertiesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfigurationFields = ubx.FieldMap{
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"VisualOptions": ubx.FieldSpec{
-			WireName: "visual_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOptionsFields,
-		},
-	}
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"VisualOptions": ubx.FieldSpec{
+		WireName: "visual_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfiguration_VisualOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_PluginVisualFields = ubx.FieldMap{
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfigurationFields,
-		},
-		"PluginArn": ubx.FieldSpec{WireName: "plugin_arn"},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PluginVisual_ChartConfigurationFields,
+	},
+	"PluginArn": ubx.FieldSpec{WireName: "plugin_arn"},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_BaseSeriesSettingsFields = ubx.FieldMap{
-		"AreaStyleSettings": ubx.FieldSpec{
-			WireName: "area_style_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
-		},
-	}
+	"AreaStyleSettings": ubx.FieldSpec{
+		WireName: "area_style_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDropdownOptions_DisplayOptions_SelectAllOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWells_RadarChartAggregatedFieldWellsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Color": ubx.FieldSpec{
-			WireName: "color",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Color": ubx.FieldSpec{
+		WireName: "color",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"RadarChartAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "radar_chart_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWells_RadarChartAggregatedFieldWellsFields,
-		},
-	}
+	"RadarChartAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "radar_chart_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWells_RadarChartAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfigurationFields = ubx.FieldMap{
-		"AlternateBandColorsVisibility": ubx.FieldSpec{WireName: "alternate_band_colors_visibility"},
-		"AlternateBandEvenColor": ubx.FieldSpec{WireName: "alternate_band_even_color"},
-		"AlternateBandOddColor": ubx.FieldSpec{WireName: "alternate_band_odd_color"},
-		"AxesRangeScale": ubx.FieldSpec{WireName: "axes_range_scale"},
-		"BaseSeriesSettings": ubx.FieldSpec{
-			WireName: "base_series_settings",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_BaseSeriesSettingsFields,
-		},
-		"CategoryAxis": ubx.FieldSpec{
-			WireName: "category_axis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"CategoryLabelOptions": ubx.FieldSpec{
-			WireName: "category_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ColorAxis": ubx.FieldSpec{
-			WireName: "color_axis",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"ColorLabelOptions": ubx.FieldSpec{
-			WireName: "color_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"Shape": ubx.FieldSpec{WireName: "shape"},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"StartAngle": ubx.FieldSpec{WireName: "start_angle"},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-	}
+	"AlternateBandColorsVisibility": ubx.FieldSpec{WireName: "alternate_band_colors_visibility"},
+	"AlternateBandEvenColor":        ubx.FieldSpec{WireName: "alternate_band_even_color"},
+	"AlternateBandOddColor":         ubx.FieldSpec{WireName: "alternate_band_odd_color"},
+	"AxesRangeScale":                ubx.FieldSpec{WireName: "axes_range_scale"},
+	"BaseSeriesSettings": ubx.FieldSpec{
+		WireName: "base_series_settings",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_BaseSeriesSettingsFields,
+	},
+	"CategoryAxis": ubx.FieldSpec{
+		WireName: "category_axis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"CategoryLabelOptions": ubx.FieldSpec{
+		WireName: "category_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ColorAxis": ubx.FieldSpec{
+		WireName: "color_axis",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"ColorLabelOptions": ubx.FieldSpec{
+		WireName: "color_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"Shape": ubx.FieldSpec{WireName: "shape"},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"StartAngle": ubx.FieldSpec{WireName: "start_angle"},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_RadarChartVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_RadarChartVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWells_SankeyDiagramAggregatedFieldWellsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Weight": ubx.FieldSpec{
-			WireName: "weight",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Weight": ubx.FieldSpec{
+		WireName: "weight",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"SankeyDiagramAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "sankey_diagram_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWells_SankeyDiagramAggregatedFieldWellsFields,
-		},
-	}
+	"SankeyDiagramAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "sankey_diagram_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWells_SankeyDiagramAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"DestinationItemsLimit": ubx.FieldSpec{
-			WireName: "destination_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"SourceItemsLimit": ubx.FieldSpec{
-			WireName: "source_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"WeightSort": ubx.FieldSpec{
-			WireName: "weight_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"DestinationItemsLimit": ubx.FieldSpec{
+		WireName: "destination_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"SourceItemsLimit": ubx.FieldSpec{
+		WireName: "source_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"WeightSort": ubx.FieldSpec{
+		WireName: "weight_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfigurationFields = ubx.FieldMap{
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_SortConfigurationFields,
-		},
-	}
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfiguration_SortConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_SankeyDiagramVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfigurationFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_SankeyDiagramVisual_ChartConfigurationFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotCategoricallyAggregatedFieldWellsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Label": ubx.FieldSpec{
-			WireName: "label",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Size": ubx.FieldSpec{
-			WireName: "size",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Xaxis": ubx.FieldSpec{
-			WireName: "xaxis",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Yaxis": ubx.FieldSpec{
-			WireName: "yaxis",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Label": ubx.FieldSpec{
+		WireName: "label",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Size": ubx.FieldSpec{
+		WireName: "size",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Xaxis": ubx.FieldSpec{
+		WireName: "xaxis",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Yaxis": ubx.FieldSpec{
+		WireName: "yaxis",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotUnaggregatedFieldWellsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{
-			WireName: "category",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Label": ubx.FieldSpec{
-			WireName: "label",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Size": ubx.FieldSpec{
-			WireName: "size",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Xaxis": ubx.FieldSpec{
-			WireName: "xaxis",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Yaxis": ubx.FieldSpec{
-			WireName: "yaxis",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-	}
+	"Category": ubx.FieldSpec{
+		WireName: "category",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Label": ubx.FieldSpec{
+		WireName: "label",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Size": ubx.FieldSpec{
+		WireName: "size",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Xaxis": ubx.FieldSpec{
+		WireName: "xaxis",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Yaxis": ubx.FieldSpec{
+		WireName: "yaxis",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"ScatterPlotCategoricallyAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "scatter_plot_categorically_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotCategoricallyAggregatedFieldWellsFields,
-		},
-		"ScatterPlotUnaggregatedFieldWells": ubx.FieldSpec{
-			WireName: "scatter_plot_unaggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotUnaggregatedFieldWellsFields,
-		},
-	}
+	"ScatterPlotCategoricallyAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "scatter_plot_categorically_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotCategoricallyAggregatedFieldWellsFields,
+	},
+	"ScatterPlotUnaggregatedFieldWells": ubx.FieldSpec{
+		WireName: "scatter_plot_unaggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWells_ScatterPlotUnaggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"ScatterPlotLimitConfiguration": ubx.FieldSpec{
-			WireName: "scatter_plot_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-	}
+	"ScatterPlotLimitConfiguration": ubx.FieldSpec{
+		WireName: "scatter_plot_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfigurationFields = ubx.FieldMap{
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-		"XaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "xaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"XaxisLabelOptions": ubx.FieldSpec{
-			WireName: "xaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"YaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "yaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"YaxisLabelOptions": ubx.FieldSpec{
-			WireName: "yaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-	}
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+	"XaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "xaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"XaxisLabelOptions": ubx.FieldSpec{
+		WireName: "xaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"YaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "yaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"YaxisLabelOptions": ubx.FieldSpec{
+		WireName: "yaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_ScatterPlotVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ScatterPlotVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_PinnedFieldOptionsFields = ubx.FieldMap{
-		"PinnedLeftFields": ubx.FieldSpec{WireName: "pinned_left_fields"},
-	}
+	"PinnedLeftFields": ubx.FieldSpec{WireName: "pinned_left_fields"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_ImageConfiguration_SizingOptionsFields = ubx.FieldMap{
-		"TableCellImageScalingConfiguration": ubx.FieldSpec{WireName: "table_cell_image_scaling_configuration"},
-	}
+	"TableCellImageScalingConfiguration": ubx.FieldSpec{WireName: "table_cell_image_scaling_configuration"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_ImageConfigurationFields = ubx.FieldMap{
-		"SizingOptions": ubx.FieldSpec{
-			WireName: "sizing_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_ImageConfiguration_SizingOptionsFields,
-		},
-	}
+	"SizingOptions": ubx.FieldSpec{
+		WireName: "sizing_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_ImageConfiguration_SizingOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content_CustomIconContentFields = ubx.FieldMap{
-		"Icon": ubx.FieldSpec{WireName: "icon"},
-	}
+	"Icon": ubx.FieldSpec{WireName: "icon"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content_CustomTextContentFields = ubx.FieldMap{
-		"FontConfiguration": ubx.FieldSpec{
-			WireName: "font_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
-		},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"FontConfiguration": ubx.FieldSpec{
+		WireName: "font_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_FilterGroups_Filters_CategoryFilter_DefaultFilterControlConfiguration_ControlOptions_DefaultDateTimePickerOptions_DisplayOptions_TitleOptions_FontConfigurationFields,
+	},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_ContentFields = ubx.FieldMap{
-		"CustomIconContent": ubx.FieldSpec{
-			WireName: "custom_icon_content",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content_CustomIconContentFields,
-		},
-		"CustomTextContent": ubx.FieldSpec{
-			WireName: "custom_text_content",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content_CustomTextContentFields,
-		},
-	}
+	"CustomIconContent": ubx.FieldSpec{
+		WireName: "custom_icon_content",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content_CustomIconContentFields,
+	},
+	"CustomTextContent": ubx.FieldSpec{
+		WireName: "custom_text_content",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_Content_CustomTextContentFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfigurationFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_ContentFields,
-		},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfiguration_ContentFields,
+	},
+	"Target": ubx.FieldSpec{WireName: "target"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_UrlstylingFields = ubx.FieldMap{
-		"ImageConfiguration": ubx.FieldSpec{
-			WireName: "image_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_ImageConfigurationFields,
-		},
-		"LinkConfiguration": ubx.FieldSpec{
-			WireName: "link_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfigurationFields,
-		},
-	}
+	"ImageConfiguration": ubx.FieldSpec{
+		WireName: "image_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_ImageConfigurationFields,
+	},
+	"LinkConfiguration": ubx.FieldSpec{
+		WireName: "link_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_Urlstyling_LinkConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptionsFields = ubx.FieldMap{
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"Urlstyling": ubx.FieldSpec{
-			WireName: "urlstyling",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_UrlstylingFields,
-		},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
+	"FieldId":     ubx.FieldSpec{WireName: "field_id"},
+	"Urlstyling": ubx.FieldSpec{
+		WireName: "urlstyling",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptions_UrlstylingFields,
+	},
+	"Visibility": ubx.FieldSpec{WireName: "visibility"},
+	"Width":      ubx.FieldSpec{WireName: "width"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_TransposedTableOptionsFields = ubx.FieldMap{
-		"ColumnIndex": ubx.FieldSpec{WireName: "column_index"},
-		"ColumnType": ubx.FieldSpec{WireName: "column_type"},
-		"ColumnWidth": ubx.FieldSpec{WireName: "column_width"},
-	}
+	"ColumnIndex": ubx.FieldSpec{WireName: "column_index"},
+	"ColumnType":  ubx.FieldSpec{WireName: "column_type"},
+	"ColumnWidth": ubx.FieldSpec{WireName: "column_width"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptionsFields = ubx.FieldMap{
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"PinnedFieldOptions": ubx.FieldSpec{
-			WireName: "pinned_field_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_PinnedFieldOptionsFields,
-		},
-		"SelectedFieldOptions": ubx.FieldSpec{
-			WireName: "selected_field_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptionsFields,
-		},
-		"TransposedTableOptions": ubx.FieldSpec{
-			WireName: "transposed_table_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_TransposedTableOptionsFields,
-		},
-	}
+	"Order": ubx.FieldSpec{WireName: "order"},
+	"PinnedFieldOptions": ubx.FieldSpec{
+		WireName: "pinned_field_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_PinnedFieldOptionsFields,
+	},
+	"SelectedFieldOptions": ubx.FieldSpec{
+		WireName: "selected_field_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_SelectedFieldOptionsFields,
+	},
+	"TransposedTableOptions": ubx.FieldSpec{
+		WireName: "transposed_table_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptions_TransposedTableOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWells_TableUnaggregatedFieldWellsFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyFieldFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisual_ChartConfiguration_MapLayers_JoinDefinition_DatasetKeyFieldFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"TableAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "table_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells_BoxPlotAggregatedFieldWellsFields,
-		},
-		"TableUnaggregatedFieldWells": ubx.FieldSpec{
-			WireName: "table_unaggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWells_TableUnaggregatedFieldWellsFields,
-		},
-	}
+	"TableAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "table_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_FieldWells_BoxPlotAggregatedFieldWellsFields,
+	},
+	"TableUnaggregatedFieldWells": ubx.FieldSpec{
+		WireName: "table_unaggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWells_TableUnaggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"PaginationConfiguration": ubx.FieldSpec{
-			WireName: "pagination_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration_PaginationConfigurationFields,
-		},
-		"RowSort": ubx.FieldSpec{
-			WireName: "row_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"PaginationConfiguration": ubx.FieldSpec{
+		WireName: "pagination_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisual_ChartConfiguration_SortConfiguration_PaginationConfigurationFields,
+	},
+	"RowSort": ubx.FieldSpec{
+		WireName: "row_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizations_DataBarsFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"NegativeColor": ubx.FieldSpec{WireName: "negative_color"},
-		"PositiveColor": ubx.FieldSpec{WireName: "positive_color"},
-	}
+	"FieldId":       ubx.FieldSpec{WireName: "field_id"},
+	"NegativeColor": ubx.FieldSpec{WireName: "negative_color"},
+	"PositiveColor": ubx.FieldSpec{WireName: "positive_color"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizationsFields = ubx.FieldMap{
-		"DataBars": ubx.FieldSpec{
-			WireName: "data_bars",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizations_DataBarsFields,
-		},
-	}
+	"DataBars": ubx.FieldSpec{
+		WireName: "data_bars",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizations_DataBarsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableOptionsFields = ubx.FieldMap{
-		"CellStyle": ubx.FieldSpec{
-			WireName: "cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"HeaderStyle": ubx.FieldSpec{
-			WireName: "header_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"Orientation": ubx.FieldSpec{WireName: "orientation"},
-		"RowAlternateColorOptions": ubx.FieldSpec{
-			WireName: "row_alternate_color_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowAlternateColorOptionsFields,
-		},
-	}
+	"CellStyle": ubx.FieldSpec{
+		WireName: "cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"HeaderStyle": ubx.FieldSpec{
+		WireName: "header_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"Orientation": ubx.FieldSpec{WireName: "orientation"},
+	"RowAlternateColorOptions": ubx.FieldSpec{
+		WireName: "row_alternate_color_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_RowAlternateColorOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TotalOptionsFields = ubx.FieldMap{
-		"CustomLabel": ubx.FieldSpec{WireName: "custom_label"},
-		"Placement": ubx.FieldSpec{WireName: "placement"},
-		"ScrollStatus": ubx.FieldSpec{WireName: "scroll_status"},
-		"TotalAggregationOptions": ubx.FieldSpec{
-			WireName: "total_aggregation_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptionsFields,
-		},
-		"TotalCellStyle": ubx.FieldSpec{
-			WireName: "total_cell_style",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
-		},
-		"TotalsVisibility": ubx.FieldSpec{WireName: "totals_visibility"},
-	}
+	"CustomLabel":  ubx.FieldSpec{WireName: "custom_label"},
+	"Placement":    ubx.FieldSpec{WireName: "placement"},
+	"ScrollStatus": ubx.FieldSpec{WireName: "scroll_status"},
+	"TotalAggregationOptions": ubx.FieldSpec{
+		WireName: "total_aggregation_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TotalOptions_ColumnTotalOptions_TotalAggregationOptionsFields,
+	},
+	"TotalCellStyle": ubx.FieldSpec{
+		WireName: "total_cell_style",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_TableOptions_CellStyleFields,
+	},
+	"TotalsVisibility": ubx.FieldSpec{WireName: "totals_visibility"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfigurationFields = ubx.FieldMap{
-		"FieldOptions": ubx.FieldSpec{
-			WireName: "field_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptionsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"PaginatedReportOptions": ubx.FieldSpec{
-			WireName: "paginated_report_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_PaginatedReportOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"TableInlineVisualizations": ubx.FieldSpec{
-			WireName: "table_inline_visualizations",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizationsFields,
-		},
-		"TableOptions": ubx.FieldSpec{
-			WireName: "table_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableOptionsFields,
-		},
-		"TotalOptions": ubx.FieldSpec{
-			WireName: "total_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TotalOptionsFields,
-		},
-	}
+	"FieldOptions": ubx.FieldSpec{
+		WireName: "field_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldOptionsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"PaginatedReportOptions": ubx.FieldSpec{
+		WireName: "paginated_report_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ChartConfiguration_PaginatedReportOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"TableInlineVisualizations": ubx.FieldSpec{
+		WireName: "table_inline_visualizations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableInlineVisualizationsFields,
+	},
+	"TableOptions": ubx.FieldSpec{
+		WireName: "table_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TableOptionsFields,
+	},
+	"TotalOptions": ubx.FieldSpec{
+		WireName: "total_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfiguration_TotalOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_CellFields = ubx.FieldMap{
-		"FieldId": ubx.FieldSpec{WireName: "field_id"},
-		"TextFormat": ubx.FieldSpec{
-			WireName: "text_format",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_TextFormatFields,
-		},
-	}
+	"FieldId": ubx.FieldSpec{WireName: "field_id"},
+	"TextFormat": ubx.FieldSpec{
+		WireName: "text_format",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisual_ConditionalFormatting_ConditionalFormattingOptions_Cell_TextFormatFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_RowFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{
-			WireName: "background_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
-		},
-		"TextColor": ubx.FieldSpec{
-			WireName: "text_color",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
-		},
-	}
+	"BackgroundColor": ubx.FieldSpec{
+		WireName: "background_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
+	},
+	"TextColor": ubx.FieldSpec{
+		WireName: "text_color",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisual_ConditionalFormatting_ConditionalFormattingOptions_Shape_Format_BackgroundColorFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptionsFields = ubx.FieldMap{
-		"Cell": ubx.FieldSpec{
-			WireName: "cell",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_CellFields,
-		},
-		"Row": ubx.FieldSpec{
-			WireName: "row",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_RowFields,
-		},
-	}
+	"Cell": ubx.FieldSpec{
+		WireName: "cell",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_CellFields,
+	},
+	"Row": ubx.FieldSpec{
+		WireName: "row",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptions_RowFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormattingFields = ubx.FieldMap{
-		"ConditionalFormattingOptions": ubx.FieldSpec{
-			WireName: "conditional_formatting_options",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
-		},
-	}
+	"ConditionalFormattingOptions": ubx.FieldSpec{
+		WireName: "conditional_formatting_options",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormatting_ConditionalFormattingOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TableVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfigurationFields,
-		},
-		"ConditionalFormatting": ubx.FieldSpec{
-			WireName: "conditional_formatting",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormattingFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ChartConfigurationFields,
+	},
+	"ConditionalFormatting": ubx.FieldSpec{
+		WireName: "conditional_formatting",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisual_ConditionalFormattingFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWells_TreeMapAggregatedFieldWellsFields = ubx.FieldMap{
-		"Colors": ubx.FieldSpec{
-			WireName: "colors",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-		"Groups": ubx.FieldSpec{
-			WireName: "groups",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Sizes": ubx.FieldSpec{
-			WireName: "sizes",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Colors": ubx.FieldSpec{
+		WireName: "colors",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+	"Groups": ubx.FieldSpec{
+		WireName: "groups",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Sizes": ubx.FieldSpec{
+		WireName: "sizes",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"TreeMapAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "tree_map_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWells_TreeMapAggregatedFieldWellsFields,
-		},
-	}
+	"TreeMapAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "tree_map_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWells_TreeMapAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"TreeMapGroupItemsLimitConfiguration": ubx.FieldSpec{
-			WireName: "tree_map_group_items_limit_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"TreeMapSort": ubx.FieldSpec{
-			WireName: "tree_map_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"TreeMapGroupItemsLimitConfiguration": ubx.FieldSpec{
+		WireName: "tree_map_group_items_limit_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"TreeMapSort": ubx.FieldSpec{
+		WireName: "tree_map_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfigurationFields = ubx.FieldMap{
-		"ColorLabelOptions": ubx.FieldSpec{
-			WireName: "color_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ColorScale": ubx.FieldSpec{
-			WireName: "color_scale",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScaleFields,
-		},
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"GroupLabelOptions": ubx.FieldSpec{
-			WireName: "group_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"SizeLabelOptions": ubx.FieldSpec{
-			WireName: "size_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"Tooltip": ubx.FieldSpec{
-			WireName: "tooltip",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
-		},
-	}
+	"ColorLabelOptions": ubx.FieldSpec{
+		WireName: "color_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ColorScale": ubx.FieldSpec{
+		WireName: "color_scale",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisual_ChartConfiguration_ColorScaleFields,
+	},
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"GroupLabelOptions": ubx.FieldSpec{
+		WireName: "group_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"SizeLabelOptions": ubx.FieldSpec{
+		WireName: "size_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"Tooltip": ubx.FieldSpec{
+		WireName: "tooltip",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_TooltipFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_TreeMapVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TreeMapVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfiguration_GroupColorConfigurationFields = ubx.FieldMap{
-		"NegativeBarColor": ubx.FieldSpec{WireName: "negative_bar_color"},
-		"PositiveBarColor": ubx.FieldSpec{WireName: "positive_bar_color"},
-		"TotalBarColor": ubx.FieldSpec{WireName: "total_bar_color"},
-	}
+	"NegativeBarColor": ubx.FieldSpec{WireName: "negative_bar_color"},
+	"PositiveBarColor": ubx.FieldSpec{WireName: "positive_bar_color"},
+	"TotalBarColor":    ubx.FieldSpec{WireName: "total_bar_color"},
+}
 
 var Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfigurationFields = ubx.FieldMap{
-		"GroupColorConfiguration": ubx.FieldSpec{
-			WireName: "group_color_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfiguration_GroupColorConfigurationFields,
-		},
-	}
+	"GroupColorConfiguration": ubx.FieldSpec{
+		WireName: "group_color_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfiguration_GroupColorConfigurationFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWells_WaterfallChartAggregatedFieldWellsFields = ubx.FieldMap{
-		"Breakdowns": ubx.FieldSpec{
-			WireName: "breakdowns",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Categories": ubx.FieldSpec{
-			WireName: "categories",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"Breakdowns": ubx.FieldSpec{
+		WireName: "breakdowns",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Categories": ubx.FieldSpec{
+		WireName: "categories",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"WaterfallChartAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "waterfall_chart_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWells_WaterfallChartAggregatedFieldWellsFields,
-		},
-	}
+	"WaterfallChartAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "waterfall_chart_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWells_WaterfallChartAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_SortConfigurationFields = ubx.FieldMap{
-		"BreakdownItemsLimit": ubx.FieldSpec{
-			WireName: "breakdown_items_limit",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
-		},
-		"CategorySort": ubx.FieldSpec{
-			WireName: "category_sort",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
-		},
-	}
+	"BreakdownItemsLimit": ubx.FieldSpec{
+		WireName: "breakdown_items_limit",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategoryItemsLimitFields,
+	},
+	"CategorySort": ubx.FieldSpec{
+		WireName: "category_sort",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_SortConfiguration_CategorySortFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_WaterfallChartOptionsFields = ubx.FieldMap{
-		"TotalBarLabel": ubx.FieldSpec{WireName: "total_bar_label"},
-	}
+	"TotalBarLabel": ubx.FieldSpec{WireName: "total_bar_label"},
+}
 
 var Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfigurationFields = ubx.FieldMap{
-		"CategoryAxisDisplayOptions": ubx.FieldSpec{
-			WireName: "category_axis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"CategoryAxisLabelOptions": ubx.FieldSpec{
-			WireName: "category_axis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"ColorConfiguration": ubx.FieldSpec{
-			WireName: "color_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfigurationFields,
-		},
-		"DataLabels": ubx.FieldSpec{
-			WireName: "data_labels",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"Legend": ubx.FieldSpec{
-			WireName: "legend",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
-		},
-		"PrimaryYaxisDisplayOptions": ubx.FieldSpec{
-			WireName: "primary_yaxis_display_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
-		},
-		"PrimaryYaxisLabelOptions": ubx.FieldSpec{
-			WireName: "primary_yaxis_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"VisualPalette": ubx.FieldSpec{
-			WireName: "visual_palette",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
-		},
-		"WaterfallChartOptions": ubx.FieldSpec{
-			WireName: "waterfall_chart_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_WaterfallChartOptionsFields,
-		},
-	}
+	"CategoryAxisDisplayOptions": ubx.FieldSpec{
+		WireName: "category_axis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"CategoryAxisLabelOptions": ubx.FieldSpec{
+		WireName: "category_axis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"ColorConfiguration": ubx.FieldSpec{
+		WireName: "color_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_ColorConfigurationFields,
+	},
+	"DataLabels": ubx.FieldSpec{
+		WireName: "data_labels",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_DataLabelsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"Legend": ubx.FieldSpec{
+		WireName: "legend",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_LegendFields,
+	},
+	"PrimaryYaxisDisplayOptions": ubx.FieldSpec{
+		WireName: "primary_yaxis_display_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryAxisFields,
+	},
+	"PrimaryYaxisLabelOptions": ubx.FieldSpec{
+		WireName: "primary_yaxis_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"VisualPalette": ubx.FieldSpec{
+		WireName: "visual_palette",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_VisualPaletteFields,
+	},
+	"WaterfallChartOptions": ubx.FieldSpec{
+		WireName: "waterfall_chart_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfiguration_WaterfallChartOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_WaterfallVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WaterfallVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWells_WordCloudAggregatedFieldWellsFields = ubx.FieldMap{
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
-		},
-		"Size": ubx.FieldSpec{
-			WireName: "size",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
-		},
-	}
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_CategoryFields,
+	},
+	"Size": ubx.FieldSpec{
+		WireName: "size",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_FieldWells_BarChartAggregatedFieldWells_ValuesFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWellsFields = ubx.FieldMap{
-		"WordCloudAggregatedFieldWells": ubx.FieldSpec{
-			WireName: "word_cloud_aggregated_field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWells_WordCloudAggregatedFieldWellsFields,
-		},
-	}
+	"WordCloudAggregatedFieldWells": ubx.FieldSpec{
+		WireName: "word_cloud_aggregated_field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWells_WordCloudAggregatedFieldWellsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_WordCloudOptionsFields = ubx.FieldMap{
-		"CloudLayout": ubx.FieldSpec{WireName: "cloud_layout"},
-		"MaximumStringLength": ubx.FieldSpec{WireName: "maximum_string_length"},
-		"WordCasing": ubx.FieldSpec{WireName: "word_casing"},
-		"WordOrientation": ubx.FieldSpec{WireName: "word_orientation"},
-		"WordPadding": ubx.FieldSpec{WireName: "word_padding"},
-		"WordScaling": ubx.FieldSpec{WireName: "word_scaling"},
-	}
+	"CloudLayout":         ubx.FieldSpec{WireName: "cloud_layout"},
+	"MaximumStringLength": ubx.FieldSpec{WireName: "maximum_string_length"},
+	"WordCasing":          ubx.FieldSpec{WireName: "word_casing"},
+	"WordOrientation":     ubx.FieldSpec{WireName: "word_orientation"},
+	"WordPadding":         ubx.FieldSpec{WireName: "word_padding"},
+	"WordScaling":         ubx.FieldSpec{WireName: "word_scaling"},
+}
 
 var Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfigurationFields = ubx.FieldMap{
-		"CategoryLabelOptions": ubx.FieldSpec{
-			WireName: "category_label_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
-		},
-		"FieldWells": ubx.FieldSpec{
-			WireName: "field_wells",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWellsFields,
-		},
-		"Interactions": ubx.FieldSpec{
-			WireName: "interactions",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
-		},
-		"SortConfiguration": ubx.FieldSpec{
-			WireName: "sort_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_SortConfigurationFields,
-		},
-		"WordCloudOptions": ubx.FieldSpec{
-			WireName: "word_cloud_options",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_WordCloudOptionsFields,
-		},
-	}
+	"CategoryLabelOptions": ubx.FieldSpec{
+		WireName: "category_label_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_CategoryLabelOptionsFields,
+	},
+	"FieldWells": ubx.FieldSpec{
+		WireName: "field_wells",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_FieldWellsFields,
+	},
+	"Interactions": ubx.FieldSpec{
+		WireName: "interactions",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ChartConfiguration_InteractionsFields,
+	},
+	"SortConfiguration": ubx.FieldSpec{
+		WireName: "sort_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FunnelChartVisual_ChartConfiguration_SortConfigurationFields,
+	},
+	"WordCloudOptions": ubx.FieldSpec{
+		WireName: "word_cloud_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfiguration_WordCloudOptionsFields,
+	},
+}
 
 var Analysis_Definition_Sheets_Visuals_WordCloudVisualFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
-		},
-		"ChartConfiguration": ubx.FieldSpec{
-			WireName: "chart_configuration",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfigurationFields,
-		},
-		"ColumnHierarchies": ubx.FieldSpec{
-			WireName: "column_hierarchies",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
-		},
-		"Subtitle": ubx.FieldSpec{
-			WireName: "subtitle",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
-		},
-		"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
-		"VisualId": ubx.FieldSpec{WireName: "visual_id"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ActionsFields,
+	},
+	"ChartConfiguration": ubx.FieldSpec{
+		WireName: "chart_configuration",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WordCloudVisual_ChartConfigurationFields,
+	},
+	"ColumnHierarchies": ubx.FieldSpec{
+		WireName: "column_hierarchies",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_ColumnHierarchiesFields,
+	},
+	"Subtitle": ubx.FieldSpec{
+		WireName: "subtitle",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisual_SubtitleFields,
+	},
+	"VisualContentAltText": ubx.FieldSpec{WireName: "visual_content_alt_text"},
+	"VisualId":             ubx.FieldSpec{WireName: "visual_id"},
+}
 
 var Analysis_Definition_Sheets_VisualsFields = ubx.FieldMap{
-		"BarChartVisual": ubx.FieldSpec{
-			WireName: "bar_chart_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BarChartVisualFields,
-		},
-		"BoxPlotVisual": ubx.FieldSpec{
-			WireName: "box_plot_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_BoxPlotVisualFields,
-		},
-		"ComboChartVisual": ubx.FieldSpec{
-			WireName: "combo_chart_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ComboChartVisualFields,
-		},
-		"CustomContentVisual": ubx.FieldSpec{
-			WireName: "custom_content_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_CustomContentVisualFields,
-		},
-		"EmptyVisual": ubx.FieldSpec{
-			WireName: "empty_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_EmptyVisualFields,
-		},
-		"FilledMapVisual": ubx.FieldSpec{
-			WireName: "filled_map_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FilledMapVisualFields,
-		},
-		"FunnelChartVisual": ubx.FieldSpec{
-			WireName: "funnel_chart_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_FunnelChartVisualFields,
-		},
-		"GaugeChartVisual": ubx.FieldSpec{
-			WireName: "gauge_chart_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GaugeChartVisualFields,
-		},
-		"GeospatialMapVisual": ubx.FieldSpec{
-			WireName: "geospatial_map_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_GeospatialMapVisualFields,
-		},
-		"HeatMapVisual": ubx.FieldSpec{
-			WireName: "heat_map_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HeatMapVisualFields,
-		},
-		"HistogramVisual": ubx.FieldSpec{
-			WireName: "histogram_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_HistogramVisualFields,
-		},
-		"InsightVisual": ubx.FieldSpec{
-			WireName: "insight_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_InsightVisualFields,
-		},
-		"Kpivisual": ubx.FieldSpec{
-			WireName: "kpivisual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_KpivisualFields,
-		},
-		"LayerMapVisual": ubx.FieldSpec{
-			WireName: "layer_map_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LayerMapVisualFields,
-		},
-		"LineChartVisual": ubx.FieldSpec{
-			WireName: "line_chart_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_LineChartVisualFields,
-		},
-		"PieChartVisual": ubx.FieldSpec{
-			WireName: "pie_chart_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PieChartVisualFields,
-		},
-		"PivotTableVisual": ubx.FieldSpec{
-			WireName: "pivot_table_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PivotTableVisualFields,
-		},
-		"PluginVisual": ubx.FieldSpec{
-			WireName: "plugin_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_PluginVisualFields,
-		},
-		"RadarChartVisual": ubx.FieldSpec{
-			WireName: "radar_chart_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_RadarChartVisualFields,
-		},
-		"SankeyDiagramVisual": ubx.FieldSpec{
-			WireName: "sankey_diagram_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_SankeyDiagramVisualFields,
-		},
-		"ScatterPlotVisual": ubx.FieldSpec{
-			WireName: "scatter_plot_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_ScatterPlotVisualFields,
-		},
-		"TableVisual": ubx.FieldSpec{
-			WireName: "table_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TableVisualFields,
-		},
-		"TreeMapVisual": ubx.FieldSpec{
-			WireName: "tree_map_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_TreeMapVisualFields,
-		},
-		"WaterfallVisual": ubx.FieldSpec{
-			WireName: "waterfall_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WaterfallVisualFields,
-		},
-		"WordCloudVisual": ubx.FieldSpec{
-			WireName: "word_cloud_visual",
-			Kind: "object",
-			Fields: Analysis_Definition_Sheets_Visuals_WordCloudVisualFields,
-		},
-	}
+	"BarChartVisual": ubx.FieldSpec{
+		WireName: "bar_chart_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BarChartVisualFields,
+	},
+	"BoxPlotVisual": ubx.FieldSpec{
+		WireName: "box_plot_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_BoxPlotVisualFields,
+	},
+	"ComboChartVisual": ubx.FieldSpec{
+		WireName: "combo_chart_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ComboChartVisualFields,
+	},
+	"CustomContentVisual": ubx.FieldSpec{
+		WireName: "custom_content_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_CustomContentVisualFields,
+	},
+	"EmptyVisual": ubx.FieldSpec{
+		WireName: "empty_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_EmptyVisualFields,
+	},
+	"FilledMapVisual": ubx.FieldSpec{
+		WireName: "filled_map_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FilledMapVisualFields,
+	},
+	"FunnelChartVisual": ubx.FieldSpec{
+		WireName: "funnel_chart_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_FunnelChartVisualFields,
+	},
+	"GaugeChartVisual": ubx.FieldSpec{
+		WireName: "gauge_chart_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GaugeChartVisualFields,
+	},
+	"GeospatialMapVisual": ubx.FieldSpec{
+		WireName: "geospatial_map_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_GeospatialMapVisualFields,
+	},
+	"HeatMapVisual": ubx.FieldSpec{
+		WireName: "heat_map_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HeatMapVisualFields,
+	},
+	"HistogramVisual": ubx.FieldSpec{
+		WireName: "histogram_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_HistogramVisualFields,
+	},
+	"InsightVisual": ubx.FieldSpec{
+		WireName: "insight_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_InsightVisualFields,
+	},
+	"Kpivisual": ubx.FieldSpec{
+		WireName: "kpivisual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_KpivisualFields,
+	},
+	"LayerMapVisual": ubx.FieldSpec{
+		WireName: "layer_map_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LayerMapVisualFields,
+	},
+	"LineChartVisual": ubx.FieldSpec{
+		WireName: "line_chart_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_LineChartVisualFields,
+	},
+	"PieChartVisual": ubx.FieldSpec{
+		WireName: "pie_chart_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PieChartVisualFields,
+	},
+	"PivotTableVisual": ubx.FieldSpec{
+		WireName: "pivot_table_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PivotTableVisualFields,
+	},
+	"PluginVisual": ubx.FieldSpec{
+		WireName: "plugin_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_PluginVisualFields,
+	},
+	"RadarChartVisual": ubx.FieldSpec{
+		WireName: "radar_chart_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_RadarChartVisualFields,
+	},
+	"SankeyDiagramVisual": ubx.FieldSpec{
+		WireName: "sankey_diagram_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_SankeyDiagramVisualFields,
+	},
+	"ScatterPlotVisual": ubx.FieldSpec{
+		WireName: "scatter_plot_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_ScatterPlotVisualFields,
+	},
+	"TableVisual": ubx.FieldSpec{
+		WireName: "table_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TableVisualFields,
+	},
+	"TreeMapVisual": ubx.FieldSpec{
+		WireName: "tree_map_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_TreeMapVisualFields,
+	},
+	"WaterfallVisual": ubx.FieldSpec{
+		WireName: "waterfall_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WaterfallVisualFields,
+	},
+	"WordCloudVisual": ubx.FieldSpec{
+		WireName: "word_cloud_visual",
+		Kind:     "object",
+		Fields:   Analysis_Definition_Sheets_Visuals_WordCloudVisualFields,
+	},
+}
 
 var Analysis_Definition_SheetsFields = ubx.FieldMap{
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FilterControls": ubx.FieldSpec{
-			WireName: "filter_controls",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_FilterControlsFields,
-		},
-		"Images": ubx.FieldSpec{
-			WireName: "images",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_ImagesFields,
-		},
-		"Layouts": ubx.FieldSpec{
-			WireName: "layouts",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_LayoutsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParameterControls": ubx.FieldSpec{
-			WireName: "parameter_controls",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_ParameterControlsFields,
-		},
-		"SheetControlLayouts": ubx.FieldSpec{
-			WireName: "sheet_control_layouts",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_SheetControlLayoutsFields,
-		},
-		"SheetId": ubx.FieldSpec{WireName: "sheet_id"},
-		"TextBoxes": ubx.FieldSpec{
-			WireName: "text_boxes",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_TextBoxesFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Visuals": ubx.FieldSpec{
-			WireName: "visuals",
-			Kind: "list",
-			Fields: Analysis_Definition_Sheets_VisualsFields,
-		},
-	}
+	"ContentType": ubx.FieldSpec{WireName: "content_type"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FilterControls": ubx.FieldSpec{
+		WireName: "filter_controls",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_FilterControlsFields,
+	},
+	"Images": ubx.FieldSpec{
+		WireName: "images",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_ImagesFields,
+	},
+	"Layouts": ubx.FieldSpec{
+		WireName: "layouts",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_LayoutsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ParameterControls": ubx.FieldSpec{
+		WireName: "parameter_controls",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_ParameterControlsFields,
+	},
+	"SheetControlLayouts": ubx.FieldSpec{
+		WireName: "sheet_control_layouts",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_SheetControlLayoutsFields,
+	},
+	"SheetId": ubx.FieldSpec{WireName: "sheet_id"},
+	"TextBoxes": ubx.FieldSpec{
+		WireName: "text_boxes",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_TextBoxesFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+	"Visuals": ubx.FieldSpec{
+		WireName: "visuals",
+		Kind:     "list",
+		Fields:   Analysis_Definition_Sheets_VisualsFields,
+	},
+}
 
 var Analysis_Definition_StaticFiles_ImageStaticFile_Source_S3OptionsFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"ObjectKey": ubx.FieldSpec{WireName: "object_key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"ObjectKey":  ubx.FieldSpec{WireName: "object_key"},
+	"Region":     ubx.FieldSpec{WireName: "region"},
+}
 
 var Analysis_Definition_StaticFiles_ImageStaticFile_Source_UrlOptionsFields = ubx.FieldMap{
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var Analysis_Definition_StaticFiles_ImageStaticFile_SourceFields = ubx.FieldMap{
-		"S3Options": ubx.FieldSpec{
-			WireName: "s3_options",
-			Kind: "object",
-			Fields: Analysis_Definition_StaticFiles_ImageStaticFile_Source_S3OptionsFields,
-		},
-		"UrlOptions": ubx.FieldSpec{
-			WireName: "url_options",
-			Kind: "object",
-			Fields: Analysis_Definition_StaticFiles_ImageStaticFile_Source_UrlOptionsFields,
-		},
-	}
+	"S3Options": ubx.FieldSpec{
+		WireName: "s3_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_StaticFiles_ImageStaticFile_Source_S3OptionsFields,
+	},
+	"UrlOptions": ubx.FieldSpec{
+		WireName: "url_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_StaticFiles_ImageStaticFile_Source_UrlOptionsFields,
+	},
+}
 
 var Analysis_Definition_StaticFiles_ImageStaticFileFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: Analysis_Definition_StaticFiles_ImageStaticFile_SourceFields,
-		},
-		"StaticFileId": ubx.FieldSpec{WireName: "static_file_id"},
-	}
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   Analysis_Definition_StaticFiles_ImageStaticFile_SourceFields,
+	},
+	"StaticFileId": ubx.FieldSpec{WireName: "static_file_id"},
+}
 
 var Analysis_Definition_StaticFilesFields = ubx.FieldMap{
-		"ImageStaticFile": ubx.FieldSpec{
-			WireName: "image_static_file",
-			Kind: "object",
-			Fields: Analysis_Definition_StaticFiles_ImageStaticFileFields,
-		},
-		"SpatialStaticFile": ubx.FieldSpec{
-			WireName: "spatial_static_file",
-			Kind: "object",
-			Fields: Analysis_Definition_StaticFiles_ImageStaticFileFields,
-		},
-	}
+	"ImageStaticFile": ubx.FieldSpec{
+		WireName: "image_static_file",
+		Kind:     "object",
+		Fields:   Analysis_Definition_StaticFiles_ImageStaticFileFields,
+	},
+	"SpatialStaticFile": ubx.FieldSpec{
+		WireName: "spatial_static_file",
+		Kind:     "object",
+		Fields:   Analysis_Definition_StaticFiles_ImageStaticFileFields,
+	},
+}
 
 var Analysis_DefinitionFields = ubx.FieldMap{
-		"AnalysisDefaults": ubx.FieldSpec{
-			WireName: "analysis_defaults",
-			Kind: "object",
-			Fields: Analysis_Definition_AnalysisDefaultsFields,
-		},
-		"CalculatedFields": ubx.FieldSpec{
-			WireName: "calculated_fields",
-			Kind: "list",
-			Fields: Analysis_Definition_CalculatedFieldsFields,
-		},
-		"ColumnConfigurations": ubx.FieldSpec{
-			WireName: "column_configurations",
-			Kind: "list",
-			Fields: Analysis_Definition_ColumnConfigurationsFields,
-		},
-		"DataSetIdentifierDeclarations": ubx.FieldSpec{
-			WireName: "data_set_identifier_declarations",
-			Kind: "list",
-			Fields: Analysis_Definition_DataSetIdentifierDeclarationsFields,
-		},
-		"FilterGroups": ubx.FieldSpec{
-			WireName: "filter_groups",
-			Kind: "list",
-			Fields: Analysis_Definition_FilterGroupsFields,
-		},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: Analysis_Definition_OptionsFields,
-		},
-		"ParameterDeclarations": ubx.FieldSpec{
-			WireName: "parameter_declarations",
-			Kind: "list",
-			Fields: Analysis_Definition_ParameterDeclarationsFields,
-		},
-		"QueryExecutionOptions": ubx.FieldSpec{
-			WireName: "query_execution_options",
-			Kind: "object",
-			Fields: Analysis_Definition_QueryExecutionOptionsFields,
-		},
-		"Sheets": ubx.FieldSpec{
-			WireName: "sheets",
-			Kind: "list",
-			Fields: Analysis_Definition_SheetsFields,
-		},
-		"StaticFiles": ubx.FieldSpec{
-			WireName: "static_files",
-			Kind: "list",
-			Fields: Analysis_Definition_StaticFilesFields,
-		},
-	}
+	"AnalysisDefaults": ubx.FieldSpec{
+		WireName: "analysis_defaults",
+		Kind:     "object",
+		Fields:   Analysis_Definition_AnalysisDefaultsFields,
+	},
+	"CalculatedFields": ubx.FieldSpec{
+		WireName: "calculated_fields",
+		Kind:     "list",
+		Fields:   Analysis_Definition_CalculatedFieldsFields,
+	},
+	"ColumnConfigurations": ubx.FieldSpec{
+		WireName: "column_configurations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ColumnConfigurationsFields,
+	},
+	"DataSetIdentifierDeclarations": ubx.FieldSpec{
+		WireName: "data_set_identifier_declarations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_DataSetIdentifierDeclarationsFields,
+	},
+	"FilterGroups": ubx.FieldSpec{
+		WireName: "filter_groups",
+		Kind:     "list",
+		Fields:   Analysis_Definition_FilterGroupsFields,
+	},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_OptionsFields,
+	},
+	"ParameterDeclarations": ubx.FieldSpec{
+		WireName: "parameter_declarations",
+		Kind:     "list",
+		Fields:   Analysis_Definition_ParameterDeclarationsFields,
+	},
+	"QueryExecutionOptions": ubx.FieldSpec{
+		WireName: "query_execution_options",
+		Kind:     "object",
+		Fields:   Analysis_Definition_QueryExecutionOptionsFields,
+	},
+	"Sheets": ubx.FieldSpec{
+		WireName: "sheets",
+		Kind:     "list",
+		Fields:   Analysis_Definition_SheetsFields,
+	},
+	"StaticFiles": ubx.FieldSpec{
+		WireName: "static_files",
+		Kind:     "list",
+		Fields:   Analysis_Definition_StaticFilesFields,
+	},
+}
 
 var Analysis_Errors_ViolatedEntitiesFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var Analysis_ErrorsFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ViolatedEntities": ubx.FieldSpec{
-			WireName: "violated_entities",
-			Kind: "list",
-			Fields: Analysis_Errors_ViolatedEntitiesFields,
-		},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"ViolatedEntities": ubx.FieldSpec{
+		WireName: "violated_entities",
+		Kind:     "list",
+		Fields:   Analysis_Errors_ViolatedEntitiesFields,
+	},
+}
 
 var Analysis_Parameters_DateTimeParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Analysis_Parameters_DecimalParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Analysis_ParametersFields = ubx.FieldMap{
-		"DateTimeParameters": ubx.FieldSpec{
-			WireName: "date_time_parameters",
-			Kind: "list",
-			Fields: Analysis_Parameters_DateTimeParametersFields,
-		},
-		"DecimalParameters": ubx.FieldSpec{
-			WireName: "decimal_parameters",
-			Kind: "list",
-			Fields: Analysis_Parameters_DecimalParametersFields,
-		},
-		"IntegerParameters": ubx.FieldSpec{
-			WireName: "integer_parameters",
-			Kind: "list",
-			Fields: Analysis_Parameters_DecimalParametersFields,
-		},
-		"StringParameters": ubx.FieldSpec{
-			WireName: "string_parameters",
-			Kind: "list",
-			Fields: Analysis_Parameters_DateTimeParametersFields,
-		},
-	}
+	"DateTimeParameters": ubx.FieldSpec{
+		WireName: "date_time_parameters",
+		Kind:     "list",
+		Fields:   Analysis_Parameters_DateTimeParametersFields,
+	},
+	"DecimalParameters": ubx.FieldSpec{
+		WireName: "decimal_parameters",
+		Kind:     "list",
+		Fields:   Analysis_Parameters_DecimalParametersFields,
+	},
+	"IntegerParameters": ubx.FieldSpec{
+		WireName: "integer_parameters",
+		Kind:     "list",
+		Fields:   Analysis_Parameters_DecimalParametersFields,
+	},
+	"StringParameters": ubx.FieldSpec{
+		WireName: "string_parameters",
+		Kind:     "list",
+		Fields:   Analysis_Parameters_DateTimeParametersFields,
+	},
+}
 
 var Analysis_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var Analysis_SheetsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SheetId": ubx.FieldSpec{WireName: "sheet_id"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"SheetId": ubx.FieldSpec{WireName: "sheet_id"},
+}
 
 var Analysis_SourceEntity_SourceTemplate_DataSetReferencesFields = ubx.FieldMap{
-		"DataSetArn": ubx.FieldSpec{WireName: "data_set_arn"},
-		"DataSetPlaceholder": ubx.FieldSpec{WireName: "data_set_placeholder"},
-	}
+	"DataSetArn":         ubx.FieldSpec{WireName: "data_set_arn"},
+	"DataSetPlaceholder": ubx.FieldSpec{WireName: "data_set_placeholder"},
+}
 
 var Analysis_SourceEntity_SourceTemplateFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"DataSetReferences": ubx.FieldSpec{
-			WireName: "data_set_references",
-			Kind: "list",
-			Fields: Analysis_SourceEntity_SourceTemplate_DataSetReferencesFields,
-		},
-	}
+	"Arn": ubx.FieldSpec{WireName: "arn"},
+	"DataSetReferences": ubx.FieldSpec{
+		WireName: "data_set_references",
+		Kind:     "list",
+		Fields:   Analysis_SourceEntity_SourceTemplate_DataSetReferencesFields,
+	},
+}
 
 var Analysis_SourceEntityFields = ubx.FieldMap{
-		"SourceTemplate": ubx.FieldSpec{
-			WireName: "source_template",
-			Kind: "object",
-			Fields: Analysis_SourceEntity_SourceTemplateFields,
-		},
-	}
+	"SourceTemplate": ubx.FieldSpec{
+		WireName: "source_template",
+		Kind:     "object",
+		Fields:   Analysis_SourceEntity_SourceTemplateFields,
+	},
+}
 
 var Analysis_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Analysis_ValidationStrategyFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 type AnalysisConfig struct {
-	AnalysisId any
+	AnalysisId   any
 	AwsAccountId any
-	Definition any
+	Definition   any
 	// <p>Errors associated with the analysis.</p>
-	Errors any
+	Errors     any
 	FolderArns any
 	// <p>The descriptive name of the analysis.</p>
 	Name any
 	// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
-	Parameters any
+	Parameters  any
 	Permissions any
 	// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
 	Sheets any
 	// <p>The source entity of an analysis.</p>
 	SourceEntity any
-	Status any
-	Tags any
+	Status       any
+	Tags         any
 	// <p>The ARN of the theme of the analysis.</p>
 	ThemeArn any
 	// <p>The option to relax the validation that is required to create and update analyses, dashboards, and templates with definition objects. When you set this value to <code>LENIENT</code>, validation is skipped for specific errors.</p>
@@ -10831,29 +10831,29 @@ type AnalysisConfig struct {
 type AnalysisAttrs struct {
 	AnalysisId any
 	// <p>The Amazon Resource Name (ARN) of the analysis.</p>
-	Arn any
+	Arn          any
 	AwsAccountId any
 	// <p>The time that the analysis was created.</p>
 	CreatedTime any
 	// <p>The ARNs of the datasets of the analysis.</p>
 	DataSetArns any
-	Definition any
+	Definition  any
 	// <p>Errors associated with the analysis.</p>
-	Errors any
+	Errors     any
 	FolderArns any
 	// <p>The time that the analysis was last updated.</p>
 	LastUpdatedTime any
 	// <p>The descriptive name of the analysis.</p>
 	Name any
 	// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
-	Parameters any
+	Parameters  any
 	Permissions any
 	// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
 	Sheets any
 	// <p>The source entity of an analysis.</p>
 	SourceEntity any
-	Status any
-	Tags any
+	Status       any
+	Tags         any
 	// <p>The ARN of the theme of the analysis.</p>
 	ThemeArn any
 	// <p>The option to relax the validation that is required to create and update analyses, dashboards, and templates with definition objects. When you set this value to <code>LENIENT</code>, validation is skipped for specific errors.</p>
@@ -10863,51 +10863,51 @@ type AnalysisAttrs struct {
 var Analysis = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_analysis",
 	Fields: ubx.FieldMap{
-		"AnalysisId": ubx.FieldSpec{WireName: "analysis_id"},
+		"AnalysisId":   ubx.FieldSpec{WireName: "analysis_id"},
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: Analysis_DefinitionFields,
+			Kind:     "object",
+			Fields:   Analysis_DefinitionFields,
 		},
 		"Errors": ubx.FieldSpec{
 			WireName: "errors",
-			Kind: "list",
-			Fields: Analysis_ErrorsFields,
+			Kind:     "list",
+			Fields:   Analysis_ErrorsFields,
 		},
 		"FolderArns": ubx.FieldSpec{WireName: "folder_arns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "object",
-			Fields: Analysis_ParametersFields,
+			Kind:     "object",
+			Fields:   Analysis_ParametersFields,
 		},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: Analysis_PermissionsFields,
+			Kind:     "list",
+			Fields:   Analysis_PermissionsFields,
 		},
 		"Sheets": ubx.FieldSpec{
 			WireName: "sheets",
-			Kind: "list",
-			Fields: Analysis_SheetsFields,
+			Kind:     "list",
+			Fields:   Analysis_SheetsFields,
 		},
 		"SourceEntity": ubx.FieldSpec{
 			WireName: "source_entity",
-			Kind: "object",
-			Fields: Analysis_SourceEntityFields,
+			Kind:     "object",
+			Fields:   Analysis_SourceEntityFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Analysis_TagsFields,
+			Kind:     "list",
+			Fields:   Analysis_TagsFields,
 		},
 		"ThemeArn": ubx.FieldSpec{WireName: "theme_arn"},
 		"ValidationStrategy": ubx.FieldSpec{
 			WireName: "validation_strategy",
-			Kind: "object",
-			Fields: Analysis_ValidationStrategyFields,
+			Kind:     "object",
+			Fields:   Analysis_ValidationStrategyFields,
 		},
 	},
 }

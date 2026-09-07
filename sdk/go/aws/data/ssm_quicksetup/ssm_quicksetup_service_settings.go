@@ -17,6 +17,5 @@ type SsmQuicksetupServiceSettingsAttrs struct {
 
 var SsmQuicksetupServiceSettings = ubx.DataSourceBinding{
 	WireType: "aws_ssm_quicksetup_service_settings",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -9,7 +9,7 @@ type AssociatedFleetsConfig struct {
 }
 
 type AssociatedFleetsAttrs struct {
-	Names any
+	Names     any
 	NextToken any
 	StackName any
 }

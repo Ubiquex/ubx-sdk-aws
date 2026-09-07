@@ -6,17 +6,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type MethodResponseConfig struct {
 	HttpMethod any
 	ResourceId any
-	RestApiId any
+	RestApiId  any
 	// <p>The status code.</p>
 	StatusCode any
 }
 
 type MethodResponseAttrs struct {
-	HttpMethod any
-	ResourceId any
-	ResponseModels any
+	HttpMethod         any
+	ResourceId         any
+	ResponseModels     any
 	ResponseParameters any
-	RestApiId any
+	RestApiId          any
 	// <p>The status code.</p>
 	StatusCode any
 }
@@ -26,7 +26,7 @@ var MethodResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"RestApiId":  ubx.FieldSpec{WireName: "rest_api_id"},
 		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
 	},
 }

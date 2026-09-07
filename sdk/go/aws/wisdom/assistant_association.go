@@ -24,23 +24,23 @@ type AssistantAssociation_Tags struct {
 }
 
 var AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfigFields = ubx.FieldMap{
-		"AccessRoleArn": ubx.FieldSpec{WireName: "access_role_arn"},
-		"BedrockKnowledgeBaseArn": ubx.FieldSpec{WireName: "bedrock_knowledge_base_arn"},
-	}
+	"AccessRoleArn":           ubx.FieldSpec{WireName: "access_role_arn"},
+	"BedrockKnowledgeBaseArn": ubx.FieldSpec{WireName: "bedrock_knowledge_base_arn"},
+}
 
 var AssistantAssociation_AssociationFields = ubx.FieldMap{
-		"ExternalBedrockKnowledgeBaseConfig": ubx.FieldSpec{
-			WireName: "external_bedrock_knowledge_base_config",
-			Kind: "object",
-			Fields: AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfigFields,
-		},
-		"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
-	}
+	"ExternalBedrockKnowledgeBaseConfig": ubx.FieldSpec{
+		WireName: "external_bedrock_knowledge_base_config",
+		Kind:     "object",
+		Fields:   AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfigFields,
+	},
+	"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
+}
 
 var AssistantAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssistantAssociationConfig struct {
 	// The unique identifier of the Wisdom assistant to which this association connects, linking the assistant to the associated knowledge base or integration. (AI-inferred)
@@ -49,7 +49,7 @@ type AssistantAssociationConfig struct {
 	Association any
 	// The type of resource being associated with the Wisdom assistant, with the only supported value being KNOWLEDGE_BASE for associating a knowledge base. (AI-inferred)
 	AssociationType any
-	Tags any
+	Tags            any
 }
 
 type AssistantAssociationAttrs struct {
@@ -65,7 +65,7 @@ type AssistantAssociationAttrs struct {
 	Association any
 	// The type of resource being associated with the Wisdom assistant, with the only supported value being KNOWLEDGE_BASE for associating a knowledge base. (AI-inferred)
 	AssociationType any
-	Tags any
+	Tags            any
 }
 
 var AssistantAssociation = ubx.ResourceBinding{
@@ -74,14 +74,14 @@ var AssistantAssociation = ubx.ResourceBinding{
 		"AssistantId": ubx.FieldSpec{WireName: "assistant_id"},
 		"Association": ubx.FieldSpec{
 			WireName: "association",
-			Kind: "object",
-			Fields: AssistantAssociation_AssociationFields,
+			Kind:     "object",
+			Fields:   AssistantAssociation_AssociationFields,
 		},
 		"AssociationType": ubx.FieldSpec{WireName: "association_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AssistantAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   AssistantAssociation_TagsFields,
 		},
 	},
 }

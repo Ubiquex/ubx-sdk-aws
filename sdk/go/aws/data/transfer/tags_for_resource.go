@@ -4,28 +4,28 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResourceConfig struct {
-	Arn any
+	Arn        any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TagsForResourceAttrs struct {
-	Arn any
+	Arn        any
 	MaxResults any
-	NextToken any
-	Tags any
+	NextToken  any
+	Tags       any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_transfer_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"Arn":        ubx.FieldSpec{WireName: "arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

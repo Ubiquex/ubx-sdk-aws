@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SearchConfig struct {
 	// <p>The unique identifier of a search, assigned by the service when the search is started.</p>
-	SearchId any
+	SearchId      any
 	WorkspaceName any
 }
 
@@ -18,17 +18,17 @@ type SearchAttrs struct {
 	SearchId any
 	// <p>The search strategy, which trades off latency against recall. <code>DEEP</code> runs the full semantic and structured search for the highest-quality matches; <code>QUICK</code> returns faster, lower-recall results. When <code>searchType</code> is omitted on a request, the search defaults to <code>QUICK</code>.</p>
 	SearchType any
-	StartedAt any
+	StartedAt  any
 	// <p>The lifecycle status of a search.</p>
-	Status any
-	StatusReason any
+	Status        any
+	StatusReason  any
 	WorkspaceName any
 }
 
 var Search = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_search",
 	Fields: ubx.FieldMap{
-		"SearchId": ubx.FieldSpec{WireName: "search_id"},
+		"SearchId":      ubx.FieldSpec{WireName: "search_id"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

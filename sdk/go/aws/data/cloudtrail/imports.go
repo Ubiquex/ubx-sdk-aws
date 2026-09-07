@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Imports_Imports struct {
 	CreatedTimestamp any
-	Destinations any
-	ImportId any
-	ImportStatus any
+	Destinations     any
+	ImportId         any
+	ImportStatus     any
 	UpdatedTimestamp any
 }
 
 type ImportsConfig struct {
-	Destination any
+	Destination  any
 	ImportStatus any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type ImportsAttrs struct {
-	Destination any
+	Destination  any
 	ImportStatus any
-	Imports any
-	MaxResults any
-	NextToken any
+	Imports      any
+	MaxResults   any
+	NextToken    any
 }
 
 var Imports = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_imports",
 	Fields: ubx.FieldMap{
-		"Destination": ubx.FieldSpec{WireName: "destination"},
+		"Destination":  ubx.FieldSpec{WireName: "destination"},
 		"ImportStatus": ubx.FieldSpec{WireName: "import_status"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

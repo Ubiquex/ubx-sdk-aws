@@ -4,26 +4,26 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileObjectTypeTemplates_Items struct {
-	SourceName any
+	SourceName   any
 	SourceObject any
-	TemplateId any
+	TemplateId   any
 }
 
 type ProfileObjectTypeTemplatesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ProfileObjectTypeTemplatesAttrs struct {
-	Items any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ProfileObjectTypeTemplates = ubx.DataSourceBinding{
 	WireType: "aws_profile_profile_object_type_templates",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

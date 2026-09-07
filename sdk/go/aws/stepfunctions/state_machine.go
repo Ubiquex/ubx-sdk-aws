@@ -53,47 +53,47 @@ type StateMachine_TracingConfiguration struct {
 }
 
 var StateMachine_DefinitionS3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var StateMachine_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsDataKeyReusePeriodSeconds": ubx.FieldSpec{WireName: "kms_data_key_reuse_period_seconds"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KmsDataKeyReusePeriodSeconds": ubx.FieldSpec{WireName: "kms_data_key_reuse_period_seconds"},
+	"KmsKeyId":                     ubx.FieldSpec{WireName: "kms_key_id"},
+	"Type":                         ubx.FieldSpec{WireName: "type"},
+}
 
 var StateMachine_LoggingConfiguration_Destinations_CloudWatchLogsLogGroupFields = ubx.FieldMap{
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-	}
+	"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
+}
 
 var StateMachine_LoggingConfiguration_DestinationsFields = ubx.FieldMap{
-		"CloudWatchLogsLogGroup": ubx.FieldSpec{
-			WireName: "cloud_watch_logs_log_group",
-			Kind: "object",
-			Fields: StateMachine_LoggingConfiguration_Destinations_CloudWatchLogsLogGroupFields,
-		},
-	}
+	"CloudWatchLogsLogGroup": ubx.FieldSpec{
+		WireName: "cloud_watch_logs_log_group",
+		Kind:     "object",
+		Fields:   StateMachine_LoggingConfiguration_Destinations_CloudWatchLogsLogGroupFields,
+	},
+}
 
 var StateMachine_LoggingConfigurationFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: StateMachine_LoggingConfiguration_DestinationsFields,
-		},
-		"IncludeExecutionData": ubx.FieldSpec{WireName: "include_execution_data"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   StateMachine_LoggingConfiguration_DestinationsFields,
+	},
+	"IncludeExecutionData": ubx.FieldSpec{WireName: "include_execution_data"},
+	"Level":                ubx.FieldSpec{WireName: "level"},
+}
 
 var StateMachine_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var StateMachine_TracingConfigurationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 type StateMachineConfig struct {
 	// The Amazon States Language definition, a JSON or YAML string that specifies the state machine's states, transitions, and execution logic. (AI-inferred)
@@ -157,33 +157,33 @@ var StateMachine = ubx.ResourceBinding{
 		"Definition": ubx.FieldSpec{WireName: "definition"},
 		"DefinitionS3Location": ubx.FieldSpec{
 			WireName: "definition_s3_location",
-			Kind: "object",
-			Fields: StateMachine_DefinitionS3LocationFields,
+			Kind:     "object",
+			Fields:   StateMachine_DefinitionS3LocationFields,
 		},
-		"DefinitionString": ubx.FieldSpec{WireName: "definition_string"},
+		"DefinitionString":        ubx.FieldSpec{WireName: "definition_string"},
 		"DefinitionSubstitutions": ubx.FieldSpec{WireName: "definition_substitutions"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: StateMachine_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   StateMachine_EncryptionConfigurationFields,
 		},
 		"LoggingConfiguration": ubx.FieldSpec{
 			WireName: "logging_configuration",
-			Kind: "object",
-			Fields: StateMachine_LoggingConfigurationFields,
+			Kind:     "object",
+			Fields:   StateMachine_LoggingConfigurationFields,
 		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"RoleArn":          ubx.FieldSpec{WireName: "role_arn"},
 		"StateMachineName": ubx.FieldSpec{WireName: "state_machine_name"},
 		"StateMachineType": ubx.FieldSpec{WireName: "state_machine_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StateMachine_TagsFields,
+			Kind:     "list",
+			Fields:   StateMachine_TagsFields,
 		},
 		"TracingConfiguration": ubx.FieldSpec{
 			WireName: "tracing_configuration",
-			Kind: "object",
-			Fields: StateMachine_TracingConfigurationFields,
+			Kind:     "object",
+			Fields:   StateMachine_TracingConfigurationFields,
 		},
 	},
 }

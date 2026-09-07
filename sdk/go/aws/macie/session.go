@@ -27,6 +27,6 @@ var Session = ubx.ResourceBinding{
 	WireType: "aws_macie_session",
 	Fields: ubx.FieldMap{
 		"FindingPublishingFrequency": ubx.FieldSpec{WireName: "finding_publishing_frequency"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":                     ubx.FieldSpec{WireName: "status"},
 	},
 }

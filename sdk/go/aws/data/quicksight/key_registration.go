@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyRegistration_KeyRegistration struct {
 	DefaultKey any
-	KeyArn any
+	KeyArn     any
 }
 
 type KeyRegistration_QdataKey struct {
-	QdataKeyArn any
+	QdataKeyArn  any
 	QdataKeyType any
 }
 
 type KeyRegistrationConfig struct {
-	AwsAccountId any
+	AwsAccountId   any
 	DefaultKeyOnly any
 }
 
 type KeyRegistrationAttrs struct {
-	AwsAccountId any
-	DefaultKeyOnly any
+	AwsAccountId    any
+	DefaultKeyOnly  any
 	KeyRegistration any
 	// <p>A structure that contains information about the <code>QDataKey</code>.</p>
-	QdataKey any
+	QdataKey  any
 	RequestId any
-	Status any
+	Status    any
 }
 
 var KeyRegistration = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_key_registration",
 	Fields: ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+		"AwsAccountId":   ubx.FieldSpec{WireName: "aws_account_id"},
 		"DefaultKeyOnly": ubx.FieldSpec{WireName: "default_key_only"},
 	},
 }

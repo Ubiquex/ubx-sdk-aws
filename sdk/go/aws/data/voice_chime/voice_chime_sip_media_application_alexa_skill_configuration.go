@@ -4,7 +4,7 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeSipMediaApplicationAlexaSkillConfiguration_SipMediaApplicationAlexaSkillConfiguration struct {
-	AlexaSkillIds any
+	AlexaSkillIds    any
 	AlexaSkillStatus any
 }
 
@@ -15,7 +15,7 @@ type VoiceChimeSipMediaApplicationAlexaSkillConfigurationConfig struct {
 type VoiceChimeSipMediaApplicationAlexaSkillConfigurationAttrs struct {
 	// <p>The Alexa Skill configuration of a SIP media application.</p> <important> <p>Due to changes made by the Amazon Alexa service, this data type is no longer available for use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa Smart Properties</a> page.</p> </important>
 	SipMediaApplicationAlexaSkillConfiguration any
-	SipMediaApplicationId any
+	SipMediaApplicationId                      any
 }
 
 var VoiceChimeSipMediaApplicationAlexaSkillConfiguration = ubx.DataSourceBinding{

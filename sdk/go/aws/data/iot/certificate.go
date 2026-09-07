@@ -4,32 +4,32 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Certificate_CertificateDescription_TransferData struct {
-	AcceptDate any
-	RejectDate any
-	RejectReason any
-	TransferDate any
+	AcceptDate      any
+	RejectDate      any
+	RejectReason    any
+	TransferDate    any
 	TransferMessage any
 }
 
 type Certificate_CertificateDescription_Validity struct {
-	NotAfter any
+	NotAfter  any
 	NotBefore any
 }
 
 type Certificate_CertificateDescription struct {
 	CaCertificateId any
-	CertificateArn any
-	CertificateId any
+	CertificateArn  any
+	CertificateId   any
 	CertificateMode any
 	// <p>The PEM of a certificate.</p>
-	CertificatePem any
-	CreationDate any
-	CustomerVersion any
-	GenerationId any
+	CertificatePem   any
+	CreationDate     any
+	CustomerVersion  any
+	GenerationId     any
 	LastModifiedDate any
-	OwnedBy any
-	PreviousOwnedBy any
-	Status any
+	OwnedBy          any
+	PreviousOwnedBy  any
+	Status           any
 	// <p>Data used to transfer a certificate to an Amazon Web Services account.</p>
 	TransferData any
 	// <p>When the certificate is valid.</p>
@@ -43,7 +43,7 @@ type CertificateConfig struct {
 type CertificateAttrs struct {
 	// <p>Describes a certificate.</p>
 	CertificateDescription any
-	CertificateId any
+	CertificateId          any
 }
 
 var Certificate = ubx.DataSourceBinding{

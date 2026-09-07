@@ -43,43 +43,43 @@ type DeploymentConfig_ZonalConfig struct {
 }
 
 var DeploymentConfig_MinimumHealthyHostsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DeploymentConfig_TrafficRoutingConfig_TimeBasedCanaryFields = ubx.FieldMap{
-		"CanaryInterval": ubx.FieldSpec{WireName: "canary_interval"},
-		"CanaryPercentage": ubx.FieldSpec{WireName: "canary_percentage"},
-	}
+	"CanaryInterval":   ubx.FieldSpec{WireName: "canary_interval"},
+	"CanaryPercentage": ubx.FieldSpec{WireName: "canary_percentage"},
+}
 
 var DeploymentConfig_TrafficRoutingConfig_TimeBasedLinearFields = ubx.FieldMap{
-		"LinearInterval": ubx.FieldSpec{WireName: "linear_interval"},
-		"LinearPercentage": ubx.FieldSpec{WireName: "linear_percentage"},
-	}
+	"LinearInterval":   ubx.FieldSpec{WireName: "linear_interval"},
+	"LinearPercentage": ubx.FieldSpec{WireName: "linear_percentage"},
+}
 
 var DeploymentConfig_TrafficRoutingConfigFields = ubx.FieldMap{
-		"TimeBasedCanary": ubx.FieldSpec{
-			WireName: "time_based_canary",
-			Kind: "object",
-			Fields: DeploymentConfig_TrafficRoutingConfig_TimeBasedCanaryFields,
-		},
-		"TimeBasedLinear": ubx.FieldSpec{
-			WireName: "time_based_linear",
-			Kind: "object",
-			Fields: DeploymentConfig_TrafficRoutingConfig_TimeBasedLinearFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"TimeBasedCanary": ubx.FieldSpec{
+		WireName: "time_based_canary",
+		Kind:     "object",
+		Fields:   DeploymentConfig_TrafficRoutingConfig_TimeBasedCanaryFields,
+	},
+	"TimeBasedLinear": ubx.FieldSpec{
+		WireName: "time_based_linear",
+		Kind:     "object",
+		Fields:   DeploymentConfig_TrafficRoutingConfig_TimeBasedLinearFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DeploymentConfig_ZonalConfigFields = ubx.FieldMap{
-		"FirstZoneMonitorDurationInSeconds": ubx.FieldSpec{WireName: "first_zone_monitor_duration_in_seconds"},
-		"MinimumHealthyHostsPerZone": ubx.FieldSpec{
-			WireName: "minimum_healthy_hosts_per_zone",
-			Kind: "object",
-			Fields: DeploymentConfig_MinimumHealthyHostsFields,
-		},
-		"MonitorDurationInSeconds": ubx.FieldSpec{WireName: "monitor_duration_in_seconds"},
-	}
+	"FirstZoneMonitorDurationInSeconds": ubx.FieldSpec{WireName: "first_zone_monitor_duration_in_seconds"},
+	"MinimumHealthyHostsPerZone": ubx.FieldSpec{
+		WireName: "minimum_healthy_hosts_per_zone",
+		Kind:     "object",
+		Fields:   DeploymentConfig_MinimumHealthyHostsFields,
+	},
+	"MonitorDurationInSeconds": ubx.FieldSpec{WireName: "monitor_duration_in_seconds"},
+}
 
 type DeploymentConfigConfig struct {
 	// The destination platform type for the deployment (Lambda, Server, or ECS).
@@ -110,22 +110,22 @@ type DeploymentConfigAttrs struct {
 var DeploymentConfig = ubx.ResourceBinding{
 	WireType: "aws_code_deploy_deployment_config",
 	Fields: ubx.FieldMap{
-		"ComputePlatform": ubx.FieldSpec{WireName: "compute_platform"},
+		"ComputePlatform":      ubx.FieldSpec{WireName: "compute_platform"},
 		"DeploymentConfigName": ubx.FieldSpec{WireName: "deployment_config_name"},
 		"MinimumHealthyHosts": ubx.FieldSpec{
 			WireName: "minimum_healthy_hosts",
-			Kind: "object",
-			Fields: DeploymentConfig_MinimumHealthyHostsFields,
+			Kind:     "object",
+			Fields:   DeploymentConfig_MinimumHealthyHostsFields,
 		},
 		"TrafficRoutingConfig": ubx.FieldSpec{
 			WireName: "traffic_routing_config",
-			Kind: "object",
-			Fields: DeploymentConfig_TrafficRoutingConfigFields,
+			Kind:     "object",
+			Fields:   DeploymentConfig_TrafficRoutingConfigFields,
 		},
 		"ZonalConfig": ubx.FieldSpec{
 			WireName: "zonal_config",
-			Kind: "object",
-			Fields: DeploymentConfig_ZonalConfigFields,
+			Kind:     "object",
+			Fields:   DeploymentConfig_ZonalConfigFields,
 		},
 	},
 }

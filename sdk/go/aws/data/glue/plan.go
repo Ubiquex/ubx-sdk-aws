@@ -4,89 +4,89 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Plan_Location_DynamoDb struct {
-	Name any
+	Name  any
 	Param any
 	Value any
 }
 
 type Plan_Location struct {
 	DynamoDb any
-	Jdbc any
-	S3 any
+	Jdbc     any
+	S3       any
 }
 
 type Plan_Mapping struct {
-	SourcePath any
+	SourcePath  any
 	SourceTable any
-	SourceType any
-	TargetPath any
+	SourceType  any
+	TargetPath  any
 	TargetTable any
-	TargetType any
+	TargetType  any
 }
 
 type Plan_Sinks struct {
 	DatabaseName any
-	TableName any
+	TableName    any
 }
 
 var Plan_Location_DynamoDbFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Param": ubx.FieldSpec{WireName: "param"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Param": ubx.FieldSpec{WireName: "param"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Plan_LocationFields = ubx.FieldMap{
-		"DynamoDb": ubx.FieldSpec{
-			WireName: "dynamo_db",
-			Kind: "list",
-			Fields: Plan_Location_DynamoDbFields,
-		},
-		"Jdbc": ubx.FieldSpec{
-			WireName: "jdbc",
-			Kind: "list",
-			Fields: Plan_Location_DynamoDbFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "list",
-			Fields: Plan_Location_DynamoDbFields,
-		},
-	}
+	"DynamoDb": ubx.FieldSpec{
+		WireName: "dynamo_db",
+		Kind:     "list",
+		Fields:   Plan_Location_DynamoDbFields,
+	},
+	"Jdbc": ubx.FieldSpec{
+		WireName: "jdbc",
+		Kind:     "list",
+		Fields:   Plan_Location_DynamoDbFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "list",
+		Fields:   Plan_Location_DynamoDbFields,
+	},
+}
 
 var Plan_MappingFields = ubx.FieldMap{
-		"SourcePath": ubx.FieldSpec{WireName: "source_path"},
-		"SourceTable": ubx.FieldSpec{WireName: "source_table"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"TargetPath": ubx.FieldSpec{WireName: "target_path"},
-		"TargetTable": ubx.FieldSpec{WireName: "target_table"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
-	}
+	"SourcePath":  ubx.FieldSpec{WireName: "source_path"},
+	"SourceTable": ubx.FieldSpec{WireName: "source_table"},
+	"SourceType":  ubx.FieldSpec{WireName: "source_type"},
+	"TargetPath":  ubx.FieldSpec{WireName: "target_path"},
+	"TargetTable": ubx.FieldSpec{WireName: "target_table"},
+	"TargetType":  ubx.FieldSpec{WireName: "target_type"},
+}
 
 var Plan_SinksFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+}
 
 type PlanConfig struct {
 	AdditionalPlanOptionsMap any
-	Language any
+	Language                 any
 	// <p>The location of resources.</p>
 	Location any
-	Mapping any
-	Sinks any
+	Mapping  any
+	Sinks    any
 	// <p>Specifies a table definition in the Glue Data Catalog.</p>
 	Source any
 }
 
 type PlanAttrs struct {
 	AdditionalPlanOptionsMap any
-	Language any
+	Language                 any
 	// <p>The location of resources.</p>
-	Location any
-	Mapping any
+	Location     any
+	Mapping      any
 	PythonScript any
-	ScalaCode any
-	Sinks any
+	ScalaCode    any
+	Sinks        any
 	// <p>Specifies a table definition in the Glue Data Catalog.</p>
 	Source any
 }
@@ -95,26 +95,26 @@ var Plan = ubx.DataSourceBinding{
 	WireType: "aws_glue_plan",
 	Fields: ubx.FieldMap{
 		"AdditionalPlanOptionsMap": ubx.FieldSpec{WireName: "additional_plan_options_map"},
-		"Language": ubx.FieldSpec{WireName: "language"},
+		"Language":                 ubx.FieldSpec{WireName: "language"},
 		"Location": ubx.FieldSpec{
 			WireName: "location",
-			Kind: "object",
-			Fields: Plan_LocationFields,
+			Kind:     "object",
+			Fields:   Plan_LocationFields,
 		},
 		"Mapping": ubx.FieldSpec{
 			WireName: "mapping",
-			Kind: "list",
-			Fields: Plan_MappingFields,
+			Kind:     "list",
+			Fields:   Plan_MappingFields,
 		},
 		"Sinks": ubx.FieldSpec{
 			WireName: "sinks",
-			Kind: "list",
-			Fields: Plan_SinksFields,
+			Kind:     "list",
+			Fields:   Plan_SinksFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Plan_SinksFields,
+			Kind:     "object",
+			Fields:   Plan_SinksFields,
 		},
 	},
 }

@@ -18,28 +18,28 @@ type ConnectionFunction_ConnectionFunctionConfig struct {
 }
 
 type ConnectionFunction_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ConnectionFunction_ConnectionFunctionConfig_KeyValueStoreAssociationsFields = ubx.FieldMap{
-		"KeyValueStoreArn": ubx.FieldSpec{WireName: "key_value_store_arn"},
-	}
+	"KeyValueStoreArn": ubx.FieldSpec{WireName: "key_value_store_arn"},
+}
 
 var ConnectionFunction_ConnectionFunctionConfigFields = ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"KeyValueStoreAssociations": ubx.FieldSpec{
-			WireName: "key_value_store_associations",
-			Kind: "list",
-			Fields: ConnectionFunction_ConnectionFunctionConfig_KeyValueStoreAssociationsFields,
-		},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-	}
+	"Comment": ubx.FieldSpec{WireName: "comment"},
+	"KeyValueStoreAssociations": ubx.FieldSpec{
+		WireName: "key_value_store_associations",
+		Kind:     "list",
+		Fields:   ConnectionFunction_ConnectionFunctionConfig_KeyValueStoreAssociationsFields,
+	},
+	"Runtime": ubx.FieldSpec{WireName: "runtime"},
+}
 
 var ConnectionFunction_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConnectionFunctionConfig struct {
 	// A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it’s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``.
@@ -84,18 +84,18 @@ type ConnectionFunctionAttrs struct {
 var ConnectionFunction = ubx.ResourceBinding{
 	WireType: "aws_cloud_front_connection_function",
 	Fields: ubx.FieldMap{
-		"AutoPublish": ubx.FieldSpec{WireName: "auto_publish"},
+		"AutoPublish":            ubx.FieldSpec{WireName: "auto_publish"},
 		"ConnectionFunctionCode": ubx.FieldSpec{WireName: "connection_function_code"},
 		"ConnectionFunctionConfig": ubx.FieldSpec{
 			WireName: "connection_function_config",
-			Kind: "object",
-			Fields: ConnectionFunction_ConnectionFunctionConfigFields,
+			Kind:     "object",
+			Fields:   ConnectionFunction_ConnectionFunctionConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConnectionFunction_TagsFields,
+			Kind:     "list",
+			Fields:   ConnectionFunction_TagsFields,
 		},
 	},
 }

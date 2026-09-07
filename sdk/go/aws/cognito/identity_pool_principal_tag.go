@@ -28,9 +28,9 @@ type IdentityPoolPrincipalTagAttrs struct {
 var IdentityPoolPrincipalTag = ubx.ResourceBinding{
 	WireType: "aws_cognito_identity_pool_principal_tag",
 	Fields: ubx.FieldMap{
-		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
+		"IdentityPoolId":       ubx.FieldSpec{WireName: "identity_pool_id"},
 		"IdentityProviderName": ubx.FieldSpec{WireName: "identity_provider_name"},
-		"PrincipalTags": ubx.FieldSpec{WireName: "principal_tags"},
-		"UseDefaults": ubx.FieldSpec{WireName: "use_defaults"},
+		"PrincipalTags":        ubx.FieldSpec{WireName: "principal_tags"},
+		"UseDefaults":          ubx.FieldSpec{WireName: "use_defaults"},
 	},
 }

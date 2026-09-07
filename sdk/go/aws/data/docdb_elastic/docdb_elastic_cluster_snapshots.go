@@ -4,18 +4,18 @@ package docdb_elastic
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocdbElasticClusterSnapshots_Snapshots struct {
-	ClusterArn any
-	SnapshotArn any
+	ClusterArn           any
+	SnapshotArn          any
 	SnapshotCreationTime any
-	SnapshotName any
-	Status any
+	SnapshotName         any
+	Status               any
 }
 
 type DocdbElasticClusterSnapshotsConfig struct {
 	ClusterArn any
 	MaxResults any
 	// Token or cursor used in paginated operations. When this value is provided as operation input, the service returns results from where the previous response left off. When this value is present in operation output, it indicates that there are more results to retrieve. This should be opaque to not expose implementation details and potentially versioned to allow evolution of pagination strategy.
-	NextToken any
+	NextToken    any
 	SnapshotType any
 }
 
@@ -23,17 +23,17 @@ type DocdbElasticClusterSnapshotsAttrs struct {
 	ClusterArn any
 	MaxResults any
 	// Token or cursor used in paginated operations. When this value is provided as operation input, the service returns results from where the previous response left off. When this value is present in operation output, it indicates that there are more results to retrieve. This should be opaque to not expose implementation details and potentially versioned to allow evolution of pagination strategy.
-	NextToken any
+	NextToken    any
 	SnapshotType any
-	Snapshots any
+	Snapshots    any
 }
 
 var DocdbElasticClusterSnapshots = ubx.DataSourceBinding{
 	WireType: "aws_docdb_elastic_cluster_snapshots",
 	Fields: ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ClusterArn":   ubx.FieldSpec{WireName: "cluster_arn"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"SnapshotType": ubx.FieldSpec{WireName: "snapshot_type"},
 	},
 }

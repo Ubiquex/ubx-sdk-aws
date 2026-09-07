@@ -4,48 +4,48 @@ package application_autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationAutoscalingScalableTargets_ScalableTargets_SuspendedState struct {
-	DynamicScalingInSuspended any
+	DynamicScalingInSuspended  any
 	DynamicScalingOutSuspended any
-	ScheduledScalingSuspended any
+	ScheduledScalingSuspended  any
 }
 
 type ApplicationAutoscalingScalableTargets_ScalableTargets struct {
-	CreationTime any
-	MaxCapacity any
-	MinCapacity any
+	CreationTime      any
+	MaxCapacity       any
+	MinCapacity       any
 	PredictedCapacity any
-	ResourceId any
-	RoleArn any
+	ResourceId        any
+	RoleArn           any
 	ScalableDimension any
 	ScalableTargetArn any
-	ServiceNamespace any
-	SuspendedState any
+	ServiceNamespace  any
+	SuspendedState    any
 }
 
 type ApplicationAutoscalingScalableTargetsConfig struct {
-	MaxResults any
-	NextToken any
-	ResourceIds any
+	MaxResults        any
+	NextToken         any
+	ResourceIds       any
 	ScalableDimension any
-	ServiceNamespace any
+	ServiceNamespace  any
 }
 
 type ApplicationAutoscalingScalableTargetsAttrs struct {
-	MaxResults any
-	NextToken any
-	ResourceIds any
+	MaxResults        any
+	NextToken         any
+	ResourceIds       any
 	ScalableDimension any
-	ScalableTargets any
-	ServiceNamespace any
+	ScalableTargets   any
+	ServiceNamespace  any
 }
 
 var ApplicationAutoscalingScalableTargets = ubx.DataSourceBinding{
 	WireType: "aws_application_autoscaling_scalable_targets",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceIds": ubx.FieldSpec{WireName: "resource_ids"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"ResourceIds":       ubx.FieldSpec{WireName: "resource_ids"},
 		"ScalableDimension": ubx.FieldSpec{WireName: "scalable_dimension"},
-		"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
+		"ServiceNamespace":  ubx.FieldSpec{WireName: "service_namespace"},
 	},
 }

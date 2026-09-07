@@ -4,38 +4,38 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ShardIteratorConfig struct {
-	DryRun any
-	ShardId any
-	ShardIteratorType any
+	DryRun                 any
+	ShardId                any
+	ShardIteratorType      any
 	StartingSequenceNumber any
-	StreamArn any
-	StreamId any
-	StreamName any
-	Timestamp any
+	StreamArn              any
+	StreamId               any
+	StreamName             any
+	Timestamp              any
 }
 
 type ShardIteratorAttrs struct {
-	DryRun any
-	ShardId any
-	ShardIterator any
-	ShardIteratorType any
+	DryRun                 any
+	ShardId                any
+	ShardIterator          any
+	ShardIteratorType      any
 	StartingSequenceNumber any
-	StreamArn any
-	StreamId any
-	StreamName any
-	Timestamp any
+	StreamArn              any
+	StreamId               any
+	StreamName             any
+	Timestamp              any
 }
 
 var ShardIterator = ubx.DataSourceBinding{
 	WireType: "aws_kinesis_shard_iterator",
 	Fields: ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"ShardId": ubx.FieldSpec{WireName: "shard_id"},
-		"ShardIteratorType": ubx.FieldSpec{WireName: "shard_iterator_type"},
+		"DryRun":                 ubx.FieldSpec{WireName: "dry_run"},
+		"ShardId":                ubx.FieldSpec{WireName: "shard_id"},
+		"ShardIteratorType":      ubx.FieldSpec{WireName: "shard_iterator_type"},
 		"StartingSequenceNumber": ubx.FieldSpec{WireName: "starting_sequence_number"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+		"StreamArn":              ubx.FieldSpec{WireName: "stream_arn"},
+		"StreamId":               ubx.FieldSpec{WireName: "stream_id"},
+		"StreamName":             ubx.FieldSpec{WireName: "stream_name"},
+		"Timestamp":              ubx.FieldSpec{WireName: "timestamp"},
 	},
 }

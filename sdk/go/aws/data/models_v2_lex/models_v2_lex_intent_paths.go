@@ -4,38 +4,38 @@ package models_v2_lex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelsV2LexIntentPaths_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexIntentPaths_NodeSummaries struct {
 	IntentCount any
 	IntentLevel any
-	IntentName any
-	IntentPath any
-	NodeType any
+	IntentName  any
+	IntentPath  any
+	NodeType    any
 }
 
 var ModelsV2LexIntentPaths_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 type ModelsV2LexIntentPathsConfig struct {
-	BotId any
-	EndDateTime any
-	Filters any
-	IntentPath any
+	BotId         any
+	EndDateTime   any
+	Filters       any
+	IntentPath    any
 	StartDateTime any
 }
 
 type ModelsV2LexIntentPathsAttrs struct {
-	BotId any
-	EndDateTime any
-	Filters any
-	IntentPath any
+	BotId         any
+	EndDateTime   any
+	Filters       any
+	IntentPath    any
 	NodeSummaries any
 	StartDateTime any
 }
@@ -43,14 +43,14 @@ type ModelsV2LexIntentPathsAttrs struct {
 var ModelsV2LexIntentPaths = ubx.DataSourceBinding{
 	WireType: "aws_models_v2_lex_intent_paths",
 	Fields: ubx.FieldMap{
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":       ubx.FieldSpec{WireName: "bot_id"},
 		"EndDateTime": ubx.FieldSpec{WireName: "end_date_time"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexIntentPaths_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexIntentPaths_FiltersFields,
 		},
-		"IntentPath": ubx.FieldSpec{WireName: "intent_path"},
+		"IntentPath":    ubx.FieldSpec{WireName: "intent_path"},
 		"StartDateTime": ubx.FieldSpec{WireName: "start_date_time"},
 	},
 }

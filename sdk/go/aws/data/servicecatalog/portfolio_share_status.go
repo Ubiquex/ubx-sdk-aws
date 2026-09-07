@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PortfolioShareStatus_ShareDetails_ShareErrors struct {
 	Accounts any
-	Error any
-	Message any
+	Error    any
+	Message  any
 }
 
 type PortfolioShareStatus_ShareDetails struct {
-	ShareErrors any
+	ShareErrors      any
 	SuccessfulShares any
 }
 
@@ -20,11 +20,11 @@ type PortfolioShareStatusConfig struct {
 
 type PortfolioShareStatusAttrs struct {
 	OrganizationNodeValue any
-	PortfolioId any
-	PortfolioShareToken any
+	PortfolioId           any
+	PortfolioShareToken   any
 	// <p>Information about the portfolio share operation.</p>
 	ShareDetails any
-	Status any
+	Status       any
 }
 
 var PortfolioShareStatus = ubx.DataSourceBinding{

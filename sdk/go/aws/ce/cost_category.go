@@ -11,9 +11,9 @@ type CostCategory_Tags struct {
 }
 
 var CostCategory_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CostCategoryConfig struct {
 	// The default value for the cost category
@@ -52,15 +52,15 @@ type CostCategoryAttrs struct {
 var CostCategory = ubx.ResourceBinding{
 	WireType: "aws_ce_cost_category",
 	Fields: ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RuleVersion": ubx.FieldSpec{WireName: "rule_version"},
-		"Rules": ubx.FieldSpec{WireName: "rules"},
+		"DefaultValue":     ubx.FieldSpec{WireName: "default_value"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"RuleVersion":      ubx.FieldSpec{WireName: "rule_version"},
+		"Rules":            ubx.FieldSpec{WireName: "rules"},
 		"SplitChargeRules": ubx.FieldSpec{WireName: "split_charge_rules"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CostCategory_TagsFields,
+			Kind:     "list",
+			Fields:   CostCategory_TagsFields,
 		},
 	},
 }

@@ -5,61 +5,61 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoreNetworkRoutingInformation_CoreNetworkRoutingInformation_NextHop struct {
 	CoreNetworkAttachmentId any
-	EdgeLocation any
-	IpAddress any
-	ResourceId any
-	ResourceType any
-	SegmentName any
+	EdgeLocation            any
+	IpAddress               any
+	ResourceId              any
+	ResourceType            any
+	SegmentName             any
 }
 
 type CoreNetworkRoutingInformation_CoreNetworkRoutingInformation struct {
-	AsPath any
-	Communities any
+	AsPath          any
+	Communities     any
 	LocalPreference any
-	Med any
-	NextHop any
-	Prefix any
+	Med             any
+	NextHop         any
+	Prefix          any
 }
 
 type CoreNetworkRoutingInformationConfig struct {
-	CommunityMatches any
-	CoreNetworkId any
-	EdgeLocation any
-	ExactAsPathMatches any
+	CommunityMatches       any
+	CoreNetworkId          any
+	EdgeLocation           any
+	ExactAsPathMatches     any
 	LocalPreferenceMatches any
-	MaxResults any
-	MedMatches any
-	NextHopFilters any
-	NextToken any
-	SegmentName any
+	MaxResults             any
+	MedMatches             any
+	NextHopFilters         any
+	NextToken              any
+	SegmentName            any
 }
 
 type CoreNetworkRoutingInformationAttrs struct {
-	CommunityMatches any
-	CoreNetworkId any
+	CommunityMatches              any
+	CoreNetworkId                 any
 	CoreNetworkRoutingInformation any
-	EdgeLocation any
-	ExactAsPathMatches any
-	LocalPreferenceMatches any
-	MaxResults any
-	MedMatches any
-	NextHopFilters any
-	NextToken any
-	SegmentName any
+	EdgeLocation                  any
+	ExactAsPathMatches            any
+	LocalPreferenceMatches        any
+	MaxResults                    any
+	MedMatches                    any
+	NextHopFilters                any
+	NextToken                     any
+	SegmentName                   any
 }
 
 var CoreNetworkRoutingInformation = ubx.DataSourceBinding{
 	WireType: "aws_networkmanager_core_network_routing_information",
 	Fields: ubx.FieldMap{
-		"CommunityMatches": ubx.FieldSpec{WireName: "community_matches"},
-		"CoreNetworkId": ubx.FieldSpec{WireName: "core_network_id"},
-		"EdgeLocation": ubx.FieldSpec{WireName: "edge_location"},
-		"ExactAsPathMatches": ubx.FieldSpec{WireName: "exact_as_path_matches"},
+		"CommunityMatches":       ubx.FieldSpec{WireName: "community_matches"},
+		"CoreNetworkId":          ubx.FieldSpec{WireName: "core_network_id"},
+		"EdgeLocation":           ubx.FieldSpec{WireName: "edge_location"},
+		"ExactAsPathMatches":     ubx.FieldSpec{WireName: "exact_as_path_matches"},
 		"LocalPreferenceMatches": ubx.FieldSpec{WireName: "local_preference_matches"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MedMatches": ubx.FieldSpec{WireName: "med_matches"},
-		"NextHopFilters": ubx.FieldSpec{WireName: "next_hop_filters"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SegmentName": ubx.FieldSpec{WireName: "segment_name"},
+		"MaxResults":             ubx.FieldSpec{WireName: "max_results"},
+		"MedMatches":             ubx.FieldSpec{WireName: "med_matches"},
+		"NextHopFilters":         ubx.FieldSpec{WireName: "next_hop_filters"},
+		"NextToken":              ubx.FieldSpec{WireName: "next_token"},
+		"SegmentName":            ubx.FieldSpec{WireName: "segment_name"},
 	},
 }

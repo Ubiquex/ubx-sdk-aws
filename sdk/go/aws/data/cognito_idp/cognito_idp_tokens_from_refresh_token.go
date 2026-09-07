@@ -5,44 +5,44 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CognitoIdpTokensFromRefreshToken_AuthenticationResult_NewDeviceMetadata struct {
 	DeviceGroupKey any
-	DeviceKey any
+	DeviceKey      any
 }
 
 type CognitoIdpTokensFromRefreshToken_AuthenticationResult struct {
 	AccessToken any
-	ExpiresIn any
-	IdToken any
+	ExpiresIn   any
+	IdToken     any
 	// <p>Information that your user pool responds with in <code>AuthenticationResult</code>when you configure it to remember devices and a user signs in with an unrecognized device. Amazon Cognito presents a new device key that you can use to set up <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">device authentication</a> in a "Remember me on this device" authentication model.</p>
 	NewDeviceMetadata any
-	RefreshToken any
-	TokenType any
+	RefreshToken      any
+	TokenType         any
 }
 
 type CognitoIdpTokensFromRefreshTokenConfig struct {
-	ClientId any
+	ClientId       any
 	ClientMetadata any
-	ClientSecret any
-	DeviceKey any
-	RefreshToken any
+	ClientSecret   any
+	DeviceKey      any
+	RefreshToken   any
 }
 
 type CognitoIdpTokensFromRefreshTokenAttrs struct {
 	// <p>The object that your application receives after authentication. Contains tokens and information for device authentication.</p>
 	AuthenticationResult any
-	ClientId any
-	ClientMetadata any
-	ClientSecret any
-	DeviceKey any
-	RefreshToken any
+	ClientId             any
+	ClientMetadata       any
+	ClientSecret         any
+	DeviceKey            any
+	RefreshToken         any
 }
 
 var CognitoIdpTokensFromRefreshToken = ubx.DataSourceBinding{
 	WireType: "aws_cognito_idp_tokens_from_refresh_token",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":       ubx.FieldSpec{WireName: "client_id"},
 		"ClientMetadata": ubx.FieldSpec{WireName: "client_metadata"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"DeviceKey": ubx.FieldSpec{WireName: "device_key"},
-		"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
+		"ClientSecret":   ubx.FieldSpec{WireName: "client_secret"},
+		"DeviceKey":      ubx.FieldSpec{WireName: "device_key"},
+		"RefreshToken":   ubx.FieldSpec{WireName: "refresh_token"},
 	},
 }

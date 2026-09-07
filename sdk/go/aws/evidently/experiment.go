@@ -45,7 +45,7 @@ type Experiment_RunningStatus struct {
 
 type Experiment_Tags struct {
 	// The key portion of a key-value tag applied to the Evidently experiment, used for metadata and resource categorization. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
@@ -61,46 +61,46 @@ type Experiment_Treatments struct {
 }
 
 var Experiment_MetricGoalsFields = ubx.FieldMap{
-		"DesiredChange": ubx.FieldSpec{WireName: "desired_change"},
-		"EntityIdKey": ubx.FieldSpec{WireName: "entity_id_key"},
-		"EventPattern": ubx.FieldSpec{WireName: "event_pattern"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"UnitLabel": ubx.FieldSpec{WireName: "unit_label"},
-		"ValueKey": ubx.FieldSpec{WireName: "value_key"},
-	}
+	"DesiredChange": ubx.FieldSpec{WireName: "desired_change"},
+	"EntityIdKey":   ubx.FieldSpec{WireName: "entity_id_key"},
+	"EventPattern":  ubx.FieldSpec{WireName: "event_pattern"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"UnitLabel":     ubx.FieldSpec{WireName: "unit_label"},
+	"ValueKey":      ubx.FieldSpec{WireName: "value_key"},
+}
 
 var Experiment_OnlineAbConfig_TreatmentWeightsFields = ubx.FieldMap{
-		"SplitWeight": ubx.FieldSpec{WireName: "split_weight"},
-		"Treatment": ubx.FieldSpec{WireName: "treatment"},
-	}
+	"SplitWeight": ubx.FieldSpec{WireName: "split_weight"},
+	"Treatment":   ubx.FieldSpec{WireName: "treatment"},
+}
 
 var Experiment_OnlineAbConfigFields = ubx.FieldMap{
-		"ControlTreatmentName": ubx.FieldSpec{WireName: "control_treatment_name"},
-		"TreatmentWeights": ubx.FieldSpec{
-			WireName: "treatment_weights",
-			Kind: "list",
-			Fields: Experiment_OnlineAbConfig_TreatmentWeightsFields,
-		},
-	}
+	"ControlTreatmentName": ubx.FieldSpec{WireName: "control_treatment_name"},
+	"TreatmentWeights": ubx.FieldSpec{
+		WireName: "treatment_weights",
+		Kind:     "list",
+		Fields:   Experiment_OnlineAbConfig_TreatmentWeightsFields,
+	},
+}
 
 var Experiment_RunningStatusFields = ubx.FieldMap{
-		"AnalysisCompleteTime": ubx.FieldSpec{WireName: "analysis_complete_time"},
-		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AnalysisCompleteTime": ubx.FieldSpec{WireName: "analysis_complete_time"},
+	"DesiredState":         ubx.FieldSpec{WireName: "desired_state"},
+	"Reason":               ubx.FieldSpec{WireName: "reason"},
+	"Status":               ubx.FieldSpec{WireName: "status"},
+}
 
 var Experiment_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Experiment_TreatmentsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Feature": ubx.FieldSpec{WireName: "feature"},
-		"TreatmentName": ubx.FieldSpec{WireName: "treatment_name"},
-		"Variation": ubx.FieldSpec{WireName: "variation"},
-	}
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"Feature":       ubx.FieldSpec{WireName: "feature"},
+	"TreatmentName": ubx.FieldSpec{WireName: "treatment_name"},
+	"Variation":     ubx.FieldSpec{WireName: "variation"},
+}
 
 type ExperimentConfig struct {
 	// Provides an optional, human-readable description of the experiment to convey its purpose or context. (AI-inferred)
@@ -164,34 +164,34 @@ var Experiment = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"MetricGoals": ubx.FieldSpec{
 			WireName: "metric_goals",
-			Kind: "list",
-			Fields: Experiment_MetricGoalsFields,
+			Kind:     "list",
+			Fields:   Experiment_MetricGoalsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OnlineAbConfig": ubx.FieldSpec{
 			WireName: "online_ab_config",
-			Kind: "object",
-			Fields: Experiment_OnlineAbConfigFields,
+			Kind:     "object",
+			Fields:   Experiment_OnlineAbConfigFields,
 		},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":           ubx.FieldSpec{WireName: "project"},
 		"RandomizationSalt": ubx.FieldSpec{WireName: "randomization_salt"},
-		"RemoveSegment": ubx.FieldSpec{WireName: "remove_segment"},
+		"RemoveSegment":     ubx.FieldSpec{WireName: "remove_segment"},
 		"RunningStatus": ubx.FieldSpec{
 			WireName: "running_status",
-			Kind: "object",
-			Fields: Experiment_RunningStatusFields,
+			Kind:     "object",
+			Fields:   Experiment_RunningStatusFields,
 		},
 		"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
-		"Segment": ubx.FieldSpec{WireName: "segment"},
+		"Segment":      ubx.FieldSpec{WireName: "segment"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Experiment_TagsFields,
+			Kind:     "list",
+			Fields:   Experiment_TagsFields,
 		},
 		"Treatments": ubx.FieldSpec{
 			WireName: "treatments",
-			Kind: "list",
-			Fields: Experiment_TreatmentsFields,
+			Kind:     "list",
+			Fields:   Experiment_TreatmentsFields,
 		},
 	},
 }

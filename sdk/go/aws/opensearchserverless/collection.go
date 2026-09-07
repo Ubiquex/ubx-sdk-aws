@@ -30,18 +30,18 @@ type Collection_VectorOptions struct {
 }
 
 var Collection_EncryptionConfigFields = ubx.FieldMap{
-		"AwsownedKey": ubx.FieldSpec{WireName: "awsowned_key"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"AwsownedKey": ubx.FieldSpec{WireName: "awsowned_key"},
+	"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var Collection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Collection_VectorOptionsFields = ubx.FieldMap{
-		"ServerlessVectorAcceleration": ubx.FieldSpec{WireName: "serverless_vector_acceleration"},
-	}
+	"ServerlessVectorAcceleration": ubx.FieldSpec{WireName: "serverless_vector_acceleration"},
+}
 
 type CollectionConfig struct {
 	// The name of the collection group to associate with the collection.
@@ -101,25 +101,25 @@ var Collection = ubx.ResourceBinding{
 	WireType: "aws_open_search_serverless_collection",
 	Fields: ubx.FieldMap{
 		"CollectionGroupName": ubx.FieldSpec{WireName: "collection_group_name"},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"DeletionProtection":  ubx.FieldSpec{WireName: "deletion_protection"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Collection_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   Collection_EncryptionConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"StandbyReplicas": ubx.FieldSpec{WireName: "standby_replicas"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Collection_TagsFields,
+			Kind:     "list",
+			Fields:   Collection_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"VectorOptions": ubx.FieldSpec{
 			WireName: "vector_options",
-			Kind: "object",
-			Fields: Collection_VectorOptionsFields,
+			Kind:     "object",
+			Fields:   Collection_VectorOptionsFields,
 		},
 	},
 }

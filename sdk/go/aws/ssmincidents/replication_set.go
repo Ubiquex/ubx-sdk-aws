@@ -23,22 +23,22 @@ type ReplicationSet_Tags struct {
 }
 
 var ReplicationSet_Regions_RegionConfigurationFields = ubx.FieldMap{
-		"SseKmsKeyId": ubx.FieldSpec{WireName: "sse_kms_key_id"},
-	}
+	"SseKmsKeyId": ubx.FieldSpec{WireName: "sse_kms_key_id"},
+}
 
 var ReplicationSet_RegionsFields = ubx.FieldMap{
-		"RegionConfiguration": ubx.FieldSpec{
-			WireName: "region_configuration",
-			Kind: "object",
-			Fields: ReplicationSet_Regions_RegionConfigurationFields,
-		},
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
-	}
+	"RegionConfiguration": ubx.FieldSpec{
+		WireName: "region_configuration",
+		Kind:     "object",
+		Fields:   ReplicationSet_Regions_RegionConfigurationFields,
+	},
+	"RegionName": ubx.FieldSpec{WireName: "region_name"},
+}
 
 var ReplicationSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ReplicationSetConfig struct {
 	// Configures the ReplicationSet deletion protection.
@@ -66,13 +66,13 @@ var ReplicationSet = ubx.ResourceBinding{
 		"DeletionProtected": ubx.FieldSpec{WireName: "deletion_protected"},
 		"Regions": ubx.FieldSpec{
 			WireName: "regions",
-			Kind: "list",
-			Fields: ReplicationSet_RegionsFields,
+			Kind:     "list",
+			Fields:   ReplicationSet_RegionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ReplicationSet_TagsFields,
+			Kind:     "list",
+			Fields:   ReplicationSet_TagsFields,
 		},
 	},
 }

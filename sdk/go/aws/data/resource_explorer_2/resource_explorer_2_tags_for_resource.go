@@ -9,7 +9,7 @@ type ResourceExplorer2TagsForResourceConfig struct {
 
 type ResourceExplorer2TagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ResourceExplorer2TagsForResource = ubx.DataSourceBinding{

@@ -83,84 +83,84 @@ type Api_Tags struct {
 }
 
 var Api_EventConfig_AuthProviders_CognitoConfigFields = ubx.FieldMap{
-		"AppIdClientRegex": ubx.FieldSpec{WireName: "app_id_client_regex"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
-	}
+	"AppIdClientRegex": ubx.FieldSpec{WireName: "app_id_client_regex"},
+	"AwsRegion":        ubx.FieldSpec{WireName: "aws_region"},
+	"UserPoolId":       ubx.FieldSpec{WireName: "user_pool_id"},
+}
 
 var Api_EventConfig_AuthProviders_LambdaAuthorizerConfigFields = ubx.FieldMap{
-		"AuthorizerResultTtlInSeconds": ubx.FieldSpec{WireName: "authorizer_result_ttl_in_seconds"},
-		"AuthorizerUri": ubx.FieldSpec{WireName: "authorizer_uri"},
-		"IdentityValidationExpression": ubx.FieldSpec{WireName: "identity_validation_expression"},
-	}
+	"AuthorizerResultTtlInSeconds": ubx.FieldSpec{WireName: "authorizer_result_ttl_in_seconds"},
+	"AuthorizerUri":                ubx.FieldSpec{WireName: "authorizer_uri"},
+	"IdentityValidationExpression": ubx.FieldSpec{WireName: "identity_validation_expression"},
+}
 
 var Api_EventConfig_AuthProviders_OpenIdconnectConfigFields = ubx.FieldMap{
-		"AuthTtl": ubx.FieldSpec{WireName: "auth_ttl"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"IatTtl": ubx.FieldSpec{WireName: "iat_ttl"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-	}
+	"AuthTtl":  ubx.FieldSpec{WireName: "auth_ttl"},
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"IatTtl":   ubx.FieldSpec{WireName: "iat_ttl"},
+	"Issuer":   ubx.FieldSpec{WireName: "issuer"},
+}
 
 var Api_EventConfig_AuthProvidersFields = ubx.FieldMap{
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"CognitoConfig": ubx.FieldSpec{
-			WireName: "cognito_config",
-			Kind: "object",
-			Fields: Api_EventConfig_AuthProviders_CognitoConfigFields,
-		},
-		"LambdaAuthorizerConfig": ubx.FieldSpec{
-			WireName: "lambda_authorizer_config",
-			Kind: "object",
-			Fields: Api_EventConfig_AuthProviders_LambdaAuthorizerConfigFields,
-		},
-		"OpenIdconnectConfig": ubx.FieldSpec{
-			WireName: "open_idconnect_config",
-			Kind: "object",
-			Fields: Api_EventConfig_AuthProviders_OpenIdconnectConfigFields,
-		},
-	}
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+	"CognitoConfig": ubx.FieldSpec{
+		WireName: "cognito_config",
+		Kind:     "object",
+		Fields:   Api_EventConfig_AuthProviders_CognitoConfigFields,
+	},
+	"LambdaAuthorizerConfig": ubx.FieldSpec{
+		WireName: "lambda_authorizer_config",
+		Kind:     "object",
+		Fields:   Api_EventConfig_AuthProviders_LambdaAuthorizerConfigFields,
+	},
+	"OpenIdconnectConfig": ubx.FieldSpec{
+		WireName: "open_idconnect_config",
+		Kind:     "object",
+		Fields:   Api_EventConfig_AuthProviders_OpenIdconnectConfigFields,
+	},
+}
 
 var Api_EventConfig_ConnectionAuthModesFields = ubx.FieldMap{
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-	}
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+}
 
 var Api_EventConfig_LogConfigFields = ubx.FieldMap{
-		"CloudWatchLogsRoleArn": ubx.FieldSpec{WireName: "cloud_watch_logs_role_arn"},
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-	}
+	"CloudWatchLogsRoleArn": ubx.FieldSpec{WireName: "cloud_watch_logs_role_arn"},
+	"LogLevel":              ubx.FieldSpec{WireName: "log_level"},
+}
 
 var Api_EventConfigFields = ubx.FieldMap{
-		"AuthProviders": ubx.FieldSpec{
-			WireName: "auth_providers",
-			Kind: "list",
-			Fields: Api_EventConfig_AuthProvidersFields,
-		},
-		"ConnectionAuthModes": ubx.FieldSpec{
-			WireName: "connection_auth_modes",
-			Kind: "list",
-			Fields: Api_EventConfig_ConnectionAuthModesFields,
-		},
-		"DefaultPublishAuthModes": ubx.FieldSpec{
-			WireName: "default_publish_auth_modes",
-			Kind: "list",
-			Fields: Api_EventConfig_ConnectionAuthModesFields,
-		},
-		"DefaultSubscribeAuthModes": ubx.FieldSpec{
-			WireName: "default_subscribe_auth_modes",
-			Kind: "list",
-			Fields: Api_EventConfig_ConnectionAuthModesFields,
-		},
-		"LogConfig": ubx.FieldSpec{
-			WireName: "log_config",
-			Kind: "object",
-			Fields: Api_EventConfig_LogConfigFields,
-		},
-	}
+	"AuthProviders": ubx.FieldSpec{
+		WireName: "auth_providers",
+		Kind:     "list",
+		Fields:   Api_EventConfig_AuthProvidersFields,
+	},
+	"ConnectionAuthModes": ubx.FieldSpec{
+		WireName: "connection_auth_modes",
+		Kind:     "list",
+		Fields:   Api_EventConfig_ConnectionAuthModesFields,
+	},
+	"DefaultPublishAuthModes": ubx.FieldSpec{
+		WireName: "default_publish_auth_modes",
+		Kind:     "list",
+		Fields:   Api_EventConfig_ConnectionAuthModesFields,
+	},
+	"DefaultSubscribeAuthModes": ubx.FieldSpec{
+		WireName: "default_subscribe_auth_modes",
+		Kind:     "list",
+		Fields:   Api_EventConfig_ConnectionAuthModesFields,
+	},
+	"LogConfig": ubx.FieldSpec{
+		WireName: "log_config",
+		Kind:     "object",
+		Fields:   Api_EventConfig_LogConfigFields,
+	},
+}
 
 var Api_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApiConfig struct {
 	// The configuration for an Event Api
@@ -195,15 +195,15 @@ var Api = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EventConfig": ubx.FieldSpec{
 			WireName: "event_config",
-			Kind: "object",
-			Fields: Api_EventConfigFields,
+			Kind:     "object",
+			Fields:   Api_EventConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"OwnerContact": ubx.FieldSpec{WireName: "owner_contact"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Api_TagsFields,
+			Kind:     "list",
+			Fields:   Api_TagsFields,
 		},
 	},
 }

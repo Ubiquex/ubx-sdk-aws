@@ -4,41 +4,41 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceToneAnalysisTask_VoiceToneAnalysisTask_CallDetails struct {
-	IsCaller any
-	TransactionId any
+	IsCaller         any
+	TransactionId    any
 	VoiceConnectorId any
 }
 
 type VoiceChimeVoiceToneAnalysisTask_VoiceToneAnalysisTask struct {
 	// <p>The details of an Amazon Chime SDK Voice Connector call.</p>
-	CallDetails any
-	CreatedTimestamp any
-	StartedTimestamp any
-	StatusMessage any
-	UpdatedTimestamp any
-	VoiceToneAnalysisTaskId any
+	CallDetails                 any
+	CreatedTimestamp            any
+	StartedTimestamp            any
+	StatusMessage               any
+	UpdatedTimestamp            any
+	VoiceToneAnalysisTaskId     any
 	VoiceToneAnalysisTaskStatus any
 }
 
 type VoiceChimeVoiceToneAnalysisTaskConfig struct {
-	IsCaller any
-	VoiceConnectorId any
+	IsCaller                any
+	VoiceConnectorId        any
 	VoiceToneAnalysisTaskId any
 }
 
 type VoiceChimeVoiceToneAnalysisTaskAttrs struct {
-	IsCaller any
+	IsCaller         any
 	VoiceConnectorId any
 	// <p>A representation of an asynchronous request to perform voice tone analysis on a Voice Connector call.</p>
-	VoiceToneAnalysisTask any
+	VoiceToneAnalysisTask   any
 	VoiceToneAnalysisTaskId any
 }
 
 var VoiceChimeVoiceToneAnalysisTask = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_voice_tone_analysis_task",
 	Fields: ubx.FieldMap{
-		"IsCaller": ubx.FieldSpec{WireName: "is_caller"},
-		"VoiceConnectorId": ubx.FieldSpec{WireName: "voice_connector_id"},
+		"IsCaller":                ubx.FieldSpec{WireName: "is_caller"},
+		"VoiceConnectorId":        ubx.FieldSpec{WireName: "voice_connector_id"},
 		"VoiceToneAnalysisTaskId": ubx.FieldSpec{WireName: "voice_tone_analysis_task_id"},
 	},
 }

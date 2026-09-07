@@ -17,12 +17,12 @@ type ManagedLoginBranding_Assets struct {
 }
 
 var ManagedLoginBranding_AssetsFields = ubx.FieldMap{
-		"Bytes": ubx.FieldSpec{WireName: "bytes"},
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"ColorMode": ubx.FieldSpec{WireName: "color_mode"},
-		"Extension": ubx.FieldSpec{WireName: "extension"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-	}
+	"Bytes":      ubx.FieldSpec{WireName: "bytes"},
+	"Category":   ubx.FieldSpec{WireName: "category"},
+	"ColorMode":  ubx.FieldSpec{WireName: "color_mode"},
+	"Extension":  ubx.FieldSpec{WireName: "extension"},
+	"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+}
 
 type ManagedLoginBrandingConfig struct {
 	// Specifies the list of image assets (such as logos, icons, and email graphics) to associate with the managed login branding, where each asset defines a category, resource identifier, and optional file URI. (AI-inferred)
@@ -61,13 +61,13 @@ var ManagedLoginBranding = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Assets": ubx.FieldSpec{
 			WireName: "assets",
-			Kind: "list",
-			Fields: ManagedLoginBranding_AssetsFields,
+			Kind:     "list",
+			Fields:   ManagedLoginBranding_AssetsFields,
 		},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ReturnMergedResources": ubx.FieldSpec{WireName: "return_merged_resources"},
-		"Settings": ubx.FieldSpec{WireName: "settings"},
+		"ClientId":                 ubx.FieldSpec{WireName: "client_id"},
+		"ReturnMergedResources":    ubx.FieldSpec{WireName: "return_merged_resources"},
+		"Settings":                 ubx.FieldSpec{WireName: "settings"},
 		"UseCognitoProvidedValues": ubx.FieldSpec{WireName: "use_cognito_provided_values"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"UserPoolId":               ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }

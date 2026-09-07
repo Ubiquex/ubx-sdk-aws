@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectionProposal_Provider struct {
 	CloudServiceProvider any
-	LastMileProvider any
+	LastMileProvider     any
 }
 
 type ConnectionProposalConfig struct {
@@ -14,9 +14,9 @@ type ConnectionProposalConfig struct {
 
 type ConnectionProposalAttrs struct {
 	ActivationKey any
-	Bandwidth any
+	Bandwidth     any
 	EnvironmentId any
-	Location any
+	Location      any
 	// <p>Describes the respective AWS Interconnect Partner organization.</p>
 	Provider any
 }

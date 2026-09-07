@@ -26,8 +26,8 @@ type UsagePlanKeyAttrs struct {
 var UsagePlanKey = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_usage_plan_key",
 	Fields: ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
+		"KeyId":       ubx.FieldSpec{WireName: "key_id"},
+		"KeyType":     ubx.FieldSpec{WireName: "key_type"},
 		"UsagePlanId": ubx.FieldSpec{WireName: "usage_plan_id"},
 	},
 }

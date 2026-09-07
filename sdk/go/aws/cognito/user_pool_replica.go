@@ -24,8 +24,8 @@ type UserPoolReplicaAttrs struct {
 var UserPoolReplica = ubx.ResourceBinding{
 	WireType: "aws_cognito_user_pool_replica",
 	Fields: ubx.FieldMap{
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"RegionName":           ubx.FieldSpec{WireName: "region_name"},
+		"UserPoolId":           ubx.FieldSpec{WireName: "user_pool_id"},
 		"UserPoolTagsAtCreate": ubx.FieldSpec{WireName: "user_pool_tags_at_create"},
 	},
 }

@@ -41,57 +41,57 @@ type EventAction_Event struct {
 
 type EventAction_Tags struct {
 	// Key of a tag attached to an AWS Data Exchange event action, used to categorize, organize, and manage event actions within your AWS account. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var EventAction_Action_ExportRevisionToS3_EncryptionFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var EventAction_Action_ExportRevisionToS3_RevisionDestinationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"KeyPattern": ubx.FieldSpec{WireName: "key_pattern"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"KeyPattern": ubx.FieldSpec{WireName: "key_pattern"},
+}
 
 var EventAction_Action_ExportRevisionToS3Fields = ubx.FieldMap{
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: EventAction_Action_ExportRevisionToS3_EncryptionFields,
-		},
-		"RevisionDestination": ubx.FieldSpec{
-			WireName: "revision_destination",
-			Kind: "object",
-			Fields: EventAction_Action_ExportRevisionToS3_RevisionDestinationFields,
-		},
-	}
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   EventAction_Action_ExportRevisionToS3_EncryptionFields,
+	},
+	"RevisionDestination": ubx.FieldSpec{
+		WireName: "revision_destination",
+		Kind:     "object",
+		Fields:   EventAction_Action_ExportRevisionToS3_RevisionDestinationFields,
+	},
+}
 
 var EventAction_ActionFields = ubx.FieldMap{
-		"ExportRevisionToS3": ubx.FieldSpec{
-			WireName: "export_revision_to_s3",
-			Kind: "object",
-			Fields: EventAction_Action_ExportRevisionToS3Fields,
-		},
-	}
+	"ExportRevisionToS3": ubx.FieldSpec{
+		WireName: "export_revision_to_s3",
+		Kind:     "object",
+		Fields:   EventAction_Action_ExportRevisionToS3Fields,
+	},
+}
 
 var EventAction_Event_RevisionPublishedFields = ubx.FieldMap{
-		"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
-	}
+	"DataSetId": ubx.FieldSpec{WireName: "data_set_id"},
+}
 
 var EventAction_EventFields = ubx.FieldMap{
-		"RevisionPublished": ubx.FieldSpec{
-			WireName: "revision_published",
-			Kind: "object",
-			Fields: EventAction_Event_RevisionPublishedFields,
-		},
-	}
+	"RevisionPublished": ubx.FieldSpec{
+		WireName: "revision_published",
+		Kind:     "object",
+		Fields:   EventAction_Event_RevisionPublishedFields,
+	},
+}
 
 var EventAction_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventActionConfig struct {
 	// What occurs after a certain event.
@@ -124,18 +124,18 @@ var EventAction = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "object",
-			Fields: EventAction_ActionFields,
+			Kind:     "object",
+			Fields:   EventAction_ActionFields,
 		},
 		"Event": ubx.FieldSpec{
 			WireName: "event",
-			Kind: "object",
-			Fields: EventAction_EventFields,
+			Kind:     "object",
+			Fields:   EventAction_EventFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventAction_TagsFields,
+			Kind:     "list",
+			Fields:   EventAction_TagsFields,
 		},
 	},
 }

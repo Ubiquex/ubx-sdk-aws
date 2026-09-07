@@ -4,43 +4,43 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoipPools_CoipPools_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CoipPools_CoipPools struct {
 	LocalGatewayRouteTableId any
-	PoolArn any
-	PoolCidrs any
-	PoolId any
-	Tags any
+	PoolArn                  any
+	PoolCidrs                any
+	PoolId                   any
+	Tags                     any
 }
 
 type CoipPools_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var CoipPools_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type CoipPoolsConfig struct {
-	DryRun any
-	Filters any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
-	PoolIds any
+	NextToken  any
+	PoolIds    any
 }
 
 type CoipPoolsAttrs struct {
-	CoipPools any
-	DryRun any
-	Filters any
+	CoipPools  any
+	DryRun     any
+	Filters    any
 	MaxResults any
-	NextToken any
-	PoolIds any
+	NextToken  any
+	PoolIds    any
 }
 
 var CoipPools = ubx.DataSourceBinding{
@@ -49,11 +49,11 @@ var CoipPools = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: CoipPools_FiltersFields,
+			Kind:     "list",
+			Fields:   CoipPools_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PoolIds": ubx.FieldSpec{WireName: "pool_ids"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"PoolIds":    ubx.FieldSpec{WireName: "pool_ids"},
 	},
 }

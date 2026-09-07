@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestoreTestingInferredMetadataConfig struct {
 	BackupVaultAccountId any
-	BackupVaultName any
-	RecoveryPointArn any
+	BackupVaultName      any
+	RecoveryPointArn     any
 }
 
 type RestoreTestingInferredMetadataAttrs struct {
 	BackupVaultAccountId any
-	BackupVaultName any
-	InferredMetadata any
-	RecoveryPointArn any
+	BackupVaultName      any
+	InferredMetadata     any
+	RecoveryPointArn     any
 }
 
 var RestoreTestingInferredMetadata = ubx.DataSourceBinding{
 	WireType: "aws_backup_restore_testing_inferred_metadata",
 	Fields: ubx.FieldMap{
 		"BackupVaultAccountId": ubx.FieldSpec{WireName: "backup_vault_account_id"},
-		"BackupVaultName": ubx.FieldSpec{WireName: "backup_vault_name"},
-		"RecoveryPointArn": ubx.FieldSpec{WireName: "recovery_point_arn"},
+		"BackupVaultName":      ubx.FieldSpec{WireName: "backup_vault_name"},
+		"RecoveryPointArn":     ubx.FieldSpec{WireName: "recovery_point_arn"},
 	},
 }

@@ -34,37 +34,37 @@ type SecurityConfiguration_EncryptionConfiguration struct {
 }
 
 var SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryptionFields = ubx.FieldMap{
-		"CloudWatchEncryptionMode": ubx.FieldSpec{WireName: "cloud_watch_encryption_mode"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"CloudWatchEncryptionMode": ubx.FieldSpec{WireName: "cloud_watch_encryption_mode"},
+	"KmsKeyArn":                ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryptionFields = ubx.FieldMap{
-		"JobBookmarksEncryptionMode": ubx.FieldSpec{WireName: "job_bookmarks_encryption_mode"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"JobBookmarksEncryptionMode": ubx.FieldSpec{WireName: "job_bookmarks_encryption_mode"},
+	"KmsKeyArn":                  ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var SecurityConfiguration_EncryptionConfiguration_S3EncryptionsFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"S3EncryptionMode": ubx.FieldSpec{WireName: "s3_encryption_mode"},
-	}
+	"KmsKeyArn":        ubx.FieldSpec{WireName: "kms_key_arn"},
+	"S3EncryptionMode": ubx.FieldSpec{WireName: "s3_encryption_mode"},
+}
 
 var SecurityConfiguration_EncryptionConfigurationFields = ubx.FieldMap{
-		"CloudWatchEncryption": ubx.FieldSpec{
-			WireName: "cloud_watch_encryption",
-			Kind: "object",
-			Fields: SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryptionFields,
-		},
-		"JobBookmarksEncryption": ubx.FieldSpec{
-			WireName: "job_bookmarks_encryption",
-			Kind: "object",
-			Fields: SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryptionFields,
-		},
-		"S3Encryptions": ubx.FieldSpec{
-			WireName: "s3_encryptions",
-			Kind: "list",
-			Fields: SecurityConfiguration_EncryptionConfiguration_S3EncryptionsFields,
-		},
-	}
+	"CloudWatchEncryption": ubx.FieldSpec{
+		WireName: "cloud_watch_encryption",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryptionFields,
+	},
+	"JobBookmarksEncryption": ubx.FieldSpec{
+		WireName: "job_bookmarks_encryption",
+		Kind:     "object",
+		Fields:   SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryptionFields,
+	},
+	"S3Encryptions": ubx.FieldSpec{
+		WireName: "s3_encryptions",
+		Kind:     "list",
+		Fields:   SecurityConfiguration_EncryptionConfiguration_S3EncryptionsFields,
+	},
+}
 
 type SecurityConfigurationConfig struct {
 	// The encryption configuration for the security configuration.
@@ -85,8 +85,8 @@ var SecurityConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: SecurityConfiguration_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   SecurityConfiguration_EncryptionConfigurationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

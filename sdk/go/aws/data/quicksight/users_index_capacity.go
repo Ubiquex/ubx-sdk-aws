@@ -14,49 +14,49 @@ type UsersIndexCapacity_Filters_UserNameOrEmail struct {
 
 type UsersIndexCapacity_Filters struct {
 	TotalCapacityBytes any
-	UserNameOrEmail any
+	UserNameOrEmail    any
 }
 
 type UsersIndexCapacity_Users struct {
-	Email any
-	KbCount any
-	Role any
-	SpaceCount any
-	TotalCapacityBytes any
-	TotalKbcapacityBytes any
+	Email                   any
+	KbCount                 any
+	Role                    any
+	SpaceCount              any
+	TotalCapacityBytes      any
+	TotalKbcapacityBytes    any
 	TotalSpaceCapacityBytes any
-	UserArn any
-	UserName any
+	UserArn                 any
+	UserName                any
 }
 
 var UsersIndexCapacity_Filters_TotalCapacityBytesFields = ubx.FieldMap{
-		"MaxBytes": ubx.FieldSpec{WireName: "max_bytes"},
-		"MinBytes": ubx.FieldSpec{WireName: "min_bytes"},
-	}
+	"MaxBytes": ubx.FieldSpec{WireName: "max_bytes"},
+	"MinBytes": ubx.FieldSpec{WireName: "min_bytes"},
+}
 
 var UsersIndexCapacity_Filters_UserNameOrEmailFields = ubx.FieldMap{
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+}
 
 var UsersIndexCapacity_FiltersFields = ubx.FieldMap{
-		"TotalCapacityBytes": ubx.FieldSpec{
-			WireName: "total_capacity_bytes",
-			Kind: "object",
-			Fields: UsersIndexCapacity_Filters_TotalCapacityBytesFields,
-		},
-		"UserNameOrEmail": ubx.FieldSpec{
-			WireName: "user_name_or_email",
-			Kind: "object",
-			Fields: UsersIndexCapacity_Filters_UserNameOrEmailFields,
-		},
-	}
+	"TotalCapacityBytes": ubx.FieldSpec{
+		WireName: "total_capacity_bytes",
+		Kind:     "object",
+		Fields:   UsersIndexCapacity_Filters_TotalCapacityBytesFields,
+	},
+	"UserNameOrEmail": ubx.FieldSpec{
+		WireName: "user_name_or_email",
+		Kind:     "object",
+		Fields:   UsersIndexCapacity_Filters_UserNameOrEmailFields,
+	},
+}
 
 type UsersIndexCapacityConfig struct {
 	AwsAccountId any
-	Filters any
-	MaxResults any
-	Namespace any
-	NextToken any
+	Filters      any
+	MaxResults   any
+	Namespace    any
+	NextToken    any
 	// <p>The field to sort user index capacity results by.</p>
 	SortBy any
 	// <p>The sort order for user index capacity results.</p>
@@ -65,16 +65,16 @@ type UsersIndexCapacityConfig struct {
 
 type UsersIndexCapacityAttrs struct {
 	AwsAccountId any
-	Filters any
-	MaxResults any
-	Namespace any
-	NextToken any
-	RequestId any
+	Filters      any
+	MaxResults   any
+	Namespace    any
+	NextToken    any
+	RequestId    any
 	// <p>The field to sort user index capacity results by.</p>
 	SortBy any
 	// <p>The sort order for user index capacity results.</p>
 	SortOrder any
-	Users any
+	Users     any
 }
 
 var UsersIndexCapacity = ubx.DataSourceBinding{
@@ -83,13 +83,13 @@ var UsersIndexCapacity = ubx.DataSourceBinding{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: UsersIndexCapacity_FiltersFields,
+			Kind:     "list",
+			Fields:   UsersIndexCapacity_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":     ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

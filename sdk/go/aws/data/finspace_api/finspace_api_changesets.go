@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FinspaceApiChangesets_Changesets_ErrorInfo struct {
 	ErrorCategory any
-	ErrorMessage any
+	ErrorMessage  any
 }
 
 type FinspaceApiChangesets_Changesets struct {
-	ActiveFromTimestamp any
+	ActiveFromTimestamp  any
 	ActiveUntilTimestamp any
-	ChangeType any
-	ChangesetArn any
-	ChangesetId any
-	CreateTime any
-	DatasetId any
-	ErrorInfo any
-	FormatParams any
-	SourceParams any
-	Status any
+	ChangeType           any
+	ChangesetArn         any
+	ChangesetId          any
+	CreateTime           any
+	DatasetId            any
+	ErrorInfo            any
+	FormatParams         any
+	SourceParams         any
+	Status               any
 	UpdatedByChangesetId any
-	UpdatesChangesetId any
+	UpdatesChangesetId   any
 }
 
 type FinspaceApiChangesetsConfig struct {
 	// ID for a given Dataset
-	DatasetId any
+	DatasetId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type FinspaceApiChangesetsAttrs struct {
 	// List of Changeset Summaries
 	Changesets any
 	// ID for a given Dataset
-	DatasetId any
+	DatasetId  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var FinspaceApiChangesets = ubx.DataSourceBinding{
 	WireType: "aws_finspace_api_changesets",
 	Fields: ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+		"DatasetId":  ubx.FieldSpec{WireName: "dataset_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

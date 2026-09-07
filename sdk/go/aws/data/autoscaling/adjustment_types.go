@@ -16,6 +16,5 @@ type AdjustmentTypesAttrs struct {
 
 var AdjustmentTypes = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_adjustment_types",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

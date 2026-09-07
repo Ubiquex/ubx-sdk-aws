@@ -55,66 +55,66 @@ type Detector_Tags struct {
 }
 
 var Detector_DataSources_Kubernetes_AuditLogsFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-	}
+	"Enable": ubx.FieldSpec{WireName: "enable"},
+}
 
 var Detector_DataSources_KubernetesFields = ubx.FieldMap{
-		"AuditLogs": ubx.FieldSpec{
-			WireName: "audit_logs",
-			Kind: "object",
-			Fields: Detector_DataSources_Kubernetes_AuditLogsFields,
-		},
-	}
+	"AuditLogs": ubx.FieldSpec{
+		WireName: "audit_logs",
+		Kind:     "object",
+		Fields:   Detector_DataSources_Kubernetes_AuditLogsFields,
+	},
+}
 
 var Detector_DataSources_MalwareProtection_ScanEc2InstanceWithFindingsFields = ubx.FieldMap{
-		"EbsVolumes": ubx.FieldSpec{WireName: "ebs_volumes"},
-	}
+	"EbsVolumes": ubx.FieldSpec{WireName: "ebs_volumes"},
+}
 
 var Detector_DataSources_MalwareProtectionFields = ubx.FieldMap{
-		"ScanEc2InstanceWithFindings": ubx.FieldSpec{
-			WireName: "scan_ec2_instance_with_findings",
-			Kind: "object",
-			Fields: Detector_DataSources_MalwareProtection_ScanEc2InstanceWithFindingsFields,
-		},
-	}
+	"ScanEc2InstanceWithFindings": ubx.FieldSpec{
+		WireName: "scan_ec2_instance_with_findings",
+		Kind:     "object",
+		Fields:   Detector_DataSources_MalwareProtection_ScanEc2InstanceWithFindingsFields,
+	},
+}
 
 var Detector_DataSourcesFields = ubx.FieldMap{
-		"Kubernetes": ubx.FieldSpec{
-			WireName: "kubernetes",
-			Kind: "object",
-			Fields: Detector_DataSources_KubernetesFields,
-		},
-		"MalwareProtection": ubx.FieldSpec{
-			WireName: "malware_protection",
-			Kind: "object",
-			Fields: Detector_DataSources_MalwareProtectionFields,
-		},
-		"S3Logs": ubx.FieldSpec{
-			WireName: "s3_logs",
-			Kind: "object",
-			Fields: Detector_DataSources_Kubernetes_AuditLogsFields,
-		},
-	}
+	"Kubernetes": ubx.FieldSpec{
+		WireName: "kubernetes",
+		Kind:     "object",
+		Fields:   Detector_DataSources_KubernetesFields,
+	},
+	"MalwareProtection": ubx.FieldSpec{
+		WireName: "malware_protection",
+		Kind:     "object",
+		Fields:   Detector_DataSources_MalwareProtectionFields,
+	},
+	"S3Logs": ubx.FieldSpec{
+		WireName: "s3_logs",
+		Kind:     "object",
+		Fields:   Detector_DataSources_Kubernetes_AuditLogsFields,
+	},
+}
 
 var Detector_Features_AdditionalConfigurationFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Detector_FeaturesFields = ubx.FieldMap{
-		"AdditionalConfiguration": ubx.FieldSpec{
-			WireName: "additional_configuration",
-			Kind: "list",
-			Fields: Detector_Features_AdditionalConfigurationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AdditionalConfiguration": ubx.FieldSpec{
+		WireName: "additional_configuration",
+		Kind:     "list",
+		Fields:   Detector_Features_AdditionalConfigurationFields,
+	},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Detector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DetectorConfig struct {
 	// Specifies which GuardDuty data sources (e.g., S3 logs, Kubernetes audit logs, Malware Protection) are enabled for the detector. (AI-inferred)
@@ -149,20 +149,20 @@ var Detector = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataSources": ubx.FieldSpec{
 			WireName: "data_sources",
-			Kind: "object",
-			Fields: Detector_DataSourcesFields,
+			Kind:     "object",
+			Fields:   Detector_DataSourcesFields,
 		},
 		"Enable": ubx.FieldSpec{WireName: "enable"},
 		"Features": ubx.FieldSpec{
 			WireName: "features",
-			Kind: "list",
-			Fields: Detector_FeaturesFields,
+			Kind:     "list",
+			Fields:   Detector_FeaturesFields,
 		},
 		"FindingPublishingFrequency": ubx.FieldSpec{WireName: "finding_publishing_frequency"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Detector_TagsFields,
+			Kind:     "list",
+			Fields:   Detector_TagsFields,
 		},
 	},
 }

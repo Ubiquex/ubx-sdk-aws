@@ -9,22 +9,22 @@ type InterfaceRelationships_InterfaceRelationshipSummaries struct {
 
 type InterfaceRelationshipsConfig struct {
 	InterfaceAssetModelId any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type InterfaceRelationshipsAttrs struct {
-	InterfaceAssetModelId any
+	InterfaceAssetModelId          any
 	InterfaceRelationshipSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults                     any
+	NextToken                      any
 }
 
 var InterfaceRelationships = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_interface_relationships",
 	Fields: ubx.FieldMap{
 		"InterfaceAssetModelId": ubx.FieldSpec{WireName: "interface_asset_model_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

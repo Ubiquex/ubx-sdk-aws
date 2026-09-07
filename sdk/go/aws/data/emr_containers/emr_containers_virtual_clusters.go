@@ -13,68 +13,68 @@ type EmrContainersVirtualClusters_VirtualClusters_ContainerProvider_Info struct 
 }
 
 type EmrContainersVirtualClusters_VirtualClusters_ContainerProvider struct {
-	Id any
+	Id   any
 	Info any
 	Type any
 }
 
 type EmrContainersVirtualClusters_VirtualClusters_SchedulerConfiguration struct {
 	MaxConcurrentJobRuns any
-	MaxInQueueJobRuns any
+	MaxInQueueJobRuns    any
 }
 
 type EmrContainersVirtualClusters_VirtualClusters_SchedulerStatus struct {
 	CurrentConcurrentJobRuns any
-	CurrentInQueueJobRuns any
+	CurrentInQueueJobRuns    any
 }
 
 type EmrContainersVirtualClusters_VirtualClusters struct {
-	Arn any
-	ContainerProvider any
-	CreatedAt any
-	Id any
-	Name any
-	SchedulerConfiguration any
-	SchedulerStatus any
+	Arn                     any
+	ContainerProvider       any
+	CreatedAt               any
+	Id                      any
+	Name                    any
+	SchedulerConfiguration  any
+	SchedulerStatus         any
 	SecurityConfigurationId any
-	SessionEnabled any
-	State any
-	Tags any
+	SessionEnabled          any
+	State                   any
+	Tags                    any
 }
 
 type EmrContainersVirtualClustersConfig struct {
-	ContainerProviderId any
-	ContainerProviderType any
-	CreatedAfter any
-	CreatedBefore any
+	ContainerProviderId      any
+	ContainerProviderType    any
+	CreatedAfter             any
+	CreatedBefore            any
 	EksAccessEntryIntegrated any
-	MaxResults any
-	NextToken any
-	States any
+	MaxResults               any
+	NextToken                any
+	States                   any
 }
 
 type EmrContainersVirtualClustersAttrs struct {
-	ContainerProviderId any
-	ContainerProviderType any
-	CreatedAfter any
-	CreatedBefore any
+	ContainerProviderId      any
+	ContainerProviderType    any
+	CreatedAfter             any
+	CreatedBefore            any
 	EksAccessEntryIntegrated any
-	MaxResults any
-	NextToken any
-	States any
-	VirtualClusters any
+	MaxResults               any
+	NextToken                any
+	States                   any
+	VirtualClusters          any
 }
 
 var EmrContainersVirtualClusters = ubx.DataSourceBinding{
 	WireType: "aws_emr_containers_virtual_clusters",
 	Fields: ubx.FieldMap{
-		"ContainerProviderId": ubx.FieldSpec{WireName: "container_provider_id"},
-		"ContainerProviderType": ubx.FieldSpec{WireName: "container_provider_type"},
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
+		"ContainerProviderId":      ubx.FieldSpec{WireName: "container_provider_id"},
+		"ContainerProviderType":    ubx.FieldSpec{WireName: "container_provider_type"},
+		"CreatedAfter":             ubx.FieldSpec{WireName: "created_after"},
+		"CreatedBefore":            ubx.FieldSpec{WireName: "created_before"},
 		"EksAccessEntryIntegrated": ubx.FieldSpec{WireName: "eks_access_entry_integrated"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"States": ubx.FieldSpec{WireName: "states"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
+		"States":                   ubx.FieldSpec{WireName: "states"},
 	},
 }

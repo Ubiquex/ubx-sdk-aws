@@ -12,24 +12,24 @@ type FileSystem_SynchronizationConfiguration_ImportDataRules struct {
 	Prefix any
 	// Specifies the maximum file size in bytes for files to be included in the synchronization import, so that only files smaller than this value are imported. (AI-inferred)
 	SizeLessThan any
-	Trigger any
+	Trigger      any
 }
 
 type FileSystem_SynchronizationConfiguration struct {
 	ExpirationDataRules any
-	ImportDataRules any
+	ImportDataRules     any
 	LatestVersionNumber any
 }
 
 type FileSystem_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var FileSystem_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FileSystemConfig struct {
 	// Whether the warning about using this S3 bucket for an S3 Files file system has been read and accepted. (AI-inferred)
@@ -83,15 +83,15 @@ var FileSystem = ubx.ResourceBinding{
 	WireType: "aws_s3_files_file_system",
 	Fields: ubx.FieldMap{
 		"AcceptBucketWarning": ubx.FieldSpec{WireName: "accept_bucket_warning"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
+		"ClientToken":         ubx.FieldSpec{WireName: "client_token"},
+		"KmsKeyId":            ubx.FieldSpec{WireName: "kms_key_id"},
+		"Prefix":              ubx.FieldSpec{WireName: "prefix"},
+		"RoleArn":             ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FileSystem_TagsFields,
+			Kind:     "list",
+			Fields:   FileSystem_TagsFields,
 		},
 	},
 }

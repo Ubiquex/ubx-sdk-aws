@@ -4,50 +4,50 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComplianceItems_ComplianceItems_ExecutionSummary struct {
-	ExecutionId any
+	ExecutionId   any
 	ExecutionTime any
 	ExecutionType any
 }
 
 type ComplianceItems_ComplianceItems struct {
-	ComplianceType any
-	Details any
+	ComplianceType   any
+	Details          any
 	ExecutionSummary any
-	Id any
-	ResourceId any
-	ResourceType any
-	Severity any
-	Status any
-	Title any
+	Id               any
+	ResourceId       any
+	ResourceType     any
+	Severity         any
+	Status           any
+	Title            any
 }
 
 type ComplianceItems_Filters struct {
-	Key any
-	Type any
+	Key    any
+	Type   any
 	Values any
 }
 
 var ComplianceItems_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ComplianceItemsConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
-	ResourceIds any
+	Filters       any
+	MaxResults    any
+	NextToken     any
+	ResourceIds   any
 	ResourceTypes any
 }
 
 type ComplianceItemsAttrs struct {
 	ComplianceItems any
-	Filters any
-	MaxResults any
-	NextToken any
-	ResourceIds any
-	ResourceTypes any
+	Filters         any
+	MaxResults      any
+	NextToken       any
+	ResourceIds     any
+	ResourceTypes   any
 }
 
 var ComplianceItems = ubx.DataSourceBinding{
@@ -55,12 +55,12 @@ var ComplianceItems = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ComplianceItems_FiltersFields,
+			Kind:     "list",
+			Fields:   ComplianceItems_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ResourceIds": ubx.FieldSpec{WireName: "resource_ids"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"ResourceIds":   ubx.FieldSpec{WireName: "resource_ids"},
 		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
 	},
 }

@@ -13,7 +13,7 @@ type ServiceProfile_LoRaWan struct {
 	// This field specifies the downlink bucket size for the LoRaWAN service profile, which controls the maximum burst of downlink traffic by setting the size of the token bucket used for downlink rate limiting. (AI-inferred)
 	DlBucketSize any
 	// The downlink data rate (in kbps) for the LoRaWAN service profile, controlling the speed at which devices receive messages from the network server. (AI-inferred)
-	DlRate any
+	DlRate       any
 	DlRatePolicy any
 	// The maximum LoRaWAN data rate (DR) index allowed for wireless transmissions under this service profile. (AI-inferred)
 	DrMax any
@@ -51,9 +51,9 @@ type ServiceProfile_Tags struct {
 }
 
 var ServiceProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceProfileConfig struct {
 	// Name of service profile
@@ -81,8 +81,8 @@ var ServiceProfile = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ServiceProfile_TagsFields,
+			Kind:     "list",
+			Fields:   ServiceProfile_TagsFields,
 		},
 	},
 }

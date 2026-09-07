@@ -22,20 +22,20 @@ type LoggerDefinition_InitialVersion struct {
 }
 
 var LoggerDefinition_InitialVersion_LoggersFields = ubx.FieldMap{
-		"Component": ubx.FieldSpec{WireName: "component"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"Space": ubx.FieldSpec{WireName: "space"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Component": ubx.FieldSpec{WireName: "component"},
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"Level":     ubx.FieldSpec{WireName: "level"},
+	"Space":     ubx.FieldSpec{WireName: "space"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var LoggerDefinition_InitialVersionFields = ubx.FieldMap{
-		"Loggers": ubx.FieldSpec{
-			WireName: "loggers",
-			Kind: "list",
-			Fields: LoggerDefinition_InitialVersion_LoggersFields,
-		},
-	}
+	"Loggers": ubx.FieldSpec{
+		WireName: "loggers",
+		Kind:     "list",
+		Fields:   LoggerDefinition_InitialVersion_LoggersFields,
+	},
+}
 
 type LoggerDefinitionConfig struct {
 	// Specifies the initial version of the logger definition, which consists of a set of loggers that define how Greengrass components write logs to CloudWatch or the local file system. (AI-inferred)
@@ -66,8 +66,8 @@ var LoggerDefinition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InitialVersion": ubx.FieldSpec{
 			WireName: "initial_version",
-			Kind: "object",
-			Fields: LoggerDefinition_InitialVersionFields,
+			Kind:     "object",
+			Fields:   LoggerDefinition_InitialVersionFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

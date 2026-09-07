@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicies_ResourcePolicies struct {
 	LastUpdatedTime any
-	PolicyDocument any
-	PolicyName any
-	PolicyScope any
-	ResourceArn any
-	RevisionId any
+	PolicyDocument  any
+	PolicyName      any
+	PolicyScope     any
+	ResourceArn     any
+	RevisionId      any
 }
 
 type ResourcePoliciesConfig struct {
 	Limit any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
+	NextToken   any
 	PolicyScope any
 	ResourceArn any
 }
@@ -23,17 +23,17 @@ type ResourcePoliciesConfig struct {
 type ResourcePoliciesAttrs struct {
 	Limit any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-	NextToken any
-	PolicyScope any
-	ResourceArn any
+	NextToken        any
+	PolicyScope      any
+	ResourceArn      any
 	ResourcePolicies any
 }
 
 var ResourcePolicies = ubx.DataSourceBinding{
 	WireType: "aws_logs_resource_policies",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"PolicyScope": ubx.FieldSpec{WireName: "policy_scope"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},

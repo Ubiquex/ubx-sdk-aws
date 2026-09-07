@@ -4,13 +4,13 @@ package email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityNotificationAttributes_NotificationAttributes struct {
-	BounceTopic any
-	ComplaintTopic any
-	DeliveryTopic any
-	ForwardingEnabled any
-	HeadersInBounceNotificationsEnabled any
+	BounceTopic                            any
+	ComplaintTopic                         any
+	DeliveryTopic                          any
+	ForwardingEnabled                      any
+	HeadersInBounceNotificationsEnabled    any
 	HeadersInComplaintNotificationsEnabled any
-	HeadersInDeliveryNotificationsEnabled any
+	HeadersInDeliveryNotificationsEnabled  any
 }
 
 type IdentityNotificationAttributesConfig struct {
@@ -18,7 +18,7 @@ type IdentityNotificationAttributesConfig struct {
 }
 
 type IdentityNotificationAttributesAttrs struct {
-	Identities any
+	Identities             any
 	NotificationAttributes any
 }
 

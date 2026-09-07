@@ -9,14 +9,14 @@ type ResourceEvaluationSummary_EvaluationContext struct {
 
 type ResourceEvaluationSummary_EvaluationStatus struct {
 	FailureReason any
-	Status any
+	Status        any
 }
 
 type ResourceEvaluationSummary_ResourceDetails struct {
-	ResourceConfiguration any
+	ResourceConfiguration           any
 	ResourceConfigurationSchemaType any
-	ResourceId any
-	ResourceType any
+	ResourceId                      any
+	ResourceType                    any
 }
 
 type ResourceEvaluationSummaryConfig struct {
@@ -26,13 +26,13 @@ type ResourceEvaluationSummaryConfig struct {
 type ResourceEvaluationSummaryAttrs struct {
 	Compliance any
 	// <p>Use EvaluationContext to group independently initiated proactive resource evaluations. For example, CFN Stack. If you want to check just a resource definition, you do not need to provide evaluation context.</p>
-	EvaluationContext any
-	EvaluationMode any
+	EvaluationContext        any
+	EvaluationMode           any
 	EvaluationStartTimestamp any
 	// <p>Returns status details of an evaluation.</p>
 	EvaluationStatus any
 	// <p>Returns information about the resource being evaluated.</p>
-	ResourceDetails any
+	ResourceDetails      any
 	ResourceEvaluationId any
 }
 

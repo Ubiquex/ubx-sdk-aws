@@ -4,12 +4,12 @@ package auditmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Settings_Settings_DefaultAssessmentReportsDestination struct {
-	Destination any
+	Destination     any
 	DestinationType any
 }
 
 type Settings_Settings_DefaultProcessOwners struct {
-	RoleArn any
+	RoleArn  any
 	RoleType any
 }
 
@@ -18,9 +18,9 @@ type Settings_Settings_DeregistrationPolicy struct {
 }
 
 type Settings_Settings_EvidenceFinderEnablement struct {
-	BackfillStatus any
-	EnablementStatus any
-	Error any
+	BackfillStatus    any
+	EnablementStatus  any
+	Error             any
 	EventDataStoreArn any
 }
 
@@ -29,14 +29,14 @@ type Settings_Settings struct {
 	DefaultAssessmentReportsDestination any
 	// <p>The default s3 bucket where Audit Manager saves the files that you export from evidence finder.</p>
 	DefaultExportDestination any
-	DefaultProcessOwners any
+	DefaultProcessOwners     any
 	// <p>The deregistration policy for the data that's stored in Audit Manager. You can use this attribute to determine how your data is handled when you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister Audit Manager</a>.</p> <p>By default, Audit Manager retains evidence data for two years from the time of its creation. Other Audit Manager resources (including assessments, custom controls, and custom frameworks) remain in Audit Manager indefinitely, and are available if you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register Audit Manager</a> in the future. For more information about data retention, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the <i>Audit Manager User Guide</i>.</p> <important> <p>If you choose to delete all data, this action permanently deletes all evidence data in your account within seven days. It also deletes all of the Audit Manager resources that you created, including assessments, custom controls, and custom frameworks. Your data will not be available if you re-register Audit Manager in the future.</p> </important>
 	DeregistrationPolicy any
 	// <p>The settings object that specifies whether evidence finder is enabled. This object also describes the related event data store, and the backfill status for populating the event data store with evidence data.</p>
 	EvidenceFinderEnablement any
-	IsAwsOrgEnabled any
-	KmsKey any
-	SnsTopic any
+	IsAwsOrgEnabled          any
+	KmsKey                   any
+	SnsTopic                 any
 }
 
 type SettingsConfig struct {

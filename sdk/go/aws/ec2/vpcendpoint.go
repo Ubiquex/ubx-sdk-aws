@@ -15,21 +15,21 @@ type Vpcendpoint_DnsOptions struct {
 }
 
 type Vpcendpoint_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Vpcendpoint_DnsOptionsFields = ubx.FieldMap{
-		"DnsRecordIpType": ubx.FieldSpec{WireName: "dns_record_ip_type"},
-		"PrivateDnsOnlyForInboundResolverEndpoint": ubx.FieldSpec{WireName: "private_dns_only_for_inbound_resolver_endpoint"},
-		"PrivateDnsPreference": ubx.FieldSpec{WireName: "private_dns_preference"},
-		"PrivateDnsSpecifiedDomains": ubx.FieldSpec{WireName: "private_dns_specified_domains"},
-	}
+	"DnsRecordIpType":                          ubx.FieldSpec{WireName: "dns_record_ip_type"},
+	"PrivateDnsOnlyForInboundResolverEndpoint": ubx.FieldSpec{WireName: "private_dns_only_for_inbound_resolver_endpoint"},
+	"PrivateDnsPreference":                     ubx.FieldSpec{WireName: "private_dns_preference"},
+	"PrivateDnsSpecifiedDomains":               ubx.FieldSpec{WireName: "private_dns_specified_domains"},
+}
 
 var Vpcendpoint_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type VpcendpointConfig struct {
 	// Describes the DNS options for an endpoint.
@@ -106,25 +106,25 @@ var Vpcendpoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DnsOptions": ubx.FieldSpec{
 			WireName: "dns_options",
-			Kind: "object",
-			Fields: Vpcendpoint_DnsOptionsFields,
+			Kind:     "object",
+			Fields:   Vpcendpoint_DnsOptionsFields,
 		},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PrivateDnsEnabled": ubx.FieldSpec{WireName: "private_dns_enabled"},
+		"IpAddressType":            ubx.FieldSpec{WireName: "ip_address_type"},
+		"PolicyDocument":           ubx.FieldSpec{WireName: "policy_document"},
+		"PrivateDnsEnabled":        ubx.FieldSpec{WireName: "private_dns_enabled"},
 		"ResourceConfigurationArn": ubx.FieldSpec{WireName: "resource_configuration_arn"},
-		"RouteTableIds": ubx.FieldSpec{WireName: "route_table_ids"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceNetworkArn": ubx.FieldSpec{WireName: "service_network_arn"},
-		"ServiceRegion": ubx.FieldSpec{WireName: "service_region"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"RouteTableIds":            ubx.FieldSpec{WireName: "route_table_ids"},
+		"SecurityGroupIds":         ubx.FieldSpec{WireName: "security_group_ids"},
+		"ServiceName":              ubx.FieldSpec{WireName: "service_name"},
+		"ServiceNetworkArn":        ubx.FieldSpec{WireName: "service_network_arn"},
+		"ServiceRegion":            ubx.FieldSpec{WireName: "service_region"},
+		"SubnetIds":                ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Vpcendpoint_TagsFields,
+			Kind:     "list",
+			Fields:   Vpcendpoint_TagsFields,
 		},
 		"VpcEndpointType": ubx.FieldSpec{WireName: "vpc_endpoint_type"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":           ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

@@ -4,25 +4,25 @@ package observabilityadmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3TableIntegrations_IntegrationSummaries struct {
-	Arn any
+	Arn    any
 	Status any
 }
 
 type S3TableIntegrationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type S3TableIntegrationsAttrs struct {
 	IntegrationSummaries any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var S3TableIntegrations = ubx.DataSourceBinding{
 	WireType: "aws_observabilityadmin_s3_table_integrations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

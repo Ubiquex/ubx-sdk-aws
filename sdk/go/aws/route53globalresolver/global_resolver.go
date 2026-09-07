@@ -4,14 +4,14 @@ package route53globalresolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalResolver_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var GlobalResolver_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GlobalResolverConfig struct {
 	// A unique string that identifies the request used to create this global resolver, ensuring idempotency. (AI-inferred)
@@ -66,16 +66,16 @@ type GlobalResolverAttrs struct {
 var GlobalResolver = ubx.ResourceBinding{
 	WireType: "aws_route53_global_resolver_global_resolver",
 	Fields: ubx.FieldMap{
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ClientToken":         ubx.FieldSpec{WireName: "client_token"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"IpAddressType":       ubx.FieldSpec{WireName: "ip_address_type"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"ObservabilityRegion": ubx.FieldSpec{WireName: "observability_region"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
+		"Regions":             ubx.FieldSpec{WireName: "regions"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GlobalResolver_TagsFields,
+			Kind:     "list",
+			Fields:   GlobalResolver_TagsFields,
 		},
 	},
 }

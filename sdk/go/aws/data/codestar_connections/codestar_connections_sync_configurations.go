@@ -4,40 +4,40 @@ package codestar_connections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CodestarConnectionsSyncConfigurations_SyncConfigurations struct {
-	Branch any
-	ConfigFile any
-	OwnerId any
-	ProviderType any
+	Branch                  any
+	ConfigFile              any
+	OwnerId                 any
+	ProviderType            any
 	PublishDeploymentStatus any
-	RepositoryLinkId any
-	RepositoryName any
-	ResourceName any
-	RoleArn any
-	SyncType any
+	RepositoryLinkId        any
+	RepositoryName          any
+	ResourceName            any
+	RoleArn                 any
+	SyncType                any
 	TriggerResourceUpdateOn any
 }
 
 type CodestarConnectionsSyncConfigurationsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 	RepositoryLinkId any
-	SyncType any
+	SyncType         any
 }
 
 type CodestarConnectionsSyncConfigurationsAttrs struct {
-	MaxResults any
-	NextToken any
-	RepositoryLinkId any
+	MaxResults         any
+	NextToken          any
+	RepositoryLinkId   any
 	SyncConfigurations any
-	SyncType any
+	SyncType           any
 }
 
 var CodestarConnectionsSyncConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_codestar_connections_sync_configurations",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 		"RepositoryLinkId": ubx.FieldSpec{WireName: "repository_link_id"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+		"SyncType":         ubx.FieldSpec{WireName: "sync_type"},
 	},
 }

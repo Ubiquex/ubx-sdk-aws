@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiPricingProducts_Filters struct {
 	Field any
-	Type any
+	Type  any
 	Value any
 }
 
 var ApiPricingProducts_FiltersFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ApiPricingProductsConfig struct {
-	Filters any
+	Filters       any
 	FormatVersion any
-	MaxResults any
-	NextToken any
-	ServiceCode any
+	MaxResults    any
+	NextToken     any
+	ServiceCode   any
 }
 
 type ApiPricingProductsAttrs struct {
-	Filters any
+	Filters       any
 	FormatVersion any
-	MaxResults any
-	NextToken any
-	PriceList any
-	ServiceCode any
+	MaxResults    any
+	NextToken     any
+	PriceList     any
+	ServiceCode   any
 }
 
 var ApiPricingProducts = ubx.DataSourceBinding{
@@ -37,12 +37,12 @@ var ApiPricingProducts = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ApiPricingProducts_FiltersFields,
+			Kind:     "list",
+			Fields:   ApiPricingProducts_FiltersFields,
 		},
 		"FormatVersion": ubx.FieldSpec{WireName: "format_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceCode": ubx.FieldSpec{WireName: "service_code"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"ServiceCode":   ubx.FieldSpec{WireName: "service_code"},
 	},
 }

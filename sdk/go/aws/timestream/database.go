@@ -11,9 +11,9 @@ type Database_Tags struct {
 }
 
 var Database_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatabaseConfig struct {
 	// The name for the database. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the database name.
@@ -39,11 +39,11 @@ var Database = ubx.ResourceBinding{
 	WireType: "aws_timestream_database",
 	Fields: ubx.FieldMap{
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
+		"KmsKeyId":     ubx.FieldSpec{WireName: "kms_key_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Database_TagsFields,
+			Kind:     "list",
+			Fields:   Database_TagsFields,
 		},
 	},
 }

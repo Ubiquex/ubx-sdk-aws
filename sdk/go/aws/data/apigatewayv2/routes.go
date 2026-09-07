@@ -8,39 +8,39 @@ type Routes_Items_RequestParameters struct {
 }
 
 type Routes_Items struct {
-	ApiGatewayManaged any
-	ApiKeyRequired any
-	AuthorizationScopes any
-	AuthorizationType any
-	AuthorizerId any
-	ModelSelectionExpression any
-	OperationName any
-	RequestModels any
-	RequestParameters any
-	RouteId any
-	RouteKey any
+	ApiGatewayManaged                any
+	ApiKeyRequired                   any
+	AuthorizationScopes              any
+	AuthorizationType                any
+	AuthorizerId                     any
+	ModelSelectionExpression         any
+	OperationName                    any
+	RequestModels                    any
+	RequestParameters                any
+	RouteId                          any
+	RouteKey                         any
 	RouteResponseSelectionExpression any
-	Target any
+	Target                           any
 }
 
 type RoutesConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RoutesAttrs struct {
-	ApiId any
-	Items any
+	ApiId      any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Routes = ubx.DataSourceBinding{
 	WireType: "aws_apigatewayv2_routes",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

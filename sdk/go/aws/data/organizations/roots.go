@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Roots_Roots_PolicyTypes struct {
 	Status any
-	Type any
+	Type   any
 }
 
 type Roots_Roots struct {
-	Arn any
-	Id any
-	Name any
+	Arn         any
+	Id          any
+	Name        any
 	PolicyTypes any
 }
 
 type RootsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type RootsAttrs struct {
 	MaxResults any
-	NextToken any
-	Roots any
+	NextToken  any
+	Roots      any
 }
 
 var Roots = ubx.DataSourceBinding{
 	WireType: "aws_organizations_roots",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

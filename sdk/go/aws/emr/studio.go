@@ -11,9 +11,9 @@ type Studio_Tags struct {
 }
 
 var Studio_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StudioConfig struct {
 	// Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM. Amazon EMR Studio currently only supports SSO authentication.
@@ -98,26 +98,26 @@ type StudioAttrs struct {
 var Studio = ubx.ResourceBinding{
 	WireType: "aws_emr_studio",
 	Fields: ubx.FieldMap{
-		"AuthMode": ubx.FieldSpec{WireName: "auth_mode"},
-		"DefaultS3Location": ubx.FieldSpec{WireName: "default_s3_location"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
-		"EngineSecurityGroupId": ubx.FieldSpec{WireName: "engine_security_group_id"},
-		"IdcInstanceArn": ubx.FieldSpec{WireName: "idc_instance_arn"},
-		"IdcUserAssignment": ubx.FieldSpec{WireName: "idc_user_assignment"},
-		"IdpAuthUrl": ubx.FieldSpec{WireName: "idp_auth_url"},
+		"AuthMode":                   ubx.FieldSpec{WireName: "auth_mode"},
+		"DefaultS3Location":          ubx.FieldSpec{WireName: "default_s3_location"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
+		"EncryptionKeyArn":           ubx.FieldSpec{WireName: "encryption_key_arn"},
+		"EngineSecurityGroupId":      ubx.FieldSpec{WireName: "engine_security_group_id"},
+		"IdcInstanceArn":             ubx.FieldSpec{WireName: "idc_instance_arn"},
+		"IdcUserAssignment":          ubx.FieldSpec{WireName: "idc_user_assignment"},
+		"IdpAuthUrl":                 ubx.FieldSpec{WireName: "idp_auth_url"},
 		"IdpRelayStateParameterName": ubx.FieldSpec{WireName: "idp_relay_state_parameter_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceRole": ubx.FieldSpec{WireName: "service_role"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
+		"ServiceRole":                ubx.FieldSpec{WireName: "service_role"},
+		"SubnetIds":                  ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Studio_TagsFields,
+			Kind:     "list",
+			Fields:   Studio_TagsFields,
 		},
 		"TrustedIdentityPropagationEnabled": ubx.FieldSpec{WireName: "trusted_identity_propagation_enabled"},
-		"UserRole": ubx.FieldSpec{WireName: "user_role"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-		"WorkspaceSecurityGroupId": ubx.FieldSpec{WireName: "workspace_security_group_id"},
+		"UserRole":                          ubx.FieldSpec{WireName: "user_role"},
+		"VpcId":                             ubx.FieldSpec{WireName: "vpc_id"},
+		"WorkspaceSecurityGroupId":          ubx.FieldSpec{WireName: "workspace_security_group_id"},
 	},
 }

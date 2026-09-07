@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomVerificationEmailTemplate_Tags struct {
 	// The key part of a tag attached to the Amazon SES custom verification email template, used to categorize or identify the template. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var CustomVerificationEmailTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomVerificationEmailTemplateConfig struct {
 	// The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.
@@ -52,15 +52,15 @@ var CustomVerificationEmailTemplate = ubx.ResourceBinding{
 	WireType: "aws_ses_custom_verification_email_template",
 	Fields: ubx.FieldMap{
 		"FailureRedirectionUrl": ubx.FieldSpec{WireName: "failure_redirection_url"},
-		"FromEmailAddress": ubx.FieldSpec{WireName: "from_email_address"},
+		"FromEmailAddress":      ubx.FieldSpec{WireName: "from_email_address"},
 		"SuccessRedirectionUrl": ubx.FieldSpec{WireName: "success_redirection_url"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CustomVerificationEmailTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   CustomVerificationEmailTemplate_TagsFields,
 		},
 		"TemplateContent": ubx.FieldSpec{WireName: "template_content"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"TemplateName":    ubx.FieldSpec{WireName: "template_name"},
 		"TemplateSubject": ubx.FieldSpec{WireName: "template_subject"},
 	},
 }

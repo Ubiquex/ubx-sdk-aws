@@ -4,7 +4,7 @@ package mail_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerMembersOfAddressList_Addresses struct {
-	Address any
+	Address          any
 	CreatedTimestamp any
 }
 
@@ -13,24 +13,24 @@ type MailManagerMembersOfAddressList_Filter struct {
 }
 
 var MailManagerMembersOfAddressList_FilterFields = ubx.FieldMap{
-		"AddressPrefix": ubx.FieldSpec{WireName: "address_prefix"},
-	}
+	"AddressPrefix": ubx.FieldSpec{WireName: "address_prefix"},
+}
 
 type MailManagerMembersOfAddressListConfig struct {
 	AddressListId any
 	// <p>Filtering options for ListMembersOfAddressList operation.</p>
-	Filter any
+	Filter    any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type MailManagerMembersOfAddressListAttrs struct {
 	AddressListId any
-	Addresses any
+	Addresses     any
 	// <p>Filtering options for ListMembersOfAddressList operation.</p>
-	Filter any
+	Filter    any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 var MailManagerMembersOfAddressList = ubx.DataSourceBinding{
@@ -39,10 +39,10 @@ var MailManagerMembersOfAddressList = ubx.DataSourceBinding{
 		"AddressListId": ubx.FieldSpec{WireName: "address_list_id"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: MailManagerMembersOfAddressList_FilterFields,
+			Kind:     "object",
+			Fields:   MailManagerMembersOfAddressList_FilterFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

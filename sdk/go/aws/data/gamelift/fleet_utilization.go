@@ -4,33 +4,33 @@ package gamelift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FleetUtilization_FleetUtilization struct {
-	ActiveGameSessionCount any
-	ActiveServerProcessCount any
+	ActiveGameSessionCount    any
+	ActiveServerProcessCount  any
 	CurrentPlayerSessionCount any
-	FleetArn any
-	FleetId any
-	Location any
+	FleetArn                  any
+	FleetId                   any
+	Location                  any
 	MaximumPlayerSessionCount any
 }
 
 type FleetUtilizationConfig struct {
-	FleetIds any
-	Limit any
+	FleetIds  any
+	Limit     any
 	NextToken any
 }
 
 type FleetUtilizationAttrs struct {
-	FleetIds any
+	FleetIds         any
 	FleetUtilization any
-	Limit any
-	NextToken any
+	Limit            any
+	NextToken        any
 }
 
 var FleetUtilization = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_fleet_utilization",
 	Fields: ubx.FieldMap{
-		"FleetIds": ubx.FieldSpec{WireName: "fleet_ids"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"FleetIds":  ubx.FieldSpec{WireName: "fleet_ids"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

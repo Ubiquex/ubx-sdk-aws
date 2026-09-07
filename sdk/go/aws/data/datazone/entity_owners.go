@@ -13,24 +13,24 @@ type EntityOwners_Owners_User struct {
 
 type EntityOwners_Owners struct {
 	Group any
-	User any
+	User  any
 }
 
 type EntityOwnersConfig struct {
 	DomainIdentifier any
 	EntityIdentifier any
-	EntityType any
-	MaxResults any
-	NextToken any
+	EntityType       any
+	MaxResults       any
+	NextToken        any
 }
 
 type EntityOwnersAttrs struct {
 	DomainIdentifier any
 	EntityIdentifier any
-	EntityType any
-	MaxResults any
-	NextToken any
-	Owners any
+	EntityType       any
+	MaxResults       any
+	NextToken        any
+	Owners           any
 }
 
 var EntityOwners = ubx.DataSourceBinding{
@@ -38,8 +38,8 @@ var EntityOwners = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
 		"EntityIdentifier": ubx.FieldSpec{WireName: "entity_identifier"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"EntityType":       ubx.FieldSpec{WireName: "entity_type"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

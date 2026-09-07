@@ -22,26 +22,26 @@ type TargetGroup_Targets struct {
 	// The identifier of the target (e.g., EC2 instance ID, IP address, or Lambda function ARN) to register with the target group. (AI-inferred)
 	Id any
 	// The port on which this target receives traffic, which overrides the target group's default port for that specific target when specified. (AI-inferred)
-	Port any
+	Port         any
 	QuicServerId any
 }
 
 var TargetGroup_MatcherFields = ubx.FieldMap{
-		"GrpcCode": ubx.FieldSpec{WireName: "grpc_code"},
-		"HttpCode": ubx.FieldSpec{WireName: "http_code"},
-	}
+	"GrpcCode": ubx.FieldSpec{WireName: "grpc_code"},
+	"HttpCode": ubx.FieldSpec{WireName: "http_code"},
+}
 
 var TargetGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TargetGroup_TargetsFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"QuicServerId": ubx.FieldSpec{WireName: "quic_server_id"},
-	}
+	"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+	"Id":               ubx.FieldSpec{WireName: "id"},
+	"Port":             ubx.FieldSpec{WireName: "port"},
+	"QuicServerId":     ubx.FieldSpec{WireName: "quic_server_id"},
+}
 
 type TargetGroupConfig struct {
 	// Indicates whether health checks are enabled. If the target type is lambda, health checks are disabled by default but can be enabled. If the target type is instance, ip, or alb, health checks are always enabled and cannot be disabled.
@@ -140,41 +140,41 @@ type TargetGroupAttrs struct {
 var TargetGroup = ubx.ResourceBinding{
 	WireType: "aws_elastic_load_balancing_v2_target_group",
 	Fields: ubx.FieldMap{
-		"HealthCheckEnabled": ubx.FieldSpec{WireName: "health_check_enabled"},
+		"HealthCheckEnabled":         ubx.FieldSpec{WireName: "health_check_enabled"},
 		"HealthCheckIntervalSeconds": ubx.FieldSpec{WireName: "health_check_interval_seconds"},
-		"HealthCheckPath": ubx.FieldSpec{WireName: "health_check_path"},
-		"HealthCheckPort": ubx.FieldSpec{WireName: "health_check_port"},
-		"HealthCheckProtocol": ubx.FieldSpec{WireName: "health_check_protocol"},
-		"HealthCheckTimeoutSeconds": ubx.FieldSpec{WireName: "health_check_timeout_seconds"},
-		"HealthyThresholdCount": ubx.FieldSpec{WireName: "healthy_threshold_count"},
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
+		"HealthCheckPath":            ubx.FieldSpec{WireName: "health_check_path"},
+		"HealthCheckPort":            ubx.FieldSpec{WireName: "health_check_port"},
+		"HealthCheckProtocol":        ubx.FieldSpec{WireName: "health_check_protocol"},
+		"HealthCheckTimeoutSeconds":  ubx.FieldSpec{WireName: "health_check_timeout_seconds"},
+		"HealthyThresholdCount":      ubx.FieldSpec{WireName: "healthy_threshold_count"},
+		"IpAddressType":              ubx.FieldSpec{WireName: "ip_address_type"},
 		"Matcher": ubx.FieldSpec{
 			WireName: "matcher",
-			Kind: "object",
-			Fields: TargetGroup_MatcherFields,
+			Kind:     "object",
+			Fields:   TargetGroup_MatcherFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Port":            ubx.FieldSpec{WireName: "port"},
+		"Protocol":        ubx.FieldSpec{WireName: "protocol"},
 		"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TargetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   TargetGroup_TagsFields,
 		},
 		"TargetControlPort": ubx.FieldSpec{WireName: "target_control_port"},
 		"TargetGroupAttributes": ubx.FieldSpec{
 			WireName: "target_group_attributes",
-			Kind: "list",
-			Fields: TargetGroup_TagsFields,
+			Kind:     "list",
+			Fields:   TargetGroup_TagsFields,
 		},
 		"TargetType": ubx.FieldSpec{WireName: "target_type"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: TargetGroup_TargetsFields,
+			Kind:     "list",
+			Fields:   TargetGroup_TargetsFields,
 		},
 		"UnhealthyThresholdCount": ubx.FieldSpec{WireName: "unhealthy_threshold_count"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
+		"VpcId":                   ubx.FieldSpec{WireName: "vpc_id"},
 	},
 }

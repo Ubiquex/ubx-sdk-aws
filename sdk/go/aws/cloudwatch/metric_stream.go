@@ -26,33 +26,33 @@ type MetricStream_StatisticsConfigurations struct {
 
 type MetricStream_Tags struct {
 	// The key of a tag attached to the CloudWatch metric stream, used for identifying and organizing the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var MetricStream_ExcludeFiltersFields = ubx.FieldMap{
-		"MetricNames": ubx.FieldSpec{WireName: "metric_names"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"MetricNames": ubx.FieldSpec{WireName: "metric_names"},
+	"Namespace":   ubx.FieldSpec{WireName: "namespace"},
+}
 
 var MetricStream_StatisticsConfigurations_IncludeMetricsFields = ubx.FieldMap{
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+}
 
 var MetricStream_StatisticsConfigurationsFields = ubx.FieldMap{
-		"AdditionalStatistics": ubx.FieldSpec{WireName: "additional_statistics"},
-		"IncludeMetrics": ubx.FieldSpec{
-			WireName: "include_metrics",
-			Kind: "list",
-			Fields: MetricStream_StatisticsConfigurations_IncludeMetricsFields,
-		},
-	}
+	"AdditionalStatistics": ubx.FieldSpec{WireName: "additional_statistics"},
+	"IncludeMetrics": ubx.FieldSpec{
+		WireName: "include_metrics",
+		Kind:     "list",
+		Fields:   MetricStream_StatisticsConfigurations_IncludeMetricsFields,
+	},
+}
 
 var MetricStream_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MetricStreamConfig struct {
 	// Define which metrics will be not streamed. Metrics matched by multiple instances of MetricStreamFilter are joined with an OR operation by default. If both IncludeFilters and ExcludeFilters are omitted, all metrics in the account will be streamed. IncludeFilters and ExcludeFilters are mutually exclusive. Default to null.
@@ -109,28 +109,28 @@ var MetricStream = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ExcludeFilters": ubx.FieldSpec{
 			WireName: "exclude_filters",
-			Kind: "list",
-			Fields: MetricStream_ExcludeFiltersFields,
+			Kind:     "list",
+			Fields:   MetricStream_ExcludeFiltersFields,
 		},
 		"FirehoseArn": ubx.FieldSpec{WireName: "firehose_arn"},
 		"IncludeFilters": ubx.FieldSpec{
 			WireName: "include_filters",
-			Kind: "list",
-			Fields: MetricStream_ExcludeFiltersFields,
+			Kind:     "list",
+			Fields:   MetricStream_ExcludeFiltersFields,
 		},
 		"IncludeLinkedAccountsMetrics": ubx.FieldSpec{WireName: "include_linked_accounts_metrics"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":                         ubx.FieldSpec{WireName: "name"},
+		"OutputFormat":                 ubx.FieldSpec{WireName: "output_format"},
+		"RoleArn":                      ubx.FieldSpec{WireName: "role_arn"},
 		"StatisticsConfigurations": ubx.FieldSpec{
 			WireName: "statistics_configurations",
-			Kind: "list",
-			Fields: MetricStream_StatisticsConfigurationsFields,
+			Kind:     "list",
+			Fields:   MetricStream_StatisticsConfigurationsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: MetricStream_TagsFields,
+			Kind:     "list",
+			Fields:   MetricStream_TagsFields,
 		},
 	},
 }

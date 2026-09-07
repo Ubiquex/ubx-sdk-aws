@@ -20,21 +20,21 @@ type Input_Tags struct {
 }
 
 var Input_InputDefinition_AttributesFields = ubx.FieldMap{
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-	}
+	"JsonPath": ubx.FieldSpec{WireName: "json_path"},
+}
 
 var Input_InputDefinitionFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: Input_InputDefinition_AttributesFields,
-		},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   Input_InputDefinition_AttributesFields,
+	},
+}
 
 var Input_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InputConfig struct {
 	// The definition of the input.
@@ -63,15 +63,15 @@ var Input = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InputDefinition": ubx.FieldSpec{
 			WireName: "input_definition",
-			Kind: "object",
-			Fields: Input_InputDefinitionFields,
+			Kind:     "object",
+			Fields:   Input_InputDefinitionFields,
 		},
 		"InputDescription": ubx.FieldSpec{WireName: "input_description"},
-		"InputName": ubx.FieldSpec{WireName: "input_name"},
+		"InputName":        ubx.FieldSpec{WireName: "input_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Input_TagsFields,
+			Kind:     "list",
+			Fields:   Input_TagsFields,
 		},
 	},
 }

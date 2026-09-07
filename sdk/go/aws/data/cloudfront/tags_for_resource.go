@@ -4,7 +4,7 @@ package cloudfront
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 

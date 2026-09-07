@@ -4,37 +4,37 @@ package ds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Settings_SettingEntries struct {
-	AllowedValues any
-	AppliedValue any
-	DataType any
+	AllowedValues         any
+	AppliedValue          any
+	DataType              any
 	LastRequestedDateTime any
-	LastUpdatedDateTime any
-	Name any
+	LastUpdatedDateTime   any
+	Name                  any
 	RequestDetailedStatus any
-	RequestStatus any
-	RequestStatusMessage any
-	RequestedValue any
-	Type any
+	RequestStatus         any
+	RequestStatusMessage  any
+	RequestedValue        any
+	Type                  any
 }
 
 type SettingsConfig struct {
 	DirectoryId any
-	NextToken any
-	Status any
+	NextToken   any
+	Status      any
 }
 
 type SettingsAttrs struct {
-	DirectoryId any
-	NextToken any
+	DirectoryId    any
+	NextToken      any
 	SettingEntries any
-	Status any
+	Status         any
 }
 
 var Settings = ubx.DataSourceBinding{
 	WireType: "aws_ds_settings",
 	Fields: ubx.FieldMap{
 		"DirectoryId": ubx.FieldSpec{WireName: "directory_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 	},
 }

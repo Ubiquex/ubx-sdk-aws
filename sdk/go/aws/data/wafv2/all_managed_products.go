@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AllManagedProducts_ManagedProducts struct {
 	IsAdvancedManagedRuleSet any
-	IsVersioningSupported any
-	ManagedRuleSetName any
-	ProductDescription any
-	ProductId any
-	ProductLink any
-	ProductTitle any
-	SnsTopicArn any
-	VendorName any
+	IsVersioningSupported    any
+	ManagedRuleSetName       any
+	ProductDescription       any
+	ProductId                any
+	ProductLink              any
+	ProductTitle             any
+	SnsTopicArn              any
+	VendorName               any
 }
 
 type AllManagedProductsConfig struct {
@@ -21,7 +21,7 @@ type AllManagedProductsConfig struct {
 
 type AllManagedProductsAttrs struct {
 	ManagedProducts any
-	Scope any
+	Scope           any
 }
 
 var AllManagedProducts = ubx.DataSourceBinding{

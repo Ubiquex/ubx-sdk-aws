@@ -5,56 +5,56 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerArtifacts_ArtifactSummaries_Source_SourceTypes struct {
 	SourceIdType any
-	Value any
+	Value        any
 }
 
 type ApiSagemakerArtifacts_ArtifactSummaries_Source struct {
 	SourceTypes any
-	SourceUri any
+	SourceUri   any
 }
 
 type ApiSagemakerArtifacts_ArtifactSummaries struct {
-	ArtifactArn any
-	ArtifactName any
-	ArtifactType any
-	CreationTime any
+	ArtifactArn      any
+	ArtifactName     any
+	ArtifactType     any
+	CreationTime     any
 	LastModifiedTime any
-	Source any
+	Source           any
 }
 
 type ApiSagemakerArtifactsConfig struct {
-	ArtifactType any
-	CreatedAfter any
+	ArtifactType  any
+	CreatedAfter  any
 	CreatedBefore any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	SourceUri any
+	MaxResults    any
+	NextToken     any
+	SortBy        any
+	SortOrder     any
+	SourceUri     any
 }
 
 type ApiSagemakerArtifactsAttrs struct {
 	ArtifactSummaries any
-	ArtifactType any
-	CreatedAfter any
-	CreatedBefore any
-	MaxResults any
-	NextToken any
-	SortBy any
-	SortOrder any
-	SourceUri any
+	ArtifactType      any
+	CreatedAfter      any
+	CreatedBefore     any
+	MaxResults        any
+	NextToken         any
+	SortBy            any
+	SortOrder         any
+	SourceUri         any
 }
 
 var ApiSagemakerArtifacts = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_artifacts",
 	Fields: ubx.FieldMap{
-		"ArtifactType": ubx.FieldSpec{WireName: "artifact_type"},
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+		"ArtifactType":  ubx.FieldSpec{WireName: "artifact_type"},
+		"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
 		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"SortBy":        ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":     ubx.FieldSpec{WireName: "sort_order"},
+		"SourceUri":     ubx.FieldSpec{WireName: "source_uri"},
 	},
 }

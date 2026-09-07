@@ -4,31 +4,31 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployments_Deployments struct {
-	CreatedAt any
-	DeploymentArn any
-	DeploymentId any
+	CreatedAt      any
+	DeploymentArn  any
+	DeploymentId   any
 	DeploymentType any
-	GroupArn any
+	GroupArn       any
 }
 
 type DeploymentsConfig struct {
-	GroupId any
+	GroupId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DeploymentsAttrs struct {
 	Deployments any
-	GroupId any
-	MaxResults any
-	NextToken any
+	GroupId     any
+	MaxResults  any
+	NextToken   any
 }
 
 var Deployments = ubx.DataSourceBinding{
 	WireType: "aws_greengrass_deployments",
 	Fields: ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"GroupId":    ubx.FieldSpec{WireName: "group_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,17 +4,17 @@ package api_iotwireless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotwirelessMetrics_SummaryMetricQueries_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ApiIotwirelessMetrics_SummaryMetricQueries struct {
 	AggregationPeriod any
-	Dimensions any
-	EndTimestamp any
-	MetricName any
-	QueryId any
-	StartTimestamp any
+	Dimensions        any
+	EndTimestamp      any
+	MetricName        any
+	QueryId           any
+	StartTimestamp    any
 }
 
 type ApiIotwirelessMetrics_SummaryMetricQueryResults_Values struct {
@@ -28,42 +28,42 @@ type ApiIotwirelessMetrics_SummaryMetricQueryResults_Values struct {
 
 type ApiIotwirelessMetrics_SummaryMetricQueryResults struct {
 	AggregationPeriod any
-	Dimensions any
-	EndTimestamp any
-	Error any
-	MetricName any
-	QueryId any
-	QueryStatus any
-	StartTimestamp any
-	Timestamps any
-	Unit any
-	Values any
+	Dimensions        any
+	EndTimestamp      any
+	Error             any
+	MetricName        any
+	QueryId           any
+	QueryStatus       any
+	StartTimestamp    any
+	Timestamps        any
+	Unit              any
+	Values            any
 }
 
 var ApiIotwirelessMetrics_SummaryMetricQueries_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ApiIotwirelessMetrics_SummaryMetricQueriesFields = ubx.FieldMap{
-		"AggregationPeriod": ubx.FieldSpec{WireName: "aggregation_period"},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: ApiIotwirelessMetrics_SummaryMetricQueries_DimensionsFields,
-		},
-		"EndTimestamp": ubx.FieldSpec{WireName: "end_timestamp"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
-		"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
-	}
+	"AggregationPeriod": ubx.FieldSpec{WireName: "aggregation_period"},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   ApiIotwirelessMetrics_SummaryMetricQueries_DimensionsFields,
+	},
+	"EndTimestamp":   ubx.FieldSpec{WireName: "end_timestamp"},
+	"MetricName":     ubx.FieldSpec{WireName: "metric_name"},
+	"QueryId":        ubx.FieldSpec{WireName: "query_id"},
+	"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
+}
 
 type ApiIotwirelessMetricsConfig struct {
 	SummaryMetricQueries any
 }
 
 type ApiIotwirelessMetricsAttrs struct {
-	SummaryMetricQueries any
+	SummaryMetricQueries      any
 	SummaryMetricQueryResults any
 }
 
@@ -72,8 +72,8 @@ var ApiIotwirelessMetrics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"SummaryMetricQueries": ubx.FieldSpec{
 			WireName: "summary_metric_queries",
-			Kind: "list",
-			Fields: ApiIotwirelessMetrics_SummaryMetricQueriesFields,
+			Kind:     "list",
+			Fields:   ApiIotwirelessMetrics_SummaryMetricQueriesFields,
 		},
 	},
 }

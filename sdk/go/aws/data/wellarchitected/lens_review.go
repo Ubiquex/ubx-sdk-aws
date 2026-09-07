@@ -4,7 +4,7 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LensReview_LensReview_JiraConfiguration_SelectedPillars struct {
-	PillarId any
+	PillarId            any
 	SelectedQuestionIds any
 }
 
@@ -13,15 +13,15 @@ type LensReview_LensReview_JiraConfiguration struct {
 }
 
 type LensReview_LensReview_PillarReviewSummaries struct {
-	Notes any
-	PillarId any
-	PillarName any
+	Notes                 any
+	PillarId              any
+	PillarName            any
 	PrioritizedRiskCounts any
-	RiskCounts any
+	RiskCounts            any
 }
 
 type LensReview_LensReview_Profiles struct {
-	ProfileArn any
+	ProfileArn     any
 	ProfileVersion any
 }
 
@@ -30,10 +30,10 @@ type LensReview_LensReview struct {
 	JiraConfiguration any
 	// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
 	LensAlias any
-	LensArn any
+	LensArn   any
 	// <p>The full name of the lens.</p>
-	LensName any
-	LensStatus any
+	LensName    any
+	LensStatus  any
 	LensVersion any
 	// <p>The token to use to retrieve the next set of results.</p>
 	NextToken any
@@ -43,10 +43,10 @@ type LensReview_LensReview struct {
 	PillarReviewSummaries any
 	// <p>A map from risk names to the count of how many questions have that rating.</p>
 	PrioritizedRiskCounts any
-	Profiles any
+	Profiles              any
 	// <p>A map from risk names to the count of how many questions have that rating.</p>
 	RiskCounts any
-	UpdatedAt any
+	UpdatedAt  any
 }
 
 type LensReviewConfig struct {
@@ -72,8 +72,8 @@ type LensReviewAttrs struct {
 var LensReview = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_lens_review",
 	Fields: ubx.FieldMap{
-		"LensAlias": ubx.FieldSpec{WireName: "lens_alias"},
+		"LensAlias":       ubx.FieldSpec{WireName: "lens_alias"},
 		"MilestoneNumber": ubx.FieldSpec{WireName: "milestone_number"},
-		"WorkloadId": ubx.FieldSpec{WireName: "workload_id"},
+		"WorkloadId":      ubx.FieldSpec{WireName: "workload_id"},
 	},
 }

@@ -14,16 +14,16 @@ type Aiprompt_TemplateConfiguration struct {
 }
 
 var Aiprompt_TemplateConfiguration_TextFullAipromptEditTemplateConfigurationFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Aiprompt_TemplateConfigurationFields = ubx.FieldMap{
-		"TextFullAipromptEditTemplateConfiguration": ubx.FieldSpec{
-			WireName: "text_full_aiprompt_edit_template_configuration",
-			Kind: "object",
-			Fields: Aiprompt_TemplateConfiguration_TextFullAipromptEditTemplateConfigurationFields,
-		},
-	}
+	"TextFullAipromptEditTemplateConfiguration": ubx.FieldSpec{
+		WireName: "text_full_aiprompt_edit_template_configuration",
+		Kind:     "object",
+		Fields:   Aiprompt_TemplateConfiguration_TextFullAipromptEditTemplateConfigurationFields,
+	},
+}
 
 type AipromptConfig struct {
 	// The API format for the AI prompt, indicating whether the model invocation uses TEXT for a single-turn prompt or CHAT for a chat-based multi-turn conversation. (AI-inferred)
@@ -78,18 +78,18 @@ type AipromptAttrs struct {
 var Aiprompt = ubx.ResourceBinding{
 	WireType: "aws_wisdom_aiprompt",
 	Fields: ubx.FieldMap{
-		"ApiFormat": ubx.FieldSpec{WireName: "api_format"},
+		"ApiFormat":   ubx.FieldSpec{WireName: "api_format"},
 		"AssistantId": ubx.FieldSpec{WireName: "assistant_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"ModelId":     ubx.FieldSpec{WireName: "model_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"TemplateConfiguration": ubx.FieldSpec{
 			WireName: "template_configuration",
-			Kind: "object",
-			Fields: Aiprompt_TemplateConfigurationFields,
+			Kind:     "object",
+			Fields:   Aiprompt_TemplateConfigurationFields,
 		},
 		"TemplateType": ubx.FieldSpec{WireName: "template_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":         ubx.FieldSpec{WireName: "type"},
 	},
 }

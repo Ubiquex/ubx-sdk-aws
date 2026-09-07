@@ -4,20 +4,20 @@ package bedrock_agentcore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BedrockAgentcoreWorkloadAccessTokenForUserIdConfig struct {
-	UserId any
+	UserId       any
 	WorkloadName any
 }
 
 type BedrockAgentcoreWorkloadAccessTokenForUserIdAttrs struct {
-	UserId any
+	UserId              any
 	WorkloadAccessToken any
-	WorkloadName any
+	WorkloadName        any
 }
 
 var BedrockAgentcoreWorkloadAccessTokenForUserId = ubx.DataSourceBinding{
 	WireType: "aws_bedrock_agentcore_workload_access_token_for_user_id",
 	Fields: ubx.FieldMap{
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":       ubx.FieldSpec{WireName: "user_id"},
 		"WorkloadName": ubx.FieldSpec{WireName: "workload_name"},
 	},
 }

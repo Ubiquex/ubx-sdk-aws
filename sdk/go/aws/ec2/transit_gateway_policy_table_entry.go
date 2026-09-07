@@ -17,12 +17,12 @@ type TransitGatewayPolicyTableEntry_PolicyRule struct {
 }
 
 var TransitGatewayPolicyTableEntry_PolicyRuleFields = ubx.FieldMap{
-		"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
-		"DestinationPortRange": ubx.FieldSpec{WireName: "destination_port_range"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SourceCidrBlock": ubx.FieldSpec{WireName: "source_cidr_block"},
-		"SourcePortRange": ubx.FieldSpec{WireName: "source_port_range"},
-	}
+	"DestinationCidrBlock": ubx.FieldSpec{WireName: "destination_cidr_block"},
+	"DestinationPortRange": ubx.FieldSpec{WireName: "destination_port_range"},
+	"Protocol":             ubx.FieldSpec{WireName: "protocol"},
+	"SourceCidrBlock":      ubx.FieldSpec{WireName: "source_cidr_block"},
+	"SourcePortRange":      ubx.FieldSpec{WireName: "source_port_range"},
+}
 
 type TransitGatewayPolicyTableEntryConfig struct {
 	// The policy rule that defines the source and destination CIDR blocks, protocol, port ranges, and action (allow or drop) for the transit gateway policy table entry. (AI-inferred)
@@ -53,11 +53,11 @@ var TransitGatewayPolicyTableEntry = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"PolicyRule": ubx.FieldSpec{
 			WireName: "policy_rule",
-			Kind: "object",
-			Fields: TransitGatewayPolicyTableEntry_PolicyRuleFields,
+			Kind:     "object",
+			Fields:   TransitGatewayPolicyTableEntry_PolicyRuleFields,
 		},
-		"PolicyRuleNumber": ubx.FieldSpec{WireName: "policy_rule_number"},
-		"TargetRouteTableId": ubx.FieldSpec{WireName: "target_route_table_id"},
+		"PolicyRuleNumber":            ubx.FieldSpec{WireName: "policy_rule_number"},
+		"TargetRouteTableId":          ubx.FieldSpec{WireName: "target_route_table_id"},
 		"TransitGatewayPolicyTableId": ubx.FieldSpec{WireName: "transit_gateway_policy_table_id"},
 	},
 }

@@ -40,11 +40,11 @@ type ApiDestinationAttrs struct {
 var ApiDestination = ubx.ResourceBinding{
 	WireType: "aws_events_api_destination",
 	Fields: ubx.FieldMap{
-		"ConnectionArn": ubx.FieldSpec{WireName: "connection_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"InvocationEndpoint": ubx.FieldSpec{WireName: "invocation_endpoint"},
+		"ConnectionArn":                ubx.FieldSpec{WireName: "connection_arn"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
+		"HttpMethod":                   ubx.FieldSpec{WireName: "http_method"},
+		"InvocationEndpoint":           ubx.FieldSpec{WireName: "invocation_endpoint"},
 		"InvocationRateLimitPerSecond": ubx.FieldSpec{WireName: "invocation_rate_limit_per_second"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                         ubx.FieldSpec{WireName: "name"},
 	},
 }

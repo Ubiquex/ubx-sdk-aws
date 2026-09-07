@@ -4,7 +4,7 @@ package directconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VirtualGateways_VirtualGateways struct {
-	VirtualGatewayId any
+	VirtualGatewayId    any
 	VirtualGatewayState any
 }
 
@@ -17,6 +17,5 @@ type VirtualGatewaysAttrs struct {
 
 var VirtualGateways = ubx.DataSourceBinding{
 	WireType: "aws_directconnect_virtual_gateways",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

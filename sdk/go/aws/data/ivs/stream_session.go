@@ -4,57 +4,57 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamSession_StreamSession_Channel_MultitrackInputConfiguration struct {
-	Enabled any
+	Enabled           any
 	MaximumResolution any
-	Policy any
+	Policy            any
 }
 
 type StreamSession_StreamSession_Channel_Srt struct {
-	Endpoint any
+	Endpoint   any
 	Passphrase any
 }
 
 type StreamSession_StreamSession_Channel struct {
 	AdConfigurationArn any
-	Arn any
-	Authorized any
-	ContainerFormat any
-	IngestEndpoint any
-	InsecureIngest any
-	LatencyMode any
+	Arn                any
+	Authorized         any
+	ContainerFormat    any
+	IngestEndpoint     any
+	InsecureIngest     any
+	LatencyMode        any
 	// <p>A complex type that specifies multitrack input configuration.</p>
 	MultitrackInputConfiguration any
-	Name any
+	Name                         any
 	PlaybackRestrictionPolicyArn any
-	PlaybackUrl any
-	Preset any
-	RecordingConfigurationArn any
+	PlaybackUrl                  any
+	Preset                       any
+	RecordingConfigurationArn    any
 	// <p>Specifies information needed to stream using the SRT protocol.</p>
-	Srt any
+	Srt  any
 	Tags any
 	Type any
 }
 
 type StreamSession_StreamSession_IngestConfiguration_Audio struct {
-	Channels any
-	Codec any
-	SampleRate any
+	Channels      any
+	Codec         any
+	SampleRate    any
 	TargetBitrate any
-	Track any
+	Track         any
 }
 
 type StreamSession_StreamSession_IngestConfiguration_Video struct {
-	AvcLevel any
-	AvcProfile any
-	Codec any
-	Encoder any
-	Level any
-	Profile any
-	TargetBitrate any
+	AvcLevel        any
+	AvcProfile      any
+	Codec           any
+	Encoder         any
+	Level           any
+	Profile         any
+	TargetBitrate   any
 	TargetFramerate any
-	Track any
-	VideoHeight any
-	VideoWidth any
+	Track           any
+	VideoHeight     any
+	VideoWidth      any
 }
 
 type StreamSession_StreamSession_IngestConfiguration struct {
@@ -80,35 +80,35 @@ type StreamSession_StreamSession_RecordingConfiguration_DestinationConfiguration
 
 type StreamSession_StreamSession_RecordingConfiguration_RenditionConfiguration struct {
 	RenditionSelection any
-	Renditions any
+	Renditions         any
 }
 
 type StreamSession_StreamSession_RecordingConfiguration_ThumbnailConfiguration struct {
-	RecordingMode any
-	Resolution any
-	Storage any
+	RecordingMode         any
+	Resolution            any
+	Storage               any
 	TargetIntervalSeconds any
 }
 
 type StreamSession_StreamSession_RecordingConfiguration struct {
 	Arn any
 	// <p>A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.</p>
-	DestinationConfiguration any
-	Name any
+	DestinationConfiguration        any
+	Name                            any
 	RecordingReconnectWindowSeconds any
 	// <p>Object that describes which renditions should be recorded for a stream.</p>
 	RenditionConfiguration any
-	State any
-	Tags any
+	State                  any
+	Tags                   any
 	// <p>An object representing a configuration of thumbnails for recorded video.</p>
 	ThumbnailConfiguration any
 }
 
 type StreamSession_StreamSession_TruncatedEvents struct {
-	Code any
+	Code      any
 	EventTime any
-	Name any
-	Type any
+	Name      any
+	Type      any
 }
 
 type StreamSession_StreamSession struct {
@@ -121,19 +121,19 @@ type StreamSession_StreamSession struct {
 	IngestConfigurations any
 	// <p>An object representing a configuration to record a channel stream.</p>
 	RecordingConfiguration any
-	StartTime any
-	StreamId any
-	TruncatedEvents any
+	StartTime              any
+	StreamId               any
+	TruncatedEvents        any
 }
 
 type StreamSessionConfig struct {
 	ChannelArn any
-	StreamId any
+	StreamId   any
 }
 
 type StreamSessionAttrs struct {
 	ChannelArn any
-	StreamId any
+	StreamId   any
 	// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.</p>
 	StreamSession any
 }
@@ -142,6 +142,6 @@ var StreamSession = ubx.DataSourceBinding{
 	WireType: "aws_ivs_stream_session",
 	Fields: ubx.FieldMap{
 		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamId":   ubx.FieldSpec{WireName: "stream_id"},
 	},
 }

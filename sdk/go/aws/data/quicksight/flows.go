@@ -4,41 +4,41 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Flows_FlowSummaryList struct {
-	Arn any
-	CreatedBy any
-	CreatedTime any
-	Description any
-	FlowId any
+	Arn             any
+	CreatedBy       any
+	CreatedTime     any
+	Description     any
+	FlowId          any
 	LastPublishedAt any
 	LastPublishedBy any
-	LastUpdatedBy any
+	LastUpdatedBy   any
 	LastUpdatedTime any
-	Name any
-	PublishState any
-	RunCount any
-	UserCount any
+	Name            any
+	PublishState    any
+	RunCount        any
+	UserCount       any
 }
 
 type FlowsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
+	MaxResults   any
+	NextToken    any
 }
 
 type FlowsAttrs struct {
-	AwsAccountId any
+	AwsAccountId    any
 	FlowSummaryList any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
+	MaxResults      any
+	NextToken       any
+	RequestId       any
+	Status          any
 }
 
 var Flows = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_flows",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,19 +4,19 @@ package workmail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessControlRules_Rules struct {
-	Actions any
-	DateCreated any
-	DateModified any
-	Description any
-	Effect any
-	ImpersonationRoleIds any
-	IpRanges any
-	Name any
-	NotActions any
+	Actions                 any
+	DateCreated             any
+	DateModified            any
+	Description             any
+	Effect                  any
+	ImpersonationRoleIds    any
+	IpRanges                any
+	Name                    any
+	NotActions              any
 	NotImpersonationRoleIds any
-	NotIpRanges any
-	NotUserIds any
-	UserIds any
+	NotIpRanges             any
+	NotUserIds              any
+	UserIds                 any
 }
 
 type AccessControlRulesConfig struct {
@@ -25,7 +25,7 @@ type AccessControlRulesConfig struct {
 
 type AccessControlRulesAttrs struct {
 	OrganizationId any
-	Rules any
+	Rules          any
 }
 
 var AccessControlRules = ubx.DataSourceBinding{

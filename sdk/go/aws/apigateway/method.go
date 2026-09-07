@@ -61,41 +61,41 @@ type Method_MethodResponses struct {
 }
 
 var Method_Integration_IntegrationResponsesFields = ubx.FieldMap{
-		"ContentHandling": ubx.FieldSpec{WireName: "content_handling"},
-		"ResponseParameters": ubx.FieldSpec{WireName: "response_parameters"},
-		"ResponseTemplates": ubx.FieldSpec{WireName: "response_templates"},
-		"SelectionPattern": ubx.FieldSpec{WireName: "selection_pattern"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"ContentHandling":    ubx.FieldSpec{WireName: "content_handling"},
+	"ResponseParameters": ubx.FieldSpec{WireName: "response_parameters"},
+	"ResponseTemplates":  ubx.FieldSpec{WireName: "response_templates"},
+	"SelectionPattern":   ubx.FieldSpec{WireName: "selection_pattern"},
+	"StatusCode":         ubx.FieldSpec{WireName: "status_code"},
+}
 
 var Method_IntegrationFields = ubx.FieldMap{
-		"CacheKeyParameters": ubx.FieldSpec{WireName: "cache_key_parameters"},
-		"CacheNamespace": ubx.FieldSpec{WireName: "cache_namespace"},
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"ContentHandling": ubx.FieldSpec{WireName: "content_handling"},
-		"Credentials": ubx.FieldSpec{WireName: "credentials"},
-		"IntegrationHttpMethod": ubx.FieldSpec{WireName: "integration_http_method"},
-		"IntegrationResponses": ubx.FieldSpec{
-			WireName: "integration_responses",
-			Kind: "list",
-			Fields: Method_Integration_IntegrationResponsesFields,
-		},
-		"IntegrationTarget": ubx.FieldSpec{WireName: "integration_target"},
-		"PassthroughBehavior": ubx.FieldSpec{WireName: "passthrough_behavior"},
-		"RequestParameters": ubx.FieldSpec{WireName: "request_parameters"},
-		"RequestTemplates": ubx.FieldSpec{WireName: "request_templates"},
-		"ResponseTransferMode": ubx.FieldSpec{WireName: "response_transfer_mode"},
-		"TimeoutInMillis": ubx.FieldSpec{WireName: "timeout_in_millis"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"CacheKeyParameters":    ubx.FieldSpec{WireName: "cache_key_parameters"},
+	"CacheNamespace":        ubx.FieldSpec{WireName: "cache_namespace"},
+	"ConnectionId":          ubx.FieldSpec{WireName: "connection_id"},
+	"ConnectionType":        ubx.FieldSpec{WireName: "connection_type"},
+	"ContentHandling":       ubx.FieldSpec{WireName: "content_handling"},
+	"Credentials":           ubx.FieldSpec{WireName: "credentials"},
+	"IntegrationHttpMethod": ubx.FieldSpec{WireName: "integration_http_method"},
+	"IntegrationResponses": ubx.FieldSpec{
+		WireName: "integration_responses",
+		Kind:     "list",
+		Fields:   Method_Integration_IntegrationResponsesFields,
+	},
+	"IntegrationTarget":    ubx.FieldSpec{WireName: "integration_target"},
+	"PassthroughBehavior":  ubx.FieldSpec{WireName: "passthrough_behavior"},
+	"RequestParameters":    ubx.FieldSpec{WireName: "request_parameters"},
+	"RequestTemplates":     ubx.FieldSpec{WireName: "request_templates"},
+	"ResponseTransferMode": ubx.FieldSpec{WireName: "response_transfer_mode"},
+	"TimeoutInMillis":      ubx.FieldSpec{WireName: "timeout_in_millis"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+	"Uri":                  ubx.FieldSpec{WireName: "uri"},
+}
 
 var Method_MethodResponsesFields = ubx.FieldMap{
-		"ResponseModels": ubx.FieldSpec{WireName: "response_models"},
-		"ResponseParameters": ubx.FieldSpec{WireName: "response_parameters"},
-		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-	}
+	"ResponseModels":     ubx.FieldSpec{WireName: "response_models"},
+	"ResponseParameters": ubx.FieldSpec{WireName: "response_parameters"},
+	"StatusCode":         ubx.FieldSpec{WireName: "status_code"},
+}
 
 type MethodConfig struct {
 	// Whether this method requires clients to submit a valid API key, enforced by API Gateway. (AI-inferred)
@@ -158,26 +158,26 @@ type MethodAttrs struct {
 var Method = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_method",
 	Fields: ubx.FieldMap{
-		"ApiKeyRequired": ubx.FieldSpec{WireName: "api_key_required"},
+		"ApiKeyRequired":      ubx.FieldSpec{WireName: "api_key_required"},
 		"AuthorizationScopes": ubx.FieldSpec{WireName: "authorization_scopes"},
-		"AuthorizationType": ubx.FieldSpec{WireName: "authorization_type"},
-		"AuthorizerId": ubx.FieldSpec{WireName: "authorizer_id"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
+		"AuthorizationType":   ubx.FieldSpec{WireName: "authorization_type"},
+		"AuthorizerId":        ubx.FieldSpec{WireName: "authorizer_id"},
+		"HttpMethod":          ubx.FieldSpec{WireName: "http_method"},
 		"Integration": ubx.FieldSpec{
 			WireName: "integration",
-			Kind: "object",
-			Fields: Method_IntegrationFields,
+			Kind:     "object",
+			Fields:   Method_IntegrationFields,
 		},
 		"MethodResponses": ubx.FieldSpec{
 			WireName: "method_responses",
-			Kind: "list",
-			Fields: Method_MethodResponsesFields,
+			Kind:     "list",
+			Fields:   Method_MethodResponsesFields,
 		},
-		"OperationName": ubx.FieldSpec{WireName: "operation_name"},
-		"RequestModels": ubx.FieldSpec{WireName: "request_models"},
-		"RequestParameters": ubx.FieldSpec{WireName: "request_parameters"},
+		"OperationName":      ubx.FieldSpec{WireName: "operation_name"},
+		"RequestModels":      ubx.FieldSpec{WireName: "request_models"},
+		"RequestParameters":  ubx.FieldSpec{WireName: "request_parameters"},
 		"RequestValidatorId": ubx.FieldSpec{WireName: "request_validator_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
+		"ResourceId":         ubx.FieldSpec{WireName: "resource_id"},
+		"RestApiId":          ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

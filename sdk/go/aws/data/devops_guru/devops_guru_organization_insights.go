@@ -4,7 +4,7 @@ package devops_guru
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DevopsGuruOrganizationInsights_ProactiveInsights_InsightTimeRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
@@ -14,12 +14,12 @@ type DevopsGuruOrganizationInsights_ProactiveInsights_ResourceCollection_CloudFo
 
 type DevopsGuruOrganizationInsights_ProactiveInsights_ResourceCollection_Tags struct {
 	AppBoundaryKey any
-	TagValues any
+	TagValues      any
 }
 
 type DevopsGuruOrganizationInsights_ProactiveInsights_ResourceCollection struct {
 	CloudFormation any
-	Tags any
+	Tags           any
 }
 
 type DevopsGuruOrganizationInsights_ProactiveInsights_ServiceCollection struct {
@@ -27,45 +27,45 @@ type DevopsGuruOrganizationInsights_ProactiveInsights_ServiceCollection struct {
 }
 
 type DevopsGuruOrganizationInsights_ProactiveInsights struct {
-	AccountId any
-	Id any
-	InsightTimeRange any
-	Name any
+	AccountId            any
+	Id                   any
+	InsightTimeRange     any
+	Name                 any
 	OrganizationalUnitId any
-	PredictionTimeRange any
-	ResourceCollection any
-	ServiceCollection any
-	Severity any
-	Status any
+	PredictionTimeRange  any
+	ResourceCollection   any
+	ServiceCollection    any
+	Severity             any
+	Status               any
 }
 
 type DevopsGuruOrganizationInsights_ReactiveInsights struct {
-	AccountId any
-	Id any
-	InsightTimeRange any
-	Name any
+	AccountId            any
+	Id                   any
+	InsightTimeRange     any
+	Name                 any
 	OrganizationalUnitId any
-	ResourceCollection any
-	ServiceCollection any
-	Severity any
-	Status any
+	ResourceCollection   any
+	ServiceCollection    any
+	Severity             any
+	Status               any
 }
 
 type DevopsGuruOrganizationInsights_StatusFilter_Any_StartTimeRange struct {
 	FromTime any
-	ToTime any
+	ToTime   any
 }
 
 type DevopsGuruOrganizationInsights_StatusFilter_Any struct {
 	// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
 	StartTimeRange any
-	Type any
+	Type           any
 }
 
 type DevopsGuruOrganizationInsights_StatusFilter_Closed struct {
 	// <p> A range of time that specifies when anomalous behavior in an anomaly or insight ended. </p>
 	EndTimeRange any
-	Type any
+	Type         any
 }
 
 type DevopsGuruOrganizationInsights_StatusFilter_Ongoing struct {
@@ -82,66 +82,66 @@ type DevopsGuruOrganizationInsights_StatusFilter struct {
 }
 
 var DevopsGuruOrganizationInsights_StatusFilter_Any_StartTimeRangeFields = ubx.FieldMap{
-		"FromTime": ubx.FieldSpec{WireName: "from_time"},
-		"ToTime": ubx.FieldSpec{WireName: "to_time"},
-	}
+	"FromTime": ubx.FieldSpec{WireName: "from_time"},
+	"ToTime":   ubx.FieldSpec{WireName: "to_time"},
+}
 
 var DevopsGuruOrganizationInsights_StatusFilter_AnyFields = ubx.FieldMap{
-		"StartTimeRange": ubx.FieldSpec{
-			WireName: "start_time_range",
-			Kind: "object",
-			Fields: DevopsGuruOrganizationInsights_StatusFilter_Any_StartTimeRangeFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"StartTimeRange": ubx.FieldSpec{
+		WireName: "start_time_range",
+		Kind:     "object",
+		Fields:   DevopsGuruOrganizationInsights_StatusFilter_Any_StartTimeRangeFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DevopsGuruOrganizationInsights_StatusFilter_ClosedFields = ubx.FieldMap{
-		"EndTimeRange": ubx.FieldSpec{
-			WireName: "end_time_range",
-			Kind: "object",
-			Fields: DevopsGuruOrganizationInsights_StatusFilter_Any_StartTimeRangeFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"EndTimeRange": ubx.FieldSpec{
+		WireName: "end_time_range",
+		Kind:     "object",
+		Fields:   DevopsGuruOrganizationInsights_StatusFilter_Any_StartTimeRangeFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DevopsGuruOrganizationInsights_StatusFilter_OngoingFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DevopsGuruOrganizationInsights_StatusFilterFields = ubx.FieldMap{
-		"Any": ubx.FieldSpec{
-			WireName: "any",
-			Kind: "object",
-			Fields: DevopsGuruOrganizationInsights_StatusFilter_AnyFields,
-		},
-		"Closed": ubx.FieldSpec{
-			WireName: "closed",
-			Kind: "object",
-			Fields: DevopsGuruOrganizationInsights_StatusFilter_ClosedFields,
-		},
-		"Ongoing": ubx.FieldSpec{
-			WireName: "ongoing",
-			Kind: "object",
-			Fields: DevopsGuruOrganizationInsights_StatusFilter_OngoingFields,
-		},
-	}
+	"Any": ubx.FieldSpec{
+		WireName: "any",
+		Kind:     "object",
+		Fields:   DevopsGuruOrganizationInsights_StatusFilter_AnyFields,
+	},
+	"Closed": ubx.FieldSpec{
+		WireName: "closed",
+		Kind:     "object",
+		Fields:   DevopsGuruOrganizationInsights_StatusFilter_ClosedFields,
+	},
+	"Ongoing": ubx.FieldSpec{
+		WireName: "ongoing",
+		Kind:     "object",
+		Fields:   DevopsGuruOrganizationInsights_StatusFilter_OngoingFields,
+	},
+}
 
 type DevopsGuruOrganizationInsightsConfig struct {
-	AccountIds any
-	MaxResults any
-	NextToken any
+	AccountIds            any
+	MaxResults            any
+	NextToken             any
 	OrganizationalUnitIds any
 	// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
 	StatusFilter any
 }
 
 type DevopsGuruOrganizationInsightsAttrs struct {
-	AccountIds any
-	MaxResults any
-	NextToken any
+	AccountIds            any
+	MaxResults            any
+	NextToken             any
 	OrganizationalUnitIds any
-	ProactiveInsights any
-	ReactiveInsights any
+	ProactiveInsights     any
+	ReactiveInsights      any
 	// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
 	StatusFilter any
 }
@@ -149,14 +149,14 @@ type DevopsGuruOrganizationInsightsAttrs struct {
 var DevopsGuruOrganizationInsights = ubx.DataSourceBinding{
 	WireType: "aws_devops_guru_organization_insights",
 	Fields: ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AccountIds":            ubx.FieldSpec{WireName: "account_ids"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationalUnitIds": ubx.FieldSpec{WireName: "organizational_unit_ids"},
 		"StatusFilter": ubx.FieldSpec{
 			WireName: "status_filter",
-			Kind: "object",
-			Fields: DevopsGuruOrganizationInsights_StatusFilterFields,
+			Kind:     "object",
+			Fields:   DevopsGuruOrganizationInsights_StatusFilterFields,
 		},
 	},
 }

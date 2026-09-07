@@ -20,7 +20,7 @@ type BatchScramSecretAttrs struct {
 var BatchScramSecret = ubx.ResourceBinding{
 	WireType: "aws_msk_batch_scram_secret",
 	Fields: ubx.FieldMap{
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
+		"ClusterArn":    ubx.FieldSpec{WireName: "cluster_arn"},
 		"SecretArnList": ubx.FieldSpec{WireName: "secret_arn_list"},
 	},
 }

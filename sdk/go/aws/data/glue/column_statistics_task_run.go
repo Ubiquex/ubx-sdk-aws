@@ -4,25 +4,25 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ColumnStatisticsTaskRun_ColumnStatisticsTaskRun struct {
-	CatalogId any
-	ColumnNameList any
+	CatalogId                 any
+	ColumnNameList            any
 	ColumnStatisticsTaskRunId any
-	ComputationType any
-	CreationTime any
-	CustomerId any
-	DatabaseName any
-	Dpuseconds any
-	EndTime any
-	ErrorMessage any
-	LastUpdated any
-	NumberOfWorkers any
-	Role any
-	SampleSize any
-	SecurityConfiguration any
-	StartTime any
-	Status any
-	TableName any
-	WorkerType any
+	ComputationType           any
+	CreationTime              any
+	CustomerId                any
+	DatabaseName              any
+	Dpuseconds                any
+	EndTime                   any
+	ErrorMessage              any
+	LastUpdated               any
+	NumberOfWorkers           any
+	Role                      any
+	SampleSize                any
+	SecurityConfiguration     any
+	StartTime                 any
+	Status                    any
+	TableName                 any
+	WorkerType                any
 }
 
 type ColumnStatisticsTaskRunConfig struct {
@@ -31,7 +31,7 @@ type ColumnStatisticsTaskRunConfig struct {
 
 type ColumnStatisticsTaskRunAttrs struct {
 	// <p>The object that shows the details of the column stats run.</p>
-	ColumnStatisticsTaskRun any
+	ColumnStatisticsTaskRun   any
 	ColumnStatisticsTaskRunId any
 }
 

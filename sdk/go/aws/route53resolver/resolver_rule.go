@@ -24,17 +24,17 @@ type ResolverRule_TargetIps struct {
 }
 
 var ResolverRule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ResolverRule_TargetIpsFields = ubx.FieldMap{
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"Ipv6": ubx.FieldSpec{WireName: "ipv6"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"ServerNameIndication": ubx.FieldSpec{WireName: "server_name_indication"},
-	}
+	"Ip":                   ubx.FieldSpec{WireName: "ip"},
+	"Ipv6":                 ubx.FieldSpec{WireName: "ipv6"},
+	"Port":                 ubx.FieldSpec{WireName: "port"},
+	"Protocol":             ubx.FieldSpec{WireName: "protocol"},
+	"ServerNameIndication": ubx.FieldSpec{WireName: "server_name_indication"},
+}
 
 type ResolverRuleConfig struct {
 	// The name server domain for queries to be delegated to if a query matches the delegation record.
@@ -77,20 +77,20 @@ type ResolverRuleAttrs struct {
 var ResolverRule = ubx.ResourceBinding{
 	WireType: "aws_route53_resolver_resolver_rule",
 	Fields: ubx.FieldMap{
-		"DelegationRecord": ubx.FieldSpec{WireName: "delegation_record"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DelegationRecord":   ubx.FieldSpec{WireName: "delegation_record"},
+		"DomainName":         ubx.FieldSpec{WireName: "domain_name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"ResolverEndpointId": ubx.FieldSpec{WireName: "resolver_endpoint_id"},
-		"RuleType": ubx.FieldSpec{WireName: "rule_type"},
+		"RuleType":           ubx.FieldSpec{WireName: "rule_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResolverRule_TagsFields,
+			Kind:     "list",
+			Fields:   ResolverRule_TagsFields,
 		},
 		"TargetIps": ubx.FieldSpec{
 			WireName: "target_ips",
-			Kind: "list",
-			Fields: ResolverRule_TargetIpsFields,
+			Kind:     "list",
+			Fields:   ResolverRule_TargetIpsFields,
 		},
 	},
 }

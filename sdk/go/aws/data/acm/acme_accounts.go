@@ -4,32 +4,32 @@ package acm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcmeAccounts_AcmeAccounts struct {
-	AccountUrl any
+	AccountUrl                    any
 	AcmeExternalAccountBindingArn any
-	Contacts any
-	CreatedAt any
-	PublicKeyThumbprint any
-	Status any
+	Contacts                      any
+	CreatedAt                     any
+	PublicKeyThumbprint           any
+	Status                        any
 }
 
 type AcmeAccountsConfig struct {
 	AcmeEndpointArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type AcmeAccountsAttrs struct {
-	AcmeAccounts any
+	AcmeAccounts    any
 	AcmeEndpointArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 var AcmeAccounts = ubx.DataSourceBinding{
 	WireType: "aws_acm_acme_accounts",
 	Fields: ubx.FieldMap{
 		"AcmeEndpointArn": ubx.FieldSpec{WireName: "acme_endpoint_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -12,11 +12,11 @@ type DraftAppVersionResourcesImportStatusConfig struct {
 }
 
 type DraftAppVersionResourcesImportStatusAttrs struct {
-	AppArn any
-	AppVersion any
-	ErrorDetails any
-	ErrorMessage any
-	Status any
+	AppArn           any
+	AppVersion       any
+	ErrorDetails     any
+	ErrorMessage     any
+	Status           any
 	StatusChangeTime any
 }
 

@@ -4,61 +4,61 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScalingActivities_Activities struct {
-	ActivityId any
-	AutoScalingGroupArn any
-	AutoScalingGroupName any
+	ActivityId            any
+	AutoScalingGroupArn   any
+	AutoScalingGroupName  any
 	AutoScalingGroupState any
-	Cause any
-	Description any
-	Details any
-	EndTime any
-	Progress any
-	StartTime any
-	StatusCode any
-	StatusMessage any
+	Cause                 any
+	Description           any
+	Details               any
+	EndTime               any
+	Progress              any
+	StartTime             any
+	StatusCode            any
+	StatusMessage         any
 }
 
 type ScalingActivities_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 var ScalingActivities_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ScalingActivitiesConfig struct {
-	ActivityIds any
+	ActivityIds          any
 	AutoScalingGroupName any
-	Filters any
+	Filters              any
 	IncludeDeletedGroups any
-	MaxRecords any
-	NextToken any
+	MaxRecords           any
+	NextToken            any
 }
 
 type ScalingActivitiesAttrs struct {
-	Activities any
-	ActivityIds any
+	Activities           any
+	ActivityIds          any
 	AutoScalingGroupName any
-	Filters any
+	Filters              any
 	IncludeDeletedGroups any
-	MaxRecords any
-	NextToken any
+	MaxRecords           any
+	NextToken            any
 }
 
 var ScalingActivities = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_scaling_activities",
 	Fields: ubx.FieldMap{
-		"ActivityIds": ubx.FieldSpec{WireName: "activity_ids"},
+		"ActivityIds":          ubx.FieldSpec{WireName: "activity_ids"},
 		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ScalingActivities_FiltersFields,
+			Kind:     "list",
+			Fields:   ScalingActivities_FiltersFields,
 		},
 		"IncludeDeletedGroups": ubx.FieldSpec{WireName: "include_deleted_groups"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxRecords":           ubx.FieldSpec{WireName: "max_records"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 	},
 }

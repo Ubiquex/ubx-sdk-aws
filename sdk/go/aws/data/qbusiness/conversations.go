@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Conversations_Conversations struct {
 	ConversationId any
-	StartTime any
-	Title any
+	StartTime      any
+	Title          any
 }
 
 type ConversationsConfig struct {
 	ApplicationId any
-	MaxResults any
-	NextToken any
-	UserId any
+	MaxResults    any
+	NextToken     any
+	UserId        any
 }
 
 type ConversationsAttrs struct {
 	ApplicationId any
 	Conversations any
-	MaxResults any
-	NextToken any
-	UserId any
+	MaxResults    any
+	NextToken     any
+	UserId        any
 }
 
 var Conversations = ubx.DataSourceBinding{
 	WireType: "aws_qbusiness_conversations",
 	Fields: ubx.FieldMap{
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"UserId":        ubx.FieldSpec{WireName: "user_id"},
 	},
 }

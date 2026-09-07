@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Thesauri_ThesaurusSummaryItems struct {
 	CreatedAt any
-	Id any
-	Name any
-	Status any
+	Id        any
+	Name      any
+	Status    any
 	UpdatedAt any
 }
 
 type ThesauriConfig struct {
-	IndexId any
+	IndexId    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ThesauriAttrs struct {
-	IndexId any
-	MaxResults any
-	NextToken any
+	IndexId               any
+	MaxResults            any
+	NextToken             any
 	ThesaurusSummaryItems any
 }
 
 var Thesauri = ubx.DataSourceBinding{
 	WireType: "aws_kendra_thesauri",
 	Fields: ubx.FieldMap{
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"IndexId":    ubx.FieldSpec{WireName: "index_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

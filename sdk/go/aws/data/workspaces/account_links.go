@@ -4,30 +4,30 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountLinks_AccountLinks struct {
-	AccountLinkId any
+	AccountLinkId     any
 	AccountLinkStatus any
-	SourceAccountId any
-	TargetAccountId any
+	SourceAccountId   any
+	TargetAccountId   any
 }
 
 type AccountLinksConfig struct {
 	LinkStatusFilter any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 type AccountLinksAttrs struct {
-	AccountLinks any
+	AccountLinks     any
 	LinkStatusFilter any
-	MaxResults any
-	NextToken any
+	MaxResults       any
+	NextToken        any
 }
 
 var AccountLinks = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_account_links",
 	Fields: ubx.FieldMap{
 		"LinkStatusFilter": ubx.FieldSpec{WireName: "link_status_filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
 	},
 }

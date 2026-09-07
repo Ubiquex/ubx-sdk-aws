@@ -7,14 +7,13 @@ type AccountConfig struct {
 }
 
 type AccountAttrs struct {
-	DedicatedTenancyAccountType any
+	DedicatedTenancyAccountType         any
 	DedicatedTenancyManagementCidrRange any
-	DedicatedTenancySupport any
-	Message any
+	DedicatedTenancySupport             any
+	Message                             any
 }
 
 var Account = ubx.DataSourceBinding{
 	WireType: "aws_workspaces_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

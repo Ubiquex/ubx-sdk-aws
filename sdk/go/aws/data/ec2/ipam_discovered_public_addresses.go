@@ -4,17 +4,17 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamDiscoveredPublicAddresses_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamDiscoveredPublicAddresses_IpamDiscoveredPublicAddresses_SecurityGroups struct {
-	GroupId any
+	GroupId   any
 	GroupName any
 }
 
 type IpamDiscoveredPublicAddresses_IpamDiscoveredPublicAddresses_Tags_EipTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -23,64 +23,64 @@ type IpamDiscoveredPublicAddresses_IpamDiscoveredPublicAddresses_Tags struct {
 }
 
 type IpamDiscoveredPublicAddresses_IpamDiscoveredPublicAddresses struct {
-	Address any
-	AddressAllocationId any
-	AddressOwnerId any
-	AddressRegion any
-	AddressType any
-	AssociationStatus any
-	InstanceId any
-	IpamResourceDiscoveryId any
-	NetworkBorderGroup any
+	Address                     any
+	AddressAllocationId         any
+	AddressOwnerId              any
+	AddressRegion               any
+	AddressType                 any
+	AssociationStatus           any
+	InstanceId                  any
+	IpamResourceDiscoveryId     any
+	NetworkBorderGroup          any
 	NetworkInterfaceDescription any
-	NetworkInterfaceId any
-	PublicIpv4PoolId any
-	SampleTime any
-	SecurityGroups any
-	Service any
-	ServiceResource any
-	SubnetId any
-	Tags any
-	VpcId any
+	NetworkInterfaceId          any
+	PublicIpv4PoolId            any
+	SampleTime                  any
+	SecurityGroups              any
+	Service                     any
+	ServiceResource             any
+	SubnetId                    any
+	Tags                        any
+	VpcId                       any
 }
 
 var IpamDiscoveredPublicAddresses_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamDiscoveredPublicAddressesConfig struct {
-	AddressRegion any
-	DryRun any
-	Filters any
+	AddressRegion           any
+	DryRun                  any
+	Filters                 any
 	IpamResourceDiscoveryId any
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 }
 
 type IpamDiscoveredPublicAddressesAttrs struct {
-	AddressRegion any
-	DryRun any
-	Filters any
+	AddressRegion                 any
+	DryRun                        any
+	Filters                       any
 	IpamDiscoveredPublicAddresses any
-	IpamResourceDiscoveryId any
-	MaxResults any
-	NextToken any
-	OldestSampleTime any
+	IpamResourceDiscoveryId       any
+	MaxResults                    any
+	NextToken                     any
+	OldestSampleTime              any
 }
 
 var IpamDiscoveredPublicAddresses = ubx.DataSourceBinding{
 	WireType: "aws_ec2_ipam_discovered_public_addresses",
 	Fields: ubx.FieldMap{
 		"AddressRegion": ubx.FieldSpec{WireName: "address_region"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamDiscoveredPublicAddresses_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamDiscoveredPublicAddresses_FiltersFields,
 		},
 		"IpamResourceDiscoveryId": ubx.FieldSpec{WireName: "ipam_resource_discovery_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 	},
 }

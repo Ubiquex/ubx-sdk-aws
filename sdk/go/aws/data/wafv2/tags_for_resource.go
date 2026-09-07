@@ -4,24 +4,24 @@ package wafv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_TagInfoForResource_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TagsForResource_TagInfoForResource struct {
 	ResourceArn any
-	TagList any
+	TagList     any
 }
 
 type TagsForResourceConfig struct {
-	Limit any
-	NextMarker any
+	Limit       any
+	NextMarker  any
 	ResourceArn any
 }
 
 type TagsForResourceAttrs struct {
-	Limit any
-	NextMarker any
+	Limit       any
+	NextMarker  any
 	ResourceArn any
 	// <p>The collection of tagging definitions for an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
 	TagInfoForResource any
@@ -30,8 +30,8 @@ type TagsForResourceAttrs struct {
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_tags_for_resource",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"NextMarker":  ubx.FieldSpec{WireName: "next_marker"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

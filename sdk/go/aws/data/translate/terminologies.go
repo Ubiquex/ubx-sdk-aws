@@ -4,35 +4,35 @@ package translate
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Terminologies_TerminologyPropertiesList_EncryptionKey struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type Terminologies_TerminologyPropertiesList struct {
-	Arn any
-	CreatedAt any
-	Description any
-	Directionality any
-	EncryptionKey any
-	Format any
-	LastUpdatedAt any
-	Message any
-	Name any
-	SizeBytes any
-	SkippedTermCount any
-	SourceLanguageCode any
+	Arn                 any
+	CreatedAt           any
+	Description         any
+	Directionality      any
+	EncryptionKey       any
+	Format              any
+	LastUpdatedAt       any
+	Message             any
+	Name                any
+	SizeBytes           any
+	SkippedTermCount    any
+	SourceLanguageCode  any
 	TargetLanguageCodes any
-	TermCount any
+	TermCount           any
 }
 
 type TerminologiesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type TerminologiesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                any
+	NextToken                 any
 	TerminologyPropertiesList any
 }
 
@@ -40,6 +40,6 @@ var Terminologies = ubx.DataSourceBinding{
 	WireType: "aws_translate_terminologies",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

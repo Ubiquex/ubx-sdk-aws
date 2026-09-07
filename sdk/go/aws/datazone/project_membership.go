@@ -11,9 +11,9 @@ type ProjectMembership_Member struct {
 }
 
 var ProjectMembership_MemberFields = ubx.FieldMap{
-		"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
-		"UserIdentifier": ubx.FieldSpec{WireName: "user_identifier"},
-	}
+	"GroupIdentifier": ubx.FieldSpec{WireName: "group_identifier"},
+	"UserIdentifier":  ubx.FieldSpec{WireName: "user_identifier"},
+}
 
 type ProjectMembershipConfig struct {
 	// Designates the role of the member in the DataZone project, determining their access permissions (for example, PROJECT_OWNER or PROJECT_CONTRIBUTOR). (AI-inferred)
@@ -44,12 +44,12 @@ type ProjectMembershipAttrs struct {
 var ProjectMembership = ubx.ResourceBinding{
 	WireType: "aws_data_zone_project_membership",
 	Fields: ubx.FieldMap{
-		"Designation": ubx.FieldSpec{WireName: "designation"},
+		"Designation":      ubx.FieldSpec{WireName: "designation"},
 		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
 		"Member": ubx.FieldSpec{
 			WireName: "member",
-			Kind: "object",
-			Fields: ProjectMembership_MemberFields,
+			Kind:     "object",
+			Fields:   ProjectMembership_MemberFields,
 		},
 		"ProjectIdentifier": ubx.FieldSpec{WireName: "project_identifier"},
 	},

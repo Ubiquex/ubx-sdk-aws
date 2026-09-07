@@ -11,9 +11,9 @@ type CarrierGateway_Tags struct {
 }
 
 var CarrierGateway_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CarrierGatewayConfig struct {
 	Tags any
@@ -28,7 +28,7 @@ type CarrierGatewayAttrs struct {
 	OwnerId any
 	// The state of the carrier gateway.
 	State any
-	Tags any
+	Tags  any
 	// The ID of the VPC.
 	VpcId any
 }
@@ -38,8 +38,8 @@ var CarrierGateway = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CarrierGateway_TagsFields,
+			Kind:     "list",
+			Fields:   CarrierGateway_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

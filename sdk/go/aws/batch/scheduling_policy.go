@@ -24,23 +24,23 @@ type SchedulingPolicy_QuotaSharePolicy struct {
 }
 
 var SchedulingPolicy_FairsharePolicy_ShareDistributionFields = ubx.FieldMap{
-		"ShareIdentifier": ubx.FieldSpec{WireName: "share_identifier"},
-		"WeightFactor": ubx.FieldSpec{WireName: "weight_factor"},
-	}
+	"ShareIdentifier": ubx.FieldSpec{WireName: "share_identifier"},
+	"WeightFactor":    ubx.FieldSpec{WireName: "weight_factor"},
+}
 
 var SchedulingPolicy_FairsharePolicyFields = ubx.FieldMap{
-		"ComputeReservation": ubx.FieldSpec{WireName: "compute_reservation"},
-		"ShareDecaySeconds": ubx.FieldSpec{WireName: "share_decay_seconds"},
-		"ShareDistribution": ubx.FieldSpec{
-			WireName: "share_distribution",
-			Kind: "list",
-			Fields: SchedulingPolicy_FairsharePolicy_ShareDistributionFields,
-		},
-	}
+	"ComputeReservation": ubx.FieldSpec{WireName: "compute_reservation"},
+	"ShareDecaySeconds":  ubx.FieldSpec{WireName: "share_decay_seconds"},
+	"ShareDistribution": ubx.FieldSpec{
+		WireName: "share_distribution",
+		Kind:     "list",
+		Fields:   SchedulingPolicy_FairsharePolicy_ShareDistributionFields,
+	},
+}
 
 var SchedulingPolicy_QuotaSharePolicyFields = ubx.FieldMap{
-		"IdleResourceAssignmentStrategy": ubx.FieldSpec{WireName: "idle_resource_assignment_strategy"},
-	}
+	"IdleResourceAssignmentStrategy": ubx.FieldSpec{WireName: "idle_resource_assignment_strategy"},
+}
 
 type SchedulingPolicyConfig struct {
 	// Fair Share Policy for the Job Queue.
@@ -71,14 +71,14 @@ var SchedulingPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"FairsharePolicy": ubx.FieldSpec{
 			WireName: "fairshare_policy",
-			Kind: "object",
-			Fields: SchedulingPolicy_FairsharePolicyFields,
+			Kind:     "object",
+			Fields:   SchedulingPolicy_FairsharePolicyFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"QuotaSharePolicy": ubx.FieldSpec{
 			WireName: "quota_share_policy",
-			Kind: "object",
-			Fields: SchedulingPolicy_QuotaSharePolicyFields,
+			Kind:     "object",
+			Fields:   SchedulingPolicy_QuotaSharePolicyFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

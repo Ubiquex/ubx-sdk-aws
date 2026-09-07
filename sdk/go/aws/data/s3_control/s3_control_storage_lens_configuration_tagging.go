@@ -4,25 +4,25 @@ package s3_control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type S3ControlStorageLensConfigurationTagging_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type S3ControlStorageLensConfigurationTaggingConfig struct {
 	AccountId any
-	ConfigId any
+	ConfigId  any
 }
 
 type S3ControlStorageLensConfigurationTaggingAttrs struct {
 	AccountId any
-	ConfigId any
-	Tags any
+	ConfigId  any
+	Tags      any
 }
 
 var S3ControlStorageLensConfigurationTagging = ubx.DataSourceBinding{
 	WireType: "aws_s3_control_storage_lens_configuration_tagging",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
+		"ConfigId":  ubx.FieldSpec{WireName: "config_id"},
 	},
 }

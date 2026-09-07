@@ -4,23 +4,23 @@ package wellarchitected
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentRecommendationItems_Items struct {
-	CreatedAt any
-	CreatedBy any
-	Id any
-	LastModifiedAt any
-	LastModifiedBy any
-	Metadata any
+	CreatedAt         any
+	CreatedBy         any
+	Id                any
+	LastModifiedAt    any
+	LastModifiedBy    any
+	Metadata          any
 	RecommendationArn any
-	Type any
+	Type              any
 }
 
 type AgentRecommendationItemsConfig struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken         any
 	RecommendationArn any
-	Type any
+	Type              any
 }
 
 type AgentRecommendationItemsAttrs struct {
@@ -28,17 +28,17 @@ type AgentRecommendationItemsAttrs struct {
 	// <p>The maximum number of results to return for this request.</p>
 	MaxResults any
 	// <p>The token to use to retrieve the next set of results.</p>
-	NextToken any
+	NextToken         any
 	RecommendationArn any
-	Type any
+	Type              any
 }
 
 var AgentRecommendationItems = ubx.DataSourceBinding{
 	WireType: "aws_wellarchitected_agent_recommendation_items",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"RecommendationArn": ubx.FieldSpec{WireName: "recommendation_arn"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":              ubx.FieldSpec{WireName: "type"},
 	},
 }

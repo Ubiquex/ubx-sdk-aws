@@ -11,9 +11,9 @@ type IpamresourceDiscoveryAssociation_Tags struct {
 }
 
 var IpamresourceDiscoveryAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpamresourceDiscoveryAssociationConfig struct {
 	// The Id of the IPAM this Resource Discovery is associated to.
@@ -52,12 +52,12 @@ type IpamresourceDiscoveryAssociationAttrs struct {
 var IpamresourceDiscoveryAssociation = ubx.ResourceBinding{
 	WireType: "aws_ec2_ipamresource_discovery_association",
 	Fields: ubx.FieldMap{
-		"IpamId": ubx.FieldSpec{WireName: "ipam_id"},
+		"IpamId":                  ubx.FieldSpec{WireName: "ipam_id"},
 		"IpamResourceDiscoveryId": ubx.FieldSpec{WireName: "ipam_resource_discovery_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: IpamresourceDiscoveryAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   IpamresourceDiscoveryAssociation_TagsFields,
 		},
 	},
 }

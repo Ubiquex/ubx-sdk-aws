@@ -4,32 +4,32 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Authorizers_Authorizers struct {
-	AuthorizerArn any
+	AuthorizerArn  any
 	AuthorizerName any
 }
 
 type AuthorizersConfig struct {
 	AscendingOrder any
-	Marker any
-	PageSize any
-	Status any
+	Marker         any
+	PageSize       any
+	Status         any
 }
 
 type AuthorizersAttrs struct {
 	AscendingOrder any
-	Authorizers any
-	Marker any
-	NextMarker any
-	PageSize any
-	Status any
+	Authorizers    any
+	Marker         any
+	NextMarker     any
+	PageSize       any
+	Status         any
 }
 
 var Authorizers = ubx.DataSourceBinding{
 	WireType: "aws_iot_authorizers",
 	Fields: ubx.FieldMap{
 		"AscendingOrder": ubx.FieldSpec{WireName: "ascending_order"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"Status":         ubx.FieldSpec{WireName: "status"},
 	},
 }

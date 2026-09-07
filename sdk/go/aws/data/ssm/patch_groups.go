@@ -4,39 +4,39 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PatchGroups_Filters struct {
-	Key any
+	Key    any
 	Values any
 }
 
 type PatchGroups_Mappings_BaselineIdentity struct {
 	BaselineDescription any
-	BaselineId any
-	BaselineName any
-	DefaultBaseline any
-	OperatingSystem any
+	BaselineId          any
+	BaselineName        any
+	DefaultBaseline     any
+	OperatingSystem     any
 }
 
 type PatchGroups_Mappings struct {
 	BaselineIdentity any
-	PatchGroup any
+	PatchGroup       any
 }
 
 var PatchGroups_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type PatchGroupsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type PatchGroupsAttrs struct {
-	Filters any
-	Mappings any
+	Filters    any
+	Mappings   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var PatchGroups = ubx.DataSourceBinding{
@@ -44,10 +44,10 @@ var PatchGroups = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: PatchGroups_FiltersFields,
+			Kind:     "list",
+			Fields:   PatchGroups_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

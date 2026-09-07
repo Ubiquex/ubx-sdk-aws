@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImpersonationRoleEffect_MatchedRules struct {
 	ImpersonationRuleId any
-	Name any
+	Name                any
 }
 
 type ImpersonationRoleEffectConfig struct {
 	ImpersonationRoleId any
-	OrganizationId any
-	TargetUser any
+	OrganizationId      any
+	TargetUser          any
 }
 
 type ImpersonationRoleEffectAttrs struct {
-	Effect any
+	Effect              any
 	ImpersonationRoleId any
-	MatchedRules any
-	OrganizationId any
-	TargetUser any
-	Type any
+	MatchedRules        any
+	OrganizationId      any
+	TargetUser          any
+	Type                any
 }
 
 var ImpersonationRoleEffect = ubx.DataSourceBinding{
 	WireType: "aws_workmail_impersonation_role_effect",
 	Fields: ubx.FieldMap{
 		"ImpersonationRoleId": ubx.FieldSpec{WireName: "impersonation_role_id"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"TargetUser": ubx.FieldSpec{WireName: "target_user"},
+		"OrganizationId":      ubx.FieldSpec{WireName: "organization_id"},
+		"TargetUser":          ubx.FieldSpec{WireName: "target_user"},
 	},
 }

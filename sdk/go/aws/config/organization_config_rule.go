@@ -69,41 +69,41 @@ type OrganizationConfigRule_OrganizationManagedRuleMetadata struct {
 }
 
 var OrganizationConfigRule_OrganizationCustomPolicyRuleMetadataFields = ubx.FieldMap{
-		"DebugLogDeliveryAccounts": ubx.FieldSpec{WireName: "debug_log_delivery_accounts"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-		"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
-		"OrganizationConfigRuleTriggerTypes": ubx.FieldSpec{WireName: "organization_config_rule_trigger_types"},
-		"PolicyText": ubx.FieldSpec{WireName: "policy_text"},
-		"ResourceIdScope": ubx.FieldSpec{WireName: "resource_id_scope"},
-		"ResourceTypesScope": ubx.FieldSpec{WireName: "resource_types_scope"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"TagKeyScope": ubx.FieldSpec{WireName: "tag_key_scope"},
-		"TagValueScope": ubx.FieldSpec{WireName: "tag_value_scope"},
-	}
+	"DebugLogDeliveryAccounts":           ubx.FieldSpec{WireName: "debug_log_delivery_accounts"},
+	"Description":                        ubx.FieldSpec{WireName: "description"},
+	"InputParameters":                    ubx.FieldSpec{WireName: "input_parameters"},
+	"MaximumExecutionFrequency":          ubx.FieldSpec{WireName: "maximum_execution_frequency"},
+	"OrganizationConfigRuleTriggerTypes": ubx.FieldSpec{WireName: "organization_config_rule_trigger_types"},
+	"PolicyText":                         ubx.FieldSpec{WireName: "policy_text"},
+	"ResourceIdScope":                    ubx.FieldSpec{WireName: "resource_id_scope"},
+	"ResourceTypesScope":                 ubx.FieldSpec{WireName: "resource_types_scope"},
+	"Runtime":                            ubx.FieldSpec{WireName: "runtime"},
+	"TagKeyScope":                        ubx.FieldSpec{WireName: "tag_key_scope"},
+	"TagValueScope":                      ubx.FieldSpec{WireName: "tag_value_scope"},
+}
 
 var OrganizationConfigRule_OrganizationCustomRuleMetadataFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-		"LambdaFunctionArn": ubx.FieldSpec{WireName: "lambda_function_arn"},
-		"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
-		"OrganizationConfigRuleTriggerTypes": ubx.FieldSpec{WireName: "organization_config_rule_trigger_types"},
-		"ResourceIdScope": ubx.FieldSpec{WireName: "resource_id_scope"},
-		"ResourceTypesScope": ubx.FieldSpec{WireName: "resource_types_scope"},
-		"TagKeyScope": ubx.FieldSpec{WireName: "tag_key_scope"},
-		"TagValueScope": ubx.FieldSpec{WireName: "tag_value_scope"},
-	}
+	"Description":                        ubx.FieldSpec{WireName: "description"},
+	"InputParameters":                    ubx.FieldSpec{WireName: "input_parameters"},
+	"LambdaFunctionArn":                  ubx.FieldSpec{WireName: "lambda_function_arn"},
+	"MaximumExecutionFrequency":          ubx.FieldSpec{WireName: "maximum_execution_frequency"},
+	"OrganizationConfigRuleTriggerTypes": ubx.FieldSpec{WireName: "organization_config_rule_trigger_types"},
+	"ResourceIdScope":                    ubx.FieldSpec{WireName: "resource_id_scope"},
+	"ResourceTypesScope":                 ubx.FieldSpec{WireName: "resource_types_scope"},
+	"TagKeyScope":                        ubx.FieldSpec{WireName: "tag_key_scope"},
+	"TagValueScope":                      ubx.FieldSpec{WireName: "tag_value_scope"},
+}
 
 var OrganizationConfigRule_OrganizationManagedRuleMetadataFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-		"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
-		"ResourceIdScope": ubx.FieldSpec{WireName: "resource_id_scope"},
-		"ResourceTypesScope": ubx.FieldSpec{WireName: "resource_types_scope"},
-		"RuleIdentifier": ubx.FieldSpec{WireName: "rule_identifier"},
-		"TagKeyScope": ubx.FieldSpec{WireName: "tag_key_scope"},
-		"TagValueScope": ubx.FieldSpec{WireName: "tag_value_scope"},
-	}
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"InputParameters":           ubx.FieldSpec{WireName: "input_parameters"},
+	"MaximumExecutionFrequency": ubx.FieldSpec{WireName: "maximum_execution_frequency"},
+	"ResourceIdScope":           ubx.FieldSpec{WireName: "resource_id_scope"},
+	"ResourceTypesScope":        ubx.FieldSpec{WireName: "resource_types_scope"},
+	"RuleIdentifier":            ubx.FieldSpec{WireName: "rule_identifier"},
+	"TagKeyScope":               ubx.FieldSpec{WireName: "tag_key_scope"},
+	"TagValueScope":             ubx.FieldSpec{WireName: "tag_value_scope"},
+}
 
 type OrganizationConfigRuleConfig struct {
 	// Specifies the AWS account IDs to exclude from the evaluation of this organization config rule, ensuring the rule does not apply to those accounts. (AI-inferred)
@@ -136,22 +136,22 @@ type OrganizationConfigRuleAttrs struct {
 var OrganizationConfigRule = ubx.ResourceBinding{
 	WireType: "aws_config_organization_config_rule",
 	Fields: ubx.FieldMap{
-		"ExcludedAccounts": ubx.FieldSpec{WireName: "excluded_accounts"},
+		"ExcludedAccounts":           ubx.FieldSpec{WireName: "excluded_accounts"},
 		"OrganizationConfigRuleName": ubx.FieldSpec{WireName: "organization_config_rule_name"},
 		"OrganizationCustomPolicyRuleMetadata": ubx.FieldSpec{
 			WireName: "organization_custom_policy_rule_metadata",
-			Kind: "object",
-			Fields: OrganizationConfigRule_OrganizationCustomPolicyRuleMetadataFields,
+			Kind:     "object",
+			Fields:   OrganizationConfigRule_OrganizationCustomPolicyRuleMetadataFields,
 		},
 		"OrganizationCustomRuleMetadata": ubx.FieldSpec{
 			WireName: "organization_custom_rule_metadata",
-			Kind: "object",
-			Fields: OrganizationConfigRule_OrganizationCustomRuleMetadataFields,
+			Kind:     "object",
+			Fields:   OrganizationConfigRule_OrganizationCustomRuleMetadataFields,
 		},
 		"OrganizationManagedRuleMetadata": ubx.FieldSpec{
 			WireName: "organization_managed_rule_metadata",
-			Kind: "object",
-			Fields: OrganizationConfigRule_OrganizationManagedRuleMetadataFields,
+			Kind:     "object",
+			Fields:   OrganizationConfigRule_OrganizationManagedRuleMetadataFields,
 		},
 	},
 }

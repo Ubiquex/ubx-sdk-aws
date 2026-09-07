@@ -11,9 +11,9 @@ type RecoveryGroup_Tags struct {
 }
 
 var RecoveryGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RecoveryGroupConfig struct {
 	// A list of the cell Amazon Resource Names (ARNs) in the recovery group.
@@ -38,12 +38,12 @@ type RecoveryGroupAttrs struct {
 var RecoveryGroup = ubx.ResourceBinding{
 	WireType: "aws_route53_recovery_readiness_recovery_group",
 	Fields: ubx.FieldMap{
-		"Cells": ubx.FieldSpec{WireName: "cells"},
+		"Cells":             ubx.FieldSpec{WireName: "cells"},
 		"RecoveryGroupName": ubx.FieldSpec{WireName: "recovery_group_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RecoveryGroup_TagsFields,
+			Kind:     "list",
+			Fields:   RecoveryGroup_TagsFields,
 		},
 	},
 }

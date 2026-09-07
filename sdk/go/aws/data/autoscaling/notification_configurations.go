@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationConfigurations_NotificationConfigurations struct {
 	AutoScalingGroupName any
-	NotificationType any
-	TopicArn any
+	NotificationType     any
+	TopicArn             any
 }
 
 type NotificationConfigurationsConfig struct {
 	AutoScalingGroupNames any
-	MaxRecords any
-	NextToken any
+	MaxRecords            any
+	NextToken             any
 }
 
 type NotificationConfigurationsAttrs struct {
-	AutoScalingGroupNames any
-	MaxRecords any
-	NextToken any
+	AutoScalingGroupNames      any
+	MaxRecords                 any
+	NextToken                  any
 	NotificationConfigurations any
 }
 
@@ -26,7 +26,7 @@ var NotificationConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_autoscaling_notification_configurations",
 	Fields: ubx.FieldMap{
 		"AutoScalingGroupNames": ubx.FieldSpec{WireName: "auto_scaling_group_names"},
-		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxRecords":            ubx.FieldSpec{WireName: "max_records"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

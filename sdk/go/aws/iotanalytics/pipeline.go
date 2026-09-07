@@ -111,113 +111,113 @@ type Pipeline_Tags struct {
 }
 
 var Pipeline_PipelineActivities_AddAttributesFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Next": ubx.FieldSpec{WireName: "next"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Next":       ubx.FieldSpec{WireName: "next"},
+}
 
 var Pipeline_PipelineActivities_ChannelFields = ubx.FieldMap{
-		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Next": ubx.FieldSpec{WireName: "next"},
-	}
+	"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Next":        ubx.FieldSpec{WireName: "next"},
+}
 
 var Pipeline_PipelineActivities_DatastoreFields = ubx.FieldMap{
-		"DatastoreName": ubx.FieldSpec{WireName: "datastore_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DatastoreName": ubx.FieldSpec{WireName: "datastore_name"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+}
 
 var Pipeline_PipelineActivities_DeviceRegistryEnrichFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Next": ubx.FieldSpec{WireName: "next"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Next":      ubx.FieldSpec{WireName: "next"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"ThingName": ubx.FieldSpec{WireName: "thing_name"},
+}
 
 var Pipeline_PipelineActivities_FilterFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Next": ubx.FieldSpec{WireName: "next"},
-	}
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Next":   ubx.FieldSpec{WireName: "next"},
+}
 
 var Pipeline_PipelineActivities_LambdaFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"LambdaName": ubx.FieldSpec{WireName: "lambda_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Next": ubx.FieldSpec{WireName: "next"},
-	}
+	"BatchSize":  ubx.FieldSpec{WireName: "batch_size"},
+	"LambdaName": ubx.FieldSpec{WireName: "lambda_name"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Next":       ubx.FieldSpec{WireName: "next"},
+}
 
 var Pipeline_PipelineActivities_MathFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Math": ubx.FieldSpec{WireName: "math"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Next": ubx.FieldSpec{WireName: "next"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Math":      ubx.FieldSpec{WireName: "math"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Next":      ubx.FieldSpec{WireName: "next"},
+}
 
 var Pipeline_PipelineActivities_RemoveAttributesFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Next": ubx.FieldSpec{WireName: "next"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Next":       ubx.FieldSpec{WireName: "next"},
+}
 
 var Pipeline_PipelineActivitiesFields = ubx.FieldMap{
-		"AddAttributes": ubx.FieldSpec{
-			WireName: "add_attributes",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_AddAttributesFields,
-		},
-		"Channel": ubx.FieldSpec{
-			WireName: "channel",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_ChannelFields,
-		},
-		"Datastore": ubx.FieldSpec{
-			WireName: "datastore",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_DatastoreFields,
-		},
-		"DeviceRegistryEnrich": ubx.FieldSpec{
-			WireName: "device_registry_enrich",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_DeviceRegistryEnrichFields,
-		},
-		"DeviceShadowEnrich": ubx.FieldSpec{
-			WireName: "device_shadow_enrich",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_DeviceRegistryEnrichFields,
-		},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_FilterFields,
-		},
-		"Lambda": ubx.FieldSpec{
-			WireName: "lambda",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_LambdaFields,
-		},
-		"Math": ubx.FieldSpec{
-			WireName: "math",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_MathFields,
-		},
-		"RemoveAttributes": ubx.FieldSpec{
-			WireName: "remove_attributes",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_RemoveAttributesFields,
-		},
-		"SelectAttributes": ubx.FieldSpec{
-			WireName: "select_attributes",
-			Kind: "object",
-			Fields: Pipeline_PipelineActivities_RemoveAttributesFields,
-		},
-	}
+	"AddAttributes": ubx.FieldSpec{
+		WireName: "add_attributes",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_AddAttributesFields,
+	},
+	"Channel": ubx.FieldSpec{
+		WireName: "channel",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_ChannelFields,
+	},
+	"Datastore": ubx.FieldSpec{
+		WireName: "datastore",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_DatastoreFields,
+	},
+	"DeviceRegistryEnrich": ubx.FieldSpec{
+		WireName: "device_registry_enrich",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_DeviceRegistryEnrichFields,
+	},
+	"DeviceShadowEnrich": ubx.FieldSpec{
+		WireName: "device_shadow_enrich",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_DeviceRegistryEnrichFields,
+	},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_FilterFields,
+	},
+	"Lambda": ubx.FieldSpec{
+		WireName: "lambda",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_LambdaFields,
+	},
+	"Math": ubx.FieldSpec{
+		WireName: "math",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_MathFields,
+	},
+	"RemoveAttributes": ubx.FieldSpec{
+		WireName: "remove_attributes",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_RemoveAttributesFields,
+	},
+	"SelectAttributes": ubx.FieldSpec{
+		WireName: "select_attributes",
+		Kind:     "object",
+		Fields:   Pipeline_PipelineActivities_RemoveAttributesFields,
+	},
+}
 
 var Pipeline_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PipelineConfig struct {
 	// Specifies the ordered list of pipeline activities (such as filter, select attributes, math, device registry, and channel or datastore writes) that process messages as they flow through the IoT Analytics pipeline. (AI-inferred)
@@ -244,14 +244,14 @@ var Pipeline = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"PipelineActivities": ubx.FieldSpec{
 			WireName: "pipeline_activities",
-			Kind: "list",
-			Fields: Pipeline_PipelineActivitiesFields,
+			Kind:     "list",
+			Fields:   Pipeline_PipelineActivitiesFields,
 		},
 		"PipelineName": ubx.FieldSpec{WireName: "pipeline_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Pipeline_TagsFields,
+			Kind:     "list",
+			Fields:   Pipeline_TagsFields,
 		},
 	},
 }

@@ -16,10 +16,10 @@ type DataSource_Rdsmetadata struct {
 	Database any
 	// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
 	DatabaseUserName any
-	ResourceRole any
+	ResourceRole     any
 	// <p>The SQL query to be executed against the Amazon RDS database. The SQL query should be valid for the Amazon RDS type being used.</p>
 	SelectSqlQuery any
-	ServiceRole any
+	ServiceRole    any
 }
 
 type DataSource_RedshiftMetadata_RedshiftDatabase struct {
@@ -53,18 +53,18 @@ type DataSourceAttrs struct {
 	// <p>An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.</p>
 	CreatedByIamUser any
 	// <p>A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).</p>
-	DataLocationS3 any
+	DataLocationS3    any
 	DataRearrangement any
 	// <p>Long integer type that is a 64-bit signed number.</p>
 	DataSizeInBytes any
-	DataSourceId any
+	DataSourceId    any
 	// <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p> <code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code> </p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] }</p>
 	DataSourceSchema any
 	// <p>A timestamp represented in epoch time.</p>
 	FinishedAt any
 	// <p>A timestamp represented in epoch time.</p>
 	LastUpdatedAt any
-	LogUri any
+	LogUri        any
 	// <p>Description of the most recent details about an object.</p>
 	Message any
 	// <p>A user-supplied name or description of the Amazon ML resource.</p>
@@ -89,6 +89,6 @@ var DataSource = ubx.DataSourceBinding{
 	WireType: "aws_machinelearning_data_source",
 	Fields: ubx.FieldMap{
 		"DataSourceId": ubx.FieldSpec{WireName: "data_source_id"},
-		"Verbose": ubx.FieldSpec{WireName: "verbose"},
+		"Verbose":      ubx.FieldSpec{WireName: "verbose"},
 	},
 }

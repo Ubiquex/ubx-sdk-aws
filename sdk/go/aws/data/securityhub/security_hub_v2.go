@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityHubV2_Features struct {
 	FeatureStatus any
-	UpdatedAt any
+	UpdatedAt     any
 }
 
 type SecurityHubV2Config struct {
@@ -13,13 +13,12 @@ type SecurityHubV2Config struct {
 
 type SecurityHubV2Attrs struct {
 	// <p>A map of feature names to their current detail, including enablement status and metadata.</p>
-	Features any
-	HubV2Arn any
+	Features     any
+	HubV2Arn     any
 	SubscribedAt any
 }
 
 var SecurityHubV2 = ubx.DataSourceBinding{
 	WireType: "aws_securityhub_security_hub_v2",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

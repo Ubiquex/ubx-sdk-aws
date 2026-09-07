@@ -4,33 +4,33 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReputationEntities_ReputationEntities_AwsSesManagedStatus struct {
-	Cause any
+	Cause                any
 	LastUpdatedTimestamp any
-	Status any
+	Status               any
 }
 
 type ReputationEntities_ReputationEntities struct {
-	AwsSesManagedStatus any
-	CustomerManagedStatus any
-	ReputationEntityReference any
-	ReputationEntityType any
-	ReputationImpact any
+	AwsSesManagedStatus        any
+	CustomerManagedStatus      any
+	ReputationEntityReference  any
+	ReputationEntityType       any
+	ReputationImpact           any
 	ReputationManagementPolicy any
-	SendingStatusAggregate any
+	SendingStatusAggregate     any
 }
 
 type ReputationEntitiesConfig struct {
 	// <p>An object that contains filters to apply when listing reputation entities.</p>
-	Filter any
+	Filter    any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type ReputationEntitiesAttrs struct {
 	// <p>An object that contains filters to apply when listing reputation entities.</p>
-	Filter any
+	Filter    any
 	NextToken any
-	PageSize any
+	PageSize  any
 	// <p>A list of reputation entities.</p>
 	ReputationEntities any
 }
@@ -38,8 +38,8 @@ type ReputationEntitiesAttrs struct {
 var ReputationEntities = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_reputation_entities",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":    ubx.FieldSpec{WireName: "filter"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

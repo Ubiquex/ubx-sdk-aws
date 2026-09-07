@@ -4,7 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamResourceDiscoveries_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -17,43 +17,43 @@ type IpamResourceDiscoveries_IpamResourceDiscoveries_OrganizationalUnitExclusion
 }
 
 type IpamResourceDiscoveries_IpamResourceDiscoveries_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type IpamResourceDiscoveries_IpamResourceDiscoveries struct {
-	Description any
-	IpamResourceDiscoveryArn any
-	IpamResourceDiscoveryId any
-	IpamResourceDiscoveryRegion any
-	IsDefault any
-	OperatingRegions any
+	Description                  any
+	IpamResourceDiscoveryArn     any
+	IpamResourceDiscoveryId      any
+	IpamResourceDiscoveryRegion  any
+	IsDefault                    any
+	OperatingRegions             any
 	OrganizationalUnitExclusions any
-	OwnerId any
-	State any
-	Tags any
+	OwnerId                      any
+	State                        any
+	Tags                         any
 }
 
 var IpamResourceDiscoveries_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamResourceDiscoveriesConfig struct {
-	DryRun any
-	Filters any
+	DryRun                   any
+	Filters                  any
 	IpamResourceDiscoveryIds any
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 }
 
 type IpamResourceDiscoveriesAttrs struct {
-	DryRun any
-	Filters any
-	IpamResourceDiscoveries any
+	DryRun                   any
+	Filters                  any
+	IpamResourceDiscoveries  any
 	IpamResourceDiscoveryIds any
-	MaxResults any
-	NextToken any
+	MaxResults               any
+	NextToken                any
 }
 
 var IpamResourceDiscoveries = ubx.DataSourceBinding{
@@ -62,11 +62,11 @@ var IpamResourceDiscoveries = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamResourceDiscoveries_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamResourceDiscoveries_FiltersFields,
 		},
 		"IpamResourceDiscoveryIds": ubx.FieldSpec{WireName: "ipam_resource_discovery_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":               ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                ubx.FieldSpec{WireName: "next_token"},
 	},
 }

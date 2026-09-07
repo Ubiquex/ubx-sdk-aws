@@ -4,39 +4,39 @@ package edge_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EdgeSagemakerDeployments_Deployments_Definitions_Checksum struct {
-	Sum any
+	Sum  any
 	Type any
 }
 
 type EdgeSagemakerDeployments_Deployments_Definitions struct {
-	Checksum any
+	Checksum    any
 	ModelHandle any
-	S3Url any
-	State any
+	S3Url       any
+	State       any
 }
 
 type EdgeSagemakerDeployments_Deployments struct {
-	Definitions any
-	DeploymentName any
+	Definitions           any
+	DeploymentName        any
 	FailureHandlingPolicy any
-	Type any
+	Type                  any
 }
 
 type EdgeSagemakerDeploymentsConfig struct {
 	DeviceFleetName any
-	DeviceName any
+	DeviceName      any
 }
 
 type EdgeSagemakerDeploymentsAttrs struct {
-	Deployments any
+	Deployments     any
 	DeviceFleetName any
-	DeviceName any
+	DeviceName      any
 }
 
 var EdgeSagemakerDeployments = ubx.DataSourceBinding{
 	WireType: "aws_edge_sagemaker_deployments",
 	Fields: ubx.FieldMap{
 		"DeviceFleetName": ubx.FieldSpec{WireName: "device_fleet_name"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+		"DeviceName":      ubx.FieldSpec{WireName: "device_name"},
 	},
 }

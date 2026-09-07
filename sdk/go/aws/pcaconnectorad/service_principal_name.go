@@ -20,7 +20,7 @@ type ServicePrincipalNameAttrs struct {
 var ServicePrincipalName = ubx.ResourceBinding{
 	WireType: "aws_pcaconnector_ad_service_principal_name",
 	Fields: ubx.FieldMap{
-		"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
+		"ConnectorArn":             ubx.FieldSpec{WireName: "connector_arn"},
 		"DirectoryRegistrationArn": ubx.FieldSpec{WireName: "directory_registration_arn"},
 	},
 }

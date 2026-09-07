@@ -9,7 +9,7 @@ type TagsLogGroupConfig struct {
 
 type TagsLogGroupAttrs struct {
 	LogGroupName any
-	Tags any
+	Tags         any
 }
 
 var TagsLogGroup = ubx.DataSourceBinding{

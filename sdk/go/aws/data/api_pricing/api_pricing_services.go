@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiPricingServices_Services struct {
 	AttributeNames any
-	ServiceCode any
+	ServiceCode    any
 }
 
 type ApiPricingServicesConfig struct {
 	FormatVersion any
-	MaxResults any
-	NextToken any
-	ServiceCode any
+	MaxResults    any
+	NextToken     any
+	ServiceCode   any
 }
 
 type ApiPricingServicesAttrs struct {
 	FormatVersion any
-	MaxResults any
-	NextToken any
-	ServiceCode any
-	Services any
+	MaxResults    any
+	NextToken     any
+	ServiceCode   any
+	Services      any
 }
 
 var ApiPricingServices = ubx.DataSourceBinding{
 	WireType: "aws_api_pricing_services",
 	Fields: ubx.FieldMap{
 		"FormatVersion": ubx.FieldSpec{WireName: "format_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceCode": ubx.FieldSpec{WireName: "service_code"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"ServiceCode":   ubx.FieldSpec{WireName: "service_code"},
 	},
 }

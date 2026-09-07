@@ -4,14 +4,14 @@ package pinpoint_email
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PinpointEmailDeliverabilityDashboardOptions_ActiveSubscribedDomains_InboxPlacementTrackingOption struct {
-	Global any
+	Global      any
 	TrackedIsps any
 }
 
 type PinpointEmailDeliverabilityDashboardOptions_ActiveSubscribedDomains struct {
-	Domain any
+	Domain                       any
 	InboxPlacementTrackingOption any
-	SubscriptionStartDate any
+	SubscriptionStartDate        any
 }
 
 type PinpointEmailDeliverabilityDashboardOptionsConfig struct {
@@ -22,14 +22,13 @@ type PinpointEmailDeliverabilityDashboardOptionsAttrs struct {
 	AccountStatus any
 	// <p>An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.</p>
 	ActiveSubscribedDomains any
-	DashboardEnabled any
+	DashboardEnabled        any
 	// <p>An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.</p>
 	PendingExpirationSubscribedDomains any
-	SubscriptionExpiryDate any
+	SubscriptionExpiryDate             any
 }
 
 var PinpointEmailDeliverabilityDashboardOptions = ubx.DataSourceBinding{
 	WireType: "aws_pinpoint_email_deliverability_dashboard_options",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

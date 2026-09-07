@@ -30,9 +30,9 @@ type SourceCredentialAttrs struct {
 var SourceCredential = ubx.ResourceBinding{
 	WireType: "aws_code_build_source_credential",
 	Fields: ubx.FieldMap{
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+		"AuthType":   ubx.FieldSpec{WireName: "auth_type"},
 		"ServerType": ubx.FieldSpec{WireName: "server_type"},
-		"Token": ubx.FieldSpec{WireName: "token"},
-		"Username": ubx.FieldSpec{WireName: "username"},
+		"Token":      ubx.FieldSpec{WireName: "token"},
+		"Username":   ubx.FieldSpec{WireName: "username"},
 	},
 }

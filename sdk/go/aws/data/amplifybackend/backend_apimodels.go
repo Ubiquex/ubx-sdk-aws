@@ -4,25 +4,25 @@ package amplifybackend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackendApimodelsConfig struct {
-	AppId any
+	AppId                  any
 	BackendEnvironmentName any
-	ResourceName any
+	ResourceName           any
 }
 
 type BackendApimodelsAttrs struct {
-	AppId any
-	BackendEnvironmentName any
+	AppId                    any
+	BackendEnvironmentName   any
 	ModelIntrospectionSchema any
-	Models any
-	ResourceName any
-	Status any
+	Models                   any
+	ResourceName             any
+	Status                   any
 }
 
 var BackendApimodels = ubx.DataSourceBinding{
 	WireType: "aws_amplifybackend_backend_apimodels",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":                  ubx.FieldSpec{WireName: "app_id"},
 		"BackendEnvironmentName": ubx.FieldSpec{WireName: "backend_environment_name"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
+		"ResourceName":           ubx.FieldSpec{WireName: "resource_name"},
 	},
 }

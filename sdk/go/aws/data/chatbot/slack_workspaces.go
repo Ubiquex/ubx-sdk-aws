@@ -4,20 +4,20 @@ package chatbot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SlackWorkspaces_SlackWorkspaces struct {
-	SlackTeamId any
+	SlackTeamId   any
 	SlackTeamName any
-	State any
-	StateReason any
+	State         any
+	StateReason   any
 }
 
 type SlackWorkspacesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SlackWorkspacesAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	SlackWorkspaces any
 }
 
@@ -25,6 +25,6 @@ var SlackWorkspaces = ubx.DataSourceBinding{
 	WireType: "aws_chatbot_slack_workspaces",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

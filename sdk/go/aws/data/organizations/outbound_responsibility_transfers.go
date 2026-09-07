@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutboundResponsibilityTransfers_ResponsibilityTransfers_Source struct {
 	ManagementAccountEmail any
-	ManagementAccountId any
+	ManagementAccountId    any
 }
 
 type OutboundResponsibilityTransfers_ResponsibilityTransfers struct {
 	ActiveHandshakeId any
-	Arn any
-	EndTimestamp any
-	Id any
-	Name any
-	Source any
-	StartTimestamp any
-	Status any
-	Target any
-	Type any
+	Arn               any
+	EndTimestamp      any
+	Id                any
+	Name              any
+	Source            any
+	StartTimestamp    any
+	Status            any
+	Target            any
+	Type              any
 }
 
 type OutboundResponsibilityTransfersConfig struct {
 	MaxResults any
-	NextToken any
-	Type any
+	NextToken  any
+	Type       any
 }
 
 type OutboundResponsibilityTransfersAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults              any
+	NextToken               any
 	ResponsibilityTransfers any
-	Type any
+	Type                    any
 }
 
 var OutboundResponsibilityTransfers = ubx.DataSourceBinding{
 	WireType: "aws_organizations_outbound_responsibility_transfers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

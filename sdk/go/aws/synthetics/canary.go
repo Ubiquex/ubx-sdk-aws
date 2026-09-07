@@ -22,7 +22,7 @@ type Canary_BrowserConfigs struct {
 
 type Canary_Code_Dependencies struct {
 	Reference any
-	Type any
+	Type      any
 }
 
 type Canary_Code struct {
@@ -48,7 +48,7 @@ type Canary_Replicas_ReplicationStatus struct {
 }
 
 type Canary_Replicas_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -57,20 +57,20 @@ type Canary_Replicas_VpcConfig struct {
 	Ipv6AllowedForDualStack any
 	// The security group IDs applied to the canary's VPC configuration, which control network traffic for the Synthetics canary when it runs in your virtual private cloud. (AI-inferred)
 	SecurityGroupIds any
-	SubnetIds any
-	VpcId any
+	SubnetIds        any
+	VpcId            any
 }
 
 type Canary_Replicas struct {
 	CanaryState any
-	KmsKeyArn any
+	KmsKeyArn   any
 	// In an AWS Synthetics canary, this numeric field records the last modification timestamp (Unix time) of a canary replica, which is a copy of the canary deployed to another AWS Region. (AI-inferred)
-	LastModified any
-	Location any
-	ReplicationStatus any
+	LastModified             any
+	Location                 any
+	ReplicationStatus        any
 	ResourcesToReplicateTags any
-	Tags any
-	VpcConfig any
+	Tags                     any
+	VpcConfig                any
 }
 
 type Canary_RunConfig struct {
@@ -112,74 +112,74 @@ type Canary_VisualReference struct {
 	BaseCanaryRunId any
 	// List of screenshots used as base reference for visual testing
 	BaseScreenshots any
-	BrowserType any
+	BrowserType     any
 }
 
 var Canary_ArtifactConfig_S3EncryptionFields = ubx.FieldMap{
-		"EncryptionMode": ubx.FieldSpec{WireName: "encryption_mode"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"EncryptionMode": ubx.FieldSpec{WireName: "encryption_mode"},
+	"KmsKeyArn":      ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var Canary_ArtifactConfigFields = ubx.FieldMap{
-		"S3Encryption": ubx.FieldSpec{
-			WireName: "s3_encryption",
-			Kind: "object",
-			Fields: Canary_ArtifactConfig_S3EncryptionFields,
-		},
-	}
+	"S3Encryption": ubx.FieldSpec{
+		WireName: "s3_encryption",
+		Kind:     "object",
+		Fields:   Canary_ArtifactConfig_S3EncryptionFields,
+	},
+}
 
 var Canary_BrowserConfigsFields = ubx.FieldMap{
-		"BrowserType": ubx.FieldSpec{WireName: "browser_type"},
-	}
+	"BrowserType": ubx.FieldSpec{WireName: "browser_type"},
+}
 
 var Canary_RunConfigFields = ubx.FieldMap{
-		"ActiveTracing": ubx.FieldSpec{WireName: "active_tracing"},
-		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"EphemeralStorage": ubx.FieldSpec{WireName: "ephemeral_storage"},
-		"MemoryInMb": ubx.FieldSpec{WireName: "memory_in_mb"},
-		"TimeoutInSeconds": ubx.FieldSpec{WireName: "timeout_in_seconds"},
-	}
+	"ActiveTracing":        ubx.FieldSpec{WireName: "active_tracing"},
+	"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
+	"EphemeralStorage":     ubx.FieldSpec{WireName: "ephemeral_storage"},
+	"MemoryInMb":           ubx.FieldSpec{WireName: "memory_in_mb"},
+	"TimeoutInSeconds":     ubx.FieldSpec{WireName: "timeout_in_seconds"},
+}
 
 var Canary_Schedule_RetryConfigFields = ubx.FieldMap{
-		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
-	}
+	"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
+}
 
 var Canary_ScheduleFields = ubx.FieldMap{
-		"DurationInSeconds": ubx.FieldSpec{WireName: "duration_in_seconds"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"RetryConfig": ubx.FieldSpec{
-			WireName: "retry_config",
-			Kind: "object",
-			Fields: Canary_Schedule_RetryConfigFields,
-		},
-	}
+	"DurationInSeconds": ubx.FieldSpec{WireName: "duration_in_seconds"},
+	"Expression":        ubx.FieldSpec{WireName: "expression"},
+	"RetryConfig": ubx.FieldSpec{
+		WireName: "retry_config",
+		Kind:     "object",
+		Fields:   Canary_Schedule_RetryConfigFields,
+	},
+}
 
 var Canary_Replicas_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Canary_Replicas_VpcConfigFields = ubx.FieldMap{
-		"Ipv6AllowedForDualStack": ubx.FieldSpec{WireName: "ipv6_allowed_for_dual_stack"},
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
-	}
+	"Ipv6AllowedForDualStack": ubx.FieldSpec{WireName: "ipv6_allowed_for_dual_stack"},
+	"SecurityGroupIds":        ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":               ubx.FieldSpec{WireName: "subnet_ids"},
+	"VpcId":                   ubx.FieldSpec{WireName: "vpc_id"},
+}
 
 var Canary_VisualReference_BaseScreenshotsFields = ubx.FieldMap{
-		"IgnoreCoordinates": ubx.FieldSpec{WireName: "ignore_coordinates"},
-		"ScreenshotName": ubx.FieldSpec{WireName: "screenshot_name"},
-	}
+	"IgnoreCoordinates": ubx.FieldSpec{WireName: "ignore_coordinates"},
+	"ScreenshotName":    ubx.FieldSpec{WireName: "screenshot_name"},
+}
 
 var Canary_VisualReferenceFields = ubx.FieldMap{
-		"BaseCanaryRunId": ubx.FieldSpec{WireName: "base_canary_run_id"},
-		"BaseScreenshots": ubx.FieldSpec{
-			WireName: "base_screenshots",
-			Kind: "list",
-			Fields: Canary_VisualReference_BaseScreenshotsFields,
-		},
-		"BrowserType": ubx.FieldSpec{WireName: "browser_type"},
-	}
+	"BaseCanaryRunId": ubx.FieldSpec{WireName: "base_canary_run_id"},
+	"BaseScreenshots": ubx.FieldSpec{
+		WireName: "base_screenshots",
+		Kind:     "list",
+		Fields:   Canary_VisualReference_BaseScreenshotsFields,
+	},
+	"BrowserType": ubx.FieldSpec{WireName: "browser_type"},
+}
 
 type CanaryConfig struct {
 	// Specifies the S3 encryption configuration for artifacts generated by the canary, such as screenshots, logs, and HAR files. (AI-inferred)
@@ -280,55 +280,55 @@ var Canary = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ArtifactConfig": ubx.FieldSpec{
 			WireName: "artifact_config",
-			Kind: "object",
-			Fields: Canary_ArtifactConfigFields,
+			Kind:     "object",
+			Fields:   Canary_ArtifactConfigFields,
 		},
 		"ArtifactS3Location": ubx.FieldSpec{WireName: "artifact_s3_location"},
 		"BrowserConfigs": ubx.FieldSpec{
 			WireName: "browser_configs",
-			Kind: "list",
-			Fields: Canary_BrowserConfigsFields,
+			Kind:     "list",
+			Fields:   Canary_BrowserConfigsFields,
 		},
 		"DeleteLambdaResourcesOnCanaryDeletion": ubx.FieldSpec{WireName: "delete_lambda_resources_on_canary_deletion"},
-		"DryRunAndUpdate": ubx.FieldSpec{WireName: "dry_run_and_update"},
-		"ExecutionRoleArn": ubx.FieldSpec{WireName: "execution_role_arn"},
-		"FailureRetentionPeriod": ubx.FieldSpec{WireName: "failure_retention_period"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProvisionedResourceCleanup": ubx.FieldSpec{WireName: "provisioned_resource_cleanup"},
-		"ResourcesToReplicateTags": ubx.FieldSpec{WireName: "resources_to_replicate_tags"},
+		"DryRunAndUpdate":                       ubx.FieldSpec{WireName: "dry_run_and_update"},
+		"ExecutionRoleArn":                      ubx.FieldSpec{WireName: "execution_role_arn"},
+		"FailureRetentionPeriod":                ubx.FieldSpec{WireName: "failure_retention_period"},
+		"KmsKeyArn":                             ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Name":                                  ubx.FieldSpec{WireName: "name"},
+		"ProvisionedResourceCleanup":            ubx.FieldSpec{WireName: "provisioned_resource_cleanup"},
+		"ResourcesToReplicateTags":              ubx.FieldSpec{WireName: "resources_to_replicate_tags"},
 		"RunConfig": ubx.FieldSpec{
 			WireName: "run_config",
-			Kind: "object",
-			Fields: Canary_RunConfigFields,
+			Kind:     "object",
+			Fields:   Canary_RunConfigFields,
 		},
 		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: Canary_ScheduleFields,
+			Kind:     "object",
+			Fields:   Canary_ScheduleFields,
 		},
 		"StartCanaryAfterCreation": ubx.FieldSpec{WireName: "start_canary_after_creation"},
-		"SuccessRetentionPeriod": ubx.FieldSpec{WireName: "success_retention_period"},
+		"SuccessRetentionPeriod":   ubx.FieldSpec{WireName: "success_retention_period"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Canary_Replicas_TagsFields,
+			Kind:     "list",
+			Fields:   Canary_Replicas_TagsFields,
 		},
 		"Vpcconfig": ubx.FieldSpec{
 			WireName: "vpcconfig",
-			Kind: "object",
-			Fields: Canary_Replicas_VpcConfigFields,
+			Kind:     "object",
+			Fields:   Canary_Replicas_VpcConfigFields,
 		},
 		"VisualReference": ubx.FieldSpec{
 			WireName: "visual_reference",
-			Kind: "object",
-			Fields: Canary_VisualReferenceFields,
+			Kind:     "object",
+			Fields:   Canary_VisualReferenceFields,
 		},
 		"VisualReferences": ubx.FieldSpec{
 			WireName: "visual_references",
-			Kind: "list",
-			Fields: Canary_VisualReferenceFields,
+			Kind:     "list",
+			Fields:   Canary_VisualReferenceFields,
 		},
 	},
 }

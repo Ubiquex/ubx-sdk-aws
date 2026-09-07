@@ -10,41 +10,41 @@ type AssessmentTemplates_Filter_DurationRange struct {
 
 type AssessmentTemplates_Filter struct {
 	// <p>This data type is used in the <a>AssessmentTemplateFilter</a> data type.</p>
-	DurationRange any
-	NamePattern any
+	DurationRange    any
+	NamePattern      any
 	RulesPackageArns any
 }
 
 var AssessmentTemplates_Filter_DurationRangeFields = ubx.FieldMap{
-		"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
-		"MinSeconds": ubx.FieldSpec{WireName: "min_seconds"},
-	}
+	"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
+	"MinSeconds": ubx.FieldSpec{WireName: "min_seconds"},
+}
 
 var AssessmentTemplates_FilterFields = ubx.FieldMap{
-		"DurationRange": ubx.FieldSpec{
-			WireName: "duration_range",
-			Kind: "object",
-			Fields: AssessmentTemplates_Filter_DurationRangeFields,
-		},
-		"NamePattern": ubx.FieldSpec{WireName: "name_pattern"},
-		"RulesPackageArns": ubx.FieldSpec{WireName: "rules_package_arns"},
-	}
+	"DurationRange": ubx.FieldSpec{
+		WireName: "duration_range",
+		Kind:     "object",
+		Fields:   AssessmentTemplates_Filter_DurationRangeFields,
+	},
+	"NamePattern":      ubx.FieldSpec{WireName: "name_pattern"},
+	"RulesPackageArns": ubx.FieldSpec{WireName: "rules_package_arns"},
+}
 
 type AssessmentTemplatesConfig struct {
 	AssessmentTargetArns any
 	// <p>Used as the request parameter in the <a>ListAssessmentTemplates</a> action.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AssessmentTemplatesAttrs struct {
-	AssessmentTargetArns any
+	AssessmentTargetArns   any
 	AssessmentTemplateArns any
 	// <p>Used as the request parameter in the <a>ListAssessmentTemplates</a> action.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var AssessmentTemplates = ubx.DataSourceBinding{
@@ -53,10 +53,10 @@ var AssessmentTemplates = ubx.DataSourceBinding{
 		"AssessmentTargetArns": ubx.FieldSpec{WireName: "assessment_target_arns"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: AssessmentTemplates_FilterFields,
+			Kind:     "object",
+			Fields:   AssessmentTemplates_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

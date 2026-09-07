@@ -9,47 +9,47 @@ type InsightsData_Events_Resources struct {
 }
 
 type InsightsData_Events struct {
-	AccessKeyId any
+	AccessKeyId     any
 	CloudTrailEvent any
-	EventId any
-	EventName any
-	EventSource any
-	EventTime any
-	ReadOnly any
-	Resources any
-	Username any
+	EventId         any
+	EventName       any
+	EventSource     any
+	EventTime       any
+	ReadOnly        any
+	Resources       any
+	Username        any
 }
 
 type InsightsDataConfig struct {
-	DataType any
-	Dimensions any
-	EndTime any
+	DataType      any
+	Dimensions    any
+	EndTime       any
 	InsightSource any
-	MaxResults any
-	NextToken any
-	StartTime any
+	MaxResults    any
+	NextToken     any
+	StartTime     any
 }
 
 type InsightsDataAttrs struct {
-	DataType any
-	Dimensions any
-	EndTime any
-	Events any
+	DataType      any
+	Dimensions    any
+	EndTime       any
+	Events        any
 	InsightSource any
-	MaxResults any
-	NextToken any
-	StartTime any
+	MaxResults    any
+	NextToken     any
+	StartTime     any
 }
 
 var InsightsData = ubx.DataSourceBinding{
 	WireType: "aws_cloudtrail_insights_data",
 	Fields: ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"DataType":      ubx.FieldSpec{WireName: "data_type"},
+		"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+		"EndTime":       ubx.FieldSpec{WireName: "end_time"},
 		"InsightSource": ubx.FieldSpec{WireName: "insight_source"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":     ubx.FieldSpec{WireName: "start_time"},
 	},
 }

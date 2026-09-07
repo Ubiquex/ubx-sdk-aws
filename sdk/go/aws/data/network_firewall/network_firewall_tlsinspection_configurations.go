@@ -4,18 +4,18 @@ package network_firewall
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkFirewallTlsinspectionConfigurations_TlsinspectionConfigurations struct {
-	Arn any
+	Arn  any
 	Name any
 }
 
 type NetworkFirewallTlsinspectionConfigurationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type NetworkFirewallTlsinspectionConfigurationsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults                  any
+	NextToken                   any
 	TlsinspectionConfigurations any
 }
 
@@ -23,6 +23,6 @@ var NetworkFirewallTlsinspectionConfigurations = ubx.DataSourceBinding{
 	WireType: "aws_network_firewall_tlsinspection_configurations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

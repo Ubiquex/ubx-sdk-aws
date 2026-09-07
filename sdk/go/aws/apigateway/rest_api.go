@@ -31,22 +31,22 @@ type RestApi_Tags struct {
 }
 
 var RestApi_BodyS3LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Etag":    ubx.FieldSpec{WireName: "etag"},
+	"Key":     ubx.FieldSpec{WireName: "key"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var RestApi_EndpointConfigurationFields = ubx.FieldMap{
-		"IpAddressType": ubx.FieldSpec{WireName: "ip_address_type"},
-		"Types": ubx.FieldSpec{WireName: "types"},
-		"VpcEndpointIds": ubx.FieldSpec{WireName: "vpc_endpoint_ids"},
-	}
+	"IpAddressType":  ubx.FieldSpec{WireName: "ip_address_type"},
+	"Types":          ubx.FieldSpec{WireName: "types"},
+	"VpcEndpointIds": ubx.FieldSpec{WireName: "vpc_endpoint_ids"},
+}
 
 var RestApi_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RestApiConfig struct {
 	// Determines whether API keys are sourced from the request header or from an authorizer, with allowed values HEADER and AUTHORIZER. (AI-inferred)
@@ -82,7 +82,7 @@ type RestApiConfig struct {
 	// Specifies the minimum TLS version allowed for the REST API's endpoint, either 'TLS_1_0' or 'TLS_1_2'. (AI-inferred)
 	SecurityPolicy any
 	// Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred)
-	Tags any
+	Tags    any
 	Version any
 }
 
@@ -124,7 +124,7 @@ type RestApiAttrs struct {
 	// Specifies the minimum TLS version allowed for the REST API's endpoint, either 'TLS_1_0' or 'TLS_1_2'. (AI-inferred)
 	SecurityPolicy any
 	// Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred)
-	Tags any
+	Tags    any
 	Version any
 }
 
@@ -133,32 +133,32 @@ var RestApi = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApiKeySourceType": ubx.FieldSpec{WireName: "api_key_source_type"},
 		"BinaryMediaTypes": ubx.FieldSpec{WireName: "binary_media_types"},
-		"Body": ubx.FieldSpec{WireName: "body"},
+		"Body":             ubx.FieldSpec{WireName: "body"},
 		"BodyS3Location": ubx.FieldSpec{
 			WireName: "body_s3_location",
-			Kind: "object",
-			Fields: RestApi_BodyS3LocationFields,
+			Kind:     "object",
+			Fields:   RestApi_BodyS3LocationFields,
 		},
-		"CloneFrom": ubx.FieldSpec{WireName: "clone_from"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CloneFrom":                 ubx.FieldSpec{WireName: "clone_from"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
 		"DisableExecuteApiEndpoint": ubx.FieldSpec{WireName: "disable_execute_api_endpoint"},
-		"EndpointAccessMode": ubx.FieldSpec{WireName: "endpoint_access_mode"},
+		"EndpointAccessMode":        ubx.FieldSpec{WireName: "endpoint_access_mode"},
 		"EndpointConfiguration": ubx.FieldSpec{
 			WireName: "endpoint_configuration",
-			Kind: "object",
-			Fields: RestApi_EndpointConfigurationFields,
+			Kind:     "object",
+			Fields:   RestApi_EndpointConfigurationFields,
 		},
-		"FailOnWarnings": ubx.FieldSpec{WireName: "fail_on_warnings"},
+		"FailOnWarnings":         ubx.FieldSpec{WireName: "fail_on_warnings"},
 		"MinimumCompressionSize": ubx.FieldSpec{WireName: "minimum_compression_size"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
+		"Mode":                   ubx.FieldSpec{WireName: "mode"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Parameters":             ubx.FieldSpec{WireName: "parameters"},
+		"Policy":                 ubx.FieldSpec{WireName: "policy"},
+		"SecurityPolicy":         ubx.FieldSpec{WireName: "security_policy"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RestApi_TagsFields,
+			Kind:     "list",
+			Fields:   RestApi_TagsFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

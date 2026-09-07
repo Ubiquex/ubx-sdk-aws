@@ -24,7 +24,7 @@ type QueueLimitAssociationAttrs struct {
 var QueueLimitAssociation = ubx.ResourceBinding{
 	WireType: "aws_deadline_queue_limit_association",
 	Fields: ubx.FieldMap{
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
+		"FarmId":  ubx.FieldSpec{WireName: "farm_id"},
 		"LimitId": ubx.FieldSpec{WireName: "limit_id"},
 		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
 	},

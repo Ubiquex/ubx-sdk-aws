@@ -9,42 +9,42 @@ type ImportFileEnrichments_Filters struct {
 
 type ImportFileEnrichments_Items_Checksum struct {
 	EncryptionAlgorithm any
-	Hash any
+	Hash                any
 }
 
 type ImportFileEnrichments_Items_S3BucketTarget struct {
-	S3Bucket any
+	S3Bucket      any
 	S3BucketOwner any
-	S3Key any
+	S3Key         any
 }
 
 type ImportFileEnrichments_Items struct {
-	Checksum any
-	CreatedAt any
-	EndedAt any
-	JobId any
+	Checksum       any
+	CreatedAt      any
+	EndedAt        any
+	JobId          any
 	S3BucketTarget any
-	Status any
-	StatusDetails any
+	Status         any
+	StatusDetails  any
 }
 
 var ImportFileEnrichments_FiltersFields = ubx.FieldMap{
-		"JobIds": ubx.FieldSpec{WireName: "job_ids"},
-	}
+	"JobIds": ubx.FieldSpec{WireName: "job_ids"},
+}
 
 type ImportFileEnrichmentsConfig struct {
 	// <p>Filters for listing import file enrichment jobs.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type ImportFileEnrichmentsAttrs struct {
 	// <p>Filters for listing import file enrichment jobs.</p>
-	Filters any
-	Items any
+	Filters    any
+	Items      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var ImportFileEnrichments = ubx.DataSourceBinding{
@@ -52,10 +52,10 @@ var ImportFileEnrichments = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ImportFileEnrichments_FiltersFields,
+			Kind:     "object",
+			Fields:   ImportFileEnrichments_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

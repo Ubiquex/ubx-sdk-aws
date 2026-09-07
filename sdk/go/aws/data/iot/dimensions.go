@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DimensionsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type DimensionsAttrs struct {
 	DimensionNames any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var Dimensions = ubx.DataSourceBinding{
 	WireType: "aws_iot_dimensions",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

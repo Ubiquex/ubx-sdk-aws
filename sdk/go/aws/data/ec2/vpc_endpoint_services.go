@@ -4,7 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcEndpointServices_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -17,51 +17,51 @@ type VpcEndpointServices_ServiceDetails_ServiceType struct {
 }
 
 type VpcEndpointServices_ServiceDetails_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type VpcEndpointServices_ServiceDetails struct {
-	AcceptanceRequired any
-	AvailabilityZoneIds any
-	AvailabilityZones any
-	BaseEndpointDnsNames any
-	ManagesVpcEndpoints any
-	Owner any
-	PayerResponsibility any
-	PrivateDnsName any
+	AcceptanceRequired              any
+	AvailabilityZoneIds             any
+	AvailabilityZones               any
+	BaseEndpointDnsNames            any
+	ManagesVpcEndpoints             any
+	Owner                           any
+	PayerResponsibility             any
+	PrivateDnsName                  any
 	PrivateDnsNameVerificationState any
-	PrivateDnsNames any
-	ServiceId any
-	ServiceName any
-	ServiceRegion any
-	ServiceType any
-	SupportedIpAddressTypes any
-	Tags any
-	VpcEndpointPolicySupported any
+	PrivateDnsNames                 any
+	ServiceId                       any
+	ServiceName                     any
+	ServiceRegion                   any
+	ServiceType                     any
+	SupportedIpAddressTypes         any
+	Tags                            any
+	VpcEndpointPolicySupported      any
 }
 
 var VpcEndpointServices_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type VpcEndpointServicesConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	ServiceNames any
+	DryRun         any
+	Filters        any
+	MaxResults     any
+	NextToken      any
+	ServiceNames   any
 	ServiceRegions any
 }
 
 type VpcEndpointServicesAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun         any
+	Filters        any
+	MaxResults     any
+	NextToken      any
 	ServiceDetails any
-	ServiceNames any
+	ServiceNames   any
 	ServiceRegions any
 }
 
@@ -71,12 +71,12 @@ var VpcEndpointServices = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: VpcEndpointServices_FiltersFields,
+			Kind:     "list",
+			Fields:   VpcEndpointServices_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ServiceNames": ubx.FieldSpec{WireName: "service_names"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
+		"ServiceNames":   ubx.FieldSpec{WireName: "service_names"},
 		"ServiceRegions": ubx.FieldSpec{WireName: "service_regions"},
 	},
 }

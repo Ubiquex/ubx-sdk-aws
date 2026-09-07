@@ -4,23 +4,23 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrderableInstanceTypes_InstanceTypes_FormFactorConfigs struct {
-	FormFactor any
+	FormFactor        any
 	OutpostGeneration any
 }
 
 type OrderableInstanceTypes_InstanceTypes struct {
-	FormFactorConfigs any
-	InstanceType any
-	MemoryInMib any
+	FormFactorConfigs  any
+	InstanceType       any
+	MemoryInMib        any
 	NetworkPerformance any
-	Vcpus any
+	Vcpus              any
 }
 
 type OrderableInstanceTypesConfig struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken               any
 	OutpostGenerationFilter any
 }
 
@@ -29,15 +29,15 @@ type OrderableInstanceTypesAttrs struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken               any
 	OutpostGenerationFilter any
 }
 
 var OrderableInstanceTypes = ubx.DataSourceBinding{
 	WireType: "aws_outposts_orderable_instance_types",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":              ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":               ubx.FieldSpec{WireName: "next_token"},
 		"OutpostGenerationFilter": ubx.FieldSpec{WireName: "outpost_generation_filter"},
 	},
 }

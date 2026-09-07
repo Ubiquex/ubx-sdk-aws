@@ -4,7 +4,7 @@ package elasticfilesystem
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -12,7 +12,7 @@ type TagsForResourceConfig struct {
 	// Max results used for pagination.
 	MaxResults any
 	// Token used for pagination.
-	NextToken any
+	NextToken  any
 	ResourceId any
 }
 
@@ -20,16 +20,16 @@ type TagsForResourceAttrs struct {
 	// Max results used for pagination.
 	MaxResults any
 	// Token used for pagination.
-	NextToken any
+	NextToken  any
 	ResourceId any
-	Tags any
+	Tags       any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
 	WireType: "aws_elasticfilesystem_tags_for_resource",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

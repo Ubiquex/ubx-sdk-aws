@@ -4,41 +4,41 @@ package api_sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiSagemakerPipelineVersions_PipelineVersionSummaries struct {
-	CreationTime any
+	CreationTime                      any
 	LastExecutionPipelineExecutionArn any
-	PipelineArn any
-	PipelineVersionDescription any
-	PipelineVersionDisplayName any
-	PipelineVersionId any
+	PipelineArn                       any
+	PipelineVersionDescription        any
+	PipelineVersionDisplayName        any
+	PipelineVersionId                 any
 }
 
 type ApiSagemakerPipelineVersionsConfig struct {
-	CreatedAfter any
+	CreatedAfter  any
 	CreatedBefore any
-	MaxResults any
-	NextToken any
-	PipelineName any
-	SortOrder any
+	MaxResults    any
+	NextToken     any
+	PipelineName  any
+	SortOrder     any
 }
 
 type ApiSagemakerPipelineVersionsAttrs struct {
-	CreatedAfter any
-	CreatedBefore any
-	MaxResults any
-	NextToken any
-	PipelineName any
+	CreatedAfter             any
+	CreatedBefore            any
+	MaxResults               any
+	NextToken                any
+	PipelineName             any
 	PipelineVersionSummaries any
-	SortOrder any
+	SortOrder                any
 }
 
 var ApiSagemakerPipelineVersions = ubx.DataSourceBinding{
 	WireType: "aws_api_sagemaker_pipeline_versions",
 	Fields: ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+		"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
 		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PipelineName": ubx.FieldSpec{WireName: "pipeline_name"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
+		"PipelineName":  ubx.FieldSpec{WireName: "pipeline_name"},
+		"SortOrder":     ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

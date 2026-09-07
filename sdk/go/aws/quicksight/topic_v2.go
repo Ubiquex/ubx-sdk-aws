@@ -37,50 +37,50 @@ type TopicV2_Permissions struct {
 }
 
 type TopicV2_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var TopicV2_CustomInstructionsFields = ubx.FieldMap{
-		"CustomInstructionsString": ubx.FieldSpec{WireName: "custom_instructions_string"},
-	}
+	"CustomInstructionsString": ubx.FieldSpec{WireName: "custom_instructions_string"},
+}
 
 var TopicV2_DataSetRelations_LeftFields = ubx.FieldMap{
-		"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
-		"DataSetArn": ubx.FieldSpec{WireName: "data_set_arn"},
-	}
+	"ColumnNames": ubx.FieldSpec{WireName: "column_names"},
+	"DataSetArn":  ubx.FieldSpec{WireName: "data_set_arn"},
+}
 
 var TopicV2_DataSetRelationsFields = ubx.FieldMap{
-		"Left": ubx.FieldSpec{
-			WireName: "left",
-			Kind: "object",
-			Fields: TopicV2_DataSetRelations_LeftFields,
-		},
-		"Right": ubx.FieldSpec{
-			WireName: "right",
-			Kind: "object",
-			Fields: TopicV2_DataSetRelations_LeftFields,
-		},
-	}
+	"Left": ubx.FieldSpec{
+		WireName: "left",
+		Kind:     "object",
+		Fields:   TopicV2_DataSetRelations_LeftFields,
+	},
+	"Right": ubx.FieldSpec{
+		WireName: "right",
+		Kind:     "object",
+		Fields:   TopicV2_DataSetRelations_LeftFields,
+	},
+}
 
 var TopicV2_DataSetsFields = ubx.FieldMap{
-		"DataSetArn": ubx.FieldSpec{WireName: "data_set_arn"},
-		"DataSetName": ubx.FieldSpec{WireName: "data_set_name"},
-	}
+	"DataSetArn":  ubx.FieldSpec{WireName: "data_set_arn"},
+	"DataSetName": ubx.FieldSpec{WireName: "data_set_name"},
+}
 
 var TopicV2_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var TopicV2_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type TopicV2Config struct {
 	// The AWS account ID in which the QuickSight topic is created or managed; defaults to the account associated with the provider credentials if not specified. (AI-inferred)
-	AwsAccountId any
+	AwsAccountId       any
 	CustomInstructions any
 	// Specifies the relationships among the datasets associated with the QuickSight topic, enabling the topic to understand how to join or relate data from different sources. (AI-inferred)
 	DataSetRelations any
@@ -104,7 +104,7 @@ type TopicV2Attrs struct {
 	// The Amazon Resource Name (ARN) of the QuickSight topic, assigned by AWS when the topic is created. (AI-inferred)
 	Arn any
 	// The AWS account ID in which the QuickSight topic is created or managed; defaults to the account associated with the provider credentials if not specified. (AI-inferred)
-	AwsAccountId any
+	AwsAccountId       any
 	CustomInstructions any
 	// Specifies the relationships among the datasets associated with the QuickSight topic, enabling the topic to understand how to join or relate data from different sources. (AI-inferred)
 	DataSetRelations any
@@ -130,31 +130,31 @@ var TopicV2 = ubx.ResourceBinding{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 		"CustomInstructions": ubx.FieldSpec{
 			WireName: "custom_instructions",
-			Kind: "object",
-			Fields: TopicV2_CustomInstructionsFields,
+			Kind:     "object",
+			Fields:   TopicV2_CustomInstructionsFields,
 		},
 		"DataSetRelations": ubx.FieldSpec{
 			WireName: "data_set_relations",
-			Kind: "list",
-			Fields: TopicV2_DataSetRelationsFields,
+			Kind:     "list",
+			Fields:   TopicV2_DataSetRelationsFields,
 		},
 		"DataSets": ubx.FieldSpec{
 			WireName: "data_sets",
-			Kind: "list",
-			Fields: TopicV2_DataSetsFields,
+			Kind:     "list",
+			Fields:   TopicV2_DataSetsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"FolderArns": ubx.FieldSpec{WireName: "folder_arns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"FolderArns":  ubx.FieldSpec{WireName: "folder_arns"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: TopicV2_PermissionsFields,
+			Kind:     "list",
+			Fields:   TopicV2_PermissionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: TopicV2_TagsFields,
+			Kind:     "list",
+			Fields:   TopicV2_TagsFields,
 		},
 		"TopicId": ubx.FieldSpec{WireName: "topic_id"},
 	},

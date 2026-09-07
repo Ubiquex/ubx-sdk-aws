@@ -11,9 +11,9 @@ type Host_Tags struct {
 }
 
 var Host_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type HostConfig struct {
 	// The ID of the Outpost hardware asset.
@@ -62,18 +62,18 @@ type HostAttrs struct {
 var Host = ubx.ResourceBinding{
 	WireType: "aws_ec2_host",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"AutoPlacement": ubx.FieldSpec{WireName: "auto_placement"},
+		"AssetId":          ubx.FieldSpec{WireName: "asset_id"},
+		"AutoPlacement":    ubx.FieldSpec{WireName: "auto_placement"},
 		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"HostMaintenance": ubx.FieldSpec{WireName: "host_maintenance"},
-		"HostRecovery": ubx.FieldSpec{WireName: "host_recovery"},
-		"InstanceFamily": ubx.FieldSpec{WireName: "instance_family"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"OutpostArn": ubx.FieldSpec{WireName: "outpost_arn"},
+		"HostMaintenance":  ubx.FieldSpec{WireName: "host_maintenance"},
+		"HostRecovery":     ubx.FieldSpec{WireName: "host_recovery"},
+		"InstanceFamily":   ubx.FieldSpec{WireName: "instance_family"},
+		"InstanceType":     ubx.FieldSpec{WireName: "instance_type"},
+		"OutpostArn":       ubx.FieldSpec{WireName: "outpost_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Host_TagsFields,
+			Kind:     "list",
+			Fields:   Host_TagsFields,
 		},
 	},
 }

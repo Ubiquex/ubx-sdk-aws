@@ -4,53 +4,53 @@ package networkmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteAnalysis_RouteAnalysis_Destination struct {
-	IpAddress any
-	TransitGatewayArn any
+	IpAddress                   any
+	TransitGatewayArn           any
 	TransitGatewayAttachmentArn any
 }
 
 type RouteAnalysis_RouteAnalysis_ForwardPath_CompletionStatus struct {
-	ReasonCode any
+	ReasonCode    any
 	ReasonContext any
-	ResultCode any
+	ResultCode    any
 }
 
 type RouteAnalysis_RouteAnalysis_ForwardPath_Path_Resource struct {
-	Definition any
-	IsMiddlebox any
-	NameTag any
+	Definition           any
+	IsMiddlebox          any
+	NameTag              any
 	RegisteredGatewayArn any
-	ResourceArn any
-	ResourceType any
+	ResourceArn          any
+	ResourceType         any
 }
 
 type RouteAnalysis_RouteAnalysis_ForwardPath_Path struct {
 	DestinationCidrBlock any
-	Resource any
-	Sequence any
+	Resource             any
+	Sequence             any
 }
 
 type RouteAnalysis_RouteAnalysis_ForwardPath struct {
 	// <p>Describes the status of an analysis at completion.</p>
 	CompletionStatus any
-	Path any
+	Path             any
 }
 
 type RouteAnalysis_RouteAnalysis struct {
 	// <p>Describes a source or a destination.</p>
 	Destination any
 	// <p>Describes a route analysis path.</p>
-	ForwardPath any
-	GlobalNetworkId any
+	ForwardPath       any
+	GlobalNetworkId   any
 	IncludeReturnPath any
-	OwnerAccountId any
+	OwnerAccountId    any
 	// <p>Describes a route analysis path.</p>
-	ReturnPath any
+	ReturnPath      any
 	RouteAnalysisId any
 	// <p>Describes a source or a destination.</p>
-	Source any
+	Source         any
 	StartTimestamp any
-	Status any
+	Status         any
 	UseMiddleboxes any
 }
 
@@ -62,7 +62,7 @@ type RouteAnalysisConfig struct {
 type RouteAnalysisAttrs struct {
 	GlobalNetworkId any
 	// <p>Describes a route analysis.</p>
-	RouteAnalysis any
+	RouteAnalysis   any
 	RouteAnalysisId any
 }
 

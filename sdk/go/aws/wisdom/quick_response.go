@@ -23,23 +23,23 @@ type QuickResponse_GroupingConfiguration struct {
 }
 
 type QuickResponse_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var QuickResponse_ContentFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+}
 
 var QuickResponse_GroupingConfigurationFields = ubx.FieldMap{
-		"Criteria": ubx.FieldSpec{WireName: "criteria"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Criteria": ubx.FieldSpec{WireName: "criteria"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var QuickResponse_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type QuickResponseConfig struct {
 	// The Amazon Connect contact channels this quick response applies to.
@@ -105,25 +105,25 @@ var QuickResponse = ubx.ResourceBinding{
 		"Channels": ubx.FieldSpec{WireName: "channels"},
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: QuickResponse_ContentFields,
+			Kind:     "object",
+			Fields:   QuickResponse_ContentFields,
 		},
 		"ContentType": ubx.FieldSpec{WireName: "content_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GroupingConfiguration": ubx.FieldSpec{
 			WireName: "grouping_configuration",
-			Kind: "object",
-			Fields: QuickResponse_GroupingConfigurationFields,
+			Kind:     "object",
+			Fields:   QuickResponse_GroupingConfigurationFields,
 		},
-		"IsActive": ubx.FieldSpec{WireName: "is_active"},
+		"IsActive":         ubx.FieldSpec{WireName: "is_active"},
 		"KnowledgeBaseArn": ubx.FieldSpec{WireName: "knowledge_base_arn"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ShortcutKey": ubx.FieldSpec{WireName: "shortcut_key"},
+		"Language":         ubx.FieldSpec{WireName: "language"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"ShortcutKey":      ubx.FieldSpec{WireName: "shortcut_key"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: QuickResponse_TagsFields,
+			Kind:     "list",
+			Fields:   QuickResponse_TagsFields,
 		},
 	},
 }

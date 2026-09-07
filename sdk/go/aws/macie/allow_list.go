@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AllowList_Tags struct {
 	// The key of a tag that can be applied to this Amazon Macie allow list resource for organizing and identifying it. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var AllowList_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AllowListConfig struct {
 	// The regex or s3 object to use for the AllowList.
@@ -45,13 +45,13 @@ type AllowListAttrs struct {
 var AllowList = ubx.ResourceBinding{
 	WireType: "aws_macie_allow_list",
 	Fields: ubx.FieldMap{
-		"Criteria": ubx.FieldSpec{WireName: "criteria"},
+		"Criteria":    ubx.FieldSpec{WireName: "criteria"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AllowList_TagsFields,
+			Kind:     "list",
+			Fields:   AllowList_TagsFields,
 		},
 	},
 }

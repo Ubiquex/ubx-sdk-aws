@@ -23,22 +23,22 @@ type EnvironmentBlueprintConfiguration_RegionalParameters struct {
 }
 
 var EnvironmentBlueprintConfiguration_ProvisioningConfigurations_LakeFormationConfigurationFields = ubx.FieldMap{
-		"LocationRegistrationExcludeS3Locations": ubx.FieldSpec{WireName: "location_registration_exclude_s3_locations"},
-		"LocationRegistrationRole": ubx.FieldSpec{WireName: "location_registration_role"},
-	}
+	"LocationRegistrationExcludeS3Locations": ubx.FieldSpec{WireName: "location_registration_exclude_s3_locations"},
+	"LocationRegistrationRole":               ubx.FieldSpec{WireName: "location_registration_role"},
+}
 
 var EnvironmentBlueprintConfiguration_ProvisioningConfigurationsFields = ubx.FieldMap{
-		"LakeFormationConfiguration": ubx.FieldSpec{
-			WireName: "lake_formation_configuration",
-			Kind: "object",
-			Fields: EnvironmentBlueprintConfiguration_ProvisioningConfigurations_LakeFormationConfigurationFields,
-		},
-	}
+	"LakeFormationConfiguration": ubx.FieldSpec{
+		WireName: "lake_formation_configuration",
+		Kind:     "object",
+		Fields:   EnvironmentBlueprintConfiguration_ProvisioningConfigurations_LakeFormationConfigurationFields,
+	},
+}
 
 var EnvironmentBlueprintConfiguration_RegionalParametersFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"Region":     ubx.FieldSpec{WireName: "region"},
+}
 
 type EnvironmentBlueprintConfigurationConfig struct {
 	// The unique identifier of the Amazon Data Zone domain for which this environment blueprint configuration is defined. (AI-inferred)
@@ -93,22 +93,22 @@ type EnvironmentBlueprintConfigurationAttrs struct {
 var EnvironmentBlueprintConfiguration = ubx.ResourceBinding{
 	WireType: "aws_data_zone_environment_blueprint_configuration",
 	Fields: ubx.FieldMap{
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"EnabledRegions": ubx.FieldSpec{WireName: "enabled_regions"},
-		"EnvironmentBlueprintIdentifier": ubx.FieldSpec{WireName: "environment_blueprint_identifier"},
+		"DomainIdentifier":                  ubx.FieldSpec{WireName: "domain_identifier"},
+		"EnabledRegions":                    ubx.FieldSpec{WireName: "enabled_regions"},
+		"EnvironmentBlueprintIdentifier":    ubx.FieldSpec{WireName: "environment_blueprint_identifier"},
 		"EnvironmentRolePermissionBoundary": ubx.FieldSpec{WireName: "environment_role_permission_boundary"},
-		"GlobalParameters": ubx.FieldSpec{WireName: "global_parameters"},
-		"ManageAccessRoleArn": ubx.FieldSpec{WireName: "manage_access_role_arn"},
+		"GlobalParameters":                  ubx.FieldSpec{WireName: "global_parameters"},
+		"ManageAccessRoleArn":               ubx.FieldSpec{WireName: "manage_access_role_arn"},
 		"ProvisioningConfigurations": ubx.FieldSpec{
 			WireName: "provisioning_configurations",
-			Kind: "list",
-			Fields: EnvironmentBlueprintConfiguration_ProvisioningConfigurationsFields,
+			Kind:     "list",
+			Fields:   EnvironmentBlueprintConfiguration_ProvisioningConfigurationsFields,
 		},
 		"ProvisioningRoleArn": ubx.FieldSpec{WireName: "provisioning_role_arn"},
 		"RegionalParameters": ubx.FieldSpec{
 			WireName: "regional_parameters",
-			Kind: "list",
-			Fields: EnvironmentBlueprintConfiguration_RegionalParametersFields,
+			Kind:     "list",
+			Fields:   EnvironmentBlueprintConfiguration_RegionalParametersFields,
 		},
 	},
 }

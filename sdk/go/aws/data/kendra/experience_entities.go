@@ -4,37 +4,37 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperienceEntities_SummaryItems_DisplayData struct {
-	FirstName any
-	GroupName any
+	FirstName          any
+	GroupName          any
 	IdentifiedUserName any
-	LastName any
-	UserName any
+	LastName           any
+	UserName           any
 }
 
 type ExperienceEntities_SummaryItems struct {
 	DisplayData any
-	EntityId any
-	EntityType any
+	EntityId    any
+	EntityType  any
 }
 
 type ExperienceEntitiesConfig struct {
-	Id any
-	IndexId any
+	Id        any
+	IndexId   any
 	NextToken any
 }
 
 type ExperienceEntitiesAttrs struct {
-	Id any
-	IndexId any
-	NextToken any
+	Id           any
+	IndexId      any
+	NextToken    any
 	SummaryItems any
 }
 
 var ExperienceEntities = ubx.DataSourceBinding{
 	WireType: "aws_kendra_experience_entities",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
+		"IndexId":   ubx.FieldSpec{WireName: "index_id"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

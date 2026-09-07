@@ -4,7 +4,7 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tasks_TaskSummaries_Status_Error struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,19 +14,19 @@ type Tasks_TaskSummaries_Status struct {
 }
 
 type Tasks_TaskSummaries struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Status any
-	TaskArn any
-	TaskName any
-	UpdatedAt any
-	Version any
+	Status      any
+	TaskArn     any
+	TaskName    any
+	UpdatedAt   any
+	Version     any
 }
 
 type TasksConfig struct {
 	MaxResults any
 	// <p>An opaque pagination token. Pass the value returned by a previous request to retrieve the next page of results.</p>
-	NextToken any
+	NextToken     any
 	WorkspaceName any
 }
 
@@ -42,8 +42,8 @@ type TasksAttrs struct {
 var Tasks = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_tasks",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"WorkspaceName": ubx.FieldSpec{WireName: "workspace_name"},
 	},
 }

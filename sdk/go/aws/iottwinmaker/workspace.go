@@ -39,9 +39,9 @@ var Workspace = ubx.ResourceBinding{
 	WireType: "aws_io_ttwin_maker_workspace",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"S3Location": ubx.FieldSpec{WireName: "s3_location"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Role":        ubx.FieldSpec{WireName: "role"},
+		"S3Location":  ubx.FieldSpec{WireName: "s3_location"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"WorkspaceId": ubx.FieldSpec{WireName: "workspace_id"},
 	},
 }

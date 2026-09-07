@@ -4,9 +4,9 @@ package xray
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EncryptionConfig_EncryptionConfig struct {
-	KeyId any
+	KeyId  any
 	Status any
-	Type any
+	Type   any
 }
 
 type EncryptionConfigConfig struct {
@@ -19,6 +19,5 @@ type EncryptionConfigAttrs struct {
 
 var EncryptionConfig = ubx.DataSourceBinding{
 	WireType: "aws_xray_encryption_config",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

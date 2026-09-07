@@ -32,8 +32,8 @@ type AiguardrailVersionAttrs struct {
 var AiguardrailVersion = ubx.ResourceBinding{
 	WireType: "aws_wisdom_aiguardrail_version",
 	Fields: ubx.FieldMap{
-		"AiguardrailId": ubx.FieldSpec{WireName: "aiguardrail_id"},
-		"AssistantId": ubx.FieldSpec{WireName: "assistant_id"},
+		"AiguardrailId":       ubx.FieldSpec{WireName: "aiguardrail_id"},
+		"AssistantId":         ubx.FieldSpec{WireName: "assistant_id"},
 		"ModifiedTimeSeconds": ubx.FieldSpec{WireName: "modified_time_seconds"},
 	},
 }

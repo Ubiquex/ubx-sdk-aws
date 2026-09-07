@@ -4,32 +4,32 @@ package api_mediatailor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiMediatailorAlerts_Items struct {
-	AlertCode any
-	AlertMessage any
-	Category any
-	LastModifiedTime any
+	AlertCode           any
+	AlertMessage        any
+	Category            any
+	LastModifiedTime    any
 	RelatedResourceArns any
-	ResourceArn any
+	ResourceArn         any
 }
 
 type ApiMediatailorAlertsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 type ApiMediatailorAlertsAttrs struct {
-	Items any
-	MaxResults any
-	NextToken any
+	Items       any
+	MaxResults  any
+	NextToken   any
 	ResourceArn any
 }
 
 var ApiMediatailorAlerts = ubx.DataSourceBinding{
 	WireType: "aws_api_mediatailor_alerts",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ResourceArn": ubx.FieldSpec{WireName: "resource_arn"},
 	},
 }

@@ -4,23 +4,23 @@ package managedblockchain
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProposalVotes_ProposalVotes struct {
-	MemberId any
+	MemberId   any
 	MemberName any
-	Vote any
+	Vote       any
 }
 
 type ProposalVotesConfig struct {
 	MaxResults any
-	NetworkId any
-	NextToken any
+	NetworkId  any
+	NextToken  any
 	ProposalId any
 }
 
 type ProposalVotesAttrs struct {
-	MaxResults any
-	NetworkId any
-	NextToken any
-	ProposalId any
+	MaxResults    any
+	NetworkId     any
+	NextToken     any
+	ProposalId    any
 	ProposalVotes any
 }
 
@@ -28,8 +28,8 @@ var ProposalVotes = ubx.DataSourceBinding{
 	WireType: "aws_managedblockchain_proposal_votes",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NetworkId":  ubx.FieldSpec{WireName: "network_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ProposalId": ubx.FieldSpec{WireName: "proposal_id"},
 	},
 }

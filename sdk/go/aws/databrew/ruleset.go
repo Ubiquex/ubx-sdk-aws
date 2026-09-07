@@ -48,46 +48,46 @@ type Ruleset_Tags struct {
 }
 
 var Ruleset_Rules_ColumnSelectorsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Regex": ubx.FieldSpec{WireName: "regex"},
+}
 
 var Ruleset_Rules_SubstitutionMapFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueReference": ubx.FieldSpec{WireName: "value_reference"},
-	}
+	"Value":          ubx.FieldSpec{WireName: "value"},
+	"ValueReference": ubx.FieldSpec{WireName: "value_reference"},
+}
 
 var Ruleset_Rules_ThresholdFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Ruleset_RulesFields = ubx.FieldMap{
-		"CheckExpression": ubx.FieldSpec{WireName: "check_expression"},
-		"ColumnSelectors": ubx.FieldSpec{
-			WireName: "column_selectors",
-			Kind: "list",
-			Fields: Ruleset_Rules_ColumnSelectorsFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SubstitutionMap": ubx.FieldSpec{
-			WireName: "substitution_map",
-			Kind: "list",
-			Fields: Ruleset_Rules_SubstitutionMapFields,
-		},
-		"Threshold": ubx.FieldSpec{
-			WireName: "threshold",
-			Kind: "object",
-			Fields: Ruleset_Rules_ThresholdFields,
-		},
-	}
+	"CheckExpression": ubx.FieldSpec{WireName: "check_expression"},
+	"ColumnSelectors": ubx.FieldSpec{
+		WireName: "column_selectors",
+		Kind:     "list",
+		Fields:   Ruleset_Rules_ColumnSelectorsFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"SubstitutionMap": ubx.FieldSpec{
+		WireName: "substitution_map",
+		Kind:     "list",
+		Fields:   Ruleset_Rules_SubstitutionMapFields,
+	},
+	"Threshold": ubx.FieldSpec{
+		WireName: "threshold",
+		Kind:     "object",
+		Fields:   Ruleset_Rules_ThresholdFields,
+	},
+}
 
 var Ruleset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RulesetConfig struct {
 	// Description of the Ruleset
@@ -119,16 +119,16 @@ var Ruleset = ubx.ResourceBinding{
 	WireType: "aws_data_brew_ruleset",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: Ruleset_RulesFields,
+			Kind:     "list",
+			Fields:   Ruleset_RulesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Ruleset_TagsFields,
+			Kind:     "list",
+			Fields:   Ruleset_TagsFields,
 		},
 		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
 	},

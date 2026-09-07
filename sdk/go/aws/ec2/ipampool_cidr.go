@@ -28,8 +28,8 @@ type IpampoolCidrAttrs struct {
 var IpampoolCidr = ubx.ResourceBinding{
 	WireType: "aws_ec2_ipampool_cidr",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"IpamPoolId": ubx.FieldSpec{WireName: "ipam_pool_id"},
+		"Cidr":          ubx.FieldSpec{WireName: "cidr"},
+		"IpamPoolId":    ubx.FieldSpec{WireName: "ipam_pool_id"},
 		"NetmaskLength": ubx.FieldSpec{WireName: "netmask_length"},
 	},
 }

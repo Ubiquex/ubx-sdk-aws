@@ -41,31 +41,31 @@ type LaunchConfiguration_MetadataOptions struct {
 }
 
 var LaunchConfiguration_BlockDeviceMappings_EbsFields = ubx.FieldMap{
-		"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"DeleteOnTermination": ubx.FieldSpec{WireName: "delete_on_termination"},
+	"Encrypted":           ubx.FieldSpec{WireName: "encrypted"},
+	"Iops":                ubx.FieldSpec{WireName: "iops"},
+	"SnapshotId":          ubx.FieldSpec{WireName: "snapshot_id"},
+	"Throughput":          ubx.FieldSpec{WireName: "throughput"},
+	"VolumeSize":          ubx.FieldSpec{WireName: "volume_size"},
+	"VolumeType":          ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var LaunchConfiguration_BlockDeviceMappingsFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Ebs": ubx.FieldSpec{
-			WireName: "ebs",
-			Kind: "object",
-			Fields: LaunchConfiguration_BlockDeviceMappings_EbsFields,
-		},
-		"NoDevice": ubx.FieldSpec{WireName: "no_device"},
-		"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Ebs": ubx.FieldSpec{
+		WireName: "ebs",
+		Kind:     "object",
+		Fields:   LaunchConfiguration_BlockDeviceMappings_EbsFields,
+	},
+	"NoDevice":    ubx.FieldSpec{WireName: "no_device"},
+	"VirtualName": ubx.FieldSpec{WireName: "virtual_name"},
+}
 
 var LaunchConfiguration_MetadataOptionsFields = ubx.FieldMap{
-		"HttpEndpoint": ubx.FieldSpec{WireName: "http_endpoint"},
-		"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
-		"HttpTokens": ubx.FieldSpec{WireName: "http_tokens"},
-	}
+	"HttpEndpoint":            ubx.FieldSpec{WireName: "http_endpoint"},
+	"HttpPutResponseHopLimit": ubx.FieldSpec{WireName: "http_put_response_hop_limit"},
+	"HttpTokens":              ubx.FieldSpec{WireName: "http_tokens"},
+}
 
 type LaunchConfigurationConfig struct {
 	// For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether to assign a public IP address to the group's instances.
@@ -155,29 +155,29 @@ var LaunchConfiguration = ubx.ResourceBinding{
 		"AssociatePublicIpAddress": ubx.FieldSpec{WireName: "associate_public_ip_address"},
 		"BlockDeviceMappings": ubx.FieldSpec{
 			WireName: "block_device_mappings",
-			Kind: "list",
-			Fields: LaunchConfiguration_BlockDeviceMappingsFields,
+			Kind:     "list",
+			Fields:   LaunchConfiguration_BlockDeviceMappingsFields,
 		},
-		"ClassicLinkVpcid": ubx.FieldSpec{WireName: "classic_link_vpcid"},
+		"ClassicLinkVpcid":             ubx.FieldSpec{WireName: "classic_link_vpcid"},
 		"ClassicLinkVpcsecurityGroups": ubx.FieldSpec{WireName: "classic_link_vpcsecurity_groups"},
-		"EbsOptimized": ubx.FieldSpec{WireName: "ebs_optimized"},
-		"IamInstanceProfile": ubx.FieldSpec{WireName: "iam_instance_profile"},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"InstanceMonitoring": ubx.FieldSpec{WireName: "instance_monitoring"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"KernelId": ubx.FieldSpec{WireName: "kernel_id"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"LaunchConfigurationName": ubx.FieldSpec{WireName: "launch_configuration_name"},
+		"EbsOptimized":                 ubx.FieldSpec{WireName: "ebs_optimized"},
+		"IamInstanceProfile":           ubx.FieldSpec{WireName: "iam_instance_profile"},
+		"ImageId":                      ubx.FieldSpec{WireName: "image_id"},
+		"InstanceId":                   ubx.FieldSpec{WireName: "instance_id"},
+		"InstanceMonitoring":           ubx.FieldSpec{WireName: "instance_monitoring"},
+		"InstanceType":                 ubx.FieldSpec{WireName: "instance_type"},
+		"KernelId":                     ubx.FieldSpec{WireName: "kernel_id"},
+		"KeyName":                      ubx.FieldSpec{WireName: "key_name"},
+		"LaunchConfigurationName":      ubx.FieldSpec{WireName: "launch_configuration_name"},
 		"MetadataOptions": ubx.FieldSpec{
 			WireName: "metadata_options",
-			Kind: "object",
-			Fields: LaunchConfiguration_MetadataOptionsFields,
+			Kind:     "object",
+			Fields:   LaunchConfiguration_MetadataOptionsFields,
 		},
 		"PlacementTenancy": ubx.FieldSpec{WireName: "placement_tenancy"},
-		"RamDiskId": ubx.FieldSpec{WireName: "ram_disk_id"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"SpotPrice": ubx.FieldSpec{WireName: "spot_price"},
-		"UserData": ubx.FieldSpec{WireName: "user_data"},
+		"RamDiskId":        ubx.FieldSpec{WireName: "ram_disk_id"},
+		"SecurityGroups":   ubx.FieldSpec{WireName: "security_groups"},
+		"SpotPrice":        ubx.FieldSpec{WireName: "spot_price"},
+		"UserData":         ubx.FieldSpec{WireName: "user_data"},
 	},
 }

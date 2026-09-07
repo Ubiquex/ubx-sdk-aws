@@ -11,9 +11,9 @@ type Environment_UserParameters struct {
 }
 
 var Environment_UserParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EnvironmentConfig struct {
 	// The deployment order for the environment.
@@ -100,22 +100,22 @@ type EnvironmentAttrs struct {
 var Environment = ubx.ResourceBinding{
 	WireType: "aws_data_zone_environment",
 	Fields: ubx.FieldMap{
-		"DeploymentOrder": ubx.FieldSpec{WireName: "deployment_order"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainIdentifier": ubx.FieldSpec{WireName: "domain_identifier"},
-		"EnvironmentAccountIdentifier": ubx.FieldSpec{WireName: "environment_account_identifier"},
-		"EnvironmentAccountRegion": ubx.FieldSpec{WireName: "environment_account_region"},
+		"DeploymentOrder":                ubx.FieldSpec{WireName: "deployment_order"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"DomainIdentifier":               ubx.FieldSpec{WireName: "domain_identifier"},
+		"EnvironmentAccountIdentifier":   ubx.FieldSpec{WireName: "environment_account_identifier"},
+		"EnvironmentAccountRegion":       ubx.FieldSpec{WireName: "environment_account_region"},
 		"EnvironmentBlueprintIdentifier": ubx.FieldSpec{WireName: "environment_blueprint_identifier"},
-		"EnvironmentConfigurationId": ubx.FieldSpec{WireName: "environment_configuration_id"},
-		"EnvironmentProfileIdentifier": ubx.FieldSpec{WireName: "environment_profile_identifier"},
-		"EnvironmentRoleArn": ubx.FieldSpec{WireName: "environment_role_arn"},
-		"GlossaryTerms": ubx.FieldSpec{WireName: "glossary_terms"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectIdentifier": ubx.FieldSpec{WireName: "project_identifier"},
+		"EnvironmentConfigurationId":     ubx.FieldSpec{WireName: "environment_configuration_id"},
+		"EnvironmentProfileIdentifier":   ubx.FieldSpec{WireName: "environment_profile_identifier"},
+		"EnvironmentRoleArn":             ubx.FieldSpec{WireName: "environment_role_arn"},
+		"GlossaryTerms":                  ubx.FieldSpec{WireName: "glossary_terms"},
+		"Name":                           ubx.FieldSpec{WireName: "name"},
+		"ProjectIdentifier":              ubx.FieldSpec{WireName: "project_identifier"},
 		"UserParameters": ubx.FieldSpec{
 			WireName: "user_parameters",
-			Kind: "list",
-			Fields: Environment_UserParametersFields,
+			Kind:     "list",
+			Fields:   Environment_UserParametersFields,
 		},
 	},
 }

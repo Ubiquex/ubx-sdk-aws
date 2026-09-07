@@ -108,9 +108,9 @@ type Service_ForceNewDeployment struct {
 
 type Service_LoadBalancers_AdvancedConfiguration struct {
 	AlternateTargetGroupArn any
-	ProductionListenerRule any
-	RoleArn any
-	TestListenerRule any
+	ProductionListenerRule  any
+	RoleArn                 any
+	TestListenerRule        any
 }
 
 type Service_LoadBalancers struct {
@@ -194,7 +194,7 @@ type Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules
 
 type Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header struct {
 	// The name of the HTTP header that identifies test traffic for routing through this client alias, enabling Service Connect canary deployments. (AI-inferred)
-	Name any
+	Name  any
 	Value any
 }
 
@@ -206,7 +206,7 @@ type Service_ServiceConnectConfiguration_Services_ClientAliases struct {
 	// The custom DNS hostname that clients use to access the service through AWS ECS Service Connect, which overrides the default service discovery name within the namespace. (AI-inferred)
 	DnsName any
 	// The port number that clients use to connect to the service through this Service Connect client alias. (AI-inferred)
-	Port any
+	Port             any
 	TestTrafficRules any
 }
 
@@ -328,323 +328,323 @@ type Service_VpcLatticeConfigurations struct {
 }
 
 var Service_CapacityProviderStrategyFields = ubx.FieldMap{
-		"Base": ubx.FieldSpec{WireName: "base"},
-		"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Base":             ubx.FieldSpec{WireName: "base"},
+	"CapacityProvider": ubx.FieldSpec{WireName: "capacity_provider"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 var Service_DeploymentConfiguration_AlarmsFields = ubx.FieldMap{
-		"AlarmNames": ubx.FieldSpec{WireName: "alarm_names"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"Rollback": ubx.FieldSpec{WireName: "rollback"},
-	}
+	"AlarmNames": ubx.FieldSpec{WireName: "alarm_names"},
+	"Enable":     ubx.FieldSpec{WireName: "enable"},
+	"Rollback":   ubx.FieldSpec{WireName: "rollback"},
+}
 
 var Service_DeploymentConfiguration_CanaryConfigurationFields = ubx.FieldMap{
-		"CanaryBakeTimeInMinutes": ubx.FieldSpec{WireName: "canary_bake_time_in_minutes"},
-		"CanaryPercent": ubx.FieldSpec{WireName: "canary_percent"},
-	}
+	"CanaryBakeTimeInMinutes": ubx.FieldSpec{WireName: "canary_bake_time_in_minutes"},
+	"CanaryPercent":           ubx.FieldSpec{WireName: "canary_percent"},
+}
 
 var Service_DeploymentConfiguration_DeploymentCircuitBreaker_ThresholdConfigurationFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Service_DeploymentConfiguration_DeploymentCircuitBreakerFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"ResetOnHealthyTask": ubx.FieldSpec{WireName: "reset_on_healthy_task"},
-		"Rollback": ubx.FieldSpec{WireName: "rollback"},
-		"ThresholdConfiguration": ubx.FieldSpec{
-			WireName: "threshold_configuration",
-			Kind: "object",
-			Fields: Service_DeploymentConfiguration_DeploymentCircuitBreaker_ThresholdConfigurationFields,
-		},
-	}
+	"Enable":             ubx.FieldSpec{WireName: "enable"},
+	"ResetOnHealthyTask": ubx.FieldSpec{WireName: "reset_on_healthy_task"},
+	"Rollback":           ubx.FieldSpec{WireName: "rollback"},
+	"ThresholdConfiguration": ubx.FieldSpec{
+		WireName: "threshold_configuration",
+		Kind:     "object",
+		Fields:   Service_DeploymentConfiguration_DeploymentCircuitBreaker_ThresholdConfigurationFields,
+	},
+}
 
 var Service_DeploymentConfiguration_LifecycleHooks_TimeoutConfigurationFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"TimeoutInMinutes": ubx.FieldSpec{WireName: "timeout_in_minutes"},
-	}
+	"Action":           ubx.FieldSpec{WireName: "action"},
+	"TimeoutInMinutes": ubx.FieldSpec{WireName: "timeout_in_minutes"},
+}
 
 var Service_DeploymentConfiguration_LifecycleHooksFields = ubx.FieldMap{
-		"HookDetails": ubx.FieldSpec{WireName: "hook_details"},
-		"HookTargetArn": ubx.FieldSpec{WireName: "hook_target_arn"},
-		"LifecycleStages": ubx.FieldSpec{WireName: "lifecycle_stages"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
-		"TimeoutConfiguration": ubx.FieldSpec{
-			WireName: "timeout_configuration",
-			Kind: "object",
-			Fields: Service_DeploymentConfiguration_LifecycleHooks_TimeoutConfigurationFields,
-		},
-	}
+	"HookDetails":     ubx.FieldSpec{WireName: "hook_details"},
+	"HookTargetArn":   ubx.FieldSpec{WireName: "hook_target_arn"},
+	"LifecycleStages": ubx.FieldSpec{WireName: "lifecycle_stages"},
+	"RoleArn":         ubx.FieldSpec{WireName: "role_arn"},
+	"TargetType":      ubx.FieldSpec{WireName: "target_type"},
+	"TimeoutConfiguration": ubx.FieldSpec{
+		WireName: "timeout_configuration",
+		Kind:     "object",
+		Fields:   Service_DeploymentConfiguration_LifecycleHooks_TimeoutConfigurationFields,
+	},
+}
 
 var Service_DeploymentConfiguration_LinearConfigurationFields = ubx.FieldMap{
-		"StepBakeTimeInMinutes": ubx.FieldSpec{WireName: "step_bake_time_in_minutes"},
-		"StepPercent": ubx.FieldSpec{WireName: "step_percent"},
-	}
+	"StepBakeTimeInMinutes": ubx.FieldSpec{WireName: "step_bake_time_in_minutes"},
+	"StepPercent":           ubx.FieldSpec{WireName: "step_percent"},
+}
 
 var Service_DeploymentConfigurationFields = ubx.FieldMap{
-		"Alarms": ubx.FieldSpec{
-			WireName: "alarms",
-			Kind: "object",
-			Fields: Service_DeploymentConfiguration_AlarmsFields,
-		},
-		"BakeTimeInMinutes": ubx.FieldSpec{WireName: "bake_time_in_minutes"},
-		"CanaryConfiguration": ubx.FieldSpec{
-			WireName: "canary_configuration",
-			Kind: "object",
-			Fields: Service_DeploymentConfiguration_CanaryConfigurationFields,
-		},
-		"DeploymentCircuitBreaker": ubx.FieldSpec{
-			WireName: "deployment_circuit_breaker",
-			Kind: "object",
-			Fields: Service_DeploymentConfiguration_DeploymentCircuitBreakerFields,
-		},
-		"LifecycleHooks": ubx.FieldSpec{
-			WireName: "lifecycle_hooks",
-			Kind: "list",
-			Fields: Service_DeploymentConfiguration_LifecycleHooksFields,
-		},
-		"LinearConfiguration": ubx.FieldSpec{
-			WireName: "linear_configuration",
-			Kind: "object",
-			Fields: Service_DeploymentConfiguration_LinearConfigurationFields,
-		},
-		"MaximumPercent": ubx.FieldSpec{WireName: "maximum_percent"},
-		"MinimumHealthyPercent": ubx.FieldSpec{WireName: "minimum_healthy_percent"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"Alarms": ubx.FieldSpec{
+		WireName: "alarms",
+		Kind:     "object",
+		Fields:   Service_DeploymentConfiguration_AlarmsFields,
+	},
+	"BakeTimeInMinutes": ubx.FieldSpec{WireName: "bake_time_in_minutes"},
+	"CanaryConfiguration": ubx.FieldSpec{
+		WireName: "canary_configuration",
+		Kind:     "object",
+		Fields:   Service_DeploymentConfiguration_CanaryConfigurationFields,
+	},
+	"DeploymentCircuitBreaker": ubx.FieldSpec{
+		WireName: "deployment_circuit_breaker",
+		Kind:     "object",
+		Fields:   Service_DeploymentConfiguration_DeploymentCircuitBreakerFields,
+	},
+	"LifecycleHooks": ubx.FieldSpec{
+		WireName: "lifecycle_hooks",
+		Kind:     "list",
+		Fields:   Service_DeploymentConfiguration_LifecycleHooksFields,
+	},
+	"LinearConfiguration": ubx.FieldSpec{
+		WireName: "linear_configuration",
+		Kind:     "object",
+		Fields:   Service_DeploymentConfiguration_LinearConfigurationFields,
+	},
+	"MaximumPercent":        ubx.FieldSpec{WireName: "maximum_percent"},
+	"MinimumHealthyPercent": ubx.FieldSpec{WireName: "minimum_healthy_percent"},
+	"Strategy":              ubx.FieldSpec{WireName: "strategy"},
+}
 
 var Service_DeploymentControllerFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_ForceNewDeploymentFields = ubx.FieldMap{
-		"EnableForceNewDeployment": ubx.FieldSpec{WireName: "enable_force_new_deployment"},
-		"ForceNewDeploymentNonce": ubx.FieldSpec{WireName: "force_new_deployment_nonce"},
-	}
+	"EnableForceNewDeployment": ubx.FieldSpec{WireName: "enable_force_new_deployment"},
+	"ForceNewDeploymentNonce":  ubx.FieldSpec{WireName: "force_new_deployment_nonce"},
+}
 
 var Service_LoadBalancers_AdvancedConfigurationFields = ubx.FieldMap{
-		"AlternateTargetGroupArn": ubx.FieldSpec{WireName: "alternate_target_group_arn"},
-		"ProductionListenerRule": ubx.FieldSpec{WireName: "production_listener_rule"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TestListenerRule": ubx.FieldSpec{WireName: "test_listener_rule"},
-	}
+	"AlternateTargetGroupArn": ubx.FieldSpec{WireName: "alternate_target_group_arn"},
+	"ProductionListenerRule":  ubx.FieldSpec{WireName: "production_listener_rule"},
+	"RoleArn":                 ubx.FieldSpec{WireName: "role_arn"},
+	"TestListenerRule":        ubx.FieldSpec{WireName: "test_listener_rule"},
+}
 
 var Service_LoadBalancersFields = ubx.FieldMap{
-		"AdvancedConfiguration": ubx.FieldSpec{
-			WireName: "advanced_configuration",
-			Kind: "object",
-			Fields: Service_LoadBalancers_AdvancedConfigurationFields,
-		},
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
-		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
-	}
+	"AdvancedConfiguration": ubx.FieldSpec{
+		WireName: "advanced_configuration",
+		Kind:     "object",
+		Fields:   Service_LoadBalancers_AdvancedConfigurationFields,
+	},
+	"ContainerName":    ubx.FieldSpec{WireName: "container_name"},
+	"ContainerPort":    ubx.FieldSpec{WireName: "container_port"},
+	"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
+	"TargetGroupArn":   ubx.FieldSpec{WireName: "target_group_arn"},
+}
 
 var Service_Monitoring_MetricConfigurationsFields = ubx.FieldMap{
-		"MetricNames": ubx.FieldSpec{WireName: "metric_names"},
-		"ResolutionSeconds": ubx.FieldSpec{WireName: "resolution_seconds"},
-	}
+	"MetricNames":       ubx.FieldSpec{WireName: "metric_names"},
+	"ResolutionSeconds": ubx.FieldSpec{WireName: "resolution_seconds"},
+}
 
 var Service_MonitoringFields = ubx.FieldMap{
-		"MetricConfigurations": ubx.FieldSpec{
-			WireName: "metric_configurations",
-			Kind: "list",
-			Fields: Service_Monitoring_MetricConfigurationsFields,
-		},
-	}
+	"MetricConfigurations": ubx.FieldSpec{
+		WireName: "metric_configurations",
+		Kind:     "list",
+		Fields:   Service_Monitoring_MetricConfigurationsFields,
+	},
+}
 
 var Service_NetworkConfiguration_AwsvpcConfigurationFields = ubx.FieldMap{
-		"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"AssignPublicIp": ubx.FieldSpec{WireName: "assign_public_ip"},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"Subnets":        ubx.FieldSpec{WireName: "subnets"},
+}
 
 var Service_NetworkConfigurationFields = ubx.FieldMap{
-		"AwsvpcConfiguration": ubx.FieldSpec{
-			WireName: "awsvpc_configuration",
-			Kind: "object",
-			Fields: Service_NetworkConfiguration_AwsvpcConfigurationFields,
-		},
-	}
+	"AwsvpcConfiguration": ubx.FieldSpec{
+		WireName: "awsvpc_configuration",
+		Kind:     "object",
+		Fields:   Service_NetworkConfiguration_AwsvpcConfigurationFields,
+	},
+}
 
 var Service_PlacementConstraintsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_PlacementStrategiesFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_ServiceConnectConfiguration_AccessLogConfigurationFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"IncludeQueryParameters": ubx.FieldSpec{WireName: "include_query_parameters"},
-	}
+	"Format":                 ubx.FieldSpec{WireName: "format"},
+	"IncludeQueryParameters": ubx.FieldSpec{WireName: "include_query_parameters"},
+}
 
 var Service_ServiceConnectConfiguration_LogConfiguration_SecretOptionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ValueFrom": ubx.FieldSpec{WireName: "value_from"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ValueFrom": ubx.FieldSpec{WireName: "value_from"},
+}
 
 var Service_ServiceConnectConfiguration_LogConfigurationFields = ubx.FieldMap{
-		"LogDriver": ubx.FieldSpec{WireName: "log_driver"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"SecretOptions": ubx.FieldSpec{
-			WireName: "secret_options",
-			Kind: "list",
-			Fields: Service_ServiceConnectConfiguration_LogConfiguration_SecretOptionsFields,
-		},
-	}
+	"LogDriver": ubx.FieldSpec{WireName: "log_driver"},
+	"Options":   ubx.FieldSpec{WireName: "options"},
+	"SecretOptions": ubx.FieldSpec{
+		WireName: "secret_options",
+		Kind:     "list",
+		Fields:   Service_ServiceConnectConfiguration_LogConfiguration_SecretOptionsFields,
+	},
+}
 
 var Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header_ValueFields = ubx.FieldMap{
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-	}
+	"Exact": ubx.FieldSpec{WireName: "exact"},
+}
 
 var Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_HeaderFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header_ValueFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header_ValueFields,
+	},
+}
 
 var Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRulesFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_HeaderFields,
-		},
-	}
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "object",
+		Fields:   Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_HeaderFields,
+	},
+}
 
 var Service_ServiceConnectConfiguration_Services_ClientAliasesFields = ubx.FieldMap{
-		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"TestTrafficRules": ubx.FieldSpec{
-			WireName: "test_traffic_rules",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRulesFields,
-		},
-	}
+	"DnsName": ubx.FieldSpec{WireName: "dns_name"},
+	"Port":    ubx.FieldSpec{WireName: "port"},
+	"TestTrafficRules": ubx.FieldSpec{
+		WireName: "test_traffic_rules",
+		Kind:     "object",
+		Fields:   Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRulesFields,
+	},
+}
 
 var Service_ServiceConnectConfiguration_Services_TimeoutFields = ubx.FieldMap{
-		"IdleTimeoutSeconds": ubx.FieldSpec{WireName: "idle_timeout_seconds"},
-		"PerRequestTimeoutSeconds": ubx.FieldSpec{WireName: "per_request_timeout_seconds"},
-	}
+	"IdleTimeoutSeconds":       ubx.FieldSpec{WireName: "idle_timeout_seconds"},
+	"PerRequestTimeoutSeconds": ubx.FieldSpec{WireName: "per_request_timeout_seconds"},
+}
 
 var Service_ServiceConnectConfiguration_Services_Tls_IssuerCertificateAuthorityFields = ubx.FieldMap{
-		"AwsPcaAuthorityArn": ubx.FieldSpec{WireName: "aws_pca_authority_arn"},
-	}
+	"AwsPcaAuthorityArn": ubx.FieldSpec{WireName: "aws_pca_authority_arn"},
+}
 
 var Service_ServiceConnectConfiguration_Services_TlsFields = ubx.FieldMap{
-		"IssuerCertificateAuthority": ubx.FieldSpec{
-			WireName: "issuer_certificate_authority",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfiguration_Services_Tls_IssuerCertificateAuthorityFields,
-		},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"IssuerCertificateAuthority": ubx.FieldSpec{
+		WireName: "issuer_certificate_authority",
+		Kind:     "object",
+		Fields:   Service_ServiceConnectConfiguration_Services_Tls_IssuerCertificateAuthorityFields,
+	},
+	"KmsKey":  ubx.FieldSpec{WireName: "kms_key"},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Service_ServiceConnectConfiguration_ServicesFields = ubx.FieldMap{
-		"ClientAliases": ubx.FieldSpec{
-			WireName: "client_aliases",
-			Kind: "list",
-			Fields: Service_ServiceConnectConfiguration_Services_ClientAliasesFields,
-		},
-		"DiscoveryName": ubx.FieldSpec{WireName: "discovery_name"},
-		"IngressPortOverride": ubx.FieldSpec{WireName: "ingress_port_override"},
-		"PortName": ubx.FieldSpec{WireName: "port_name"},
-		"Timeout": ubx.FieldSpec{
-			WireName: "timeout",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfiguration_Services_TimeoutFields,
-		},
-		"Tls": ubx.FieldSpec{
-			WireName: "tls",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfiguration_Services_TlsFields,
-		},
-	}
+	"ClientAliases": ubx.FieldSpec{
+		WireName: "client_aliases",
+		Kind:     "list",
+		Fields:   Service_ServiceConnectConfiguration_Services_ClientAliasesFields,
+	},
+	"DiscoveryName":       ubx.FieldSpec{WireName: "discovery_name"},
+	"IngressPortOverride": ubx.FieldSpec{WireName: "ingress_port_override"},
+	"PortName":            ubx.FieldSpec{WireName: "port_name"},
+	"Timeout": ubx.FieldSpec{
+		WireName: "timeout",
+		Kind:     "object",
+		Fields:   Service_ServiceConnectConfiguration_Services_TimeoutFields,
+	},
+	"Tls": ubx.FieldSpec{
+		WireName: "tls",
+		Kind:     "object",
+		Fields:   Service_ServiceConnectConfiguration_Services_TlsFields,
+	},
+}
 
 var Service_ServiceConnectConfigurationFields = ubx.FieldMap{
-		"AccessLogConfiguration": ubx.FieldSpec{
-			WireName: "access_log_configuration",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfiguration_AccessLogConfigurationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogConfiguration": ubx.FieldSpec{
-			WireName: "log_configuration",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfiguration_LogConfigurationFields,
-		},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Services": ubx.FieldSpec{
-			WireName: "services",
-			Kind: "list",
-			Fields: Service_ServiceConnectConfiguration_ServicesFields,
-		},
-	}
+	"AccessLogConfiguration": ubx.FieldSpec{
+		WireName: "access_log_configuration",
+		Kind:     "object",
+		Fields:   Service_ServiceConnectConfiguration_AccessLogConfigurationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"LogConfiguration": ubx.FieldSpec{
+		WireName: "log_configuration",
+		Kind:     "object",
+		Fields:   Service_ServiceConnectConfiguration_LogConfigurationFields,
+	},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"Services": ubx.FieldSpec{
+		WireName: "services",
+		Kind:     "list",
+		Fields:   Service_ServiceConnectConfiguration_ServicesFields,
+	},
+}
 
 var Service_ServiceRegistriesFields = ubx.FieldMap{
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"RegistryArn": ubx.FieldSpec{WireName: "registry_arn"},
-	}
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+	"Port":          ubx.FieldSpec{WireName: "port"},
+	"RegistryArn":   ubx.FieldSpec{WireName: "registry_arn"},
+}
 
 var Service_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Service_VolumeConfigurations_ManagedEbsvolume_TagSpecificationsFields = ubx.FieldMap{
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Service_TagsFields,
-		},
-	}
+	"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
+	"ResourceType":  ubx.FieldSpec{WireName: "resource_type"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Service_TagsFields,
+	},
+}
 
 var Service_VolumeConfigurations_ManagedEbsvolumeFields = ubx.FieldMap{
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
-		"FilesystemType": ubx.FieldSpec{WireName: "filesystem_type"},
-		"Iops": ubx.FieldSpec{WireName: "iops"},
-		"KmsKeyId": ubx.FieldSpec{WireName: "kms_key_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SizeInGiB": ubx.FieldSpec{WireName: "size_in_gi_b"},
-		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
-		"TagSpecifications": ubx.FieldSpec{
-			WireName: "tag_specifications",
-			Kind: "list",
-			Fields: Service_VolumeConfigurations_ManagedEbsvolume_TagSpecificationsFields,
-		},
-		"Throughput": ubx.FieldSpec{WireName: "throughput"},
-		"VolumeInitializationRate": ubx.FieldSpec{WireName: "volume_initialization_rate"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Encrypted":      ubx.FieldSpec{WireName: "encrypted"},
+	"FilesystemType": ubx.FieldSpec{WireName: "filesystem_type"},
+	"Iops":           ubx.FieldSpec{WireName: "iops"},
+	"KmsKeyId":       ubx.FieldSpec{WireName: "kms_key_id"},
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"SizeInGiB":      ubx.FieldSpec{WireName: "size_in_gi_b"},
+	"SnapshotId":     ubx.FieldSpec{WireName: "snapshot_id"},
+	"TagSpecifications": ubx.FieldSpec{
+		WireName: "tag_specifications",
+		Kind:     "list",
+		Fields:   Service_VolumeConfigurations_ManagedEbsvolume_TagSpecificationsFields,
+	},
+	"Throughput":               ubx.FieldSpec{WireName: "throughput"},
+	"VolumeInitializationRate": ubx.FieldSpec{WireName: "volume_initialization_rate"},
+	"VolumeType":               ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var Service_VolumeConfigurationsFields = ubx.FieldMap{
-		"ManagedEbsvolume": ubx.FieldSpec{
-			WireName: "managed_ebsvolume",
-			Kind: "object",
-			Fields: Service_VolumeConfigurations_ManagedEbsvolumeFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ManagedEbsvolume": ubx.FieldSpec{
+		WireName: "managed_ebsvolume",
+		Kind:     "object",
+		Fields:   Service_VolumeConfigurations_ManagedEbsvolumeFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Service_VpcLatticeConfigurationsFields = ubx.FieldMap{
-		"PortName": ubx.FieldSpec{WireName: "port_name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
-	}
+	"PortName":       ubx.FieldSpec{WireName: "port_name"},
+	"RoleArn":        ubx.FieldSpec{WireName: "role_arn"},
+	"TargetGroupArn": ubx.FieldSpec{WireName: "target_group_arn"},
+}
 
 type ServiceConfig struct {
 	// Indicates whether to use Availability Zone rebalancing for the service. For more information, see [Balancing an Amazon ECS service across Availability Zones](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html) in the *Amazon Elastic Container Service Developer Guide*. The default behavior of ``AvailabilityZoneRebalancing`` differs between create and update requests: + For create service requests, when no value is specified for ``AvailabilityZoneRebalancing``, Amazon ECS defaults the value to ``ENABLED``. + For update service requests, when no value is specified for ``AvailabilityZoneRebalancing``, Amazon ECS defaults to the existing service’s ``AvailabilityZoneRebalancing`` value. If the service never had an ``AvailabilityZoneRebalancing`` value set, Amazon ECS treats this as ``DISABLED``.
@@ -770,85 +770,85 @@ var Service = ubx.ResourceBinding{
 		"AvailabilityZoneRebalancing": ubx.FieldSpec{WireName: "availability_zone_rebalancing"},
 		"CapacityProviderStrategy": ubx.FieldSpec{
 			WireName: "capacity_provider_strategy",
-			Kind: "list",
-			Fields: Service_CapacityProviderStrategyFields,
+			Kind:     "list",
+			Fields:   Service_CapacityProviderStrategyFields,
 		},
 		"Cluster": ubx.FieldSpec{WireName: "cluster"},
 		"DeploymentConfiguration": ubx.FieldSpec{
 			WireName: "deployment_configuration",
-			Kind: "object",
-			Fields: Service_DeploymentConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_DeploymentConfigurationFields,
 		},
 		"DeploymentController": ubx.FieldSpec{
 			WireName: "deployment_controller",
-			Kind: "object",
-			Fields: Service_DeploymentControllerFields,
+			Kind:     "object",
+			Fields:   Service_DeploymentControllerFields,
 		},
-		"DesiredCount": ubx.FieldSpec{WireName: "desired_count"},
+		"DesiredCount":         ubx.FieldSpec{WireName: "desired_count"},
 		"EnableEcsmanagedTags": ubx.FieldSpec{WireName: "enable_ecsmanaged_tags"},
 		"EnableExecuteCommand": ubx.FieldSpec{WireName: "enable_execute_command"},
 		"ForceNewDeployment": ubx.FieldSpec{
 			WireName: "force_new_deployment",
-			Kind: "object",
-			Fields: Service_ForceNewDeploymentFields,
+			Kind:     "object",
+			Fields:   Service_ForceNewDeploymentFields,
 		},
 		"HealthCheckGracePeriodSeconds": ubx.FieldSpec{WireName: "health_check_grace_period_seconds"},
-		"LaunchType": ubx.FieldSpec{WireName: "launch_type"},
+		"LaunchType":                    ubx.FieldSpec{WireName: "launch_type"},
 		"LoadBalancers": ubx.FieldSpec{
 			WireName: "load_balancers",
-			Kind: "list",
-			Fields: Service_LoadBalancersFields,
+			Kind:     "list",
+			Fields:   Service_LoadBalancersFields,
 		},
 		"Monitoring": ubx.FieldSpec{
 			WireName: "monitoring",
-			Kind: "object",
-			Fields: Service_MonitoringFields,
+			Kind:     "object",
+			Fields:   Service_MonitoringFields,
 		},
 		"NetworkConfiguration": ubx.FieldSpec{
 			WireName: "network_configuration",
-			Kind: "object",
-			Fields: Service_NetworkConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_NetworkConfigurationFields,
 		},
 		"PlacementConstraints": ubx.FieldSpec{
 			WireName: "placement_constraints",
-			Kind: "list",
-			Fields: Service_PlacementConstraintsFields,
+			Kind:     "list",
+			Fields:   Service_PlacementConstraintsFields,
 		},
 		"PlacementStrategies": ubx.FieldSpec{
 			WireName: "placement_strategies",
-			Kind: "list",
-			Fields: Service_PlacementStrategiesFields,
+			Kind:     "list",
+			Fields:   Service_PlacementStrategiesFields,
 		},
-		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
-		"PropagateTags": ubx.FieldSpec{WireName: "propagate_tags"},
-		"Role": ubx.FieldSpec{WireName: "role"},
+		"PlatformVersion":    ubx.FieldSpec{WireName: "platform_version"},
+		"PropagateTags":      ubx.FieldSpec{WireName: "propagate_tags"},
+		"Role":               ubx.FieldSpec{WireName: "role"},
 		"SchedulingStrategy": ubx.FieldSpec{WireName: "scheduling_strategy"},
 		"ServiceConnectConfiguration": ubx.FieldSpec{
 			WireName: "service_connect_configuration",
-			Kind: "object",
-			Fields: Service_ServiceConnectConfigurationFields,
+			Kind:     "object",
+			Fields:   Service_ServiceConnectConfigurationFields,
 		},
 		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
 		"ServiceRegistries": ubx.FieldSpec{
 			WireName: "service_registries",
-			Kind: "list",
-			Fields: Service_ServiceRegistriesFields,
+			Kind:     "list",
+			Fields:   Service_ServiceRegistriesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Service_TagsFields,
+			Kind:     "list",
+			Fields:   Service_TagsFields,
 		},
 		"TaskDefinition": ubx.FieldSpec{WireName: "task_definition"},
 		"VolumeConfigurations": ubx.FieldSpec{
 			WireName: "volume_configurations",
-			Kind: "list",
-			Fields: Service_VolumeConfigurationsFields,
+			Kind:     "list",
+			Fields:   Service_VolumeConfigurationsFields,
 		},
 		"VpcLatticeConfigurations": ubx.FieldSpec{
 			WireName: "vpc_lattice_configurations",
-			Kind: "list",
-			Fields: Service_VpcLatticeConfigurationsFields,
+			Kind:     "list",
+			Fields:   Service_VpcLatticeConfigurationsFields,
 		},
 	},
 }

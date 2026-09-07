@@ -6,17 +6,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type SsmContactsPageResolutions_PageResolutions struct {
 	ContactArn any
 	StageIndex any
-	Type any
+	Type       any
 }
 
 type SsmContactsPageResolutionsConfig struct {
 	NextToken any
-	PageId any
+	PageId    any
 }
 
 type SsmContactsPageResolutionsAttrs struct {
-	NextToken any
-	PageId any
+	NextToken       any
+	PageId          any
 	PageResolutions any
 }
 
@@ -24,6 +24,6 @@ var SsmContactsPageResolutions = ubx.DataSourceBinding{
 	WireType: "aws_ssm_contacts_page_resolutions",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":    ubx.FieldSpec{WireName: "page_id"},
 	},
 }

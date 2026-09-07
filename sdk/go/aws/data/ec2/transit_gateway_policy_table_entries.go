@@ -4,51 +4,51 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayPolicyTableEntries_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TransitGatewayPolicyTableEntries_TransitGatewayPolicyTableEntries_PolicyRule_MetaData struct {
-	MetaDataKey any
+	MetaDataKey   any
 	MetaDataValue any
 }
 
 type TransitGatewayPolicyTableEntries_TransitGatewayPolicyTableEntries_PolicyRule struct {
 	DestinationCidrBlock any
 	DestinationPortRange any
-	MetaData any
-	Protocol any
-	SourceCidrBlock any
-	SourcePortRange any
+	MetaData             any
+	Protocol             any
+	SourceCidrBlock      any
+	SourcePortRange      any
 }
 
 type TransitGatewayPolicyTableEntries_TransitGatewayPolicyTableEntries struct {
-	PolicyRule any
-	PolicyRuleNumber any
-	State any
+	PolicyRule         any
+	PolicyRuleNumber   any
+	State              any
 	TargetRouteTableId any
 }
 
 var TransitGatewayPolicyTableEntries_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TransitGatewayPolicyTableEntriesConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                      any
+	Filters                     any
+	MaxResults                  any
+	NextToken                   any
 	TransitGatewayPolicyTableId any
 }
 
 type TransitGatewayPolicyTableEntriesAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                           any
+	Filters                          any
+	MaxResults                       any
+	NextToken                        any
 	TransitGatewayPolicyTableEntries any
-	TransitGatewayPolicyTableId any
+	TransitGatewayPolicyTableId      any
 }
 
 var TransitGatewayPolicyTableEntries = ubx.DataSourceBinding{
@@ -57,11 +57,11 @@ var TransitGatewayPolicyTableEntries = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TransitGatewayPolicyTableEntries_FiltersFields,
+			Kind:     "list",
+			Fields:   TransitGatewayPolicyTableEntries_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayPolicyTableId": ubx.FieldSpec{WireName: "transit_gateway_policy_table_id"},
 	},
 }

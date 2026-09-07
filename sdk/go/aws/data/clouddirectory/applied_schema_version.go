@@ -9,7 +9,7 @@ type AppliedSchemaVersionConfig struct {
 
 type AppliedSchemaVersionAttrs struct {
 	AppliedSchemaArn any
-	SchemaArn any
+	SchemaArn        any
 }
 
 var AppliedSchemaVersion = ubx.DataSourceBinding{

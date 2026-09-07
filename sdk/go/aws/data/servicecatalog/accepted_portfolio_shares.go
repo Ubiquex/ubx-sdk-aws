@@ -4,36 +4,36 @@ package servicecatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcceptedPortfolioShares_PortfolioDetails struct {
-	Arn any
-	CreatedTime any
-	Description any
-	DisplayName any
-	Id any
+	Arn          any
+	CreatedTime  any
+	Description  any
+	DisplayName  any
+	Id           any
 	ProviderName any
 }
 
 type AcceptedPortfolioSharesConfig struct {
-	AcceptLanguage any
-	PageSize any
-	PageToken any
+	AcceptLanguage     any
+	PageSize           any
+	PageToken          any
 	PortfolioShareType any
 }
 
 type AcceptedPortfolioSharesAttrs struct {
-	AcceptLanguage any
-	NextPageToken any
-	PageSize any
-	PageToken any
-	PortfolioDetails any
+	AcceptLanguage     any
+	NextPageToken      any
+	PageSize           any
+	PageToken          any
+	PortfolioDetails   any
 	PortfolioShareType any
 }
 
 var AcceptedPortfolioShares = ubx.DataSourceBinding{
 	WireType: "aws_servicecatalog_accepted_portfolio_shares",
 	Fields: ubx.FieldMap{
-		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"AcceptLanguage":     ubx.FieldSpec{WireName: "accept_language"},
+		"PageSize":           ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":          ubx.FieldSpec{WireName: "page_token"},
 		"PortfolioShareType": ubx.FieldSpec{WireName: "portfolio_share_type"},
 	},
 }

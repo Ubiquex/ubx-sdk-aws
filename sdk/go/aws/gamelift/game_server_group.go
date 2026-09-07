@@ -39,33 +39,33 @@ type GameServerGroup_Tags struct {
 }
 
 var GameServerGroup_AutoScalingPolicy_TargetTrackingConfigurationFields = ubx.FieldMap{
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"TargetValue": ubx.FieldSpec{WireName: "target_value"},
+}
 
 var GameServerGroup_AutoScalingPolicyFields = ubx.FieldMap{
-		"EstimatedInstanceWarmup": ubx.FieldSpec{WireName: "estimated_instance_warmup"},
-		"TargetTrackingConfiguration": ubx.FieldSpec{
-			WireName: "target_tracking_configuration",
-			Kind: "object",
-			Fields: GameServerGroup_AutoScalingPolicy_TargetTrackingConfigurationFields,
-		},
-	}
+	"EstimatedInstanceWarmup": ubx.FieldSpec{WireName: "estimated_instance_warmup"},
+	"TargetTrackingConfiguration": ubx.FieldSpec{
+		WireName: "target_tracking_configuration",
+		Kind:     "object",
+		Fields:   GameServerGroup_AutoScalingPolicy_TargetTrackingConfigurationFields,
+	},
+}
 
 var GameServerGroup_InstanceDefinitionsFields = ubx.FieldMap{
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
-	}
+	"InstanceType":     ubx.FieldSpec{WireName: "instance_type"},
+	"WeightedCapacity": ubx.FieldSpec{WireName: "weighted_capacity"},
+}
 
 var GameServerGroup_LaunchTemplateFields = ubx.FieldMap{
-		"LaunchTemplateId": ubx.FieldSpec{WireName: "launch_template_id"},
-		"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"LaunchTemplateId":   ubx.FieldSpec{WireName: "launch_template_id"},
+	"LaunchTemplateName": ubx.FieldSpec{WireName: "launch_template_name"},
+	"Version":            ubx.FieldSpec{WireName: "version"},
+}
 
 var GameServerGroup_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GameServerGroupConfig struct {
 	// Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. Updating this game server group property will not take effect for the created EC2 Auto Scaling group, please update the EC2 Auto Scaling group directly after creating the resource.
@@ -130,30 +130,30 @@ var GameServerGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoScalingPolicy": ubx.FieldSpec{
 			WireName: "auto_scaling_policy",
-			Kind: "object",
-			Fields: GameServerGroup_AutoScalingPolicyFields,
+			Kind:     "object",
+			Fields:   GameServerGroup_AutoScalingPolicyFields,
 		},
-		"BalancingStrategy": ubx.FieldSpec{WireName: "balancing_strategy"},
-		"DeleteOption": ubx.FieldSpec{WireName: "delete_option"},
-		"GameServerGroupName": ubx.FieldSpec{WireName: "game_server_group_name"},
+		"BalancingStrategy":          ubx.FieldSpec{WireName: "balancing_strategy"},
+		"DeleteOption":               ubx.FieldSpec{WireName: "delete_option"},
+		"GameServerGroupName":        ubx.FieldSpec{WireName: "game_server_group_name"},
 		"GameServerProtectionPolicy": ubx.FieldSpec{WireName: "game_server_protection_policy"},
 		"InstanceDefinitions": ubx.FieldSpec{
 			WireName: "instance_definitions",
-			Kind: "list",
-			Fields: GameServerGroup_InstanceDefinitionsFields,
+			Kind:     "list",
+			Fields:   GameServerGroup_InstanceDefinitionsFields,
 		},
 		"LaunchTemplate": ubx.FieldSpec{
 			WireName: "launch_template",
-			Kind: "object",
-			Fields: GameServerGroup_LaunchTemplateFields,
+			Kind:     "object",
+			Fields:   GameServerGroup_LaunchTemplateFields,
 		},
 		"MaxSize": ubx.FieldSpec{WireName: "max_size"},
 		"MinSize": ubx.FieldSpec{WireName: "min_size"},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GameServerGroup_TagsFields,
+			Kind:     "list",
+			Fields:   GameServerGroup_TagsFields,
 		},
 		"VpcSubnets": ubx.FieldSpec{WireName: "vpc_subnets"},
 	},

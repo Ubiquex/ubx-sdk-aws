@@ -8,7 +8,7 @@ type ConversionConfigurationConfig struct {
 }
 
 type ConversionConfigurationAttrs struct {
-	ConversionConfiguration any
+	ConversionConfiguration    any
 	MigrationProjectIdentifier any
 }
 

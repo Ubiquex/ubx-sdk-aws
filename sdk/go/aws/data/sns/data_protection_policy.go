@@ -9,7 +9,7 @@ type DataProtectionPolicyConfig struct {
 
 type DataProtectionPolicyAttrs struct {
 	DataProtectionPolicy any
-	ResourceArn any
+	ResourceArn          any
 }
 
 var DataProtectionPolicy = ubx.DataSourceBinding{

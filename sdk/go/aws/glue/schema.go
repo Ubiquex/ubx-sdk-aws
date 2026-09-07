@@ -24,19 +24,19 @@ type Schema_Tags struct {
 }
 
 var Schema_CheckpointVersionFields = ubx.FieldMap{
-		"IsLatest": ubx.FieldSpec{WireName: "is_latest"},
-		"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
-	}
+	"IsLatest":      ubx.FieldSpec{WireName: "is_latest"},
+	"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
+}
 
 var Schema_RegistryFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Arn":  ubx.FieldSpec{WireName: "arn"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Schema_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SchemaConfig struct {
 	// Specify checkpoint version for update. This is only required to update the Compatibility.
@@ -85,23 +85,23 @@ var Schema = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CheckpointVersion": ubx.FieldSpec{
 			WireName: "checkpoint_version",
-			Kind: "object",
-			Fields: Schema_CheckpointVersionFields,
+			Kind:     "object",
+			Fields:   Schema_CheckpointVersionFields,
 		},
 		"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DataFormat":    ubx.FieldSpec{WireName: "data_format"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"Registry": ubx.FieldSpec{
 			WireName: "registry",
-			Kind: "object",
-			Fields: Schema_RegistryFields,
+			Kind:     "object",
+			Fields:   Schema_RegistryFields,
 		},
 		"SchemaDefinition": ubx.FieldSpec{WireName: "schema_definition"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Schema_TagsFields,
+			Kind:     "list",
+			Fields:   Schema_TagsFields,
 		},
 	},
 }

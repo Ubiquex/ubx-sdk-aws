@@ -4,67 +4,67 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataQualityRulesets_Filter_TargetTable struct {
-	CatalogId any
+	CatalogId    any
 	DatabaseName any
-	TableName any
+	TableName    any
 }
 
 type DataQualityRulesets_Filter struct {
-	CreatedAfter any
-	CreatedBefore any
-	Description any
-	LastModifiedAfter any
+	CreatedAfter       any
+	CreatedBefore      any
+	Description        any
+	LastModifiedAfter  any
 	LastModifiedBefore any
-	Name any
+	Name               any
 	// <p>An object representing an Glue table.</p>
 	TargetTable any
 }
 
 type DataQualityRulesets_Rulesets struct {
-	CreatedOn any
-	Description any
-	LastModifiedOn any
-	Name any
+	CreatedOn           any
+	Description         any
+	LastModifiedOn      any
+	Name                any
 	RecommendationRunId any
-	RuleCount any
-	TargetTable any
+	RuleCount           any
+	TargetTable         any
 }
 
 var DataQualityRulesets_Filter_TargetTableFields = ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"TableName":    ubx.FieldSpec{WireName: "table_name"},
+}
 
 var DataQualityRulesets_FilterFields = ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"LastModifiedAfter": ubx.FieldSpec{WireName: "last_modified_after"},
-		"LastModifiedBefore": ubx.FieldSpec{WireName: "last_modified_before"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetTable": ubx.FieldSpec{
-			WireName: "target_table",
-			Kind: "object",
-			Fields: DataQualityRulesets_Filter_TargetTableFields,
-		},
-	}
+	"CreatedAfter":       ubx.FieldSpec{WireName: "created_after"},
+	"CreatedBefore":      ubx.FieldSpec{WireName: "created_before"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"LastModifiedAfter":  ubx.FieldSpec{WireName: "last_modified_after"},
+	"LastModifiedBefore": ubx.FieldSpec{WireName: "last_modified_before"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"TargetTable": ubx.FieldSpec{
+		WireName: "target_table",
+		Kind:     "object",
+		Fields:   DataQualityRulesets_Filter_TargetTableFields,
+	},
+}
 
 type DataQualityRulesetsConfig struct {
 	// <p>The criteria used to filter data quality rulesets.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
-	Tags any
+	NextToken  any
+	Tags       any
 }
 
 type DataQualityRulesetsAttrs struct {
 	// <p>The criteria used to filter data quality rulesets.</p>
-	Filter any
+	Filter     any
 	MaxResults any
-	NextToken any
-	Rulesets any
-	Tags any
+	NextToken  any
+	Rulesets   any
+	Tags       any
 }
 
 var DataQualityRulesets = ubx.DataSourceBinding{
@@ -72,11 +72,11 @@ var DataQualityRulesets = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: DataQualityRulesets_FilterFields,
+			Kind:     "object",
+			Fields:   DataQualityRulesets_FilterFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Tags":       ubx.FieldSpec{WireName: "tags"},
 	},
 }

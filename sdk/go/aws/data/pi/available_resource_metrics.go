@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AvailableResourceMetrics_Metrics struct {
 	Description any
-	Metric any
-	Unit any
+	Metric      any
+	Unit        any
 }
 
 type AvailableResourceMetricsConfig struct {
-	Identifier any
-	MaxResults any
+	Identifier  any
+	MaxResults  any
 	MetricTypes any
-	NextToken any
+	NextToken   any
 	ServiceType any
 }
 
 type AvailableResourceMetricsAttrs struct {
-	Identifier any
-	MaxResults any
+	Identifier  any
+	MaxResults  any
 	MetricTypes any
-	Metrics any
-	NextToken any
+	Metrics     any
+	NextToken   any
 	ServiceType any
 }
 
 var AvailableResourceMetrics = ubx.DataSourceBinding{
 	WireType: "aws_pi_available_resource_metrics",
 	Fields: ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+		"Identifier":  ubx.FieldSpec{WireName: "identifier"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
 		"MetricTypes": ubx.FieldSpec{WireName: "metric_types"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
 	},
 }

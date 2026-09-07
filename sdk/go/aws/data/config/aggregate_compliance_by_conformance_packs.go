@@ -4,47 +4,47 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregateComplianceByConformancePacks_AggregateComplianceByConformancePacks_Compliance struct {
-	ComplianceType any
-	CompliantRuleCount any
+	ComplianceType        any
+	CompliantRuleCount    any
 	NonCompliantRuleCount any
-	TotalRuleCount any
+	TotalRuleCount        any
 }
 
 type AggregateComplianceByConformancePacks_AggregateComplianceByConformancePacks struct {
-	AccountId any
-	AwsRegion any
-	Compliance any
+	AccountId           any
+	AwsRegion           any
+	Compliance          any
 	ConformancePackName any
 }
 
 type AggregateComplianceByConformancePacks_Filters struct {
-	AccountId any
-	AwsRegion any
-	ComplianceType any
+	AccountId           any
+	AwsRegion           any
+	ComplianceType      any
 	ConformancePackName any
 }
 
 var AggregateComplianceByConformancePacks_FiltersFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"ComplianceType": ubx.FieldSpec{WireName: "compliance_type"},
-		"ConformancePackName": ubx.FieldSpec{WireName: "conformance_pack_name"},
-	}
+	"AccountId":           ubx.FieldSpec{WireName: "account_id"},
+	"AwsRegion":           ubx.FieldSpec{WireName: "aws_region"},
+	"ComplianceType":      ubx.FieldSpec{WireName: "compliance_type"},
+	"ConformancePackName": ubx.FieldSpec{WireName: "conformance_pack_name"},
+}
 
 type AggregateComplianceByConformancePacksConfig struct {
 	ConfigurationAggregatorName any
 	// <p>Filters the conformance packs based on an account ID, region, compliance type, and the name of the conformance pack.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
 type AggregateComplianceByConformancePacksAttrs struct {
 	AggregateComplianceByConformancePacks any
-	ConfigurationAggregatorName any
+	ConfigurationAggregatorName           any
 	// <p>Filters the conformance packs based on an account ID, region, compliance type, and the name of the conformance pack.</p>
-	Filters any
-	Limit any
+	Filters   any
+	Limit     any
 	NextToken any
 }
 
@@ -54,10 +54,10 @@ var AggregateComplianceByConformancePacks = ubx.DataSourceBinding{
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: AggregateComplianceByConformancePacks_FiltersFields,
+			Kind:     "object",
+			Fields:   AggregateComplianceByConformancePacks_FiltersFields,
 		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

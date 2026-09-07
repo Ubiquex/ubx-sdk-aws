@@ -4,7 +4,7 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataCatalogExportConfiguration_EncryptionConfiguration struct {
-	KmsKeyArn any
+	KmsKeyArn    any
 	SseAlgorithm any
 }
 
@@ -16,15 +16,14 @@ type DataCatalogExportConfigurationAttrs struct {
 	// <p>The encryption configuration for exported data catalog metadata.</p>
 	EncryptionConfiguration any
 	// <p>The export setting for the data catalog.</p>
-	ExportSetting any
+	ExportSetting    any
 	S3TableBucketArn any
 	// <p>The current status of the data catalog export.</p>
-	Status any
+	Status    any
 	UpdatedAt any
 }
 
 var DataCatalogExportConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_glue_data_catalog_export_configuration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

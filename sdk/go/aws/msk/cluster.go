@@ -179,225 +179,225 @@ type Cluster_Rebalancing struct {
 }
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_PublicAccessFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_SaslFields = ubx.FieldMap{
-		"Iam": ubx.FieldSpec{
-			WireName: "iam",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
-		},
-		"Scram": ubx.FieldSpec{
-			WireName: "scram",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
-		},
-	}
+	"Iam": ubx.FieldSpec{
+		WireName: "iam",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
+	},
+	"Scram": ubx.FieldSpec{
+		WireName: "scram",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
+	},
+}
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthenticationFields = ubx.FieldMap{
-		"Sasl": ubx.FieldSpec{
-			WireName: "sasl",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_SaslFields,
-		},
-		"Tls": ubx.FieldSpec{
-			WireName: "tls",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
-		},
-	}
+	"Sasl": ubx.FieldSpec{
+		WireName: "sasl",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_SaslFields,
+	},
+	"Tls": ubx.FieldSpec{
+		WireName: "tls",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
+	},
+}
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivityFields = ubx.FieldMap{
-		"ClientAuthentication": ubx.FieldSpec{
-			WireName: "client_authentication",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthenticationFields,
-		},
-	}
+	"ClientAuthentication": ubx.FieldSpec{
+		WireName: "client_authentication",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthenticationFields,
+	},
+}
 
 var Cluster_BrokerNodeGroupInfo_ConnectivityInfoFields = ubx.FieldMap{
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"PublicAccess": ubx.FieldSpec{
-			WireName: "public_access",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_PublicAccessFields,
-		},
-		"VpcConnectivity": ubx.FieldSpec{
-			WireName: "vpc_connectivity",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivityFields,
-		},
-	}
+	"NetworkType": ubx.FieldSpec{WireName: "network_type"},
+	"PublicAccess": ubx.FieldSpec{
+		WireName: "public_access",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_PublicAccessFields,
+	},
+	"VpcConnectivity": ubx.FieldSpec{
+		WireName: "vpc_connectivity",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivityFields,
+	},
+}
 
 var Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfo_ProvisionedThroughputFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"VolumeThroughput": ubx.FieldSpec{WireName: "volume_throughput"},
-	}
+	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+	"VolumeThroughput": ubx.FieldSpec{WireName: "volume_throughput"},
+}
 
 var Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfoFields = ubx.FieldMap{
-		"ProvisionedThroughput": ubx.FieldSpec{
-			WireName: "provisioned_throughput",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfo_ProvisionedThroughputFields,
-		},
-		"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
-	}
+	"ProvisionedThroughput": ubx.FieldSpec{
+		WireName: "provisioned_throughput",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfo_ProvisionedThroughputFields,
+	},
+	"VolumeSize": ubx.FieldSpec{WireName: "volume_size"},
+}
 
 var Cluster_BrokerNodeGroupInfo_StorageInfoFields = ubx.FieldMap{
-		"EbsstorageInfo": ubx.FieldSpec{
-			WireName: "ebsstorage_info",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfoFields,
-		},
-	}
+	"EbsstorageInfo": ubx.FieldSpec{
+		WireName: "ebsstorage_info",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_StorageInfo_EbsstorageInfoFields,
+	},
+}
 
 var Cluster_BrokerNodeGroupInfoFields = ubx.FieldMap{
-		"BrokerAzdistribution": ubx.FieldSpec{WireName: "broker_azdistribution"},
-		"ClientSubnets": ubx.FieldSpec{WireName: "client_subnets"},
-		"ConnectivityInfo": ubx.FieldSpec{
-			WireName: "connectivity_info",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfoFields,
-		},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
-		"StorageInfo": ubx.FieldSpec{
-			WireName: "storage_info",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_StorageInfoFields,
-		},
-	}
+	"BrokerAzdistribution": ubx.FieldSpec{WireName: "broker_azdistribution"},
+	"ClientSubnets":        ubx.FieldSpec{WireName: "client_subnets"},
+	"ConnectivityInfo": ubx.FieldSpec{
+		WireName: "connectivity_info",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfoFields,
+	},
+	"InstanceType":   ubx.FieldSpec{WireName: "instance_type"},
+	"SecurityGroups": ubx.FieldSpec{WireName: "security_groups"},
+	"StorageInfo": ubx.FieldSpec{
+		WireName: "storage_info",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_StorageInfoFields,
+	},
+}
 
 var Cluster_ClientAuthentication_TlsFields = ubx.FieldMap{
-		"CertificateAuthorityArnList": ubx.FieldSpec{WireName: "certificate_authority_arn_list"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"CertificateAuthorityArnList": ubx.FieldSpec{WireName: "certificate_authority_arn_list"},
+	"Enabled":                     ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Cluster_ClientAuthenticationFields = ubx.FieldMap{
-		"Sasl": ubx.FieldSpec{
-			WireName: "sasl",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_SaslFields,
-		},
-		"Tls": ubx.FieldSpec{
-			WireName: "tls",
-			Kind: "object",
-			Fields: Cluster_ClientAuthentication_TlsFields,
-		},
-		"Unauthenticated": ubx.FieldSpec{
-			WireName: "unauthenticated",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
-		},
-	}
+	"Sasl": ubx.FieldSpec{
+		WireName: "sasl",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_SaslFields,
+	},
+	"Tls": ubx.FieldSpec{
+		WireName: "tls",
+		Kind:     "object",
+		Fields:   Cluster_ClientAuthentication_TlsFields,
+	},
+	"Unauthenticated": ubx.FieldSpec{
+		WireName: "unauthenticated",
+		Kind:     "object",
+		Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
+	},
+}
 
 var Cluster_ConfigurationInfoFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Arn":      ubx.FieldSpec{WireName: "arn"},
+	"Revision": ubx.FieldSpec{WireName: "revision"},
+}
 
 var Cluster_EncryptionInfo_EncryptionAtRestFields = ubx.FieldMap{
-		"DataVolumeKmskeyId": ubx.FieldSpec{WireName: "data_volume_kmskey_id"},
-	}
+	"DataVolumeKmskeyId": ubx.FieldSpec{WireName: "data_volume_kmskey_id"},
+}
 
 var Cluster_EncryptionInfo_EncryptionInTransitFields = ubx.FieldMap{
-		"ClientBroker": ubx.FieldSpec{WireName: "client_broker"},
-		"InCluster": ubx.FieldSpec{WireName: "in_cluster"},
-	}
+	"ClientBroker": ubx.FieldSpec{WireName: "client_broker"},
+	"InCluster":    ubx.FieldSpec{WireName: "in_cluster"},
+}
 
 var Cluster_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionAtRest": ubx.FieldSpec{
-			WireName: "encryption_at_rest",
-			Kind: "object",
-			Fields: Cluster_EncryptionInfo_EncryptionAtRestFields,
-		},
-		"EncryptionInTransit": ubx.FieldSpec{
-			WireName: "encryption_in_transit",
-			Kind: "object",
-			Fields: Cluster_EncryptionInfo_EncryptionInTransitFields,
-		},
-	}
+	"EncryptionAtRest": ubx.FieldSpec{
+		WireName: "encryption_at_rest",
+		Kind:     "object",
+		Fields:   Cluster_EncryptionInfo_EncryptionAtRestFields,
+	},
+	"EncryptionInTransit": ubx.FieldSpec{
+		WireName: "encryption_in_transit",
+		Kind:     "object",
+		Fields:   Cluster_EncryptionInfo_EncryptionInTransitFields,
+	},
+}
 
 var Cluster_LoggingInfo_AuthorizerLogs_CloudWatchLogsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LogGroup": ubx.FieldSpec{WireName: "log_group"},
-	}
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"LogGroup": ubx.FieldSpec{WireName: "log_group"},
+}
 
 var Cluster_LoggingInfo_AuthorizerLogs_FirehoseFields = ubx.FieldMap{
-		"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"DeliveryStream": ubx.FieldSpec{WireName: "delivery_stream"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Cluster_LoggingInfo_AuthorizerLogs_S3Fields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Bucket":  ubx.FieldSpec{WireName: "bucket"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Prefix":  ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Cluster_LoggingInfo_AuthorizerLogsFields = ubx.FieldMap{
-		"CloudWatchLogs": ubx.FieldSpec{
-			WireName: "cloud_watch_logs",
-			Kind: "object",
-			Fields: Cluster_LoggingInfo_AuthorizerLogs_CloudWatchLogsFields,
-		},
-		"Firehose": ubx.FieldSpec{
-			WireName: "firehose",
-			Kind: "object",
-			Fields: Cluster_LoggingInfo_AuthorizerLogs_FirehoseFields,
-		},
-		"S3": ubx.FieldSpec{
-			WireName: "s3",
-			Kind: "object",
-			Fields: Cluster_LoggingInfo_AuthorizerLogs_S3Fields,
-		},
-	}
+	"CloudWatchLogs": ubx.FieldSpec{
+		WireName: "cloud_watch_logs",
+		Kind:     "object",
+		Fields:   Cluster_LoggingInfo_AuthorizerLogs_CloudWatchLogsFields,
+	},
+	"Firehose": ubx.FieldSpec{
+		WireName: "firehose",
+		Kind:     "object",
+		Fields:   Cluster_LoggingInfo_AuthorizerLogs_FirehoseFields,
+	},
+	"S3": ubx.FieldSpec{
+		WireName: "s3",
+		Kind:     "object",
+		Fields:   Cluster_LoggingInfo_AuthorizerLogs_S3Fields,
+	},
+}
 
 var Cluster_LoggingInfoFields = ubx.FieldMap{
-		"AuthorizerLogs": ubx.FieldSpec{
-			WireName: "authorizer_logs",
-			Kind: "object",
-			Fields: Cluster_LoggingInfo_AuthorizerLogsFields,
-		},
-		"BrokerLogs": ubx.FieldSpec{
-			WireName: "broker_logs",
-			Kind: "object",
-			Fields: Cluster_LoggingInfo_AuthorizerLogsFields,
-		},
-	}
+	"AuthorizerLogs": ubx.FieldSpec{
+		WireName: "authorizer_logs",
+		Kind:     "object",
+		Fields:   Cluster_LoggingInfo_AuthorizerLogsFields,
+	},
+	"BrokerLogs": ubx.FieldSpec{
+		WireName: "broker_logs",
+		Kind:     "object",
+		Fields:   Cluster_LoggingInfo_AuthorizerLogsFields,
+	},
+}
 
 var Cluster_OpenMonitoring_Prometheus_JmxExporterFields = ubx.FieldMap{
-		"EnabledInBroker": ubx.FieldSpec{WireName: "enabled_in_broker"},
-	}
+	"EnabledInBroker": ubx.FieldSpec{WireName: "enabled_in_broker"},
+}
 
 var Cluster_OpenMonitoring_PrometheusFields = ubx.FieldMap{
-		"JmxExporter": ubx.FieldSpec{
-			WireName: "jmx_exporter",
-			Kind: "object",
-			Fields: Cluster_OpenMonitoring_Prometheus_JmxExporterFields,
-		},
-		"NodeExporter": ubx.FieldSpec{
-			WireName: "node_exporter",
-			Kind: "object",
-			Fields: Cluster_OpenMonitoring_Prometheus_JmxExporterFields,
-		},
-	}
+	"JmxExporter": ubx.FieldSpec{
+		WireName: "jmx_exporter",
+		Kind:     "object",
+		Fields:   Cluster_OpenMonitoring_Prometheus_JmxExporterFields,
+	},
+	"NodeExporter": ubx.FieldSpec{
+		WireName: "node_exporter",
+		Kind:     "object",
+		Fields:   Cluster_OpenMonitoring_Prometheus_JmxExporterFields,
+	},
+}
 
 var Cluster_OpenMonitoringFields = ubx.FieldMap{
-		"Prometheus": ubx.FieldSpec{
-			WireName: "prometheus",
-			Kind: "object",
-			Fields: Cluster_OpenMonitoring_PrometheusFields,
-		},
-	}
+	"Prometheus": ubx.FieldSpec{
+		WireName: "prometheus",
+		Kind:     "object",
+		Fields:   Cluster_OpenMonitoring_PrometheusFields,
+	},
+}
 
 var Cluster_RebalancingFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 type ClusterConfig struct {
 	// Configures the compute and networking resources for the Apache Kafka broker nodes, including instance type, number of brokers, subnets, and EBS storage settings. (AI-inferred)
@@ -470,49 +470,49 @@ var Cluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BrokerNodeGroupInfo": ubx.FieldSpec{
 			WireName: "broker_node_group_info",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfoFields,
+			Kind:     "object",
+			Fields:   Cluster_BrokerNodeGroupInfoFields,
 		},
 		"ClientAuthentication": ubx.FieldSpec{
 			WireName: "client_authentication",
-			Kind: "object",
-			Fields: Cluster_ClientAuthenticationFields,
+			Kind:     "object",
+			Fields:   Cluster_ClientAuthenticationFields,
 		},
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
 		"ConfigurationInfo": ubx.FieldSpec{
 			WireName: "configuration_info",
-			Kind: "object",
-			Fields: Cluster_ConfigurationInfoFields,
+			Kind:     "object",
+			Fields:   Cluster_ConfigurationInfoFields,
 		},
 		"EncryptionInfo": ubx.FieldSpec{
 			WireName: "encryption_info",
-			Kind: "object",
-			Fields: Cluster_EncryptionInfoFields,
+			Kind:     "object",
+			Fields:   Cluster_EncryptionInfoFields,
 		},
 		"EnhancedMonitoring": ubx.FieldSpec{WireName: "enhanced_monitoring"},
-		"KafkaVersion": ubx.FieldSpec{WireName: "kafka_version"},
+		"KafkaVersion":       ubx.FieldSpec{WireName: "kafka_version"},
 		"LoggingInfo": ubx.FieldSpec{
 			WireName: "logging_info",
-			Kind: "object",
-			Fields: Cluster_LoggingInfoFields,
+			Kind:     "object",
+			Fields:   Cluster_LoggingInfoFields,
 		},
 		"NumberOfBrokerNodes": ubx.FieldSpec{WireName: "number_of_broker_nodes"},
 		"OpenMonitoring": ubx.FieldSpec{
 			WireName: "open_monitoring",
-			Kind: "object",
-			Fields: Cluster_OpenMonitoringFields,
+			Kind:     "object",
+			Fields:   Cluster_OpenMonitoringFields,
 		},
 		"Rebalancing": ubx.FieldSpec{
 			WireName: "rebalancing",
-			Kind: "object",
-			Fields: Cluster_RebalancingFields,
+			Kind:     "object",
+			Fields:   Cluster_RebalancingFields,
 		},
 		"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"ZookeeperAccess": ubx.FieldSpec{
 			WireName: "zookeeper_access",
-			Kind: "object",
-			Fields: Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
+			Kind:     "object",
+			Fields:   Cluster_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl_IamFields,
 		},
 	},
 }

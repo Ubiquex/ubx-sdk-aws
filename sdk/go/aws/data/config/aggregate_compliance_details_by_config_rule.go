@@ -6,56 +6,56 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type AggregateComplianceDetailsByConfigRule_AggregateEvaluationResults_EvaluationResultIdentifier_EvaluationResultQualifier struct {
 	ConfigRuleName any
 	EvaluationMode any
-	ResourceId any
-	ResourceType any
+	ResourceId     any
+	ResourceType   any
 }
 
 type AggregateComplianceDetailsByConfigRule_AggregateEvaluationResults_EvaluationResultIdentifier struct {
 	EvaluationResultQualifier any
-	OrderingTimestamp any
-	ResourceEvaluationId any
+	OrderingTimestamp         any
+	ResourceEvaluationId      any
 }
 
 type AggregateComplianceDetailsByConfigRule_AggregateEvaluationResults struct {
-	AccountId any
-	Annotation any
-	AwsRegion any
-	ComplianceType any
-	ConfigRuleInvokedTime any
+	AccountId                  any
+	Annotation                 any
+	AwsRegion                  any
+	ComplianceType             any
+	ConfigRuleInvokedTime      any
 	EvaluationResultIdentifier any
-	ResultRecordedTime any
+	ResultRecordedTime         any
 }
 
 type AggregateComplianceDetailsByConfigRuleConfig struct {
-	AccountId any
-	AwsRegion any
-	ComplianceType any
-	ConfigRuleName any
+	AccountId                   any
+	AwsRegion                   any
+	ComplianceType              any
+	ConfigRuleName              any
 	ConfigurationAggregatorName any
-	Limit any
-	NextToken any
+	Limit                       any
+	NextToken                   any
 }
 
 type AggregateComplianceDetailsByConfigRuleAttrs struct {
-	AccountId any
-	AggregateEvaluationResults any
-	AwsRegion any
-	ComplianceType any
-	ConfigRuleName any
+	AccountId                   any
+	AggregateEvaluationResults  any
+	AwsRegion                   any
+	ComplianceType              any
+	ConfigRuleName              any
 	ConfigurationAggregatorName any
-	Limit any
-	NextToken any
+	Limit                       any
+	NextToken                   any
 }
 
 var AggregateComplianceDetailsByConfigRule = ubx.DataSourceBinding{
 	WireType: "aws_config_aggregate_compliance_details_by_config_rule",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"ComplianceType": ubx.FieldSpec{WireName: "compliance_type"},
-		"ConfigRuleName": ubx.FieldSpec{WireName: "config_rule_name"},
+		"AccountId":                   ubx.FieldSpec{WireName: "account_id"},
+		"AwsRegion":                   ubx.FieldSpec{WireName: "aws_region"},
+		"ComplianceType":              ubx.FieldSpec{WireName: "compliance_type"},
+		"ConfigRuleName":              ubx.FieldSpec{WireName: "config_rule_name"},
 		"ConfigurationAggregatorName": ubx.FieldSpec{WireName: "configuration_aggregator_name"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"Limit":                       ubx.FieldSpec{WireName: "limit"},
+		"NextToken":                   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

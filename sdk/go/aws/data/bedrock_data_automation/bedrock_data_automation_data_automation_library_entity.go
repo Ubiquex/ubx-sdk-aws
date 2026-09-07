@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BedrockDataAutomationDataAutomationLibraryEntity_Entity_Vocabulary_Phrases struct {
 	DisplayAsText any
-	Text any
+	Text          any
 }
 
 type BedrockDataAutomationDataAutomationLibraryEntity_Entity_Vocabulary struct {
-	Description any
-	EntityId any
-	Language any
+	Description      any
+	EntityId         any
+	Language         any
 	LastModifiedTime any
-	Phrases any
+	Phrases          any
 }
 
 type BedrockDataAutomationDataAutomationLibraryEntity_Entity struct {
@@ -43,7 +43,7 @@ type BedrockDataAutomationDataAutomationLibraryEntityAttrs struct {
 var BedrockDataAutomationDataAutomationLibraryEntity = ubx.DataSourceBinding{
 	WireType: "aws_bedrock_data_automation_data_automation_library_entity",
 	Fields: ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
+		"EntityId":   ubx.FieldSpec{WireName: "entity_id"},
 		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
 		"LibraryArn": ubx.FieldSpec{WireName: "library_arn"},
 	},

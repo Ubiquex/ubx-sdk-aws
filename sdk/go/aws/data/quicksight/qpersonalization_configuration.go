@@ -8,10 +8,10 @@ type QpersonalizationConfigurationConfig struct {
 }
 
 type QpersonalizationConfigurationAttrs struct {
-	AwsAccountId any
+	AwsAccountId        any
 	PersonalizationMode any
-	RequestId any
-	Status any
+	RequestId           any
+	Status              any
 }
 
 var QpersonalizationConfiguration = ubx.DataSourceBinding{

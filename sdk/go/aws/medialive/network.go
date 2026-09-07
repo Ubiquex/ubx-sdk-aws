@@ -22,18 +22,18 @@ type Network_Tags struct {
 }
 
 var Network_IpPoolsFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-	}
+	"Cidr": ubx.FieldSpec{WireName: "cidr"},
+}
 
 var Network_RoutesFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"Gateway": ubx.FieldSpec{WireName: "gateway"},
-	}
+	"Cidr":    ubx.FieldSpec{WireName: "cidr"},
+	"Gateway": ubx.FieldSpec{WireName: "gateway"},
+}
 
 var Network_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkConfig struct {
 	// The list of IP address cidr pools for the network
@@ -70,19 +70,19 @@ var Network = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"IpPools": ubx.FieldSpec{
 			WireName: "ip_pools",
-			Kind: "list",
-			Fields: Network_IpPoolsFields,
+			Kind:     "list",
+			Fields:   Network_IpPoolsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Routes": ubx.FieldSpec{
 			WireName: "routes",
-			Kind: "list",
-			Fields: Network_RoutesFields,
+			Kind:     "list",
+			Fields:   Network_RoutesFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Network_TagsFields,
+			Kind:     "list",
+			Fields:   Network_TagsFields,
 		},
 	},
 }

@@ -4,36 +4,36 @@ package redshift_data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RedshiftDataTables_Tables struct {
-	Name any
+	Name   any
 	Schema any
-	Type any
+	Type   any
 }
 
 type RedshiftDataTablesConfig struct {
 	ClusterIdentifier any
 	ConnectedDatabase any
-	Database any
-	DbUser any
-	MaxResults any
-	NextToken any
-	SchemaPattern any
-	SecretArn any
-	TablePattern any
-	WorkgroupName any
+	Database          any
+	DbUser            any
+	MaxResults        any
+	NextToken         any
+	SchemaPattern     any
+	SecretArn         any
+	TablePattern      any
+	WorkgroupName     any
 }
 
 type RedshiftDataTablesAttrs struct {
 	ClusterIdentifier any
 	ConnectedDatabase any
-	Database any
-	DbUser any
-	MaxResults any
-	NextToken any
-	SchemaPattern any
-	SecretArn any
-	TablePattern any
-	Tables any
-	WorkgroupName any
+	Database          any
+	DbUser            any
+	MaxResults        any
+	NextToken         any
+	SchemaPattern     any
+	SecretArn         any
+	TablePattern      any
+	Tables            any
+	WorkgroupName     any
 }
 
 var RedshiftDataTables = ubx.DataSourceBinding{
@@ -41,13 +41,13 @@ var RedshiftDataTables = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
 		"ConnectedDatabase": ubx.FieldSpec{WireName: "connected_database"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DbUser": ubx.FieldSpec{WireName: "db_user"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SchemaPattern": ubx.FieldSpec{WireName: "schema_pattern"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"TablePattern": ubx.FieldSpec{WireName: "table_pattern"},
-		"WorkgroupName": ubx.FieldSpec{WireName: "workgroup_name"},
+		"Database":          ubx.FieldSpec{WireName: "database"},
+		"DbUser":            ubx.FieldSpec{WireName: "db_user"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"SchemaPattern":     ubx.FieldSpec{WireName: "schema_pattern"},
+		"SecretArn":         ubx.FieldSpec{WireName: "secret_arn"},
+		"TablePattern":      ubx.FieldSpec{WireName: "table_pattern"},
+		"WorkgroupName":     ubx.FieldSpec{WireName: "workgroup_name"},
 	},
 }

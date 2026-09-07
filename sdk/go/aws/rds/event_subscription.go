@@ -11,9 +11,9 @@ type EventSubscription_Tags struct {
 }
 
 var EventSubscription_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventSubscriptionConfig struct {
 	// Specifies whether to activate the subscription. If the event notification subscription isn't activated, the subscription is created but not active.
@@ -52,16 +52,16 @@ type EventSubscriptionAttrs struct {
 var EventSubscription = ubx.ResourceBinding{
 	WireType: "aws_rds_event_subscription",
 	Fields: ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EventCategories": ubx.FieldSpec{WireName: "event_categories"},
-		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
-		"SourceIds": ubx.FieldSpec{WireName: "source_ids"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+		"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+		"EventCategories":  ubx.FieldSpec{WireName: "event_categories"},
+		"SnsTopicArn":      ubx.FieldSpec{WireName: "sns_topic_arn"},
+		"SourceIds":        ubx.FieldSpec{WireName: "source_ids"},
+		"SourceType":       ubx.FieldSpec{WireName: "source_type"},
 		"SubscriptionName": ubx.FieldSpec{WireName: "subscription_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventSubscription_TagsFields,
+			Kind:     "list",
+			Fields:   EventSubscription_TagsFields,
 		},
 	},
 }

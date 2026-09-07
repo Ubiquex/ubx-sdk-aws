@@ -4,36 +4,36 @@ package route53globalresolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SharedDnsviews_DnsViews struct {
-	Arn any
-	ClientToken any
-	CreatedAt any
-	Description any
-	DnssecValidation any
-	EdnsClientSubnet any
+	Arn                   any
+	ClientToken           any
+	CreatedAt             any
+	Description           any
+	DnssecValidation      any
+	EdnsClientSubnet      any
 	FirewallRulesFailOpen any
-	GlobalResolverId any
-	Id any
-	Name any
-	OwnerAccountId any
-	Status any
-	UpdatedAt any
+	GlobalResolverId      any
+	Id                    any
+	Name                  any
+	OwnerAccountId        any
+	Status                any
+	UpdatedAt             any
 }
 
 type SharedDnsviewsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SharedDnsviewsAttrs struct {
-	DnsViews any
+	DnsViews   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var SharedDnsviews = ubx.DataSourceBinding{
 	WireType: "aws_route53globalresolver_shared_dnsviews",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

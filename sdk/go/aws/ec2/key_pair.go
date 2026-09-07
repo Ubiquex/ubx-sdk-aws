@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyPair_Tags struct {
 	// The key of a tag attached to the EC2 key pair, used to organize and identify the resource within AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var KeyPair_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type KeyPairConfig struct {
 	// The format of the key pair. Default: ``pem``
@@ -47,14 +47,14 @@ type KeyPairAttrs struct {
 var KeyPair = ubx.ResourceBinding{
 	WireType: "aws_key_pair",
 	Fields: ubx.FieldMap{
-		"KeyFormat": ubx.FieldSpec{WireName: "key_format"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
+		"KeyFormat":         ubx.FieldSpec{WireName: "key_format"},
+		"KeyName":           ubx.FieldSpec{WireName: "key_name"},
+		"KeyType":           ubx.FieldSpec{WireName: "key_type"},
 		"PublicKeyMaterial": ubx.FieldSpec{WireName: "public_key_material"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: KeyPair_TagsFields,
+			Kind:     "list",
+			Fields:   KeyPair_TagsFields,
 		},
 	},
 }

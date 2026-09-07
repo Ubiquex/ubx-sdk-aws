@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Resolvers_Resolvers_CachingConfig struct {
 	CachingKeys any
-	Ttl any
+	Ttl         any
 }
 
 type Resolvers_Resolvers_PipelineConfig struct {
@@ -13,7 +13,7 @@ type Resolvers_Resolvers_PipelineConfig struct {
 }
 
 type Resolvers_Resolvers_Runtime struct {
-	Name any
+	Name           any
 	RuntimeVersion any
 }
 
@@ -22,49 +22,49 @@ type Resolvers_Resolvers_SyncConfig_LambdaConflictHandlerConfig struct {
 }
 
 type Resolvers_Resolvers_SyncConfig struct {
-	ConflictDetection any
-	ConflictHandler any
+	ConflictDetection           any
+	ConflictHandler             any
 	LambdaConflictHandlerConfig any
 }
 
 type Resolvers_Resolvers struct {
-	CachingConfig any
-	Code any
-	DataSourceName any
-	FieldName any
-	Kind any
-	MaxBatchSize any
-	MetricsConfig any
-	PipelineConfig any
-	RequestMappingTemplate any
-	ResolverArn any
+	CachingConfig           any
+	Code                    any
+	DataSourceName          any
+	FieldName               any
+	Kind                    any
+	MaxBatchSize            any
+	MetricsConfig           any
+	PipelineConfig          any
+	RequestMappingTemplate  any
+	ResolverArn             any
 	ResponseMappingTemplate any
-	Runtime any
-	SyncConfig any
-	TypeName any
+	Runtime                 any
+	SyncConfig              any
+	TypeName                any
 }
 
 type ResolversConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
-	TypeName any
+	NextToken  any
+	TypeName   any
 }
 
 type ResolversAttrs struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
-	Resolvers any
-	TypeName any
+	NextToken  any
+	Resolvers  any
+	TypeName   any
 }
 
 var Resolvers = ubx.DataSourceBinding{
 	WireType: "aws_appsync_resolvers",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"TypeName":   ubx.FieldSpec{WireName: "type_name"},
 	},
 }

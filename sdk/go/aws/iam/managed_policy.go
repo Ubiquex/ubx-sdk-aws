@@ -56,12 +56,12 @@ type ManagedPolicyAttrs struct {
 var ManagedPolicy = ubx.ResourceBinding{
 	WireType: "aws_iam_managed_policy",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Groups": ubx.FieldSpec{WireName: "groups"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Groups":            ubx.FieldSpec{WireName: "groups"},
 		"ManagedPolicyName": ubx.FieldSpec{WireName: "managed_policy_name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-		"Users": ubx.FieldSpec{WireName: "users"},
+		"Path":              ubx.FieldSpec{WireName: "path"},
+		"PolicyDocument":    ubx.FieldSpec{WireName: "policy_document"},
+		"Roles":             ubx.FieldSpec{WireName: "roles"},
+		"Users":             ubx.FieldSpec{WireName: "users"},
 	},
 }

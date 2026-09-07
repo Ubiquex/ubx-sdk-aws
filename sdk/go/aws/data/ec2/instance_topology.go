@@ -4,42 +4,42 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceTopology_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type InstanceTopology_Instances struct {
 	AvailabilityZone any
-	CapacityBlockId any
-	GroupName any
-	InstanceId any
-	InstanceType any
-	NetworkNodes any
-	ZoneId any
+	CapacityBlockId  any
+	GroupName        any
+	InstanceId       any
+	InstanceType     any
+	NetworkNodes     any
+	ZoneId           any
 }
 
 var InstanceTopology_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type InstanceTopologyConfig struct {
-	DryRun any
-	Filters any
-	GroupNames any
+	DryRun      any
+	Filters     any
+	GroupNames  any
 	InstanceIds any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type InstanceTopologyAttrs struct {
-	DryRun any
-	Filters any
-	GroupNames any
+	DryRun      any
+	Filters     any
+	GroupNames  any
 	InstanceIds any
-	Instances any
-	MaxResults any
-	NextToken any
+	Instances   any
+	MaxResults  any
+	NextToken   any
 }
 
 var InstanceTopology = ubx.DataSourceBinding{
@@ -48,12 +48,12 @@ var InstanceTopology = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: InstanceTopology_FiltersFields,
+			Kind:     "list",
+			Fields:   InstanceTopology_FiltersFields,
 		},
-		"GroupNames": ubx.FieldSpec{WireName: "group_names"},
+		"GroupNames":  ubx.FieldSpec{WireName: "group_names"},
 		"InstanceIds": ubx.FieldSpec{WireName: "instance_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -11,9 +11,9 @@ type AccessGrantsLocation_Tags struct {
 }
 
 var AccessGrantsLocation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AccessGrantsLocationConfig struct {
 	// The Amazon Resource Name (ARN) of the access grant location's associated IAM role.
@@ -40,12 +40,12 @@ type AccessGrantsLocationAttrs struct {
 var AccessGrantsLocation = ubx.ResourceBinding{
 	WireType: "aws_s3_access_grants_location",
 	Fields: ubx.FieldMap{
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
+		"IamRoleArn":    ubx.FieldSpec{WireName: "iam_role_arn"},
 		"LocationScope": ubx.FieldSpec{WireName: "location_scope"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AccessGrantsLocation_TagsFields,
+			Kind:     "list",
+			Fields:   AccessGrantsLocation_TagsFields,
 		},
 	},
 }

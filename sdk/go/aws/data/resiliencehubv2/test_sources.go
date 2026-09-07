@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestSources_TestSources_ObservabilityAlarm struct {
 	AccountId any
-	AlarmArn any
+	AlarmArn  any
 	AlarmName any
 	CreatedAt any
-	Region any
+	Region    any
 }
 
 type TestSources_TestSources struct {
-	ObservabilityAlarm any
+	ObservabilityAlarm   any
 	SuccessCriteriaAlarm any
 }
 
@@ -37,7 +37,7 @@ type TestSourcesAttrs struct {
 	// <p>ARN identifier.</p>
 	ServiceArn any
 	// <p>The unique identifier of a test.</p>
-	TestId any
+	TestId      any
 	TestSources any
 	// <p>The purpose of a test monitoring source.</p>
 	Type any
@@ -47,9 +47,9 @@ var TestSources = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehubv2_test_sources",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"ServiceArn": ubx.FieldSpec{WireName: "service_arn"},
-		"TestId": ubx.FieldSpec{WireName: "test_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"TestId":     ubx.FieldSpec{WireName: "test_id"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Hypervisor_Tags struct {
 	// The key component of a tag assigned to an AWS Backup Gateway hypervisor, used to label and categorize the resource for management and cost allocation. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Hypervisor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type HypervisorConfig struct {
 	// Specifies the hostname or IP address of the on-premises VMware hypervisor (such as vCenter Server or ESXi) that AWS Backup Gateway connects to for backup operations. (AI-inferred)
@@ -53,15 +53,15 @@ type HypervisorAttrs struct {
 var Hypervisor = ubx.ResourceBinding{
 	WireType: "aws_backup_gateway_hypervisor",
 	Fields: ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+		"Host":        ubx.FieldSpec{WireName: "host"},
+		"KmsKeyArn":   ubx.FieldSpec{WireName: "kms_key_arn"},
 		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Password": ubx.FieldSpec{WireName: "password"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Password":    ubx.FieldSpec{WireName: "password"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Hypervisor_TagsFields,
+			Kind:     "list",
+			Fields:   Hypervisor_TagsFields,
 		},
 		"Username": ubx.FieldSpec{WireName: "username"},
 	},

@@ -4,14 +4,14 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceProfile_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var InstanceProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type InstanceProfileConfig struct {
 	// The property describes an availability zone of the instance profile.
@@ -66,18 +66,18 @@ type InstanceProfileAttrs struct {
 var InstanceProfile = ubx.ResourceBinding{
 	WireType: "aws_dms_instance_profile",
 	Fields: ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AvailabilityZone":          ubx.FieldSpec{WireName: "availability_zone"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
 		"InstanceProfileIdentifier": ubx.FieldSpec{WireName: "instance_profile_identifier"},
-		"InstanceProfileName": ubx.FieldSpec{WireName: "instance_profile_name"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"PubliclyAccessible": ubx.FieldSpec{WireName: "publicly_accessible"},
-		"SubnetGroupIdentifier": ubx.FieldSpec{WireName: "subnet_group_identifier"},
+		"InstanceProfileName":       ubx.FieldSpec{WireName: "instance_profile_name"},
+		"KmsKeyArn":                 ubx.FieldSpec{WireName: "kms_key_arn"},
+		"NetworkType":               ubx.FieldSpec{WireName: "network_type"},
+		"PubliclyAccessible":        ubx.FieldSpec{WireName: "publicly_accessible"},
+		"SubnetGroupIdentifier":     ubx.FieldSpec{WireName: "subnet_group_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: InstanceProfile_TagsFields,
+			Kind:     "list",
+			Fields:   InstanceProfile_TagsFields,
 		},
 		"VpcSecurityGroups": ubx.FieldSpec{WireName: "vpc_security_groups"},
 	},

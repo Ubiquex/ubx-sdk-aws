@@ -30,23 +30,23 @@ type Job_NotificationProperty struct {
 }
 
 var Job_CommandFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"ScriptLocation": ubx.FieldSpec{WireName: "script_location"},
-	}
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"PythonVersion":  ubx.FieldSpec{WireName: "python_version"},
+	"Runtime":        ubx.FieldSpec{WireName: "runtime"},
+	"ScriptLocation": ubx.FieldSpec{WireName: "script_location"},
+}
 
 var Job_ConnectionsFields = ubx.FieldMap{
-		"Connections": ubx.FieldSpec{WireName: "connections"},
-	}
+	"Connections": ubx.FieldSpec{WireName: "connections"},
+}
 
 var Job_ExecutionPropertyFields = ubx.FieldMap{
-		"MaxConcurrentRuns": ubx.FieldSpec{WireName: "max_concurrent_runs"},
-	}
+	"MaxConcurrentRuns": ubx.FieldSpec{WireName: "max_concurrent_runs"},
+}
 
 var Job_NotificationPropertyFields = ubx.FieldMap{
-		"NotifyDelayAfter": ubx.FieldSpec{WireName: "notify_delay_after"},
-	}
+	"NotifyDelayAfter": ubx.FieldSpec{WireName: "notify_delay_after"},
+}
 
 type JobConfig struct {
 	// The number of capacity units that are allocated to this job.
@@ -152,41 +152,41 @@ var Job = ubx.ResourceBinding{
 		"AllocatedCapacity": ubx.FieldSpec{WireName: "allocated_capacity"},
 		"Command": ubx.FieldSpec{
 			WireName: "command",
-			Kind: "object",
-			Fields: Job_CommandFields,
+			Kind:     "object",
+			Fields:   Job_CommandFields,
 		},
 		"Connections": ubx.FieldSpec{
 			WireName: "connections",
-			Kind: "object",
-			Fields: Job_ConnectionsFields,
+			Kind:     "object",
+			Fields:   Job_ConnectionsFields,
 		},
 		"DefaultArguments": ubx.FieldSpec{WireName: "default_arguments"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExecutionClass": ubx.FieldSpec{WireName: "execution_class"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"ExecutionClass":   ubx.FieldSpec{WireName: "execution_class"},
 		"ExecutionProperty": ubx.FieldSpec{
 			WireName: "execution_property",
-			Kind: "object",
-			Fields: Job_ExecutionPropertyFields,
+			Kind:     "object",
+			Fields:   Job_ExecutionPropertyFields,
 		},
-		"GlueVersion": ubx.FieldSpec{WireName: "glue_version"},
-		"JobMode": ubx.FieldSpec{WireName: "job_mode"},
-		"JobRunQueuingEnabled": ubx.FieldSpec{WireName: "job_run_queuing_enabled"},
-		"LogUri": ubx.FieldSpec{WireName: "log_uri"},
-		"MaintenanceWindow": ubx.FieldSpec{WireName: "maintenance_window"},
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"GlueVersion":             ubx.FieldSpec{WireName: "glue_version"},
+		"JobMode":                 ubx.FieldSpec{WireName: "job_mode"},
+		"JobRunQueuingEnabled":    ubx.FieldSpec{WireName: "job_run_queuing_enabled"},
+		"LogUri":                  ubx.FieldSpec{WireName: "log_uri"},
+		"MaintenanceWindow":       ubx.FieldSpec{WireName: "maintenance_window"},
+		"MaxCapacity":             ubx.FieldSpec{WireName: "max_capacity"},
+		"MaxRetries":              ubx.FieldSpec{WireName: "max_retries"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"NonOverridableArguments": ubx.FieldSpec{WireName: "non_overridable_arguments"},
 		"NotificationProperty": ubx.FieldSpec{
 			WireName: "notification_property",
-			Kind: "object",
-			Fields: Job_NotificationPropertyFields,
+			Kind:     "object",
+			Fields:   Job_NotificationPropertyFields,
 		},
-		"NumberOfWorkers": ubx.FieldSpec{WireName: "number_of_workers"},
-		"Role": ubx.FieldSpec{WireName: "role"},
+		"NumberOfWorkers":       ubx.FieldSpec{WireName: "number_of_workers"},
+		"Role":                  ubx.FieldSpec{WireName: "role"},
 		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"WorkerType": ubx.FieldSpec{WireName: "worker_type"},
+		"Tags":                  ubx.FieldSpec{WireName: "tags"},
+		"Timeout":               ubx.FieldSpec{WireName: "timeout"},
+		"WorkerType":            ubx.FieldSpec{WireName: "worker_type"},
 	},
 }

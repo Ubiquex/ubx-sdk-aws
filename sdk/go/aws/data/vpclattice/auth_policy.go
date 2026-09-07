@@ -8,11 +8,11 @@ type AuthPolicyConfig struct {
 }
 
 type AuthPolicyAttrs struct {
-	CreatedAt any
-	LastUpdatedAt any
-	Policy any
+	CreatedAt          any
+	LastUpdatedAt      any
+	Policy             any
 	ResourceIdentifier any
-	State any
+	State              any
 }
 
 var AuthPolicy = ubx.DataSourceBinding{

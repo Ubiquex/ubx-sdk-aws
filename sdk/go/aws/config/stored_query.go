@@ -10,9 +10,9 @@ type StoredQuery_Tags struct {
 }
 
 var StoredQuery_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StoredQueryConfig struct {
 	// The query_description field provides an optional, human-readable description for the AWS Config stored query, used to document the query's purpose or details. (AI-inferred)
@@ -44,12 +44,12 @@ var StoredQuery = ubx.ResourceBinding{
 	WireType: "aws_config_stored_query",
 	Fields: ubx.FieldMap{
 		"QueryDescription": ubx.FieldSpec{WireName: "query_description"},
-		"QueryExpression": ubx.FieldSpec{WireName: "query_expression"},
-		"QueryName": ubx.FieldSpec{WireName: "query_name"},
+		"QueryExpression":  ubx.FieldSpec{WireName: "query_expression"},
+		"QueryName":        ubx.FieldSpec{WireName: "query_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StoredQuery_TagsFields,
+			Kind:     "list",
+			Fields:   StoredQuery_TagsFields,
 		},
 	},
 }

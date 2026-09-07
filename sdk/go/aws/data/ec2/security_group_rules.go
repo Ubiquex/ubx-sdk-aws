@@ -4,60 +4,60 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityGroupRules_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SecurityGroupRules_SecurityGroupRules_ReferencedGroupInfo struct {
-	GroupId any
-	PeeringStatus any
-	UserId any
-	VpcId any
+	GroupId                any
+	PeeringStatus          any
+	UserId                 any
+	VpcId                  any
 	VpcPeeringConnectionId any
 }
 
 type SecurityGroupRules_SecurityGroupRules_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type SecurityGroupRules_SecurityGroupRules struct {
-	CidrIpv4 any
-	CidrIpv6 any
-	Description any
-	FromPort any
-	GroupId any
-	GroupOwnerId any
-	IpProtocol any
-	IsEgress any
-	PrefixListId any
-	ReferencedGroupInfo any
+	CidrIpv4             any
+	CidrIpv6             any
+	Description          any
+	FromPort             any
+	GroupId              any
+	GroupOwnerId         any
+	IpProtocol           any
+	IsEgress             any
+	PrefixListId         any
+	ReferencedGroupInfo  any
 	SecurityGroupRuleArn any
-	SecurityGroupRuleId any
-	Tags any
-	ToPort any
+	SecurityGroupRuleId  any
+	Tags                 any
+	ToPort               any
 }
 
 var SecurityGroupRules_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SecurityGroupRulesConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun               any
+	Filters              any
+	MaxResults           any
+	NextToken            any
 	SecurityGroupRuleIds any
 }
 
 type SecurityGroupRulesAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun               any
+	Filters              any
+	MaxResults           any
+	NextToken            any
 	SecurityGroupRuleIds any
-	SecurityGroupRules any
+	SecurityGroupRules   any
 }
 
 var SecurityGroupRules = ubx.DataSourceBinding{
@@ -66,11 +66,11 @@ var SecurityGroupRules = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SecurityGroupRules_FiltersFields,
+			Kind:     "list",
+			Fields:   SecurityGroupRules_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"SecurityGroupRuleIds": ubx.FieldSpec{WireName: "security_group_rule_ids"},
 	},
 }

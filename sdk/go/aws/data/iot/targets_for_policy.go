@@ -4,24 +4,24 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetsForPolicyConfig struct {
-	Marker any
-	PageSize any
+	Marker     any
+	PageSize   any
 	PolicyName any
 }
 
 type TargetsForPolicyAttrs struct {
-	Marker any
+	Marker     any
 	NextMarker any
-	PageSize any
+	PageSize   any
 	PolicyName any
-	Targets any
+	Targets    any
 }
 
 var TargetsForPolicy = ubx.DataSourceBinding{
 	WireType: "aws_iot_targets_for_policy",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
+		"PageSize":   ubx.FieldSpec{WireName: "page_size"},
 		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
 	},
 }

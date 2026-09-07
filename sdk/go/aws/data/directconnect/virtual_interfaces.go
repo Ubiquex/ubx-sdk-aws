@@ -4,17 +4,17 @@ package directconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VirtualInterfaces_VirtualInterfaces_BgpPeers struct {
-	AddressFamily any
-	AmazonAddress any
-	Asn any
-	AsnLong any
-	AuthKey any
-	AwsDeviceV2 any
+	AddressFamily      any
+	AmazonAddress      any
+	Asn                any
+	AsnLong            any
+	AuthKey            any
+	AwsDeviceV2        any
 	AwsLogicalDeviceId any
-	BgpPeerId any
-	BgpPeerState any
-	BgpStatus any
-	CustomerAddress any
+	BgpPeerId          any
+	BgpPeerState       any
+	BgpStatus          any
+	CustomerAddress    any
 }
 
 type VirtualInterfaces_VirtualInterfaces_RouteFilterPrefixes struct {
@@ -22,64 +22,64 @@ type VirtualInterfaces_VirtualInterfaces_RouteFilterPrefixes struct {
 }
 
 type VirtualInterfaces_VirtualInterfaces_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type VirtualInterfaces_VirtualInterfaces struct {
-	AddressFamily any
-	AmazonAddress any
-	AmazonSideAsn any
-	Asn any
-	AsnLong any
-	AuthKey any
-	AwsDeviceV2 any
-	AwsLogicalDeviceId any
-	BgpPeers any
-	ConnectionId any
-	CustomerAddress any
-	CustomerRouterConfig any
-	DirectConnectGatewayId any
-	JumboFrameCapable any
-	Location any
-	Mtu any
-	OwnerAccount any
+	AddressFamily                any
+	AmazonAddress                any
+	AmazonSideAsn                any
+	Asn                          any
+	AsnLong                      any
+	AuthKey                      any
+	AwsDeviceV2                  any
+	AwsLogicalDeviceId           any
+	BgpPeers                     any
+	ConnectionId                 any
+	CustomerAddress              any
+	CustomerRouterConfig         any
+	DirectConnectGatewayId       any
+	JumboFrameCapable            any
+	Location                     any
+	Mtu                          any
+	OwnerAccount                 any
 	PrefixPoolAllocatedCountIpv4 any
 	PrefixPoolAllocatedCountIpv6 any
-	RateLimit any
-	Region any
-	RouteFilterPrefixes any
-	SiteLinkEnabled any
-	Tags any
-	VirtualGatewayId any
-	VirtualInterfaceId any
-	VirtualInterfaceName any
-	VirtualInterfaceState any
-	VirtualInterfaceType any
-	Vlan any
+	RateLimit                    any
+	Region                       any
+	RouteFilterPrefixes          any
+	SiteLinkEnabled              any
+	Tags                         any
+	VirtualGatewayId             any
+	VirtualInterfaceId           any
+	VirtualInterfaceName         any
+	VirtualInterfaceState        any
+	VirtualInterfaceType         any
+	Vlan                         any
 }
 
 type VirtualInterfacesConfig struct {
-	ConnectionId any
-	MaxResults any
-	NextToken any
+	ConnectionId       any
+	MaxResults         any
+	NextToken          any
 	VirtualInterfaceId any
 }
 
 type VirtualInterfacesAttrs struct {
-	ConnectionId any
-	MaxResults any
-	NextToken any
+	ConnectionId       any
+	MaxResults         any
+	NextToken          any
 	VirtualInterfaceId any
-	VirtualInterfaces any
+	VirtualInterfaces  any
 }
 
 var VirtualInterfaces = ubx.DataSourceBinding{
 	WireType: "aws_directconnect_virtual_interfaces",
 	Fields: ubx.FieldMap{
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ConnectionId":       ubx.FieldSpec{WireName: "connection_id"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 		"VirtualInterfaceId": ubx.FieldSpec{WireName: "virtual_interface_id"},
 	},
 }

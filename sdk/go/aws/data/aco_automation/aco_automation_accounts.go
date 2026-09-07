@@ -4,28 +4,28 @@ package aco_automation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcoAutomationAccounts_Accounts struct {
-	AccountId any
+	AccountId            any
 	LastUpdatedTimestamp any
 	OrganizationRuleMode any
-	Status any
-	StatusReason any
+	Status               any
+	StatusReason         any
 }
 
 type AcoAutomationAccountsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AcoAutomationAccountsAttrs struct {
-	Accounts any
+	Accounts   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var AcoAutomationAccounts = ubx.DataSourceBinding{
 	WireType: "aws_aco_automation_accounts",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

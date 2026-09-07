@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryPointRestoreMetadataConfig struct {
 	BackupVaultAccountId any
-	BackupVaultName any
-	RecoveryPointArn any
+	BackupVaultName      any
+	RecoveryPointArn     any
 }
 
 type RecoveryPointRestoreMetadataAttrs struct {
 	BackupVaultAccountId any
-	BackupVaultArn any
-	BackupVaultName any
-	RecoveryPointArn any
-	ResourceType any
-	RestoreMetadata any
+	BackupVaultArn       any
+	BackupVaultName      any
+	RecoveryPointArn     any
+	ResourceType         any
+	RestoreMetadata      any
 }
 
 var RecoveryPointRestoreMetadata = ubx.DataSourceBinding{
 	WireType: "aws_backup_recovery_point_restore_metadata",
 	Fields: ubx.FieldMap{
 		"BackupVaultAccountId": ubx.FieldSpec{WireName: "backup_vault_account_id"},
-		"BackupVaultName": ubx.FieldSpec{WireName: "backup_vault_name"},
-		"RecoveryPointArn": ubx.FieldSpec{WireName: "recovery_point_arn"},
+		"BackupVaultName":      ubx.FieldSpec{WireName: "backup_vault_name"},
+		"RecoveryPointArn":     ubx.FieldSpec{WireName: "recovery_point_arn"},
 	},
 }

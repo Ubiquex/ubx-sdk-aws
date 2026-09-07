@@ -4,43 +4,43 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayMeteringPolicies_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TransitGatewayMeteringPolicies_TransitGatewayMeteringPolicies_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type TransitGatewayMeteringPolicies_TransitGatewayMeteringPolicies struct {
-	MiddleboxAttachmentIds any
-	State any
-	Tags any
-	TransitGatewayId any
+	MiddleboxAttachmentIds         any
+	State                          any
+	Tags                           any
+	TransitGatewayId               any
 	TransitGatewayMeteringPolicyId any
-	UpdateEffectiveAt any
+	UpdateEffectiveAt              any
 }
 
 var TransitGatewayMeteringPolicies_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TransitGatewayMeteringPoliciesConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                          any
+	Filters                         any
+	MaxResults                      any
+	NextToken                       any
 	TransitGatewayMeteringPolicyIds any
 }
 
 type TransitGatewayMeteringPoliciesAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	TransitGatewayMeteringPolicies any
+	DryRun                          any
+	Filters                         any
+	MaxResults                      any
+	NextToken                       any
+	TransitGatewayMeteringPolicies  any
 	TransitGatewayMeteringPolicyIds any
 }
 
@@ -50,11 +50,11 @@ var TransitGatewayMeteringPolicies = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TransitGatewayMeteringPolicies_FiltersFields,
+			Kind:     "list",
+			Fields:   TransitGatewayMeteringPolicies_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                       ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayMeteringPolicyIds": ubx.FieldSpec{WireName: "transit_gateway_metering_policy_ids"},
 	},
 }

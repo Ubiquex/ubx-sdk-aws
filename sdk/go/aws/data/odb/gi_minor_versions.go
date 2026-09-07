@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GiMinorVersions_GiMinorVersions struct {
 	GridImageId any
-	Version any
+	Version     any
 }
 
 type GiMinorVersionsConfig struct {
-	AvailabilityZone any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	GiVersion any
-	MaxResults any
-	NextToken any
-	ShapeFamily any
+	GiVersion          any
+	MaxResults         any
+	NextToken          any
+	ShapeFamily        any
 }
 
 type GiMinorVersionsAttrs struct {
-	AvailabilityZone any
+	AvailabilityZone   any
 	AvailabilityZoneId any
-	GiMinorVersions any
-	GiVersion any
-	MaxResults any
-	NextToken any
-	ShapeFamily any
+	GiMinorVersions    any
+	GiVersion          any
+	MaxResults         any
+	NextToken          any
+	ShapeFamily        any
 }
 
 var GiMinorVersions = ubx.DataSourceBinding{
 	WireType: "aws_odb_gi_minor_versions",
 	Fields: ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
+		"AvailabilityZone":   ubx.FieldSpec{WireName: "availability_zone"},
 		"AvailabilityZoneId": ubx.FieldSpec{WireName: "availability_zone_id"},
-		"GiVersion": ubx.FieldSpec{WireName: "gi_version"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"ShapeFamily": ubx.FieldSpec{WireName: "shape_family"},
+		"GiVersion":          ubx.FieldSpec{WireName: "gi_version"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
+		"ShapeFamily":        ubx.FieldSpec{WireName: "shape_family"},
 	},
 }

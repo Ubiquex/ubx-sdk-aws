@@ -4,50 +4,50 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricStatistics_Datapoints struct {
-	Average any
+	Average            any
 	ExtendedStatistics any
-	Maximum any
-	Minimum any
-	SampleCount any
-	Sum any
-	Timestamp any
-	Unit any
+	Maximum            any
+	Minimum            any
+	SampleCount        any
+	Sum                any
+	Timestamp          any
+	Unit               any
 }
 
 type MetricStatistics_Dimensions struct {
-	Name any
+	Name  any
 	Value any
 }
 
 var MetricStatistics_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type MetricStatisticsConfig struct {
-	Dimensions any
-	EndTime any
+	Dimensions         any
+	EndTime            any
 	ExtendedStatistics any
-	MetricName any
-	Namespace any
-	Period any
-	StartTime any
-	Statistics any
-	Unit any
+	MetricName         any
+	Namespace          any
+	Period             any
+	StartTime          any
+	Statistics         any
+	Unit               any
 }
 
 type MetricStatisticsAttrs struct {
-	Datapoints any
-	Dimensions any
-	EndTime any
+	Datapoints         any
+	Dimensions         any
+	EndTime            any
 	ExtendedStatistics any
-	Label any
-	MetricName any
-	Namespace any
-	Period any
-	StartTime any
-	Statistics any
-	Unit any
+	Label              any
+	MetricName         any
+	Namespace          any
+	Period             any
+	StartTime          any
+	Statistics         any
+	Unit               any
 }
 
 var MetricStatistics = ubx.DataSourceBinding{
@@ -55,16 +55,16 @@ var MetricStatistics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Dimensions": ubx.FieldSpec{
 			WireName: "dimensions",
-			Kind: "list",
-			Fields: MetricStatistics_DimensionsFields,
+			Kind:     "list",
+			Fields:   MetricStatistics_DimensionsFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":            ubx.FieldSpec{WireName: "end_time"},
 		"ExtendedStatistics": ubx.FieldSpec{WireName: "extended_statistics"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Statistics": ubx.FieldSpec{WireName: "statistics"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
+		"MetricName":         ubx.FieldSpec{WireName: "metric_name"},
+		"Namespace":          ubx.FieldSpec{WireName: "namespace"},
+		"Period":             ubx.FieldSpec{WireName: "period"},
+		"StartTime":          ubx.FieldSpec{WireName: "start_time"},
+		"Statistics":         ubx.FieldSpec{WireName: "statistics"},
+		"Unit":               ubx.FieldSpec{WireName: "unit"},
 	},
 }

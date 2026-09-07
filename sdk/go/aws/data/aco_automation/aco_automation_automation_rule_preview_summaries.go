@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeSizeInGib struct {
 	Comparison any
-	Values any
+	Values     any
 }
 
 type AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeType struct {
 	Comparison any
-	Values any
+	Values     any
 }
 
 type AcoAutomationAutomationRulePreviewSummaries_Criteria_ResourceTag struct {
 	Comparison any
-	Key any
-	Values any
+	Key        any
+	Values     any
 }
 
 type AcoAutomationAutomationRulePreviewSummaries_Criteria struct {
-	EbsVolumeSizeInGib any
-	EbsVolumeType any
+	EbsVolumeSizeInGib      any
+	EbsVolumeType           any
 	EstimatedMonthlySavings any
-	LookBackPeriodInDays any
-	Region any
-	ResourceArn any
-	ResourceTag any
-	RestartNeeded any
+	LookBackPeriodInDays    any
+	Region                  any
+	ResourceArn             any
+	ResourceTag             any
+	RestartNeeded           any
 }
 
 type AcoAutomationAutomationRulePreviewSummaries_OrganizationScope struct {
@@ -35,106 +35,106 @@ type AcoAutomationAutomationRulePreviewSummaries_OrganizationScope struct {
 }
 
 type AcoAutomationAutomationRulePreviewSummaries_PreviewResultSummaries_Total_EstimatedMonthlySavings struct {
-	AfterDiscountSavings any
+	AfterDiscountSavings  any
 	BeforeDiscountSavings any
-	Currency any
+	Currency              any
 	SavingsEstimationMode any
 }
 
 type AcoAutomationAutomationRulePreviewSummaries_PreviewResultSummaries_Total struct {
 	EstimatedMonthlySavings any
-	RecommendedActionCount any
+	RecommendedActionCount  any
 }
 
 type AcoAutomationAutomationRulePreviewSummaries_PreviewResultSummaries struct {
-	Key any
+	Key   any
 	Total any
 }
 
 var AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeSizeInGibFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var AcoAutomationAutomationRulePreviewSummaries_Criteria_ResourceTagFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Values":     ubx.FieldSpec{WireName: "values"},
+}
 
 var AcoAutomationAutomationRulePreviewSummaries_CriteriaFields = ubx.FieldMap{
-		"EbsVolumeSizeInGib": ubx.FieldSpec{
-			WireName: "ebs_volume_size_in_gib",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeSizeInGibFields,
-		},
-		"EbsVolumeType": ubx.FieldSpec{
-			WireName: "ebs_volume_type",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields,
-		},
-		"EstimatedMonthlySavings": ubx.FieldSpec{
-			WireName: "estimated_monthly_savings",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeSizeInGibFields,
-		},
-		"LookBackPeriodInDays": ubx.FieldSpec{
-			WireName: "look_back_period_in_days",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeSizeInGibFields,
-		},
-		"Region": ubx.FieldSpec{
-			WireName: "region",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields,
-		},
-		"ResourceArn": ubx.FieldSpec{
-			WireName: "resource_arn",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields,
-		},
-		"ResourceTag": ubx.FieldSpec{
-			WireName: "resource_tag",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_Criteria_ResourceTagFields,
-		},
-		"RestartNeeded": ubx.FieldSpec{
-			WireName: "restart_needed",
-			Kind: "list",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields,
-		},
-	}
+	"EbsVolumeSizeInGib": ubx.FieldSpec{
+		WireName: "ebs_volume_size_in_gib",
+		Kind:     "list",
+		Fields:   AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeSizeInGibFields,
+	},
+	"EbsVolumeType": ubx.FieldSpec{
+		WireName: "ebs_volume_type",
+		Kind:     "list",
+		Fields:   AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields,
+	},
+	"EstimatedMonthlySavings": ubx.FieldSpec{
+		WireName: "estimated_monthly_savings",
+		Kind:     "list",
+		Fields:   AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeSizeInGibFields,
+	},
+	"LookBackPeriodInDays": ubx.FieldSpec{
+		WireName: "look_back_period_in_days",
+		Kind:     "list",
+		Fields:   AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeSizeInGibFields,
+	},
+	"Region": ubx.FieldSpec{
+		WireName: "region",
+		Kind:     "list",
+		Fields:   AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields,
+	},
+	"ResourceArn": ubx.FieldSpec{
+		WireName: "resource_arn",
+		Kind:     "list",
+		Fields:   AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields,
+	},
+	"ResourceTag": ubx.FieldSpec{
+		WireName: "resource_tag",
+		Kind:     "list",
+		Fields:   AcoAutomationAutomationRulePreviewSummaries_Criteria_ResourceTagFields,
+	},
+	"RestartNeeded": ubx.FieldSpec{
+		WireName: "restart_needed",
+		Kind:     "list",
+		Fields:   AcoAutomationAutomationRulePreviewSummaries_Criteria_EbsVolumeTypeFields,
+	},
+}
 
 var AcoAutomationAutomationRulePreviewSummaries_OrganizationScopeFields = ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-	}
+	"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
+}
 
 type AcoAutomationAutomationRulePreviewSummariesConfig struct {
 	// <p> A set of conditions that specify which recommended action qualify for implementation. When a rule is active and a recommended action matches these criteria, Compute Optimizer implements the action at the scheduled run time. You can specify up to 20 conditions per filter criteria and 20 values per condition. </p>
-	Criteria any
+	Criteria   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p> Defines the scope for organization-level rules when previewing matching actions.</p>
-	OrganizationScope any
+	OrganizationScope      any
 	RecommendedActionTypes any
-	RuleType any
+	RuleType               any
 }
 
 type AcoAutomationAutomationRulePreviewSummariesAttrs struct {
 	// <p> A set of conditions that specify which recommended action qualify for implementation. When a rule is active and a recommended action matches these criteria, Compute Optimizer implements the action at the scheduled run time. You can specify up to 20 conditions per filter criteria and 20 values per condition. </p>
-	Criteria any
+	Criteria   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	// <p> Defines the scope for organization-level rules when previewing matching actions.</p>
-	OrganizationScope any
+	OrganizationScope      any
 	PreviewResultSummaries any
 	RecommendedActionTypes any
-	RuleType any
+	RuleType               any
 }
 
 var AcoAutomationAutomationRulePreviewSummaries = ubx.DataSourceBinding{
@@ -142,17 +142,17 @@ var AcoAutomationAutomationRulePreviewSummaries = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Criteria": ubx.FieldSpec{
 			WireName: "criteria",
-			Kind: "object",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_CriteriaFields,
+			Kind:     "object",
+			Fields:   AcoAutomationAutomationRulePreviewSummaries_CriteriaFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"OrganizationScope": ubx.FieldSpec{
 			WireName: "organization_scope",
-			Kind: "object",
-			Fields: AcoAutomationAutomationRulePreviewSummaries_OrganizationScopeFields,
+			Kind:     "object",
+			Fields:   AcoAutomationAutomationRulePreviewSummaries_OrganizationScopeFields,
 		},
 		"RecommendedActionTypes": ubx.FieldSpec{WireName: "recommended_action_types"},
-		"RuleType": ubx.FieldSpec{WireName: "rule_type"},
+		"RuleType":               ubx.FieldSpec{WireName: "rule_type"},
 	},
 }

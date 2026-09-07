@@ -36,10 +36,10 @@ type QueueEnvironmentAttrs struct {
 var QueueEnvironment = ubx.ResourceBinding{
 	WireType: "aws_deadline_queue_environment",
 	Fields: ubx.FieldMap{
-		"FarmId": ubx.FieldSpec{WireName: "farm_id"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
-		"Template": ubx.FieldSpec{WireName: "template"},
+		"FarmId":       ubx.FieldSpec{WireName: "farm_id"},
+		"Priority":     ubx.FieldSpec{WireName: "priority"},
+		"QueueId":      ubx.FieldSpec{WireName: "queue_id"},
+		"Template":     ubx.FieldSpec{WireName: "template"},
 		"TemplateType": ubx.FieldSpec{WireName: "template_type"},
 	},
 }

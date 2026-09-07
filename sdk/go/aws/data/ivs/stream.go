@@ -4,12 +4,12 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Stream_Stream struct {
-	ChannelArn any
-	Health any
+	ChannelArn  any
+	Health      any
 	PlaybackUrl any
-	StartTime any
-	State any
-	StreamId any
+	StartTime   any
+	State       any
+	StreamId    any
 	ViewerCount any
 }
 

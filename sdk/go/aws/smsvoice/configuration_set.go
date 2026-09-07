@@ -38,49 +38,49 @@ type ConfigurationSet_EventDestinations struct {
 }
 
 type ConfigurationSet_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ConfigurationSet_EventDestinations_CloudWatchLogsDestinationFields = ubx.FieldMap{
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-	}
+	"IamRoleArn":  ubx.FieldSpec{WireName: "iam_role_arn"},
+	"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
+}
 
 var ConfigurationSet_EventDestinations_KinesisFirehoseDestinationFields = ubx.FieldMap{
-		"DeliveryStreamArn": ubx.FieldSpec{WireName: "delivery_stream_arn"},
-		"IamRoleArn": ubx.FieldSpec{WireName: "iam_role_arn"},
-	}
+	"DeliveryStreamArn": ubx.FieldSpec{WireName: "delivery_stream_arn"},
+	"IamRoleArn":        ubx.FieldSpec{WireName: "iam_role_arn"},
+}
 
 var ConfigurationSet_EventDestinations_SnsDestinationFields = ubx.FieldMap{
-		"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
-	}
+	"TopicArn": ubx.FieldSpec{WireName: "topic_arn"},
+}
 
 var ConfigurationSet_EventDestinationsFields = ubx.FieldMap{
-		"CloudWatchLogsDestination": ubx.FieldSpec{
-			WireName: "cloud_watch_logs_destination",
-			Kind: "object",
-			Fields: ConfigurationSet_EventDestinations_CloudWatchLogsDestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EventDestinationName": ubx.FieldSpec{WireName: "event_destination_name"},
-		"KinesisFirehoseDestination": ubx.FieldSpec{
-			WireName: "kinesis_firehose_destination",
-			Kind: "object",
-			Fields: ConfigurationSet_EventDestinations_KinesisFirehoseDestinationFields,
-		},
-		"MatchingEventTypes": ubx.FieldSpec{WireName: "matching_event_types"},
-		"SnsDestination": ubx.FieldSpec{
-			WireName: "sns_destination",
-			Kind: "object",
-			Fields: ConfigurationSet_EventDestinations_SnsDestinationFields,
-		},
-	}
+	"CloudWatchLogsDestination": ubx.FieldSpec{
+		WireName: "cloud_watch_logs_destination",
+		Kind:     "object",
+		Fields:   ConfigurationSet_EventDestinations_CloudWatchLogsDestinationFields,
+	},
+	"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+	"EventDestinationName": ubx.FieldSpec{WireName: "event_destination_name"},
+	"KinesisFirehoseDestination": ubx.FieldSpec{
+		WireName: "kinesis_firehose_destination",
+		Kind:     "object",
+		Fields:   ConfigurationSet_EventDestinations_KinesisFirehoseDestinationFields,
+	},
+	"MatchingEventTypes": ubx.FieldSpec{WireName: "matching_event_types"},
+	"SnsDestination": ubx.FieldSpec{
+		WireName: "sns_destination",
+		Kind:     "object",
+		Fields:   ConfigurationSet_EventDestinations_SnsDestinationFields,
+	},
+}
 
 var ConfigurationSet_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ConfigurationSetConfig struct {
 	// The name to use for the configuration set.
@@ -118,18 +118,18 @@ var ConfigurationSet = ubx.ResourceBinding{
 	WireType: "aws_smsvoice_configuration_set",
 	Fields: ubx.FieldMap{
 		"ConfigurationSetName": ubx.FieldSpec{WireName: "configuration_set_name"},
-		"DefaultSenderId": ubx.FieldSpec{WireName: "default_sender_id"},
+		"DefaultSenderId":      ubx.FieldSpec{WireName: "default_sender_id"},
 		"EventDestinations": ubx.FieldSpec{
 			WireName: "event_destinations",
-			Kind: "list",
-			Fields: ConfigurationSet_EventDestinationsFields,
+			Kind:     "list",
+			Fields:   ConfigurationSet_EventDestinationsFields,
 		},
 		"MessageFeedbackEnabled": ubx.FieldSpec{WireName: "message_feedback_enabled"},
 		"ProtectConfigurationId": ubx.FieldSpec{WireName: "protect_configuration_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfigurationSet_TagsFields,
+			Kind:     "list",
+			Fields:   ConfigurationSet_TagsFields,
 		},
 	},
 }

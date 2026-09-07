@@ -4,26 +4,26 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueueEmailAddresses_EmailAddressMetadataList struct {
-	Arn any
-	Id any
+	Arn                    any
+	Id                     any
 	IsDefaultOutboundEmail any
 }
 
 type QueueEmailAddressesConfig struct {
 	InstanceId any
 	MaxResults any
-	NextToken any
-	QueueId any
+	NextToken  any
+	QueueId    any
 }
 
 type QueueEmailAddressesAttrs struct {
 	EmailAddressMetadataList any
-	InstanceId any
-	LastModifiedRegion any
-	LastModifiedTime any
-	MaxResults any
-	NextToken any
-	QueueId any
+	InstanceId               any
+	LastModifiedRegion       any
+	LastModifiedTime         any
+	MaxResults               any
+	NextToken                any
+	QueueId                  any
 }
 
 var QueueEmailAddresses = ubx.DataSourceBinding{
@@ -31,7 +31,7 @@ var QueueEmailAddresses = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"QueueId":    ubx.FieldSpec{WireName: "queue_id"},
 	},
 }

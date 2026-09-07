@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReusableDelegationSets_DelegationSets struct {
 	CallerReference any
-	Id any
-	NameServers any
+	Id              any
+	NameServers     any
 }
 
 type ReusableDelegationSetsConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 }
 
 type ReusableDelegationSetsAttrs struct {
 	DelegationSets any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	NextMarker any
+	IsTruncated    any
+	Marker         any
+	MaxItems       any
+	NextMarker     any
 }
 
 var ReusableDelegationSets = ubx.DataSourceBinding{
 	WireType: "aws_route53_reusable_delegation_sets",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 	},
 }

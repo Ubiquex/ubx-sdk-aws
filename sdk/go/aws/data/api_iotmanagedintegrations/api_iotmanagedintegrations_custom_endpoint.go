@@ -12,6 +12,5 @@ type ApiIotmanagedintegrationsCustomEndpointAttrs struct {
 
 var ApiIotmanagedintegrationsCustomEndpoint = ubx.DataSourceBinding{
 	WireType: "aws_api_iotmanagedintegrations_custom_endpoint",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -21,6 +21,6 @@ var OrganizationalUnitAssociation = ubx.ResourceBinding{
 	WireType: "aws_notifications_organizational_unit_association",
 	Fields: ubx.FieldMap{
 		"NotificationConfigurationArn": ubx.FieldSpec{WireName: "notification_configuration_arn"},
-		"OrganizationalUnitId": ubx.FieldSpec{WireName: "organizational_unit_id"},
+		"OrganizationalUnitId":         ubx.FieldSpec{WireName: "organizational_unit_id"},
 	},
 }

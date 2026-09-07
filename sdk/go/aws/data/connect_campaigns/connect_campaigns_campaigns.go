@@ -4,10 +4,10 @@ package connect_campaigns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectCampaignsCampaigns_CampaignSummaryList struct {
-	Arn any
+	Arn               any
 	ConnectInstanceId any
-	Id any
-	Name any
+	Id                any
+	Name              any
 }
 
 type ConnectCampaignsCampaigns_Filters_InstanceIdFilter struct {
@@ -23,17 +23,17 @@ type ConnectCampaignsCampaigns_Filters struct {
 }
 
 var ConnectCampaignsCampaigns_Filters_InstanceIdFilterFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var ConnectCampaignsCampaigns_FiltersFields = ubx.FieldMap{
-		"InstanceIdFilter": ubx.FieldSpec{
-			WireName: "instance_id_filter",
-			Kind: "object",
-			Fields: ConnectCampaignsCampaigns_Filters_InstanceIdFilterFields,
-		},
-	}
+	"InstanceIdFilter": ubx.FieldSpec{
+		WireName: "instance_id_filter",
+		Kind:     "object",
+		Fields:   ConnectCampaignsCampaigns_Filters_InstanceIdFilterFields,
+	},
+}
 
 type ConnectCampaignsCampaignsConfig struct {
 	// Filter model by type
@@ -60,10 +60,10 @@ var ConnectCampaignsCampaigns = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ConnectCampaignsCampaigns_FiltersFields,
+			Kind:     "object",
+			Fields:   ConnectCampaignsCampaigns_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

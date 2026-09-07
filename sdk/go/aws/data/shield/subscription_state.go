@@ -12,6 +12,5 @@ type SubscriptionStateAttrs struct {
 
 var SubscriptionState = ubx.DataSourceBinding{
 	WireType: "aws_shield_subscription_state",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

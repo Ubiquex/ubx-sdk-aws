@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PullRequestOverrideStateConfig struct {
 	PullRequestId any
-	RevisionId any
+	RevisionId    any
 }
 
 type PullRequestOverrideStateAttrs struct {
-	Overridden any
-	Overrider any
+	Overridden    any
+	Overrider     any
 	PullRequestId any
-	RevisionId any
+	RevisionId    any
 }
 
 var PullRequestOverrideState = ubx.DataSourceBinding{
 	WireType: "aws_codecommit_pull_request_override_state",
 	Fields: ubx.FieldMap{
 		"PullRequestId": ubx.FieldSpec{WireName: "pull_request_id"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
+		"RevisionId":    ubx.FieldSpec{WireName: "revision_id"},
 	},
 }

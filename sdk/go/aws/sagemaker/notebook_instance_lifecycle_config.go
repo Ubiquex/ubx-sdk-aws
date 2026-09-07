@@ -9,8 +9,8 @@ type NotebookInstanceLifecycleConfig_OnCreate struct {
 }
 
 var NotebookInstanceLifecycleConfig_OnCreateFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+}
 
 type NotebookInstanceLifecycleConfigConfig struct {
 	// The name of the lifecycle configuration, which uniquely identifies it within your AWS account and is used when associating the lifecycle configuration with a notebook instance. (AI-inferred)
@@ -38,13 +38,13 @@ var NotebookInstanceLifecycleConfig = ubx.ResourceBinding{
 		"NotebookInstanceLifecycleConfigName": ubx.FieldSpec{WireName: "notebook_instance_lifecycle_config_name"},
 		"OnCreate": ubx.FieldSpec{
 			WireName: "on_create",
-			Kind: "list",
-			Fields: NotebookInstanceLifecycleConfig_OnCreateFields,
+			Kind:     "list",
+			Fields:   NotebookInstanceLifecycleConfig_OnCreateFields,
 		},
 		"OnStart": ubx.FieldSpec{
 			WireName: "on_start",
-			Kind: "list",
-			Fields: NotebookInstanceLifecycleConfig_OnCreateFields,
+			Kind:     "list",
+			Fields:   NotebookInstanceLifecycleConfig_OnCreateFields,
 		},
 	},
 }

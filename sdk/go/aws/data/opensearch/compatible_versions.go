@@ -4,7 +4,7 @@ package opensearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CompatibleVersions_CompatibleVersions struct {
-	SourceVersion any
+	SourceVersion  any
 	TargetVersions any
 }
 

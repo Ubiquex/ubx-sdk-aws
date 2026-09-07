@@ -4,7 +4,7 @@ package inspector2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DelegatedAdminAccount_DelegatedAdmin struct {
-	AccountId any
+	AccountId          any
 	RelationshipStatus any
 }
 
@@ -18,6 +18,5 @@ type DelegatedAdminAccountAttrs struct {
 
 var DelegatedAdminAccount = ubx.DataSourceBinding{
 	WireType: "aws_inspector2_delegated_admin_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

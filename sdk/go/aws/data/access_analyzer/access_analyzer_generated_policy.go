@@ -8,22 +8,22 @@ type AccessAnalyzerGeneratedPolicy_GeneratedPolicyResult_GeneratedPolicies struc
 }
 
 type AccessAnalyzerGeneratedPolicy_GeneratedPolicyResult_Properties_CloudTrailProperties_TrailProperties struct {
-	AllRegions any
+	AllRegions    any
 	CloudTrailArn any
-	Regions any
+	Regions       any
 }
 
 type AccessAnalyzerGeneratedPolicy_GeneratedPolicyResult_Properties_CloudTrailProperties struct {
-	EndTime any
-	StartTime any
+	EndTime         any
+	StartTime       any
 	TrailProperties any
 }
 
 type AccessAnalyzerGeneratedPolicy_GeneratedPolicyResult_Properties struct {
 	// <p>Contains information about CloudTrail access.</p>
 	CloudTrailProperties any
-	IsComplete any
-	PrincipalArn any
+	IsComplete           any
+	PrincipalArn         any
 }
 
 type AccessAnalyzerGeneratedPolicy_GeneratedPolicyResult struct {
@@ -33,33 +33,33 @@ type AccessAnalyzerGeneratedPolicy_GeneratedPolicyResult struct {
 }
 
 type AccessAnalyzerGeneratedPolicy_JobDetails_JobError struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type AccessAnalyzerGeneratedPolicy_JobDetails struct {
 	CompletedOn any
 	// <p>Contains the details about the policy generation error.</p>
-	JobError any
-	JobId any
+	JobError  any
+	JobId     any
 	StartedOn any
-	Status any
+	Status    any
 }
 
 type AccessAnalyzerGeneratedPolicyConfig struct {
 	IncludeResourcePlaceholders any
 	IncludeServiceLevelTemplate any
-	JobId any
+	JobId                       any
 }
 
 type AccessAnalyzerGeneratedPolicyAttrs struct {
 	// <p>Contains the text for the generated policy and its details.</p>
-	GeneratedPolicyResult any
+	GeneratedPolicyResult       any
 	IncludeResourcePlaceholders any
 	IncludeServiceLevelTemplate any
 	// <p>Contains details about the policy generation request.</p>
 	JobDetails any
-	JobId any
+	JobId      any
 }
 
 var AccessAnalyzerGeneratedPolicy = ubx.DataSourceBinding{
@@ -67,6 +67,6 @@ var AccessAnalyzerGeneratedPolicy = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"IncludeResourcePlaceholders": ubx.FieldSpec{WireName: "include_resource_placeholders"},
 		"IncludeServiceLevelTemplate": ubx.FieldSpec{WireName: "include_service_level_template"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":                       ubx.FieldSpec{WireName: "job_id"},
 	},
 }

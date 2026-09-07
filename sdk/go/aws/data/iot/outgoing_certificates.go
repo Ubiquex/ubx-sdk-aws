@@ -4,33 +4,33 @@ package iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutgoingCertificates_OutgoingCertificates struct {
-	CertificateArn any
-	CertificateId any
-	CreationDate any
-	TransferDate any
+	CertificateArn  any
+	CertificateId   any
+	CreationDate    any
+	TransferDate    any
 	TransferMessage any
-	TransferredTo any
+	TransferredTo   any
 }
 
 type OutgoingCertificatesConfig struct {
 	AscendingOrder any
-	Marker any
-	PageSize any
+	Marker         any
+	PageSize       any
 }
 
 type OutgoingCertificatesAttrs struct {
-	AscendingOrder any
-	Marker any
-	NextMarker any
+	AscendingOrder       any
+	Marker               any
+	NextMarker           any
 	OutgoingCertificates any
-	PageSize any
+	PageSize             any
 }
 
 var OutgoingCertificates = ubx.DataSourceBinding{
 	WireType: "aws_iot_outgoing_certificates",
 	Fields: ubx.FieldMap{
 		"AscendingOrder": ubx.FieldSpec{WireName: "ascending_order"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Marker":         ubx.FieldSpec{WireName: "marker"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
 	},
 }

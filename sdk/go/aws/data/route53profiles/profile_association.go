@@ -4,15 +4,15 @@ package route53profiles
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileAssociation_ProfileAssociation struct {
-	CreationTime any
-	Id any
+	CreationTime     any
+	Id               any
 	ModificationTime any
-	Name any
-	OwnerId any
-	ProfileId any
-	ResourceId any
-	Status any
-	StatusMessage any
+	Name             any
+	OwnerId          any
+	ProfileId        any
+	ResourceId       any
+	Status           any
+	StatusMessage    any
 }
 
 type ProfileAssociationConfig struct {
@@ -21,7 +21,7 @@ type ProfileAssociationConfig struct {
 
 type ProfileAssociationAttrs struct {
 	// <p> An association between a Route 53 Profile and a VPC. </p>
-	ProfileAssociation any
+	ProfileAssociation   any
 	ProfileAssociationId any
 }
 

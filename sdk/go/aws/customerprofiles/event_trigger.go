@@ -29,8 +29,8 @@ type EventTrigger_EventTriggerConditions struct {
 type EventTrigger_EventTriggerLimits_Periods struct {
 	// Defines the maximum number of times the event trigger can be invoked for a single customer profile within the specified time period. (AI-inferred)
 	MaxInvocationsPerProfile any
-	Unit any
-	Unlimited any
+	Unit                     any
+	Unlimited                any
 	// In an Amazon Customer Profiles event trigger limit period, this value specifies the number of time units (such as days or hours) that define the duration during which the trigger's maximum invocations are constrained. (AI-inferred)
 	Value any
 }
@@ -44,54 +44,54 @@ type EventTrigger_EventTriggerLimits struct {
 
 type EventTrigger_Tags struct {
 	// The tag key component of a key-value pair assigned to the event trigger, identifying the tag's name within the resource's tag set. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var EventTrigger_EventTriggerConditions_EventTriggerDimensions_ObjectAttributesFields = ubx.FieldMap{
-		"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ComparisonOperator": ubx.FieldSpec{WireName: "comparison_operator"},
+	"FieldName":          ubx.FieldSpec{WireName: "field_name"},
+	"Source":             ubx.FieldSpec{WireName: "source"},
+	"Values":             ubx.FieldSpec{WireName: "values"},
+}
 
 var EventTrigger_EventTriggerConditions_EventTriggerDimensionsFields = ubx.FieldMap{
-		"ObjectAttributes": ubx.FieldSpec{
-			WireName: "object_attributes",
-			Kind: "list",
-			Fields: EventTrigger_EventTriggerConditions_EventTriggerDimensions_ObjectAttributesFields,
-		},
-	}
+	"ObjectAttributes": ubx.FieldSpec{
+		WireName: "object_attributes",
+		Kind:     "list",
+		Fields:   EventTrigger_EventTriggerConditions_EventTriggerDimensions_ObjectAttributesFields,
+	},
+}
 
 var EventTrigger_EventTriggerConditionsFields = ubx.FieldMap{
-		"EventTriggerDimensions": ubx.FieldSpec{
-			WireName: "event_trigger_dimensions",
-			Kind: "list",
-			Fields: EventTrigger_EventTriggerConditions_EventTriggerDimensionsFields,
-		},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-	}
+	"EventTriggerDimensions": ubx.FieldSpec{
+		WireName: "event_trigger_dimensions",
+		Kind:     "list",
+		Fields:   EventTrigger_EventTriggerConditions_EventTriggerDimensionsFields,
+	},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+}
 
 var EventTrigger_EventTriggerLimits_PeriodsFields = ubx.FieldMap{
-		"MaxInvocationsPerProfile": ubx.FieldSpec{WireName: "max_invocations_per_profile"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Unlimited": ubx.FieldSpec{WireName: "unlimited"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"MaxInvocationsPerProfile": ubx.FieldSpec{WireName: "max_invocations_per_profile"},
+	"Unit":                     ubx.FieldSpec{WireName: "unit"},
+	"Unlimited":                ubx.FieldSpec{WireName: "unlimited"},
+	"Value":                    ubx.FieldSpec{WireName: "value"},
+}
 
 var EventTrigger_EventTriggerLimitsFields = ubx.FieldMap{
-		"EventExpiration": ubx.FieldSpec{WireName: "event_expiration"},
-		"Periods": ubx.FieldSpec{
-			WireName: "periods",
-			Kind: "list",
-			Fields: EventTrigger_EventTriggerLimits_PeriodsFields,
-		},
-	}
+	"EventExpiration": ubx.FieldSpec{WireName: "event_expiration"},
+	"Periods": ubx.FieldSpec{
+		WireName: "periods",
+		Kind:     "list",
+		Fields:   EventTrigger_EventTriggerLimits_PeriodsFields,
+	},
+}
 
 var EventTrigger_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EventTriggerConfig struct {
 	// The description of the event trigger.
@@ -139,24 +139,24 @@ var EventTrigger = ubx.ResourceBinding{
 	WireType: "aws_customer_profiles_event_trigger",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":  ubx.FieldSpec{WireName: "domain_name"},
 		"EventTriggerConditions": ubx.FieldSpec{
 			WireName: "event_trigger_conditions",
-			Kind: "list",
-			Fields: EventTrigger_EventTriggerConditionsFields,
+			Kind:     "list",
+			Fields:   EventTrigger_EventTriggerConditionsFields,
 		},
 		"EventTriggerLimits": ubx.FieldSpec{
 			WireName: "event_trigger_limits",
-			Kind: "object",
-			Fields: EventTrigger_EventTriggerLimitsFields,
+			Kind:     "object",
+			Fields:   EventTrigger_EventTriggerLimitsFields,
 		},
 		"EventTriggerName": ubx.FieldSpec{WireName: "event_trigger_name"},
-		"ObjectTypeName": ubx.FieldSpec{WireName: "object_type_name"},
-		"SegmentFilter": ubx.FieldSpec{WireName: "segment_filter"},
+		"ObjectTypeName":   ubx.FieldSpec{WireName: "object_type_name"},
+		"SegmentFilter":    ubx.FieldSpec{WireName: "segment_filter"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: EventTrigger_TagsFields,
+			Kind:     "list",
+			Fields:   EventTrigger_TagsFields,
 		},
 	},
 }

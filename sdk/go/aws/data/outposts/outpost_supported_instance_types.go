@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutpostSupportedInstanceTypes_InstanceTypes struct {
 	InstanceType any
-	Vcpus any
+	Vcpus        any
 }
 
 type OutpostSupportedInstanceTypesConfig struct {
@@ -13,8 +13,8 @@ type OutpostSupportedInstanceTypesConfig struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
-	OrderId any
+	NextToken         any
+	OrderId           any
 	OutpostIdentifier any
 }
 
@@ -25,18 +25,18 @@ type OutpostSupportedInstanceTypesAttrs struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
-	OrderId any
+	NextToken         any
+	OrderId           any
 	OutpostIdentifier any
 }
 
 var OutpostSupportedInstanceTypes = ubx.DataSourceBinding{
 	WireType: "aws_outposts_outpost_supported_instance_types",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OrderId": ubx.FieldSpec{WireName: "order_id"},
+		"AssetId":           ubx.FieldSpec{WireName: "asset_id"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
+		"OrderId":           ubx.FieldSpec{WireName: "order_id"},
 		"OutpostIdentifier": ubx.FieldSpec{WireName: "outpost_identifier"},
 	},
 }

@@ -4,14 +4,14 @@ package bedrockmantle
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Project_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Project_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProjectConfig struct {
 	// The name of the project.
@@ -39,8 +39,8 @@ var Project = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Project_TagsFields,
+			Kind:     "list",
+			Fields:   Project_TagsFields,
 		},
 	},
 }

@@ -12,6 +12,5 @@ type AccountSendingEnabledAttrs struct {
 
 var AccountSendingEnabled = ubx.DataSourceBinding{
 	WireType: "aws_email_account_sending_enabled",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

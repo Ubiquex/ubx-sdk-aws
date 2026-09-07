@@ -4,14 +4,14 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentStatus_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var AgentStatus_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AgentStatusConfig struct {
 	// The description of the status.
@@ -60,16 +60,16 @@ type AgentStatusAttrs struct {
 var AgentStatus = ubx.ResourceBinding{
 	WireType: "aws_connect_agent_status",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayOrder": ubx.FieldSpec{WireName: "display_order"},
-		"InstanceArn": ubx.FieldSpec{WireName: "instance_arn"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"DisplayOrder":     ubx.FieldSpec{WireName: "display_order"},
+		"InstanceArn":      ubx.FieldSpec{WireName: "instance_arn"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ResetOrderNumber": ubx.FieldSpec{WireName: "reset_order_number"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":            ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AgentStatus_TagsFields,
+			Kind:     "list",
+			Fields:   AgentStatus_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

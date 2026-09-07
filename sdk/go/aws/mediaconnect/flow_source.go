@@ -43,34 +43,34 @@ type FlowSource_Tags struct {
 }
 
 var FlowSource_DecryptionFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"ConstantInitializationVector": ubx.FieldSpec{WireName: "constant_initialization_vector"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Algorithm":                    ubx.FieldSpec{WireName: "algorithm"},
+	"ConstantInitializationVector": ubx.FieldSpec{WireName: "constant_initialization_vector"},
+	"DeviceId":                     ubx.FieldSpec{WireName: "device_id"},
+	"KeyType":                      ubx.FieldSpec{WireName: "key_type"},
+	"Region":                       ubx.FieldSpec{WireName: "region"},
+	"ResourceId":                   ubx.FieldSpec{WireName: "resource_id"},
+	"RoleArn":                      ubx.FieldSpec{WireName: "role_arn"},
+	"SecretArn":                    ubx.FieldSpec{WireName: "secret_arn"},
+	"Url":                          ubx.FieldSpec{WireName: "url"},
+}
 
 var FlowSource_GatewayBridgeSource_VpcInterfaceAttachmentFields = ubx.FieldMap{
-		"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
-	}
+	"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
+}
 
 var FlowSource_GatewayBridgeSourceFields = ubx.FieldMap{
-		"BridgeArn": ubx.FieldSpec{WireName: "bridge_arn"},
-		"VpcInterfaceAttachment": ubx.FieldSpec{
-			WireName: "vpc_interface_attachment",
-			Kind: "object",
-			Fields: FlowSource_GatewayBridgeSource_VpcInterfaceAttachmentFields,
-		},
-	}
+	"BridgeArn": ubx.FieldSpec{WireName: "bridge_arn"},
+	"VpcInterfaceAttachment": ubx.FieldSpec{
+		WireName: "vpc_interface_attachment",
+		Kind:     "object",
+		Fields:   FlowSource_GatewayBridgeSource_VpcInterfaceAttachmentFields,
+	},
+}
 
 var FlowSource_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FlowSourceConfig struct {
 	// Information about the encryption of the flow.
@@ -165,34 +165,34 @@ var FlowSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Decryption": ubx.FieldSpec{
 			WireName: "decryption",
-			Kind: "object",
-			Fields: FlowSource_DecryptionFields,
+			Kind:     "object",
+			Fields:   FlowSource_DecryptionFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"EntitlementArn": ubx.FieldSpec{WireName: "entitlement_arn"},
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
+		"FlowArn":        ubx.FieldSpec{WireName: "flow_arn"},
 		"GatewayBridgeSource": ubx.FieldSpec{
 			WireName: "gateway_bridge_source",
-			Kind: "object",
-			Fields: FlowSource_GatewayBridgeSourceFields,
+			Kind:     "object",
+			Fields:   FlowSource_GatewayBridgeSourceFields,
 		},
-		"IngestPort": ubx.FieldSpec{WireName: "ingest_port"},
-		"MaxBitrate": ubx.FieldSpec{WireName: "max_bitrate"},
-		"MaxLatency": ubx.FieldSpec{WireName: "max_latency"},
-		"MinLatency": ubx.FieldSpec{WireName: "min_latency"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SenderControlPort": ubx.FieldSpec{WireName: "sender_control_port"},
-		"SenderIpAddress": ubx.FieldSpec{WireName: "sender_ip_address"},
+		"IngestPort":            ubx.FieldSpec{WireName: "ingest_port"},
+		"MaxBitrate":            ubx.FieldSpec{WireName: "max_bitrate"},
+		"MaxLatency":            ubx.FieldSpec{WireName: "max_latency"},
+		"MinLatency":            ubx.FieldSpec{WireName: "min_latency"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Protocol":              ubx.FieldSpec{WireName: "protocol"},
+		"SenderControlPort":     ubx.FieldSpec{WireName: "sender_control_port"},
+		"SenderIpAddress":       ubx.FieldSpec{WireName: "sender_ip_address"},
 		"SourceListenerAddress": ubx.FieldSpec{WireName: "source_listener_address"},
-		"SourceListenerPort": ubx.FieldSpec{WireName: "source_listener_port"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"SourceListenerPort":    ubx.FieldSpec{WireName: "source_listener_port"},
+		"StreamId":              ubx.FieldSpec{WireName: "stream_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FlowSource_TagsFields,
+			Kind:     "list",
+			Fields:   FlowSource_TagsFields,
 		},
 		"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
-		"WhitelistCidr": ubx.FieldSpec{WireName: "whitelist_cidr"},
+		"WhitelistCidr":    ubx.FieldSpec{WireName: "whitelist_cidr"},
 	},
 }

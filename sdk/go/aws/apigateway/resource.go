@@ -26,8 +26,8 @@ type ResourceAttrs struct {
 var Resource = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_resource",
 	Fields: ubx.FieldMap{
-		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
-		"PathPart": ubx.FieldSpec{WireName: "path_part"},
+		"ParentId":  ubx.FieldSpec{WireName: "parent_id"},
+		"PathPart":  ubx.FieldSpec{WireName: "path_part"},
 		"RestApiId": ubx.FieldSpec{WireName: "rest_api_id"},
 	},
 }

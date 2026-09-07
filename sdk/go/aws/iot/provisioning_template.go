@@ -18,14 +18,14 @@ type ProvisioningTemplate_Tags struct {
 }
 
 var ProvisioningTemplate_PreProvisioningHookFields = ubx.FieldMap{
-		"PayloadVersion": ubx.FieldSpec{WireName: "payload_version"},
-		"TargetArn": ubx.FieldSpec{WireName: "target_arn"},
-	}
+	"PayloadVersion": ubx.FieldSpec{WireName: "payload_version"},
+	"TargetArn":      ubx.FieldSpec{WireName: "target_arn"},
+}
 
 var ProvisioningTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProvisioningTemplateConfig struct {
 	// The Description property provides an optional, user-defined text description for the AWS IoT provisioning template, aiding in identifying the template's purpose and intended use case. (AI-inferred)
@@ -71,17 +71,17 @@ var ProvisioningTemplate = ubx.ResourceBinding{
 	WireType: "aws_io_t_provisioning_template",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
 		"PreProvisioningHook": ubx.FieldSpec{
 			WireName: "pre_provisioning_hook",
-			Kind: "object",
-			Fields: ProvisioningTemplate_PreProvisioningHookFields,
+			Kind:     "object",
+			Fields:   ProvisioningTemplate_PreProvisioningHookFields,
 		},
 		"ProvisioningRoleArn": ubx.FieldSpec{WireName: "provisioning_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ProvisioningTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   ProvisioningTemplate_TagsFields,
 		},
 		"TemplateBody": ubx.FieldSpec{WireName: "template_body"},
 		"TemplateName": ubx.FieldSpec{WireName: "template_name"},

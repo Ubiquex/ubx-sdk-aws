@@ -4,14 +4,14 @@ package route53globalresolver
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DnsView_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DnsView_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DnsViewConfig struct {
 	// A unique string that identifies the request used to create this DNS view, ensuring idempotency. (AI-inferred)
@@ -64,17 +64,17 @@ type DnsViewAttrs struct {
 var DnsView = ubx.ResourceBinding{
 	WireType: "aws_route53_global_resolver_dns_view",
 	Fields: ubx.FieldMap{
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DnssecValidation": ubx.FieldSpec{WireName: "dnssec_validation"},
-		"EdnsClientSubnet": ubx.FieldSpec{WireName: "edns_client_subnet"},
+		"ClientToken":           ubx.FieldSpec{WireName: "client_token"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"DnssecValidation":      ubx.FieldSpec{WireName: "dnssec_validation"},
+		"EdnsClientSubnet":      ubx.FieldSpec{WireName: "edns_client_subnet"},
 		"FirewallRulesFailOpen": ubx.FieldSpec{WireName: "firewall_rules_fail_open"},
-		"GlobalResolverId": ubx.FieldSpec{WireName: "global_resolver_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"GlobalResolverId":      ubx.FieldSpec{WireName: "global_resolver_id"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DnsView_TagsFields,
+			Kind:     "list",
+			Fields:   DnsView_TagsFields,
 		},
 	},
 }

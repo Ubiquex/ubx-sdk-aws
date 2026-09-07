@@ -4,26 +4,26 @@ package elasticloadbalancing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountLimits_Limits struct {
-	Max any
+	Max  any
 	Name any
 }
 
 type AccountLimitsConfig struct {
-	Marker any
+	Marker   any
 	PageSize any
 }
 
 type AccountLimitsAttrs struct {
-	Limits any
-	Marker any
+	Limits     any
+	Marker     any
 	NextMarker any
-	PageSize any
+	PageSize   any
 }
 
 var AccountLimits = ubx.DataSourceBinding{
 	WireType: "aws_elasticloadbalancing_account_limits",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"PageSize": ubx.FieldSpec{WireName: "page_size"},
 	},
 }

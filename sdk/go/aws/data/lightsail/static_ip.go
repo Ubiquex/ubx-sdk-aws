@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StaticIp_StaticIp_Location struct {
 	AvailabilityZone any
-	RegionName any
+	RegionName       any
 }
 
 type StaticIp_StaticIp struct {
-	Arn any
+	Arn        any
 	AttachedTo any
-	CreatedAt any
-	IpAddress any
+	CreatedAt  any
+	IpAddress  any
 	IsAttached any
 	// <p>Describes the resource location.</p>
-	Location any
-	Name any
+	Location     any
+	Name         any
 	ResourceType any
-	SupportCode any
+	SupportCode  any
 }
 
 type StaticIpConfig struct {
@@ -27,7 +27,7 @@ type StaticIpConfig struct {
 
 type StaticIpAttrs struct {
 	// <p>Describes a static IP.</p>
-	StaticIp any
+	StaticIp     any
 	StaticIpName any
 }
 

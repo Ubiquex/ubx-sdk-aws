@@ -10,36 +10,36 @@ type EffectiveDeployments_EffectiveDeployments_StatusDetails struct {
 
 type EffectiveDeployments_EffectiveDeployments struct {
 	CoreDeviceExecutionStatus any
-	CreationTimestamp any
-	DeploymentId any
-	DeploymentName any
-	Description any
-	IotJobArn any
-	IotJobId any
-	ModifiedTimestamp any
-	Reason any
-	StatusDetails any
-	TargetArn any
+	CreationTimestamp         any
+	DeploymentId              any
+	DeploymentName            any
+	Description               any
+	IotJobArn                 any
+	IotJobId                  any
+	ModifiedTimestamp         any
+	Reason                    any
+	StatusDetails             any
+	TargetArn                 any
 }
 
 type EffectiveDeploymentsConfig struct {
 	CoreDeviceThingName any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type EffectiveDeploymentsAttrs struct {
-	CoreDeviceThingName any
+	CoreDeviceThingName  any
 	EffectiveDeployments any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var EffectiveDeployments = ubx.DataSourceBinding{
 	WireType: "aws_greengrassv2_effective_deployments",
 	Fields: ubx.FieldMap{
 		"CoreDeviceThingName": ubx.FieldSpec{WireName: "core_device_thing_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

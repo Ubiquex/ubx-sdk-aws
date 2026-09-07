@@ -4,33 +4,33 @@ package license_manager_linux_subscriptions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerLinuxSubscriptionsLinuxSubscriptions_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type LicenseManagerLinuxSubscriptionsLinuxSubscriptions_Subscriptions struct {
 	InstanceCount any
-	Name any
-	Type any
+	Name          any
+	Type          any
 }
 
 var LicenseManagerLinuxSubscriptionsLinuxSubscriptions_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerLinuxSubscriptionsLinuxSubscriptionsConfig struct {
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type LicenseManagerLinuxSubscriptionsLinuxSubscriptionsAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	Subscriptions any
 }
 
@@ -39,10 +39,10 @@ var LicenseManagerLinuxSubscriptionsLinuxSubscriptions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerLinuxSubscriptionsLinuxSubscriptions_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerLinuxSubscriptionsLinuxSubscriptions_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

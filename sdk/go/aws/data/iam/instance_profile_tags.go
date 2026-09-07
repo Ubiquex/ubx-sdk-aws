@@ -4,29 +4,29 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceProfileTags_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type InstanceProfileTagsConfig struct {
 	InstanceProfileName any
-	Marker any
-	MaxItems any
+	Marker              any
+	MaxItems            any
 }
 
 type InstanceProfileTagsAttrs struct {
 	InstanceProfileName any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	Tags any
+	IsTruncated         any
+	Marker              any
+	MaxItems            any
+	Tags                any
 }
 
 var InstanceProfileTags = ubx.DataSourceBinding{
 	WireType: "aws_iam_instance_profile_tags",
 	Fields: ubx.FieldMap{
 		"InstanceProfileName": ubx.FieldSpec{WireName: "instance_profile_name"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":              ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":            ubx.FieldSpec{WireName: "max_items"},
 	},
 }

@@ -11,9 +11,9 @@ type Listener_PortRanges struct {
 }
 
 var Listener_PortRangesFields = ubx.FieldMap{
-		"FromPort": ubx.FieldSpec{WireName: "from_port"},
-		"ToPort": ubx.FieldSpec{WireName: "to_port"},
-	}
+	"FromPort": ubx.FieldSpec{WireName: "from_port"},
+	"ToPort":   ubx.FieldSpec{WireName: "to_port"},
+}
 
 type ListenerConfig struct {
 	// The Amazon Resource Name (ARN) of the accelerator.
@@ -46,8 +46,8 @@ var Listener = ubx.ResourceBinding{
 		"ClientAffinity": ubx.FieldSpec{WireName: "client_affinity"},
 		"PortRanges": ubx.FieldSpec{
 			WireName: "port_ranges",
-			Kind: "list",
-			Fields: Listener_PortRangesFields,
+			Kind:     "list",
+			Fields:   Listener_PortRangesFields,
 		},
 		"Protocol": ubx.FieldSpec{WireName: "protocol"},
 	},

@@ -4,12 +4,12 @@ package gameliftstreams
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationShaderCaches_Items struct {
-	ApplicationArn any
+	ApplicationArn         any
 	AssociatedStreamGroups any
-	Identifier any
-	LastUpdatedAt any
-	Status any
-	StorageBytes any
+	Identifier             any
+	LastUpdatedAt          any
+	Status                 any
+	StorageBytes           any
 }
 
 type ApplicationShaderCachesConfig struct {
@@ -18,7 +18,7 @@ type ApplicationShaderCachesConfig struct {
 
 type ApplicationShaderCachesAttrs struct {
 	Identifier any
-	Items any
+	Items      any
 }
 
 var ApplicationShaderCaches = ubx.DataSourceBinding{

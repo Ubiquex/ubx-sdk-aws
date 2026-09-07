@@ -4,42 +4,42 @@ package savingsplans
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SavingsPlanRates_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type SavingsPlanRates_SearchResults_Properties struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type SavingsPlanRates_SearchResults struct {
-	Currency any
-	Operation any
+	Currency    any
+	Operation   any
 	ProductType any
-	Properties any
-	Rate any
+	Properties  any
+	Rate        any
 	ServiceCode any
-	Unit any
-	UsageType any
+	Unit        any
+	UsageType   any
 }
 
 var SavingsPlanRates_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type SavingsPlanRatesConfig struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	SavingsPlanId any
 }
 
 type SavingsPlanRatesAttrs struct {
-	Filters any
-	MaxResults any
-	NextToken any
+	Filters       any
+	MaxResults    any
+	NextToken     any
 	SavingsPlanId any
 	SearchResults any
 }
@@ -49,11 +49,11 @@ var SavingsPlanRates = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: SavingsPlanRates_FiltersFields,
+			Kind:     "list",
+			Fields:   SavingsPlanRates_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"SavingsPlanId": ubx.FieldSpec{WireName: "savings_plan_id"},
 	},
 }

@@ -33,6 +33,6 @@ var Backup = ubx.ResourceBinding{
 	WireType: "aws_dynamo_db_backup",
 	Fields: ubx.FieldMap{
 		"BackupName": ubx.FieldSpec{WireName: "backup_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
+		"TableName":  ubx.FieldSpec{WireName: "table_name"},
 	},
 }

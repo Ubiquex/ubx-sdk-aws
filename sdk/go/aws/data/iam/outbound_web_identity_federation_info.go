@@ -7,12 +7,11 @@ type OutboundWebIdentityFederationInfoConfig struct {
 }
 
 type OutboundWebIdentityFederationInfoAttrs struct {
-	IssuerIdentifier any
+	IssuerIdentifier  any
 	JwtVendingEnabled any
 }
 
 var OutboundWebIdentityFederationInfo = ubx.DataSourceBinding{
 	WireType: "aws_iam_outbound_web_identity_federation_info",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

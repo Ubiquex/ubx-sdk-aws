@@ -4,7 +4,7 @@ package networkmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type TagsForResourceConfig struct {
 
 type TagsForResourceAttrs struct {
 	ResourceArn any
-	TagList any
+	TagList     any
 }
 
 var TagsForResource = ubx.DataSourceBinding{

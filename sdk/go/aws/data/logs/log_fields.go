@@ -8,8 +8,8 @@ type LogFields_LogFields_LogFieldType_Fields struct {
 
 type LogFields_LogFields_LogFieldType struct {
 	Element any
-	Fields any
-	Type any
+	Fields  any
+	Type    any
 }
 
 type LogFields_LogFields struct {
@@ -25,7 +25,7 @@ type LogFieldsConfig struct {
 type LogFieldsAttrs struct {
 	DataSourceName any
 	DataSourceType any
-	LogFields any
+	LogFields      any
 }
 
 var LogFields = ubx.DataSourceBinding{

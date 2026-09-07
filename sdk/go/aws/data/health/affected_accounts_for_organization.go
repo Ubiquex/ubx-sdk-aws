@@ -4,24 +4,24 @@ package health
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AffectedAccountsForOrganizationConfig struct {
-	EventArn any
+	EventArn   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AffectedAccountsForOrganizationAttrs struct {
 	AffectedAccounts any
-	EventArn any
-	EventScopeCode any
-	MaxResults any
-	NextToken any
+	EventArn         any
+	EventScopeCode   any
+	MaxResults       any
+	NextToken        any
 }
 
 var AffectedAccountsForOrganization = ubx.DataSourceBinding{
 	WireType: "aws_health_affected_accounts_for_organization",
 	Fields: ubx.FieldMap{
-		"EventArn": ubx.FieldSpec{WireName: "event_arn"},
+		"EventArn":   ubx.FieldSpec{WireName: "event_arn"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

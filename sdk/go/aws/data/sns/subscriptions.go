@@ -4,11 +4,11 @@ package sns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Subscriptions_Subscriptions struct {
-	Endpoint any
-	Owner any
-	Protocol any
+	Endpoint        any
+	Owner           any
+	Protocol        any
 	SubscriptionArn any
-	TopicArn any
+	TopicArn        any
 }
 
 type SubscriptionsConfig struct {
@@ -16,7 +16,7 @@ type SubscriptionsConfig struct {
 }
 
 type SubscriptionsAttrs struct {
-	NextToken any
+	NextToken     any
 	Subscriptions any
 }
 

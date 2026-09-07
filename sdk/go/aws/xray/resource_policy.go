@@ -25,7 +25,7 @@ var ResourcePolicy = ubx.ResourceBinding{
 	WireType: "aws_xray_resource_policy",
 	Fields: ubx.FieldMap{
 		"BypassPolicyLockoutCheck": ubx.FieldSpec{WireName: "bypass_policy_lockout_check"},
-		"PolicyDocument": ubx.FieldSpec{WireName: "policy_document"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
+		"PolicyDocument":           ubx.FieldSpec{WireName: "policy_document"},
+		"PolicyName":               ubx.FieldSpec{WireName: "policy_name"},
 	},
 }

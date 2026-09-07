@@ -4,7 +4,7 @@ package trustedadvisor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Recommendation_Recommendation_PillarSpecificAggregates_CostOptimizing struct {
-	EstimatedMonthlySavings any
+	EstimatedMonthlySavings        any
 	EstimatedPercentMonthlySavings any
 }
 
@@ -14,55 +14,55 @@ type Recommendation_Recommendation_PillarSpecificAggregates struct {
 }
 
 type Recommendation_Recommendation_ResourcesAggregates struct {
-	ErrorCount any
+	ErrorCount    any
 	ExcludedCount any
-	OkCount any
-	WarningCount any
+	OkCount       any
+	WarningCount  any
 }
 
 type Recommendation_Recommendation struct {
-	Arn any
-	AwsServices any
-	CheckArn any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Id any
-	LastUpdatedAt any
+	Arn            any
+	AwsServices    any
+	CheckArn       any
+	CreatedAt      any
+	CreatedBy      any
+	Description    any
+	Id             any
+	LastUpdatedAt  any
 	LifecycleStage any
-	Name any
+	Name           any
 	// <p>Recommendation pillar aggregates</p>
 	PillarSpecificAggregates any
-	Pillars any
-	ResolvedAt any
+	Pillars                  any
+	ResolvedAt               any
 	// <p>Aggregation of Recommendation Resources</p>
-	ResourcesAggregates any
-	Source any
-	Status any
-	StatusReason any
-	Type any
-	UpdateReason any
-	UpdateReasonCode any
-	UpdatedOnBehalfOf any
+	ResourcesAggregates       any
+	Source                    any
+	Status                    any
+	StatusReason              any
+	Type                      any
+	UpdateReason              any
+	UpdateReasonCode          any
+	UpdatedOnBehalfOf         any
 	UpdatedOnBehalfOfJobTitle any
 }
 
 type RecommendationConfig struct {
-	Language any
+	Language                 any
 	RecommendationIdentifier any
 }
 
 type RecommendationAttrs struct {
 	Language any
 	// <p>A Recommendation for an Account</p>
-	Recommendation any
+	Recommendation           any
 	RecommendationIdentifier any
 }
 
 var Recommendation = ubx.DataSourceBinding{
 	WireType: "aws_trustedadvisor_recommendation",
 	Fields: ubx.FieldMap{
-		"Language": ubx.FieldSpec{WireName: "language"},
+		"Language":                 ubx.FieldSpec{WireName: "language"},
 		"RecommendationIdentifier": ubx.FieldSpec{WireName: "recommendation_identifier"},
 	},
 }

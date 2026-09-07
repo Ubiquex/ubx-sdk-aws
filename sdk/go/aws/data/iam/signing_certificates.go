@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SigningCertificates_Certificates struct {
 	CertificateBody any
-	CertificateId any
-	Status any
-	UploadDate any
-	UserName any
+	CertificateId   any
+	Status          any
+	UploadDate      any
+	UserName        any
 }
 
 type SigningCertificatesConfig struct {
-	Marker any
+	Marker   any
 	MaxItems any
 	UserName any
 }
@@ -20,16 +20,16 @@ type SigningCertificatesConfig struct {
 type SigningCertificatesAttrs struct {
 	// <p>Contains a list of signing certificates.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSigningCertificates.html">ListSigningCertificates</a> operation.</p>
 	Certificates any
-	IsTruncated any
-	Marker any
-	MaxItems any
-	UserName any
+	IsTruncated  any
+	Marker       any
+	MaxItems     any
+	UserName     any
 }
 
 var SigningCertificates = ubx.DataSourceBinding{
 	WireType: "aws_iam_signing_certificates",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":   ubx.FieldSpec{WireName: "marker"},
 		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
 		"UserName": ubx.FieldSpec{WireName: "user_name"},
 	},

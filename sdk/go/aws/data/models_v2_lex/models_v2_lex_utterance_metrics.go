@@ -9,19 +9,19 @@ type ModelsV2LexUtteranceMetrics_Attributes struct {
 
 type ModelsV2LexUtteranceMetrics_BinBy struct {
 	Interval any
-	Name any
-	Order any
+	Name     any
+	Order    any
 }
 
 type ModelsV2LexUtteranceMetrics_Filters struct {
-	Name any
+	Name     any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ModelsV2LexUtteranceMetrics_Metrics struct {
-	Name any
-	Order any
+	Name      any
+	Order     any
 	Statistic any
 }
 
@@ -30,74 +30,74 @@ type ModelsV2LexUtteranceMetrics_Results_AttributeResults struct {
 }
 
 type ModelsV2LexUtteranceMetrics_Results_BinKeys struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ModelsV2LexUtteranceMetrics_Results_GroupByKeys struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ModelsV2LexUtteranceMetrics_Results_MetricsResults struct {
-	Name any
+	Name      any
 	Statistic any
-	Value any
+	Value     any
 }
 
 type ModelsV2LexUtteranceMetrics_Results struct {
 	AttributeResults any
-	BinKeys any
-	GroupByKeys any
-	MetricsResults any
+	BinKeys          any
+	GroupByKeys      any
+	MetricsResults   any
 }
 
 var ModelsV2LexUtteranceMetrics_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var ModelsV2LexUtteranceMetrics_BinByFields = ubx.FieldMap{
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Order":    ubx.FieldSpec{WireName: "order"},
+}
 
 var ModelsV2LexUtteranceMetrics_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ModelsV2LexUtteranceMetrics_MetricsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Order":     ubx.FieldSpec{WireName: "order"},
+	"Statistic": ubx.FieldSpec{WireName: "statistic"},
+}
 
 type ModelsV2LexUtteranceMetricsConfig struct {
-	Attributes any
-	BinBy any
-	BotId any
-	EndDateTime any
-	Filters any
-	GroupBy any
-	MaxResults any
-	Metrics any
-	NextToken any
+	Attributes    any
+	BinBy         any
+	BotId         any
+	EndDateTime   any
+	Filters       any
+	GroupBy       any
+	MaxResults    any
+	Metrics       any
+	NextToken     any
 	StartDateTime any
 }
 
 type ModelsV2LexUtteranceMetricsAttrs struct {
-	Attributes any
-	BinBy any
-	BotId any
-	EndDateTime any
-	Filters any
-	GroupBy any
-	MaxResults any
-	Metrics any
-	NextToken any
-	Results any
+	Attributes    any
+	BinBy         any
+	BotId         any
+	EndDateTime   any
+	Filters       any
+	GroupBy       any
+	MaxResults    any
+	Metrics       any
+	NextToken     any
+	Results       any
 	StartDateTime any
 }
 
@@ -106,33 +106,33 @@ var ModelsV2LexUtteranceMetrics = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: ModelsV2LexUtteranceMetrics_AttributesFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexUtteranceMetrics_AttributesFields,
 		},
 		"BinBy": ubx.FieldSpec{
 			WireName: "bin_by",
-			Kind: "list",
-			Fields: ModelsV2LexUtteranceMetrics_BinByFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexUtteranceMetrics_BinByFields,
 		},
-		"BotId": ubx.FieldSpec{WireName: "bot_id"},
+		"BotId":       ubx.FieldSpec{WireName: "bot_id"},
 		"EndDateTime": ubx.FieldSpec{WireName: "end_date_time"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: ModelsV2LexUtteranceMetrics_FiltersFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexUtteranceMetrics_FiltersFields,
 		},
 		"GroupBy": ubx.FieldSpec{
 			WireName: "group_by",
-			Kind: "list",
-			Fields: ModelsV2LexUtteranceMetrics_AttributesFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexUtteranceMetrics_AttributesFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: ModelsV2LexUtteranceMetrics_MetricsFields,
+			Kind:     "list",
+			Fields:   ModelsV2LexUtteranceMetrics_MetricsFields,
 		},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"StartDateTime": ubx.FieldSpec{WireName: "start_date_time"},
 	},
 }

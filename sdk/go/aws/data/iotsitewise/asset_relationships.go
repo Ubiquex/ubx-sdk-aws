@@ -4,36 +4,36 @@ package iotsitewise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetRelationships_AssetRelationshipSummaries_HierarchyInfo struct {
-	ChildAssetId any
+	ChildAssetId  any
 	ParentAssetId any
 }
 
 type AssetRelationships_AssetRelationshipSummaries struct {
-	HierarchyInfo any
+	HierarchyInfo    any
 	RelationshipType any
 }
 
 type AssetRelationshipsConfig struct {
-	AssetId any
-	MaxResults any
-	NextToken any
+	AssetId       any
+	MaxResults    any
+	NextToken     any
 	TraversalType any
 }
 
 type AssetRelationshipsAttrs struct {
-	AssetId any
+	AssetId                    any
 	AssetRelationshipSummaries any
-	MaxResults any
-	NextToken any
-	TraversalType any
+	MaxResults                 any
+	NextToken                  any
+	TraversalType              any
 }
 
 var AssetRelationships = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_asset_relationships",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"AssetId":       ubx.FieldSpec{WireName: "asset_id"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 		"TraversalType": ubx.FieldSpec{WireName: "traversal_type"},
 	},
 }

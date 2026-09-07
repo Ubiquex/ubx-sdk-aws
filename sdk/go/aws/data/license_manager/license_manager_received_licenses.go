@@ -4,12 +4,12 @@ package license_manager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseManagerReceivedLicenses_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type LicenseManagerReceivedLicenses_Licenses_ConsumptionConfiguration_BorrowConfiguration struct {
-	AllowEarlyCheckIn any
+	AllowEarlyCheckIn      any
 	MaxTimeToLiveInMinutes any
 }
 
@@ -18,78 +18,78 @@ type LicenseManagerReceivedLicenses_Licenses_ConsumptionConfiguration_Provisiona
 }
 
 type LicenseManagerReceivedLicenses_Licenses_ConsumptionConfiguration struct {
-	BorrowConfiguration any
+	BorrowConfiguration      any
 	ProvisionalConfiguration any
-	RenewType any
+	RenewType                any
 }
 
 type LicenseManagerReceivedLicenses_Licenses_Entitlements struct {
 	AllowCheckIn any
-	MaxCount any
-	Name any
-	Overage any
-	Unit any
-	Value any
+	MaxCount     any
+	Name         any
+	Overage      any
+	Unit         any
+	Value        any
 }
 
 type LicenseManagerReceivedLicenses_Licenses_Issuer struct {
 	KeyFingerprint any
-	Name any
-	SignKey any
+	Name           any
+	SignKey        any
 }
 
 type LicenseManagerReceivedLicenses_Licenses_LicenseMetadata struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type LicenseManagerReceivedLicenses_Licenses_ReceivedMetadata struct {
-	AllowedOperations any
-	ReceivedStatus any
+	AllowedOperations    any
+	ReceivedStatus       any
 	ReceivedStatusReason any
 }
 
 type LicenseManagerReceivedLicenses_Licenses_Validity struct {
 	Begin any
-	End any
+	End   any
 }
 
 type LicenseManagerReceivedLicenses_Licenses struct {
-	Beneficiary any
+	Beneficiary              any
 	ConsumptionConfiguration any
-	CreateTime any
-	Entitlements any
-	HomeRegion any
-	Issuer any
-	LicenseArn any
-	LicenseMetadata any
-	LicenseName any
-	ProductName any
-	ProductSku any
-	ReceivedMetadata any
-	Status any
-	Validity any
-	Version any
+	CreateTime               any
+	Entitlements             any
+	HomeRegion               any
+	Issuer                   any
+	LicenseArn               any
+	LicenseMetadata          any
+	LicenseName              any
+	ProductName              any
+	ProductSku               any
+	ReceivedMetadata         any
+	Status                   any
+	Validity                 any
+	Version                  any
 }
 
 var LicenseManagerReceivedLicenses_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type LicenseManagerReceivedLicensesConfig struct {
-	Filters any
+	Filters     any
 	LicenseArns any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type LicenseManagerReceivedLicensesAttrs struct {
-	Filters any
+	Filters     any
 	LicenseArns any
-	Licenses any
-	MaxResults any
-	NextToken any
+	Licenses    any
+	MaxResults  any
+	NextToken   any
 }
 
 var LicenseManagerReceivedLicenses = ubx.DataSourceBinding{
@@ -97,11 +97,11 @@ var LicenseManagerReceivedLicenses = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: LicenseManagerReceivedLicenses_FiltersFields,
+			Kind:     "list",
+			Fields:   LicenseManagerReceivedLicenses_FiltersFields,
 		},
 		"LicenseArns": ubx.FieldSpec{WireName: "license_arns"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

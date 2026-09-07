@@ -8,10 +8,10 @@ type NamespaceConfig struct {
 }
 
 type NamespaceAttrs struct {
-	NamespaceArn any
-	NamespaceName any
-	NamespaceVersion any
-	TrackingNamespaceName any
+	NamespaceArn             any
+	NamespaceName            any
+	NamespaceVersion         any
+	TrackingNamespaceName    any
 	TrackingNamespaceVersion any
 }
 

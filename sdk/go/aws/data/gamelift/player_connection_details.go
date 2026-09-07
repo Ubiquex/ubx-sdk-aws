@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlayerConnectionDetails_PlayerConnectionDetails_Endpoints struct {
 	IpAddress any
-	Port any
+	Port      any
 }
 
 type PlayerConnectionDetails_PlayerConnectionDetails struct {
-	Endpoints any
-	Expiration any
+	Endpoints          any
+	Expiration         any
 	PlayerGatewayToken any
-	PlayerId any
+	PlayerId           any
 }
 
 type PlayerConnectionDetailsConfig struct {
 	GameSessionId any
-	PlayerIds any
+	PlayerIds     any
 }
 
 type PlayerConnectionDetailsAttrs struct {
-	GameSessionId any
+	GameSessionId           any
 	PlayerConnectionDetails any
-	PlayerIds any
+	PlayerIds               any
 }
 
 var PlayerConnectionDetails = ubx.DataSourceBinding{
 	WireType: "aws_gamelift_player_connection_details",
 	Fields: ubx.FieldMap{
 		"GameSessionId": ubx.FieldSpec{WireName: "game_session_id"},
-		"PlayerIds": ubx.FieldSpec{WireName: "player_ids"},
+		"PlayerIds":     ubx.FieldSpec{WireName: "player_ids"},
 	},
 }

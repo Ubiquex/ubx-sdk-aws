@@ -11,9 +11,9 @@ type Collection_Tags struct {
 }
 
 var Collection_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CollectionConfig struct {
 	// The name of the collection
@@ -37,8 +37,8 @@ var Collection = ubx.ResourceBinding{
 		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Collection_TagsFields,
+			Kind:     "list",
+			Fields:   Collection_TagsFields,
 		},
 	},
 }

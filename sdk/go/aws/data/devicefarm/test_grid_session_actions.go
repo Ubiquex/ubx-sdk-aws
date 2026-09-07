@@ -4,31 +4,31 @@ package devicefarm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestGridSessionActions_Actions struct {
-	Action any
-	Duration any
+	Action        any
+	Duration      any
 	RequestMethod any
-	Started any
-	StatusCode any
+	Started       any
+	StatusCode    any
 }
 
 type TestGridSessionActionsConfig struct {
-	MaxResult any
-	NextToken any
+	MaxResult  any
+	NextToken  any
 	SessionArn any
 }
 
 type TestGridSessionActionsAttrs struct {
-	Actions any
-	MaxResult any
-	NextToken any
+	Actions    any
+	MaxResult  any
+	NextToken  any
 	SessionArn any
 }
 
 var TestGridSessionActions = ubx.DataSourceBinding{
 	WireType: "aws_devicefarm_test_grid_session_actions",
 	Fields: ubx.FieldMap{
-		"MaxResult": ubx.FieldSpec{WireName: "max_result"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResult":  ubx.FieldSpec{WireName: "max_result"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"SessionArn": ubx.FieldSpec{WireName: "session_arn"},
 	},
 }

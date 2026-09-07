@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StackSetAutoDeploymentTargets_Summaries struct {
 	OrganizationalUnitId any
-	Regions any
+	Regions              any
 }
 
 type StackSetAutoDeploymentTargetsConfig struct {
-	CallAs any
-	MaxResults any
-	NextToken any
+	CallAs       any
+	MaxResults   any
+	NextToken    any
 	StackSetName any
 }
 
 type StackSetAutoDeploymentTargetsAttrs struct {
-	CallAs any
-	MaxResults any
-	NextToken any
+	CallAs       any
+	MaxResults   any
+	NextToken    any
 	StackSetName any
-	Summaries any
+	Summaries    any
 }
 
 var StackSetAutoDeploymentTargets = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_stack_set_auto_deployment_targets",
 	Fields: ubx.FieldMap{
-		"CallAs": ubx.FieldSpec{WireName: "call_as"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CallAs":       ubx.FieldSpec{WireName: "call_as"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 		"StackSetName": ubx.FieldSpec{WireName: "stack_set_name"},
 	},
 }

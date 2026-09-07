@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Permission_Tags struct {
 	// The key of a tag to attach to the AWS Resource Access Manager (RAM) permission, used for organizing and filtering the permission in AWS. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var Permission_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PermissionConfig struct {
 	// The name of the permission.
@@ -47,13 +47,13 @@ type PermissionAttrs struct {
 var Permission = ubx.ResourceBinding{
 	WireType: "aws_ram_permission",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"PolicyTemplate": ubx.FieldSpec{WireName: "policy_template"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":   ubx.FieldSpec{WireName: "resource_type"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Permission_TagsFields,
+			Kind:     "list",
+			Fields:   Permission_TagsFields,
 		},
 	},
 }

@@ -38,7 +38,7 @@ type EntitlementAttrs struct {
 	// The ARN of the application
 	ApplicationArn any
 	// The timestamp when the entitlement was created
-	CreatedAt any
+	CreatedAt   any
 	Entitlement any
 	// The ID of the entitlement
 	EntitlementId any

@@ -18,14 +18,14 @@ type FleetMetric_Tags struct {
 }
 
 var FleetMetric_AggregationTypeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var FleetMetric_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type FleetMetricConfig struct {
 	// The aggregation field to perform aggregation and metric emission
@@ -87,19 +87,19 @@ var FleetMetric = ubx.ResourceBinding{
 		"AggregationField": ubx.FieldSpec{WireName: "aggregation_field"},
 		"AggregationType": ubx.FieldSpec{
 			WireName: "aggregation_type",
-			Kind: "object",
-			Fields: FleetMetric_AggregationTypeFields,
+			Kind:     "object",
+			Fields:   FleetMetric_AggregationTypeFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"QueryString": ubx.FieldSpec{WireName: "query_string"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"IndexName":    ubx.FieldSpec{WireName: "index_name"},
+		"MetricName":   ubx.FieldSpec{WireName: "metric_name"},
+		"Period":       ubx.FieldSpec{WireName: "period"},
+		"QueryString":  ubx.FieldSpec{WireName: "query_string"},
 		"QueryVersion": ubx.FieldSpec{WireName: "query_version"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FleetMetric_TagsFields,
+			Kind:     "list",
+			Fields:   FleetMetric_TagsFields,
 		},
 		"Unit": ubx.FieldSpec{WireName: "unit"},
 	},

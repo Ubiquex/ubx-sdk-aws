@@ -9,7 +9,7 @@ type NeptuneGraphTagsForResourceConfig struct {
 
 type NeptuneGraphTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var NeptuneGraphTagsForResource = ubx.DataSourceBinding{

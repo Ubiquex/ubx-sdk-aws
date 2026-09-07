@@ -8,22 +8,22 @@ type ResourcesTrendsV2_Filters_CompositeFilters_NestedCompositeFilters struct {
 
 type ResourcesTrendsV2_Filters_CompositeFilters_StringFilters_Filter struct {
 	Comparison any
-	Value any
+	Value      any
 }
 
 type ResourcesTrendsV2_Filters_CompositeFilters_StringFilters struct {
 	FieldName any
-	Filter any
+	Filter    any
 }
 
 type ResourcesTrendsV2_Filters_CompositeFilters struct {
 	NestedCompositeFilters any
-	Operator any
-	StringFilters any
+	Operator               any
+	StringFilters          any
 }
 
 type ResourcesTrendsV2_Filters struct {
-	CompositeFilters any
+	CompositeFilters  any
 	CompositeOperator any
 }
 
@@ -36,67 +36,66 @@ type ResourcesTrendsV2_TrendsMetrics_TrendsValues struct {
 }
 
 type ResourcesTrendsV2_TrendsMetrics struct {
-	Timestamp any
+	Timestamp    any
 	TrendsValues any
 }
 
-var ResourcesTrendsV2_Filters_CompositeFilters_NestedCompositeFiltersFields = ubx.FieldMap{
-	}
+var ResourcesTrendsV2_Filters_CompositeFilters_NestedCompositeFiltersFields = ubx.FieldMap{}
 
 var ResourcesTrendsV2_Filters_CompositeFilters_StringFilters_FilterFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var ResourcesTrendsV2_Filters_CompositeFilters_StringFiltersFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: ResourcesTrendsV2_Filters_CompositeFilters_StringFilters_FilterFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   ResourcesTrendsV2_Filters_CompositeFilters_StringFilters_FilterFields,
+	},
+}
 
 var ResourcesTrendsV2_Filters_CompositeFiltersFields = ubx.FieldMap{
-		"NestedCompositeFilters": ubx.FieldSpec{
-			WireName: "nested_composite_filters",
-			Kind: "list",
-			Fields: ResourcesTrendsV2_Filters_CompositeFilters_NestedCompositeFiltersFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"StringFilters": ubx.FieldSpec{
-			WireName: "string_filters",
-			Kind: "list",
-			Fields: ResourcesTrendsV2_Filters_CompositeFilters_StringFiltersFields,
-		},
-	}
+	"NestedCompositeFilters": ubx.FieldSpec{
+		WireName: "nested_composite_filters",
+		Kind:     "list",
+		Fields:   ResourcesTrendsV2_Filters_CompositeFilters_NestedCompositeFiltersFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"StringFilters": ubx.FieldSpec{
+		WireName: "string_filters",
+		Kind:     "list",
+		Fields:   ResourcesTrendsV2_Filters_CompositeFilters_StringFiltersFields,
+	},
+}
 
 var ResourcesTrendsV2_FiltersFields = ubx.FieldMap{
-		"CompositeFilters": ubx.FieldSpec{
-			WireName: "composite_filters",
-			Kind: "list",
-			Fields: ResourcesTrendsV2_Filters_CompositeFiltersFields,
-		},
-		"CompositeOperator": ubx.FieldSpec{WireName: "composite_operator"},
-	}
+	"CompositeFilters": ubx.FieldSpec{
+		WireName: "composite_filters",
+		Kind:     "list",
+		Fields:   ResourcesTrendsV2_Filters_CompositeFiltersFields,
+	},
+	"CompositeOperator": ubx.FieldSpec{WireName: "composite_operator"},
+}
 
 type ResourcesTrendsV2Config struct {
 	EndTime any
 	// <p>The structure that defines filters to apply to resources trend data queries.</p>
-	Filters any
+	Filters    any
 	MaxResults any
-	NextToken any
-	StartTime any
+	NextToken  any
+	StartTime  any
 }
 
 type ResourcesTrendsV2Attrs struct {
 	EndTime any
 	// <p>The structure that defines filters to apply to resources trend data queries.</p>
-	Filters any
-	Granularity any
-	MaxResults any
-	NextToken any
-	StartTime any
+	Filters       any
+	Granularity   any
+	MaxResults    any
+	NextToken     any
+	StartTime     any
 	TrendsMetrics any
 }
 
@@ -106,11 +105,11 @@ var ResourcesTrendsV2 = ubx.DataSourceBinding{
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: ResourcesTrendsV2_FiltersFields,
+			Kind:     "object",
+			Fields:   ResourcesTrendsV2_FiltersFields,
 		},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"StartTime":  ubx.FieldSpec{WireName: "start_time"},
 	},
 }

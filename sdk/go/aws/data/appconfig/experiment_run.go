@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentRun_ExperimentDefinitionSnapshot_Control_FlagValue_AttributeValues struct {
 	BooleanValue any
-	NumberArray any
-	NumberValue any
-	StringArray any
-	StringValue any
+	NumberArray  any
+	NumberValue  any
+	StringArray  any
+	StringValue  any
 }
 
 type ExperimentRun_ExperimentDefinitionSnapshot_Control_FlagValue struct {
 	AttributeValues any
-	Enabled any
+	Enabled         any
 }
 
 type ExperimentRun_ExperimentDefinitionSnapshot_Control struct {
 	Description any
 	// <p>The feature flag value configuration for a treatment, including the enabled state and attribute values.</p>
 	FlagValue any
-	Key any
-	Weight any
+	Key       any
+	Weight    any
 }
 
 type ExperimentRun_ExperimentDefinitionSnapshot struct {
-	ApplicationId any
-	AudienceDescription any
-	AudienceRule any
+	ApplicationId          any
+	AudienceDescription    any
+	AudienceRule           any
 	ConfigurationProfileId any
 	// <p>Describes a treatment in an experiment, including its traffic allocation weight and feature flag value.</p>
-	Control any
-	EnvironmentId any
-	FlagKey any
-	Hypothesis any
-	Id any
+	Control        any
+	EnvironmentId  any
+	FlagKey        any
+	Hypothesis     any
+	Id             any
 	LaunchCriteria any
-	Name any
-	Treatments any
+	Name           any
+	Treatments     any
 }
 
 type ExperimentRun_Result struct {
-	ExecutiveSummary any
+	ExecutiveSummary   any
 	ReasonsNotToLaunch any
-	ReasonsToLaunch any
+	ReasonsToLaunch    any
 }
 
 type ExperimentRun_TreatmentOverrides struct {
@@ -51,36 +51,36 @@ type ExperimentRun_TreatmentOverrides struct {
 }
 
 type ExperimentRunConfig struct {
-	ApplicationIdentifier any
+	ApplicationIdentifier          any
 	ExperimentDefinitionIdentifier any
-	Run any
+	Run                            any
 }
 
 type ExperimentRunAttrs struct {
-	ApplicationId any
-	ApplicationIdentifier any
-	Description any
-	EndedAt any
-	ExperimentDefinitionId any
+	ApplicationId                  any
+	ApplicationIdentifier          any
+	Description                    any
+	EndedAt                        any
+	ExperimentDefinitionId         any
 	ExperimentDefinitionIdentifier any
 	// <p>A snapshot of the experiment definition captured at the time an experiment run was started. This preserves the configuration that was active during the run.</p>
 	ExperimentDefinitionSnapshot any
-	ExposurePercentage any
+	ExposurePercentage           any
 	// <p>The result of an experiment run, including the executive summary and launch decision rationale.</p>
-	Result any
-	Run any
+	Result    any
+	Run       any
 	StartedAt any
-	Status any
+	Status    any
 	// <p>Treatment assignment overrides that assign specific entity IDs to treatments, bypassing random assignment.</p>
 	TreatmentOverrides any
-	UpdatedAt any
+	UpdatedAt          any
 }
 
 var ExperimentRun = ubx.DataSourceBinding{
 	WireType: "aws_appconfig_experiment_run",
 	Fields: ubx.FieldMap{
-		"ApplicationIdentifier": ubx.FieldSpec{WireName: "application_identifier"},
+		"ApplicationIdentifier":          ubx.FieldSpec{WireName: "application_identifier"},
 		"ExperimentDefinitionIdentifier": ubx.FieldSpec{WireName: "experiment_definition_identifier"},
-		"Run": ubx.FieldSpec{WireName: "run"},
+		"Run":                            ubx.FieldSpec{WireName: "run"},
 	},
 }

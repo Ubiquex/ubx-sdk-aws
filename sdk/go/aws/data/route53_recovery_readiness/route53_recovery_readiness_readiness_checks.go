@@ -4,20 +4,20 @@ package route53_recovery_readiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route53RecoveryReadinessReadinessChecks_ReadinessChecks struct {
-	ReadinessCheckArn any
+	ReadinessCheckArn  any
 	ReadinessCheckName any
-	ResourceSet any
-	Tags any
+	ResourceSet        any
+	Tags               any
 }
 
 type Route53RecoveryReadinessReadinessChecksConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type Route53RecoveryReadinessReadinessChecksAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 	ReadinessChecks any
 }
 
@@ -25,6 +25,6 @@ var Route53RecoveryReadinessReadinessChecks = ubx.DataSourceBinding{
 	WireType: "aws_route53_recovery_readiness_readiness_checks",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

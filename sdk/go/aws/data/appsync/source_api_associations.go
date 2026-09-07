@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SourceApiAssociations_SourceApiAssociationSummaries struct {
 	AssociationArn any
-	AssociationId any
-	Description any
-	MergedApiArn any
-	MergedApiId any
-	SourceApiArn any
-	SourceApiId any
+	AssociationId  any
+	Description    any
+	MergedApiArn   any
+	MergedApiId    any
+	SourceApiArn   any
+	SourceApiId    any
 }
 
 type SourceApiAssociationsConfig struct {
-	ApiId any
+	ApiId      any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SourceApiAssociationsAttrs struct {
-	ApiId any
-	MaxResults any
-	NextToken any
+	ApiId                         any
+	MaxResults                    any
+	NextToken                     any
 	SourceApiAssociationSummaries any
 }
 
 var SourceApiAssociations = ubx.DataSourceBinding{
 	WireType: "aws_appsync_source_api_associations",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":      ubx.FieldSpec{WireName: "api_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

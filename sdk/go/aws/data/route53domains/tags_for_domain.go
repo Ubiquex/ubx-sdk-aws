@@ -4,7 +4,7 @@ package route53domains
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForDomain_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type TagsForDomainConfig struct {
 
 type TagsForDomainAttrs struct {
 	DomainName any
-	TagList any
+	TagList    any
 }
 
 var TagsForDomain = ubx.DataSourceBinding{

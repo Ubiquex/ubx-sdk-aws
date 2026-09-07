@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Lexicon_Lexicon struct {
 	Content any
-	Name any
+	Name    any
 }
 
 type Lexicon_LexiconAttributes struct {
-	Alphabet any
+	Alphabet     any
 	LanguageCode any
 	LastModified any
 	LexemesCount any
-	LexiconArn any
-	Size any
+	LexiconArn   any
+	Size         any
 }
 
 type LexiconConfig struct {
@@ -26,7 +26,7 @@ type LexiconAttrs struct {
 	Lexicon any
 	// <p>Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 	LexiconAttributes any
-	Name any
+	Name              any
 }
 
 var Lexicon = ubx.DataSourceBinding{

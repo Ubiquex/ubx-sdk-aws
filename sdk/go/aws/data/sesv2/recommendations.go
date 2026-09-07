@@ -4,35 +4,35 @@ package sesv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Recommendations_Recommendations struct {
-	CreatedTimestamp any
-	Description any
-	Impact any
+	CreatedTimestamp     any
+	Description          any
+	Impact               any
 	LastUpdatedTimestamp any
-	ResourceArn any
-	Status any
-	Type any
+	ResourceArn          any
+	Status               any
+	Type                 any
 }
 
 type RecommendationsConfig struct {
 	// <p>An object that contains mapping between <code>ListRecommendationsFilterKey</code> and <code>ListRecommendationFilterValue</code> to filter by.</p>
-	Filter any
+	Filter    any
 	NextToken any
-	PageSize any
+	PageSize  any
 }
 
 type RecommendationsAttrs struct {
 	// <p>An object that contains mapping between <code>ListRecommendationsFilterKey</code> and <code>ListRecommendationFilterValue</code> to filter by.</p>
-	Filter any
-	NextToken any
-	PageSize any
+	Filter          any
+	NextToken       any
+	PageSize        any
 	Recommendations any
 }
 
 var Recommendations = ubx.DataSourceBinding{
 	WireType: "aws_sesv2_recommendations",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":    ubx.FieldSpec{WireName: "filter"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 	},
 }

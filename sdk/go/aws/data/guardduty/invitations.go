@@ -4,27 +4,27 @@ package guardduty
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Invitations_Invitations struct {
-	AccountId any
-	InvitationId any
-	InvitedAt any
+	AccountId          any
+	InvitationId       any
+	InvitedAt          any
 	RelationshipStatus any
 }
 
 type InvitationsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type InvitationsAttrs struct {
 	Invitations any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 var Invitations = ubx.DataSourceBinding{
 	WireType: "aws_guardduty_invitations",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

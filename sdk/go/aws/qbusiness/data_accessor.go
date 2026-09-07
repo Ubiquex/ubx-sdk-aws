@@ -82,105 +82,105 @@ type DataAccessor_Tags struct {
 }
 
 var DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAll_ValueFields = ubx.FieldMap{
-		"DateValue": ubx.FieldSpec{WireName: "date_value"},
-		"LongValue": ubx.FieldSpec{WireName: "long_value"},
-		"StringListValue": ubx.FieldSpec{WireName: "string_list_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"DateValue":       ubx.FieldSpec{WireName: "date_value"},
+	"LongValue":       ubx.FieldSpec{WireName: "long_value"},
+	"StringListValue": ubx.FieldSpec{WireName: "string_list_value"},
+	"StringValue":     ubx.FieldSpec{WireName: "string_value"},
+}
 
 var DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAll_ValueFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAll_ValueFields,
+	},
+}
 
 var DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilterFields = ubx.FieldMap{
-		"AndAllFilters": ubx.FieldSpec{WireName: "and_all_filters"},
-		"ContainsAll": ubx.FieldSpec{
-			WireName: "contains_all",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
-		},
-		"ContainsAny": ubx.FieldSpec{
-			WireName: "contains_any",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
-		},
-		"EqualsTo": ubx.FieldSpec{
-			WireName: "equals_to",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
-		},
-		"GreaterThan": ubx.FieldSpec{
-			WireName: "greater_than",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
-		},
-		"GreaterThanOrEquals": ubx.FieldSpec{
-			WireName: "greater_than_or_equals",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
-		},
-		"LessThan": ubx.FieldSpec{
-			WireName: "less_than",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
-		},
-		"LessThanOrEquals": ubx.FieldSpec{
-			WireName: "less_than_or_equals",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
-		},
-		"NotFilter": ubx.FieldSpec{WireName: "not_filter"},
-		"OrAllFilters": ubx.FieldSpec{WireName: "or_all_filters"},
-	}
+	"AndAllFilters": ubx.FieldSpec{WireName: "and_all_filters"},
+	"ContainsAll": ubx.FieldSpec{
+		WireName: "contains_all",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
+	},
+	"ContainsAny": ubx.FieldSpec{
+		WireName: "contains_any",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
+	},
+	"EqualsTo": ubx.FieldSpec{
+		WireName: "equals_to",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
+	},
+	"GreaterThan": ubx.FieldSpec{
+		WireName: "greater_than",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
+	},
+	"GreaterThanOrEquals": ubx.FieldSpec{
+		WireName: "greater_than_or_equals",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
+	},
+	"LessThan": ubx.FieldSpec{
+		WireName: "less_than",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
+	},
+	"LessThanOrEquals": ubx.FieldSpec{
+		WireName: "less_than_or_equals",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAllFields,
+	},
+	"NotFilter":    ubx.FieldSpec{WireName: "not_filter"},
+	"OrAllFilters": ubx.FieldSpec{WireName: "or_all_filters"},
+}
 
 var DataAccessor_ActionConfigurations_FilterConfigurationFields = ubx.FieldMap{
-		"DocumentAttributeFilter": ubx.FieldSpec{
-			WireName: "document_attribute_filter",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilterFields,
-		},
-	}
+	"DocumentAttributeFilter": ubx.FieldSpec{
+		WireName: "document_attribute_filter",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilterFields,
+	},
+}
 
 var DataAccessor_ActionConfigurationsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"FilterConfiguration": ubx.FieldSpec{
-			WireName: "filter_configuration",
-			Kind: "object",
-			Fields: DataAccessor_ActionConfigurations_FilterConfigurationFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"FilterConfiguration": ubx.FieldSpec{
+		WireName: "filter_configuration",
+		Kind:     "object",
+		Fields:   DataAccessor_ActionConfigurations_FilterConfigurationFields,
+	},
+}
 
 var DataAccessor_AuthenticationDetail_AuthenticationConfiguration_IdcTrustedTokenIssuerConfigurationFields = ubx.FieldMap{
-		"IdcTrustedTokenIssuerArn": ubx.FieldSpec{WireName: "idc_trusted_token_issuer_arn"},
-	}
+	"IdcTrustedTokenIssuerArn": ubx.FieldSpec{WireName: "idc_trusted_token_issuer_arn"},
+}
 
 var DataAccessor_AuthenticationDetail_AuthenticationConfigurationFields = ubx.FieldMap{
-		"IdcTrustedTokenIssuerConfiguration": ubx.FieldSpec{
-			WireName: "idc_trusted_token_issuer_configuration",
-			Kind: "object",
-			Fields: DataAccessor_AuthenticationDetail_AuthenticationConfiguration_IdcTrustedTokenIssuerConfigurationFields,
-		},
-	}
+	"IdcTrustedTokenIssuerConfiguration": ubx.FieldSpec{
+		WireName: "idc_trusted_token_issuer_configuration",
+		Kind:     "object",
+		Fields:   DataAccessor_AuthenticationDetail_AuthenticationConfiguration_IdcTrustedTokenIssuerConfigurationFields,
+	},
+}
 
 var DataAccessor_AuthenticationDetailFields = ubx.FieldMap{
-		"AuthenticationConfiguration": ubx.FieldSpec{
-			WireName: "authentication_configuration",
-			Kind: "object",
-			Fields: DataAccessor_AuthenticationDetail_AuthenticationConfigurationFields,
-		},
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"ExternalIds": ubx.FieldSpec{WireName: "external_ids"},
-	}
+	"AuthenticationConfiguration": ubx.FieldSpec{
+		WireName: "authentication_configuration",
+		Kind:     "object",
+		Fields:   DataAccessor_AuthenticationDetail_AuthenticationConfigurationFields,
+	},
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+	"ExternalIds":        ubx.FieldSpec{WireName: "external_ids"},
+}
 
 var DataAccessor_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DataAccessorConfig struct {
 	// Specifies the list of allowed actions for this Q Business data accessor, each with an action type and optional filter configuration that constrains which data the accessor can access. (AI-inferred)
@@ -227,21 +227,21 @@ var DataAccessor = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActionConfigurations": ubx.FieldSpec{
 			WireName: "action_configurations",
-			Kind: "list",
-			Fields: DataAccessor_ActionConfigurationsFields,
+			Kind:     "list",
+			Fields:   DataAccessor_ActionConfigurationsFields,
 		},
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 		"AuthenticationDetail": ubx.FieldSpec{
 			WireName: "authentication_detail",
-			Kind: "object",
-			Fields: DataAccessor_AuthenticationDetailFields,
+			Kind:     "object",
+			Fields:   DataAccessor_AuthenticationDetailFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"Principal":   ubx.FieldSpec{WireName: "principal"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataAccessor_TagsFields,
+			Kind:     "list",
+			Fields:   DataAccessor_TagsFields,
 		},
 	},
 }

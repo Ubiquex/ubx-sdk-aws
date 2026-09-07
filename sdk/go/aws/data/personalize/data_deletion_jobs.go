@@ -4,33 +4,33 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataDeletionJobs_DataDeletionJobs struct {
-	CreationDateTime any
-	DataDeletionJobArn any
-	DatasetGroupArn any
-	FailureReason any
-	JobName any
+	CreationDateTime    any
+	DataDeletionJobArn  any
+	DatasetGroupArn     any
+	FailureReason       any
+	JobName             any
 	LastUpdatedDateTime any
-	Status any
+	Status              any
 }
 
 type DataDeletionJobsConfig struct {
 	DatasetGroupArn any
-	MaxResults any
-	NextToken any
+	MaxResults      any
+	NextToken       any
 }
 
 type DataDeletionJobsAttrs struct {
 	DataDeletionJobs any
-	DatasetGroupArn any
-	MaxResults any
-	NextToken any
+	DatasetGroupArn  any
+	MaxResults       any
+	NextToken        any
 }
 
 var DataDeletionJobs = ubx.DataSourceBinding{
 	WireType: "aws_personalize_data_deletion_jobs",
 	Fields: ubx.FieldMap{
 		"DatasetGroupArn": ubx.FieldSpec{WireName: "dataset_group_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":      ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":       ubx.FieldSpec{WireName: "next_token"},
 	},
 }

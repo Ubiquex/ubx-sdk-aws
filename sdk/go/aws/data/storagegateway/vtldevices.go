@@ -4,43 +4,43 @@ package storagegateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vtldevices_Vtldevices_DeviceiScsiattributes struct {
-	ChapEnabled any
-	NetworkInterfaceId any
+	ChapEnabled          any
+	NetworkInterfaceId   any
 	NetworkInterfacePort any
-	TargetArn any
+	TargetArn            any
 }
 
 type Vtldevices_Vtldevices struct {
-	DeviceiScsiattributes any
-	VtldeviceArn any
+	DeviceiScsiattributes      any
+	VtldeviceArn               any
 	VtldeviceProductIdentifier any
-	VtldeviceType any
-	VtldeviceVendor any
+	VtldeviceType              any
+	VtldeviceVendor            any
 }
 
 type VtldevicesConfig struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
-	Limit any
-	Marker any
+	GatewayArn    any
+	Limit         any
+	Marker        any
 	VtldeviceArns any
 }
 
 type VtldevicesAttrs struct {
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
-	Limit any
-	Marker any
+	GatewayArn    any
+	Limit         any
+	Marker        any
 	VtldeviceArns any
-	Vtldevices any
+	Vtldevices    any
 }
 
 var Vtldevices = ubx.DataSourceBinding{
 	WireType: "aws_storagegateway_vtldevices",
 	Fields: ubx.FieldMap{
-		"GatewayArn": ubx.FieldSpec{WireName: "gateway_arn"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"GatewayArn":    ubx.FieldSpec{WireName: "gateway_arn"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
+		"Marker":        ubx.FieldSpec{WireName: "marker"},
 		"VtldeviceArns": ubx.FieldSpec{WireName: "vtldevice_arns"},
 	},
 }

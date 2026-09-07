@@ -9,41 +9,41 @@ type AssetProperties_AssetPropertySummaries_Notification struct {
 }
 
 type AssetProperties_AssetPropertySummaries_Path struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type AssetProperties_AssetPropertySummaries struct {
-	Alias any
+	Alias                 any
 	AssetCompositeModelId any
-	ExternalId any
-	Id any
-	Notification any
-	Path any
-	Unit any
+	ExternalId            any
+	Id                    any
+	Notification          any
+	Path                  any
+	Unit                  any
 }
 
 type AssetPropertiesConfig struct {
-	AssetId any
-	Filter any
+	AssetId    any
+	Filter     any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AssetPropertiesAttrs struct {
-	AssetId any
+	AssetId                any
 	AssetPropertySummaries any
-	Filter any
-	MaxResults any
-	NextToken any
+	Filter                 any
+	MaxResults             any
+	NextToken              any
 }
 
 var AssetProperties = ubx.DataSourceBinding{
 	WireType: "aws_iotsitewise_asset_properties",
 	Fields: ubx.FieldMap{
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"AssetId":    ubx.FieldSpec{WireName: "asset_id"},
+		"Filter":     ubx.FieldSpec{WireName: "filter"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

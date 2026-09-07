@@ -20,15 +20,15 @@ type Vault_Notifications struct {
 }
 
 var Vault_LockConfigurationFields = ubx.FieldMap{
-		"ChangeableForDays": ubx.FieldSpec{WireName: "changeable_for_days"},
-		"MaxRetentionDays": ubx.FieldSpec{WireName: "max_retention_days"},
-		"MinRetentionDays": ubx.FieldSpec{WireName: "min_retention_days"},
-	}
+	"ChangeableForDays": ubx.FieldSpec{WireName: "changeable_for_days"},
+	"MaxRetentionDays":  ubx.FieldSpec{WireName: "max_retention_days"},
+	"MinRetentionDays":  ubx.FieldSpec{WireName: "min_retention_days"},
+}
 
 var Vault_NotificationsFields = ubx.FieldMap{
-		"BackupVaultEvents": ubx.FieldSpec{WireName: "backup_vault_events"},
-		"SnstopicArn": ubx.FieldSpec{WireName: "snstopic_arn"},
-	}
+	"BackupVaultEvents": ubx.FieldSpec{WireName: "backup_vault_events"},
+	"SnstopicArn":       ubx.FieldSpec{WireName: "snstopic_arn"},
+}
 
 type VaultConfig struct {
 	// Specifies a resource-based policy (in JSON) that defines which IAM principals can perform actions on the backup vault and its recovery points, such as viewing, creating, or deleting backups. (AI-inferred)
@@ -65,19 +65,19 @@ type VaultAttrs struct {
 var Vault = ubx.ResourceBinding{
 	WireType: "aws_backup_vault",
 	Fields: ubx.FieldMap{
-		"AccessPolicy": ubx.FieldSpec{WireName: "access_policy"},
-		"BackupVaultName": ubx.FieldSpec{WireName: "backup_vault_name"},
-		"BackupVaultTags": ubx.FieldSpec{WireName: "backup_vault_tags"},
+		"AccessPolicy":     ubx.FieldSpec{WireName: "access_policy"},
+		"BackupVaultName":  ubx.FieldSpec{WireName: "backup_vault_name"},
+		"BackupVaultTags":  ubx.FieldSpec{WireName: "backup_vault_tags"},
 		"EncryptionKeyArn": ubx.FieldSpec{WireName: "encryption_key_arn"},
 		"LockConfiguration": ubx.FieldSpec{
 			WireName: "lock_configuration",
-			Kind: "object",
-			Fields: Vault_LockConfigurationFields,
+			Kind:     "object",
+			Fields:   Vault_LockConfigurationFields,
 		},
 		"Notifications": ubx.FieldSpec{
 			WireName: "notifications",
-			Kind: "object",
-			Fields: Vault_NotificationsFields,
+			Kind:     "object",
+			Fields:   Vault_NotificationsFields,
 		},
 	},
 }

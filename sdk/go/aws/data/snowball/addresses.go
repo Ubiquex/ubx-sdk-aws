@@ -4,38 +4,38 @@ package snowball
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Addresses_Addresses struct {
-	AddressId any
-	City any
-	Company any
-	Country any
-	IsRestricted any
-	Landmark any
-	Name any
-	PhoneNumber any
-	PostalCode any
+	AddressId            any
+	City                 any
+	Company              any
+	Country              any
+	IsRestricted         any
+	Landmark             any
+	Name                 any
+	PhoneNumber          any
+	PostalCode           any
 	PrefectureOrDistrict any
-	StateOrProvince any
-	Street1 any
-	Street2 any
-	Street3 any
-	Type any
+	StateOrProvince      any
+	Street1              any
+	Street2              any
+	Street3              any
+	Type                 any
 }
 
 type AddressesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AddressesAttrs struct {
-	Addresses any
+	Addresses  any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Addresses = ubx.DataSourceBinding{
 	WireType: "aws_snowball_addresses",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

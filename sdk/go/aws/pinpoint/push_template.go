@@ -51,32 +51,32 @@ type PushTemplate_Default struct {
 }
 
 var PushTemplate_AdmFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"ImageIconUrl": ubx.FieldSpec{WireName: "image_icon_url"},
-		"ImageUrl": ubx.FieldSpec{WireName: "image_url"},
-		"SmallImageIconUrl": ubx.FieldSpec{WireName: "small_image_icon_url"},
-		"Sound": ubx.FieldSpec{WireName: "sound"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Action":            ubx.FieldSpec{WireName: "action"},
+	"Body":              ubx.FieldSpec{WireName: "body"},
+	"ImageIconUrl":      ubx.FieldSpec{WireName: "image_icon_url"},
+	"ImageUrl":          ubx.FieldSpec{WireName: "image_url"},
+	"SmallImageIconUrl": ubx.FieldSpec{WireName: "small_image_icon_url"},
+	"Sound":             ubx.FieldSpec{WireName: "sound"},
+	"Title":             ubx.FieldSpec{WireName: "title"},
+	"Url":               ubx.FieldSpec{WireName: "url"},
+}
 
 var PushTemplate_ApnsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"MediaUrl": ubx.FieldSpec{WireName: "media_url"},
-		"Sound": ubx.FieldSpec{WireName: "sound"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Action":   ubx.FieldSpec{WireName: "action"},
+	"Body":     ubx.FieldSpec{WireName: "body"},
+	"MediaUrl": ubx.FieldSpec{WireName: "media_url"},
+	"Sound":    ubx.FieldSpec{WireName: "sound"},
+	"Title":    ubx.FieldSpec{WireName: "title"},
+	"Url":      ubx.FieldSpec{WireName: "url"},
+}
 
 var PushTemplate_DefaultFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Sound": ubx.FieldSpec{WireName: "sound"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Body":   ubx.FieldSpec{WireName: "body"},
+	"Sound":  ubx.FieldSpec{WireName: "sound"},
+	"Title":  ubx.FieldSpec{WireName: "title"},
+	"Url":    ubx.FieldSpec{WireName: "url"},
+}
 
 type PushTemplateConfig struct {
 	// Defines the Amazon Device Messenger (ADM) push notification settings, such as the action, title, body, and URL, used for delivering messages to Fire OS devices. (AI-inferred)
@@ -129,32 +129,32 @@ var PushTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Adm": ubx.FieldSpec{
 			WireName: "adm",
-			Kind: "object",
-			Fields: PushTemplate_AdmFields,
+			Kind:     "object",
+			Fields:   PushTemplate_AdmFields,
 		},
 		"Apns": ubx.FieldSpec{
 			WireName: "apns",
-			Kind: "object",
-			Fields: PushTemplate_ApnsFields,
+			Kind:     "object",
+			Fields:   PushTemplate_ApnsFields,
 		},
 		"Baidu": ubx.FieldSpec{
 			WireName: "baidu",
-			Kind: "object",
-			Fields: PushTemplate_AdmFields,
+			Kind:     "object",
+			Fields:   PushTemplate_AdmFields,
 		},
 		"Default": ubx.FieldSpec{
 			WireName: "default",
-			Kind: "object",
-			Fields: PushTemplate_DefaultFields,
+			Kind:     "object",
+			Fields:   PushTemplate_DefaultFields,
 		},
 		"DefaultSubstitutions": ubx.FieldSpec{WireName: "default_substitutions"},
 		"Gcm": ubx.FieldSpec{
 			WireName: "gcm",
-			Kind: "object",
-			Fields: PushTemplate_AdmFields,
+			Kind:     "object",
+			Fields:   PushTemplate_AdmFields,
 		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":                ubx.FieldSpec{WireName: "tags"},
 		"TemplateDescription": ubx.FieldSpec{WireName: "template_description"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+		"TemplateName":        ubx.FieldSpec{WireName: "template_name"},
 	},
 }

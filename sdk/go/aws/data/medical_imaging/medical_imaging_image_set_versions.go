@@ -8,39 +8,39 @@ type MedicalImagingImageSetVersions_ImageSetPropertiesList_Overrides struct {
 }
 
 type MedicalImagingImageSetVersions_ImageSetPropertiesList struct {
-	CreatedAt any
-	DeletedAt any
-	ImageSetId any
-	ImageSetState any
+	CreatedAt              any
+	DeletedAt              any
+	ImageSetId             any
+	ImageSetState          any
 	ImageSetWorkflowStatus any
-	IsPrimary any
-	Message any
-	Overrides any
-	UpdatedAt any
-	VersionId any
+	IsPrimary              any
+	Message                any
+	Overrides              any
+	UpdatedAt              any
+	VersionId              any
 }
 
 type MedicalImagingImageSetVersionsConfig struct {
 	DatastoreId any
-	ImageSetId any
-	MaxResults any
-	NextToken any
+	ImageSetId  any
+	MaxResults  any
+	NextToken   any
 }
 
 type MedicalImagingImageSetVersionsAttrs struct {
-	DatastoreId any
-	ImageSetId any
+	DatastoreId            any
+	ImageSetId             any
 	ImageSetPropertiesList any
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 }
 
 var MedicalImagingImageSetVersions = ubx.DataSourceBinding{
 	WireType: "aws_medical_imaging_image_set_versions",
 	Fields: ubx.FieldMap{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"ImageSetId": ubx.FieldSpec{WireName: "image_set_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ImageSetId":  ubx.FieldSpec{WireName: "image_set_id"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

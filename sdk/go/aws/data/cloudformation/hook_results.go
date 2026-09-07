@@ -4,45 +4,45 @@ package cloudformation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HookResults_HookResults struct {
-	FailureMode any
-	HookExecutionTarget any
-	HookResultId any
-	HookStatusReason any
-	InvocationPoint any
-	InvokedAt any
-	Status any
-	TargetId any
-	TargetType any
-	TypeArn any
+	FailureMode                any
+	HookExecutionTarget        any
+	HookResultId               any
+	HookStatusReason           any
+	InvocationPoint            any
+	InvokedAt                  any
+	Status                     any
+	TargetId                   any
+	TargetType                 any
+	TypeArn                    any
 	TypeConfigurationVersionId any
-	TypeName any
-	TypeVersionId any
+	TypeName                   any
+	TypeVersionId              any
 }
 
 type HookResultsConfig struct {
-	NextToken any
-	Status any
-	TargetId any
+	NextToken  any
+	Status     any
+	TargetId   any
 	TargetType any
-	TypeArn any
+	TypeArn    any
 }
 
 type HookResultsAttrs struct {
 	HookResults any
-	NextToken any
-	Status any
-	TargetId any
-	TargetType any
-	TypeArn any
+	NextToken   any
+	Status      any
+	TargetId    any
+	TargetType  any
+	TypeArn     any
 }
 
 var HookResults = ubx.DataSourceBinding{
 	WireType: "aws_cloudformation_hook_results",
 	Fields: ubx.FieldMap{
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
+		"TargetId":   ubx.FieldSpec{WireName: "target_id"},
 		"TargetType": ubx.FieldSpec{WireName: "target_type"},
-		"TypeArn": ubx.FieldSpec{WireName: "type_arn"},
+		"TypeArn":    ubx.FieldSpec{WireName: "type_arn"},
 	},
 }

@@ -4,14 +4,14 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainNameAccessAssociation_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var DomainNameAccessAssociation_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DomainNameAccessAssociationConfig struct {
 	// The source of the domain name access association resource.
@@ -40,13 +40,13 @@ type DomainNameAccessAssociationAttrs struct {
 var DomainNameAccessAssociation = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_domain_name_access_association",
 	Fields: ubx.FieldMap{
-		"AccessAssociationSource": ubx.FieldSpec{WireName: "access_association_source"},
+		"AccessAssociationSource":     ubx.FieldSpec{WireName: "access_association_source"},
 		"AccessAssociationSourceType": ubx.FieldSpec{WireName: "access_association_source_type"},
-		"DomainNameArn": ubx.FieldSpec{WireName: "domain_name_arn"},
+		"DomainNameArn":               ubx.FieldSpec{WireName: "domain_name_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DomainNameAccessAssociation_TagsFields,
+			Kind:     "list",
+			Fields:   DomainNameAccessAssociation_TagsFields,
 		},
 	},
 }

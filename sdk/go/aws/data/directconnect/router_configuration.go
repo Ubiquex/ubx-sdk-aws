@@ -4,25 +4,25 @@ package directconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouterConfiguration_Router struct {
-	Platform any
-	RouterTypeIdentifier any
-	Software any
-	Vendor any
-	XsltTemplateName any
+	Platform                  any
+	RouterTypeIdentifier      any
+	Software                  any
+	Vendor                    any
+	XsltTemplateName          any
 	XsltTemplateNameForMacSec any
 }
 
 type RouterConfigurationConfig struct {
 	RouterTypeIdentifier any
-	VirtualInterfaceId any
+	VirtualInterfaceId   any
 }
 
 type RouterConfigurationAttrs struct {
 	CustomerRouterConfig any
 	// <p>Information about the virtual router.</p>
-	Router any
+	Router               any
 	RouterTypeIdentifier any
-	VirtualInterfaceId any
+	VirtualInterfaceId   any
 	VirtualInterfaceName any
 }
 
@@ -30,6 +30,6 @@ var RouterConfiguration = ubx.DataSourceBinding{
 	WireType: "aws_directconnect_router_configuration",
 	Fields: ubx.FieldMap{
 		"RouterTypeIdentifier": ubx.FieldSpec{WireName: "router_type_identifier"},
-		"VirtualInterfaceId": ubx.FieldSpec{WireName: "virtual_interface_id"},
+		"VirtualInterfaceId":   ubx.FieldSpec{WireName: "virtual_interface_id"},
 	},
 }

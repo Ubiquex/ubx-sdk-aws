@@ -4,7 +4,7 @@ package api_tunneling_iot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiTunnelingIotTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type ApiTunnelingIotTagsForResourceConfig struct {
 
 type ApiTunnelingIotTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var ApiTunnelingIotTagsForResource = ubx.DataSourceBinding{

@@ -8,9 +8,9 @@ type DistributionLatestCacheResetConfig struct {
 }
 
 type DistributionLatestCacheResetAttrs struct {
-	CreateTime any
+	CreateTime       any
 	DistributionName any
-	Status any
+	Status           any
 }
 
 var DistributionLatestCacheReset = ubx.DataSourceBinding{

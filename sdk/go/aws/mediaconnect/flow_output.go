@@ -79,77 +79,77 @@ type FlowOutput_VpcInterfaceAttachment struct {
 }
 
 var FlowOutput_EncryptionFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
+	"KeyType":   ubx.FieldSpec{WireName: "key_type"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var FlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations_InterfaceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var FlowOutput_MediaStreamOutputConfigurations_DestinationConfigurationsFields = ubx.FieldMap{
-		"DestinationIp": ubx.FieldSpec{WireName: "destination_ip"},
-		"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
-		"Interface": ubx.FieldSpec{
-			WireName: "interface",
-			Kind: "object",
-			Fields: FlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations_InterfaceFields,
-		},
-	}
+	"DestinationIp":   ubx.FieldSpec{WireName: "destination_ip"},
+	"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
+	"Interface": ubx.FieldSpec{
+		WireName: "interface",
+		Kind:     "object",
+		Fields:   FlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations_InterfaceFields,
+	},
+}
 
 var FlowOutput_MediaStreamOutputConfigurations_EncodingParametersFields = ubx.FieldMap{
-		"CompressionFactor": ubx.FieldSpec{WireName: "compression_factor"},
-		"EncoderProfile": ubx.FieldSpec{WireName: "encoder_profile"},
-	}
+	"CompressionFactor": ubx.FieldSpec{WireName: "compression_factor"},
+	"EncoderProfile":    ubx.FieldSpec{WireName: "encoder_profile"},
+}
 
 var FlowOutput_MediaStreamOutputConfigurationsFields = ubx.FieldMap{
-		"DestinationConfigurations": ubx.FieldSpec{
-			WireName: "destination_configurations",
-			Kind: "list",
-			Fields: FlowOutput_MediaStreamOutputConfigurations_DestinationConfigurationsFields,
-		},
-		"EncodingName": ubx.FieldSpec{WireName: "encoding_name"},
-		"EncodingParameters": ubx.FieldSpec{
-			WireName: "encoding_parameters",
-			Kind: "object",
-			Fields: FlowOutput_MediaStreamOutputConfigurations_EncodingParametersFields,
-		},
-		"MediaStreamName": ubx.FieldSpec{WireName: "media_stream_name"},
-	}
+	"DestinationConfigurations": ubx.FieldSpec{
+		WireName: "destination_configurations",
+		Kind:     "list",
+		Fields:   FlowOutput_MediaStreamOutputConfigurations_DestinationConfigurationsFields,
+	},
+	"EncodingName": ubx.FieldSpec{WireName: "encoding_name"},
+	"EncodingParameters": ubx.FieldSpec{
+		WireName: "encoding_parameters",
+		Kind:     "object",
+		Fields:   FlowOutput_MediaStreamOutputConfigurations_EncodingParametersFields,
+	},
+	"MediaStreamName": ubx.FieldSpec{WireName: "media_stream_name"},
+}
 
 var FlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration_SecretsManagerFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var FlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfigurationFields = ubx.FieldMap{
-		"Automatic": ubx.FieldSpec{WireName: "automatic"},
-		"SecretsManager": ubx.FieldSpec{
-			WireName: "secrets_manager",
-			Kind: "object",
-			Fields: FlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration_SecretsManagerFields,
-		},
-	}
+	"Automatic": ubx.FieldSpec{WireName: "automatic"},
+	"SecretsManager": ubx.FieldSpec{
+		WireName: "secrets_manager",
+		Kind:     "object",
+		Fields:   FlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration_SecretsManagerFields,
+	},
+}
 
 var FlowOutput_RouterIntegrationTransitEncryptionFields = ubx.FieldMap{
-		"EncryptionKeyConfiguration": ubx.FieldSpec{
-			WireName: "encryption_key_configuration",
-			Kind: "object",
-			Fields: FlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfigurationFields,
-		},
-		"EncryptionKeyType": ubx.FieldSpec{WireName: "encryption_key_type"},
-	}
+	"EncryptionKeyConfiguration": ubx.FieldSpec{
+		WireName: "encryption_key_configuration",
+		Kind:     "object",
+		Fields:   FlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfigurationFields,
+	},
+	"EncryptionKeyType": ubx.FieldSpec{WireName: "encryption_key_type"},
+}
 
 var FlowOutput_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FlowOutput_VpcInterfaceAttachmentFields = ubx.FieldMap{
-		"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
-	}
+	"VpcInterfaceName": ubx.FieldSpec{WireName: "vpc_interface_name"},
+}
 
 type FlowOutputConfig struct {
 	// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -251,46 +251,46 @@ var FlowOutput = ubx.ResourceBinding{
 	WireType: "aws_media_connect_flow_output",
 	Fields: ubx.FieldMap{
 		"CidrAllowList": ubx.FieldSpec{WireName: "cidr_allow_list"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Destination": ubx.FieldSpec{WireName: "destination"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Destination":   ubx.FieldSpec{WireName: "destination"},
 		"Encryption": ubx.FieldSpec{
 			WireName: "encryption",
-			Kind: "object",
-			Fields: FlowOutput_EncryptionFields,
+			Kind:     "object",
+			Fields:   FlowOutput_EncryptionFields,
 		},
-		"FlowArn": ubx.FieldSpec{WireName: "flow_arn"},
+		"FlowArn":    ubx.FieldSpec{WireName: "flow_arn"},
 		"MaxLatency": ubx.FieldSpec{WireName: "max_latency"},
 		"MediaStreamOutputConfigurations": ubx.FieldSpec{
 			WireName: "media_stream_output_configurations",
-			Kind: "list",
-			Fields: FlowOutput_MediaStreamOutputConfigurationsFields,
+			Kind:     "list",
+			Fields:   FlowOutput_MediaStreamOutputConfigurationsFields,
 		},
-		"MinLatency": ubx.FieldSpec{WireName: "min_latency"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MinLatency":              ubx.FieldSpec{WireName: "min_latency"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"NdiOutputTimecodeSource": ubx.FieldSpec{WireName: "ndi_output_timecode_source"},
-		"NdiProgramName": ubx.FieldSpec{WireName: "ndi_program_name"},
-		"NdiSpeedHqQuality": ubx.FieldSpec{WireName: "ndi_speed_hq_quality"},
-		"OutputStatus": ubx.FieldSpec{WireName: "output_status"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"RemoteId": ubx.FieldSpec{WireName: "remote_id"},
-		"RouterIntegrationState": ubx.FieldSpec{WireName: "router_integration_state"},
+		"NdiProgramName":          ubx.FieldSpec{WireName: "ndi_program_name"},
+		"NdiSpeedHqQuality":       ubx.FieldSpec{WireName: "ndi_speed_hq_quality"},
+		"OutputStatus":            ubx.FieldSpec{WireName: "output_status"},
+		"Port":                    ubx.FieldSpec{WireName: "port"},
+		"Protocol":                ubx.FieldSpec{WireName: "protocol"},
+		"RemoteId":                ubx.FieldSpec{WireName: "remote_id"},
+		"RouterIntegrationState":  ubx.FieldSpec{WireName: "router_integration_state"},
 		"RouterIntegrationTransitEncryption": ubx.FieldSpec{
 			WireName: "router_integration_transit_encryption",
-			Kind: "object",
-			Fields: FlowOutput_RouterIntegrationTransitEncryptionFields,
+			Kind:     "object",
+			Fields:   FlowOutput_RouterIntegrationTransitEncryptionFields,
 		},
 		"SmoothingLatency": ubx.FieldSpec{WireName: "smoothing_latency"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamId":         ubx.FieldSpec{WireName: "stream_id"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: FlowOutput_TagsFields,
+			Kind:     "list",
+			Fields:   FlowOutput_TagsFields,
 		},
 		"VpcInterfaceAttachment": ubx.FieldSpec{
 			WireName: "vpc_interface_attachment",
-			Kind: "object",
-			Fields: FlowOutput_VpcInterfaceAttachmentFields,
+			Kind:     "object",
+			Fields:   FlowOutput_VpcInterfaceAttachmentFields,
 		},
 	},
 }

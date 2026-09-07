@@ -4,29 +4,29 @@ package neptune
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagsForResource_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TagsForResource_TagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var TagsForResource_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TagsForResourceConfig struct {
-	Filters any
+	Filters      any
 	ResourceName any
 }
 
 type TagsForResourceAttrs struct {
-	Filters any
+	Filters      any
 	ResourceName any
-	TagList any
+	TagList      any
 }
 
 var TagsForResource = ubx.DataSourceBinding{
@@ -34,8 +34,8 @@ var TagsForResource = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TagsForResource_FiltersFields,
+			Kind:     "list",
+			Fields:   TagsForResource_FiltersFields,
 		},
 		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
 	},

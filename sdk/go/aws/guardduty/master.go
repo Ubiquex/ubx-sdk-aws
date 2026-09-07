@@ -24,8 +24,8 @@ type MasterAttrs struct {
 var Master = ubx.ResourceBinding{
 	WireType: "aws_guard_duty_master",
 	Fields: ubx.FieldMap{
-		"DetectorId": ubx.FieldSpec{WireName: "detector_id"},
+		"DetectorId":   ubx.FieldSpec{WireName: "detector_id"},
 		"InvitationId": ubx.FieldSpec{WireName: "invitation_id"},
-		"MasterId": ubx.FieldSpec{WireName: "master_id"},
+		"MasterId":     ubx.FieldSpec{WireName: "master_id"},
 	},
 }

@@ -21,17 +21,17 @@ type Ipam_Tags struct {
 }
 
 var Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusionsFields = ubx.FieldMap{
-		"OrganizationsEntityPath": ubx.FieldSpec{WireName: "organizations_entity_path"},
-	}
+	"OrganizationsEntityPath": ubx.FieldSpec{WireName: "organizations_entity_path"},
+}
 
 var Ipam_OperatingRegionsFields = ubx.FieldMap{
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
-	}
+	"RegionName": ubx.FieldSpec{WireName: "region_name"},
+}
 
 var Ipam_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type IpamConfig struct {
 	// A set of organizational unit (OU) exclusions for the default resource discovery, created with this IPAM.
@@ -88,21 +88,21 @@ var Ipam = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultResourceDiscoveryOrganizationalUnitExclusions": ubx.FieldSpec{
 			WireName: "default_resource_discovery_organizational_unit_exclusions",
-			Kind: "list",
-			Fields: Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusionsFields,
+			Kind:     "list",
+			Fields:   Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusionsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"EnablePrivateGua": ubx.FieldSpec{WireName: "enable_private_gua"},
-		"MeteredAccount": ubx.FieldSpec{WireName: "metered_account"},
+		"MeteredAccount":   ubx.FieldSpec{WireName: "metered_account"},
 		"OperatingRegions": ubx.FieldSpec{
 			WireName: "operating_regions",
-			Kind: "list",
-			Fields: Ipam_OperatingRegionsFields,
+			Kind:     "list",
+			Fields:   Ipam_OperatingRegionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Ipam_TagsFields,
+			Kind:     "list",
+			Fields:   Ipam_TagsFields,
 		},
 		"Tier": ubx.FieldSpec{WireName: "tier"},
 	},

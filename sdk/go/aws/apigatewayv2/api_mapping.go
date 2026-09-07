@@ -30,9 +30,9 @@ type ApiMappingAttrs struct {
 var ApiMapping = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_api_mapping",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
+		"ApiId":         ubx.FieldSpec{WireName: "api_id"},
 		"ApiMappingKey": ubx.FieldSpec{WireName: "api_mapping_key"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
+		"DomainName":    ubx.FieldSpec{WireName: "domain_name"},
+		"Stage":         ubx.FieldSpec{WireName: "stage"},
 	},
 }

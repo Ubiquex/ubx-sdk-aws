@@ -4,7 +4,7 @@ package redshift_serverless
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RedshiftServerlessTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type RedshiftServerlessTagsForResourceConfig struct {
 
 type RedshiftServerlessTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var RedshiftServerlessTagsForResource = ubx.DataSourceBinding{

@@ -142,120 +142,120 @@ type PlaybackConfiguration_Tags struct {
 }
 
 var PlaybackConfiguration_AdConditioningConfigurationFields = ubx.FieldMap{
-		"StreamingMediaFileConditioning": ubx.FieldSpec{WireName: "streaming_media_file_conditioning"},
-	}
+	"StreamingMediaFileConditioning": ubx.FieldSpec{WireName: "streaming_media_file_conditioning"},
+}
 
 var PlaybackConfiguration_AdDecisionServerConfiguration_HttpRequestFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"CompressRequest": ubx.FieldSpec{WireName: "compress_request"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-	}
+	"Body":            ubx.FieldSpec{WireName: "body"},
+	"CompressRequest": ubx.FieldSpec{WireName: "compress_request"},
+	"Headers":         ubx.FieldSpec{WireName: "headers"},
+	"HttpMethod":      ubx.FieldSpec{WireName: "http_method"},
+}
 
 var PlaybackConfiguration_AdDecisionServerConfiguration_VastResponseFields = ubx.FieldMap{
-		"AdSequencingMode": ubx.FieldSpec{WireName: "ad_sequencing_mode"},
-	}
+	"AdSequencingMode": ubx.FieldSpec{WireName: "ad_sequencing_mode"},
+}
 
 var PlaybackConfiguration_AdDecisionServerConfigurationFields = ubx.FieldMap{
-		"HttpRequest": ubx.FieldSpec{
-			WireName: "http_request",
-			Kind: "object",
-			Fields: PlaybackConfiguration_AdDecisionServerConfiguration_HttpRequestFields,
-		},
-		"VastResponse": ubx.FieldSpec{
-			WireName: "vast_response",
-			Kind: "object",
-			Fields: PlaybackConfiguration_AdDecisionServerConfiguration_VastResponseFields,
-		},
-	}
+	"HttpRequest": ubx.FieldSpec{
+		WireName: "http_request",
+		Kind:     "object",
+		Fields:   PlaybackConfiguration_AdDecisionServerConfiguration_HttpRequestFields,
+	},
+	"VastResponse": ubx.FieldSpec{
+		WireName: "vast_response",
+		Kind:     "object",
+		Fields:   PlaybackConfiguration_AdDecisionServerConfiguration_VastResponseFields,
+	},
+}
 
 var PlaybackConfiguration_AdsPersonalizationConcurrencyFields = ubx.FieldMap{
-		"EnableVodVastParallelization": ubx.FieldSpec{WireName: "enable_vod_vast_parallelization"},
-		"MaxConcurrentAdsRequests": ubx.FieldSpec{WireName: "max_concurrent_ads_requests"},
-	}
+	"EnableVodVastParallelization": ubx.FieldSpec{WireName: "enable_vod_vast_parallelization"},
+	"MaxConcurrentAdsRequests":     ubx.FieldSpec{WireName: "max_concurrent_ads_requests"},
+}
 
 var PlaybackConfiguration_AdsPersonalizationTimeoutsFields = ubx.FieldMap{
-		"AdsRequestTimeoutMilliseconds": ubx.FieldSpec{WireName: "ads_request_timeout_milliseconds"},
-		"LiveMaximumAdsPersonalizationTimeMilliseconds": ubx.FieldSpec{WireName: "live_maximum_ads_personalization_time_milliseconds"},
-		"PrefetchAdsRequestTimeoutMilliseconds": ubx.FieldSpec{WireName: "prefetch_ads_request_timeout_milliseconds"},
-		"PrefetchMaximumAdsPersonalizationTimeMilliseconds": ubx.FieldSpec{WireName: "prefetch_maximum_ads_personalization_time_milliseconds"},
-		"VodMaximumAdsPersonalizationTimeMilliseconds": ubx.FieldSpec{WireName: "vod_maximum_ads_personalization_time_milliseconds"},
-	}
+	"AdsRequestTimeoutMilliseconds":                     ubx.FieldSpec{WireName: "ads_request_timeout_milliseconds"},
+	"LiveMaximumAdsPersonalizationTimeMilliseconds":     ubx.FieldSpec{WireName: "live_maximum_ads_personalization_time_milliseconds"},
+	"PrefetchAdsRequestTimeoutMilliseconds":             ubx.FieldSpec{WireName: "prefetch_ads_request_timeout_milliseconds"},
+	"PrefetchMaximumAdsPersonalizationTimeMilliseconds": ubx.FieldSpec{WireName: "prefetch_maximum_ads_personalization_time_milliseconds"},
+	"VodMaximumAdsPersonalizationTimeMilliseconds":      ubx.FieldSpec{WireName: "vod_maximum_ads_personalization_time_milliseconds"},
+}
 
 var PlaybackConfiguration_AvailSuppressionFields = ubx.FieldMap{
-		"FillPolicy": ubx.FieldSpec{WireName: "fill_policy"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"FillPolicy": ubx.FieldSpec{WireName: "fill_policy"},
+	"Mode":       ubx.FieldSpec{WireName: "mode"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var PlaybackConfiguration_BumperFields = ubx.FieldMap{
-		"EndUrl": ubx.FieldSpec{WireName: "end_url"},
-		"StartUrl": ubx.FieldSpec{WireName: "start_url"},
-	}
+	"EndUrl":   ubx.FieldSpec{WireName: "end_url"},
+	"StartUrl": ubx.FieldSpec{WireName: "start_url"},
+}
 
 var PlaybackConfiguration_CdnConfigurationFields = ubx.FieldMap{
-		"AdSegmentUrlPrefix": ubx.FieldSpec{WireName: "ad_segment_url_prefix"},
-		"ContentSegmentUrlPrefix": ubx.FieldSpec{WireName: "content_segment_url_prefix"},
-	}
+	"AdSegmentUrlPrefix":      ubx.FieldSpec{WireName: "ad_segment_url_prefix"},
+	"ContentSegmentUrlPrefix": ubx.FieldSpec{WireName: "content_segment_url_prefix"},
+}
 
 var PlaybackConfiguration_LivePreRollConfiguration_AdDecisionServerConfigurationFields = ubx.FieldMap{
-		"VastResponse": ubx.FieldSpec{
-			WireName: "vast_response",
-			Kind: "object",
-			Fields: PlaybackConfiguration_AdDecisionServerConfiguration_VastResponseFields,
-		},
-	}
+	"VastResponse": ubx.FieldSpec{
+		WireName: "vast_response",
+		Kind:     "object",
+		Fields:   PlaybackConfiguration_AdDecisionServerConfiguration_VastResponseFields,
+	},
+}
 
 var PlaybackConfiguration_LivePreRollConfigurationFields = ubx.FieldMap{
-		"AdDecisionServerConfiguration": ubx.FieldSpec{
-			WireName: "ad_decision_server_configuration",
-			Kind: "object",
-			Fields: PlaybackConfiguration_LivePreRollConfiguration_AdDecisionServerConfigurationFields,
-		},
-		"AdDecisionServerUrl": ubx.FieldSpec{WireName: "ad_decision_server_url"},
-		"MaxDurationSeconds": ubx.FieldSpec{WireName: "max_duration_seconds"},
-	}
+	"AdDecisionServerConfiguration": ubx.FieldSpec{
+		WireName: "ad_decision_server_configuration",
+		Kind:     "object",
+		Fields:   PlaybackConfiguration_LivePreRollConfiguration_AdDecisionServerConfigurationFields,
+	},
+	"AdDecisionServerUrl": ubx.FieldSpec{WireName: "ad_decision_server_url"},
+	"MaxDurationSeconds":  ubx.FieldSpec{WireName: "max_duration_seconds"},
+}
 
 var PlaybackConfiguration_LogConfiguration_AdsInteractionLogFields = ubx.FieldMap{
-		"ExcludeEventTypes": ubx.FieldSpec{WireName: "exclude_event_types"},
-		"PublishOptInEventTypes": ubx.FieldSpec{WireName: "publish_opt_in_event_types"},
-	}
+	"ExcludeEventTypes":      ubx.FieldSpec{WireName: "exclude_event_types"},
+	"PublishOptInEventTypes": ubx.FieldSpec{WireName: "publish_opt_in_event_types"},
+}
 
 var PlaybackConfiguration_LogConfiguration_ManifestServiceInteractionLogFields = ubx.FieldMap{
-		"ExcludeEventTypes": ubx.FieldSpec{WireName: "exclude_event_types"},
-	}
+	"ExcludeEventTypes": ubx.FieldSpec{WireName: "exclude_event_types"},
+}
 
 var PlaybackConfiguration_LogConfigurationFields = ubx.FieldMap{
-		"AdsInteractionLog": ubx.FieldSpec{
-			WireName: "ads_interaction_log",
-			Kind: "object",
-			Fields: PlaybackConfiguration_LogConfiguration_AdsInteractionLogFields,
-		},
-		"EnabledLoggingStrategies": ubx.FieldSpec{WireName: "enabled_logging_strategies"},
-		"ManifestServiceInteractionLog": ubx.FieldSpec{
-			WireName: "manifest_service_interaction_log",
-			Kind: "object",
-			Fields: PlaybackConfiguration_LogConfiguration_ManifestServiceInteractionLogFields,
-		},
-		"PercentEnabled": ubx.FieldSpec{WireName: "percent_enabled"},
-	}
+	"AdsInteractionLog": ubx.FieldSpec{
+		WireName: "ads_interaction_log",
+		Kind:     "object",
+		Fields:   PlaybackConfiguration_LogConfiguration_AdsInteractionLogFields,
+	},
+	"EnabledLoggingStrategies": ubx.FieldSpec{WireName: "enabled_logging_strategies"},
+	"ManifestServiceInteractionLog": ubx.FieldSpec{
+		WireName: "manifest_service_interaction_log",
+		Kind:     "object",
+		Fields:   PlaybackConfiguration_LogConfiguration_ManifestServiceInteractionLogFields,
+	},
+	"PercentEnabled": ubx.FieldSpec{WireName: "percent_enabled"},
+}
 
 var PlaybackConfiguration_ManifestProcessingRules_AdMarkerPassthroughFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var PlaybackConfiguration_ManifestProcessingRulesFields = ubx.FieldMap{
-		"AdMarkerPassthrough": ubx.FieldSpec{
-			WireName: "ad_marker_passthrough",
-			Kind: "object",
-			Fields: PlaybackConfiguration_ManifestProcessingRules_AdMarkerPassthroughFields,
-		},
-	}
+	"AdMarkerPassthrough": ubx.FieldSpec{
+		WireName: "ad_marker_passthrough",
+		Kind:     "object",
+		Fields:   PlaybackConfiguration_ManifestProcessingRules_AdMarkerPassthroughFields,
+	},
+}
 
 var PlaybackConfiguration_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PlaybackConfigurationConfig struct {
 	// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
@@ -358,67 +358,67 @@ var PlaybackConfiguration = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdConditioningConfiguration": ubx.FieldSpec{
 			WireName: "ad_conditioning_configuration",
-			Kind: "object",
-			Fields: PlaybackConfiguration_AdConditioningConfigurationFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_AdConditioningConfigurationFields,
 		},
 		"AdDecisionServerConfiguration": ubx.FieldSpec{
 			WireName: "ad_decision_server_configuration",
-			Kind: "object",
-			Fields: PlaybackConfiguration_AdDecisionServerConfigurationFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_AdDecisionServerConfigurationFields,
 		},
 		"AdDecisionServerUrl": ubx.FieldSpec{WireName: "ad_decision_server_url"},
 		"AdsPersonalizationConcurrency": ubx.FieldSpec{
 			WireName: "ads_personalization_concurrency",
-			Kind: "object",
-			Fields: PlaybackConfiguration_AdsPersonalizationConcurrencyFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_AdsPersonalizationConcurrencyFields,
 		},
 		"AdsPersonalizationTimeouts": ubx.FieldSpec{
 			WireName: "ads_personalization_timeouts",
-			Kind: "object",
-			Fields: PlaybackConfiguration_AdsPersonalizationTimeoutsFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_AdsPersonalizationTimeoutsFields,
 		},
 		"AvailSuppression": ubx.FieldSpec{
 			WireName: "avail_suppression",
-			Kind: "object",
-			Fields: PlaybackConfiguration_AvailSuppressionFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_AvailSuppressionFields,
 		},
 		"Bumper": ubx.FieldSpec{
 			WireName: "bumper",
-			Kind: "object",
-			Fields: PlaybackConfiguration_BumperFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_BumperFields,
 		},
 		"CdnConfiguration": ubx.FieldSpec{
 			WireName: "cdn_configuration",
-			Kind: "object",
-			Fields: PlaybackConfiguration_CdnConfigurationFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_CdnConfigurationFields,
 		},
 		"ConfigurationAliases": ubx.FieldSpec{WireName: "configuration_aliases"},
-		"FunctionMapping": ubx.FieldSpec{WireName: "function_mapping"},
-		"InsertionMode": ubx.FieldSpec{WireName: "insertion_mode"},
+		"FunctionMapping":      ubx.FieldSpec{WireName: "function_mapping"},
+		"InsertionMode":        ubx.FieldSpec{WireName: "insertion_mode"},
 		"LivePreRollConfiguration": ubx.FieldSpec{
 			WireName: "live_pre_roll_configuration",
-			Kind: "object",
-			Fields: PlaybackConfiguration_LivePreRollConfigurationFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_LivePreRollConfigurationFields,
 		},
 		"LogConfiguration": ubx.FieldSpec{
 			WireName: "log_configuration",
-			Kind: "object",
-			Fields: PlaybackConfiguration_LogConfigurationFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_LogConfigurationFields,
 		},
 		"ManifestProcessingRules": ubx.FieldSpec{
 			WireName: "manifest_processing_rules",
-			Kind: "object",
-			Fields: PlaybackConfiguration_ManifestProcessingRulesFields,
+			Kind:     "object",
+			Fields:   PlaybackConfiguration_ManifestProcessingRulesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                            ubx.FieldSpec{WireName: "name"},
 		"PersonalizationThresholdSeconds": ubx.FieldSpec{WireName: "personalization_threshold_seconds"},
-		"SlateAdUrl": ubx.FieldSpec{WireName: "slate_ad_url"},
+		"SlateAdUrl":                      ubx.FieldSpec{WireName: "slate_ad_url"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: PlaybackConfiguration_TagsFields,
+			Kind:     "list",
+			Fields:   PlaybackConfiguration_TagsFields,
 		},
-		"TranscodeProfileName": ubx.FieldSpec{WireName: "transcode_profile_name"},
+		"TranscodeProfileName":  ubx.FieldSpec{WireName: "transcode_profile_name"},
 		"VideoContentSourceUrl": ubx.FieldSpec{WireName: "video_content_source_url"},
 	},
 }

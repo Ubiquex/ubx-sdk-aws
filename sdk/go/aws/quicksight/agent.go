@@ -54,41 +54,41 @@ type Agent_CustomPromptInterface struct {
 }
 
 type Agent_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Agent_CustomPromptInput_ExistingPromptFields = ubx.FieldMap{
-		"ModelProfileId": ubx.FieldSpec{WireName: "model_profile_id"},
-		"QbsAwsAccountId": ubx.FieldSpec{WireName: "qbs_aws_account_id"},
-		"SubscriptionId": ubx.FieldSpec{WireName: "subscription_id"},
-	}
+	"ModelProfileId":  ubx.FieldSpec{WireName: "model_profile_id"},
+	"QbsAwsAccountId": ubx.FieldSpec{WireName: "qbs_aws_account_id"},
+	"SubscriptionId":  ubx.FieldSpec{WireName: "subscription_id"},
+}
 
 var Agent_CustomPromptInput_NewPromptFields = ubx.FieldMap{
-		"CustomInstructions": ubx.FieldSpec{WireName: "custom_instructions"},
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"OutputStyle": ubx.FieldSpec{WireName: "output_style"},
-		"ResponseLength": ubx.FieldSpec{WireName: "response_length"},
-		"Tone": ubx.FieldSpec{WireName: "tone"},
-	}
+	"CustomInstructions": ubx.FieldSpec{WireName: "custom_instructions"},
+	"Identity":           ubx.FieldSpec{WireName: "identity"},
+	"OutputStyle":        ubx.FieldSpec{WireName: "output_style"},
+	"ResponseLength":     ubx.FieldSpec{WireName: "response_length"},
+	"Tone":               ubx.FieldSpec{WireName: "tone"},
+}
 
 var Agent_CustomPromptInputFields = ubx.FieldMap{
-		"ExistingPrompt": ubx.FieldSpec{
-			WireName: "existing_prompt",
-			Kind: "object",
-			Fields: Agent_CustomPromptInput_ExistingPromptFields,
-		},
-		"NewPrompt": ubx.FieldSpec{
-			WireName: "new_prompt",
-			Kind: "object",
-			Fields: Agent_CustomPromptInput_NewPromptFields,
-		},
-	}
+	"ExistingPrompt": ubx.FieldSpec{
+		WireName: "existing_prompt",
+		Kind:     "object",
+		Fields:   Agent_CustomPromptInput_ExistingPromptFields,
+	},
+	"NewPrompt": ubx.FieldSpec{
+		WireName: "new_prompt",
+		Kind:     "object",
+		Fields:   Agent_CustomPromptInput_NewPromptFields,
+	},
+}
 
 var Agent_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AgentConfig struct {
 	// A list of ActionConnector ARNs (max 10) attached to the agent.
@@ -162,23 +162,23 @@ var Agent = ubx.ResourceBinding{
 	WireType: "aws_quick_sight_agent",
 	Fields: ubx.FieldMap{
 		"ActionConnectors": ubx.FieldSpec{WireName: "action_connectors"},
-		"AgentId": ubx.FieldSpec{WireName: "agent_id"},
-		"AgentLifecycle": ubx.FieldSpec{WireName: "agent_lifecycle"},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+		"AgentId":          ubx.FieldSpec{WireName: "agent_id"},
+		"AgentLifecycle":   ubx.FieldSpec{WireName: "agent_lifecycle"},
+		"AwsAccountId":     ubx.FieldSpec{WireName: "aws_account_id"},
 		"CustomPromptInput": ubx.FieldSpec{
 			WireName: "custom_prompt_input",
-			Kind: "object",
-			Fields: Agent_CustomPromptInputFields,
+			Kind:     "object",
+			Fields:   Agent_CustomPromptInputFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IconId": ubx.FieldSpec{WireName: "icon_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Spaces": ubx.FieldSpec{WireName: "spaces"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"IconId":         ubx.FieldSpec{WireName: "icon_id"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Spaces":         ubx.FieldSpec{WireName: "spaces"},
 		"StarterPrompts": ubx.FieldSpec{WireName: "starter_prompts"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Agent_TagsFields,
+			Kind:     "list",
+			Fields:   Agent_TagsFields,
 		},
 		"WelcomeMessage": ubx.FieldSpec{WireName: "welcome_message"},
 	},

@@ -4,14 +4,14 @@ package profile
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowSteps_Items_AppflowIntegration struct {
-	BatchRecordsEndTime any
+	BatchRecordsEndTime   any
 	BatchRecordsStartTime any
-	CreatedAt any
-	ExecutionMessage any
-	FlowName any
-	LastUpdatedAt any
-	RecordsProcessed any
-	Status any
+	CreatedAt             any
+	ExecutionMessage      any
+	FlowName              any
+	LastUpdatedAt         any
+	RecordsProcessed      any
+	Status                any
 }
 
 type WorkflowSteps_Items struct {
@@ -21,16 +21,16 @@ type WorkflowSteps_Items struct {
 type WorkflowStepsConfig struct {
 	DomainName any
 	MaxResults any
-	NextToken any
+	NextToken  any
 	WorkflowId any
 }
 
 type WorkflowStepsAttrs struct {
-	DomainName any
-	Items any
-	MaxResults any
-	NextToken any
-	WorkflowId any
+	DomainName   any
+	Items        any
+	MaxResults   any
+	NextToken    any
+	WorkflowId   any
 	WorkflowType any
 }
 
@@ -39,7 +39,7 @@ var WorkflowSteps = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 		"WorkflowId": ubx.FieldSpec{WireName: "workflow_id"},
 	},
 }

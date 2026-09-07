@@ -4,30 +4,30 @@ package wafv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AvailableManagedRuleGroups_ManagedRuleGroups struct {
-	Description any
-	Name any
-	VendorName any
+	Description         any
+	Name                any
+	VendorName          any
 	VersioningSupported any
 }
 
 type AvailableManagedRuleGroupsConfig struct {
-	Limit any
+	Limit      any
 	NextMarker any
-	Scope any
+	Scope      any
 }
 
 type AvailableManagedRuleGroupsAttrs struct {
-	Limit any
+	Limit             any
 	ManagedRuleGroups any
-	NextMarker any
-	Scope any
+	NextMarker        any
+	Scope             any
 }
 
 var AvailableManagedRuleGroups = ubx.DataSourceBinding{
 	WireType: "aws_wafv2_available_managed_rule_groups",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
 		"NextMarker": ubx.FieldSpec{WireName: "next_marker"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":      ubx.FieldSpec{WireName: "scope"},
 	},
 }

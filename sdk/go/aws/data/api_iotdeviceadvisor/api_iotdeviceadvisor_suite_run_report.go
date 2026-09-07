@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiIotdeviceadvisorSuiteRunReportConfig struct {
 	SuiteDefinitionId any
-	SuiteRunId any
+	SuiteRunId        any
 }
 
 type ApiIotdeviceadvisorSuiteRunReportAttrs struct {
 	QualificationReportDownloadUrl any
-	SuiteDefinitionId any
-	SuiteRunId any
+	SuiteDefinitionId              any
+	SuiteRunId                     any
 }
 
 var ApiIotdeviceadvisorSuiteRunReport = ubx.DataSourceBinding{
 	WireType: "aws_api_iotdeviceadvisor_suite_run_report",
 	Fields: ubx.FieldMap{
 		"SuiteDefinitionId": ubx.FieldSpec{WireName: "suite_definition_id"},
-		"SuiteRunId": ubx.FieldSpec{WireName: "suite_run_id"},
+		"SuiteRunId":        ubx.FieldSpec{WireName: "suite_run_id"},
 	},
 }

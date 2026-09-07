@@ -4,21 +4,21 @@ package m2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EngineVersions_EngineVersions struct {
-	EngineType any
+	EngineType    any
 	EngineVersion any
 }
 
 type EngineVersionsConfig struct {
 	EngineType any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type EngineVersionsAttrs struct {
-	EngineType any
+	EngineType     any
 	EngineVersions any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 var EngineVersions = ubx.DataSourceBinding{
@@ -26,6 +26,6 @@ var EngineVersions = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"EngineType": ubx.FieldSpec{WireName: "engine_type"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

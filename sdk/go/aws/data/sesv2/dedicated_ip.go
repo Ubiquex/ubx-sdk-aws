@@ -7,7 +7,7 @@ type DedicatedIp_DedicatedIp struct {
 	// <p>An IPv4 address.</p>
 	Ip any
 	// <p>The name of a dedicated IP pool.</p>
-	PoolName any
+	PoolName         any
 	WarmupPercentage any
 	// <p>The warmup status of a dedicated IP.</p>
 	WarmupStatus any

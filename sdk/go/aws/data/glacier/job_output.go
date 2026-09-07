@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobOutputConfig struct {
 	AccountId any
-	JobId any
-	Range any
+	JobId     any
+	Range     any
 	VaultName any
 }
 
 type JobOutputAttrs struct {
-	AcceptRanges any
-	AccountId any
+	AcceptRanges       any
+	AccountId          any
 	ArchiveDescription any
-	Body any
-	Checksum any
-	ContentRange any
-	ContentType any
-	JobId any
-	Range any
-	Status any
-	VaultName any
+	Body               any
+	Checksum           any
+	ContentRange       any
+	ContentType        any
+	JobId              any
+	Range              any
+	Status             any
+	VaultName          any
 }
 
 var JobOutput = ubx.DataSourceBinding{
 	WireType: "aws_glacier_job_output",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
-		"Range": ubx.FieldSpec{WireName: "range"},
+		"JobId":     ubx.FieldSpec{WireName: "job_id"},
+		"Range":     ubx.FieldSpec{WireName: "range"},
 		"VaultName": ubx.FieldSpec{WireName: "vault_name"},
 	},
 }

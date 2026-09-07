@@ -17,16 +17,16 @@ type ApiSagemakerSearchSuggestions_SuggestionQuery struct {
 }
 
 var ApiSagemakerSearchSuggestions_SuggestionQuery_PropertyNameQueryFields = ubx.FieldMap{
-		"PropertyNameHint": ubx.FieldSpec{WireName: "property_name_hint"},
-	}
+	"PropertyNameHint": ubx.FieldSpec{WireName: "property_name_hint"},
+}
 
 var ApiSagemakerSearchSuggestions_SuggestionQueryFields = ubx.FieldMap{
-		"PropertyNameQuery": ubx.FieldSpec{
-			WireName: "property_name_query",
-			Kind: "object",
-			Fields: ApiSagemakerSearchSuggestions_SuggestionQuery_PropertyNameQueryFields,
-		},
-	}
+	"PropertyNameQuery": ubx.FieldSpec{
+		WireName: "property_name_query",
+		Kind:     "object",
+		Fields:   ApiSagemakerSearchSuggestions_SuggestionQuery_PropertyNameQueryFields,
+	},
+}
 
 type ApiSagemakerSearchSuggestionsConfig struct {
 	Resource any
@@ -36,7 +36,7 @@ type ApiSagemakerSearchSuggestionsConfig struct {
 
 type ApiSagemakerSearchSuggestionsAttrs struct {
 	PropertyNameSuggestions any
-	Resource any
+	Resource                any
 	// <p>Specified in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_GetSearchSuggestions.html">GetSearchSuggestions</a> request. Limits the property names that are included in the response.</p>
 	SuggestionQuery any
 }
@@ -47,8 +47,8 @@ var ApiSagemakerSearchSuggestions = ubx.DataSourceBinding{
 		"Resource": ubx.FieldSpec{WireName: "resource"},
 		"SuggestionQuery": ubx.FieldSpec{
 			WireName: "suggestion_query",
-			Kind: "object",
-			Fields: ApiSagemakerSearchSuggestions_SuggestionQueryFields,
+			Kind:     "object",
+			Fields:   ApiSagemakerSearchSuggestions_SuggestionQueryFields,
 		},
 	},
 }

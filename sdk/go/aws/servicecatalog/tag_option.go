@@ -27,7 +27,7 @@ var TagOption = ubx.ResourceBinding{
 	WireType: "aws_service_catalog_tag_option",
 	Fields: ubx.FieldMap{
 		"Active": ubx.FieldSpec{WireName: "active"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
+		"Key":    ubx.FieldSpec{WireName: "key"},
+		"Value":  ubx.FieldSpec{WireName: "value"},
 	},
 }

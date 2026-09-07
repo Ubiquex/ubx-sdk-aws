@@ -10,9 +10,9 @@ type StreamKey_Tags struct {
 }
 
 var StreamKey_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StreamKeyConfig struct {
 	// Channel ARN for the stream.
@@ -38,8 +38,8 @@ var StreamKey = ubx.ResourceBinding{
 		"ChannelArn": ubx.FieldSpec{WireName: "channel_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StreamKey_TagsFields,
+			Kind:     "list",
+			Fields:   StreamKey_TagsFields,
 		},
 	},
 }

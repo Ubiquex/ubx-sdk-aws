@@ -4,57 +4,57 @@ package mturk_requester
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MturkRequesterAssignment_Assignment struct {
-	AcceptTime any
-	Answer any
-	ApprovalTime any
-	AssignmentId any
-	AssignmentStatus any
-	AutoApprovalTime any
-	Deadline any
-	Hitid any
-	RejectionTime any
+	AcceptTime        any
+	Answer            any
+	ApprovalTime      any
+	AssignmentId      any
+	AssignmentStatus  any
+	AutoApprovalTime  any
+	Deadline          any
+	Hitid             any
+	RejectionTime     any
 	RequesterFeedback any
-	SubmitTime any
-	WorkerId any
+	SubmitTime        any
+	WorkerId          any
 }
 
 type MturkRequesterAssignment_Hit_QualificationRequirements_LocaleValues struct {
-	Country any
+	Country     any
 	Subdivision any
 }
 
 type MturkRequesterAssignment_Hit_QualificationRequirements struct {
-	ActionsGuarded any
-	Comparator any
-	IntegerValues any
-	LocaleValues any
+	ActionsGuarded      any
+	Comparator          any
+	IntegerValues       any
+	LocaleValues        any
 	QualificationTypeId any
-	RequiredToPreview any
+	RequiredToPreview   any
 }
 
 type MturkRequesterAssignment_Hit struct {
-	AssignmentDurationInSeconds any
-	AutoApprovalDelayInSeconds any
-	CreationTime any
-	Description any
-	Expiration any
-	HitgroupId any
-	Hitid any
-	HitlayoutId any
-	HitreviewStatus any
-	Hitstatus any
-	HittypeId any
-	Keywords any
-	MaxAssignments any
+	AssignmentDurationInSeconds  any
+	AutoApprovalDelayInSeconds   any
+	CreationTime                 any
+	Description                  any
+	Expiration                   any
+	HitgroupId                   any
+	Hitid                        any
+	HitlayoutId                  any
+	HitreviewStatus              any
+	Hitstatus                    any
+	HittypeId                    any
+	Keywords                     any
+	MaxAssignments               any
 	NumberOfAssignmentsAvailable any
 	NumberOfAssignmentsCompleted any
-	NumberOfAssignmentsPending any
-	QualificationRequirements any
-	Question any
-	RequesterAnnotation any
+	NumberOfAssignmentsPending   any
+	QualificationRequirements    any
+	Question                     any
+	RequesterAnnotation          any
 	// <p>A string representing a currency amount.</p>
 	Reward any
-	Title any
+	Title  any
 }
 
 type MturkRequesterAssignmentConfig struct {
@@ -63,7 +63,7 @@ type MturkRequesterAssignmentConfig struct {
 
 type MturkRequesterAssignmentAttrs struct {
 	// <p> The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval. </p>
-	Assignment any
+	Assignment   any
 	AssignmentId any
 	// <p> The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.</p>
 	Hit any

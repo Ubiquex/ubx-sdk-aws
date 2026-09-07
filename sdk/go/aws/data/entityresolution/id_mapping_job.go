@@ -8,31 +8,31 @@ type IdMappingJob_ErrorDetails struct {
 }
 
 type IdMappingJob_Metrics struct {
-	DeleteRecordsProcessed any
-	InputRecords any
-	MappedRecordsRemoved any
+	DeleteRecordsProcessed     any
+	InputRecords               any
+	MappedRecordsRemoved       any
 	MappedSourceRecordsRemoved any
 	MappedTargetRecordsRemoved any
-	NewMappedRecords any
-	NewMappedSourceRecords any
-	NewMappedTargetRecords any
-	NewUniqueRecordsLoaded any
-	RecordsNotProcessed any
-	TotalMappedRecords any
-	TotalMappedSourceRecords any
-	TotalMappedTargetRecords any
-	TotalRecordsProcessed any
-	UniqueRecordsLoaded any
+	NewMappedRecords           any
+	NewMappedSourceRecords     any
+	NewMappedTargetRecords     any
+	NewUniqueRecordsLoaded     any
+	RecordsNotProcessed        any
+	TotalMappedRecords         any
+	TotalMappedSourceRecords   any
+	TotalMappedTargetRecords   any
+	TotalRecordsProcessed      any
+	UniqueRecordsLoaded        any
 }
 
 type IdMappingJob_OutputSourceConfig struct {
-	Kmsarn any
+	Kmsarn       any
 	OutputS3Path any
-	RoleArn any
+	RoleArn      any
 }
 
 type IdMappingJobConfig struct {
-	JobId any
+	JobId        any
 	WorkflowName any
 }
 
@@ -40,20 +40,20 @@ type IdMappingJobAttrs struct {
 	EndTime any
 	// <p>An object containing an error message, if there was an error.</p>
 	ErrorDetails any
-	JobId any
-	JobType any
+	JobId        any
+	JobType      any
 	// <p>An object that contains metrics about an ID mapping job, including counts of input records, processed records, and mapped records between source and target identifiers. </p>
-	Metrics any
+	Metrics            any
 	OutputSourceConfig any
-	StartTime any
-	Status any
-	WorkflowName any
+	StartTime          any
+	Status             any
+	WorkflowName       any
 }
 
 var IdMappingJob = ubx.DataSourceBinding{
 	WireType: "aws_entityresolution_id_mapping_job",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":        ubx.FieldSpec{WireName: "job_id"},
 		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},
 }

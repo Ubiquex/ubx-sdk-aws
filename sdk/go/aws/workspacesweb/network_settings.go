@@ -10,9 +10,9 @@ type NetworkSettings_Tags struct {
 }
 
 var NetworkSettings_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkSettingsConfig struct {
 	// One or more security group IDs that define the network traffic rules for the WorkSpaces Web portal, controlling access to the VPC resources it connects to. (AI-inferred)
@@ -44,11 +44,11 @@ var NetworkSettings = ubx.ResourceBinding{
 	WireType: "aws_work_spaces_web_network_settings",
 	Fields: ubx.FieldMap{
 		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
+		"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkSettings_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkSettings_TagsFields,
 		},
 		"VpcId": ubx.FieldSpec{WireName: "vpc_id"},
 	},

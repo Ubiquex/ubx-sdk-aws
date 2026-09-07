@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deliveries_Deliveries_S3DeliveryConfiguration struct {
 	EnableHiveCompatiblePath any
-	SuffixPath any
+	SuffixPath               any
 }
 
 type Deliveries_Deliveries struct {
-	Arn any
-	DeliveryDestinationArn any
+	Arn                     any
+	DeliveryDestinationArn  any
 	DeliveryDestinationType any
-	DeliverySourceName any
-	FieldDelimiter any
-	Id any
-	RecordFields any
+	DeliverySourceName      any
+	FieldDelimiter          any
+	Id                      any
+	RecordFields            any
 	S3DeliveryConfiguration any
-	Tags any
+	Tags                    any
 }
 
 type DeliveriesConfig struct {
@@ -28,7 +28,7 @@ type DeliveriesConfig struct {
 
 type DeliveriesAttrs struct {
 	Deliveries any
-	Limit any
+	Limit      any
 	// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
 	NextToken any
 }
@@ -36,7 +36,7 @@ type DeliveriesAttrs struct {
 var Deliveries = ubx.DataSourceBinding{
 	WireType: "aws_logs_deliveries",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},
 }

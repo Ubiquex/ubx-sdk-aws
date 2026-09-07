@@ -4,7 +4,7 @@ package ssm_contacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SsmContactsTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type SsmContactsTagsForResourceConfig struct {
 
 type SsmContactsTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var SsmContactsTagsForResource = ubx.DataSourceBinding{

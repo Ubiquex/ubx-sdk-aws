@@ -28,8 +28,8 @@ type AggregatorV2Attrs struct {
 var AggregatorV2 = ubx.ResourceBinding{
 	WireType: "aws_security_hub_aggregator_v2",
 	Fields: ubx.FieldMap{
-		"LinkedRegions": ubx.FieldSpec{WireName: "linked_regions"},
+		"LinkedRegions":     ubx.FieldSpec{WireName: "linked_regions"},
 		"RegionLinkingMode": ubx.FieldSpec{WireName: "region_linking_mode"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":              ubx.FieldSpec{WireName: "tags"},
 	},
 }

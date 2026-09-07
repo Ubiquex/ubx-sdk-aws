@@ -4,10 +4,10 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataTableAttributes_Attributes_LockVersion struct {
-	Attribute any
-	DataTable any
+	Attribute     any
+	DataTable     any
 	PrimaryValues any
-	Value any
+	Value         any
 }
 
 type DataTableAttributes_Attributes_Validation_Enum struct {
@@ -16,58 +16,58 @@ type DataTableAttributes_Attributes_Validation_Enum struct {
 }
 
 type DataTableAttributes_Attributes_Validation struct {
-	Enum any
+	Enum             any
 	ExclusiveMaximum any
 	ExclusiveMinimum any
-	IgnoreCase any
-	MaxLength any
-	MaxValues any
-	Maximum any
-	MinLength any
-	MinValues any
-	Minimum any
-	MultipleOf any
+	IgnoreCase       any
+	MaxLength        any
+	MaxValues        any
+	Maximum          any
+	MinLength        any
+	MinValues        any
+	Minimum          any
+	MultipleOf       any
 }
 
 type DataTableAttributes_Attributes struct {
-	AttributeId any
-	DataTableArn any
-	DataTableId any
-	Description any
+	AttributeId        any
+	DataTableArn       any
+	DataTableId        any
+	Description        any
 	LastModifiedRegion any
-	LastModifiedTime any
-	LockVersion any
-	Name any
-	Primary any
-	Validation any
-	ValueType any
-	Version any
+	LastModifiedTime   any
+	LockVersion        any
+	Name               any
+	Primary            any
+	Validation         any
+	ValueType          any
+	Version            any
 }
 
 type DataTableAttributesConfig struct {
 	AttributeIds any
-	DataTableId any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	DataTableId  any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
 }
 
 type DataTableAttributesAttrs struct {
 	AttributeIds any
-	Attributes any
-	DataTableId any
-	InstanceId any
-	MaxResults any
-	NextToken any
+	Attributes   any
+	DataTableId  any
+	InstanceId   any
+	MaxResults   any
+	NextToken    any
 }
 
 var DataTableAttributes = ubx.DataSourceBinding{
 	WireType: "aws_connect_data_table_attributes",
 	Fields: ubx.FieldMap{
 		"AttributeIds": ubx.FieldSpec{WireName: "attribute_ids"},
-		"DataTableId": ubx.FieldSpec{WireName: "data_table_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"DataTableId":  ubx.FieldSpec{WireName: "data_table_id"},
+		"InstanceId":   ubx.FieldSpec{WireName: "instance_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
 	},
 }

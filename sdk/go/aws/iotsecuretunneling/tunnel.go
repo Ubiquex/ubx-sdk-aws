@@ -11,7 +11,7 @@ type Tunnel_DestinationConfig struct {
 }
 
 type Tunnel_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -21,18 +21,18 @@ type Tunnel_TimeoutConfig struct {
 }
 
 var Tunnel_DestinationConfigFields = ubx.FieldMap{
-		"Services": ubx.FieldSpec{WireName: "services"},
-		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
-	}
+	"Services":  ubx.FieldSpec{WireName: "services"},
+	"ThingName": ubx.FieldSpec{WireName: "thing_name"},
+}
 
 var Tunnel_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Tunnel_TimeoutConfigFields = ubx.FieldMap{
-		"MaxLifetimeTimeoutMinutes": ubx.FieldSpec{WireName: "max_lifetime_timeout_minutes"},
-	}
+	"MaxLifetimeTimeoutMinutes": ubx.FieldSpec{WireName: "max_lifetime_timeout_minutes"},
+}
 
 type TunnelConfig struct {
 	// A short text description of the tunnel.
@@ -68,18 +68,18 @@ var Tunnel = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationConfig": ubx.FieldSpec{
 			WireName: "destination_config",
-			Kind: "object",
-			Fields: Tunnel_DestinationConfigFields,
+			Kind:     "object",
+			Fields:   Tunnel_DestinationConfigFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Tunnel_TagsFields,
+			Kind:     "list",
+			Fields:   Tunnel_TagsFields,
 		},
 		"TimeoutConfig": ubx.FieldSpec{
 			WireName: "timeout_config",
-			Kind: "object",
-			Fields: Tunnel_TimeoutConfigFields,
+			Kind:     "object",
+			Fields:   Tunnel_TimeoutConfigFields,
 		},
 	},
 }

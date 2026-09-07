@@ -16,23 +16,23 @@ type Session_Connections struct {
 }
 
 type Session_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var Session_CommandFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
-	}
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
+}
 
 var Session_ConnectionsFields = ubx.FieldMap{
-		"Connections": ubx.FieldSpec{WireName: "connections"},
-	}
+	"Connections": ubx.FieldSpec{WireName: "connections"},
+}
 
 var Session_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SessionConfig struct {
 	// The SessionCommand that runs the job.
@@ -113,30 +113,30 @@ var Session = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Command": ubx.FieldSpec{
 			WireName: "command",
-			Kind: "object",
-			Fields: Session_CommandFields,
+			Kind:     "object",
+			Fields:   Session_CommandFields,
 		},
 		"Connections": ubx.FieldSpec{
 			WireName: "connections",
-			Kind: "object",
-			Fields: Session_ConnectionsFields,
+			Kind:     "object",
+			Fields:   Session_ConnectionsFields,
 		},
-		"DefaultArguments": ubx.FieldSpec{WireName: "default_arguments"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"GlueVersion": ubx.FieldSpec{WireName: "glue_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-		"MaxCapacity": ubx.FieldSpec{WireName: "max_capacity"},
-		"NumberOfWorkers": ubx.FieldSpec{WireName: "number_of_workers"},
-		"RequestOrigin": ubx.FieldSpec{WireName: "request_origin"},
-		"Role": ubx.FieldSpec{WireName: "role"},
+		"DefaultArguments":      ubx.FieldSpec{WireName: "default_arguments"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"GlueVersion":           ubx.FieldSpec{WireName: "glue_version"},
+		"Id":                    ubx.FieldSpec{WireName: "id"},
+		"IdleTimeout":           ubx.FieldSpec{WireName: "idle_timeout"},
+		"MaxCapacity":           ubx.FieldSpec{WireName: "max_capacity"},
+		"NumberOfWorkers":       ubx.FieldSpec{WireName: "number_of_workers"},
+		"RequestOrigin":         ubx.FieldSpec{WireName: "request_origin"},
+		"Role":                  ubx.FieldSpec{WireName: "role"},
 		"SecurityConfiguration": ubx.FieldSpec{WireName: "security_configuration"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Session_TagsFields,
+			Kind:     "list",
+			Fields:   Session_TagsFields,
 		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
+		"Timeout":    ubx.FieldSpec{WireName: "timeout"},
 		"WorkerType": ubx.FieldSpec{WireName: "worker_type"},
 	},
 }

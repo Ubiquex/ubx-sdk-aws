@@ -11,9 +11,9 @@ type SnapshotSchedule_Tags struct {
 }
 
 var SnapshotSchedule_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type SnapshotScheduleConfig struct {
 	// The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".
@@ -46,11 +46,11 @@ var SnapshotSchedule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ScheduleDefinitions": ubx.FieldSpec{WireName: "schedule_definitions"},
 		"ScheduleDescription": ubx.FieldSpec{WireName: "schedule_description"},
-		"ScheduleIdentifier": ubx.FieldSpec{WireName: "schedule_identifier"},
+		"ScheduleIdentifier":  ubx.FieldSpec{WireName: "schedule_identifier"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: SnapshotSchedule_TagsFields,
+			Kind:     "list",
+			Fields:   SnapshotSchedule_TagsFields,
 		},
 	},
 }

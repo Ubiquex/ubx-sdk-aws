@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAtsIotNamedShadowsForThingConfig struct {
 	NextToken any
-	PageSize any
+	PageSize  any
 	ThingName any
 }
 
 type DataAtsIotNamedShadowsForThingAttrs struct {
 	NextToken any
-	PageSize any
-	Results any
+	PageSize  any
+	Results   any
 	ThingName any
 	Timestamp any
 }
@@ -21,7 +21,7 @@ var DataAtsIotNamedShadowsForThing = ubx.DataSourceBinding{
 	WireType: "aws_data_ats_iot_named_shadows_for_thing",
 	Fields: ubx.FieldMap{
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 		"ThingName": ubx.FieldSpec{WireName: "thing_name"},
 	},
 }

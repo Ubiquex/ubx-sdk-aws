@@ -4,7 +4,7 @@ package media_pipelines_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MediaPipelinesChimeTagsForResource_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -14,7 +14,7 @@ type MediaPipelinesChimeTagsForResourceConfig struct {
 
 type MediaPipelinesChimeTagsForResourceAttrs struct {
 	ResourceArn any
-	Tags any
+	Tags        any
 }
 
 var MediaPipelinesChimeTagsForResource = ubx.DataSourceBinding{

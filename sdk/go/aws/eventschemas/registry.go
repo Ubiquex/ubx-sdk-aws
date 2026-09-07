@@ -11,9 +11,9 @@ type Registry_Tags struct {
 }
 
 var Registry_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RegistryConfig struct {
 	// A description of the registry to be created.
@@ -38,12 +38,12 @@ type RegistryAttrs struct {
 var Registry = ubx.ResourceBinding{
 	WireType: "aws_event_schemas_registry",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Registry_TagsFields,
+			Kind:     "list",
+			Fields:   Registry_TagsFields,
 		},
 	},
 }

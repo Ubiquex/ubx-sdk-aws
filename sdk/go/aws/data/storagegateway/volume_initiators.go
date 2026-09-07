@@ -9,7 +9,7 @@ type VolumeInitiatorsConfig struct {
 
 type VolumeInitiatorsAttrs struct {
 	Initiators any
-	VolumeArn any
+	VolumeArn  any
 }
 
 var VolumeInitiators = ubx.DataSourceBinding{

@@ -9,19 +9,19 @@ type AppBundles_AppBundleSummaryList struct {
 
 type AppBundlesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type AppBundlesAttrs struct {
 	AppBundleSummaryList any
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 }
 
 var AppBundles = ubx.DataSourceBinding{
 	WireType: "aws_appfabric_app_bundles",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

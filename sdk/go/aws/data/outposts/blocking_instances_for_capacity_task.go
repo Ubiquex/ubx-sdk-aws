@@ -4,9 +4,9 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BlockingInstancesForCapacityTask_BlockingInstances struct {
-	AccountId any
+	AccountId      any
 	AwsServiceName any
-	InstanceId any
+	InstanceId     any
 }
 
 type BlockingInstancesForCapacityTaskConfig struct {
@@ -14,26 +14,26 @@ type BlockingInstancesForCapacityTaskConfig struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken         any
 	OutpostIdentifier any
 }
 
 type BlockingInstancesForCapacityTaskAttrs struct {
 	BlockingInstances any
-	CapacityTaskId any
+	CapacityTaskId    any
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
+	NextToken         any
 	OutpostIdentifier any
 }
 
 var BlockingInstancesForCapacityTask = ubx.DataSourceBinding{
 	WireType: "aws_outposts_blocking_instances_for_capacity_task",
 	Fields: ubx.FieldMap{
-		"CapacityTaskId": ubx.FieldSpec{WireName: "capacity_task_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"CapacityTaskId":    ubx.FieldSpec{WireName: "capacity_task_id"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 		"OutpostIdentifier": ubx.FieldSpec{WireName: "outpost_identifier"},
 	},
 }

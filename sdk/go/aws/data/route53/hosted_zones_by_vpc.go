@@ -10,33 +10,33 @@ type HostedZonesByVpc_HostedZoneSummaries_Owner struct {
 
 type HostedZonesByVpc_HostedZoneSummaries struct {
 	HostedZoneId any
-	Name any
-	Owner any
+	Name         any
+	Owner        any
 }
 
 type HostedZonesByVpcConfig struct {
-	MaxItems any
+	MaxItems  any
 	NextToken any
 	// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
-	Vpcid any
+	Vpcid     any
 	Vpcregion any
 }
 
 type HostedZonesByVpcAttrs struct {
 	HostedZoneSummaries any
-	MaxItems any
-	NextToken any
+	MaxItems            any
+	NextToken           any
 	// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
-	Vpcid any
+	Vpcid     any
 	Vpcregion any
 }
 
 var HostedZonesByVpc = ubx.DataSourceBinding{
 	WireType: "aws_route53_hosted_zones_by_vpc",
 	Fields: ubx.FieldMap{
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxItems":  ubx.FieldSpec{WireName: "max_items"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Vpcid": ubx.FieldSpec{WireName: "vpcid"},
+		"Vpcid":     ubx.FieldSpec{WireName: "vpcid"},
 		"Vpcregion": ubx.FieldSpec{WireName: "vpcregion"},
 	},
 }

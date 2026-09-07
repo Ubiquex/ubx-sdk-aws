@@ -11,14 +11,14 @@ type DedicatedIpPool_Tags struct {
 }
 
 var DedicatedIpPool_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DedicatedIpPoolConfig struct {
 	// The name of the dedicated IP pool in Amazon Pinpoint, which serves as the unique identifier when referencing the pool in sending configurations. (AI-inferred)
 	PoolName any
-	Tags any
+	Tags     any
 }
 
 type DedicatedIpPoolAttrs struct {
@@ -26,7 +26,7 @@ type DedicatedIpPoolAttrs struct {
 	Id any
 	// The name of the dedicated IP pool in Amazon Pinpoint, which serves as the unique identifier when referencing the pool in sending configurations. (AI-inferred)
 	PoolName any
-	Tags any
+	Tags     any
 }
 
 var DedicatedIpPool = ubx.ResourceBinding{
@@ -35,8 +35,8 @@ var DedicatedIpPool = ubx.ResourceBinding{
 		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DedicatedIpPool_TagsFields,
+			Kind:     "list",
+			Fields:   DedicatedIpPool_TagsFields,
 		},
 	},
 }

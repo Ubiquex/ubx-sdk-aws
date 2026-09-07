@@ -332,174 +332,174 @@ type DataSource_VectorIngestionConfiguration struct {
 }
 
 var DataSource_ServerSideEncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+}
 
 var DataSource_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfigurationFields = ubx.FieldMap{
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-		"OverlapPercentage": ubx.FieldSpec{WireName: "overlap_percentage"},
-	}
+	"MaxTokens":         ubx.FieldSpec{WireName: "max_tokens"},
+	"OverlapPercentage": ubx.FieldSpec{WireName: "overlap_percentage"},
+}
 
 var DataSource_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurationsFields = ubx.FieldMap{
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-	}
+	"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
+}
 
 var DataSource_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfigurationFields = ubx.FieldMap{
-		"LevelConfigurations": ubx.FieldSpec{
-			WireName: "level_configurations",
-			Kind: "list",
-			Fields: DataSource_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurationsFields,
-		},
-		"OverlapTokens": ubx.FieldSpec{WireName: "overlap_tokens"},
-	}
+	"LevelConfigurations": ubx.FieldSpec{
+		WireName: "level_configurations",
+		Kind:     "list",
+		Fields:   DataSource_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurationsFields,
+	},
+	"OverlapTokens": ubx.FieldSpec{WireName: "overlap_tokens"},
+}
 
 var DataSource_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfigurationFields = ubx.FieldMap{
-		"BreakpointPercentileThreshold": ubx.FieldSpec{WireName: "breakpoint_percentile_threshold"},
-		"BufferSize": ubx.FieldSpec{WireName: "buffer_size"},
-		"MaxTokens": ubx.FieldSpec{WireName: "max_tokens"},
-	}
+	"BreakpointPercentileThreshold": ubx.FieldSpec{WireName: "breakpoint_percentile_threshold"},
+	"BufferSize":                    ubx.FieldSpec{WireName: "buffer_size"},
+	"MaxTokens":                     ubx.FieldSpec{WireName: "max_tokens"},
+}
 
 var DataSource_VectorIngestionConfiguration_ChunkingConfigurationFields = ubx.FieldMap{
-		"ChunkingStrategy": ubx.FieldSpec{WireName: "chunking_strategy"},
-		"FixedSizeChunkingConfiguration": ubx.FieldSpec{
-			WireName: "fixed_size_chunking_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfigurationFields,
-		},
-		"HierarchicalChunkingConfiguration": ubx.FieldSpec{
-			WireName: "hierarchical_chunking_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfigurationFields,
-		},
-		"SemanticChunkingConfiguration": ubx.FieldSpec{
-			WireName: "semantic_chunking_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfigurationFields,
-		},
-	}
+	"ChunkingStrategy": ubx.FieldSpec{WireName: "chunking_strategy"},
+	"FixedSizeChunkingConfiguration": ubx.FieldSpec{
+		WireName: "fixed_size_chunking_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfigurationFields,
+	},
+	"HierarchicalChunkingConfiguration": ubx.FieldSpec{
+		WireName: "hierarchical_chunking_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfigurationFields,
+	},
+	"SemanticChunkingConfiguration": ubx.FieldSpec{
+		WireName: "semantic_chunking_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfigurationFields,
+	},
+}
 
 var DataSource_VectorIngestionConfiguration_ContextEnrichmentConfiguration_BedrockFoundationModelConfiguration_EnrichmentStrategyConfigurationFields = ubx.FieldMap{
-		"Method": ubx.FieldSpec{WireName: "method"},
-	}
+	"Method": ubx.FieldSpec{WireName: "method"},
+}
 
 var DataSource_VectorIngestionConfiguration_ContextEnrichmentConfiguration_BedrockFoundationModelConfigurationFields = ubx.FieldMap{
-		"EnrichmentStrategyConfiguration": ubx.FieldSpec{
-			WireName: "enrichment_strategy_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ContextEnrichmentConfiguration_BedrockFoundationModelConfiguration_EnrichmentStrategyConfigurationFields,
-		},
-		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
-	}
+	"EnrichmentStrategyConfiguration": ubx.FieldSpec{
+		WireName: "enrichment_strategy_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ContextEnrichmentConfiguration_BedrockFoundationModelConfiguration_EnrichmentStrategyConfigurationFields,
+	},
+	"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
+}
 
 var DataSource_VectorIngestionConfiguration_ContextEnrichmentConfigurationFields = ubx.FieldMap{
-		"BedrockFoundationModelConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_foundation_model_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ContextEnrichmentConfiguration_BedrockFoundationModelConfigurationFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"BedrockFoundationModelConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_foundation_model_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ContextEnrichmentConfiguration_BedrockFoundationModelConfigurationFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_IntermediateStorage_S3LocationFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_IntermediateStorageFields = ubx.FieldMap{
-		"S3Location": ubx.FieldSpec{
-			WireName: "s3_location",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_IntermediateStorage_S3LocationFields,
-		},
-	}
+	"S3Location": ubx.FieldSpec{
+		WireName: "s3_location",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_IntermediateStorage_S3LocationFields,
+	},
+}
 
 var DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations_TransformationFunction_TransformationLambdaConfigurationFields = ubx.FieldMap{
-		"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
-	}
+	"LambdaArn": ubx.FieldSpec{WireName: "lambda_arn"},
+}
 
 var DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations_TransformationFunctionFields = ubx.FieldMap{
-		"TransformationLambdaConfiguration": ubx.FieldSpec{
-			WireName: "transformation_lambda_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations_TransformationFunction_TransformationLambdaConfigurationFields,
-		},
-	}
+	"TransformationLambdaConfiguration": ubx.FieldSpec{
+		WireName: "transformation_lambda_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations_TransformationFunction_TransformationLambdaConfigurationFields,
+	},
+}
 
 var DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_TransformationsFields = ubx.FieldMap{
-		"StepToApply": ubx.FieldSpec{WireName: "step_to_apply"},
-		"TransformationFunction": ubx.FieldSpec{
-			WireName: "transformation_function",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations_TransformationFunctionFields,
-		},
-	}
+	"StepToApply": ubx.FieldSpec{WireName: "step_to_apply"},
+	"TransformationFunction": ubx.FieldSpec{
+		WireName: "transformation_function",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations_TransformationFunctionFields,
+	},
+}
 
 var DataSource_VectorIngestionConfiguration_CustomTransformationConfigurationFields = ubx.FieldMap{
-		"IntermediateStorage": ubx.FieldSpec{
-			WireName: "intermediate_storage",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_IntermediateStorageFields,
-		},
-		"Transformations": ubx.FieldSpec{
-			WireName: "transformations",
-			Kind: "list",
-			Fields: DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_TransformationsFields,
-		},
-	}
+	"IntermediateStorage": ubx.FieldSpec{
+		WireName: "intermediate_storage",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_IntermediateStorageFields,
+	},
+	"Transformations": ubx.FieldSpec{
+		WireName: "transformations",
+		Kind:     "list",
+		Fields:   DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_TransformationsFields,
+	},
+}
 
 var DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockDataAutomationConfigurationFields = ubx.FieldMap{
-		"ParsingModality": ubx.FieldSpec{WireName: "parsing_modality"},
-	}
+	"ParsingModality": ubx.FieldSpec{WireName: "parsing_modality"},
+}
 
 var DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPromptFields = ubx.FieldMap{
-		"ParsingPromptText": ubx.FieldSpec{WireName: "parsing_prompt_text"},
-	}
+	"ParsingPromptText": ubx.FieldSpec{WireName: "parsing_prompt_text"},
+}
 
 var DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfigurationFields = ubx.FieldMap{
-		"ModelArn": ubx.FieldSpec{WireName: "model_arn"},
-		"ParsingModality": ubx.FieldSpec{WireName: "parsing_modality"},
-		"ParsingPrompt": ubx.FieldSpec{
-			WireName: "parsing_prompt",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPromptFields,
-		},
-	}
+	"ModelArn":        ubx.FieldSpec{WireName: "model_arn"},
+	"ParsingModality": ubx.FieldSpec{WireName: "parsing_modality"},
+	"ParsingPrompt": ubx.FieldSpec{
+		WireName: "parsing_prompt",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPromptFields,
+	},
+}
 
 var DataSource_VectorIngestionConfiguration_ParsingConfigurationFields = ubx.FieldMap{
-		"BedrockDataAutomationConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_data_automation_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockDataAutomationConfigurationFields,
-		},
-		"BedrockFoundationModelConfiguration": ubx.FieldSpec{
-			WireName: "bedrock_foundation_model_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfigurationFields,
-		},
-		"ParsingStrategy": ubx.FieldSpec{WireName: "parsing_strategy"},
-	}
+	"BedrockDataAutomationConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_data_automation_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockDataAutomationConfigurationFields,
+	},
+	"BedrockFoundationModelConfiguration": ubx.FieldSpec{
+		WireName: "bedrock_foundation_model_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfigurationFields,
+	},
+	"ParsingStrategy": ubx.FieldSpec{WireName: "parsing_strategy"},
+}
 
 var DataSource_VectorIngestionConfigurationFields = ubx.FieldMap{
-		"ChunkingConfiguration": ubx.FieldSpec{
-			WireName: "chunking_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ChunkingConfigurationFields,
-		},
-		"ContextEnrichmentConfiguration": ubx.FieldSpec{
-			WireName: "context_enrichment_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ContextEnrichmentConfigurationFields,
-		},
-		"CustomTransformationConfiguration": ubx.FieldSpec{
-			WireName: "custom_transformation_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_CustomTransformationConfigurationFields,
-		},
-		"ParsingConfiguration": ubx.FieldSpec{
-			WireName: "parsing_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfiguration_ParsingConfigurationFields,
-		},
-	}
+	"ChunkingConfiguration": ubx.FieldSpec{
+		WireName: "chunking_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ChunkingConfigurationFields,
+	},
+	"ContextEnrichmentConfiguration": ubx.FieldSpec{
+		WireName: "context_enrichment_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ContextEnrichmentConfigurationFields,
+	},
+	"CustomTransformationConfiguration": ubx.FieldSpec{
+		WireName: "custom_transformation_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_CustomTransformationConfigurationFields,
+	},
+	"ParsingConfiguration": ubx.FieldSpec{
+		WireName: "parsing_configuration",
+		Kind:     "object",
+		Fields:   DataSource_VectorIngestionConfiguration_ParsingConfigurationFields,
+	},
+}
 
 type DataSourceConfig struct {
 	// The deletion policy for the data source.
@@ -547,18 +547,18 @@ var DataSource = ubx.ResourceBinding{
 	WireType: "aws_bedrock_data_source",
 	Fields: ubx.FieldMap{
 		"DataDeletionPolicy": ubx.FieldSpec{WireName: "data_deletion_policy"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KnowledgeBaseId": ubx.FieldSpec{WireName: "knowledge_base_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"KnowledgeBaseId":    ubx.FieldSpec{WireName: "knowledge_base_id"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"ServerSideEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "server_side_encryption_configuration",
-			Kind: "object",
-			Fields: DataSource_ServerSideEncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSource_ServerSideEncryptionConfigurationFields,
 		},
 		"VectorIngestionConfiguration": ubx.FieldSpec{
 			WireName: "vector_ingestion_configuration",
-			Kind: "object",
-			Fields: DataSource_VectorIngestionConfigurationFields,
+			Kind:     "object",
+			Fields:   DataSource_VectorIngestionConfigurationFields,
 		},
 	},
 }

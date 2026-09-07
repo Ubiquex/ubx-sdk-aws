@@ -4,17 +4,17 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Crawlers_Crawlers_LakeFormationConfiguration struct {
-	AccountId any
+	AccountId                   any
 	UseLakeFormationCredentials any
 }
 
 type Crawlers_Crawlers_LastCrawl struct {
-	ErrorMessage any
-	LogGroup any
-	LogStream any
+	ErrorMessage  any
+	LogGroup      any
+	LogStream     any
 	MessagePrefix any
-	StartTime any
-	Status any
+	StartTime     any
+	Status        any
 }
 
 type Crawlers_Crawlers_LineageConfiguration struct {
@@ -27,7 +27,7 @@ type Crawlers_Crawlers_RecrawlPolicy struct {
 
 type Crawlers_Crawlers_Schedule struct {
 	ScheduleExpression any
-	State any
+	State              any
 }
 
 type Crawlers_Crawlers_SchemaChangePolicy struct {
@@ -36,104 +36,104 @@ type Crawlers_Crawlers_SchemaChangePolicy struct {
 }
 
 type Crawlers_Crawlers_Targets_CatalogTargets struct {
-	ConnectionName any
-	DatabaseName any
+	ConnectionName   any
+	DatabaseName     any
 	DlqEventQueueArn any
-	EventQueueArn any
-	Tables any
+	EventQueueArn    any
+	Tables           any
 }
 
 type Crawlers_Crawlers_Targets_DeltaTargets struct {
-	ConnectionName any
+	ConnectionName         any
 	CreateNativeDeltaTable any
-	DeltaTables any
-	WriteManifest any
+	DeltaTables            any
+	WriteManifest          any
 }
 
 type Crawlers_Crawlers_Targets_DynamoDbtargets struct {
-	Path any
-	ScanAll any
+	Path     any
+	ScanAll  any
 	ScanRate any
 }
 
 type Crawlers_Crawlers_Targets_HudiTargets struct {
-	ConnectionName any
-	Exclusions any
+	ConnectionName        any
+	Exclusions            any
 	MaximumTraversalDepth any
-	Paths any
+	Paths                 any
 }
 
 type Crawlers_Crawlers_Targets_JdbcTargets struct {
-	ConnectionName any
+	ConnectionName           any
 	EnableAdditionalMetadata any
-	Exclusions any
-	Path any
+	Exclusions               any
+	Path                     any
 }
 
 type Crawlers_Crawlers_Targets_MongoDbtargets struct {
 	ConnectionName any
-	Path any
-	ScanAll any
+	Path           any
+	ScanAll        any
 }
 
 type Crawlers_Crawlers_Targets_S3Targets struct {
-	ConnectionName any
+	ConnectionName   any
 	DlqEventQueueArn any
-	EventQueueArn any
-	Exclusions any
-	Path any
-	SampleSize any
+	EventQueueArn    any
+	Exclusions       any
+	Path             any
+	SampleSize       any
 }
 
 type Crawlers_Crawlers_Targets struct {
-	CatalogTargets any
-	DeltaTargets any
+	CatalogTargets  any
+	DeltaTargets    any
 	DynamoDbtargets any
-	HudiTargets any
-	IcebergTargets any
-	JdbcTargets any
-	MongoDbtargets any
-	S3Targets any
+	HudiTargets     any
+	IcebergTargets  any
+	JdbcTargets     any
+	MongoDbtargets  any
+	S3Targets       any
 }
 
 type Crawlers_Crawlers struct {
-	Classifiers any
-	Configuration any
-	CrawlElapsedTime any
+	Classifiers                  any
+	Configuration                any
+	CrawlElapsedTime             any
 	CrawlerSecurityConfiguration any
-	CreationTime any
-	DatabaseName any
-	Description any
-	LakeFormationConfiguration any
-	LastCrawl any
-	LastUpdated any
-	LineageConfiguration any
-	Name any
-	RecrawlPolicy any
-	Role any
-	Schedule any
-	SchemaChangePolicy any
-	State any
-	TablePrefix any
-	Targets any
-	Version any
+	CreationTime                 any
+	DatabaseName                 any
+	Description                  any
+	LakeFormationConfiguration   any
+	LastCrawl                    any
+	LastUpdated                  any
+	LineageConfiguration         any
+	Name                         any
+	RecrawlPolicy                any
+	Role                         any
+	Schedule                     any
+	SchemaChangePolicy           any
+	State                        any
+	TablePrefix                  any
+	Targets                      any
+	Version                      any
 }
 
 type CrawlersConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type CrawlersAttrs struct {
-	Crawlers any
+	Crawlers   any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Crawlers = ubx.DataSourceBinding{
 	WireType: "aws_glue_crawlers",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

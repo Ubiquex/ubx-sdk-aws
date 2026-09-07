@@ -13,6 +13,5 @@ type OtelEnrichmentAttrs struct {
 
 var OtelEnrichment = ubx.DataSourceBinding{
 	WireType: "aws_monitoring_otel_enrichment",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

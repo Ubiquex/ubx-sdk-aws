@@ -35,28 +35,28 @@ type StorageVirtualMachine_Tags struct {
 }
 
 var StorageVirtualMachine_ActiveDirectoryConfiguration_SelfManagedActiveDirectoryConfigurationFields = ubx.FieldMap{
-		"DnsIps": ubx.FieldSpec{WireName: "dns_ips"},
-		"DomainJoinServiceAccountSecret": ubx.FieldSpec{WireName: "domain_join_service_account_secret"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"FileSystemAdministratorsGroup": ubx.FieldSpec{WireName: "file_system_administrators_group"},
-		"OrganizationalUnitDistinguishedName": ubx.FieldSpec{WireName: "organizational_unit_distinguished_name"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
-	}
+	"DnsIps":                              ubx.FieldSpec{WireName: "dns_ips"},
+	"DomainJoinServiceAccountSecret":      ubx.FieldSpec{WireName: "domain_join_service_account_secret"},
+	"DomainName":                          ubx.FieldSpec{WireName: "domain_name"},
+	"FileSystemAdministratorsGroup":       ubx.FieldSpec{WireName: "file_system_administrators_group"},
+	"OrganizationalUnitDistinguishedName": ubx.FieldSpec{WireName: "organizational_unit_distinguished_name"},
+	"Password":                            ubx.FieldSpec{WireName: "password"},
+	"UserName":                            ubx.FieldSpec{WireName: "user_name"},
+}
 
 var StorageVirtualMachine_ActiveDirectoryConfigurationFields = ubx.FieldMap{
-		"NetBiosName": ubx.FieldSpec{WireName: "net_bios_name"},
-		"SelfManagedActiveDirectoryConfiguration": ubx.FieldSpec{
-			WireName: "self_managed_active_directory_configuration",
-			Kind: "object",
-			Fields: StorageVirtualMachine_ActiveDirectoryConfiguration_SelfManagedActiveDirectoryConfigurationFields,
-		},
-	}
+	"NetBiosName": ubx.FieldSpec{WireName: "net_bios_name"},
+	"SelfManagedActiveDirectoryConfiguration": ubx.FieldSpec{
+		WireName: "self_managed_active_directory_configuration",
+		Kind:     "object",
+		Fields:   StorageVirtualMachine_ActiveDirectoryConfiguration_SelfManagedActiveDirectoryConfigurationFields,
+	},
+}
 
 var StorageVirtualMachine_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type StorageVirtualMachineConfig struct {
 	// Specifies the Active Directory configuration for the storage virtual machine to join a domain, including the NetBIOS name and self-managed Active Directory settings such as domain name, organizational unit, and administrator credentials. (AI-inferred)
@@ -99,17 +99,17 @@ var StorageVirtualMachine = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActiveDirectoryConfiguration": ubx.FieldSpec{
 			WireName: "active_directory_configuration",
-			Kind: "object",
-			Fields: StorageVirtualMachine_ActiveDirectoryConfigurationFields,
+			Kind:     "object",
+			Fields:   StorageVirtualMachine_ActiveDirectoryConfigurationFields,
 		},
-		"FileSystemId": ubx.FieldSpec{WireName: "file_system_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"FileSystemId":            ubx.FieldSpec{WireName: "file_system_id"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"RootVolumeSecurityStyle": ubx.FieldSpec{WireName: "root_volume_security_style"},
-		"SvmAdminPassword": ubx.FieldSpec{WireName: "svm_admin_password"},
+		"SvmAdminPassword":        ubx.FieldSpec{WireName: "svm_admin_password"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: StorageVirtualMachine_TagsFields,
+			Kind:     "list",
+			Fields:   StorageVirtualMachine_TagsFields,
 		},
 	},
 }

@@ -4,28 +4,28 @@ package voice_chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChimeVoiceConnectorGroups_VoiceConnectorGroups_VoiceConnectorItems struct {
-	Priority any
+	Priority         any
 	VoiceConnectorId any
 }
 
 type VoiceChimeVoiceConnectorGroups_VoiceConnectorGroups struct {
-	CallDistributionType any
-	CreatedTimestamp any
-	Name any
-	UpdatedTimestamp any
+	CallDistributionType   any
+	CreatedTimestamp       any
+	Name                   any
+	UpdatedTimestamp       any
 	VoiceConnectorGroupArn any
-	VoiceConnectorGroupId any
-	VoiceConnectorItems any
+	VoiceConnectorGroupId  any
+	VoiceConnectorItems    any
 }
 
 type VoiceChimeVoiceConnectorGroupsConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type VoiceChimeVoiceConnectorGroupsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	VoiceConnectorGroups any
 }
 
@@ -33,6 +33,6 @@ var VoiceChimeVoiceConnectorGroups = ubx.DataSourceBinding{
 	WireType: "aws_voice_chime_voice_connector_groups",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

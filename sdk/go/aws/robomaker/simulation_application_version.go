@@ -24,7 +24,7 @@ type SimulationApplicationVersionAttrs struct {
 var SimulationApplicationVersion = ubx.ResourceBinding{
 	WireType: "aws_robo_maker_simulation_application_version",
 	Fields: ubx.FieldMap{
-		"Application": ubx.FieldSpec{WireName: "application"},
+		"Application":       ubx.FieldSpec{WireName: "application"},
 		"CurrentRevisionId": ubx.FieldSpec{WireName: "current_revision_id"},
 	},
 }

@@ -4,37 +4,37 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayRouteTablePropagations_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type TransitGatewayRouteTablePropagations_TransitGatewayRouteTablePropagations struct {
-	ResourceId any
-	ResourceType any
-	State any
-	TransitGatewayAttachmentId any
+	ResourceId                             any
+	ResourceType                           any
+	State                                  any
+	TransitGatewayAttachmentId             any
 	TransitGatewayRouteTableAnnouncementId any
 }
 
 var TransitGatewayRouteTablePropagations_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type TransitGatewayRouteTablePropagationsConfig struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
+	DryRun                     any
+	Filters                    any
+	MaxResults                 any
+	NextToken                  any
 	TransitGatewayRouteTableId any
 }
 
 type TransitGatewayRouteTablePropagationsAttrs struct {
-	DryRun any
-	Filters any
-	MaxResults any
-	NextToken any
-	TransitGatewayRouteTableId any
+	DryRun                               any
+	Filters                              any
+	MaxResults                           any
+	NextToken                            any
+	TransitGatewayRouteTableId           any
 	TransitGatewayRouteTablePropagations any
 }
 
@@ -44,11 +44,11 @@ var TransitGatewayRouteTablePropagations = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: TransitGatewayRouteTablePropagations_FiltersFields,
+			Kind:     "list",
+			Fields:   TransitGatewayRouteTablePropagations_FiltersFields,
 		},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":                 ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                  ubx.FieldSpec{WireName: "next_token"},
 		"TransitGatewayRouteTableId": ubx.FieldSpec{WireName: "transit_gateway_route_table_id"},
 	},
 }

@@ -4,18 +4,18 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ObjectTorrentConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
-	Key any
+	Key                 any
 	// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for the corresponding charges. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p> <note> <p>This functionality is not supported for directory buckets.</p> </note>
 	RequestPayer any
 }
 
 type ObjectTorrentAttrs struct {
-	Body any
-	Bucket any
+	Body                any
+	Bucket              any
 	ExpectedBucketOwner any
-	Key any
+	Key                 any
 	// <p>If present, indicates that the requester was successfully charged for the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html">Using Requester Pays buckets for storage transfers and usage</a> in the <i>Amazon Simple Storage Service user guide</i>.</p> <note> <p>This functionality is not supported for directory buckets.</p> </note>
 	RequestCharged any
 	// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for the corresponding charges. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p> <note> <p>This functionality is not supported for directory buckets.</p> </note>
@@ -25,9 +25,9 @@ type ObjectTorrentAttrs struct {
 var ObjectTorrent = ubx.DataSourceBinding{
 	WireType: "aws_s3_object_torrent",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"RequestPayer": ubx.FieldSpec{WireName: "request_payer"},
+		"Key":                 ubx.FieldSpec{WireName: "key"},
+		"RequestPayer":        ubx.FieldSpec{WireName: "request_payer"},
 	},
 }

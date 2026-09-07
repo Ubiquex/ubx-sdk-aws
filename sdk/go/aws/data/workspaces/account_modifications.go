@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountModifications_AccountModifications struct {
 	DedicatedTenancyManagementCidrRange any
-	DedicatedTenancySupport any
-	ErrorCode any
-	ErrorMessage any
-	ModificationState any
-	StartTime any
+	DedicatedTenancySupport             any
+	ErrorCode                           any
+	ErrorMessage                        any
+	ModificationState                   any
+	StartTime                           any
 }
 
 type AccountModificationsConfig struct {
@@ -18,7 +18,7 @@ type AccountModificationsConfig struct {
 
 type AccountModificationsAttrs struct {
 	AccountModifications any
-	NextToken any
+	NextToken            any
 }
 
 var AccountModifications = ubx.DataSourceBinding{

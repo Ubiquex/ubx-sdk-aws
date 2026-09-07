@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schemas_Schemas struct {
 	LastModified any
-	SchemaArn any
-	SchemaName any
-	Tags any
+	SchemaArn    any
+	SchemaName   any
+	Tags         any
 	VersionCount any
 }
 
 type SchemasConfig struct {
-	Limit any
-	NextToken any
-	RegistryName any
+	Limit            any
+	NextToken        any
+	RegistryName     any
 	SchemaNamePrefix any
 }
 
 type SchemasAttrs struct {
-	Limit any
-	NextToken any
-	RegistryName any
+	Limit            any
+	NextToken        any
+	RegistryName     any
 	SchemaNamePrefix any
-	Schemas any
+	Schemas          any
 }
 
 var Schemas = ubx.DataSourceBinding{
 	WireType: "aws_schemas_schemas",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"RegistryName": ubx.FieldSpec{WireName: "registry_name"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"RegistryName":     ubx.FieldSpec{WireName: "registry_name"},
 		"SchemaNamePrefix": ubx.FieldSpec{WireName: "schema_name_prefix"},
 	},
 }

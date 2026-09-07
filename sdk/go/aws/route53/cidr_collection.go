@@ -11,9 +11,9 @@ type CidrCollection_Locations struct {
 }
 
 var CidrCollection_LocationsFields = ubx.FieldMap{
-		"CidrList": ubx.FieldSpec{WireName: "cidr_list"},
-		"LocationName": ubx.FieldSpec{WireName: "location_name"},
-	}
+	"CidrList":     ubx.FieldSpec{WireName: "cidr_list"},
+	"LocationName": ubx.FieldSpec{WireName: "location_name"},
+}
 
 type CidrCollectionConfig struct {
 	// A complex type that contains information about the list of CIDR locations.
@@ -38,8 +38,8 @@ var CidrCollection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Locations": ubx.FieldSpec{
 			WireName: "locations",
-			Kind: "list",
-			Fields: CidrCollection_LocationsFields,
+			Kind:     "list",
+			Fields:   CidrCollection_LocationsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

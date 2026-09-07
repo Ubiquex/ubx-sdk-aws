@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnvironmentManagedActions_ManagedActions struct {
 	ActionDescription any
-	ActionId any
-	ActionType any
-	Status any
-	WindowStartTime any
+	ActionId          any
+	ActionType        any
+	Status            any
+	WindowStartTime   any
 }
 
 type EnvironmentManagedActionsConfig struct {
-	EnvironmentId any
+	EnvironmentId   any
 	EnvironmentName any
-	Status any
+	Status          any
 }
 
 type EnvironmentManagedActionsAttrs struct {
-	EnvironmentId any
+	EnvironmentId   any
 	EnvironmentName any
-	ManagedActions any
-	Status any
+	ManagedActions  any
+	Status          any
 }
 
 var EnvironmentManagedActions = ubx.DataSourceBinding{
 	WireType: "aws_elasticbeanstalk_environment_managed_actions",
 	Fields: ubx.FieldMap{
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"EnvironmentId":   ubx.FieldSpec{WireName: "environment_id"},
 		"EnvironmentName": ubx.FieldSpec{WireName: "environment_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 	},
 }

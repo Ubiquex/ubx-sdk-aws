@@ -18,9 +18,9 @@ type DatabaseSnapshot_Tags struct {
 }
 
 var DatabaseSnapshot_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatabaseSnapshotConfig struct {
 	// The name of the database on which to base your new snapshot.
@@ -71,12 +71,12 @@ type DatabaseSnapshotAttrs struct {
 var DatabaseSnapshot = ubx.ResourceBinding{
 	WireType: "aws_lightsail_database_snapshot",
 	Fields: ubx.FieldMap{
-		"RelationalDatabaseName": ubx.FieldSpec{WireName: "relational_database_name"},
+		"RelationalDatabaseName":         ubx.FieldSpec{WireName: "relational_database_name"},
 		"RelationalDatabaseSnapshotName": ubx.FieldSpec{WireName: "relational_database_snapshot_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DatabaseSnapshot_TagsFields,
+			Kind:     "list",
+			Fields:   DatabaseSnapshot_TagsFields,
 		},
 	},
 }

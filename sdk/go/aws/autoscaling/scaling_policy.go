@@ -127,7 +127,7 @@ type ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification str
 	Metrics any
 	// Specifies the CloudWatch namespace of the customized metric used by the target tracking scaling policy, identifying the source or service that published the metric. (AI-inferred)
 	Namespace any
-	Period any
+	Period    any
 	// The statistic to apply to the custom CloudWatch metric in the target tracking policy (e.g., Average, Sum, Minimum, Maximum, SampleCount). (AI-inferred)
 	Statistic any
 	// The unit of measure for the custom CloudWatch metric specified in the target tracking configuration, such as 'Count' or 'Percent', which is used by the scaling policy to interpret the metric's value. (AI-inferred)
@@ -146,163 +146,163 @@ type ScalingPolicy_TargetTrackingConfiguration struct {
 }
 
 var ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_DimensionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_MetricFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_DimensionsFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Namespace":  ubx.FieldSpec{WireName: "namespace"},
+}
 
 var ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStatFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_MetricFields,
-		},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_MetricFields,
+	},
+	"Stat": ubx.FieldSpec{WireName: "stat"},
+	"Unit": ubx.FieldSpec{WireName: "unit"},
+}
 
 var ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueriesFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"MetricStat": ubx.FieldSpec{
-			WireName: "metric_stat",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStatFields,
-		},
-		"ReturnData": ubx.FieldSpec{WireName: "return_data"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Label":      ubx.FieldSpec{WireName: "label"},
+	"MetricStat": ubx.FieldSpec{
+		WireName: "metric_stat",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStatFields,
+	},
+	"ReturnData": ubx.FieldSpec{WireName: "return_data"},
+}
 
 var ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecificationFields = ubx.FieldMap{
-		"MetricDataQueries": ubx.FieldSpec{
-			WireName: "metric_data_queries",
-			Kind: "list",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueriesFields,
-		},
-	}
+	"MetricDataQueries": ubx.FieldSpec{
+		WireName: "metric_data_queries",
+		Kind:     "list",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueriesFields,
+	},
+}
 
 var ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields = ubx.FieldMap{
-		"PredefinedMetricType": ubx.FieldSpec{WireName: "predefined_metric_type"},
-		"ResourceLabel": ubx.FieldSpec{WireName: "resource_label"},
-	}
+	"PredefinedMetricType": ubx.FieldSpec{WireName: "predefined_metric_type"},
+	"ResourceLabel":        ubx.FieldSpec{WireName: "resource_label"},
+}
 
 var ScalingPolicy_PredictiveScalingConfiguration_MetricSpecificationsFields = ubx.FieldMap{
-		"CustomizedCapacityMetricSpecification": ubx.FieldSpec{
-			WireName: "customized_capacity_metric_specification",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecificationFields,
-		},
-		"CustomizedLoadMetricSpecification": ubx.FieldSpec{
-			WireName: "customized_load_metric_specification",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecificationFields,
-		},
-		"CustomizedScalingMetricSpecification": ubx.FieldSpec{
-			WireName: "customized_scaling_metric_specification",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecificationFields,
-		},
-		"PredefinedLoadMetricSpecification": ubx.FieldSpec{
-			WireName: "predefined_load_metric_specification",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields,
-		},
-		"PredefinedMetricPairSpecification": ubx.FieldSpec{
-			WireName: "predefined_metric_pair_specification",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields,
-		},
-		"PredefinedScalingMetricSpecification": ubx.FieldSpec{
-			WireName: "predefined_scaling_metric_specification",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields,
-		},
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"CustomizedCapacityMetricSpecification": ubx.FieldSpec{
+		WireName: "customized_capacity_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecificationFields,
+	},
+	"CustomizedLoadMetricSpecification": ubx.FieldSpec{
+		WireName: "customized_load_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecificationFields,
+	},
+	"CustomizedScalingMetricSpecification": ubx.FieldSpec{
+		WireName: "customized_scaling_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecificationFields,
+	},
+	"PredefinedLoadMetricSpecification": ubx.FieldSpec{
+		WireName: "predefined_load_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields,
+	},
+	"PredefinedMetricPairSpecification": ubx.FieldSpec{
+		WireName: "predefined_metric_pair_specification",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields,
+	},
+	"PredefinedScalingMetricSpecification": ubx.FieldSpec{
+		WireName: "predefined_scaling_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields,
+	},
+	"TargetValue": ubx.FieldSpec{WireName: "target_value"},
+}
 
 var ScalingPolicy_PredictiveScalingConfigurationFields = ubx.FieldMap{
-		"MaxCapacityBreachBehavior": ubx.FieldSpec{WireName: "max_capacity_breach_behavior"},
-		"MaxCapacityBuffer": ubx.FieldSpec{WireName: "max_capacity_buffer"},
-		"MetricSpecifications": ubx.FieldSpec{
-			WireName: "metric_specifications",
-			Kind: "list",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecificationsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"SchedulingBufferTime": ubx.FieldSpec{WireName: "scheduling_buffer_time"},
-	}
+	"MaxCapacityBreachBehavior": ubx.FieldSpec{WireName: "max_capacity_breach_behavior"},
+	"MaxCapacityBuffer":         ubx.FieldSpec{WireName: "max_capacity_buffer"},
+	"MetricSpecifications": ubx.FieldSpec{
+		WireName: "metric_specifications",
+		Kind:     "list",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecificationsFields,
+	},
+	"Mode":                 ubx.FieldSpec{WireName: "mode"},
+	"SchedulingBufferTime": ubx.FieldSpec{WireName: "scheduling_buffer_time"},
+}
 
 var ScalingPolicy_StepAdjustmentsFields = ubx.FieldMap{
-		"MetricIntervalLowerBound": ubx.FieldSpec{WireName: "metric_interval_lower_bound"},
-		"MetricIntervalUpperBound": ubx.FieldSpec{WireName: "metric_interval_upper_bound"},
-		"ScalingAdjustment": ubx.FieldSpec{WireName: "scaling_adjustment"},
-	}
+	"MetricIntervalLowerBound": ubx.FieldSpec{WireName: "metric_interval_lower_bound"},
+	"MetricIntervalUpperBound": ubx.FieldSpec{WireName: "metric_interval_upper_bound"},
+	"ScalingAdjustment":        ubx.FieldSpec{WireName: "scaling_adjustment"},
+}
 
 var ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification_Metrics_MetricStatFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_MetricFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Stat": ubx.FieldSpec{WireName: "stat"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_MetricFields,
+	},
+	"Period": ubx.FieldSpec{WireName: "period"},
+	"Stat":   ubx.FieldSpec{WireName: "stat"},
+	"Unit":   ubx.FieldSpec{WireName: "unit"},
+}
 
 var ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification_MetricsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"MetricStat": ubx.FieldSpec{
-			WireName: "metric_stat",
-			Kind: "object",
-			Fields: ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification_Metrics_MetricStatFields,
-		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"ReturnData": ubx.FieldSpec{WireName: "return_data"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Label":      ubx.FieldSpec{WireName: "label"},
+	"MetricStat": ubx.FieldSpec{
+		WireName: "metric_stat",
+		Kind:     "object",
+		Fields:   ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification_Metrics_MetricStatFields,
+	},
+	"Period":     ubx.FieldSpec{WireName: "period"},
+	"ReturnData": ubx.FieldSpec{WireName: "return_data"},
+}
 
 var ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecificationFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_DimensionsFields,
-		},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification_MetricsFields,
-		},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_DimensionsFields,
+	},
+	"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification_MetricsFields,
+	},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"Period":    ubx.FieldSpec{WireName: "period"},
+	"Statistic": ubx.FieldSpec{WireName: "statistic"},
+	"Unit":      ubx.FieldSpec{WireName: "unit"},
+}
 
 var ScalingPolicy_TargetTrackingConfigurationFields = ubx.FieldMap{
-		"CustomizedMetricSpecification": ubx.FieldSpec{
-			WireName: "customized_metric_specification",
-			Kind: "object",
-			Fields: ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecificationFields,
-		},
-		"DisableScaleIn": ubx.FieldSpec{WireName: "disable_scale_in"},
-		"PredefinedMetricSpecification": ubx.FieldSpec{
-			WireName: "predefined_metric_specification",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields,
-		},
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"CustomizedMetricSpecification": ubx.FieldSpec{
+		WireName: "customized_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecificationFields,
+	},
+	"DisableScaleIn": ubx.FieldSpec{WireName: "disable_scale_in"},
+	"PredefinedMetricSpecification": ubx.FieldSpec{
+		WireName: "predefined_metric_specification",
+		Kind:     "object",
+		Fields:   ScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecificationFields,
+	},
+	"TargetValue": ubx.FieldSpec{WireName: "target_value"},
+}
 
 type ScalingPolicyConfig struct {
 	// Specifies how the scaling adjustment is interpreted. The valid values are ChangeInCapacity, ExactCapacity, and PercentChangeInCapacity.
@@ -361,28 +361,28 @@ type ScalingPolicyAttrs struct {
 var ScalingPolicy = ubx.ResourceBinding{
 	WireType: "aws_auto_scaling_scaling_policy",
 	Fields: ubx.FieldMap{
-		"AdjustmentType": ubx.FieldSpec{WireName: "adjustment_type"},
-		"AutoScalingGroupName": ubx.FieldSpec{WireName: "auto_scaling_group_name"},
-		"Cooldown": ubx.FieldSpec{WireName: "cooldown"},
+		"AdjustmentType":          ubx.FieldSpec{WireName: "adjustment_type"},
+		"AutoScalingGroupName":    ubx.FieldSpec{WireName: "auto_scaling_group_name"},
+		"Cooldown":                ubx.FieldSpec{WireName: "cooldown"},
 		"EstimatedInstanceWarmup": ubx.FieldSpec{WireName: "estimated_instance_warmup"},
-		"MetricAggregationType": ubx.FieldSpec{WireName: "metric_aggregation_type"},
-		"MinAdjustmentMagnitude": ubx.FieldSpec{WireName: "min_adjustment_magnitude"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
+		"MetricAggregationType":   ubx.FieldSpec{WireName: "metric_aggregation_type"},
+		"MinAdjustmentMagnitude":  ubx.FieldSpec{WireName: "min_adjustment_magnitude"},
+		"PolicyType":              ubx.FieldSpec{WireName: "policy_type"},
 		"PredictiveScalingConfiguration": ubx.FieldSpec{
 			WireName: "predictive_scaling_configuration",
-			Kind: "object",
-			Fields: ScalingPolicy_PredictiveScalingConfigurationFields,
+			Kind:     "object",
+			Fields:   ScalingPolicy_PredictiveScalingConfigurationFields,
 		},
 		"ScalingAdjustment": ubx.FieldSpec{WireName: "scaling_adjustment"},
 		"StepAdjustments": ubx.FieldSpec{
 			WireName: "step_adjustments",
-			Kind: "list",
-			Fields: ScalingPolicy_StepAdjustmentsFields,
+			Kind:     "list",
+			Fields:   ScalingPolicy_StepAdjustmentsFields,
 		},
 		"TargetTrackingConfiguration": ubx.FieldSpec{
 			WireName: "target_tracking_configuration",
-			Kind: "object",
-			Fields: ScalingPolicy_TargetTrackingConfigurationFields,
+			Kind:     "object",
+			Fields:   ScalingPolicy_TargetTrackingConfigurationFields,
 		},
 	},
 }

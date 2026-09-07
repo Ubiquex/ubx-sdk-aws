@@ -94,99 +94,99 @@ type ResponsePlan_Integrations struct {
 }
 
 var ResponsePlan_Actions_SsmAutomation_DynamicParameters_ValueFields = ubx.FieldMap{
-		"Variable": ubx.FieldSpec{WireName: "variable"},
-	}
+	"Variable": ubx.FieldSpec{WireName: "variable"},
+}
 
 var ResponsePlan_Actions_SsmAutomation_DynamicParametersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: ResponsePlan_Actions_SsmAutomation_DynamicParameters_ValueFields,
-		},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   ResponsePlan_Actions_SsmAutomation_DynamicParameters_ValueFields,
+	},
+}
 
 var ResponsePlan_Actions_SsmAutomation_ParametersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ResponsePlan_Actions_SsmAutomationFields = ubx.FieldMap{
-		"DocumentName": ubx.FieldSpec{WireName: "document_name"},
-		"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
-		"DynamicParameters": ubx.FieldSpec{
-			WireName: "dynamic_parameters",
-			Kind: "list",
-			Fields: ResponsePlan_Actions_SsmAutomation_DynamicParametersFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: ResponsePlan_Actions_SsmAutomation_ParametersFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TargetAccount": ubx.FieldSpec{WireName: "target_account"},
-	}
+	"DocumentName":    ubx.FieldSpec{WireName: "document_name"},
+	"DocumentVersion": ubx.FieldSpec{WireName: "document_version"},
+	"DynamicParameters": ubx.FieldSpec{
+		WireName: "dynamic_parameters",
+		Kind:     "list",
+		Fields:   ResponsePlan_Actions_SsmAutomation_DynamicParametersFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   ResponsePlan_Actions_SsmAutomation_ParametersFields,
+	},
+	"RoleArn":       ubx.FieldSpec{WireName: "role_arn"},
+	"TargetAccount": ubx.FieldSpec{WireName: "target_account"},
+}
 
 var ResponsePlan_ActionsFields = ubx.FieldMap{
-		"SsmAutomation": ubx.FieldSpec{
-			WireName: "ssm_automation",
-			Kind: "object",
-			Fields: ResponsePlan_Actions_SsmAutomationFields,
-		},
-	}
+	"SsmAutomation": ubx.FieldSpec{
+		WireName: "ssm_automation",
+		Kind:     "object",
+		Fields:   ResponsePlan_Actions_SsmAutomationFields,
+	},
+}
 
 var ResponsePlan_ChatChannelFields = ubx.FieldMap{
-		"ChatbotSns": ubx.FieldSpec{WireName: "chatbot_sns"},
-	}
+	"ChatbotSns": ubx.FieldSpec{WireName: "chatbot_sns"},
+}
 
 var ResponsePlan_IncidentTemplate_IncidentTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ResponsePlan_IncidentTemplate_NotificationTargetsFields = ubx.FieldMap{
-		"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
-	}
+	"SnsTopicArn": ubx.FieldSpec{WireName: "sns_topic_arn"},
+}
 
 var ResponsePlan_IncidentTemplateFields = ubx.FieldMap{
-		"DedupeString": ubx.FieldSpec{WireName: "dedupe_string"},
-		"Impact": ubx.FieldSpec{WireName: "impact"},
-		"IncidentTags": ubx.FieldSpec{
-			WireName: "incident_tags",
-			Kind: "list",
-			Fields: ResponsePlan_IncidentTemplate_IncidentTagsFields,
-		},
-		"NotificationTargets": ubx.FieldSpec{
-			WireName: "notification_targets",
-			Kind: "list",
-			Fields: ResponsePlan_IncidentTemplate_NotificationTargetsFields,
-		},
-		"Summary": ubx.FieldSpec{WireName: "summary"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"DedupeString": ubx.FieldSpec{WireName: "dedupe_string"},
+	"Impact":       ubx.FieldSpec{WireName: "impact"},
+	"IncidentTags": ubx.FieldSpec{
+		WireName: "incident_tags",
+		Kind:     "list",
+		Fields:   ResponsePlan_IncidentTemplate_IncidentTagsFields,
+	},
+	"NotificationTargets": ubx.FieldSpec{
+		WireName: "notification_targets",
+		Kind:     "list",
+		Fields:   ResponsePlan_IncidentTemplate_NotificationTargetsFields,
+	},
+	"Summary": ubx.FieldSpec{WireName: "summary"},
+	"Title":   ubx.FieldSpec{WireName: "title"},
+}
 
 var ResponsePlan_Integrations_PagerDutyConfiguration_PagerDutyIncidentConfigurationFields = ubx.FieldMap{
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
-	}
+	"ServiceId": ubx.FieldSpec{WireName: "service_id"},
+}
 
 var ResponsePlan_Integrations_PagerDutyConfigurationFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PagerDutyIncidentConfiguration": ubx.FieldSpec{
-			WireName: "pager_duty_incident_configuration",
-			Kind: "object",
-			Fields: ResponsePlan_Integrations_PagerDutyConfiguration_PagerDutyIncidentConfigurationFields,
-		},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PagerDutyIncidentConfiguration": ubx.FieldSpec{
+		WireName: "pager_duty_incident_configuration",
+		Kind:     "object",
+		Fields:   ResponsePlan_Integrations_PagerDutyConfiguration_PagerDutyIncidentConfigurationFields,
+	},
+	"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+}
 
 var ResponsePlan_IntegrationsFields = ubx.FieldMap{
-		"PagerDutyConfiguration": ubx.FieldSpec{
-			WireName: "pager_duty_configuration",
-			Kind: "object",
-			Fields: ResponsePlan_Integrations_PagerDutyConfigurationFields,
-		},
-	}
+	"PagerDutyConfiguration": ubx.FieldSpec{
+		WireName: "pager_duty_configuration",
+		Kind:     "object",
+		Fields:   ResponsePlan_Integrations_PagerDutyConfigurationFields,
+	},
+}
 
 type ResponsePlanConfig struct {
 	// The list of actions.
@@ -233,31 +233,31 @@ var ResponsePlan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: ResponsePlan_ActionsFields,
+			Kind:     "list",
+			Fields:   ResponsePlan_ActionsFields,
 		},
 		"ChatChannel": ubx.FieldSpec{
 			WireName: "chat_channel",
-			Kind: "object",
-			Fields: ResponsePlan_ChatChannelFields,
+			Kind:     "object",
+			Fields:   ResponsePlan_ChatChannelFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Engagements": ubx.FieldSpec{WireName: "engagements"},
 		"IncidentTemplate": ubx.FieldSpec{
 			WireName: "incident_template",
-			Kind: "object",
-			Fields: ResponsePlan_IncidentTemplateFields,
+			Kind:     "object",
+			Fields:   ResponsePlan_IncidentTemplateFields,
 		},
 		"Integrations": ubx.FieldSpec{
 			WireName: "integrations",
-			Kind: "list",
-			Fields: ResponsePlan_IntegrationsFields,
+			Kind:     "list",
+			Fields:   ResponsePlan_IntegrationsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResponsePlan_IncidentTemplate_IncidentTagsFields,
+			Kind:     "list",
+			Fields:   ResponsePlan_IncidentTemplate_IncidentTagsFields,
 		},
 	},
 }

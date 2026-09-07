@@ -102,93 +102,93 @@ type Connection_ConnectionInput struct {
 }
 
 var Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentialsFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields = ubx.FieldMap{
-		"AuthorizationCode": ubx.FieldSpec{WireName: "authorization_code"},
-		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
-	}
+	"AuthorizationCode": ubx.FieldSpec{WireName: "authorization_code"},
+	"RedirectUri":       ubx.FieldSpec{WireName: "redirect_uri"},
+}
 
 var Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields = ubx.FieldMap{
-		"AwsmanagedClientApplicationReference": ubx.FieldSpec{WireName: "awsmanaged_client_application_reference"},
-		"UserManagedClientApplicationClientId": ubx.FieldSpec{WireName: "user_managed_client_application_client_id"},
-	}
+	"AwsmanagedClientApplicationReference": ubx.FieldSpec{WireName: "awsmanaged_client_application_reference"},
+	"UserManagedClientApplicationClientId": ubx.FieldSpec{WireName: "user_managed_client_application_client_id"},
+}
 
 var Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"JwtToken": ubx.FieldSpec{WireName: "jwt_token"},
-		"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
-		"UserManagedClientApplicationClientSecret": ubx.FieldSpec{WireName: "user_managed_client_application_client_secret"},
-	}
+	"AccessToken":  ubx.FieldSpec{WireName: "access_token"},
+	"JwtToken":     ubx.FieldSpec{WireName: "jwt_token"},
+	"RefreshToken": ubx.FieldSpec{WireName: "refresh_token"},
+	"UserManagedClientApplicationClientSecret": ubx.FieldSpec{WireName: "user_managed_client_application_client_secret"},
+}
 
 var Connection_ConnectionInput_AuthenticationConfiguration_Oauth2PropertiesFields = ubx.FieldMap{
-		"AuthorizationCodeProperties": ubx.FieldSpec{
-			WireName: "authorization_code_properties",
-			Kind: "object",
-			Fields: Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields,
-		},
-		"Oauth2ClientApplication": ubx.FieldSpec{
-			WireName: "oauth2_client_application",
-			Kind: "object",
-			Fields: Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields,
-		},
-		"Oauth2Credentials": ubx.FieldSpec{
-			WireName: "oauth2_credentials",
-			Kind: "object",
-			Fields: Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields,
-		},
-		"Oauth2GrantType": ubx.FieldSpec{WireName: "oauth2_grant_type"},
-		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
-		"TokenUrlParametersMap": ubx.FieldSpec{WireName: "token_url_parameters_map"},
-	}
+	"AuthorizationCodeProperties": ubx.FieldSpec{
+		WireName: "authorization_code_properties",
+		Kind:     "object",
+		Fields:   Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodePropertiesFields,
+	},
+	"Oauth2ClientApplication": ubx.FieldSpec{
+		WireName: "oauth2_client_application",
+		Kind:     "object",
+		Fields:   Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplicationFields,
+	},
+	"Oauth2Credentials": ubx.FieldSpec{
+		WireName: "oauth2_credentials",
+		Kind:     "object",
+		Fields:   Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2CredentialsFields,
+	},
+	"Oauth2GrantType":       ubx.FieldSpec{WireName: "oauth2_grant_type"},
+	"TokenUrl":              ubx.FieldSpec{WireName: "token_url"},
+	"TokenUrlParametersMap": ubx.FieldSpec{WireName: "token_url_parameters_map"},
+}
 
 var Connection_ConnectionInput_AuthenticationConfigurationFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"BasicAuthenticationCredentials": ubx.FieldSpec{
-			WireName: "basic_authentication_credentials",
-			Kind: "object",
-			Fields: Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentialsFields,
-		},
-		"CustomAuthenticationCredentials": ubx.FieldSpec{WireName: "custom_authentication_credentials"},
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"Oauth2Properties": ubx.FieldSpec{
-			WireName: "oauth2_properties",
-			Kind: "object",
-			Fields: Connection_ConnectionInput_AuthenticationConfiguration_Oauth2PropertiesFields,
-		},
-		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
-	}
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+	"BasicAuthenticationCredentials": ubx.FieldSpec{
+		WireName: "basic_authentication_credentials",
+		Kind:     "object",
+		Fields:   Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentialsFields,
+	},
+	"CustomAuthenticationCredentials": ubx.FieldSpec{WireName: "custom_authentication_credentials"},
+	"KmsKeyArn":                       ubx.FieldSpec{WireName: "kms_key_arn"},
+	"Oauth2Properties": ubx.FieldSpec{
+		WireName: "oauth2_properties",
+		Kind:     "object",
+		Fields:   Connection_ConnectionInput_AuthenticationConfiguration_Oauth2PropertiesFields,
+	},
+	"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
+}
 
 var Connection_ConnectionInput_PhysicalConnectionRequirementsFields = ubx.FieldMap{
-		"AvailabilityZone": ubx.FieldSpec{WireName: "availability_zone"},
-		"SecurityGroupIdList": ubx.FieldSpec{WireName: "security_group_id_list"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-	}
+	"AvailabilityZone":    ubx.FieldSpec{WireName: "availability_zone"},
+	"SecurityGroupIdList": ubx.FieldSpec{WireName: "security_group_id_list"},
+	"SubnetId":            ubx.FieldSpec{WireName: "subnet_id"},
+}
 
 var Connection_ConnectionInputFields = ubx.FieldMap{
-		"AthenaProperties": ubx.FieldSpec{WireName: "athena_properties"},
-		"AuthenticationConfiguration": ubx.FieldSpec{
-			WireName: "authentication_configuration",
-			Kind: "object",
-			Fields: Connection_ConnectionInput_AuthenticationConfigurationFields,
-		},
-		"ConnectionProperties": ubx.FieldSpec{WireName: "connection_properties"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MatchCriteria": ubx.FieldSpec{WireName: "match_criteria"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PhysicalConnectionRequirements": ubx.FieldSpec{
-			WireName: "physical_connection_requirements",
-			Kind: "object",
-			Fields: Connection_ConnectionInput_PhysicalConnectionRequirementsFields,
-		},
-		"PythonProperties": ubx.FieldSpec{WireName: "python_properties"},
-		"SparkProperties": ubx.FieldSpec{WireName: "spark_properties"},
-		"ValidateCredentials": ubx.FieldSpec{WireName: "validate_credentials"},
-		"ValidateForComputeEnvironments": ubx.FieldSpec{WireName: "validate_for_compute_environments"},
-	}
+	"AthenaProperties": ubx.FieldSpec{WireName: "athena_properties"},
+	"AuthenticationConfiguration": ubx.FieldSpec{
+		WireName: "authentication_configuration",
+		Kind:     "object",
+		Fields:   Connection_ConnectionInput_AuthenticationConfigurationFields,
+	},
+	"ConnectionProperties": ubx.FieldSpec{WireName: "connection_properties"},
+	"ConnectionType":       ubx.FieldSpec{WireName: "connection_type"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"MatchCriteria":        ubx.FieldSpec{WireName: "match_criteria"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"PhysicalConnectionRequirements": ubx.FieldSpec{
+		WireName: "physical_connection_requirements",
+		Kind:     "object",
+		Fields:   Connection_ConnectionInput_PhysicalConnectionRequirementsFields,
+	},
+	"PythonProperties":               ubx.FieldSpec{WireName: "python_properties"},
+	"SparkProperties":                ubx.FieldSpec{WireName: "spark_properties"},
+	"ValidateCredentials":            ubx.FieldSpec{WireName: "validate_credentials"},
+	"ValidateForComputeEnvironments": ubx.FieldSpec{WireName: "validate_for_compute_environments"},
+}
 
 type ConnectionConfig struct {
 	// The ID of the data catalog to create the catalog object in. Currently, this should be the AWS account ID.
@@ -216,8 +216,8 @@ var Connection = ubx.ResourceBinding{
 		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
 		"ConnectionInput": ubx.FieldSpec{
 			WireName: "connection_input",
-			Kind: "object",
-			Fields: Connection_ConnectionInputFields,
+			Kind:     "object",
+			Fields:   Connection_ConnectionInputFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

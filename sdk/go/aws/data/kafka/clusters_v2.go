@@ -12,13 +12,13 @@ type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_ConnectivityInfo
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication_Sasl struct {
-	Iam any
+	Iam   any
 	Scram any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity_ClientAuthentication struct {
 	Sasl any
-	Tls any
+	Tls  any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_ConnectivityInfo_VpcConnectivity struct {
@@ -26,19 +26,19 @@ type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_ConnectivityInfo
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_ConnectivityInfo struct {
-	NetworkType any
-	PublicAccess any
+	NetworkType     any
+	PublicAccess    any
 	VpcConnectivity any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfo_ProvisionedThroughput struct {
-	Enabled any
+	Enabled          any
 	VolumeThroughput any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_StorageInfo_EbsStorageInfo struct {
 	ProvisionedThroughput any
-	VolumeSize any
+	VolumeSize            any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_StorageInfo struct {
@@ -47,29 +47,29 @@ type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo_StorageInfo stru
 
 type ClustersV2_ClusterInfoList_Provisioned_BrokerNodeGroupInfo struct {
 	BrokerAzdistribution any
-	ClientSubnets any
-	ConnectivityInfo any
-	InstanceType any
-	SecurityGroups any
-	StorageInfo any
-	ZoneIds any
+	ClientSubnets        any
+	ConnectivityInfo     any
+	InstanceType         any
+	SecurityGroups       any
+	StorageInfo          any
+	ZoneIds              any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_ClientAuthentication_Tls struct {
 	CertificateAuthorityArnList any
-	Enabled any
+	Enabled                     any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_ClientAuthentication struct {
-	Sasl any
-	Tls any
+	Sasl            any
+	Tls             any
 	Unauthenticated any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_CurrentBrokerSoftwareInfo struct {
-	ConfigurationArn any
+	ConfigurationArn      any
 	ConfigurationRevision any
-	KafkaVersion any
+	KafkaVersion          any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_EncryptionInfo_EncryptionAtRest struct {
@@ -78,39 +78,39 @@ type ClustersV2_ClusterInfoList_Provisioned_EncryptionInfo_EncryptionAtRest stru
 
 type ClustersV2_ClusterInfoList_Provisioned_EncryptionInfo_EncryptionInTransit struct {
 	ClientBroker any
-	InCluster any
+	InCluster    any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_EncryptionInfo struct {
-	EncryptionAtRest any
+	EncryptionAtRest    any
 	EncryptionInTransit any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_LoggingInfo_AuthorizerLogs_CloudWatchLogs struct {
-	Enabled any
+	Enabled  any
 	LogGroup any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_LoggingInfo_AuthorizerLogs_Firehose struct {
 	DeliveryStream any
-	Enabled any
+	Enabled        any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_LoggingInfo_AuthorizerLogs_S3 struct {
-	Bucket any
+	Bucket  any
 	Enabled any
-	Prefix any
+	Prefix  any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_LoggingInfo_AuthorizerLogs struct {
 	CloudWatchLogs any
-	Firehose any
-	S3 any
+	Firehose       any
+	S3             any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_LoggingInfo struct {
 	AuthorizerLogs any
-	BrokerLogs any
+	BrokerLogs     any
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_OpenMonitoring_Prometheus_JmxExporter struct {
@@ -118,7 +118,7 @@ type ClustersV2_ClusterInfoList_Provisioned_OpenMonitoring_Prometheus_JmxExporte
 }
 
 type ClustersV2_ClusterInfoList_Provisioned_OpenMonitoring_Prometheus struct {
-	JmxExporter any
+	JmxExporter  any
 	NodeExporter any
 }
 
@@ -131,18 +131,18 @@ type ClustersV2_ClusterInfoList_Provisioned_Rebalancing struct {
 }
 
 type ClustersV2_ClusterInfoList_Provisioned struct {
-	BrokerNodeGroupInfo any
-	ClientAuthentication any
+	BrokerNodeGroupInfo       any
+	ClientAuthentication      any
 	CurrentBrokerSoftwareInfo any
-	CustomerActionStatus any
-	EncryptionInfo any
-	EnhancedMonitoring any
-	LoggingInfo any
-	NumberOfBrokerNodes any
-	OpenMonitoring any
-	Rebalancing any
-	StorageMode any
-	ZookeeperConnectString any
+	CustomerActionStatus      any
+	EncryptionInfo            any
+	EnhancedMonitoring        any
+	LoggingInfo               any
+	NumberOfBrokerNodes       any
+	OpenMonitoring            any
+	Rebalancing               any
+	StorageMode               any
+	ZookeeperConnectString    any
 	ZookeeperConnectStringTls any
 }
 
@@ -160,47 +160,47 @@ type ClustersV2_ClusterInfoList_Serverless_ConnectivityInfo struct {
 
 type ClustersV2_ClusterInfoList_Serverless_VpcConfigs struct {
 	SecurityGroupIds any
-	SubnetIds any
+	SubnetIds        any
 }
 
 type ClustersV2_ClusterInfoList_Serverless struct {
 	ClientAuthentication any
-	ConnectivityInfo any
-	VpcConfigs any
+	ConnectivityInfo     any
+	VpcConfigs           any
 }
 
 type ClustersV2_ClusterInfoList_StateInfo struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type ClustersV2_ClusterInfoList struct {
 	ActiveOperationArn any
-	ClusterArn any
-	ClusterName any
-	ClusterType any
-	CreationTime any
-	CurrentVersion any
-	Provisioned any
-	Serverless any
-	State any
-	StateInfo any
-	Tags any
+	ClusterArn         any
+	ClusterName        any
+	ClusterType        any
+	CreationTime       any
+	CurrentVersion     any
+	Provisioned        any
+	Serverless         any
+	State              any
+	StateInfo          any
+	Tags               any
 }
 
 type ClustersV2Config struct {
 	ClusterNameFilter any
 	ClusterTypeFilter any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 type ClustersV2Attrs struct {
-	ClusterInfoList any
+	ClusterInfoList   any
 	ClusterNameFilter any
 	ClusterTypeFilter any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var ClustersV2 = ubx.DataSourceBinding{
@@ -208,7 +208,7 @@ var ClustersV2 = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterNameFilter": ubx.FieldSpec{WireName: "cluster_name_filter"},
 		"ClusterTypeFilter": ubx.FieldSpec{WireName: "cluster_type_filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

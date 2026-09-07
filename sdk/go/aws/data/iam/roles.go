@@ -4,51 +4,51 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Roles_Roles_PermissionsBoundary struct {
-	PermissionsBoundaryArn any
+	PermissionsBoundaryArn  any
 	PermissionsBoundaryType any
 }
 
 type Roles_Roles_RoleLastUsed struct {
 	LastUsedDate any
-	Region any
+	Region       any
 }
 
 type Roles_Roles_SourceRoleTemplate struct {
-	TemplateArn any
+	TemplateArn          any
 	TemplateMinorVersion any
 }
 
 type Roles_Roles_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Roles_Roles struct {
-	Arn any
+	Arn                      any
 	AssumeRolePolicyDocument any
-	CreateDate any
-	Description any
-	MaxSessionDuration any
-	Path any
-	PermissionsBoundary any
-	RoleId any
-	RoleLastUsed any
-	RoleName any
-	SourceRoleTemplate any
-	Tags any
+	CreateDate               any
+	Description              any
+	MaxSessionDuration       any
+	Path                     any
+	PermissionsBoundary      any
+	RoleId                   any
+	RoleLastUsed             any
+	RoleName                 any
+	SourceRoleTemplate       any
+	Tags                     any
 }
 
 type RolesConfig struct {
-	Marker any
-	MaxItems any
+	Marker     any
+	MaxItems   any
 	PathPrefix any
 }
 
 type RolesAttrs struct {
 	IsTruncated any
-	Marker any
-	MaxItems any
-	PathPrefix any
+	Marker      any
+	MaxItems    any
+	PathPrefix  any
 	// <p>Contains a list of IAM roles.</p> <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html">ListRoles</a> operation.</p>
 	Roles any
 }
@@ -56,8 +56,8 @@ type RolesAttrs struct {
 var Roles = ubx.DataSourceBinding{
 	WireType: "aws_iam_roles",
 	Fields: ubx.FieldMap{
-		"Marker": ubx.FieldSpec{WireName: "marker"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
+		"MaxItems":   ubx.FieldSpec{WireName: "max_items"},
 		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
 	},
 }

@@ -11,9 +11,9 @@ type CertificateProvider_Tags struct {
 }
 
 var CertificateProvider_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CertificateProviderConfig struct {
 	// The AWS::IoT::CertificateProvider account default for operations property specifies the list of certificate provider operations (RegisterCertificate or RegisterCertificateWithoutCA) for which this certificate provider is the default provider in the AWS account. (AI-inferred)
@@ -43,12 +43,12 @@ var CertificateProvider = ubx.ResourceBinding{
 	WireType: "aws_io_t_certificate_provider",
 	Fields: ubx.FieldMap{
 		"AccountDefaultForOperations": ubx.FieldSpec{WireName: "account_default_for_operations"},
-		"CertificateProviderName": ubx.FieldSpec{WireName: "certificate_provider_name"},
-		"LambdaFunctionArn": ubx.FieldSpec{WireName: "lambda_function_arn"},
+		"CertificateProviderName":     ubx.FieldSpec{WireName: "certificate_provider_name"},
+		"LambdaFunctionArn":           ubx.FieldSpec{WireName: "lambda_function_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: CertificateProvider_TagsFields,
+			Kind:     "list",
+			Fields:   CertificateProvider_TagsFields,
 		},
 	},
 }

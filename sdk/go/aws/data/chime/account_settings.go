@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountSettings_AccountSettings struct {
 	DisableRemoteControl any
-	EnableDialOut any
+	EnableDialOut        any
 }
 
 type AccountSettingsConfig struct {

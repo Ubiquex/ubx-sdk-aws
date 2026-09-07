@@ -71,10 +71,10 @@ type EndpointAccessAttrs struct {
 var EndpointAccess = ubx.ResourceBinding{
 	WireType: "aws_redshift_endpoint_access",
 	Fields: ubx.FieldMap{
-		"ClusterIdentifier": ubx.FieldSpec{WireName: "cluster_identifier"},
-		"EndpointName": ubx.FieldSpec{WireName: "endpoint_name"},
-		"ResourceOwner": ubx.FieldSpec{WireName: "resource_owner"},
-		"SubnetGroupName": ubx.FieldSpec{WireName: "subnet_group_name"},
+		"ClusterIdentifier":   ubx.FieldSpec{WireName: "cluster_identifier"},
+		"EndpointName":        ubx.FieldSpec{WireName: "endpoint_name"},
+		"ResourceOwner":       ubx.FieldSpec{WireName: "resource_owner"},
+		"SubnetGroupName":     ubx.FieldSpec{WireName: "subnet_group_name"},
 		"VpcSecurityGroupIds": ubx.FieldSpec{WireName: "vpc_security_group_ids"},
 	},
 }

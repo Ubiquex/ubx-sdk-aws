@@ -65,72 +65,72 @@ type ExperimentTemplate_StopConditions struct {
 }
 
 var ExperimentTemplate_ExperimentOptionsFields = ubx.FieldMap{
-		"AccountTargeting": ubx.FieldSpec{WireName: "account_targeting"},
-		"EmptyTargetResolutionMode": ubx.FieldSpec{WireName: "empty_target_resolution_mode"},
-	}
+	"AccountTargeting":          ubx.FieldSpec{WireName: "account_targeting"},
+	"EmptyTargetResolutionMode": ubx.FieldSpec{WireName: "empty_target_resolution_mode"},
+}
 
 var ExperimentTemplate_ExperimentReportConfiguration_DataSources_CloudWatchDashboardsFields = ubx.FieldMap{
-		"DashboardIdentifier": ubx.FieldSpec{WireName: "dashboard_identifier"},
-	}
+	"DashboardIdentifier": ubx.FieldSpec{WireName: "dashboard_identifier"},
+}
 
 var ExperimentTemplate_ExperimentReportConfiguration_DataSourcesFields = ubx.FieldMap{
-		"CloudWatchDashboards": ubx.FieldSpec{
-			WireName: "cloud_watch_dashboards",
-			Kind: "list",
-			Fields: ExperimentTemplate_ExperimentReportConfiguration_DataSources_CloudWatchDashboardsFields,
-		},
-	}
+	"CloudWatchDashboards": ubx.FieldSpec{
+		WireName: "cloud_watch_dashboards",
+		Kind:     "list",
+		Fields:   ExperimentTemplate_ExperimentReportConfiguration_DataSources_CloudWatchDashboardsFields,
+	},
+}
 
 var ExperimentTemplate_ExperimentReportConfiguration_Outputs_ExperimentReportS3ConfigurationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"Prefix":     ubx.FieldSpec{WireName: "prefix"},
+}
 
 var ExperimentTemplate_ExperimentReportConfiguration_OutputsFields = ubx.FieldMap{
-		"ExperimentReportS3Configuration": ubx.FieldSpec{
-			WireName: "experiment_report_s3_configuration",
-			Kind: "object",
-			Fields: ExperimentTemplate_ExperimentReportConfiguration_Outputs_ExperimentReportS3ConfigurationFields,
-		},
-	}
+	"ExperimentReportS3Configuration": ubx.FieldSpec{
+		WireName: "experiment_report_s3_configuration",
+		Kind:     "object",
+		Fields:   ExperimentTemplate_ExperimentReportConfiguration_Outputs_ExperimentReportS3ConfigurationFields,
+	},
+}
 
 var ExperimentTemplate_ExperimentReportConfigurationFields = ubx.FieldMap{
-		"DataSources": ubx.FieldSpec{
-			WireName: "data_sources",
-			Kind: "object",
-			Fields: ExperimentTemplate_ExperimentReportConfiguration_DataSourcesFields,
-		},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "object",
-			Fields: ExperimentTemplate_ExperimentReportConfiguration_OutputsFields,
-		},
-		"PostExperimentDuration": ubx.FieldSpec{WireName: "post_experiment_duration"},
-		"PreExperimentDuration": ubx.FieldSpec{WireName: "pre_experiment_duration"},
-	}
+	"DataSources": ubx.FieldSpec{
+		WireName: "data_sources",
+		Kind:     "object",
+		Fields:   ExperimentTemplate_ExperimentReportConfiguration_DataSourcesFields,
+	},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "object",
+		Fields:   ExperimentTemplate_ExperimentReportConfiguration_OutputsFields,
+	},
+	"PostExperimentDuration": ubx.FieldSpec{WireName: "post_experiment_duration"},
+	"PreExperimentDuration":  ubx.FieldSpec{WireName: "pre_experiment_duration"},
+}
 
 var ExperimentTemplate_LogConfiguration_CloudWatchLogsConfigurationFields = ubx.FieldMap{
-		"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
-	}
+	"LogGroupArn": ubx.FieldSpec{WireName: "log_group_arn"},
+}
 
 var ExperimentTemplate_LogConfigurationFields = ubx.FieldMap{
-		"CloudWatchLogsConfiguration": ubx.FieldSpec{
-			WireName: "cloud_watch_logs_configuration",
-			Kind: "object",
-			Fields: ExperimentTemplate_LogConfiguration_CloudWatchLogsConfigurationFields,
-		},
-		"LogSchemaVersion": ubx.FieldSpec{WireName: "log_schema_version"},
-		"S3Configuration": ubx.FieldSpec{
-			WireName: "s3_configuration",
-			Kind: "object",
-			Fields: ExperimentTemplate_ExperimentReportConfiguration_Outputs_ExperimentReportS3ConfigurationFields,
-		},
-	}
+	"CloudWatchLogsConfiguration": ubx.FieldSpec{
+		WireName: "cloud_watch_logs_configuration",
+		Kind:     "object",
+		Fields:   ExperimentTemplate_LogConfiguration_CloudWatchLogsConfigurationFields,
+	},
+	"LogSchemaVersion": ubx.FieldSpec{WireName: "log_schema_version"},
+	"S3Configuration": ubx.FieldSpec{
+		WireName: "s3_configuration",
+		Kind:     "object",
+		Fields:   ExperimentTemplate_ExperimentReportConfiguration_Outputs_ExperimentReportS3ConfigurationFields,
+	},
+}
 
 var ExperimentTemplate_StopConditionsFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 type ExperimentTemplateConfig struct {
 	// The actions for the experiment.
@@ -179,30 +179,30 @@ type ExperimentTemplateAttrs struct {
 var ExperimentTemplate = ubx.ResourceBinding{
 	WireType: "aws_fis_experiment_template",
 	Fields: ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
+		"Actions":     ubx.FieldSpec{WireName: "actions"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExperimentOptions": ubx.FieldSpec{
 			WireName: "experiment_options",
-			Kind: "object",
-			Fields: ExperimentTemplate_ExperimentOptionsFields,
+			Kind:     "object",
+			Fields:   ExperimentTemplate_ExperimentOptionsFields,
 		},
 		"ExperimentReportConfiguration": ubx.FieldSpec{
 			WireName: "experiment_report_configuration",
-			Kind: "object",
-			Fields: ExperimentTemplate_ExperimentReportConfigurationFields,
+			Kind:     "object",
+			Fields:   ExperimentTemplate_ExperimentReportConfigurationFields,
 		},
 		"LogConfiguration": ubx.FieldSpec{
 			WireName: "log_configuration",
-			Kind: "object",
-			Fields: ExperimentTemplate_LogConfigurationFields,
+			Kind:     "object",
+			Fields:   ExperimentTemplate_LogConfigurationFields,
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"StopConditions": ubx.FieldSpec{
 			WireName: "stop_conditions",
-			Kind: "list",
-			Fields: ExperimentTemplate_StopConditionsFields,
+			Kind:     "list",
+			Fields:   ExperimentTemplate_StopConditionsFields,
 		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":    ubx.FieldSpec{WireName: "tags"},
 		"Targets": ubx.FieldSpec{WireName: "targets"},
 	},
 }

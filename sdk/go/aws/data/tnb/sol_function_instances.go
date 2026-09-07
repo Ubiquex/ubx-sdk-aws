@@ -8,36 +8,36 @@ type SolFunctionInstances_FunctionInstances_InstantiatedVnfInfo struct {
 }
 
 type SolFunctionInstances_FunctionInstances_Metadata struct {
-	CreatedAt any
+	CreatedAt    any
 	LastModified any
 }
 
 type SolFunctionInstances_FunctionInstances struct {
-	Arn any
-	Id any
+	Arn                 any
+	Id                  any
 	InstantiatedVnfInfo any
-	InstantiationState any
-	Metadata any
-	NsInstanceId any
-	VnfPkgId any
-	VnfPkgName any
+	InstantiationState  any
+	Metadata            any
+	NsInstanceId        any
+	VnfPkgId            any
+	VnfPkgName          any
 }
 
 type SolFunctionInstancesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type SolFunctionInstancesAttrs struct {
 	FunctionInstances any
-	MaxResults any
-	NextToken any
+	MaxResults        any
+	NextToken         any
 }
 
 var SolFunctionInstances = ubx.DataSourceBinding{
 	WireType: "aws_tnb_sol_function_instances",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -4,69 +4,69 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamPools_Filters struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type IpamPools_IpamPools_AllocationResourceTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type IpamPools_IpamPools_SourceResource struct {
-	ResourceId any
-	ResourceOwner any
+	ResourceId     any
+	ResourceOwner  any
 	ResourceRegion any
-	ResourceType any
+	ResourceType   any
 }
 
 type IpamPools_IpamPools struct {
-	AddressFamily any
+	AddressFamily                  any
 	AllocationDefaultNetmaskLength any
-	AllocationMaxNetmaskLength any
-	AllocationMinNetmaskLength any
-	AllocationResourceTags any
-	AutoImport any
-	AwsService any
-	Description any
-	IpamArn any
-	IpamPoolArn any
-	IpamPoolId any
-	IpamRegion any
-	IpamScopeArn any
-	IpamScopeType any
-	Locale any
-	OwnerId any
-	PoolDepth any
-	PublicIpSource any
-	PubliclyAdvertisable any
-	SourceIpamPoolId any
-	SourceResource any
-	State any
-	StateMessage any
-	Tags any
+	AllocationMaxNetmaskLength     any
+	AllocationMinNetmaskLength     any
+	AllocationResourceTags         any
+	AutoImport                     any
+	AwsService                     any
+	Description                    any
+	IpamArn                        any
+	IpamPoolArn                    any
+	IpamPoolId                     any
+	IpamRegion                     any
+	IpamScopeArn                   any
+	IpamScopeType                  any
+	Locale                         any
+	OwnerId                        any
+	PoolDepth                      any
+	PublicIpSource                 any
+	PubliclyAdvertisable           any
+	SourceIpamPoolId               any
+	SourceResource                 any
+	State                          any
+	StateMessage                   any
+	Tags                           any
 }
 
 var IpamPools_FiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type IpamPoolsConfig struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	IpamPoolIds any
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 }
 
 type IpamPoolsAttrs struct {
-	DryRun any
-	Filters any
+	DryRun      any
+	Filters     any
 	IpamPoolIds any
-	IpamPools any
-	MaxResults any
-	NextToken any
+	IpamPools   any
+	MaxResults  any
+	NextToken   any
 }
 
 var IpamPools = ubx.DataSourceBinding{
@@ -75,11 +75,11 @@ var IpamPools = ubx.DataSourceBinding{
 		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: IpamPools_FiltersFields,
+			Kind:     "list",
+			Fields:   IpamPools_FiltersFields,
 		},
 		"IpamPoolIds": ubx.FieldSpec{WireName: "ipam_pool_ids"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 	},
 }

@@ -25,23 +25,23 @@ type FunctionConfiguration_SyncConfig struct {
 }
 
 var FunctionConfiguration_RuntimeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-	}
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
+}
 
 var FunctionConfiguration_SyncConfig_LambdaConflictHandlerConfigFields = ubx.FieldMap{
-		"LambdaConflictHandlerArn": ubx.FieldSpec{WireName: "lambda_conflict_handler_arn"},
-	}
+	"LambdaConflictHandlerArn": ubx.FieldSpec{WireName: "lambda_conflict_handler_arn"},
+}
 
 var FunctionConfiguration_SyncConfigFields = ubx.FieldMap{
-		"ConflictDetection": ubx.FieldSpec{WireName: "conflict_detection"},
-		"ConflictHandler": ubx.FieldSpec{WireName: "conflict_handler"},
-		"LambdaConflictHandlerConfig": ubx.FieldSpec{
-			WireName: "lambda_conflict_handler_config",
-			Kind: "object",
-			Fields: FunctionConfiguration_SyncConfig_LambdaConflictHandlerConfigFields,
-		},
-	}
+	"ConflictDetection": ubx.FieldSpec{WireName: "conflict_detection"},
+	"ConflictHandler":   ubx.FieldSpec{WireName: "conflict_handler"},
+	"LambdaConflictHandlerConfig": ubx.FieldSpec{
+		WireName: "lambda_conflict_handler_config",
+		Kind:     "object",
+		Fields:   FunctionConfiguration_SyncConfig_LambdaConflictHandlerConfigFields,
+	},
+}
 
 type FunctionConfigurationConfig struct {
 	// The AWS AppSync GraphQL API that you want to attach using this function.
@@ -112,27 +112,27 @@ type FunctionConfigurationAttrs struct {
 var FunctionConfiguration = ubx.ResourceBinding{
 	WireType: "aws_app_sync_function_configuration",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"CodeS3Location": ubx.FieldSpec{WireName: "code_s3_location"},
-		"DataSourceName": ubx.FieldSpec{WireName: "data_source_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FunctionVersion": ubx.FieldSpec{WireName: "function_version"},
-		"MaxBatchSize": ubx.FieldSpec{WireName: "max_batch_size"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RequestMappingTemplate": ubx.FieldSpec{WireName: "request_mapping_template"},
-		"RequestMappingTemplateS3Location": ubx.FieldSpec{WireName: "request_mapping_template_s3_location"},
-		"ResponseMappingTemplate": ubx.FieldSpec{WireName: "response_mapping_template"},
+		"ApiId":                             ubx.FieldSpec{WireName: "api_id"},
+		"Code":                              ubx.FieldSpec{WireName: "code"},
+		"CodeS3Location":                    ubx.FieldSpec{WireName: "code_s3_location"},
+		"DataSourceName":                    ubx.FieldSpec{WireName: "data_source_name"},
+		"Description":                       ubx.FieldSpec{WireName: "description"},
+		"FunctionVersion":                   ubx.FieldSpec{WireName: "function_version"},
+		"MaxBatchSize":                      ubx.FieldSpec{WireName: "max_batch_size"},
+		"Name":                              ubx.FieldSpec{WireName: "name"},
+		"RequestMappingTemplate":            ubx.FieldSpec{WireName: "request_mapping_template"},
+		"RequestMappingTemplateS3Location":  ubx.FieldSpec{WireName: "request_mapping_template_s3_location"},
+		"ResponseMappingTemplate":           ubx.FieldSpec{WireName: "response_mapping_template"},
 		"ResponseMappingTemplateS3Location": ubx.FieldSpec{WireName: "response_mapping_template_s3_location"},
 		"Runtime": ubx.FieldSpec{
 			WireName: "runtime",
-			Kind: "object",
-			Fields: FunctionConfiguration_RuntimeFields,
+			Kind:     "object",
+			Fields:   FunctionConfiguration_RuntimeFields,
 		},
 		"SyncConfig": ubx.FieldSpec{
 			WireName: "sync_config",
-			Kind: "object",
-			Fields: FunctionConfiguration_SyncConfigFields,
+			Kind:     "object",
+			Fields:   FunctionConfiguration_SyncConfigFields,
 		},
 	},
 }

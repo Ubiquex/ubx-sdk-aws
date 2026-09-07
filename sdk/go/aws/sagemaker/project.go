@@ -45,44 +45,44 @@ type Project_TemplateProviderDetails struct {
 }
 
 var Project_ServiceCatalogProvisionedProductDetailsFields = ubx.FieldMap{
-		"ProvisionedProductId": ubx.FieldSpec{WireName: "provisioned_product_id"},
-		"ProvisionedProductStatusMessage": ubx.FieldSpec{WireName: "provisioned_product_status_message"},
-	}
+	"ProvisionedProductId":            ubx.FieldSpec{WireName: "provisioned_product_id"},
+	"ProvisionedProductStatusMessage": ubx.FieldSpec{WireName: "provisioned_product_status_message"},
+}
 
 var Project_ServiceCatalogProvisioningDetails_ProvisioningParametersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Project_ServiceCatalogProvisioningDetailsFields = ubx.FieldMap{
-		"PathId": ubx.FieldSpec{WireName: "path_id"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
-		"ProvisioningArtifactId": ubx.FieldSpec{WireName: "provisioning_artifact_id"},
-		"ProvisioningParameters": ubx.FieldSpec{
-			WireName: "provisioning_parameters",
-			Kind: "list",
-			Fields: Project_ServiceCatalogProvisioningDetails_ProvisioningParametersFields,
-		},
-	}
+	"PathId":                 ubx.FieldSpec{WireName: "path_id"},
+	"ProductId":              ubx.FieldSpec{WireName: "product_id"},
+	"ProvisioningArtifactId": ubx.FieldSpec{WireName: "provisioning_artifact_id"},
+	"ProvisioningParameters": ubx.FieldSpec{
+		WireName: "provisioning_parameters",
+		Kind:     "list",
+		Fields:   Project_ServiceCatalogProvisioningDetails_ProvisioningParametersFields,
+	},
+}
 
 var Project_TemplateProviderDetails_CfnTemplateProviderDetailFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: Project_ServiceCatalogProvisioningDetails_ProvisioningParametersFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
-		"TemplateUrl": ubx.FieldSpec{WireName: "template_url"},
-	}
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   Project_ServiceCatalogProvisioningDetails_ProvisioningParametersFields,
+	},
+	"RoleArn":      ubx.FieldSpec{WireName: "role_arn"},
+	"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+	"TemplateUrl":  ubx.FieldSpec{WireName: "template_url"},
+}
 
 var Project_TemplateProviderDetailsFields = ubx.FieldMap{
-		"CfnTemplateProviderDetail": ubx.FieldSpec{
-			WireName: "cfn_template_provider_detail",
-			Kind: "object",
-			Fields: Project_TemplateProviderDetails_CfnTemplateProviderDetailFields,
-		},
-	}
+	"CfnTemplateProviderDetail": ubx.FieldSpec{
+		WireName: "cfn_template_provider_detail",
+		Kind:     "object",
+		Fields:   Project_TemplateProviderDetails_CfnTemplateProviderDetailFields,
+	},
+}
 
 type ProjectConfig struct {
 	// The description of the project.
@@ -126,26 +126,26 @@ var Project = ubx.ResourceBinding{
 	WireType: "aws_sage_maker_project",
 	Fields: ubx.FieldMap{
 		"ProjectDescription": ubx.FieldSpec{WireName: "project_description"},
-		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
+		"ProjectName":        ubx.FieldSpec{WireName: "project_name"},
 		"ServiceCatalogProvisionedProductDetails": ubx.FieldSpec{
 			WireName: "service_catalog_provisioned_product_details",
-			Kind: "object",
-			Fields: Project_ServiceCatalogProvisionedProductDetailsFields,
+			Kind:     "object",
+			Fields:   Project_ServiceCatalogProvisionedProductDetailsFields,
 		},
 		"ServiceCatalogProvisioningDetails": ubx.FieldSpec{
 			WireName: "service_catalog_provisioning_details",
-			Kind: "object",
-			Fields: Project_ServiceCatalogProvisioningDetailsFields,
+			Kind:     "object",
+			Fields:   Project_ServiceCatalogProvisioningDetailsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Project_ServiceCatalogProvisioningDetails_ProvisioningParametersFields,
+			Kind:     "list",
+			Fields:   Project_ServiceCatalogProvisioningDetails_ProvisioningParametersFields,
 		},
 		"TemplateProviderDetails": ubx.FieldSpec{
 			WireName: "template_provider_details",
-			Kind: "list",
-			Fields: Project_TemplateProviderDetailsFields,
+			Kind:     "list",
+			Fields:   Project_TemplateProviderDetailsFields,
 		},
 	},
 }

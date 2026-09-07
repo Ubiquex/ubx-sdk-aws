@@ -4,26 +4,26 @@ package appstream2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SoftwareAssociations_SoftwareAssociations_DeploymentError struct {
-	ErrorCode any
+	ErrorCode    any
 	ErrorMessage any
 }
 
 type SoftwareAssociations_SoftwareAssociations struct {
 	DeploymentError any
-	SoftwareName any
-	Status any
+	SoftwareName    any
+	Status          any
 }
 
 type SoftwareAssociationsConfig struct {
 	AssociatedResource any
-	MaxResults any
-	NextToken any
+	MaxResults         any
+	NextToken          any
 }
 
 type SoftwareAssociationsAttrs struct {
-	AssociatedResource any
-	MaxResults any
-	NextToken any
+	AssociatedResource   any
+	MaxResults           any
+	NextToken            any
 	SoftwareAssociations any
 }
 
@@ -31,7 +31,7 @@ var SoftwareAssociations = ubx.DataSourceBinding{
 	WireType: "aws_appstream2_software_associations",
 	Fields: ubx.FieldMap{
 		"AssociatedResource": ubx.FieldSpec{WireName: "associated_resource"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":         ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":          ubx.FieldSpec{WireName: "next_token"},
 	},
 }

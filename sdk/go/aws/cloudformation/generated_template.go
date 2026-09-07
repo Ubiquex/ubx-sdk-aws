@@ -22,9 +22,9 @@ type GeneratedTemplate_TemplateConfiguration struct {
 }
 
 var GeneratedTemplate_TemplateConfigurationFields = ubx.FieldMap{
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
-		"UpdateReplacePolicy": ubx.FieldSpec{WireName: "update_replace_policy"},
-	}
+	"DeletionPolicy":      ubx.FieldSpec{WireName: "deletion_policy"},
+	"UpdateReplacePolicy": ubx.FieldSpec{WireName: "update_replace_policy"},
+}
 
 type GeneratedTemplateConfig struct {
 	// The name assigned to the generated template.
@@ -58,8 +58,8 @@ var GeneratedTemplate = ubx.ResourceBinding{
 		"GeneratedTemplateName": ubx.FieldSpec{WireName: "generated_template_name"},
 		"TemplateConfiguration": ubx.FieldSpec{
 			WireName: "template_configuration",
-			Kind: "object",
-			Fields: GeneratedTemplate_TemplateConfigurationFields,
+			Kind:     "object",
+			Fields:   GeneratedTemplate_TemplateConfigurationFields,
 		},
 	},
 }

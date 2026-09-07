@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PodIdentityAssociations_Associations struct {
 	AssociationArn any
-	AssociationId any
-	ClusterName any
-	Namespace any
-	OwnerArn any
+	AssociationId  any
+	ClusterName    any
+	Namespace      any
+	OwnerArn       any
 	ServiceAccount any
 }
 
 type PodIdentityAssociationsConfig struct {
-	ClusterName any
-	MaxResults any
-	Namespace any
-	NextToken any
+	ClusterName    any
+	MaxResults     any
+	Namespace      any
+	NextToken      any
 	ServiceAccount any
 }
 
 type PodIdentityAssociationsAttrs struct {
-	Associations any
-	ClusterName any
-	MaxResults any
-	Namespace any
-	NextToken any
+	Associations   any
+	ClusterName    any
+	MaxResults     any
+	Namespace      any
+	NextToken      any
 	ServiceAccount any
 }
 
 var PodIdentityAssociations = ubx.DataSourceBinding{
 	WireType: "aws_eks_pod_identity_associations",
 	Fields: ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"ClusterName":    ubx.FieldSpec{WireName: "cluster_name"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"Namespace":      ubx.FieldSpec{WireName: "namespace"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 	},
 }

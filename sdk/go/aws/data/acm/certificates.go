@@ -4,67 +4,67 @@ package acm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Certificates_CertificateSummaryList struct {
-	CertificateArn any
-	CertificateKeyPairOrigin any
-	CreatedAt any
-	DomainName any
-	ExportOption any
-	Exported any
-	ExtendedKeyUsages any
+	CertificateArn                       any
+	CertificateKeyPairOrigin             any
+	CreatedAt                            any
+	DomainName                           any
+	ExportOption                         any
+	Exported                             any
+	ExtendedKeyUsages                    any
 	HasAdditionalSubjectAlternativeNames any
-	ImportedAt any
-	InUse any
-	IssuedAt any
-	KeyAlgorithm any
-	KeyUsages any
-	ManagedBy any
-	NotAfter any
-	NotBefore any
-	RenewalEligibility any
-	RevokedAt any
-	Status any
-	SubjectAlternativeNameSummaries any
-	Type any
+	ImportedAt                           any
+	InUse                                any
+	IssuedAt                             any
+	KeyAlgorithm                         any
+	KeyUsages                            any
+	ManagedBy                            any
+	NotAfter                             any
+	NotBefore                            any
+	RenewalEligibility                   any
+	RevokedAt                            any
+	Status                               any
+	SubjectAlternativeNameSummaries      any
+	Type                                 any
 }
 
 type Certificates_Includes struct {
-	ExportOption any
+	ExportOption     any
 	ExtendedKeyUsage any
-	KeyTypes any
-	KeyUsage any
-	ManagedBy any
+	KeyTypes         any
+	KeyUsage         any
+	ManagedBy        any
 }
 
 var Certificates_IncludesFields = ubx.FieldMap{
-		"ExportOption": ubx.FieldSpec{WireName: "export_option"},
-		"ExtendedKeyUsage": ubx.FieldSpec{WireName: "extended_key_usage"},
-		"KeyTypes": ubx.FieldSpec{WireName: "key_types"},
-		"KeyUsage": ubx.FieldSpec{WireName: "key_usage"},
-		"ManagedBy": ubx.FieldSpec{WireName: "managed_by"},
-	}
+	"ExportOption":     ubx.FieldSpec{WireName: "export_option"},
+	"ExtendedKeyUsage": ubx.FieldSpec{WireName: "extended_key_usage"},
+	"KeyTypes":         ubx.FieldSpec{WireName: "key_types"},
+	"KeyUsage":         ubx.FieldSpec{WireName: "key_usage"},
+	"ManagedBy":        ubx.FieldSpec{WireName: "managed_by"},
+}
 
 type CertificatesConfig struct {
 	// <p>A list of <code>CertificateKeyPairOrigin</code> values used to filter certificates.</p>
 	CertificateKeyPairOrigins any
-	CertificateStatuses any
+	CertificateStatuses       any
 	// <p>This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list. </p>
-	Includes any
-	MaxItems any
+	Includes  any
+	MaxItems  any
 	NextToken any
-	SortBy any
+	SortBy    any
 	SortOrder any
 }
 
 type CertificatesAttrs struct {
 	// <p>A list of <code>CertificateKeyPairOrigin</code> values used to filter certificates.</p>
 	CertificateKeyPairOrigins any
-	CertificateStatuses any
-	CertificateSummaryList any
+	CertificateStatuses       any
+	CertificateSummaryList    any
 	// <p>This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list. </p>
-	Includes any
-	MaxItems any
+	Includes  any
+	MaxItems  any
 	NextToken any
-	SortBy any
+	SortBy    any
 	SortOrder any
 }
 
@@ -72,15 +72,15 @@ var Certificates = ubx.DataSourceBinding{
 	WireType: "aws_acm_certificates",
 	Fields: ubx.FieldMap{
 		"CertificateKeyPairOrigins": ubx.FieldSpec{WireName: "certificate_key_pair_origins"},
-		"CertificateStatuses": ubx.FieldSpec{WireName: "certificate_statuses"},
+		"CertificateStatuses":       ubx.FieldSpec{WireName: "certificate_statuses"},
 		"Includes": ubx.FieldSpec{
 			WireName: "includes",
-			Kind: "object",
-			Fields: Certificates_IncludesFields,
+			Kind:     "object",
+			Fields:   Certificates_IncludesFields,
 		},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxItems":  ubx.FieldSpec{WireName: "max_items"},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

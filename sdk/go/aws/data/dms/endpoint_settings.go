@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointSettings_EndpointSettings struct {
 	Applicability any
-	DefaultValue any
-	EnumValues any
-	IntValueMax any
-	IntValueMin any
-	Name any
-	Sensitive any
-	Type any
-	Units any
+	DefaultValue  any
+	EnumValues    any
+	IntValueMax   any
+	IntValueMin   any
+	Name          any
+	Sensitive     any
+	Type          any
+	Units         any
 }
 
 type EndpointSettingsConfig struct {
 	EngineName any
-	Marker any
+	Marker     any
 	MaxRecords any
 }
 
 type EndpointSettingsAttrs struct {
 	EndpointSettings any
-	EngineName any
-	Marker any
-	MaxRecords any
+	EngineName       any
+	Marker           any
+	MaxRecords       any
 }
 
 var EndpointSettings = ubx.DataSourceBinding{
 	WireType: "aws_dms_endpoint_settings",
 	Fields: ubx.FieldMap{
 		"EngineName": ubx.FieldSpec{WireName: "engine_name"},
-		"Marker": ubx.FieldSpec{WireName: "marker"},
+		"Marker":     ubx.FieldSpec{WireName: "marker"},
 		"MaxRecords": ubx.FieldSpec{WireName: "max_records"},
 	},
 }

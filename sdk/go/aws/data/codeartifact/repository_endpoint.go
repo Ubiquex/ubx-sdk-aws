@@ -4,29 +4,29 @@ package codeartifact
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RepositoryEndpointConfig struct {
-	Domain any
-	DomainOwner any
+	Domain       any
+	DomainOwner  any
 	EndpointType any
-	Format any
-	Repository any
+	Format       any
+	Repository   any
 }
 
 type RepositoryEndpointAttrs struct {
-	Domain any
-	DomainOwner any
-	EndpointType any
-	Format any
-	Repository any
+	Domain             any
+	DomainOwner        any
+	EndpointType       any
+	Format             any
+	Repository         any
 	RepositoryEndpoint any
 }
 
 var RepositoryEndpoint = ubx.DataSourceBinding{
 	WireType: "aws_codeartifact_repository_endpoint",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainOwner": ubx.FieldSpec{WireName: "domain_owner"},
+		"Domain":       ubx.FieldSpec{WireName: "domain"},
+		"DomainOwner":  ubx.FieldSpec{WireName: "domain_owner"},
 		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
+		"Format":       ubx.FieldSpec{WireName: "format"},
+		"Repository":   ubx.FieldSpec{WireName: "repository"},
 	},
 }

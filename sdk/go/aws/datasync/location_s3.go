@@ -16,13 +16,13 @@ type LocationS3_Tags struct {
 }
 
 var LocationS3_S3ConfigFields = ubx.FieldMap{
-		"BucketAccessRoleArn": ubx.FieldSpec{WireName: "bucket_access_role_arn"},
-	}
+	"BucketAccessRoleArn": ubx.FieldSpec{WireName: "bucket_access_role_arn"},
+}
 
 var LocationS3_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type LocationS3Config struct {
 	// The Amazon Resource Name (ARN) of the Amazon S3 bucket.
@@ -60,15 +60,15 @@ var LocationS3 = ubx.ResourceBinding{
 		"S3BucketArn": ubx.FieldSpec{WireName: "s3_bucket_arn"},
 		"S3Config": ubx.FieldSpec{
 			WireName: "s3_config",
-			Kind: "object",
-			Fields: LocationS3_S3ConfigFields,
+			Kind:     "object",
+			Fields:   LocationS3_S3ConfigFields,
 		},
 		"S3StorageClass": ubx.FieldSpec{WireName: "s3_storage_class"},
-		"Subdirectory": ubx.FieldSpec{WireName: "subdirectory"},
+		"Subdirectory":   ubx.FieldSpec{WireName: "subdirectory"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: LocationS3_TagsFields,
+			Kind:     "list",
+			Fields:   LocationS3_TagsFields,
 		},
 	},
 }

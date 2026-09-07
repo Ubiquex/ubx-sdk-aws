@@ -13,10 +13,10 @@ type ConnectorDefinitionVersion_Connectors struct {
 }
 
 var ConnectorDefinitionVersion_ConnectorsFields = ubx.FieldMap{
-		"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"ConnectorArn": ubx.FieldSpec{WireName: "connector_arn"},
+	"Id":           ubx.FieldSpec{WireName: "id"},
+	"Parameters":   ubx.FieldSpec{WireName: "parameters"},
+}
 
 type ConnectorDefinitionVersionConfig struct {
 	// Specifies the ID of the Greengrass connector definition to which this version belongs, linking the version to its parent ConnectorDefinition resource. (AI-inferred)
@@ -40,8 +40,8 @@ var ConnectorDefinitionVersion = ubx.ResourceBinding{
 		"ConnectorDefinitionId": ubx.FieldSpec{WireName: "connector_definition_id"},
 		"Connectors": ubx.FieldSpec{
 			WireName: "connectors",
-			Kind: "list",
-			Fields: ConnectorDefinitionVersion_ConnectorsFields,
+			Kind:     "list",
+			Fields:   ConnectorDefinitionVersion_ConnectorsFields,
 		},
 	},
 }

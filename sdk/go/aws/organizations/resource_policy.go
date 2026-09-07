@@ -11,9 +11,9 @@ type ResourcePolicy_Tags struct {
 }
 
 var ResourcePolicy_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ResourcePolicyConfig struct {
 	// The policy document. For AWS CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format before submitting it.
@@ -39,8 +39,8 @@ var ResourcePolicy = ubx.ResourceBinding{
 		"Content": ubx.FieldSpec{WireName: "content"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ResourcePolicy_TagsFields,
+			Kind:     "list",
+			Fields:   ResourcePolicy_TagsFields,
 		},
 	},
 }

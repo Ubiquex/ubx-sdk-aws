@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationAssignments_ApplicationAssignments struct {
 	ApplicationArn any
-	PrincipalId any
-	PrincipalType any
+	PrincipalId    any
+	PrincipalType  any
 }
 
 type ApplicationAssignmentsConfig struct {
 	ApplicationArn any
-	MaxResults any
-	NextToken any
+	MaxResults     any
+	NextToken      any
 }
 
 type ApplicationAssignmentsAttrs struct {
-	ApplicationArn any
+	ApplicationArn         any
 	ApplicationAssignments any
-	MaxResults any
-	NextToken any
+	MaxResults             any
+	NextToken              any
 }
 
 var ApplicationAssignments = ubx.DataSourceBinding{
 	WireType: "aws_sso_application_assignments",
 	Fields: ubx.FieldMap{
 		"ApplicationArn": ubx.FieldSpec{WireName: "application_arn"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":     ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":      ubx.FieldSpec{WireName: "next_token"},
 	},
 }

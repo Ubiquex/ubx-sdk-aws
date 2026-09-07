@@ -7,26 +7,26 @@ type BucketCors_Corsrules struct {
 	AllowedHeaders any
 	AllowedMethods any
 	AllowedOrigins any
-	ExposeHeaders any
-	Id any
-	MaxAgeSeconds any
+	ExposeHeaders  any
+	Id             any
+	MaxAgeSeconds  any
 }
 
 type BucketCorsConfig struct {
-	Bucket any
+	Bucket              any
 	ExpectedBucketOwner any
 }
 
 type BucketCorsAttrs struct {
-	Bucket any
-	Corsrules any
+	Bucket              any
+	Corsrules           any
 	ExpectedBucketOwner any
 }
 
 var BucketCors = ubx.DataSourceBinding{
 	WireType: "aws_s3_bucket_cors",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"Bucket":              ubx.FieldSpec{WireName: "bucket"},
 		"ExpectedBucketOwner": ubx.FieldSpec{WireName: "expected_bucket_owner"},
 	},
 }

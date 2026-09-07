@@ -6,8 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ModelsV2LexBotReplicas_BotReplicaSummaries struct {
 	BotReplicaStatus any
 	CreationDateTime any
-	FailureReasons any
-	ReplicaRegion any
+	FailureReasons   any
+	ReplicaRegion    any
 }
 
 type ModelsV2LexBotReplicasConfig struct {
@@ -15,7 +15,7 @@ type ModelsV2LexBotReplicasConfig struct {
 }
 
 type ModelsV2LexBotReplicasAttrs struct {
-	BotId any
+	BotId               any
 	BotReplicaSummaries any
 	// <p>The region that contains the replicated bots. Minimum value = 2, maximum value = 25.</p>
 	SourceRegion any

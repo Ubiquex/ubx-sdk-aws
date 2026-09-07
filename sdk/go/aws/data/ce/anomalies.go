@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Anomalies_Anomalies_AnomalyScore struct {
 	CurrentScore any
-	MaxScore any
+	MaxScore     any
 }
 
 type Anomalies_Anomalies_Impact struct {
-	MaxImpact any
-	TotalActualSpend any
-	TotalExpectedSpend any
-	TotalImpact any
+	MaxImpact             any
+	TotalActualSpend      any
+	TotalExpectedSpend    any
+	TotalImpact           any
 	TotalImpactPercentage any
 }
 
@@ -21,54 +21,54 @@ type Anomalies_Anomalies_RootCauses_Impact struct {
 }
 
 type Anomalies_Anomalies_RootCauses struct {
-	Impact any
-	LinkedAccount any
+	Impact            any
+	LinkedAccount     any
 	LinkedAccountName any
-	Region any
-	Service any
-	UsageType any
+	Region            any
+	Service           any
+	UsageType         any
 }
 
 type Anomalies_Anomalies struct {
-	AnomalyEndDate any
-	AnomalyId any
-	AnomalyScore any
+	AnomalyEndDate   any
+	AnomalyId        any
+	AnomalyScore     any
 	AnomalyStartDate any
-	DimensionValue any
-	Feedback any
-	Impact any
-	MonitorArn any
-	RootCauses any
+	DimensionValue   any
+	Feedback         any
+	Impact           any
+	MonitorArn       any
+	RootCauses       any
 }
 
 type Anomalies_DateInterval struct {
-	EndDate any
+	EndDate   any
 	StartDate any
 }
 
 type Anomalies_TotalImpact struct {
-	EndValue any
+	EndValue        any
 	NumericOperator any
-	StartValue any
+	StartValue      any
 }
 
 var Anomalies_DateIntervalFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-	}
+	"EndDate":   ubx.FieldSpec{WireName: "end_date"},
+	"StartDate": ubx.FieldSpec{WireName: "start_date"},
+}
 
 var Anomalies_TotalImpactFields = ubx.FieldMap{
-		"EndValue": ubx.FieldSpec{WireName: "end_value"},
-		"NumericOperator": ubx.FieldSpec{WireName: "numeric_operator"},
-		"StartValue": ubx.FieldSpec{WireName: "start_value"},
-	}
+	"EndValue":        ubx.FieldSpec{WireName: "end_value"},
+	"NumericOperator": ubx.FieldSpec{WireName: "numeric_operator"},
+	"StartValue":      ubx.FieldSpec{WireName: "start_value"},
+}
 
 type AnomaliesConfig struct {
 	// <p>The time period for an anomaly. </p>
-	DateInterval any
-	Feedback any
-	MaxResults any
-	MonitorArn any
+	DateInterval  any
+	Feedback      any
+	MaxResults    any
+	MonitorArn    any
 	NextPageToken any
 	// <p>Filters cost anomalies based on the total impact. </p>
 	TotalImpact any
@@ -77,10 +77,10 @@ type AnomaliesConfig struct {
 type AnomaliesAttrs struct {
 	Anomalies any
 	// <p>The time period for an anomaly. </p>
-	DateInterval any
-	Feedback any
-	MaxResults any
-	MonitorArn any
+	DateInterval  any
+	Feedback      any
+	MaxResults    any
+	MonitorArn    any
 	NextPageToken any
 	// <p>Filters cost anomalies based on the total impact. </p>
 	TotalImpact any
@@ -91,17 +91,17 @@ var Anomalies = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"DateInterval": ubx.FieldSpec{
 			WireName: "date_interval",
-			Kind: "object",
-			Fields: Anomalies_DateIntervalFields,
+			Kind:     "object",
+			Fields:   Anomalies_DateIntervalFields,
 		},
-		"Feedback": ubx.FieldSpec{WireName: "feedback"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MonitorArn": ubx.FieldSpec{WireName: "monitor_arn"},
+		"Feedback":      ubx.FieldSpec{WireName: "feedback"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"MonitorArn":    ubx.FieldSpec{WireName: "monitor_arn"},
 		"NextPageToken": ubx.FieldSpec{WireName: "next_page_token"},
 		"TotalImpact": ubx.FieldSpec{
 			WireName: "total_impact",
-			Kind: "object",
-			Fields: Anomalies_TotalImpactFields,
+			Kind:     "object",
+			Fields:   Anomalies_TotalImpactFields,
 		},
 	},
 }

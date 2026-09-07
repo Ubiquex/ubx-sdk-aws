@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachPoints_AttachPoints struct {
 	Identifier any
-	Name any
-	Type any
+	Name       any
+	Type       any
 }
 
 type AttachPointsConfig struct {
 	EnvironmentId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 type AttachPointsAttrs struct {
-	AttachPoints any
+	AttachPoints  any
 	EnvironmentId any
-	MaxResults any
-	NextToken any
+	MaxResults    any
+	NextToken     any
 }
 
 var AttachPoints = ubx.DataSourceBinding{
 	WireType: "aws_interconnect_attach_points",
 	Fields: ubx.FieldMap{
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":    ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":     ubx.FieldSpec{WireName: "next_token"},
 	},
 }

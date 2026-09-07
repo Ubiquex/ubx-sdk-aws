@@ -4,7 +4,7 @@ package connectcampaignsv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectInstanceIntegrations_IntegrationSummaryList_CustomerProfiles struct {
-	DomainArn any
+	DomainArn       any
 	ObjectTypeNames any
 }
 
@@ -18,8 +18,8 @@ type ConnectInstanceIntegrations_IntegrationSummaryList_QConnect struct {
 
 type ConnectInstanceIntegrations_IntegrationSummaryList struct {
 	CustomerProfiles any
-	Lambda any
-	QConnect any
+	Lambda           any
+	QConnect         any
 }
 
 type ConnectInstanceIntegrationsConfig struct {
@@ -46,7 +46,7 @@ var ConnectInstanceIntegrations = ubx.DataSourceBinding{
 	WireType: "aws_connectcampaignsv2_connect_instance_integrations",
 	Fields: ubx.FieldMap{
 		"ConnectInstanceId": ubx.FieldSpec{WireName: "connect_instance_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":        ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":         ubx.FieldSpec{WireName: "next_token"},
 	},
 }

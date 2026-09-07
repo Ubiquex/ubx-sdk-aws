@@ -4,32 +4,32 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Campaigns_Campaigns struct {
-	CampaignArn any
-	CreationDateTime any
-	FailureReason any
+	CampaignArn         any
+	CreationDateTime    any
+	FailureReason       any
 	LastUpdatedDateTime any
-	Name any
-	Status any
+	Name                any
+	Status              any
 }
 
 type CampaignsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults  any
+	NextToken   any
 	SolutionArn any
 }
 
 type CampaignsAttrs struct {
-	Campaigns any
-	MaxResults any
-	NextToken any
+	Campaigns   any
+	MaxResults  any
+	NextToken   any
 	SolutionArn any
 }
 
 var Campaigns = ubx.DataSourceBinding{
 	WireType: "aws_personalize_campaigns",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":  ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":   ubx.FieldSpec{WireName: "next_token"},
 		"SolutionArn": ubx.FieldSpec{WireName: "solution_arn"},
 	},
 }

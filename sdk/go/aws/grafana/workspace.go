@@ -66,58 +66,58 @@ type Workspace_VpcConfiguration struct {
 }
 
 var Workspace_NetworkAccessControlFields = ubx.FieldMap{
-		"PrefixListIds": ubx.FieldSpec{WireName: "prefix_list_ids"},
-		"VpceIds": ubx.FieldSpec{WireName: "vpce_ids"},
-	}
+	"PrefixListIds": ubx.FieldSpec{WireName: "prefix_list_ids"},
+	"VpceIds":       ubx.FieldSpec{WireName: "vpce_ids"},
+}
 
 var Workspace_SamlConfiguration_AssertionAttributesFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Groups": ubx.FieldSpec{WireName: "groups"},
-		"Login": ubx.FieldSpec{WireName: "login"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Org": ubx.FieldSpec{WireName: "org"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Groups": ubx.FieldSpec{WireName: "groups"},
+	"Login":  ubx.FieldSpec{WireName: "login"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Org":    ubx.FieldSpec{WireName: "org"},
+	"Role":   ubx.FieldSpec{WireName: "role"},
+}
 
 var Workspace_SamlConfiguration_IdpMetadataFields = ubx.FieldMap{
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"Xml": ubx.FieldSpec{WireName: "xml"},
-	}
+	"Url": ubx.FieldSpec{WireName: "url"},
+	"Xml": ubx.FieldSpec{WireName: "xml"},
+}
 
 var Workspace_SamlConfiguration_RoleValuesFields = ubx.FieldMap{
-		"Admin": ubx.FieldSpec{WireName: "admin"},
-		"Editor": ubx.FieldSpec{WireName: "editor"},
-	}
+	"Admin":  ubx.FieldSpec{WireName: "admin"},
+	"Editor": ubx.FieldSpec{WireName: "editor"},
+}
 
 var Workspace_SamlConfigurationFields = ubx.FieldMap{
-		"AllowedOrganizations": ubx.FieldSpec{WireName: "allowed_organizations"},
-		"AssertionAttributes": ubx.FieldSpec{
-			WireName: "assertion_attributes",
-			Kind: "object",
-			Fields: Workspace_SamlConfiguration_AssertionAttributesFields,
-		},
-		"IdpMetadata": ubx.FieldSpec{
-			WireName: "idp_metadata",
-			Kind: "object",
-			Fields: Workspace_SamlConfiguration_IdpMetadataFields,
-		},
-		"LoginValidityDuration": ubx.FieldSpec{WireName: "login_validity_duration"},
-		"RoleValues": ubx.FieldSpec{
-			WireName: "role_values",
-			Kind: "object",
-			Fields: Workspace_SamlConfiguration_RoleValuesFields,
-		},
-	}
+	"AllowedOrganizations": ubx.FieldSpec{WireName: "allowed_organizations"},
+	"AssertionAttributes": ubx.FieldSpec{
+		WireName: "assertion_attributes",
+		Kind:     "object",
+		Fields:   Workspace_SamlConfiguration_AssertionAttributesFields,
+	},
+	"IdpMetadata": ubx.FieldSpec{
+		WireName: "idp_metadata",
+		Kind:     "object",
+		Fields:   Workspace_SamlConfiguration_IdpMetadataFields,
+	},
+	"LoginValidityDuration": ubx.FieldSpec{WireName: "login_validity_duration"},
+	"RoleValues": ubx.FieldSpec{
+		WireName: "role_values",
+		Kind:     "object",
+		Fields:   Workspace_SamlConfiguration_RoleValuesFields,
+	},
+}
 
 var Workspace_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Workspace_VpcConfigurationFields = ubx.FieldMap{
-		"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
-		"SubnetIds": ubx.FieldSpec{WireName: "subnet_ids"},
-	}
+	"SecurityGroupIds": ubx.FieldSpec{WireName: "security_group_ids"},
+	"SubnetIds":        ubx.FieldSpec{WireName: "subnet_ids"},
+}
 
 type WorkspaceConfig struct {
 	// These enums represent valid account access types. Specifically these enums determine whether the workspace can access AWS resources in the AWS account only, or whether it can also access resources in other accounts in the same organization. If the value CURRENT_ACCOUNT is used, a workspace role ARN must be provided. If the value is ORGANIZATION, a list of organizational units must be provided.
@@ -214,39 +214,39 @@ type WorkspaceAttrs struct {
 var Workspace = ubx.ResourceBinding{
 	WireType: "aws_grafana_workspace",
 	Fields: ubx.FieldMap{
-		"AccountAccessType": ubx.FieldSpec{WireName: "account_access_type"},
+		"AccountAccessType":       ubx.FieldSpec{WireName: "account_access_type"},
 		"AuthenticationProviders": ubx.FieldSpec{WireName: "authentication_providers"},
-		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
-		"DataSources": ubx.FieldSpec{WireName: "data_sources"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"GrafanaVersion": ubx.FieldSpec{WireName: "grafana_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ClientToken":             ubx.FieldSpec{WireName: "client_token"},
+		"DataSources":             ubx.FieldSpec{WireName: "data_sources"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"GrafanaVersion":          ubx.FieldSpec{WireName: "grafana_version"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"NetworkAccessControl": ubx.FieldSpec{
 			WireName: "network_access_control",
-			Kind: "object",
-			Fields: Workspace_NetworkAccessControlFields,
+			Kind:     "object",
+			Fields:   Workspace_NetworkAccessControlFields,
 		},
 		"NotificationDestinations": ubx.FieldSpec{WireName: "notification_destinations"},
-		"OrganizationRoleName": ubx.FieldSpec{WireName: "organization_role_name"},
-		"OrganizationalUnits": ubx.FieldSpec{WireName: "organizational_units"},
-		"PermissionType": ubx.FieldSpec{WireName: "permission_type"},
-		"PluginAdminEnabled": ubx.FieldSpec{WireName: "plugin_admin_enabled"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"OrganizationRoleName":     ubx.FieldSpec{WireName: "organization_role_name"},
+		"OrganizationalUnits":      ubx.FieldSpec{WireName: "organizational_units"},
+		"PermissionType":           ubx.FieldSpec{WireName: "permission_type"},
+		"PluginAdminEnabled":       ubx.FieldSpec{WireName: "plugin_admin_enabled"},
+		"RoleArn":                  ubx.FieldSpec{WireName: "role_arn"},
 		"SamlConfiguration": ubx.FieldSpec{
 			WireName: "saml_configuration",
-			Kind: "object",
-			Fields: Workspace_SamlConfigurationFields,
+			Kind:     "object",
+			Fields:   Workspace_SamlConfigurationFields,
 		},
 		"StackSetName": ubx.FieldSpec{WireName: "stack_set_name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Workspace_TagsFields,
+			Kind:     "list",
+			Fields:   Workspace_TagsFields,
 		},
 		"VpcConfiguration": ubx.FieldSpec{
 			WireName: "vpc_configuration",
-			Kind: "object",
-			Fields: Workspace_VpcConfigurationFields,
+			Kind:     "object",
+			Fields:   Workspace_VpcConfigurationFields,
 		},
 	},
 }

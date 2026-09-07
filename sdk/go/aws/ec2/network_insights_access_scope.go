@@ -56,63 +56,63 @@ type NetworkInsightsAccessScope_Tags struct {
 }
 
 var NetworkInsightsAccessScope_ExcludePaths_Destination_PacketHeaderStatementFields = ubx.FieldMap{
-		"DestinationAddresses": ubx.FieldSpec{WireName: "destination_addresses"},
-		"DestinationPorts": ubx.FieldSpec{WireName: "destination_ports"},
-		"DestinationPrefixLists": ubx.FieldSpec{WireName: "destination_prefix_lists"},
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
-		"SourceAddresses": ubx.FieldSpec{WireName: "source_addresses"},
-		"SourcePorts": ubx.FieldSpec{WireName: "source_ports"},
-		"SourcePrefixLists": ubx.FieldSpec{WireName: "source_prefix_lists"},
-	}
+	"DestinationAddresses":   ubx.FieldSpec{WireName: "destination_addresses"},
+	"DestinationPorts":       ubx.FieldSpec{WireName: "destination_ports"},
+	"DestinationPrefixLists": ubx.FieldSpec{WireName: "destination_prefix_lists"},
+	"Protocols":              ubx.FieldSpec{WireName: "protocols"},
+	"SourceAddresses":        ubx.FieldSpec{WireName: "source_addresses"},
+	"SourcePorts":            ubx.FieldSpec{WireName: "source_ports"},
+	"SourcePrefixLists":      ubx.FieldSpec{WireName: "source_prefix_lists"},
+}
 
 var NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatementFields = ubx.FieldMap{
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-	}
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+	"Resources":     ubx.FieldSpec{WireName: "resources"},
+}
 
 var NetworkInsightsAccessScope_ExcludePaths_DestinationFields = ubx.FieldMap{
-		"PacketHeaderStatement": ubx.FieldSpec{
-			WireName: "packet_header_statement",
-			Kind: "object",
-			Fields: NetworkInsightsAccessScope_ExcludePaths_Destination_PacketHeaderStatementFields,
-		},
-		"ResourceStatement": ubx.FieldSpec{
-			WireName: "resource_statement",
-			Kind: "object",
-			Fields: NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatementFields,
-		},
-	}
+	"PacketHeaderStatement": ubx.FieldSpec{
+		WireName: "packet_header_statement",
+		Kind:     "object",
+		Fields:   NetworkInsightsAccessScope_ExcludePaths_Destination_PacketHeaderStatementFields,
+	},
+	"ResourceStatement": ubx.FieldSpec{
+		WireName: "resource_statement",
+		Kind:     "object",
+		Fields:   NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatementFields,
+	},
+}
 
 var NetworkInsightsAccessScope_ExcludePaths_ThroughResourcesFields = ubx.FieldMap{
-		"ResourceStatement": ubx.FieldSpec{
-			WireName: "resource_statement",
-			Kind: "object",
-			Fields: NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatementFields,
-		},
-	}
+	"ResourceStatement": ubx.FieldSpec{
+		WireName: "resource_statement",
+		Kind:     "object",
+		Fields:   NetworkInsightsAccessScope_ExcludePaths_Destination_ResourceStatementFields,
+	},
+}
 
 var NetworkInsightsAccessScope_ExcludePathsFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: NetworkInsightsAccessScope_ExcludePaths_DestinationFields,
-		},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: NetworkInsightsAccessScope_ExcludePaths_DestinationFields,
-		},
-		"ThroughResources": ubx.FieldSpec{
-			WireName: "through_resources",
-			Kind: "list",
-			Fields: NetworkInsightsAccessScope_ExcludePaths_ThroughResourcesFields,
-		},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   NetworkInsightsAccessScope_ExcludePaths_DestinationFields,
+	},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   NetworkInsightsAccessScope_ExcludePaths_DestinationFields,
+	},
+	"ThroughResources": ubx.FieldSpec{
+		WireName: "through_resources",
+		Kind:     "list",
+		Fields:   NetworkInsightsAccessScope_ExcludePaths_ThroughResourcesFields,
+	},
+}
 
 var NetworkInsightsAccessScope_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type NetworkInsightsAccessScopeConfig struct {
 	// Specifies a list of network path statements to exclude from the access scope, so that traffic matching any of these paths is not analyzed. (AI-inferred)
@@ -145,18 +145,18 @@ var NetworkInsightsAccessScope = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ExcludePaths": ubx.FieldSpec{
 			WireName: "exclude_paths",
-			Kind: "list",
-			Fields: NetworkInsightsAccessScope_ExcludePathsFields,
+			Kind:     "list",
+			Fields:   NetworkInsightsAccessScope_ExcludePathsFields,
 		},
 		"MatchPaths": ubx.FieldSpec{
 			WireName: "match_paths",
-			Kind: "list",
-			Fields: NetworkInsightsAccessScope_ExcludePathsFields,
+			Kind:     "list",
+			Fields:   NetworkInsightsAccessScope_ExcludePathsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: NetworkInsightsAccessScope_TagsFields,
+			Kind:     "list",
+			Fields:   NetworkInsightsAccessScope_TagsFields,
 		},
 	},
 }

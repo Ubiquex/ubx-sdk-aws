@@ -11,9 +11,9 @@ type WorkingStorageConfig struct {
 type WorkingStorageAttrs struct {
 	DiskIds any
 	// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-	GatewayArn any
+	GatewayArn                     any
 	WorkingStorageAllocatedInBytes any
-	WorkingStorageUsedInBytes any
+	WorkingStorageUsedInBytes      any
 }
 
 var WorkingStorage = ubx.DataSourceBinding{

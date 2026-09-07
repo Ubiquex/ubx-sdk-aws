@@ -4,45 +4,45 @@ package ce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SavingsPlanPurchaseRecommendationDetails_RecommendationDetailData_MetricsOverLookbackPeriod struct {
-	CurrentCoverage any
-	EstimatedCoverage any
+	CurrentCoverage                   any
+	EstimatedCoverage                 any
 	EstimatedNewCommitmentUtilization any
-	EstimatedOnDemandCost any
-	StartTime any
+	EstimatedOnDemandCost             any
+	StartTime                         any
 }
 
 type SavingsPlanPurchaseRecommendationDetails_RecommendationDetailData struct {
-	AccountId any
-	AccountScope any
-	CurrencyCode any
-	CurrentAverageCoverage any
-	CurrentAverageHourlyOnDemandSpend any
-	CurrentMaximumHourlyOnDemandSpend any
-	CurrentMinimumHourlyOnDemandSpend any
-	EstimatedAverageCoverage any
-	EstimatedAverageUtilization any
-	EstimatedMonthlySavingsAmount any
-	EstimatedOnDemandCost any
+	AccountId                                  any
+	AccountScope                               any
+	CurrencyCode                               any
+	CurrentAverageCoverage                     any
+	CurrentAverageHourlyOnDemandSpend          any
+	CurrentMaximumHourlyOnDemandSpend          any
+	CurrentMinimumHourlyOnDemandSpend          any
+	EstimatedAverageCoverage                   any
+	EstimatedAverageUtilization                any
+	EstimatedMonthlySavingsAmount              any
+	EstimatedOnDemandCost                      any
 	EstimatedOnDemandCostWithCurrentCommitment any
-	EstimatedRoi any
-	EstimatedSavingsAmount any
-	EstimatedSavingsPercentage any
-	EstimatedSpcost any
-	ExistingHourlyCommitment any
+	EstimatedRoi                               any
+	EstimatedSavingsAmount                     any
+	EstimatedSavingsPercentage                 any
+	EstimatedSpcost                            any
+	ExistingHourlyCommitment                   any
 	// <p>The period of time that you want the usage and costs for.</p>
-	GenerationTimestamp any
+	GenerationTimestamp        any
 	HourlyCommitmentToPurchase any
-	InstanceFamily any
+	InstanceFamily             any
 	// <p>The period of time that you want the usage and costs for.</p>
-	LatestUsageTimestamp any
-	LookbackPeriodInDays any
+	LatestUsageTimestamp      any
+	LookbackPeriodInDays      any
 	MetricsOverLookbackPeriod any
-	OfferingId any
-	PaymentOption any
-	Region any
-	SavingsPlansType any
-	TermInYears any
-	UpfrontCost any
+	OfferingId                any
+	PaymentOption             any
+	Region                    any
+	SavingsPlansType          any
+	TermInYears               any
+	UpfrontCost               any
 }
 
 type SavingsPlanPurchaseRecommendationDetailsConfig struct {
@@ -52,7 +52,7 @@ type SavingsPlanPurchaseRecommendationDetailsConfig struct {
 type SavingsPlanPurchaseRecommendationDetailsAttrs struct {
 	// <p>The details and metrics for the given recommendation.</p>
 	RecommendationDetailData any
-	RecommendationDetailId any
+	RecommendationDetailId   any
 }
 
 var SavingsPlanPurchaseRecommendationDetails = ubx.DataSourceBinding{

@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Reservations_Reservations_RenewalSettings struct {
 	AutomaticRenewal any
-	RenewalCount any
+	RenewalCount     any
 }
 
 type Reservations_Reservations_ResourceSpecification struct {
-	ChannelClass any
-	Codec any
-	MaximumBitrate any
+	ChannelClass     any
+	Codec            any
+	MaximumBitrate   any
 	MaximumFramerate any
-	Resolution any
-	ResourceType any
-	SpecialFeature any
-	VideoQuality any
+	Resolution       any
+	ResourceType     any
+	SpecialFeature   any
+	VideoQuality     any
 }
 
 type Reservations_Reservations struct {
-	Arn any
-	Count any
-	CurrencyCode any
-	Duration any
-	DurationUnits any
-	End any
-	FixedPrice any
-	Name any
-	OfferingDescription any
-	OfferingId any
-	OfferingType any
-	Region any
-	RenewalSettings any
-	ReservationId any
+	Arn                   any
+	Count                 any
+	CurrencyCode          any
+	Duration              any
+	DurationUnits         any
+	End                   any
+	FixedPrice            any
+	Name                  any
+	OfferingDescription   any
+	OfferingId            any
+	OfferingType          any
+	Region                any
+	RenewalSettings       any
+	ReservationId         any
 	ResourceSpecification any
-	Start any
-	State any
-	Tags any
-	UsagePrice any
+	Start                 any
+	State                 any
+	Tags                  any
+	UsagePrice            any
 }
 
 type ReservationsConfig struct {
@@ -92,15 +92,15 @@ type ReservationsAttrs struct {
 var Reservations = ubx.DataSourceBinding{
 	WireType: "aws_medialive_reservations",
 	Fields: ubx.FieldMap{
-		"ChannelClass": ubx.FieldSpec{WireName: "channel_class"},
-		"Codec": ubx.FieldSpec{WireName: "codec"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"MaximumBitrate": ubx.FieldSpec{WireName: "maximum_bitrate"},
+		"ChannelClass":     ubx.FieldSpec{WireName: "channel_class"},
+		"Codec":            ubx.FieldSpec{WireName: "codec"},
+		"MaxResults":       ubx.FieldSpec{WireName: "max_results"},
+		"MaximumBitrate":   ubx.FieldSpec{WireName: "maximum_bitrate"},
 		"MaximumFramerate": ubx.FieldSpec{WireName: "maximum_framerate"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Resolution": ubx.FieldSpec{WireName: "resolution"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"SpecialFeature": ubx.FieldSpec{WireName: "special_feature"},
-		"VideoQuality": ubx.FieldSpec{WireName: "video_quality"},
+		"NextToken":        ubx.FieldSpec{WireName: "next_token"},
+		"Resolution":       ubx.FieldSpec{WireName: "resolution"},
+		"ResourceType":     ubx.FieldSpec{WireName: "resource_type"},
+		"SpecialFeature":   ubx.FieldSpec{WireName: "special_feature"},
+		"VideoQuality":     ubx.FieldSpec{WireName: "video_quality"},
 	},
 }

@@ -11,9 +11,9 @@ type ServiceAction_Definition struct {
 }
 
 var ServiceAction_DefinitionFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ServiceActionConfig struct {
 	// Specifies the language code (e.g., 'en' for English) used for localized text such as the service action's name and description when interacting with AWS Service Catalog. (AI-inferred)
@@ -49,11 +49,11 @@ var ServiceAction = ubx.ResourceBinding{
 		"AcceptLanguage": ubx.FieldSpec{WireName: "accept_language"},
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "list",
-			Fields: ServiceAction_DefinitionFields,
+			Kind:     "list",
+			Fields:   ServiceAction_DefinitionFields,
 		},
 		"DefinitionType": ubx.FieldSpec{WireName: "definition_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 	},
 }

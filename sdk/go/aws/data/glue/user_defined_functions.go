@@ -5,48 +5,48 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserDefinedFunctions_UserDefinedFunctions_ResourceUris struct {
 	ResourceType any
-	Uri any
+	Uri          any
 }
 
 type UserDefinedFunctions_UserDefinedFunctions struct {
-	CatalogId any
-	ClassName any
-	CreateTime any
+	CatalogId    any
+	ClassName    any
+	CreateTime   any
 	DatabaseName any
 	FunctionName any
 	FunctionType any
-	OwnerName any
-	OwnerType any
+	OwnerName    any
+	OwnerType    any
 	ResourceUris any
 }
 
 type UserDefinedFunctionsConfig struct {
-	CatalogId any
+	CatalogId    any
 	DatabaseName any
 	FunctionType any
-	MaxResults any
-	NextToken any
-	Pattern any
+	MaxResults   any
+	NextToken    any
+	Pattern      any
 }
 
 type UserDefinedFunctionsAttrs struct {
-	CatalogId any
-	DatabaseName any
-	FunctionType any
-	MaxResults any
-	NextToken any
-	Pattern any
+	CatalogId            any
+	DatabaseName         any
+	FunctionType         any
+	MaxResults           any
+	NextToken            any
+	Pattern              any
 	UserDefinedFunctions any
 }
 
 var UserDefinedFunctions = ubx.DataSourceBinding{
 	WireType: "aws_glue_user_defined_functions",
 	Fields: ubx.FieldMap{
-		"CatalogId": ubx.FieldSpec{WireName: "catalog_id"},
+		"CatalogId":    ubx.FieldSpec{WireName: "catalog_id"},
 		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
 		"FunctionType": ubx.FieldSpec{WireName: "function_type"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"Pattern":      ubx.FieldSpec{WireName: "pattern"},
 	},
 }

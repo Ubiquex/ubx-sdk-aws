@@ -7,7 +7,7 @@ type ActionConnector_AuthenticationConfig_AuthenticationMetadata_ApiKeyConnectio
 	ApiKey any
 	// The base endpoint URL of the external API service that the QuickSight action connector communicates with when using API key authentication. (AI-inferred)
 	BaseEndpoint any
-	Email any
+	Email        any
 }
 
 type ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetails_AuthorizationCodeGrantDetails struct {
@@ -28,7 +28,7 @@ type ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCo
 type ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata struct {
 	// Contains the OAuth 2.0 client ID and client secret (or a reference to a Secrets Manager secret storing them) used by the QuickSight action connector during the authorization code grant token exchange in its authentication flow. (AI-inferred)
 	AuthorizationCodeGrantCredentialsDetails any
-	AuthorizationCodeGrantCredentialsSource any
+	AuthorizationCodeGrantCredentialsSource  any
 	// The base endpoint (base URL) of the OAuth authorization server to which Amazon QuickSight sends authorization code grant requests for the action connector's authentication metadata. (AI-inferred)
 	BaseEndpoint any
 	// Specifies the redirect (callback) URL to which the user is redirected after authorizing the OAuth 2.0 authorization code grant, enabling the QuickSight action connector to exchange the authorization code for tokens. (AI-inferred)
@@ -60,7 +60,7 @@ type ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentia
 	BaseEndpoint any
 	// This object contains the client credentials (e.g., client ID and client secret) and other details needed to perform the OAuth 2.0 client-credentials grant for authenticating the QuickSight action connector to the external service. (AI-inferred)
 	ClientCredentialsDetails any
-	ClientCredentialsSource any
+	ClientCredentialsSource  any
 }
 
 type ActionConnector_AuthenticationConfig_AuthenticationMetadata_IamConnectionMetadata struct {
@@ -77,9 +77,9 @@ type ActionConnector_AuthenticationConfig_AuthenticationMetadata struct {
 	ApiKeyConnectionMetadata any
 	// Contains the OAuth 2.0 authorization code grant parameters (such as authorization and token endpoints, client ID, client secret, and scopes) used by QuickSight to authenticate an action connector to an external service. (AI-inferred)
 	AuthorizationCodeGrantMetadata any
-	BasicAuthConnectionMetadata any
+	BasicAuthConnectionMetadata    any
 	ClientCredentialsGrantMetadata any
-	IamConnectionMetadata any
+	IamConnectionMetadata          any
 	// The `noneConnectionMetadata` object is an empty placeholder used within the authentication metadata when the authentication type is set to `none`, indicating that no connection credentials are required for the action connector. (AI-inferred)
 	NoneConnectionMetadata any
 }
@@ -98,131 +98,131 @@ type ActionConnector_Permissions struct {
 }
 
 type ActionConnector_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_ApiKeyConnectionMetadataFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"ApiKey":       ubx.FieldSpec{WireName: "api_key"},
+	"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
+	"Email":        ubx.FieldSpec{WireName: "email"},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetails_AuthorizationCodeGrantDetailsFields = ubx.FieldMap{
-		"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"AuthorizationEndpoint": ubx.FieldSpec{WireName: "authorization_endpoint"},
+	"ClientId":              ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":          ubx.FieldSpec{WireName: "client_secret"},
+	"TokenEndpoint":         ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetailsFields = ubx.FieldMap{
-		"AuthorizationCodeGrantDetails": ubx.FieldSpec{
-			WireName: "authorization_code_grant_details",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetails_AuthorizationCodeGrantDetailsFields,
-		},
-	}
+	"AuthorizationCodeGrantDetails": ubx.FieldSpec{
+		WireName: "authorization_code_grant_details",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetails_AuthorizationCodeGrantDetailsFields,
+	},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadataFields = ubx.FieldMap{
-		"AuthorizationCodeGrantCredentialsDetails": ubx.FieldSpec{
-			WireName: "authorization_code_grant_credentials_details",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetailsFields,
-		},
-		"AuthorizationCodeGrantCredentialsSource": ubx.FieldSpec{WireName: "authorization_code_grant_credentials_source"},
-		"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
-		"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
-	}
+	"AuthorizationCodeGrantCredentialsDetails": ubx.FieldSpec{
+		WireName: "authorization_code_grant_credentials_details",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetailsFields,
+	},
+	"AuthorizationCodeGrantCredentialsSource": ubx.FieldSpec{WireName: "authorization_code_grant_credentials_source"},
+	"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
+	"RedirectUrl":  ubx.FieldSpec{WireName: "redirect_url"},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_BasicAuthConnectionMetadataFields = ubx.FieldMap{
-		"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
+	"Password":     ubx.FieldSpec{WireName: "password"},
+	"Username":     ubx.FieldSpec{WireName: "username"},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetails_ClientCredentialsGrantDetailsFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"ClientId":      ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":  ubx.FieldSpec{WireName: "client_secret"},
+	"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetailsFields = ubx.FieldMap{
-		"ClientCredentialsGrantDetails": ubx.FieldSpec{
-			WireName: "client_credentials_grant_details",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetails_ClientCredentialsGrantDetailsFields,
-		},
-	}
+	"ClientCredentialsGrantDetails": ubx.FieldSpec{
+		WireName: "client_credentials_grant_details",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetails_ClientCredentialsGrantDetailsFields,
+	},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadataFields = ubx.FieldMap{
-		"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
-		"ClientCredentialsDetails": ubx.FieldSpec{
-			WireName: "client_credentials_details",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetailsFields,
-		},
-		"ClientCredentialsSource": ubx.FieldSpec{WireName: "client_credentials_source"},
-	}
+	"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
+	"ClientCredentialsDetails": ubx.FieldSpec{
+		WireName: "client_credentials_details",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetailsFields,
+	},
+	"ClientCredentialsSource": ubx.FieldSpec{WireName: "client_credentials_source"},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_IamConnectionMetadataFields = ubx.FieldMap{
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadata_NoneConnectionMetadataFields = ubx.FieldMap{
-		"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
-	}
+	"BaseEndpoint": ubx.FieldSpec{WireName: "base_endpoint"},
+}
 
 var ActionConnector_AuthenticationConfig_AuthenticationMetadataFields = ubx.FieldMap{
-		"ApiKeyConnectionMetadata": ubx.FieldSpec{
-			WireName: "api_key_connection_metadata",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_ApiKeyConnectionMetadataFields,
-		},
-		"AuthorizationCodeGrantMetadata": ubx.FieldSpec{
-			WireName: "authorization_code_grant_metadata",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadataFields,
-		},
-		"BasicAuthConnectionMetadata": ubx.FieldSpec{
-			WireName: "basic_auth_connection_metadata",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_BasicAuthConnectionMetadataFields,
-		},
-		"ClientCredentialsGrantMetadata": ubx.FieldSpec{
-			WireName: "client_credentials_grant_metadata",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadataFields,
-		},
-		"IamConnectionMetadata": ubx.FieldSpec{
-			WireName: "iam_connection_metadata",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_IamConnectionMetadataFields,
-		},
-		"NoneConnectionMetadata": ubx.FieldSpec{
-			WireName: "none_connection_metadata",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadata_NoneConnectionMetadataFields,
-		},
-	}
+	"ApiKeyConnectionMetadata": ubx.FieldSpec{
+		WireName: "api_key_connection_metadata",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_ApiKeyConnectionMetadataFields,
+	},
+	"AuthorizationCodeGrantMetadata": ubx.FieldSpec{
+		WireName: "authorization_code_grant_metadata",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadataFields,
+	},
+	"BasicAuthConnectionMetadata": ubx.FieldSpec{
+		WireName: "basic_auth_connection_metadata",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_BasicAuthConnectionMetadataFields,
+	},
+	"ClientCredentialsGrantMetadata": ubx.FieldSpec{
+		WireName: "client_credentials_grant_metadata",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadataFields,
+	},
+	"IamConnectionMetadata": ubx.FieldSpec{
+		WireName: "iam_connection_metadata",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_IamConnectionMetadataFields,
+	},
+	"NoneConnectionMetadata": ubx.FieldSpec{
+		WireName: "none_connection_metadata",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadata_NoneConnectionMetadataFields,
+	},
+}
 
 var ActionConnector_AuthenticationConfigFields = ubx.FieldMap{
-		"AuthenticationMetadata": ubx.FieldSpec{
-			WireName: "authentication_metadata",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfig_AuthenticationMetadataFields,
-		},
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-	}
+	"AuthenticationMetadata": ubx.FieldSpec{
+		WireName: "authentication_metadata",
+		Kind:     "object",
+		Fields:   ActionConnector_AuthenticationConfig_AuthenticationMetadataFields,
+	},
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+}
 
 var ActionConnector_PermissionsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Actions":   ubx.FieldSpec{WireName: "actions"},
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var ActionConnector_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ActionConnectorConfig struct {
 	// The unique identifier of this action connector. (AI-inferred)
@@ -234,7 +234,7 @@ type ActionConnectorConfig struct {
 	// The description of this action connector. (AI-inferred)
 	Description any
 	// The name of this action connector. (AI-inferred)
-	Name any
+	Name        any
 	Permissions any
 	// The tags assigned to this action connector. (AI-inferred)
 	Tags any
@@ -262,7 +262,7 @@ type ActionConnectorAttrs struct {
 	// The date and time when this action connector was last updated. (AI-inferred)
 	LastUpdatedTime any
 	// The name of this action connector. (AI-inferred)
-	Name any
+	Name        any
 	Permissions any
 	// The current status of this action connector. (AI-inferred)
 	Status any
@@ -280,23 +280,23 @@ var ActionConnector = ubx.ResourceBinding{
 		"ActionConnectorId": ubx.FieldSpec{WireName: "action_connector_id"},
 		"AuthenticationConfig": ubx.FieldSpec{
 			WireName: "authentication_config",
-			Kind: "object",
-			Fields: ActionConnector_AuthenticationConfigFields,
+			Kind:     "object",
+			Fields:   ActionConnector_AuthenticationConfigFields,
 		},
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "list",
-			Fields: ActionConnector_PermissionsFields,
+			Kind:     "list",
+			Fields:   ActionConnector_PermissionsFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ActionConnector_TagsFields,
+			Kind:     "list",
+			Fields:   ActionConnector_TagsFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
 		"VpcConnectionArn": ubx.FieldSpec{WireName: "vpc_connection_arn"},
 	},
 }

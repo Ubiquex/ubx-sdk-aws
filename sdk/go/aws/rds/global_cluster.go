@@ -16,9 +16,9 @@ type GlobalCluster_Tags struct {
 }
 
 var GlobalCluster_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type GlobalClusterConfig struct {
 	// The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.
@@ -63,17 +63,17 @@ type GlobalClusterAttrs struct {
 var GlobalCluster = ubx.ResourceBinding{
 	WireType: "aws_rds_global_cluster",
 	Fields: ubx.FieldMap{
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"EngineLifecycleSupport": ubx.FieldSpec{WireName: "engine_lifecycle_support"},
-		"EngineVersion": ubx.FieldSpec{WireName: "engine_version"},
-		"GlobalClusterIdentifier": ubx.FieldSpec{WireName: "global_cluster_identifier"},
+		"DeletionProtection":        ubx.FieldSpec{WireName: "deletion_protection"},
+		"Engine":                    ubx.FieldSpec{WireName: "engine"},
+		"EngineLifecycleSupport":    ubx.FieldSpec{WireName: "engine_lifecycle_support"},
+		"EngineVersion":             ubx.FieldSpec{WireName: "engine_version"},
+		"GlobalClusterIdentifier":   ubx.FieldSpec{WireName: "global_cluster_identifier"},
 		"SourceDbclusterIdentifier": ubx.FieldSpec{WireName: "source_dbcluster_identifier"},
-		"StorageEncrypted": ubx.FieldSpec{WireName: "storage_encrypted"},
+		"StorageEncrypted":          ubx.FieldSpec{WireName: "storage_encrypted"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: GlobalCluster_TagsFields,
+			Kind:     "list",
+			Fields:   GlobalCluster_TagsFields,
 		},
 	},
 }

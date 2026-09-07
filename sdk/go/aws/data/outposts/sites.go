@@ -4,38 +4,38 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Sites_Sites_RackPhysicalProperties struct {
-	FiberOpticCableType any
+	FiberOpticCableType       any
 	MaximumSupportedWeightLbs any
-	OpticalStandard any
-	PowerConnector any
-	PowerDrawKva any
-	PowerFeedDrop any
-	PowerPhase any
-	UplinkCount any
-	UplinkGbps any
+	OpticalStandard           any
+	PowerConnector            any
+	PowerDrawKva              any
+	PowerFeedDrop             any
+	PowerPhase                any
+	UplinkCount               any
+	UplinkGbps                any
 }
 
 type Sites_Sites struct {
-	AccountId any
-	Description any
-	Name any
-	Notes any
-	OperatingAddressCity any
-	OperatingAddressCountryCode any
+	AccountId                     any
+	Description                   any
+	Name                          any
+	Notes                         any
+	OperatingAddressCity          any
+	OperatingAddressCountryCode   any
 	OperatingAddressStateOrRegion any
-	RackPhysicalProperties any
-	SiteArn any
-	SiteId any
-	Tags any
+	RackPhysicalProperties        any
+	SiteArn                       any
+	SiteId                        any
+	Tags                          any
 }
 
 type SitesConfig struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
-	OperatingAddressCityFilter any
-	OperatingAddressCountryCodeFilter any
+	NextToken                           any
+	OperatingAddressCityFilter          any
+	OperatingAddressCountryCodeFilter   any
 	OperatingAddressStateOrRegionFilter any
 }
 
@@ -43,9 +43,9 @@ type SitesAttrs struct {
 	// <p>The maximum page size.</p>
 	MaxResults any
 	// <p>The pagination token.</p>
-	NextToken any
-	OperatingAddressCityFilter any
-	OperatingAddressCountryCodeFilter any
+	NextToken                           any
+	OperatingAddressCityFilter          any
+	OperatingAddressCountryCodeFilter   any
 	OperatingAddressStateOrRegionFilter any
 	// <p>Information about the sites.</p>
 	Sites any
@@ -54,10 +54,10 @@ type SitesAttrs struct {
 var Sites = ubx.DataSourceBinding{
 	WireType: "aws_outposts_sites",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"OperatingAddressCityFilter": ubx.FieldSpec{WireName: "operating_address_city_filter"},
-		"OperatingAddressCountryCodeFilter": ubx.FieldSpec{WireName: "operating_address_country_code_filter"},
+		"MaxResults":                          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":                           ubx.FieldSpec{WireName: "next_token"},
+		"OperatingAddressCityFilter":          ubx.FieldSpec{WireName: "operating_address_city_filter"},
+		"OperatingAddressCountryCodeFilter":   ubx.FieldSpec{WireName: "operating_address_country_code_filter"},
 		"OperatingAddressStateOrRegionFilter": ubx.FieldSpec{WireName: "operating_address_state_or_region_filter"},
 	},
 }

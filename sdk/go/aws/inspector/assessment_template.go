@@ -11,9 +11,9 @@ type AssessmentTemplate_UserAttributesForFindings struct {
 }
 
 var AssessmentTemplate_UserAttributesForFindingsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AssessmentTemplateConfig struct {
 	// The ARN of the AWS Inspector assessment target that this template will run assessments against. (AI-inferred)
@@ -46,14 +46,14 @@ type AssessmentTemplateAttrs struct {
 var AssessmentTemplate = ubx.ResourceBinding{
 	WireType: "aws_inspector_assessment_template",
 	Fields: ubx.FieldMap{
-		"AssessmentTargetArn": ubx.FieldSpec{WireName: "assessment_target_arn"},
+		"AssessmentTargetArn":    ubx.FieldSpec{WireName: "assessment_target_arn"},
 		"AssessmentTemplateName": ubx.FieldSpec{WireName: "assessment_template_name"},
-		"DurationInSeconds": ubx.FieldSpec{WireName: "duration_in_seconds"},
-		"RulesPackageArns": ubx.FieldSpec{WireName: "rules_package_arns"},
+		"DurationInSeconds":      ubx.FieldSpec{WireName: "duration_in_seconds"},
+		"RulesPackageArns":       ubx.FieldSpec{WireName: "rules_package_arns"},
 		"UserAttributesForFindings": ubx.FieldSpec{
 			WireName: "user_attributes_for_findings",
-			Kind: "list",
-			Fields: AssessmentTemplate_UserAttributesForFindingsFields,
+			Kind:     "list",
+			Fields:   AssessmentTemplate_UserAttributesForFindingsFields,
 		},
 	},
 }

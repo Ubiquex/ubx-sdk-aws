@@ -30,27 +30,27 @@ type Dataset_Tags struct {
 }
 
 var Dataset_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"KmsKeyArn": ubx.FieldSpec{WireName: "kms_key_arn"},
+	"RoleArn":   ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var Dataset_Schema_AttributesFields = ubx.FieldMap{
-		"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
-		"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
-	}
+	"AttributeName": ubx.FieldSpec{WireName: "attribute_name"},
+	"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
+}
 
 var Dataset_SchemaFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: Dataset_Schema_AttributesFields,
-		},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   Dataset_Schema_AttributesFields,
+	},
+}
 
 var Dataset_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DatasetConfig struct {
 	// Frequency of data collection. This parameter is required for RELATED_TIME_SERIES
@@ -92,23 +92,23 @@ var Dataset = ubx.ResourceBinding{
 	WireType: "aws_forecast_dataset",
 	Fields: ubx.FieldMap{
 		"DataFrequency": ubx.FieldSpec{WireName: "data_frequency"},
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"DatasetType": ubx.FieldSpec{WireName: "dataset_type"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"DatasetName":   ubx.FieldSpec{WireName: "dataset_name"},
+		"DatasetType":   ubx.FieldSpec{WireName: "dataset_type"},
+		"Domain":        ubx.FieldSpec{WireName: "domain"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Dataset_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   Dataset_EncryptionConfigFields,
 		},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Dataset_SchemaFields,
+			Kind:     "object",
+			Fields:   Dataset_SchemaFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: Dataset_TagsFields,
+			Kind:     "list",
+			Fields:   Dataset_TagsFields,
 		},
 	},
 }

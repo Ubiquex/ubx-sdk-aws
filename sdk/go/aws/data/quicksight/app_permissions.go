@@ -4,27 +4,27 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppPermissions_Permissions struct {
-	Actions any
+	Actions   any
 	Principal any
 }
 
 type AppPermissionsConfig struct {
-	AppId any
+	AppId        any
 	AwsAccountId any
 }
 
 type AppPermissionsAttrs struct {
-	AppId any
-	Arn any
+	AppId        any
+	Arn          any
 	AwsAccountId any
-	Permissions any
-	RequestId any
+	Permissions  any
+	RequestId    any
 }
 
 var AppPermissions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_app_permissions",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":        ubx.FieldSpec{WireName: "app_id"},
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
 	},
 }

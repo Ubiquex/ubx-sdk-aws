@@ -31,8 +31,8 @@ var DirectConnectGatewayAssociation = ubx.ResourceBinding{
 	WireType: "aws_direct_connect_direct_connect_gateway_association",
 	Fields: ubx.FieldMap{
 		"AcceptDirectConnectGatewayAssociationProposalRoleArn": ubx.FieldSpec{WireName: "accept_direct_connect_gateway_association_proposal_role_arn"},
-		"AllowedPrefixesToDirectConnectGateway": ubx.FieldSpec{WireName: "allowed_prefixes_to_direct_connect_gateway"},
-		"AssociatedGatewayId": ubx.FieldSpec{WireName: "associated_gateway_id"},
-		"DirectConnectGatewayId": ubx.FieldSpec{WireName: "direct_connect_gateway_id"},
+		"AllowedPrefixesToDirectConnectGateway":                ubx.FieldSpec{WireName: "allowed_prefixes_to_direct_connect_gateway"},
+		"AssociatedGatewayId":                                  ubx.FieldSpec{WireName: "associated_gateway_id"},
+		"DirectConnectGatewayId":                               ubx.FieldSpec{WireName: "direct_connect_gateway_id"},
 	},
 }

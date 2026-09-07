@@ -9,34 +9,34 @@ type MedicalImagingImageSet_Overrides struct {
 
 type MedicalImagingImageSetConfig struct {
 	DatastoreId any
-	ImageSetId any
-	VersionId any
+	ImageSetId  any
+	VersionId   any
 }
 
 type MedicalImagingImageSetAttrs struct {
-	CreatedAt any
-	DatastoreId any
-	DeletedAt any
-	ImageSetArn any
-	ImageSetId any
-	ImageSetState any
+	CreatedAt              any
+	DatastoreId            any
+	DeletedAt              any
+	ImageSetArn            any
+	ImageSetId             any
+	ImageSetState          any
 	ImageSetWorkflowStatus any
-	IsPrimary any
-	LastAccessedAt any
-	Message any
+	IsPrimary              any
+	LastAccessedAt         any
+	Message                any
 	// <p>Specifies the overrides used in image set modification calls to <code>CopyImageSet</code> and <code>UpdateImageSetMetadata</code>.</p>
 	Overrides any
 	// Storage tier for image sets
 	StorageTier any
-	UpdatedAt any
-	VersionId any
+	UpdatedAt   any
+	VersionId   any
 }
 
 var MedicalImagingImageSet = ubx.DataSourceBinding{
 	WireType: "aws_medical_imaging_image_set",
 	Fields: ubx.FieldMap{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"ImageSetId": ubx.FieldSpec{WireName: "image_set_id"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+		"ImageSetId":  ubx.FieldSpec{WireName: "image_set_id"},
+		"VersionId":   ubx.FieldSpec{WireName: "version_id"},
 	},
 }

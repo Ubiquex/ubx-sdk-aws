@@ -4,27 +4,27 @@ package quicksight
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateVersions_TemplateVersionSummaryList struct {
-	Arn any
-	CreatedTime any
-	Description any
-	Status any
+	Arn           any
+	CreatedTime   any
+	Description   any
+	Status        any
 	VersionNumber any
 }
 
 type TemplateVersionsConfig struct {
 	AwsAccountId any
-	MaxResults any
-	NextToken any
-	TemplateId any
+	MaxResults   any
+	NextToken    any
+	TemplateId   any
 }
 
 type TemplateVersionsAttrs struct {
-	AwsAccountId any
-	MaxResults any
-	NextToken any
-	RequestId any
-	Status any
-	TemplateId any
+	AwsAccountId               any
+	MaxResults                 any
+	NextToken                  any
+	RequestId                  any
+	Status                     any
+	TemplateId                 any
 	TemplateVersionSummaryList any
 }
 
@@ -32,8 +32,8 @@ var TemplateVersions = ubx.DataSourceBinding{
 	WireType: "aws_quicksight_template_versions",
 	Fields: ubx.FieldMap{
 		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
+		"MaxResults":   ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":    ubx.FieldSpec{WireName: "next_token"},
+		"TemplateId":   ubx.FieldSpec{WireName: "template_id"},
 	},
 }

@@ -10,9 +10,9 @@ type RunCache_Tags struct {
 }
 
 var RunCache_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RunCacheConfig struct {
 	// The default cache behavior for runs using this cache.
@@ -55,15 +55,15 @@ type RunCacheAttrs struct {
 var RunCache = ubx.ResourceBinding{
 	WireType: "aws_omics_run_cache",
 	Fields: ubx.FieldMap{
-		"CacheBehavior": ubx.FieldSpec{WireName: "cache_behavior"},
+		"CacheBehavior":      ubx.FieldSpec{WireName: "cache_behavior"},
 		"CacheBucketOwnerId": ubx.FieldSpec{WireName: "cache_bucket_owner_id"},
-		"CacheS3Location": ubx.FieldSpec{WireName: "cache_s3_location"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CacheS3Location":    ubx.FieldSpec{WireName: "cache_s3_location"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: RunCache_TagsFields,
+			Kind:     "list",
+			Fields:   RunCache_TagsFields,
 		},
 	},
 }

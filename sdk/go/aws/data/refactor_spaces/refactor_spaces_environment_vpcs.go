@@ -4,33 +4,33 @@ package refactor_spaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RefactorSpacesEnvironmentVpcs_EnvironmentVpcList struct {
-	AccountId any
-	CidrBlocks any
-	CreatedTime any
-	EnvironmentId any
+	AccountId       any
+	CidrBlocks      any
+	CreatedTime     any
+	EnvironmentId   any
 	LastUpdatedTime any
-	VpcId any
-	VpcName any
+	VpcId           any
+	VpcName         any
 }
 
 type RefactorSpacesEnvironmentVpcsConfig struct {
 	EnvironmentIdentifier any
-	MaxResults any
-	NextToken any
+	MaxResults            any
+	NextToken             any
 }
 
 type RefactorSpacesEnvironmentVpcsAttrs struct {
 	EnvironmentIdentifier any
-	EnvironmentVpcList any
-	MaxResults any
-	NextToken any
+	EnvironmentVpcList    any
+	MaxResults            any
+	NextToken             any
 }
 
 var RefactorSpacesEnvironmentVpcs = ubx.DataSourceBinding{
 	WireType: "aws_refactor_spaces_environment_vpcs",
 	Fields: ubx.FieldMap{
 		"EnvironmentIdentifier": ubx.FieldSpec{WireName: "environment_identifier"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":            ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":             ubx.FieldSpec{WireName: "next_token"},
 	},
 }

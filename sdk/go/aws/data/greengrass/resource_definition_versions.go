@@ -4,30 +4,30 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceDefinitionVersions_Versions struct {
-	Arn any
+	Arn               any
 	CreationTimestamp any
-	Id any
-	Version any
+	Id                any
+	Version           any
 }
 
 type ResourceDefinitionVersionsConfig struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	ResourceDefinitionId any
 }
 
 type ResourceDefinitionVersionsAttrs struct {
-	MaxResults any
-	NextToken any
+	MaxResults           any
+	NextToken            any
 	ResourceDefinitionId any
-	Versions any
+	Versions             any
 }
 
 var ResourceDefinitionVersions = ubx.DataSourceBinding{
 	WireType: "aws_greengrass_resource_definition_versions",
 	Fields: ubx.FieldMap{
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":           ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":            ubx.FieldSpec{WireName: "next_token"},
 		"ResourceDefinitionId": ubx.FieldSpec{WireName: "resource_definition_id"},
 	},
 }

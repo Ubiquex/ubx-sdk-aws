@@ -4,59 +4,59 @@ package imagebuilder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImageScanFindingAggregations_Filter struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ImageScanFindingAggregations_Responses_AccountAggregation_SeverityCounts struct {
-	All any
+	All      any
 	Critical any
-	High any
-	Medium any
+	High     any
+	Medium   any
 }
 
 type ImageScanFindingAggregations_Responses_AccountAggregation struct {
-	AccountId any
+	AccountId      any
 	SeverityCounts any
 }
 
 type ImageScanFindingAggregations_Responses_ImageAggregation struct {
 	ImageBuildVersionArn any
-	SeverityCounts any
+	SeverityCounts       any
 }
 
 type ImageScanFindingAggregations_Responses_ImagePipelineAggregation struct {
 	ImagePipelineArn any
-	SeverityCounts any
+	SeverityCounts   any
 }
 
 type ImageScanFindingAggregations_Responses_VulnerabilityIdAggregation struct {
-	SeverityCounts any
+	SeverityCounts  any
 	VulnerabilityId any
 }
 
 type ImageScanFindingAggregations_Responses struct {
-	AccountAggregation any
-	ImageAggregation any
-	ImagePipelineAggregation any
+	AccountAggregation         any
+	ImageAggregation           any
+	ImagePipelineAggregation   any
 	VulnerabilityIdAggregation any
 }
 
 var ImageScanFindingAggregations_FilterFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 type ImageScanFindingAggregationsConfig struct {
 	// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
-	Filter any
+	Filter    any
 	NextToken any
 }
 
 type ImageScanFindingAggregationsAttrs struct {
 	AggregationType any
 	// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
-	Filter any
+	Filter    any
 	NextToken any
 	RequestId any
 	Responses any
@@ -67,8 +67,8 @@ var ImageScanFindingAggregations = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: ImageScanFindingAggregations_FilterFields,
+			Kind:     "object",
+			Fields:   ImageScanFindingAggregations_FilterFields,
 		},
 		"NextToken": ubx.FieldSpec{WireName: "next_token"},
 	},

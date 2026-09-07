@@ -13,10 +13,10 @@ type ProactiveEngagement_EmergencyContactList struct {
 }
 
 var ProactiveEngagement_EmergencyContactListFields = ubx.FieldMap{
-		"ContactNotes": ubx.FieldSpec{WireName: "contact_notes"},
-		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-	}
+	"ContactNotes": ubx.FieldSpec{WireName: "contact_notes"},
+	"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
+	"PhoneNumber":  ubx.FieldSpec{WireName: "phone_number"},
+}
 
 type ProactiveEngagementConfig struct {
 	// A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. To enable proactive engagement, the contact list must include at least one phone number.
@@ -39,8 +39,8 @@ var ProactiveEngagement = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EmergencyContactList": ubx.FieldSpec{
 			WireName: "emergency_contact_list",
-			Kind: "list",
-			Fields: ProactiveEngagement_EmergencyContactListFields,
+			Kind:     "list",
+			Fields:   ProactiveEngagement_EmergencyContactListFields,
 		},
 		"ProactiveEngagementStatus": ubx.FieldSpec{WireName: "proactive_engagement_status"},
 	},

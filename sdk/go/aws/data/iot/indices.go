@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IndicesConfig struct {
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 type IndicesAttrs struct {
 	IndexNames any
 	MaxResults any
-	NextToken any
+	NextToken  any
 }
 
 var Indices = ubx.DataSourceBinding{
 	WireType: "aws_iot_indices",
 	Fields: ubx.FieldMap{
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
 	},
 }

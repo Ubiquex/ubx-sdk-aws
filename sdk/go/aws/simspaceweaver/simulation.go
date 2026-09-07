@@ -11,9 +11,9 @@ type Simulation_SchemaS3Location struct {
 }
 
 var Simulation_SchemaS3LocationFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"ObjectKey": ubx.FieldSpec{WireName: "object_key"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"ObjectKey":  ubx.FieldSpec{WireName: "object_key"},
+}
 
 type SimulationConfig struct {
 	// The maximum running time of the simulation.
@@ -47,17 +47,17 @@ var Simulation = ubx.ResourceBinding{
 	WireType: "aws_sim_space_weaver_simulation",
 	Fields: ubx.FieldMap{
 		"MaximumDuration": ubx.FieldSpec{WireName: "maximum_duration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"RoleArn":         ubx.FieldSpec{WireName: "role_arn"},
 		"SchemaS3Location": ubx.FieldSpec{
 			WireName: "schema_s3_location",
-			Kind: "object",
-			Fields: Simulation_SchemaS3LocationFields,
+			Kind:     "object",
+			Fields:   Simulation_SchemaS3LocationFields,
 		},
 		"SnapshotS3Location": ubx.FieldSpec{
 			WireName: "snapshot_s3_location",
-			Kind: "object",
-			Fields: Simulation_SchemaS3LocationFields,
+			Kind:     "object",
+			Fields:   Simulation_SchemaS3LocationFields,
 		},
 	},
 }

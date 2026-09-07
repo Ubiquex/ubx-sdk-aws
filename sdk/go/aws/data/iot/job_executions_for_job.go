@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobExecutionsForJob_ExecutionSummaries_JobExecutionSummary struct {
 	ExecutionNumber any
-	LastUpdatedAt any
-	QueuedAt any
-	RetryAttempt any
-	StartedAt any
-	Status any
+	LastUpdatedAt   any
+	QueuedAt        any
+	RetryAttempt    any
+	StartedAt       any
+	Status          any
 }
 
 type JobExecutionsForJob_ExecutionSummaries struct {
 	JobExecutionSummary any
-	ThingArn any
+	ThingArn            any
 }
 
 type JobExecutionsForJobConfig struct {
-	JobId any
+	JobId      any
 	MaxResults any
-	NextToken any
-	Status any
+	NextToken  any
+	Status     any
 }
 
 type JobExecutionsForJobAttrs struct {
 	ExecutionSummaries any
-	JobId any
-	MaxResults any
-	NextToken any
-	Status any
+	JobId              any
+	MaxResults         any
+	NextToken          any
+	Status             any
 }
 
 var JobExecutionsForJob = ubx.DataSourceBinding{
 	WireType: "aws_iot_job_executions_for_job",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"NextToken":  ubx.FieldSpec{WireName: "next_token"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

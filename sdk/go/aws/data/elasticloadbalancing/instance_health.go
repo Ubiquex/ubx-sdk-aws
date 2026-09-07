@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceHealth_InstanceStates struct {
 	Description any
-	InstanceId any
-	ReasonCode any
-	State any
+	InstanceId  any
+	ReasonCode  any
+	State       any
 }
 
 type InstanceHealth_Instances struct {
@@ -15,17 +15,17 @@ type InstanceHealth_Instances struct {
 }
 
 var InstanceHealth_InstancesFields = ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-	}
+	"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+}
 
 type InstanceHealthConfig struct {
-	Instances any
+	Instances        any
 	LoadBalancerName any
 }
 
 type InstanceHealthAttrs struct {
-	InstanceStates any
-	Instances any
+	InstanceStates   any
+	Instances        any
 	LoadBalancerName any
 }
 
@@ -34,8 +34,8 @@ var InstanceHealth = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Instances": ubx.FieldSpec{
 			WireName: "instances",
-			Kind: "list",
-			Fields: InstanceHealth_InstancesFields,
+			Kind:     "list",
+			Fields:   InstanceHealth_InstancesFields,
 		},
 		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
 	},

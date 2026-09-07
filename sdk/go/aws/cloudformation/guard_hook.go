@@ -54,50 +54,50 @@ type GuardHook_TargetFilters struct {
 }
 
 var GuardHook_RuleLocationFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"Uri":       ubx.FieldSpec{WireName: "uri"},
+	"VersionId": ubx.FieldSpec{WireName: "version_id"},
+}
 
 var GuardHook_StackFilters_StackNamesFields = ubx.FieldMap{
-		"Exclude": ubx.FieldSpec{WireName: "exclude"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Exclude": ubx.FieldSpec{WireName: "exclude"},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var GuardHook_StackFilters_StackRolesFields = ubx.FieldMap{
-		"Exclude": ubx.FieldSpec{WireName: "exclude"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Exclude": ubx.FieldSpec{WireName: "exclude"},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var GuardHook_StackFiltersFields = ubx.FieldMap{
-		"FilteringCriteria": ubx.FieldSpec{WireName: "filtering_criteria"},
-		"StackNames": ubx.FieldSpec{
-			WireName: "stack_names",
-			Kind: "object",
-			Fields: GuardHook_StackFilters_StackNamesFields,
-		},
-		"StackRoles": ubx.FieldSpec{
-			WireName: "stack_roles",
-			Kind: "object",
-			Fields: GuardHook_StackFilters_StackRolesFields,
-		},
-	}
+	"FilteringCriteria": ubx.FieldSpec{WireName: "filtering_criteria"},
+	"StackNames": ubx.FieldSpec{
+		WireName: "stack_names",
+		Kind:     "object",
+		Fields:   GuardHook_StackFilters_StackNamesFields,
+	},
+	"StackRoles": ubx.FieldSpec{
+		WireName: "stack_roles",
+		Kind:     "object",
+		Fields:   GuardHook_StackFilters_StackRolesFields,
+	},
+}
 
 var GuardHook_TargetFilters_TargetsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"InvocationPoint": ubx.FieldSpec{WireName: "invocation_point"},
-		"TargetName": ubx.FieldSpec{WireName: "target_name"},
-	}
+	"Action":          ubx.FieldSpec{WireName: "action"},
+	"InvocationPoint": ubx.FieldSpec{WireName: "invocation_point"},
+	"TargetName":      ubx.FieldSpec{WireName: "target_name"},
+}
 
 var GuardHook_TargetFiltersFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"InvocationPoints": ubx.FieldSpec{WireName: "invocation_points"},
-		"TargetNames": ubx.FieldSpec{WireName: "target_names"},
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "list",
-			Fields: GuardHook_TargetFilters_TargetsFields,
-		},
-	}
+	"Actions":          ubx.FieldSpec{WireName: "actions"},
+	"InvocationPoints": ubx.FieldSpec{WireName: "invocation_points"},
+	"TargetNames":      ubx.FieldSpec{WireName: "target_names"},
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "list",
+		Fields:   GuardHook_TargetFilters_TargetsFields,
+	},
+}
 
 type GuardHookConfig struct {
 	// The typename alias for the hook.
@@ -150,26 +150,26 @@ type GuardHookAttrs struct {
 var GuardHook = ubx.ResourceBinding{
 	WireType: "aws_cloud_formation_guard_hook",
 	Fields: ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
+		"Alias":         ubx.FieldSpec{WireName: "alias"},
 		"ExecutionRole": ubx.FieldSpec{WireName: "execution_role"},
-		"FailureMode": ubx.FieldSpec{WireName: "failure_mode"},
-		"HookStatus": ubx.FieldSpec{WireName: "hook_status"},
-		"LogBucket": ubx.FieldSpec{WireName: "log_bucket"},
-		"Options": ubx.FieldSpec{WireName: "options"},
+		"FailureMode":   ubx.FieldSpec{WireName: "failure_mode"},
+		"HookStatus":    ubx.FieldSpec{WireName: "hook_status"},
+		"LogBucket":     ubx.FieldSpec{WireName: "log_bucket"},
+		"Options":       ubx.FieldSpec{WireName: "options"},
 		"RuleLocation": ubx.FieldSpec{
 			WireName: "rule_location",
-			Kind: "object",
-			Fields: GuardHook_RuleLocationFields,
+			Kind:     "object",
+			Fields:   GuardHook_RuleLocationFields,
 		},
 		"StackFilters": ubx.FieldSpec{
 			WireName: "stack_filters",
-			Kind: "object",
-			Fields: GuardHook_StackFiltersFields,
+			Kind:     "object",
+			Fields:   GuardHook_StackFiltersFields,
 		},
 		"TargetFilters": ubx.FieldSpec{
 			WireName: "target_filters",
-			Kind: "object",
-			Fields: GuardHook_TargetFiltersFields,
+			Kind:     "object",
+			Fields:   GuardHook_TargetFiltersFields,
 		},
 		"TargetOperations": ubx.FieldSpec{WireName: "target_operations"},
 	},

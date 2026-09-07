@@ -9,8 +9,8 @@ type Integration_TlsConfig struct {
 }
 
 var Integration_TlsConfigFields = ubx.FieldMap{
-		"ServerNameToVerify": ubx.FieldSpec{WireName: "server_name_to_verify"},
-	}
+	"ServerNameToVerify": ubx.FieldSpec{WireName: "server_name_to_verify"},
+}
 
 type IntegrationConfig struct {
 	// The API identifier.
@@ -95,27 +95,27 @@ type IntegrationAttrs struct {
 var Integration = ubx.ResourceBinding{
 	WireType: "aws_api_gateway_v2_integration",
 	Fields: ubx.FieldMap{
-		"ApiId": ubx.FieldSpec{WireName: "api_id"},
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"ContentHandlingStrategy": ubx.FieldSpec{WireName: "content_handling_strategy"},
-		"CredentialsArn": ubx.FieldSpec{WireName: "credentials_arn"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IntegrationMethod": ubx.FieldSpec{WireName: "integration_method"},
-		"IntegrationSubtype": ubx.FieldSpec{WireName: "integration_subtype"},
-		"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
-		"IntegrationUri": ubx.FieldSpec{WireName: "integration_uri"},
-		"PassthroughBehavior": ubx.FieldSpec{WireName: "passthrough_behavior"},
-		"PayloadFormatVersion": ubx.FieldSpec{WireName: "payload_format_version"},
-		"RequestParameters": ubx.FieldSpec{WireName: "request_parameters"},
-		"RequestTemplates": ubx.FieldSpec{WireName: "request_templates"},
-		"ResponseParameters": ubx.FieldSpec{WireName: "response_parameters"},
+		"ApiId":                       ubx.FieldSpec{WireName: "api_id"},
+		"ConnectionId":                ubx.FieldSpec{WireName: "connection_id"},
+		"ConnectionType":              ubx.FieldSpec{WireName: "connection_type"},
+		"ContentHandlingStrategy":     ubx.FieldSpec{WireName: "content_handling_strategy"},
+		"CredentialsArn":              ubx.FieldSpec{WireName: "credentials_arn"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"IntegrationMethod":           ubx.FieldSpec{WireName: "integration_method"},
+		"IntegrationSubtype":          ubx.FieldSpec{WireName: "integration_subtype"},
+		"IntegrationType":             ubx.FieldSpec{WireName: "integration_type"},
+		"IntegrationUri":              ubx.FieldSpec{WireName: "integration_uri"},
+		"PassthroughBehavior":         ubx.FieldSpec{WireName: "passthrough_behavior"},
+		"PayloadFormatVersion":        ubx.FieldSpec{WireName: "payload_format_version"},
+		"RequestParameters":           ubx.FieldSpec{WireName: "request_parameters"},
+		"RequestTemplates":            ubx.FieldSpec{WireName: "request_templates"},
+		"ResponseParameters":          ubx.FieldSpec{WireName: "response_parameters"},
 		"TemplateSelectionExpression": ubx.FieldSpec{WireName: "template_selection_expression"},
-		"TimeoutInMillis": ubx.FieldSpec{WireName: "timeout_in_millis"},
+		"TimeoutInMillis":             ubx.FieldSpec{WireName: "timeout_in_millis"},
 		"TlsConfig": ubx.FieldSpec{
 			WireName: "tls_config",
-			Kind: "object",
-			Fields: Integration_TlsConfigFields,
+			Kind:     "object",
+			Fields:   Integration_TlsConfigFields,
 		},
 	},
 }

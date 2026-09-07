@@ -10,22 +10,22 @@ type Languages_Languages struct {
 
 type LanguagesConfig struct {
 	DisplayLanguageCode any
-	MaxResults any
-	NextToken any
+	MaxResults          any
+	NextToken           any
 }
 
 type LanguagesAttrs struct {
 	DisplayLanguageCode any
-	Languages any
-	MaxResults any
-	NextToken any
+	Languages           any
+	MaxResults          any
+	NextToken           any
 }
 
 var Languages = ubx.DataSourceBinding{
 	WireType: "aws_translate_languages",
 	Fields: ubx.FieldMap{
 		"DisplayLanguageCode": ubx.FieldSpec{WireName: "display_language_code"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-		"NextToken": ubx.FieldSpec{WireName: "next_token"},
+		"MaxResults":          ubx.FieldSpec{WireName: "max_results"},
+		"NextToken":           ubx.FieldSpec{WireName: "next_token"},
 	},
 }

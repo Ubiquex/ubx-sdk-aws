@@ -18,14 +18,14 @@ type ConfigurationProfile_Validators struct {
 }
 
 var ConfigurationProfile_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ConfigurationProfile_ValidatorsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type ConfigurationProfileConfig struct {
 	// The application ID.
@@ -80,23 +80,23 @@ type ConfigurationProfileAttrs struct {
 var ConfigurationProfile = ubx.ResourceBinding{
 	WireType: "aws_app_config_configuration_profile",
 	Fields: ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ApplicationId":           ubx.FieldSpec{WireName: "application_id"},
 		"DeletionProtectionCheck": ubx.FieldSpec{WireName: "deletion_protection_check"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyIdentifier": ubx.FieldSpec{WireName: "kms_key_identifier"},
-		"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RetrievalRoleArn": ubx.FieldSpec{WireName: "retrieval_role_arn"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"KmsKeyIdentifier":        ubx.FieldSpec{WireName: "kms_key_identifier"},
+		"LocationUri":             ubx.FieldSpec{WireName: "location_uri"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"RetrievalRoleArn":        ubx.FieldSpec{WireName: "retrieval_role_arn"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: ConfigurationProfile_TagsFields,
+			Kind:     "list",
+			Fields:   ConfigurationProfile_TagsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"Validators": ubx.FieldSpec{
 			WireName: "validators",
-			Kind: "list",
-			Fields: ConfigurationProfile_ValidatorsFields,
+			Kind:     "list",
+			Fields:   ConfigurationProfile_ValidatorsFields,
 		},
 	},
 }

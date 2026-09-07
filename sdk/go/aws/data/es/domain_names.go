@@ -15,7 +15,7 @@ type DomainNamesConfig struct {
 type DomainNamesAttrs struct {
 	// <p> Contains the list of Elasticsearch domain information.</p>
 	DomainNames any
-	EngineType any
+	EngineType  any
 }
 
 var DomainNames = ubx.DataSourceBinding{

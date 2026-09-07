@@ -4,20 +4,20 @@ package resiliencehub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppVersionConfig struct {
-	AppArn any
+	AppArn     any
 	AppVersion any
 }
 
 type AppVersionAttrs struct {
 	AdditionalInfo any
-	AppArn any
-	AppVersion any
+	AppArn         any
+	AppVersion     any
 }
 
 var AppVersion = ubx.DataSourceBinding{
 	WireType: "aws_resiliencehub_app_version",
 	Fields: ubx.FieldMap{
-		"AppArn": ubx.FieldSpec{WireName: "app_arn"},
+		"AppArn":     ubx.FieldSpec{WireName: "app_arn"},
 		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
 	},
 }

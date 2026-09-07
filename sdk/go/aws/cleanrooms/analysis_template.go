@@ -57,7 +57,7 @@ type AnalysisTemplate_SourceMetadata_Artifacts_AdditionalArtifactHashes struct {
 
 type AnalysisTemplate_SourceMetadata_Artifacts struct {
 	AdditionalArtifactHashes any
-	EntryPointHash any
+	EntryPointHash           any
 }
 
 type AnalysisTemplate_SourceMetadata struct {
@@ -94,121 +94,121 @@ type AnalysisTemplate_SyntheticDataParameters struct {
 
 type AnalysisTemplate_Tags struct {
 	// The user-defined key of a tag attached to the AWS Clean Rooms analysis template, used to categorize, organize, and identify the resource. (AI-inferred)
-	Key any
+	Key   any
 	Value any
 }
 
 var AnalysisTemplate_AnalysisParametersFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var AnalysisTemplate_ErrorMessageConfigurationFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AnalysisTemplate_SchemaFields = ubx.FieldMap{
-		"ReferencedTables": ubx.FieldSpec{WireName: "referenced_tables"},
-	}
+	"ReferencedTables": ubx.FieldSpec{WireName: "referenced_tables"},
+}
 
 var AnalysisTemplate_Source_Artifacts_AdditionalArtifacts_LocationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var AnalysisTemplate_Source_Artifacts_AdditionalArtifactsFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: AnalysisTemplate_Source_Artifacts_AdditionalArtifacts_LocationFields,
-		},
-	}
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   AnalysisTemplate_Source_Artifacts_AdditionalArtifacts_LocationFields,
+	},
+}
 
 var AnalysisTemplate_Source_ArtifactsFields = ubx.FieldMap{
-		"AdditionalArtifacts": ubx.FieldSpec{
-			WireName: "additional_artifacts",
-			Kind: "list",
-			Fields: AnalysisTemplate_Source_Artifacts_AdditionalArtifactsFields,
-		},
-		"EntryPoint": ubx.FieldSpec{
-			WireName: "entry_point",
-			Kind: "object",
-			Fields: AnalysisTemplate_Source_Artifacts_AdditionalArtifactsFields,
-		},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"AdditionalArtifacts": ubx.FieldSpec{
+		WireName: "additional_artifacts",
+		Kind:     "list",
+		Fields:   AnalysisTemplate_Source_Artifacts_AdditionalArtifactsFields,
+	},
+	"EntryPoint": ubx.FieldSpec{
+		WireName: "entry_point",
+		Kind:     "object",
+		Fields:   AnalysisTemplate_Source_Artifacts_AdditionalArtifactsFields,
+	},
+	"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var AnalysisTemplate_SourceFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{
-			WireName: "artifacts",
-			Kind: "object",
-			Fields: AnalysisTemplate_Source_ArtifactsFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Artifacts": ubx.FieldSpec{
+		WireName: "artifacts",
+		Kind:     "object",
+		Fields:   AnalysisTemplate_Source_ArtifactsFields,
+	},
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var AnalysisTemplate_SourceMetadata_Artifacts_AdditionalArtifactHashesFields = ubx.FieldMap{
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"Sha256": ubx.FieldSpec{WireName: "sha256"},
+}
 
 var AnalysisTemplate_SourceMetadata_ArtifactsFields = ubx.FieldMap{
-		"AdditionalArtifactHashes": ubx.FieldSpec{
-			WireName: "additional_artifact_hashes",
-			Kind: "list",
-			Fields: AnalysisTemplate_SourceMetadata_Artifacts_AdditionalArtifactHashesFields,
-		},
-		"EntryPointHash": ubx.FieldSpec{
-			WireName: "entry_point_hash",
-			Kind: "object",
-			Fields: AnalysisTemplate_SourceMetadata_Artifacts_AdditionalArtifactHashesFields,
-		},
-	}
+	"AdditionalArtifactHashes": ubx.FieldSpec{
+		WireName: "additional_artifact_hashes",
+		Kind:     "list",
+		Fields:   AnalysisTemplate_SourceMetadata_Artifacts_AdditionalArtifactHashesFields,
+	},
+	"EntryPointHash": ubx.FieldSpec{
+		WireName: "entry_point_hash",
+		Kind:     "object",
+		Fields:   AnalysisTemplate_SourceMetadata_Artifacts_AdditionalArtifactHashesFields,
+	},
+}
 
 var AnalysisTemplate_SourceMetadataFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{
-			WireName: "artifacts",
-			Kind: "object",
-			Fields: AnalysisTemplate_SourceMetadata_ArtifactsFields,
-		},
-	}
+	"Artifacts": ubx.FieldSpec{
+		WireName: "artifacts",
+		Kind:     "object",
+		Fields:   AnalysisTemplate_SourceMetadata_ArtifactsFields,
+	},
+}
 
 var AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_ColumnClassification_ColumnMappingFields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"ColumnType": ubx.FieldSpec{WireName: "column_type"},
-		"IsPredictiveValue": ubx.FieldSpec{WireName: "is_predictive_value"},
-	}
+	"ColumnName":        ubx.FieldSpec{WireName: "column_name"},
+	"ColumnType":        ubx.FieldSpec{WireName: "column_type"},
+	"IsPredictiveValue": ubx.FieldSpec{WireName: "is_predictive_value"},
+}
 
 var AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_ColumnClassificationFields = ubx.FieldMap{
-		"ColumnMapping": ubx.FieldSpec{
-			WireName: "column_mapping",
-			Kind: "list",
-			Fields: AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_ColumnClassification_ColumnMappingFields,
-		},
-	}
+	"ColumnMapping": ubx.FieldSpec{
+		WireName: "column_mapping",
+		Kind:     "list",
+		Fields:   AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_ColumnClassification_ColumnMappingFields,
+	},
+}
 
 var AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParametersFields = ubx.FieldMap{
-		"ColumnClassification": ubx.FieldSpec{
-			WireName: "column_classification",
-			Kind: "object",
-			Fields: AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_ColumnClassificationFields,
-		},
-		"Epsilon": ubx.FieldSpec{WireName: "epsilon"},
-		"MaxMembershipInferenceAttackScore": ubx.FieldSpec{WireName: "max_membership_inference_attack_score"},
-	}
+	"ColumnClassification": ubx.FieldSpec{
+		WireName: "column_classification",
+		Kind:     "object",
+		Fields:   AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_ColumnClassificationFields,
+	},
+	"Epsilon":                           ubx.FieldSpec{WireName: "epsilon"},
+	"MaxMembershipInferenceAttackScore": ubx.FieldSpec{WireName: "max_membership_inference_attack_score"},
+}
 
 var AnalysisTemplate_SyntheticDataParametersFields = ubx.FieldMap{
-		"MlSyntheticDataParameters": ubx.FieldSpec{
-			WireName: "ml_synthetic_data_parameters",
-			Kind: "object",
-			Fields: AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParametersFields,
-		},
-	}
+	"MlSyntheticDataParameters": ubx.FieldSpec{
+		WireName: "ml_synthetic_data_parameters",
+		Kind:     "object",
+		Fields:   AnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParametersFields,
+	},
+}
 
 var AnalysisTemplate_TagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AnalysisTemplateConfig struct {
 	// The member who can query can provide this placeholder for a literal data value in an analysis template
@@ -226,7 +226,7 @@ type AnalysisTemplateConfig struct {
 	// Specifies the referenced tables (via an AnalysisSchema object) that the analysis template's SQL query is allowed to access. (AI-inferred)
 	Schema any
 	// The source object defines the SQL query content for the analysis template, containing the query text that will be executed against the collaboration data. (AI-inferred)
-	Source any
+	Source         any
 	SourceMetadata any
 	// Configures the generation of synthetic data based on the analysis template's schema, including the desired row count, for testing analysis queries without using real data. (AI-inferred)
 	SyntheticDataParameters any
@@ -260,7 +260,7 @@ type AnalysisTemplateAttrs struct {
 	// Specifies the referenced tables (via an AnalysisSchema object) that the analysis template's SQL query is allowed to access. (AI-inferred)
 	Schema any
 	// The source object defines the SQL query content for the analysis template, containing the query text that will be executed against the collaboration data. (AI-inferred)
-	Source any
+	Source         any
 	SourceMetadata any
 	// Configures the generation of synthetic data based on the analysis template's schema, including the desired row count, for testing analysis queries without using real data. (AI-inferred)
 	SyntheticDataParameters any
@@ -273,42 +273,42 @@ var AnalysisTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AnalysisParameters": ubx.FieldSpec{
 			WireName: "analysis_parameters",
-			Kind: "list",
-			Fields: AnalysisTemplate_AnalysisParametersFields,
+			Kind:     "list",
+			Fields:   AnalysisTemplate_AnalysisParametersFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ErrorMessageConfiguration": ubx.FieldSpec{
 			WireName: "error_message_configuration",
-			Kind: "object",
-			Fields: AnalysisTemplate_ErrorMessageConfigurationFields,
+			Kind:     "object",
+			Fields:   AnalysisTemplate_ErrorMessageConfigurationFields,
 		},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":               ubx.FieldSpec{WireName: "format"},
 		"MembershipIdentifier": ubx.FieldSpec{WireName: "membership_identifier"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: AnalysisTemplate_SchemaFields,
+			Kind:     "object",
+			Fields:   AnalysisTemplate_SchemaFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: AnalysisTemplate_SourceFields,
+			Kind:     "object",
+			Fields:   AnalysisTemplate_SourceFields,
 		},
 		"SourceMetadata": ubx.FieldSpec{
 			WireName: "source_metadata",
-			Kind: "object",
-			Fields: AnalysisTemplate_SourceMetadataFields,
+			Kind:     "object",
+			Fields:   AnalysisTemplate_SourceMetadataFields,
 		},
 		"SyntheticDataParameters": ubx.FieldSpec{
 			WireName: "synthetic_data_parameters",
-			Kind: "object",
-			Fields: AnalysisTemplate_SyntheticDataParametersFields,
+			Kind:     "object",
+			Fields:   AnalysisTemplate_SyntheticDataParametersFields,
 		},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: AnalysisTemplate_TagsFields,
+			Kind:     "list",
+			Fields:   AnalysisTemplate_TagsFields,
 		},
 	},
 }

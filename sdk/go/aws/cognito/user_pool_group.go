@@ -33,9 +33,9 @@ var UserPoolGroup = ubx.ResourceBinding{
 	WireType: "aws_cognito_user_pool_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"Precedence": ubx.FieldSpec{WireName: "precedence"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-		"UserPoolId": ubx.FieldSpec{WireName: "user_pool_id"},
+		"GroupName":   ubx.FieldSpec{WireName: "group_name"},
+		"Precedence":  ubx.FieldSpec{WireName: "precedence"},
+		"RoleArn":     ubx.FieldSpec{WireName: "role_arn"},
+		"UserPoolId":  ubx.FieldSpec{WireName: "user_pool_id"},
 	},
 }
