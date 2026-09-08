@@ -85,7 +85,7 @@ generated — do not hand-edit; re-run `ubx sdk gen` after the source
 schema changes.
 
 Depends on the shared runtime: [ubx-sdk-go](https://github.com/ubiquex/ubx-sdk-go) (Go),
-[`jsr:@ubx/sdk`](https://jsr.io/@ubx/sdk) (TypeScript),
+[`@ubx/sdk`](https://www.npmjs.com/package/@ubx/sdk) (TypeScript),
 [`ubx-sdk`](https://pypi.org/project/ubx-sdk/) (Python, imported as `ubx_sdk`).
 
 <!-- README-GEN:BEGIN -->
