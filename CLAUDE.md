@@ -13,7 +13,9 @@ languages in one combined repo:
   own semantic import versioning requires the `/v2` path suffix once a module
   crosses v2)
 - `sdk/typescript/` — TypeScript bindings, published to npm as `@ubx/sdk-aws`
-  (npm, not JSR — the one language exception among these six repos)
+  (npm, not JSR, for every provider repo — UBI-143: JSR enforces a hard 20MB
+  package cap and a 95-character path cap, both of which real provider
+  packages cross)
 - `sdk/python/` — Python bindings, published to PyPI as `ubx-sdk-aws`
 
 `VERSION` at repo root records the real upstream spec this generation was
@@ -58,7 +60,7 @@ version.
   the same as "published" for any of the three — verify against the
   SEPARATE published repo/registry directly (a real `git log`/`diff` against
   the actual separate repo, or a real registry query: the Go module proxy,
-  `jsr.io`, `pypi.org`), never infer "published" from a commit to the
+  `npmjs.com`, `pypi.org`), never infer "published" from a commit to the
   monorepo's own copy alone (`ubiquex`'s own CLAUDE.md rule 8). This bit the
   project once already at the runtime-repo level: a Go fix was reported
   "committed and pushed" across multiple session summaries, but only the
